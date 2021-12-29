@@ -156,9 +156,9 @@ pub mod get_attribute_values_output {
         /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and
         /// <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code>
         /// <code>volumeType</code>.</p>
-        pub fn attribute_values(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
+        pub fn attribute_values(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.attribute_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_values = Some(v);
             self
         }
@@ -248,9 +248,9 @@ pub mod describe_services_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>The service metadata for the service or services in the response.</p>
-        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
+        pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }

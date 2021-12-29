@@ -1146,9 +1146,9 @@ pub mod create_job_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8842,9 +8842,9 @@ pub mod list_jobs_input {
         /// To override the contents of this collection use [`set_job_statuses`](Self::set_job_statuses).
         ///
         /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
-        pub fn job_statuses(mut self, input: impl Into<crate::model::JobStatus>) -> Self {
+        pub fn job_statuses(mut self, input: crate::model::JobStatus) -> Self {
             let mut v = self.job_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_statuses = Some(v);
             self
         }
@@ -11243,9 +11243,9 @@ pub mod put_job_tagging_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11944,9 +11944,9 @@ pub mod put_storage_lens_configuration_input {
         /// <note>
         /// <p>You can set up to a maximum of 50 tags.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::StorageLensTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::StorageLensTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12191,9 +12191,9 @@ pub mod put_storage_lens_configuration_tagging_input {
         /// <note>
         /// <p>You can set up to a maximum of 50 tags.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::StorageLensTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::StorageLensTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

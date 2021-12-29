@@ -733,9 +733,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tags associated with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -804,12 +804,9 @@ pub mod list_state_machines_output {
         ///
         /// To override the contents of this collection use [`set_state_machines`](Self::set_state_machines).
         ///
-        pub fn state_machines(
-            mut self,
-            input: impl Into<crate::model::StateMachineListItem>,
-        ) -> Self {
+        pub fn state_machines(mut self, input: crate::model::StateMachineListItem) -> Self {
             let mut v = self.state_machines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.state_machines = Some(v);
             self
         }
@@ -893,9 +890,9 @@ pub mod list_executions_output {
         /// To override the contents of this collection use [`set_executions`](Self::set_executions).
         ///
         /// <p>The list of matching executions.</p>
-        pub fn executions(mut self, input: impl Into<crate::model::ExecutionListItem>) -> Self {
+        pub fn executions(mut self, input: crate::model::ExecutionListItem) -> Self {
             let mut v = self.executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.executions = Some(v);
             self
         }
@@ -979,9 +976,9 @@ pub mod list_activities_output {
         /// To override the contents of this collection use [`set_activities`](Self::set_activities).
         ///
         /// <p>The list of activities.</p>
-        pub fn activities(mut self, input: impl Into<crate::model::ActivityListItem>) -> Self {
+        pub fn activities(mut self, input: crate::model::ActivityListItem) -> Self {
             let mut v = self.activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.activities = Some(v);
             self
         }
@@ -1065,9 +1062,9 @@ pub mod get_execution_history_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The list of events that occurred in the execution.</p>
-        pub fn events(mut self, input: impl Into<crate::model::HistoryEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::HistoryEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }

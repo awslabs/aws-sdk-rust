@@ -109,12 +109,9 @@ pub mod create_group_input {
         /// <p>A resource group can contain either a <code>Configuration</code> or a
         /// <code>ResourceQuery</code>, but not both.</p>
         /// </note>
-        pub fn configuration(
-            mut self,
-            input: impl Into<crate::model::GroupConfigurationItem>,
-        ) -> Self {
+        pub fn configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             let mut v = self.configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration = Some(v);
             self
         }
@@ -1287,9 +1284,9 @@ pub mod list_group_resources_input {
         /// the group query specifies <code>AWS::AllSupported</code>, because a group based on such
         /// a query can contain any of the allowed resource types for the query type (tag-based or
         /// AWS CloudFormation stack-based queries).</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ResourceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ResourceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1549,9 +1546,9 @@ pub mod list_groups_input {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::GroupFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::GroupFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1817,12 +1814,9 @@ pub mod put_group_configuration_input {
         /// <p>A resource group can contain either a <code>Configuration</code> or a
         /// <code>ResourceQuery</code>, but not both.</p>
         /// </note>
-        pub fn configuration(
-            mut self,
-            input: impl Into<crate::model::GroupConfigurationItem>,
-        ) -> Self {
+        pub fn configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             let mut v = self.configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration = Some(v);
             self
         }

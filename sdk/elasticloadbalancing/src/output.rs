@@ -154,9 +154,9 @@ pub mod register_instances_with_load_balancer_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The updated list of instances for the load balancer.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -493,9 +493,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tag_descriptions`](Self::set_tag_descriptions).
         ///
         /// <p>Information about the tags.</p>
-        pub fn tag_descriptions(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
+        pub fn tag_descriptions(mut self, input: crate::model::TagDescription) -> Self {
             let mut v = self.tag_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_descriptions = Some(v);
             self
         }
@@ -573,10 +573,10 @@ pub mod describe_load_balancers_output {
         /// <p>Information about the load balancers.</p>
         pub fn load_balancer_descriptions(
             mut self,
-            input: impl Into<crate::model::LoadBalancerDescription>,
+            input: crate::model::LoadBalancerDescription,
         ) -> Self {
             let mut v = self.load_balancer_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancer_descriptions = Some(v);
             self
         }
@@ -654,10 +654,10 @@ pub mod describe_load_balancer_policy_types_output {
         /// <p>Information about the policy types.</p>
         pub fn policy_type_descriptions(
             mut self,
-            input: impl Into<crate::model::PolicyTypeDescription>,
+            input: crate::model::PolicyTypeDescription,
         ) -> Self {
             let mut v = self.policy_type_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_type_descriptions = Some(v);
             self
         }
@@ -719,12 +719,9 @@ pub mod describe_load_balancer_policies_output {
         /// To override the contents of this collection use [`set_policy_descriptions`](Self::set_policy_descriptions).
         ///
         /// <p>Information about the policies.</p>
-        pub fn policy_descriptions(
-            mut self,
-            input: impl Into<crate::model::PolicyDescription>,
-        ) -> Self {
+        pub fn policy_descriptions(mut self, input: crate::model::PolicyDescription) -> Self {
             let mut v = self.policy_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_descriptions = Some(v);
             self
         }
@@ -848,9 +845,9 @@ pub mod describe_instance_health_output {
         /// To override the contents of this collection use [`set_instance_states`](Self::set_instance_states).
         ///
         /// <p>Information about the health of the instances.</p>
-        pub fn instance_states(mut self, input: impl Into<crate::model::InstanceState>) -> Self {
+        pub fn instance_states(mut self, input: crate::model::InstanceState) -> Self {
             let mut v = self.instance_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_states = Some(v);
             self
         }
@@ -919,9 +916,9 @@ pub mod describe_account_limits_output {
         /// To override the contents of this collection use [`set_limits`](Self::set_limits).
         ///
         /// <p>Information about the limits.</p>
-        pub fn limits(mut self, input: impl Into<crate::model::Limit>) -> Self {
+        pub fn limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.limits = Some(v);
             self
         }
@@ -993,9 +990,9 @@ pub mod deregister_instances_from_load_balancer_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The remaining instances registered with the load balancer.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }

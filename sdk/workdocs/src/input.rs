@@ -457,9 +457,9 @@ pub mod add_resource_permissions_input {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The users, groups, or organization being granted permission.</p>
-        pub fn principals(mut self, input: impl Into<crate::model::SharePrincipal>) -> Self {
+        pub fn principals(mut self, input: crate::model::SharePrincipal) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principals = Some(v);
             self
         }

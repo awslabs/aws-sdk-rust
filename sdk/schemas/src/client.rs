@@ -369,8 +369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A description for the discoverer.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description for the discoverer.</p>
@@ -379,8 +379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the event bus.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(signature.into());
             self
         }
         /// <p>The ARN of the event bus.</p>
@@ -389,8 +389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
-        pub fn cross_account(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cross_account(inp);
+        pub fn cross_account(mut self, signature: bool) -> Self {
+            self.inner = self.inner.cross_account(signature);
             self
         }
         /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
@@ -408,7 +408,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags associated with the resource.</p>
@@ -482,8 +482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A description of the registry to be created.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the registry to be created.</p>
@@ -492,8 +492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -514,7 +514,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags to associate with the registry.</p>
@@ -588,8 +588,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The source of the schema definition.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(signature.into());
             self
         }
         /// <p>The source of the schema definition.</p>
@@ -598,8 +598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the schema.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the schema.</p>
@@ -608,8 +608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -621,8 +621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -640,7 +640,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags associated with the schema.</p>
@@ -654,8 +654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of schema.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of schema.</p>
@@ -724,8 +724,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(signature.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -797,8 +797,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -870,8 +870,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -943,8 +943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -956,8 +956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1026,8 +1026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1039,8 +1039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1049,8 +1049,8 @@ pub mod fluent_builders {
             self
         }
         /// The version number of the schema
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(signature.into());
             self
         }
         /// The version number of the schema
@@ -1122,8 +1122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The language of the code binding.</p>
-        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(signature.into());
             self
         }
         /// <p>The language of the code binding.</p>
@@ -1132,8 +1132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1155,8 +1155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -1228,8 +1228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(signature.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -1301,8 +1301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1374,8 +1374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1387,8 +1387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1397,8 +1397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -1469,8 +1469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1482,8 +1482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1492,8 +1492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -1505,8 +1505,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(signature.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1575,8 +1575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The language of the code binding.</p>
-        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(signature.into());
             self
         }
         /// <p>The language of the code binding.</p>
@@ -1585,8 +1585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1598,8 +1598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1608,8 +1608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -1685,8 +1685,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-        pub fn events(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.events(inp);
+        pub fn events(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.events(input.into());
             self
         }
         /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
@@ -1698,8 +1698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of event.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of event.</p>
@@ -1768,8 +1768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1841,8 +1841,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
-        pub fn discoverer_id_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id_prefix(inp);
+        pub fn discoverer_id_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id_prefix(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
@@ -1854,8 +1854,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1864,8 +1864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -1874,8 +1874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
-        pub fn source_arn_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn_prefix(inp);
+        pub fn source_arn_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn_prefix(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
@@ -1947,8 +1947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1957,8 +1957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -1967,8 +1967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
-        pub fn registry_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name_prefix(inp);
+        pub fn registry_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name_prefix(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
@@ -1980,8 +1980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
-        pub fn scope(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scope(signature.into());
             self
         }
         /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
@@ -2050,8 +2050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2060,8 +2060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -2070,8 +2070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2083,8 +2083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
-        pub fn schema_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name_prefix(inp);
+        pub fn schema_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name_prefix(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
@@ -2156,8 +2156,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2166,8 +2166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -2176,8 +2176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2189,8 +2189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -2259,8 +2259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2329,8 +2329,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The language of the code binding.</p>
-        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(signature.into());
             self
         }
         /// <p>The language of the code binding.</p>
@@ -2339,8 +2339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2352,8 +2352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -2362,8 +2362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -2435,8 +2435,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource-based policy.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The resource-based policy.</p>
@@ -2445,8 +2445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2458,8 +2458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The revision ID of the policy.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>The revision ID of the policy.</p>
@@ -2528,8 +2528,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(signature.into());
             self
         }
         /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
@@ -2538,8 +2538,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2548,8 +2548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -2558,8 +2558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2631,8 +2631,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(signature.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -2704,8 +2704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(signature.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -2777,8 +2777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2796,7 +2796,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags associated with the resource.</p>
@@ -2870,8 +2870,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2884,8 +2884,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys of key-value pairs.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys of key-value pairs.</p>
@@ -2957,8 +2957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the discoverer to update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the discoverer to update.</p>
@@ -2967,8 +2967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(signature.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -2980,8 +2980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
-        pub fn cross_account(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cross_account(inp);
+        pub fn cross_account(mut self, signature: bool) -> Self {
+            self.inner = self.inner.cross_account(signature);
             self
         }
         /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
@@ -3050,8 +3050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the registry to update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the registry to update.</p>
@@ -3060,8 +3060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -3133,8 +3133,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the client token.</p>
-        pub fn client_token_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token_id(inp);
+        pub fn client_token_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token_id(signature.into());
             self
         }
         /// <p>The ID of the client token.</p>
@@ -3146,8 +3146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source of the schema definition.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(signature.into());
             self
         }
         /// <p>The source of the schema definition.</p>
@@ -3156,8 +3156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the schema.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the schema.</p>
@@ -3166,8 +3166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(signature.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -3179,8 +3179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -3189,8 +3189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema type for the events schema.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The schema type for the events schema.</p>

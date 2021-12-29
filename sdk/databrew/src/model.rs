@@ -227,9 +227,9 @@ pub mod rule {
         ///
         /// <p>List of column selectors. Selectors can be used to select columns using a name or regular
         /// expression from the dataset. Rule will be applied to selected columns.</p>
-        pub fn column_selectors(mut self, input: impl Into<crate::model::ColumnSelector>) -> Self {
+        pub fn column_selectors(mut self, input: crate::model::ColumnSelector) -> Self {
             let mut v = self.column_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_selectors = Some(v);
             self
         }
@@ -1761,12 +1761,9 @@ pub mod recipe_step {
         /// <p>All of the conditions in the array must be met. In other words, all of the
         /// conditions must be combined using a logical AND operation.</p>
         /// </note>
-        pub fn condition_expressions(
-            mut self,
-            input: impl Into<crate::model::ConditionExpression>,
-        ) -> Self {
+        pub fn condition_expressions(mut self, input: crate::model::ConditionExpression) -> Self {
             let mut v = self.condition_expressions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.condition_expressions = Some(v);
             self
         }
@@ -2584,9 +2581,9 @@ pub mod profile_configuration {
         /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When
         /// ProfileColumns is undefined, the profile job will profile all supported columns.
         /// </p>
-        pub fn profile_columns(mut self, input: impl Into<crate::model::ColumnSelector>) -> Self {
+        pub fn profile_columns(mut self, input: crate::model::ColumnSelector) -> Self {
             let mut v = self.profile_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profile_columns = Some(v);
             self
         }
@@ -2611,10 +2608,10 @@ pub mod profile_configuration {
         /// </p>
         pub fn column_statistics_configurations(
             mut self,
-            input: impl Into<crate::model::ColumnStatisticsConfiguration>,
+            input: crate::model::ColumnStatisticsConfiguration,
         ) -> Self {
             let mut v = self.column_statistics_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_configurations = Some(v);
             self
         }
@@ -2977,12 +2974,9 @@ pub mod entity_detector_configuration {
         /// <p>Configuration of statistics that are allowed to be run on columns that
         /// contain detected entities. When undefined, no statistics will be computed
         /// on columns that contain detected entities.</p>
-        pub fn allowed_statistics(
-            mut self,
-            input: impl Into<crate::model::AllowedStatistics>,
-        ) -> Self {
+        pub fn allowed_statistics(mut self, input: crate::model::AllowedStatistics) -> Self {
             let mut v = self.allowed_statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_statistics = Some(v);
             self
         }
@@ -3131,9 +3125,9 @@ pub mod column_statistics_configuration {
         /// <p>List of column selectors. Selectors can be used to select columns from the dataset.
         /// When selectors are undefined, configuration will be applied to all supported columns.
         /// </p>
-        pub fn selectors(mut self, input: impl Into<crate::model::ColumnSelector>) -> Self {
+        pub fn selectors(mut self, input: crate::model::ColumnSelector) -> Self {
             let mut v = self.selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.selectors = Some(v);
             self
         }
@@ -3247,9 +3241,9 @@ pub mod statistics_configuration {
         /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
         ///
         /// <p>List of overrides for evaluations.</p>
-        pub fn overrides(mut self, input: impl Into<crate::model::StatisticOverride>) -> Self {
+        pub fn overrides(mut self, input: crate::model::StatisticOverride) -> Self {
             let mut v = self.overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.overrides = Some(v);
             self
         }
@@ -3472,10 +3466,10 @@ pub mod path_options {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::DatasetParameter>,
+            v: crate::model::DatasetParameter,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -4832,9 +4826,9 @@ pub mod excel_options {
         ///
         /// <p>One or more sheet numbers in the Excel file that will be included in the
         /// dataset.</p>
-        pub fn sheet_indexes(mut self, input: impl Into<i32>) -> Self {
+        pub fn sheet_indexes(mut self, input: i32) -> Self {
             let mut v = self.sheet_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sheet_indexes = Some(v);
             self
         }
@@ -6057,9 +6051,9 @@ pub mod recipe {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>A list of steps that are defined by the recipe.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::RecipeStep>) -> Self {
+        pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -7002,9 +6996,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more artifacts that represent output from running the job.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -7022,12 +7016,9 @@ pub mod job {
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output
         /// from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            input: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalog_outputs = Some(v);
             self
         }
@@ -7046,9 +7037,9 @@ pub mod job {
         ///
         /// <p>Represents a list of JDBC database output objects which defines the output
         /// destination for a DataBrew recipe job to write into.</p>
-        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_outputs = Some(v);
             self
         }
@@ -7167,10 +7158,10 @@ pub mod job {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            input: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_configurations = Some(v);
             self
         }
@@ -7653,9 +7644,9 @@ pub mod job_run {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more output artifacts from a job run.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -7673,12 +7664,9 @@ pub mod job_run {
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output
         /// from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            input: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalog_outputs = Some(v);
             self
         }
@@ -7697,9 +7685,9 @@ pub mod job_run {
         ///
         /// <p>Represents a list of JDBC database output objects which defines the output
         /// destination for a DataBrew recipe job to write into.</p>
-        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_outputs = Some(v);
             self
         }
@@ -7774,10 +7762,10 @@ pub mod job_run {
         /// <p>List of validation configurations that are applied to the profile job run.</p>
         pub fn validation_configurations(
             mut self,
-            input: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_configurations = Some(v);
             self
         }

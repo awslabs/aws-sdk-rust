@@ -556,9 +556,9 @@ pub mod create_tags_input {
         /// <p>
         /// <code>{"key": "serverType", "value": "webServer"}</code>
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -912,9 +912,9 @@ pub mod delete_tags_input {
         /// <p>
         /// <code>{"key": "serverType", "value": "webServer"}</code>
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1110,9 +1110,9 @@ pub mod describe_agents_input {
         /// <p>
         /// <code>{"key": "collectionStatus", "value": "STARTED"}</code>
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1886,9 +1886,9 @@ pub mod describe_export_tasks_input {
         /// exported</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::ExportFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2097,9 +2097,9 @@ pub mod describe_import_tasks_input {
         /// <p>An array of name-value pairs that you provide to filter the results for the
         /// <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard
         /// values aren't supported for filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ImportTaskFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ImportTaskFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2288,9 +2288,9 @@ pub mod describe_tags_input {
         /// <p>You can filter the list using a <i>key</i>-<i>value</i>
         /// format. You can separate these items by using logical operators. Allowed filters include
         /// <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2951,9 +2951,9 @@ pub mod list_configurations_input {
         /// <p>For a complete list of filter options and guidance about using them with this action,
         /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
         /// Service User Guide</i>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3005,9 +3005,9 @@ pub mod list_configurations_input {
         /// <p>Certain filter criteria return output that can be sorted in ascending or descending
         /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
         /// Service User Guide</i>.</p>
-        pub fn order_by(mut self, input: impl Into<crate::model::OrderByElement>) -> Self {
+        pub fn order_by(mut self, input: crate::model::OrderByElement) -> Self {
             let mut v = self.order_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.order_by = Some(v);
             self
         }
@@ -3718,12 +3718,9 @@ pub mod start_export_task_input {
         /// <code>GRAPHML</code>
         /// <i>option has been deprecated.</i>
         /// </p>
-        pub fn export_data_format(
-            mut self,
-            input: impl Into<crate::model::ExportDataFormat>,
-        ) -> Self {
+        pub fn export_data_format(mut self, input: crate::model::ExportDataFormat) -> Self {
             let mut v = self.export_data_format.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_data_format = Some(v);
             self
         }
@@ -3750,9 +3747,9 @@ pub mod start_export_task_input {
         /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both
         /// Agentless Discovery Connector data and summary data from Application Discovery agents.
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::ExportFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }

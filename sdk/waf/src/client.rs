@@ -743,8 +743,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a
         /// <code>ByteMatchSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a
@@ -754,8 +754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -852,8 +852,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
@@ -862,8 +862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -965,8 +965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
@@ -975,8 +975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -1139,8 +1139,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description of the <a>RateBasedRule</a>. You can't
         /// change the name of a <code>RateBasedRule</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>RateBasedRule</a>. You can't
@@ -1153,8 +1153,8 @@ pub mod fluent_builders {
         /// The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
         /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
         /// <code>RateBasedRule</code>.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>.
@@ -1170,8 +1170,8 @@ pub mod fluent_builders {
         /// is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP
         /// address are subject to the <code>RateLimit</code> that is specified in
         /// the <code>RateBasedRule</code>.</p>
-        pub fn rate_key(mut self, inp: crate::model::RateKey) -> Self {
-            self.inner = self.inner.rate_key(inp);
+        pub fn rate_key(mut self, signature: crate::model::RateKey) -> Self {
+            self.inner = self.inner.rate_key(signature);
             self
         }
         /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single
@@ -1187,8 +1187,8 @@ pub mod fluent_builders {
         /// specified by <code>RateKey</code>, allowed in a five-minute period. If the number of
         /// requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule
         /// are also met, AWS WAF triggers the action that is specified for this rule.</p>
-        pub fn rate_limit(mut self, inp: i64) -> Self {
-            self.inner = self.inner.rate_limit(inp);
+        pub fn rate_limit(mut self, signature: i64) -> Self {
+            self.inner = self.inner.rate_limit(signature);
             self
         }
         /// <p>The maximum number of requests, which have an identical value in the field that is
@@ -1202,8 +1202,8 @@ pub mod fluent_builders {
         /// <p>The <code>ChangeToken</code> that you used to submit the
         /// <code>CreateRateBasedRule</code> request. You can also use this value to query the
         /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p></p>
@@ -1323,8 +1323,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change <code>Name</code> after you create a
         /// <code>RegexMatchSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change <code>Name</code> after you create a
@@ -1334,8 +1334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -1432,8 +1432,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code> after you create a
         /// <code>RegexPatternSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code> after you create a
@@ -1443,8 +1443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -1564,8 +1564,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</p>
@@ -1576,8 +1576,8 @@ pub mod fluent_builders {
         /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
         /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
         /// <code>Rule</code>.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
@@ -1588,8 +1588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -1602,8 +1602,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p></p>
@@ -1698,8 +1698,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description of the <a>RuleGroup</a>. You can't change <code>Name</code> after you create a
         /// <code>RuleGroup</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>RuleGroup</a>. You can't change <code>Name</code> after you create a
@@ -1710,8 +1710,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
         /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
@@ -1721,8 +1721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -1735,8 +1735,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p></p>
@@ -1840,8 +1840,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't change <code>Name</code> after you create a
         /// <code>SizeConstraintSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't change <code>Name</code> after you create a
@@ -1851,8 +1851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -1951,8 +1951,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code>
         /// after you create the <code>SqlInjectionMatchSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code>
@@ -1962,8 +1962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -2071,8 +2071,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
@@ -2083,8 +2083,8 @@ pub mod fluent_builders {
         /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
         /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the
         /// <code>WebACL</code>.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
@@ -2096,8 +2096,8 @@ pub mod fluent_builders {
         }
         /// <p>The action that you want  AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code>
         /// objects that are associated with the <code>WebACL</code>.</p>
-        pub fn default_action(mut self, inp: crate::model::WafAction) -> Self {
-            self.inner = self.inner.default_action(inp);
+        pub fn default_action(mut self, signature: crate::model::WafAction) -> Self {
+            self.inner = self.inner.default_action(signature);
             self
         }
         /// <p>The action that you want  AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code>
@@ -2110,8 +2110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -2124,8 +2124,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p></p>
@@ -2204,8 +2204,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
-        pub fn web_acl_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(inp);
+        pub fn web_acl_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_id(signature.into());
             self
         }
         /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
@@ -2227,8 +2227,8 @@ pub mod fluent_builders {
         /// bucket policies, see the Examples section. </p>
         /// </li>
         /// </ul>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be
@@ -2255,8 +2255,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration.
         /// Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported
         /// entities, it stops the process and throws an exception. </p>
-        pub fn ignore_unsupported_type(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ignore_unsupported_type(inp);
+        pub fn ignore_unsupported_type(mut self, signature: bool) -> Self {
+            self.inner = self.inner.ignore_unsupported_type(signature);
             self
         }
         /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration.
@@ -2357,8 +2357,8 @@ pub mod fluent_builders {
         }
         /// <p>A friendly name or description for the <a>XssMatchSet</a> that you're creating. You can't change <code>Name</code>
         /// after you create the <code>XssMatchSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name or description for the <a>XssMatchSet</a> that you're creating. You can't change <code>Name</code>
@@ -2368,8 +2368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -2462,8 +2462,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
         /// <a>ListByteMatchSets</a>.</p>
-        pub fn byte_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.byte_match_set_id(inp);
+        pub fn byte_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.byte_match_set_id(signature.into());
             self
         }
         /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
@@ -2476,8 +2476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -2570,8 +2570,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>GeoMatchSetID</code> of the <a>GeoMatchSet</a> that you want to delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
         /// <a>ListGeoMatchSets</a>.</p>
-        pub fn geo_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.geo_match_set_id(inp);
+        pub fn geo_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.geo_match_set_id(signature.into());
             self
         }
         /// <p>The <code>GeoMatchSetID</code> of the <a>GeoMatchSet</a> that you want to delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
@@ -2584,8 +2584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -2678,8 +2678,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
         /// <a>ListIPSets</a>.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(signature.into());
             self
         }
         /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
@@ -2689,8 +2689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -2768,8 +2768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
@@ -2848,8 +2848,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete the policy.</p>
         /// <p>The user making the request must be the owner of the RuleGroup.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete the policy.</p>
@@ -2948,8 +2948,8 @@ pub mod fluent_builders {
         /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to
         /// delete. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
         /// <a>ListRateBasedRules</a>.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to
@@ -2960,8 +2960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3054,8 +3054,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
         /// <a>ListRegexMatchSets</a>.</p>
-        pub fn regex_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex_match_set_id(inp);
+        pub fn regex_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex_match_set_id(signature.into());
             self
         }
         /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
@@ -3068,8 +3068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3148,8 +3148,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to delete. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
         /// <a>ListRegexPatternSets</a>.</p>
-        pub fn regex_pattern_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex_pattern_set_id(inp);
+        pub fn regex_pattern_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex_pattern_set_id(signature.into());
             self
         }
         /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to delete. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
@@ -3162,8 +3162,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3256,8 +3256,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by
         /// <a>ListRules</a>.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by
@@ -3267,8 +3267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3361,8 +3361,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to delete. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
         /// <a>ListRuleGroups</a>.</p>
-        pub fn rule_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_id(inp);
+        pub fn rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_id(signature.into());
             self
         }
         /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to delete. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
@@ -3375,8 +3375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3469,8 +3469,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to delete. <code>SizeConstraintSetId</code>
         /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-        pub fn size_constraint_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.size_constraint_set_id(inp);
+        pub fn size_constraint_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.size_constraint_set_id(signature.into());
             self
         }
         /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to delete. <code>SizeConstraintSetId</code>
@@ -3483,8 +3483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3578,8 +3578,11 @@ pub mod fluent_builders {
         }
         /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete.
         /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
-        pub fn sql_injection_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql_injection_match_set_id(inp);
+        pub fn sql_injection_match_set_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.sql_injection_match_set_id(signature.into());
             self
         }
         /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete.
@@ -3592,8 +3595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3684,8 +3687,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
         /// <a>ListWebACLs</a>.</p>
-        pub fn web_acl_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(inp);
+        pub fn web_acl_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_id(signature.into());
             self
         }
         /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -3695,8 +3698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3790,8 +3793,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to delete.
         /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
-        pub fn xss_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.xss_match_set_id(inp);
+        pub fn xss_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.xss_match_set_id(signature.into());
             self
         }
         /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to delete.
@@ -3804,8 +3807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -3883,8 +3886,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by
         /// <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
-        pub fn byte_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.byte_match_set_id(inp);
+        pub fn byte_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.byte_match_set_id(signature.into());
             self
         }
         /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by
@@ -4055,8 +4058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
@@ -4134,8 +4137,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
         /// <a>ListGeoMatchSets</a>.</p>
-        pub fn geo_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.geo_match_set_id(inp);
+        pub fn geo_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.geo_match_set_id(signature.into());
             self
         }
         /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
@@ -4217,8 +4220,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
         /// <a>ListIPSets</a>.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(signature.into());
             self
         }
         /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
@@ -4296,8 +4299,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
@@ -4374,8 +4377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
@@ -4455,8 +4458,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
         /// <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
@@ -4537,8 +4540,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to
         /// get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to
@@ -4548,8 +4551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A null value and not currently used. Do not include this in your request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>A null value and not currently used. Do not include this in your request.</p>
@@ -4627,8 +4630,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get. <code>RegexMatchSetId</code> is returned by
         /// <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
-        pub fn regex_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex_match_set_id(inp);
+        pub fn regex_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex_match_set_id(signature.into());
             self
         }
         /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get. <code>RegexMatchSetId</code> is returned by
@@ -4710,8 +4713,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to get. <code>RegexPatternSetId</code> is returned by
         /// <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
-        pub fn regex_pattern_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex_pattern_set_id(inp);
+        pub fn regex_pattern_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex_pattern_set_id(signature.into());
             self
         }
         /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to get. <code>RegexPatternSetId</code> is returned by
@@ -4793,8 +4796,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by
         /// <a>ListRules</a>.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by
@@ -4874,8 +4877,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
         /// <a>ListRuleGroups</a>.</p>
-        pub fn rule_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_id(inp);
+        pub fn rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_id(signature.into());
             self
         }
         /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
@@ -4960,8 +4963,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
-        pub fn web_acl_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(inp);
+        pub fn web_acl_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_id(signature.into());
             self
         }
         /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
@@ -4981,8 +4984,8 @@ pub mod fluent_builders {
         /// didn't match any of the rules in the specified <code>WebACL</code>.</p>
         /// </li>
         /// </ul>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>
@@ -5004,8 +5007,8 @@ pub mod fluent_builders {
         /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
         /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special  
         /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-        pub fn time_window(mut self, inp: crate::model::TimeWindow) -> Self {
-            self.inner = self.inner.time_window(inp);
+        pub fn time_window(mut self, signature: crate::model::TimeWindow) -> Self {
+            self.inner = self.inner.time_window(signature);
             self
         }
         /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
@@ -5021,8 +5024,8 @@ pub mod fluent_builders {
         /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received
         /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
         /// returns information about all of them. </p>
-        pub fn max_items(mut self, inp: i64) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i64) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received
@@ -5102,8 +5105,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by
         /// <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-        pub fn size_constraint_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.size_constraint_set_id(inp);
+        pub fn size_constraint_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.size_constraint_set_id(signature.into());
             self
         }
         /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by
@@ -5185,8 +5188,11 @@ pub mod fluent_builders {
         }
         /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code>
         /// is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
-        pub fn sql_injection_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql_injection_match_set_id(inp);
+        pub fn sql_injection_match_set_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.sql_injection_match_set_id(signature.into());
             self
         }
         /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code>
@@ -5268,8 +5274,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
         /// <a>ListWebACLs</a>.</p>
-        pub fn web_acl_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(inp);
+        pub fn web_acl_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_id(signature.into());
             self
         }
         /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -5348,8 +5354,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
         /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
-        pub fn xss_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.xss_match_set_id(inp);
+        pub fn xss_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.xss_match_set_id(signature.into());
             self
         }
         /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
@@ -5430,8 +5436,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> for which you want to get a list of <a>ActivatedRule</a> objects.</p>
-        pub fn rule_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_id(inp);
+        pub fn rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_id(signature.into());
             self
         }
         /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> for which you want to get a list of <a>ActivatedRule</a> objects.</p>
@@ -5446,8 +5452,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>.
         /// For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>,
@@ -5460,8 +5466,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a
@@ -5542,8 +5548,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
         /// For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>,
@@ -5557,8 +5563,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
         /// <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
@@ -5640,8 +5646,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects.
         /// For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>,
@@ -5655,8 +5661,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
         /// <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
@@ -5738,8 +5744,8 @@ pub mod fluent_builders {
         /// list another group of <code>IPSets</code>. For the second and subsequent
         /// <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the
         /// previous response to get information about another batch of <code>IPSets</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
@@ -5753,8 +5759,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more
         /// <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more
@@ -5836,8 +5842,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>.
         /// For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>,
@@ -5849,8 +5855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
@@ -5932,8 +5938,8 @@ pub mod fluent_builders {
         /// subsequent <code>ListRateBasedRules</code> requests, specify the value of
         /// <code>NextMarker</code> from the previous response to get information about another
         /// batch of <code>Rules</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code>
@@ -5950,8 +5956,8 @@ pub mod fluent_builders {
         /// request. If you have more <code>Rules</code> than the number that you specify for
         /// <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can
         /// use to get another batch of <code>Rules</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this
@@ -6034,8 +6040,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
         /// For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>,
@@ -6049,8 +6055,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
         /// <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
@@ -6132,8 +6138,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects.
         /// For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>,
@@ -6147,8 +6153,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more
         /// <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more
@@ -6230,8 +6236,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>.
         /// For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>,
@@ -6243,8 +6249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
@@ -6324,8 +6330,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>.
         /// For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>Rules</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>,
@@ -6338,8 +6344,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more       <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more       <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a
@@ -6419,8 +6425,8 @@ pub mod fluent_builders {
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>,
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>.
         /// For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code>       from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>,
@@ -6433,8 +6439,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more
         /// <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more
@@ -6516,8 +6522,8 @@ pub mod fluent_builders {
         /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
         /// <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the
         /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the value of
@@ -6531,8 +6537,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
         /// <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
@@ -6614,8 +6620,8 @@ pub mod fluent_builders {
         /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups.
         /// For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of subscribed rule groups.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>,
@@ -6629,8 +6635,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more
         /// objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more
@@ -6710,8 +6716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p></p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p></p>
@@ -6720,8 +6726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p></p>
@@ -6730,8 +6736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p></p>
@@ -6811,8 +6817,8 @@ pub mod fluent_builders {
         /// for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
         /// <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code>
         /// from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify
@@ -6826,8 +6832,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more
         /// <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more
@@ -6909,8 +6915,8 @@ pub mod fluent_builders {
         /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
         /// <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the
         /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>If you specify a value for <code>Limit</code> and you have more <a>XssMatchSet</a> objects than the value of
@@ -6924,8 +6930,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
         /// <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
         /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
@@ -7028,8 +7034,11 @@ pub mod fluent_builders {
         /// the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>,
         /// or <code>METHOD</code>.</p>
         /// </note>
-        pub fn logging_configuration(mut self, inp: crate::model::LoggingConfiguration) -> Self {
-            self.inner = self.inner.logging_configuration(inp);
+        pub fn logging_configuration(
+            mut self,
+            signature: crate::model::LoggingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.logging_configuration(signature);
             self
         }
         /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
@@ -7148,8 +7157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
@@ -7158,8 +7167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy to attach to the specified RuleGroup.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The policy to attach to the specified RuleGroup.</p>
@@ -7237,8 +7246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p></p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p></p>
@@ -7251,8 +7260,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p></p>
@@ -7332,8 +7341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p></p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p></p>
@@ -7346,8 +7355,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p></p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p></p>
@@ -7466,8 +7475,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
         /// <a>ListByteMatchSets</a>.</p>
-        pub fn byte_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.byte_match_set_id(inp);
+        pub fn byte_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.byte_match_set_id(signature.into());
             self
         }
         /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
@@ -7480,8 +7489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -7513,8 +7522,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, inp: impl Into<crate::model::ByteMatchSetUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::ByteMatchSetUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>.
@@ -7644,8 +7653,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
         /// <a>ListGeoMatchSets</a>.</p>
-        pub fn geo_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.geo_match_set_id(inp);
+        pub fn geo_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.geo_match_set_id(signature.into());
             self
         }
         /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
@@ -7658,8 +7667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -7686,8 +7695,8 @@ pub mod fluent_builders {
         /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p>      
         /// </li>
         /// </ul>
-        pub fn updates(mut self, inp: impl Into<crate::model::GeoMatchSetUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::GeoMatchSetUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <a>GeoMatchSet</a>.
@@ -7847,8 +7856,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
         /// <a>ListIPSets</a>.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(signature.into());
             self
         }
         /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
@@ -7858,8 +7867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -7886,8 +7895,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-        pub fn updates(mut self, inp: impl Into<crate::model::IpSetUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::IpSetUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
@@ -8028,8 +8037,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update.
         /// <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <a>ListRateBasedRules</a>.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update.
@@ -8039,8 +8048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -8054,8 +8063,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete
         /// from a <a>RateBasedRule</a>. </p>
-        pub fn updates(mut self, inp: impl Into<crate::model::RuleUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::RuleUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete
@@ -8071,8 +8080,8 @@ pub mod fluent_builders {
         /// five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other
         /// predicates specified in the rule are also met,
         /// AWS WAF triggers the action that is specified for this rule.</p>
-        pub fn rate_limit(mut self, inp: i64) -> Self {
-            self.inner = self.inner.rate_limit(inp);
+        pub fn rate_limit(mut self, signature: i64) -> Self {
+            self.inner = self.inner.rate_limit(signature);
             self
         }
         /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a
@@ -8187,8 +8196,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to update. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
         /// <a>ListRegexMatchSets</a>.</p>
-        pub fn regex_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex_match_set_id(inp);
+        pub fn regex_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex_match_set_id(signature.into());
             self
         }
         /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to update. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
@@ -8206,8 +8215,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <a>RegexMatchSet</a>.
         /// For more information, see <a>RegexMatchTuple</a>.</p>
-        pub fn updates(mut self, inp: impl Into<crate::model::RegexMatchSetUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::RegexMatchSetUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <a>RegexMatchSet</a>.
@@ -8220,8 +8229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -8338,8 +8347,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to update. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
         /// <a>ListRegexPatternSets</a>.</p>
-        pub fn regex_pattern_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex_pattern_set_id(inp);
+        pub fn regex_pattern_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex_pattern_set_id(signature.into());
             self
         }
         /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to update. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
@@ -8356,8 +8365,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
         /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <a>RegexPatternSet</a>.</p>
-        pub fn updates(mut self, inp: impl Into<crate::model::RegexPatternSetUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::RegexPatternSetUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <a>RegexPatternSet</a>.</p>
@@ -8369,8 +8378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -8489,8 +8498,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by
         /// <code>CreateRule</code> and by <a>ListRules</a>.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by
@@ -8500,8 +8509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -8532,8 +8541,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, inp: impl Into<crate::model::RuleUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::RuleUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a
@@ -8656,8 +8665,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
         /// <a>ListRuleGroups</a>.</p>
-        pub fn rule_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_id(inp);
+        pub fn rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_id(signature.into());
             self
         }
         /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
@@ -8678,8 +8687,8 @@ pub mod fluent_builders {
         /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
         /// <p>
         /// <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.  For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-        pub fn updates(mut self, inp: impl Into<crate::model::RuleGroupUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::RuleGroupUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a
@@ -8695,8 +8704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -8816,8 +8825,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to update. <code>SizeConstraintSetId</code>
         /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-        pub fn size_constraint_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.size_constraint_set_id(inp);
+        pub fn size_constraint_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.size_constraint_set_id(signature.into());
             self
         }
         /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to update. <code>SizeConstraintSetId</code>
@@ -8830,8 +8839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -8863,8 +8872,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, inp: impl Into<crate::model::SizeConstraintSetUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::SizeConstraintSetUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <a>SizeConstraintSet</a>.
@@ -9005,8 +9014,11 @@ pub mod fluent_builders {
         }
         /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update.
         /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
-        pub fn sql_injection_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql_injection_match_set_id(inp);
+        pub fn sql_injection_match_set_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.sql_injection_match_set_id(signature.into());
             self
         }
         /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update.
@@ -9019,8 +9031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -9051,8 +9063,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, inp: impl Into<crate::model::SqlInjectionMatchSetUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::SqlInjectionMatchSetUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a
@@ -9222,8 +9234,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
         /// <a>ListWebACLs</a>.</p>
-        pub fn web_acl_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(inp);
+        pub fn web_acl_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_id(signature.into());
             self
         }
         /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -9233,8 +9245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -9272,8 +9284,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, inp: impl Into<crate::model::WebAclUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::WebAclUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of updates to make to the <a>WebACL</a>.</p>    
@@ -9311,8 +9323,8 @@ pub mod fluent_builders {
         }
         /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default
         /// action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
-        pub fn default_action(mut self, inp: crate::model::WafAction) -> Self {
-            self.inner = self.inner.default_action(inp);
+        pub fn default_action(mut self, signature: crate::model::WafAction) -> Self {
+            self.inner = self.inner.default_action(signature);
             self
         }
         /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default
@@ -9437,8 +9449,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update.
         /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
-        pub fn xss_match_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.xss_match_set_id(inp);
+        pub fn xss_match_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.xss_match_set_id(signature.into());
             self
         }
         /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update.
@@ -9451,8 +9463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-        pub fn change_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_token(inp);
+        pub fn change_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_token(signature.into());
             self
         }
         /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -9485,8 +9497,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, inp: impl Into<crate::model::XssMatchSetUpdate>) -> Self {
-            self.inner = self.inner.updates(inp);
+        pub fn updates(mut self, input: crate::model::XssMatchSetUpdate) -> Self {
+            self.inner = self.inner.updates(input);
             self
         }
         /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or

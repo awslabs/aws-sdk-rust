@@ -178,9 +178,9 @@ pub mod update_theme_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The resulting list of resource permissions for the theme.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -565,9 +565,9 @@ pub mod update_template_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions to be set on the template.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1125,10 +1125,10 @@ pub mod update_iam_policy_assignment_output {
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.identities = Some(hash_map);
             self
         }
@@ -1417,9 +1417,9 @@ pub mod update_folder_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions for the folder.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -2317,9 +2317,9 @@ pub mod update_dashboard_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions on the dashboard.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -2629,9 +2629,9 @@ pub mod update_analysis_permissions_output {
         ///
         /// <p>A structure that describes the principals and the resource-level permissions on an
         /// analysis.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -3265,12 +3265,9 @@ pub mod search_folders_output {
         /// To override the contents of this collection use [`set_folder_summary_list`](Self::set_folder_summary_list).
         ///
         /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-        pub fn folder_summary_list(
-            mut self,
-            input: impl Into<crate::model::FolderSummary>,
-        ) -> Self {
+        pub fn folder_summary_list(mut self, input: crate::model::FolderSummary) -> Self {
             let mut v = self.folder_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_summary_list = Some(v);
             self
         }
@@ -3382,12 +3379,9 @@ pub mod search_dashboards_output {
         ///
         /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your
         /// request.</p>
-        pub fn dashboard_summary_list(
-            mut self,
-            input: impl Into<crate::model::DashboardSummary>,
-        ) -> Self {
+        pub fn dashboard_summary_list(mut self, input: crate::model::DashboardSummary) -> Self {
             let mut v = self.dashboard_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_summary_list = Some(v);
             self
         }
@@ -3509,12 +3503,9 @@ pub mod search_analyses_output {
         /// To override the contents of this collection use [`set_analysis_summary_list`](Self::set_analysis_summary_list).
         ///
         /// <p>Metadata describing the analyses that you searched for.</p>
-        pub fn analysis_summary_list(
-            mut self,
-            input: impl Into<crate::model::AnalysisSummary>,
-        ) -> Self {
+        pub fn analysis_summary_list(mut self, input: crate::model::AnalysisSummary) -> Self {
             let mut v = self.analysis_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_summary_list = Some(v);
             self
         }
@@ -3867,9 +3858,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_user_list`](Self::set_user_list).
         ///
         /// <p>The list of users.</p>
-        pub fn user_list(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn user_list(mut self, input: crate::model::User) -> Self {
             let mut v = self.user_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_list = Some(v);
             self
         }
@@ -3987,9 +3978,9 @@ pub mod list_user_groups_output {
         /// To override the contents of this collection use [`set_group_list`](Self::set_group_list).
         ///
         /// <p>The list of groups the user is a member of.</p>
-        pub fn group_list(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_list(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_list = Some(v);
             self
         }
@@ -4116,10 +4107,10 @@ pub mod list_theme_versions_output {
         /// <p>A structure containing a list of all the versions of the specified theme.</p>
         pub fn theme_version_summary_list(
             mut self,
-            input: impl Into<crate::model::ThemeVersionSummary>,
+            input: crate::model::ThemeVersionSummary,
         ) -> Self {
             let mut v = self.theme_version_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.theme_version_summary_list = Some(v);
             self
         }
@@ -4238,9 +4229,9 @@ pub mod list_themes_output {
         /// To override the contents of this collection use [`set_theme_summary_list`](Self::set_theme_summary_list).
         ///
         /// <p>Information about the themes in the list.</p>
-        pub fn theme_summary_list(mut self, input: impl Into<crate::model::ThemeSummary>) -> Self {
+        pub fn theme_summary_list(mut self, input: crate::model::ThemeSummary) -> Self {
             let mut v = self.theme_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.theme_summary_list = Some(v);
             self
         }
@@ -4358,9 +4349,9 @@ pub mod list_theme_aliases_output {
         /// To override the contents of this collection use [`set_theme_alias_list`](Self::set_theme_alias_list).
         ///
         /// <p>A structure containing the list of the theme's aliases.</p>
-        pub fn theme_alias_list(mut self, input: impl Into<crate::model::ThemeAlias>) -> Self {
+        pub fn theme_alias_list(mut self, input: crate::model::ThemeAlias) -> Self {
             let mut v = self.theme_alias_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.theme_alias_list = Some(v);
             self
         }
@@ -4487,10 +4478,10 @@ pub mod list_template_versions_output {
         /// <p>A structure containing a list of all the versions of the specified template.</p>
         pub fn template_version_summary_list(
             mut self,
-            input: impl Into<crate::model::TemplateVersionSummary>,
+            input: crate::model::TemplateVersionSummary,
         ) -> Self {
             let mut v = self.template_version_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_version_summary_list = Some(v);
             self
         }
@@ -4609,12 +4600,9 @@ pub mod list_templates_output {
         /// To override the contents of this collection use [`set_template_summary_list`](Self::set_template_summary_list).
         ///
         /// <p>A structure containing information about the templates in the list.</p>
-        pub fn template_summary_list(
-            mut self,
-            input: impl Into<crate::model::TemplateSummary>,
-        ) -> Self {
+        pub fn template_summary_list(mut self, input: crate::model::TemplateSummary) -> Self {
             let mut v = self.template_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_summary_list = Some(v);
             self
         }
@@ -4733,12 +4721,9 @@ pub mod list_template_aliases_output {
         /// To override the contents of this collection use [`set_template_alias_list`](Self::set_template_alias_list).
         ///
         /// <p>A structure containing the list of the template's aliases.</p>
-        pub fn template_alias_list(
-            mut self,
-            input: impl Into<crate::model::TemplateAlias>,
-        ) -> Self {
+        pub fn template_alias_list(mut self, input: crate::model::TemplateAlias) -> Self {
             let mut v = self.template_alias_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_alias_list = Some(v);
             self
         }
@@ -4851,9 +4836,9 @@ pub mod list_tags_for_resource_output {
         ///
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
         /// resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4967,9 +4952,9 @@ pub mod list_namespaces_output {
         /// <p>The information about the namespaces in this Amazon Web Services account. The response includes
         /// the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and
         /// identity store.</p>
-        pub fn namespaces(mut self, input: impl Into<crate::model::NamespaceInfoV2>) -> Self {
+        pub fn namespaces(mut self, input: crate::model::NamespaceInfoV2) -> Self {
             let mut v = self.namespaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.namespaces = Some(v);
             self
         }
@@ -5089,9 +5074,9 @@ pub mod list_ingestions_output {
         /// To override the contents of this collection use [`set_ingestions`](Self::set_ingestions).
         ///
         /// <p>A list of the ingestions.</p>
-        pub fn ingestions(mut self, input: impl Into<crate::model::Ingestion>) -> Self {
+        pub fn ingestions(mut self, input: crate::model::Ingestion) -> Self {
             let mut v = self.ingestions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ingestions = Some(v);
             self
         }
@@ -5215,10 +5200,10 @@ pub mod list_iam_policy_assignments_for_user_output {
         /// <p>The active assignments for this user.</p>
         pub fn active_assignments(
             mut self,
-            input: impl Into<crate::model::ActiveIamPolicyAssignment>,
+            input: crate::model::ActiveIamPolicyAssignment,
         ) -> Self {
             let mut v = self.active_assignments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_assignments = Some(v);
             self
         }
@@ -5342,10 +5327,10 @@ pub mod list_iam_policy_assignments_output {
         /// <p>Information describing the IAM policy assignments.</p>
         pub fn iam_policy_assignments(
             mut self,
-            input: impl Into<crate::model::IamPolicyAssignmentSummary>,
+            input: crate::model::IamPolicyAssignmentSummary,
         ) -> Self {
             let mut v = self.iam_policy_assignments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.iam_policy_assignments = Some(v);
             self
         }
@@ -5463,9 +5448,9 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_group_list`](Self::set_group_list).
         ///
         /// <p>The list of the groups.</p>
-        pub fn group_list(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_list(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_list = Some(v);
             self
         }
@@ -5583,9 +5568,9 @@ pub mod list_group_memberships_output {
         /// To override the contents of this collection use [`set_group_member_list`](Self::set_group_member_list).
         ///
         /// <p>The list of the members of the group.</p>
-        pub fn group_member_list(mut self, input: impl Into<crate::model::GroupMember>) -> Self {
+        pub fn group_member_list(mut self, input: crate::model::GroupMember) -> Self {
             let mut v = self.group_member_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_member_list = Some(v);
             self
         }
@@ -5714,12 +5699,9 @@ pub mod list_folders_output {
         /// To override the contents of this collection use [`set_folder_summary_list`](Self::set_folder_summary_list).
         ///
         /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-        pub fn folder_summary_list(
-            mut self,
-            input: impl Into<crate::model::FolderSummary>,
-        ) -> Self {
+        pub fn folder_summary_list(mut self, input: crate::model::FolderSummary) -> Self {
             let mut v = self.folder_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_summary_list = Some(v);
             self
         }
@@ -5838,12 +5820,9 @@ pub mod list_folder_members_output {
         /// To override the contents of this collection use [`set_folder_member_list`](Self::set_folder_member_list).
         ///
         /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
-        pub fn folder_member_list(
-            mut self,
-            input: impl Into<crate::model::MemberIdArnPair>,
-        ) -> Self {
+        pub fn folder_member_list(mut self, input: crate::model::MemberIdArnPair) -> Self {
             let mut v = self.folder_member_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_member_list = Some(v);
             self
         }
@@ -5951,9 +5930,9 @@ pub mod list_data_sources_output {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>A list of data sources.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -6072,12 +6051,9 @@ pub mod list_data_sets_output {
         /// To override the contents of this collection use [`set_data_set_summaries`](Self::set_data_set_summaries).
         ///
         /// <p>The list of dataset summaries.</p>
-        pub fn data_set_summaries(
-            mut self,
-            input: impl Into<crate::model::DataSetSummary>,
-        ) -> Self {
+        pub fn data_set_summaries(mut self, input: crate::model::DataSetSummary) -> Self {
             let mut v = self.data_set_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_set_summaries = Some(v);
             self
         }
@@ -6204,10 +6180,10 @@ pub mod list_dashboard_versions_output {
         /// <p>A structure that contains information about each version of the dashboard.</p>
         pub fn dashboard_version_summary_list(
             mut self,
-            input: impl Into<crate::model::DashboardVersionSummary>,
+            input: crate::model::DashboardVersionSummary,
         ) -> Self {
             let mut v = self.dashboard_version_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_version_summary_list = Some(v);
             self
         }
@@ -6329,12 +6305,9 @@ pub mod list_dashboards_output {
         ///
         /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure
         /// provides basic information about the dashboards.</p>
-        pub fn dashboard_summary_list(
-            mut self,
-            input: impl Into<crate::model::DashboardSummary>,
-        ) -> Self {
+        pub fn dashboard_summary_list(mut self, input: crate::model::DashboardSummary) -> Self {
             let mut v = self.dashboard_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_summary_list = Some(v);
             self
         }
@@ -6454,12 +6427,9 @@ pub mod list_analyses_output {
         /// To override the contents of this collection use [`set_analysis_summary_list`](Self::set_analysis_summary_list).
         ///
         /// <p>Metadata describing each of the analyses that are listed.</p>
-        pub fn analysis_summary_list(
-            mut self,
-            input: impl Into<crate::model::AnalysisSummary>,
-        ) -> Self {
+        pub fn analysis_summary_list(mut self, input: crate::model::AnalysisSummary) -> Self {
             let mut v = self.analysis_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_summary_list = Some(v);
             self
         }
@@ -7090,9 +7060,9 @@ pub mod describe_theme_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions set on the theme. </p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -7417,9 +7387,9 @@ pub mod describe_template_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions to be set on the template. </p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -8297,9 +8267,9 @@ pub mod describe_folder_resolved_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions for the folder.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -8437,9 +8407,9 @@ pub mod describe_folder_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions on the folder.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -8665,9 +8635,9 @@ pub mod describe_data_source_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions on the data source.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -8900,9 +8870,9 @@ pub mod describe_data_set_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions on the dataset.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -9155,9 +9125,9 @@ pub mod describe_dashboard_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A structure that contains the permissions for the dashboard.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -9420,9 +9390,9 @@ pub mod describe_analysis_permissions_output {
         ///
         /// <p>A structure that describes the principals and the resource-level permissions on an
         /// analysis.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -12548,10 +12518,10 @@ pub mod create_iam_policy_assignment_output {
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.identities = Some(hash_map);
             self
         }

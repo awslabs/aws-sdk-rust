@@ -124,9 +124,9 @@ pub mod list_projects_output {
         /// <p>
         /// List of projects.
         /// </p>
-        pub fn projects(mut self, input: impl Into<crate::model::ProjectSummary>) -> Self {
+        pub fn projects(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -230,9 +230,9 @@ pub mod list_bundles_output {
         /// <p>
         /// A list of bundles.
         /// </p>
-        pub fn bundle_list(mut self, input: impl Into<crate::model::BundleDetails>) -> Self {
+        pub fn bundle_list(mut self, input: crate::model::BundleDetails) -> Self {
             let mut v = self.bundle_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bundle_list = Some(v);
             self
         }
@@ -684,9 +684,9 @@ pub mod delete_project_output {
         /// <p>
         /// Resources which were deleted.
         /// </p>
-        pub fn deleted_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn deleted_resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.deleted_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deleted_resources = Some(v);
             self
         }
@@ -708,9 +708,9 @@ pub mod delete_project_output {
         /// Resources which were not deleted, due to a risk of losing potentially
         /// important data or files.
         /// </p>
-        pub fn orphaned_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn orphaned_resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.orphaned_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.orphaned_resources = Some(v);
             self
         }

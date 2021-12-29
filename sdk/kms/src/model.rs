@@ -919,10 +919,10 @@ pub mod key_metadata {
         /// <code>ENCRYPT_DECRYPT</code>.</p>
         pub fn encryption_algorithms(
             mut self,
-            input: impl Into<crate::model::EncryptionAlgorithmSpec>,
+            input: crate::model::EncryptionAlgorithmSpec,
         ) -> Self {
             let mut v = self.encryption_algorithms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.encryption_algorithms = Some(v);
             self
         }
@@ -945,12 +945,9 @@ pub mod key_metadata {
         /// signing algorithms within KMS.</p>
         /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is
         /// <code>SIGN_VERIFY</code>.</p>
-        pub fn signing_algorithms(
-            mut self,
-            input: impl Into<crate::model::SigningAlgorithmSpec>,
-        ) -> Self {
+        pub fn signing_algorithms(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
             let mut v = self.signing_algorithms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.signing_algorithms = Some(v);
             self
         }
@@ -1198,9 +1195,9 @@ pub mod multi_region_configuration {
         ///
         /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS
         /// key if it is a replica key.</p>
-        pub fn replica_keys(mut self, input: impl Into<crate::model::MultiRegionKey>) -> Self {
+        pub fn replica_keys(mut self, input: crate::model::MultiRegionKey) -> Self {
             let mut v = self.replica_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_keys = Some(v);
             self
         }
@@ -2023,9 +2020,9 @@ pub mod grant_list_entry {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>The list of operations permitted by the grant.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::GrantOperation>) -> Self {
+        pub fn operations(mut self, input: crate::model::GrantOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }

@@ -126,13 +126,9 @@ pub mod prediction {
         /// To override the contents of this collection use [`set_predicted_scores`](Self::set_predicted_scores).
         ///
         /// <p>Provides the raw classification score corresponding to each label.</p>
-        pub fn predicted_scores(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<f32>,
-        ) -> Self {
+        pub fn predicted_scores(mut self, k: impl Into<std::string::String>, v: f32) -> Self {
             let mut hash_map = self.predicted_scores.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.predicted_scores = Some(hash_map);
             self
         }
@@ -151,11 +147,11 @@ pub mod prediction {
         /// <p>Provides any additional details regarding the prediction.</p>
         pub fn details(
             mut self,
-            k: impl Into<crate::model::DetailsAttributes>,
+            k: crate::model::DetailsAttributes,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.details.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.details = Some(hash_map);
             self
         }

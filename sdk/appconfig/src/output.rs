@@ -171,9 +171,9 @@ pub mod update_environment_output {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }
@@ -581,9 +581,9 @@ pub mod update_configuration_profile_output {
         /// To override the contents of this collection use [`set_validators`](Self::set_validators).
         ///
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn validators(mut self, input: impl Into<crate::model::Validator>) -> Self {
+        pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validators = Some(v);
             self
         }
@@ -1143,9 +1143,9 @@ pub mod stop_deployment_output {
         ///
         /// <p>A list containing all events related to a deployment. The most recent events are
         /// displayed first.</p>
-        pub fn event_log(mut self, input: impl Into<crate::model::DeploymentEvent>) -> Self {
+        pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_log = Some(v);
             self
         }
@@ -1588,9 +1588,9 @@ pub mod start_deployment_output {
         ///
         /// <p>A list containing all events related to a deployment. The most recent events are
         /// displayed first.</p>
-        pub fn event_log(mut self, input: impl Into<crate::model::DeploymentEvent>) -> Self {
+        pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_log = Some(v);
             self
         }
@@ -1799,12 +1799,9 @@ pub mod list_hosted_configuration_versions_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::HostedConfigurationVersionSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::HostedConfigurationVersionSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1890,9 +1887,9 @@ pub mod list_environments_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Environment>) -> Self {
+        pub fn items(mut self, input: crate::model::Environment) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1976,9 +1973,9 @@ pub mod list_deployment_strategies_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DeploymentStrategy>) -> Self {
+        pub fn items(mut self, input: crate::model::DeploymentStrategy) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2062,9 +2059,9 @@ pub mod list_deployments_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DeploymentSummary>) -> Self {
+        pub fn items(mut self, input: crate::model::DeploymentSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2149,12 +2146,9 @@ pub mod list_configuration_profiles_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ConfigurationProfileSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ConfigurationProfileSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2238,9 +2232,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn items(mut self, input: crate::model::Application) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2581,9 +2575,9 @@ pub mod get_environment_output {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }
@@ -3187,9 +3181,9 @@ pub mod get_deployment_output {
         ///
         /// <p>A list containing all events related to a deployment. The most recent events are
         /// displayed first.</p>
-        pub fn event_log(mut self, input: impl Into<crate::model::DeploymentEvent>) -> Self {
+        pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_log = Some(v);
             self
         }
@@ -3436,9 +3430,9 @@ pub mod get_configuration_profile_output {
         /// To override the contents of this collection use [`set_validators`](Self::set_validators).
         ///
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn validators(mut self, input: impl Into<crate::model::Validator>) -> Self {
+        pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validators = Some(v);
             self
         }
@@ -4160,9 +4154,9 @@ pub mod create_environment_output {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }
@@ -4570,9 +4564,9 @@ pub mod create_configuration_profile_output {
         /// To override the contents of this collection use [`set_validators`](Self::set_validators).
         ///
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn validators(mut self, input: impl Into<crate::model::Validator>) -> Self {
+        pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validators = Some(v);
             self
         }

@@ -503,9 +503,9 @@ pub mod update_resource_collection_filter {
         /// application might be <code>Devops-Guru-production-application/RDS</code> or
         /// <code>Devops-Guru-production-application/containers</code>.</p>
         /// </important>
-        pub fn tags(mut self, input: impl Into<crate::model::UpdateTagCollectionFilter>) -> Self {
+        pub fn tags(mut self, input: crate::model::UpdateTagCollectionFilter) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1033,10 +1033,10 @@ pub mod cost_estimation_resource_collection_filter {
         /// </important>
         pub fn tags(
             mut self,
-            input: impl Into<crate::model::TagCostEstimationResourceCollectionFilter>,
+            input: crate::model::TagCostEstimationResourceCollectionFilter,
         ) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1610,9 +1610,9 @@ pub mod service_collection {
         /// To override the contents of this collection use [`set_service_names`](Self::set_service_names).
         ///
         /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-        pub fn service_names(mut self, input: impl Into<crate::model::ServiceName>) -> Self {
+        pub fn service_names(mut self, input: crate::model::ServiceName) -> Self {
             let mut v = self.service_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_names = Some(v);
             self
         }
@@ -1973,9 +1973,9 @@ pub mod resource_collection {
         /// application might be <code>Devops-Guru-production-application/RDS</code> or
         /// <code>Devops-Guru-production-application/containers</code>.</p>
         /// </important>
-        pub fn tags(mut self, input: impl Into<crate::model::TagCollection>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagCollection) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2962,9 +2962,9 @@ pub mod search_organization_insights_filters {
         /// To override the contents of this collection use [`set_severities`](Self::set_severities).
         ///
         /// <p> An array of severity values used to search for insights. </p>
-        pub fn severities(mut self, input: impl Into<crate::model::InsightSeverity>) -> Self {
+        pub fn severities(mut self, input: crate::model::InsightSeverity) -> Self {
             let mut v = self.severities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.severities = Some(v);
             self
         }
@@ -2981,9 +2981,9 @@ pub mod search_organization_insights_filters {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p> An array of status values used to search for insights. </p>
-        pub fn statuses(mut self, input: impl Into<crate::model::InsightStatus>) -> Self {
+        pub fn statuses(mut self, input: crate::model::InsightStatus) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -3190,9 +3190,9 @@ pub mod search_insights_filters {
         /// To override the contents of this collection use [`set_severities`](Self::set_severities).
         ///
         /// <p> An array of severity values used to search for insights. </p>
-        pub fn severities(mut self, input: impl Into<crate::model::InsightSeverity>) -> Self {
+        pub fn severities(mut self, input: crate::model::InsightSeverity) -> Self {
             let mut v = self.severities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.severities = Some(v);
             self
         }
@@ -3209,9 +3209,9 @@ pub mod search_insights_filters {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p> An array of status values used to search for insights. </p>
-        pub fn statuses(mut self, input: impl Into<crate::model::InsightStatus>) -> Self {
+        pub fn statuses(mut self, input: crate::model::InsightStatus) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -3550,12 +3550,9 @@ pub mod recommendation {
         ///
         /// <p> Events that are related to the problem. Use these events to learn more about what's
         /// happening and to help address the issue. </p>
-        pub fn related_events(
-            mut self,
-            input: impl Into<crate::model::RecommendationRelatedEvent>,
-        ) -> Self {
+        pub fn related_events(mut self, input: crate::model::RecommendationRelatedEvent) -> Self {
             let mut v = self.related_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_events = Some(v);
             self
         }
@@ -3576,10 +3573,10 @@ pub mod recommendation {
         /// what's happening and to help address the issue. </p>
         pub fn related_anomalies(
             mut self,
-            input: impl Into<crate::model::RecommendationRelatedAnomaly>,
+            input: crate::model::RecommendationRelatedAnomaly,
         ) -> Self {
             let mut v = self.related_anomalies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_anomalies = Some(v);
             self
         }
@@ -3678,10 +3675,10 @@ pub mod recommendation_related_anomaly {
         /// behavior. Each object contains the name and type of the resource. </p>
         pub fn resources(
             mut self,
-            input: impl Into<crate::model::RecommendationRelatedAnomalyResource>,
+            input: crate::model::RecommendationRelatedAnomalyResource,
         ) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -3704,10 +3701,10 @@ pub mod recommendation_related_anomaly {
         /// For example, details in Amazon CloudWatch metrics. </p>
         pub fn source_details(
             mut self,
-            input: impl Into<crate::model::RecommendationRelatedAnomalySourceDetail>,
+            input: crate::model::RecommendationRelatedAnomalySourceDetail,
         ) -> Self {
             let mut v = self.source_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_details = Some(v);
             self
         }
@@ -3796,10 +3793,10 @@ pub mod recommendation_related_anomaly_source_detail {
         /// about the analyzed metrics that displayed anomalous behavior. </p>
         pub fn cloud_watch_metrics(
             mut self,
-            input: impl Into<crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail>,
+            input: crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail,
         ) -> Self {
             let mut v = self.cloud_watch_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_metrics = Some(v);
             self
         }
@@ -4058,10 +4055,10 @@ pub mod recommendation_related_event {
         /// CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resources(
             mut self,
-            input: impl Into<crate::model::RecommendationRelatedEventResource>,
+            input: crate::model::RecommendationRelatedEventResource,
         ) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -5645,9 +5642,9 @@ pub mod event {
         ///
         /// <p> An <code>EventResource</code> object that contains information about the resource
         /// that emitted the event. </p>
-        pub fn resources(mut self, input: impl Into<crate::model::EventResource>) -> Self {
+        pub fn resources(mut self, input: crate::model::EventResource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -6545,12 +6542,9 @@ pub mod reactive_anomaly_summary {
         /// To override the contents of this collection use [`set_anomaly_resources`](Self::set_anomaly_resources).
         ///
         /// <p>The Amazon Web Services resources in which anomalous behavior was detected by DevOps Guru.</p>
-        pub fn anomaly_resources(
-            mut self,
-            input: impl Into<crate::model::AnomalyResource>,
-        ) -> Self {
+        pub fn anomaly_resources(mut self, input: crate::model::AnomalyResource) -> Self {
             let mut v = self.anomaly_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_resources = Some(v);
             self
         }
@@ -6779,12 +6773,9 @@ pub mod anomaly_source_details {
         ///
         /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information
         /// about analyzed CloudWatch metrics that show anomalous behavior. </p>
-        pub fn cloud_watch_metrics(
-            mut self,
-            input: impl Into<crate::model::CloudWatchMetricsDetail>,
-        ) -> Self {
+        pub fn cloud_watch_metrics(mut self, input: crate::model::CloudWatchMetricsDetail) -> Self {
             let mut v = self.cloud_watch_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_metrics = Some(v);
             self
         }
@@ -6805,10 +6796,10 @@ pub mod anomaly_source_details {
         /// about analyzed Performance Insights metrics that show anomalous behavior.</p>
         pub fn performance_insights_metrics(
             mut self,
-            input: impl Into<crate::model::PerformanceInsightsMetricsDetail>,
+            input: crate::model::PerformanceInsightsMetricsDetail,
         ) -> Self {
             let mut v = self.performance_insights_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.performance_insights_metrics = Some(v);
             self
         }
@@ -7014,10 +7005,10 @@ pub mod performance_insights_metrics_detail {
         /// </p>
         pub fn reference_data(
             mut self,
-            input: impl Into<crate::model::PerformanceInsightsReferenceData>,
+            input: crate::model::PerformanceInsightsReferenceData,
         ) -> Self {
             let mut v = self.reference_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_data = Some(v);
             self
         }
@@ -7041,12 +7032,9 @@ pub mod performance_insights_metrics_detail {
         /// To override the contents of this collection use [`set_stats_at_anomaly`](Self::set_stats_at_anomaly).
         ///
         /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
-        pub fn stats_at_anomaly(
-            mut self,
-            input: impl Into<crate::model::PerformanceInsightsStat>,
-        ) -> Self {
+        pub fn stats_at_anomaly(mut self, input: crate::model::PerformanceInsightsStat) -> Self {
             let mut v = self.stats_at_anomaly.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stats_at_anomaly = Some(v);
             self
         }
@@ -7065,12 +7053,9 @@ pub mod performance_insights_metrics_detail {
         /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes
         /// metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are
         /// anomalous.</p>
-        pub fn stats_at_baseline(
-            mut self,
-            input: impl Into<crate::model::PerformanceInsightsStat>,
-        ) -> Self {
+        pub fn stats_at_baseline(mut self, input: crate::model::PerformanceInsightsStat) -> Self {
             let mut v = self.stats_at_baseline.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stats_at_baseline = Some(v);
             self
         }
@@ -8476,12 +8461,9 @@ pub mod cloud_watch_metrics_detail {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p> An array of CloudWatch dimensions associated with </p>
-        pub fn dimensions(
-            mut self,
-            input: impl Into<crate::model::CloudWatchMetricsDimension>,
-        ) -> Self {
+        pub fn dimensions(mut self, input: crate::model::CloudWatchMetricsDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -8623,10 +8605,10 @@ pub mod cloud_watch_metrics_data_summary {
         /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
         pub fn timestamp_metric_value_pair_list(
             mut self,
-            input: impl Into<crate::model::TimestampMetricValuePair>,
+            input: crate::model::TimestampMetricValuePair,
         ) -> Self {
             let mut v = self.timestamp_metric_value_pair_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timestamp_metric_value_pair_list = Some(v);
             self
         }
@@ -9755,9 +9737,9 @@ pub mod resource_collection_filter {
         /// application might be <code>Devops-Guru-production-application/RDS</code> or
         /// <code>Devops-Guru-production-application/containers</code>.</p>
         /// </important>
-        pub fn tags(mut self, input: impl Into<crate::model::TagCollectionFilter>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagCollectionFilter) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12173,12 +12155,9 @@ pub mod reactive_anomaly {
         /// To override the contents of this collection use [`set_anomaly_resources`](Self::set_anomaly_resources).
         ///
         /// <p>The Amazon Web Services resources in which anomalous behavior was detected by DevOps Guru.</p>
-        pub fn anomaly_resources(
-            mut self,
-            input: impl Into<crate::model::AnomalyResource>,
-        ) -> Self {
+        pub fn anomaly_resources(mut self, input: crate::model::AnomalyResource) -> Self {
             let mut v = self.anomaly_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_resources = Some(v);
             self
         }

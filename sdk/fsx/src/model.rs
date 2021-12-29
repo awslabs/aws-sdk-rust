@@ -372,9 +372,9 @@ pub mod volume {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -432,12 +432,9 @@ pub mod volume {
         /// <p>A list of administrative actions for the file system that are in process or waiting to
         /// be processed. Administrative actions describe changes to the Amazon FSx system
         /// that you initiated.</p>
-        pub fn administrative_actions(
-            mut self,
-            input: impl Into<crate::model::AdministrativeAction>,
-        ) -> Self {
+        pub fn administrative_actions(mut self, input: crate::model::AdministrativeAction) -> Self {
             let mut v = self.administrative_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.administrative_actions = Some(v);
             self
         }
@@ -808,9 +805,9 @@ pub mod open_zfs_volume_configuration {
         ///
         /// <p>The configuration object for mounting a Network File System (NFS) file
         /// system.</p>
-        pub fn nfs_exports(mut self, input: impl Into<crate::model::OpenZfsNfsExport>) -> Self {
+        pub fn nfs_exports(mut self, input: crate::model::OpenZfsNfsExport) -> Self {
             let mut v = self.nfs_exports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nfs_exports = Some(v);
             self
         }
@@ -830,10 +827,10 @@ pub mod open_zfs_volume_configuration {
         /// <p>An object specifying how much storage users or groups can use on the volume. </p>
         pub fn user_and_group_quotas(
             mut self,
-            input: impl Into<crate::model::OpenZfsUserOrGroupQuota>,
+            input: crate::model::OpenZfsUserOrGroupQuota,
         ) -> Self {
             let mut v = self.user_and_group_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_and_group_quotas = Some(v);
             self
         }
@@ -1066,10 +1063,10 @@ pub mod open_zfs_nfs_export {
         /// OpenZFS file system. </p>
         pub fn client_configurations(
             mut self,
-            input: impl Into<crate::model::OpenZfsClientConfiguration>,
+            input: crate::model::OpenZfsClientConfiguration,
         ) -> Self {
             let mut v = self.client_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.client_configurations = Some(v);
             self
         }
@@ -2392,9 +2389,9 @@ pub mod snapshot {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2413,12 +2410,9 @@ pub mod snapshot {
         /// <p>A list of administrative actions for the file system that are in process or waiting to
         /// be processed. Administrative actions describe changes to the Amazon FSx
         /// system.</p>
-        pub fn administrative_actions(
-            mut self,
-            input: impl Into<crate::model::AdministrativeAction>,
-        ) -> Self {
+        pub fn administrative_actions(mut self, input: crate::model::AdministrativeAction) -> Self {
             let mut v = self.administrative_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.administrative_actions = Some(v);
             self
         }
@@ -3282,9 +3276,9 @@ pub mod file_system {
         /// <p>The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your
         /// Amazon EC2 resources</a> in the <i>Amazon EC2 User
         /// Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3337,12 +3331,9 @@ pub mod file_system {
         /// <p>A list of administrative actions for the file system that are in process or waiting to
         /// be processed. Administrative actions describe changes to the Amazon FSx system
         /// that you have initiated using the <code>UpdateFileSystem</code> operation.</p>
-        pub fn administrative_actions(
-            mut self,
-            input: impl Into<crate::model::AdministrativeAction>,
-        ) -> Self {
+        pub fn administrative_actions(mut self, input: crate::model::AdministrativeAction) -> Self {
             let mut v = self.administrative_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.administrative_actions = Some(v);
             self
         }
@@ -6651,10 +6642,10 @@ pub mod windows_file_system_configuration {
         /// <p>The list of maintenance operations in progress for this file system.</p>
         pub fn maintenance_operations_in_progress(
             mut self,
-            input: impl Into<crate::model::FileSystemMaintenanceOperation>,
+            input: crate::model::FileSystemMaintenanceOperation,
         ) -> Self {
             let mut v = self.maintenance_operations_in_progress.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.maintenance_operations_in_progress = Some(v);
             self
         }
@@ -6748,9 +6739,9 @@ pub mod windows_file_system_configuration {
         /// You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation.
         /// You only need to specify the alias name in the request payload. For more information, see
         /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">DNS aliases</a>.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::Alias>) -> Self {
+        pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }
@@ -9515,9 +9506,9 @@ pub mod update_open_zfs_volume_configuration {
         /// To override the contents of this collection use [`set_nfs_exports`](Self::set_nfs_exports).
         ///
         /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-        pub fn nfs_exports(mut self, input: impl Into<crate::model::OpenZfsNfsExport>) -> Self {
+        pub fn nfs_exports(mut self, input: crate::model::OpenZfsNfsExport) -> Self {
             let mut v = self.nfs_exports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nfs_exports = Some(v);
             self
         }
@@ -9536,10 +9527,10 @@ pub mod update_open_zfs_volume_configuration {
         /// <p>An object specifying how much storage users or groups can use on the volume.</p>
         pub fn user_and_group_quotas(
             mut self,
-            input: impl Into<crate::model::OpenZfsUserOrGroupQuota>,
+            input: crate::model::OpenZfsUserOrGroupQuota,
         ) -> Self {
             let mut v = self.user_and_group_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_and_group_quotas = Some(v);
             self
         }
@@ -10144,9 +10135,9 @@ pub mod storage_virtual_machine {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13367,9 +13358,9 @@ pub mod data_repository_association {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13620,9 +13611,9 @@ pub mod auto_export_policy {
         /// </li>
         /// </ul>
         /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-        pub fn events(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn events(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -13825,9 +13816,9 @@ pub mod auto_import_policy {
         /// </li>
         /// </ul>
         /// <p>You can define any combination of event types for your <code>AutoImportPolicy</code>.</p>
-        pub fn events(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn events(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -14788,9 +14779,9 @@ pub mod data_repository_task {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16218,9 +16209,9 @@ pub mod backup {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with a particular file system.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16808,9 +16799,9 @@ pub mod delete_volume_ontap_response {
         /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
@@ -16876,12 +16867,9 @@ pub mod delete_volume_open_zfs_configuration {
         ///
         /// <p>To delete the volume's children and snapshots, use the string
         /// <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
-        pub fn options(
-            mut self,
-            input: impl Into<crate::model::DeleteOpenZfsVolumeOption>,
-        ) -> Self {
+        pub fn options(mut self, input: crate::model::DeleteOpenZfsVolumeOption) -> Self {
             let mut v = self.options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.options = Some(v);
             self
         }
@@ -17020,9 +17008,9 @@ pub mod delete_volume_ontap_configuration {
         /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
@@ -17106,9 +17094,9 @@ pub mod delete_file_system_open_zfs_response {
         /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
@@ -17192,9 +17180,9 @@ pub mod delete_file_system_lustre_response {
         /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
         ///
         /// <p>The set of tags applied to the final backup.</p>
-        pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
@@ -17278,9 +17266,9 @@ pub mod delete_file_system_windows_response {
         /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
         ///
         /// <p>The set of tags applied to the final backup.</p>
-        pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
@@ -17381,9 +17369,9 @@ pub mod delete_file_system_open_zfs_configuration {
         /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
@@ -17493,9 +17481,9 @@ pub mod delete_file_system_lustre_configuration {
         /// and you want to apply an array of tags to the final backup. If you have set the file system property
         /// <code>CopyTagsToBackups</code> to true, and
         /// you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
-        pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
@@ -17591,9 +17579,9 @@ pub mod delete_file_system_windows_configuration {
         /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
         ///
         /// <p>A set of tags for your final backup.</p>
-        pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn final_backup_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_backup_tags = Some(v);
             self
         }
@@ -18175,9 +18163,9 @@ pub mod create_open_zfs_volume_configuration {
         /// To override the contents of this collection use [`set_nfs_exports`](Self::set_nfs_exports).
         ///
         /// <p>The configuration object for mounting a Network File System (NFS) file system. </p>
-        pub fn nfs_exports(mut self, input: impl Into<crate::model::OpenZfsNfsExport>) -> Self {
+        pub fn nfs_exports(mut self, input: crate::model::OpenZfsNfsExport) -> Self {
             let mut v = self.nfs_exports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nfs_exports = Some(v);
             self
         }
@@ -18196,10 +18184,10 @@ pub mod create_open_zfs_volume_configuration {
         /// <p>An object specifying how much storage users or groups can use on the volume. </p>
         pub fn user_and_group_quotas(
             mut self,
-            input: impl Into<crate::model::OpenZfsUserOrGroupQuota>,
+            input: crate::model::OpenZfsUserOrGroupQuota,
         ) -> Self {
             let mut v = self.user_and_group_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_and_group_quotas = Some(v);
             self
         }
@@ -19353,9 +19341,9 @@ pub mod open_zfs_create_root_volume_configuration {
         /// To override the contents of this collection use [`set_nfs_exports`](Self::set_nfs_exports).
         ///
         /// <p>The configuration object for mounting a file system.</p>
-        pub fn nfs_exports(mut self, input: impl Into<crate::model::OpenZfsNfsExport>) -> Self {
+        pub fn nfs_exports(mut self, input: crate::model::OpenZfsNfsExport) -> Self {
             let mut v = self.nfs_exports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nfs_exports = Some(v);
             self
         }
@@ -19374,10 +19362,10 @@ pub mod open_zfs_create_root_volume_configuration {
         /// <p>An object specifying how much storage users or groups can use on the volume.</p>
         pub fn user_and_group_quotas(
             mut self,
-            input: impl Into<crate::model::OpenZfsUserOrGroupQuota>,
+            input: crate::model::OpenZfsUserOrGroupQuota,
         ) -> Self {
             let mut v = self.user_and_group_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_and_group_quotas = Some(v);
             self
         }

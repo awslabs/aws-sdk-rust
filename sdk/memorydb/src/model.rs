@@ -565,9 +565,9 @@ pub mod subnet_group {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>A list of subnets associated with the subnet group.</p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -1217,9 +1217,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_shards`](Self::set_shards).
         ///
         /// <p>A list of shards that are members of the cluster.</p>
-        pub fn shards(mut self, input: impl Into<crate::model::Shard>) -> Self {
+        pub fn shards(mut self, input: crate::model::Shard) -> Self {
             let mut v = self.shards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shards = Some(v);
             self
         }
@@ -1324,12 +1324,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>A list of security groups used by the cluster</p>
-        pub fn security_groups(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupMembership>,
-        ) -> Self {
+        pub fn security_groups(mut self, input: crate::model::SecurityGroupMembership) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_groups = Some(v);
             self
         }
@@ -1813,9 +1810,9 @@ pub mod shard {
         /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
         ///
         /// <p>A list containing information about individual nodes within the shard</p>
-        pub fn nodes(mut self, input: impl Into<crate::model::Node>) -> Self {
+        pub fn nodes(mut self, input: crate::model::Node) -> Self {
             let mut v = self.nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nodes = Some(v);
             self
         }
@@ -2074,10 +2071,10 @@ pub mod cluster_pending_updates {
         /// <p>A list of service updates being applied to the cluster</p>
         pub fn service_updates(
             mut self,
-            input: impl Into<crate::model::PendingModifiedServiceUpdate>,
+            input: crate::model::PendingModifiedServiceUpdate,
         ) -> Self {
             let mut v = self.service_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_updates = Some(v);
             self
         }
@@ -3401,9 +3398,9 @@ pub mod cluster_configuration {
         /// To override the contents of this collection use [`set_shards`](Self::set_shards).
         ///
         /// <p>The list of shards in the cluster</p>
-        pub fn shards(mut self, input: impl Into<crate::model::ShardDetail>) -> Self {
+        pub fn shards(mut self, input: crate::model::ShardDetail) -> Self {
             let mut v = self.shards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shards = Some(v);
             self
         }

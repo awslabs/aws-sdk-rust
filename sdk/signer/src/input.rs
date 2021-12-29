@@ -1655,9 +1655,9 @@ pub mod list_signing_profiles_input {
         ///
         /// <p>Filters results to return only signing jobs with statuses in the specified
         /// list.</p>
-        pub fn statuses(mut self, input: impl Into<crate::model::SigningProfileStatus>) -> Self {
+        pub fn statuses(mut self, input: crate::model::SigningProfileStatus) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }

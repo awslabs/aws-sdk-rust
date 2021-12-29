@@ -779,9 +779,9 @@ pub mod create_environment_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your environment. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1040,9 +1040,9 @@ pub mod create_environment_account_connection_input {
         ///
         /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
         /// Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1275,9 +1275,9 @@ pub mod create_environment_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your environment template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1516,9 +1516,9 @@ pub mod create_environment_template_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for a new version of an environment template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2021,9 +2021,9 @@ pub mod create_service_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your service. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2259,9 +2259,9 @@ pub mod create_service_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your service template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2503,10 +2503,10 @@ pub mod create_service_template_version_input {
         /// <p>An array of compatible environment template objects for the new version of a service template.</p>
         pub fn compatible_environment_templates(
             mut self,
-            input: impl Into<crate::model::CompatibleEnvironmentTemplateInput>,
+            input: crate::model::CompatibleEnvironmentTemplateInput,
         ) -> Self {
             let mut v = self.compatible_environment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_environment_templates = Some(v);
             self
         }
@@ -2525,9 +2525,9 @@ pub mod create_service_template_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for a new version of a service template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6631,12 +6631,9 @@ pub mod list_environment_account_connections_input {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>The status details for each listed environment account connection.</p>
-        pub fn statuses(
-            mut self,
-            input: impl Into<crate::model::EnvironmentAccountConnectionStatus>,
-        ) -> Self {
+        pub fn statuses(mut self, input: crate::model::EnvironmentAccountConnectionStatus) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -7202,10 +7199,10 @@ pub mod list_environments_input {
         /// <p>An array of the versions of the environment template.</p>
         pub fn environment_templates(
             mut self,
-            input: impl Into<crate::model::EnvironmentTemplateFilter>,
+            input: crate::model::EnvironmentTemplateFilter,
         ) -> Self {
             let mut v = self.environment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_templates = Some(v);
             self
         }
@@ -9753,9 +9750,9 @@ pub mod notify_resource_deployment_status_change_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -10115,9 +10112,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of resource tags to apply to a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12595,10 +12592,10 @@ pub mod update_service_template_version_input {
         /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
         pub fn compatible_environment_templates(
             mut self,
-            input: impl Into<crate::model::CompatibleEnvironmentTemplateInput>,
+            input: crate::model::CompatibleEnvironmentTemplateInput,
         ) -> Self {
             let mut v = self.compatible_environment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_environment_templates = Some(v);
             self
         }

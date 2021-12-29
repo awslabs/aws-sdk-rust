@@ -2164,12 +2164,12 @@ pub mod list_topics_detection_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn topics_detection_job_properties_list(
             mut self,
-            input: impl Into<crate::model::TopicsDetectionJobProperties>,
+            input: crate::model::TopicsDetectionJobProperties,
         ) -> Self {
             let mut v = self
                 .topics_detection_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topics_detection_job_properties_list = Some(v);
             self
         }
@@ -2272,9 +2272,9 @@ pub mod list_tags_for_resource_output {
         /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
         /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2356,12 +2356,12 @@ pub mod list_sentiment_detection_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn sentiment_detection_job_properties_list(
             mut self,
-            input: impl Into<crate::model::SentimentDetectionJobProperties>,
+            input: crate::model::SentimentDetectionJobProperties,
         ) -> Self {
             let mut v = self
                 .sentiment_detection_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sentiment_detection_job_properties_list = Some(v);
             self
         }
@@ -2453,12 +2453,12 @@ pub mod list_pii_entities_detection_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn pii_entities_detection_job_properties_list(
             mut self,
-            input: impl Into<crate::model::PiiEntitiesDetectionJobProperties>,
+            input: crate::model::PiiEntitiesDetectionJobProperties,
         ) -> Self {
             let mut v = self
                 .pii_entities_detection_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pii_entities_detection_job_properties_list = Some(v);
             self
         }
@@ -2550,12 +2550,12 @@ pub mod list_key_phrases_detection_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn key_phrases_detection_job_properties_list(
             mut self,
-            input: impl Into<crate::model::KeyPhrasesDetectionJobProperties>,
+            input: crate::model::KeyPhrasesDetectionJobProperties,
         ) -> Self {
             let mut v = self
                 .key_phrases_detection_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_phrases_detection_job_properties_list = Some(v);
             self
         }
@@ -2647,12 +2647,12 @@ pub mod list_events_detection_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn events_detection_job_properties_list(
             mut self,
-            input: impl Into<crate::model::EventsDetectionJobProperties>,
+            input: crate::model::EventsDetectionJobProperties,
         ) -> Self {
             let mut v = self
                 .events_detection_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events_detection_job_properties_list = Some(v);
             self
         }
@@ -2741,10 +2741,10 @@ pub mod list_entity_recognizer_summaries_output {
         /// <p>The list entity recognizer summaries.</p>
         pub fn entity_recognizer_summaries_list(
             mut self,
-            input: impl Into<crate::model::EntityRecognizerSummary>,
+            input: crate::model::EntityRecognizerSummary,
         ) -> Self {
             let mut v = self.entity_recognizer_summaries_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_recognizer_summaries_list = Some(v);
             self
         }
@@ -2833,10 +2833,10 @@ pub mod list_entity_recognizers_output {
         /// <p>The list of properties of an entity recognizer.</p>
         pub fn entity_recognizer_properties_list(
             mut self,
-            input: impl Into<crate::model::EntityRecognizerProperties>,
+            input: crate::model::EntityRecognizerProperties,
         ) -> Self {
             let mut v = self.entity_recognizer_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_recognizer_properties_list = Some(v);
             self
         }
@@ -2925,12 +2925,12 @@ pub mod list_entities_detection_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn entities_detection_job_properties_list(
             mut self,
-            input: impl Into<crate::model::EntitiesDetectionJobProperties>,
+            input: crate::model::EntitiesDetectionJobProperties,
         ) -> Self {
             let mut v = self
                 .entities_detection_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities_detection_job_properties_list = Some(v);
             self
         }
@@ -3017,12 +3017,9 @@ pub mod list_endpoints_output {
         ///
         /// <p>Displays a list of endpoint properties being retrieved by the service in response to the
         /// request.</p>
-        pub fn endpoint_properties_list(
-            mut self,
-            input: impl Into<crate::model::EndpointProperties>,
-        ) -> Self {
+        pub fn endpoint_properties_list(mut self, input: crate::model::EndpointProperties) -> Self {
             let mut v = self.endpoint_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_properties_list = Some(v);
             self
         }
@@ -3114,12 +3111,12 @@ pub mod list_dominant_language_detection_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn dominant_language_detection_job_properties_list(
             mut self,
-            input: impl Into<crate::model::DominantLanguageDetectionJobProperties>,
+            input: crate::model::DominantLanguageDetectionJobProperties,
         ) -> Self {
             let mut v = self
                 .dominant_language_detection_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dominant_language_detection_job_properties_list = Some(v);
             self
         }
@@ -3211,10 +3208,10 @@ pub mod list_document_classifier_summaries_output {
         /// <p>The list of summaries of document classifiers.</p>
         pub fn document_classifier_summaries_list(
             mut self,
-            input: impl Into<crate::model::DocumentClassifierSummary>,
+            input: crate::model::DocumentClassifierSummary,
         ) -> Self {
             let mut v = self.document_classifier_summaries_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_classifier_summaries_list = Some(v);
             self
         }
@@ -3303,10 +3300,10 @@ pub mod list_document_classifiers_output {
         /// <p>A list containing the properties of each job returned.</p>
         pub fn document_classifier_properties_list(
             mut self,
-            input: impl Into<crate::model::DocumentClassifierProperties>,
+            input: crate::model::DocumentClassifierProperties,
         ) -> Self {
             let mut v = self.document_classifier_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_classifier_properties_list = Some(v);
             self
         }
@@ -3395,12 +3392,12 @@ pub mod list_document_classification_jobs_output {
         /// <p>A list containing the properties of each job returned.</p>
         pub fn document_classification_job_properties_list(
             mut self,
-            input: impl Into<crate::model::DocumentClassificationJobProperties>,
+            input: crate::model::DocumentClassificationJobProperties,
         ) -> Self {
             let mut v = self
                 .document_classification_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_classification_job_properties_list = Some(v);
             self
         }
@@ -3481,9 +3478,9 @@ pub mod detect_syntax_output {
         /// <p>A collection of syntax tokens describing the text. For each token, the response provides
         /// the text, the token type, where the text begins and ends, and the level of confidence that
         /// Amazon Comprehend has that the token is correct. For a list of token types, see <a>how-syntax</a>.</p>
-        pub fn syntax_tokens(mut self, input: impl Into<crate::model::SyntaxToken>) -> Self {
+        pub fn syntax_tokens(mut self, input: crate::model::SyntaxToken) -> Self {
             let mut v = self.syntax_tokens.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.syntax_tokens = Some(v);
             self
         }
@@ -3639,9 +3636,9 @@ pub mod detect_pii_entities_output {
         /// <p>A collection of PII entities identified in the input text. For each entity, the response
         /// provides the entity type, where the entity text begins and ends, and the level of confidence
         /// that Amazon Comprehend has in the detection.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::PiiEntity>) -> Self {
+        pub fn entities(mut self, input: crate::model::PiiEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -3713,9 +3710,9 @@ pub mod detect_key_phrases_output {
         /// each key phrase, the response provides the text of the key phrase, where the key phrase begins
         /// and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the
         /// detection. </p>
-        pub fn key_phrases(mut self, input: impl Into<crate::model::KeyPhrase>) -> Self {
+        pub fn key_phrases(mut self, input: crate::model::KeyPhrase) -> Self {
             let mut v = self.key_phrases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_phrases = Some(v);
             self
         }
@@ -3794,9 +3791,9 @@ pub mod detect_entities_output {
         /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the
         /// entities that the model is trained to recognize. Otherwise, it detects the default entity
         /// types. For a list of default entity types, see <a>how-entities</a>.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -3871,9 +3868,9 @@ pub mod detect_dominant_language_output {
         /// response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend
         /// has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the
         /// <i>IETF Tools</i> web site.</p>
-        pub fn languages(mut self, input: impl Into<crate::model::DominantLanguage>) -> Self {
+        pub fn languages(mut self, input: crate::model::DominantLanguage) -> Self {
             let mut v = self.languages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.languages = Some(v);
             self
         }
@@ -4937,9 +4934,9 @@ pub mod contains_pii_entities_output {
         ///
         /// <p>The labels used in the document being analyzed. Individual labels represent personally
         /// identifiable information (PII) entity types.</p>
-        pub fn labels(mut self, input: impl Into<crate::model::EntityLabel>) -> Self {
+        pub fn labels(mut self, input: crate::model::EntityLabel) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
@@ -5024,9 +5021,9 @@ pub mod classify_document_output {
         /// models. Individual classes are mutually exclusive and each document is expected to have only a
         /// single class assigned to it. For example, an animal can be a dog or a cat, but not both at the
         /// same time. </p>
-        pub fn classes(mut self, input: impl Into<crate::model::DocumentClass>) -> Self {
+        pub fn classes(mut self, input: crate::model::DocumentClass) -> Self {
             let mut v = self.classes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.classes = Some(v);
             self
         }
@@ -5049,9 +5046,9 @@ pub mod classify_document_output {
         /// models. Individual labels represent different categories that are related in some manner and
         /// are not mutually exclusive. For example, a movie can be just an action movie, or it can be an
         /// action movie, a science fiction movie, and a comedy, all at the same time. </p>
-        pub fn labels(mut self, input: impl Into<crate::model::DocumentLabel>) -> Self {
+        pub fn labels(mut self, input: crate::model::DocumentLabel) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
@@ -5140,12 +5137,9 @@ pub mod batch_detect_syntax_output {
         /// of the operation. The results are sorted in ascending order by the <code>Index</code> field
         /// and match the order of the documents in the input list. If all of the documents contain an
         /// error, the <code>ResultList</code> is empty.</p>
-        pub fn result_list(
-            mut self,
-            input: impl Into<crate::model::BatchDetectSyntaxItemResult>,
-        ) -> Self {
+        pub fn result_list(mut self, input: crate::model::BatchDetectSyntaxItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_list = Some(v);
             self
         }
@@ -5168,9 +5162,9 @@ pub mod batch_detect_syntax_output {
         /// contained an error. The results are sorted in ascending order by the <code>Index</code> field
         /// and match the order of the documents in the input list. If there are no errors in the batch,
         /// the <code>ErrorList</code> is empty.</p>
-        pub fn error_list(mut self, input: impl Into<crate::model::BatchItemError>) -> Self {
+        pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_list = Some(v);
             self
         }
@@ -5262,12 +5256,9 @@ pub mod batch_detect_sentiment_output {
         /// results of the operation. The results are sorted in ascending order by the <code>Index</code>
         /// field and match the order of the documents in the input list. If all of the documents contain
         /// an error, the <code>ResultList</code> is empty.</p>
-        pub fn result_list(
-            mut self,
-            input: impl Into<crate::model::BatchDetectSentimentItemResult>,
-        ) -> Self {
+        pub fn result_list(mut self, input: crate::model::BatchDetectSentimentItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_list = Some(v);
             self
         }
@@ -5290,9 +5281,9 @@ pub mod batch_detect_sentiment_output {
         /// that contained an error. The results are sorted in ascending order by the <code>Index</code>
         /// field and match the order of the documents in the input list. If there are no errors in the
         /// batch, the <code>ErrorList</code> is empty.</p>
-        pub fn error_list(mut self, input: impl Into<crate::model::BatchItemError>) -> Self {
+        pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_list = Some(v);
             self
         }
@@ -5384,12 +5375,9 @@ pub mod batch_detect_key_phrases_output {
         /// results of the operation. The results are sorted in ascending order by the <code>Index</code>
         /// field and match the order of the documents in the input list. If all of the documents contain
         /// an error, the <code>ResultList</code> is empty.</p>
-        pub fn result_list(
-            mut self,
-            input: impl Into<crate::model::BatchDetectKeyPhrasesItemResult>,
-        ) -> Self {
+        pub fn result_list(mut self, input: crate::model::BatchDetectKeyPhrasesItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_list = Some(v);
             self
         }
@@ -5414,9 +5402,9 @@ pub mod batch_detect_key_phrases_output {
         /// that contained an error. The results are sorted in ascending order by the <code>Index</code>
         /// field and match the order of the documents in the input list. If there are no errors in the
         /// batch, the <code>ErrorList</code> is empty.</p>
-        pub fn error_list(mut self, input: impl Into<crate::model::BatchItemError>) -> Self {
+        pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_list = Some(v);
             self
         }
@@ -5508,12 +5496,9 @@ pub mod batch_detect_entities_output {
         /// results of the operation. The results are sorted in ascending order by the <code>Index</code>
         /// field and match the order of the documents in the input list. If all of the documents contain
         /// an error, the <code>ResultList</code> is empty.</p>
-        pub fn result_list(
-            mut self,
-            input: impl Into<crate::model::BatchDetectEntitiesItemResult>,
-        ) -> Self {
+        pub fn result_list(mut self, input: crate::model::BatchDetectEntitiesItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_list = Some(v);
             self
         }
@@ -5536,9 +5521,9 @@ pub mod batch_detect_entities_output {
         /// that contained an error. The results are sorted in ascending order by the <code>Index</code>
         /// field and match the order of the documents in the input list. If there are no errors in the
         /// batch, the <code>ErrorList</code> is empty.</p>
-        pub fn error_list(mut self, input: impl Into<crate::model::BatchItemError>) -> Self {
+        pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_list = Some(v);
             self
         }
@@ -5632,10 +5617,10 @@ pub mod batch_detect_dominant_language_output {
         /// the documents contain an error, the <code>ResultList</code> is empty.</p>
         pub fn result_list(
             mut self,
-            input: impl Into<crate::model::BatchDetectDominantLanguageItemResult>,
+            input: crate::model::BatchDetectDominantLanguageItemResult,
         ) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_list = Some(v);
             self
         }
@@ -5660,9 +5645,9 @@ pub mod batch_detect_dominant_language_output {
         /// that contained an error. The results are sorted in ascending order by the <code>Index</code>
         /// field and match the order of the documents in the input list. If there are no errors in the
         /// batch, the <code>ErrorList</code> is empty.</p>
-        pub fn error_list(mut self, input: impl Into<crate::model::BatchItemError>) -> Self {
+        pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_list = Some(v);
             self
         }

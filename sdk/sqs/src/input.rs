@@ -432,10 +432,10 @@ pub mod change_message_visibility_batch_input {
         /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
         pub fn entries(
             mut self,
-            input: impl Into<crate::model::ChangeMessageVisibilityBatchRequestEntry>,
+            input: crate::model::ChangeMessageVisibilityBatchRequestEntry,
         ) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -880,11 +880,11 @@ pub mod create_queue_input {
         /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::QueueAttributeName>,
+            k: crate::model::QueueAttributeName,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -1384,12 +1384,9 @@ pub mod delete_message_batch_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of receipt handles for the messages to be deleted.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::DeleteMessageBatchRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::DeleteMessageBatchRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1879,12 +1876,9 @@ pub mod get_queue_attributes_input {
         /// <p>For information on throughput quotas,
         /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
         /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        pub fn attribute_names(
-            mut self,
-            input: impl Into<crate::model::QueueAttributeName>,
-        ) -> Self {
+        pub fn attribute_names(mut self, input: crate::model::QueueAttributeName) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_names = Some(v);
             self
         }
@@ -3112,12 +3106,9 @@ pub mod receive_message_input {
         /// <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
         /// </li>
         /// </ul>
-        pub fn attribute_names(
-            mut self,
-            input: impl Into<crate::model::QueueAttributeName>,
-        ) -> Self {
+        pub fn attribute_names(mut self, input: crate::model::QueueAttributeName) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_names = Some(v);
             self
         }
@@ -3786,10 +3777,10 @@ pub mod send_message_input {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -3825,11 +3816,11 @@ pub mod send_message_input {
         /// </important>
         pub fn message_system_attributes(
             mut self,
-            k: impl Into<crate::model::MessageSystemAttributeNameForSends>,
-            v: impl Into<crate::model::MessageSystemAttributeValue>,
+            k: crate::model::MessageSystemAttributeNameForSends,
+            v: crate::model::MessageSystemAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_system_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.message_system_attributes = Some(hash_map);
             self
         }
@@ -4191,12 +4182,9 @@ pub mod send_message_batch_input {
         /// <p>A list of <code>
         /// <a>SendMessageBatchRequestEntry</a>
         /// </code> items.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::SendMessageBatchRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::SendMessageBatchRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -4526,11 +4514,11 @@ pub mod set_queue_attributes_input {
         /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::QueueAttributeName>,
+            k: crate::model::QueueAttributeName,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }

@@ -658,9 +658,9 @@ pub mod update_column_statistics_for_table_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>List of ColumnStatisticsErrors.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ColumnStatisticsError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ColumnStatisticsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -721,9 +721,9 @@ pub mod update_column_statistics_for_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Error occurred during updating column statistics data.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ColumnStatisticsError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ColumnStatisticsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -1576,9 +1576,9 @@ pub mod search_tables_output {
         /// To override the contents of this collection use [`set_table_list`](Self::set_table_list).
         ///
         /// <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
-        pub fn table_list(mut self, input: impl Into<crate::model::Table>) -> Self {
+        pub fn table_list(mut self, input: crate::model::Table) -> Self {
             let mut v = self.table_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_list = Some(v);
             self
         }
@@ -2100,10 +2100,10 @@ pub mod query_schema_version_metadata_output {
         pub fn metadata_info_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MetadataInfo>,
+            v: crate::model::MetadataInfo,
         ) -> Self {
             let mut hash_map = self.metadata_info_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metadata_info_map = Some(hash_map);
             self
         }
@@ -2685,9 +2685,9 @@ pub mod list_schema_versions_output {
         /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
         ///
         /// <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
-        pub fn schemas(mut self, input: impl Into<crate::model::SchemaVersionListItem>) -> Self {
+        pub fn schemas(mut self, input: crate::model::SchemaVersionListItem) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schemas = Some(v);
             self
         }
@@ -2767,9 +2767,9 @@ pub mod list_schemas_output {
         /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
         ///
         /// <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
-        pub fn schemas(mut self, input: impl Into<crate::model::SchemaListItem>) -> Self {
+        pub fn schemas(mut self, input: crate::model::SchemaListItem) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schemas = Some(v);
             self
         }
@@ -2849,9 +2849,9 @@ pub mod list_registries_output {
         /// To override the contents of this collection use [`set_registries`](Self::set_registries).
         ///
         /// <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
-        pub fn registries(mut self, input: impl Into<crate::model::RegistryListItem>) -> Self {
+        pub fn registries(mut self, input: crate::model::RegistryListItem) -> Self {
             let mut v = self.registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.registries = Some(v);
             self
         }
@@ -3395,9 +3395,9 @@ pub mod get_workflow_runs_output {
         /// To override the contents of this collection use [`set_runs`](Self::set_runs).
         ///
         /// <p>A list of workflow run metadata objects.</p>
-        pub fn runs(mut self, input: impl Into<crate::model::WorkflowRun>) -> Self {
+        pub fn runs(mut self, input: crate::model::WorkflowRun) -> Self {
             let mut v = self.runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.runs = Some(v);
             self
         }
@@ -3664,12 +3664,9 @@ pub mod get_user_defined_functions_output {
         /// To override the contents of this collection use [`set_user_defined_functions`](Self::set_user_defined_functions).
         ///
         /// <p>A list of requested function definitions.</p>
-        pub fn user_defined_functions(
-            mut self,
-            input: impl Into<crate::model::UserDefinedFunction>,
-        ) -> Self {
+        pub fn user_defined_functions(mut self, input: crate::model::UserDefinedFunction) -> Self {
             let mut v = self.user_defined_functions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_defined_functions = Some(v);
             self
         }
@@ -3810,9 +3807,9 @@ pub mod get_triggers_output {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>A list of triggers for the specified job.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::Trigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::Trigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -4026,9 +4023,9 @@ pub mod get_table_versions_output {
         ///
         /// <p>A list of strings identifying available versions of the
         /// specified table.</p>
-        pub fn table_versions(mut self, input: impl Into<crate::model::TableVersion>) -> Self {
+        pub fn table_versions(mut self, input: crate::model::TableVersion) -> Self {
             let mut v = self.table_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_versions = Some(v);
             self
         }
@@ -4170,9 +4167,9 @@ pub mod get_tables_output {
         /// To override the contents of this collection use [`set_table_list`](Self::set_table_list).
         ///
         /// <p>A list of the requested <code>Table</code> objects.</p>
-        pub fn table_list(mut self, input: impl Into<crate::model::Table>) -> Self {
+        pub fn table_list(mut self, input: crate::model::Table) -> Self {
             let mut v = self.table_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_list = Some(v);
             self
         }
@@ -4314,10 +4311,10 @@ pub mod get_security_configurations_output {
         /// <p>A list of security configurations.</p>
         pub fn security_configurations(
             mut self,
-            input: impl Into<crate::model::SecurityConfiguration>,
+            input: crate::model::SecurityConfiguration,
         ) -> Self {
             let mut v = self.security_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_configurations = Some(v);
             self
         }
@@ -5255,10 +5252,10 @@ pub mod get_resource_policies_output {
         /// <p>A list of the individual resource policies and the account-level resource policy.</p>
         pub fn get_resource_policies_response_list(
             mut self,
-            input: impl Into<crate::model::GluePolicy>,
+            input: crate::model::GluePolicy,
         ) -> Self {
             let mut v = self.get_resource_policies_response_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.get_resource_policies_response_list = Some(v);
             self
         }
@@ -5571,9 +5568,9 @@ pub mod get_partitions_output {
         /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
         ///
         /// <p>A list of requested partitions.</p>
-        pub fn partitions(mut self, input: impl Into<crate::model::Partition>) -> Self {
+        pub fn partitions(mut self, input: crate::model::Partition) -> Self {
             let mut v = self.partitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions = Some(v);
             self
         }
@@ -5664,10 +5661,10 @@ pub mod get_partition_indexes_output {
         /// <p>A list of index descriptors.</p>
         pub fn partition_index_descriptor_list(
             mut self,
-            input: impl Into<crate::model::PartitionIndexDescriptor>,
+            input: crate::model::PartitionIndexDescriptor,
         ) -> Self {
             let mut v = self.partition_index_descriptor_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partition_index_descriptor_list = Some(v);
             self
         }
@@ -5808,9 +5805,9 @@ pub mod get_ml_transforms_output {
         /// To override the contents of this collection use [`set_transforms`](Self::set_transforms).
         ///
         /// <p>A list of machine learning transforms.</p>
-        pub fn transforms(mut self, input: impl Into<crate::model::MlTransform>) -> Self {
+        pub fn transforms(mut self, input: crate::model::MlTransform) -> Self {
             let mut v = self.transforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transforms = Some(v);
             self
         }
@@ -6135,9 +6132,9 @@ pub mod get_ml_transform_output {
         /// To override the contents of this collection use [`set_input_record_tables`](Self::set_input_record_tables).
         ///
         /// <p>A list of Glue table definitions used by the transform.</p>
-        pub fn input_record_tables(mut self, input: impl Into<crate::model::GlueTable>) -> Self {
+        pub fn input_record_tables(mut self, input: crate::model::GlueTable) -> Self {
             let mut v = self.input_record_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_record_tables = Some(v);
             self
         }
@@ -6191,9 +6188,9 @@ pub mod get_ml_transform_output {
         ///
         /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
         /// transform accepts. Has an upper bound of 100 columns.</p>
-        pub fn schema(mut self, input: impl Into<crate::model::SchemaColumn>) -> Self {
+        pub fn schema(mut self, input: crate::model::SchemaColumn) -> Self {
             let mut v = self.schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema = Some(v);
             self
         }
@@ -6401,9 +6398,9 @@ pub mod get_ml_task_runs_output {
         /// To override the contents of this collection use [`set_task_runs`](Self::set_task_runs).
         ///
         /// <p>A list of task runs that are associated with the transform.</p>
-        pub fn task_runs(mut self, input: impl Into<crate::model::TaskRun>) -> Self {
+        pub fn task_runs(mut self, input: crate::model::TaskRun) -> Self {
             let mut v = self.task_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_runs = Some(v);
             self
         }
@@ -6718,9 +6715,9 @@ pub mod get_mapping_output {
         /// To override the contents of this collection use [`set_mapping`](Self::set_mapping).
         ///
         /// <p>A list of mappings to the specified targets.</p>
-        pub fn mapping(mut self, input: impl Into<crate::model::MappingEntry>) -> Self {
+        pub fn mapping(mut self, input: crate::model::MappingEntry) -> Self {
             let mut v = self.mapping.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mapping = Some(v);
             self
         }
@@ -6789,9 +6786,9 @@ pub mod get_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of job definitions.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -6871,9 +6868,9 @@ pub mod get_job_runs_output {
         /// To override the contents of this collection use [`set_job_runs`](Self::set_job_runs).
         ///
         /// <p>A list of job-run metadata objects.</p>
-        pub fn job_runs(mut self, input: impl Into<crate::model::JobRun>) -> Self {
+        pub fn job_runs(mut self, input: crate::model::JobRun) -> Self {
             let mut v = self.job_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_runs = Some(v);
             self
         }
@@ -7118,9 +7115,9 @@ pub mod get_dev_endpoints_output {
         /// To override the contents of this collection use [`set_dev_endpoints`](Self::set_dev_endpoints).
         ///
         /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-        pub fn dev_endpoints(mut self, input: impl Into<crate::model::DevEndpoint>) -> Self {
+        pub fn dev_endpoints(mut self, input: crate::model::DevEndpoint) -> Self {
             let mut v = self.dev_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dev_endpoints = Some(v);
             self
         }
@@ -7259,9 +7256,9 @@ pub mod get_dataflow_graph_output {
         /// To override the contents of this collection use [`set_dag_nodes`](Self::set_dag_nodes).
         ///
         /// <p>A list of the nodes in the resulting DAG.</p>
-        pub fn dag_nodes(mut self, input: impl Into<crate::model::CodeGenNode>) -> Self {
+        pub fn dag_nodes(mut self, input: crate::model::CodeGenNode) -> Self {
             let mut v = self.dag_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dag_nodes = Some(v);
             self
         }
@@ -7278,9 +7275,9 @@ pub mod get_dataflow_graph_output {
         /// To override the contents of this collection use [`set_dag_edges`](Self::set_dag_edges).
         ///
         /// <p>A list of the edges in the resulting DAG.</p>
-        pub fn dag_edges(mut self, input: impl Into<crate::model::CodeGenEdge>) -> Self {
+        pub fn dag_edges(mut self, input: crate::model::CodeGenEdge) -> Self {
             let mut v = self.dag_edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dag_edges = Some(v);
             self
         }
@@ -7419,9 +7416,9 @@ pub mod get_databases_output {
         /// To override the contents of this collection use [`set_database_list`](Self::set_database_list).
         ///
         /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-        pub fn database_list(mut self, input: impl Into<crate::model::Database>) -> Self {
+        pub fn database_list(mut self, input: crate::model::Database) -> Self {
             let mut v = self.database_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_list = Some(v);
             self
         }
@@ -7559,9 +7556,9 @@ pub mod get_crawlers_output {
         /// To override the contents of this collection use [`set_crawlers`](Self::set_crawlers).
         ///
         /// <p>A list of crawler metadata.</p>
-        pub fn crawlers(mut self, input: impl Into<crate::model::Crawler>) -> Self {
+        pub fn crawlers(mut self, input: crate::model::Crawler) -> Self {
             let mut v = self.crawlers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.crawlers = Some(v);
             self
         }
@@ -7646,12 +7643,9 @@ pub mod get_crawler_metrics_output {
         /// To override the contents of this collection use [`set_crawler_metrics_list`](Self::set_crawler_metrics_list).
         ///
         /// <p>A list of metrics for the specified crawler.</p>
-        pub fn crawler_metrics_list(
-            mut self,
-            input: impl Into<crate::model::CrawlerMetrics>,
-        ) -> Self {
+        pub fn crawler_metrics_list(mut self, input: crate::model::CrawlerMetrics) -> Self {
             let mut v = self.crawler_metrics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.crawler_metrics_list = Some(v);
             self
         }
@@ -7789,9 +7783,9 @@ pub mod get_connections_output {
         /// To override the contents of this collection use [`set_connection_list`](Self::set_connection_list).
         ///
         /// <p>A list of requested connection definitions.</p>
-        pub fn connection_list(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connection_list(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connection_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_list = Some(v);
             self
         }
@@ -7931,12 +7925,9 @@ pub mod get_column_statistics_for_table_output {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-        pub fn column_statistics_list(
-            mut self,
-            input: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
             let mut v = self.column_statistics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_list = Some(v);
             self
         }
@@ -7953,9 +7944,9 @@ pub mod get_column_statistics_for_table_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ColumnError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ColumnError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -8026,12 +8017,9 @@ pub mod get_column_statistics_for_partition_output {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-        pub fn column_statistics_list(
-            mut self,
-            input: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
             let mut v = self.column_statistics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_list = Some(v);
             self
         }
@@ -8048,9 +8036,9 @@ pub mod get_column_statistics_for_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Error occurred during retrieving column statistics data.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ColumnError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ColumnError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -8123,9 +8111,9 @@ pub mod get_classifiers_output {
         ///
         /// <p>The requested list of classifier
         /// objects.</p>
-        pub fn classifiers(mut self, input: impl Into<crate::model::Classifier>) -> Self {
+        pub fn classifiers(mut self, input: crate::model::Classifier) -> Self {
             let mut v = self.classifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.classifiers = Some(v);
             self
         }
@@ -8320,9 +8308,9 @@ pub mod get_blueprint_runs_output {
         /// To override the contents of this collection use [`set_blueprint_runs`](Self::set_blueprint_runs).
         ///
         /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
-        pub fn blueprint_runs(mut self, input: impl Into<crate::model::BlueprintRun>) -> Self {
+        pub fn blueprint_runs(mut self, input: crate::model::BlueprintRun) -> Self {
             let mut v = self.blueprint_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blueprint_runs = Some(v);
             self
         }
@@ -8738,10 +8726,10 @@ pub mod delete_schema_versions_output {
         /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
         pub fn schema_version_errors(
             mut self,
-            input: impl Into<crate::model::SchemaVersionErrorItem>,
+            input: crate::model::SchemaVersionErrorItem,
         ) -> Self {
             let mut v = self.schema_version_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_version_errors = Some(v);
             self
         }
@@ -11282,12 +11270,9 @@ pub mod batch_update_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchUpdatePartitionFailureEntry>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchUpdatePartitionFailureEntry) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -11368,10 +11353,10 @@ pub mod batch_stop_job_run_output {
         /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
         pub fn successful_submissions(
             mut self,
-            input: impl Into<crate::model::BatchStopJobRunSuccessfulSubmission>,
+            input: crate::model::BatchStopJobRunSuccessfulSubmission,
         ) -> Self {
             let mut v = self.successful_submissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_submissions = Some(v);
             self
         }
@@ -11392,9 +11377,9 @@ pub mod batch_stop_job_run_output {
         /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
         /// including the <code>JobRunId</code> for which each error was encountered and details about the
         /// error.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchStopJobRunError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchStopJobRunError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -11466,9 +11451,9 @@ pub mod batch_get_workflows_output {
         /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
         ///
         /// <p>A list of workflow resource metadata.</p>
-        pub fn workflows(mut self, input: impl Into<crate::model::Workflow>) -> Self {
+        pub fn workflows(mut self, input: crate::model::Workflow) -> Self {
             let mut v = self.workflows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workflows = Some(v);
             self
         }
@@ -11557,9 +11542,9 @@ pub mod batch_get_triggers_output {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>A list of trigger definitions.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::Trigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::Trigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -11651,9 +11636,9 @@ pub mod batch_get_partition_output {
         /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
         ///
         /// <p>A list of the requested partitions.</p>
-        pub fn partitions(mut self, input: impl Into<crate::model::Partition>) -> Self {
+        pub fn partitions(mut self, input: crate::model::Partition) -> Self {
             let mut v = self.partitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions = Some(v);
             self
         }
@@ -11671,12 +11656,9 @@ pub mod batch_get_partition_output {
         ///
         /// <p>A list of the partition values in the request for which partitions were not
         /// returned.</p>
-        pub fn unprocessed_keys(
-            mut self,
-            input: impl Into<crate::model::PartitionValueList>,
-        ) -> Self {
+        pub fn unprocessed_keys(mut self, input: crate::model::PartitionValueList) -> Self {
             let mut v = self.unprocessed_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_keys = Some(v);
             self
         }
@@ -11747,9 +11729,9 @@ pub mod batch_get_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of job definitions.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -11838,9 +11820,9 @@ pub mod batch_get_dev_endpoints_output {
         /// To override the contents of this collection use [`set_dev_endpoints`](Self::set_dev_endpoints).
         ///
         /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-        pub fn dev_endpoints(mut self, input: impl Into<crate::model::DevEndpoint>) -> Self {
+        pub fn dev_endpoints(mut self, input: crate::model::DevEndpoint) -> Self {
             let mut v = self.dev_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dev_endpoints = Some(v);
             self
         }
@@ -11929,9 +11911,9 @@ pub mod batch_get_crawlers_output {
         /// To override the contents of this collection use [`set_crawlers`](Self::set_crawlers).
         ///
         /// <p>A list of crawler definitions.</p>
-        pub fn crawlers(mut self, input: impl Into<crate::model::Crawler>) -> Self {
+        pub fn crawlers(mut self, input: crate::model::Crawler) -> Self {
             let mut v = self.crawlers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.crawlers = Some(v);
             self
         }
@@ -12020,9 +12002,9 @@ pub mod batch_get_blueprints_output {
         /// To override the contents of this collection use [`set_blueprints`](Self::set_blueprints).
         ///
         /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
-        pub fn blueprints(mut self, input: impl Into<crate::model::Blueprint>) -> Self {
+        pub fn blueprints(mut self, input: crate::model::Blueprint) -> Self {
             let mut v = self.blueprints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blueprints = Some(v);
             self
         }
@@ -12106,9 +12088,9 @@ pub mod batch_delete_table_version_output {
         ///
         /// <p>A list of errors encountered while trying to delete
         /// the specified table versions.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::TableVersionError>) -> Self {
+        pub fn errors(mut self, input: crate::model::TableVersionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -12170,9 +12152,9 @@ pub mod batch_delete_table_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of errors encountered in attempting to delete the specified tables.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::TableError>) -> Self {
+        pub fn errors(mut self, input: crate::model::TableError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -12233,9 +12215,9 @@ pub mod batch_delete_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors encountered when trying to delete the requested partitions.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::PartitionError>) -> Self {
+        pub fn errors(mut self, input: crate::model::PartitionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -12341,10 +12323,10 @@ pub mod batch_delete_connection_output {
         pub fn errors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ErrorDetail>,
+            v: crate::model::ErrorDetail,
         ) -> Self {
             let mut hash_map = self.errors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.errors = Some(hash_map);
             self
         }
@@ -12409,9 +12391,9 @@ pub mod batch_create_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors encountered when trying to create the requested partitions.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::PartitionError>) -> Self {
+        pub fn errors(mut self, input: crate::model::PartitionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

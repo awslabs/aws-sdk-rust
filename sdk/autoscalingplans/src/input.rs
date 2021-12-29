@@ -50,12 +50,9 @@ pub mod create_scaling_plan_input {
         ///
         /// <p>The scaling instructions.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn scaling_instructions(
-            mut self,
-            input: impl Into<crate::model::ScalingInstruction>,
-        ) -> Self {
+        pub fn scaling_instructions(mut self, input: crate::model::ScalingInstruction) -> Self {
             let mut v = self.scaling_instructions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_instructions = Some(v);
             self
         }
@@ -637,12 +634,9 @@ pub mod describe_scaling_plans_input {
         ///
         /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
         /// cannot specify application sources.</p>
-        pub fn application_sources(
-            mut self,
-            input: impl Into<crate::model::ApplicationSource>,
-        ) -> Self {
+        pub fn application_sources(mut self, input: crate::model::ApplicationSource) -> Self {
             let mut v = self.application_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_sources = Some(v);
             self
         }
@@ -1200,12 +1194,9 @@ pub mod update_scaling_plan_input {
         ///
         /// <p>The scaling instructions.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn scaling_instructions(
-            mut self,
-            input: impl Into<crate::model::ScalingInstruction>,
-        ) -> Self {
+        pub fn scaling_instructions(mut self, input: crate::model::ScalingInstruction) -> Self {
             let mut v = self.scaling_instructions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_instructions = Some(v);
             self
         }

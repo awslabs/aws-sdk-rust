@@ -403,8 +403,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the application instance.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A name for the application instance.</p>
@@ -413,8 +413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the application instance.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description for the application instance.</p>
@@ -423,8 +423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The application's manifest document.</p>
-        pub fn manifest_payload(mut self, inp: crate::model::ManifestPayload) -> Self {
-            self.inner = self.inner.manifest_payload(inp);
+        pub fn manifest_payload(mut self, signature: crate::model::ManifestPayload) -> Self {
+            self.inner = self.inner.manifest_payload(signature);
             self
         }
         /// <p>The application's manifest document.</p>
@@ -438,9 +438,9 @@ pub mod fluent_builders {
         /// <p>Setting overrides for the application manifest.</p>
         pub fn manifest_overrides_payload(
             mut self,
-            inp: crate::model::ManifestOverridesPayload,
+            signature: crate::model::ManifestOverridesPayload,
         ) -> Self {
-            self.inner = self.inner.manifest_overrides_payload(inp);
+            self.inner = self.inner.manifest_overrides_payload(signature);
             self
         }
         /// <p>Setting overrides for the application manifest.</p>
@@ -454,9 +454,11 @@ pub mod fluent_builders {
         /// <p>The ID of an application instance to replace with the new instance.</p>
         pub fn application_instance_id_to_replace(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.application_instance_id_to_replace(inp);
+            self.inner = self
+                .inner
+                .application_instance_id_to_replace(signature.into());
             self
         }
         /// <p>The ID of an application instance to replace with the new instance.</p>
@@ -468,8 +470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of a runtime role for the application instance.</p>
-        pub fn runtime_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.runtime_role_arn(inp);
+        pub fn runtime_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.runtime_role_arn(signature.into());
             self
         }
         /// <p>The ARN of a runtime role for the application instance.</p>
@@ -483,9 +485,9 @@ pub mod fluent_builders {
         /// <p>A device's ID.</p>
         pub fn default_runtime_context_device(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_runtime_context_device(inp);
+            self.inner = self.inner.default_runtime_context_device(signature.into());
             self
         }
         /// <p>A device's ID.</p>
@@ -506,7 +508,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags for the application instance.</p>
@@ -584,8 +586,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
         ///
         /// <p>IDs of target devices.</p>
-        pub fn device_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_ids(inp);
+        pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_ids(input.into());
             self
         }
         /// <p>IDs of target devices.</p>
@@ -597,8 +599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration settings for the job.</p>
-        pub fn device_job_config(mut self, inp: crate::model::DeviceJobConfig) -> Self {
-            self.inner = self.inner.device_job_config(inp);
+        pub fn device_job_config(mut self, signature: crate::model::DeviceJobConfig) -> Self {
+            self.inner = self.inner.device_job_config(signature);
             self
         }
         /// <p>Configuration settings for the job.</p>
@@ -610,8 +612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of job to run.</p>
-        pub fn job_type(mut self, inp: crate::model::JobType) -> Self {
-            self.inner = self.inner.job_type(inp);
+        pub fn job_type(mut self, signature: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(signature);
             self
         }
         /// <p>The type of job to run.</p>
@@ -680,8 +682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of node.</p>
-        pub fn template_type(mut self, inp: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, signature: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(signature);
             self
         }
         /// <p>The type of node.</p>
@@ -693,8 +695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An output package name for the node.</p>
-        pub fn output_package_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_package_name(inp);
+        pub fn output_package_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_package_name(signature.into());
             self
         }
         /// <p>An output package name for the node.</p>
@@ -706,8 +708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An output package version for the node.</p>
-        pub fn output_package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_package_version(inp);
+        pub fn output_package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_package_version(signature.into());
             self
         }
         /// <p>An output package version for the node.</p>
@@ -719,8 +721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the node.</p>
-        pub fn node_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_name(inp);
+        pub fn node_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_name(signature.into());
             self
         }
         /// <p>A name for the node.</p>
@@ -729,8 +731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the node.</p>
-        pub fn node_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_description(inp);
+        pub fn node_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_description(signature.into());
             self
         }
         /// <p>A description for the node.</p>
@@ -751,7 +753,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.template_parameters(k, v);
+            self.inner = self.inner.template_parameters(k.into(), v.into());
             self
         }
         /// <p>Template parameters for the node.</p>
@@ -769,8 +771,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
         ///
         /// <p>Tags for the job.</p>
-        pub fn job_tags(mut self, inp: impl Into<crate::model::JobResourceTags>) -> Self {
-            self.inner = self.inner.job_tags(inp);
+        pub fn job_tags(mut self, input: crate::model::JobResourceTags) -> Self {
+            self.inner = self.inner.job_tags(input);
             self
         }
         /// <p>Tags for the job.</p>
@@ -842,8 +844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the package.</p>
-        pub fn package_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_name(inp);
+        pub fn package_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_name(signature.into());
             self
         }
         /// <p>A name for the package.</p>
@@ -861,7 +863,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags for the package.</p>
@@ -935,8 +937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A job type for the package import job.</p>
-        pub fn job_type(mut self, inp: crate::model::PackageImportJobType) -> Self {
-            self.inner = self.inner.job_type(inp);
+        pub fn job_type(mut self, signature: crate::model::PackageImportJobType) -> Self {
+            self.inner = self.inner.job_type(signature);
             self
         }
         /// <p>A job type for the package import job.</p>
@@ -948,8 +950,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An input config for the package import job.</p>
-        pub fn input_config(mut self, inp: crate::model::PackageImportJobInputConfig) -> Self {
-            self.inner = self.inner.input_config(inp);
+        pub fn input_config(
+            mut self,
+            signature: crate::model::PackageImportJobInputConfig,
+        ) -> Self {
+            self.inner = self.inner.input_config(signature);
             self
         }
         /// <p>An input config for the package import job.</p>
@@ -961,8 +966,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An output config for the package import job.</p>
-        pub fn output_config(mut self, inp: crate::model::PackageImportJobOutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(
+            mut self,
+            signature: crate::model::PackageImportJobOutputConfig,
+        ) -> Self {
+            self.inner = self.inner.output_config(signature);
             self
         }
         /// <p>An output config for the package import job.</p>
@@ -974,8 +982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token for the package import job.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token for the package import job.</p>
@@ -988,8 +996,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
         ///
         /// <p>Tags for the package import job.</p>
-        pub fn job_tags(mut self, inp: impl Into<crate::model::JobResourceTags>) -> Self {
-            self.inner = self.inner.job_tags(inp);
+        pub fn job_tags(mut self, input: crate::model::JobResourceTags) -> Self {
+            self.inner = self.inner.job_tags(input);
             self
         }
         /// <p>Tags for the package import job.</p>
@@ -1061,8 +1069,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device's ID.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The device's ID.</p>
@@ -1131,8 +1139,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The package's ID.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>The package's ID.</p>
@@ -1142,8 +1150,8 @@ pub mod fluent_builders {
         }
         /// <p>Delete the package even if it has artifacts stored in its access point.
         /// Deletes the package's artifacts from Amazon S3.</p>
-        pub fn force_delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete(inp);
+        pub fn force_delete(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_delete(signature);
             self
         }
         /// <p>Delete the package even if it has artifacts stored in its access point.
@@ -1213,8 +1221,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An owner account.</p>
-        pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(inp);
+        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(signature.into());
             self
         }
         /// <p>An owner account.</p>
@@ -1226,8 +1234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A package ID.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>A package ID.</p>
@@ -1236,8 +1244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A package version.</p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>A package version.</p>
@@ -1249,8 +1257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A patch version.</p>
-        pub fn patch_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_version(inp);
+        pub fn patch_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_version(signature.into());
             self
         }
         /// <p>A patch version.</p>
@@ -1262,8 +1270,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the version was marked latest, the new version to maker as latest.</p>
-        pub fn updated_latest_patch_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.updated_latest_patch_version(inp);
+        pub fn updated_latest_patch_version(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.updated_latest_patch_version(signature.into());
             self
         }
         /// <p>If the version was marked latest, the new version to maker as latest.</p>
@@ -1335,8 +1346,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application instance's ID.</p>
-        pub fn application_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_instance_id(inp);
+        pub fn application_instance_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_instance_id(signature.into());
             self
         }
         /// <p>The application instance's ID.</p>
@@ -1410,8 +1424,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application instance's ID.</p>
-        pub fn application_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_instance_id(inp);
+        pub fn application_instance_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_instance_id(signature.into());
             self
         }
         /// <p>The application instance's ID.</p>
@@ -1483,8 +1500,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device's ID.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The device's ID.</p>
@@ -1553,8 +1570,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job's ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The job's ID.</p>
@@ -1623,8 +1640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The node's ID.</p>
-        pub fn node_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(inp);
+        pub fn node_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(signature.into());
             self
         }
         /// <p>The node's ID.</p>
@@ -1633,8 +1650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the node's owner.</p>
-        pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(inp);
+        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(signature.into());
             self
         }
         /// <p>The account ID of the node's owner.</p>
@@ -1706,8 +1723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job's ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The job's ID.</p>
@@ -1776,8 +1793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The package's ID.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>The package's ID.</p>
@@ -1846,8 +1863,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job's ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The job's ID.</p>
@@ -1916,8 +1933,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The version's owner account.</p>
-        pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(inp);
+        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(signature.into());
             self
         }
         /// <p>The version's owner account.</p>
@@ -1929,8 +1946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version's ID.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>The version's ID.</p>
@@ -1939,8 +1956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version's version.</p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>The version's version.</p>
@@ -1952,8 +1969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version's patch version.</p>
-        pub fn patch_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_version(inp);
+        pub fn patch_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_version(signature.into());
             self
         }
         /// <p>The version's patch version.</p>
@@ -2027,8 +2044,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application instance's ID.</p>
-        pub fn application_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_instance_id(inp);
+        pub fn application_instance_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_instance_id(signature.into());
             self
         }
         /// <p>The application instance's ID.</p>
@@ -2040,8 +2060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
@@ -2050,8 +2070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2122,8 +2142,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The node instances' application instance ID.</p>
-        pub fn application_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_instance_id(inp);
+        pub fn application_instance_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_instance_id(signature.into());
             self
         }
         /// <p>The node instances' application instance ID.</p>
@@ -2135,8 +2158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of node instances to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of node instances to return in one page of results.</p>
@@ -2145,8 +2168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2215,8 +2238,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application instances' device ID.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The application instances' device ID.</p>
@@ -2225,8 +2248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Only include instances with a specific status.</p>
-        pub fn status_filter(mut self, inp: crate::model::StatusFilter) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        pub fn status_filter(mut self, signature: crate::model::StatusFilter) -> Self {
+            self.inner = self.inner.status_filter(signature);
             self
         }
         /// <p>Only include instances with a specific status.</p>
@@ -2238,8 +2261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of application instances to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of application instances to return in one page of results.</p>
@@ -2248,8 +2271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2318,8 +2341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2328,8 +2351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of devices to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of devices to return in one page of results.</p>
@@ -2398,8 +2421,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filter results by the job's target device ID.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>Filter results by the job's target device ID.</p>
@@ -2408,8 +2431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2418,8 +2441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of device jobs to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of device jobs to return in one page of results.</p>
@@ -2488,8 +2511,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2498,8 +2521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of node from template jobs to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of node from template jobs to return in one page of results.</p>
@@ -2568,8 +2591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Search for nodes by category.</p>
-        pub fn category(mut self, inp: crate::model::NodeCategory) -> Self {
-            self.inner = self.inner.category(inp);
+        pub fn category(mut self, signature: crate::model::NodeCategory) -> Self {
+            self.inner = self.inner.category(signature);
             self
         }
         /// <p>Search for nodes by category.</p>
@@ -2581,8 +2604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-        pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(inp);
+        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(signature.into());
             self
         }
         /// <p>Search for nodes by the account ID of the nodes' owner.</p>
@@ -2594,8 +2617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Search for nodes by name.</p>
-        pub fn package_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_name(inp);
+        pub fn package_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_name(signature.into());
             self
         }
         /// <p>Search for nodes by name.</p>
@@ -2604,8 +2627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Search for nodes by version.</p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>Search for nodes by version.</p>
@@ -2617,8 +2640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Search for nodes by patch version.</p>
-        pub fn patch_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_version(inp);
+        pub fn patch_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_version(signature.into());
             self
         }
         /// <p>Search for nodes by patch version.</p>
@@ -2630,8 +2653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2640,8 +2663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of nodes to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of nodes to return in one page of results.</p>
@@ -2710,8 +2733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2720,8 +2743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of package import jobs to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of package import jobs to return in one page of results.</p>
@@ -2790,8 +2813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of packages to return in one page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of packages to return in one page of results.</p>
@@ -2800,8 +2823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -2870,8 +2893,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource's ARN.</p>
@@ -2942,8 +2965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the device.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A name for the device.</p>
@@ -2952,8 +2975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the device.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description for the device.</p>
@@ -2971,7 +2994,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags for the device.</p>
@@ -2985,8 +3008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A networking configuration for the device.</p>
-        pub fn networking_configuration(mut self, inp: crate::model::NetworkPayload) -> Self {
-            self.inner = self.inner.networking_configuration(inp);
+        pub fn networking_configuration(mut self, signature: crate::model::NetworkPayload) -> Self {
+            self.inner = self.inner.networking_configuration(signature);
             self
         }
         /// <p>A networking configuration for the device.</p>
@@ -3058,8 +3081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An owner account.</p>
-        pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(inp);
+        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(signature.into());
             self
         }
         /// <p>An owner account.</p>
@@ -3071,8 +3094,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A package ID.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>A package ID.</p>
@@ -3081,8 +3104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A package version.</p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>A package version.</p>
@@ -3094,8 +3117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A patch version.</p>
-        pub fn patch_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_version(inp);
+        pub fn patch_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_version(signature.into());
             self
         }
         /// <p>A patch version.</p>
@@ -3107,8 +3130,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to mark the new version as the latest version.</p>
-        pub fn mark_latest(mut self, inp: bool) -> Self {
-            self.inner = self.inner.mark_latest(inp);
+        pub fn mark_latest(mut self, signature: bool) -> Self {
+            self.inner = self.inner.mark_latest(signature);
             self
         }
         /// <p>Whether to mark the new version as the latest version.</p>
@@ -3177,8 +3200,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An application instance ID.</p>
-        pub fn application_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_instance_id(inp);
+        pub fn application_instance_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_instance_id(signature.into());
             self
         }
         /// <p>An application instance ID.</p>
@@ -3250,8 +3276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource's ARN.</p>
@@ -3269,7 +3295,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags for the resource.</p>
@@ -3343,8 +3369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource's ARN.</p>
@@ -3357,8 +3383,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Tag keys to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Tag keys to remove.</p>
@@ -3430,8 +3456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device's ID.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The device's ID.</p>
@@ -3440,8 +3466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the device.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description for the device.</p>

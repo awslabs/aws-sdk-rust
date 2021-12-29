@@ -310,9 +310,9 @@ pub mod statement_data {
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
         /// <p>The parameters used in a SQL statement.</p>
-        pub fn query_parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
+        pub fn query_parameters(mut self, input: crate::model::SqlParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_parameters = Some(v);
             self
         }

@@ -1296,10 +1296,10 @@ pub mod batch_associate_service_action_with_provisioning_artifact_input {
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn service_action_associations(
             mut self,
-            input: impl Into<crate::model::ServiceActionAssociation>,
+            input: crate::model::ServiceActionAssociation,
         ) -> Self {
             let mut v = self.service_action_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_action_associations = Some(v);
             self
         }
@@ -1513,10 +1513,10 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn service_action_associations(
             mut self,
-            input: impl Into<crate::model::ServiceActionAssociation>,
+            input: crate::model::ServiceActionAssociation,
         ) -> Self {
             let mut v = self.service_action_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_action_associations = Some(v);
             self
         }
@@ -1822,17 +1822,15 @@ pub mod copy_product_input {
         /// By default, all provisioning artifacts are copied.</p>
         pub fn source_provisioning_artifact_identifiers(
             mut self,
-            input: impl Into<
-                std::collections::HashMap<
-                    crate::model::ProvisioningArtifactPropertyName,
-                    std::string::String,
-                >,
+            input: std::collections::HashMap<
+                crate::model::ProvisioningArtifactPropertyName,
+                std::string::String,
             >,
         ) -> Self {
             let mut v = self
                 .source_provisioning_artifact_identifiers
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_provisioning_artifact_identifiers = Some(v);
             self
         }
@@ -1858,9 +1856,9 @@ pub mod copy_product_input {
         ///
         /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
         /// product are copied to the target product.</p>
-        pub fn copy_options(mut self, input: impl Into<crate::model::CopyOption>) -> Self {
+        pub fn copy_options(mut self, input: crate::model::CopyOption) -> Self {
             let mut v = self.copy_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.copy_options = Some(v);
             self
         }
@@ -2546,9 +2544,9 @@ pub mod create_portfolio_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3126,9 +3124,9 @@ pub mod create_product_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3484,10 +3482,10 @@ pub mod create_provisioned_product_plan_input {
         /// product.</p>
         pub fn provisioning_parameters(
             mut self,
-            input: impl Into<crate::model::UpdateProvisioningParameter>,
+            input: crate::model::UpdateProvisioningParameter,
         ) -> Self {
             let mut v = self.provisioning_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_parameters = Some(v);
             self
         }
@@ -3521,9 +3519,9 @@ pub mod create_provisioned_product_plan_input {
         ///
         /// <p>One or more tags.</p>
         /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3993,11 +3991,11 @@ pub mod create_service_action_input {
         /// </dl>
         pub fn definition(
             mut self,
-            k: impl Into<crate::model::ServiceActionDefinitionKey>,
+            k: crate::model::ServiceActionDefinitionKey,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.definition.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.definition = Some(hash_map);
             self
         }
@@ -10963,10 +10961,10 @@ pub mod execute_provisioned_product_service_action_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -16032,10 +16030,10 @@ pub mod provision_product_input {
         /// product.</p>
         pub fn provisioning_parameters(
             mut self,
-            input: impl Into<crate::model::ProvisioningParameter>,
+            input: crate::model::ProvisioningParameter,
         ) -> Self {
             let mut v = self.provisioning_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_parameters = Some(v);
             self
         }
@@ -16069,9 +16067,9 @@ pub mod provision_product_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16810,11 +16808,11 @@ pub mod search_products_input {
         /// all products to which the caller has access.</p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.filters = Some(hash_map);
             self
         }
@@ -17098,11 +17096,11 @@ pub mod search_products_as_admin_input {
         /// to which the administrator has access.</p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.filters = Some(hash_map);
             self
         }
@@ -17412,11 +17410,11 @@ pub mod search_provisioned_products_input {
         /// </p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProvisionedProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProvisionedProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.filters = Some(hash_map);
             self
         }
@@ -18334,9 +18332,9 @@ pub mod update_portfolio_input {
         /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
         ///
         /// <p>The tags to add.</p>
-        pub fn add_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn add_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.add_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_tags = Some(v);
             self
         }
@@ -18897,9 +18895,9 @@ pub mod update_product_input {
         /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
         ///
         /// <p>The tags to add to the product.</p>
-        pub fn add_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn add_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.add_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_tags = Some(v);
             self
         }
@@ -19241,10 +19239,10 @@ pub mod update_provisioned_product_input {
         /// <p>The new parameters.</p>
         pub fn provisioning_parameters(
             mut self,
-            input: impl Into<crate::model::UpdateProvisioningParameter>,
+            input: crate::model::UpdateProvisioningParameter,
         ) -> Self {
             let mut v = self.provisioning_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_parameters = Some(v);
             self
         }
@@ -19277,9 +19275,9 @@ pub mod update_provisioned_product_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -19547,11 +19545,11 @@ pub mod update_provisioned_product_properties_input {
         /// API or the Service Catalog console on that provisioned product.</p>
         pub fn provisioned_product_properties(
             mut self,
-            k: impl Into<crate::model::PropertyKey>,
+            k: crate::model::PropertyKey,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.provisioned_product_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.provisioned_product_properties = Some(hash_map);
             self
         }
@@ -20061,11 +20059,11 @@ pub mod update_service_action_input {
         /// <p>A map that defines the self-service action.</p>
         pub fn definition(
             mut self,
-            k: impl Into<crate::model::ServiceActionDefinitionKey>,
+            k: crate::model::ServiceActionDefinitionKey,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.definition.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.definition = Some(hash_map);
             self
         }

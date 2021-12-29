@@ -43,10 +43,10 @@ pub mod instance_access_control_attribute_configuration {
         /// instance.</p>
         pub fn access_control_attributes(
             mut self,
-            input: impl Into<crate::model::AccessControlAttribute>,
+            input: crate::model::AccessControlAttribute,
         ) -> Self {
             let mut v = self.access_control_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_control_attributes = Some(v);
             self
         }

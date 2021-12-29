@@ -226,12 +226,9 @@ pub mod table_auto_scaling_description {
         /// To override the contents of this collection use [`set_replicas`](Self::set_replicas).
         ///
         /// <p>Represents replicas of the global table.</p>
-        pub fn replicas(
-            mut self,
-            input: impl Into<crate::model::ReplicaAutoScalingDescription>,
-        ) -> Self {
+        pub fn replicas(mut self, input: crate::model::ReplicaAutoScalingDescription) -> Self {
             let mut v = self.replicas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicas = Some(v);
             self
         }
@@ -401,10 +398,10 @@ pub mod replica_auto_scaling_description {
         /// <p>Replica-specific global secondary index auto scaling settings.</p>
         pub fn global_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription>,
+            input: crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_indexes = Some(v);
             self
         }
@@ -735,10 +732,10 @@ pub mod auto_scaling_settings_description {
         /// <p>Information about the scaling policies.</p>
         pub fn scaling_policies(
             mut self,
-            input: impl Into<crate::model::AutoScalingPolicyDescription>,
+            input: crate::model::AutoScalingPolicyDescription,
         ) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_policies = Some(v);
             self
         }
@@ -1485,12 +1482,12 @@ pub mod replica_auto_scaling_update {
         /// modified.</p>
         pub fn replica_global_secondary_index_updates(
             mut self,
-            input: impl Into<crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate>,
+            input: crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate,
         ) -> Self {
             let mut v = self
                 .replica_global_secondary_index_updates
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_global_secondary_index_updates = Some(v);
             self
         }
@@ -2940,12 +2937,9 @@ pub mod table_description {
         /// <code>AttributeType</code> - The data type for the attribute.</p>
         /// </li>
         /// </ul>
-        pub fn attribute_definitions(
-            mut self,
-            input: impl Into<crate::model::AttributeDefinition>,
-        ) -> Self {
+        pub fn attribute_definitions(mut self, input: crate::model::AttributeDefinition) -> Self {
             let mut v = self.attribute_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_definitions = Some(v);
             self
         }
@@ -3018,9 +3012,9 @@ pub mod table_description {
         /// </ul>
         /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -3317,10 +3311,10 @@ pub mod table_description {
         /// be returned.</p>
         pub fn local_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::LocalSecondaryIndexDescription>,
+            input: crate::model::LocalSecondaryIndexDescription,
         ) -> Self {
             let mut v = self.local_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_secondary_indexes = Some(v);
             self
         }
@@ -3518,10 +3512,10 @@ pub mod table_description {
         /// be returned.</p>
         pub fn global_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndexDescription>,
+            input: crate::model::GlobalSecondaryIndexDescription,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_indexes = Some(v);
             self
         }
@@ -3742,9 +3736,9 @@ pub mod table_description {
         /// To override the contents of this collection use [`set_replicas`](Self::set_replicas).
         ///
         /// <p>Represents replicas of the table.</p>
-        pub fn replicas(mut self, input: impl Into<crate::model::ReplicaDescription>) -> Self {
+        pub fn replicas(mut self, input: crate::model::ReplicaDescription) -> Self {
             let mut v = self.replicas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicas = Some(v);
             self
         }
@@ -4967,10 +4961,10 @@ pub mod replica_description {
         /// <p>Replica-specific global secondary index settings.</p>
         pub fn global_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::ReplicaGlobalSecondaryIndexDescription>,
+            input: crate::model::ReplicaGlobalSecondaryIndexDescription,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_indexes = Some(v);
             self
         }
@@ -5675,9 +5669,9 @@ pub mod global_secondary_index_description {
         /// the same partition key physically close together, in sorted order by the sort key
         /// value.</p>
         /// </note>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -6675,9 +6669,9 @@ pub mod local_secondary_index_description {
         /// partition key physically close together, in sorted order by the sort key
         /// value.</p>
         /// </note>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -7499,10 +7493,10 @@ pub mod update_replication_group_member_action {
         /// <p>Replica-specific global secondary index settings.</p>
         pub fn global_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::ReplicaGlobalSecondaryIndex>,
+            input: crate::model::ReplicaGlobalSecondaryIndex,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_indexes = Some(v);
             self
         }
@@ -7778,10 +7772,10 @@ pub mod create_replication_group_member_action {
         /// <p>Replica-specific global secondary index settings.</p>
         pub fn global_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::ReplicaGlobalSecondaryIndex>,
+            input: crate::model::ReplicaGlobalSecondaryIndex,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_indexes = Some(v);
             self
         }
@@ -8340,9 +8334,9 @@ pub mod create_global_secondary_index_action {
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
         /// <p>The key schema for the global secondary index.</p>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -8691,10 +8685,10 @@ pub mod item_collection_metrics {
         pub fn item_collection_key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item_collection_key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item_collection_key = Some(hash_map);
             self
         }
@@ -8720,9 +8714,9 @@ pub mod item_collection_metrics {
         /// local secondary index is approaching its size limit.</p>
         /// <p>The estimate is subject to change over time; therefore, do not rely on the precision
         /// or accuracy of the estimate.</p>
-        pub fn size_estimate_range_gb(mut self, input: impl Into<f64>) -> Self {
+        pub fn size_estimate_range_gb(mut self, input: f64) -> Self {
             let mut v = self.size_estimate_range_gb.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.size_estimate_range_gb = Some(v);
             self
         }
@@ -9128,10 +9122,10 @@ pub mod consumed_capacity {
         pub fn local_secondary_indexes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Capacity>,
+            v: crate::model::Capacity,
         ) -> Self {
             let mut hash_map = self.local_secondary_indexes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.local_secondary_indexes = Some(hash_map);
             self
         }
@@ -9155,10 +9149,10 @@ pub mod consumed_capacity {
         pub fn global_secondary_indexes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Capacity>,
+            v: crate::model::Capacity,
         ) -> Self {
             let mut hash_map = self.global_secondary_indexes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.global_secondary_indexes = Some(hash_map);
             self
         }
@@ -10575,12 +10569,9 @@ pub mod expected_attribute_value {
         /// compares binary values.</p>
         /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a>
         /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn attribute_value_list(
-            mut self,
-            input: impl Into<crate::model::AttributeValue>,
-        ) -> Self {
+        pub fn attribute_value_list(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.attribute_value_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_value_list = Some(v);
             self
         }
@@ -11607,12 +11598,12 @@ pub mod replica_settings_description {
         /// <p>Replica global secondary index settings for the global table.</p>
         pub fn replica_global_secondary_index_settings(
             mut self,
-            input: impl Into<crate::model::ReplicaGlobalSecondaryIndexSettingsDescription>,
+            input: crate::model::ReplicaGlobalSecondaryIndexSettingsDescription,
         ) -> Self {
             let mut v = self
                 .replica_global_secondary_index_settings
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_global_secondary_index_settings = Some(v);
             self
         }
@@ -12100,12 +12091,12 @@ pub mod replica_settings_update {
         /// modified.</p>
         pub fn replica_global_secondary_index_settings_update(
             mut self,
-            input: impl Into<crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate>,
+            input: crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate,
         ) -> Self {
             let mut v = self
                 .replica_global_secondary_index_settings_update
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_global_secondary_index_settings_update = Some(v);
             self
         }
@@ -12516,12 +12507,9 @@ pub mod global_table_description {
         /// To override the contents of this collection use [`set_replication_group`](Self::set_replication_group).
         ///
         /// <p>The Regions where the global table has replicas.</p>
-        pub fn replication_group(
-            mut self,
-            input: impl Into<crate::model::ReplicaDescription>,
-        ) -> Self {
+        pub fn replication_group(mut self, input: crate::model::ReplicaDescription) -> Self {
             let mut v = self.replication_group.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_group = Some(v);
             self
         }
@@ -13551,10 +13539,10 @@ pub mod cancellation_reason {
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item = Some(hash_map);
             self
         }
@@ -13853,10 +13841,10 @@ pub mod update {
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
@@ -13944,10 +13932,10 @@ pub mod update {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -14183,10 +14171,10 @@ pub mod delete {
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
@@ -14259,10 +14247,10 @@ pub mod delete {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -14451,10 +14439,10 @@ pub mod put {
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item = Some(hash_map);
             self
         }
@@ -14530,10 +14518,10 @@ pub mod put {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -14714,10 +14702,10 @@ pub mod condition_check {
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
@@ -14790,10 +14778,10 @@ pub mod condition_check {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -14895,10 +14883,10 @@ pub mod item_response {
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item = Some(hash_map);
             self
         }
@@ -15075,10 +15063,10 @@ pub mod get {
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
@@ -15711,12 +15699,9 @@ pub mod condition {
         /// <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
         /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
         /// compares binary values.</p>
-        pub fn attribute_value_list(
-            mut self,
-            input: impl Into<crate::model::AttributeValue>,
-        ) -> Self {
+        pub fn attribute_value_list(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.attribute_value_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_value_list = Some(v);
             self
         }
@@ -16333,9 +16318,9 @@ pub mod local_secondary_index {
         /// partition key physically close together, in sorted order by the sort key
         /// value.</p>
         /// </note>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -16551,9 +16536,9 @@ pub mod global_secondary_index {
         /// partition key physically close together, in sorted order by the sort key
         /// value.</p>
         /// </note>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -16700,9 +16685,9 @@ pub mod global_table {
         /// To override the contents of this collection use [`set_replication_group`](Self::set_replication_group).
         ///
         /// <p>The Regions where the global table has replicas.</p>
-        pub fn replication_group(mut self, input: impl Into<crate::model::Replica>) -> Self {
+        pub fn replication_group(mut self, input: crate::model::Replica) -> Self {
             let mut v = self.replication_group.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_group = Some(v);
             self
         }
@@ -18197,9 +18182,9 @@ pub mod parameterized_statement {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p> The parameter values. </p>
-        pub fn parameters(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
+        pub fn parameters(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -18904,10 +18889,10 @@ pub mod source_table_feature_details {
         /// </p>
         pub fn local_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::LocalSecondaryIndexInfo>,
+            input: crate::model::LocalSecondaryIndexInfo,
         ) -> Self {
             let mut v = self.local_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_secondary_indexes = Some(v);
             self
         }
@@ -18930,10 +18915,10 @@ pub mod source_table_feature_details {
         /// table at the time of backup. </p>
         pub fn global_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndexInfo>,
+            input: crate::model::GlobalSecondaryIndexInfo,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_indexes = Some(v);
             self
         }
@@ -19147,9 +19132,9 @@ pub mod global_secondary_index_info {
         /// the same partition key physically close together, in sorted order by the sort key
         /// value.</p>
         /// </note>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -19362,9 +19347,9 @@ pub mod local_secondary_index_info {
         /// partition key physically close together, in sorted order by the sort key
         /// value.</p>
         /// </note>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -19601,9 +19586,9 @@ pub mod source_table_details {
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
         /// <p>Schema of the table. </p>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -20113,10 +20098,10 @@ pub mod delete_request {
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
@@ -20202,10 +20187,10 @@ pub mod put_request {
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item = Some(hash_map);
             self
         }
@@ -20451,12 +20436,10 @@ pub mod keys_and_attributes {
         /// with the items.</p>
         pub fn keys(
             mut self,
-            input: impl Into<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
+            input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         ) -> Self {
             let mut v = self.keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.keys = Some(v);
             self
         }
@@ -20763,10 +20746,10 @@ pub mod batch_statement_response {
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item = Some(hash_map);
             self
         }
@@ -21044,9 +21027,9 @@ pub mod batch_statement_request {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p> The parameters associated with a PartiQL statement in the batch request. </p>
-        pub fn parameters(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
+        pub fn parameters(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }

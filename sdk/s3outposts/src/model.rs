@@ -173,12 +173,9 @@ pub mod endpoint {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>The network interface of the endpoint.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }

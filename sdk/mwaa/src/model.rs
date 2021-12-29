@@ -522,9 +522,9 @@ pub mod metric_datum {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>Internal only API.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }

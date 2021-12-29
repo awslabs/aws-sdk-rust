@@ -269,12 +269,9 @@ pub mod load_balancer_attributes {
         /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).
         ///
         /// <p>Any additional attributes.</p>
-        pub fn additional_attributes(
-            mut self,
-            input: impl Into<crate::model::AdditionalAttribute>,
-        ) -> Self {
+        pub fn additional_attributes(mut self, input: crate::model::AdditionalAttribute) -> Self {
             let mut v = self.additional_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_attributes = Some(v);
             self
         }
@@ -775,9 +772,9 @@ pub mod tag_description {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1119,12 +1116,9 @@ pub mod load_balancer_description {
         /// To override the contents of this collection use [`set_listener_descriptions`](Self::set_listener_descriptions).
         ///
         /// <p>The listeners for the load balancer.</p>
-        pub fn listener_descriptions(
-            mut self,
-            input: impl Into<crate::model::ListenerDescription>,
-        ) -> Self {
+        pub fn listener_descriptions(mut self, input: crate::model::ListenerDescription) -> Self {
             let mut v = self.listener_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listener_descriptions = Some(v);
             self
         }
@@ -1153,10 +1147,10 @@ pub mod load_balancer_description {
         /// <p>Information about your EC2 instances.</p>
         pub fn backend_server_descriptions(
             mut self,
-            input: impl Into<crate::model::BackendServerDescription>,
+            input: crate::model::BackendServerDescription,
         ) -> Self {
             let mut v = self.backend_server_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backend_server_descriptions = Some(v);
             self
         }
@@ -1221,9 +1215,9 @@ pub mod load_balancer_description {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances for the load balancer.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -1714,10 +1708,10 @@ pub mod policies {
         /// <p>The stickiness policies created using <a>CreateAppCookieStickinessPolicy</a>.</p>
         pub fn app_cookie_stickiness_policies(
             mut self,
-            input: impl Into<crate::model::AppCookieStickinessPolicy>,
+            input: crate::model::AppCookieStickinessPolicy,
         ) -> Self {
             let mut v = self.app_cookie_stickiness_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_cookie_stickiness_policies = Some(v);
             self
         }
@@ -1736,10 +1730,10 @@ pub mod policies {
         /// <p>The stickiness policies created using <a>CreateLBCookieStickinessPolicy</a>.</p>
         pub fn lb_cookie_stickiness_policies(
             mut self,
-            input: impl Into<crate::model::LbCookieStickinessPolicy>,
+            input: crate::model::LbCookieStickinessPolicy,
         ) -> Self {
             let mut v = self.lb_cookie_stickiness_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lb_cookie_stickiness_policies = Some(v);
             self
         }
@@ -2259,10 +2253,10 @@ pub mod policy_type_description {
         /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
         pub fn policy_attribute_type_descriptions(
             mut self,
-            input: impl Into<crate::model::PolicyAttributeTypeDescription>,
+            input: crate::model::PolicyAttributeTypeDescription,
         ) -> Self {
             let mut v = self.policy_attribute_type_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_attribute_type_descriptions = Some(v);
             self
         }
@@ -2572,10 +2566,10 @@ pub mod policy_description {
         /// <p>The policy attributes.</p>
         pub fn policy_attribute_descriptions(
             mut self,
-            input: impl Into<crate::model::PolicyAttributeDescription>,
+            input: crate::model::PolicyAttributeDescription,
         ) -> Self {
             let mut v = self.policy_attribute_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_attribute_descriptions = Some(v);
             self
         }

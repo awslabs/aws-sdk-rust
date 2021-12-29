@@ -18,10 +18,10 @@ pub mod add_custom_routing_endpoints_input {
         /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
         pub fn endpoint_configurations(
             mut self,
-            input: impl Into<crate::model::CustomRoutingEndpointConfiguration>,
+            input: crate::model::CustomRoutingEndpointConfiguration,
         ) -> Self {
             let mut v = self.endpoint_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_configurations = Some(v);
             self
         }
@@ -409,9 +409,9 @@ pub mod allow_custom_routing_traffic_input {
         /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
         ///
         /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-        pub fn destination_ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn destination_ports(mut self, input: i32) -> Self {
             let mut v = self.destination_ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_ports = Some(v);
             self
         }
@@ -702,9 +702,9 @@ pub mod create_accelerator_input {
         /// <p>Create tags for an accelerator.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
         /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -971,9 +971,9 @@ pub mod create_custom_routing_accelerator_input {
         /// <p>Create tags for an accelerator.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
         /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1179,10 +1179,10 @@ pub mod create_custom_routing_endpoint_group_input {
         /// client traffic on.</p>
         pub fn destination_configurations(
             mut self,
-            input: impl Into<crate::model::CustomRoutingDestinationConfiguration>,
+            input: crate::model::CustomRoutingDestinationConfiguration,
         ) -> Self {
             let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_configurations = Some(v);
             self
         }
@@ -1387,9 +1387,9 @@ pub mod create_custom_routing_listener_input {
         /// <p>The port range to support for connections from clients to your accelerator.</p>
         /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
         /// endpoints for custom routing accelerators</a>.</p>
-        pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_ranges = Some(v);
             self
         }
@@ -1612,10 +1612,10 @@ pub mod create_endpoint_group_input {
         /// <p>The list of endpoint objects.</p>
         pub fn endpoint_configurations(
             mut self,
-            input: impl Into<crate::model::EndpointConfiguration>,
+            input: crate::model::EndpointConfiguration,
         ) -> Self {
             let mut v = self.endpoint_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_configurations = Some(v);
             self
         }
@@ -1739,9 +1739,9 @@ pub mod create_endpoint_group_input {
         /// and 1443, respectively, on the endpoints.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
         /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn port_overrides(mut self, input: impl Into<crate::model::PortOverride>) -> Self {
+        pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
             let mut v = self.port_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_overrides = Some(v);
             self
         }
@@ -1937,9 +1937,9 @@ pub mod create_listener_input {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
-        pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_ranges = Some(v);
             self
         }
@@ -3162,9 +3162,9 @@ pub mod deny_custom_routing_traffic_input {
         ///
         /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
         /// receiving traffic.</p>
-        pub fn destination_ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn destination_ports(mut self, input: i32) -> Self {
             let mut v = self.destination_ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_ports = Some(v);
             self
         }
@@ -6942,9 +6942,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8137,9 +8137,9 @@ pub mod update_custom_routing_listener_input {
         /// currently being used by a subnet endpoint, the call fails.</p>
         /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
         /// endpoints for custom routing accelerators</a>.</p>
-        pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_ranges = Some(v);
             self
         }
@@ -8330,10 +8330,10 @@ pub mod update_endpoint_group_input {
         /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
         pub fn endpoint_configurations(
             mut self,
-            input: impl Into<crate::model::EndpointConfiguration>,
+            input: crate::model::EndpointConfiguration,
         ) -> Self {
             let mut v = self.endpoint_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_configurations = Some(v);
             self
         }
@@ -8442,9 +8442,9 @@ pub mod update_endpoint_group_input {
         /// and 1443, respectively, on the endpoints.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
         /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn port_overrides(mut self, input: impl Into<crate::model::PortOverride>) -> Self {
+        pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
             let mut v = self.port_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_overrides = Some(v);
             self
         }
@@ -8631,9 +8631,9 @@ pub mod update_listener_input {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
-        pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_ranges = Some(v);
             self
         }

@@ -179,10 +179,10 @@ pub mod get_recommendation_summaries_output {
         /// <p>An array of objects that summarize a recommendation.</p>
         pub fn recommendation_summaries(
             mut self,
-            input: impl Into<crate::model::RecommendationSummary>,
+            input: crate::model::RecommendationSummary,
         ) -> Self {
             let mut v = self.recommendation_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_summaries = Some(v);
             self
         }
@@ -279,10 +279,10 @@ pub mod get_recommendation_preferences_output {
         /// <p>An array of objects that describe recommendation preferences.</p>
         pub fn recommendation_preferences_details(
             mut self,
-            input: impl Into<crate::model::RecommendationPreferencesDetail>,
+            input: crate::model::RecommendationPreferencesDetail,
         ) -> Self {
             let mut v = self.recommendation_preferences_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_preferences_details = Some(v);
             self
         }
@@ -381,10 +381,10 @@ pub mod get_lambda_function_recommendations_output {
         /// <p>An array of objects that describe function recommendations.</p>
         pub fn lambda_function_recommendations(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionRecommendation>,
+            input: crate::model::LambdaFunctionRecommendation,
         ) -> Self {
             let mut v = self.lambda_function_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lambda_function_recommendations = Some(v);
             self
         }
@@ -470,10 +470,10 @@ pub mod get_enrollment_statuses_for_organization_output {
         /// accounts.</p>
         pub fn account_enrollment_statuses(
             mut self,
-            input: impl Into<crate::model::AccountEnrollmentStatus>,
+            input: crate::model::AccountEnrollmentStatus,
         ) -> Self {
             let mut v = self.account_enrollment_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_enrollment_statuses = Some(v);
             self
         }
@@ -820,12 +820,12 @@ pub mod get_ec2_recommendation_projected_metrics_output {
         /// <p>An array of objects that describes projected metrics.</p>
         pub fn recommended_option_projected_metrics(
             mut self,
-            input: impl Into<crate::model::RecommendedOptionProjectedMetric>,
+            input: crate::model::RecommendedOptionProjectedMetric,
         ) -> Self {
             let mut v = self
                 .recommended_option_projected_metrics
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommended_option_projected_metrics = Some(v);
             self
         }
@@ -932,10 +932,10 @@ pub mod get_ec2_instance_recommendations_output {
         /// <p>An array of objects that describe instance recommendations.</p>
         pub fn instance_recommendations(
             mut self,
-            input: impl Into<crate::model::InstanceRecommendation>,
+            input: crate::model::InstanceRecommendation,
         ) -> Self {
             let mut v = self.instance_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_recommendations = Some(v);
             self
         }
@@ -954,9 +954,9 @@ pub mod get_ec2_instance_recommendations_output {
         /// <p>An array of objects that describe errors of the request.</p>
         /// <p>For example, an error is returned if you request recommendations for an instance of an
         /// unsupported instance family.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::GetRecommendationError>) -> Self {
+        pub fn errors(mut self, input: crate::model::GetRecommendationError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -1063,12 +1063,9 @@ pub mod get_ebs_volume_recommendations_output {
         /// To override the contents of this collection use [`set_volume_recommendations`](Self::set_volume_recommendations).
         ///
         /// <p>An array of objects that describe volume recommendations.</p>
-        pub fn volume_recommendations(
-            mut self,
-            input: impl Into<crate::model::VolumeRecommendation>,
-        ) -> Self {
+        pub fn volume_recommendations(mut self, input: crate::model::VolumeRecommendation) -> Self {
             let mut v = self.volume_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_recommendations = Some(v);
             self
         }
@@ -1087,9 +1084,9 @@ pub mod get_ebs_volume_recommendations_output {
         /// <p>An array of objects that describe errors of the request.</p>
         /// <p>For example, an error is returned if you request recommendations for an unsupported
         /// volume.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::GetRecommendationError>) -> Self {
+        pub fn errors(mut self, input: crate::model::GetRecommendationError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -1205,10 +1202,10 @@ pub mod get_auto_scaling_group_recommendations_output {
         /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
         pub fn auto_scaling_group_recommendations(
             mut self,
-            input: impl Into<crate::model::AutoScalingGroupRecommendation>,
+            input: crate::model::AutoScalingGroupRecommendation,
         ) -> Self {
             let mut v = self.auto_scaling_group_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_scaling_group_recommendations = Some(v);
             self
         }
@@ -1227,9 +1224,9 @@ pub mod get_auto_scaling_group_recommendations_output {
         /// <p>An array of objects that describe errors of the request.</p>
         /// <p>For example, an error is returned if you request recommendations for an unsupported
         /// Auto Scaling group.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::GetRecommendationError>) -> Self {
+        pub fn errors(mut self, input: crate::model::GetRecommendationError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -1665,10 +1662,10 @@ pub mod describe_recommendation_export_jobs_output {
         /// <p>An array of objects that describe recommendation export jobs.</p>
         pub fn recommendation_export_jobs(
             mut self,
-            input: impl Into<crate::model::RecommendationExportJob>,
+            input: crate::model::RecommendationExportJob,
         ) -> Self {
             let mut v = self.recommendation_export_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_export_jobs = Some(v);
             self
         }

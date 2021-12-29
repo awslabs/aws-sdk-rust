@@ -456,8 +456,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
-        pub fn qualification_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_request_id(inp);
+        pub fn qualification_request_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.qualification_request_id(signature.into());
             self
         }
         /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
@@ -472,8 +475,8 @@ pub mod fluent_builders {
         /// The value of the Qualification. You can omit this value if you are using the
         /// presence or absence of the Qualification as the basis for a HIT requirement.
         /// </p>
-        pub fn integer_value(mut self, inp: i32) -> Self {
-            self.inner = self.inner.integer_value(inp);
+        pub fn integer_value(mut self, signature: i32) -> Self {
+            self.inner = self.inner.integer_value(signature);
             self
         }
         /// <p>
@@ -576,8 +579,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
         /// </p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        pub fn assignment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(signature.into());
             self
         }
         /// <p>
@@ -593,8 +596,8 @@ pub mod fluent_builders {
         /// <p>
         /// A message for the Worker, which the Worker can see in the Status section of the web site.
         /// </p>
-        pub fn requester_feedback(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_feedback(inp);
+        pub fn requester_feedback(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_feedback(signature.into());
             self
         }
         /// <p>
@@ -610,8 +613,8 @@ pub mod fluent_builders {
         /// <p>
         /// A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.
         /// </p>
-        pub fn override_rejection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.override_rejection(inp);
+        pub fn override_rejection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.override_rejection(signature);
             self
         }
         /// <p>
@@ -702,8 +705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
@@ -718,8 +721,8 @@ pub mod fluent_builders {
         /// The ID of the Worker to whom the Qualification is being assigned.
         /// Worker IDs are included with submitted HIT assignments and Qualification requests.
         /// </p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(signature.into());
             self
         }
         /// <p>
@@ -731,8 +734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the Qualification to assign.</p>
-        pub fn integer_value(mut self, inp: i32) -> Self {
-            self.inner = self.inner.integer_value(inp);
+        pub fn integer_value(mut self, signature: i32) -> Self {
+            self.inner = self.inner.integer_value(signature);
             self
         }
         /// <p>The value of the Qualification to assign.</p>
@@ -745,8 +748,8 @@ pub mod fluent_builders {
         /// saying that the qualification was assigned to the Worker.
         /// Note: this is true by default.
         /// </p>
-        pub fn send_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.send_notification(inp);
+        pub fn send_notification(mut self, signature: bool) -> Self {
+            self.inner = self.inner.send_notification(signature);
             self
         }
         /// <p>
@@ -841,8 +844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the HIT to extend.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>The ID of the HIT to extend.</p>
@@ -851,8 +854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of additional assignments to request for this HIT.</p>
-        pub fn number_of_additional_assignments(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_additional_assignments(inp);
+        pub fn number_of_additional_assignments(mut self, signature: i32) -> Self {
+            self.inner = self.inner.number_of_additional_assignments(signature);
             self
         }
         /// <p>The number of additional assignments to request for this HIT.</p>
@@ -871,8 +874,8 @@ pub mod fluent_builders {
         /// from a previous call using the same <code>UniqueRequestToken</code>,
         /// subsequent calls will return an error with a message containing the request ID.
         /// </p>
-        pub fn unique_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_request_token(inp);
+        pub fn unique_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_request_token(signature.into());
             self
         }
         /// <p>
@@ -969,8 +972,8 @@ pub mod fluent_builders {
         /// <p>
         /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
         /// </p>
-        pub fn max_assignments(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_assignments(inp);
+        pub fn max_assignments(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_assignments(signature);
             self
         }
         /// <p>
@@ -985,8 +988,8 @@ pub mod fluent_builders {
         /// after which the assignment is considered Approved automatically
         /// unless the Requester explicitly rejects it.
         /// </p>
-        pub fn auto_approval_delay_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.auto_approval_delay_in_seconds(inp);
+        pub fn auto_approval_delay_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.auto_approval_delay_in_seconds(signature);
             self
         }
         /// <p>
@@ -1006,8 +1009,8 @@ pub mod fluent_builders {
         /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
         /// even if not all of the assignments for the HIT have been accepted.
         /// </p>
-        pub fn lifetime_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.lifetime_in_seconds(inp);
+        pub fn lifetime_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.lifetime_in_seconds(signature);
             self
         }
         /// <p>
@@ -1026,8 +1029,8 @@ pub mod fluent_builders {
         /// (that is, its lifetime has not elapsed), the assignment becomes available
         /// for other users to find and accept.
         /// </p>
-        pub fn assignment_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.assignment_duration_in_seconds(inp);
+        pub fn assignment_duration_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.assignment_duration_in_seconds(signature);
             self
         }
         /// <p>
@@ -1047,8 +1050,8 @@ pub mod fluent_builders {
         /// <p>
         /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
         /// </p>
-        pub fn reward(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reward(inp);
+        pub fn reward(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reward(signature.into());
             self
         }
         /// <p>
@@ -1063,8 +1066,8 @@ pub mod fluent_builders {
         /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
         /// and everywhere the HIT is mentioned.
         /// </p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(signature.into());
             self
         }
         /// <p>
@@ -1080,8 +1083,8 @@ pub mod fluent_builders {
         /// One or more words or phrases that describe the HIT, separated by commas.
         /// These words are used in searches to find HITs.
         /// </p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(signature.into());
             self
         }
         /// <p>
@@ -1098,8 +1101,8 @@ pub mod fluent_builders {
         /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
         /// information to evaluate the HIT before accepting it.
         /// </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>
@@ -1121,8 +1124,8 @@ pub mod fluent_builders {
         /// 64 kilobytes (65,535 bytes) in size, including whitespace.
         /// </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
-        pub fn question(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question(inp);
+        pub fn question(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question(signature.into());
             self
         }
         /// <p>
@@ -1153,8 +1156,8 @@ pub mod fluent_builders {
         /// The RequesterAnnotation parameter may be different for each HIT you submit.
         /// It does not affect how your HITs are grouped.
         /// </p>
-        pub fn requester_annotation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_annotation(inp);
+        pub fn requester_annotation(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_annotation(signature.into());
             self
         }
         /// <p>
@@ -1193,9 +1196,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn qualification_requirements(
             mut self,
-            inp: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
-            self.inner = self.inner.qualification_requirements(inp);
+            self.inner = self.inner.qualification_requirements(input);
             self
         }
         /// <p>
@@ -1229,8 +1232,8 @@ pub mod fluent_builders {
         /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
         /// </p>
         /// </note>
-        pub fn unique_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_request_token(inp);
+        pub fn unique_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_request_token(signature.into());
             self
         }
         /// <p>
@@ -1260,8 +1263,8 @@ pub mod fluent_builders {
         /// The Assignment-level Review Policy applies to the assignments under the HIT.
         /// You can specify for Mechanical Turk to take various actions based on the policy.
         /// </p>
-        pub fn assignment_review_policy(mut self, inp: crate::model::ReviewPolicy) -> Self {
-            self.inner = self.inner.assignment_review_policy(inp);
+        pub fn assignment_review_policy(mut self, signature: crate::model::ReviewPolicy) -> Self {
+            self.inner = self.inner.assignment_review_policy(signature);
             self
         }
         /// <p>
@@ -1279,8 +1282,8 @@ pub mod fluent_builders {
         /// The HIT-level Review Policy applies to the HIT.
         /// You can specify for Mechanical Turk to take various actions based on the policy.
         /// </p>
-        pub fn hit_review_policy(mut self, inp: crate::model::ReviewPolicy) -> Self {
-            self.inner = self.inner.hit_review_policy(inp);
+        pub fn hit_review_policy(mut self, signature: crate::model::ReviewPolicy) -> Self {
+            self.inner = self.inner.hit_review_policy(signature);
             self
         }
         /// <p>
@@ -1301,8 +1304,8 @@ pub mod fluent_builders {
         /// <p>
         /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
         /// </p>
-        pub fn hit_layout_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_layout_id(inp);
+        pub fn hit_layout_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_layout_id(signature.into());
             self
         }
         /// <p>
@@ -1327,11 +1330,8 @@ pub mod fluent_builders {
         /// If the HITLayoutId is provided, any placeholder values must be filled in with values
         /// using the HITLayoutParameter structure. For more information, see HITLayout.
         /// </p>
-        pub fn hit_layout_parameters(
-            mut self,
-            inp: impl Into<crate::model::HitLayoutParameter>,
-        ) -> Self {
-            self.inner = self.inner.hit_layout_parameters(inp);
+        pub fn hit_layout_parameters(mut self, input: crate::model::HitLayoutParameter) -> Self {
+            self.inner = self.inner.hit_layout_parameters(input);
             self
         }
         /// <p>
@@ -1415,8 +1415,8 @@ pub mod fluent_builders {
         /// after which the assignment is considered Approved automatically
         /// unless the Requester explicitly rejects it.
         /// </p>
-        pub fn auto_approval_delay_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.auto_approval_delay_in_seconds(inp);
+        pub fn auto_approval_delay_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.auto_approval_delay_in_seconds(signature);
             self
         }
         /// <p>
@@ -1438,8 +1438,8 @@ pub mod fluent_builders {
         /// (that is, its lifetime has not elapsed), the assignment becomes available
         /// for other users to find and accept.
         /// </p>
-        pub fn assignment_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.assignment_duration_in_seconds(inp);
+        pub fn assignment_duration_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.assignment_duration_in_seconds(signature);
             self
         }
         /// <p>
@@ -1459,8 +1459,8 @@ pub mod fluent_builders {
         /// <p>
         /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
         /// </p>
-        pub fn reward(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reward(inp);
+        pub fn reward(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reward(signature.into());
             self
         }
         /// <p>
@@ -1475,8 +1475,8 @@ pub mod fluent_builders {
         /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
         /// and everywhere the HIT is mentioned.
         /// </p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(signature.into());
             self
         }
         /// <p>
@@ -1492,8 +1492,8 @@ pub mod fluent_builders {
         /// One or more words or phrases that describe the HIT, separated by commas.
         /// These words are used in searches to find HITs.
         /// </p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(signature.into());
             self
         }
         /// <p>
@@ -1510,8 +1510,8 @@ pub mod fluent_builders {
         /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
         /// information to evaluate the HIT before accepting it.
         /// </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>
@@ -1538,9 +1538,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn qualification_requirements(
             mut self,
-            inp: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
-            self.inner = self.inner.qualification_requirements(inp);
+            self.inner = self.inner.qualification_requirements(input);
             self
         }
         /// <p>
@@ -1636,8 +1636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The HIT type ID you want to create this HIT with.</p>
-        pub fn hit_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_type_id(inp);
+        pub fn hit_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_type_id(signature.into());
             self
         }
         /// <p>The HIT type ID you want to create this HIT with.</p>
@@ -1648,8 +1648,8 @@ pub mod fluent_builders {
         /// <p>
         /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
         /// </p>
-        pub fn max_assignments(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_assignments(inp);
+        pub fn max_assignments(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_assignments(signature);
             self
         }
         /// <p>
@@ -1664,8 +1664,8 @@ pub mod fluent_builders {
         /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
         /// even if not all of the assignments for the HIT have been accepted.
         /// </p>
-        pub fn lifetime_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.lifetime_in_seconds(inp);
+        pub fn lifetime_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.lifetime_in_seconds(signature);
             self
         }
         /// <p>
@@ -1686,8 +1686,8 @@ pub mod fluent_builders {
         /// 64 kilobytes (65,535 bytes) in size, including whitespace.
         /// </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
-        pub fn question(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question(inp);
+        pub fn question(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question(signature.into());
             self
         }
         /// <p>
@@ -1718,8 +1718,8 @@ pub mod fluent_builders {
         /// The RequesterAnnotation parameter may be different for each HIT you submit.
         /// It does not affect how your HITs are grouped.
         /// </p>
-        pub fn requester_annotation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_annotation(inp);
+        pub fn requester_annotation(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_annotation(signature.into());
             self
         }
         /// <p>
@@ -1760,8 +1760,8 @@ pub mod fluent_builders {
         /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
         /// </p>
         /// </note>
-        pub fn unique_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_request_token(inp);
+        pub fn unique_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_request_token(signature.into());
             self
         }
         /// <p>
@@ -1791,8 +1791,8 @@ pub mod fluent_builders {
         /// The Assignment-level Review Policy applies to the assignments under the HIT.
         /// You can specify for Mechanical Turk to take various actions based on the policy.
         /// </p>
-        pub fn assignment_review_policy(mut self, inp: crate::model::ReviewPolicy) -> Self {
-            self.inner = self.inner.assignment_review_policy(inp);
+        pub fn assignment_review_policy(mut self, signature: crate::model::ReviewPolicy) -> Self {
+            self.inner = self.inner.assignment_review_policy(signature);
             self
         }
         /// <p>
@@ -1810,8 +1810,8 @@ pub mod fluent_builders {
         /// The HIT-level Review Policy applies to the HIT.
         /// You can specify for Mechanical Turk to take various actions based on the policy.
         /// </p>
-        pub fn hit_review_policy(mut self, inp: crate::model::ReviewPolicy) -> Self {
-            self.inner = self.inner.hit_review_policy(inp);
+        pub fn hit_review_policy(mut self, signature: crate::model::ReviewPolicy) -> Self {
+            self.inner = self.inner.hit_review_policy(signature);
             self
         }
         /// <p>
@@ -1832,8 +1832,8 @@ pub mod fluent_builders {
         /// <p>
         /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
         /// </p>
-        pub fn hit_layout_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_layout_id(inp);
+        pub fn hit_layout_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_layout_id(signature.into());
             self
         }
         /// <p>
@@ -1858,11 +1858,8 @@ pub mod fluent_builders {
         /// If the HITLayoutId is provided, any placeholder values must be filled in with values
         /// using the HITLayoutParameter structure. For more information, see HITLayout.
         /// </p>
-        pub fn hit_layout_parameters(
-            mut self,
-            inp: impl Into<crate::model::HitLayoutParameter>,
-        ) -> Self {
-            self.inner = self.inner.hit_layout_parameters(inp);
+        pub fn hit_layout_parameters(mut self, input: crate::model::HitLayoutParameter) -> Self {
+            self.inner = self.inner.hit_layout_parameters(input);
             self
         }
         /// <p>
@@ -1946,8 +1943,8 @@ pub mod fluent_builders {
         /// is used to represent the Qualification to Workers, and to find the
         /// type using a Qualification type search. It must be unique across all
         /// of your Qualification types.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p> The name you give to the Qualification type. The type name
@@ -1961,8 +1958,8 @@ pub mod fluent_builders {
         /// <p>One or more words or phrases that describe the Qualification
         /// type, separated by commas. The keywords of a type make the type
         /// easier to find during a search.</p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(signature.into());
             self
         }
         /// <p>One or more words or phrases that describe the Qualification
@@ -1975,8 +1972,8 @@ pub mod fluent_builders {
         /// <p>A long description for the Qualification type. On the Amazon
         /// Mechanical Turk website, the long description is displayed when a
         /// Worker examines a Qualification type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A long description for the Qualification type. On the Amazon
@@ -1990,9 +1987,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Valid values are: Active | Inactive</p>
         pub fn qualification_type_status(
             mut self,
-            inp: crate::model::QualificationTypeStatus,
+            signature: crate::model::QualificationTypeStatus,
         ) -> Self {
-            self.inner = self.inner.qualification_type_status(inp);
+            self.inner = self.inner.qualification_type_status(signature);
             self
         }
         /// <p>The initial status of the Qualification type.</p>
@@ -2014,8 +2011,8 @@ pub mod fluent_builders {
         /// with retries enabled. If you want to disable retries, you must delete
         /// existing retry-enabled Qualification type and then create a new
         /// Qualification type with retries disabled.</p>
-        pub fn retry_delay_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.retry_delay_in_seconds(inp);
+        pub fn retry_delay_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.retry_delay_in_seconds(signature);
             self
         }
         /// <p>The number of seconds that a Worker must wait after
@@ -2044,8 +2041,8 @@ pub mod fluent_builders {
         /// AutoGranted is true.</p>
         /// <p>Constraints: None. If not specified, the Worker may request
         /// the Qualification without answering any questions.</p>
-        pub fn test(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.test(inp);
+        pub fn test(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.test(signature.into());
             self
         }
         /// <p>
@@ -2069,8 +2066,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must not be longer than 65535 bytes.</p>
         /// <p>Constraints: None. If not specified, you must process
         /// Qualification requests manually.</p>
-        pub fn answer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.answer_key(inp);
+        pub fn answer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.answer_key(signature.into());
             self
         }
         /// <p>The answers to the Qualification test specified in the Test
@@ -2085,8 +2082,8 @@ pub mod fluent_builders {
         /// <p>The number of seconds the Worker has to complete the
         /// Qualification test, starting from the time the Worker requests the
         /// Qualification.</p>
-        pub fn test_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.test_duration_in_seconds(inp);
+        pub fn test_duration_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.test_duration_in_seconds(signature);
             self
         }
         /// <p>The number of seconds the Worker has to complete the
@@ -2101,8 +2098,8 @@ pub mod fluent_builders {
         /// Qualification test.</p>
         /// <p>Constraints: If the Test parameter is specified, this
         /// parameter cannot be true.</p>
-        pub fn auto_granted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_granted(inp);
+        pub fn auto_granted(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_granted(signature);
             self
         }
         /// <p>Specifies whether requests for the Qualification type are
@@ -2117,8 +2114,8 @@ pub mod fluent_builders {
         /// <p>The Qualification value to use for automatically granted
         /// Qualifications. This parameter is used only if the AutoGranted
         /// parameter is true.</p>
-        pub fn auto_granted_value(mut self, inp: i32) -> Self {
-            self.inner = self.inner.auto_granted_value(inp);
+        pub fn auto_granted_value(mut self, signature: i32) -> Self {
+            self.inner = self.inner.auto_granted_value(signature);
             self
         }
         /// <p>The Qualification value to use for automatically granted
@@ -2189,8 +2186,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Worker to block.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(signature.into());
             self
         }
         /// <p>The ID of the Worker to block.</p>
@@ -2199,8 +2196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
@@ -2304,8 +2301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the HIT to be deleted.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>The ID of the HIT to be deleted.</p>
@@ -2392,8 +2389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the QualificationType to dispose.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>The ID of the QualificationType to dispose.</p>
@@ -2465,8 +2462,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Worker to unblock.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(signature.into());
             self
         }
         /// <p>The ID of the Worker to unblock.</p>
@@ -2475,8 +2472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
@@ -2554,8 +2551,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(signature.into());
             self
         }
         /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
@@ -2564,8 +2561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
@@ -2577,8 +2574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
@@ -2711,8 +2708,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Assignment to be retrieved.</p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        pub fn assignment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(signature.into());
             self
         }
         /// <p>The ID of the Assignment to be retrieved.</p>
@@ -2802,8 +2799,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the assignment that contains the question with a
         /// FileUploadAnswer.</p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        pub fn assignment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(signature.into());
             self
         }
         /// <p>The ID of the assignment that contains the question with a
@@ -2817,8 +2814,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the question with a FileUploadAnswer, as
         /// specified in the QuestionForm of the HIT.</p>
-        pub fn question_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question_identifier(inp);
+        pub fn question_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question_identifier(signature.into());
             self
         }
         /// <p>The identifier of the question with a FileUploadAnswer, as
@@ -2893,8 +2890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the HIT to be retrieved.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>The ID of the HIT to be retrieved.</p>
@@ -2976,8 +2973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the QualificationType.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>The ID of the QualificationType.</p>
@@ -2989,8 +2986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Worker whose Qualification is being updated.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(signature.into());
             self
         }
         /// <p>The ID of the Worker whose Qualification is being updated.</p>
@@ -3061,8 +3058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the QualificationType.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>The ID of the QualificationType.</p>
@@ -3160,8 +3157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the HIT.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>The ID of the HIT.</p>
@@ -3170,8 +3167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token</p>
@@ -3180,8 +3177,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3195,11 +3192,8 @@ pub mod fluent_builders {
         ///
         /// <p>The status of the assignments to return: Submitted | Approved
         /// | Rejected</p>
-        pub fn assignment_statuses(
-            mut self,
-            inp: impl Into<crate::model::AssignmentStatus>,
-        ) -> Self {
-            self.inner = self.inner.assignment_statuses(inp);
+        pub fn assignment_statuses(mut self, input: crate::model::AssignmentStatus) -> Self {
+            self.inner = self.inner.assignment_statuses(input);
             self
         }
         /// <p>The status of the assignments to return: Submitted | Approved
@@ -3280,8 +3274,8 @@ pub mod fluent_builders {
         /// retrieve. If not specified, all bonus payments for all assignments
         /// for the given HIT are returned. Either the HITId parameter or the
         /// AssignmentId parameter must be specified</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>The ID of the HIT associated with the bonus payments to
@@ -3296,8 +3290,8 @@ pub mod fluent_builders {
         /// to retrieve. If specified, only bonus payments for the given
         /// assignment are returned. Either the HITId parameter or the
         /// AssignmentId parameter must be specified</p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        pub fn assignment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(signature.into());
             self
         }
         /// <p>The ID of the assignment associated with the bonus payments
@@ -3312,8 +3306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token</p>
@@ -3322,8 +3316,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3398,8 +3392,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token</p>
@@ -3408,8 +3402,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3485,8 +3479,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the Qualification type to use when querying HITs.
         /// </p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>
@@ -3500,8 +3494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination Token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination Token</p>
@@ -3512,8 +3506,8 @@ pub mod fluent_builders {
         /// <p>
         /// Limit the number of results returned.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -3591,8 +3585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the QualificationType.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>The ID of the QualificationType.</p>
@@ -3607,8 +3601,8 @@ pub mod fluent_builders {
         /// returns a pagination token in the response. You can use this pagination token
         /// to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
@@ -3621,8 +3615,8 @@ pub mod fluent_builders {
         }
         /// <p> The maximum number of results to return in a single call.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> The maximum number of results to return in a single call.
@@ -3699,8 +3693,8 @@ pub mod fluent_builders {
         /// <p> A text query against all of the searchable attributes of
         /// Qualification types.
         /// </p>
-        pub fn query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query(inp);
+        pub fn query(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query(signature.into());
             self
         }
         /// <p> A text query against all of the searchable attributes of
@@ -3718,8 +3712,8 @@ pub mod fluent_builders {
         /// Qualification types, including those managed by the system, are
         /// considered. Valid values are True | False.
         /// </p>
-        pub fn must_be_requestable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.must_be_requestable(inp);
+        pub fn must_be_requestable(mut self, signature: bool) -> Self {
+            self.inner = self.inner.must_be_requestable(signature);
             self
         }
         /// <p>Specifies that only Qualification types that a user can
@@ -3738,8 +3732,8 @@ pub mod fluent_builders {
         /// created are returned. If false, the operation returns all
         /// Qualification types.
         /// </p>
-        pub fn must_be_owned_by_caller(mut self, inp: bool) -> Self {
-            self.inner = self.inner.must_be_owned_by_caller(inp);
+        pub fn must_be_owned_by_caller(mut self, signature: bool) -> Self {
+            self.inner = self.inner.must_be_owned_by_caller(signature);
             self
         }
         /// <p> Specifies that only Qualification types that the Requester
@@ -3754,8 +3748,8 @@ pub mod fluent_builders {
         /// returns a pagination token in the response. You can use this pagination token
         /// to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
@@ -3768,8 +3762,8 @@ pub mod fluent_builders {
         }
         /// <p> The maximum number of results to return in a single call.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> The maximum number of results to return in a single call.
@@ -3845,8 +3839,8 @@ pub mod fluent_builders {
         /// The ID of the HIT type of the HITs to consider for the query.
         /// If not specified, all HITs for the Reviewer are considered
         /// </p>
-        pub fn hit_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_type_id(inp);
+        pub fn hit_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_type_id(signature.into());
             self
         }
         /// <p>
@@ -3861,8 +3855,8 @@ pub mod fluent_builders {
         /// Can be either <code>Reviewable</code> or <code>Reviewing</code>.
         /// Reviewable is the default value.
         /// </p>
-        pub fn status(mut self, inp: crate::model::ReviewableHitStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::ReviewableHitStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>
@@ -3877,8 +3871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination Token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination Token</p>
@@ -3889,8 +3883,8 @@ pub mod fluent_builders {
         /// <p>
         /// Limit the number of results returned.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -3967,8 +3961,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the HIT to retrieve review results for.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>The unique identifier of the HIT to retrieve review results for.</p>
@@ -3985,8 +3979,8 @@ pub mod fluent_builders {
         /// If omitted, the default behavior is to retrieve all data for both policy levels.
         /// For a list of all the described policies, see Review Policies.
         /// </p>
-        pub fn policy_levels(mut self, inp: impl Into<crate::model::ReviewPolicyLevel>) -> Self {
-            self.inner = self.inner.policy_levels(inp);
+        pub fn policy_levels(mut self, input: crate::model::ReviewPolicyLevel) -> Self {
+            self.inner = self.inner.policy_levels(input);
             self
         }
         /// <p>
@@ -4005,8 +3999,8 @@ pub mod fluent_builders {
         /// Specify if the operation should retrieve a list of the actions taken executing
         /// the Review Policies and their outcomes.
         /// </p>
-        pub fn retrieve_actions(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retrieve_actions(inp);
+        pub fn retrieve_actions(mut self, signature: bool) -> Self {
+            self.inner = self.inner.retrieve_actions(signature);
             self
         }
         /// <p>
@@ -4020,8 +4014,8 @@ pub mod fluent_builders {
         /// <p>
         /// Specify if the operation should retrieve a list of the results computed by the Review Policies.
         /// </p>
-        pub fn retrieve_results(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retrieve_results(inp);
+        pub fn retrieve_results(mut self, signature: bool) -> Self {
+            self.inner = self.inner.retrieve_results(signature);
             self
         }
         /// <p>
@@ -4032,8 +4026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token</p>
@@ -4042,8 +4036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limit the number of results returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Limit the number of results returned.</p>
@@ -4112,8 +4106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token</p>
@@ -4122,8 +4116,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -4196,8 +4190,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Qualification type of the Qualifications to
         /// return.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>The ID of the Qualification type of the Qualifications to
@@ -4213,8 +4207,8 @@ pub mod fluent_builders {
         /// The status of the Qualifications to return.
         /// Can be <code>Granted | Revoked</code>.
         /// </p>
-        pub fn status(mut self, inp: crate::model::QualificationStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::QualificationStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>
@@ -4229,8 +4223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination Token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination Token</p>
@@ -4241,8 +4235,8 @@ pub mod fluent_builders {
         /// <p>
         /// Limit the number of results returned.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -4323,8 +4317,8 @@ pub mod fluent_builders {
         }
         /// <p>The subject line of the email message to send. Can include up
         /// to 200 characters.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject(inp);
+        pub fn subject(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject(signature.into());
             self
         }
         /// <p>The subject line of the email message to send. Can include up
@@ -4335,8 +4329,8 @@ pub mod fluent_builders {
         }
         /// <p>The text of the email message to send. Can include up to
         /// 4,096 characters</p>
-        pub fn message_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_text(inp);
+        pub fn message_text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_text(signature.into());
             self
         }
         /// <p>The text of the email message to send. Can include up to
@@ -4352,8 +4346,8 @@ pub mod fluent_builders {
         /// <p>A list of Worker IDs you wish to notify. You
         /// can notify upto
         /// 100 Workers at a time.</p>
-        pub fn worker_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_ids(inp);
+        pub fn worker_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_ids(input.into());
             self
         }
         /// <p>A list of Worker IDs you wish to notify. You
@@ -4441,8 +4435,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
         /// </p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        pub fn assignment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(signature.into());
             self
         }
         /// <p>
@@ -4458,8 +4452,8 @@ pub mod fluent_builders {
         /// <p>
         /// A message for the Worker, which the Worker can see in the Status section of the web site.
         /// </p>
-        pub fn requester_feedback(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_feedback(inp);
+        pub fn requester_feedback(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_feedback(signature.into());
             self
         }
         /// <p>
@@ -4543,8 +4537,11 @@ pub mod fluent_builders {
         /// <code>ListQualificationRequests</code>
         /// operation.
         /// </p>
-        pub fn qualification_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_request_id(inp);
+        pub fn qualification_request_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.qualification_request_id(signature.into());
             self
         }
         /// <p>
@@ -4561,8 +4558,8 @@ pub mod fluent_builders {
         }
         /// <p>A text message explaining why the request was rejected, to be
         /// shown to the Worker who made the request.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>A text message explaining why the request was rejected, to be
@@ -4645,8 +4642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Worker being paid the bonus.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(signature.into());
             self
         }
         /// <p>The ID of the Worker being paid the bonus.</p>
@@ -4658,8 +4655,8 @@ pub mod fluent_builders {
         /// The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and
         /// "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
         /// </p>
-        pub fn bonus_amount(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bonus_amount(inp);
+        pub fn bonus_amount(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bonus_amount(signature.into());
             self
         }
         /// <p>
@@ -4671,8 +4668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the assignment for which this bonus is paid.</p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        pub fn assignment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(signature.into());
             self
         }
         /// <p>The ID of the assignment for which this bonus is paid.</p>
@@ -4685,8 +4682,8 @@ pub mod fluent_builders {
         }
         /// <p>A message that explains the reason for the bonus payment. The
         /// Worker receiving the bonus can see this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>A message that explains the reason for the bonus payment. The
@@ -4702,8 +4699,8 @@ pub mod fluent_builders {
         /// in the system from a previous call using the same UniqueRequestToken,
         /// subsequent calls will return an error with a message containing the
         /// request ID.</p>
-        pub fn unique_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_request_token(inp);
+        pub fn unique_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_request_token(signature.into());
             self
         }
         /// <p>A unique identifier for this request, which allows you to
@@ -4791,8 +4788,8 @@ pub mod fluent_builders {
         /// you would provide to the UpdateNotificationSettings operation when you establish
         /// the notification specification for a HIT type.
         /// </p>
-        pub fn notification(mut self, inp: crate::model::NotificationSpecification) -> Self {
-            self.inner = self.inner.notification(inp);
+        pub fn notification(mut self, signature: crate::model::NotificationSpecification) -> Self {
+            self.inner = self.inner.notification(signature);
             self
         }
         /// <p>
@@ -4813,8 +4810,8 @@ pub mod fluent_builders {
         /// does not include the event type.
         /// The notification specification does not filter out the test event.
         /// </p>
-        pub fn test_event_type(mut self, inp: crate::model::EventType) -> Self {
-            self.inner = self.inner.test_event_type(inp);
+        pub fn test_event_type(mut self, signature: crate::model::EventType) -> Self {
+            self.inner = self.inner.test_event_type(signature);
             self
         }
         /// <p>
@@ -4896,8 +4893,8 @@ pub mod fluent_builders {
         /// <p>
         /// The HIT to update.
         /// </p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>
@@ -4910,8 +4907,8 @@ pub mod fluent_builders {
         /// <p>
         /// The date and time at which you want the HIT to expire
         /// </p>
-        pub fn expire_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expire_at(inp);
+        pub fn expire_at(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expire_at(signature);
             self
         }
         /// <p>
@@ -4991,8 +4988,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the HIT to update.
         /// </p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>
@@ -5017,8 +5014,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn revert(mut self, inp: bool) -> Self {
-            self.inner = self.inner.revert(inp);
+        pub fn revert(mut self, signature: bool) -> Self {
+            self.inner = self.inner.revert(signature);
             self
         }
         /// <p>
@@ -5108,8 +5105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The HIT to update.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(signature.into());
             self
         }
         /// <p>The HIT to update.</p>
@@ -5118,8 +5115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the new HIT type.</p>
-        pub fn hit_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_type_id(inp);
+        pub fn hit_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_type_id(signature.into());
             self
         }
         /// <p>The ID of the new HIT type.</p>
@@ -5201,8 +5198,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the HIT type whose notification specification is being updated.
         /// </p>
-        pub fn hit_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_type_id(inp);
+        pub fn hit_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_type_id(signature.into());
             self
         }
         /// <p>
@@ -5215,8 +5212,8 @@ pub mod fluent_builders {
         /// <p>
         /// The notification specification for the HIT type.
         /// </p>
-        pub fn notification(mut self, inp: crate::model::NotificationSpecification) -> Self {
-            self.inner = self.inner.notification(inp);
+        pub fn notification(mut self, signature: crate::model::NotificationSpecification) -> Self {
+            self.inner = self.inner.notification(signature);
             self
         }
         /// <p>
@@ -5235,8 +5232,8 @@ pub mod fluent_builders {
         /// You must specify either the Notification parameter or the Active parameter
         /// for the call to UpdateNotificationSettings to succeed.
         /// </p>
-        pub fn active(mut self, inp: bool) -> Self {
-            self.inner = self.inner.active(inp);
+        pub fn active(mut self, signature: bool) -> Self {
+            self.inner = self.inner.active(signature);
             self
         }
         /// <p>
@@ -5342,8 +5339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Qualification type to update.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(signature.into());
             self
         }
         /// <p>The ID of the Qualification type to update.</p>
@@ -5355,8 +5352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description of the Qualification type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The new description of the Qualification type.</p>
@@ -5367,9 +5364,9 @@ pub mod fluent_builders {
         /// <p>The new status of the Qualification type - Active | Inactive</p>
         pub fn qualification_type_status(
             mut self,
-            inp: crate::model::QualificationTypeStatus,
+            signature: crate::model::QualificationTypeStatus,
         ) -> Self {
-            self.inner = self.inner.qualification_type_status(inp);
+            self.inner = self.inner.qualification_type_status(signature);
             self
         }
         /// <p>The new status of the Qualification type - Active | Inactive</p>
@@ -5383,8 +5380,8 @@ pub mod fluent_builders {
         /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
         /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
         /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
-        pub fn test(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.test(inp);
+        pub fn test(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.test(signature.into());
             self
         }
         /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
@@ -5395,8 +5392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
-        pub fn answer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.answer_key(inp);
+        pub fn answer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.answer_key(signature.into());
             self
         }
         /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
@@ -5405,8 +5402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
-        pub fn test_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.test_duration_in_seconds(inp);
+        pub fn test_duration_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.test_duration_in_seconds(signature);
             self
         }
         /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
@@ -5422,8 +5419,8 @@ pub mod fluent_builders {
         /// the existing retry-enabled Qualification type using
         /// DisposeQualificationType and then create a new Qualification type with
         /// retries disabled using CreateQualificationType.</p>
-        pub fn retry_delay_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.retry_delay_in_seconds(inp);
+        pub fn retry_delay_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.retry_delay_in_seconds(signature);
             self
         }
         /// <p>The amount of time, in seconds, that Workers must wait
@@ -5440,8 +5437,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
         /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
-        pub fn auto_granted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_granted(inp);
+        pub fn auto_granted(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_granted(signature);
             self
         }
         /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
@@ -5451,8 +5448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
-        pub fn auto_granted_value(mut self, inp: i32) -> Self {
-            self.inner = self.inner.auto_granted_value(inp);
+        pub fn auto_granted_value(mut self, signature: i32) -> Self {
+            self.inner = self.inner.auto_granted_value(signature);
             self
         }
         /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>

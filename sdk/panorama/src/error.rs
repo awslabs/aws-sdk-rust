@@ -4282,10 +4282,10 @@ pub mod validation_exception {
         /// <p>A list of attributes that led to the exception and their values.</p>
         pub fn error_arguments(
             mut self,
-            input: impl Into<crate::model::ValidationExceptionErrorArgument>,
+            input: crate::model::ValidationExceptionErrorArgument,
         ) -> Self {
             let mut v = self.error_arguments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_arguments = Some(v);
             self
         }
@@ -4304,9 +4304,9 @@ pub mod validation_exception {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A list of request parameters that failed validation.</p>
-        pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
+        pub fn fields(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }
@@ -4656,10 +4656,10 @@ pub mod conflict_exception {
         /// <p>A list of attributes that led to the exception and their values.</p>
         pub fn error_arguments(
             mut self,
-            input: impl Into<crate::model::ConflictExceptionErrorArgument>,
+            input: crate::model::ConflictExceptionErrorArgument,
         ) -> Self {
             let mut v = self.error_arguments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_arguments = Some(v);
             self
         }

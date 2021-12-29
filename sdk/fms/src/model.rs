@@ -251,10 +251,10 @@ pub mod protocols_list_data {
         pub fn previous_protocols_list(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.previous_protocols_list.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.previous_protocols_list = Some(hash_map);
             self
         }
@@ -677,9 +677,9 @@ pub mod policy {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>An array of <code>ResourceTag</code> objects.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -757,11 +757,11 @@ pub mod policy {
         /// </ul>
         pub fn include_map(
             mut self,
-            k: impl Into<crate::model::CustomerPolicyScopeIdType>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::CustomerPolicyScopeIdType,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.include_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.include_map = Some(hash_map);
             self
         }
@@ -825,11 +825,11 @@ pub mod policy {
         /// </ul>
         pub fn exclude_map(
             mut self,
-            k: impl Into<crate::model::CustomerPolicyScopeIdType>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::CustomerPolicyScopeIdType,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.exclude_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.exclude_map = Some(hash_map);
             self
         }
@@ -1640,9 +1640,9 @@ pub mod apps_list_data {
         /// To override the contents of this collection use [`set_apps_list`](Self::set_apps_list).
         ///
         /// <p>An array of applications in the Firewall Manager applications list.</p>
-        pub fn apps_list(mut self, input: impl Into<crate::model::App>) -> Self {
+        pub fn apps_list(mut self, input: crate::model::App) -> Self {
             let mut v = self.apps_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.apps_list = Some(v);
             self
         }
@@ -1662,10 +1662,10 @@ pub mod apps_list_data {
         pub fn previous_apps_list(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::App>>,
+            v: std::vec::Vec<crate::model::App>,
         ) -> Self {
             let mut hash_map = self.previous_apps_list.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.previous_apps_list = Some(hash_map);
             self
         }
@@ -2277,12 +2277,9 @@ pub mod policy_compliance_status {
         /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
         ///
         /// <p>An array of <code>EvaluationResult</code> objects.</p>
-        pub fn evaluation_results(
-            mut self,
-            input: impl Into<crate::model::EvaluationResult>,
-        ) -> Self {
+        pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_results = Some(v);
             self
         }
@@ -2315,11 +2312,11 @@ pub mod policy_compliance_status {
         /// and the error message received that indicates the problem with the service.</p>
         pub fn issue_info_map(
             mut self,
-            k: impl Into<crate::model::DependentServiceName>,
+            k: crate::model::DependentServiceName,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.issue_info_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.issue_info_map = Some(hash_map);
             self
         }
@@ -2679,9 +2676,9 @@ pub mod apps_list_data_summary {
         /// To override the contents of this collection use [`set_apps_list`](Self::set_apps_list).
         ///
         /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
-        pub fn apps_list(mut self, input: impl Into<crate::model::App>) -> Self {
+        pub fn apps_list(mut self, input: crate::model::App) -> Self {
             let mut v = self.apps_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.apps_list = Some(v);
             self
         }
@@ -2840,12 +2837,9 @@ pub mod violation_detail {
         /// To override the contents of this collection use [`set_resource_violations`](Self::set_resource_violations).
         ///
         /// <p>List of violations for the requested resource.</p>
-        pub fn resource_violations(
-            mut self,
-            input: impl Into<crate::model::ResourceViolation>,
-        ) -> Self {
+        pub fn resource_violations(mut self, input: crate::model::ResourceViolation) -> Self {
             let mut v = self.resource_violations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_violations = Some(v);
             self
         }
@@ -2862,9 +2856,9 @@ pub mod violation_detail {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -3601,12 +3595,9 @@ pub mod possible_remediation_actions {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>Information about the actions.</p>
-        pub fn actions(
-            mut self,
-            input: impl Into<crate::model::PossibleRemediationAction>,
-        ) -> Self {
+        pub fn actions(mut self, input: crate::model::PossibleRemediationAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -3703,10 +3694,10 @@ pub mod possible_remediation_action {
         /// <p>The ordered list of remediation actions.</p>
         pub fn ordered_remediation_actions(
             mut self,
-            input: impl Into<crate::model::RemediationActionWithOrder>,
+            input: crate::model::RemediationActionWithOrder,
         ) -> Self {
             let mut v = self.ordered_remediation_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ordered_remediation_actions = Some(v);
             self
         }
@@ -5395,9 +5386,9 @@ pub mod dns_rule_group_priority_conflict_violation {
         ///
         /// <p>The priorities of rule groups that are already associated with the VPC. To retry your operation,
         /// choose priority settings that aren't in this list for the rule groups in your new DNS Firewall policy. </p>
-        pub fn unavailable_priorities(mut self, input: impl Into<i32>) -> Self {
+        pub fn unavailable_priorities(mut self, input: i32) -> Self {
             let mut v = self.unavailable_priorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unavailable_priorities = Some(v);
             self
         }
@@ -5492,9 +5483,9 @@ pub mod network_firewall_missing_expected_routes_violation {
         /// To override the contents of this collection use [`set_expected_routes`](Self::set_expected_routes).
         ///
         /// <p>The expected routes.</p>
-        pub fn expected_routes(mut self, input: impl Into<crate::model::ExpectedRoute>) -> Self {
+        pub fn expected_routes(mut self, input: crate::model::ExpectedRoute) -> Self {
             let mut v = self.expected_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expected_routes = Some(v);
             self
         }
@@ -5774,9 +5765,9 @@ pub mod network_firewall_unexpected_gateway_routes_violation {
         /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
         ///
         /// <p>The routes that are in violation.</p>
-        pub fn violating_routes(mut self, input: impl Into<crate::model::Route>) -> Self {
+        pub fn violating_routes(mut self, input: crate::model::Route) -> Self {
             let mut v = self.violating_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.violating_routes = Some(v);
             self
         }
@@ -6183,9 +6174,9 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
         /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
         ///
         /// <p>The routes that are in violation.</p>
-        pub fn violating_routes(mut self, input: impl Into<crate::model::Route>) -> Self {
+        pub fn violating_routes(mut self, input: crate::model::Route) -> Self {
             let mut v = self.violating_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.violating_routes = Some(v);
             self
         }
@@ -6347,9 +6338,9 @@ pub mod network_firewall_black_hole_route_detected_violation {
         /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
         ///
         /// <p>Information about the route or routes that are in violation.</p>
-        pub fn violating_routes(mut self, input: impl Into<crate::model::Route>) -> Self {
+        pub fn violating_routes(mut self, input: crate::model::Route) -> Self {
             let mut v = self.violating_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.violating_routes = Some(v);
             self
         }
@@ -6703,10 +6694,10 @@ pub mod network_firewall_invalid_route_configuration_violation {
         /// <p>The firewall subnet routes that are expected.</p>
         pub fn expected_firewall_subnet_routes(
             mut self,
-            input: impl Into<crate::model::ExpectedRoute>,
+            input: crate::model::ExpectedRoute,
         ) -> Self {
             let mut v = self.expected_firewall_subnet_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expected_firewall_subnet_routes = Some(v);
             self
         }
@@ -6723,12 +6714,9 @@ pub mod network_firewall_invalid_route_configuration_violation {
         /// To override the contents of this collection use [`set_actual_firewall_subnet_routes`](Self::set_actual_firewall_subnet_routes).
         ///
         /// <p>The actual firewall subnet routes that are expected.</p>
-        pub fn actual_firewall_subnet_routes(
-            mut self,
-            input: impl Into<crate::model::Route>,
-        ) -> Self {
+        pub fn actual_firewall_subnet_routes(mut self, input: crate::model::Route) -> Self {
             let mut v = self.actual_firewall_subnet_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actual_firewall_subnet_routes = Some(v);
             self
         }
@@ -6776,10 +6764,10 @@ pub mod network_firewall_invalid_route_configuration_violation {
         /// <p>The expected routes for the internet gateway.</p>
         pub fn expected_internet_gateway_routes(
             mut self,
-            input: impl Into<crate::model::ExpectedRoute>,
+            input: crate::model::ExpectedRoute,
         ) -> Self {
             let mut v = self.expected_internet_gateway_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expected_internet_gateway_routes = Some(v);
             self
         }
@@ -6796,12 +6784,9 @@ pub mod network_firewall_invalid_route_configuration_violation {
         /// To override the contents of this collection use [`set_actual_internet_gateway_routes`](Self::set_actual_internet_gateway_routes).
         ///
         /// <p>The actual internet gateway routes.</p>
-        pub fn actual_internet_gateway_routes(
-            mut self,
-            input: impl Into<crate::model::Route>,
-        ) -> Self {
+        pub fn actual_internet_gateway_routes(mut self, input: crate::model::Route) -> Self {
             let mut v = self.actual_internet_gateway_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actual_internet_gateway_routes = Some(v);
             self
         }
@@ -7072,9 +7057,9 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
         /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
         ///
         /// <p>The route or routes that are in violation.</p>
-        pub fn violating_routes(mut self, input: impl Into<crate::model::Route>) -> Self {
+        pub fn violating_routes(mut self, input: crate::model::Route) -> Self {
             let mut v = self.violating_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.violating_routes = Some(v);
             self
         }
@@ -7148,10 +7133,10 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
         /// <p>The firewall subnet routes that are expected.</p>
         pub fn expected_firewall_subnet_routes(
             mut self,
-            input: impl Into<crate::model::ExpectedRoute>,
+            input: crate::model::ExpectedRoute,
         ) -> Self {
             let mut v = self.expected_firewall_subnet_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expected_firewall_subnet_routes = Some(v);
             self
         }
@@ -7168,12 +7153,9 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
         /// To override the contents of this collection use [`set_actual_firewall_subnet_routes`](Self::set_actual_firewall_subnet_routes).
         ///
         /// <p>The actual firewall subnet routes.</p>
-        pub fn actual_firewall_subnet_routes(
-            mut self,
-            input: impl Into<crate::model::Route>,
-        ) -> Self {
+        pub fn actual_firewall_subnet_routes(mut self, input: crate::model::Route) -> Self {
             let mut v = self.actual_firewall_subnet_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actual_firewall_subnet_routes = Some(v);
             self
         }
@@ -7221,10 +7203,10 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
         /// <p>The internet gateway routes that are expected.</p>
         pub fn expected_internet_gateway_routes(
             mut self,
-            input: impl Into<crate::model::ExpectedRoute>,
+            input: crate::model::ExpectedRoute,
         ) -> Self {
             let mut v = self.expected_internet_gateway_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expected_internet_gateway_routes = Some(v);
             self
         }
@@ -7241,12 +7223,9 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
         /// To override the contents of this collection use [`set_actual_internet_gateway_routes`](Self::set_actual_internet_gateway_routes).
         ///
         /// <p>The actual internet gateway routes.</p>
-        pub fn actual_internet_gateway_routes(
-            mut self,
-            input: impl Into<crate::model::Route>,
-        ) -> Self {
+        pub fn actual_internet_gateway_routes(mut self, input: crate::model::Route) -> Self {
             let mut v = self.actual_internet_gateway_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actual_internet_gateway_routes = Some(v);
             self
         }
@@ -7500,12 +7479,9 @@ pub mod network_firewall_policy_description {
         /// To override the contents of this collection use [`set_stateless_rule_groups`](Self::set_stateless_rule_groups).
         ///
         /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
-        pub fn stateless_rule_groups(
-            mut self,
-            input: impl Into<crate::model::StatelessRuleGroup>,
-        ) -> Self {
+        pub fn stateless_rule_groups(mut self, input: crate::model::StatelessRuleGroup) -> Self {
             let mut v = self.stateless_rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stateless_rule_groups = Some(v);
             self
         }
@@ -7582,12 +7558,9 @@ pub mod network_firewall_policy_description {
         /// To override the contents of this collection use [`set_stateful_rule_groups`](Self::set_stateful_rule_groups).
         ///
         /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
-        pub fn stateful_rule_groups(
-            mut self,
-            input: impl Into<crate::model::StatefulRuleGroup>,
-        ) -> Self {
+        pub fn stateful_rule_groups(mut self, input: crate::model::StatefulRuleGroup) -> Self {
             let mut v = self.stateful_rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stateful_rule_groups = Some(v);
             self
         }
@@ -8238,12 +8211,12 @@ pub mod aws_ec2_instance_violation {
         /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
         pub fn aws_ec2_network_interface_violations(
             mut self,
-            input: impl Into<crate::model::AwsEc2NetworkInterfaceViolation>,
+            input: crate::model::AwsEc2NetworkInterfaceViolation,
         ) -> Self {
             let mut v = self
                 .aws_ec2_network_interface_violations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aws_ec2_network_interface_violations = Some(v);
             self
         }
@@ -8456,9 +8429,9 @@ pub mod aws_vpc_security_group_violation {
         /// To override the contents of this collection use [`set_partial_matches`](Self::set_partial_matches).
         ///
         /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
-        pub fn partial_matches(mut self, input: impl Into<crate::model::PartialMatch>) -> Self {
+        pub fn partial_matches(mut self, input: crate::model::PartialMatch) -> Self {
             let mut v = self.partial_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partial_matches = Some(v);
             self
         }
@@ -8477,12 +8450,12 @@ pub mod aws_vpc_security_group_violation {
         /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
         pub fn possible_security_group_remediation_actions(
             mut self,
-            input: impl Into<crate::model::SecurityGroupRemediationAction>,
+            input: crate::model::SecurityGroupRemediationAction,
         ) -> Self {
             let mut v = self
                 .possible_security_group_remediation_actions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.possible_security_group_remediation_actions = Some(v);
             self
         }
@@ -9066,9 +9039,9 @@ pub mod policy_compliance_detail {
         ///
         /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or
         /// that aren't in compliance with the security group policy.</p>
-        pub fn violators(mut self, input: impl Into<crate::model::ComplianceViolator>) -> Self {
+        pub fn violators(mut self, input: crate::model::ComplianceViolator) -> Self {
             let mut v = self.violators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.violators = Some(v);
             self
         }
@@ -9116,11 +9089,11 @@ pub mod policy_compliance_detail {
         /// and the error message received that indicates the problem with the service.</p>
         pub fn issue_info_map(
             mut self,
-            k: impl Into<crate::model::DependentServiceName>,
+            k: crate::model::DependentServiceName,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.issue_info_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.issue_info_map = Some(hash_map);
             self
         }

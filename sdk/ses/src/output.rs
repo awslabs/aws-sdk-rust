@@ -1017,12 +1017,9 @@ pub mod send_bulk_templated_email_output {
         ///
         /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
         /// action.</p>
-        pub fn status(
-            mut self,
-            input: impl Into<crate::model::BulkEmailDestinationStatus>,
-        ) -> Self {
+        pub fn status(mut self, input: crate::model::BulkEmailDestinationStatus) -> Self {
             let mut v = self.status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.status = Some(v);
             self
         }
@@ -1310,12 +1307,9 @@ pub mod list_templates_output {
         ///
         /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
         /// account.</p>
-        pub fn templates_metadata(
-            mut self,
-            input: impl Into<crate::model::TemplateMetadata>,
-        ) -> Self {
+        pub fn templates_metadata(mut self, input: crate::model::TemplateMetadata) -> Self {
             let mut v = self.templates_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.templates_metadata = Some(v);
             self
         }
@@ -1408,9 +1402,9 @@ pub mod list_receipt_rule_sets_output {
         ///
         /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
         /// rule set name and the timestamp of when the rule set was created.</p>
-        pub fn rule_sets(mut self, input: impl Into<crate::model::ReceiptRuleSetMetadata>) -> Self {
+        pub fn rule_sets(mut self, input: crate::model::ReceiptRuleSetMetadata) -> Self {
             let mut v = self.rule_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_sets = Some(v);
             self
         }
@@ -1490,9 +1484,9 @@ pub mod list_receipt_filters_output {
         ///
         /// <p>A list of IP address filter data structures, which each consist of a name, an IP
         /// address range, and whether to allow or block mail from it.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ReceiptFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ReceiptFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1723,10 +1717,10 @@ pub mod list_custom_verification_email_templates_output {
         /// <p>A list of the custom verification email templates that exist in your account.</p>
         pub fn custom_verification_email_templates(
             mut self,
-            input: impl Into<crate::model::CustomVerificationEmailTemplate>,
+            input: crate::model::CustomVerificationEmailTemplate,
         ) -> Self {
             let mut v = self.custom_verification_email_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_verification_email_templates = Some(v);
             self
         }
@@ -1822,12 +1816,9 @@ pub mod list_configuration_sets_output {
         /// To override the contents of this collection use [`set_configuration_sets`](Self::set_configuration_sets).
         ///
         /// <p>A list of configuration sets.</p>
-        pub fn configuration_sets(
-            mut self,
-            input: impl Into<crate::model::ConfigurationSet>,
-        ) -> Self {
+        pub fn configuration_sets(mut self, input: crate::model::ConfigurationSet) -> Self {
             let mut v = self.configuration_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_sets = Some(v);
             self
         }
@@ -1963,9 +1954,9 @@ pub mod get_send_statistics_output {
         /// To override the contents of this collection use [`set_send_data_points`](Self::set_send_data_points).
         ///
         /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-        pub fn send_data_points(mut self, input: impl Into<crate::model::SendDataPoint>) -> Self {
+        pub fn send_data_points(mut self, input: crate::model::SendDataPoint) -> Self {
             let mut v = self.send_data_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.send_data_points = Some(v);
             self
         }
@@ -2164,10 +2155,10 @@ pub mod get_identity_verification_attributes_output {
         pub fn verification_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::IdentityVerificationAttributes>,
+            v: crate::model::IdentityVerificationAttributes,
         ) -> Self {
             let mut hash_map = self.verification_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.verification_attributes = Some(hash_map);
             self
         }
@@ -2328,10 +2319,10 @@ pub mod get_identity_notification_attributes_output {
         pub fn notification_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::IdentityNotificationAttributes>,
+            v: crate::model::IdentityNotificationAttributes,
         ) -> Self {
             let mut hash_map = self.notification_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.notification_attributes = Some(hash_map);
             self
         }
@@ -2420,10 +2411,10 @@ pub mod get_identity_mail_from_domain_attributes_output {
         pub fn mail_from_domain_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::IdentityMailFromDomainAttributes>,
+            v: crate::model::IdentityMailFromDomainAttributes,
         ) -> Self {
             let mut hash_map = self.mail_from_domain_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.mail_from_domain_attributes = Some(hash_map);
             self
         }
@@ -2503,10 +2494,10 @@ pub mod get_identity_dkim_attributes_output {
         pub fn dkim_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::IdentityDkimAttributes>,
+            v: crate::model::IdentityDkimAttributes,
         ) -> Self {
             let mut hash_map = self.dkim_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.dkim_attributes = Some(hash_map);
             self
         }
@@ -2831,9 +2822,9 @@ pub mod describe_receipt_rule_set_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::ReceiptRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::ReceiptRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -3004,12 +2995,9 @@ pub mod describe_configuration_set_output {
         /// To override the contents of this collection use [`set_event_destinations`](Self::set_event_destinations).
         ///
         /// <p>A list of event destinations associated with the configuration set. </p>
-        pub fn event_destinations(
-            mut self,
-            input: impl Into<crate::model::EventDestination>,
-        ) -> Self {
+        pub fn event_destinations(mut self, input: crate::model::EventDestination) -> Self {
             let mut v = self.event_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_destinations = Some(v);
             self
         }
@@ -3143,9 +3131,9 @@ pub mod describe_active_receipt_rule_set_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The receipt rules that belong to the active rule set.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::ReceiptRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::ReceiptRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }

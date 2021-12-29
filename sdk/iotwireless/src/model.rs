@@ -1004,12 +1004,9 @@ pub mod wireless_gateway_log_option {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The list of wireless gateway event log options.</p>
-        pub fn events(
-            mut self,
-            input: impl Into<crate::model::WirelessGatewayEventLogOption>,
-        ) -> Self {
+        pub fn events(mut self, input: crate::model::WirelessGatewayEventLogOption) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1295,12 +1292,9 @@ pub mod wireless_device_log_option {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The list of wireless device event log options.</p>
-        pub fn events(
-            mut self,
-            input: impl Into<crate::model::WirelessDeviceEventLogOption>,
-        ) -> Self {
+        pub fn events(mut self, input: crate::model::WirelessDeviceEventLogOption) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -2842,12 +2836,9 @@ pub mod lo_ra_wan_gateway {
         /// To override the contents of this collection use [`set_join_eui_filters`](Self::set_join_eui_filters).
         ///
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-        pub fn join_eui_filters(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn join_eui_filters(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.join_eui_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.join_eui_filters = Some(v);
             self
         }
@@ -2883,9 +2874,9 @@ pub mod lo_ra_wan_gateway {
         /// To override the contents of this collection use [`set_sub_bands`](Self::set_sub_bands).
         ///
         /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
-        pub fn sub_bands(mut self, input: impl Into<i32>) -> Self {
+        pub fn sub_bands(mut self, input: i32) -> Self {
             let mut v = self.sub_bands.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_bands = Some(v);
             self
         }
@@ -3373,12 +3364,9 @@ pub mod sidewalk_list_device {
         /// To override the contents of this collection use [`set_device_certificates`](Self::set_device_certificates).
         ///
         /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-        pub fn device_certificates(
-            mut self,
-            input: impl Into<crate::model::CertificateList>,
-        ) -> Self {
+        pub fn device_certificates(mut self, input: crate::model::CertificateList) -> Self {
             let mut v = self.device_certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_certificates = Some(v);
             self
         }
@@ -5163,9 +5151,9 @@ pub mod lo_ra_wan_device_metadata {
         /// To override the contents of this collection use [`set_gateways`](Self::set_gateways).
         ///
         /// <p>Information about the gateways accessed by the device.</p>
-        pub fn gateways(mut self, input: impl Into<crate::model::LoRaWanGatewayMetadata>) -> Self {
+        pub fn gateways(mut self, input: crate::model::LoRaWanGatewayMetadata) -> Self {
             let mut v = self.gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateways = Some(v);
             self
         }
@@ -5381,12 +5369,9 @@ pub mod sidewalk_device {
         /// To override the contents of this collection use [`set_device_certificates`](Self::set_device_certificates).
         ///
         /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-        pub fn device_certificates(
-            mut self,
-            input: impl Into<crate::model::CertificateList>,
-        ) -> Self {
+        pub fn device_certificates(mut self, input: crate::model::CertificateList) -> Self {
             let mut v = self.device_certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_certificates = Some(v);
             self
         }
@@ -7338,9 +7323,9 @@ pub mod lo_ra_wan_device_profile {
         /// To override the contents of this collection use [`set_factory_preset_freqs_list`](Self::set_factory_preset_freqs_list).
         ///
         /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
-        pub fn factory_preset_freqs_list(mut self, input: impl Into<i32>) -> Self {
+        pub fn factory_preset_freqs_list(mut self, input: i32) -> Self {
             let mut v = self.factory_preset_freqs_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.factory_preset_freqs_list = Some(v);
             self
         }

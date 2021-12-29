@@ -279,8 +279,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -360,8 +360,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -377,8 +377,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -391,8 +391,8 @@ pub mod fluent_builders {
         /// A string of up to 128 characters.
         /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
         /// (dot).
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// A string of up to 128 characters.
@@ -468,8 +468,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -485,8 +485,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -499,8 +499,8 @@ pub mod fluent_builders {
         /// A string of up to 128 characters.
         /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
         /// (dot).
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// A string of up to 128 characters.
@@ -621,8 +621,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for
         /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
         /// generation is unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for
@@ -747,8 +747,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for
         /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
         /// generation is unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for
@@ -764,8 +764,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -838,8 +838,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -913,8 +913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Cognito Identity Pool ID for the request</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>The Cognito Identity Pool ID for the request</p>
@@ -1033,8 +1033,8 @@ pub mod fluent_builders {
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
         /// Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
@@ -1167,8 +1167,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -1184,8 +1184,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -1197,8 +1197,8 @@ pub mod fluent_builders {
         }
         /// A pagination token for obtaining the next
         /// page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A pagination token for obtaining the next
@@ -1209,8 +1209,8 @@ pub mod fluent_builders {
         }
         /// The maximum number of results to be
         /// returned.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of results to be
@@ -1339,8 +1339,8 @@ pub mod fluent_builders {
         }
         /// A pagination token for obtaining
         /// the next page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A pagination token for obtaining
@@ -1351,8 +1351,8 @@ pub mod fluent_builders {
         }
         /// The maximum number of results to
         /// be returned.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of results to
@@ -1479,8 +1479,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -1496,8 +1496,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -1509,8 +1509,8 @@ pub mod fluent_builders {
         }
         /// A string of up to 128 characters. Allowed
         /// characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// A string of up to 128 characters. Allowed
@@ -1521,8 +1521,8 @@ pub mod fluent_builders {
         }
         /// The last server sync count for this
         /// record.
-        pub fn last_sync_count(mut self, inp: i64) -> Self {
-            self.inner = self.inner.last_sync_count(inp);
+        pub fn last_sync_count(mut self, signature: i64) -> Self {
+            self.inner = self.inner.last_sync_count(signature);
             self
         }
         /// The last server sync count for this
@@ -1533,8 +1533,8 @@ pub mod fluent_builders {
         }
         /// A pagination token for obtaining the next
         /// page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A pagination token for obtaining the next
@@ -1545,8 +1545,8 @@ pub mod fluent_builders {
         }
         /// The maximum number of results to be
         /// returned.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of results to be
@@ -1557,8 +1557,8 @@ pub mod fluent_builders {
         }
         /// A token containing a session ID,
         /// identity ID, and expiration.
-        pub fn sync_session_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_session_token(inp);
+        pub fn sync_session_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_session_token(signature.into());
             self
         }
         /// A token containing a session ID,
@@ -1676,8 +1676,8 @@ pub mod fluent_builders {
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
         /// Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
@@ -1690,8 +1690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID for this identity.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>The unique ID for this identity.</p>
@@ -1700,8 +1700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
-        pub fn platform(mut self, inp: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, signature: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(signature);
             self
         }
         /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
@@ -1710,8 +1710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The push token.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(signature.into());
             self
         }
         /// <p>The push token.</p>
@@ -1780,8 +1780,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
@@ -1802,7 +1802,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.events(k, v);
+            self.inner = self.inner.events(k.into(), v.into());
             self
         }
         /// <p>The events to configure</p>
@@ -1927,8 +1927,8 @@ pub mod fluent_builders {
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
         /// Amazon Cognito. This is the ID of the pool to modify.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
@@ -1941,8 +1941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Options to apply to this identity pool for push synchronization.</p>
-        pub fn push_sync(mut self, inp: crate::model::PushSync) -> Self {
-            self.inner = self.inner.push_sync(inp);
+        pub fn push_sync(mut self, signature: crate::model::PushSync) -> Self {
+            self.inner = self.inner.push_sync(signature);
             self
         }
         /// <p>Options to apply to this identity pool for push synchronization.</p>
@@ -1951,8 +1951,8 @@ pub mod fluent_builders {
             self
         }
         /// Options to apply to this identity pool for Amazon Cognito streams.
-        pub fn cognito_streams(mut self, inp: crate::model::CognitoStreams) -> Self {
-            self.inner = self.inner.cognito_streams(inp);
+        pub fn cognito_streams(mut self, signature: crate::model::CognitoStreams) -> Self {
+            self.inner = self.inner.cognito_streams(signature);
             self
         }
         /// Options to apply to this identity pool for Amazon Cognito streams.
@@ -2068,8 +2068,8 @@ pub mod fluent_builders {
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
         /// Amazon Cognito. The ID of the pool to which the identity belongs.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
@@ -2082,8 +2082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique ID for this identity.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>Unique ID for this identity.</p>
@@ -2092,8 +2092,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the dataset to subcribe to.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset to subcribe to.</p>
@@ -2102,8 +2102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
@@ -2217,8 +2217,8 @@ pub mod fluent_builders {
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
         /// Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
@@ -2231,8 +2231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique ID for this identity.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>Unique ID for this identity.</p>
@@ -2241,8 +2241,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the dataset from which to unsubcribe.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset from which to unsubcribe.</p>
@@ -2251,8 +2251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
@@ -2325,8 +2325,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -2342,8 +2342,8 @@ pub mod fluent_builders {
         /// A name-spaced GUID (for example,
         /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
         /// unique within a region.
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// A name-spaced GUID (for example,
@@ -2356,8 +2356,8 @@ pub mod fluent_builders {
         /// A string of up to 128 characters.
         /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
         /// (dot).
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// A string of up to 128 characters.
@@ -2368,8 +2368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
@@ -2383,8 +2383,8 @@ pub mod fluent_builders {
         ///
         /// A list of patch
         /// operations.
-        pub fn record_patches(mut self, inp: impl Into<crate::model::RecordPatch>) -> Self {
-            self.inner = self.inner.record_patches(inp);
+        pub fn record_patches(mut self, input: crate::model::RecordPatch) -> Self {
+            self.inner = self.inner.record_patches(input);
             self
         }
         /// A list of patch
@@ -2398,8 +2398,8 @@ pub mod fluent_builders {
         }
         /// The SyncSessionToken returned by a
         /// previous call to ListRecords for this dataset and identity.
-        pub fn sync_session_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_session_token(inp);
+        pub fn sync_session_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_session_token(signature.into());
             self
         }
         /// The SyncSessionToken returned by a
@@ -2414,8 +2414,8 @@ pub mod fluent_builders {
         /// Intended to supply a device ID that
         /// will populate the lastModifiedBy field referenced in other methods. The
         /// ClientContext field is not yet implemented.
-        pub fn client_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_context(inp);
+        pub fn client_context(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_context(signature.into());
             self
         }
         /// Intended to supply a device ID that

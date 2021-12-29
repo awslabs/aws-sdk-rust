@@ -51,12 +51,9 @@ pub mod validate_pipeline_definition_output {
         /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
         ///
         /// <p>Any validation errors that were found.</p>
-        pub fn validation_errors(
-            mut self,
-            input: impl Into<crate::model::ValidationError>,
-        ) -> Self {
+        pub fn validation_errors(mut self, input: crate::model::ValidationError) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_errors = Some(v);
             self
         }
@@ -73,12 +70,9 @@ pub mod validate_pipeline_definition_output {
         /// To override the contents of this collection use [`set_validation_warnings`](Self::set_validation_warnings).
         ///
         /// <p>Any validation warnings that were found.</p>
-        pub fn validation_warnings(
-            mut self,
-            input: impl Into<crate::model::ValidationWarning>,
-        ) -> Self {
+        pub fn validation_warnings(mut self, input: crate::model::ValidationWarning) -> Self {
             let mut v = self.validation_warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_warnings = Some(v);
             self
         }
@@ -474,12 +468,9 @@ pub mod put_pipeline_definition_output {
         /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
         ///
         /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-        pub fn validation_errors(
-            mut self,
-            input: impl Into<crate::model::ValidationError>,
-        ) -> Self {
+        pub fn validation_errors(mut self, input: crate::model::ValidationError) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_errors = Some(v);
             self
         }
@@ -496,12 +487,9 @@ pub mod put_pipeline_definition_output {
         /// To override the contents of this collection use [`set_validation_warnings`](Self::set_validation_warnings).
         ///
         /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-        pub fn validation_warnings(
-            mut self,
-            input: impl Into<crate::model::ValidationWarning>,
-        ) -> Self {
+        pub fn validation_warnings(mut self, input: crate::model::ValidationWarning) -> Self {
             let mut v = self.validation_warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_warnings = Some(v);
             self
         }
@@ -663,9 +651,9 @@ pub mod list_pipelines_output {
         ///
         /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call
         /// <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>
-        pub fn pipeline_id_list(mut self, input: impl Into<crate::model::PipelineIdName>) -> Self {
+        pub fn pipeline_id_list(mut self, input: crate::model::PipelineIdName) -> Self {
             let mut v = self.pipeline_id_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_id_list = Some(v);
             self
         }
@@ -770,9 +758,9 @@ pub mod get_pipeline_definition_output {
         /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
         ///
         /// <p>The objects defined in the pipeline.</p>
-        pub fn pipeline_objects(mut self, input: impl Into<crate::model::PipelineObject>) -> Self {
+        pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_objects = Some(v);
             self
         }
@@ -789,12 +777,9 @@ pub mod get_pipeline_definition_output {
         /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
         ///
         /// <p>The parameter objects used in the pipeline definition.</p>
-        pub fn parameter_objects(
-            mut self,
-            input: impl Into<crate::model::ParameterObject>,
-        ) -> Self {
+        pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
             let mut v = self.parameter_objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_objects = Some(v);
             self
         }
@@ -811,9 +796,9 @@ pub mod get_pipeline_definition_output {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>The parameter values used in the pipeline definition.</p>
-        pub fn parameter_values(mut self, input: impl Into<crate::model::ParameterValue>) -> Self {
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_values = Some(v);
             self
         }
@@ -939,10 +924,10 @@ pub mod describe_pipelines_output {
         /// <p>An array of descriptions for the specified pipelines.</p>
         pub fn pipeline_description_list(
             mut self,
-            input: impl Into<crate::model::PipelineDescription>,
+            input: crate::model::PipelineDescription,
         ) -> Self {
             let mut v = self.pipeline_description_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_description_list = Some(v);
             self
         }
@@ -1022,9 +1007,9 @@ pub mod describe_objects_output {
         /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
         ///
         /// <p>An array of object definitions.</p>
-        pub fn pipeline_objects(mut self, input: impl Into<crate::model::PipelineObject>) -> Self {
+        pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_objects = Some(v);
             self
         }

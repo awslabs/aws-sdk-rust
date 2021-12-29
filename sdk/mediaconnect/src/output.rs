@@ -1146,9 +1146,9 @@ pub mod list_reservations_output {
         /// To override the contents of this collection use [`set_reservations`](Self::set_reservations).
         ///
         /// A list of all reservations that have been purchased by this account in the current AWS Region.
-        pub fn reservations(mut self, input: impl Into<crate::model::Reservation>) -> Self {
+        pub fn reservations(mut self, input: crate::model::Reservation) -> Self {
             let mut v = self.reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reservations = Some(v);
             self
         }
@@ -1228,9 +1228,9 @@ pub mod list_offerings_output {
         /// To override the contents of this collection use [`set_offerings`](Self::set_offerings).
         ///
         /// A list of offerings that are available to this account in the current AWS Region.
-        pub fn offerings(mut self, input: impl Into<crate::model::Offering>) -> Self {
+        pub fn offerings(mut self, input: crate::model::Offering) -> Self {
             let mut v = self.offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offerings = Some(v);
             self
         }
@@ -1300,9 +1300,9 @@ pub mod list_flows_output {
         /// To override the contents of this collection use [`set_flows`](Self::set_flows).
         ///
         /// A list of flow summaries.
-        pub fn flows(mut self, input: impl Into<crate::model::ListedFlow>) -> Self {
+        pub fn flows(mut self, input: crate::model::ListedFlow) -> Self {
             let mut v = self.flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.flows = Some(v);
             self
         }
@@ -1383,9 +1383,9 @@ pub mod list_entitlements_output {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// A list of entitlements that have been granted to you from other AWS accounts.
-        pub fn entitlements(mut self, input: impl Into<crate::model::ListedEntitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::ListedEntitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -1465,9 +1465,9 @@ pub mod grant_flow_entitlements_output {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The entitlements that were just granted.
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -1866,9 +1866,9 @@ pub mod add_flow_vpc_interfaces_output {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// The details of the newly added VPC interfaces.
-        pub fn vpc_interfaces(mut self, input: impl Into<crate::model::VpcInterface>) -> Self {
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterface) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_interfaces = Some(v);
             self
         }
@@ -1948,9 +1948,9 @@ pub mod add_flow_sources_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// The details of the newly added sources.
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -2030,9 +2030,9 @@ pub mod add_flow_outputs_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// The details of the newly added outputs.
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -2112,9 +2112,9 @@ pub mod add_flow_media_streams_output {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that you added to the flow.
-        pub fn media_streams(mut self, input: impl Into<crate::model::MediaStream>) -> Self {
+        pub fn media_streams(mut self, input: crate::model::MediaStream) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_streams = Some(v);
             self
         }

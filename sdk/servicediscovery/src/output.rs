@@ -413,9 +413,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -499,9 +499,9 @@ pub mod list_services_output {
         ///
         /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter
         /// criteria.</p>
-        pub fn services(mut self, input: impl Into<crate::model::ServiceSummary>) -> Self {
+        pub fn services(mut self, input: crate::model::ServiceSummary) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -610,9 +610,9 @@ pub mod list_operations_output {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>Summary information about the operations that match the specified criteria.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::OperationSummary>) -> Self {
+        pub fn operations(mut self, input: crate::model::OperationSummary) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -723,9 +723,9 @@ pub mod list_namespaces_output {
         ///
         /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified
         /// filter criteria.</p>
-        pub fn namespaces(mut self, input: impl Into<crate::model::NamespaceSummary>) -> Self {
+        pub fn namespaces(mut self, input: crate::model::NamespaceSummary) -> Self {
             let mut v = self.namespaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.namespaces = Some(v);
             self
         }
@@ -824,9 +824,9 @@ pub mod list_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>Summary information about the instances that are associated with the specified service.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::InstanceSummary>) -> Self {
+        pub fn instances(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -1096,10 +1096,10 @@ pub mod get_instances_health_status_output {
         pub fn status(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::HealthStatus>,
+            v: crate::model::HealthStatus,
         ) -> Self {
             let mut hash_map = self.status.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.status = Some(hash_map);
             self
         }
@@ -1232,9 +1232,9 @@ pub mod discover_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::HttpInstanceSummary>) -> Self {
+        pub fn instances(mut self, input: crate::model::HttpInstanceSummary) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }

@@ -36,9 +36,9 @@ pub mod update_relational_database_parameters_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -103,9 +103,9 @@ pub mod update_relational_database_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -170,9 +170,9 @@ pub mod update_load_balancer_attribute_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -237,9 +237,9 @@ pub mod update_domain_entry_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -479,9 +479,9 @@ pub mod update_bucket_bundle_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -564,9 +564,9 @@ pub mod update_bucket_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -632,9 +632,9 @@ pub mod untag_resource_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -760,9 +760,9 @@ pub mod test_alarm_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -827,9 +827,9 @@ pub mod tag_resource_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -894,9 +894,9 @@ pub mod stop_relational_database_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -961,9 +961,9 @@ pub mod stop_instance_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1028,9 +1028,9 @@ pub mod start_relational_database_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1095,9 +1095,9 @@ pub mod start_instance_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1162,9 +1162,9 @@ pub mod set_resource_access_for_bucket_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1229,9 +1229,9 @@ pub mod set_ip_address_type_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1296,9 +1296,9 @@ pub mod send_contact_method_verification_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1469,9 +1469,9 @@ pub mod release_static_ip_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1597,9 +1597,9 @@ pub mod reboot_relational_database_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1664,9 +1664,9 @@ pub mod reboot_instance_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1792,9 +1792,9 @@ pub mod put_alarm_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -2114,9 +2114,9 @@ pub mod get_static_ips_output {
         ///
         /// <p>An array of key-value pairs containing information about your get static IPs
         /// request.</p>
-        pub fn static_ips(mut self, input: impl Into<crate::model::StaticIp>) -> Self {
+        pub fn static_ips(mut self, input: crate::model::StaticIp) -> Self {
             let mut v = self.static_ips.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.static_ips = Some(v);
             self
         }
@@ -2277,10 +2277,10 @@ pub mod get_relational_database_snapshots_output {
         /// <p>An object describing the result of your get relational database snapshots request.</p>
         pub fn relational_database_snapshots(
             mut self,
-            input: impl Into<crate::model::RelationalDatabaseSnapshot>,
+            input: crate::model::RelationalDatabaseSnapshot,
         ) -> Self {
             let mut v = self.relational_database_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relational_database_snapshots = Some(v);
             self
         }
@@ -2444,12 +2444,9 @@ pub mod get_relational_databases_output {
         /// To override the contents of this collection use [`set_relational_databases`](Self::set_relational_databases).
         ///
         /// <p>An object describing the result of your get relational databases request.</p>
-        pub fn relational_databases(
-            mut self,
-            input: impl Into<crate::model::RelationalDatabase>,
-        ) -> Self {
+        pub fn relational_databases(mut self, input: crate::model::RelationalDatabase) -> Self {
             let mut v = self.relational_databases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relational_databases = Some(v);
             self
         }
@@ -2547,12 +2544,9 @@ pub mod get_relational_database_parameters_output {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>An object describing the result of your get relational database parameters request.</p>
-        pub fn parameters(
-            mut self,
-            input: impl Into<crate::model::RelationalDatabaseParameter>,
-        ) -> Self {
+        pub fn parameters(mut self, input: crate::model::RelationalDatabaseParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -2656,9 +2650,9 @@ pub mod get_relational_database_metric_data_output {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatapoint>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }
@@ -2887,9 +2881,9 @@ pub mod get_relational_database_log_events_output {
         /// To override the contents of this collection use [`set_resource_log_events`](Self::set_resource_log_events).
         ///
         /// <p>An object describing the result of your get relational database log events request.</p>
-        pub fn resource_log_events(mut self, input: impl Into<crate::model::LogEvent>) -> Self {
+        pub fn resource_log_events(mut self, input: crate::model::LogEvent) -> Self {
             let mut v = self.resource_log_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_log_events = Some(v);
             self
         }
@@ -3005,10 +2999,10 @@ pub mod get_relational_database_events_output {
         /// <p>An object describing the result of your get relational database events request.</p>
         pub fn relational_database_events(
             mut self,
-            input: impl Into<crate::model::RelationalDatabaseEvent>,
+            input: crate::model::RelationalDatabaseEvent,
         ) -> Self {
             let mut v = self.relational_database_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relational_database_events = Some(v);
             self
         }
@@ -3104,9 +3098,9 @@ pub mod get_relational_database_bundles_output {
         /// To override the contents of this collection use [`set_bundles`](Self::set_bundles).
         ///
         /// <p>An object describing the result of your get relational database bundles request.</p>
-        pub fn bundles(mut self, input: impl Into<crate::model::RelationalDatabaseBundle>) -> Self {
+        pub fn bundles(mut self, input: crate::model::RelationalDatabaseBundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bundles = Some(v);
             self
         }
@@ -3204,12 +3198,9 @@ pub mod get_relational_database_blueprints_output {
         /// To override the contents of this collection use [`set_blueprints`](Self::set_blueprints).
         ///
         /// <p>An object describing the result of your get relational database blueprints request.</p>
-        pub fn blueprints(
-            mut self,
-            input: impl Into<crate::model::RelationalDatabaseBlueprint>,
-        ) -> Self {
+        pub fn blueprints(mut self, input: crate::model::RelationalDatabaseBlueprint) -> Self {
             let mut v = self.blueprints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blueprints = Some(v);
             self
         }
@@ -3349,9 +3340,9 @@ pub mod get_regions_output {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>An array of key-value pairs containing information about your get regions request.</p>
-        pub fn regions(mut self, input: impl Into<crate::model::Region>) -> Self {
+        pub fn regions(mut self, input: crate::model::Region) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions = Some(v);
             self
         }
@@ -3447,9 +3438,9 @@ pub mod get_operations_for_resource_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -3572,9 +3563,9 @@ pub mod get_operations_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -3724,12 +3715,9 @@ pub mod get_load_balancer_tls_certificates_output {
         ///
         /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
         /// certificates.</p>
-        pub fn tls_certificates(
-            mut self,
-            input: impl Into<crate::model::LoadBalancerTlsCertificate>,
-        ) -> Self {
+        pub fn tls_certificates(mut self, input: crate::model::LoadBalancerTlsCertificate) -> Self {
             let mut v = self.tls_certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tls_certificates = Some(v);
             self
         }
@@ -3805,9 +3793,9 @@ pub mod get_load_balancers_output {
         /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
         ///
         /// <p>An array of LoadBalancer objects describing your load balancers.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -3909,9 +3897,9 @@ pub mod get_load_balancer_metric_data_output {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatapoint>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }
@@ -4044,9 +4032,9 @@ pub mod get_key_pairs_output {
         /// To override the contents of this collection use [`set_key_pairs`](Self::set_key_pairs).
         ///
         /// <p>An array of key-value pairs containing information about the key pairs.</p>
-        pub fn key_pairs(mut self, input: impl Into<crate::model::KeyPair>) -> Self {
+        pub fn key_pairs(mut self, input: crate::model::KeyPair) -> Self {
             let mut v = self.key_pairs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_pairs = Some(v);
             self
         }
@@ -4254,12 +4242,9 @@ pub mod get_instance_snapshots_output {
         ///
         /// <p>An array of key-value pairs containing information about the results of your get instance
         /// snapshots request.</p>
-        pub fn instance_snapshots(
-            mut self,
-            input: impl Into<crate::model::InstanceSnapshot>,
-        ) -> Self {
+        pub fn instance_snapshots(mut self, input: crate::model::InstanceSnapshot) -> Self {
             let mut v = self.instance_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_snapshots = Some(v);
             self
         }
@@ -4416,9 +4401,9 @@ pub mod get_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>An array of key-value pairs containing information about your instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -4502,9 +4487,9 @@ pub mod get_instance_port_states_output {
         ///
         /// <p>An array of objects that describe the firewall port states for the specified
         /// instance.</p>
-        pub fn port_states(mut self, input: impl Into<crate::model::InstancePortState>) -> Self {
+        pub fn port_states(mut self, input: crate::model::InstancePortState) -> Self {
             let mut v = self.port_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_states = Some(v);
             self
         }
@@ -4587,9 +4572,9 @@ pub mod get_instance_metric_data_output {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatapoint>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }
@@ -4786,10 +4771,10 @@ pub mod get_export_snapshot_records_output {
         /// <p>A list of objects describing the export snapshot records.</p>
         pub fn export_snapshot_records(
             mut self,
-            input: impl Into<crate::model::ExportSnapshotRecord>,
+            input: crate::model::ExportSnapshotRecord,
         ) -> Self {
             let mut v = self.export_snapshot_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_snapshot_records = Some(v);
             self
         }
@@ -4887,9 +4872,9 @@ pub mod get_domains_output {
         ///
         /// <p>An array of key-value pairs containing information about each of the domain entries in the
         /// user's account.</p>
-        pub fn domains(mut self, input: impl Into<crate::model::Domain>) -> Self {
+        pub fn domains(mut self, input: crate::model::Domain) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domains = Some(v);
             self
         }
@@ -5040,12 +5025,9 @@ pub mod get_distributions_output {
         /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
         ///
         /// <p>An array of objects that describe your distributions.</p>
-        pub fn distributions(
-            mut self,
-            input: impl Into<crate::model::LightsailDistribution>,
-        ) -> Self {
+        pub fn distributions(mut self, input: crate::model::LightsailDistribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.distributions = Some(v);
             self
         }
@@ -5147,9 +5129,9 @@ pub mod get_distribution_metric_data_output {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatapoint>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }
@@ -5291,9 +5273,9 @@ pub mod get_distribution_bundles_output {
         /// To override the contents of this collection use [`set_bundles`](Self::set_bundles).
         ///
         /// <p>An object that describes a distribution bundle.</p>
-        pub fn bundles(mut self, input: impl Into<crate::model::DistributionBundle>) -> Self {
+        pub fn bundles(mut self, input: crate::model::DistributionBundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bundles = Some(v);
             self
         }
@@ -5368,9 +5350,9 @@ pub mod get_disk_snapshots_output {
         /// To override the contents of this collection use [`set_disk_snapshots`](Self::set_disk_snapshots).
         ///
         /// <p>An array of objects containing information about all block storage disk snapshots.</p>
-        pub fn disk_snapshots(mut self, input: impl Into<crate::model::DiskSnapshot>) -> Self {
+        pub fn disk_snapshots(mut self, input: crate::model::DiskSnapshot) -> Self {
             let mut v = self.disk_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disk_snapshots = Some(v);
             self
         }
@@ -5522,9 +5504,9 @@ pub mod get_disks_output {
         /// To override the contents of this collection use [`set_disks`](Self::set_disks).
         ///
         /// <p>An array of objects containing information about all block storage disks.</p>
-        pub fn disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
+        pub fn disks(mut self, input: crate::model::Disk) -> Self {
             let mut v = self.disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disks = Some(v);
             self
         }
@@ -5658,12 +5640,9 @@ pub mod get_container_services_output {
         /// To override the contents of this collection use [`set_container_services`](Self::set_container_services).
         ///
         /// <p>An array of objects that describe one or more container services.</p>
-        pub fn container_services(
-            mut self,
-            input: impl Into<crate::model::ContainerService>,
-        ) -> Self {
+        pub fn container_services(mut self, input: crate::model::ContainerService) -> Self {
             let mut v = self.container_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.container_services = Some(v);
             self
         }
@@ -5727,9 +5706,9 @@ pub mod get_container_service_powers_output {
         ///
         /// <p>An array of objects that describe the powers that can be specified for a container
         /// service.</p>
-        pub fn powers(mut self, input: impl Into<crate::model::ContainerServicePower>) -> Self {
+        pub fn powers(mut self, input: crate::model::ContainerServicePower) -> Self {
             let mut v = self.powers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.powers = Some(v);
             self
         }
@@ -5812,9 +5791,9 @@ pub mod get_container_service_metric_data_output {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatapoint>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }
@@ -5877,12 +5856,9 @@ pub mod get_container_service_deployments_output {
         /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
         ///
         /// <p>An array of objects that describe deployments for a container service.</p>
-        pub fn deployments(
-            mut self,
-            input: impl Into<crate::model::ContainerServiceDeployment>,
-        ) -> Self {
+        pub fn deployments(mut self, input: crate::model::ContainerServiceDeployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments = Some(v);
             self
         }
@@ -5962,12 +5938,9 @@ pub mod get_container_log_output {
         /// To override the contents of this collection use [`set_log_events`](Self::set_log_events).
         ///
         /// <p>An array of objects that describe the log events of a container.</p>
-        pub fn log_events(
-            mut self,
-            input: impl Into<crate::model::ContainerServiceLogEvent>,
-        ) -> Self {
+        pub fn log_events(mut self, input: crate::model::ContainerServiceLogEvent) -> Self {
             let mut v = self.log_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_events = Some(v);
             self
         }
@@ -6056,9 +6029,9 @@ pub mod get_container_images_output {
         ///
         /// <p>An array of objects that describe container images that are registered to the container
         /// service.</p>
-        pub fn container_images(mut self, input: impl Into<crate::model::ContainerImage>) -> Self {
+        pub fn container_images(mut self, input: crate::model::ContainerImage) -> Self {
             let mut v = self.container_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.container_images = Some(v);
             self
         }
@@ -6132,10 +6105,10 @@ pub mod get_container_api_metadata_output {
         /// Control (lightsailctl) plugin.</p>
         pub fn metadata(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metadata = Some(v);
             self
         }
@@ -6199,9 +6172,9 @@ pub mod get_contact_methods_output {
         /// To override the contents of this collection use [`set_contact_methods`](Self::set_contact_methods).
         ///
         /// <p>An array of objects that describe the contact methods.</p>
-        pub fn contact_methods(mut self, input: impl Into<crate::model::ContactMethod>) -> Self {
+        pub fn contact_methods(mut self, input: crate::model::ContactMethod) -> Self {
             let mut v = self.contact_methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_methods = Some(v);
             self
         }
@@ -6287,10 +6260,10 @@ pub mod get_cloud_formation_stack_records_output {
         /// <p>A list of objects describing the CloudFormation stack records.</p>
         pub fn cloud_formation_stack_records(
             mut self,
-            input: impl Into<crate::model::CloudFormationStackRecord>,
+            input: crate::model::CloudFormationStackRecord,
         ) -> Self {
             let mut v = self.cloud_formation_stack_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_formation_stack_records = Some(v);
             self
         }
@@ -6374,9 +6347,9 @@ pub mod get_certificates_output {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>An object that describes certificates.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::CertificateSummary>) -> Self {
+        pub fn certificates(mut self, input: crate::model::CertificateSummary) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -6451,9 +6424,9 @@ pub mod get_bundles_output {
         /// To override the contents of this collection use [`set_bundles`](Self::set_bundles).
         ///
         /// <p>An array of key-value pairs that contains information about the available bundles.</p>
-        pub fn bundles(mut self, input: impl Into<crate::model::Bundle>) -> Self {
+        pub fn bundles(mut self, input: crate::model::Bundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bundles = Some(v);
             self
         }
@@ -6552,9 +6525,9 @@ pub mod get_buckets_output {
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
         /// <p>An array of objects that describe buckets.</p>
-        pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
+        pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buckets = Some(v);
             self
         }
@@ -6660,9 +6633,9 @@ pub mod get_bucket_metric_data_output {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>An array of objects that describe the metric data returned.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatapoint>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatapoint) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }
@@ -6724,9 +6697,9 @@ pub mod get_bucket_bundles_output {
         /// To override the contents of this collection use [`set_bundles`](Self::set_bundles).
         ///
         /// <p>An object that describes bucket bundles.</p>
-        pub fn bundles(mut self, input: impl Into<crate::model::BucketBundle>) -> Self {
+        pub fn bundles(mut self, input: crate::model::BucketBundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bundles = Some(v);
             self
         }
@@ -6787,9 +6760,9 @@ pub mod get_bucket_access_keys_output {
         /// To override the contents of this collection use [`set_access_keys`](Self::set_access_keys).
         ///
         /// <p>An object that describes the access keys for the specified bucket.</p>
-        pub fn access_keys(mut self, input: impl Into<crate::model::AccessKey>) -> Self {
+        pub fn access_keys(mut self, input: crate::model::AccessKey) -> Self {
             let mut v = self.access_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_keys = Some(v);
             self
         }
@@ -6867,9 +6840,9 @@ pub mod get_blueprints_output {
         ///
         /// <p>An array of key-value pairs that contains information about the available
         /// blueprints.</p>
-        pub fn blueprints(mut self, input: impl Into<crate::model::Blueprint>) -> Self {
+        pub fn blueprints(mut self, input: crate::model::Blueprint) -> Self {
             let mut v = self.blueprints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blueprints = Some(v);
             self
         }
@@ -6997,12 +6970,9 @@ pub mod get_auto_snapshots_output {
         ///
         /// <p>An array of objects that describe the automatic snapshots that are available for the
         /// specified source instance or disk.</p>
-        pub fn auto_snapshots(
-            mut self,
-            input: impl Into<crate::model::AutoSnapshotDetails>,
-        ) -> Self {
+        pub fn auto_snapshots(mut self, input: crate::model::AutoSnapshotDetails) -> Self {
             let mut v = self.auto_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_snapshots = Some(v);
             self
         }
@@ -7080,9 +7050,9 @@ pub mod get_alarms_output {
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
         /// <p>An array of objects that describe the alarms.</p>
-        pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarms = Some(v);
             self
         }
@@ -7263,9 +7233,9 @@ pub mod export_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -7330,9 +7300,9 @@ pub mod enable_add_on_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -7476,9 +7446,9 @@ pub mod disable_add_on_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -7543,9 +7513,9 @@ pub mod detach_static_ip_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -7610,9 +7580,9 @@ pub mod detach_instances_from_load_balancer_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -7677,9 +7647,9 @@ pub mod detach_disk_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -7805,9 +7775,9 @@ pub mod delete_relational_database_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -7872,9 +7842,9 @@ pub mod delete_relational_database_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -7939,9 +7909,9 @@ pub mod delete_load_balancer_tls_certificate_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8006,9 +7976,9 @@ pub mod delete_load_balancer_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8073,9 +8043,9 @@ pub mod delete_known_host_keys_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8201,9 +8171,9 @@ pub mod delete_instance_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8268,9 +8238,9 @@ pub mod delete_instance_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8518,9 +8488,9 @@ pub mod delete_disk_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8585,9 +8555,9 @@ pub mod delete_disk_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8712,9 +8682,9 @@ pub mod delete_contact_method_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8779,9 +8749,9 @@ pub mod delete_certificate_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8846,9 +8816,9 @@ pub mod delete_bucket_access_key_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8913,9 +8883,9 @@ pub mod delete_bucket_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -8980,9 +8950,9 @@ pub mod delete_auto_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9047,9 +9017,9 @@ pub mod delete_alarm_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9114,9 +9084,9 @@ pub mod create_relational_database_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9181,9 +9151,9 @@ pub mod create_relational_database_from_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9248,9 +9218,9 @@ pub mod create_relational_database_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9315,9 +9285,9 @@ pub mod create_load_balancer_tls_certificate_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9382,9 +9352,9 @@ pub mod create_load_balancer_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9577,9 +9547,9 @@ pub mod create_instance_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9644,9 +9614,9 @@ pub mod create_instances_from_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9711,9 +9681,9 @@ pub mod create_instances_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -9983,9 +9953,9 @@ pub mod create_disk_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10050,9 +10020,9 @@ pub mod create_disk_from_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10117,9 +10087,9 @@ pub mod create_disk_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10364,9 +10334,9 @@ pub mod create_contact_method_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10431,9 +10401,9 @@ pub mod create_cloud_formation_stack_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10519,9 +10489,9 @@ pub mod create_certificate_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10608,9 +10578,9 @@ pub mod create_bucket_access_key_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10694,9 +10664,9 @@ pub mod create_bucket_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10762,9 +10732,9 @@ pub mod copy_snapshot_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10890,9 +10860,9 @@ pub mod attach_static_ip_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -10963,9 +10933,9 @@ pub mod attach_load_balancer_tls_certificate_output {
         /// request, the timestamp of the request, and the resources affected by the request.</p>
         /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get
         /// the certificate and use it for another purpose.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -11032,9 +11002,9 @@ pub mod attach_instances_to_load_balancer_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -11099,9 +11069,9 @@ pub mod attach_disk_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -11227,9 +11197,9 @@ pub mod allocate_static_ip_output {
         ///
         /// <p>An array of objects that describe the result of the action, such as the status of the
         /// request, the timestamp of the request, and the resources affected by the request.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }

@@ -371,8 +371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -381,8 +381,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -394,8 +397,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the destination backend environment to be created.</p>
-        pub fn target_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_environment_name(inp);
+        pub fn target_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.target_environment_name(signature.into());
             self
         }
         /// <p>The name of the destination backend environment to be created.</p>
@@ -467,8 +473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -477,8 +483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the app.</p>
-        pub fn app_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(inp);
+        pub fn app_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_name(signature.into());
             self
         }
         /// <p>The name of the app.</p>
@@ -487,8 +493,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -500,8 +509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource configuration for creating backend storage.</p>
-        pub fn resource_config(mut self, inp: crate::model::ResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(mut self, signature: crate::model::ResourceConfig) -> Self {
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>The resource configuration for creating backend storage.</p>
@@ -513,8 +522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the resource.</p>
@@ -586,8 +595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -596,8 +605,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -609,8 +621,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource configuration for this request.</p>
-        pub fn resource_config(mut self, inp: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(
+            mut self,
+            signature: crate::model::BackendApiResourceConfig,
+        ) -> Self {
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>The resource configuration for this request.</p>
@@ -622,8 +637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -695,8 +710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -705,8 +720,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -720,9 +738,9 @@ pub mod fluent_builders {
         /// <p>The resource configuration for this request object.</p>
         pub fn resource_config(
             mut self,
-            inp: crate::model::CreateBackendAuthResourceConfig,
+            signature: crate::model::CreateBackendAuthResourceConfig,
         ) -> Self {
-            self.inner = self.inner.resource_config(inp);
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>The resource configuration for this request object.</p>
@@ -734,8 +752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -807,8 +825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -817,8 +835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app ID for the backend manager.</p>
-        pub fn backend_manager_app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_manager_app_id(inp);
+        pub fn backend_manager_app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_manager_app_id(signature.into());
             self
         }
         /// <p>The app ID for the backend manager.</p>
@@ -890,8 +908,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -900,8 +918,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -915,9 +936,9 @@ pub mod fluent_builders {
         /// <p>The resource configuration for creating backend storage.</p>
         pub fn resource_config(
             mut self,
-            inp: crate::model::CreateBackendStorageResourceConfig,
+            signature: crate::model::CreateBackendStorageResourceConfig,
         ) -> Self {
-            self.inner = self.inner.resource_config(inp);
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>The resource configuration for creating backend storage.</p>
@@ -929,8 +950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the storage resource.</p>
@@ -1002,8 +1023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1072,8 +1093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1082,8 +1103,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1155,8 +1179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1165,8 +1189,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1178,8 +1205,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, inp: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(
+            mut self,
+            signature: crate::model::BackendApiResourceConfig,
+        ) -> Self {
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
@@ -1191,8 +1221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1264,8 +1294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1274,8 +1304,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1287,8 +1320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1360,8 +1393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1370,8 +1403,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1383,8 +1419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the storage resource.</p>
@@ -1396,8 +1432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage service.</p>
-        pub fn service_name(mut self, inp: crate::model::ServiceName) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: crate::model::ServiceName) -> Self {
+            self.inner = self.inner.service_name(signature);
             self
         }
         /// <p>The name of the storage service.</p>
@@ -1469,8 +1505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1479,8 +1515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The session ID.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The session ID.</p>
@@ -1549,8 +1585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1559,8 +1595,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1572,8 +1611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1645,8 +1684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1655,8 +1694,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1728,8 +1770,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1738,8 +1780,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1751,8 +1796,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, inp: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(
+            mut self,
+            signature: crate::model::BackendApiResourceConfig,
+        ) -> Self {
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
@@ -1764,8 +1812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1837,8 +1885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1847,8 +1895,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1860,8 +1911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1933,8 +1984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1943,8 +1994,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1956,8 +2010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -2029,8 +2083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2039,8 +2093,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2052,8 +2109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID for the job.</p>
@@ -2122,8 +2179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2132,8 +2189,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2145,8 +2205,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the storage resource.</p>
@@ -2218,8 +2278,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2228,8 +2288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The session ID.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The session ID.</p>
@@ -2298,8 +2358,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2308,8 +2368,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2321,8 +2384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Cognito identity pool.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>The ID of the Amazon Cognito identity pool.</p>
@@ -2334,8 +2397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Cognito native client.</p>
-        pub fn native_client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.native_client_id(inp);
+        pub fn native_client_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.native_client_id(signature.into());
             self
         }
         /// <p>The ID of the Amazon Cognito native client.</p>
@@ -2347,8 +2410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Cognito user pool.</p>
-        pub fn user_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(inp);
+        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(signature.into());
             self
         }
         /// <p>The ID of the Amazon Cognito user pool.</p>
@@ -2357,8 +2420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Cognito web client.</p>
-        pub fn web_client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_client_id(inp);
+        pub fn web_client_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_client_id(signature.into());
             self
         }
         /// <p>The ID of the Amazon Cognito web client.</p>
@@ -2430,8 +2493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2440,8 +2503,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2453,8 +2519,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the S3 bucket.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the S3 bucket.</p>
@@ -2463,8 +2529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage service.</p>
-        pub fn service_name(mut self, inp: crate::model::ServiceName) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: crate::model::ServiceName) -> Self {
+            self.inner = self.inner.service_name(signature);
             self
         }
         /// <p>The name of the storage service.</p>
@@ -2536,8 +2602,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2546,8 +2612,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2559,8 +2628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID for the job.</p>
@@ -2569,8 +2638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results that you want in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results that you want in the response.</p>
@@ -2579,8 +2648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2589,8 +2658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-        pub fn operation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation(inp);
+        pub fn operation(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation(signature.into());
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
@@ -2599,8 +2668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(signature.into());
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
@@ -2669,8 +2738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -2739,8 +2808,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2749,8 +2818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
-        pub fn clean_amplify_app(mut self, inp: bool) -> Self {
-            self.inner = self.inner.clean_amplify_app(inp);
+        pub fn clean_amplify_app(mut self, signature: bool) -> Self {
+            self.inner = self.inner.clean_amplify_app(signature);
             self
         }
         /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
@@ -2819,8 +2888,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2889,8 +2958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2899,8 +2968,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2912,8 +2984,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, inp: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(
+            mut self,
+            signature: crate::model::BackendApiResourceConfig,
+        ) -> Self {
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
@@ -2925,8 +3000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -2998,8 +3073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3008,8 +3083,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -3023,9 +3101,9 @@ pub mod fluent_builders {
         /// <p>The resource configuration for this request object.</p>
         pub fn resource_config(
             mut self,
-            inp: crate::model::UpdateBackendAuthResourceConfig,
+            signature: crate::model::UpdateBackendAuthResourceConfig,
         ) -> Self {
-            self.inner = self.inner.resource_config(inp);
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>The resource configuration for this request object.</p>
@@ -3037,8 +3115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -3110,8 +3188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3120,8 +3198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-        pub fn login_auth_config(mut self, inp: crate::model::LoginAuthConfigReqObj) -> Self {
-            self.inner = self.inner.login_auth_config(inp);
+        pub fn login_auth_config(mut self, signature: crate::model::LoginAuthConfigReqObj) -> Self {
+            self.inner = self.inner.login_auth_config(signature);
             self
         }
         /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
@@ -3193,8 +3271,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3203,8 +3281,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -3216,8 +3297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID for the job.</p>
@@ -3226,8 +3307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-        pub fn operation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation(inp);
+        pub fn operation(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation(signature.into());
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
@@ -3236,8 +3317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(signature.into());
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
@@ -3306,8 +3387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(signature.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3316,8 +3397,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backend_environment_name(signature.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -3331,9 +3415,9 @@ pub mod fluent_builders {
         /// <p>The resource configuration for updating backend storage.</p>
         pub fn resource_config(
             mut self,
-            inp: crate::model::UpdateBackendStorageResourceConfig,
+            signature: crate::model::UpdateBackendStorageResourceConfig,
         ) -> Self {
-            self.inner = self.inner.resource_config(inp);
+            self.inner = self.inner.resource_config(signature);
             self
         }
         /// <p>The resource configuration for updating backend storage.</p>
@@ -3345,8 +3429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the storage resource.</p>

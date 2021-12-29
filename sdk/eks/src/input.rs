@@ -27,12 +27,9 @@ pub mod associate_encryption_config_input {
         /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
         ///
         /// <p>The configuration you are using for encryption.</p>
-        pub fn encryption_config(
-            mut self,
-            input: impl Into<crate::model::EncryptionConfig>,
-        ) -> Self {
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             let mut v = self.encryption_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.encryption_config = Some(v);
             self
         }
@@ -932,12 +929,9 @@ pub mod create_cluster_input {
         /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
         ///
         /// <p>The encryption configuration for the cluster.</p>
-        pub fn encryption_config(
-            mut self,
-            input: impl Into<crate::model::EncryptionConfig>,
-        ) -> Self {
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             let mut v = self.encryption_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.encryption_config = Some(v);
             self
         }
@@ -1181,9 +1175,9 @@ pub mod create_fargate_profile_input {
         /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an
         /// associated namespace. Optionally, you can also specify labels for a namespace. You may
         /// specify up to five selectors in a Fargate profile.</p>
-        pub fn selectors(mut self, input: impl Into<crate::model::FargateProfileSelector>) -> Self {
+        pub fn selectors(mut self, input: crate::model::FargateProfileSelector) -> Self {
             let mut v = self.selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.selectors = Some(v);
             self
         }
@@ -1653,9 +1647,9 @@ pub mod create_nodegroup_input {
         /// To override the contents of this collection use [`set_taints`](Self::set_taints).
         ///
         /// <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
-        pub fn taints(mut self, input: impl Into<crate::model::Taint>) -> Self {
+        pub fn taints(mut self, input: crate::model::Taint) -> Self {
             let mut v = self.taints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.taints = Some(v);
             self
         }

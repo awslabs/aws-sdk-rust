@@ -450,9 +450,9 @@ pub mod create_alias_input {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -701,9 +701,9 @@ pub mod create_build_input {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1034,12 +1034,9 @@ pub mod create_fleet_input {
         /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
         /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
         /// automatically sets TCP and UDP ranges. </p>
-        pub fn ec2_inbound_permissions(
-            mut self,
-            input: impl Into<crate::model::IpPermission>,
-        ) -> Self {
+        pub fn ec2_inbound_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.ec2_inbound_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_inbound_permissions = Some(v);
             self
         }
@@ -1290,9 +1287,9 @@ pub mod create_fleet_input {
         /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
         /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
         /// instances in the home Region only, omit this parameter. </p>
-        pub fn locations(mut self, input: impl Into<crate::model::LocationConfiguration>) -> Self {
+        pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.locations = Some(v);
             self
         }
@@ -1319,9 +1316,9 @@ pub mod create_fleet_input {
         /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
         /// may be lower than stated. See the <i>AWS General Reference</i> for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1520,9 +1517,9 @@ pub mod create_fleet_locations_input {
         /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
         /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
         /// Region code such as <code>us-west-2</code>. </p>
-        pub fn locations(mut self, input: impl Into<crate::model::LocationConfiguration>) -> Self {
+        pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.locations = Some(v);
             self
         }
@@ -1808,12 +1805,9 @@ pub mod create_game_server_group_input {
         /// it is set to the default value "1". For more information about capacity weighting, see
         /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
         /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-        pub fn instance_definitions(
-            mut self,
-            input: impl Into<crate::model::InstanceDefinition>,
-        ) -> Self {
+        pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
             let mut v = self.instance_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_definitions = Some(v);
             self
         }
@@ -1987,9 +1981,9 @@ pub mod create_game_server_group_input {
         /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
         /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
         /// AWS General Reference for actual tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2224,9 +2218,9 @@ pub mod create_game_session_input {
         ///
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
         /// <a>GameSession</a> object with a request to start a new game session.</p>
-        pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_properties = Some(v);
             self
         }
@@ -2526,12 +2520,9 @@ pub mod create_game_session_queue_input {
         /// individual player can be placed into a game with unreasonably high latency. Use multiple
         /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
         /// maximum allowed latency, starting with the lowest value.</p>
-        pub fn player_latency_policies(
-            mut self,
-            input: impl Into<crate::model::PlayerLatencyPolicy>,
-        ) -> Self {
+        pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
             let mut v = self.player_latency_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.player_latency_policies = Some(v);
             self
         }
@@ -2553,12 +2544,9 @@ pub mod create_game_session_queue_input {
         ///
         /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
         /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::GameSessionQueueDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -2653,9 +2641,9 @@ pub mod create_game_session_queue_input {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3003,9 +2991,9 @@ pub mod create_matchmaking_configuration_input {
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
         /// object that is created for a successful match. This parameter is not used if
         /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_properties = Some(v);
             self
         }
@@ -3120,9 +3108,9 @@ pub mod create_matchmaking_configuration_input {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3347,9 +3335,9 @@ pub mod create_matchmaking_rule_set_input {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3996,9 +3984,9 @@ pub mod create_script_input {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14768,12 +14756,9 @@ pub mod resume_game_server_group_input {
         /// To override the contents of this collection use [`set_resume_actions`](Self::set_resume_actions).
         ///
         /// <p>The activity to resume for this game server group.</p>
-        pub fn resume_actions(
-            mut self,
-            input: impl Into<crate::model::GameServerGroupAction>,
-        ) -> Self {
+        pub fn resume_actions(mut self, input: crate::model::GameServerGroupAction) -> Self {
             let mut v = self.resume_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resume_actions = Some(v);
             self
         }
@@ -15353,9 +15338,9 @@ pub mod start_fleet_actions_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>List of actions to restart on the fleet.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::FleetAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::FleetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -15569,9 +15554,9 @@ pub mod start_game_session_placement_input {
         ///
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-        pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_properties = Some(v);
             self
         }
@@ -15613,9 +15598,9 @@ pub mod start_game_session_placement_input {
         ///
         /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
         /// it can offer the best possible gameplay experience for the players. </p>
-        pub fn player_latencies(mut self, input: impl Into<crate::model::PlayerLatency>) -> Self {
+        pub fn player_latencies(mut self, input: crate::model::PlayerLatency) -> Self {
             let mut v = self.player_latencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.player_latencies = Some(v);
             self
         }
@@ -15635,10 +15620,10 @@ pub mod start_game_session_placement_input {
         /// <p>Set of information on each player to create a player session for.</p>
         pub fn desired_player_sessions(
             mut self,
-            input: impl Into<crate::model::DesiredPlayerSession>,
+            input: crate::model::DesiredPlayerSession,
         ) -> Self {
             let mut v = self.desired_player_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.desired_player_sessions = Some(v);
             self
         }
@@ -15891,9 +15876,9 @@ pub mod start_match_backfill_input {
         /// not include latency values for any other Region.</p>
         /// </li>
         /// </ul>
-        pub fn players(mut self, input: impl Into<crate::model::Player>) -> Self {
+        pub fn players(mut self, input: crate::model::Player) -> Self {
             let mut v = self.players.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.players = Some(v);
             self
         }
@@ -16109,9 +16094,9 @@ pub mod start_matchmaking_input {
         /// ID, and may contain player attributes and latency data to be used in the matchmaking
         /// process. After a successful match, <code>Player</code> objects contain the name of the
         /// team the player is assigned to.</p>
-        pub fn players(mut self, input: impl Into<crate::model::Player>) -> Self {
+        pub fn players(mut self, input: crate::model::Player) -> Self {
             let mut v = self.players.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.players = Some(v);
             self
         }
@@ -16289,9 +16274,9 @@ pub mod stop_fleet_actions_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>List of actions to suspend on the fleet. </p>
-        pub fn actions(mut self, input: impl Into<crate::model::FleetAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::FleetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -16792,12 +16777,9 @@ pub mod suspend_game_server_group_input {
         /// To override the contents of this collection use [`set_suspend_actions`](Self::set_suspend_actions).
         ///
         /// <p>The activity to suspend for this game server group.</p>
-        pub fn suspend_actions(
-            mut self,
-            input: impl Into<crate::model::GameServerGroupAction>,
-        ) -> Self {
+        pub fn suspend_actions(mut self, input: crate::model::GameServerGroupAction) -> Self {
             let mut v = self.suspend_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suspend_actions = Some(v);
             self
         }
@@ -16985,9 +16967,9 @@ pub mod tag_resource_input {
         /// Tags are developer-defined and structured as key-value pairs.
         /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
         /// for actual tagging limits.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -18217,10 +18199,10 @@ pub mod update_fleet_port_settings_input {
         /// <p>A collection of port settings to be added to the fleet resource.</p>
         pub fn inbound_permission_authorizations(
             mut self,
-            input: impl Into<crate::model::IpPermission>,
+            input: crate::model::IpPermission,
         ) -> Self {
             let mut v = self.inbound_permission_authorizations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inbound_permission_authorizations = Some(v);
             self
         }
@@ -18237,12 +18219,9 @@ pub mod update_fleet_port_settings_input {
         /// To override the contents of this collection use [`set_inbound_permission_revocations`](Self::set_inbound_permission_revocations).
         ///
         /// <p>A collection of port settings to be removed from the fleet resource.</p>
-        pub fn inbound_permission_revocations(
-            mut self,
-            input: impl Into<crate::model::IpPermission>,
-        ) -> Self {
+        pub fn inbound_permission_revocations(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.inbound_permission_revocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inbound_permission_revocations = Some(v);
             self
         }
@@ -18678,12 +18657,9 @@ pub mod update_game_server_group_input {
         /// an instance type, it is set to the default value "1". For more information about
         /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
         /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-        pub fn instance_definitions(
-            mut self,
-            input: impl Into<crate::model::InstanceDefinition>,
-        ) -> Self {
+        pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
             let mut v = self.instance_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_definitions = Some(v);
             self
         }
@@ -19222,12 +19198,9 @@ pub mod update_game_session_queue_input {
         /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
         /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
         /// policies.</p>
-        pub fn player_latency_policies(
-            mut self,
-            input: impl Into<crate::model::PlayerLatencyPolicy>,
-        ) -> Self {
+        pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
             let mut v = self.player_latency_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.player_latency_policies = Some(v);
             self
         }
@@ -19250,12 +19223,9 @@ pub mod update_game_session_queue_input {
         ///
         /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
         /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::GameSessionQueueDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -19657,9 +19627,9 @@ pub mod update_matchmaking_configuration_input {
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
         /// object that is created for a successful match.  This parameter is not used if
         /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_properties = Some(v);
             self
         }

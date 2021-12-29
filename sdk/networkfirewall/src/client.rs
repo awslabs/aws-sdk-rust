@@ -373,8 +373,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -386,8 +386,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -398,8 +398,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -412,8 +412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
@@ -492,8 +492,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -505,8 +505,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -517,8 +517,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -535,8 +535,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
         /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
-        pub fn subnet_mappings(mut self, inp: impl Into<crate::model::SubnetMapping>) -> Self {
-            self.inner = self.inner.subnet_mappings(inp);
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
+            self.inner = self.inner.subnet_mappings(input);
             self
         }
         /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
@@ -614,8 +614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -628,8 +628,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
         /// use for the firewall.</p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
@@ -643,8 +643,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
         /// <p>You can't change this setting after you create the firewall. </p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(signature.into());
             self
         }
         /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
@@ -660,8 +660,8 @@ pub mod fluent_builders {
         /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
         /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
         /// subnet. </p>
-        pub fn subnet_mappings(mut self, inp: impl Into<crate::model::SubnetMapping>) -> Self {
-            self.inner = self.inner.subnet_mappings(inp);
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
+            self.inner = self.inner.subnet_mappings(input);
             self
         }
         /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
@@ -677,8 +677,8 @@ pub mod fluent_builders {
         /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
         /// that the firewall is protected against deletion. Use this setting to protect against
         /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-        pub fn delete_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_protection(inp);
+        pub fn delete_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_protection(signature);
             self
         }
         /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
@@ -691,8 +691,8 @@ pub mod fluent_builders {
         /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
         /// Use this setting to protect against
         /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn subnet_change_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.subnet_change_protection(inp);
+        pub fn subnet_change_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.subnet_change_protection(signature);
             self
         }
         /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
@@ -705,8 +705,8 @@ pub mod fluent_builders {
         /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
         /// Use this setting to protect against
         /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn firewall_policy_change_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.firewall_policy_change_protection(inp);
+        pub fn firewall_policy_change_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.firewall_policy_change_protection(signature);
             self
         }
         /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
@@ -720,8 +720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the firewall.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the firewall.</p>
@@ -734,8 +734,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
@@ -810,8 +810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-        pub fn firewall_policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_name(inp);
+        pub fn firewall_policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -823,8 +823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-        pub fn firewall_policy(mut self, inp: crate::model::FirewallPolicy) -> Self {
-            self.inner = self.inner.firewall_policy(inp);
+        pub fn firewall_policy(mut self, signature: crate::model::FirewallPolicy) -> Self {
+            self.inner = self.inner.firewall_policy(signature);
             self
         }
         /// <p>The rule groups and policy actions to use in the firewall policy.</p>
@@ -836,8 +836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the firewall policy.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the firewall policy.</p>
@@ -850,8 +850,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
@@ -868,8 +868,8 @@ pub mod fluent_builders {
         /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
         /// the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
@@ -946,8 +946,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-        pub fn rule_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_name(inp);
+        pub fn rule_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(signature.into());
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -962,8 +962,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
-        pub fn rule_group(mut self, inp: crate::model::RuleGroup) -> Self {
-            self.inner = self.inner.rule_group(inp);
+        pub fn rule_group(mut self, signature: crate::model::RuleGroup) -> Self {
+            self.inner = self.inner.rule_group(signature);
             self
         }
         /// <p>An object that defines the rule group rules. </p>
@@ -984,8 +984,8 @@ pub mod fluent_builders {
         /// </note>  
         /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
         /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
-        pub fn rules(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rules(signature.into());
             self
         }
         /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
@@ -1001,8 +1001,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
         /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        pub fn r#type(mut self, inp: crate::model::RuleGroupType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
@@ -1012,8 +1012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the rule group. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the rule group. </p>
@@ -1062,8 +1062,8 @@ pub mod fluent_builders {
         /// <p>For
         /// a stateful rule group, the minimum capacity required is the number of individual rules that
         /// you expect to have in the rule group. </p>
-        pub fn capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.capacity(inp);
+        pub fn capacity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.capacity(signature);
             self
         }
         /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
@@ -1134,8 +1134,8 @@ pub mod fluent_builders {
         /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
         /// the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
@@ -1220,8 +1220,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -1235,8 +1235,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1307,8 +1307,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_name(inp);
+        pub fn firewall_policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -1322,8 +1322,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
@@ -1396,8 +1396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
@@ -1467,8 +1467,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_name(inp);
+        pub fn rule_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(signature.into());
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -1482,8 +1482,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_arn(inp);
+        pub fn rule_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
@@ -1500,8 +1500,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
-        pub fn r#type(mut self, inp: crate::model::RuleGroupType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
@@ -1575,8 +1575,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -1590,8 +1590,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1662,8 +1662,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_name(inp);
+        pub fn firewall_policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -1677,8 +1677,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
@@ -1752,8 +1752,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1764,8 +1764,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -1838,8 +1838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
@@ -1909,8 +1909,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_name(inp);
+        pub fn rule_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(signature.into());
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -1924,8 +1924,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_arn(inp);
+        pub fn rule_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
@@ -1942,8 +1942,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
-        pub fn r#type(mut self, inp: crate::model::RuleGroupType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
@@ -2021,8 +2021,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -2034,8 +2034,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -2046,8 +2046,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -2064,8 +2064,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
@@ -2141,8 +2141,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
         /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
@@ -2155,8 +2155,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
         /// objects are available, in the response, Network Firewall provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
@@ -2232,8 +2232,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
         /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
@@ -2249,8 +2249,8 @@ pub mod fluent_builders {
         ///
         /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
         /// for. Leave this blank to retrieve all firewalls that you have defined.</p>
-        pub fn vpc_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_ids(inp);
+        pub fn vpc_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_ids(input.into());
             self
         }
         /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
@@ -2265,8 +2265,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
         /// objects are available, in the response, Network Firewall provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
@@ -2341,8 +2341,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
         /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
@@ -2355,8 +2355,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
         /// objects are available, in the response, Network Firewall provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
@@ -2435,8 +2435,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
         /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
@@ -2449,8 +2449,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
         /// objects are available, in the response, Network Firewall provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
@@ -2461,8 +2461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2545,8 +2545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
@@ -2584,8 +2584,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with
@@ -2688,8 +2688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2702,8 +2702,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p></p>
@@ -2781,8 +2781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2795,8 +2795,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p></p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p></p>
@@ -2873,8 +2873,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -2886,8 +2886,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -2898,8 +2898,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -2914,8 +2914,8 @@ pub mod fluent_builders {
         /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
         /// that the firewall is protected against deletion. Use this setting to protect against
         /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-        pub fn delete_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_protection(inp);
+        pub fn delete_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_protection(signature);
             self
         }
         /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
@@ -2989,8 +2989,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -3002,8 +3002,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -3014,8 +3014,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -3029,8 +3029,8 @@ pub mod fluent_builders {
         }
         /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
         /// the description for the firewall.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
@@ -3101,8 +3101,8 @@ pub mod fluent_builders {
         }
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
         /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
@@ -3113,8 +3113,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
@@ -3128,8 +3128,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_name(inp);
+        pub fn firewall_policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -3142,8 +3142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated firewall policy to use for the firewall. </p>
-        pub fn firewall_policy(mut self, inp: crate::model::FirewallPolicy) -> Self {
-            self.inner = self.inner.firewall_policy(inp);
+        pub fn firewall_policy(mut self, signature: crate::model::FirewallPolicy) -> Self {
+            self.inner = self.inner.firewall_policy(signature);
             self
         }
         /// <p>The updated firewall policy to use for the firewall. </p>
@@ -3155,8 +3155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the firewall policy.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the firewall policy.</p>
@@ -3170,8 +3170,8 @@ pub mod fluent_builders {
         /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
         /// the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
@@ -3249,8 +3249,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -3262,8 +3262,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -3274,8 +3274,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -3290,8 +3290,8 @@ pub mod fluent_builders {
         /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
         /// Use this setting to protect against
         /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn firewall_policy_change_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.firewall_policy_change_protection(inp);
+        pub fn firewall_policy_change_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.firewall_policy_change_protection(signature);
             self
         }
         /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
@@ -3391,8 +3391,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -3403,8 +3403,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -3418,8 +3418,11 @@ pub mod fluent_builders {
         }
         /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
         /// Network Firewall disables logging for the firewall.</p>
-        pub fn logging_configuration(mut self, inp: crate::model::LoggingConfiguration) -> Self {
-            self.inner = self.inner.logging_configuration(inp);
+        pub fn logging_configuration(
+            mut self,
+            signature: crate::model::LoggingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.logging_configuration(signature);
             self
         }
         /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
@@ -3498,8 +3501,8 @@ pub mod fluent_builders {
         }
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
         /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
@@ -3510,8 +3513,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_arn(inp);
+        pub fn rule_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
@@ -3525,8 +3528,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_name(inp);
+        pub fn rule_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(signature.into());
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -3542,8 +3545,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
-        pub fn rule_group(mut self, inp: crate::model::RuleGroup) -> Self {
-            self.inner = self.inner.rule_group(inp);
+        pub fn rule_group(mut self, signature: crate::model::RuleGroup) -> Self {
+            self.inner = self.inner.rule_group(signature);
             self
         }
         /// <p>An object that defines the rule group rules. </p>
@@ -3564,8 +3567,8 @@ pub mod fluent_builders {
         /// </note>  
         /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
         /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
-        pub fn rules(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rules(signature.into());
             self
         }
         /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
@@ -3584,8 +3587,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
-        pub fn r#type(mut self, inp: crate::model::RuleGroupType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
@@ -3598,8 +3601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the rule group. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the rule group. </p>
@@ -3613,8 +3616,8 @@ pub mod fluent_builders {
         /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
         /// the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
@@ -3690,8 +3693,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -3703,8 +3706,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -3715,8 +3718,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(signature.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -3731,8 +3734,8 @@ pub mod fluent_builders {
         /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
         /// Use this setting to protect against
         /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn subnet_change_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.subnet_change_protection(inp);
+        pub fn subnet_change_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.subnet_change_protection(signature);
             self
         }
         /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.

@@ -346,10 +346,10 @@ pub mod put_dashboard_output {
         /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
         pub fn dashboard_validation_messages(
             mut self,
-            input: impl Into<crate::model::DashboardValidationMessage>,
+            input: crate::model::DashboardValidationMessage,
         ) -> Self {
             let mut v = self.dashboard_validation_messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_validation_messages = Some(v);
             self
         }
@@ -474,9 +474,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tag keys and values associated with the resource you specified.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -557,9 +557,9 @@ pub mod list_metric_streams_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>The array of metric stream information.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::MetricStreamEntry>) -> Self {
+        pub fn entries(mut self, input: crate::model::MetricStreamEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -629,9 +629,9 @@ pub mod list_metrics_output {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>The metrics that match your request. </p>
-        pub fn metrics(mut self, input: impl Into<crate::model::Metric>) -> Self {
+        pub fn metrics(mut self, input: crate::model::Metric) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics = Some(v);
             self
         }
@@ -712,9 +712,9 @@ pub mod list_dashboards_output {
         /// To override the contents of this collection use [`set_dashboard_entries`](Self::set_dashboard_entries).
         ///
         /// <p>The list of matching dashboards.</p>
-        pub fn dashboard_entries(mut self, input: impl Into<crate::model::DashboardEntry>) -> Self {
+        pub fn dashboard_entries(mut self, input: crate::model::DashboardEntry) -> Self {
             let mut v = self.dashboard_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_entries = Some(v);
             self
         }
@@ -951,12 +951,9 @@ pub mod get_metric_stream_output {
         /// <p>If this array of metric namespaces is present, then these
         /// namespaces are the only
         /// metric namespaces that are streamed by this metric stream.</p>
-        pub fn include_filters(
-            mut self,
-            input: impl Into<crate::model::MetricStreamFilter>,
-        ) -> Self {
+        pub fn include_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.include_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include_filters = Some(v);
             self
         }
@@ -977,12 +974,9 @@ pub mod get_metric_stream_output {
         /// <p>If this array of metric namespaces is present, then these namespaces are the only
         /// metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in
         /// the account are streamed by this metric stream.</p>
-        pub fn exclude_filters(
-            mut self,
-            input: impl Into<crate::model::MetricStreamFilter>,
-        ) -> Self {
+        pub fn exclude_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.exclude_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exclude_filters = Some(v);
             self
         }
@@ -1145,9 +1139,9 @@ pub mod get_metric_statistics_output {
         /// To override the contents of this collection use [`set_datapoints`](Self::set_datapoints).
         ///
         /// <p>The data points for the specified metric.</p>
-        pub fn datapoints(mut self, input: impl Into<crate::model::Datapoint>) -> Self {
+        pub fn datapoints(mut self, input: crate::model::Datapoint) -> Self {
             let mut v = self.datapoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datapoints = Some(v);
             self
         }
@@ -1236,12 +1230,9 @@ pub mod get_metric_data_output {
         /// To override the contents of this collection use [`set_metric_data_results`](Self::set_metric_data_results).
         ///
         /// <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
-        pub fn metric_data_results(
-            mut self,
-            input: impl Into<crate::model::MetricDataResult>,
-        ) -> Self {
+        pub fn metric_data_results(mut self, input: crate::model::MetricDataResult) -> Self {
             let mut v = self.metric_data_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data_results = Some(v);
             self
         }
@@ -1273,9 +1264,9 @@ pub mod get_metric_data_output {
         /// operation as possible is still executed.</p>
         /// <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
         /// about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::MessageData>) -> Self {
+        pub fn messages(mut self, input: crate::model::MessageData) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -1447,12 +1438,9 @@ pub mod get_insight_rule_report_output {
         ///
         /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values
         /// for the keys counts as a unique contributor.</p>
-        pub fn contributors(
-            mut self,
-            input: impl Into<crate::model::InsightRuleContributor>,
-        ) -> Self {
+        pub fn contributors(mut self, input: crate::model::InsightRuleContributor) -> Self {
             let mut v = self.contributors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contributors = Some(v);
             self
         }
@@ -1472,10 +1460,10 @@ pub mod get_insight_rule_report_output {
         /// <p>A time series of metric data points that matches the time period in the rule request.</p>
         pub fn metric_datapoints(
             mut self,
-            input: impl Into<crate::model::InsightRuleMetricDatapoint>,
+            input: crate::model::InsightRuleMetricDatapoint,
         ) -> Self {
             let mut v = self.metric_datapoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_datapoints = Some(v);
             self
         }
@@ -1650,9 +1638,9 @@ pub mod enable_insight_rules_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::PartialFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::PartialFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -1743,9 +1731,9 @@ pub mod disable_insight_rules_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::PartialFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::PartialFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -1854,9 +1842,9 @@ pub mod describe_insight_rules_output {
         /// To override the contents of this collection use [`set_insight_rules`](Self::set_insight_rules).
         ///
         /// <p>The rules returned by the operation.</p>
-        pub fn insight_rules(mut self, input: impl Into<crate::model::InsightRule>) -> Self {
+        pub fn insight_rules(mut self, input: crate::model::InsightRule) -> Self {
             let mut v = self.insight_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_rules = Some(v);
             self
         }
@@ -1929,12 +1917,9 @@ pub mod describe_anomaly_detectors_output {
         /// To override the contents of this collection use [`set_anomaly_detectors`](Self::set_anomaly_detectors).
         ///
         /// <p>The list of anomaly detection models returned by the operation.</p>
-        pub fn anomaly_detectors(
-            mut self,
-            input: impl Into<crate::model::AnomalyDetector>,
-        ) -> Self {
+        pub fn anomaly_detectors(mut self, input: crate::model::AnomalyDetector) -> Self {
             let mut v = self.anomaly_detectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_detectors = Some(v);
             self
         }
@@ -2008,9 +1993,9 @@ pub mod describe_alarms_for_metric_output {
         /// To override the contents of this collection use [`set_metric_alarms`](Self::set_metric_alarms).
         ///
         /// <p>The information for each alarm with the specified metric.</p>
-        pub fn metric_alarms(mut self, input: impl Into<crate::model::MetricAlarm>) -> Self {
+        pub fn metric_alarms(mut self, input: crate::model::MetricAlarm) -> Self {
             let mut v = self.metric_alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_alarms = Some(v);
             self
         }
@@ -2088,9 +2073,9 @@ pub mod describe_alarms_output {
         /// To override the contents of this collection use [`set_composite_alarms`](Self::set_composite_alarms).
         ///
         /// <p>The information about any composite alarms returned by the operation.</p>
-        pub fn composite_alarms(mut self, input: impl Into<crate::model::CompositeAlarm>) -> Self {
+        pub fn composite_alarms(mut self, input: crate::model::CompositeAlarm) -> Self {
             let mut v = self.composite_alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.composite_alarms = Some(v);
             self
         }
@@ -2107,9 +2092,9 @@ pub mod describe_alarms_output {
         /// To override the contents of this collection use [`set_metric_alarms`](Self::set_metric_alarms).
         ///
         /// <p>The information about any metric alarms returned by the operation.</p>
-        pub fn metric_alarms(mut self, input: impl Into<crate::model::MetricAlarm>) -> Self {
+        pub fn metric_alarms(mut self, input: crate::model::MetricAlarm) -> Self {
             let mut v = self.metric_alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_alarms = Some(v);
             self
         }
@@ -2191,12 +2176,9 @@ pub mod describe_alarm_history_output {
         /// To override the contents of this collection use [`set_alarm_history_items`](Self::set_alarm_history_items).
         ///
         /// <p>The alarm histories, in JSON format.</p>
-        pub fn alarm_history_items(
-            mut self,
-            input: impl Into<crate::model::AlarmHistoryItem>,
-        ) -> Self {
+        pub fn alarm_history_items(mut self, input: crate::model::AlarmHistoryItem) -> Self {
             let mut v = self.alarm_history_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_history_items = Some(v);
             self
         }
@@ -2298,9 +2280,9 @@ pub mod delete_insight_rules_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::PartialFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::PartialFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }

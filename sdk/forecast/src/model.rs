@@ -4336,9 +4336,9 @@ pub mod evaluation_result {
         /// <p>The array of test windows used for evaluating the algorithm. The
         /// <code>NumberOfBacktestWindows</code> from the <a>EvaluationParameters</a> object
         /// determines the number of windows in the array.</p>
-        pub fn test_windows(mut self, input: impl Into<crate::model::WindowSummary>) -> Self {
+        pub fn test_windows(mut self, input: crate::model::WindowSummary) -> Self {
             let mut v = self.test_windows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_windows = Some(v);
             self
         }
@@ -4635,10 +4635,10 @@ pub mod metrics {
         /// regions of equal probability. The distribution in this case is the loss function.</p>
         pub fn weighted_quantile_losses(
             mut self,
-            input: impl Into<crate::model::WeightedQuantileLoss>,
+            input: crate::model::WeightedQuantileLoss,
         ) -> Self {
             let mut v = self.weighted_quantile_losses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.weighted_quantile_losses = Some(v);
             self
         }
@@ -4658,9 +4658,9 @@ pub mod metrics {
         /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean
         /// square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE),
         /// and weighted average percentage error (WAPE). </p>
-        pub fn error_metrics(mut self, input: impl Into<crate::model::ErrorMetric>) -> Self {
+        pub fn error_metrics(mut self, input: crate::model::ErrorMetric) -> Self {
             let mut v = self.error_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_metrics = Some(v);
             self
         }
@@ -5022,12 +5022,9 @@ pub mod predictor_execution_details {
         /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a
         /// particular algorithm. The <code>NumberOfBacktestWindows</code> from the  object determines the number of windows in the
         /// array.</p>
-        pub fn predictor_executions(
-            mut self,
-            input: impl Into<crate::model::PredictorExecution>,
-        ) -> Self {
+        pub fn predictor_executions(mut self, input: crate::model::PredictorExecution) -> Self {
             let mut v = self.predictor_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.predictor_executions = Some(v);
             self
         }
@@ -5118,9 +5115,9 @@ pub mod predictor_execution {
         /// <p>An array of test windows used to evaluate the algorithm. The
         /// <code>NumberOfBacktestWindows</code> from the
         /// object determines the number of windows in the array.</p>
-        pub fn test_windows(mut self, input: impl Into<crate::model::TestWindowSummary>) -> Self {
+        pub fn test_windows(mut self, input: crate::model::TestWindowSummary) -> Self {
             let mut v = self.test_windows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_windows = Some(v);
             self
         }
@@ -5568,9 +5565,9 @@ pub mod featurization_config {
         /// To override the contents of this collection use [`set_featurizations`](Self::set_featurizations).
         ///
         /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-        pub fn featurizations(mut self, input: impl Into<crate::model::Featurization>) -> Self {
+        pub fn featurizations(mut self, input: crate::model::Featurization) -> Self {
             let mut v = self.featurizations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.featurizations = Some(v);
             self
         }
@@ -5701,12 +5698,9 @@ pub mod featurization {
         ///
         /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature
         /// transformation method.</p>
-        pub fn featurization_pipeline(
-            mut self,
-            input: impl Into<crate::model::FeaturizationMethod>,
-        ) -> Self {
+        pub fn featurization_pipeline(mut self, input: crate::model::FeaturizationMethod) -> Self {
             let mut v = self.featurization_pipeline.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.featurization_pipeline = Some(v);
             self
         }
@@ -6163,12 +6157,9 @@ pub mod input_data_config {
         ///
         /// <p>An array of supplementary features. The only supported feature is a holiday
         /// calendar.</p>
-        pub fn supplementary_features(
-            mut self,
-            input: impl Into<crate::model::SupplementaryFeature>,
-        ) -> Self {
+        pub fn supplementary_features(mut self, input: crate::model::SupplementaryFeature) -> Self {
             let mut v = self.supplementary_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supplementary_features = Some(v);
             self
         }
@@ -7264,10 +7255,10 @@ pub mod parameter_ranges {
         /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
         pub fn categorical_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::CategoricalParameterRange>,
+            input: crate::model::CategoricalParameterRange,
         ) -> Self {
             let mut v = self.categorical_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categorical_parameter_ranges = Some(v);
             self
         }
@@ -7286,10 +7277,10 @@ pub mod parameter_ranges {
         /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
         pub fn continuous_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::ContinuousParameterRange>,
+            input: crate::model::ContinuousParameterRange,
         ) -> Self {
             let mut v = self.continuous_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.continuous_parameter_ranges = Some(v);
             self
         }
@@ -7308,10 +7299,10 @@ pub mod parameter_ranges {
         /// <p>Specifies the tunable range for each integer hyperparameter.</p>
         pub fn integer_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::IntegerParameterRange>,
+            input: crate::model::IntegerParameterRange,
         ) -> Self {
             let mut v = self.integer_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.integer_parameter_ranges = Some(v);
             self
         }
@@ -8080,9 +8071,9 @@ pub mod schema {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::SchemaAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::SchemaAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -8694,12 +8685,9 @@ pub mod data_config {
         /// To override the contents of this collection use [`set_attribute_configs`](Self::set_attribute_configs).
         ///
         /// <p>Aggregation and filling options for attributes in your dataset group.</p>
-        pub fn attribute_configs(
-            mut self,
-            input: impl Into<crate::model::AttributeConfig>,
-        ) -> Self {
+        pub fn attribute_configs(mut self, input: crate::model::AttributeConfig) -> Self {
             let mut v = self.attribute_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_configs = Some(v);
             self
         }
@@ -8716,12 +8704,9 @@ pub mod data_config {
         /// To override the contents of this collection use [`set_additional_datasets`](Self::set_additional_datasets).
         ///
         /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
-        pub fn additional_datasets(
-            mut self,
-            input: impl Into<crate::model::AdditionalDataset>,
-        ) -> Self {
+        pub fn additional_datasets(mut self, input: crate::model::AdditionalDataset) -> Self {
             let mut v = self.additional_datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_datasets = Some(v);
             self
         }
@@ -9460,10 +9445,10 @@ pub mod additional_dataset {
         pub fn configuration(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.configuration.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configuration = Some(hash_map);
             self
         }

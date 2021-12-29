@@ -96,9 +96,9 @@ pub mod create_configuration_set_input {
         ///
         /// <p>An array of objects that define the tags (keys and values) to associate with the
         /// configuration set.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -517,12 +517,9 @@ pub mod create_contact_input {
         /// To override the contents of this collection use [`set_topic_preferences`](Self::set_topic_preferences).
         ///
         /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
-        pub fn topic_preferences(
-            mut self,
-            input: impl Into<crate::model::TopicPreference>,
-        ) -> Self {
+        pub fn topic_preferences(mut self, input: crate::model::TopicPreference) -> Self {
             let mut v = self.topic_preferences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_preferences = Some(v);
             self
         }
@@ -743,9 +740,9 @@ pub mod create_contact_list_input {
         ///
         /// <p>An interest group, theme, or label within a list. A contact list can have multiple
         /// topics.</p>
-        pub fn topics(mut self, input: impl Into<crate::model::Topic>) -> Self {
+        pub fn topics(mut self, input: crate::model::Topic) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topics = Some(v);
             self
         }
@@ -773,9 +770,9 @@ pub mod create_contact_list_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with a contact list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1187,9 +1184,9 @@ pub mod create_dedicated_ip_pool_input {
         ///
         /// <p>An object that defines the tags (keys and values) that you want to associate with the
         /// pool.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1391,9 +1388,9 @@ pub mod create_deliverability_test_report_input {
         ///
         /// <p>An array of objects that define the tags (keys and values) that you want to associate
         /// with the predictive inbox placement test.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1575,9 +1572,9 @@ pub mod create_email_identity_input {
         ///
         /// <p>An array of objects that define the tags (keys and values) to associate with the email
         /// identity.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8857,9 +8854,9 @@ pub mod list_suppressed_destinations_input {
         /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
         ///
         /// <p>The factors that caused the email address to be added to .</p>
-        pub fn reasons(mut self, input: impl Into<crate::model::SuppressionListReason>) -> Self {
+        pub fn reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
             let mut v = self.reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reasons = Some(v);
             self
         }
@@ -9848,12 +9845,9 @@ pub mod put_account_suppression_attributes_input {
         /// bounce.</p>
         /// </li>
         /// </ul>
-        pub fn suppressed_reasons(
-            mut self,
-            input: impl Into<crate::model::SuppressionListReason>,
-        ) -> Self {
+        pub fn suppressed_reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suppressed_reasons = Some(v);
             self
         }
@@ -10652,12 +10646,9 @@ pub mod put_configuration_set_suppression_options_input {
         /// bounce.</p>
         /// </li>
         /// </ul>
-        pub fn suppressed_reasons(
-            mut self,
-            input: impl Into<crate::model::SuppressionListReason>,
-        ) -> Self {
+        pub fn suppressed_reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suppressed_reasons = Some(v);
             self
         }
@@ -11428,10 +11419,10 @@ pub mod put_deliverability_dashboard_option_input {
         /// enabled the Deliverability dashboard for.</p>
         pub fn subscribed_domains(
             mut self,
-            input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
+            input: crate::model::DomainDeliverabilityTrackingOption,
         ) -> Self {
             let mut v = self.subscribed_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribed_domains = Some(v);
             self
         }
@@ -12982,9 +12973,9 @@ pub mod send_bulk_email_input {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
         /// email that you define, so that you can publish email sending events.</p>
-        pub fn default_email_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn default_email_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.default_email_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_email_tags = Some(v);
             self
         }
@@ -13018,12 +13009,9 @@ pub mod send_bulk_email_input {
         /// To override the contents of this collection use [`set_bulk_email_entries`](Self::set_bulk_email_entries).
         ///
         /// <p>The list of bulk email entry objects.</p>
-        pub fn bulk_email_entries(
-            mut self,
-            input: impl Into<crate::model::BulkEmailEntry>,
-        ) -> Self {
+        pub fn bulk_email_entries(mut self, input: crate::model::BulkEmailEntry) -> Self {
             let mut v = self.bulk_email_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bulk_email_entries = Some(v);
             self
         }
@@ -13563,9 +13551,9 @@ pub mod send_email_input {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
         /// email that you define, so that you can publish email sending events. </p>
-        pub fn email_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn email_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.email_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.email_tags = Some(v);
             self
         }
@@ -13775,9 +13763,9 @@ pub mod tag_resource_input {
         /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
         /// length of a tag key is 128 characters. The maximum length of a tag value is 256
         /// characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14570,12 +14558,9 @@ pub mod update_contact_input {
         /// To override the contents of this collection use [`set_topic_preferences`](Self::set_topic_preferences).
         ///
         /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-        pub fn topic_preferences(
-            mut self,
-            input: impl Into<crate::model::TopicPreference>,
-        ) -> Self {
+        pub fn topic_preferences(mut self, input: crate::model::TopicPreference) -> Self {
             let mut v = self.topic_preferences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_preferences = Some(v);
             self
         }
@@ -14811,9 +14796,9 @@ pub mod update_contact_list_input {
         ///
         /// <p>An interest group, theme, or label within a list. A contact list can have multiple
         /// topics.</p>
-        pub fn topics(mut self, input: impl Into<crate::model::Topic>) -> Self {
+        pub fn topics(mut self, input: crate::model::Topic) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topics = Some(v);
             self
         }

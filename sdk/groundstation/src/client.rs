@@ -335,8 +335,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>UUID of a contact.</p>
@@ -406,8 +406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a <code>Config</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Name of a <code>Config</code>.</p>
@@ -416,8 +416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Parameters of a <code>Config</code>.</p>
-        pub fn config_data(mut self, inp: crate::model::ConfigTypeData) -> Self {
-            self.inner = self.inner.config_data(inp);
+        pub fn config_data(mut self, signature: crate::model::ConfigTypeData) -> Self {
+            self.inner = self.inner.config_data(signature);
             self
         }
         /// <p>Parameters of a <code>Config</code>.</p>
@@ -438,7 +438,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags assigned to a <code>Config</code>.</p>
@@ -520,8 +520,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_endpoint_details`](Self::set_endpoint_details).
         ///
         /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-        pub fn endpoint_details(mut self, inp: impl Into<crate::model::EndpointDetails>) -> Self {
-            self.inner = self.inner.endpoint_details(inp);
+        pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
+            self.inner = self.inner.endpoint_details(input);
             self
         }
         /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
@@ -542,7 +542,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags of a dataflow endpoint group.</p>
@@ -619,8 +619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a mission profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Name of a mission profile.</p>
@@ -629,8 +629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-        pub fn contact_pre_pass_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.contact_pre_pass_duration_seconds(inp);
+        pub fn contact_pre_pass_duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.contact_pre_pass_duration_seconds(signature);
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
@@ -642,8 +642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn contact_post_pass_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.contact_post_pass_duration_seconds(inp);
+        pub fn contact_post_pass_duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.contact_post_pass_duration_seconds(signature);
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
@@ -655,8 +655,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-        pub fn minimum_viable_contact_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.minimum_viable_contact_duration_seconds(inp);
+        pub fn minimum_viable_contact_duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self
+                .inner
+                .minimum_viable_contact_duration_seconds(signature);
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
@@ -676,11 +678,8 @@ pub mod fluent_builders {
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
         /// <code>Config</code> and a <i>to</i>
         /// <code>Config</code>.</p>
-        pub fn dataflow_edges(
-            mut self,
-            inp: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.dataflow_edges(inp);
+        pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.dataflow_edges(input);
             self
         }
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
@@ -694,8 +693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
-        pub fn tracking_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracking_config_arn(inp);
+        pub fn tracking_config_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracking_config_arn(signature.into());
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
@@ -716,7 +715,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags assigned to a mission profile.</p>
@@ -790,8 +789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a <code>Config</code>.</p>
-        pub fn config_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(inp);
+        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(signature.into());
             self
         }
         /// <p>UUID of a <code>Config</code>.</p>
@@ -800,8 +799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn config_type(mut self, inp: crate::model::ConfigCapabilityType) -> Self {
-            self.inner = self.inner.config_type(inp);
+        pub fn config_type(mut self, signature: crate::model::ConfigCapabilityType) -> Self {
+            self.inner = self.inner.config_type(signature);
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
@@ -873,8 +872,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a dataflow endpoint group.</p>
-        pub fn dataflow_endpoint_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataflow_endpoint_group_id(inp);
+        pub fn dataflow_endpoint_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.dataflow_endpoint_group_id(signature.into());
             self
         }
         /// <p>UUID of a dataflow endpoint group.</p>
@@ -946,8 +948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn mission_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_id(inp);
+        pub fn mission_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_id(signature.into());
             self
         }
         /// <p>UUID of a mission profile.</p>
@@ -1019,8 +1021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>UUID of a contact.</p>
@@ -1090,8 +1092,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a <code>Config</code>.</p>
-        pub fn config_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(inp);
+        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(signature.into());
             self
         }
         /// <p>UUID of a <code>Config</code>.</p>
@@ -1100,8 +1102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn config_type(mut self, inp: crate::model::ConfigCapabilityType) -> Self {
-            self.inner = self.inner.config_type(inp);
+        pub fn config_type(mut self, signature: crate::model::ConfigCapabilityType) -> Self {
+            self.inner = self.inner.config_type(signature);
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
@@ -1173,8 +1175,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a dataflow endpoint group.</p>
-        pub fn dataflow_endpoint_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataflow_endpoint_group_id(inp);
+        pub fn dataflow_endpoint_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.dataflow_endpoint_group_id(signature.into());
             self
         }
         /// <p>UUID of a dataflow endpoint group.</p>
@@ -1246,8 +1251,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The month being requested, with a value of 1-12.</p>
-        pub fn month(mut self, inp: i32) -> Self {
-            self.inner = self.inner.month(inp);
+        pub fn month(mut self, signature: i32) -> Self {
+            self.inner = self.inner.month(signature);
             self
         }
         /// <p>The month being requested, with a value of 1-12.</p>
@@ -1256,8 +1261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The year being requested, in the format of YYYY.</p>
-        pub fn year(mut self, inp: i32) -> Self {
-            self.inner = self.inner.year(inp);
+        pub fn year(mut self, signature: i32) -> Self {
+            self.inner = self.inner.year(signature);
             self
         }
         /// <p>The year being requested, in the format of YYYY.</p>
@@ -1326,8 +1331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn mission_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_id(inp);
+        pub fn mission_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_id(signature.into());
             self
         }
         /// <p>UUID of a mission profile.</p>
@@ -1399,8 +1404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a satellite.</p>
-        pub fn satellite_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.satellite_id(inp);
+        pub fn satellite_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_id(signature.into());
             self
         }
         /// <p>UUID of a satellite.</p>
@@ -1469,8 +1474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of <code>Configs</code> returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of <code>Configs</code> returned.</p>
@@ -1479,8 +1484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
@@ -1552,8 +1557,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of contacts returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of contacts returned.</p>
@@ -1562,8 +1567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
@@ -1576,8 +1581,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_status_list`](Self::set_status_list).
         ///
         /// <p>Status of a contact reservation.</p>
-        pub fn status_list(mut self, inp: impl Into<crate::model::ContactStatus>) -> Self {
-            self.inner = self.inner.status_list(inp);
+        pub fn status_list(mut self, input: crate::model::ContactStatus) -> Self {
+            self.inner = self.inner.status_list(input);
             self
         }
         /// <p>Status of a contact reservation.</p>
@@ -1589,8 +1594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Start time of a contact.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>Start time of a contact.</p>
@@ -1602,8 +1607,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>End time of a contact.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>End time of a contact.</p>
@@ -1615,8 +1620,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a ground station.</p>
-        pub fn ground_station(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ground_station(inp);
+        pub fn ground_station(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ground_station(signature.into());
             self
         }
         /// <p>Name of a ground station.</p>
@@ -1628,8 +1633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a satellite.</p>
-        pub fn satellite_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.satellite_arn(inp);
+        pub fn satellite_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_arn(signature.into());
             self
         }
         /// <p>ARN of a satellite.</p>
@@ -1641,8 +1646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a mission profile.</p>
-        pub fn mission_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_arn(inp);
+        pub fn mission_profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_arn(signature.into());
             self
         }
         /// <p>ARN of a mission profile.</p>
@@ -1714,8 +1719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of dataflow endpoint groups returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of dataflow endpoint groups returned.</p>
@@ -1724,8 +1729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
@@ -1794,8 +1799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
-        pub fn satellite_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.satellite_id(inp);
+        pub fn satellite_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_id(signature.into());
             self
         }
         /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
@@ -1804,8 +1809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of ground stations returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of ground stations returned.</p>
@@ -1814,8 +1819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
@@ -1884,8 +1889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of mission profiles returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of mission profiles returned.</p>
@@ -1894,8 +1899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
@@ -1964,8 +1969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of satellites returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of satellites returned.</p>
@@ -1974,8 +1979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
@@ -2044,8 +2049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>ARN of a resource.</p>
@@ -2114,8 +2119,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a mission profile.</p>
-        pub fn mission_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_arn(inp);
+        pub fn mission_profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_arn(signature.into());
             self
         }
         /// <p>ARN of a mission profile.</p>
@@ -2127,8 +2132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a satellite</p>
-        pub fn satellite_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.satellite_arn(inp);
+        pub fn satellite_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_arn(signature.into());
             self
         }
         /// <p>ARN of a satellite</p>
@@ -2140,8 +2145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Start time of a contact.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>Start time of a contact.</p>
@@ -2153,8 +2158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>End time of a contact.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>End time of a contact.</p>
@@ -2166,8 +2171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a ground station.</p>
-        pub fn ground_station(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ground_station(inp);
+        pub fn ground_station(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ground_station(signature.into());
             self
         }
         /// <p>Name of a ground station.</p>
@@ -2188,7 +2193,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags assigned to a contact.</p>
@@ -2262,8 +2267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a resource tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>ARN of a resource tag.</p>
@@ -2281,7 +2286,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags assigned to a resource.</p>
@@ -2355,8 +2360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>ARN of a resource.</p>
@@ -2369,8 +2374,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys of a resource tag.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys of a resource tag.</p>
@@ -2444,8 +2449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a <code>Config</code>.</p>
-        pub fn config_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(inp);
+        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(signature.into());
             self
         }
         /// <p>UUID of a <code>Config</code>.</p>
@@ -2454,8 +2459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a <code>Config</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Name of a <code>Config</code>.</p>
@@ -2464,8 +2469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn config_type(mut self, inp: crate::model::ConfigCapabilityType) -> Self {
-            self.inner = self.inner.config_type(inp);
+        pub fn config_type(mut self, signature: crate::model::ConfigCapabilityType) -> Self {
+            self.inner = self.inner.config_type(signature);
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
@@ -2477,8 +2482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Parameters of a <code>Config</code>.</p>
-        pub fn config_data(mut self, inp: crate::model::ConfigTypeData) -> Self {
-            self.inner = self.inner.config_data(inp);
+        pub fn config_data(mut self, signature: crate::model::ConfigTypeData) -> Self {
+            self.inner = self.inner.config_data(signature);
             self
         }
         /// <p>Parameters of a <code>Config</code>.</p>
@@ -2552,8 +2557,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn mission_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_id(inp);
+        pub fn mission_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_id(signature.into());
             self
         }
         /// <p>UUID of a mission profile.</p>
@@ -2565,8 +2570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a mission profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Name of a mission profile.</p>
@@ -2575,8 +2580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn contact_pre_pass_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.contact_pre_pass_duration_seconds(inp);
+        pub fn contact_pre_pass_duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.contact_pre_pass_duration_seconds(signature);
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
@@ -2588,8 +2593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn contact_post_pass_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.contact_post_pass_duration_seconds(inp);
+        pub fn contact_post_pass_duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.contact_post_pass_duration_seconds(signature);
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
@@ -2601,8 +2606,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-        pub fn minimum_viable_contact_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.minimum_viable_contact_duration_seconds(inp);
+        pub fn minimum_viable_contact_duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self
+                .inner
+                .minimum_viable_contact_duration_seconds(signature);
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
@@ -2622,11 +2629,8 @@ pub mod fluent_builders {
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
         /// <code>Config</code> and a <i>to</i>
         /// <code>Config</code>.</p>
-        pub fn dataflow_edges(
-            mut self,
-            inp: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.dataflow_edges(inp);
+        pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.dataflow_edges(input);
             self
         }
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
@@ -2640,8 +2644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
-        pub fn tracking_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracking_config_arn(inp);
+        pub fn tracking_config_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracking_config_arn(signature.into());
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>

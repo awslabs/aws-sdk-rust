@@ -333,9 +333,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags that have been applied to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -631,9 +631,9 @@ pub mod describe_servers_output {
         /// <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
         /// </li>
         /// </ul>
-        pub fn servers(mut self, input: impl Into<crate::model::Server>) -> Self {
+        pub fn servers(mut self, input: crate::model::Server) -> Self {
             let mut v = self.servers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.servers = Some(v);
             self
         }
@@ -846,12 +846,9 @@ pub mod describe_node_association_status_output {
         /// <p>Attributes specific to the node association.
         /// In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).
         /// </p>
-        pub fn engine_attributes(
-            mut self,
-            input: impl Into<crate::model::EngineAttribute>,
-        ) -> Self {
+        pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_attributes = Some(v);
             self
         }
@@ -940,9 +937,9 @@ pub mod describe_events_output {
         ///
         /// <p>Contains the response to a <code>DescribeEvents</code> request.
         /// </p>
-        pub fn server_events(mut self, input: impl Into<crate::model::ServerEvent>) -> Self {
+        pub fn server_events(mut self, input: crate::model::ServerEvent) -> Self {
             let mut v = self.server_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_events = Some(v);
             self
         }
@@ -1040,9 +1037,9 @@ pub mod describe_backups_output {
         ///
         /// <p>Contains the response to a <code>DescribeBackups</code> request.
         /// </p>
-        pub fn backups(mut self, input: impl Into<crate::model::Backup>) -> Self {
+        pub fn backups(mut self, input: crate::model::Backup) -> Self {
             let mut v = self.backups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backups = Some(v);
             self
         }
@@ -1121,9 +1118,9 @@ pub mod describe_account_attributes_output {
         /// <p>
         /// The attributes that are currently set for the account.
         /// </p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AccountAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AccountAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }

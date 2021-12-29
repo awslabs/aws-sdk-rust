@@ -185,8 +185,8 @@ pub mod fluent_builders {
         /// <code>start</code> parameter in a request; they are mutually exclusive. To get the first cursor, set the cursor value to <code>initial</code>. In subsequent requests, specify the cursor value returned in the hits section of the response. </p>
         /// <p>For more
         /// information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn cursor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cursor(inp);
+        pub fn cursor(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cursor(signature.into());
             self
         }
         /// <p>Retrieves a cursor value you can use to page through large result sets.
@@ -206,8 +206,8 @@ pub mod fluent_builders {
         /// </code> </p>
         /// <p>For information about the variables, operators, and functions you can use in expressions, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing Expressions</a>
         /// in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn expr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expr(inp);
+        pub fn expr(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expr(signature.into());
             self
         }
         /// <p>Defines one or more numeric expressions that can be used to sort results or specify search or filter
@@ -271,8 +271,8 @@ pub mod fluent_builders {
         /// <p>For more
         /// information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting and Using Facet Information</a>
         /// in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn facet(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.facet(inp);
+        pub fn facet(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.facet(signature.into());
             self
         }
         /// <p>Specifies one or more fields for which to get facet information, and options that control how the facet information is returned. Each specified field must be facet-enabled in the domain configuration. The fields and options are specified in JSON using the form <code>{"FIELD":{"OPTION":VALUE,"OPTION:"STRING"},"FIELD":{"OPTION":VALUE,"OPTION":"STRING"}}</code>.</p>
@@ -331,8 +331,8 @@ pub mod fluent_builders {
         /// <p>Specifies a structured query that filters the results of a search without affecting how the results are scored and sorted. You use <code>filterQuery</code> in conjunction with the <code>query</code> parameter to filter the documents that match the constraints specified in the <code>query</code> parameter. Specifying a filter controls only which matching documents are included in the results, it has no effect on how they are scored and sorted. The <code>filterQuery</code> parameter supports the full structured query syntax. </p>
         /// <p>For more information about using filters, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/filtering-results.html">Filtering Matching Documents</a>
         /// in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn filter_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_query(inp);
+        pub fn filter_query(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_query(signature.into());
             self
         }
         /// <p>Specifies a structured query that filters the results of a search without affecting how the results are scored and sorted. You use <code>filterQuery</code> in conjunction with the <code>query</code> parameter to filter the documents that match the constraints specified in the <code>query</code> parameter. Specifying a filter controls only which matching documents are included in the results, it has no effect on how they are scored and sorted. The <code>filterQuery</code> parameter supports the full structured query syntax. </p>
@@ -377,8 +377,8 @@ pub mod fluent_builders {
         /// "actors": {},
         /// "title": {"format": "text","max_phrases": 2,"pre_tag": "<b>","post_tag": "</b>"}
         /// }</code></p>
-        pub fn highlight(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.highlight(inp);
+        pub fn highlight(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.highlight(signature.into());
             self
         }
         /// <p>Retrieves highlights for matches in the specified <code>text</code> or
@@ -421,8 +421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables partial results to be returned if one or more index partitions are unavailable. When your search index is partitioned across multiple search instances, by default Amazon CloudSearch only returns results if every partition can be queried. This means that the failure of a single search instance can result in 5xx (internal server) errors. When you enable partial results, Amazon CloudSearch returns whatever results are available and includes the percentage of documents searched in the search results (percent-searched). This enables you to more gracefully degrade your users' search experience. For example, rather than displaying no results, you could display the partial results and a message indicating that the results might be incomplete due to a temporary system outage.</p>
-        pub fn partial(mut self, inp: bool) -> Self {
-            self.inner = self.inner.partial(inp);
+        pub fn partial(mut self, signature: bool) -> Self {
+            self.inner = self.inner.partial(signature);
             self
         }
         /// <p>Enables partial results to be returned if one or more index partitions are unavailable. When your search index is partitioned across multiple search instances, by default Amazon CloudSearch only returns results if every partition can be queried. This means that the failure of a single search instance can result in 5xx (internal server) errors. When you enable partial results, Amazon CloudSearch returns whatever results are available and includes the percentage of documents searched in the search results (percent-searched). This enables you to more gracefully degrade your users' search experience. For example, rather than displaying no results, you could display the partial results and a message indicating that the results might be incomplete due to a temporary system outage.</p>
@@ -437,8 +437,8 @@ pub mod fluent_builders {
         /// the <code>structured</code>, <code>lucene</code>, or <code>dismax</code> query parser,
         /// you must also specify the <code>queryParser</code> parameter. </p>
         /// <p>For more information about specifying search criteria, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query(inp);
+        pub fn query(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query(signature.into());
             self
         }
         /// <p>Specifies the search criteria for the request. How you specify the search
@@ -507,8 +507,8 @@ pub mod fluent_builders {
         /// Set <code>tieBreaker</code> to 0 to disregard all but the highest scoring field (pure max): <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to 1.0. Default: 0.0. Valid for: <code>dismax</code>.
         /// </li>
         /// </ul>
-        pub fn query_options(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_options(inp);
+        pub fn query_options(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_options(signature.into());
             self
         }
         /// <p>Configures options for the query parser specified in the <code>queryParser</code> parameter. You specify the options in JSON using the following form <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code></p>
@@ -612,8 +612,8 @@ pub mod fluent_builders {
         /// </li>
         ///
         /// </ul>
-        pub fn query_parser(mut self, inp: crate::model::QueryParser) -> Self {
-            self.inner = self.inner.query_parser(inp);
+        pub fn query_parser(mut self, signature: crate::model::QueryParser) -> Self {
+            self.inner = self.inner.query_parser(signature);
             self
         }
         /// <p>Specifies which
@@ -668,8 +668,8 @@ pub mod fluent_builders {
         /// specify <code>_no_fields</code>.
         /// To retrieve the relevance score calculated for each document,
         /// specify <code>_score</code>.  </p>
-        pub fn r#return(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#return(inp);
+        pub fn r#return(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#return(signature.into());
             self
         }
         /// <p>Specifies the field and expression values to include in the response. Multiple fields or expressions are specified as a comma-separated list. By default, a search response includes all
@@ -683,8 +683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the maximum number of search hits to include in the response. </p>
-        pub fn size(mut self, inp: i64) -> Self {
-            self.inner = self.inner.size(inp);
+        pub fn size(mut self, signature: i64) -> Self {
+            self.inner = self.inner.size(signature);
             self
         }
         /// <p>Specifies the maximum number of search hits to include in the response. </p>
@@ -703,8 +703,8 @@ pub mod fluent_builders {
         /// desc</code>. You can also sort by document ID
         /// (<code>_id asc</code>) and version (<code>_version desc</code>).</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/sorting-results.html">Sorting Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn sort(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort(signature.into());
             self
         }
         /// <p>Specifies the fields or custom expressions to use to sort the search
@@ -724,8 +724,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive.  </p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn start(mut self, inp: i64) -> Self {
-            self.inner = self.inner.start(inp);
+        pub fn start(mut self, signature: i64) -> Self {
+            self.inner = self.inner.start(signature);
             self
         }
         /// <p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive.  </p>
@@ -737,8 +737,8 @@ pub mod fluent_builders {
         /// <p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p>
         /// <code>{"FIELD-A":{},"FIELD-B":{}}</code>
         /// <p>There are currently no options supported for statistics.</p>
-        pub fn stats(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stats(inp);
+        pub fn stats(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stats(signature.into());
             self
         }
         /// <p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p>
@@ -812,8 +812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the string for which you want to get suggestions.</p>
-        pub fn query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query(inp);
+        pub fn query(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query(signature.into());
             self
         }
         /// <p>Specifies the string for which you want to get suggestions.</p>
@@ -822,8 +822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
-        pub fn suggester(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suggester(inp);
+        pub fn suggester(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suggester(signature.into());
             self
         }
         /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
@@ -832,8 +832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the maximum number of suggestions to return. </p>
-        pub fn size(mut self, inp: i64) -> Self {
-            self.inner = self.inner.size(inp);
+        pub fn size(mut self, signature: i64) -> Self {
+            self.inner = self.inner.size(signature);
             self
         }
         /// <p>Specifies the maximum number of suggestions to return. </p>
@@ -905,8 +905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A batch of documents formatted in JSON or HTML.</p>
-        pub fn documents(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.documents(inp);
+        pub fn documents(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.documents(signature);
             self
         }
         /// <p>A batch of documents formatted in JSON or HTML.</p>
@@ -922,8 +922,8 @@ pub mod fluent_builders {
         /// <li>application/json</li>
         /// <li>application/xml</li>
         /// </ul>
-        pub fn content_type(mut self, inp: crate::model::ContentType) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: crate::model::ContentType) -> Self {
+            self.inner = self.inner.content_type(signature);
             self
         }
         /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>

@@ -1134,9 +1134,9 @@ pub mod single_master_channel_endpoint_configuration {
         /// <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this
         /// API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns
         /// an <code>HTTPS</code> endpoint.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::ChannelProtocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::ChannelProtocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }

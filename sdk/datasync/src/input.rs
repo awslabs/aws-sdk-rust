@@ -229,9 +229,9 @@ pub mod create_agent_input {
         /// <p>Valid characters for key and value are letters, spaces, and numbers representable in
         /// UTF-8 format, and the following special characters: + - = . _ : / @. </p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -570,9 +570,9 @@ pub mod create_location_efs_input {
         /// <p>The key-value pair that represents a tag that you want to add to the resource. The
         /// value can be an empty string. This value helps you manage, filter, and search for your
         /// resources. We recommend that you create a name tag for your location.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -794,9 +794,9 @@ pub mod create_location_fsx_windows_input {
         /// <p>The key-value pair that represents a tag that you want to add to the resource. The
         /// value can be an empty string. This value helps you manage, filter, and search for your
         /// resources. We recommend that you create a name tag for your location.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1034,9 +1034,9 @@ pub mod create_location_hdfs_input {
         /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
         /// opening, closing, and renaming files and directories. The NameNode contains the information to
         /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
-        pub fn name_nodes(mut self, input: impl Into<crate::model::HdfsNameNode>) -> Self {
+        pub fn name_nodes(mut self, input: crate::model::HdfsNameNode) -> Self {
             let mut v = self.name_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.name_nodes = Some(v);
             self
         }
@@ -1243,9 +1243,9 @@ pub mod create_location_hdfs_input {
         ///
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value
         /// can be an empty string. We recommend using tags to name your resources. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1525,9 +1525,9 @@ pub mod create_location_nfs_input {
         ///
         /// <p>The key-value pair that represents the tag that you want to add to the location. The
         /// value can be an empty string. We recommend using tags to name your resources.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1825,9 +1825,9 @@ pub mod create_location_object_storage_input {
         ///
         /// <p>The key-value pair that represents the tag that you want to add to the location. The
         /// value can be an empty string. We recommend using tags to name your resources.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2096,9 +2096,9 @@ pub mod create_location_s3_input {
         ///
         /// <p>The key-value pair that represents the tag that you want to add to the location. The
         /// value can be an empty string. We recommend using tags to name your resources.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2412,9 +2412,9 @@ pub mod create_location_smb_input {
         ///
         /// <p>The key-value pair that represents the tag that you want to add to the location. The value
         /// can be an empty string. We recommend using tags to name your resources.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2670,9 +2670,9 @@ pub mod create_task_input {
         /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         /// <p>
         /// </p>
-        pub fn excludes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excludes = Some(v);
             self
         }
@@ -2709,9 +2709,9 @@ pub mod create_task_input {
         ///
         /// <p>The key-value pair that represents the tag that you want to add to the resource. The
         /// value can be an empty string. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2731,9 +2731,9 @@ pub mod create_task_input {
         /// <p>A list of filter rules that determines which files to include when running a task. The
         /// pattern contains a single filter string that consists of the patterns to include. The patterns
         /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.includes = Some(v);
             self
         }
@@ -5110,9 +5110,9 @@ pub mod list_locations_input {
         /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>.
         /// For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code>
         /// with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::LocationFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::LocationFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5665,9 +5665,9 @@ pub mod list_tasks_input {
         /// For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code>
         /// with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
         /// location.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::TaskFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::TaskFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5878,9 +5878,9 @@ pub mod start_task_execution_input {
         ///
         /// <p>
         /// </p>
-        pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.includes = Some(v);
             self
         }
@@ -5905,9 +5905,9 @@ pub mod start_task_execution_input {
         /// <p>A list of filter rules that determines which files to exclude from a task. The list
         /// contains a single filter string that consists of the patterns to exclude. The patterns are
         /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        pub fn excludes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excludes = Some(v);
             self
         }
@@ -6084,9 +6084,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6622,9 +6622,9 @@ pub mod update_location_hdfs_input {
         /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
         /// opening, closing, and renaming files and directories. The NameNode contains the information to
         /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
-        pub fn name_nodes(mut self, input: impl Into<crate::model::HdfsNameNode>) -> Self {
+        pub fn name_nodes(mut self, input: crate::model::HdfsNameNode) -> Self {
             let mut v = self.name_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.name_nodes = Some(v);
             self
         }
@@ -7782,9 +7782,9 @@ pub mod update_task_input {
         /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         /// <p>
         /// </p>
-        pub fn excludes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excludes = Some(v);
             self
         }
@@ -7851,9 +7851,9 @@ pub mod update_task_input {
         /// <p>A list of filter rules that determines which files to include when running a task. The
         /// pattern contains a single filter string that consists of the patterns to include. The patterns
         /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.includes = Some(v);
             self
         }

@@ -52,12 +52,9 @@ pub mod validate_security_profile_behaviors_output {
         /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
         ///
         /// <p>The list of any errors found in the behaviors.</p>
-        pub fn validation_errors(
-            mut self,
-            input: impl Into<crate::model::ValidationError>,
-        ) -> Self {
+        pub fn validation_errors(mut self, input: crate::model::ValidationError) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_errors = Some(v);
             self
         }
@@ -528,9 +525,9 @@ pub mod update_security_profile_output {
         /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
         ///
         /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-        pub fn behaviors(mut self, input: impl Into<crate::model::Behavior>) -> Self {
+        pub fn behaviors(mut self, input: crate::model::Behavior) -> Self {
             let mut v = self.behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.behaviors = Some(v);
             self
         }
@@ -549,11 +546,11 @@ pub mod update_security_profile_output {
         /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
         pub fn alert_targets(
             mut self,
-            k: impl Into<crate::model::AlertTargetType>,
-            v: impl Into<crate::model::AlertTarget>,
+            k: crate::model::AlertTargetType,
+            v: crate::model::AlertTarget,
         ) -> Self {
             let mut hash_map = self.alert_targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.alert_targets = Some(hash_map);
             self
         }
@@ -614,10 +611,10 @@ pub mod update_security_profile_output {
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain_v2(
             mut self,
-            input: impl Into<crate::model::MetricToRetain>,
+            input: crate::model::MetricToRetain,
         ) -> Self {
             let mut v = self.additional_metrics_to_retain_v2.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_metrics_to_retain_v2 = Some(v);
             self
         }
@@ -2078,9 +2075,9 @@ pub mod test_authorization_output {
         /// To override the contents of this collection use [`set_auth_results`](Self::set_auth_results).
         ///
         /// <p>The authentication results.</p>
-        pub fn auth_results(mut self, input: impl Into<crate::model::AuthResult>) -> Self {
+        pub fn auth_results(mut self, input: crate::model::AuthResult) -> Self {
             let mut v = self.auth_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auth_results = Some(v);
             self
         }
@@ -2655,9 +2652,9 @@ pub mod search_index_output {
         /// To override the contents of this collection use [`set_things`](Self::set_things).
         ///
         /// <p>The things that match the search query.</p>
-        pub fn things(mut self, input: impl Into<crate::model::ThingDocument>) -> Self {
+        pub fn things(mut self, input: crate::model::ThingDocument) -> Self {
             let mut v = self.things.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.things = Some(v);
             self
         }
@@ -2674,9 +2671,9 @@ pub mod search_index_output {
         /// To override the contents of this collection use [`set_thing_groups`](Self::set_thing_groups).
         ///
         /// <p>The thing groups that match the search query.</p>
-        pub fn thing_groups(mut self, input: impl Into<crate::model::ThingGroupDocument>) -> Self {
+        pub fn thing_groups(mut self, input: crate::model::ThingGroupDocument) -> Self {
             let mut v = self.thing_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.thing_groups = Some(v);
             self
         }
@@ -3241,9 +3238,9 @@ pub mod list_violation_events_output {
         ///
         /// <p>The security profile violation alerts issued for this account during the given time period,
         /// potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
-        pub fn violation_events(mut self, input: impl Into<crate::model::ViolationEvent>) -> Self {
+        pub fn violation_events(mut self, input: crate::model::ViolationEvent) -> Self {
             let mut v = self.violation_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.violation_events = Some(v);
             self
         }
@@ -3332,10 +3329,10 @@ pub mod list_v2_logging_levels_output {
         /// <p>The logging configuration for a target.</p>
         pub fn log_target_configurations(
             mut self,
-            input: impl Into<crate::model::LogTargetConfiguration>,
+            input: crate::model::LogTargetConfiguration,
         ) -> Self {
             let mut v = self.log_target_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_target_configurations = Some(v);
             self
         }
@@ -3415,9 +3412,9 @@ pub mod list_topic_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::TopicRuleListItem>) -> Self {
+        pub fn rules(mut self, input: crate::model::TopicRuleListItem) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -3503,10 +3500,10 @@ pub mod list_topic_rule_destinations_output {
         /// <p>Information about a topic rule destination.</p>
         pub fn destination_summaries(
             mut self,
-            input: impl Into<crate::model::TopicRuleDestinationSummary>,
+            input: crate::model::TopicRuleDestinationSummary,
         ) -> Self {
             let mut v = self.destination_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_summaries = Some(v);
             self
         }
@@ -3587,9 +3584,9 @@ pub mod list_thing_types_output {
         /// To override the contents of this collection use [`set_thing_types`](Self::set_thing_types).
         ///
         /// <p>The thing types.</p>
-        pub fn thing_types(mut self, input: impl Into<crate::model::ThingTypeDefinition>) -> Self {
+        pub fn thing_types(mut self, input: crate::model::ThingTypeDefinition) -> Self {
             let mut v = self.thing_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.thing_types = Some(v);
             self
         }
@@ -3833,9 +3830,9 @@ pub mod list_things_output {
         /// To override the contents of this collection use [`set_things`](Self::set_things).
         ///
         /// <p>The things.</p>
-        pub fn things(mut self, input: impl Into<crate::model::ThingAttribute>) -> Self {
+        pub fn things(mut self, input: crate::model::ThingAttribute) -> Self {
             let mut v = self.things.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.things = Some(v);
             self
         }
@@ -4183,9 +4180,9 @@ pub mod list_thing_groups_for_thing_output {
         /// To override the contents of this collection use [`set_thing_groups`](Self::set_thing_groups).
         ///
         /// <p>The thing groups.</p>
-        pub fn thing_groups(mut self, input: impl Into<crate::model::GroupNameAndArn>) -> Self {
+        pub fn thing_groups(mut self, input: crate::model::GroupNameAndArn) -> Self {
             let mut v = self.thing_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.thing_groups = Some(v);
             self
         }
@@ -4265,9 +4262,9 @@ pub mod list_thing_groups_output {
         /// To override the contents of this collection use [`set_thing_groups`](Self::set_thing_groups).
         ///
         /// <p>The thing groups.</p>
-        pub fn thing_groups(mut self, input: impl Into<crate::model::GroupNameAndArn>) -> Self {
+        pub fn thing_groups(mut self, input: crate::model::GroupNameAndArn) -> Self {
             let mut v = self.thing_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.thing_groups = Some(v);
             self
         }
@@ -4355,10 +4352,10 @@ pub mod list_targets_for_security_profile_output {
         /// <p>The thing groups to which the security profile is attached.</p>
         pub fn security_profile_targets(
             mut self,
-            input: impl Into<crate::model::SecurityProfileTarget>,
+            input: crate::model::SecurityProfileTarget,
         ) -> Self {
             let mut v = self.security_profile_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_profile_targets = Some(v);
             self
         }
@@ -4522,9 +4519,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4604,9 +4601,9 @@ pub mod list_streams_output {
         /// To override the contents of this collection use [`set_streams`](Self::set_streams).
         ///
         /// <p>A list of streams.</p>
-        pub fn streams(mut self, input: impl Into<crate::model::StreamSummary>) -> Self {
+        pub fn streams(mut self, input: crate::model::StreamSummary) -> Self {
             let mut v = self.streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streams = Some(v);
             self
         }
@@ -4697,10 +4694,10 @@ pub mod list_security_profiles_for_target_output {
         /// <p>A list of security profiles and their associated targets.</p>
         pub fn security_profile_target_mappings(
             mut self,
-            input: impl Into<crate::model::SecurityProfileTargetMapping>,
+            input: crate::model::SecurityProfileTargetMapping,
         ) -> Self {
             let mut v = self.security_profile_target_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_profile_target_mappings = Some(v);
             self
         }
@@ -4793,10 +4790,10 @@ pub mod list_security_profiles_output {
         /// <p>A list of security profile identifiers (names and ARNs).</p>
         pub fn security_profile_identifiers(
             mut self,
-            input: impl Into<crate::model::SecurityProfileIdentifier>,
+            input: crate::model::SecurityProfileIdentifier,
         ) -> Self {
             let mut v = self.security_profile_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_profile_identifiers = Some(v);
             self
         }
@@ -4881,12 +4878,9 @@ pub mod list_scheduled_audits_output {
         /// To override the contents of this collection use [`set_scheduled_audits`](Self::set_scheduled_audits).
         ///
         /// <p>The list of scheduled audits.</p>
-        pub fn scheduled_audits(
-            mut self,
-            input: impl Into<crate::model::ScheduledAuditMetadata>,
-        ) -> Self {
+        pub fn scheduled_audits(mut self, input: crate::model::ScheduledAuditMetadata) -> Self {
             let mut v = self.scheduled_audits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_audits = Some(v);
             self
         }
@@ -5054,12 +5048,9 @@ pub mod list_provisioning_template_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// <p>The list of fleet provisioning template versions.</p>
-        pub fn versions(
-            mut self,
-            input: impl Into<crate::model::ProvisioningTemplateVersionSummary>,
-        ) -> Self {
+        pub fn versions(mut self, input: crate::model::ProvisioningTemplateVersionSummary) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -5142,12 +5133,9 @@ pub mod list_provisioning_templates_output {
         /// To override the contents of this collection use [`set_templates`](Self::set_templates).
         ///
         /// <p>A list of fleet provisioning templates</p>
-        pub fn templates(
-            mut self,
-            input: impl Into<crate::model::ProvisioningTemplateSummary>,
-        ) -> Self {
+        pub fn templates(mut self, input: crate::model::ProvisioningTemplateSummary) -> Self {
             let mut v = self.templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.templates = Some(v);
             self
         }
@@ -5311,9 +5299,9 @@ pub mod list_principal_policies_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>The policies.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -5387,9 +5375,9 @@ pub mod list_policy_versions_output {
         /// To override the contents of this collection use [`set_policy_versions`](Self::set_policy_versions).
         ///
         /// <p>The policy versions.</p>
-        pub fn policy_versions(mut self, input: impl Into<crate::model::PolicyVersion>) -> Self {
+        pub fn policy_versions(mut self, input: crate::model::PolicyVersion) -> Self {
             let mut v = self.policy_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_versions = Some(v);
             self
         }
@@ -5546,9 +5534,9 @@ pub mod list_policies_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>The descriptions of the policies.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -5634,12 +5622,9 @@ pub mod list_outgoing_certificates_output {
         /// To override the contents of this collection use [`set_outgoing_certificates`](Self::set_outgoing_certificates).
         ///
         /// <p>The certificates that are being transferred but not yet accepted.</p>
-        pub fn outgoing_certificates(
-            mut self,
-            input: impl Into<crate::model::OutgoingCertificate>,
-        ) -> Self {
+        pub fn outgoing_certificates(mut self, input: crate::model::OutgoingCertificate) -> Self {
             let mut v = self.outgoing_certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outgoing_certificates = Some(v);
             self
         }
@@ -5719,9 +5704,9 @@ pub mod list_ota_updates_output {
         /// To override the contents of this collection use [`set_ota_updates`](Self::set_ota_updates).
         ///
         /// <p>A list of OTA update jobs.</p>
-        pub fn ota_updates(mut self, input: impl Into<crate::model::OtaUpdateSummary>) -> Self {
+        pub fn ota_updates(mut self, input: crate::model::OtaUpdateSummary) -> Self {
             let mut v = self.ota_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ota_updates = Some(v);
             self
         }
@@ -5807,10 +5792,10 @@ pub mod list_mitigation_actions_output {
         /// <p>A set of actions that matched the specified filter criteria.</p>
         pub fn action_identifiers(
             mut self,
-            input: impl Into<crate::model::MitigationActionIdentifier>,
+            input: crate::model::MitigationActionIdentifier,
         ) -> Self {
             let mut v = self.action_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.action_identifiers = Some(v);
             self
         }
@@ -5896,10 +5881,10 @@ pub mod list_managed_job_templates_output {
         /// <p>A list of managed job templates that are returned.</p>
         pub fn managed_job_templates(
             mut self,
-            input: impl Into<crate::model::ManagedJobTemplateSummary>,
+            input: crate::model::ManagedJobTemplateSummary,
         ) -> Self {
             let mut v = self.managed_job_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_job_templates = Some(v);
             self
         }
@@ -5982,9 +5967,9 @@ pub mod list_job_templates_output {
         /// To override the contents of this collection use [`set_job_templates`](Self::set_job_templates).
         ///
         /// <p>A list of objects that contain information about the job templates.</p>
-        pub fn job_templates(mut self, input: impl Into<crate::model::JobTemplateSummary>) -> Self {
+        pub fn job_templates(mut self, input: crate::model::JobTemplateSummary) -> Self {
             let mut v = self.job_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_templates = Some(v);
             self
         }
@@ -6068,9 +6053,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
+        pub fn jobs(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -6160,10 +6145,10 @@ pub mod list_job_executions_for_thing_output {
         /// <p>A list of job execution summaries.</p>
         pub fn execution_summaries(
             mut self,
-            input: impl Into<crate::model::JobExecutionSummaryForThing>,
+            input: crate::model::JobExecutionSummaryForThing,
         ) -> Self {
             let mut v = self.execution_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.execution_summaries = Some(v);
             self
         }
@@ -6253,10 +6238,10 @@ pub mod list_job_executions_for_job_output {
         /// <p>A list of job execution summaries.</p>
         pub fn execution_summaries(
             mut self,
-            input: impl Into<crate::model::JobExecutionSummaryForJob>,
+            input: crate::model::JobExecutionSummaryForJob,
         ) -> Self {
             let mut v = self.execution_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.execution_summaries = Some(v);
             self
         }
@@ -6427,12 +6412,9 @@ pub mod list_fleet_metrics_output {
         /// To override the contents of this collection use [`set_fleet_metrics`](Self::set_fleet_metrics).
         ///
         /// <p>The list of fleet metrics objects.</p>
-        pub fn fleet_metrics(
-            mut self,
-            input: impl Into<crate::model::FleetMetricNameAndArn>,
-        ) -> Self {
+        pub fn fleet_metrics(mut self, input: crate::model::FleetMetricNameAndArn) -> Self {
             let mut v = self.fleet_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_metrics = Some(v);
             self
         }
@@ -6520,10 +6502,10 @@ pub mod list_domain_configurations_output {
         /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
         pub fn domain_configurations(
             mut self,
-            input: impl Into<crate::model::DomainConfigurationSummary>,
+            input: crate::model::DomainConfigurationSummary,
         ) -> Self {
             let mut v = self.domain_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_configurations = Some(v);
             self
         }
@@ -6698,12 +6680,9 @@ pub mod list_detect_mitigation_actions_tasks_output {
         /// <p>
         /// The collection of ML Detect mitigation tasks that matched the filter criteria.
         /// </p>
-        pub fn tasks(
-            mut self,
-            input: impl Into<crate::model::DetectMitigationActionsTaskSummary>,
-        ) -> Self {
+        pub fn tasks(mut self, input: crate::model::DetectMitigationActionsTaskSummary) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -6807,10 +6786,10 @@ pub mod list_detect_mitigation_actions_executions_output {
         /// </p>
         pub fn actions_executions(
             mut self,
-            input: impl Into<crate::model::DetectMitigationActionExecution>,
+            input: crate::model::DetectMitigationActionExecution,
         ) -> Self {
             let mut v = self.actions_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions_executions = Some(v);
             self
         }
@@ -7002,9 +6981,9 @@ pub mod list_certificates_by_ca_output {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>The device certificates signed by the specified CA certificate.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -7088,9 +7067,9 @@ pub mod list_certificates_output {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>The descriptions of the certificates.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -7172,9 +7151,9 @@ pub mod list_ca_certificates_output {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>The CA certificates registered in your Amazon Web Services account.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::CaCertificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::CaCertificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -7255,9 +7234,9 @@ pub mod list_billing_groups_output {
         /// To override the contents of this collection use [`set_billing_groups`](Self::set_billing_groups).
         ///
         /// <p>The list of billing groups.</p>
-        pub fn billing_groups(mut self, input: impl Into<crate::model::GroupNameAndArn>) -> Self {
+        pub fn billing_groups(mut self, input: crate::model::GroupNameAndArn) -> Self {
             let mut v = self.billing_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.billing_groups = Some(v);
             self
         }
@@ -7337,9 +7316,9 @@ pub mod list_authorizers_output {
         /// To override the contents of this collection use [`set_authorizers`](Self::set_authorizers).
         ///
         /// <p>The authorizers.</p>
-        pub fn authorizers(mut self, input: impl Into<crate::model::AuthorizerSummary>) -> Self {
+        pub fn authorizers(mut self, input: crate::model::AuthorizerSummary) -> Self {
             let mut v = self.authorizers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.authorizers = Some(v);
             self
         }
@@ -7421,9 +7400,9 @@ pub mod list_audit_tasks_output {
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
         /// <p>The audits that were performed during the specified time period.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::AuditTaskMetadata>) -> Self {
+        pub fn tasks(mut self, input: crate::model::AuditTaskMetadata) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -7515,9 +7494,9 @@ pub mod list_audit_suppressions_output {
         /// <p>
         /// List of audit suppressions.
         /// </p>
-        pub fn suppressions(mut self, input: impl Into<crate::model::AuditSuppression>) -> Self {
+        pub fn suppressions(mut self, input: crate::model::AuditSuppression) -> Self {
             let mut v = self.suppressions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suppressions = Some(v);
             self
         }
@@ -7606,12 +7585,9 @@ pub mod list_audit_mitigation_actions_tasks_output {
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
         /// <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
-        pub fn tasks(
-            mut self,
-            input: impl Into<crate::model::AuditMitigationActionsTaskMetadata>,
-        ) -> Self {
+        pub fn tasks(mut self, input: crate::model::AuditMitigationActionsTaskMetadata) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -7700,10 +7676,10 @@ pub mod list_audit_mitigation_actions_executions_output {
         /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
         pub fn actions_executions(
             mut self,
-            input: impl Into<crate::model::AuditMitigationActionExecutionMetadata>,
+            input: crate::model::AuditMitigationActionExecutionMetadata,
         ) -> Self {
             let mut v = self.actions_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions_executions = Some(v);
             self
         }
@@ -7787,9 +7763,9 @@ pub mod list_audit_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>The findings (results) of the audit.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::AuditFinding>) -> Self {
+        pub fn findings(mut self, input: crate::model::AuditFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -7873,9 +7849,9 @@ pub mod list_attached_policies_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>The policies.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -7960,12 +7936,9 @@ pub mod list_active_violations_output {
         /// To override the contents of this collection use [`set_active_violations`](Self::set_active_violations).
         ///
         /// <p>The list of active violations.</p>
-        pub fn active_violations(
-            mut self,
-            input: impl Into<crate::model::ActiveViolation>,
-        ) -> Self {
+        pub fn active_violations(mut self, input: crate::model::ActiveViolation) -> Self {
             let mut v = self.active_violations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_violations = Some(v);
             self
         }
@@ -8769,9 +8742,9 @@ pub mod get_percentiles_output {
         /// To override the contents of this collection use [`set_percentiles`](Self::set_percentiles).
         ///
         /// <p>The percentile values of the aggregated fields.</p>
-        pub fn percentiles(mut self, input: impl Into<crate::model::PercentPair>) -> Self {
+        pub fn percentiles(mut self, input: crate::model::PercentPair) -> Self {
             let mut v = self.percentiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.percentiles = Some(v);
             self
         }
@@ -9115,12 +9088,9 @@ pub mod get_effective_policies_output {
         /// To override the contents of this collection use [`set_effective_policies`](Self::set_effective_policies).
         ///
         /// <p>The effective policies.</p>
-        pub fn effective_policies(
-            mut self,
-            input: impl Into<crate::model::EffectivePolicy>,
-        ) -> Self {
+        pub fn effective_policies(mut self, input: crate::model::EffectivePolicy) -> Self {
             let mut v = self.effective_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.effective_policies = Some(v);
             self
         }
@@ -9265,9 +9235,9 @@ pub mod get_buckets_aggregation_output {
         /// <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
         /// <p>
         /// <code>count</code>: The number of documents that have that value.</p>
-        pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
+        pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buckets = Some(v);
             self
         }
@@ -9352,12 +9322,9 @@ pub mod get_behavior_model_training_summaries_output {
         /// <p>
         /// A list of all ML Detect behaviors and their model status for a given Security Profile.
         /// </p>
-        pub fn summaries(
-            mut self,
-            input: impl Into<crate::model::BehaviorModelTrainingSummary>,
-        ) -> Self {
+        pub fn summaries(mut self, input: crate::model::BehaviorModelTrainingSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -10770,9 +10737,9 @@ pub mod describe_security_profile_output {
         /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
         ///
         /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-        pub fn behaviors(mut self, input: impl Into<crate::model::Behavior>) -> Self {
+        pub fn behaviors(mut self, input: crate::model::Behavior) -> Self {
             let mut v = self.behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.behaviors = Some(v);
             self
         }
@@ -10791,11 +10758,11 @@ pub mod describe_security_profile_output {
         /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
         pub fn alert_targets(
             mut self,
-            k: impl Into<crate::model::AlertTargetType>,
-            v: impl Into<crate::model::AlertTarget>,
+            k: crate::model::AlertTargetType,
+            v: crate::model::AlertTarget,
         ) -> Self {
             let mut hash_map = self.alert_targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.alert_targets = Some(hash_map);
             self
         }
@@ -10859,10 +10826,10 @@ pub mod describe_security_profile_output {
         /// also retained for any metric specified here.</p>
         pub fn additional_metrics_to_retain_v2(
             mut self,
-            input: impl Into<crate::model::MetricToRetain>,
+            input: crate::model::MetricToRetain,
         ) -> Self {
             let mut v = self.additional_metrics_to_retain_v2.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_metrics_to_retain_v2 = Some(v);
             self
         }
@@ -11946,12 +11913,9 @@ pub mod describe_managed_job_template_output {
         ///
         /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
         /// a job from a managed template.</p>
-        pub fn document_parameters(
-            mut self,
-            input: impl Into<crate::model::DocumentParameter>,
-        ) -> Self {
+        pub fn document_parameters(mut self, input: crate::model::DocumentParameter) -> Self {
             let mut v = self.document_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_parameters = Some(v);
             self
         }
@@ -12942,11 +12906,11 @@ pub mod describe_event_configurations_output {
         /// <p>The event configurations.</p>
         pub fn event_configurations(
             mut self,
-            k: impl Into<crate::model::EventType>,
-            v: impl Into<crate::model::Configuration>,
+            k: crate::model::EventType,
+            v: crate::model::Configuration,
         ) -> Self {
             let mut hash_map = self.event_configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.event_configurations = Some(hash_map);
             self
         }
@@ -13210,10 +13174,10 @@ pub mod describe_domain_configuration_output {
         /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
         pub fn server_certificates(
             mut self,
-            input: impl Into<crate::model::ServerCertificateSummary>,
+            input: crate::model::ServerCertificateSummary,
         ) -> Self {
             let mut v = self.server_certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_certificates = Some(v);
             self
         }
@@ -14367,10 +14331,10 @@ pub mod describe_audit_task_output {
         pub fn audit_details(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AuditCheckDetails>,
+            v: crate::model::AuditCheckDetails,
         ) -> Self {
             let mut hash_map = self.audit_details.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_details = Some(hash_map);
             self
         }
@@ -14728,10 +14692,10 @@ pub mod describe_audit_mitigation_actions_task_output {
         pub fn task_statistics(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TaskStatisticsForAuditCheck>,
+            v: crate::model::TaskStatisticsForAuditCheck,
         ) -> Self {
             let mut hash_map = self.task_statistics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.task_statistics = Some(hash_map);
             self
         }
@@ -14769,10 +14733,10 @@ pub mod describe_audit_mitigation_actions_task_output {
         pub fn audit_check_to_actions_mapping(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.audit_check_to_actions_mapping.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_check_to_actions_mapping = Some(hash_map);
             self
         }
@@ -14791,12 +14755,9 @@ pub mod describe_audit_mitigation_actions_task_output {
         /// To override the contents of this collection use [`set_actions_definition`](Self::set_actions_definition).
         ///
         /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
-        pub fn actions_definition(
-            mut self,
-            input: impl Into<crate::model::MitigationAction>,
-        ) -> Self {
+        pub fn actions_definition(mut self, input: crate::model::MitigationAction) -> Self {
             let mut v = self.actions_definition.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions_definition = Some(v);
             self
         }
@@ -14998,13 +14959,13 @@ pub mod describe_account_audit_configuration_output {
         /// this account.</p>
         pub fn audit_notification_target_configurations(
             mut self,
-            k: impl Into<crate::model::AuditNotificationType>,
-            v: impl Into<crate::model::AuditNotificationTarget>,
+            k: crate::model::AuditNotificationType,
+            v: crate::model::AuditNotificationTarget,
         ) -> Self {
             let mut hash_map = self
                 .audit_notification_target_configurations
                 .unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.audit_notification_target_configurations = Some(hash_map);
             self
         }
@@ -15030,10 +14991,10 @@ pub mod describe_account_audit_configuration_output {
         pub fn audit_check_configurations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AuditCheckConfiguration>,
+            v: crate::model::AuditCheckConfiguration,
         ) -> Self {
             let mut hash_map = self.audit_check_configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_check_configurations = Some(hash_map);
             self
         }

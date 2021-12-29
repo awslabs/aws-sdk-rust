@@ -952,10 +952,10 @@ pub mod consolidation {
         /// <p>A list of matching criteria.</p>
         pub fn matching_attributes_list(
             mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
+            input: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut v = self.matching_attributes_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_attributes_list = Some(v);
             self
         }
@@ -2081,12 +2081,9 @@ pub mod object_type_key {
         /// only used to match a profile but is not persisted to be used for searching of the profile.
         /// A NEW_ONLY key is only used if the profile does not already exist before the object is
         /// ingested, otherwise it is only used for matching objects to profiles.</p>
-        pub fn standard_identifiers(
-            mut self,
-            input: impl Into<crate::model::StandardIdentifier>,
-        ) -> Self {
+        pub fn standard_identifiers(mut self, input: crate::model::StandardIdentifier) -> Self {
             let mut v = self.standard_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standard_identifiers = Some(v);
             self
         }
@@ -2523,9 +2520,9 @@ pub mod flow_definition {
         ///
         /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow
         /// run.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -3160,11 +3157,11 @@ pub mod task {
         /// information based on the TaskType.</p>
         pub fn task_properties(
             mut self,
-            k: impl Into<crate::model::OperatorPropertiesKeys>,
+            k: crate::model::OperatorPropertiesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.task_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.task_properties = Some(hash_map);
             self
         }

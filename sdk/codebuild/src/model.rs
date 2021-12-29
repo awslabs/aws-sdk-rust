@@ -182,12 +182,9 @@ pub mod webhook {
         /// <p>For a build to be triggered, at least one filter group in the
         /// <code>filterGroups</code> array must pass. For a filter group to pass, each of its
         /// filters must pass. </p>
-        pub fn filter_groups(
-            mut self,
-            input: impl Into<std::vec::Vec<crate::model::WebhookFilter>>,
-        ) -> Self {
+        pub fn filter_groups(mut self, input: std::vec::Vec<crate::model::WebhookFilter>) -> Self {
             let mut v = self.filter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_groups = Some(v);
             self
         }
@@ -1062,9 +1059,9 @@ pub mod report_group {
         /// <p>A list of tag key and value pairs associated with this report group. </p>
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
         /// tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2264,9 +2261,9 @@ pub mod project {
         /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
         ///
         /// <p>An array of <code>ProjectSource</code> objects. </p>
-        pub fn secondary_sources(mut self, input: impl Into<crate::model::ProjectSource>) -> Self {
+        pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources = Some(v);
             self
         }
@@ -2358,10 +2355,10 @@ pub mod project {
         /// over these <code>secondarySourceVersions</code> (at the project level). </p>
         pub fn secondary_source_versions(
             mut self,
-            input: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
             let mut v = self.secondary_source_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_source_versions = Some(v);
             self
         }
@@ -2393,12 +2390,9 @@ pub mod project {
         /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
         ///
         /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
-        pub fn secondary_artifacts(
-            mut self,
-            input: impl Into<crate::model::ProjectArtifacts>,
-        ) -> Self {
+        pub fn secondary_artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
             let mut v = self.secondary_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_artifacts = Some(v);
             self
         }
@@ -2505,9 +2499,9 @@ pub mod project {
         /// <p>A list of tag key and value pairs associated with this build project.</p>
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
         /// tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2610,10 +2604,10 @@ pub mod project {
         /// </p>
         pub fn file_system_locations(
             mut self,
-            input: impl Into<crate::model::ProjectFileSystemLocation>,
+            input: crate::model::ProjectFileSystemLocation,
         ) -> Self {
             let mut v = self.file_system_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_locations = Some(v);
             self
         }
@@ -4872,12 +4866,9 @@ pub mod project_environment {
         ///
         /// <p>A set of environment variables to make available to builds for this build
         /// project.</p>
-        pub fn environment_variables(
-            mut self,
-            input: impl Into<crate::model::EnvironmentVariable>,
-        ) -> Self {
+        pub fn environment_variables(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment_variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_variables = Some(v);
             self
         }
@@ -6002,9 +5993,9 @@ pub mod project_cache {
         /// </ul>
         /// </dd>
         /// </dl>
-        pub fn modes(mut self, input: impl Into<crate::model::CacheMode>) -> Self {
+        pub fn modes(mut self, input: crate::model::CacheMode) -> Self {
             let mut v = self.modes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.modes = Some(v);
             self
         }
@@ -9310,9 +9301,9 @@ pub mod build_batch {
         ///
         /// <p>An array of <code>BuildBatchPhase</code> objects the specify the phases of the
         /// batch build.</p>
-        pub fn phases(mut self, input: impl Into<crate::model::BuildBatchPhase>) -> Self {
+        pub fn phases(mut self, input: crate::model::BuildBatchPhase) -> Self {
             let mut v = self.phases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phases = Some(v);
             self
         }
@@ -9344,9 +9335,9 @@ pub mod build_batch {
         ///
         /// <p>An array of <code>ProjectSource</code> objects that define the sources for the batch
         /// build.</p>
-        pub fn secondary_sources(mut self, input: impl Into<crate::model::ProjectSource>) -> Self {
+        pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources = Some(v);
             self
         }
@@ -9390,10 +9381,10 @@ pub mod build_batch {
         /// </ul>
         pub fn secondary_source_versions(
             mut self,
-            input: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
             let mut v = self.secondary_source_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_source_versions = Some(v);
             self
         }
@@ -9448,12 +9439,9 @@ pub mod build_batch {
         ///
         /// <p>An array of <code>BuildArtifacts</code> objects the define the build artifacts
         /// for this batch build.</p>
-        pub fn secondary_artifacts(
-            mut self,
-            input: impl Into<crate::model::BuildArtifacts>,
-        ) -> Self {
+        pub fn secondary_artifacts(mut self, input: crate::model::BuildArtifacts) -> Self {
             let mut v = self.secondary_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_artifacts = Some(v);
             self
         }
@@ -9651,10 +9639,10 @@ pub mod build_batch {
         /// Elastic File System. </p>
         pub fn file_system_locations(
             mut self,
-            input: impl Into<crate::model::ProjectFileSystemLocation>,
+            input: crate::model::ProjectFileSystemLocation,
         ) -> Self {
             let mut v = self.file_system_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_locations = Some(v);
             self
         }
@@ -9689,9 +9677,9 @@ pub mod build_batch {
         ///
         /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the
         /// batch build.</p>
-        pub fn build_groups(mut self, input: impl Into<crate::model::BuildGroup>) -> Self {
+        pub fn build_groups(mut self, input: crate::model::BuildGroup) -> Self {
             let mut v = self.build_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.build_groups = Some(v);
             self
         }
@@ -9892,12 +9880,9 @@ pub mod build_group {
         ///
         /// <p>An array of <code>BuildSummary</code> objects that contain summaries of previous
         /// build groups.</p>
-        pub fn prior_build_summary_list(
-            mut self,
-            input: impl Into<crate::model::BuildSummary>,
-        ) -> Self {
+        pub fn prior_build_summary_list(mut self, input: crate::model::BuildSummary) -> Self {
             let mut v = self.prior_build_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prior_build_summary_list = Some(v);
             self
         }
@@ -10156,12 +10141,9 @@ pub mod build_summary {
         ///
         /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build
         /// artifacts for the build group.</p>
-        pub fn secondary_artifacts(
-            mut self,
-            input: impl Into<crate::model::ResolvedArtifact>,
-        ) -> Self {
+        pub fn secondary_artifacts(mut self, input: crate::model::ResolvedArtifact) -> Self {
             let mut v = self.secondary_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_artifacts = Some(v);
             self
         }
@@ -11133,9 +11115,9 @@ pub mod build_batch_phase {
         ///
         /// <p>Additional information about the batch build phase. Especially to help troubleshoot a
         /// failed batch build.</p>
-        pub fn contexts(mut self, input: impl Into<crate::model::PhaseContext>) -> Self {
+        pub fn contexts(mut self, input: crate::model::PhaseContext) -> Self {
             let mut v = self.contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contexts = Some(v);
             self
         }
@@ -12037,9 +12019,9 @@ pub mod build {
         ///
         /// <p>Information about all previous build phases that are complete and information about
         /// any current build phase that is not yet complete.</p>
-        pub fn phases(mut self, input: impl Into<crate::model::BuildPhase>) -> Self {
+        pub fn phases(mut self, input: crate::model::BuildPhase) -> Self {
             let mut v = self.phases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phases = Some(v);
             self
         }
@@ -12070,9 +12052,9 @@ pub mod build {
         /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
         ///
         /// <p> An array of <code>ProjectSource</code> objects. </p>
-        pub fn secondary_sources(mut self, input: impl Into<crate::model::ProjectSource>) -> Self {
+        pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources = Some(v);
             self
         }
@@ -12115,10 +12097,10 @@ pub mod build {
         /// </ul>
         pub fn secondary_source_versions(
             mut self,
-            input: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
             let mut v = self.secondary_source_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_source_versions = Some(v);
             self
         }
@@ -12172,12 +12154,9 @@ pub mod build {
         /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
         ///
         /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-        pub fn secondary_artifacts(
-            mut self,
-            input: impl Into<crate::model::BuildArtifacts>,
-        ) -> Self {
+        pub fn secondary_artifacts(mut self, input: crate::model::BuildArtifacts) -> Self {
             let mut v = self.secondary_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_artifacts = Some(v);
             self
         }
@@ -12371,10 +12350,10 @@ pub mod build {
         /// For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in the <i>CodePipeline User Guide</i>.</p>
         pub fn exported_environment_variables(
             mut self,
-            input: impl Into<crate::model::ExportedEnvironmentVariable>,
+            input: crate::model::ExportedEnvironmentVariable,
         ) -> Self {
             let mut v = self.exported_environment_variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exported_environment_variables = Some(v);
             self
         }
@@ -12419,10 +12398,10 @@ pub mod build {
         /// </p>
         pub fn file_system_locations(
             mut self,
-            input: impl Into<crate::model::ProjectFileSystemLocation>,
+            input: crate::model::ProjectFileSystemLocation,
         ) -> Self {
             let mut v = self.file_system_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_locations = Some(v);
             self
         }
@@ -13401,9 +13380,9 @@ pub mod build_phase {
         ///
         /// <p>Additional information about a build phase, especially to help troubleshoot a failed
         /// build.</p>
-        pub fn contexts(mut self, input: impl Into<crate::model::PhaseContext>) -> Self {
+        pub fn contexts(mut self, input: crate::model::PhaseContext) -> Self {
             let mut v = self.contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contexts = Some(v);
             self
         }
@@ -14233,9 +14212,9 @@ pub mod environment_platform {
         ///
         /// <p>The list of programming languages that are available for the specified
         /// platform.</p>
-        pub fn languages(mut self, input: impl Into<crate::model::EnvironmentLanguage>) -> Self {
+        pub fn languages(mut self, input: crate::model::EnvironmentLanguage) -> Self {
             let mut v = self.languages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.languages = Some(v);
             self
         }
@@ -14323,9 +14302,9 @@ pub mod environment_language {
         ///
         /// <p>The list of Docker images that are related by the specified programming
         /// language.</p>
-        pub fn images(mut self, input: impl Into<crate::model::EnvironmentImage>) -> Self {
+        pub fn images(mut self, input: crate::model::EnvironmentImage) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.images = Some(v);
             self
         }
@@ -16277,13 +16256,9 @@ pub mod test_report_summary {
         ///
         /// <p> A map that contains the number of each type of status returned by the test results in
         /// this <code>TestReportSummary</code>. </p>
-        pub fn status_counts(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn status_counts(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.status_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.status_counts = Some(hash_map);
             self
         }

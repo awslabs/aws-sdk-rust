@@ -302,8 +302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -317,8 +317,8 @@ pub mod fluent_builders {
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
         /// data in this field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
@@ -333,8 +333,8 @@ pub mod fluent_builders {
         }
         /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
         /// instance, etc.) </p>
-        pub fn created_artifact(mut self, inp: crate::model::CreatedArtifact) -> Self {
-            self.inner = self.inner.created_artifact(inp);
+        pub fn created_artifact(mut self, signature: crate::model::CreatedArtifact) -> Self {
+            self.inner = self.inner.created_artifact(signature);
             self
         }
         /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
@@ -348,8 +348,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -420,8 +420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream.</p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream.</p>
@@ -435,8 +435,8 @@ pub mod fluent_builders {
         /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
         /// field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
@@ -450,8 +450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object representing a Resource.</p>
-        pub fn discovered_resource(mut self, inp: crate::model::DiscoveredResource) -> Self {
-            self.inner = self.inner.discovered_resource(inp);
+        pub fn discovered_resource(mut self, signature: crate::model::DiscoveredResource) -> Self {
+            self.inner = self.inner.discovered_resource(signature);
             self
         }
         /// <p>Object representing a Resource.</p>
@@ -464,8 +464,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -541,8 +541,11 @@ pub mod fluent_builders {
         /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
         /// field.</i>
         /// </p>
-        pub fn progress_update_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream_name(inp);
+        pub fn progress_update_stream_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.progress_update_stream_name(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
@@ -557,8 +560,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -660,8 +663,11 @@ pub mod fluent_builders {
         /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
         /// field.</i>
         /// </p>
-        pub fn progress_update_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream_name(inp);
+        pub fn progress_update_stream_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.progress_update_stream_name(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
@@ -676,8 +682,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -748,8 +754,8 @@ pub mod fluent_builders {
         }
         /// <p>The configurationId in Application Discovery Service that uniquely identifies the
         /// grouped application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(signature.into());
             self
         }
         /// <p>The configurationId in Application Discovery Service that uniquely identifies the
@@ -822,8 +828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -837,8 +843,8 @@ pub mod fluent_builders {
         /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
         /// field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
@@ -928,8 +934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -943,8 +949,8 @@ pub mod fluent_builders {
         /// <p>Unique identifier that references the migration task to be disassociated with the
         /// artifact. <i>Do not store personal data in this field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>Unique identifier that references the migration task to be disassociated with the
@@ -959,8 +965,8 @@ pub mod fluent_builders {
         }
         /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
         /// instance, etc.)</p>
-        pub fn created_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.created_artifact_name(inp);
+        pub fn created_artifact_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.created_artifact_name(signature.into());
             self
         }
         /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
@@ -974,8 +980,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -1046,8 +1052,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream.</p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream.</p>
@@ -1061,8 +1067,8 @@ pub mod fluent_builders {
         /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
         /// field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
@@ -1077,8 +1083,8 @@ pub mod fluent_builders {
         }
         /// <p>ConfigurationId of the Application Discovery Service resource to be
         /// disassociated.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(signature.into());
             self
         }
         /// <p>ConfigurationId of the Application Discovery Service resource to be
@@ -1092,8 +1098,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -1166,8 +1172,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. ></p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. ></p>
@@ -1181,8 +1187,8 @@ pub mod fluent_builders {
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
         /// data in this field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
@@ -1197,8 +1203,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -1275,8 +1281,8 @@ pub mod fluent_builders {
         ///
         /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
         /// your applications.</p>
-        pub fn application_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_ids(inp);
+        pub fn application_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_ids(input.into());
             self
         }
         /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
@@ -1291,8 +1297,8 @@ pub mod fluent_builders {
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
         /// available. To retrieve the next page of results, make the call again using the returned
         /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
@@ -1303,8 +1309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to be returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to be returned per page.</p>
@@ -1387,8 +1393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -1402,8 +1408,8 @@ pub mod fluent_builders {
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
         /// data in this field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
@@ -1419,8 +1425,8 @@ pub mod fluent_builders {
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
         /// available. To retrieve the next page of results, make the call again using the returned
         /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
@@ -1431,8 +1437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to be returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to be returned per page.</p>
@@ -1501,8 +1507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream.</p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream.</p>
@@ -1516,8 +1522,8 @@ pub mod fluent_builders {
         /// <p>The name of the MigrationTask. <i>Do not store personal data in this
         /// field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>The name of the MigrationTask. <i>Do not store personal data in this
@@ -1533,8 +1539,8 @@ pub mod fluent_builders {
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
         /// available. To retrieve the next page of results, make the call again using the returned
         /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
@@ -1545,8 +1551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results returned per page.</p>
@@ -1630,8 +1636,8 @@ pub mod fluent_builders {
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
         /// available. To retrieve the next page of results, make the call again using the returned
         /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
@@ -1642,8 +1648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Value to specify how many results are returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Value to specify how many results are returned per page.</p>
@@ -1652,8 +1658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter migration tasks by discovered resource name.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>Filter migration tasks by discovered resource name.</p>
@@ -1727,8 +1733,8 @@ pub mod fluent_builders {
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
         /// available. To retrieve the next page of results, make the call again using the returned
         /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
@@ -1739,8 +1745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter to limit the maximum number of results to list per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Filter to limit the maximum number of results to list per page.</p>
@@ -1813,8 +1819,8 @@ pub mod fluent_builders {
         }
         /// <p>The configurationId in Application Discovery Service that uniquely identifies the
         /// grouped application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(signature.into());
             self
         }
         /// <p>The configurationId in Application Discovery Service that uniquely identifies the
@@ -1827,8 +1833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-        pub fn status(mut self, inp: crate::model::ApplicationStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::ApplicationStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
@@ -1840,8 +1846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp when the application state changed.</p>
-        pub fn update_date_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.update_date_time(inp);
+        pub fn update_date_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.update_date_time(signature);
             self
         }
         /// <p>The timestamp when the application state changed.</p>
@@ -1854,8 +1860,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -1942,8 +1948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -1957,8 +1963,8 @@ pub mod fluent_builders {
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
         /// data in this field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
@@ -1972,8 +1978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the task's progress and status.</p>
-        pub fn task(mut self, inp: crate::model::Task) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, signature: crate::model::Task) -> Self {
+            self.inner = self.inner.task(signature);
             self
         }
         /// <p>Information about the task's progress and status.</p>
@@ -1982,8 +1988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
-        pub fn update_date_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.update_date_time(inp);
+        pub fn update_date_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.update_date_time(signature);
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
@@ -1997,8 +2003,8 @@ pub mod fluent_builders {
         /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
         /// update. If Migration Hub does not receive an update within the specified interval, then the
         /// migration task will be considered stale.</p>
-        pub fn next_update_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.next_update_seconds(inp);
+        pub fn next_update_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.next_update_seconds(signature);
             self
         }
         /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
@@ -2010,8 +2016,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
@@ -2106,8 +2112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(signature.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -2121,8 +2127,8 @@ pub mod fluent_builders {
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
         /// data in this field.</i>
         /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        pub fn migration_task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(signature.into());
             self
         }
         /// <p>Unique identifier that references the migration task. <i>Do not store personal
@@ -2167,11 +2173,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// </important>
-        pub fn resource_attribute_list(
-            mut self,
-            inp: impl Into<crate::model::ResourceAttribute>,
-        ) -> Self {
-            self.inner = self.inner.resource_attribute_list(inp);
+        pub fn resource_attribute_list(mut self, input: crate::model::ResourceAttribute) -> Self {
+            self.inner = self.inner.resource_attribute_list(input);
             self
         }
         /// <p>Information about the resource that is being migrated. This data will be used to map the
@@ -2211,8 +2214,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if

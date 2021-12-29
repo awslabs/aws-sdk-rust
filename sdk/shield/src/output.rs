@@ -213,9 +213,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key and value pairs associated with the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -394,9 +394,9 @@ pub mod list_protections_output {
         /// To override the contents of this collection use [`set_protections`](Self::set_protections).
         ///
         /// <p>The array of enabled <a>Protection</a> objects.</p>
-        pub fn protections(mut self, input: impl Into<crate::model::Protection>) -> Self {
+        pub fn protections(mut self, input: crate::model::Protection) -> Self {
             let mut v = self.protections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protections = Some(v);
             self
         }
@@ -497,12 +497,9 @@ pub mod list_protection_groups_output {
         /// To override the contents of this collection use [`set_protection_groups`](Self::set_protection_groups).
         ///
         /// <p></p>
-        pub fn protection_groups(
-            mut self,
-            input: impl Into<crate::model::ProtectionGroup>,
-        ) -> Self {
+        pub fn protection_groups(mut self, input: crate::model::ProtectionGroup) -> Self {
             let mut v = self.protection_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protection_groups = Some(v);
             self
         }
@@ -603,9 +600,9 @@ pub mod list_attacks_output {
         /// To override the contents of this collection use [`set_attack_summaries`](Self::set_attack_summaries).
         ///
         /// <p>The attack information for the specified time range.</p>
-        pub fn attack_summaries(mut self, input: impl Into<crate::model::AttackSummary>) -> Self {
+        pub fn attack_summaries(mut self, input: crate::model::AttackSummary) -> Self {
             let mut v = self.attack_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_summaries = Some(v);
             self
         }
@@ -1127,12 +1124,9 @@ pub mod describe_emergency_contact_settings_output {
         /// To override the contents of this collection use [`set_emergency_contact_list`](Self::set_emergency_contact_list).
         ///
         /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
-        pub fn emergency_contact_list(
-            mut self,
-            input: impl Into<crate::model::EmergencyContact>,
-        ) -> Self {
+        pub fn emergency_contact_list(mut self, input: crate::model::EmergencyContact) -> Self {
             let mut v = self.emergency_contact_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.emergency_contact_list = Some(v);
             self
         }
@@ -1297,12 +1291,9 @@ pub mod describe_attack_statistics_output {
         /// To override the contents of this collection use [`set_data_items`](Self::set_data_items).
         ///
         /// <p>The data that describes the attacks detected during the time period.</p>
-        pub fn data_items(
-            mut self,
-            input: impl Into<crate::model::AttackStatisticsDataItem>,
-        ) -> Self {
+        pub fn data_items(mut self, input: crate::model::AttackStatisticsDataItem) -> Self {
             let mut v = self.data_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_items = Some(v);
             self
         }

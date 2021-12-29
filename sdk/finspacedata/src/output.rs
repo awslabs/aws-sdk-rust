@@ -178,9 +178,9 @@ pub mod list_data_views_output {
         /// To override the contents of this collection use [`set_data_views`](Self::set_data_views).
         ///
         /// <p>A list of Dataviews.</p>
-        pub fn data_views(mut self, input: impl Into<crate::model::DataViewSummary>) -> Self {
+        pub fn data_views(mut self, input: crate::model::DataViewSummary) -> Self {
             let mut v = self.data_views.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_views = Some(v);
             self
         }
@@ -250,9 +250,9 @@ pub mod list_datasets_output {
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
         /// <p>List of Datasets.</p>
-        pub fn datasets(mut self, input: impl Into<crate::model::Dataset>) -> Self {
+        pub fn datasets(mut self, input: crate::model::Dataset) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }
@@ -332,9 +332,9 @@ pub mod list_changesets_output {
         /// To override the contents of this collection use [`set_changesets`](Self::set_changesets).
         ///
         /// <p>List of Changesets found.</p>
-        pub fn changesets(mut self, input: impl Into<crate::model::ChangesetSummary>) -> Self {
+        pub fn changesets(mut self, input: crate::model::ChangesetSummary) -> Self {
             let mut v = self.changesets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.changesets = Some(v);
             self
         }

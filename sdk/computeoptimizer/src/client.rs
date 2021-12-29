@@ -316,8 +316,8 @@ pub mod fluent_builders {
         /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
         /// encompasses only instances that are part of an Auto Scaling group.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(signature);
             self
         }
         /// <p>The target resource type of the recommendation preference to delete.</p>
@@ -337,8 +337,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
         /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
         /// Guide</i>.</p>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>An object that describes the scope of the recommendation preference to delete.</p>
@@ -361,9 +361,9 @@ pub mod fluent_builders {
         /// recommendation preference that can be deleted.</p>
         pub fn recommendation_preference_names(
             mut self,
-            inp: impl Into<crate::model::RecommendationPreferenceName>,
+            input: crate::model::RecommendationPreferenceName,
         ) -> Self {
-            self.inner = self.inner.recommendation_preference_names(inp);
+            self.inner = self.inner.recommendation_preference_names(input);
             self
         }
         /// <p>The name of the recommendation preference to delete.</p>
@@ -448,8 +448,8 @@ pub mod fluent_builders {
         /// <p>An export job ID is returned when you create an export using the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions.</p>
         /// <p>All export jobs created in the last seven days are returned if this parameter is
         /// omitted.</p>
-        pub fn job_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_ids(inp);
+        pub fn job_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_ids(input.into());
             self
         }
         /// <p>The identification numbers of the export jobs to return.</p>
@@ -469,8 +469,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of export
         /// jobs.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::JobFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::JobFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that returns a more specific list of export
@@ -483,8 +483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of export jobs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of export jobs.</p>
@@ -495,8 +495,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of export jobs to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of export jobs to return with a single request.</p>
@@ -586,8 +586,8 @@ pub mod fluent_builders {
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
         /// <p>You can specify multiple account IDs per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group
@@ -611,8 +611,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
@@ -632,9 +632,9 @@ pub mod fluent_builders {
         /// Guide</i>.</p>
         pub fn fields_to_export(
             mut self,
-            inp: impl Into<crate::model::ExportableAutoScalingGroupField>,
+            input: crate::model::ExportableAutoScalingGroupField,
         ) -> Self {
-            self.inner = self.inner.fields_to_export(inp);
+            self.inner = self.inner.fields_to_export(input);
             self
         }
         /// <p>The recommendations data to include in the export file. For more information about the
@@ -658,8 +658,11 @@ pub mod fluent_builders {
         /// an object prefix when you create the export job, you must include the object prefix in
         /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        pub fn s3_destination_config(mut self, inp: crate::model::S3DestinationConfig) -> Self {
-            self.inner = self.inner.s3_destination_config(inp);
+        pub fn s3_destination_config(
+            mut self,
+            signature: crate::model::S3DestinationConfig,
+        ) -> Self {
+            self.inner = self.inner.s3_destination_config(signature);
             self
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
@@ -680,8 +683,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the export file.</p>
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-        pub fn file_format(mut self, inp: crate::model::FileFormat) -> Self {
-            self.inner = self.inner.file_format(inp);
+        pub fn file_format(mut self, signature: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(signature);
             self
         }
         /// <p>The format of the export file.</p>
@@ -705,8 +708,8 @@ pub mod fluent_builders {
         /// parameters are mutually exclusive.</p>
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
-        pub fn include_member_accounts(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(inp);
+        pub fn include_member_accounts(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(signature);
             self
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
@@ -729,9 +732,9 @@ pub mod fluent_builders {
         /// to export.</p>
         pub fn recommendation_preferences(
             mut self,
-            inp: crate::model::RecommendationPreferences,
+            signature: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(inp);
+            self.inner = self.inner.recommendation_preferences(signature);
             self
         }
         /// <p>An object to specify the preferences for the Auto Scaling group recommendations
@@ -821,8 +824,8 @@ pub mod fluent_builders {
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
         /// <p>You can specify multiple account IDs per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS
@@ -846,8 +849,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::EbsFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::EbsFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
@@ -865,11 +868,8 @@ pub mod fluent_builders {
         /// <p>The recommendations data to include in the export file. For more information about the
         /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
         /// Guide</i>.</p>
-        pub fn fields_to_export(
-            mut self,
-            inp: impl Into<crate::model::ExportableVolumeField>,
-        ) -> Self {
-            self.inner = self.inner.fields_to_export(inp);
+        pub fn fields_to_export(mut self, input: crate::model::ExportableVolumeField) -> Self {
+            self.inner = self.inner.fields_to_export(input);
             self
         }
         /// <p>The recommendations data to include in the export file. For more information about the
@@ -891,8 +891,11 @@ pub mod fluent_builders {
         /// an object prefix when you create the export job, you must include the object prefix in
         /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        pub fn s3_destination_config(mut self, inp: crate::model::S3DestinationConfig) -> Self {
-            self.inner = self.inner.s3_destination_config(inp);
+        pub fn s3_destination_config(
+            mut self,
+            signature: crate::model::S3DestinationConfig,
+        ) -> Self {
+            self.inner = self.inner.s3_destination_config(signature);
             self
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
@@ -913,8 +916,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the export file.</p>
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-        pub fn file_format(mut self, inp: crate::model::FileFormat) -> Self {
-            self.inner = self.inner.file_format(inp);
+        pub fn file_format(mut self, signature: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(signature);
             self
         }
         /// <p>The format of the export file.</p>
@@ -938,8 +941,8 @@ pub mod fluent_builders {
         /// parameters are mutually exclusive.</p>
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
-        pub fn include_member_accounts(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(inp);
+        pub fn include_member_accounts(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(signature);
             self
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
@@ -1036,8 +1039,8 @@ pub mod fluent_builders {
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
         /// <p>You can specify multiple account IDs per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The IDs of the Amazon Web Services accounts for which to export instance
@@ -1062,8 +1065,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of objects to specify a filter that exports a more specific set of instance
         /// recommendations.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that exports a more specific set of instance
@@ -1082,11 +1085,8 @@ pub mod fluent_builders {
         /// <p>The recommendations data to include in the export file. For more information about the
         /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
         /// Guide</i>.</p>
-        pub fn fields_to_export(
-            mut self,
-            inp: impl Into<crate::model::ExportableInstanceField>,
-        ) -> Self {
-            self.inner = self.inner.fields_to_export(inp);
+        pub fn fields_to_export(mut self, input: crate::model::ExportableInstanceField) -> Self {
+            self.inner = self.inner.fields_to_export(input);
             self
         }
         /// <p>The recommendations data to include in the export file. For more information about the
@@ -1109,8 +1109,11 @@ pub mod fluent_builders {
         /// specify an object prefix when you create the export job, you must include the object
         /// prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        pub fn s3_destination_config(mut self, inp: crate::model::S3DestinationConfig) -> Self {
-            self.inner = self.inner.s3_destination_config(inp);
+        pub fn s3_destination_config(
+            mut self,
+            signature: crate::model::S3DestinationConfig,
+        ) -> Self {
+            self.inner = self.inner.s3_destination_config(signature);
             self
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
@@ -1132,8 +1135,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the export file.</p>
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-        pub fn file_format(mut self, inp: crate::model::FileFormat) -> Self {
-            self.inner = self.inner.file_format(inp);
+        pub fn file_format(mut self, signature: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(signature);
             self
         }
         /// <p>The format of the export file.</p>
@@ -1155,8 +1158,8 @@ pub mod fluent_builders {
         /// file if this parameter is omitted.</p>
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
-        pub fn include_member_accounts(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(inp);
+        pub fn include_member_accounts(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(signature);
             self
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
@@ -1177,9 +1180,9 @@ pub mod fluent_builders {
         /// recommendations to export.</p>
         pub fn recommendation_preferences(
             mut self,
-            inp: crate::model::RecommendationPreferences,
+            signature: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(inp);
+            self.inner = self.inner.recommendation_preferences(signature);
             self
         }
         /// <p>An object to specify the preferences for the Amazon EC2 instance
@@ -1271,8 +1274,8 @@ pub mod fluent_builders {
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the include member accounts parameter, is omitted.</p>
         /// <p>You can specify multiple account IDs per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The IDs of the Amazon Web Services accounts for which to export Lambda
@@ -1296,11 +1299,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
-        pub fn filters(
-            mut self,
-            inp: impl Into<crate::model::LambdaFunctionRecommendationFilter>,
-        ) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::LambdaFunctionRecommendationFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
@@ -1322,9 +1322,9 @@ pub mod fluent_builders {
         /// Guide</i>.</p>
         pub fn fields_to_export(
             mut self,
-            inp: impl Into<crate::model::ExportableLambdaFunctionField>,
+            input: crate::model::ExportableLambdaFunctionField,
         ) -> Self {
-            self.inner = self.inner.fields_to_export(inp);
+            self.inner = self.inner.fields_to_export(input);
             self
         }
         /// <p>The recommendations data to include in the export file. For more information about the
@@ -1346,8 +1346,11 @@ pub mod fluent_builders {
         /// an object prefix when you create the export job, you must include the object prefix in
         /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        pub fn s3_destination_config(mut self, inp: crate::model::S3DestinationConfig) -> Self {
-            self.inner = self.inner.s3_destination_config(inp);
+        pub fn s3_destination_config(
+            mut self,
+            signature: crate::model::S3DestinationConfig,
+        ) -> Self {
+            self.inner = self.inner.s3_destination_config(signature);
             self
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
@@ -1368,8 +1371,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the export file.</p>
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-        pub fn file_format(mut self, inp: crate::model::FileFormat) -> Self {
-            self.inner = self.inner.file_format(inp);
+        pub fn file_format(mut self, signature: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(signature);
             self
         }
         /// <p>The format of the export file.</p>
@@ -1393,8 +1396,8 @@ pub mod fluent_builders {
         /// parameters are mutually exclusive.</p>
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
-        pub fn include_member_accounts(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(inp);
+        pub fn include_member_accounts(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(signature);
             self
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
@@ -1489,8 +1492,8 @@ pub mod fluent_builders {
         /// specify the member account for which you want to return Auto Scaling group
         /// recommendations.</p>
         /// <p>Only one account ID can be specified per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group
@@ -1512,8 +1515,8 @@ pub mod fluent_builders {
         ///
         /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return
         /// recommendations.</p>
-        pub fn auto_scaling_group_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_arns(inp);
+        pub fn auto_scaling_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_group_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return
@@ -1527,8 +1530,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to advance to the next page of Auto Scaling group
         /// recommendations.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of Auto Scaling group
@@ -1541,8 +1544,8 @@ pub mod fluent_builders {
         /// request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of Auto Scaling group recommendations to return with a single
@@ -1558,8 +1561,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
@@ -1574,9 +1577,9 @@ pub mod fluent_builders {
         /// to return in the response.</p>
         pub fn recommendation_preferences(
             mut self,
-            inp: crate::model::RecommendationPreferences,
+            signature: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(inp);
+            self.inner = self.inner.recommendation_preferences(signature);
             self
         }
         /// <p>An object to specify the preferences for the Auto Scaling group recommendations
@@ -1658,8 +1661,8 @@ pub mod fluent_builders {
         ///
         /// <p>The Amazon Resource Name (ARN) of the volumes for which to return
         /// recommendations.</p>
-        pub fn volume_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_arns(inp);
+        pub fn volume_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the volumes for which to return
@@ -1672,8 +1675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of volume recommendations.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of volume recommendations.</p>
@@ -1684,8 +1687,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of volume recommendations to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of volume recommendations to return with a single request.</p>
@@ -1701,8 +1704,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of volume
         /// recommendations.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::EbsFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::EbsFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that returns a more specific list of volume
@@ -1723,8 +1726,8 @@ pub mod fluent_builders {
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return volume recommendations.</p>
         /// <p>Only one account ID can be specified per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account for which to return volume
@@ -1809,8 +1812,8 @@ pub mod fluent_builders {
         ///
         /// <p>The Amazon Resource Name (ARN) of the instances for which to return
         /// recommendations.</p>
-        pub fn instance_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arns(inp);
+        pub fn instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the instances for which to return
@@ -1823,8 +1826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of instance recommendations.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of instance recommendations.</p>
@@ -1835,8 +1838,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of instance recommendations to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of instance recommendations to return with a single request.</p>
@@ -1852,8 +1855,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of instance
         /// recommendations.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that returns a more specific list of instance
@@ -1874,8 +1877,8 @@ pub mod fluent_builders {
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return instance recommendations.</p>
         /// <p>Only one account ID can be specified per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account for which to return instance
@@ -1894,9 +1897,9 @@ pub mod fluent_builders {
         /// recommendations to return in the response.</p>
         pub fn recommendation_preferences(
             mut self,
-            inp: crate::model::RecommendationPreferences,
+            signature: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(inp);
+            self.inner = self.inner.recommendation_preferences(signature);
             self
         }
         /// <p>An object to specify the preferences for the Amazon EC2 instance
@@ -1979,8 +1982,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation
         /// projected metrics.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation
@@ -1990,8 +1993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The statistic of the projected metrics.</p>
-        pub fn stat(mut self, inp: crate::model::MetricStatistic) -> Self {
-            self.inner = self.inner.stat(inp);
+        pub fn stat(mut self, signature: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.stat(signature);
             self
         }
         /// <p>The statistic of the projected metrics.</p>
@@ -2003,8 +2006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The granularity, in seconds, of the projected metrics data points.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The granularity, in seconds, of the projected metrics data points.</p>
@@ -2013,8 +2016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp of the first projected metrics data point to return.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The timestamp of the first projected metrics data point to return.</p>
@@ -2026,8 +2029,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp of the last projected metrics data point to return.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The timestamp of the last projected metrics data point to return.</p>
@@ -2042,9 +2045,9 @@ pub mod fluent_builders {
         /// projected metrics to return in the response.</p>
         pub fn recommendation_preferences(
             mut self,
-            inp: crate::model::RecommendationPreferences,
+            signature: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(inp);
+            self.inner = self.inner.recommendation_preferences(signature);
             self
         }
         /// <p>An object to specify the preferences for the Amazon EC2 recommendation
@@ -2126,8 +2129,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective
         /// recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are
         /// currently supported.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective
@@ -2271,8 +2274,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of account
         /// enrollment statuses.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::EnrollmentFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::EnrollmentFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that returns a more specific list of account
@@ -2285,8 +2288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of account enrollment statuses.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of account enrollment statuses.</p>
@@ -2298,8 +2301,8 @@ pub mod fluent_builders {
         /// can specify up to 100 statuses to return with each request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of account enrollment statuses to return with a single request. You
@@ -2387,8 +2390,8 @@ pub mod fluent_builders {
         /// function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
         /// versions</a> in the <i>Lambda Developer
         /// Guide</i>.</p>
-        pub fn function_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_arns(inp);
+        pub fn function_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the functions for which to return
@@ -2416,8 +2419,8 @@ pub mod fluent_builders {
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return function recommendations.</p>
         /// <p>Only one account ID can be specified per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account for which to return function
@@ -2438,11 +2441,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of function
         /// recommendations.</p>
-        pub fn filters(
-            mut self,
-            inp: impl Into<crate::model::LambdaFunctionRecommendationFilter>,
-        ) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::LambdaFunctionRecommendationFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects to specify a filter that returns a more specific list of function
@@ -2457,8 +2457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of function recommendations.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of function recommendations.</p>
@@ -2469,8 +2469,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of function recommendations to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of function recommendations to return with a single request.</p>
@@ -2552,8 +2552,8 @@ pub mod fluent_builders {
         /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
         /// encompasses only instances that are part of an Auto Scaling group.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(signature);
             self
         }
         /// <p>The target resource type of the recommendation preference for which to return
@@ -2574,8 +2574,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
         /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
         /// Guide</i>.</p>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>An object that describes the scope of the recommendation preference to return.</p>
@@ -2589,8 +2589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of recommendation preferences.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of recommendation preferences.</p>
@@ -2602,8 +2602,8 @@ pub mod fluent_builders {
         /// request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of recommendation preferences to return with a single
@@ -2703,8 +2703,8 @@ pub mod fluent_builders {
         /// <p>If your account is the management account of an organization, use this parameter to
         /// specify the member account for which you want to return recommendation summaries.</p>
         /// <p>Only one account ID can be specified per request.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account for which to return recommendation
@@ -2720,8 +2720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of recommendation summaries.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of recommendation summaries.</p>
@@ -2732,8 +2732,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of recommendation summaries to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of recommendation summaries to return with a single request.</p>
@@ -2811,8 +2811,8 @@ pub mod fluent_builders {
         /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
         /// encompasses only instances that are part of an Auto Scaling group.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(signature);
             self
         }
         /// <p>The target resource type of the recommendation preference to create.</p>
@@ -2840,8 +2840,8 @@ pub mod fluent_builders {
         /// Resource Name (ARN). This will configure the preference for all instances that are
         /// part of the specified the Auto Scaling group.</p>
         /// </note>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>An object that describes the scope of the recommendation preference to create.</p>
@@ -2869,9 +2869,9 @@ pub mod fluent_builders {
         /// applied.</p>
         pub fn enhanced_infrastructure_metrics(
             mut self,
-            inp: crate::model::EnhancedInfrastructureMetrics,
+            signature: crate::model::EnhancedInfrastructureMetrics,
         ) -> Self {
-            self.inner = self.inner.enhanced_infrastructure_metrics(inp);
+            self.inner = self.inner.enhanced_infrastructure_metrics(signature);
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference to create
@@ -2975,8 +2975,8 @@ pub mod fluent_builders {
         /// the enrollment status of an account. They are returned in the response of a request
         /// to update the enrollment status of an account.</p>
         /// </note>
-        pub fn status(mut self, inp: crate::model::Status) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::Status) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The new enrollment status of the account.</p>
@@ -3007,8 +3007,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to enroll member accounts of the organization if the account is the
         /// management account of an organization.</p>
-        pub fn include_member_accounts(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(inp);
+        pub fn include_member_accounts(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(signature);
             self
         }
         /// <p>Indicates whether to enroll member accounts of the organization if the account is the

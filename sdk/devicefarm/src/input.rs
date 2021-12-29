@@ -48,9 +48,9 @@ pub mod create_device_pool_input {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The device pool's rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -7421,9 +7421,9 @@ pub mod list_devices_input {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::DeviceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DeviceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12444,9 +12444,9 @@ pub mod tag_resource_input {
         ///
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
         /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13015,9 +13015,9 @@ pub mod update_device_pool_input {
         ///
         /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
         /// your request, the update replaces the existing rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }

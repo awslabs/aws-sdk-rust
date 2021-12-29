@@ -2244,9 +2244,9 @@ pub mod launch {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::LaunchGroup>) -> Self {
+        pub fn groups(mut self, input: crate::model::LaunchGroup) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -2263,9 +2263,9 @@ pub mod launch {
         /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
         ///
         /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-        pub fn metric_monitors(mut self, input: impl Into<crate::model::MetricMonitor>) -> Self {
+        pub fn metric_monitors(mut self, input: crate::model::MetricMonitor) -> Self {
             let mut v = self.metric_monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_monitors = Some(v);
             self
         }
@@ -2417,9 +2417,9 @@ pub mod scheduled_splits_launch_definition {
         /// <p>An array of structures that define the traffic allocation percentages among the feature
         /// variations during each step of the launch. This also defines the start time of each
         /// step.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::ScheduledSplit>) -> Self {
+        pub fn steps(mut self, input: crate::model::ScheduledSplit) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -2511,13 +2511,9 @@ pub mod scheduled_split {
         /// <p>The traffic allocation percentages among the feature variations during one step of a
         /// launch. This is a set of key-value pairs.   The keys are variation names. The values represent
         /// the percentage of traffic to allocate to that variation during this step.</p>
-        pub fn group_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i64>,
-        ) -> Self {
+        pub fn group_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.group_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.group_weights = Some(hash_map);
             self
         }
@@ -3423,9 +3419,9 @@ pub mod scheduled_splits_launch_config {
         /// <p>An array of structures that define the traffic allocation percentages among the feature
         /// variations during each step of the launch. This also defines the start time of each
         /// step.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::ScheduledSplitConfig>) -> Self {
+        pub fn steps(mut self, input: crate::model::ScheduledSplitConfig) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -3517,13 +3513,9 @@ pub mod scheduled_split_config {
         /// <p>The traffic allocation percentages among the feature variations during one step of a
         /// launch. This is a set of key-value pairs. The keys are variation names. The values represent
         /// the percentage of traffic to allocate to that variation during this step.</p>
-        pub fn group_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i64>,
-        ) -> Self {
+        pub fn group_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.group_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.group_weights = Some(hash_map);
             self
         }
@@ -3766,9 +3758,9 @@ pub mod feature_summary {
         /// To override the contents of this collection use [`set_evaluation_rules`](Self::set_evaluation_rules).
         ///
         /// <p>An array of structures that define</p>
-        pub fn evaluation_rules(mut self, input: impl Into<crate::model::EvaluationRule>) -> Self {
+        pub fn evaluation_rules(mut self, input: crate::model::EvaluationRule) -> Self {
             let mut v = self.evaluation_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_rules = Some(v);
             self
         }
@@ -4332,9 +4324,9 @@ pub mod feature {
         /// To override the contents of this collection use [`set_variations`](Self::set_variations).
         ///
         /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-        pub fn variations(mut self, input: impl Into<crate::model::Variation>) -> Self {
+        pub fn variations(mut self, input: crate::model::Variation) -> Self {
             let mut v = self.variations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variations = Some(v);
             self
         }
@@ -4374,9 +4366,9 @@ pub mod feature {
         /// To override the contents of this collection use [`set_evaluation_rules`](Self::set_evaluation_rules).
         ///
         /// <p>An array of structures that define the evaluation rules for the feature.</p>
-        pub fn evaluation_rules(mut self, input: impl Into<crate::model::EvaluationRule>) -> Self {
+        pub fn evaluation_rules(mut self, input: crate::model::EvaluationRule) -> Self {
             let mut v = self.evaluation_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_rules = Some(v);
             self
         }
@@ -5009,9 +5001,9 @@ pub mod experiment_results_data {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -5546,9 +5538,9 @@ pub mod experiment {
         /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
         ///
         /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-        pub fn treatments(mut self, input: impl Into<crate::model::Treatment>) -> Self {
+        pub fn treatments(mut self, input: crate::model::Treatment) -> Self {
             let mut v = self.treatments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.treatments = Some(v);
             self
         }
@@ -5566,9 +5558,9 @@ pub mod experiment {
         ///
         /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
         /// or lower value for each metric is the goal.</p>
-        pub fn metric_goals(mut self, input: impl Into<crate::model::MetricGoal>) -> Self {
+        pub fn metric_goals(mut self, input: crate::model::MetricGoal) -> Self {
             let mut v = self.metric_goals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_goals = Some(v);
             self
         }
@@ -5771,13 +5763,9 @@ pub mod online_ab_definition {
         /// of experiment traffic to be assigned to that variation. The traffic portion is specified in
         /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
         /// traffic to that variation.</p>
-        pub fn treatment_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i64>,
-        ) -> Self {
+        pub fn treatment_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.treatment_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.treatment_weights = Some(hash_map);
             self
         }
@@ -6404,13 +6392,9 @@ pub mod online_ab_config {
         /// of experiment traffic to be assigned to that variation. Specify the traffic portion in
         /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
         /// traffic to that variation.</p>
-        pub fn treatment_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i64>,
-        ) -> Self {
+        pub fn treatment_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.treatment_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.treatment_weights = Some(hash_map);
             self
         }

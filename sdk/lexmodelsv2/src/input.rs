@@ -577,10 +577,10 @@ pub mod create_bot_alias_input {
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }
@@ -1190,10 +1190,10 @@ pub mod create_bot_version_input {
         pub fn bot_version_locale_specification(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotVersionLocaleDetails>,
+            v: crate::model::BotVersionLocaleDetails,
         ) -> Self {
             let mut hash_map = self.bot_version_locale_specification.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_version_locale_specification = Some(hash_map);
             self
         }
@@ -1627,12 +1627,9 @@ pub mod create_intent_input {
         /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
         /// to indicate where they should be displayed in the utterance shown to
         /// the user.. </p>
-        pub fn sample_utterances(
-            mut self,
-            input: impl Into<crate::model::SampleUtterance>,
-        ) -> Self {
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_utterances = Some(v);
             self
         }
@@ -1759,9 +1756,9 @@ pub mod create_intent_input {
         /// <p>An intent may have up to 5 input contexts. If an intent has multiple
         /// input contexts, all of the contexts must be active to consider the
         /// intent.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -1800,9 +1797,9 @@ pub mod create_intent_input {
         /// fulfilled. You can set up to 10 output contexts. You can also set the
         /// number of conversation turns that the context should be active, or the
         /// length of time that the context should be active.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -2331,9 +2328,9 @@ pub mod create_resource_policy_statement_input {
         /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
         /// that is allowed or denied access to a resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
-        pub fn principal(mut self, input: impl Into<crate::model::Principal>) -> Self {
+        pub fn principal(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principal.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principal = Some(v);
             self
         }
@@ -2384,10 +2381,10 @@ pub mod create_resource_policy_statement_input {
         pub fn condition(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.condition.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.condition = Some(hash_map);
             self
         }
@@ -3024,9 +3021,9 @@ pub mod create_slot_type_input {
         /// that the slot type can take. Each value can have a list of synonyms,
         /// additional values that help train the machine learning model about the
         /// values that it resolves for a slot.</p>
-        pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_values = Some(v);
             self
         }
@@ -8256,12 +8253,9 @@ pub mod list_aggregated_utterances_input {
         /// <p>Provides the specification of a filter used to limit the utterances
         /// in the response to only those that match the filter specification. You
         /// can only specify one filter and one string to filter on.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::AggregatedUtterancesFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::AggregatedUtterancesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8725,9 +8719,9 @@ pub mod list_bot_locales_input {
         /// <p>Provides the specification for a filter used to limit the response
         /// to only those locales that match the filter specification. You can only
         /// specify one filter and one value to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::BotLocaleFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::BotLocaleFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9244,9 +9238,9 @@ pub mod list_bots_input {
         /// <p>Provides the specification of a filter used to limit the bots in the
         /// response to only those that match the filter specification. You can
         /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::BotFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::BotFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10158,9 +10152,9 @@ pub mod list_exports_input {
         /// <p>Provides the specification of a filter used to limit the exports in
         /// the response to only those that match the filter specification. You can
         /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ExportFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10398,9 +10392,9 @@ pub mod list_imports_input {
         /// <p>Provides the specification of a filter used to limit the bots in the
         /// response to only those that match the filter specification. You can
         /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ImportFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ImportFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10655,9 +10649,9 @@ pub mod list_intents_input {
         /// <p>Provides the specification of a filter used to limit the intents in
         /// the response to only those that match the filter specification. You can
         /// only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::IntentFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::IntentFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -11263,9 +11257,9 @@ pub mod list_slots_input {
         /// <p>Provides the specification of a filter used to limit the slots in
         /// the response to only those that match the filter specification. You can
         /// only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SlotFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SlotFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -11580,9 +11574,9 @@ pub mod list_slot_types_input {
         /// <p>Provides the specification of a filter used to limit the slot types
         /// in the response to only those that match the filter specification. You
         /// can only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SlotTypeFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SlotTypeFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12061,12 +12055,9 @@ pub mod search_associated_transcripts_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of filter objects.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::AssociatedTranscriptFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::AssociatedTranscriptFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -13491,10 +13482,10 @@ pub mod update_bot_alias_input {
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }
@@ -14548,12 +14539,9 @@ pub mod update_intent_input {
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
         /// <p>New utterances used to invoke the intent.</p>
-        pub fn sample_utterances(
-            mut self,
-            input: impl Into<crate::model::SampleUtterance>,
-        ) -> Self {
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_utterances = Some(v);
             self
         }
@@ -14604,9 +14592,9 @@ pub mod update_intent_input {
         ///
         /// <p>A new list of slots and their priorities that are contained by the
         /// intent.</p>
-        pub fn slot_priorities(mut self, input: impl Into<crate::model::SlotPriority>) -> Self {
+        pub fn slot_priorities(mut self, input: crate::model::SlotPriority) -> Self {
             let mut v = self.slot_priorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_priorities = Some(v);
             self
         }
@@ -14658,9 +14646,9 @@ pub mod update_intent_input {
         ///
         /// <p>A new list of contexts that must be active in order for Amazon Lex to
         /// consider the intent.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -14679,9 +14667,9 @@ pub mod update_intent_input {
         ///
         /// <p>A new list of contexts that Amazon Lex activates when the intent is
         /// fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -15625,9 +15613,9 @@ pub mod update_slot_type_input {
         ///
         /// <p>A new list of values and their optional synonyms that define the
         /// values that the slot type can take.</p>
-        pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_values = Some(v);
             self
         }

@@ -200,9 +200,9 @@ pub mod query_table_rows_output {
         /// <p>
         /// The list of rows in the table that match the query filter.
         /// </p>
-        pub fn rows(mut self, input: impl Into<crate::model::TableRow>) -> Self {
+        pub fn rows(mut self, input: crate::model::TableRow) -> Self {
             let mut v = self.rows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rows = Some(v);
             self
         }
@@ -338,9 +338,9 @@ pub mod list_tables_output {
         /// <p>
         /// The list of tables in the workbook.
         /// </p>
-        pub fn tables(mut self, input: impl Into<crate::model::Table>) -> Self {
+        pub fn tables(mut self, input: crate::model::Table) -> Self {
             let mut v = self.tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tables = Some(v);
             self
         }
@@ -525,9 +525,9 @@ pub mod list_table_rows_output {
         /// The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100
         /// rows.
         /// </p>
-        pub fn rows(mut self, input: impl Into<crate::model::TableRow>) -> Self {
+        pub fn rows(mut self, input: crate::model::TableRow) -> Self {
             let mut v = self.rows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rows = Some(v);
             self
         }
@@ -688,9 +688,9 @@ pub mod list_table_columns_output {
         /// <p>
         /// The list of columns in the table.
         /// </p>
-        pub fn table_columns(mut self, input: impl Into<crate::model::TableColumn>) -> Self {
+        pub fn table_columns(mut self, input: crate::model::TableColumn) -> Self {
             let mut v = self.table_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_columns = Some(v);
             self
         }
@@ -881,10 +881,10 @@ pub mod get_screen_data_output {
         pub fn results(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ResultSet>,
+            v: crate::model::ResultSet,
         ) -> Self {
             let mut hash_map = self.results.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.results = Some(hash_map);
             self
         }
@@ -1151,10 +1151,10 @@ pub mod batch_upsert_table_rows_output {
         pub fn rows(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::UpsertRowsResult>,
+            v: crate::model::UpsertRowsResult,
         ) -> Self {
             let mut hash_map = self.rows.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.rows = Some(hash_map);
             self
         }
@@ -1191,12 +1191,9 @@ pub mod batch_upsert_table_rows_output {
         /// this list contains one item from the request that could not be updated in the table along with the reason
         /// why that item could not be updated or appended.
         /// </p>
-        pub fn failed_batch_items(
-            mut self,
-            input: impl Into<crate::model::FailedBatchItem>,
-        ) -> Self {
+        pub fn failed_batch_items(mut self, input: crate::model::FailedBatchItem) -> Self {
             let mut v = self.failed_batch_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batch_items = Some(v);
             self
         }
@@ -1294,12 +1291,9 @@ pub mod batch_update_table_rows_output {
         /// contains one item from the request that could not be updated in the table along with the reason why
         /// that item could not be updated.
         /// </p>
-        pub fn failed_batch_items(
-            mut self,
-            input: impl Into<crate::model::FailedBatchItem>,
-        ) -> Self {
+        pub fn failed_batch_items(mut self, input: crate::model::FailedBatchItem) -> Self {
             let mut v = self.failed_batch_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batch_items = Some(v);
             self
         }
@@ -1396,12 +1390,9 @@ pub mod batch_delete_table_rows_output {
         /// contains one row id from the request that could not be deleted along with the reason why that item could not
         /// be deleted.
         /// </p>
-        pub fn failed_batch_items(
-            mut self,
-            input: impl Into<crate::model::FailedBatchItem>,
-        ) -> Self {
+        pub fn failed_batch_items(mut self, input: crate::model::FailedBatchItem) -> Self {
             let mut v = self.failed_batch_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batch_items = Some(v);
             self
         }
@@ -1537,12 +1528,9 @@ pub mod batch_create_table_rows_output {
         /// contains one item from the request that could not be added to the table along with the reason why
         /// that item could not be added.
         /// </p>
-        pub fn failed_batch_items(
-            mut self,
-            input: impl Into<crate::model::FailedBatchItem>,
-        ) -> Self {
+        pub fn failed_batch_items(mut self, input: crate::model::FailedBatchItem) -> Self {
             let mut v = self.failed_batch_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batch_items = Some(v);
             self
         }

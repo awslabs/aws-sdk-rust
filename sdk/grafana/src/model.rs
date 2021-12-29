@@ -198,10 +198,10 @@ pub mod workspace_summary {
         /// these channels.</p>
         pub fn notification_destinations(
             mut self,
-            input: impl Into<crate::model::NotificationDestinationType>,
+            input: crate::model::NotificationDestinationType,
         ) -> Self {
             let mut v = self.notification_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_destinations = Some(v);
             self
         }
@@ -317,12 +317,9 @@ pub mod authentication_summary {
         ///
         /// <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
         /// authentication.</p>
-        pub fn providers(
-            mut self,
-            input: impl Into<crate::model::AuthenticationProviderTypes>,
-        ) -> Self {
+        pub fn providers(mut self, input: crate::model::AuthenticationProviderTypes) -> Self {
             let mut v = self.providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.providers = Some(v);
             self
         }
@@ -1048,9 +1045,9 @@ pub mod workspace_description {
         /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM
         /// roles and permissions created to allow
         /// Amazon Managed Grafana to read data from these sources.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSourceType>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSourceType) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -1152,10 +1149,10 @@ pub mod workspace_description {
         /// Amazon Managed Grafana to use these channels.</p>
         pub fn notification_destinations(
             mut self,
-            input: impl Into<crate::model::NotificationDestinationType>,
+            input: crate::model::NotificationDestinationType,
         ) -> Self {
             let mut v = self.notification_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_destinations = Some(v);
             self
         }
@@ -1780,9 +1777,9 @@ pub mod update_instruction {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -2185,12 +2182,9 @@ pub mod authentication_description {
         ///
         /// <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate
         /// users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
-        pub fn providers(
-            mut self,
-            input: impl Into<crate::model::AuthenticationProviderTypes>,
-        ) -> Self {
+        pub fn providers(mut self, input: crate::model::AuthenticationProviderTypes) -> Self {
             let mut v = self.providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.providers = Some(v);
             self
         }

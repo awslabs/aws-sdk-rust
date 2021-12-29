@@ -362,9 +362,9 @@ pub mod create_cost_category_definition_input {
         ///
         /// <p>The Cost Category rules used to categorize costs. For more information, see
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::CostCategoryRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::CostCategoryRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -401,10 +401,10 @@ pub mod create_cost_category_definition_input {
         /// </p>
         pub fn split_charge_rules(
             mut self,
-            input: impl Into<crate::model::CostCategorySplitChargeRule>,
+            input: crate::model::CostCategorySplitChargeRule,
         ) -> Self {
             let mut v = self.split_charge_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.split_charge_rules = Some(v);
             self
         }
@@ -1977,9 +1977,9 @@ pub mod get_cost_and_usage_input {
         /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
         /// <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
         /// <p>When you group by the <code>TAG</code>  type and include a valid tag key, you get all tag values, including empty strings.</p>
-        pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_by = Some(v);
             self
         }
@@ -2273,9 +2273,9 @@ pub mod get_cost_and_usage_with_resources_input {
         /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
         ///
         /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
-        pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_by = Some(v);
             self
         }
@@ -2662,9 +2662,9 @@ pub mod get_cost_categories_input {
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
-        pub fn sort_by(mut self, input: impl Into<crate::model::SortDefinition>) -> Self {
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_by = Some(v);
             self
         }
@@ -3842,9 +3842,9 @@ pub mod get_dimension_values_input {
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
-        pub fn sort_by(mut self, input: impl Into<crate::model::SortDefinition>) -> Self {
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_by = Some(v);
             self
         }
@@ -4133,9 +4133,9 @@ pub mod get_reservation_coverage_input {
         /// <p>TENANCY</p>
         /// </li>
         /// </ul>
-        pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_by = Some(v);
             self
         }
@@ -5038,9 +5038,9 @@ pub mod get_reservation_utilization_input {
         /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
         ///
         /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-        pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_by = Some(v);
             self
         }
@@ -5890,9 +5890,9 @@ pub mod get_savings_plans_coverage_input {
         /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
         ///
         /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-        pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_by = Some(v);
             self
         }
@@ -6987,9 +6987,9 @@ pub mod get_savings_plans_utilization_details_input {
         /// To override the contents of this collection use [`set_data_type`](Self::set_data_type).
         ///
         /// <p>The data type.</p>
-        pub fn data_type(mut self, input: impl Into<crate::model::SavingsPlansDataType>) -> Self {
+        pub fn data_type(mut self, input: crate::model::SavingsPlansDataType) -> Self {
             let mut v = self.data_type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_type = Some(v);
             self
         }
@@ -7475,9 +7475,9 @@ pub mod get_tags_input {
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
-        pub fn sort_by(mut self, input: impl Into<crate::model::SortDefinition>) -> Self {
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_by = Some(v);
             self
         }
@@ -8761,9 +8761,9 @@ pub mod update_anomaly_subscription_input {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p>The update to the subscriber list. </p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }
@@ -8977,9 +8977,9 @@ pub mod update_cost_category_definition_input {
         ///
         /// <p>The <code>Expression</code> object used to categorize costs. For more information, see
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-        pub fn rules(mut self, input: impl Into<crate::model::CostCategoryRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::CostCategoryRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -9016,10 +9016,10 @@ pub mod update_cost_category_definition_input {
         /// </p>
         pub fn split_charge_rules(
             mut self,
-            input: impl Into<crate::model::CostCategorySplitChargeRule>,
+            input: crate::model::CostCategorySplitChargeRule,
         ) -> Self {
             let mut v = self.split_charge_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.split_charge_rules = Some(v);
             self
         }

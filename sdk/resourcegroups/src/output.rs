@@ -276,9 +276,9 @@ pub mod ungroup_resources_output {
         ///
         /// <p>A list of any resources that failed to be removed from the group by this
         /// operation.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::FailedResource>) -> Self {
+        pub fn failed(mut self, input: crate::model::FailedResource) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
@@ -301,9 +301,9 @@ pub mod ungroup_resources_output {
         /// <a>ListGroupResources</a>
         /// </code> operation. After the resource is successfully removed, it no longer
         /// appears in the response.</p>
-        pub fn pending(mut self, input: impl Into<crate::model::PendingResource>) -> Self {
+        pub fn pending(mut self, input: crate::model::PendingResource) -> Self {
             let mut v = self.pending.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending = Some(v);
             self
         }
@@ -497,12 +497,9 @@ pub mod search_resources_output {
         ///
         /// <p>The ARNs and resource types of resources that are members of the group that you
         /// specified.</p>
-        pub fn resource_identifiers(
-            mut self,
-            input: impl Into<crate::model::ResourceIdentifier>,
-        ) -> Self {
+        pub fn resource_identifiers(mut self, input: crate::model::ResourceIdentifier) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
@@ -539,9 +536,9 @@ pub mod search_resources_output {
         /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
         /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
         /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-        pub fn query_errors(mut self, input: impl Into<crate::model::QueryError>) -> Self {
+        pub fn query_errors(mut self, input: crate::model::QueryError) -> Self {
             let mut v = self.query_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_errors = Some(v);
             self
         }
@@ -679,12 +676,9 @@ pub mod list_groups_output {
         ///
         /// <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
         /// contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
-        pub fn group_identifiers(
-            mut self,
-            input: impl Into<crate::model::GroupIdentifier>,
-        ) -> Self {
+        pub fn group_identifiers(mut self, input: crate::model::GroupIdentifier) -> Self {
             let mut v = self.group_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_identifiers = Some(v);
             self
         }
@@ -710,9 +704,9 @@ pub mod list_groups_output {
         /// </i>
         /// </p>
         /// </important>
-        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -856,9 +850,9 @@ pub mod list_group_resources_output {
         ///
         /// <p>An array of resources from which you can determine each resource's identity, type, and
         /// group membership status.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::ListGroupResourcesItem>) -> Self {
+        pub fn resources(mut self, input: crate::model::ListGroupResourcesItem) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -884,12 +878,9 @@ pub mod list_group_resources_output {
         /// </b>
         /// </p>
         /// </important>
-        pub fn resource_identifiers(
-            mut self,
-            input: impl Into<crate::model::ResourceIdentifier>,
-        ) -> Self {
+        pub fn resource_identifiers(mut self, input: crate::model::ResourceIdentifier) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
@@ -933,9 +924,9 @@ pub mod list_group_resources_output {
         /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
         /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
         /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-        pub fn query_errors(mut self, input: impl Into<crate::model::QueryError>) -> Self {
+        pub fn query_errors(mut self, input: crate::model::QueryError) -> Self {
             let mut v = self.query_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_errors = Some(v);
             self
         }
@@ -1054,9 +1045,9 @@ pub mod group_resources_output {
         ///
         /// <p>A list of ARNs of any resources that failed to be added to the group by this
         /// operation.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::FailedResource>) -> Self {
+        pub fn failed(mut self, input: crate::model::FailedResource) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
@@ -1079,9 +1070,9 @@ pub mod group_resources_output {
         /// <a>ListGroupResources</a>
         /// </code> operation, and checking the <code>Resources</code> array in the response
         /// and the <code>Status</code> field of each object in that array. </p>
-        pub fn pending(mut self, input: impl Into<crate::model::PendingResource>) -> Self {
+        pub fn pending(mut self, input: crate::model::PendingResource) -> Self {
             let mut v = self.pending.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending = Some(v);
             self
         }

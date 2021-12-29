@@ -34,9 +34,9 @@ pub mod add_attributes_to_findings_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The array of attributes that you want to assign to specified findings.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -454,12 +454,9 @@ pub mod create_assessment_template_input {
         /// the assessment run that uses this assessment template. An attribute is a key and value pair
         /// (an <a>Attribute</a> object). Within an assessment template, each key must be
         /// unique.</p>
-        pub fn user_attributes_for_findings(
-            mut self,
-            input: impl Into<crate::model::Attribute>,
-        ) -> Self {
+        pub fn user_attributes_for_findings(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes_for_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes_for_findings = Some(v);
             self
         }
@@ -795,12 +792,9 @@ pub mod create_resource_group_input {
         /// <p>A collection of keys and an array of possible values,
         /// '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
         /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-        pub fn resource_group_tags(
-            mut self,
-            input: impl Into<crate::model::ResourceGroupTag>,
-        ) -> Self {
+        pub fn resource_group_tags(mut self, input: crate::model::ResourceGroupTag) -> Self {
             let mut v = self.resource_group_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_group_tags = Some(v);
             self
         }
@@ -5693,9 +5687,9 @@ pub mod set_tags_for_resource_input {
         ///
         /// <p>A collection of key and value pairs that you want to set to the assessment
         /// template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -26,9 +26,9 @@ pub mod batch_put_property_values_input {
         ///
         /// <p>An object that maps strings to the property value entries to set. Each string
         /// in the mapping must be unique to this object.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::PropertyValueEntry>) -> Self {
+        pub fn entries(mut self, input: crate::model::PropertyValueEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -272,10 +272,10 @@ pub mod create_component_type_input {
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyDefinitionRequest>,
+            v: crate::model::PropertyDefinitionRequest,
         ) -> Self {
             let mut hash_map = self.property_definitions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.property_definitions = Some(hash_map);
             self
         }
@@ -321,10 +321,10 @@ pub mod create_component_type_input {
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FunctionRequest>,
+            v: crate::model::FunctionRequest,
         ) -> Self {
             let mut hash_map = self.functions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.functions = Some(hash_map);
             self
         }
@@ -607,10 +607,10 @@ pub mod create_entity_input {
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentRequest>,
+            v: crate::model::ComponentRequest,
         ) -> Self {
             let mut hash_map = self.components.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.components = Some(hash_map);
             self
         }
@@ -2750,9 +2750,9 @@ pub mod get_property_value_history_input {
         /// To override the contents of this collection use [`set_property_filters`](Self::set_property_filters).
         ///
         /// <p>A list of objects that filter the property value history request.</p>
-        pub fn property_filters(mut self, input: impl Into<crate::model::PropertyFilter>) -> Self {
+        pub fn property_filters(mut self, input: crate::model::PropertyFilter) -> Self {
             let mut v = self.property_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_filters = Some(v);
             self
         }
@@ -3368,9 +3368,9 @@ pub mod list_component_types_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of objects that filter the request.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ListComponentTypesFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ListComponentTypesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3584,9 +3584,9 @@ pub mod list_entities_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of objects that filter the request.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ListEntitiesFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ListEntitiesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4735,10 +4735,10 @@ pub mod update_component_type_input {
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyDefinitionRequest>,
+            v: crate::model::PropertyDefinitionRequest,
         ) -> Self {
             let mut hash_map = self.property_definitions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.property_definitions = Some(hash_map);
             self
         }
@@ -4784,10 +4784,10 @@ pub mod update_component_type_input {
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FunctionRequest>,
+            v: crate::model::FunctionRequest,
         ) -> Self {
             let mut hash_map = self.functions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.functions = Some(hash_map);
             self
         }
@@ -5042,10 +5042,10 @@ pub mod update_entity_input {
         pub fn component_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentUpdateRequest>,
+            v: crate::model::ComponentUpdateRequest,
         ) -> Self {
             let mut hash_map = self.component_updates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.component_updates = Some(hash_map);
             self
         }

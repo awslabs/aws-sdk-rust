@@ -8955,12 +8955,9 @@ pub mod transaction_canceled_exception {
         /// To override the contents of this collection use [`set_cancellation_reasons`](Self::set_cancellation_reasons).
         ///
         /// <p>A list of cancellation reasons.</p>
-        pub fn cancellation_reasons(
-            mut self,
-            input: impl Into<crate::model::CancellationReason>,
-        ) -> Self {
+        pub fn cancellation_reasons(mut self, input: crate::model::CancellationReason) -> Self {
             let mut v = self.cancellation_reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cancellation_reasons = Some(v);
             self
         }

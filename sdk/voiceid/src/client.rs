@@ -313,8 +313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -323,8 +323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of this domain.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A brief description of this domain.</p>
@@ -338,9 +338,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            signature: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(signature);
             self
         }
         /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for
@@ -356,8 +356,8 @@ pub mod fluent_builders {
         }
         /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
         /// this field.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
@@ -371,8 +371,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags you want added to the domain.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags you want added to the domain.</p>
@@ -444,8 +444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain you want to delete.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain you want to delete.</p>
@@ -514,8 +514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the fraudster.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain containing the fraudster.</p>
@@ -524,8 +524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the fraudster you want to delete.</p>
-        pub fn fraudster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fraudster_id(inp);
+        pub fn fraudster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fraudster_id(signature.into());
             self
         }
         /// <p>The identifier of the fraudster you want to delete.</p>
@@ -594,8 +594,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the speaker.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain containing the speaker.</p>
@@ -604,8 +604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the speaker you want to delete.</p>
-        pub fn speaker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.speaker_id(inp);
+        pub fn speaker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.speaker_id(signature.into());
             self
         }
         /// <p>The identifier of the speaker you want to delete.</p>
@@ -674,8 +674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain you are describing.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain you are describing.</p>
@@ -744,8 +744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the fraudster.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain containing the fraudster.</p>
@@ -754,8 +754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the fraudster you are describing.</p>
-        pub fn fraudster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fraudster_id(inp);
+        pub fn fraudster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fraudster_id(signature.into());
             self
         }
         /// <p>The identifier of the fraudster you are describing.</p>
@@ -824,8 +824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the domain containing the fraudster registration job.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier for the domain containing the fraudster registration job.</p>
@@ -834,8 +834,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the fraudster registration job you are describing.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The identifier for the fraudster registration job you are describing.</p>
@@ -904,8 +904,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain that contains the speaker.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain that contains the speaker.</p>
@@ -914,8 +914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the speaker you are describing.</p>
-        pub fn speaker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.speaker_id(inp);
+        pub fn speaker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.speaker_id(signature.into());
             self
         }
         /// <p>The identifier of the speaker you are describing.</p>
@@ -984,8 +984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the speaker enrollment job.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain containing the speaker enrollment job.</p>
@@ -994,8 +994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the speaker enrollment job you are describing.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The identifier of the speaker enrollment job you are describing.</p>
@@ -1065,8 +1065,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain where the session started.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain where the session started.</p>
@@ -1076,8 +1076,8 @@ pub mod fluent_builders {
         }
         /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
         /// integration, this is the Contact-Id.</p>
-        pub fn session_name_or_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_name_or_id(inp);
+        pub fn session_name_or_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_name_or_id(signature.into());
             self
         }
         /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
@@ -1153,8 +1153,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
         /// further pages of results. The default is 100; the maximum allowed page size is also 100.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
@@ -1168,8 +1168,8 @@ pub mod fluent_builders {
         /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
         /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
@@ -1244,8 +1244,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the fraudster registration Jobs.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain containing the fraudster registration Jobs.</p>
@@ -1254,8 +1254,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides the status of your fraudster registration job.</p>
-        pub fn job_status(mut self, inp: crate::model::FraudsterRegistrationJobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        pub fn job_status(
+            mut self,
+            signature: crate::model::FraudsterRegistrationJobStatus,
+        ) -> Self {
+            self.inner = self.inner.job_status(signature);
             self
         }
         /// <p>Provides the status of your fraudster registration job.</p>
@@ -1269,8 +1272,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
         /// further pages of results. The default is 100; the maximum allowed page size is also 100.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
@@ -1284,8 +1287,8 @@ pub mod fluent_builders {
         /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
         /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
@@ -1359,8 +1362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the speaker enrollment jobs.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain containing the speaker enrollment jobs.</p>
@@ -1369,8 +1372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides the status of your speaker enrollment Job.</p>
-        pub fn job_status(mut self, inp: crate::model::SpeakerEnrollmentJobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        pub fn job_status(mut self, signature: crate::model::SpeakerEnrollmentJobStatus) -> Self {
+            self.inner = self.inner.job_status(signature);
             self
         }
         /// <p>Provides the status of your speaker enrollment Job.</p>
@@ -1384,8 +1387,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
         /// further pages of results. The default is 100; the maximum allowed page size is also 100.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
@@ -1399,8 +1402,8 @@ pub mod fluent_builders {
         /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
         /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
@@ -1472,8 +1475,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain.</p>
@@ -1484,8 +1487,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
         /// further pages of results. The default is 100; the maximum allowed page size is also 100.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
@@ -1499,8 +1502,8 @@ pub mod fluent_builders {
         /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
         /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
@@ -1572,8 +1575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
@@ -1646,8 +1649,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the speaker.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain containing the speaker.</p>
@@ -1656,8 +1659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the speaker you want opted-out.</p>
-        pub fn speaker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.speaker_id(inp);
+        pub fn speaker_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.speaker_id(signature.into());
             self
         }
         /// <p>The identifier of the speaker you want opted-out.</p>
@@ -1727,8 +1730,8 @@ pub mod fluent_builders {
         }
         /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
         /// SDK populates this field.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
@@ -1738,8 +1741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new fraudster registration job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>The name of the new fraudster registration job.</p>
@@ -1749,8 +1752,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
         /// registered.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
@@ -1763,8 +1766,8 @@ pub mod fluent_builders {
         /// to read the input manifest file and write the Job output file. Refer to the
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and
         /// edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-        pub fn data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(inp);
+        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(signature.into());
             self
         }
         /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
@@ -1780,8 +1783,8 @@ pub mod fluent_builders {
         }
         /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
         /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
-        pub fn registration_config(mut self, inp: crate::model::RegistrationConfig) -> Self {
-            self.inner = self.inner.registration_config(inp);
+        pub fn registration_config(mut self, signature: crate::model::RegistrationConfig) -> Self {
+            self.inner = self.inner.registration_config(signature);
             self
         }
         /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
@@ -1795,8 +1798,8 @@ pub mod fluent_builders {
         }
         /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
         /// of fraudster registration requests.</p>
-        pub fn input_data_config(mut self, inp: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(inp);
+        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(signature);
             self
         }
         /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
@@ -1810,8 +1813,8 @@ pub mod fluent_builders {
         }
         /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
         /// also include a KMS Key ID to encrypt the file.</p>
-        pub fn output_data_config(mut self, inp: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(inp);
+        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(signature);
             self
         }
         /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
@@ -1885,8 +1888,8 @@ pub mod fluent_builders {
         }
         /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
         /// SDK populates this field.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
@@ -1896,8 +1899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for your speaker enrollment job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>A name for your speaker enrollment job.</p>
@@ -1908,8 +1911,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
         /// enrolled.
         /// </p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
@@ -1922,8 +1925,8 @@ pub mod fluent_builders {
         /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
         /// to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior
         /// calls</a> documentation for the permissions needed in this role.</p>
-        pub fn data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(inp);
+        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(signature.into());
             self
         }
         /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
@@ -1938,8 +1941,8 @@ pub mod fluent_builders {
         }
         /// <p>The enrollment config that contains details such as the action to take when a speaker is already
         /// enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
-        pub fn enrollment_config(mut self, inp: crate::model::EnrollmentConfig) -> Self {
-            self.inner = self.inner.enrollment_config(inp);
+        pub fn enrollment_config(mut self, signature: crate::model::EnrollmentConfig) -> Self {
+            self.inner = self.inner.enrollment_config(signature);
             self
         }
         /// <p>The enrollment config that contains details such as the action to take when a speaker is already
@@ -1953,8 +1956,8 @@ pub mod fluent_builders {
         }
         /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
         /// speaker enrollment requests.</p>
-        pub fn input_data_config(mut self, inp: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(inp);
+        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(signature);
             self
         }
         /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
@@ -1968,8 +1971,8 @@ pub mod fluent_builders {
         }
         /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
         /// also include a KMS Key ID to encrypt the file.</p>
-        pub fn output_data_config(mut self, inp: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(inp);
+        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(signature);
             self
         }
         /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
@@ -2042,8 +2045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to tag.</p>
@@ -2056,8 +2059,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to assign to the specified resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tags to assign to the specified resource.</p>
@@ -2129,8 +2132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.</p>
@@ -2143,8 +2146,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys you want to remove from the specified resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys you want to remove from the specified resource.</p>
@@ -2217,8 +2220,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain to be updated.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(signature.into());
             self
         }
         /// <p>The identifier of the domain to be updated.</p>
@@ -2227,8 +2230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -2237,8 +2240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description about this domain.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A brief description about this domain.</p>
@@ -2251,9 +2254,9 @@ pub mod fluent_builders {
         /// existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            signature: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(signature);
             self
         }
         /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side

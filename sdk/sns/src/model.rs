@@ -576,10 +576,10 @@ pub mod publish_batch_request_entry {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -1425,12 +1425,9 @@ pub mod phone_number_information {
         /// To override the contents of this collection use [`set_number_capabilities`](Self::set_number_capabilities).
         ///
         /// <p>The capabilities of each phone number.</p>
-        pub fn number_capabilities(
-            mut self,
-            input: impl Into<crate::model::NumberCapability>,
-        ) -> Self {
+        pub fn number_capabilities(mut self, input: crate::model::NumberCapability) -> Self {
             let mut v = self.number_capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.number_capabilities = Some(v);
             self
         }

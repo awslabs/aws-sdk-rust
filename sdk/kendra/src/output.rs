@@ -433,9 +433,9 @@ pub mod query_output {
         /// To override the contents of this collection use [`set_result_items`](Self::set_result_items).
         ///
         /// <p>The results of the search.</p>
-        pub fn result_items(mut self, input: impl Into<crate::model::QueryResultItem>) -> Self {
+        pub fn result_items(mut self, input: crate::model::QueryResultItem) -> Self {
             let mut v = self.result_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_items = Some(v);
             self
         }
@@ -454,9 +454,9 @@ pub mod query_output {
         /// <p>Contains the facet results. A <code>FacetResult</code> contains the
         /// counts for each attribute key that was specified in the
         /// <code>Facets</code> input parameter.</p>
-        pub fn facet_results(mut self, input: impl Into<crate::model::FacetResult>) -> Self {
+        pub fn facet_results(mut self, input: crate::model::FacetResult) -> Self {
             let mut v = self.facet_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.facet_results = Some(v);
             self
         }
@@ -599,12 +599,9 @@ pub mod list_thesauri_output {
         /// To override the contents of this collection use [`set_thesaurus_summary_items`](Self::set_thesaurus_summary_items).
         ///
         /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
-        pub fn thesaurus_summary_items(
-            mut self,
-            input: impl Into<crate::model::ThesaurusSummary>,
-        ) -> Self {
+        pub fn thesaurus_summary_items(mut self, input: crate::model::ThesaurusSummary) -> Self {
             let mut v = self.thesaurus_summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.thesaurus_summary_items = Some(v);
             self
         }
@@ -666,9 +663,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the index, FAQ, or data source.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -761,10 +758,10 @@ pub mod list_query_suggestions_block_lists_output {
         /// for Amazon Kendra</a>.</p>
         pub fn block_list_summary_items(
             mut self,
-            input: impl Into<crate::model::QuerySuggestionsBlockListSummary>,
+            input: crate::model::QuerySuggestionsBlockListSummary,
         ) -> Self {
             let mut v = self.block_list_summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_list_summary_items = Some(v);
             self
         }
@@ -867,10 +864,10 @@ pub mod list_indices_output {
         /// <p>An array of summary information for one or more indexes.</p>
         pub fn index_configuration_summary_items(
             mut self,
-            input: impl Into<crate::model::IndexConfigurationSummary>,
+            input: crate::model::IndexConfigurationSummary,
         ) -> Self {
             let mut v = self.index_configuration_summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.index_configuration_summary_items = Some(v);
             self
         }
@@ -971,9 +968,9 @@ pub mod list_groups_older_than_ordering_id_output {
         /// Summary information for list of groups that are mapped to users before a
         /// given ordering or timestamp identifier.
         /// </p>
-        pub fn groups_summaries(mut self, input: impl Into<crate::model::GroupSummary>) -> Self {
+        pub fn groups_summaries(mut self, input: crate::model::GroupSummary) -> Self {
             let mut v = self.groups_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups_summaries = Some(v);
             self
         }
@@ -1078,9 +1075,9 @@ pub mod list_faqs_output {
         /// To override the contents of this collection use [`set_faq_summary_items`](Self::set_faq_summary_items).
         ///
         /// <p>information about the FAQs associated with the specified index.</p>
-        pub fn faq_summary_items(mut self, input: impl Into<crate::model::FaqSummary>) -> Self {
+        pub fn faq_summary_items(mut self, input: crate::model::FaqSummary) -> Self {
             let mut v = self.faq_summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.faq_summary_items = Some(v);
             self
         }
@@ -1153,9 +1150,9 @@ pub mod list_experiences_output {
         /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
         ///
         /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-        pub fn summary_items(mut self, input: impl Into<crate::model::ExperiencesSummary>) -> Self {
+        pub fn summary_items(mut self, input: crate::model::ExperiencesSummary) -> Self {
             let mut v = self.summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_items = Some(v);
             self
         }
@@ -1240,12 +1237,9 @@ pub mod list_experience_entities_output {
         /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
         ///
         /// <p>An array of summary information for one or more users or groups.</p>
-        pub fn summary_items(
-            mut self,
-            input: impl Into<crate::model::ExperienceEntitiesSummary>,
-        ) -> Self {
+        pub fn summary_items(mut self, input: crate::model::ExperienceEntitiesSummary) -> Self {
             let mut v = self.summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_items = Some(v);
             self
         }
@@ -1329,9 +1323,9 @@ pub mod list_entity_personas_output {
         /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
         ///
         /// <p>An array of summary information for one or more users or groups.</p>
-        pub fn summary_items(mut self, input: impl Into<crate::model::PersonasSummary>) -> Self {
+        pub fn summary_items(mut self, input: crate::model::PersonasSummary) -> Self {
             let mut v = self.summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_items = Some(v);
             self
         }
@@ -1415,9 +1409,9 @@ pub mod list_data_source_sync_jobs_output {
         /// To override the contents of this collection use [`set_history`](Self::set_history).
         ///
         /// <p>A history of synchronization jobs for the data source.</p>
-        pub fn history(mut self, input: impl Into<crate::model::DataSourceSyncJob>) -> Self {
+        pub fn history(mut self, input: crate::model::DataSourceSyncJob) -> Self {
             let mut v = self.history.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.history = Some(v);
             self
         }
@@ -1504,9 +1498,9 @@ pub mod list_data_sources_output {
         /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
         ///
         /// <p>An array of summary information for one or more data sources.</p>
-        pub fn summary_items(mut self, input: impl Into<crate::model::DataSourceSummary>) -> Self {
+        pub fn summary_items(mut self, input: crate::model::DataSourceSummary) -> Self {
             let mut v = self.summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_items = Some(v);
             self
         }
@@ -1650,12 +1644,9 @@ pub mod get_snapshots_output {
         ///
         /// <p>The search metrics data. The data returned depends on the
         /// metric type you requested.</p>
-        pub fn snapshots_data(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn snapshots_data(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.snapshots_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots_data = Some(v);
             self
         }
@@ -1755,9 +1746,9 @@ pub mod get_query_suggestions_output {
         /// To override the contents of this collection use [`set_suggestions`](Self::set_suggestions).
         ///
         /// <p>A list of query suggestions for an index.</p>
-        pub fn suggestions(mut self, input: impl Into<crate::model::Suggestion>) -> Self {
+        pub fn suggestions(mut self, input: crate::model::Suggestion) -> Self {
             let mut v = self.suggestions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suggestions = Some(v);
             self
         }
@@ -1823,9 +1814,9 @@ pub mod disassociate_personas_from_entities_output {
         ///
         /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
         /// failed to properly remove access to your Amazon Kendra experience.</p>
-        pub fn failed_entity_list(mut self, input: impl Into<crate::model::FailedEntity>) -> Self {
+        pub fn failed_entity_list(mut self, input: crate::model::FailedEntity) -> Self {
             let mut v = self.failed_entity_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_entity_list = Some(v);
             self
         }
@@ -1891,9 +1882,9 @@ pub mod disassociate_entities_from_experience_output {
         ///
         /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
         /// failed to properly remove access to your Amazon Kendra experience.</p>
-        pub fn failed_entity_list(mut self, input: impl Into<crate::model::FailedEntity>) -> Self {
+        pub fn failed_entity_list(mut self, input: crate::model::FailedEntity) -> Self {
             let mut v = self.failed_entity_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_entity_list = Some(v);
             self
         }
@@ -3104,10 +3095,10 @@ pub mod describe_principal_mapping_output {
         /// </ul>
         pub fn group_ordering_id_summaries(
             mut self,
-            input: impl Into<crate::model::GroupOrderingIdSummary>,
+            input: crate::model::GroupOrderingIdSummary,
         ) -> Self {
             let mut v = self.group_ordering_id_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_ordering_id_summaries = Some(v);
             self
         }
@@ -3491,10 +3482,10 @@ pub mod describe_index_output {
         /// the index.</p>
         pub fn document_metadata_configurations(
             mut self,
-            input: impl Into<crate::model::DocumentMetadataConfiguration>,
+            input: crate::model::DocumentMetadataConfiguration,
         ) -> Self {
             let mut v = self.document_metadata_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_metadata_configurations = Some(v);
             self
         }
@@ -3567,10 +3558,10 @@ pub mod describe_index_output {
         /// <p>The user token configuration for the Amazon Kendra index.</p>
         pub fn user_token_configurations(
             mut self,
-            input: impl Into<crate::model::UserTokenConfiguration>,
+            input: crate::model::UserTokenConfiguration,
         ) -> Self {
             let mut v = self.user_token_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_token_configurations = Some(v);
             self
         }
@@ -4118,9 +4109,9 @@ pub mod describe_experience_output {
         ///
         /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully
         /// hosted by Amazon Web Services.</p>
-        pub fn endpoints(mut self, input: impl Into<crate::model::ExperienceEndpoint>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::ExperienceEndpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -5287,10 +5278,10 @@ pub mod batch_put_document_output {
         /// </p>
         pub fn failed_documents(
             mut self,
-            input: impl Into<crate::model::BatchPutDocumentResponseFailedDocument>,
+            input: crate::model::BatchPutDocumentResponseFailedDocument,
         ) -> Self {
             let mut v = self.failed_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_documents = Some(v);
             self
         }
@@ -5384,12 +5375,9 @@ pub mod batch_get_document_status_output {
         /// <p>A list of documents that Amazon Kendra couldn't get the status for. The
         /// list includes the ID of the document and the reason that the status
         /// couldn't be found.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchGetDocumentStatusResponseError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchGetDocumentStatusResponseError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -5413,9 +5401,9 @@ pub mod batch_get_document_status_output {
         /// waiting to be indexed, is in the process of indexing, has completed
         /// indexing, or failed indexing. If a document failed indexing, the
         /// status provides the reason why.</p>
-        pub fn document_status_list(mut self, input: impl Into<crate::model::Status>) -> Self {
+        pub fn document_status_list(mut self, input: crate::model::Status) -> Self {
             let mut v = self.document_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_status_list = Some(v);
             self
         }
@@ -5493,10 +5481,10 @@ pub mod batch_delete_document_output {
         /// be removed from the index.</p>
         pub fn failed_documents(
             mut self,
-            input: impl Into<crate::model::BatchDeleteDocumentResponseFailedDocument>,
+            input: crate::model::BatchDeleteDocumentResponseFailedDocument,
         ) -> Self {
             let mut v = self.failed_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_documents = Some(v);
             self
         }
@@ -5565,9 +5553,9 @@ pub mod associate_personas_to_entities_output {
         ///
         /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
         /// failed to properly configure with your Amazon Kendra experience.</p>
-        pub fn failed_entity_list(mut self, input: impl Into<crate::model::FailedEntity>) -> Self {
+        pub fn failed_entity_list(mut self, input: crate::model::FailedEntity) -> Self {
             let mut v = self.failed_entity_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_entity_list = Some(v);
             self
         }
@@ -5633,9 +5621,9 @@ pub mod associate_entities_to_experience_output {
         ///
         /// <p>Lists the users or groups in your Amazon Web Services SSO identity source that
         /// failed to properly configure with your Amazon Kendra experience.</p>
-        pub fn failed_entity_list(mut self, input: impl Into<crate::model::FailedEntity>) -> Self {
+        pub fn failed_entity_list(mut self, input: crate::model::FailedEntity) -> Self {
             let mut v = self.failed_entity_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_entity_list = Some(v);
             self
         }

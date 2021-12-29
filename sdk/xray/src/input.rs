@@ -275,9 +275,9 @@ pub mod create_group_input {
         /// use.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -499,9 +499,9 @@ pub mod create_sampling_rule_input {
         /// use.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1948,9 +1948,9 @@ pub mod get_insight_summaries_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The list of insight states. </p>
-        pub fn states(mut self, input: impl Into<crate::model::InsightState>) -> Self {
+        pub fn states(mut self, input: crate::model::InsightState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -2484,10 +2484,10 @@ pub mod get_sampling_targets_input {
         /// <p>Information about rules that the service is using to sample requests.</p>
         pub fn sampling_statistics_documents(
             mut self,
-            input: impl Into<crate::model::SamplingStatisticsDocument>,
+            input: crate::model::SamplingStatisticsDocument,
         ) -> Self {
             let mut v = self.sampling_statistics_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampling_statistics_documents = Some(v);
             self
         }
@@ -3886,12 +3886,9 @@ pub mod put_telemetry_records_input {
         /// To override the contents of this collection use [`set_telemetry_records`](Self::set_telemetry_records).
         ///
         /// <p></p>
-        pub fn telemetry_records(
-            mut self,
-            input: impl Into<crate::model::TelemetryRecord>,
-        ) -> Self {
+        pub fn telemetry_records(mut self, input: crate::model::TelemetryRecord) -> Self {
             let mut v = self.telemetry_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.telemetry_records = Some(v);
             self
         }
@@ -4279,9 +4276,9 @@ pub mod tag_resource_input {
         /// cannot edit or delete system tags.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

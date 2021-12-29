@@ -345,8 +345,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique name that helps you identify the alarm model. You can't change this name after
         /// you create the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(signature.into());
             self
         }
         /// <p>A unique name that helps you identify the alarm model. You can't change this name after
@@ -359,8 +359,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description that tells you what the alarm model detects.</p>
-        pub fn alarm_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_description(inp);
+        pub fn alarm_model_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.alarm_model_description(signature.into());
             self
         }
         /// <p>A description that tells you what the alarm model detects.</p>
@@ -372,8 +375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -389,8 +392,8 @@ pub mod fluent_builders {
         /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
         /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
         /// <p>You can create up to 50 tags for one alarm model.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
@@ -407,8 +410,8 @@ pub mod fluent_builders {
         /// <p>An input attribute used as a key to create an alarm.
         /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
         /// associated with this key to the alarm.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>An input attribute used as a key to create an alarm.
@@ -419,8 +422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
-        pub fn severity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.severity(inp);
+        pub fn severity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.severity(signature);
             self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -429,8 +432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
-        pub fn alarm_rule(mut self, inp: crate::model::AlarmRule) -> Self {
-            self.inner = self.inner.alarm_rule(inp);
+        pub fn alarm_rule(mut self, signature: crate::model::AlarmRule) -> Self {
+            self.inner = self.inner.alarm_rule(signature);
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
@@ -442,8 +445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
-        pub fn alarm_notification(mut self, inp: crate::model::AlarmNotification) -> Self {
-            self.inner = self.inner.alarm_notification(inp);
+        pub fn alarm_notification(mut self, signature: crate::model::AlarmNotification) -> Self {
+            self.inner = self.inner.alarm_notification(signature);
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
@@ -455,8 +458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
-        pub fn alarm_event_actions(mut self, inp: crate::model::AlarmEventActions) -> Self {
-            self.inner = self.inner.alarm_event_actions(inp);
+        pub fn alarm_event_actions(mut self, signature: crate::model::AlarmEventActions) -> Self {
+            self.inner = self.inner.alarm_event_actions(signature);
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
@@ -468,8 +471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
-        pub fn alarm_capabilities(mut self, inp: crate::model::AlarmCapabilities) -> Self {
-            self.inner = self.inner.alarm_capabilities(inp);
+        pub fn alarm_capabilities(mut self, signature: crate::model::AlarmCapabilities) -> Self {
+            self.inner = self.inner.alarm_capabilities(signature);
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
@@ -541,8 +544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(signature.into());
             self
         }
         /// <p>The name of the detector model.</p>
@@ -556,9 +559,9 @@ pub mod fluent_builders {
         /// <p>Information that defines how the detectors operate.</p>
         pub fn detector_model_definition(
             mut self,
-            inp: crate::model::DetectorModelDefinition,
+            signature: crate::model::DetectorModelDefinition,
         ) -> Self {
-            self.inner = self.inner.detector_model_definition(inp);
+            self.inner = self.inner.detector_model_definition(signature);
             self
         }
         /// <p>Information that defines how the detectors operate.</p>
@@ -570,8 +573,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the detector model.</p>
-        pub fn detector_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_description(inp);
+        pub fn detector_model_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.detector_model_description(signature.into());
             self
         }
         /// <p>A brief description of the detector model.</p>
@@ -587,8 +593,8 @@ pub mod fluent_builders {
         /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
         /// input to specify the attribute-value pair that is used to identify the device associated with
         /// the input.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The input attribute key used to identify a device or system to create a detector (an
@@ -601,8 +607,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
@@ -615,8 +621,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the detector model.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata that can be used to manage the detector model.</p>
@@ -629,8 +635,8 @@ pub mod fluent_builders {
         }
         /// <p>Information about the order in which events are evaluated and how actions are executed.
         /// </p>
-        pub fn evaluation_method(mut self, inp: crate::model::EvaluationMethod) -> Self {
-            self.inner = self.inner.evaluation_method(inp);
+        pub fn evaluation_method(mut self, signature: crate::model::EvaluationMethod) -> Self {
+            self.inner = self.inner.evaluation_method(signature);
             self
         }
         /// <p>Information about the order in which events are evaluated and how actions are executed.
@@ -703,8 +709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name you want to give to the input.</p>
-        pub fn input_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_name(inp);
+        pub fn input_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_name(signature.into());
             self
         }
         /// <p>The name you want to give to the input.</p>
@@ -713,8 +719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the input.</p>
-        pub fn input_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_description(inp);
+        pub fn input_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_description(signature.into());
             self
         }
         /// <p>A brief description of the input.</p>
@@ -726,8 +732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The definition of the input.</p>
-        pub fn input_definition(mut self, inp: crate::model::InputDefinition) -> Self {
-            self.inner = self.inner.input_definition(inp);
+        pub fn input_definition(mut self, signature: crate::model::InputDefinition) -> Self {
+            self.inner = self.inner.input_definition(signature);
             self
         }
         /// <p>The definition of the input.</p>
@@ -743,8 +749,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the input.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata that can be used to manage the input.</p>
@@ -817,8 +823,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(signature.into());
             self
         }
         /// <p>The name of the alarm model.</p>
@@ -891,8 +897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model to be deleted.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(signature.into());
             self
         }
         /// <p>The name of the detector model to be deleted.</p>
@@ -964,8 +970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the input to delete.</p>
-        pub fn input_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_name(inp);
+        pub fn input_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_name(signature.into());
             self
         }
         /// <p>The name of the input to delete.</p>
@@ -1035,8 +1041,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(signature.into());
             self
         }
         /// <p>The name of the alarm model.</p>
@@ -1048,8 +1054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the alarm model.</p>
-        pub fn alarm_model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_version(inp);
+        pub fn alarm_model_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_version(signature.into());
             self
         }
         /// <p>The version of the alarm model.</p>
@@ -1122,8 +1128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(signature.into());
             self
         }
         /// <p>The name of the detector model.</p>
@@ -1135,8 +1141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the detector model.</p>
-        pub fn detector_model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_version(inp);
+        pub fn detector_model_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_version(signature.into());
             self
         }
         /// <p>The version of the detector model.</p>
@@ -1211,8 +1217,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the analysis result that you want to retrieve.</p>
-        pub fn analysis_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(inp);
+        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(signature.into());
             self
         }
         /// <p>The ID of the analysis result that you want to retrieve.</p>
@@ -1281,8 +1287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the input.</p>
-        pub fn input_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_name(inp);
+        pub fn input_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_name(signature.into());
             self
         }
         /// <p>The name of the input.</p>
@@ -1414,8 +1420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the analysis result that you want to retrieve.</p>
-        pub fn analysis_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(inp);
+        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(signature.into());
             self
         }
         /// <p>The ID of the analysis result that you want to retrieve.</p>
@@ -1424,8 +1430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1434,8 +1440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1505,8 +1511,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1515,8 +1521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1586,8 +1592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(signature.into());
             self
         }
         /// <p>The name of the alarm model.</p>
@@ -1599,8 +1605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1609,8 +1615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1680,8 +1686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1690,8 +1696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1761,8 +1767,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model whose versions are returned.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(signature.into());
             self
         }
         /// <p>The name of the detector model whose versions are returned.</p>
@@ -1774,8 +1780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1784,8 +1790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1858,8 +1864,8 @@ pub mod fluent_builders {
         /// <p>
         /// The identifer of the routed input.
         /// </p>
-        pub fn input_identifier(mut self, inp: crate::model::InputIdentifier) -> Self {
-            self.inner = self.inner.input_identifier(inp);
+        pub fn input_identifier(mut self, signature: crate::model::InputIdentifier) -> Self {
+            self.inner = self.inner.input_identifier(signature);
             self
         }
         /// <p>
@@ -1875,8 +1881,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results to be returned per request.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -1889,8 +1895,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token that you can use to return the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -1961,8 +1967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1971,8 +1977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -2041,8 +2047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2115,8 +2121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The new values of the AWS IoT Events logging options.</p>
-        pub fn logging_options(mut self, inp: crate::model::LoggingOptions) -> Self {
-            self.inner = self.inner.logging_options(inp);
+        pub fn logging_options(mut self, signature: crate::model::LoggingOptions) -> Self {
+            self.inner = self.inner.logging_options(signature);
             self
         }
         /// <p>The new values of the AWS IoT Events logging options.</p>
@@ -2192,9 +2198,9 @@ pub mod fluent_builders {
         /// <p>Information that defines how a detector operates.</p>
         pub fn detector_model_definition(
             mut self,
-            inp: crate::model::DetectorModelDefinition,
+            signature: crate::model::DetectorModelDefinition,
         ) -> Self {
-            self.inner = self.inner.detector_model_definition(inp);
+            self.inner = self.inner.detector_model_definition(signature);
             self
         }
         /// <p>Information that defines how a detector operates.</p>
@@ -2267,8 +2273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2281,8 +2287,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The new or modified tags for the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The new or modified tags for the resource.</p>
@@ -2354,8 +2360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2368,8 +2374,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of the tags to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of the tags to be removed from the resource.</p>
@@ -2442,8 +2448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(signature.into());
             self
         }
         /// <p>The name of the alarm model.</p>
@@ -2455,8 +2461,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the alarm model.</p>
-        pub fn alarm_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_description(inp);
+        pub fn alarm_model_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.alarm_model_description(signature.into());
             self
         }
         /// <p>The description of the alarm model.</p>
@@ -2468,8 +2477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2478,8 +2487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
-        pub fn severity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.severity(inp);
+        pub fn severity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.severity(signature);
             self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -2488,8 +2497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
-        pub fn alarm_rule(mut self, inp: crate::model::AlarmRule) -> Self {
-            self.inner = self.inner.alarm_rule(inp);
+        pub fn alarm_rule(mut self, signature: crate::model::AlarmRule) -> Self {
+            self.inner = self.inner.alarm_rule(signature);
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
@@ -2501,8 +2510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
-        pub fn alarm_notification(mut self, inp: crate::model::AlarmNotification) -> Self {
-            self.inner = self.inner.alarm_notification(inp);
+        pub fn alarm_notification(mut self, signature: crate::model::AlarmNotification) -> Self {
+            self.inner = self.inner.alarm_notification(signature);
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
@@ -2514,8 +2523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
-        pub fn alarm_event_actions(mut self, inp: crate::model::AlarmEventActions) -> Self {
-            self.inner = self.inner.alarm_event_actions(inp);
+        pub fn alarm_event_actions(mut self, signature: crate::model::AlarmEventActions) -> Self {
+            self.inner = self.inner.alarm_event_actions(signature);
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
@@ -2527,8 +2536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
-        pub fn alarm_capabilities(mut self, inp: crate::model::AlarmCapabilities) -> Self {
-            self.inner = self.inner.alarm_capabilities(inp);
+        pub fn alarm_capabilities(mut self, signature: crate::model::AlarmCapabilities) -> Self {
+            self.inner = self.inner.alarm_capabilities(signature);
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
@@ -2601,8 +2610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model that is updated.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(signature.into());
             self
         }
         /// <p>The name of the detector model that is updated.</p>
@@ -2616,9 +2625,9 @@ pub mod fluent_builders {
         /// <p>Information that defines how a detector operates.</p>
         pub fn detector_model_definition(
             mut self,
-            inp: crate::model::DetectorModelDefinition,
+            signature: crate::model::DetectorModelDefinition,
         ) -> Self {
-            self.inner = self.inner.detector_model_definition(inp);
+            self.inner = self.inner.detector_model_definition(signature);
             self
         }
         /// <p>Information that defines how a detector operates.</p>
@@ -2630,8 +2639,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the detector model.</p>
-        pub fn detector_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_description(inp);
+        pub fn detector_model_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.detector_model_description(signature.into());
             self
         }
         /// <p>A brief description of the detector model.</p>
@@ -2643,8 +2655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
@@ -2654,8 +2666,8 @@ pub mod fluent_builders {
         }
         /// <p>Information about the order in which events are evaluated and how actions are executed.
         /// </p>
-        pub fn evaluation_method(mut self, inp: crate::model::EvaluationMethod) -> Self {
-            self.inner = self.inner.evaluation_method(inp);
+        pub fn evaluation_method(mut self, signature: crate::model::EvaluationMethod) -> Self {
+            self.inner = self.inner.evaluation_method(signature);
             self
         }
         /// <p>Information about the order in which events are evaluated and how actions are executed.
@@ -2728,8 +2740,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the input you want to update.</p>
-        pub fn input_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_name(inp);
+        pub fn input_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_name(signature.into());
             self
         }
         /// <p>The name of the input you want to update.</p>
@@ -2738,8 +2750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the input.</p>
-        pub fn input_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_description(inp);
+        pub fn input_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_description(signature.into());
             self
         }
         /// <p>A brief description of the input.</p>
@@ -2751,8 +2763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The definition of the input.</p>
-        pub fn input_definition(mut self, inp: crate::model::InputDefinition) -> Self {
-            self.inner = self.inner.input_definition(inp);
+        pub fn input_definition(mut self, signature: crate::model::InputDefinition) -> Self {
+            self.inner = self.inner.input_definition(signature);
             self
         }
         /// <p>The definition of the input.</p>

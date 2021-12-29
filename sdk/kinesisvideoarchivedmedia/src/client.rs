@@ -232,8 +232,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the stream for which to retrieve the media clip. </p>
         /// <p>You must specify either the StreamName or the StreamARN. </p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream for which to retrieve the media clip. </p>
@@ -244,8 +244,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
         /// <p>You must specify either the StreamName or the StreamARN. </p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
@@ -255,8 +255,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time range of the requested clip and the source of the timestamps.</p>
-        pub fn clip_fragment_selector(mut self, inp: crate::model::ClipFragmentSelector) -> Self {
-            self.inner = self.inner.clip_fragment_selector(inp);
+        pub fn clip_fragment_selector(
+            mut self,
+            signature: crate::model::ClipFragmentSelector,
+        ) -> Self {
+            self.inner = self.inner.clip_fragment_selector(signature);
             self
         }
         /// <p>The time range of the requested clip and the source of the timestamps.</p>
@@ -476,8 +479,8 @@ pub mod fluent_builders {
         /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
         /// <p>You must specify either the <code>StreamName</code> or the
         /// <code>StreamARN</code>.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
@@ -491,8 +494,8 @@ pub mod fluent_builders {
         /// manifest URL.</p>
         /// <p>You must specify either the <code>StreamName</code> or the
         /// <code>StreamARN</code>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH
@@ -563,8 +566,8 @@ pub mod fluent_builders {
         /// included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media
         /// player.</p>
         /// <p>The default is <code>LIVE</code>.</p>
-        pub fn playback_mode(mut self, inp: crate::model::DashPlaybackMode) -> Self {
-            self.inner = self.inner.playback_mode(inp);
+        pub fn playback_mode(mut self, signature: crate::model::DashPlaybackMode) -> Self {
+            self.inner = self.inner.playback_mode(signature);
             self
         }
         /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
@@ -650,9 +653,9 @@ pub mod fluent_builders {
         /// timestamps. </p>
         pub fn display_fragment_timestamp(
             mut self,
-            inp: crate::model::DashDisplayFragmentTimestamp,
+            signature: crate::model::DashDisplayFragmentTimestamp,
         ) -> Self {
-            self.inner = self.inner.display_fragment_timestamp(inp);
+            self.inner = self.inner.display_fragment_timestamp(signature);
             self
         }
         /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file
@@ -686,9 +689,9 @@ pub mod fluent_builders {
         /// <p>The default value is <code>NEVER</code>.</p>
         pub fn display_fragment_number(
             mut self,
-            inp: crate::model::DashDisplayFragmentNumber,
+            signature: crate::model::DashDisplayFragmentNumber,
         ) -> Self {
-            self.inner = self.inner.display_fragment_number(inp);
+            self.inner = self.inner.display_fragment_number(signature);
             self
         }
         /// <p>Fragments are identified in the manifest file based on their sequence number in the
@@ -714,8 +717,11 @@ pub mod fluent_builders {
         /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
         /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
         /// <code>TimestampRange</code> must be set.</p>
-        pub fn dash_fragment_selector(mut self, inp: crate::model::DashFragmentSelector) -> Self {
-            self.inner = self.inner.dash_fragment_selector(inp);
+        pub fn dash_fragment_selector(
+            mut self,
+            signature: crate::model::DashFragmentSelector,
+        ) -> Self {
+            self.inner = self.inner.dash_fragment_selector(signature);
             self
         }
         /// <p>The time range of the requested fragment and the source of the timestamps.</p>
@@ -739,8 +745,8 @@ pub mod fluent_builders {
         /// <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for
         /// that session.</p>
         /// <p>The default is 300 (5 minutes).</p>
-        pub fn expires(mut self, inp: i32) -> Self {
-            self.inner = self.inner.expires(inp);
+        pub fn expires(mut self, signature: i32) -> Self {
+            self.inner = self.inner.expires(signature);
             self
         }
         /// <p>The time in seconds until the requested session expires. This value can be between 300
@@ -768,8 +774,8 @@ pub mod fluent_builders {
         /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
         /// streams with 1-second fragments, and more than 2 1/2 hours of video on streams with
         /// 10-second fragments.</p>
-        pub fn max_manifest_fragment_results(mut self, inp: i64) -> Self {
-            self.inner = self.inner.max_manifest_fragment_results(inp);
+        pub fn max_manifest_fragment_results(mut self, signature: i64) -> Self {
+            self.inner = self.inner.max_manifest_fragment_results(signature);
             self
         }
         /// <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p>
@@ -1036,8 +1042,8 @@ pub mod fluent_builders {
         /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
         /// <p>You must specify either the <code>StreamName</code> or the
         /// <code>StreamARN</code>.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
@@ -1051,8 +1057,8 @@ pub mod fluent_builders {
         /// playlist URL.</p>
         /// <p>You must specify either the <code>StreamName</code> or the
         /// <code>StreamARN</code>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master
@@ -1123,8 +1129,8 @@ pub mod fluent_builders {
         /// included in the HLS media playlist. This can lead to unexpected behavior in the media
         /// player.</p>
         /// <p>The default is <code>LIVE</code>.</p>
-        pub fn playback_mode(mut self, inp: crate::model::HlsPlaybackMode) -> Self {
-            self.inner = self.inner.playback_mode(inp);
+        pub fn playback_mode(mut self, signature: crate::model::HlsPlaybackMode) -> Self {
+            self.inner = self.inner.playback_mode(signature);
             self
         }
         /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
@@ -1202,8 +1208,11 @@ pub mod fluent_builders {
         /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
         /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
         /// <code>TimestampRange</code> must be set.</p>
-        pub fn hls_fragment_selector(mut self, inp: crate::model::HlsFragmentSelector) -> Self {
-            self.inner = self.inner.hls_fragment_selector(inp);
+        pub fn hls_fragment_selector(
+            mut self,
+            signature: crate::model::HlsFragmentSelector,
+        ) -> Self {
+            self.inner = self.inner.hls_fragment_selector(signature);
             self
         }
         /// <p>The time range of the requested fragment and the source of the timestamps.</p>
@@ -1229,8 +1238,8 @@ pub mod fluent_builders {
         /// older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means
         /// MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
         /// <p>The default is <code>FRAGMENTED_MP4</code>.</p>
-        pub fn container_format(mut self, inp: crate::model::ContainerFormat) -> Self {
-            self.inner = self.inner.container_format(inp);
+        pub fn container_format(mut self, signature: crate::model::ContainerFormat) -> Self {
+            self.inner = self.inner.container_format(signature);
             self
         }
         /// <p>Specifies which format should be used for packaging the media. Specifying the
@@ -1286,8 +1295,8 @@ pub mod fluent_builders {
         /// <p>The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set
         /// to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to
         /// <code>PRODUCER_TIMESTAMP</code>.</p>
-        pub fn discontinuity_mode(mut self, inp: crate::model::HlsDiscontinuityMode) -> Self {
-            self.inner = self.inner.discontinuity_mode(inp);
+        pub fn discontinuity_mode(mut self, signature: crate::model::HlsDiscontinuityMode) -> Self {
+            self.inner = self.inner.discontinuity_mode(signature);
             self
         }
         /// <p>Specifies when flags marking discontinuities between fragments are added to the media
@@ -1349,9 +1358,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn display_fragment_timestamp(
             mut self,
-            inp: crate::model::HlsDisplayFragmentTimestamp,
+            signature: crate::model::HlsDisplayFragmentTimestamp,
         ) -> Self {
-            self.inner = self.inner.display_fragment_timestamp(inp);
+            self.inner = self.inner.display_fragment_timestamp(signature);
             self
         }
         /// <p>Specifies when the fragment start timestamps should be included in the HLS media
@@ -1380,8 +1389,8 @@ pub mod fluent_builders {
         /// <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that
         /// session.</p>
         /// <p>The default is 300 (5 minutes).</p>
-        pub fn expires(mut self, inp: i32) -> Self {
-            self.inner = self.inner.expires(inp);
+        pub fn expires(mut self, signature: i32) -> Self {
+            self.inner = self.inner.expires(signature);
             self
         }
         /// <p>The time in seconds until the requested session expires. This value can be between 300
@@ -1410,8 +1419,8 @@ pub mod fluent_builders {
         /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
         /// streams with 1-second fragments, and more than 13 hours of video on streams with
         /// 10-second fragments.</p>
-        pub fn max_media_playlist_fragment_results(mut self, inp: i64) -> Self {
-            self.inner = self.inner.max_media_playlist_fragment_results(inp);
+        pub fn max_media_playlist_fragment_results(mut self, signature: i64) -> Self {
+            self.inner = self.inner.max_media_playlist_fragment_results(signature);
             self
         }
         /// <p>The maximum number of fragments that are returned in the HLS media playlists.</p>
@@ -1533,8 +1542,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
@@ -1543,8 +1552,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
@@ -1558,8 +1567,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these
         /// values with <a>ListFragments</a>.</p>
-        pub fn fragments(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fragments(inp);
+        pub fn fragments(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fragments(input.into());
             self
         }
         /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these
@@ -1668,8 +1677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
@@ -1678,8 +1687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
@@ -1690,8 +1699,8 @@ pub mod fluent_builders {
         /// <p>The total number of fragments to return. If the total number of fragments available is
         /// more than the value specified in <code>max-results</code>, then a <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use
         /// to resume pagination.</p>
-        pub fn max_results(mut self, inp: i64) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i64) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The total number of fragments to return. If the total number of fragments available is
@@ -1703,8 +1712,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated
         /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated
@@ -1715,8 +1724,8 @@ pub mod fluent_builders {
         }
         /// <p>Describes the timestamp range and timestamp origin for the range of fragments to
         /// return.</p>
-        pub fn fragment_selector(mut self, inp: crate::model::FragmentSelector) -> Self {
-            self.inner = self.inner.fragment_selector(inp);
+        pub fn fragment_selector(mut self, signature: crate::model::FragmentSelector) -> Self {
+            self.inner = self.inner.fragment_selector(signature);
             self
         }
         /// <p>Describes the timestamp range and timestamp origin for the range of fragments to

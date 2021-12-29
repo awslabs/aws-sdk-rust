@@ -210,8 +210,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
         /// the lifecycle policy.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
@@ -225,8 +225,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
         /// supported.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
@@ -236,8 +236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired activation state of the lifecycle policy after creation.</p>
-        pub fn state(mut self, inp: crate::model::SettablePolicyStateValues) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, signature: crate::model::SettablePolicyStateValues) -> Self {
+            self.inner = self.inner.state(signature);
             self
         }
         /// <p>The desired activation state of the lifecycle policy after creation.</p>
@@ -249,8 +249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration details of the lifecycle policy.</p>
-        pub fn policy_details(mut self, inp: crate::model::PolicyDetails) -> Self {
-            self.inner = self.inner.policy_details(inp);
+        pub fn policy_details(mut self, signature: crate::model::PolicyDetails) -> Self {
+            self.inner = self.inner.policy_details(signature);
             self
         }
         /// <p>The configuration details of the lifecycle policy.</p>
@@ -271,7 +271,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to apply to the lifecycle policy during creation.</p>
@@ -346,8 +346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the lifecycle policy.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(signature.into());
             self
         }
         /// <p>The identifier of the lifecycle policy.</p>
@@ -421,8 +421,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_ids`](Self::set_policy_ids).
         ///
         /// <p>The identifiers of the data lifecycle policies.</p>
-        pub fn policy_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_ids(inp);
+        pub fn policy_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_ids(input.into());
             self
         }
         /// <p>The identifiers of the data lifecycle policies.</p>
@@ -434,8 +434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The activation state.</p>
-        pub fn state(mut self, inp: crate::model::GettablePolicyStateValues) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, signature: crate::model::GettablePolicyStateValues) -> Self {
+            self.inner = self.inner.state(signature);
             self
         }
         /// <p>The activation state.</p>
@@ -451,8 +451,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource type.</p>
-        pub fn resource_types(mut self, inp: impl Into<crate::model::ResourceTypeValues>) -> Self {
-            self.inner = self.inner.resource_types(inp);
+        pub fn resource_types(mut self, input: crate::model::ResourceTypeValues) -> Self {
+            self.inner = self.inner.resource_types(input);
             self
         }
         /// <p>The resource type.</p>
@@ -469,8 +469,8 @@ pub mod fluent_builders {
         ///
         /// <p>The target tag for a policy.</p>
         /// <p>Tags are strings in the format <code>key=value</code>.</p>
-        pub fn target_tags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_tags(inp);
+        pub fn target_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_tags(input.into());
             self
         }
         /// <p>The target tag for a policy.</p>
@@ -489,8 +489,8 @@ pub mod fluent_builders {
         /// <p>The tags to add to objects created by the policy.</p>
         /// <p>Tags are strings in the format <code>key=value</code>.</p>
         /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-        pub fn tags_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags_to_add(inp);
+        pub fn tags_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tags_to_add(input.into());
             self
         }
         /// <p>The tags to add to objects created by the policy.</p>
@@ -564,8 +564,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the lifecycle policy.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(signature.into());
             self
         }
         /// <p>The identifier of the lifecycle policy.</p>
@@ -634,8 +634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -704,8 +704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -723,7 +723,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -797,8 +797,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -811,8 +811,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -884,8 +884,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the lifecycle policy.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(signature.into());
             self
         }
         /// <p>The identifier of the lifecycle policy.</p>
@@ -895,8 +895,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
         /// the lifecycle policy.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
@@ -909,8 +909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired activation state of the lifecycle policy after creation.</p>
-        pub fn state(mut self, inp: crate::model::SettablePolicyStateValues) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, signature: crate::model::SettablePolicyStateValues) -> Self {
+            self.inner = self.inner.state(signature);
             self
         }
         /// <p>The desired activation state of the lifecycle policy after creation.</p>
@@ -922,8 +922,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the lifecycle policy.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the lifecycle policy.</p>
@@ -933,8 +933,8 @@ pub mod fluent_builders {
         }
         /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
         /// resource type.</p>
-        pub fn policy_details(mut self, inp: crate::model::PolicyDetails) -> Self {
-            self.inner = self.inner.policy_details(inp);
+        pub fn policy_details(mut self, signature: crate::model::PolicyDetails) -> Self {
+            self.inner = self.inner.policy_details(signature);
             self
         }
         /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the

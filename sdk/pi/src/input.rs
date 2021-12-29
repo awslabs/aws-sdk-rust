@@ -746,9 +746,9 @@ pub mod get_resource_metrics_input {
         ///
         /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and
         /// can optionally specify aggregation and filtering criteria.</p>
-        pub fn metric_queries(mut self, input: impl Into<crate::model::MetricQuery>) -> Self {
+        pub fn metric_queries(mut self, input: crate::model::MetricQuery) -> Self {
             let mut v = self.metric_queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_queries = Some(v);
             self
         }

@@ -18824,9 +18824,9 @@ pub mod invalid_contact_flow_module_exception {
         ///
         /// To override the contents of this collection use [`set_problems`](Self::set_problems).
         ///
-        pub fn problems(mut self, input: impl Into<crate::model::ProblemDetail>) -> Self {
+        pub fn problems(mut self, input: crate::model::ProblemDetail) -> Self {
             let mut v = self.problems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.problems = Some(v);
             self
         }
@@ -18918,9 +18918,9 @@ pub mod invalid_contact_flow_exception {
         /// To override the contents of this collection use [`set_problems`](Self::set_problems).
         ///
         /// <p>The problems with the contact flow. Please fix before trying again.</p>
-        pub fn problems(mut self, input: impl Into<crate::model::ProblemDetail>) -> Self {
+        pub fn problems(mut self, input: crate::model::ProblemDetail) -> Self {
             let mut v = self.problems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.problems = Some(v);
             self
         }

@@ -129,12 +129,9 @@ pub mod list_human_loops_output {
         /// To override the contents of this collection use [`set_human_loop_summaries`](Self::set_human_loop_summaries).
         ///
         /// <p>An array of objects that contain information about the human loops.</p>
-        pub fn human_loop_summaries(
-            mut self,
-            input: impl Into<crate::model::HumanLoopSummary>,
-        ) -> Self {
+        pub fn human_loop_summaries(mut self, input: crate::model::HumanLoopSummary) -> Self {
             let mut v = self.human_loop_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.human_loop_summaries = Some(v);
             self
         }

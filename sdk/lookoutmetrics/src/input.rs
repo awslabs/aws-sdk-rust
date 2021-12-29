@@ -838,9 +838,9 @@ pub mod create_metric_set_input {
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
         /// <p>A list of metrics that the dataset will contain.</p>
-        pub fn metric_list(mut self, input: impl Into<crate::model::Metric>) -> Self {
+        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
             let mut v = self.metric_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_list = Some(v);
             self
         }
@@ -4428,9 +4428,9 @@ pub mod update_metric_set_input {
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
         /// <p>The metric list.</p>
-        pub fn metric_list(mut self, input: impl Into<crate::model::Metric>) -> Self {
+        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
             let mut v = self.metric_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_list = Some(v);
             self
         }

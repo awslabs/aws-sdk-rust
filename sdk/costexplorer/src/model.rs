@@ -145,10 +145,10 @@ pub mod cost_category_split_charge_rule {
         /// <code>FIXED</code> method. </p>
         pub fn parameters(
             mut self,
-            input: impl Into<crate::model::CostCategorySplitChargeRuleParameter>,
+            input: crate::model::CostCategorySplitChargeRuleParameter,
         ) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -936,9 +936,9 @@ pub mod expression {
         /// To override the contents of this collection use [`set_or`](Self::set_or).
         ///
         /// <p>Return results that match either <code>Dimension</code> object.</p>
-        pub fn or(mut self, input: impl Into<crate::model::Expression>) -> Self {
+        pub fn or(mut self, input: crate::model::Expression) -> Self {
             let mut v = self.or.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.or = Some(v);
             self
         }
@@ -955,9 +955,9 @@ pub mod expression {
         /// To override the contents of this collection use [`set_and`](Self::set_and).
         ///
         /// <p>Return results that match both <code>Dimension</code> objects.</p>
-        pub fn and(mut self, input: impl Into<crate::model::Expression>) -> Self {
+        pub fn and(mut self, input: crate::model::Expression) -> Self {
             let mut v = self.and.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.and = Some(v);
             self
         }
@@ -1133,9 +1133,9 @@ pub mod cost_category_values {
         /// applicable for actions related to cost category. The default values for
         /// <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
         /// </p>
-        pub fn match_options(mut self, input: impl Into<crate::model::MatchOption>) -> Self {
+        pub fn match_options(mut self, input: crate::model::MatchOption) -> Self {
             let mut v = self.match_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.match_options = Some(v);
             self
         }
@@ -1345,9 +1345,9 @@ pub mod tag_values {
         /// is only applicable for actions related to Cost Category. The default values for
         /// <code>MatchOptions</code> are <code>EQUALS</code> and
         /// <code>CASE_SENSITIVE</code>.</p>
-        pub fn match_options(mut self, input: impl Into<crate::model::MatchOption>) -> Self {
+        pub fn match_options(mut self, input: crate::model::MatchOption) -> Self {
             let mut v = self.match_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.match_options = Some(v);
             self
         }
@@ -1476,9 +1476,9 @@ pub mod dimension_values {
         /// is only applicable for actions related to Cost Category. The default values for
         /// <code>MatchOptions</code> are <code>EQUALS</code> and
         /// <code>CASE_SENSITIVE</code>.</p>
-        pub fn match_options(mut self, input: impl Into<crate::model::MatchOption>) -> Self {
+        pub fn match_options(mut self, input: crate::model::MatchOption) -> Self {
             let mut v = self.match_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.match_options = Some(v);
             self
         }
@@ -2257,10 +2257,10 @@ pub mod cost_category_reference {
         /// category. </p>
         pub fn processing_status(
             mut self,
-            input: impl Into<crate::model::CostCategoryProcessingStatus>,
+            input: crate::model::CostCategoryProcessingStatus,
         ) -> Self {
             let mut v = self.processing_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processing_status = Some(v);
             self
         }
@@ -4157,12 +4157,12 @@ pub mod savings_plans_purchase_recommendation {
         /// Plans eligible workloads.</p>
         pub fn savings_plans_purchase_recommendation_details(
             mut self,
-            input: impl Into<crate::model::SavingsPlansPurchaseRecommendationDetail>,
+            input: crate::model::SavingsPlansPurchaseRecommendationDetail,
         ) -> Self {
             let mut v = self
                 .savings_plans_purchase_recommendation_details
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.savings_plans_purchase_recommendation_details = Some(v);
             self
         }
@@ -6262,12 +6262,9 @@ pub mod rightsizing_recommendation {
         ///
         /// <p> The list of possible reasons why the recommendation is generated such as under or
         /// over utilization of specific metrics (for example, CPU, Memory, Network). </p>
-        pub fn finding_reason_codes(
-            mut self,
-            input: impl Into<crate::model::FindingReasonCode>,
-        ) -> Self {
+        pub fn finding_reason_codes(mut self, input: crate::model::FindingReasonCode) -> Self {
             let mut v = self.finding_reason_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_reason_codes = Some(v);
             self
         }
@@ -6561,9 +6558,9 @@ pub mod modify_recommendation_detail {
         ///
         /// <p>Determines whether this instance type is the Amazon Web Services default
         /// recommendation.</p>
-        pub fn target_instances(mut self, input: impl Into<crate::model::TargetInstance>) -> Self {
+        pub fn target_instances(mut self, input: crate::model::TargetInstance) -> Self {
             let mut v = self.target_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_instances = Some(v);
             self
         }
@@ -6769,12 +6766,9 @@ pub mod target_instance {
         ///
         /// <p> Explains the actions you might need to take in order to successfully migrate your
         /// workloads from the current instance type to the recommended instance type. </p>
-        pub fn platform_differences(
-            mut self,
-            input: impl Into<crate::model::PlatformDifference>,
-        ) -> Self {
+        pub fn platform_differences(mut self, input: crate::model::PlatformDifference) -> Self {
             let mut v = self.platform_differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_differences = Some(v);
             self
         }
@@ -8069,9 +8063,9 @@ pub mod current_instance {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Cost allocation resource tags that are applied to the instance.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagValues>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagValues) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9025,12 +9019,9 @@ pub mod utilization_by_time {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The groups that this utilization result uses.</p>
-        pub fn groups(
-            mut self,
-            input: impl Into<crate::model::ReservationUtilizationGroup>,
-        ) -> Self {
+        pub fn groups(mut self, input: crate::model::ReservationUtilizationGroup) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -9388,10 +9379,10 @@ pub mod reservation_purchase_recommendation {
         /// <p>Details about the recommended purchases.</p>
         pub fn recommendation_details(
             mut self,
-            input: impl Into<crate::model::ReservationPurchaseRecommendationDetail>,
+            input: crate::model::ReservationPurchaseRecommendationDetail,
         ) -> Self {
             let mut v = self.recommendation_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_details = Some(v);
             self
         }
@@ -11969,9 +11960,9 @@ pub mod coverage_by_time {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The groups of instances that the reservation covered.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::ReservationCoverageGroup>) -> Self {
+        pub fn groups(mut self, input: crate::model::ReservationCoverageGroup) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -12340,10 +12331,10 @@ pub mod result_by_time {
         pub fn total(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MetricValue>,
+            v: crate::model::MetricValue,
         ) -> Self {
             let mut hash_map = self.total.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.total = Some(hash_map);
             self
         }
@@ -12362,9 +12353,9 @@ pub mod result_by_time {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The groups that this time period includes.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -12476,10 +12467,10 @@ pub mod group {
         pub fn metrics(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MetricValue>,
+            v: crate::model::MetricValue,
         ) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
@@ -12636,9 +12627,9 @@ pub mod anomaly_subscription {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p>A list of subscribers to notify. </p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }
@@ -13409,9 +13400,9 @@ pub mod anomaly {
         /// To override the contents of this collection use [`set_root_causes`](Self::set_root_causes).
         ///
         /// <p>The list of identified root causes for the anomaly. </p>
-        pub fn root_causes(mut self, input: impl Into<crate::model::RootCause>) -> Self {
+        pub fn root_causes(mut self, input: crate::model::RootCause) -> Self {
             let mut v = self.root_causes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.root_causes = Some(v);
             self
         }
@@ -14182,9 +14173,9 @@ pub mod cost_category {
         /// <p>The rules are processed in order. If there are multiple rules that match the line
         /// item, then the first rule to match is used to determine that Cost Category value.
         /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::CostCategoryRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::CostCategoryRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -14206,10 +14197,10 @@ pub mod cost_category {
         /// Category values. </p>
         pub fn split_charge_rules(
             mut self,
-            input: impl Into<crate::model::CostCategorySplitChargeRule>,
+            input: crate::model::CostCategorySplitChargeRule,
         ) -> Self {
             let mut v = self.split_charge_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.split_charge_rules = Some(v);
             self
         }
@@ -14230,10 +14221,10 @@ pub mod cost_category {
         /// category. </p>
         pub fn processing_status(
             mut self,
-            input: impl Into<crate::model::CostCategoryProcessingStatus>,
+            input: crate::model::CostCategoryProcessingStatus,
         ) -> Self {
             let mut v = self.processing_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processing_status = Some(v);
             self
         }

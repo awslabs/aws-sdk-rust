@@ -936,9 +936,9 @@ pub mod create_application_input {
         /// <p>Specifies the tags applied to the application.</p>
         /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the
         /// application don't inherit the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1262,9 +1262,9 @@ pub mod create_application_version_input {
         /// <p>Specifies the tags applied to the application version.</p>
         /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the
         /// application version don't inherit the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1594,12 +1594,9 @@ pub mod create_configuration_template_input {
         /// values override the values obtained from the solution stack or the source configuration
         /// template. For a complete list of Elastic Beanstalk configuration options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
         /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }
@@ -1619,9 +1616,9 @@ pub mod create_configuration_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to the configuration template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1897,9 +1894,9 @@ pub mod create_environment_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to resources in the environment.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2005,12 +2002,9 @@ pub mod create_environment_input {
         /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the
         /// requested value in the configuration set for the new environment. These override the values
         /// obtained from the solution stack or the configuration template.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }
@@ -2030,12 +2024,9 @@ pub mod create_environment_input {
         ///
         /// <p>A list of custom user-defined configuration options to remove from the configuration
         /// set for this new environment.</p>
-        pub fn options_to_remove(
-            mut self,
-            input: impl Into<crate::model::OptionSpecification>,
-        ) -> Self {
+        pub fn options_to_remove(mut self, input: crate::model::OptionSpecification) -> Self {
             let mut v = self.options_to_remove.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.options_to_remove = Some(v);
             self
         }
@@ -2286,12 +2277,9 @@ pub mod create_platform_version_input {
         /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
         ///
         /// <p>The configuration option settings to apply to the builder environment.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }
@@ -2310,9 +2298,9 @@ pub mod create_platform_version_input {
         /// <p>Specifies the tags applied to the new platform version.</p>
         /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using
         /// the platform version don't inherit the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4024,9 +4012,9 @@ pub mod describe_configuration_options_input {
         /// To override the contents of this collection use [`set_options`](Self::set_options).
         ///
         /// <p>If specified, restricts the descriptions to only the specified options.</p>
-        pub fn options(mut self, input: impl Into<crate::model::OptionSpecification>) -> Self {
+        pub fn options(mut self, input: crate::model::OptionSpecification) -> Self {
             let mut v = self.options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.options = Some(v);
             self
         }
@@ -4426,12 +4414,9 @@ pub mod describe_environment_health_input {
         /// <p>Specify the response elements to return. To retrieve all attributes, set to
         /// <code>All</code>. If no attribute names are specified, returns the name of the
         /// environment.</p>
-        pub fn attribute_names(
-            mut self,
-            input: impl Into<crate::model::EnvironmentHealthAttribute>,
-        ) -> Self {
+        pub fn attribute_names(mut self, input: crate::model::EnvironmentHealthAttribute) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_names = Some(v);
             self
         }
@@ -5804,12 +5789,9 @@ pub mod describe_instances_health_input {
         /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to
         /// <code>All</code>. If no attribute names are specified, returns a list of
         /// instances.</p>
-        pub fn attribute_names(
-            mut self,
-            input: impl Into<crate::model::InstancesHealthAttribute>,
-        ) -> Self {
+        pub fn attribute_names(mut self, input: crate::model::InstancesHealthAttribute) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_names = Some(v);
             self
         }
@@ -6490,9 +6472,9 @@ pub mod list_platform_branches_input {
         /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
         /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10
         /// items.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SearchFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SearchFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6751,9 +6733,9 @@ pub mod list_platform_versions_input {
         /// <p>Criteria for restricting the resulting list of platform versions. The filter is
         /// interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code>
         /// terms.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::PlatformFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::PlatformFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8925,12 +8907,9 @@ pub mod update_configuration_template_input {
         ///
         /// <p>A list of configuration option settings to update with the new specified option
         /// value.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }
@@ -8950,12 +8929,9 @@ pub mod update_configuration_template_input {
         /// <p>A list of configuration options to remove from the configuration set.</p>
         /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options.
         /// </p>
-        pub fn options_to_remove(
-            mut self,
-            input: impl Into<crate::model::OptionSpecification>,
-        ) -> Self {
+        pub fn options_to_remove(mut self, input: crate::model::OptionSpecification) -> Self {
             let mut v = self.options_to_remove.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.options_to_remove = Some(v);
             self
         }
@@ -9295,12 +9271,9 @@ pub mod update_environment_input {
         /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the
         /// running environment and sets the specified configuration options to the requested
         /// value.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }
@@ -9320,12 +9293,9 @@ pub mod update_environment_input {
         ///
         /// <p>A list of custom user-defined configuration options to remove from the configuration
         /// set for this environment.</p>
-        pub fn options_to_remove(
-            mut self,
-            input: impl Into<crate::model::OptionSpecification>,
-        ) -> Self {
+        pub fn options_to_remove(mut self, input: crate::model::OptionSpecification) -> Self {
             let mut v = self.options_to_remove.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.options_to_remove = Some(v);
             self
         }
@@ -9510,9 +9480,9 @@ pub mod update_tags_for_resource_input {
         /// updated.</p>
         /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>,
         /// <code>TagsToRemove</code>.</p>
-        pub fn tags_to_add(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_to_add(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_to_add.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_to_add = Some(v);
             self
         }
@@ -9747,12 +9717,9 @@ pub mod validate_configuration_settings_input {
         /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
         ///
         /// <p>A list of the options and desired values to evaluate.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }

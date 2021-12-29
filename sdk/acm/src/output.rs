@@ -252,9 +252,9 @@ pub mod list_tags_for_certificate_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pairs that define the applied tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -339,12 +339,9 @@ pub mod list_certificates_output {
         /// To override the contents of this collection use [`set_certificate_summary_list`](Self::set_certificate_summary_list).
         ///
         /// <p>A list of ACM certificates.</p>
-        pub fn certificate_summary_list(
-            mut self,
-            input: impl Into<crate::model::CertificateSummary>,
-        ) -> Self {
+        pub fn certificate_summary_list(mut self, input: crate::model::CertificateSummary) -> Self {
             let mut v = self.certificate_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_summary_list = Some(v);
             self
         }

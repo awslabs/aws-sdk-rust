@@ -548,9 +548,9 @@ pub mod put_session_input {
         ///
         /// <p>A list of messages to send to the user. Messages are sent in the
         /// order that they are defined in the list.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }

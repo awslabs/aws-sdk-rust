@@ -2909,9 +2909,9 @@ pub mod header_object {
         /// To override the contents of this collection use [`set_headers_allow_list`](Self::set_headers_allow_list).
         ///
         /// <p>The specific headers to forward to your distribution's origin.</p>
-        pub fn headers_allow_list(mut self, input: impl Into<crate::model::HeaderEnum>) -> Self {
+        pub fn headers_allow_list(mut self, input: crate::model::HeaderEnum) -> Self {
             let mut v = self.headers_allow_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers_allow_list = Some(v);
             self
         }
@@ -3941,9 +3941,9 @@ pub mod container_service {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4216,10 +4216,10 @@ pub mod container_service {
         pub fn public_domain_names(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.public_domain_names.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.public_domain_names = Some(hash_map);
             self
         }
@@ -4502,10 +4502,10 @@ pub mod container_service_deployment {
         pub fn containers(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Container>,
+            v: crate::model::Container,
         ) -> Self {
             let mut hash_map = self.containers.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.containers = Some(hash_map);
             self
         }
@@ -5039,10 +5039,10 @@ pub mod container {
         pub fn ports(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ContainerServiceProtocol>,
+            v: crate::model::ContainerServiceProtocol,
         ) -> Self {
             let mut hash_map = self.ports.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.ports = Some(hash_map);
             self
         }
@@ -6235,9 +6235,9 @@ pub mod bucket {
         ///
         /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in
         /// Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6351,10 +6351,10 @@ pub mod bucket {
         /// have access to a bucket.</p>
         pub fn resources_receiving_access(
             mut self,
-            input: impl Into<crate::model::ResourceReceivingAccess>,
+            input: crate::model::ResourceReceivingAccess,
         ) -> Self {
             let mut v = self.resources_receiving_access.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources_receiving_access = Some(v);
             self
         }
@@ -8837,9 +8837,9 @@ pub mod relational_database_snapshot {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9359,9 +9359,9 @@ pub mod relational_database {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9625,10 +9625,10 @@ pub mod relational_database {
         /// <p>Describes the pending maintenance actions for the database.</p>
         pub fn pending_maintenance_actions(
             mut self,
-            input: impl Into<crate::model::PendingMaintenanceAction>,
+            input: crate::model::PendingMaintenanceAction,
         ) -> Self {
             let mut v = self.pending_maintenance_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_maintenance_actions = Some(v);
             self
         }
@@ -11373,12 +11373,9 @@ pub mod region {
         ///
         /// <p>The Availability Zones. Follows the format <code>us-east-2a</code>
         /// (case-sensitive).</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -11399,12 +11396,12 @@ pub mod region {
         /// (case-sensitive).</p>
         pub fn relational_database_availability_zones(
             mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
+            input: crate::model::AvailabilityZone,
         ) -> Self {
             let mut v = self
                 .relational_database_availability_zones
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relational_database_availability_zones = Some(v);
             self
         }
@@ -12256,9 +12253,9 @@ pub mod load_balancer_tls_certificate {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12327,10 +12324,10 @@ pub mod load_balancer_tls_certificate {
         /// records.</p>
         pub fn domain_validation_records(
             mut self,
-            input: impl Into<crate::model::LoadBalancerTlsCertificateDomainValidationRecord>,
+            input: crate::model::LoadBalancerTlsCertificateDomainValidationRecord,
         ) -> Self {
             let mut v = self.domain_validation_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_validation_records = Some(v);
             self
         }
@@ -13065,10 +13062,10 @@ pub mod load_balancer_tls_certificate_renewal_summary {
         /// occurs as a result of the RequestCertificate request.</p>
         pub fn domain_validation_options(
             mut self,
-            input: impl Into<crate::model::LoadBalancerTlsCertificateDomainValidationOption>,
+            input: crate::model::LoadBalancerTlsCertificateDomainValidationOption,
         ) -> Self {
             let mut v = self.domain_validation_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_validation_options = Some(v);
             self
         }
@@ -13912,9 +13909,9 @@ pub mod load_balancer {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13973,9 +13970,9 @@ pub mod load_balancer {
         ///
         /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS,
         /// use port 443.</p>
-        pub fn public_ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn public_ports(mut self, input: i32) -> Self {
             let mut v = self.public_ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.public_ports = Some(v);
             self
         }
@@ -14020,10 +14017,10 @@ pub mod load_balancer {
         /// balancer.</p>
         pub fn instance_health_summary(
             mut self,
-            input: impl Into<crate::model::InstanceHealthSummary>,
+            input: crate::model::InstanceHealthSummary,
         ) -> Self {
             let mut v = self.instance_health_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_health_summary = Some(v);
             self
         }
@@ -14045,10 +14042,10 @@ pub mod load_balancer {
         /// to the load balancer.</p>
         pub fn tls_certificate_summaries(
             mut self,
-            input: impl Into<crate::model::LoadBalancerTlsCertificateSummary>,
+            input: crate::model::LoadBalancerTlsCertificateSummary,
         ) -> Self {
             let mut v = self.tls_certificate_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tls_certificate_summaries = Some(v);
             self
         }
@@ -14072,11 +14069,11 @@ pub mod load_balancer {
         /// are listed below.</p>
         pub fn configuration_options(
             mut self,
-            k: impl Into<crate::model::LoadBalancerAttributeName>,
+            k: crate::model::LoadBalancerAttributeName,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.configuration_options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.configuration_options = Some(hash_map);
             self
         }
@@ -15407,9 +15404,9 @@ pub mod key_pair {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15781,9 +15778,9 @@ pub mod instance_snapshot {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15832,9 +15829,9 @@ pub mod instance_snapshot {
         /// To override the contents of this collection use [`set_from_attached_disks`](Self::set_from_attached_disks).
         ///
         /// <p>An array of disk objects containing information about all block storage disks.</p>
-        pub fn from_attached_disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
+        pub fn from_attached_disks(mut self, input: crate::model::Disk) -> Self {
             let mut v = self.from_attached_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.from_attached_disks = Some(v);
             self
         }
@@ -16218,9 +16215,9 @@ pub mod disk {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16238,9 +16235,9 @@ pub mod disk {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects representing the add-ons enabled on the disk.</p>
-        pub fn add_ons(mut self, input: impl Into<crate::model::AddOn>) -> Self {
+        pub fn add_ons(mut self, input: crate::model::AddOn) -> Self {
             let mut v = self.add_ons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_ons = Some(v);
             self
         }
@@ -16963,9 +16960,9 @@ pub mod instance {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -17016,9 +17013,9 @@ pub mod instance {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects representing the add-ons enabled on the instance.</p>
-        pub fn add_ons(mut self, input: impl Into<crate::model::AddOn>) -> Self {
+        pub fn add_ons(mut self, input: crate::model::AddOn) -> Self {
             let mut v = self.add_ons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_ons = Some(v);
             self
         }
@@ -17257,9 +17254,9 @@ pub mod instance_networking {
         /// To override the contents of this collection use [`set_ports`](Self::set_ports).
         ///
         /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-        pub fn ports(mut self, input: impl Into<crate::model::InstancePortInfo>) -> Self {
+        pub fn ports(mut self, input: crate::model::InstancePortInfo) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ports = Some(v);
             self
         }
@@ -18141,9 +18138,9 @@ pub mod instance_hardware {
         /// To override the contents of this collection use [`set_disks`](Self::set_disks).
         ///
         /// <p>The disks attached to the instance.</p>
-        pub fn disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
+        pub fn disks(mut self, input: crate::model::Disk) -> Self {
             let mut v = self.disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disks = Some(v);
             self
         }
@@ -19157,9 +19154,9 @@ pub mod instance_access_details {
         /// To override the contents of this collection use [`set_host_keys`](Self::set_host_keys).
         ///
         /// <p>Describes the public SSH host keys or the RDP certificate.</p>
-        pub fn host_keys(mut self, input: impl Into<crate::model::HostKeyAttributes>) -> Self {
+        pub fn host_keys(mut self, input: crate::model::HostKeyAttributes) -> Self {
             let mut v = self.host_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.host_keys = Some(v);
             self
         }
@@ -20329,9 +20326,9 @@ pub mod instance_snapshot_info {
         /// To override the contents of this collection use [`set_from_disk_info`](Self::set_from_disk_info).
         ///
         /// <p>A list of objects describing the disks that were attached to the source instance.</p>
-        pub fn from_disk_info(mut self, input: impl Into<crate::model::DiskInfo>) -> Self {
+        pub fn from_disk_info(mut self, input: crate::model::DiskInfo) -> Self {
             let mut v = self.from_disk_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.from_disk_info = Some(v);
             self
         }
@@ -20763,9 +20760,9 @@ pub mod domain {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -20783,9 +20780,9 @@ pub mod domain {
         /// To override the contents of this collection use [`set_domain_entries`](Self::set_domain_entries).
         ///
         /// <p>An array of key-value pairs containing information about the domain entries.</p>
-        pub fn domain_entries(mut self, input: impl Into<crate::model::DomainEntry>) -> Self {
+        pub fn domain_entries(mut self, input: crate::model::DomainEntry) -> Self {
             let mut v = self.domain_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_entries = Some(v);
             self
         }
@@ -21251,12 +21248,9 @@ pub mod lightsail_distribution {
         /// To override the contents of this collection use [`set_cache_behaviors`](Self::set_cache_behaviors).
         ///
         /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
-        pub fn cache_behaviors(
-            mut self,
-            input: impl Into<crate::model::CacheBehaviorPerPath>,
-        ) -> Self {
+        pub fn cache_behaviors(mut self, input: crate::model::CacheBehaviorPerPath) -> Self {
             let mut v = self.cache_behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_behaviors = Some(v);
             self
         }
@@ -21309,9 +21303,9 @@ pub mod lightsail_distribution {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -21932,9 +21926,9 @@ pub mod disk_snapshot {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -22972,10 +22966,10 @@ pub mod cloud_formation_stack_record {
         /// <p>A list of objects describing the source of the CloudFormation stack record.</p>
         pub fn source_info(
             mut self,
-            input: impl Into<crate::model::CloudFormationStackRecordSourceInfo>,
+            input: crate::model::CloudFormationStackRecordSourceInfo,
         ) -> Self {
             let mut v = self.source_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_info = Some(v);
             self
         }
@@ -23297,9 +23291,9 @@ pub mod certificate_summary {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -23754,10 +23748,10 @@ pub mod certificate {
         /// <p>An array of objects that describe the domain validation records of the certificate.</p>
         pub fn domain_validation_records(
             mut self,
-            input: impl Into<crate::model::DomainValidationRecord>,
+            input: crate::model::DomainValidationRecord,
         ) -> Self {
             let mut v = self.domain_validation_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_validation_records = Some(v);
             self
         }
@@ -24057,9 +24051,9 @@ pub mod certificate {
         ///
         /// <p>The tag keys and optional values for the resource. For more information about tags in
         /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -24261,10 +24255,10 @@ pub mod renewal_summary {
         /// <p>An array of objects that describe the domain validation records of the certificate.</p>
         pub fn domain_validation_records(
             mut self,
-            input: impl Into<crate::model::DomainValidationRecord>,
+            input: crate::model::DomainValidationRecord,
         ) -> Self {
             let mut v = self.domain_validation_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_validation_records = Some(v);
             self
         }
@@ -24981,12 +24975,9 @@ pub mod bundle {
         /// supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the
         /// <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a
         /// <code>LINUX_UNIX</code> bundle.</p>
-        pub fn supported_platforms(
-            mut self,
-            input: impl Into<crate::model::InstancePlatform>,
-        ) -> Self {
+        pub fn supported_platforms(mut self, input: crate::model::InstancePlatform) -> Self {
             let mut v = self.supported_platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_platforms = Some(v);
             self
         }
@@ -26112,9 +26103,9 @@ pub mod auto_snapshot_details {
         ///
         /// <p>An array of objects that describe the block storage disks attached to the instance when
         /// the automatic snapshot was created.</p>
-        pub fn from_attached_disks(mut self, input: impl Into<crate::model::AttachedDisk>) -> Self {
+        pub fn from_attached_disks(mut self, input: crate::model::AttachedDisk) -> Self {
             let mut v = self.from_attached_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.from_attached_disks = Some(v);
             self
         }
@@ -26967,12 +26958,9 @@ pub mod alarm {
         ///
         /// <p>The contact protocols for the alarm, such as <code>Email</code>, <code>SMS</code> (text
         /// messaging), or both.</p>
-        pub fn contact_protocols(
-            mut self,
-            input: impl Into<crate::model::ContactProtocol>,
-        ) -> Self {
+        pub fn contact_protocols(mut self, input: crate::model::ContactProtocol) -> Self {
             let mut v = self.contact_protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_protocols = Some(v);
             self
         }
@@ -26990,9 +26978,9 @@ pub mod alarm {
         /// To override the contents of this collection use [`set_notification_triggers`](Self::set_notification_triggers).
         ///
         /// <p>The alarm states that trigger a notification.</p>
-        pub fn notification_triggers(mut self, input: impl Into<crate::model::AlarmState>) -> Self {
+        pub fn notification_triggers(mut self, input: crate::model::AlarmState) -> Self {
             let mut v = self.notification_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_triggers = Some(v);
             self
         }
@@ -27831,10 +27819,10 @@ pub mod container_service_deployment_request {
         pub fn containers(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Container>,
+            v: crate::model::Container,
         ) -> Self {
             let mut hash_map = self.containers.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.containers = Some(hash_map);
             self
         }

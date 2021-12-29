@@ -1296,9 +1296,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Placeholder documentation for __listOfOutputDestination
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1328,12 +1328,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -1621,12 +1618,9 @@ pub mod create_input_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Destination settings for PUSH type inputs.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::InputDestinationRequest>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::InputDestinationRequest) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1643,12 +1637,9 @@ pub mod create_input_input {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// Settings for the devices.
-        pub fn input_devices(
-            mut self,
-            input: impl Into<crate::model::InputDeviceSettings>,
-        ) -> Self {
+        pub fn input_devices(mut self, input: crate::model::InputDeviceSettings) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_devices = Some(v);
             self
         }
@@ -1686,12 +1677,9 @@ pub mod create_input_input {
         /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
         /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
         /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-        pub fn media_connect_flows(
-            mut self,
-            input: impl Into<crate::model::MediaConnectFlowRequest>,
-        ) -> Self {
+        pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlowRequest) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_connect_flows = Some(v);
             self
         }
@@ -1744,9 +1732,9 @@ pub mod create_input_input {
         /// The source URLs for a PULL-type input. Every PULL type input needs
         /// exactly two source URLs for redundancy.
         /// Only specify sources for PULL type Inputs. Leave Destinations empty.
-        pub fn sources(mut self, input: impl Into<crate::model::InputSourceRequest>) -> Self {
+        pub fn sources(mut self, input: crate::model::InputSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -1999,12 +1987,9 @@ pub mod create_input_security_group_input {
         /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
         ///
         /// List of IPv4 CIDR addresses to whitelist
-        pub fn whitelist_rules(
-            mut self,
-            input: impl Into<crate::model::InputWhitelistRuleCidr>,
-        ) -> Self {
+        pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRuleCidr) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.whitelist_rules = Some(v);
             self
         }
@@ -9309,9 +9294,9 @@ pub mod update_channel_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of output destinations for this channel.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -9341,12 +9326,9 @@ pub mod update_channel_input {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// Placeholder documentation for __listOfInputAttachment
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -9594,9 +9576,9 @@ pub mod update_channel_class_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of output destinations for this channel.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -9784,12 +9766,9 @@ pub mod update_input_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Destination settings for PUSH type inputs.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::InputDestinationRequest>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::InputDestinationRequest) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -9806,9 +9785,9 @@ pub mod update_input_input {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// Settings for the devices.
-        pub fn input_devices(mut self, input: impl Into<crate::model::InputDeviceRequest>) -> Self {
+        pub fn input_devices(mut self, input: crate::model::InputDeviceRequest) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_devices = Some(v);
             self
         }
@@ -9856,12 +9835,9 @@ pub mod update_input_input {
         /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
         /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
         /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-        pub fn media_connect_flows(
-            mut self,
-            input: impl Into<crate::model::MediaConnectFlowRequest>,
-        ) -> Self {
+        pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlowRequest) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_connect_flows = Some(v);
             self
         }
@@ -9902,9 +9878,9 @@ pub mod update_input_input {
         /// The source URLs for a PULL-type input. Every PULL type input needs
         /// exactly two source URLs for redundancy.
         /// Only specify sources for PULL type Inputs. Leave Destinations empty.
-        pub fn sources(mut self, input: impl Into<crate::model::InputSourceRequest>) -> Self {
+        pub fn sources(mut self, input: crate::model::InputSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -10349,12 +10325,9 @@ pub mod update_input_security_group_input {
         /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
         ///
         /// List of IPv4 CIDR addresses to whitelist
-        pub fn whitelist_rules(
-            mut self,
-            input: impl Into<crate::model::InputWhitelistRuleCidr>,
-        ) -> Self {
+        pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRuleCidr) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.whitelist_rules = Some(v);
             self
         }

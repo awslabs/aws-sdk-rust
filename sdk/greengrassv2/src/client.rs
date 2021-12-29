@@ -343,9 +343,9 @@ pub mod fluent_builders {
         /// <p>The list of client devices to associate.</p>
         pub fn entries(
             mut self,
-            inp: impl Into<crate::model::AssociateClientDeviceWithCoreDeviceEntry>,
+            input: crate::model::AssociateClientDeviceWithCoreDeviceEntry,
         ) -> Self {
-            self.inner = self.inner.entries(inp);
+            self.inner = self.inner.entries(input);
             self
         }
         /// <p>The list of client devices to associate.</p>
@@ -359,8 +359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-        pub fn core_device_thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_device_thing_name(inp);
+        pub fn core_device_thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_device_thing_name(signature.into());
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -442,9 +442,9 @@ pub mod fluent_builders {
         /// <p>The list of client devices to disassociate.</p>
         pub fn entries(
             mut self,
-            inp: impl Into<crate::model::DisassociateClientDeviceFromCoreDeviceEntry>,
+            input: crate::model::DisassociateClientDeviceFromCoreDeviceEntry,
         ) -> Self {
-            self.inner = self.inner.entries(inp);
+            self.inner = self.inner.entries(input);
             self
         }
         /// <p>The list of client devices to disassociate.</p>
@@ -458,8 +458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-        pub fn core_device_thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_device_thing_name(inp);
+        pub fn core_device_thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_device_thing_name(signature.into());
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -533,8 +533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the deployment.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(signature.into());
             self
         }
         /// <p>The ID of the deployment.</p>
@@ -664,8 +664,8 @@ pub mod fluent_builders {
         /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
         /// parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
         /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
-        pub fn inline_recipe(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.inline_recipe(inp);
+        pub fn inline_recipe(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.inline_recipe(signature);
             self
         }
         /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
@@ -680,8 +680,11 @@ pub mod fluent_builders {
         }
         /// <p>The parameters to create a component from a Lambda function.</p>
         /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
-        pub fn lambda_function(mut self, inp: crate::model::LambdaFunctionRecipeSource) -> Self {
-            self.inner = self.inner.lambda_function(inp);
+        pub fn lambda_function(
+            mut self,
+            signature: crate::model::LambdaFunctionRecipeSource,
+        ) -> Self {
+            self.inner = self.inner.lambda_function(signature);
             self
         }
         /// <p>The parameters to create a component from a Lambda function.</p>
@@ -705,7 +708,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the resource. For more
@@ -725,8 +728,8 @@ pub mod fluent_builders {
         /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
         /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
         /// idempotent requests for up to 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
@@ -809,8 +812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_arn(inp);
+        pub fn target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
@@ -819,8 +822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the deployment.</p>
-        pub fn deployment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_name(inp);
+        pub fn deployment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_name(signature.into());
             self
         }
         /// <p>The name of the deployment.</p>
@@ -840,9 +843,9 @@ pub mod fluent_builders {
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentDeploymentSpecification>,
+            v: crate::model::ComponentDeploymentSpecification,
         ) -> Self {
-            self.inner = self.inner.components(k, v);
+            self.inner = self.inner.components(k.into(), v);
             self
         }
         /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
@@ -863,9 +866,9 @@ pub mod fluent_builders {
         /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
         pub fn iot_job_configuration(
             mut self,
-            inp: crate::model::DeploymentIoTJobConfiguration,
+            signature: crate::model::DeploymentIoTJobConfiguration,
         ) -> Self {
-            self.inner = self.inner.iot_job_configuration(inp);
+            self.inner = self.inner.iot_job_configuration(signature);
             self
         }
         /// <p>The job configuration for the deployment configuration. The job configuration specifies
@@ -879,8 +882,8 @@ pub mod fluent_builders {
         }
         /// <p>The deployment policies for the deployment. These policies define how the deployment
         /// updates components and handles failure.</p>
-        pub fn deployment_policies(mut self, inp: crate::model::DeploymentPolicies) -> Self {
-            self.inner = self.inner.deployment_policies(inp);
+        pub fn deployment_policies(mut self, signature: crate::model::DeploymentPolicies) -> Self {
+            self.inner = self.inner.deployment_policies(signature);
             self
         }
         /// <p>The deployment policies for the deployment. These policies define how the deployment
@@ -904,7 +907,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the resource. For more
@@ -924,8 +927,8 @@ pub mod fluent_builders {
         /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
         /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
         /// idempotent requests for up to 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
@@ -1004,8 +1007,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
@@ -1077,8 +1080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-        pub fn core_device_thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_device_thing_name(inp);
+        pub fn core_device_thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_device_thing_name(signature.into());
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -1150,8 +1153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
@@ -1221,8 +1224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The format of the recipe.</p>
-        pub fn recipe_output_format(mut self, inp: crate::model::RecipeOutputFormat) -> Self {
-            self.inner = self.inner.recipe_output_format(inp);
+        pub fn recipe_output_format(mut self, signature: crate::model::RecipeOutputFormat) -> Self {
+            self.inner = self.inner.recipe_output_format(signature);
             self
         }
         /// <p>The format of the recipe.</p>
@@ -1234,8 +1237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
@@ -1305,8 +1308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
@@ -1320,8 +1323,8 @@ pub mod fluent_builders {
         /// the section of the URI after the scheme. For example, in the artifact URI
         /// <code>greengrass:SomeArtifact.zip</code>, the artifact name is
         /// <code>SomeArtifact.zip</code>.</p>
-        pub fn artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_name(inp);
+        pub fn artifact_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_name(signature.into());
             self
         }
         /// <p>The name of the artifact.</p>
@@ -1398,8 +1401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-        pub fn core_device_thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_device_thing_name(inp);
+        pub fn core_device_thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_device_thing_name(signature.into());
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -1471,8 +1474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the deployment.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(signature.into());
             self
         }
         /// <p>The ID of the deployment.</p>
@@ -1547,8 +1550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-        pub fn core_device_thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_device_thing_name(inp);
+        pub fn core_device_thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_device_thing_name(signature.into());
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -1560,8 +1563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -1570,8 +1573,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -1643,8 +1646,8 @@ pub mod fluent_builders {
         /// <p>The scope of the components to list.</p>
         /// <p>Default: <code>PRIVATE</code>
         /// </p>
-        pub fn scope(mut self, inp: crate::model::ComponentVisibilityScope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::ComponentVisibilityScope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>The scope of the components to list.</p>
@@ -1658,8 +1661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -1668,8 +1671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -1738,8 +1741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
@@ -1748,8 +1751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -1758,8 +1761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -1829,8 +1832,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
         /// list includes only core devices that are members of this thing group.</p>
-        pub fn thing_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_group_arn(inp);
+        pub fn thing_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_group_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
@@ -1855,8 +1858,8 @@ pub mod fluent_builders {
         /// on the core device.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::CoreDeviceStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::CoreDeviceStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The core device status by which to filter. If you specify this parameter, the list
@@ -1880,8 +1883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -1890,8 +1893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -1960,8 +1963,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_arn(inp);
+        pub fn target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
@@ -1983,8 +1986,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Default: <code>LATEST_ONLY</code>
         /// </p>
-        pub fn history_filter(mut self, inp: crate::model::DeploymentHistoryFilter) -> Self {
-            self.inner = self.inner.history_filter(inp);
+        pub fn history_filter(mut self, signature: crate::model::DeploymentHistoryFilter) -> Self {
+            self.inner = self.inner.history_filter(signature);
             self
         }
         /// <p>The filter for the list of deployments. Choose one of the following options:</p>
@@ -2009,8 +2012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -2019,8 +2022,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -2090,8 +2093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-        pub fn core_device_thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_device_thing_name(inp);
+        pub fn core_device_thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_device_thing_name(signature.into());
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -2103,8 +2106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -2113,8 +2116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -2183,8 +2186,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-        pub fn core_device_thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_device_thing_name(inp);
+        pub fn core_device_thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_device_thing_name(signature.into());
             self
         }
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -2196,8 +2199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -2206,8 +2209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -2276,8 +2279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
@@ -2360,8 +2363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The platform to use to resolve compatible components.</p>
-        pub fn platform(mut self, inp: crate::model::ComponentPlatform) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, signature: crate::model::ComponentPlatform) -> Self {
+            self.inner = self.inner.platform(signature);
             self
         }
         /// <p>The platform to use to resolve compatible components.</p>
@@ -2377,11 +2380,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_component_candidates`](Self::set_component_candidates).
         ///
         /// <p>The list of components to resolve.</p>
-        pub fn component_candidates(
-            mut self,
-            inp: impl Into<crate::model::ComponentCandidate>,
-        ) -> Self {
-            self.inner = self.inner.component_candidates(inp);
+        pub fn component_candidates(mut self, input: crate::model::ComponentCandidate) -> Self {
+            self.inner = self.inner.component_candidates(input);
             self
         }
         /// <p>The list of components to resolve.</p>
@@ -2454,8 +2454,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
@@ -2475,7 +2475,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of key-value pairs that contain metadata for the resource. For more
@@ -2551,8 +2551,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
@@ -2565,8 +2565,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of keys for tags to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of keys for tags to remove from the resource.</p>

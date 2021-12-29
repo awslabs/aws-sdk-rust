@@ -815,9 +815,9 @@ pub mod load_balancer_description {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>A list of Listeners used by the LoadBalancer.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -4472,10 +4472,10 @@ pub mod platform_description {
         /// <p>The programming languages supported by the platform version.</p>
         pub fn programming_languages(
             mut self,
-            input: impl Into<crate::model::PlatformProgrammingLanguage>,
+            input: crate::model::PlatformProgrammingLanguage,
         ) -> Self {
             let mut v = self.programming_languages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.programming_languages = Some(v);
             self
         }
@@ -4492,9 +4492,9 @@ pub mod platform_description {
         /// To override the contents of this collection use [`set_frameworks`](Self::set_frameworks).
         ///
         /// <p>The frameworks supported by the platform version.</p>
-        pub fn frameworks(mut self, input: impl Into<crate::model::PlatformFramework>) -> Self {
+        pub fn frameworks(mut self, input: crate::model::PlatformFramework) -> Self {
             let mut v = self.frameworks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.frameworks = Some(v);
             self
         }
@@ -4511,9 +4511,9 @@ pub mod platform_description {
         /// To override the contents of this collection use [`set_custom_ami_list`](Self::set_custom_ami_list).
         ///
         /// <p>The custom AMIs supported by the platform version.</p>
-        pub fn custom_ami_list(mut self, input: impl Into<crate::model::CustomAmi>) -> Self {
+        pub fn custom_ami_list(mut self, input: crate::model::CustomAmi) -> Self {
             let mut v = self.custom_ami_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_ami_list = Some(v);
             self
         }
@@ -5392,9 +5392,9 @@ pub mod system_status {
         /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods.
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
-        pub fn load_average(mut self, input: impl Into<f64>) -> Self {
+        pub fn load_average(mut self, input: f64) -> Self {
             let mut v = self.load_average.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_average = Some(v);
             self
         }
@@ -7203,12 +7203,9 @@ pub mod environment_description {
         /// To override the contents of this collection use [`set_environment_links`](Self::set_environment_links).
         ///
         /// <p>A list of links to other environments in the same group.</p>
-        pub fn environment_links(
-            mut self,
-            input: impl Into<crate::model::EnvironmentLink>,
-        ) -> Self {
+        pub fn environment_links(mut self, input: crate::model::EnvironmentLink) -> Self {
             let mut v = self.environment_links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_links = Some(v);
             self
         }
@@ -7392,12 +7389,9 @@ pub mod environment_resource_description {
         /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
         ///
         /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
-        pub fn auto_scaling_groups(
-            mut self,
-            input: impl Into<crate::model::AutoScalingGroup>,
-        ) -> Self {
+        pub fn auto_scaling_groups(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.auto_scaling_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_scaling_groups = Some(v);
             self
         }
@@ -7414,9 +7408,9 @@ pub mod environment_resource_description {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The Amazon EC2 instances used by this environment.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -7433,12 +7427,9 @@ pub mod environment_resource_description {
         /// To override the contents of this collection use [`set_launch_configurations`](Self::set_launch_configurations).
         ///
         /// <p>The Auto Scaling launch configurations in use by this environment.</p>
-        pub fn launch_configurations(
-            mut self,
-            input: impl Into<crate::model::LaunchConfiguration>,
-        ) -> Self {
+        pub fn launch_configurations(mut self, input: crate::model::LaunchConfiguration) -> Self {
             let mut v = self.launch_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_configurations = Some(v);
             self
         }
@@ -7455,9 +7446,9 @@ pub mod environment_resource_description {
         /// To override the contents of this collection use [`set_launch_templates`](Self::set_launch_templates).
         ///
         /// <p>The Amazon EC2 launch templates in use by this environment.</p>
-        pub fn launch_templates(mut self, input: impl Into<crate::model::LaunchTemplate>) -> Self {
+        pub fn launch_templates(mut self, input: crate::model::LaunchTemplate) -> Self {
             let mut v = self.launch_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_templates = Some(v);
             self
         }
@@ -7474,9 +7465,9 @@ pub mod environment_resource_description {
         /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
         ///
         /// <p>The LoadBalancers in use by this environment.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -7493,9 +7484,9 @@ pub mod environment_resource_description {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
-        pub fn triggers(mut self, input: impl Into<crate::model::Trigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::Trigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -7512,9 +7503,9 @@ pub mod environment_resource_description {
         /// To override the contents of this collection use [`set_queues`](Self::set_queues).
         ///
         /// <p>The queues used by this environment.</p>
-        pub fn queues(mut self, input: impl Into<crate::model::Queue>) -> Self {
+        pub fn queues(mut self, input: crate::model::Queue) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queues = Some(v);
             self
         }
@@ -9225,12 +9216,9 @@ pub mod configuration_settings_description {
         ///
         /// <p>A list of the configuration options and their values in this configuration
         /// set.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }

@@ -215,13 +215,9 @@ pub mod intent {
         /// <p>A map of all of the slots for the intent. The name of the slot maps
         /// to the value of the slot. If a slot has not been filled, the value is
         /// null.</p>
-        pub fn slots(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Slot>,
-        ) -> Self {
+        pub fn slots(mut self, k: impl Into<std::string::String>, v: crate::model::Slot) -> Self {
             let mut hash_map = self.slots.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.slots = Some(hash_map);
             self
         }
@@ -505,9 +501,9 @@ pub mod slot {
         /// <p>A list of one or more values that the user provided for the slot.
         /// For example, if a for a slot that elicits pizza toppings, the values
         /// might be "pepperoni" and "pineapple." </p>
-        pub fn values(mut self, input: impl Into<crate::model::Slot>) -> Self {
+        pub fn values(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -1175,9 +1171,9 @@ pub mod session_state {
         /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a
         /// request. When a context is active, Amazon Lex V2 considers intents with the
         /// matching context as a trigger as the next intent in a session.</p>
-        pub fn active_contexts(mut self, input: impl Into<crate::model::ActiveContext>) -> Self {
+        pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_contexts = Some(v);
             self
         }
@@ -2102,9 +2098,9 @@ pub mod image_response_card {
         /// <p>A list of buttons that should be displayed on the response card. The
         /// arrangement of the buttons is determined by the platform that displays
         /// the button.</p>
-        pub fn buttons(mut self, input: impl Into<crate::model::Button>) -> Self {
+        pub fn buttons(mut self, input: crate::model::Button) -> Self {
             let mut v = self.buttons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buttons = Some(v);
             self
         }

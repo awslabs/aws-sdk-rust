@@ -454,8 +454,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -464,8 +464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
-        pub fn resource(mut self, inp: crate::model::Resource) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: crate::model::Resource) -> Self {
+            self.inner = self.inner.resource(signature);
             self
         }
         /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
@@ -478,8 +478,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>The LF-tags to attach to the resource.</p>
-        pub fn lf_tags(mut self, inp: impl Into<crate::model::LfTagPair>) -> Self {
-            self.inner = self.inner.lf_tags(inp);
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
+            self.inner = self.inner.lf_tags(input);
             self
         }
         /// <p>The LF-tags to attach to the resource.</p>
@@ -551,8 +551,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -565,11 +565,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-        pub fn entries(
-            mut self,
-            inp: impl Into<crate::model::BatchPermissionsRequestEntry>,
-        ) -> Self {
-            self.inner = self.inner.entries(inp);
+        pub fn entries(mut self, input: crate::model::BatchPermissionsRequestEntry) -> Self {
+            self.inner = self.inner.entries(input);
             self
         }
         /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
@@ -641,8 +638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -655,11 +652,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
-        pub fn entries(
-            mut self,
-            inp: impl Into<crate::model::BatchPermissionsRequestEntry>,
-        ) -> Self {
-            self.inner = self.inner.entries(inp);
+        pub fn entries(mut self, input: crate::model::BatchPermissionsRequestEntry) -> Self {
+            self.inner = self.inner.entries(input);
             self
         }
         /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
@@ -731,8 +725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The transaction to cancel.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(signature.into());
             self
         }
         /// <p>The transaction to cancel.</p>
@@ -804,8 +798,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The transaction to commit.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(signature.into());
             self
         }
         /// <p>The transaction to commit.</p>
@@ -877,8 +871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
-        pub fn table_data(mut self, inp: crate::model::DataCellsFilter) -> Self {
-            self.inner = self.inner.table_data(inp);
+        pub fn table_data(mut self, signature: crate::model::DataCellsFilter) -> Self {
+            self.inner = self.inner.table_data(signature);
             self
         }
         /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
@@ -950,8 +944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -960,8 +954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key-name for the LF-tag.</p>
-        pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key(inp);
+        pub fn tag_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key(signature.into());
             self
         }
         /// <p>The key-name for the LF-tag.</p>
@@ -974,8 +968,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
         ///
         /// <p>A list of possible values an attribute can take.</p>
-        pub fn tag_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_values(inp);
+        pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_values(input.into());
             self
         }
         /// <p>A list of possible values an attribute can take.</p>
@@ -1047,8 +1041,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the catalog to which the table belongs.</p>
-        pub fn table_catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_catalog_id(inp);
+        pub fn table_catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_catalog_id(signature.into());
             self
         }
         /// <p>The ID of the catalog to which the table belongs.</p>
@@ -1060,8 +1054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A database in the Glue Data Catalog.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>A database in the Glue Data Catalog.</p>
@@ -1073,8 +1067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A table in the database.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(signature.into());
             self
         }
         /// <p>A table in the database.</p>
@@ -1083,8 +1077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name given by the user to the data filter cell.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name given by the user to the data filter cell.</p>
@@ -1153,8 +1147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -1163,8 +1157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key-name for the LF-tag to delete.</p>
-        pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key(inp);
+        pub fn tag_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key(signature.into());
             self
         }
         /// <p>The key-name for the LF-tag to delete.</p>
@@ -1240,8 +1234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
@@ -1250,8 +1244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database that contains the governed table.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>The database that contains the governed table.</p>
@@ -1263,8 +1257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the governed table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(signature.into());
             self
         }
         /// <p>The name of the governed table.</p>
@@ -1273,8 +1267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ID of the transaction that the writes occur in.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(signature.into());
             self
         }
         /// <p>ID of the transaction that the writes occur in.</p>
@@ -1290,8 +1284,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-        pub fn objects(mut self, inp: impl Into<crate::model::VirtualObject>) -> Self {
-            self.inner = self.inner.objects(inp);
+        pub fn objects(mut self, input: crate::model::VirtualObject) -> Self {
+            self.inner = self.inner.objects(input);
             self
         }
         /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
@@ -1365,8 +1359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
@@ -1435,8 +1429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -1505,8 +1499,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The transaction for which to return status.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(signature.into());
             self
         }
         /// <p>The transaction for which to return status.</p>
@@ -1580,8 +1574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The transaction to extend.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(signature.into());
             self
         }
         /// <p>The transaction to extend.</p>
@@ -1653,8 +1647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -1724,8 +1718,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -1734,8 +1728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
@@ -1744,8 +1738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -1754,8 +1748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1824,8 +1818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -1834,8 +1828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key-name for the LF-tag.</p>
-        pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key(inp);
+        pub fn tag_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key(signature.into());
             self
         }
         /// <p>The key-name for the LF-tag.</p>
@@ -1904,8 +1898,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the plan query operation.</p>
-        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_id(inp);
+        pub fn query_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(signature.into());
             self
         }
         /// <p>The ID of the plan query operation.</p>
@@ -1974,8 +1968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the plan query operation.</p>
-        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_id(inp);
+        pub fn query_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(signature.into());
             self
         }
         /// <p>The ID of the plan query operation.</p>
@@ -2044,8 +2038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -2054,8 +2048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
-        pub fn resource(mut self, inp: crate::model::Resource) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: crate::model::Resource) -> Self {
+            self.inner = self.inner.resource(signature);
             self
         }
         /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
@@ -2064,8 +2058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to show the assigned LF-tags.</p>
-        pub fn show_assigned_lf_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.show_assigned_lf_tags(inp);
+        pub fn show_assigned_lf_tags(mut self, signature: bool) -> Self {
+            self.inner = self.inner.show_assigned_lf_tags(signature);
             self
         }
         /// <p>Indicates whether to show the assigned LF-tags.</p>
@@ -2134,8 +2128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
@@ -2144,8 +2138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database containing the governed table.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>The database containing the governed table.</p>
@@ -2157,8 +2151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The governed table for which to retrieve objects.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(signature.into());
             self
         }
         /// <p>The governed table for which to retrieve objects.</p>
@@ -2167,8 +2161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(signature.into());
             self
         }
         /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
@@ -2180,8 +2174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
-        pub fn query_as_of_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.query_as_of_time(inp);
+        pub fn query_as_of_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_as_of_time(signature);
             self
         }
         /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
@@ -2204,8 +2198,8 @@ pub mod fluent_builders {
         /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
         /// </li>
         /// </ul>
-        pub fn partition_predicate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_predicate(inp);
+        pub fn partition_predicate(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_predicate(signature.into());
             self
         }
         /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
@@ -2228,8 +2222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies how many values to return in a page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Specifies how many values to return in a page.</p>
@@ -2238,8 +2232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
@@ -2308,8 +2302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the plan query operation for which to get results.</p>
-        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_id(inp);
+        pub fn query_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(signature.into());
             self
         }
         /// <p>The ID of the plan query operation for which to get results.</p>
@@ -2318,8 +2312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
-        pub fn work_unit_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.work_unit_id(inp);
+        pub fn work_unit_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.work_unit_id(signature);
             self
         }
         /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
@@ -2328,8 +2322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
-        pub fn work_unit_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_unit_token(inp);
+        pub fn work_unit_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_unit_token(signature.into());
             self
         }
         /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
@@ -2401,8 +2395,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -2411,8 +2405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
@@ -2421,8 +2415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the plan query operation.</p>
-        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_id(inp);
+        pub fn query_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(signature.into());
             self
         }
         /// <p>The ID of the plan query operation.</p>
@@ -2492,8 +2486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -2503,8 +2497,8 @@ pub mod fluent_builders {
         }
         /// <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>
         /// <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
-        pub fn principal(mut self, inp: crate::model::DataLakePrincipal) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: crate::model::DataLakePrincipal) -> Self {
+            self.inner = self.inner.principal(signature);
             self
         }
         /// <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>
@@ -2517,8 +2511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
-        pub fn resource(mut self, inp: crate::model::Resource) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: crate::model::Resource) -> Self {
+            self.inner = self.inner.resource(signature);
             self
         }
         /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
@@ -2531,8 +2525,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
-        pub fn permissions(mut self, inp: impl Into<crate::model::Permission>) -> Self {
-            self.inner = self.inner.permissions(inp);
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
+            self.inner = self.inner.permissions(input);
             self
         }
         /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
@@ -2548,11 +2542,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
         ///
         /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
-        pub fn permissions_with_grant_option(
-            mut self,
-            inp: impl Into<crate::model::Permission>,
-        ) -> Self {
-            self.inner = self.inner.permissions_with_grant_option(inp);
+        pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
+            self.inner = self.inner.permissions_with_grant_option(input);
             self
         }
         /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
@@ -2624,8 +2615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A table in the Glue Data Catalog.</p>
-        pub fn table(mut self, inp: crate::model::TableResource) -> Self {
-            self.inner = self.inner.table(inp);
+        pub fn table(mut self, signature: crate::model::TableResource) -> Self {
+            self.inner = self.inner.table(signature);
             self
         }
         /// <p>A table in the Glue Data Catalog.</p>
@@ -2637,8 +2628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -2647,8 +2638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -2717,8 +2708,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -2727,8 +2718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
-        pub fn resource_share_type(mut self, inp: crate::model::ResourceShareType) -> Self {
-            self.inner = self.inner.resource_share_type(inp);
+        pub fn resource_share_type(mut self, signature: crate::model::ResourceShareType) -> Self {
+            self.inner = self.inner.resource_share_type(signature);
             self
         }
         /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
@@ -2740,8 +2731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2750,8 +2741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -2822,8 +2813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -2832,8 +2823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a principal to filter the permissions returned.</p>
-        pub fn principal(mut self, inp: crate::model::DataLakePrincipal) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: crate::model::DataLakePrincipal) -> Self {
+            self.inner = self.inner.principal(signature);
             self
         }
         /// <p>Specifies a principal to filter the permissions returned.</p>
@@ -2845,8 +2836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a resource type to filter the permissions returned.</p>
-        pub fn resource_type(mut self, inp: crate::model::DataLakeResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: crate::model::DataLakeResourceType) -> Self {
+            self.inner = self.inner.resource_type(signature);
             self
         }
         /// <p>Specifies a resource type to filter the permissions returned.</p>
@@ -2859,8 +2850,8 @@ pub mod fluent_builders {
         }
         /// <p>A resource where you will get a list of the principal permissions.</p>
         /// <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>
-        pub fn resource(mut self, inp: crate::model::Resource) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: crate::model::Resource) -> Self {
+            self.inner = self.inner.resource(signature);
             self
         }
         /// <p>A resource where you will get a list of the principal permissions.</p>
@@ -2870,8 +2861,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -2880,8 +2871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2890,8 +2881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates that related permissions should be included in the results.</p>
-        pub fn include_related(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include_related(inp);
+        pub fn include_related(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include_related(signature.into());
             self
         }
         /// <p>Indicates that related permissions should be included in the results.</p>
@@ -2967,11 +2958,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filter_condition_list`](Self::set_filter_condition_list).
         ///
         /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-        pub fn filter_condition_list(
-            mut self,
-            inp: impl Into<crate::model::FilterCondition>,
-        ) -> Self {
-            self.inner = self.inner.filter_condition_list(inp);
+        pub fn filter_condition_list(mut self, input: crate::model::FilterCondition) -> Self {
+            self.inner = self.inner.filter_condition_list(input);
             self
         }
         /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
@@ -2983,8 +2971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resource results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of resource results.</p>
@@ -2993,8 +2981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
@@ -3063,8 +3051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Catalog ID of the table.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The Catalog ID of the table.</p>
@@ -3073,8 +3061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the database where the table is present.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>Name of the database where the table is present.</p>
@@ -3086,8 +3074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(signature.into());
             self
         }
         /// <p>Name of the table.</p>
@@ -3096,8 +3084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
-        pub fn storage_optimizer_type(mut self, inp: crate::model::OptimizerType) -> Self {
-            self.inner = self.inner.storage_optimizer_type(inp);
+        pub fn storage_optimizer_type(mut self, signature: crate::model::OptimizerType) -> Self {
+            self.inner = self.inner.storage_optimizer_type(signature);
             self
         }
         /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
@@ -3109,8 +3097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of storage optimizers to return on each call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of storage optimizers to return on each call.</p>
@@ -3119,8 +3107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -3190,8 +3178,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
@@ -3200,8 +3188,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
-        pub fn status_filter(mut self, inp: crate::model::TransactionStatusFilter) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        pub fn status_filter(mut self, signature: crate::model::TransactionStatusFilter) -> Self {
+            self.inner = self.inner.status_filter(signature);
             self
         }
         /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
@@ -3213,8 +3201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of transactions to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of transactions to return in a single call.</p>
@@ -3223,8 +3211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
@@ -3295,8 +3283,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -3305,8 +3293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
-        pub fn data_lake_settings(mut self, inp: crate::model::DataLakeSettings) -> Self {
-            self.inner = self.inner.data_lake_settings(inp);
+        pub fn data_lake_settings(mut self, signature: crate::model::DataLakeSettings) -> Self {
+            self.inner = self.inner.data_lake_settings(signature);
             self
         }
         /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
@@ -3393,8 +3381,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
@@ -3405,8 +3393,8 @@ pub mod fluent_builders {
         /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
         ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
-        pub fn use_service_linked_role(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_service_linked_role(inp);
+        pub fn use_service_linked_role(mut self, signature: bool) -> Self {
+            self.inner = self.inner.use_service_linked_role(signature);
             self
         }
         /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
@@ -3417,8 +3405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the role that registers the resource.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The identifier for the role that registers the resource.</p>
@@ -3487,8 +3475,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -3497,8 +3485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
-        pub fn resource(mut self, inp: crate::model::Resource) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: crate::model::Resource) -> Self {
+            self.inner = self.inner.resource(signature);
             self
         }
         /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
@@ -3511,8 +3499,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>The LF-tags to be removed from the resource.</p>
-        pub fn lf_tags(mut self, inp: impl Into<crate::model::LfTagPair>) -> Self {
-            self.inner = self.inner.lf_tags(inp);
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
+            self.inner = self.inner.lf_tags(input);
             self
         }
         /// <p>The LF-tags to be removed from the resource.</p>
@@ -3584,8 +3572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -3594,8 +3582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal to be revoked permissions on the resource.</p>
-        pub fn principal(mut self, inp: crate::model::DataLakePrincipal) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: crate::model::DataLakePrincipal) -> Self {
+            self.inner = self.inner.principal(signature);
             self
         }
         /// <p>The principal to be revoked permissions on the resource.</p>
@@ -3607,8 +3595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource to which permissions are to be revoked.</p>
-        pub fn resource(mut self, inp: crate::model::Resource) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: crate::model::Resource) -> Self {
+            self.inner = self.inner.resource(signature);
             self
         }
         /// <p>The resource to which permissions are to be revoked.</p>
@@ -3622,8 +3610,8 @@ pub mod fluent_builders {
         ///
         /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
         /// and Access Control to Metadata and Data</a>.</p>
-        pub fn permissions(mut self, inp: impl Into<crate::model::Permission>) -> Self {
-            self.inner = self.inner.permissions(inp);
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
+            self.inner = self.inner.permissions(input);
             self
         }
         /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
@@ -3640,11 +3628,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
         ///
         /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-        pub fn permissions_with_grant_option(
-            mut self,
-            inp: impl Into<crate::model::Permission>,
-        ) -> Self {
-            self.inner = self.inner.permissions_with_grant_option(inp);
+        pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
+            self.inner = self.inner.permissions_with_grant_option(input);
             self
         }
         /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
@@ -3716,8 +3701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -3726,8 +3711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3736,8 +3721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -3750,8 +3735,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_expression`](Self::set_expression).
         ///
         /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
-        pub fn expression(mut self, inp: impl Into<crate::model::LfTag>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
+            self.inner = self.inner.expression(input);
             self
         }
         /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
@@ -3823,8 +3808,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -3833,8 +3818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3843,8 +3828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -3857,8 +3842,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_expression`](Self::set_expression).
         ///
         /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
-        pub fn expression(mut self, inp: impl Into<crate::model::LfTag>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
+            self.inner = self.inner.expression(input);
             self
         }
         /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
@@ -3932,8 +3917,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A structure containing information about the query plan.</p>
-        pub fn query_planning_context(mut self, inp: crate::model::QueryPlanningContext) -> Self {
-            self.inner = self.inner.query_planning_context(inp);
+        pub fn query_planning_context(
+            mut self,
+            signature: crate::model::QueryPlanningContext,
+        ) -> Self {
+            self.inner = self.inner.query_planning_context(signature);
             self
         }
         /// <p>A structure containing information about the query plan.</p>
@@ -3945,8 +3933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A PartiQL query statement used as an input to the planner service.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(signature.into());
             self
         }
         /// <p>A PartiQL query statement used as an input to the planner service.</p>
@@ -4015,8 +4003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
-        pub fn transaction_type(mut self, inp: crate::model::TransactionType) -> Self {
-            self.inner = self.inner.transaction_type(inp);
+        pub fn transaction_type(mut self, signature: crate::model::TransactionType) -> Self {
+            self.inner = self.inner.transaction_type(signature);
             self
         }
         /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
@@ -4088,8 +4076,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -4098,8 +4086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key-name for the LF-tag for which to add or delete values.</p>
-        pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key(inp);
+        pub fn tag_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key(signature.into());
             self
         }
         /// <p>The key-name for the LF-tag for which to add or delete values.</p>
@@ -4112,8 +4100,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_values_to_delete`](Self::set_tag_values_to_delete).
         ///
         /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-        pub fn tag_values_to_delete(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_values_to_delete(inp);
+        pub fn tag_values_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_values_to_delete(input.into());
             self
         }
         /// <p>A list of LF-tag values to delete from the LF-tag.</p>
@@ -4129,8 +4117,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_values_to_add`](Self::set_tag_values_to_add).
         ///
         /// <p>A list of LF-tag values to add from the LF-tag.</p>
-        pub fn tag_values_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_values_to_add(inp);
+        pub fn tag_values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_values_to_add(input.into());
             self
         }
         /// <p>A list of LF-tag values to add from the LF-tag.</p>
@@ -4202,8 +4190,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The new role to use for the given resource registered in Lake Formation.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The new role to use for the given resource registered in Lake Formation.</p>
@@ -4212,8 +4200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -4282,8 +4270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
@@ -4292,8 +4280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database containing the governed table to update.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>The database containing the governed table to update.</p>
@@ -4305,8 +4293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The governed table to update.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(signature.into());
             self
         }
         /// <p>The governed table to update.</p>
@@ -4315,8 +4303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction at which to do the write.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(signature.into());
             self
         }
         /// <p>The transaction at which to do the write.</p>
@@ -4332,8 +4320,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_write_operations`](Self::set_write_operations).
         ///
         /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-        pub fn write_operations(mut self, inp: impl Into<crate::model::WriteOperation>) -> Self {
-            self.inner = self.inner.write_operations(inp);
+        pub fn write_operations(mut self, input: crate::model::WriteOperation) -> Self {
+            self.inner = self.inner.write_operations(input);
             self
         }
         /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
@@ -4405,8 +4393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Catalog ID of the table.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(signature.into());
             self
         }
         /// <p>The Catalog ID of the table.</p>
@@ -4415,8 +4403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the database where the table is present.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>Name of the database where the table is present.</p>
@@ -4428,8 +4416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the table for which to enable the storage optimizer.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(signature.into());
             self
         }
         /// <p>Name of the table for which to enable the storage optimizer.</p>
@@ -4444,8 +4432,8 @@ pub mod fluent_builders {
         /// <p>Name of the table for which to enable the storage optimizer.</p>
         pub fn storage_optimizer_config(
             mut self,
-            k: impl Into<crate::model::OptimizerType>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            k: crate::model::OptimizerType,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             self.inner = self.inner.storage_optimizer_config(k, v);
             self

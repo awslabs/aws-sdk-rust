@@ -34,9 +34,9 @@ pub mod add_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1089,9 +1089,9 @@ pub mod create_load_balancer_input {
         /// <p>The listeners.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
         /// in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -1195,9 +1195,9 @@ pub mod create_load_balancer_input {
         /// <p>A list of tags to assign to the load balancer.</p>
         /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
         /// in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1375,9 +1375,9 @@ pub mod create_load_balancer_listeners_input {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>The listeners.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -1578,12 +1578,9 @@ pub mod create_load_balancer_policy_input {
         /// To override the contents of this collection use [`set_policy_attributes`](Self::set_policy_attributes).
         ///
         /// <p>The policy attributes.</p>
-        pub fn policy_attributes(
-            mut self,
-            input: impl Into<crate::model::PolicyAttribute>,
-        ) -> Self {
+        pub fn policy_attributes(mut self, input: crate::model::PolicyAttribute) -> Self {
             let mut v = self.policy_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_attributes = Some(v);
             self
         }
@@ -1911,9 +1908,9 @@ pub mod delete_load_balancer_listeners_input {
         /// To override the contents of this collection use [`set_load_balancer_ports`](Self::set_load_balancer_ports).
         ///
         /// <p>The client port numbers of the listeners.</p>
-        pub fn load_balancer_ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn load_balancer_ports(mut self, input: i32) -> Self {
             let mut v = self.load_balancer_ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancer_ports = Some(v);
             self
         }
@@ -2253,9 +2250,9 @@ pub mod deregister_instances_from_load_balancer_input {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -2592,9 +2589,9 @@ pub mod describe_instance_health_input {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -4302,9 +4299,9 @@ pub mod register_instances_with_load_balancer_input {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -4484,9 +4481,9 @@ pub mod remove_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tag keys to remove.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagKeyOnly>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagKeyOnly) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -305,9 +305,9 @@ pub mod create_configuration_profile_input {
         /// To override the contents of this collection use [`set_validators`](Self::set_validators).
         ///
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn validators(mut self, input: impl Into<crate::model::Validator>) -> Self {
+        pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validators = Some(v);
             self
         }
@@ -903,9 +903,9 @@ pub mod create_environment_input {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }
@@ -6259,9 +6259,9 @@ pub mod update_configuration_profile_input {
         /// To override the contents of this collection use [`set_validators`](Self::set_validators).
         ///
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn validators(mut self, input: impl Into<crate::model::Validator>) -> Self {
+        pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validators = Some(v);
             self
         }
@@ -6812,9 +6812,9 @@ pub mod update_environment_input {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }

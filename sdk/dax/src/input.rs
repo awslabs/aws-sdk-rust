@@ -343,9 +343,9 @@ pub mod create_cluster_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of tags to associate with the DAX cluster.  </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3393,9 +3393,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the DAX resource. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4012,12 +4012,9 @@ pub mod update_parameter_group_input {
         /// <p>
         /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
         /// </note>
-        pub fn parameter_name_values(
-            mut self,
-            input: impl Into<crate::model::ParameterNameValue>,
-        ) -> Self {
+        pub fn parameter_name_values(mut self, input: crate::model::ParameterNameValue) -> Self {
             let mut v = self.parameter_name_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_name_values = Some(v);
             self
         }

@@ -594,9 +594,9 @@ pub mod create_rate_based_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1141,9 +1141,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1343,9 +1343,9 @@ pub mod create_rule_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1903,9 +1903,9 @@ pub mod create_web_acl_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10872,9 +10872,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11255,9 +11255,9 @@ pub mod update_byte_match_set_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, input: impl Into<crate::model::ByteMatchSetUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::ByteMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -11480,9 +11480,9 @@ pub mod update_geo_match_set_input {
         /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p>      
         /// </li>
         /// </ul>
-        pub fn updates(mut self, input: impl Into<crate::model::GeoMatchSetUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::GeoMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -11697,9 +11697,9 @@ pub mod update_ip_set_input {
         /// </li>
         /// </ul>
         /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-        pub fn updates(mut self, input: impl Into<crate::model::IpSetUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::IpSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -11901,9 +11901,9 @@ pub mod update_rate_based_rule_input {
         ///
         /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete
         /// from a <a>RateBasedRule</a>. </p>
-        pub fn updates(mut self, input: impl Into<crate::model::RuleUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::RuleUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -12104,9 +12104,9 @@ pub mod update_regex_match_set_input {
         ///
         /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <a>RegexMatchSet</a>.
         /// For more information, see <a>RegexMatchTuple</a>.</p>
-        pub fn updates(mut self, input: impl Into<crate::model::RegexMatchSetUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::RegexMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -12299,9 +12299,9 @@ pub mod update_regex_pattern_set_input {
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
         /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <a>RegexPatternSet</a>.</p>
-        pub fn updates(mut self, input: impl Into<crate::model::RegexPatternSetUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::RegexPatternSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -12518,9 +12518,9 @@ pub mod update_rule_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, input: impl Into<crate::model::RuleUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::RuleUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -12721,9 +12721,9 @@ pub mod update_rule_group_input {
         /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
         /// <p>
         /// <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.  For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-        pub fn updates(mut self, input: impl Into<crate::model::RuleGroupUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::RuleGroupUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -12947,9 +12947,9 @@ pub mod update_size_constraint_set_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, input: impl Into<crate::model::SizeConstraintSetUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::SizeConstraintSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -13180,12 +13180,9 @@ pub mod update_sql_injection_match_set_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(
-            mut self,
-            input: impl Into<crate::model::SqlInjectionMatchSetUpdate>,
-        ) -> Self {
+        pub fn updates(mut self, input: crate::model::SqlInjectionMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -13418,9 +13415,9 @@ pub mod update_web_acl_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, input: impl Into<crate::model::WebAclUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::WebAclUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -13670,9 +13667,9 @@ pub mod update_xss_match_set_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn updates(mut self, input: impl Into<crate::model::XssMatchSetUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::XssMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }

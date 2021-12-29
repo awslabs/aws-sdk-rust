@@ -37,9 +37,9 @@ pub mod update_records_output {
         ///
         /// A list of records that have been
         /// updated.
-        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -429,9 +429,9 @@ pub mod list_records_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// A list of all records.
-        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -649,12 +649,9 @@ pub mod list_identity_pool_usage_output {
         ///
         /// Usage information for
         /// the identity pools.
-        pub fn identity_pool_usages(
-            mut self,
-            input: impl Into<crate::model::IdentityPoolUsage>,
-        ) -> Self {
+        pub fn identity_pool_usages(mut self, input: crate::model::IdentityPoolUsage) -> Self {
             let mut v = self.identity_pool_usages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identity_pool_usages = Some(v);
             self
         }
@@ -774,9 +771,9 @@ pub mod list_datasets_output {
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
         /// A set of datasets.
-        pub fn datasets(mut self, input: impl Into<crate::model::Dataset>) -> Self {
+        pub fn datasets(mut self, input: crate::model::Dataset) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }

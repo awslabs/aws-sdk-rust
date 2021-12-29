@@ -2770,9 +2770,9 @@ pub mod proposal_actions {
         /// <p>
         /// The actions to perform for an <code>APPROVED</code> proposal to invite an AWS account to create a member and join the network.
         /// </p>
-        pub fn invitations(mut self, input: impl Into<crate::model::InviteAction>) -> Self {
+        pub fn invitations(mut self, input: crate::model::InviteAction) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.invitations = Some(v);
             self
         }
@@ -2793,9 +2793,9 @@ pub mod proposal_actions {
         /// <p>
         /// The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.
         /// </p>
-        pub fn removals(mut self, input: impl Into<crate::model::RemoveAction>) -> Self {
+        pub fn removals(mut self, input: crate::model::RemoveAction) -> Self {
             let mut v = self.removals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.removals = Some(v);
             self
         }

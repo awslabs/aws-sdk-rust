@@ -249,9 +249,9 @@ pub mod settings {
         /// To override the contents of this collection use [`set_default_process_owners`](Self::set_default_process_owners).
         ///
         /// <p> The designated default audit owners. </p>
-        pub fn default_process_owners(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn default_process_owners(mut self, input: crate::model::Role) -> Self {
             let mut v = self.default_process_owners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_process_owners = Some(v);
             self
         }
@@ -856,10 +856,10 @@ pub mod control {
         /// <p> The data mapping sources for the control. </p>
         pub fn control_mapping_sources(
             mut self,
-            input: impl Into<crate::model::ControlMappingSource>,
+            input: crate::model::ControlMappingSource,
         ) -> Self {
             let mut v = self.control_mapping_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_mapping_sources = Some(v);
             self
         }
@@ -1820,12 +1820,9 @@ pub mod assessment_framework {
         /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
         ///
         /// <p> The control sets that are associated with the framework. </p>
-        pub fn control_sets(
-            mut self,
-            input: impl Into<crate::model::AssessmentControlSet>,
-        ) -> Self {
+        pub fn control_sets(mut self, input: crate::model::AssessmentControlSet) -> Self {
             let mut v = self.control_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_sets = Some(v);
             self
         }
@@ -1986,9 +1983,9 @@ pub mod assessment_control_set {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The roles that are associated with the control set. </p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -2005,9 +2002,9 @@ pub mod assessment_control_set {
         /// To override the contents of this collection use [`set_controls`](Self::set_controls).
         ///
         /// <p> The list of controls that's contained with the control set. </p>
-        pub fn controls(mut self, input: impl Into<crate::model::AssessmentControl>) -> Self {
+        pub fn controls(mut self, input: crate::model::AssessmentControl) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }
@@ -2024,9 +2021,9 @@ pub mod assessment_control_set {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The delegations that are associated with the control set. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::Delegation>) -> Self {
+        pub fn delegations(mut self, input: crate::model::Delegation) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -2594,9 +2591,9 @@ pub mod assessment_control {
         /// To override the contents of this collection use [`set_comments`](Self::set_comments).
         ///
         /// <p> The list of comments that's attached to the control. </p>
-        pub fn comments(mut self, input: impl Into<crate::model::ControlComment>) -> Self {
+        pub fn comments(mut self, input: crate::model::ControlComment) -> Self {
             let mut v = self.comments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comments = Some(v);
             self
         }
@@ -3281,9 +3278,9 @@ pub mod assessment_metadata {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The roles that are associated with the assessment. </p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -3300,9 +3297,9 @@ pub mod assessment_metadata {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The delegations that are associated with the assessment. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::Delegation>) -> Self {
+        pub fn delegations(mut self, input: crate::model::Delegation) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -3413,9 +3410,9 @@ pub mod scope {
         ///
         /// <p> The Amazon Web Services accounts that are included in the scope of the assessment.
         /// </p>
-        pub fn aws_accounts(mut self, input: impl Into<crate::model::AwsAccount>) -> Self {
+        pub fn aws_accounts(mut self, input: crate::model::AwsAccount) -> Self {
             let mut v = self.aws_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aws_accounts = Some(v);
             self
         }
@@ -3434,9 +3431,9 @@ pub mod scope {
         ///
         /// <p> The Amazon Web Services services that are included in the scope of the assessment.
         /// </p>
-        pub fn aws_services(mut self, input: impl Into<crate::model::AwsService>) -> Self {
+        pub fn aws_services(mut self, input: crate::model::AwsService) -> Self {
             let mut v = self.aws_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aws_services = Some(v);
             self
         }
@@ -4458,9 +4455,9 @@ pub mod framework {
         /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
         ///
         /// <p> The control sets that are associated with the framework. </p>
-        pub fn control_sets(mut self, input: impl Into<crate::model::ControlSet>) -> Self {
+        pub fn control_sets(mut self, input: crate::model::ControlSet) -> Self {
             let mut v = self.control_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_sets = Some(v);
             self
         }
@@ -4648,9 +4645,9 @@ pub mod control_set {
         /// To override the contents of this collection use [`set_controls`](Self::set_controls).
         ///
         /// <p> The list of controls within the control set. </p>
-        pub fn controls(mut self, input: impl Into<crate::model::Control>) -> Self {
+        pub fn controls(mut self, input: crate::model::Control) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }
@@ -4808,12 +4805,9 @@ pub mod update_assessment_framework_control_set {
         /// To override the contents of this collection use [`set_controls`](Self::set_controls).
         ///
         /// <p> The list of controls that are contained within the control set. </p>
-        pub fn controls(
-            mut self,
-            input: impl Into<crate::model::CreateAssessmentFrameworkControl>,
-        ) -> Self {
+        pub fn controls(mut self, input: crate::model::CreateAssessmentFrameworkControl) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }
@@ -5911,9 +5905,9 @@ pub mod assessment_metadata_item {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The roles that are associated with the assessment. </p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -5930,9 +5924,9 @@ pub mod assessment_metadata_item {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The delegations that are associated with the assessment. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::Delegation>) -> Self {
+        pub fn delegations(mut self, input: crate::model::Delegation) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -8078,9 +8072,9 @@ pub mod evidence {
         /// To override the contents of this collection use [`set_resources_included`](Self::set_resources_included).
         ///
         /// <p> The list of resources that are assessed to generate the evidence. </p>
-        pub fn resources_included(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources_included(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources_included.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources_included = Some(v);
             self
         }
@@ -9365,12 +9359,9 @@ pub mod create_assessment_framework_control_set {
         ///
         /// <p> The list of controls within the control set. This doesn't contain the control set ID.
         /// </p>
-        pub fn controls(
-            mut self,
-            input: impl Into<crate::model::CreateAssessmentFrameworkControl>,
-        ) -> Self {
+        pub fn controls(mut self, input: crate::model::CreateAssessmentFrameworkControl) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }

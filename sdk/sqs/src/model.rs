@@ -811,10 +811,10 @@ pub mod send_message_batch_request_entry {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -850,11 +850,11 @@ pub mod send_message_batch_request_entry {
         /// </important>
         pub fn message_system_attributes(
             mut self,
-            k: impl Into<crate::model::MessageSystemAttributeNameForSends>,
-            v: impl Into<crate::model::MessageSystemAttributeValue>,
+            k: crate::model::MessageSystemAttributeNameForSends,
+            v: crate::model::MessageSystemAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_system_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.message_system_attributes = Some(hash_map);
             self
         }
@@ -1188,9 +1188,9 @@ pub mod message_system_attribute_value {
         /// To override the contents of this collection use [`set_binary_list_values`](Self::set_binary_list_values).
         ///
         /// <p>Not implemented. Reserved for future use.</p>
-        pub fn binary_list_values(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        pub fn binary_list_values(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.binary_list_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.binary_list_values = Some(v);
             self
         }
@@ -1398,9 +1398,9 @@ pub mod message_attribute_value {
         /// To override the contents of this collection use [`set_binary_list_values`](Self::set_binary_list_values).
         ///
         /// <p>Not implemented. Reserved for future use.</p>
-        pub fn binary_list_values(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        pub fn binary_list_values(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.binary_list_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.binary_list_values = Some(v);
             self
         }
@@ -1724,11 +1724,11 @@ pub mod message {
         /// <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::MessageSystemAttributeName>,
+            k: crate::model::MessageSystemAttributeName,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -1812,10 +1812,10 @@ pub mod message {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }

@@ -252,8 +252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -263,8 +263,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
         /// </p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
@@ -290,8 +290,8 @@ pub mod fluent_builders {
         /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
         /// </li>
         /// </ul>
-        pub fn change_type(mut self, inp: crate::model::ChangeType) -> Self {
-            self.inner = self.inner.change_type(inp);
+        pub fn change_type(mut self, signature: crate::model::ChangeType) -> Self {
+            self.inner = self.inner.change_type(signature);
             self
         }
         /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
@@ -328,7 +328,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_params(k, v);
+            self.inner = self.inner.source_params(k.into(), v.into());
             self
         }
         /// <p>Options that define the location of the data being ingested.</p>
@@ -388,7 +388,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.format_params(k, v);
+            self.inner = self.inner.format_params(k.into(), v.into());
             self
         }
         /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
@@ -499,8 +499,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -509,8 +509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Display title for a FinSpace Dataset.</p>
-        pub fn dataset_title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_title(inp);
+        pub fn dataset_title(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_title(signature.into());
             self
         }
         /// <p>Display title for a FinSpace Dataset.</p>
@@ -532,8 +532,8 @@ pub mod fluent_builders {
         /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
         /// </li>
         /// </ul>
-        pub fn kind(mut self, inp: crate::model::DatasetKind) -> Self {
-            self.inner = self.inner.kind(inp);
+        pub fn kind(mut self, signature: crate::model::DatasetKind) -> Self {
+            self.inner = self.inner.kind(signature);
             self
         }
         /// <p>The format in which Dataset data is structured.</p>
@@ -552,8 +552,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of a Dataset.</p>
-        pub fn dataset_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_description(inp);
+        pub fn dataset_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_description(signature.into());
             self
         }
         /// <p>Description of a Dataset.</p>
@@ -565,8 +565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contact information for a Dataset owner.</p>
-        pub fn owner_info(mut self, inp: crate::model::DatasetOwnerInfo) -> Self {
-            self.inner = self.inner.owner_info(inp);
+        pub fn owner_info(mut self, signature: crate::model::DatasetOwnerInfo) -> Self {
+            self.inner = self.inner.owner_info(signature);
             self
         }
         /// <p>Contact information for a Dataset owner.</p>
@@ -578,8 +578,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Permission group parameters for Dataset permissions.</p>
-        pub fn permission_group_params(mut self, inp: crate::model::PermissionGroupParams) -> Self {
-            self.inner = self.inner.permission_group_params(inp);
+        pub fn permission_group_params(
+            mut self,
+            signature: crate::model::PermissionGroupParams,
+        ) -> Self {
+            self.inner = self.inner.permission_group_params(signature);
             self
         }
         /// <p>Permission group parameters for Dataset permissions.</p>
@@ -591,8 +594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(signature.into());
             self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
@@ -601,8 +604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
-        pub fn schema_definition(mut self, inp: crate::model::SchemaUnion) -> Self {
-            self.inner = self.inner.schema_definition(inp);
+        pub fn schema_definition(mut self, signature: crate::model::SchemaUnion) -> Self {
+            self.inner = self.inner.schema_definition(signature);
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
@@ -674,8 +677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -684,8 +687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
@@ -694,8 +697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Flag to indicate Dataview should be updated automatically.</p>
-        pub fn auto_update(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_update(inp);
+        pub fn auto_update(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_update(signature);
             self
         }
         /// <p>Flag to indicate Dataview should be updated automatically.</p>
@@ -708,8 +711,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sort_columns`](Self::set_sort_columns).
         ///
         /// <p>Columns to be used for sorting the data.</p>
-        pub fn sort_columns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_columns(inp);
+        pub fn sort_columns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_columns(input.into());
             self
         }
         /// <p>Columns to be used for sorting the data.</p>
@@ -725,8 +728,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
         ///
         /// <p>Ordered set of column names used to partition data.</p>
-        pub fn partition_columns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_columns(inp);
+        pub fn partition_columns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_columns(input.into());
             self
         }
         /// <p>Ordered set of column names used to partition data.</p>
@@ -738,8 +741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-        pub fn as_of_timestamp(mut self, inp: i64) -> Self {
-            self.inner = self.inner.as_of_timestamp(inp);
+        pub fn as_of_timestamp(mut self, signature: i64) -> Self {
+            self.inner = self.inner.as_of_timestamp(signature);
             self
         }
         /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -750,9 +753,9 @@ pub mod fluent_builders {
         /// <p>Options that define the destination type for the Dataview.</p>
         pub fn destination_type_params(
             mut self,
-            inp: crate::model::DataViewDestinationTypeParams,
+            signature: crate::model::DataViewDestinationTypeParams,
         ) -> Self {
-            self.inner = self.inner.destination_type_params(inp);
+            self.inner = self.inner.destination_type_params(signature);
             self
         }
         /// <p>Options that define the destination type for the Dataview.</p>
@@ -824,8 +827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -834,8 +837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the Dataset to be deleted.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier of the Dataset to be deleted.</p>
@@ -904,8 +907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
@@ -914,8 +917,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the Changeset for which to get data.</p>
-        pub fn changeset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.changeset_id(inp);
+        pub fn changeset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.changeset_id(signature.into());
             self
         }
         /// <p>The unique identifier of the Changeset for which to get data.</p>
@@ -984,8 +987,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a Dataset.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier for a Dataset.</p>
@@ -1054,8 +1057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Dataview.</p>
-        pub fn data_view_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_view_id(inp);
+        pub fn data_view_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_view_id(signature.into());
             self
         }
         /// <p>The unique identifier for the Dataview.</p>
@@ -1064,8 +1067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Dataset used in the Dataview.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier for the Dataset used in the Dataview.</p>
@@ -1134,8 +1137,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The time duration in which the credentials remain valid. </p>
-        pub fn duration_in_minutes(mut self, inp: i64) -> Self {
-            self.inner = self.inner.duration_in_minutes(inp);
+        pub fn duration_in_minutes(mut self, signature: i64) -> Self {
+            self.inner = self.inner.duration_in_minutes(signature);
             self
         }
         /// <p>The time duration in which the credentials remain valid. </p>
@@ -1144,8 +1147,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The FinSpace environment identifier.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The FinSpace environment identifier.</p>
@@ -1230,8 +1233,8 @@ pub mod fluent_builders {
         /// data content and then use the location with the Changeset creation operation.</p>
         /// </li>
         /// </ul>
-        pub fn location_type(mut self, inp: crate::model::LocationType) -> Self {
-            self.inner = self.inner.location_type(inp);
+        pub fn location_type(mut self, signature: crate::model::LocationType) -> Self {
+            self.inner = self.inner.location_type(signature);
             self
         }
         /// <p>Specify the type of the working location.</p>
@@ -1315,8 +1318,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
@@ -1325,8 +1328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results per page.</p>
@@ -1335,8 +1338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
@@ -1405,8 +1408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token indicating where a results page should begin.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
@@ -1415,8 +1418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results per page.</p>
@@ -1485,8 +1488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
@@ -1495,8 +1498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
@@ -1505,8 +1508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results per page.</p>
@@ -1575,8 +1578,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -1585,8 +1588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
@@ -1595,8 +1598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Changeset to update.</p>
-        pub fn changeset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.changeset_id(inp);
+        pub fn changeset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.changeset_id(signature.into());
             self
         }
         /// <p>The unique identifier for the Changeset to update.</p>
@@ -1614,7 +1617,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_params(k, v);
+            self.inner = self.inner.source_params(k.into(), v.into());
             self
         }
         /// <p>Options that define the location of the data being ingested.</p>
@@ -1637,7 +1640,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.format_params(k, v);
+            self.inner = self.inner.format_params(k.into(), v.into());
             self
         }
         /// <p>Options that define the structure of the source file(s).</p>
@@ -1711,8 +1714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -1721,8 +1724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Dataset to update.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(signature.into());
             self
         }
         /// <p>The unique identifier for the Dataset to update.</p>
@@ -1731,8 +1734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A display title for the Dataset.</p>
-        pub fn dataset_title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_title(inp);
+        pub fn dataset_title(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_title(signature.into());
             self
         }
         /// <p>A display title for the Dataset.</p>
@@ -1754,8 +1757,8 @@ pub mod fluent_builders {
         /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
         /// </li>
         /// </ul>
-        pub fn kind(mut self, inp: crate::model::DatasetKind) -> Self {
-            self.inner = self.inner.kind(inp);
+        pub fn kind(mut self, signature: crate::model::DatasetKind) -> Self {
+            self.inner = self.inner.kind(signature);
             self
         }
         /// <p>The format in which the Dataset data is structured.</p>
@@ -1774,8 +1777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the Dataset.</p>
-        pub fn dataset_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_description(inp);
+        pub fn dataset_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_description(signature.into());
             self
         }
         /// <p>A description for the Dataset.</p>
@@ -1787,8 +1790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(signature.into());
             self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
@@ -1797,8 +1800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
-        pub fn schema_definition(mut self, inp: crate::model::SchemaUnion) -> Self {
-            self.inner = self.inner.schema_definition(inp);
+        pub fn schema_definition(mut self, signature: crate::model::SchemaUnion) -> Self {
+            self.inner = self.inner.schema_definition(signature);
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>

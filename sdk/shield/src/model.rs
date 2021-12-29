@@ -1368,12 +1368,9 @@ pub mod attack_summary {
         /// To override the contents of this collection use [`set_attack_vectors`](Self::set_attack_vectors).
         ///
         /// <p>The list of attacks for a specified time period.</p>
-        pub fn attack_vectors(
-            mut self,
-            input: impl Into<crate::model::AttackVectorDescription>,
-        ) -> Self {
+        pub fn attack_vectors(mut self, input: crate::model::AttackVectorDescription) -> Self {
             let mut v = self.attack_vectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_vectors = Some(v);
             self
         }
@@ -1972,9 +1969,9 @@ pub mod subscription {
         /// To override the contents of this collection use [`set_limits`](Self::set_limits).
         ///
         /// <p>Specifies how many protections of a given type you can create.</p>
-        pub fn limits(mut self, input: impl Into<crate::model::Limit>) -> Self {
+        pub fn limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.limits = Some(v);
             self
         }
@@ -2377,12 +2374,9 @@ pub mod protection_limits {
         /// To override the contents of this collection use [`set_protected_resource_type_limits`](Self::set_protected_resource_type_limits).
         ///
         /// <p>The maximum number of resource types that you can specify in a protection.</p>
-        pub fn protected_resource_type_limits(
-            mut self,
-            input: impl Into<crate::model::Limit>,
-        ) -> Self {
+        pub fn protected_resource_type_limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.protected_resource_type_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protected_resource_type_limits = Some(v);
             self
         }
@@ -2895,9 +2889,9 @@ pub mod attack_detail {
         /// To override the contents of this collection use [`set_sub_resources`](Self::set_sub_resources).
         ///
         /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-        pub fn sub_resources(mut self, input: impl Into<crate::model::SubResourceSummary>) -> Self {
+        pub fn sub_resources(mut self, input: crate::model::SubResourceSummary) -> Self {
             let mut v = self.sub_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_resources = Some(v);
             self
         }
@@ -2940,12 +2934,9 @@ pub mod attack_detail {
         /// To override the contents of this collection use [`set_attack_counters`](Self::set_attack_counters).
         ///
         /// <p>List of counters that describe the attack for the specified time period.</p>
-        pub fn attack_counters(
-            mut self,
-            input: impl Into<crate::model::SummarizedCounter>,
-        ) -> Self {
+        pub fn attack_counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.attack_counters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_counters = Some(v);
             self
         }
@@ -2966,9 +2957,9 @@ pub mod attack_detail {
         /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
         /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
         /// in the <i>WAF Developer Guide</i>. </p>
-        pub fn attack_properties(mut self, input: impl Into<crate::model::AttackProperty>) -> Self {
+        pub fn attack_properties(mut self, input: crate::model::AttackProperty) -> Self {
             let mut v = self.attack_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_properties = Some(v);
             self
         }
@@ -2989,9 +2980,9 @@ pub mod attack_detail {
         /// To override the contents of this collection use [`set_mitigations`](Self::set_mitigations).
         ///
         /// <p>List of mitigation actions taken for the attack.</p>
-        pub fn mitigations(mut self, input: impl Into<crate::model::Mitigation>) -> Self {
+        pub fn mitigations(mut self, input: crate::model::Mitigation) -> Self {
             let mut v = self.mitigations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mitigations = Some(v);
             self
         }
@@ -3213,9 +3204,9 @@ pub mod attack_property {
         /// To override the contents of this collection use [`set_top_contributors`](Self::set_top_contributors).
         ///
         /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
-        pub fn top_contributors(mut self, input: impl Into<crate::model::Contributor>) -> Self {
+        pub fn top_contributors(mut self, input: crate::model::Contributor) -> Self {
             let mut v = self.top_contributors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.top_contributors = Some(v);
             self
         }
@@ -3778,12 +3769,9 @@ pub mod sub_resource_summary {
         /// To override the contents of this collection use [`set_attack_vectors`](Self::set_attack_vectors).
         ///
         /// <p>The list of attack types and associated counters.</p>
-        pub fn attack_vectors(
-            mut self,
-            input: impl Into<crate::model::SummarizedAttackVector>,
-        ) -> Self {
+        pub fn attack_vectors(mut self, input: crate::model::SummarizedAttackVector) -> Self {
             let mut v = self.attack_vectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_vectors = Some(v);
             self
         }
@@ -3800,9 +3788,9 @@ pub mod sub_resource_summary {
         /// To override the contents of this collection use [`set_counters`](Self::set_counters).
         ///
         /// <p>The counters that describe the details of the attack.</p>
-        pub fn counters(mut self, input: impl Into<crate::model::SummarizedCounter>) -> Self {
+        pub fn counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.counters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.counters = Some(v);
             self
         }
@@ -3885,12 +3873,9 @@ pub mod summarized_attack_vector {
         /// To override the contents of this collection use [`set_vector_counters`](Self::set_vector_counters).
         ///
         /// <p>The list of counters that describe the details of the attack.</p>
-        pub fn vector_counters(
-            mut self,
-            input: impl Into<crate::model::SummarizedCounter>,
-        ) -> Self {
+        pub fn vector_counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.vector_counters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vector_counters = Some(v);
             self
         }

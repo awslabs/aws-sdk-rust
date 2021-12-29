@@ -163,8 +163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -173,8 +173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -183,8 +183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximimum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximimum number of results to return per page.</p>
@@ -194,8 +194,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous

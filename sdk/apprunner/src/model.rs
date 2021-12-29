@@ -3232,10 +3232,10 @@ pub mod custom_domain {
         /// <p>A list of certificate CNAME records that's used for this domain name.</p>
         pub fn certificate_validation_records(
             mut self,
-            input: impl Into<crate::model::CertificateValidationRecord>,
+            input: crate::model::CertificateValidationRecord,
         ) -> Self {
             let mut v = self.certificate_validation_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_validation_records = Some(v);
             self
         }

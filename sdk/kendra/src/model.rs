@@ -1385,13 +1385,9 @@ pub mod relevance {
         /// given special attention when they appear in the metadata of a
         /// document. When those terms appear they are given the specified
         /// importance instead of the regular importance for the boost.</p>
-        pub fn value_importance_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn value_importance_map(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.value_importance_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.value_importance_map = Some(hash_map);
             self
         }
@@ -1975,10 +1971,10 @@ pub mod custom_document_enrichment_configuration {
         /// content when ingesting documents into Amazon Kendra.</p>
         pub fn inline_configurations(
             mut self,
-            input: impl Into<crate::model::InlineCustomDocumentEnrichmentConfiguration>,
+            input: crate::model::InlineCustomDocumentEnrichmentConfiguration,
         ) -> Self {
             let mut v = self.inline_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inline_configurations = Some(v);
             self
         }
@@ -3530,10 +3526,10 @@ pub mod work_docs_configuration {
         /// need to exist in your Amazon WorkDocs custom metadata.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -4151,10 +4147,10 @@ pub mod authentication_configuration {
         /// <p>The list includes the name and port number of the website host.</p>
         pub fn basic_authentication(
             mut self,
-            input: impl Into<crate::model::BasicAuthenticationConfiguration>,
+            input: crate::model::BasicAuthenticationConfiguration,
         ) -> Self {
             let mut v = self.basic_authentication.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.basic_authentication = Some(v);
             self
         }
@@ -5111,10 +5107,10 @@ pub mod google_drive_configuration {
         /// operation.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -5838,10 +5834,10 @@ pub mod confluence_attachment_configuration {
         /// you must specify at least one field mapping.</p>
         pub fn attachment_field_mappings(
             mut self,
-            input: impl Into<crate::model::ConfluenceAttachmentToIndexFieldMapping>,
+            input: crate::model::ConfluenceAttachmentToIndexFieldMapping,
         ) -> Self {
             let mut v = self.attachment_field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachment_field_mappings = Some(v);
             self
         }
@@ -6175,10 +6171,10 @@ pub mod confluence_blog_configuration {
         /// must specify at least one field mapping.</p>
         pub fn blog_field_mappings(
             mut self,
-            input: impl Into<crate::model::ConfluenceBlogToIndexFieldMapping>,
+            input: crate::model::ConfluenceBlogToIndexFieldMapping,
         ) -> Self {
             let mut v = self.blog_field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blog_field_mappings = Some(v);
             self
         }
@@ -6490,10 +6486,10 @@ pub mod confluence_page_configuration {
         /// must specify at least one field mapping.</p>
         pub fn page_field_mappings(
             mut self,
-            input: impl Into<crate::model::ConfluencePageToIndexFieldMapping>,
+            input: crate::model::ConfluencePageToIndexFieldMapping,
         ) -> Self {
             let mut v = self.page_field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.page_field_mappings = Some(v);
             self
         }
@@ -6966,10 +6962,10 @@ pub mod confluence_space_configuration {
         /// must specify at least one field mapping.</p>
         pub fn space_field_mappings(
             mut self,
-            input: impl Into<crate::model::ConfluenceSpaceToIndexFieldMapping>,
+            input: crate::model::ConfluenceSpaceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.space_field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.space_field_mappings = Some(v);
             self
         }
@@ -7808,10 +7804,10 @@ pub mod service_now_service_catalog_configuration {
         /// must create the index field before you map the field.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -8074,10 +8070,10 @@ pub mod service_now_knowledge_article_configuration {
         /// must create the index field before you map the field.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -8414,10 +8410,10 @@ pub mod one_drive_configuration {
         /// OneDrive fields.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -8888,10 +8884,10 @@ pub mod salesforce_configuration {
         /// indexes.</p>
         pub fn standard_object_configurations(
             mut self,
-            input: impl Into<crate::model::SalesforceStandardObjectConfiguration>,
+            input: crate::model::SalesforceStandardObjectConfiguration,
         ) -> Self {
             let mut v = self.standard_object_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standard_object_configurations = Some(v);
             self
         }
@@ -9131,10 +9127,10 @@ pub mod salesforce_standard_object_attachment_configuration {
         /// index fields.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -9287,10 +9283,10 @@ pub mod salesforce_chatter_feed_configuration {
         /// fields.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -9314,10 +9310,10 @@ pub mod salesforce_chatter_feed_configuration {
         /// standard users are documented. You can specify both.</p>
         pub fn include_filter_types(
             mut self,
-            input: impl Into<crate::model::SalesforceChatterFeedIncludeFilterType>,
+            input: crate::model::SalesforceChatterFeedIncludeFilterType,
         ) -> Self {
             let mut v = self.include_filter_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include_filter_types = Some(v);
             self
         }
@@ -9495,10 +9491,10 @@ pub mod salesforce_knowledge_article_configuration {
         /// state.</p>
         pub fn included_states(
             mut self,
-            input: impl Into<crate::model::SalesforceKnowledgeArticleState>,
+            input: crate::model::SalesforceKnowledgeArticleState,
         ) -> Self {
             let mut v = self.included_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.included_states = Some(v);
             self
         }
@@ -9542,12 +9538,12 @@ pub mod salesforce_knowledge_article_configuration {
         /// articles.</p>
         pub fn custom_knowledge_article_type_configurations(
             mut self,
-            input: impl Into<crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration>,
+            input: crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration,
         ) -> Self {
             let mut v = self
                 .custom_knowledge_article_type_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_knowledge_article_type_configurations = Some(v);
             self
         }
@@ -9693,10 +9689,10 @@ pub mod salesforce_custom_knowledge_article_type_configuration {
         /// article to fields in the Amazon Kendra index.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -9821,10 +9817,10 @@ pub mod salesforce_standard_knowledge_article_type_configuration {
         /// a Salesforce field to it.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -10033,10 +10029,10 @@ pub mod salesforce_standard_object_configuration {
         /// a Salesforce field to it.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -10760,10 +10756,10 @@ pub mod column_configuration {
         /// in the index using the <code>UpdateIndex</code> operation.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -11440,10 +11436,10 @@ pub mod share_point_configuration {
         /// Fields</a>.</p>
         pub fn field_mappings(
             mut self,
-            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+            input: crate::model::DataSourceToIndexFieldMapping,
         ) -> Self {
             let mut v = self.field_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_mappings = Some(v);
             self
         }
@@ -12544,12 +12540,12 @@ pub mod facet_result {
         /// value.</p>
         pub fn document_attribute_value_count_pairs(
             mut self,
-            input: impl Into<crate::model::DocumentAttributeValueCountPair>,
+            input: crate::model::DocumentAttributeValueCountPair,
         ) -> Self {
             let mut v = self
                 .document_attribute_value_count_pairs
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_attribute_value_count_pairs = Some(v);
             self
         }
@@ -12842,10 +12838,10 @@ pub mod query_result_item {
         /// result.</p>
         pub fn additional_attributes(
             mut self,
-            input: impl Into<crate::model::AdditionalResultAttribute>,
+            input: crate::model::AdditionalResultAttribute,
         ) -> Self {
             let mut v = self.additional_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_attributes = Some(v);
             self
         }
@@ -12915,12 +12911,9 @@ pub mod query_result_item {
         /// <p>An array of document attributes for the document that the query
         /// result maps to. For example, the document author (Author) or the source
         /// URI (SourceUri) of the document.</p>
-        pub fn document_attributes(
-            mut self,
-            input: impl Into<crate::model::DocumentAttribute>,
-        ) -> Self {
+        pub fn document_attributes(mut self, input: crate::model::DocumentAttribute) -> Self {
             let mut v = self.document_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_attributes = Some(v);
             self
         }
@@ -13267,9 +13260,9 @@ pub mod text_with_highlights {
         ///
         /// <p>The beginning and end of the text that should be
         /// highlighted.</p>
-        pub fn highlights(mut self, input: impl Into<crate::model::Highlight>) -> Self {
+        pub fn highlights(mut self, input: crate::model::Highlight) -> Self {
             let mut v = self.highlights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.highlights = Some(v);
             self
         }
@@ -13894,12 +13887,9 @@ pub mod user_context {
         ///
         /// <p>The list of data source groups you want to filter search results
         /// based on groups' access to documents in that data source.</p>
-        pub fn data_source_groups(
-            mut self,
-            input: impl Into<crate::model::DataSourceGroup>,
-        ) -> Self {
+        pub fn data_source_groups(mut self, input: crate::model::DataSourceGroup) -> Self {
             let mut v = self.data_source_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_source_groups = Some(v);
             self
         }
@@ -14590,9 +14580,9 @@ pub mod attribute_filter {
         ///
         /// <p>Performs a logical <code>AND</code> operation on all supplied
         /// filters.</p>
-        pub fn and_all_filters(mut self, input: impl Into<crate::model::AttributeFilter>) -> Self {
+        pub fn and_all_filters(mut self, input: crate::model::AttributeFilter) -> Self {
             let mut v = self.and_all_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.and_all_filters = Some(v);
             self
         }
@@ -14611,9 +14601,9 @@ pub mod attribute_filter {
         ///
         /// <p>Performs a logical <code>OR</code> operation on all supplied
         /// filters.</p>
-        pub fn or_all_filters(mut self, input: impl Into<crate::model::AttributeFilter>) -> Self {
+        pub fn or_all_filters(mut self, input: crate::model::AttributeFilter) -> Self {
             let mut v = self.or_all_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.or_all_filters = Some(v);
             self
         }
@@ -14863,9 +14853,9 @@ pub mod group_members {
         /// <p>A list of sub groups that belong to a group. For example, the sub
         /// groups "Research", "Engineering", and "Sales and Marketing" all belong
         /// to the group "Company".</p>
-        pub fn member_groups(mut self, input: impl Into<crate::model::MemberGroup>) -> Self {
+        pub fn member_groups(mut self, input: crate::model::MemberGroup) -> Self {
             let mut v = self.member_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_groups = Some(v);
             self
         }
@@ -14885,9 +14875,9 @@ pub mod group_members {
         ///
         /// <p>A list of users that belong to a group. For example, a list of interns
         /// all belong to the "Interns" group.</p>
-        pub fn member_users(mut self, input: impl Into<crate::model::MemberUser>) -> Self {
+        pub fn member_users(mut self, input: crate::model::MemberUser) -> Self {
             let mut v = self.member_users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_users = Some(v);
             self
         }
@@ -16406,9 +16396,9 @@ pub mod experiences_summary {
         ///
         /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique
         /// and fully hosted by Amazon Web Services.</p>
-        pub fn endpoints(mut self, input: impl Into<crate::model::ExperienceEndpoint>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::ExperienceEndpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -18508,9 +18498,9 @@ pub mod suggestion_text_with_highlights {
         /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
         ///
         /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
-        pub fn highlights(mut self, input: impl Into<crate::model::SuggestionHighlight>) -> Self {
+        pub fn highlights(mut self, input: crate::model::SuggestionHighlight) -> Self {
             let mut v = self.highlights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.highlights = Some(v);
             self
         }
@@ -19660,9 +19650,9 @@ pub mod document {
         /// attributes to provide additional information for searching, to
         /// provide facets for refining searches, and to provide additional
         /// information in the query response.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::DocumentAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::DocumentAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -19683,9 +19673,9 @@ pub mod document {
         ///
         /// <p>Information on user and group access rights, which is used for
         /// user context filtering.</p>
-        pub fn access_control_list(mut self, input: impl Into<crate::model::Principal>) -> Self {
+        pub fn access_control_list(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.access_control_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_control_list = Some(v);
             self
         }
@@ -19706,10 +19696,10 @@ pub mod document {
         /// that define the hierarchy for which documents users should have access to.</p>
         pub fn hierarchical_access_control_list(
             mut self,
-            input: impl Into<crate::model::HierarchicalPrincipal>,
+            input: crate::model::HierarchicalPrincipal,
         ) -> Self {
             let mut v = self.hierarchical_access_control_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hierarchical_access_control_list = Some(v);
             self
         }
@@ -19871,9 +19861,9 @@ pub mod hierarchical_principal {
         /// that define the hierarchy for which documents users should have access to.
         /// Each hierarchical list specifies which user or group has allow or deny
         /// access for each document.</p>
-        pub fn principal_list(mut self, input: impl Into<crate::model::Principal>) -> Self {
+        pub fn principal_list(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principal_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principal_list = Some(v);
             self
         }
@@ -20600,9 +20590,9 @@ pub mod document_info {
         /// "0".</p>
         /// </li>
         /// </ul>
-        pub fn attributes(mut self, input: impl Into<crate::model::DocumentAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::DocumentAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }

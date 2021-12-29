@@ -1120,10 +1120,10 @@ pub mod create_deployment_job_input {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -1713,9 +1713,9 @@ pub mod create_robot_application_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -2155,9 +2155,9 @@ pub mod create_simulation_application_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -2731,12 +2731,9 @@ pub mod create_simulation_job_input {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>The robot application to use in the simulation job.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -2755,10 +2752,10 @@ pub mod create_simulation_job_input {
         /// <p>The simulation application to use in the simulation job.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -2780,9 +2777,9 @@ pub mod create_simulation_job_input {
         /// <p>There is a limit of 100 files and a combined size of 25GB for all
         /// <code>DataSourceConfig</code> objects. </p>
         /// </note>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSourceConfig>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSourceConfig) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -6503,9 +6500,9 @@ pub mod list_deployment_jobs_input {
         /// filtering, you must use the complete value of the filtered item. You can use up to three
         /// filters, but they must be for the same named item. For example, if you are looking for
         /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6759,9 +6756,9 @@ pub mod list_fleets_input {
         /// <p>Optional filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
         /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6978,9 +6975,9 @@ pub mod list_robot_applications_input {
         /// <p>Optional filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
         /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7189,9 +7186,9 @@ pub mod list_robots_input {
         /// filtering, you must use the complete value of the filtered item. You can use up to three
         /// filters, but they must be for the same named item. For example, if you are looking for
         /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7410,9 +7407,9 @@ pub mod list_simulation_applications_input {
         /// <p>Optional list of filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
         /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7614,9 +7611,9 @@ pub mod list_simulation_job_batches_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7824,9 +7821,9 @@ pub mod list_simulation_jobs_input {
         /// complete value of the filtered item. You can use up to three filters, but they must be for
         /// the same named item. For example, if you are looking for items with the status
         /// <code>Preparing</code> or the status <code>Running</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8183,9 +8180,9 @@ pub mod list_world_export_jobs_input {
         ///
         /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
         /// <code>templateId</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8389,9 +8386,9 @@ pub mod list_world_generation_jobs_input {
         ///
         /// <p>Optional filters to limit results. You can use <code>status</code> and
         /// <code>templateId</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8595,9 +8592,9 @@ pub mod list_worlds_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9280,10 +9277,10 @@ pub mod start_simulation_job_batch_input {
         /// <p>A list of simulation job requests to create in the batch.</p>
         pub fn create_simulation_job_requests(
             mut self,
-            input: impl Into<crate::model::SimulationJobRequest>,
+            input: crate::model::SimulationJobRequest,
         ) -> Self {
             let mut v = self.create_simulation_job_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_simulation_job_requests = Some(v);
             self
         }
@@ -10040,9 +10037,9 @@ pub mod update_robot_application_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -10260,9 +10257,9 @@ pub mod update_simulation_application_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }

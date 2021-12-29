@@ -362,8 +362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the flow.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the flow.
@@ -376,11 +376,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that you want to add to the flow.
-        pub fn media_streams(
-            mut self,
-            inp: impl Into<crate::model::AddMediaStreamRequest>,
-        ) -> Self {
-            self.inner = self.inner.media_streams(inp);
+        pub fn media_streams(mut self, input: crate::model::AddMediaStreamRequest) -> Self {
+            self.inner = self.inner.media_streams(input);
             self
         }
         /// The media streams that you want to add to the flow.
@@ -452,8 +449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The flow that you want to add outputs to.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to add outputs to.
@@ -466,8 +463,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// A list of outputs that you want to add.
-        pub fn outputs(mut self, inp: impl Into<crate::model::AddOutputRequest>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::AddOutputRequest) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// A list of outputs that you want to add.
@@ -539,8 +536,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The flow that you want to mutate.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to mutate.
@@ -553,8 +550,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// A list of sources that you want to add.
-        pub fn sources(mut self, inp: impl Into<crate::model::SetSourceRequest>) -> Self {
-            self.inner = self.inner.sources(inp);
+        pub fn sources(mut self, input: crate::model::SetSourceRequest) -> Self {
+            self.inner = self.inner.sources(input);
             self
         }
         /// A list of sources that you want to add.
@@ -626,8 +623,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The flow that you want to mutate.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to mutate.
@@ -640,8 +637,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// A list of VPC interfaces that you want to add.
-        pub fn vpc_interfaces(mut self, inp: impl Into<crate::model::VpcInterfaceRequest>) -> Self {
-            self.inner = self.inner.vpc_interfaces(inp);
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterfaceRequest) -> Self {
+            self.inner = self.inner.vpc_interfaces(input);
             self
         }
         /// A list of VPC interfaces that you want to add.
@@ -713,8 +710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
@@ -730,11 +727,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The entitlements that you want to grant on a flow.
-        pub fn entitlements(
-            mut self,
-            inp: impl Into<crate::model::GrantEntitlementRequest>,
-        ) -> Self {
-            self.inner = self.inner.entitlements(inp);
+        pub fn entitlements(mut self, input: crate::model::GrantEntitlementRequest) -> Self {
+            self.inner = self.inner.entitlements(input);
             self
         }
         /// The entitlements that you want to grant on a flow.
@@ -750,11 +744,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-        pub fn media_streams(
-            mut self,
-            inp: impl Into<crate::model::AddMediaStreamRequest>,
-        ) -> Self {
-            self.inner = self.inner.media_streams(inp);
+        pub fn media_streams(mut self, input: crate::model::AddMediaStreamRequest) -> Self {
+            self.inner = self.inner.media_streams(input);
             self
         }
         /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
@@ -766,8 +757,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the flow.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// The name of the flow.
@@ -780,8 +771,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// The outputs that you want to add to this flow.
-        pub fn outputs(mut self, inp: impl Into<crate::model::AddOutputRequest>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::AddOutputRequest) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// The outputs that you want to add to this flow.
@@ -793,8 +784,8 @@ pub mod fluent_builders {
             self
         }
         /// The settings for the source of the flow.
-        pub fn source(mut self, inp: crate::model::SetSourceRequest) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, signature: crate::model::SetSourceRequest) -> Self {
+            self.inner = self.inner.source(signature);
             self
         }
         /// The settings for the source of the flow.
@@ -806,8 +797,8 @@ pub mod fluent_builders {
             self
         }
         /// The settings for source failover
-        pub fn source_failover_config(mut self, inp: crate::model::FailoverConfig) -> Self {
-            self.inner = self.inner.source_failover_config(inp);
+        pub fn source_failover_config(mut self, signature: crate::model::FailoverConfig) -> Self {
+            self.inner = self.inner.source_failover_config(signature);
             self
         }
         /// The settings for source failover
@@ -823,8 +814,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         #[allow(missing_docs)] // documentation missing in model
-        pub fn sources(mut self, inp: impl Into<crate::model::SetSourceRequest>) -> Self {
-            self.inner = self.inner.sources(inp);
+        pub fn sources(mut self, input: crate::model::SetSourceRequest) -> Self {
+            self.inner = self.inner.sources(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -840,8 +831,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// The VPC interfaces you want on the flow.
-        pub fn vpc_interfaces(mut self, inp: impl Into<crate::model::VpcInterfaceRequest>) -> Self {
-            self.inner = self.inner.vpc_interfaces(inp);
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterfaceRequest) -> Self {
+            self.inner = self.inner.vpc_interfaces(input);
             self
         }
         /// The VPC interfaces you want on the flow.
@@ -913,8 +904,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the flow that you want to delete.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The ARN of the flow that you want to delete.
@@ -983,8 +974,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the flow that you want to describe.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The ARN of the flow that you want to describe.
@@ -1053,8 +1044,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the offering.
-        pub fn offering_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_arn(inp);
+        pub fn offering_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the offering.
@@ -1123,8 +1114,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the reservation.
-        pub fn reservation_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_arn(inp);
+        pub fn reservation_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the reservation.
@@ -1200,11 +1191,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The list of entitlements that you want to grant.
-        pub fn entitlements(
-            mut self,
-            inp: impl Into<crate::model::GrantEntitlementRequest>,
-        ) -> Self {
-            self.inner = self.inner.entitlements(inp);
+        pub fn entitlements(mut self, input: crate::model::GrantEntitlementRequest) -> Self {
+            self.inner = self.inner.entitlements(input);
             self
         }
         /// The list of entitlements that you want to grant.
@@ -1216,8 +1204,8 @@ pub mod fluent_builders {
             self
         }
         /// The flow that you want to grant entitlements on.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to grant entitlements on.
@@ -1286,8 +1274,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
@@ -1296,8 +1284,8 @@ pub mod fluent_builders {
             self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
@@ -1366,8 +1354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
@@ -1376,8 +1364,8 @@ pub mod fluent_builders {
             self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
@@ -1446,8 +1434,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
@@ -1456,8 +1444,8 @@ pub mod fluent_builders {
             self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
@@ -1526,8 +1514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
@@ -1536,8 +1524,8 @@ pub mod fluent_builders {
             self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
@@ -1606,8 +1594,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
@@ -1676,8 +1664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the offering.
-        pub fn offering_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_arn(inp);
+        pub fn offering_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the offering.
@@ -1686,8 +1674,8 @@ pub mod fluent_builders {
             self
         }
         /// The name that you want to use for the reservation.
-        pub fn reservation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_name(inp);
+        pub fn reservation_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_name(signature.into());
             self
         }
         /// The name that you want to use for the reservation.
@@ -1699,8 +1687,8 @@ pub mod fluent_builders {
             self
         }
         /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
-        pub fn start(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start(inp);
+        pub fn start(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start(signature.into());
             self
         }
         /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
@@ -1769,8 +1757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the flow.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the flow.
@@ -1779,8 +1767,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the media stream that you want to remove.
-        pub fn media_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_stream_name(inp);
+        pub fn media_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_stream_name(signature.into());
             self
         }
         /// The name of the media stream that you want to remove.
@@ -1852,8 +1840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The flow that you want to remove an output from.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to remove an output from.
@@ -1862,8 +1850,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the output that you want to remove.
-        pub fn output_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_arn(inp);
+        pub fn output_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_arn(signature.into());
             self
         }
         /// The ARN of the output that you want to remove.
@@ -1932,8 +1920,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The flow that you want to remove a source from.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to remove a source from.
@@ -1942,8 +1930,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the source that you want to remove.
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(signature.into());
             self
         }
         /// The ARN of the source that you want to remove.
@@ -2012,8 +2000,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The flow that you want to remove a VPC interface from.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to remove a VPC interface from.
@@ -2022,8 +2010,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the VPC interface that you want to remove.
-        pub fn vpc_interface_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_interface_name(inp);
+        pub fn vpc_interface_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_interface_name(signature.into());
             self
         }
         /// The name of the VPC interface that you want to remove.
@@ -2095,8 +2083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the entitlement that you want to revoke.
-        pub fn entitlement_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entitlement_arn(inp);
+        pub fn entitlement_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entitlement_arn(signature.into());
             self
         }
         /// The ARN of the entitlement that you want to revoke.
@@ -2108,8 +2096,8 @@ pub mod fluent_builders {
             self
         }
         /// The flow that you want to revoke an entitlement from.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to revoke an entitlement from.
@@ -2178,8 +2166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the flow that you want to start.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The ARN of the flow that you want to start.
@@ -2248,8 +2236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the flow that you want to stop.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The ARN of the flow that you want to stop.
@@ -2318,8 +2306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
@@ -2337,7 +2325,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
@@ -2411,8 +2399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
@@ -2425,8 +2413,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// The keys of the tags to be removed.
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// The keys of the tags to be removed.
@@ -2498,8 +2486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The flow that you want to update.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that you want to update.
@@ -2508,8 +2496,11 @@ pub mod fluent_builders {
             self
         }
         /// The settings for source failover
-        pub fn source_failover_config(mut self, inp: crate::model::UpdateFailoverConfig) -> Self {
-            self.inner = self.inner.source_failover_config(inp);
+        pub fn source_failover_config(
+            mut self,
+            signature: crate::model::UpdateFailoverConfig,
+        ) -> Self {
+            self.inner = self.inner.source_failover_config(signature);
             self
         }
         /// The settings for source failover
@@ -2581,8 +2572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
@@ -2591,8 +2582,8 @@ pub mod fluent_builders {
             self
         }
         /// The type of encryption that will be used on the output associated with this entitlement.
-        pub fn encryption(mut self, inp: crate::model::UpdateEncryption) -> Self {
-            self.inner = self.inner.encryption(inp);
+        pub fn encryption(mut self, signature: crate::model::UpdateEncryption) -> Self {
+            self.inner = self.inner.encryption(signature);
             self
         }
         /// The type of encryption that will be used on the output associated with this entitlement.
@@ -2604,8 +2595,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the entitlement that you want to update.
-        pub fn entitlement_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entitlement_arn(inp);
+        pub fn entitlement_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entitlement_arn(signature.into());
             self
         }
         /// The ARN of the entitlement that you want to update.
@@ -2617,8 +2608,8 @@ pub mod fluent_builders {
             self
         }
         /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-        pub fn entitlement_status(mut self, inp: crate::model::EntitlementStatus) -> Self {
-            self.inner = self.inner.entitlement_status(inp);
+        pub fn entitlement_status(mut self, signature: crate::model::EntitlementStatus) -> Self {
+            self.inner = self.inner.entitlement_status(signature);
             self
         }
         /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
@@ -2630,8 +2621,8 @@ pub mod fluent_builders {
             self
         }
         /// The flow that is associated with the entitlement that you want to update.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that is associated with the entitlement that you want to update.
@@ -2644,8 +2635,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-        pub fn subscribers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscribers(inp);
+        pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscribers(input.into());
             self
         }
         /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
@@ -2717,8 +2708,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The attributes that you want to assign to the media stream.
-        pub fn attributes(mut self, inp: crate::model::MediaStreamAttributesRequest) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, signature: crate::model::MediaStreamAttributesRequest) -> Self {
+            self.inner = self.inner.attributes(signature);
             self
         }
         /// The attributes that you want to assign to the media stream.
@@ -2730,8 +2721,8 @@ pub mod fluent_builders {
             self
         }
         /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
-        pub fn clock_rate(mut self, inp: i32) -> Self {
-            self.inner = self.inner.clock_rate(inp);
+        pub fn clock_rate(mut self, signature: i32) -> Self {
+            self.inner = self.inner.clock_rate(signature);
             self
         }
         /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
@@ -2740,8 +2731,8 @@ pub mod fluent_builders {
             self
         }
         /// Description
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// Description
@@ -2750,8 +2741,8 @@ pub mod fluent_builders {
             self
         }
         /// The Amazon Resource Name (ARN) of the flow.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the flow.
@@ -2760,8 +2751,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the media stream that you want to update.
-        pub fn media_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_stream_name(inp);
+        pub fn media_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_stream_name(signature.into());
             self
         }
         /// The name of the media stream that you want to update.
@@ -2773,8 +2764,8 @@ pub mod fluent_builders {
             self
         }
         /// The type of media stream.
-        pub fn media_stream_type(mut self, inp: crate::model::MediaStreamType) -> Self {
-            self.inner = self.inner.media_stream_type(inp);
+        pub fn media_stream_type(mut self, signature: crate::model::MediaStreamType) -> Self {
+            self.inner = self.inner.media_stream_type(signature);
             self
         }
         /// The type of media stream.
@@ -2786,8 +2777,8 @@ pub mod fluent_builders {
             self
         }
         /// The resolution of the video.
-        pub fn video_format(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.video_format(inp);
+        pub fn video_format(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.video_format(signature.into());
             self
         }
         /// The resolution of the video.
@@ -2860,8 +2851,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
         ///
         /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        pub fn cidr_allow_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr_allow_list(inp);
+        pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr_allow_list(input.into());
             self
         }
         /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -2873,8 +2864,8 @@ pub mod fluent_builders {
             self
         }
         /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
@@ -2883,8 +2874,8 @@ pub mod fluent_builders {
             self
         }
         /// The IP address where you want to send the output.
-        pub fn destination(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination(inp);
+        pub fn destination(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination(signature.into());
             self
         }
         /// The IP address where you want to send the output.
@@ -2893,8 +2884,8 @@ pub mod fluent_builders {
             self
         }
         /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-        pub fn encryption(mut self, inp: crate::model::UpdateEncryption) -> Self {
-            self.inner = self.inner.encryption(inp);
+        pub fn encryption(mut self, signature: crate::model::UpdateEncryption) -> Self {
+            self.inner = self.inner.encryption(signature);
             self
         }
         /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
@@ -2906,8 +2897,8 @@ pub mod fluent_builders {
             self
         }
         /// The flow that is associated with the output that you want to update.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that is associated with the output that you want to update.
@@ -2916,8 +2907,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum latency in milliseconds for Zixi-based streams.
-        pub fn max_latency(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_latency(inp);
+        pub fn max_latency(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_latency(signature);
             self
         }
         /// The maximum latency in milliseconds for Zixi-based streams.
@@ -2932,9 +2923,9 @@ pub mod fluent_builders {
         /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn media_stream_output_configurations(
             mut self,
-            inp: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
+            input: crate::model::MediaStreamOutputConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.media_stream_output_configurations(inp);
+            self.inner = self.inner.media_stream_output_configurations(input);
             self
         }
         /// The media streams that are associated with the output, and the parameters for those associations.
@@ -2948,8 +2939,8 @@ pub mod fluent_builders {
             self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-        pub fn min_latency(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_latency(inp);
+        pub fn min_latency(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_latency(signature);
             self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -2958,8 +2949,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the output that you want to update.
-        pub fn output_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_arn(inp);
+        pub fn output_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_arn(signature.into());
             self
         }
         /// The ARN of the output that you want to update.
@@ -2968,8 +2959,8 @@ pub mod fluent_builders {
             self
         }
         /// The port to use when content is distributed to this output.
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// The port to use when content is distributed to this output.
@@ -2978,8 +2969,8 @@ pub mod fluent_builders {
             self
         }
         /// The protocol to use for the output.
-        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, signature: crate::model::Protocol) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// The protocol to use for the output.
@@ -2988,8 +2979,8 @@ pub mod fluent_builders {
             self
         }
         /// The remote ID for the Zixi-pull stream.
-        pub fn remote_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remote_id(inp);
+        pub fn remote_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_id(signature.into());
             self
         }
         /// The remote ID for the Zixi-pull stream.
@@ -2998,8 +2989,8 @@ pub mod fluent_builders {
             self
         }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
-        pub fn smoothing_latency(mut self, inp: i32) -> Self {
-            self.inner = self.inner.smoothing_latency(inp);
+        pub fn smoothing_latency(mut self, signature: i32) -> Self {
+            self.inner = self.inner.smoothing_latency(signature);
             self
         }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
@@ -3008,8 +2999,8 @@ pub mod fluent_builders {
             self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(signature.into());
             self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
@@ -3020,9 +3011,9 @@ pub mod fluent_builders {
         /// The name of the VPC interface attachment to use for this output.
         pub fn vpc_interface_attachment(
             mut self,
-            inp: crate::model::VpcInterfaceAttachment,
+            signature: crate::model::VpcInterfaceAttachment,
         ) -> Self {
-            self.inner = self.inner.vpc_interface_attachment(inp);
+            self.inner = self.inner.vpc_interface_attachment(signature);
             self
         }
         /// The name of the VPC interface attachment to use for this output.
@@ -3094,8 +3085,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The type of encryption used on the content ingested from this source.
-        pub fn decryption(mut self, inp: crate::model::UpdateEncryption) -> Self {
-            self.inner = self.inner.decryption(inp);
+        pub fn decryption(mut self, signature: crate::model::UpdateEncryption) -> Self {
+            self.inner = self.inner.decryption(signature);
             self
         }
         /// The type of encryption used on the content ingested from this source.
@@ -3107,8 +3098,8 @@ pub mod fluent_builders {
             self
         }
         /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
@@ -3117,8 +3108,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-        pub fn entitlement_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entitlement_arn(inp);
+        pub fn entitlement_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entitlement_arn(signature.into());
             self
         }
         /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
@@ -3130,8 +3121,8 @@ pub mod fluent_builders {
             self
         }
         /// The flow that is associated with the source that you want to update.
-        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_arn(inp);
+        pub fn flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(signature.into());
             self
         }
         /// The flow that is associated with the source that you want to update.
@@ -3140,8 +3131,8 @@ pub mod fluent_builders {
             self
         }
         /// The port that the flow will be listening on for incoming content.
-        pub fn ingest_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.ingest_port(inp);
+        pub fn ingest_port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.ingest_port(signature);
             self
         }
         /// The port that the flow will be listening on for incoming content.
@@ -3150,8 +3141,8 @@ pub mod fluent_builders {
             self
         }
         /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
-        pub fn max_bitrate(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_bitrate(inp);
+        pub fn max_bitrate(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_bitrate(signature);
             self
         }
         /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
@@ -3160,8 +3151,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
-        pub fn max_latency(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_latency(inp);
+        pub fn max_latency(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_latency(signature);
             self
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
@@ -3170,8 +3161,8 @@ pub mod fluent_builders {
             self
         }
         /// The size of the buffer (in milliseconds) to use to sync incoming source data.
-        pub fn max_sync_buffer(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_sync_buffer(inp);
+        pub fn max_sync_buffer(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_sync_buffer(signature);
             self
         }
         /// The size of the buffer (in milliseconds) to use to sync incoming source data.
@@ -3186,9 +3177,9 @@ pub mod fluent_builders {
         /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
-            inp: impl Into<crate::model::MediaStreamSourceConfigurationRequest>,
+            input: crate::model::MediaStreamSourceConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.media_stream_source_configurations(inp);
+            self.inner = self.inner.media_stream_source_configurations(input);
             self
         }
         /// The media streams that are associated with the source, and the parameters for those associations.
@@ -3202,8 +3193,8 @@ pub mod fluent_builders {
             self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-        pub fn min_latency(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_latency(inp);
+        pub fn min_latency(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_latency(signature);
             self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -3212,8 +3203,8 @@ pub mod fluent_builders {
             self
         }
         /// The protocol that is used by the source.
-        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, signature: crate::model::Protocol) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// The protocol that is used by the source.
@@ -3222,8 +3213,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the source that you want to update.
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(signature.into());
             self
         }
         /// The ARN of the source that you want to update.
@@ -3232,8 +3223,8 @@ pub mod fluent_builders {
             self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(signature.into());
             self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
@@ -3242,8 +3233,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the VPC interface to use for this source.
-        pub fn vpc_interface_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_interface_name(inp);
+        pub fn vpc_interface_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_interface_name(signature.into());
             self
         }
         /// The name of the VPC interface to use for this source.
@@ -3255,8 +3246,8 @@ pub mod fluent_builders {
             self
         }
         /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        pub fn whitelist_cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.whitelist_cidr(inp);
+        pub fn whitelist_cidr(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.whitelist_cidr(signature.into());
             self
         }
         /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.

@@ -243,8 +243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user generated name for the Data Store.</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(signature.into());
             self
         }
         /// <p>The user generated name for the Data Store.</p>
@@ -256,8 +256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
-        pub fn datastore_type_version(mut self, inp: crate::model::FhirVersion) -> Self {
-            self.inner = self.inner.datastore_type_version(inp);
+        pub fn datastore_type_version(mut self, signature: crate::model::FhirVersion) -> Self {
+            self.inner = self.inner.datastore_type_version(signature);
             self
         }
         /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
@@ -271,8 +271,8 @@ pub mod fluent_builders {
         /// <p>
         /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
         /// </p>
-        pub fn sse_configuration(mut self, inp: crate::model::SseConfiguration) -> Self {
-            self.inner = self.inner.sse_configuration(inp);
+        pub fn sse_configuration(mut self, signature: crate::model::SseConfiguration) -> Self {
+            self.inner = self.inner.sse_configuration(signature);
             self
         }
         /// <p>
@@ -287,8 +287,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
         /// supported preloaded data is synthetic data generated from Synthea.</p>
-        pub fn preload_data_config(mut self, inp: crate::model::PreloadDataConfig) -> Self {
-            self.inner = self.inner.preload_data_config(inp);
+        pub fn preload_data_config(mut self, signature: crate::model::PreloadDataConfig) -> Self {
+            self.inner = self.inner.preload_data_config(signature);
             self
         }
         /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
@@ -301,8 +301,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional user provided token used for ensuring idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Optional user provided token used for ensuring idempotency.</p>
@@ -317,8 +317,8 @@ pub mod fluent_builders {
         /// <p>
         /// Resource tags that are applied to a Data Store when it is created.
         /// </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>
@@ -392,8 +392,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
-        pub fn datastore_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_id(inp);
+        pub fn datastore_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(signature.into());
             self
         }
         /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
@@ -464,8 +464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
-        pub fn datastore_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_id(inp);
+        pub fn datastore_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(signature.into());
             self
         }
         /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
@@ -534,8 +534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
-        pub fn datastore_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_id(inp);
+        pub fn datastore_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(signature.into());
             self
         }
         /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
@@ -544,8 +544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS generated ID for an export job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The AWS generated ID for an export job.</p>
@@ -614,8 +614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS-generated ID of the Data Store.</p>
-        pub fn datastore_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_id(inp);
+        pub fn datastore_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(signature.into());
             self
         }
         /// <p>The AWS-generated ID of the Data Store.</p>
@@ -624,8 +624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS-generated job ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The AWS-generated job ID.</p>
@@ -695,8 +695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Lists all filters associated with a FHIR Data Store request.</p>
-        pub fn filter(mut self, inp: crate::model::DatastoreFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::DatastoreFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Lists all filters associated with a FHIR Data Store request.</p>
@@ -708,8 +708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Fetches the next page of Data Stores when results are paginated.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Fetches the next page of Data Stores when results are paginated.</p>
@@ -719,8 +719,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of Data Stores returned in a single page of a
         /// ListFHIRDatastoresRequest call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of Data Stores returned in a single page of a
@@ -794,8 +794,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to the export job with the specified Data Store ID.
         /// </p>
-        pub fn datastore_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_id(inp);
+        pub fn datastore_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(signature.into());
             self
         }
         /// <p>
@@ -808,8 +808,8 @@ pub mod fluent_builders {
         /// <p>
         /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -822,8 +822,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -836,8 +836,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to the export job with the specified job name.
         /// </p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>
@@ -850,8 +850,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to the export jobs with the specified job status.
         /// </p>
-        pub fn job_status(mut self, inp: crate::model::JobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        pub fn job_status(mut self, signature: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.job_status(signature);
             self
         }
         /// <p>
@@ -867,8 +867,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
         /// </p>
-        pub fn submitted_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.submitted_before(inp);
+        pub fn submitted_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.submitted_before(signature);
             self
         }
         /// <p>
@@ -884,8 +884,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
         /// </p>
-        pub fn submitted_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.submitted_after(inp);
+        pub fn submitted_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.submitted_after(signature);
             self
         }
         /// <p>
@@ -963,8 +963,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to the import job with the specified Data Store ID.
         /// </p>
-        pub fn datastore_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_id(inp);
+        pub fn datastore_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(signature.into());
             self
         }
         /// <p>
@@ -977,8 +977,8 @@ pub mod fluent_builders {
         /// <p>
         /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -991,8 +991,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -1005,8 +1005,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to the import job with the specified job name.
         /// </p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>
@@ -1019,8 +1019,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to the import job with the specified job status.
         /// </p>
-        pub fn job_status(mut self, inp: crate::model::JobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        pub fn job_status(mut self, signature: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.job_status(signature);
             self
         }
         /// <p>
@@ -1036,8 +1036,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
         /// </p>
-        pub fn submitted_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.submitted_before(inp);
+        pub fn submitted_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.submitted_before(signature);
             self
         }
         /// <p>
@@ -1053,8 +1053,8 @@ pub mod fluent_builders {
         /// <p>
         /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
         /// </p>
-        pub fn submitted_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.submitted_after(inp);
+        pub fn submitted_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.submitted_after(signature);
             self
         }
         /// <p>
@@ -1132,8 +1132,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -1204,8 +1204,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user generated name for an export job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>The user generated name for an export job.</p>
@@ -1214,8 +1214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The output data configuration that was supplied when the export job was created.</p>
-        pub fn output_data_config(mut self, inp: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(inp);
+        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(signature);
             self
         }
         /// <p>The output data configuration that was supplied when the export job was created.</p>
@@ -1227,8 +1227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
-        pub fn datastore_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_id(inp);
+        pub fn datastore_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(signature.into());
             self
         }
         /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
@@ -1237,8 +1237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-        pub fn data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(inp);
+        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name used during the initiation of the job.</p>
@@ -1250,8 +1250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional user provided token used for ensuring idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>An optional user provided token used for ensuring idempotency.</p>
@@ -1320,8 +1320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
@@ -1330,8 +1330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
-        pub fn input_data_config(mut self, inp: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(inp);
+        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(signature);
             self
         }
         /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
@@ -1343,8 +1343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The output data configuration that was supplied when the export job was created.</p>
-        pub fn job_output_data_config(mut self, inp: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.job_output_data_config(inp);
+        pub fn job_output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.job_output_data_config(signature);
             self
         }
         /// <p>The output data configuration that was supplied when the export job was created.</p>
@@ -1356,8 +1356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS-generated Data Store ID.</p>
-        pub fn datastore_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_id(inp);
+        pub fn datastore_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_id(signature.into());
             self
         }
         /// <p>The AWS-generated Data Store ID.</p>
@@ -1366,8 +1366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
-        pub fn data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(inp);
+        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
@@ -1379,8 +1379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional user provided token used for ensuring idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Optional user provided token used for ensuring idempotency.</p>
@@ -1453,8 +1453,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -1471,8 +1471,8 @@ pub mod fluent_builders {
         /// <p>
         /// The user specified key and value pair tags being added to a Data Store.
         /// </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>
@@ -1550,8 +1550,8 @@ pub mod fluent_builders {
         /// <p>
         /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -1568,8 +1568,8 @@ pub mod fluent_builders {
         /// <p>
         /// The keys for the tags to be removed from the Healthlake Data Store.
         /// </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>

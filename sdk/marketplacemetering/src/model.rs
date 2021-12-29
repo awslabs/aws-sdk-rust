@@ -55,9 +55,9 @@ pub mod usage_allocation {
         ///
         /// <p>The set of tags that define the bucket of usage. For the bucket of items with no
         /// tags, this parameter can be left out.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -310,12 +310,9 @@ pub mod usage_record {
         ///
         /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities
         /// must equal the Quantity of the UsageRecord.</p>
-        pub fn usage_allocations(
-            mut self,
-            input: impl Into<crate::model::UsageAllocation>,
-        ) -> Self {
+        pub fn usage_allocations(mut self, input: crate::model::UsageAllocation) -> Self {
             let mut v = self.usage_allocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_allocations = Some(v);
             self
         }

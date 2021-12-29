@@ -183,8 +183,8 @@ pub mod fluent_builders {
         /// <p>To obtain a session token, run the <code>StartSession</code> command. This
         /// <code>SessionToken</code> is required for every subsequent command that is issued during
         /// the current session.</p>
-        pub fn session_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_token(inp);
+        pub fn session_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_token(signature.into());
             self
         }
         /// <p>Specifies the session token for the current command. A session token is constant
@@ -201,8 +201,8 @@ pub mod fluent_builders {
         }
         /// <p>Command to start a new session. A session token is obtained as part of the
         /// response.</p>
-        pub fn start_session(mut self, inp: crate::model::StartSessionRequest) -> Self {
-            self.inner = self.inner.start_session(inp);
+        pub fn start_session(mut self, signature: crate::model::StartSessionRequest) -> Self {
+            self.inner = self.inner.start_session(signature);
             self
         }
         /// <p>Command to start a new session. A session token is obtained as part of the
@@ -215,8 +215,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to start a new transaction.</p>
-        pub fn start_transaction(mut self, inp: crate::model::StartTransactionRequest) -> Self {
-            self.inner = self.inner.start_transaction(inp);
+        pub fn start_transaction(
+            mut self,
+            signature: crate::model::StartTransactionRequest,
+        ) -> Self {
+            self.inner = self.inner.start_transaction(signature);
             self
         }
         /// <p>Command to start a new transaction.</p>
@@ -228,8 +231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to end the current session.</p>
-        pub fn end_session(mut self, inp: crate::model::EndSessionRequest) -> Self {
-            self.inner = self.inner.end_session(inp);
+        pub fn end_session(mut self, signature: crate::model::EndSessionRequest) -> Self {
+            self.inner = self.inner.end_session(signature);
             self
         }
         /// <p>Command to end the current session.</p>
@@ -241,8 +244,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to commit the specified transaction.</p>
-        pub fn commit_transaction(mut self, inp: crate::model::CommitTransactionRequest) -> Self {
-            self.inner = self.inner.commit_transaction(inp);
+        pub fn commit_transaction(
+            mut self,
+            signature: crate::model::CommitTransactionRequest,
+        ) -> Self {
+            self.inner = self.inner.commit_transaction(signature);
             self
         }
         /// <p>Command to commit the specified transaction.</p>
@@ -254,8 +260,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to abort the current transaction.</p>
-        pub fn abort_transaction(mut self, inp: crate::model::AbortTransactionRequest) -> Self {
-            self.inner = self.inner.abort_transaction(inp);
+        pub fn abort_transaction(
+            mut self,
+            signature: crate::model::AbortTransactionRequest,
+        ) -> Self {
+            self.inner = self.inner.abort_transaction(signature);
             self
         }
         /// <p>Command to abort the current transaction.</p>
@@ -267,8 +276,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to execute a statement in the specified transaction.</p>
-        pub fn execute_statement(mut self, inp: crate::model::ExecuteStatementRequest) -> Self {
-            self.inner = self.inner.execute_statement(inp);
+        pub fn execute_statement(
+            mut self,
+            signature: crate::model::ExecuteStatementRequest,
+        ) -> Self {
+            self.inner = self.inner.execute_statement(signature);
             self
         }
         /// <p>Command to execute a statement in the specified transaction.</p>
@@ -280,8 +292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to fetch a page.</p>
-        pub fn fetch_page(mut self, inp: crate::model::FetchPageRequest) -> Self {
-            self.inner = self.inner.fetch_page(inp);
+        pub fn fetch_page(mut self, signature: crate::model::FetchPageRequest) -> Self {
+            self.inner = self.inner.fetch_page(signature);
             self
         }
         /// <p>Command to fetch a page.</p>

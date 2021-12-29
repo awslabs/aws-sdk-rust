@@ -280,12 +280,9 @@ pub mod advanced_event_selector {
         /// To override the contents of this collection use [`set_field_selectors`](Self::set_field_selectors).
         ///
         /// <p>Contains all selector statements in an advanced event selector.</p>
-        pub fn field_selectors(
-            mut self,
-            input: impl Into<crate::model::AdvancedFieldSelector>,
-        ) -> Self {
+        pub fn field_selectors(mut self, input: crate::model::AdvancedFieldSelector) -> Self {
             let mut v = self.field_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_selectors = Some(v);
             self
         }
@@ -1558,9 +1555,9 @@ pub mod event_selector {
         /// data events.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a>
         /// in the <i>CloudTrail User Guide</i>.</p>
-        pub fn data_resources(mut self, input: impl Into<crate::model::DataResource>) -> Self {
+        pub fn data_resources(mut self, input: crate::model::DataResource) -> Self {
             let mut v = self.data_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_resources = Some(v);
             self
         }
@@ -2375,9 +2372,9 @@ pub mod event {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>A list of resources referenced by the event returned.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -2878,9 +2875,9 @@ pub mod resource_tag {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>A list of tags.</p>
-        pub fn tags_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_list = Some(v);
             self
         }

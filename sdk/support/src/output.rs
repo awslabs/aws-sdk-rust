@@ -178,12 +178,9 @@ pub mod describe_trusted_advisor_check_summaries_output {
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
         /// <p>The summary information for the requested Trusted Advisor checks.</p>
-        pub fn summaries(
-            mut self,
-            input: impl Into<crate::model::TrustedAdvisorCheckSummary>,
-        ) -> Self {
+        pub fn summaries(mut self, input: crate::model::TrustedAdvisorCheckSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -245,12 +242,9 @@ pub mod describe_trusted_advisor_checks_output {
         /// To override the contents of this collection use [`set_checks`](Self::set_checks).
         ///
         /// <p>Information about all available Trusted Advisor checks.</p>
-        pub fn checks(
-            mut self,
-            input: impl Into<crate::model::TrustedAdvisorCheckDescription>,
-        ) -> Self {
+        pub fn checks(mut self, input: crate::model::TrustedAdvisorCheckDescription) -> Self {
             let mut v = self.checks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.checks = Some(v);
             self
         }
@@ -372,12 +366,9 @@ pub mod describe_trusted_advisor_check_refresh_statuses_output {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>The refresh status of the specified Trusted Advisor checks.</p>
-        pub fn statuses(
-            mut self,
-            input: impl Into<crate::model::TrustedAdvisorCheckRefreshStatus>,
-        ) -> Self {
+        pub fn statuses(mut self, input: crate::model::TrustedAdvisorCheckRefreshStatus) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -445,9 +436,9 @@ pub mod describe_severity_levels_output {
         ///
         /// <p>The available severity levels for the support case. Available severity levels are
         /// defined by your service level agreement with AWS.</p>
-        pub fn severity_levels(mut self, input: impl Into<crate::model::SeverityLevel>) -> Self {
+        pub fn severity_levels(mut self, input: crate::model::SeverityLevel) -> Self {
             let mut v = self.severity_levels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.severity_levels = Some(v);
             self
         }
@@ -510,9 +501,9 @@ pub mod describe_services_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>A JSON-formatted list of AWS services.</p>
-        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
+        pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -582,9 +573,9 @@ pub mod describe_communications_output {
         /// To override the contents of this collection use [`set_communications`](Self::set_communications).
         ///
         /// <p>The communications for the case.</p>
-        pub fn communications(mut self, input: impl Into<crate::model::Communication>) -> Self {
+        pub fn communications(mut self, input: crate::model::Communication) -> Self {
             let mut v = self.communications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.communications = Some(v);
             self
         }
@@ -666,9 +657,9 @@ pub mod describe_cases_output {
         /// To override the contents of this collection use [`set_cases`](Self::set_cases).
         ///
         /// <p>The details for the cases that match the request.</p>
-        pub fn cases(mut self, input: impl Into<crate::model::CaseDetails>) -> Self {
+        pub fn cases(mut self, input: crate::model::CaseDetails) -> Self {
             let mut v = self.cases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cases = Some(v);
             self
         }

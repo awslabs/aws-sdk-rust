@@ -281,9 +281,9 @@ pub mod create_account_customization_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the tags that you want to attach to this resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -541,9 +541,9 @@ pub mod create_analysis_input {
         /// principal listed by Amazon Resource Name (ARN). </p>
         ///
         /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -593,9 +593,9 @@ pub mod create_analysis_input {
         ///
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
         /// analysis.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -860,9 +860,9 @@ pub mod create_dashboard_input {
         /// principal ARN. </p>
         ///
         /// <p>To specify no permissions, omit the permissions list.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -923,9 +923,9 @@ pub mod create_dashboard_input {
         ///
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
         /// dashboard.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1278,10 +1278,10 @@ pub mod create_data_set_input {
         pub fn physical_table_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PhysicalTable>,
+            v: crate::model::PhysicalTable,
         ) -> Self {
             let mut hash_map = self.physical_table_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.physical_table_map = Some(hash_map);
             self
         }
@@ -1303,10 +1303,10 @@ pub mod create_data_set_input {
         pub fn logical_table_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::LogicalTable>,
+            v: crate::model::LogicalTable,
         ) -> Self {
             let mut hash_map = self.logical_table_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.logical_table_map = Some(hash_map);
             self
         }
@@ -1338,9 +1338,9 @@ pub mod create_data_set_input {
         /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
         ///
         /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-        pub fn column_groups(mut self, input: impl Into<crate::model::ColumnGroup>) -> Self {
+        pub fn column_groups(mut self, input: crate::model::ColumnGroup) -> Self {
             let mut v = self.column_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_groups = Some(v);
             self
         }
@@ -1360,10 +1360,10 @@ pub mod create_data_set_input {
         pub fn field_folders(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FieldFolder>,
+            v: crate::model::FieldFolder,
         ) -> Self {
             let mut hash_map = self.field_folders.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.field_folders = Some(hash_map);
             self
         }
@@ -1382,9 +1382,9 @@ pub mod create_data_set_input {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions on the dataset.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1437,10 +1437,10 @@ pub mod create_data_set_input {
         /// </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
-            input: impl Into<crate::model::ColumnLevelPermissionRule>,
+            input: crate::model::ColumnLevelPermissionRule,
         ) -> Self {
             let mut v = self.column_level_permission_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_level_permission_rules = Some(v);
             self
         }
@@ -1459,9 +1459,9 @@ pub mod create_data_set_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1758,9 +1758,9 @@ pub mod create_data_source_input {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions on the data source.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1808,9 +1808,9 @@ pub mod create_data_source_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2066,9 +2066,9 @@ pub mod create_folder_input {
         ///
         /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
         /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -2086,9 +2086,9 @@ pub mod create_folder_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags for the folder.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3086,10 +3086,10 @@ pub mod create_iam_policy_assignment_input {
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.identities = Some(hash_map);
             self
         }
@@ -3585,9 +3585,9 @@ pub mod create_namespace_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that you want to associate with the namespace that you're creating.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3808,9 +3808,9 @@ pub mod create_template_input {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions to be set on the template. </p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -3858,9 +3858,9 @@ pub mod create_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4416,9 +4416,9 @@ pub mod create_theme_input {
         ///
         /// <p>A valid grouping of resource permissions to apply to the new theme.
         /// </p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -4437,9 +4437,9 @@ pub mod create_theme_input {
         ///
         /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the
         /// resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13505,9 +13505,9 @@ pub mod generate_embed_url_for_anonymous_user_input {
         /// <p>The session tags used for row-level security. Before you use this parameter, make sure that
         /// you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
         /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
-        pub fn session_tags(mut self, input: impl Into<crate::model::SessionTag>) -> Self {
+        pub fn session_tags(mut self, input: crate::model::SessionTag) -> Self {
             let mut v = self.session_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.session_tags = Some(v);
             self
         }
@@ -20320,9 +20320,9 @@ pub mod search_analyses_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The structure for the search filters that you want to apply to your search. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::AnalysisSearchFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::AnalysisSearchFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20542,9 +20542,9 @@ pub mod search_dashboards_input {
         /// example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals",
         /// "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code>
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::DashboardSearchFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DashboardSearchFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20762,9 +20762,9 @@ pub mod search_folders_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to the search. Currently, you can search only by the parent folder ARN. For example, <code>"Filters": [ { "Name": "PARENT_FOLDER_ARN", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:folder/folderId" } ]</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::FolderSearchFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::FolderSearchFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20973,9 +20973,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -22068,12 +22068,9 @@ pub mod update_analysis_permissions_input {
         ///
         /// <p>A structure that describes the permissions to add and the principal to add them
         /// to.</p>
-        pub fn grant_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn grant_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grant_permissions = Some(v);
             self
         }
@@ -22092,12 +22089,9 @@ pub mod update_analysis_permissions_input {
         ///
         /// <p>A structure that describes the permissions to remove and the principal to remove them
         /// from.</p>
-        pub fn revoke_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn revoke_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revoke_permissions = Some(v);
             self
         }
@@ -22700,12 +22694,9 @@ pub mod update_dashboard_permissions_input {
         /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
         ///
         /// <p>The permissions that you want to grant on this resource.</p>
-        pub fn grant_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn grant_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grant_permissions = Some(v);
             self
         }
@@ -22722,12 +22713,9 @@ pub mod update_dashboard_permissions_input {
         /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
         ///
         /// <p>The permissions that you want to revoke from this resource.</p>
-        pub fn revoke_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn revoke_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revoke_permissions = Some(v);
             self
         }
@@ -22744,12 +22732,9 @@ pub mod update_dashboard_permissions_input {
         /// To override the contents of this collection use [`set_grant_link_permissions`](Self::set_grant_link_permissions).
         ///
         /// <p>Grants link permissions to all users in a defined namespace.</p>
-        pub fn grant_link_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn grant_link_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_link_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grant_link_permissions = Some(v);
             self
         }
@@ -22766,12 +22751,9 @@ pub mod update_dashboard_permissions_input {
         /// To override the contents of this collection use [`set_revoke_link_permissions`](Self::set_revoke_link_permissions).
         ///
         /// <p>Revokes link permissions from all users in a defined namespace.</p>
-        pub fn revoke_link_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn revoke_link_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_link_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revoke_link_permissions = Some(v);
             self
         }
@@ -23249,10 +23231,10 @@ pub mod update_data_set_input {
         pub fn physical_table_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PhysicalTable>,
+            v: crate::model::PhysicalTable,
         ) -> Self {
             let mut hash_map = self.physical_table_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.physical_table_map = Some(hash_map);
             self
         }
@@ -23274,10 +23256,10 @@ pub mod update_data_set_input {
         pub fn logical_table_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::LogicalTable>,
+            v: crate::model::LogicalTable,
         ) -> Self {
             let mut hash_map = self.logical_table_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.logical_table_map = Some(hash_map);
             self
         }
@@ -23309,9 +23291,9 @@ pub mod update_data_set_input {
         /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
         ///
         /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-        pub fn column_groups(mut self, input: impl Into<crate::model::ColumnGroup>) -> Self {
+        pub fn column_groups(mut self, input: crate::model::ColumnGroup) -> Self {
             let mut v = self.column_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_groups = Some(v);
             self
         }
@@ -23331,10 +23313,10 @@ pub mod update_data_set_input {
         pub fn field_folders(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FieldFolder>,
+            v: crate::model::FieldFolder,
         ) -> Self {
             let mut hash_map = self.field_folders.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.field_folders = Some(hash_map);
             self
         }
@@ -23389,10 +23371,10 @@ pub mod update_data_set_input {
         /// </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
-            input: impl Into<crate::model::ColumnLevelPermissionRule>,
+            input: crate::model::ColumnLevelPermissionRule,
         ) -> Self {
             let mut v = self.column_level_permission_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_level_permission_rules = Some(v);
             self
         }
@@ -23643,12 +23625,9 @@ pub mod update_data_set_permissions_input {
         /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
         ///
         /// <p>The resource permissions that you want to grant to the dataset.</p>
-        pub fn grant_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn grant_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grant_permissions = Some(v);
             self
         }
@@ -23665,12 +23644,9 @@ pub mod update_data_set_permissions_input {
         /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
         ///
         /// <p>The resource permissions that you want to revoke from the dataset.</p>
-        pub fn revoke_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn revoke_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revoke_permissions = Some(v);
             self
         }
@@ -24184,12 +24160,9 @@ pub mod update_data_source_permissions_input {
         /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
         ///
         /// <p>A list of resource permissions that you want to grant on the data source.</p>
-        pub fn grant_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn grant_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grant_permissions = Some(v);
             self
         }
@@ -24206,12 +24179,9 @@ pub mod update_data_source_permissions_input {
         /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
         ///
         /// <p>A list of resource permissions that you want to revoke on the data source.</p>
-        pub fn revoke_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn revoke_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revoke_permissions = Some(v);
             self
         }
@@ -24647,12 +24617,9 @@ pub mod update_folder_permissions_input {
         /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
         ///
         /// <p>The permissions that you want to grant on a resource.</p>
-        pub fn grant_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn grant_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grant_permissions = Some(v);
             self
         }
@@ -24669,12 +24636,9 @@ pub mod update_folder_permissions_input {
         /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
         ///
         /// <p>The permissions that you want to revoke from a resource.</p>
-        pub fn revoke_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn revoke_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revoke_permissions = Some(v);
             self
         }
@@ -25216,10 +25180,10 @@ pub mod update_iam_policy_assignment_input {
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.identities = Some(hash_map);
             self
         }
@@ -26183,12 +26147,9 @@ pub mod update_template_permissions_input {
         /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
         ///
         /// <p>A list of resource permissions to be granted on the template. </p>
-        pub fn grant_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn grant_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grant_permissions = Some(v);
             self
         }
@@ -26205,12 +26166,9 @@ pub mod update_template_permissions_input {
         /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
         ///
         /// <p>A list of resource permissions to be revoked from the template. </p>
-        pub fn revoke_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn revoke_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revoke_permissions = Some(v);
             self
         }
@@ -26938,12 +26896,9 @@ pub mod update_theme_permissions_input {
         /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
         ///
         /// <p>A list of resource permissions to be granted for the theme.</p>
-        pub fn grant_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn grant_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.grant_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grant_permissions = Some(v);
             self
         }
@@ -26960,12 +26915,9 @@ pub mod update_theme_permissions_input {
         /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
         ///
         /// <p>A list of resource permissions to be revoked from the theme.</p>
-        pub fn revoke_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn revoke_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.revoke_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revoke_permissions = Some(v);
             self
         }

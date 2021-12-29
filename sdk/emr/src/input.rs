@@ -185,12 +185,9 @@ pub mod add_instance_groups_input {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>Instance groups to add.</p>
-        pub fn instance_groups(
-            mut self,
-            input: impl Into<crate::model::InstanceGroupConfig>,
-        ) -> Self {
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroupConfig) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_groups = Some(v);
             self
         }
@@ -375,9 +372,9 @@ pub mod add_job_flow_steps_input {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
-        pub fn steps(mut self, input: impl Into<crate::model::StepConfig>) -> Self {
+        pub fn steps(mut self, input: crate::model::StepConfig) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -554,9 +551,9 @@ pub mod add_tags_input {
         /// <p>A list of tags to associate with a resource. Tags are
         /// user-defined key-value pairs that consist of a required key string with a maximum of 128
         /// characters, and an optional value string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1267,9 +1264,9 @@ pub mod create_studio_input {
         /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
         /// consist of a required key string with a maximum of 128 characters, and an optional value
         /// string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2380,12 +2377,9 @@ pub mod describe_job_flows_input {
         /// To override the contents of this collection use [`set_job_flow_states`](Self::set_job_flow_states).
         ///
         /// <p>Return only job flows whose state is contained in this list.</p>
-        pub fn job_flow_states(
-            mut self,
-            input: impl Into<crate::model::JobFlowExecutionState>,
-        ) -> Self {
+        pub fn job_flow_states(mut self, input: crate::model::JobFlowExecutionState) -> Self {
             let mut v = self.job_flow_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_flow_states = Some(v);
             self
         }
@@ -4219,9 +4213,9 @@ pub mod list_clusters_input {
         /// To override the contents of this collection use [`set_cluster_states`](Self::set_cluster_states).
         ///
         /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-        pub fn cluster_states(mut self, input: impl Into<crate::model::ClusterState>) -> Self {
+        pub fn cluster_states(mut self, input: crate::model::ClusterState) -> Self {
             let mut v = self.cluster_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_states = Some(v);
             self
         }
@@ -4756,12 +4750,9 @@ pub mod list_instances_input {
         /// To override the contents of this collection use [`set_instance_group_types`](Self::set_instance_group_types).
         ///
         /// <p>The type of instance group for which to list the instances.</p>
-        pub fn instance_group_types(
-            mut self,
-            input: impl Into<crate::model::InstanceGroupType>,
-        ) -> Self {
+        pub fn instance_group_types(mut self, input: crate::model::InstanceGroupType) -> Self {
             let mut v = self.instance_group_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_group_types = Some(v);
             self
         }
@@ -4805,9 +4796,9 @@ pub mod list_instances_input {
         ///
         /// <p>A list of instance states that will filter the instances returned with this
         /// request.</p>
-        pub fn instance_states(mut self, input: impl Into<crate::model::InstanceState>) -> Self {
+        pub fn instance_states(mut self, input: crate::model::InstanceState) -> Self {
             let mut v = self.instance_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_states = Some(v);
             self
         }
@@ -5652,9 +5643,9 @@ pub mod list_steps_input {
         /// To override the contents of this collection use [`set_step_states`](Self::set_step_states).
         ///
         /// <p>The filter to limit the step list based on certain states.</p>
-        pub fn step_states(mut self, input: impl Into<crate::model::StepState>) -> Self {
+        pub fn step_states(mut self, input: crate::model::StepState) -> Self {
             let mut v = self.step_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.step_states = Some(v);
             self
         }
@@ -6531,12 +6522,9 @@ pub mod modify_instance_groups_input {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>Instance groups to change.</p>
-        pub fn instance_groups(
-            mut self,
-            input: impl Into<crate::model::InstanceGroupModifyConfig>,
-        ) -> Self {
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroupModifyConfig) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_groups = Some(v);
             self
         }
@@ -8229,9 +8217,9 @@ pub mod run_job_flow_input {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>A list of steps to run.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::StepConfig>) -> Self {
+        pub fn steps(mut self, input: crate::model::StepConfig) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -8248,12 +8236,9 @@ pub mod run_job_flow_input {
         /// To override the contents of this collection use [`set_bootstrap_actions`](Self::set_bootstrap_actions).
         ///
         /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
-        pub fn bootstrap_actions(
-            mut self,
-            input: impl Into<crate::model::BootstrapActionConfig>,
-        ) -> Self {
+        pub fn bootstrap_actions(mut self, input: crate::model::BootstrapActionConfig) -> Self {
             let mut v = self.bootstrap_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bootstrap_actions = Some(v);
             self
         }
@@ -8355,10 +8340,10 @@ pub mod run_job_flow_input {
         /// </ul>
         pub fn new_supported_products(
             mut self,
-            input: impl Into<crate::model::SupportedProductConfig>,
+            input: crate::model::SupportedProductConfig,
         ) -> Self {
             let mut v = self.new_supported_products.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.new_supported_products = Some(v);
             self
         }
@@ -8414,9 +8399,9 @@ pub mod run_job_flow_input {
         /// for Amazon EMR to install and configure when launching the cluster. For a list of
         /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
         /// Guide</a>.</p>
-        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -8437,9 +8422,9 @@ pub mod run_job_flow_input {
         ///
         /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
         /// cluster you are creating.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -8500,9 +8485,9 @@ pub mod run_job_flow_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8694,10 +8679,10 @@ pub mod run_job_flow_input {
         /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
         pub fn placement_group_configs(
             mut self,
-            input: impl Into<crate::model::PlacementGroupConfig>,
+            input: crate::model::PlacementGroupConfig,
         ) -> Self {
             let mut v = self.placement_group_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_group_configs = Some(v);
             self
         }
@@ -9382,9 +9367,9 @@ pub mod start_notebook_execution_input {
         /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
         /// pairs that consist of a required key string with a maximum of 128 characters and an
         /// optional value string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

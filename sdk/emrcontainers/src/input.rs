@@ -1628,9 +1628,9 @@ pub mod list_job_runs_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the job run.</p>
-        pub fn states(mut self, input: impl Into<crate::model::JobRunState>) -> Self {
+        pub fn states(mut self, input: crate::model::JobRunState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -1925,9 +1925,9 @@ pub mod list_managed_endpoints_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the managed endpoints.</p>
-        pub fn states(mut self, input: impl Into<crate::model::EndpointState>) -> Self {
+        pub fn states(mut self, input: crate::model::EndpointState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -2373,9 +2373,9 @@ pub mod list_virtual_clusters_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the requested virtual clusters.</p>
-        pub fn states(mut self, input: impl Into<crate::model::VirtualClusterState>) -> Self {
+        pub fn states(mut self, input: crate::model::VirtualClusterState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }

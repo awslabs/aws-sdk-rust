@@ -227,9 +227,9 @@ pub mod rule_group_response {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -840,9 +840,9 @@ pub mod rules_source {
         /// Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options.
         /// For information about the Suricata <code>Rules</code> format, see
         /// <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
-        pub fn stateful_rules(mut self, input: impl Into<crate::model::StatefulRule>) -> Self {
+        pub fn stateful_rules(mut self, input: crate::model::StatefulRule) -> Self {
             let mut v = self.stateful_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stateful_rules = Some(v);
             self
         }
@@ -942,9 +942,9 @@ pub mod stateless_rules_and_custom_actions {
         /// To override the contents of this collection use [`set_stateless_rules`](Self::set_stateless_rules).
         ///
         /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
-        pub fn stateless_rules(mut self, input: impl Into<crate::model::StatelessRule>) -> Self {
+        pub fn stateless_rules(mut self, input: crate::model::StatelessRule) -> Self {
             let mut v = self.stateless_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stateless_rules = Some(v);
             self
         }
@@ -965,9 +965,9 @@ pub mod stateless_rules_and_custom_actions {
         /// name each custom action that you define, and then you can use it by name in your <a>StatelessRule</a>
         /// <a>RuleDefinition</a>
         /// <code>Actions</code> specification.</p>
-        pub fn custom_actions(mut self, input: impl Into<crate::model::CustomAction>) -> Self {
+        pub fn custom_actions(mut self, input: crate::model::CustomAction) -> Self {
             let mut v = self.custom_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_actions = Some(v);
             self
         }
@@ -1207,9 +1207,9 @@ pub mod publish_metric_action {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p></p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -1745,9 +1745,9 @@ pub mod match_attributes {
         ///
         /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not
         /// specified, this matches with any source address. </p>
-        pub fn sources(mut self, input: impl Into<crate::model::Address>) -> Self {
+        pub fn sources(mut self, input: crate::model::Address) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -1766,9 +1766,9 @@ pub mod match_attributes {
         ///
         /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not
         /// specified, this matches with any destination address. </p>
-        pub fn destinations(mut self, input: impl Into<crate::model::Address>) -> Self {
+        pub fn destinations(mut self, input: crate::model::Address) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1789,9 +1789,9 @@ pub mod match_attributes {
         /// This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
         /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
         /// ranges, for example <code>1990:1994</code>. </p>
-        pub fn source_ports(mut self, input: impl Into<crate::model::PortRange>) -> Self {
+        pub fn source_ports(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.source_ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_ports = Some(v);
             self
         }
@@ -1814,9 +1814,9 @@ pub mod match_attributes {
         /// destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
         /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
         /// ranges, for example <code>1990:1994</code>. </p>
-        pub fn destination_ports(mut self, input: impl Into<crate::model::PortRange>) -> Self {
+        pub fn destination_ports(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.destination_ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_ports = Some(v);
             self
         }
@@ -1837,9 +1837,9 @@ pub mod match_attributes {
         ///
         /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol
         /// number (IANA). If not specified, this matches with any protocol. </p>
-        pub fn protocols(mut self, input: impl Into<i32>) -> Self {
+        pub fn protocols(mut self, input: i32) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -1855,9 +1855,9 @@ pub mod match_attributes {
         ///
         /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any
         /// settings. This setting is only used for protocol 6 (TCP).</p>
-        pub fn tcp_flags(mut self, input: impl Into<crate::model::TcpFlagField>) -> Self {
+        pub fn tcp_flags(mut self, input: crate::model::TcpFlagField) -> Self {
             let mut v = self.tcp_flags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tcp_flags = Some(v);
             self
         }
@@ -1959,9 +1959,9 @@ pub mod tcp_flag_field {
         /// <p>The ones that are not set in this flags setting must also not be set in the packet. </p>
         /// </li>
         /// </ul>
-        pub fn flags(mut self, input: impl Into<crate::model::TcpFlag>) -> Self {
+        pub fn flags(mut self, input: crate::model::TcpFlag) -> Self {
             let mut v = self.flags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.flags = Some(v);
             self
         }
@@ -1987,9 +1987,9 @@ pub mod tcp_flag_field {
         /// To override the contents of this collection use [`set_masks`](Self::set_masks).
         ///
         /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-        pub fn masks(mut self, input: impl Into<crate::model::TcpFlag>) -> Self {
+        pub fn masks(mut self, input: crate::model::TcpFlag) -> Self {
             let mut v = self.masks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.masks = Some(v);
             self
         }
@@ -2461,9 +2461,9 @@ pub mod stateful_rule {
         /// To override the contents of this collection use [`set_rule_options`](Self::set_rule_options).
         ///
         /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
-        pub fn rule_options(mut self, input: impl Into<crate::model::RuleOption>) -> Self {
+        pub fn rule_options(mut self, input: crate::model::RuleOption) -> Self {
             let mut v = self.rule_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_options = Some(v);
             self
         }
@@ -3221,9 +3221,9 @@ pub mod rules_source_list {
         /// To override the contents of this collection use [`set_target_types`](Self::set_target_types).
         ///
         /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
-        pub fn target_types(mut self, input: impl Into<crate::model::TargetType>) -> Self {
+        pub fn target_types(mut self, input: crate::model::TargetType) -> Self {
             let mut v = self.target_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_types = Some(v);
             self
         }
@@ -3433,10 +3433,10 @@ pub mod rule_variables {
         pub fn ip_sets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::IpSet>,
+            v: crate::model::IpSet,
         ) -> Self {
             let mut hash_map = self.ip_sets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.ip_sets = Some(hash_map);
             self
         }
@@ -3458,10 +3458,10 @@ pub mod rule_variables {
         pub fn port_sets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PortSet>,
+            v: crate::model::PortSet,
         ) -> Self {
             let mut hash_map = self.port_sets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.port_sets = Some(hash_map);
             self
         }
@@ -3672,10 +3672,10 @@ pub mod logging_configuration {
         /// logs for stateful rule groups. </p>
         pub fn log_destination_configs(
             mut self,
-            input: impl Into<crate::model::LogDestinationConfig>,
+            input: crate::model::LogDestinationConfig,
         ) -> Self {
             let mut v = self.log_destination_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_destination_configs = Some(v);
             self
         }
@@ -4260,9 +4260,9 @@ pub mod firewall_policy_response {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4492,10 +4492,10 @@ pub mod firewall_policy {
         /// matching criteria in stateless rules. </p>
         pub fn stateless_rule_group_references(
             mut self,
-            input: impl Into<crate::model::StatelessRuleGroupReference>,
+            input: crate::model::StatelessRuleGroupReference,
         ) -> Self {
             let mut v = self.stateless_rule_group_references.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stateless_rule_group_references = Some(v);
             self
         }
@@ -4590,12 +4590,9 @@ pub mod firewall_policy {
         /// <p>The custom action definitions that are available for use in the firewall policy's
         /// <code>StatelessDefaultActions</code> setting. You name each custom action that you
         /// define, and then you can use it by name in your default actions specifications.</p>
-        pub fn stateless_custom_actions(
-            mut self,
-            input: impl Into<crate::model::CustomAction>,
-        ) -> Self {
+        pub fn stateless_custom_actions(mut self, input: crate::model::CustomAction) -> Self {
             let mut v = self.stateless_custom_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stateless_custom_actions = Some(v);
             self
         }
@@ -4617,10 +4614,10 @@ pub mod firewall_policy {
         /// inspection criteria in stateful rules. </p>
         pub fn stateful_rule_group_references(
             mut self,
-            input: impl Into<crate::model::StatefulRuleGroupReference>,
+            input: crate::model::StatefulRuleGroupReference,
         ) -> Self {
             let mut v = self.stateful_rule_group_references.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stateful_rule_group_references = Some(v);
             self
         }
@@ -5404,10 +5401,10 @@ pub mod firewall_status {
         pub fn sync_states(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::SyncState>,
+            v: crate::model::SyncState,
         ) -> Self {
             let mut hash_map = self.sync_states.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.sync_states = Some(hash_map);
             self
         }
@@ -5540,10 +5537,10 @@ pub mod sync_state {
         pub fn config(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PerObjectStatus>,
+            v: crate::model::PerObjectStatus,
         ) -> Self {
             let mut hash_map = self.config.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.config = Some(hash_map);
             self
         }
@@ -6208,9 +6205,9 @@ pub mod firewall {
         ///
         /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong
         /// to a different Availability Zone. </p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
@@ -6293,9 +6290,9 @@ pub mod firewall {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

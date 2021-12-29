@@ -46,12 +46,9 @@ pub mod add_facet_to_object_input {
         /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
         ///
         /// <p>Attributes on the facet that you are adding to the object.</p>
-        pub fn object_attribute_list(
-            mut self,
-            input: impl Into<crate::model::AttributeKeyAndValue>,
-        ) -> Self {
+        pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.object_attribute_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.object_attribute_list = Some(v);
             self
         }
@@ -1144,9 +1141,9 @@ pub mod attach_typed_link_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A set of attributes that are associated with the typed link.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeNameAndValue>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AttributeNameAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1348,9 +1345,9 @@ pub mod batch_read_input {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that are part of the batch.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::BatchReadOperation>) -> Self {
+        pub fn operations(mut self, input: crate::model::BatchReadOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1576,9 +1573,9 @@ pub mod batch_write_input {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that are part of the batch.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::BatchWriteOperation>) -> Self {
+        pub fn operations(mut self, input: crate::model::BatchWriteOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1975,9 +1972,9 @@ pub mod create_facet_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes that are associated with the <a>Facet</a>.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::FacetAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::FacetAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -2250,12 +2247,9 @@ pub mod create_index_input {
         ///
         /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
         /// is supported.</p>
-        pub fn ordered_indexed_attribute_list(
-            mut self,
-            input: impl Into<crate::model::AttributeKey>,
-        ) -> Self {
+        pub fn ordered_indexed_attribute_list(mut self, input: crate::model::AttributeKey) -> Self {
             let mut v = self.ordered_indexed_attribute_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ordered_indexed_attribute_list = Some(v);
             self
         }
@@ -2495,9 +2489,9 @@ pub mod create_object_input {
         /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
         ///
         /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facets(mut self, input: impl Into<crate::model::SchemaFacet>) -> Self {
+        pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
             let mut v = self.schema_facets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_facets = Some(v);
             self
         }
@@ -2515,12 +2509,9 @@ pub mod create_object_input {
         ///
         /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
         /// value.</p>
-        pub fn object_attribute_list(
-            mut self,
-            input: impl Into<crate::model::AttributeKeyAndValue>,
-        ) -> Self {
+        pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.object_attribute_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.object_attribute_list = Some(v);
             self
         }
@@ -7929,10 +7920,10 @@ pub mod list_incoming_typed_links_input {
         /// range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
-            input: impl Into<crate::model::TypedLinkAttributeRange>,
+            input: crate::model::TypedLinkAttributeRange,
         ) -> Self {
             let mut v = self.filter_attribute_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_attribute_ranges = Some(v);
             self
         }
@@ -8198,10 +8189,10 @@ pub mod list_index_input {
         /// <p>Specifies the ranges of indexed values that you want to query.</p>
         pub fn ranges_on_indexed_values(
             mut self,
-            input: impl Into<crate::model::ObjectAttributeRange>,
+            input: crate::model::ObjectAttributeRange,
         ) -> Self {
             let mut v = self.ranges_on_indexed_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ranges_on_indexed_values = Some(v);
             self
         }
@@ -9935,10 +9926,10 @@ pub mod list_outgoing_typed_links_input {
         /// range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
-            input: impl Into<crate::model::TypedLinkAttributeRange>,
+            input: crate::model::TypedLinkAttributeRange,
         ) -> Self {
             let mut v = self.filter_attribute_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_attribute_ranges = Some(v);
             self
         }
@@ -12070,9 +12061,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12429,12 +12420,9 @@ pub mod update_facet_input {
         /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
         /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
         /// operation to perform. </p>
-        pub fn attribute_updates(
-            mut self,
-            input: impl Into<crate::model::FacetAttributeUpdate>,
-        ) -> Self {
+        pub fn attribute_updates(mut self, input: crate::model::FacetAttributeUpdate) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_updates = Some(v);
             self
         }
@@ -12661,12 +12649,9 @@ pub mod update_link_attributes_input {
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
         /// <p>The attributes update structure.</p>
-        pub fn attribute_updates(
-            mut self,
-            input: impl Into<crate::model::LinkAttributeUpdate>,
-        ) -> Self {
+        pub fn attribute_updates(mut self, input: crate::model::LinkAttributeUpdate) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_updates = Some(v);
             self
         }
@@ -12885,12 +12870,9 @@ pub mod update_object_attributes_input {
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
         /// <p>The attributes update structure.</p>
-        pub fn attribute_updates(
-            mut self,
-            input: impl Into<crate::model::ObjectAttributeUpdate>,
-        ) -> Self {
+        pub fn attribute_updates(mut self, input: crate::model::ObjectAttributeUpdate) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_updates = Some(v);
             self
         }
@@ -13291,10 +13273,10 @@ pub mod update_typed_link_facet_input {
         /// <p>Attributes update structure.</p>
         pub fn attribute_updates(
             mut self,
-            input: impl Into<crate::model::TypedLinkFacetAttributeUpdate>,
+            input: crate::model::TypedLinkFacetAttributeUpdate,
         ) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_updates = Some(v);
             self
         }

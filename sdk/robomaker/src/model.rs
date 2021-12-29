@@ -2277,12 +2277,9 @@ pub mod simulation_job_request {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>The robot applications to use in the simulation job.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -2301,10 +2298,10 @@ pub mod simulation_job_request {
         /// <p>The simulation applications to use in the simulation job.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -2326,9 +2323,9 @@ pub mod simulation_job_request {
         /// <p>There is a limit of 100 files and a combined size of 25GB for all
         /// <code>DataSourceConfig</code> objects. </p>
         /// </note>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSourceConfig>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSourceConfig) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -3034,12 +3031,9 @@ pub mod simulation_application_config {
         /// To override the contents of this collection use [`set_upload_configurations`](Self::set_upload_configurations).
         ///
         /// <p>Information about upload configurations for the simulation application.</p>
-        pub fn upload_configurations(
-            mut self,
-            input: impl Into<crate::model::UploadConfiguration>,
-        ) -> Self {
+        pub fn upload_configurations(mut self, input: crate::model::UploadConfiguration) -> Self {
             let mut v = self.upload_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upload_configurations = Some(v);
             self
         }
@@ -3056,9 +3050,9 @@ pub mod simulation_application_config {
         /// To override the contents of this collection use [`set_world_configs`](Self::set_world_configs).
         ///
         /// <p>A list of world configurations.</p>
-        pub fn world_configs(mut self, input: impl Into<crate::model::WorldConfig>) -> Self {
+        pub fn world_configs(mut self, input: crate::model::WorldConfig) -> Self {
             let mut v = self.world_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.world_configs = Some(v);
             self
         }
@@ -3094,9 +3088,9 @@ pub mod simulation_application_config {
         /// To override the contents of this collection use [`set_tools`](Self::set_tools).
         ///
         /// <p>Information about tools configured for the simulation application.</p>
-        pub fn tools(mut self, input: impl Into<crate::model::Tool>) -> Self {
+        pub fn tools(mut self, input: crate::model::Tool) -> Self {
             let mut v = self.tools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tools = Some(v);
             self
         }
@@ -3889,9 +3883,9 @@ pub mod port_forwarding_config {
         /// To override the contents of this collection use [`set_port_mappings`](Self::set_port_mappings).
         ///
         /// <p>The port mappings for the configuration.</p>
-        pub fn port_mappings(mut self, input: impl Into<crate::model::PortMapping>) -> Self {
+        pub fn port_mappings(mut self, input: crate::model::PortMapping) -> Self {
             let mut v = self.port_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_mappings = Some(v);
             self
         }
@@ -4147,12 +4141,9 @@ pub mod robot_application_config {
         /// To override the contents of this collection use [`set_upload_configurations`](Self::set_upload_configurations).
         ///
         /// <p>The upload configurations for the robot application.</p>
-        pub fn upload_configurations(
-            mut self,
-            input: impl Into<crate::model::UploadConfiguration>,
-        ) -> Self {
+        pub fn upload_configurations(mut self, input: crate::model::UploadConfiguration) -> Self {
             let mut v = self.upload_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upload_configurations = Some(v);
             self
         }
@@ -4188,9 +4179,9 @@ pub mod robot_application_config {
         /// To override the contents of this collection use [`set_tools`](Self::set_tools).
         ///
         /// <p>Information about tools configured for the robot application.</p>
-        pub fn tools(mut self, input: impl Into<crate::model::Tool>) -> Self {
+        pub fn tools(mut self, input: crate::model::Tool) -> Self {
             let mut v = self.tools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tools = Some(v);
             self
         }
@@ -7447,10 +7438,10 @@ pub mod deployment_job {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -7692,9 +7683,9 @@ pub mod failure_summary {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>The worlds that failed.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::WorldFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::WorldFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -8521,9 +8512,9 @@ pub mod data_source {
         /// To override the contents of this collection use [`set_s3_keys`](Self::set_s3_keys).
         ///
         /// <p>The list of S3 keys identifying the data source files.</p>
-        pub fn s3_keys(mut self, input: impl Into<crate::model::S3KeyOutput>) -> Self {
+        pub fn s3_keys(mut self, input: crate::model::S3KeyOutput) -> Self {
             let mut v = self.s3_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.s3_keys = Some(v);
             self
         }
@@ -9625,12 +9616,9 @@ pub mod simulation_job {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>A list of robot applications.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -9649,10 +9637,10 @@ pub mod simulation_job {
         /// <p>A list of simulation applications.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -9669,9 +9657,9 @@ pub mod simulation_job {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The data sources for the simulation job.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }

@@ -26,12 +26,9 @@ pub mod add_flow_media_streams_input {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that you want to add to the flow.
-        pub fn media_streams(
-            mut self,
-            input: impl Into<crate::model::AddMediaStreamRequest>,
-        ) -> Self {
+        pub fn media_streams(mut self, input: crate::model::AddMediaStreamRequest) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_streams = Some(v);
             self
         }
@@ -221,9 +218,9 @@ pub mod add_flow_outputs_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// A list of outputs that you want to add.
-        pub fn outputs(mut self, input: impl Into<crate::model::AddOutputRequest>) -> Self {
+        pub fn outputs(mut self, input: crate::model::AddOutputRequest) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -407,9 +404,9 @@ pub mod add_flow_sources_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// A list of sources that you want to add.
-        pub fn sources(mut self, input: impl Into<crate::model::SetSourceRequest>) -> Self {
+        pub fn sources(mut self, input: crate::model::SetSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -594,12 +591,9 @@ pub mod add_flow_vpc_interfaces_input {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// A list of VPC interfaces that you want to add.
-        pub fn vpc_interfaces(
-            mut self,
-            input: impl Into<crate::model::VpcInterfaceRequest>,
-        ) -> Self {
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterfaceRequest) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_interfaces = Some(v);
             self
         }
@@ -802,12 +796,9 @@ pub mod create_flow_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The entitlements that you want to grant on a flow.
-        pub fn entitlements(
-            mut self,
-            input: impl Into<crate::model::GrantEntitlementRequest>,
-        ) -> Self {
+        pub fn entitlements(mut self, input: crate::model::GrantEntitlementRequest) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -824,12 +815,9 @@ pub mod create_flow_input {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-        pub fn media_streams(
-            mut self,
-            input: impl Into<crate::model::AddMediaStreamRequest>,
-        ) -> Self {
+        pub fn media_streams(mut self, input: crate::model::AddMediaStreamRequest) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_streams = Some(v);
             self
         }
@@ -856,9 +844,9 @@ pub mod create_flow_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// The outputs that you want to add to this flow.
-        pub fn outputs(mut self, input: impl Into<crate::model::AddOutputRequest>) -> Self {
+        pub fn outputs(mut self, input: crate::model::AddOutputRequest) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -900,9 +888,9 @@ pub mod create_flow_input {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        pub fn sources(mut self, input: impl Into<crate::model::SetSourceRequest>) -> Self {
+        pub fn sources(mut self, input: crate::model::SetSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -919,12 +907,9 @@ pub mod create_flow_input {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// The VPC interfaces you want on the flow.
-        pub fn vpc_interfaces(
-            mut self,
-            input: impl Into<crate::model::VpcInterfaceRequest>,
-        ) -> Self {
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterfaceRequest) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_interfaces = Some(v);
             self
         }
@@ -1704,12 +1689,9 @@ pub mod grant_flow_entitlements_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The list of entitlements that you want to grant.
-        pub fn entitlements(
-            mut self,
-            input: impl Into<crate::model::GrantEntitlementRequest>,
-        ) -> Self {
+        pub fn entitlements(mut self, input: crate::model::GrantEntitlementRequest) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -5295,10 +5277,10 @@ pub mod update_flow_output_input {
         /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn media_stream_output_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
+            input: crate::model::MediaStreamOutputConfigurationRequest,
         ) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_output_configurations = Some(v);
             self
         }
@@ -5695,10 +5677,10 @@ pub mod update_flow_source_input {
         /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamSourceConfigurationRequest>,
+            input: crate::model::MediaStreamSourceConfigurationRequest,
         ) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_source_configurations = Some(v);
             self
         }

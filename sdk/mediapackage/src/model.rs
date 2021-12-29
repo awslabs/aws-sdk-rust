@@ -999,9 +999,9 @@ pub mod hls_package {
         /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
         /// ad markers are output.  Specify multiple items to create ad markers for all of the included
         /// message types.
-        pub fn ad_triggers(mut self, input: impl Into<crate::model::AdTriggersElement>) -> Self {
+        pub fn ad_triggers(mut self, input: crate::model::AdTriggersElement) -> Self {
             let mut v = self.ad_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_triggers = Some(v);
             self
         }
@@ -1888,9 +1888,9 @@ pub mod dash_package {
         /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
         /// ad markers are output.  Specify multiple items to create ad markers for all of the included
         /// message types.
-        pub fn ad_triggers(mut self, input: impl Into<crate::model::AdTriggersElement>) -> Self {
+        pub fn ad_triggers(mut self, input: crate::model::AdTriggersElement) -> Self {
             let mut v = self.ad_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_triggers = Some(v);
             self
         }
@@ -1998,12 +1998,9 @@ pub mod dash_package {
         /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
         /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
         /// the Channel source contains SCTE-35 ad markers.
-        pub fn period_triggers(
-            mut self,
-            input: impl Into<crate::model::PeriodTriggersElement>,
-        ) -> Self {
+        pub fn period_triggers(mut self, input: crate::model::PeriodTriggersElement) -> Self {
             let mut v = self.period_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.period_triggers = Some(v);
             self
         }
@@ -2587,9 +2584,9 @@ pub mod cmaf_package {
         /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
         ///
         /// A list of HLS manifest configurations
-        pub fn hls_manifests(mut self, input: impl Into<crate::model::HlsManifest>) -> Self {
+        pub fn hls_manifests(mut self, input: crate::model::HlsManifest) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hls_manifests = Some(v);
             self
         }
@@ -3215,10 +3212,10 @@ pub mod cmaf_package_create_or_update_parameters {
         /// A list of HLS manifest configurations
         pub fn hls_manifests(
             mut self,
-            input: impl Into<crate::model::HlsManifestCreateOrUpdateParameters>,
+            input: crate::model::HlsManifestCreateOrUpdateParameters,
         ) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hls_manifests = Some(v);
             self
         }
@@ -3484,9 +3481,9 @@ pub mod hls_manifest_create_or_update_parameters {
         /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
         /// ad markers are output.  Specify multiple items to create ad markers for all of the included
         /// message types.
-        pub fn ad_triggers(mut self, input: impl Into<crate::model::AdTriggersElement>) -> Self {
+        pub fn ad_triggers(mut self, input: crate::model::AdTriggersElement) -> Self {
             let mut v = self.ad_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_triggers = Some(v);
             self
         }
@@ -3736,9 +3733,9 @@ pub mod hls_ingest {
         /// To override the contents of this collection use [`set_ingest_endpoints`](Self::set_ingest_endpoints).
         ///
         /// A list of endpoints to which the source stream should be sent.
-        pub fn ingest_endpoints(mut self, input: impl Into<crate::model::IngestEndpoint>) -> Self {
+        pub fn ingest_endpoints(mut self, input: crate::model::IngestEndpoint) -> Self {
             let mut v = self.ingest_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ingest_endpoints = Some(v);
             self
         }

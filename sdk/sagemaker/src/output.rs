@@ -1955,9 +1955,9 @@ pub mod search_output {
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
         /// <p>A list of <code>SearchRecord</code> objects.</p>
-        pub fn results(mut self, input: impl Into<crate::model::SearchRecord>) -> Self {
+        pub fn results(mut self, input: crate::model::SearchRecord) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -2114,9 +2114,9 @@ pub mod render_ui_template_output {
         ///
         /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered
         /// while rendering the template. If there were no errors, the list is empty.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::RenderingError>) -> Self {
+        pub fn errors(mut self, input: crate::model::RenderingError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -2225,9 +2225,9 @@ pub mod query_lineage_output {
         /// To override the contents of this collection use [`set_vertices`](Self::set_vertices).
         ///
         /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
-        pub fn vertices(mut self, input: impl Into<crate::model::Vertex>) -> Self {
+        pub fn vertices(mut self, input: crate::model::Vertex) -> Self {
             let mut v = self.vertices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vertices = Some(v);
             self
         }
@@ -2244,9 +2244,9 @@ pub mod query_lineage_output {
         /// To override the contents of this collection use [`set_edges`](Self::set_edges).
         ///
         /// <p>A list of edges that connect vertices in the response.</p>
-        pub fn edges(mut self, input: impl Into<crate::model::Edge>) -> Self {
+        pub fn edges(mut self, input: crate::model::Edge) -> Self {
             let mut v = self.edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.edges = Some(v);
             self
         }
@@ -2386,9 +2386,9 @@ pub mod list_workteams_output {
         /// To override the contents of this collection use [`set_workteams`](Self::set_workteams).
         ///
         /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
-        pub fn workteams(mut self, input: impl Into<crate::model::Workteam>) -> Self {
+        pub fn workteams(mut self, input: crate::model::Workteam) -> Self {
             let mut v = self.workteams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workteams = Some(v);
             self
         }
@@ -2470,9 +2470,9 @@ pub mod list_workforces_output {
         /// To override the contents of this collection use [`set_workforces`](Self::set_workforces).
         ///
         /// <p>A list containing information about your workforce.</p>
-        pub fn workforces(mut self, input: impl Into<crate::model::Workforce>) -> Self {
+        pub fn workforces(mut self, input: crate::model::Workforce) -> Self {
             let mut v = self.workforces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workforces = Some(v);
             self
         }
@@ -2555,9 +2555,9 @@ pub mod list_user_profiles_output {
         /// To override the contents of this collection use [`set_user_profiles`](Self::set_user_profiles).
         ///
         /// <p>The list of user profiles.</p>
-        pub fn user_profiles(mut self, input: impl Into<crate::model::UserProfileDetails>) -> Self {
+        pub fn user_profiles(mut self, input: crate::model::UserProfileDetails) -> Self {
             let mut v = self.user_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_profiles = Some(v);
             self
         }
@@ -2639,9 +2639,9 @@ pub mod list_trials_output {
         /// To override the contents of this collection use [`set_trial_summaries`](Self::set_trial_summaries).
         ///
         /// <p>A list of the summaries of your trials.</p>
-        pub fn trial_summaries(mut self, input: impl Into<crate::model::TrialSummary>) -> Self {
+        pub fn trial_summaries(mut self, input: crate::model::TrialSummary) -> Self {
             let mut v = self.trial_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trial_summaries = Some(v);
             self
         }
@@ -2727,10 +2727,10 @@ pub mod list_trial_components_output {
         /// <p>A list of the summaries of your trial components.</p>
         pub fn trial_component_summaries(
             mut self,
-            input: impl Into<crate::model::TrialComponentSummary>,
+            input: crate::model::TrialComponentSummary,
         ) -> Self {
             let mut v = self.trial_component_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trial_component_summaries = Some(v);
             self
         }
@@ -2822,12 +2822,9 @@ pub mod list_transform_jobs_output {
         /// <p>An array of
         /// <code>TransformJobSummary</code>
         /// objects.</p>
-        pub fn transform_job_summaries(
-            mut self,
-            input: impl Into<crate::model::TransformJobSummary>,
-        ) -> Self {
+        pub fn transform_job_summaries(mut self, input: crate::model::TransformJobSummary) -> Self {
             let mut v = self.transform_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transform_job_summaries = Some(v);
             self
         }
@@ -2930,10 +2927,10 @@ pub mod list_training_jobs_for_hyper_parameter_tuning_job_output {
         /// <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
         pub fn training_job_summaries(
             mut self,
-            input: impl Into<crate::model::HyperParameterTrainingJobSummary>,
+            input: crate::model::HyperParameterTrainingJobSummary,
         ) -> Self {
             let mut v = self.training_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.training_job_summaries = Some(v);
             self
         }
@@ -3032,12 +3029,9 @@ pub mod list_training_jobs_output {
         ///
         /// <p>An array of <code>TrainingJobSummary</code> objects, each listing a training
         /// job.</p>
-        pub fn training_job_summaries(
-            mut self,
-            input: impl Into<crate::model::TrainingJobSummary>,
-        ) -> Self {
+        pub fn training_job_summaries(mut self, input: crate::model::TrainingJobSummary) -> Self {
             let mut v = self.training_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.training_job_summaries = Some(v);
             self
         }
@@ -3122,9 +3116,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of <code>Tag</code> objects, each with a tag key and a value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3209,12 +3203,9 @@ pub mod list_subscribed_workteams_output {
         /// To override the contents of this collection use [`set_subscribed_workteams`](Self::set_subscribed_workteams).
         ///
         /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
-        pub fn subscribed_workteams(
-            mut self,
-            input: impl Into<crate::model::SubscribedWorkteam>,
-        ) -> Self {
+        pub fn subscribed_workteams(mut self, input: crate::model::SubscribedWorkteam) -> Self {
             let mut v = self.subscribed_workteams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribed_workteams = Some(v);
             self
         }
@@ -3312,10 +3303,10 @@ pub mod list_studio_lifecycle_configs_output {
         /// <p>A list of Lifecycle Configurations and their properties.</p>
         pub fn studio_lifecycle_configs(
             mut self,
-            input: impl Into<crate::model::StudioLifecycleConfigDetails>,
+            input: crate::model::StudioLifecycleConfigDetails,
         ) -> Self {
             let mut v = self.studio_lifecycle_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.studio_lifecycle_configs = Some(v);
             self
         }
@@ -3390,12 +3381,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_project_summary_list`](Self::set_project_summary_list).
         ///
         /// <p>A list of summaries of projects.</p>
-        pub fn project_summary_list(
-            mut self,
-            input: impl Into<crate::model::ProjectSummary>,
-        ) -> Self {
+        pub fn project_summary_list(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.project_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.project_summary_list = Some(v);
             self
         }
@@ -3490,10 +3478,10 @@ pub mod list_processing_jobs_output {
         /// job.</p>
         pub fn processing_job_summaries(
             mut self,
-            input: impl Into<crate::model::ProcessingJobSummary>,
+            input: crate::model::ProcessingJobSummary,
         ) -> Self {
             let mut v = self.processing_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processing_job_summaries = Some(v);
             self
         }
@@ -3588,12 +3576,9 @@ pub mod list_pipelines_output {
         /// filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName,
         /// ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and
         /// RoleArn. This list can be empty. </p>
-        pub fn pipeline_summaries(
-            mut self,
-            input: impl Into<crate::model::PipelineSummary>,
-        ) -> Self {
+        pub fn pipeline_summaries(mut self, input: crate::model::PipelineSummary) -> Self {
             let mut v = self.pipeline_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_summaries = Some(v);
             self
         }
@@ -3680,9 +3665,9 @@ pub mod list_pipeline_parameters_for_execution_output {
         /// To override the contents of this collection use [`set_pipeline_parameters`](Self::set_pipeline_parameters).
         ///
         /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-        pub fn pipeline_parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn pipeline_parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.pipeline_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_parameters = Some(v);
             self
         }
@@ -3781,10 +3766,10 @@ pub mod list_pipeline_execution_steps_output {
         /// information about the job created by the step.</p>
         pub fn pipeline_execution_steps(
             mut self,
-            input: impl Into<crate::model::PipelineExecutionStep>,
+            input: crate::model::PipelineExecutionStep,
         ) -> Self {
             let mut v = self.pipeline_execution_steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_execution_steps = Some(v);
             self
         }
@@ -3886,10 +3871,10 @@ pub mod list_pipeline_executions_output {
         /// and the status. This list can be empty. </p>
         pub fn pipeline_execution_summaries(
             mut self,
-            input: impl Into<crate::model::PipelineExecutionSummary>,
+            input: crate::model::PipelineExecutionSummary,
         ) -> Self {
             let mut v = self.pipeline_execution_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_execution_summaries = Some(v);
             self
         }
@@ -3998,12 +3983,9 @@ pub mod list_notebook_instances_output {
         ///
         /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook
         /// instance.</p>
-        pub fn notebook_instances(
-            mut self,
-            input: impl Into<crate::model::NotebookInstanceSummary>,
-        ) -> Self {
+        pub fn notebook_instances(mut self, input: crate::model::NotebookInstanceSummary) -> Self {
             let mut v = self.notebook_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notebook_instances = Some(v);
             self
         }
@@ -4101,10 +4083,10 @@ pub mod list_notebook_instance_lifecycle_configs_output {
         /// a lifecycle configuration.</p>
         pub fn notebook_instance_lifecycle_configs(
             mut self,
-            input: impl Into<crate::model::NotebookInstanceLifecycleConfigSummary>,
+            input: crate::model::NotebookInstanceLifecycleConfigSummary,
         ) -> Self {
             let mut v = self.notebook_instance_lifecycle_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notebook_instance_lifecycle_configs = Some(v);
             self
         }
@@ -4188,10 +4170,10 @@ pub mod list_monitoring_schedules_output {
         /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
         pub fn monitoring_schedule_summaries(
             mut self,
-            input: impl Into<crate::model::MonitoringScheduleSummary>,
+            input: crate::model::MonitoringScheduleSummary,
         ) -> Self {
             let mut v = self.monitoring_schedule_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitoring_schedule_summaries = Some(v);
             self
         }
@@ -4284,10 +4266,10 @@ pub mod list_monitoring_executions_output {
         /// <p>A JSON array in which each element is a summary for a monitoring execution.</p>
         pub fn monitoring_execution_summaries(
             mut self,
-            input: impl Into<crate::model::MonitoringExecutionSummary>,
+            input: crate::model::MonitoringExecutionSummary,
         ) -> Self {
             let mut v = self.monitoring_execution_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitoring_execution_summaries = Some(v);
             self
         }
@@ -4374,9 +4356,9 @@ pub mod list_models_output {
         ///
         /// <p>An array of <code>ModelSummary</code> objects, each of which lists a
         /// model.</p>
-        pub fn models(mut self, input: impl Into<crate::model::ModelSummary>) -> Self {
+        pub fn models(mut self, input: crate::model::ModelSummary) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }
@@ -4467,10 +4449,10 @@ pub mod list_model_quality_job_definitions_output {
         /// <p>A list of summaries of model quality monitoring job definitions.</p>
         pub fn job_definition_summaries(
             mut self,
-            input: impl Into<crate::model::MonitoringJobDefinitionSummary>,
+            input: crate::model::MonitoringJobDefinitionSummary,
         ) -> Self {
             let mut v = self.job_definition_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_definition_summaries = Some(v);
             self
         }
@@ -4566,10 +4548,10 @@ pub mod list_model_packages_output {
         /// package.</p>
         pub fn model_package_summary_list(
             mut self,
-            input: impl Into<crate::model::ModelPackageSummary>,
+            input: crate::model::ModelPackageSummary,
         ) -> Self {
             let mut v = self.model_package_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_package_summary_list = Some(v);
             self
         }
@@ -4663,10 +4645,10 @@ pub mod list_model_package_groups_output {
         /// <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
         pub fn model_package_group_summary_list(
             mut self,
-            input: impl Into<crate::model::ModelPackageGroupSummary>,
+            input: crate::model::ModelPackageGroupSummary,
         ) -> Self {
             let mut v = self.model_package_group_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_package_group_summary_list = Some(v);
             self
         }
@@ -4754,10 +4736,10 @@ pub mod list_model_metadata_output {
         /// <p>A structure that holds model metadata.</p>
         pub fn model_metadata_summaries(
             mut self,
-            input: impl Into<crate::model::ModelMetadataSummary>,
+            input: crate::model::ModelMetadataSummary,
         ) -> Self {
             let mut v = self.model_metadata_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_metadata_summaries = Some(v);
             self
         }
@@ -4845,10 +4827,10 @@ pub mod list_model_explainability_job_definitions_output {
         /// <p>A JSON array in which each element is a summary for a explainability bias jobs.</p>
         pub fn job_definition_summaries(
             mut self,
-            input: impl Into<crate::model::MonitoringJobDefinitionSummary>,
+            input: crate::model::MonitoringJobDefinitionSummary,
         ) -> Self {
             let mut v = self.job_definition_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_definition_summaries = Some(v);
             self
         }
@@ -4938,10 +4920,10 @@ pub mod list_model_bias_job_definitions_output {
         /// <p>A JSON array in which each element is a summary for a model bias jobs.</p>
         pub fn job_definition_summaries(
             mut self,
-            input: impl Into<crate::model::MonitoringJobDefinitionSummary>,
+            input: crate::model::MonitoringJobDefinitionSummary,
         ) -> Self {
             let mut v = self.job_definition_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_definition_summaries = Some(v);
             self
         }
@@ -5029,12 +5011,9 @@ pub mod list_lineage_groups_output {
         /// To override the contents of this collection use [`set_lineage_group_summaries`](Self::set_lineage_group_summaries).
         ///
         /// <p>A list of lineage groups and their properties.</p>
-        pub fn lineage_group_summaries(
-            mut self,
-            input: impl Into<crate::model::LineageGroupSummary>,
-        ) -> Self {
+        pub fn lineage_group_summaries(mut self, input: crate::model::LineageGroupSummary) -> Self {
             let mut v = self.lineage_group_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lineage_group_summaries = Some(v);
             self
         }
@@ -5127,10 +5106,10 @@ pub mod list_labeling_jobs_for_workteam_output {
         /// job.</p>
         pub fn labeling_job_summary_list(
             mut self,
-            input: impl Into<crate::model::LabelingJobForWorkteamSummary>,
+            input: crate::model::LabelingJobForWorkteamSummary,
         ) -> Self {
             let mut v = self.labeling_job_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labeling_job_summary_list = Some(v);
             self
         }
@@ -5224,10 +5203,10 @@ pub mod list_labeling_jobs_output {
         /// job.</p>
         pub fn labeling_job_summary_list(
             mut self,
-            input: impl Into<crate::model::LabelingJobSummary>,
+            input: crate::model::LabelingJobSummary,
         ) -> Self {
             let mut v = self.labeling_job_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labeling_job_summary_list = Some(v);
             self
         }
@@ -5319,10 +5298,10 @@ pub mod list_inference_recommendations_jobs_output {
         /// <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
         pub fn inference_recommendations_jobs(
             mut self,
-            input: impl Into<crate::model::InferenceRecommendationsJob>,
+            input: crate::model::InferenceRecommendationsJob,
         ) -> Self {
             let mut v = self.inference_recommendations_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_recommendations_jobs = Some(v);
             self
         }
@@ -5402,9 +5381,9 @@ pub mod list_image_versions_output {
         /// To override the contents of this collection use [`set_image_versions`](Self::set_image_versions).
         ///
         /// <p>A list of versions and their properties.</p>
-        pub fn image_versions(mut self, input: impl Into<crate::model::ImageVersion>) -> Self {
+        pub fn image_versions(mut self, input: crate::model::ImageVersion) -> Self {
             let mut v = self.image_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_versions = Some(v);
             self
         }
@@ -5484,9 +5463,9 @@ pub mod list_images_output {
         /// To override the contents of this collection use [`set_images`](Self::set_images).
         ///
         /// <p>A list of images and their properties.</p>
-        pub fn images(mut self, input: impl Into<crate::model::Image>) -> Self {
+        pub fn images(mut self, input: crate::model::Image) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.images = Some(v);
             self
         }
@@ -5588,12 +5567,12 @@ pub mod list_hyper_parameter_tuning_jobs_output {
         /// request returned.</p>
         pub fn hyper_parameter_tuning_job_summaries(
             mut self,
-            input: impl Into<crate::model::HyperParameterTuningJobSummary>,
+            input: crate::model::HyperParameterTuningJobSummary,
         ) -> Self {
             let mut v = self
                 .hyper_parameter_tuning_job_summaries
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hyper_parameter_tuning_job_summaries = Some(v);
             self
         }
@@ -5684,12 +5663,9 @@ pub mod list_human_task_uis_output {
         /// To override the contents of this collection use [`set_human_task_ui_summaries`](Self::set_human_task_ui_summaries).
         ///
         /// <p>An array of objects describing the human task user interfaces.</p>
-        pub fn human_task_ui_summaries(
-            mut self,
-            input: impl Into<crate::model::HumanTaskUiSummary>,
-        ) -> Self {
+        pub fn human_task_ui_summaries(mut self, input: crate::model::HumanTaskUiSummary) -> Self {
             let mut v = self.human_task_ui_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.human_task_ui_summaries = Some(v);
             self
         }
@@ -5775,10 +5751,10 @@ pub mod list_flow_definitions_output {
         /// <p>An array of objects describing the flow definitions.</p>
         pub fn flow_definition_summaries(
             mut self,
-            input: impl Into<crate::model::FlowDefinitionSummary>,
+            input: crate::model::FlowDefinitionSummary,
         ) -> Self {
             let mut v = self.flow_definition_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.flow_definition_summaries = Some(v);
             self
         }
@@ -5862,12 +5838,9 @@ pub mod list_feature_groups_output {
         /// To override the contents of this collection use [`set_feature_group_summaries`](Self::set_feature_group_summaries).
         ///
         /// <p>A summary of feature groups.</p>
-        pub fn feature_group_summaries(
-            mut self,
-            input: impl Into<crate::model::FeatureGroupSummary>,
-        ) -> Self {
+        pub fn feature_group_summaries(mut self, input: crate::model::FeatureGroupSummary) -> Self {
             let mut v = self.feature_group_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.feature_group_summaries = Some(v);
             self
         }
@@ -5948,12 +5921,9 @@ pub mod list_experiments_output {
         /// To override the contents of this collection use [`set_experiment_summaries`](Self::set_experiment_summaries).
         ///
         /// <p>A list of the summaries of your experiments.</p>
-        pub fn experiment_summaries(
-            mut self,
-            input: impl Into<crate::model::ExperimentSummary>,
-        ) -> Self {
+        pub fn experiment_summaries(mut self, input: crate::model::ExperimentSummary) -> Self {
             let mut v = self.experiment_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.experiment_summaries = Some(v);
             self
         }
@@ -6035,9 +6005,9 @@ pub mod list_endpoints_output {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p> An array or endpoint objects. </p>
-        pub fn endpoints(mut self, input: impl Into<crate::model::EndpointSummary>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::EndpointSummary) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -6122,12 +6092,9 @@ pub mod list_endpoint_configs_output {
         /// To override the contents of this collection use [`set_endpoint_configs`](Self::set_endpoint_configs).
         ///
         /// <p>An array of endpoint configurations.</p>
-        pub fn endpoint_configs(
-            mut self,
-            input: impl Into<crate::model::EndpointConfigSummary>,
-        ) -> Self {
+        pub fn endpoint_configs(mut self, input: crate::model::EndpointConfigSummary) -> Self {
             let mut v = self.endpoint_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_configs = Some(v);
             self
         }
@@ -6218,10 +6185,10 @@ pub mod list_edge_packaging_jobs_output {
         /// <p>Summaries of edge packaging jobs.</p>
         pub fn edge_packaging_job_summaries(
             mut self,
-            input: impl Into<crate::model::EdgePackagingJobSummary>,
+            input: crate::model::EdgePackagingJobSummary,
         ) -> Self {
             let mut v = self.edge_packaging_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.edge_packaging_job_summaries = Some(v);
             self
         }
@@ -6303,9 +6270,9 @@ pub mod list_domains_output {
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
         /// <p>The list of domains.</p>
-        pub fn domains(mut self, input: impl Into<crate::model::DomainDetails>) -> Self {
+        pub fn domains(mut self, input: crate::model::DomainDetails) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domains = Some(v);
             self
         }
@@ -6388,9 +6355,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_device_summaries`](Self::set_device_summaries).
         ///
         /// <p>Summary of devices.</p>
-        pub fn device_summaries(mut self, input: impl Into<crate::model::DeviceSummary>) -> Self {
+        pub fn device_summaries(mut self, input: crate::model::DeviceSummary) -> Self {
             let mut v = self.device_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_summaries = Some(v);
             self
         }
@@ -6474,12 +6441,9 @@ pub mod list_device_fleets_output {
         /// To override the contents of this collection use [`set_device_fleet_summaries`](Self::set_device_fleet_summaries).
         ///
         /// <p>Summary of the device fleet.</p>
-        pub fn device_fleet_summaries(
-            mut self,
-            input: impl Into<crate::model::DeviceFleetSummary>,
-        ) -> Self {
+        pub fn device_fleet_summaries(mut self, input: crate::model::DeviceFleetSummary) -> Self {
             let mut v = self.device_fleet_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_fleet_summaries = Some(v);
             self
         }
@@ -6569,10 +6533,10 @@ pub mod list_data_quality_job_definitions_output {
         /// <p>A list of data quality monitoring job definitions.</p>
         pub fn job_definition_summaries(
             mut self,
-            input: impl Into<crate::model::MonitoringJobDefinitionSummary>,
+            input: crate::model::MonitoringJobDefinitionSummary,
         ) -> Self {
             let mut v = self.job_definition_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_definition_summaries = Some(v);
             self
         }
@@ -6657,9 +6621,9 @@ pub mod list_contexts_output {
         /// To override the contents of this collection use [`set_context_summaries`](Self::set_context_summaries).
         ///
         /// <p>A list of contexts and their properties.</p>
-        pub fn context_summaries(mut self, input: impl Into<crate::model::ContextSummary>) -> Self {
+        pub fn context_summaries(mut self, input: crate::model::ContextSummary) -> Self {
             let mut v = self.context_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.context_summaries = Some(v);
             self
         }
@@ -6750,10 +6714,10 @@ pub mod list_compilation_jobs_output {
         /// compilation job. </p>
         pub fn compilation_job_summaries(
             mut self,
-            input: impl Into<crate::model::CompilationJobSummary>,
+            input: crate::model::CompilationJobSummary,
         ) -> Self {
             let mut v = self.compilation_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compilation_job_summaries = Some(v);
             self
         }
@@ -6909,10 +6873,10 @@ pub mod list_code_repositories_output {
         /// </ul>
         pub fn code_repository_summary_list(
             mut self,
-            input: impl Into<crate::model::CodeRepositorySummary>,
+            input: crate::model::CodeRepositorySummary,
         ) -> Self {
             let mut v = self.code_repository_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.code_repository_summary_list = Some(v);
             self
         }
@@ -7018,9 +6982,9 @@ pub mod list_candidates_for_auto_ml_job_output {
         /// To override the contents of this collection use [`set_candidates`](Self::set_candidates).
         ///
         /// <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-        pub fn candidates(mut self, input: impl Into<crate::model::AutoMlCandidate>) -> Self {
+        pub fn candidates(mut self, input: crate::model::AutoMlCandidate) -> Self {
             let mut v = self.candidates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.candidates = Some(v);
             self
         }
@@ -7105,12 +7069,9 @@ pub mod list_auto_ml_jobs_output {
         /// To override the contents of this collection use [`set_auto_ml_job_summaries`](Self::set_auto_ml_job_summaries).
         ///
         /// <p>Returns a summary list of jobs.</p>
-        pub fn auto_ml_job_summaries(
-            mut self,
-            input: impl Into<crate::model::AutoMlJobSummary>,
-        ) -> Self {
+        pub fn auto_ml_job_summaries(mut self, input: crate::model::AutoMlJobSummary) -> Self {
             let mut v = self.auto_ml_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_ml_job_summaries = Some(v);
             self
         }
@@ -7195,12 +7156,9 @@ pub mod list_associations_output {
         /// To override the contents of this collection use [`set_association_summaries`](Self::set_association_summaries).
         ///
         /// <p>A list of associations and their properties.</p>
-        pub fn association_summaries(
-            mut self,
-            input: impl Into<crate::model::AssociationSummary>,
-        ) -> Self {
+        pub fn association_summaries(mut self, input: crate::model::AssociationSummary) -> Self {
             let mut v = self.association_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.association_summaries = Some(v);
             self
         }
@@ -7281,12 +7239,9 @@ pub mod list_artifacts_output {
         /// To override the contents of this collection use [`set_artifact_summaries`](Self::set_artifact_summaries).
         ///
         /// <p>A list of artifacts and their properties.</p>
-        pub fn artifact_summaries(
-            mut self,
-            input: impl Into<crate::model::ArtifactSummary>,
-        ) -> Self {
+        pub fn artifact_summaries(mut self, input: crate::model::ArtifactSummary) -> Self {
             let mut v = self.artifact_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.artifact_summaries = Some(v);
             self
         }
@@ -7368,9 +7323,9 @@ pub mod list_apps_output {
         /// To override the contents of this collection use [`set_apps`](Self::set_apps).
         ///
         /// <p>The list of apps.</p>
-        pub fn apps(mut self, input: impl Into<crate::model::AppDetails>) -> Self {
+        pub fn apps(mut self, input: crate::model::AppDetails) -> Self {
             let mut v = self.apps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.apps = Some(v);
             self
         }
@@ -7463,12 +7418,9 @@ pub mod list_app_image_configs_output {
         /// To override the contents of this collection use [`set_app_image_configs`](Self::set_app_image_configs).
         ///
         /// <p>A list of AppImageConfigs and their properties.</p>
-        pub fn app_image_configs(
-            mut self,
-            input: impl Into<crate::model::AppImageConfigDetails>,
-        ) -> Self {
+        pub fn app_image_configs(mut self, input: crate::model::AppImageConfigDetails) -> Self {
             let mut v = self.app_image_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_image_configs = Some(v);
             self
         }
@@ -7544,12 +7496,9 @@ pub mod list_algorithms_output {
         ///
         /// <p>>An array of <code>AlgorithmSummary</code> objects, each of which lists an
         /// algorithm.</p>
-        pub fn algorithm_summary_list(
-            mut self,
-            input: impl Into<crate::model::AlgorithmSummary>,
-        ) -> Self {
+        pub fn algorithm_summary_list(mut self, input: crate::model::AlgorithmSummary) -> Self {
             let mut v = self.algorithm_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.algorithm_summary_list = Some(v);
             self
         }
@@ -7633,9 +7582,9 @@ pub mod list_actions_output {
         /// To override the contents of this collection use [`set_action_summaries`](Self::set_action_summaries).
         ///
         /// <p>A list of actions and their properties.</p>
-        pub fn action_summaries(mut self, input: impl Into<crate::model::ActionSummary>) -> Self {
+        pub fn action_summaries(mut self, input: crate::model::ActionSummary) -> Self {
             let mut v = self.action_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.action_summaries = Some(v);
             self
         }
@@ -7716,10 +7665,10 @@ pub mod get_search_suggestions_output {
         /// <code>SuggestionQuery</code>.</p>
         pub fn property_name_suggestions(
             mut self,
-            input: impl Into<crate::model::PropertyNameSuggestion>,
+            input: crate::model::PropertyNameSuggestion,
         ) -> Self {
             let mut v = self.property_name_suggestions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_name_suggestions = Some(v);
             self
         }
@@ -8106,9 +8055,9 @@ pub mod get_device_fleet_report_output {
         /// To override the contents of this collection use [`set_agent_versions`](Self::set_agent_versions).
         ///
         /// <p>The versions of Edge Manager agent deployed on the fleet.</p>
-        pub fn agent_versions(mut self, input: impl Into<crate::model::AgentVersion>) -> Self {
+        pub fn agent_versions(mut self, input: crate::model::AgentVersion) -> Self {
             let mut v = self.agent_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_versions = Some(v);
             self
         }
@@ -8125,9 +8074,9 @@ pub mod get_device_fleet_report_output {
         /// To override the contents of this collection use [`set_model_stats`](Self::set_model_stats).
         ///
         /// <p>Status of model on device.</p>
-        pub fn model_stats(mut self, input: impl Into<crate::model::EdgeModelStat>) -> Self {
+        pub fn model_stats(mut self, input: crate::model::EdgeModelStat) -> Self {
             let mut v = self.model_stats.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_stats = Some(v);
             self
         }
@@ -9085,10 +9034,10 @@ pub mod describe_trial_component_output {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentParameterValue>,
+            v: crate::model::TrialComponentParameterValue,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -9113,10 +9062,10 @@ pub mod describe_trial_component_output {
         pub fn input_artifacts(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentArtifact>,
+            v: crate::model::TrialComponentArtifact,
         ) -> Self {
             let mut hash_map = self.input_artifacts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.input_artifacts = Some(hash_map);
             self
         }
@@ -9141,10 +9090,10 @@ pub mod describe_trial_component_output {
         pub fn output_artifacts(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentArtifact>,
+            v: crate::model::TrialComponentArtifact,
         ) -> Self {
             let mut hash_map = self.output_artifacts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.output_artifacts = Some(hash_map);
             self
         }
@@ -9179,12 +9128,9 @@ pub mod describe_trial_component_output {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>The metrics for the component.</p>
-        pub fn metrics(
-            mut self,
-            input: impl Into<crate::model::TrialComponentMetricSummary>,
-        ) -> Self {
+        pub fn metrics(mut self, input: crate::model::TrialComponentMetricSummary) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics = Some(v);
             self
         }
@@ -11472,9 +11418,9 @@ pub mod describe_training_job_output {
         ///
         /// <p>An array of <code>Channel</code> objects that describes each data input channel.
         /// </p>
-        pub fn input_data_config(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -11633,10 +11579,10 @@ pub mod describe_training_job_output {
         /// through.</p>
         pub fn secondary_status_transitions(
             mut self,
-            input: impl Into<crate::model::SecondaryStatusTransition>,
+            input: crate::model::SecondaryStatusTransition,
         ) -> Self {
             let mut v = self.secondary_status_transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_status_transitions = Some(v);
             self
         }
@@ -11655,12 +11601,9 @@ pub mod describe_training_job_output {
         ///
         /// <p>A collection of <code>MetricData</code> objects that specify the names, values, and
         /// dates and times that the training algorithm emitted to Amazon CloudWatch.</p>
-        pub fn final_metric_data_list(
-            mut self,
-            input: impl Into<crate::model::MetricData>,
-        ) -> Self {
+        pub fn final_metric_data_list(mut self, input: crate::model::MetricData) -> Self {
             let mut v = self.final_metric_data_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_metric_data_list = Some(v);
             self
         }
@@ -11855,10 +11798,10 @@ pub mod describe_training_job_output {
         /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
         pub fn debug_rule_configurations(
             mut self,
-            input: impl Into<crate::model::DebugRuleConfiguration>,
+            input: crate::model::DebugRuleConfiguration,
         ) -> Self {
             let mut v = self.debug_rule_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.debug_rule_configurations = Some(v);
             self
         }
@@ -11893,10 +11836,10 @@ pub mod describe_training_job_output {
         /// <p>Evaluation status of Debugger rules for debugging on a training job.</p>
         pub fn debug_rule_evaluation_statuses(
             mut self,
-            input: impl Into<crate::model::DebugRuleEvaluationStatus>,
+            input: crate::model::DebugRuleEvaluationStatus,
         ) -> Self {
             let mut v = self.debug_rule_evaluation_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.debug_rule_evaluation_statuses = Some(v);
             self
         }
@@ -11931,10 +11874,10 @@ pub mod describe_training_job_output {
         /// metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
-            input: impl Into<crate::model::ProfilerRuleConfiguration>,
+            input: crate::model::ProfilerRuleConfiguration,
         ) -> Self {
             let mut v = self.profiler_rule_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profiler_rule_configurations = Some(v);
             self
         }
@@ -11954,10 +11897,10 @@ pub mod describe_training_job_output {
         /// <p>Evaluation status of Debugger rules for profiling on a training job.</p>
         pub fn profiler_rule_evaluation_statuses(
             mut self,
-            input: impl Into<crate::model::ProfilerRuleEvaluationStatus>,
+            input: crate::model::ProfilerRuleEvaluationStatus,
         ) -> Self {
             let mut v = self.profiler_rule_evaluation_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profiler_rule_evaluation_statuses = Some(v);
             self
         }
@@ -12850,12 +12793,9 @@ pub mod describe_processing_job_output {
         /// To override the contents of this collection use [`set_processing_inputs`](Self::set_processing_inputs).
         ///
         /// <p>The inputs for a processing job.</p>
-        pub fn processing_inputs(
-            mut self,
-            input: impl Into<crate::model::ProcessingInput>,
-        ) -> Self {
+        pub fn processing_inputs(mut self, input: crate::model::ProcessingInput) -> Self {
             let mut v = self.processing_inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processing_inputs = Some(v);
             self
         }
@@ -13992,12 +13932,9 @@ pub mod describe_notebook_instance_lifecycle_config_output {
         /// To override the contents of this collection use [`set_on_create`](Self::set_on_create).
         ///
         /// <p>The shell script that runs only once, when you create a notebook instance.</p>
-        pub fn on_create(
-            mut self,
-            input: impl Into<crate::model::NotebookInstanceLifecycleHook>,
-        ) -> Self {
+        pub fn on_create(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             let mut v = self.on_create.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_create = Some(v);
             self
         }
@@ -14015,12 +13952,9 @@ pub mod describe_notebook_instance_lifecycle_config_output {
         ///
         /// <p>The shell script that runs every time you start a notebook instance, including when
         /// you create the notebook instance.</p>
-        pub fn on_start(
-            mut self,
-            input: impl Into<crate::model::NotebookInstanceLifecycleHook>,
-        ) -> Self {
+        pub fn on_start(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             let mut v = self.on_start.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_start = Some(v);
             self
         }
@@ -14587,10 +14521,10 @@ pub mod describe_notebook_instance_output {
         /// SageMaker</a>.</p>
         pub fn accelerator_types(
             mut self,
-            input: impl Into<crate::model::NotebookInstanceAcceleratorType>,
+            input: crate::model::NotebookInstanceAcceleratorType,
         ) -> Self {
             let mut v = self.accelerator_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_types = Some(v);
             self
         }
@@ -16253,10 +16187,10 @@ pub mod describe_model_package_output {
         /// be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
         pub fn additional_inference_specifications(
             mut self,
-            input: impl Into<crate::model::AdditionalInferenceSpecificationDefinition>,
+            input: crate::model::AdditionalInferenceSpecificationDefinition,
         ) -> Self {
             let mut v = self.additional_inference_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_inference_specifications = Some(v);
             self
         }
@@ -17113,9 +17047,9 @@ pub mod describe_model_output {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>The containers in the inference pipeline.</p>
-        pub fn containers(mut self, input: impl Into<crate::model::ContainerDefinition>) -> Self {
+        pub fn containers(mut self, input: crate::model::ContainerDefinition) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.containers = Some(v);
             self
         }
@@ -18106,9 +18040,9 @@ pub mod describe_labeling_job_output {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -18469,10 +18403,10 @@ pub mod describe_inference_recommendations_job_output {
         /// <p>The recommendations made by Inference Recommender.</p>
         pub fn inference_recommendations(
             mut self,
-            input: impl Into<crate::model::InferenceRecommendation>,
+            input: crate::model::InferenceRecommendation,
         ) -> Self {
             let mut v = self.inference_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_recommendations = Some(v);
             self
         }
@@ -19257,10 +19191,10 @@ pub mod describe_hyper_parameter_tuning_job_output {
         /// for this tuning job.</p>
         pub fn training_job_definitions(
             mut self,
-            input: impl Into<crate::model::HyperParameterTrainingJobDefinition>,
+            input: crate::model::HyperParameterTrainingJobDefinition,
         ) -> Self {
             let mut v = self.training_job_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.training_job_definitions = Some(v);
             self
         }
@@ -20157,12 +20091,9 @@ pub mod describe_feature_group_output {
         ///
         /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>.
         /// Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-        pub fn feature_definitions(
-            mut self,
-            input: impl Into<crate::model::FeatureDefinition>,
-        ) -> Self {
+        pub fn feature_definitions(mut self, input: crate::model::FeatureDefinition) -> Self {
             let mut v = self.feature_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.feature_definitions = Some(v);
             self
         }
@@ -20700,12 +20631,9 @@ pub mod describe_endpoint_config_output {
         ///
         /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you
         /// want to host at this endpoint.</p>
-        pub fn production_variants(
-            mut self,
-            input: impl Into<crate::model::ProductionVariant>,
-        ) -> Self {
+        pub fn production_variants(mut self, input: crate::model::ProductionVariant) -> Self {
             let mut v = self.production_variants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.production_variants = Some(v);
             self
         }
@@ -21079,10 +21007,10 @@ pub mod describe_endpoint_output {
         /// hosted behind this endpoint. </p>
         pub fn production_variants(
             mut self,
-            input: impl Into<crate::model::ProductionVariantSummary>,
+            input: crate::model::ProductionVariantSummary,
         ) -> Self {
             let mut v = self.production_variants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.production_variants = Some(v);
             self
         }
@@ -22672,9 +22600,9 @@ pub mod describe_device_output {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>Models on the device.</p>
-        pub fn models(mut self, input: impl Into<crate::model::EdgeModel>) -> Self {
+        pub fn models(mut self, input: crate::model::EdgeModel) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }
@@ -24242,9 +24170,9 @@ pub mod describe_auto_ml_job_output {
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
         /// <p>Returns the input data configuration for the AutoML job..</p>
-        pub fn input_data_config(mut self, input: impl Into<crate::model::AutoMlChannel>) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::AutoMlChannel) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -24381,10 +24309,10 @@ pub mod describe_auto_ml_job_output {
         /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
         pub fn partial_failure_reasons(
             mut self,
-            input: impl Into<crate::model::AutoMlPartialFailureReason>,
+            input: crate::model::AutoMlPartialFailureReason,
         ) -> Self {
             let mut v = self.partial_failure_reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partial_failure_reasons = Some(v);
             self
         }
@@ -30041,10 +29969,10 @@ pub mod batch_describe_model_package_output {
         pub fn model_package_summaries(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BatchDescribeModelPackageSummary>,
+            v: crate::model::BatchDescribeModelPackageSummary,
         ) -> Self {
             let mut hash_map = self.model_package_summaries.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.model_package_summaries = Some(hash_map);
             self
         }
@@ -30070,12 +29998,12 @@ pub mod batch_describe_model_package_output {
         pub fn batch_describe_model_package_error_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BatchDescribeModelPackageError>,
+            v: crate::model::BatchDescribeModelPackageError,
         ) -> Self {
             let mut hash_map = self
                 .batch_describe_model_package_error_map
                 .unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.batch_describe_model_package_error_map = Some(hash_map);
             self
         }
@@ -30219,9 +30147,9 @@ pub mod add_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the Amazon SageMaker resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -262,8 +262,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the behavior graph that the member account is accepting the invitation
         /// for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph that the member account is accepting the invitation
@@ -360,7 +360,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
@@ -458,8 +458,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
         /// to.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
@@ -470,8 +470,8 @@ pub mod fluent_builders {
         }
         /// <p>Customized message text to include in the invitation email message to the invited member
         /// accounts.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(signature.into());
             self
         }
         /// <p>Customized message text to include in the invitation email message to the invited member
@@ -483,8 +483,8 @@ pub mod fluent_builders {
         /// <p>if set to <code>true</code>, then the member accounts do not receive email
         /// notifications. By default, this is set to <code>false</code>, and the member accounts
         /// receive email notifications.</p>
-        pub fn disable_email_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_email_notification(inp);
+        pub fn disable_email_notification(mut self, signature: bool) -> Self {
+            self.inner = self.inner.disable_email_notification(signature);
             self
         }
         /// <p>if set to <code>true</code>, then the member accounts do not receive email
@@ -501,8 +501,8 @@ pub mod fluent_builders {
         /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
         /// You can invite up to 50 accounts at a time. For each invited account, the account list
         /// contains the account identifier and the AWS account root user email address.</p>
-        pub fn accounts(mut self, inp: impl Into<crate::model::Account>) -> Self {
-            self.inner = self.inner.accounts(inp);
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
+            self.inner = self.inner.accounts(input);
             self
         }
         /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
@@ -580,8 +580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to disable.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph to disable.</p>
@@ -654,8 +654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to delete members from.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph to delete members from.</p>
@@ -669,8 +669,8 @@ pub mod fluent_builders {
         ///
         /// <p>The list of AWS account identifiers for the member accounts to delete from the
         /// behavior graph. You can delete up to 50 member accounts at a time.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of AWS account identifiers for the member accounts to delete from the
@@ -746,8 +746,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
         /// <p>The member account's member status in the behavior graph must be
         /// <code>ENABLED</code>.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
@@ -819,8 +819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph for which to request the member details.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph for which to request the member details.</p>
@@ -836,8 +836,8 @@ pub mod fluent_builders {
         /// details. You can request details for up to 50 member accounts at a time.</p>
         /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
         /// that were removed from the behavior graph.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of AWS account identifiers for the member account for which to return member
@@ -917,8 +917,8 @@ pub mod fluent_builders {
         /// <p>For requests to get the next page of results, the pagination token that was returned
         /// with the previous set of results. The initial request does not include a pagination
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>For requests to get the next page of results, the pagination token that was returned
@@ -930,8 +930,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of graphs to return at a time. The total must be less than the
         /// overall limit on the number of results to return, which is currently 200.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of graphs to return at a time. The total must be less than the
@@ -1008,8 +1008,8 @@ pub mod fluent_builders {
         /// <p>For requests to retrieve the next page of results, the pagination token that was
         /// returned with the previous page of results. The initial request does not include a
         /// pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>For requests to retrieve the next page of results, the pagination token that was
@@ -1022,8 +1022,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of behavior graph invitations to return in the response. The total
         /// must be less than the overall limit on the number of results to return, which is currently
         /// 200.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of behavior graph invitations to return in the response. The total
@@ -1095,8 +1095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
@@ -1107,8 +1107,8 @@ pub mod fluent_builders {
         /// <p>For requests to retrieve the next page of member account results, the pagination token
         /// that was returned with the previous page of results. The initial request does not include a
         /// pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>For requests to retrieve the next page of member account results, the pagination token
@@ -1120,8 +1120,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of member accounts to include in the response. The total must be less
         /// than the overall limit on the number of results to return, which is currently 200.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of member accounts to include in the response. The total must be less
@@ -1191,8 +1191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph for which to retrieve the tag values.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph for which to retrieve the tag values.</p>
@@ -1264,8 +1264,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
         /// <p>The member account's current member status in the behavior graph must be
         /// <code>INVITED</code>.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
@@ -1348,8 +1348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph.</p>
@@ -1360,8 +1360,8 @@ pub mod fluent_builders {
         /// <p>The account ID of the member account to try to enable.</p>
         /// <p>The account must be an invited member account with a status of
         /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
@@ -1432,8 +1432,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to assign the tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph to assign the tags to.</p>
@@ -1453,7 +1453,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
@@ -1529,8 +1529,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to remove the tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the behavior graph to remove the tags from.</p>
@@ -1544,8 +1544,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
         /// at a time.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags

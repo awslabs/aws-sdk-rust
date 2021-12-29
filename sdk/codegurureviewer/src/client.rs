@@ -284,8 +284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository to associate.</p>
-        pub fn repository(mut self, inp: crate::model::Repository) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: crate::model::Repository) -> Self {
+            self.inner = self.inner.repository(signature);
             self
         }
         /// <p>The repository to associate.</p>
@@ -298,8 +298,8 @@ pub mod fluent_builders {
         }
         /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
         /// associations if there are failures and retries. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
@@ -336,7 +336,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>
@@ -375,8 +375,8 @@ pub mod fluent_builders {
         /// is associated with this respository association.</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_details(mut self, inp: crate::model::KmsKeyDetails) -> Self {
-            self.inner = self.inner.kms_key_details(inp);
+        pub fn kms_key_details(mut self, signature: crate::model::KmsKeyDetails) -> Self {
+            self.inner = self.inner.kms_key_details(signature);
             self
         }
         /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
@@ -466,8 +466,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
         /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>
@@ -491,8 +491,11 @@ pub mod fluent_builders {
         /// A code review can only be created on an associated repository. This is the ARN of the
         /// associated repository.
         /// </p>
-        pub fn repository_association_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_association_arn(inp);
+        pub fn repository_association_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.repository_association_arn(signature.into());
             self
         }
         /// <p>
@@ -523,8 +526,8 @@ pub mod fluent_builders {
         /// </a>
         /// object. You can create a code review only of type <code>RepositoryAnalysis</code>.
         /// </p>
-        pub fn r#type(mut self, inp: crate::model::CodeReviewType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::CodeReviewType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>
@@ -545,8 +548,8 @@ pub mod fluent_builders {
         /// Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code
         /// reviews if there are failures and retries.
         /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>
@@ -624,8 +627,8 @@ pub mod fluent_builders {
         /// <code>CodeReview</code>
         /// </a> object.
         /// </p>
-        pub fn code_review_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_review_arn(inp);
+        pub fn code_review_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_review_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
@@ -705,8 +708,8 @@ pub mod fluent_builders {
         /// <code>CodeReview</code>
         /// </a> object.
         /// </p>
-        pub fn code_review_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_review_arn(inp);
+        pub fn code_review_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_review_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
@@ -723,8 +726,8 @@ pub mod fluent_builders {
         /// <p>
         /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
         /// </p>
-        pub fn recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommendation_id(inp);
+        pub fn recommendation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommendation_id(signature.into());
             self
         }
         /// <p>
@@ -745,8 +748,8 @@ pub mod fluent_builders {
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
         /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>
@@ -836,8 +839,8 @@ pub mod fluent_builders {
         /// <code>ListRepositoryAssociations</code>
         /// </a>.
         /// </p>
-        pub fn association_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_arn(inp);
+        pub fn association_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_arn(signature.into());
             self
         }
         /// <p>
@@ -927,8 +930,8 @@ pub mod fluent_builders {
         /// <code>ListRepositoryAssociations</code>
         /// </a>.
         /// </p>
-        pub fn association_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_arn(inp);
+        pub fn association_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_arn(signature.into());
             self
         }
         /// <p>
@@ -1017,8 +1020,8 @@ pub mod fluent_builders {
         /// <p>
         /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
         /// </p>
-        pub fn provider_types(mut self, inp: impl Into<crate::model::ProviderType>) -> Self {
-            self.inner = self.inner.provider_types(inp);
+        pub fn provider_types(mut self, input: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_types(input);
             self
         }
         /// <p>
@@ -1061,8 +1064,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn states(mut self, inp: impl Into<crate::model::JobState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::JobState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>
@@ -1105,8 +1108,8 @@ pub mod fluent_builders {
         /// <p>
         /// List of repository names for filtering that needs to be applied before displaying the result.
         /// </p>
-        pub fn repository_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_names(inp);
+        pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_names(input.into());
             self
         }
         /// <p>
@@ -1122,8 +1125,8 @@ pub mod fluent_builders {
         /// <p>
         /// The type of code reviews to list in the response.
         /// </p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>
@@ -1136,8 +1139,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results that are returned per call. The default is 100.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -1151,8 +1154,8 @@ pub mod fluent_builders {
         /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
         /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -1233,8 +1236,8 @@ pub mod fluent_builders {
         /// If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
         /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -1248,8 +1251,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results that are returned per call. The default is 100.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -1263,8 +1266,8 @@ pub mod fluent_builders {
         /// <code>CodeReview</code>
         /// </a> object.
         /// </p>
-        pub fn code_review_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_review_arn(inp);
+        pub fn code_review_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_review_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
@@ -1290,8 +1293,8 @@ pub mod fluent_builders {
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
         /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </p>
-        pub fn user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_ids(inp);
+        pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_ids(input.into());
             self
         }
         /// <p>
@@ -1316,8 +1319,8 @@ pub mod fluent_builders {
         /// <p>
         /// Used to query the recommendation feedback for a given recommendation.
         /// </p>
-        pub fn recommendation_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommendation_ids(inp);
+        pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommendation_ids(input.into());
             self
         }
         /// <p>
@@ -1395,8 +1398,8 @@ pub mod fluent_builders {
         /// <p>
         /// Pagination token.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -1409,8 +1412,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results that are returned per call. The default is 100.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -1424,8 +1427,8 @@ pub mod fluent_builders {
         /// <code>CodeReview</code>
         /// </a> object.
         /// </p>
-        pub fn code_review_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_review_arn(inp);
+        pub fn code_review_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_review_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
@@ -1521,8 +1524,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
         ///
         /// <p>List of provider types to use as a filter.</p>
-        pub fn provider_types(mut self, inp: impl Into<crate::model::ProviderType>) -> Self {
-            self.inner = self.inner.provider_types(inp);
+        pub fn provider_types(mut self, input: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_types(input);
             self
         }
         /// <p>List of provider types to use as a filter.</p>
@@ -1592,8 +1595,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn states(mut self, inp: impl Into<crate::model::RepositoryAssociationState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::RepositoryAssociationState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>List of repository association states to use as a filter.</p>
@@ -1663,8 +1666,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>List of repository names to use as a filter.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>List of repository names to use as a filter.</p>
@@ -1683,8 +1686,8 @@ pub mod fluent_builders {
         /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
         /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
         /// that was used to associate the repository. </p>
-        pub fn owners(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owners(inp);
+        pub fn owners(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owners(input.into());
             self
         }
         /// <p>List of owners to use as a filter.
@@ -1706,8 +1709,8 @@ pub mod fluent_builders {
         /// <code>nextToken</code> value.
         /// This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code>
         /// returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code>
@@ -1731,8 +1734,8 @@ pub mod fluent_builders {
         /// <p>Treat this token as an opaque identifier that is only used to retrieve
         /// the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -1818,8 +1821,8 @@ pub mod fluent_builders {
         /// <code>ListRepositoryAssociations</code>
         /// </a>.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -1902,8 +1905,8 @@ pub mod fluent_builders {
         /// <code>CodeReview</code>
         /// </a> object.
         /// </p>
-        pub fn code_review_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_review_arn(inp);
+        pub fn code_review_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_review_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
@@ -1920,8 +1923,8 @@ pub mod fluent_builders {
         /// <p>
         /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
         /// </p>
-        pub fn recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommendation_id(inp);
+        pub fn recommendation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommendation_id(signature.into());
             self
         }
         /// <p>
@@ -1941,8 +1944,8 @@ pub mod fluent_builders {
         /// <p>
         /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
         /// </p>
-        pub fn reactions(mut self, inp: impl Into<crate::model::Reaction>) -> Self {
-            self.inner = self.inner.reactions(inp);
+        pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
+            self.inner = self.inner.reactions(input);
             self
         }
         /// <p>
@@ -2025,8 +2028,8 @@ pub mod fluent_builders {
         /// <code>ListRepositoryAssociations</code>
         /// </a>.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -2068,7 +2071,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>
@@ -2166,8 +2169,8 @@ pub mod fluent_builders {
         /// <code>ListRepositoryAssociations</code>
         /// </a>.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -2189,8 +2192,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys for each tag you want to remove from an associated repository.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys for each tag you want to remove from an associated repository.</p>

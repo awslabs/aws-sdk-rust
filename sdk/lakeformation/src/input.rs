@@ -36,9 +36,9 @@ pub mod add_lf_tags_to_resource_input {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>The LF-tags to attach to the resource.</p>
-        pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags = Some(v);
             self
         }
@@ -210,12 +210,9 @@ pub mod batch_grant_permissions_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::BatchPermissionsRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::BatchPermissionsRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -386,12 +383,9 @@ pub mod batch_revoke_permissions_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::BatchPermissionsRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::BatchPermissionsRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1592,9 +1586,9 @@ pub mod delete_objects_on_cancel_input {
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-        pub fn objects(mut self, input: impl Into<crate::model::VirtualObject>) -> Self {
+        pub fn objects(mut self, input: crate::model::VirtualObject) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.objects = Some(v);
             self
         }
@@ -3987,9 +3981,9 @@ pub mod grant_permissions_input {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -4006,12 +4000,9 @@ pub mod grant_permissions_input {
         /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
         ///
         /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
-        pub fn permissions_with_grant_option(
-            mut self,
-            input: impl Into<crate::model::Permission>,
-        ) -> Self {
+        pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions_with_grant_option.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions_with_grant_option = Some(v);
             self
         }
@@ -4771,12 +4762,9 @@ pub mod list_resources_input {
         /// To override the contents of this collection use [`set_filter_condition_list`](Self::set_filter_condition_list).
         ///
         /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-        pub fn filter_condition_list(
-            mut self,
-            input: impl Into<crate::model::FilterCondition>,
-        ) -> Self {
+        pub fn filter_condition_list(mut self, input: crate::model::FilterCondition) -> Self {
             let mut v = self.filter_condition_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_condition_list = Some(v);
             self
         }
@@ -5723,9 +5711,9 @@ pub mod remove_lf_tags_from_resource_input {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>The LF-tags to be removed from the resource.</p>
-        pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags = Some(v);
             self
         }
@@ -5925,9 +5913,9 @@ pub mod revoke_permissions_input {
         ///
         /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
         /// and Access Control to Metadata and Data</a>.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -5945,12 +5933,9 @@ pub mod revoke_permissions_input {
         /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
         ///
         /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-        pub fn permissions_with_grant_option(
-            mut self,
-            input: impl Into<crate::model::Permission>,
-        ) -> Self {
+        pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions_with_grant_option.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions_with_grant_option = Some(v);
             self
         }
@@ -6143,9 +6128,9 @@ pub mod search_databases_by_lf_tags_input {
         /// To override the contents of this collection use [`set_expression`](Self::set_expression).
         ///
         /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
-        pub fn expression(mut self, input: impl Into<crate::model::LfTag>) -> Self {
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
             let mut v = self.expression.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expression = Some(v);
             self
         }
@@ -6340,9 +6325,9 @@ pub mod search_tables_by_lf_tags_input {
         /// To override the contents of this collection use [`set_expression`](Self::set_expression).
         ///
         /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
-        pub fn expression(mut self, input: impl Into<crate::model::LfTag>) -> Self {
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
             let mut v = self.expression.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expression = Some(v);
             self
         }
@@ -7235,9 +7220,9 @@ pub mod update_table_objects_input {
         /// To override the contents of this collection use [`set_write_operations`](Self::set_write_operations).
         ///
         /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-        pub fn write_operations(mut self, input: impl Into<crate::model::WriteOperation>) -> Self {
+        pub fn write_operations(mut self, input: crate::model::WriteOperation) -> Self {
             let mut v = self.write_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.write_operations = Some(v);
             self
         }
@@ -7440,11 +7425,11 @@ pub mod update_table_storage_optimizer_input {
         /// <p>Name of the table for which to enable the storage optimizer.</p>
         pub fn storage_optimizer_config(
             mut self,
-            k: impl Into<crate::model::OptimizerType>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            k: crate::model::OptimizerType,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.storage_optimizer_config.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.storage_optimizer_config = Some(hash_map);
             self
         }

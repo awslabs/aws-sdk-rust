@@ -732,10 +732,10 @@ pub mod batch_put_scheduled_update_group_action_input {
         /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
         pub fn scheduled_update_group_actions(
             mut self,
-            input: impl Into<crate::model::ScheduledUpdateGroupActionRequest>,
+            input: crate::model::ScheduledUpdateGroupActionRequest,
         ) -> Self {
             let mut v = self.scheduled_update_group_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_update_group_actions = Some(v);
             self
         }
@@ -1697,10 +1697,10 @@ pub mod create_auto_scaling_group_input {
         /// Amazon EC2 Auto Scaling launches or terminates instances.</p>
         pub fn lifecycle_hook_specification_list(
             mut self,
-            input: impl Into<crate::model::LifecycleHookSpecification>,
+            input: crate::model::LifecycleHookSpecification,
         ) -> Self {
             let mut v = self.lifecycle_hook_specification_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_hook_specification_list = Some(v);
             self
         }
@@ -1724,9 +1724,9 @@ pub mod create_auto_scaling_group_input {
         /// overrides the value of that instance tag with the value specified by the Auto Scaling group. For
         /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
         /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2230,12 +2230,9 @@ pub mod create_launch_configuration_input {
         /// <p>A block device mapping, which specifies the block devices for the instance. You can
         /// specify virtual devices and EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
         /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -2600,9 +2597,9 @@ pub mod create_or_update_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3747,9 +3744,9 @@ pub mod delete_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4383,9 +4380,9 @@ pub mod describe_auto_scaling_groups_input {
         ///
         /// <p>One or more filters to limit the results based on specific tags.
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7092,9 +7089,9 @@ pub mod describe_tags_input {
         ///
         /// <p>One or more filters to scope the tags to return. The maximum number of filters per
         /// filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10433,9 +10430,9 @@ pub mod put_scaling_policy_input {
         /// breach.</p>
         /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other
         /// policy type.) </p>
-        pub fn step_adjustments(mut self, input: impl Into<crate::model::StepAdjustment>) -> Self {
+        pub fn step_adjustments(mut self, input: crate::model::StepAdjustment) -> Self {
             let mut v = self.step_adjustments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.step_adjustments = Some(v);
             self
         }

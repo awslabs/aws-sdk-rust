@@ -418,8 +418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the repository.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>The name of the domain that contains the repository.</p>
@@ -431,8 +431,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -446,8 +446,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository to which the external connection is added.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -492,8 +492,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn external_connection(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_connection(inp);
+        pub fn external_connection(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_connection(signature.into());
             self
         }
         /// <p>
@@ -608,8 +608,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the source and destination repositories.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -623,8 +623,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -638,8 +638,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository that contains the package versions to copy.
         /// </p>
-        pub fn source_repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_repository(inp);
+        pub fn source_repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_repository(signature.into());
             self
         }
         /// <p>
@@ -655,8 +655,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository into which package versions are copied.
         /// </p>
-        pub fn destination_repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_repository(inp);
+        pub fn destination_repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_repository(signature.into());
             self
         }
         /// <p>
@@ -689,8 +689,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -742,8 +742,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -775,8 +775,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package that is copied.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -798,8 +798,8 @@ pub mod fluent_builders {
         /// You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
         /// </p>
         /// </note>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
         /// <p>
@@ -835,7 +835,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.version_revisions(k, v);
+            self.inner = self.inner.version_revisions(k.into(), v.into());
             self
         }
         /// <p>
@@ -862,8 +862,8 @@ pub mod fluent_builders {
         /// the package version is returned in the <code>failedVersions</code> field of the response with
         /// an <code>ALREADY_EXISTS</code> error code.
         /// </p>
-        pub fn allow_overwrite(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_overwrite(inp);
+        pub fn allow_overwrite(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_overwrite(signature);
             self
         }
         /// <p>
@@ -880,8 +880,8 @@ pub mod fluent_builders {
         /// repository to the destination repository. The default setting is false. For more information,
         /// see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
         /// upstream repositories</a>. </p>
-        pub fn include_from_upstream(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_from_upstream(inp);
+        pub fn include_from_upstream(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_from_upstream(signature);
             self
         }
         /// <p> Set to true to copy packages from repositories that are upstream from the source
@@ -965,8 +965,8 @@ pub mod fluent_builders {
         /// <p> The name of the domain to create. All domain names in an AWS Region that are in the
         /// same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do
         /// not use sensitive information in a domain name because it is publicly discoverable. </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p> The name of the domain to create. All domain names in an AWS Region that are in the
@@ -988,8 +988,8 @@ pub mod fluent_builders {
         /// domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric
         /// keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
         /// </important>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        pub fn encryption_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(signature.into());
             self
         }
         /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain.
@@ -1016,8 +1016,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tag key-value pairs for the domain.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tag key-value pairs for the domain.</p>
@@ -1093,8 +1093,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the created repository.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -1108,8 +1108,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -1121,8 +1121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the repository to create. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p> The name of the repository to create. </p>
@@ -1133,8 +1133,8 @@ pub mod fluent_builders {
         /// <p>
         /// A description of the created repository.
         /// </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>
@@ -1151,8 +1151,8 @@ pub mod fluent_builders {
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
         /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
         /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn upstreams(mut self, inp: impl Into<crate::model::UpstreamRepository>) -> Self {
-            self.inner = self.inner.upstreams(inp);
+        pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
+            self.inner = self.inner.upstreams(input);
             self
         }
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
@@ -1170,8 +1170,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tag key-value pairs for the repository.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tag key-value pairs for the repository.</p>
@@ -1248,8 +1248,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain to delete.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -1263,8 +1263,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -1340,8 +1340,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain associated with the resource policy to be deleted.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -1355,8 +1355,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -1371,8 +1371,8 @@ pub mod fluent_builders {
         /// The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which
         /// prevents others from overwriting your changes to the domain's resource policy.
         /// </p>
-        pub fn policy_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_revision(inp);
+        pub fn policy_revision(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision(signature.into());
             self
         }
         /// <p>
@@ -1453,8 +1453,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the package to delete.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -1468,8 +1468,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -1483,8 +1483,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository that contains the package versions to delete.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -1514,8 +1514,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -1567,8 +1567,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -1600,8 +1600,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package with the versions to delete.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -1618,8 +1618,8 @@ pub mod fluent_builders {
         /// <p>
         /// An array of strings that specify the versions of the package to delete.
         /// </p>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
         /// <p>
@@ -1662,8 +1662,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn expected_status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.expected_status(inp);
+        pub fn expected_status(mut self, signature: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.expected_status(signature);
             self
         }
         /// <p>
@@ -1768,8 +1768,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository to delete.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -1783,8 +1783,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -1796,8 +1796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the repository to delete. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p> The name of the repository to delete. </p>
@@ -1877,8 +1877,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository associated with the resource policy to be deleted.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -1892,8 +1892,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -1907,8 +1907,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository that is associated with the resource policy to be deleted
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -1922,8 +1922,8 @@ pub mod fluent_builders {
         /// The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which
         /// prevents others from accidentally overwriting your changes to the repository's resource policy.
         /// </p>
-        pub fn policy_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_revision(inp);
+        pub fn policy_revision(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision(signature.into());
             self
         }
         /// <p>
@@ -2004,8 +2004,8 @@ pub mod fluent_builders {
         /// <p>
         /// A string that specifies the name of the requested domain.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -2019,8 +2019,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -2098,8 +2098,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository that contains the package version.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -2113,8 +2113,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -2126,8 +2126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the repository that contains the package version. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p> The name of the repository that contains the package version. </p>
@@ -2155,8 +2155,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -2208,8 +2208,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -2239,8 +2239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the requested package version. </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p> The name of the requested package version. </p>
@@ -2251,8 +2251,8 @@ pub mod fluent_builders {
         /// <p>
         /// A string that contains the package version (for example, <code>3.5.2</code>).
         /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>
@@ -2331,8 +2331,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository to describe.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -2346,8 +2346,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -2361,8 +2361,8 @@ pub mod fluent_builders {
         /// <p>
         /// A string that specifies the name of the requested repository.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -2436,8 +2436,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the domain that contains the repository from which to remove the external
         /// repository. </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>The name of the domain that contains the repository from which to remove the external
@@ -2450,8 +2450,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -2463,8 +2463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository from which the external connection will be removed. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>The name of the repository from which the external connection will be removed. </p>
@@ -2473,8 +2473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the external connection to be removed from the repository. </p>
-        pub fn external_connection(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_connection(inp);
+        pub fn external_connection(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_connection(signature.into());
             self
         }
         /// <p>The name of the external connection to be removed from the repository. </p>
@@ -2561,8 +2561,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository you want to dispose.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -2576,8 +2576,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -2591,8 +2591,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository that contains the package versions you want to dispose.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -2622,8 +2622,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -2675,8 +2675,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -2708,8 +2708,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package with the versions you want to dispose.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -2726,8 +2726,8 @@ pub mod fluent_builders {
         /// <p>
         /// The versions of the package you want to dispose.
         /// </p>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
         /// <p>
@@ -2752,7 +2752,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.version_revisions(k, v);
+            self.inner = self.inner.version_revisions(k.into(), v.into());
             self
         }
         /// <p>
@@ -2797,8 +2797,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn expected_status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.expected_status(inp);
+        pub fn expected_status(mut self, signature: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.expected_status(signature);
             self
         }
         /// <p>
@@ -2921,8 +2921,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that is in scope for the generated authorization token.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -2936,8 +2936,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -2952,8 +2952,8 @@ pub mod fluent_builders {
         /// <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours).
         /// A value of <code>0</code> will set the expiration of the authorization token to the same expiration of
         /// the user's role's temporary credentials.</p>
-        pub fn duration_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.duration_seconds(inp);
+        pub fn duration_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.duration_seconds(signature);
             self
         }
         /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are
@@ -3036,8 +3036,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain to which the resource policy is attached.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -3051,8 +3051,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -3130,8 +3130,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository that contains the package version with the requested asset.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -3145,8 +3145,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -3160,8 +3160,8 @@ pub mod fluent_builders {
         /// <p>
         /// The repository that contains the package version with the requested asset.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -3191,8 +3191,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -3244,8 +3244,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -3277,8 +3277,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package that contains the requested asset.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -3291,8 +3291,8 @@ pub mod fluent_builders {
         /// <p>
         /// A string that contains the package version (for example, <code>3.5.2</code>).
         /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>
@@ -3308,8 +3308,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the requested asset.
         /// </p>
-        pub fn asset(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset(inp);
+        pub fn asset(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset(signature.into());
             self
         }
         /// <p>
@@ -3322,8 +3322,11 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package version revision that contains the requested asset.
         /// </p>
-        pub fn package_version_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version_revision(inp);
+        pub fn package_version_revision(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.package_version_revision(signature.into());
             self
         }
         /// <p>
@@ -3406,8 +3409,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository that contains the package version with the requested readme file.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -3421,8 +3424,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -3436,8 +3439,8 @@ pub mod fluent_builders {
         /// <p>
         /// The repository that contains the package with the requested readme file.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -3467,8 +3470,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -3520,8 +3523,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -3553,8 +3556,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package version that contains the requested readme file.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -3567,8 +3570,8 @@ pub mod fluent_builders {
         /// <p>
         /// A string that contains the package version (for example, <code>3.5.2</code>).
         /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>
@@ -3664,8 +3667,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -3679,8 +3682,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -3694,8 +3697,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -3726,8 +3729,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -3823,8 +3826,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain containing the repository whose associated resource policy is to be retrieved.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -3838,8 +3841,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -3853,8 +3856,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository whose associated resource policy is to be retrieved.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -3929,8 +3932,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results to return per page.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -3943,8 +3946,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -4021,8 +4024,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository that contains the requested list of packages.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -4036,8 +4039,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -4051,8 +4054,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository from which packages are to be listed.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -4082,8 +4085,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -4135,8 +4138,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -4169,8 +4172,8 @@ pub mod fluent_builders {
         /// A prefix used to filter returned packages. Only packages with names that start with
         /// <code>packagePrefix</code> are returned.
         /// </p>
-        pub fn package_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_prefix(inp);
+        pub fn package_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_prefix(signature.into());
             self
         }
         /// <p>
@@ -4187,8 +4190,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results to return per page.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -4201,8 +4204,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -4279,8 +4282,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository associated with the package version assets.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -4294,8 +4297,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -4309,8 +4312,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository that contains the package that contains the returned package version assets.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -4340,8 +4343,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -4393,8 +4396,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -4426,8 +4429,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package that contains the returned package version assets.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -4440,8 +4443,8 @@ pub mod fluent_builders {
         /// <p>
         /// A string that contains the package version (for example, <code>3.5.2</code>).
         /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>
@@ -4457,8 +4460,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results to return per page.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -4471,8 +4474,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -4551,8 +4554,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository that contains the requested package version dependencies.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -4566,8 +4569,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -4581,8 +4584,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository that contains the requested package version.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -4612,8 +4615,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -4665,8 +4668,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -4698,8 +4701,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package versions' package.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -4712,8 +4715,8 @@ pub mod fluent_builders {
         /// <p>
         /// A string that contains the package version (for example, <code>3.5.2</code>).
         /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        pub fn package_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(signature.into());
             self
         }
         /// <p>
@@ -4729,8 +4732,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -4807,8 +4810,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository that contains the returned package versions.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -4822,8 +4825,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -4837,8 +4840,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository that contains the package.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -4868,8 +4871,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -4921,8 +4924,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -4954,8 +4957,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package for which you want to return a list of package versions.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -4995,8 +4998,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>
@@ -5039,8 +5042,8 @@ pub mod fluent_builders {
         /// <p>
         /// How to sort the returned list of package versions.
         /// </p>
-        pub fn sort_by(mut self, inp: crate::model::PackageVersionSortType) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::PackageVersionSortType) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>
@@ -5056,8 +5059,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results to return per page.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -5070,8 +5073,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -5148,8 +5151,8 @@ pub mod fluent_builders {
         }
         /// <p> A prefix used to filter returned repositories. Only repositories with names that start
         /// with <code>repositoryPrefix</code> are returned.</p>
-        pub fn repository_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_prefix(inp);
+        pub fn repository_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_prefix(signature.into());
             self
         }
         /// <p> A prefix used to filter returned repositories. Only repositories with names that start
@@ -5164,8 +5167,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results to return per page.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -5178,8 +5181,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -5257,8 +5260,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the returned list of repositories.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -5272,8 +5275,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -5287,8 +5290,8 @@ pub mod fluent_builders {
         /// <p>
         /// Filter the list of repositories to only include those that are managed by the AWS account ID.
         /// </p>
-        pub fn administrator_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.administrator_account(inp);
+        pub fn administrator_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.administrator_account(signature.into());
             self
         }
         /// <p>
@@ -5305,8 +5308,8 @@ pub mod fluent_builders {
         /// A prefix used to filter returned repositories. Only repositories with names that start with
         /// <code>repositoryPrefix</code> are returned.
         /// </p>
-        pub fn repository_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_prefix(inp);
+        pub fn repository_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_prefix(signature.into());
             self
         }
         /// <p>
@@ -5323,8 +5326,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results to return per page.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -5337,8 +5340,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -5409,8 +5412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
@@ -5488,8 +5491,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain on which to set the resource policy.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -5503,8 +5506,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -5519,8 +5522,8 @@ pub mod fluent_builders {
         /// The current revision of the resource policy to be set. This revision is used for optimistic locking, which
         /// prevents others from overwriting your changes to the domain's resource policy.
         /// </p>
-        pub fn policy_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_revision(inp);
+        pub fn policy_revision(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision(signature.into());
             self
         }
         /// <p>
@@ -5536,8 +5539,8 @@ pub mod fluent_builders {
         }
         /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource
         /// policy on the provided domain. </p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(signature.into());
             self
         }
         /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource
@@ -5619,8 +5622,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain containing the repository to set the resource policy on.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -5634,8 +5637,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -5647,8 +5650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the repository to set the resource policy on. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p> The name of the repository to set the resource policy on. </p>
@@ -5661,8 +5664,8 @@ pub mod fluent_builders {
         /// This revision is used for optimistic locking, which prevents others from overwriting your
         /// changes to the repository's resource policy.
         /// </p>
-        pub fn policy_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_revision(inp);
+        pub fn policy_revision(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision(signature.into());
             self
         }
         /// <p>
@@ -5679,8 +5682,8 @@ pub mod fluent_builders {
         }
         /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource
         /// policy on the provided repository. </p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(signature.into());
             self
         }
         /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource
@@ -5753,8 +5756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
@@ -5767,8 +5770,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags you want to modify or add to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags you want to modify or add to the resource.</p>
@@ -5840,8 +5843,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
@@ -5854,8 +5857,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag key for each tag that you want to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag key for each tag that you want to remove from the resource.</p>
@@ -5931,8 +5934,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain that contains the repository that contains the package versions with a status to be updated.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -5946,8 +5949,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -5961,8 +5964,8 @@ pub mod fluent_builders {
         /// <p>
         /// The repository that contains the package versions with the status you want to update.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -5992,8 +5995,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>
@@ -6045,8 +6048,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>
@@ -6078,8 +6081,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the package with the version statuses to update.
         /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(signature.into());
             self
         }
         /// <p>
@@ -6096,8 +6099,8 @@ pub mod fluent_builders {
         /// <p>
         /// An array of strings that specify the versions of the package with the statuses to update.
         /// </p>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
         /// <p>
@@ -6122,7 +6125,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.version_revisions(k, v);
+            self.inner = self.inner.version_revisions(k.into(), v.into());
             self
         }
         /// <p> A map of package versions and package version revisions. The map <code>key</code> is the
@@ -6141,8 +6144,8 @@ pub mod fluent_builders {
         /// <code>expectedStatus</code> is provided, the package version's status is updated only if its
         /// status at the time <code>UpdatePackageVersionsStatus</code> is called matches
         /// <code>expectedStatus</code>. </p>
-        pub fn expected_status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.expected_status(inp);
+        pub fn expected_status(mut self, signature: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.expected_status(signature);
             self
         }
         /// <p> The package version’s expected status before it is updated. If
@@ -6159,8 +6162,8 @@ pub mod fluent_builders {
         /// <p>
         /// The status you want to change the package version status to.
         /// </p>
-        pub fn target_status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.target_status(inp);
+        pub fn target_status(mut self, signature: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.target_status(signature);
             self
         }
         /// <p>
@@ -6238,8 +6241,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the domain associated with the repository to update.
         /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>
@@ -6253,8 +6256,8 @@ pub mod fluent_builders {
         /// The 12-digit account number of the AWS account that owns the domain. It does not include
         /// dashes or spaces.
         /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        pub fn domain_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(signature.into());
             self
         }
         /// <p>
@@ -6268,8 +6271,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the repository to update.
         /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(signature.into());
             self
         }
         /// <p>
@@ -6282,8 +6285,8 @@ pub mod fluent_builders {
         /// <p>
         /// An updated repository description.
         /// </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>
@@ -6300,8 +6303,8 @@ pub mod fluent_builders {
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
         /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
         /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn upstreams(mut self, inp: impl Into<crate::model::UpstreamRepository>) -> Self {
-            self.inner = self.inner.upstreams(inp);
+        pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
+            self.inner = self.inner.upstreams(input);
             self
         }
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories

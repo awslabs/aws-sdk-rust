@@ -2319,12 +2319,9 @@ pub mod stream_description_summary {
         /// To override the contents of this collection use [`set_enhanced_monitoring`](Self::set_enhanced_monitoring).
         ///
         /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-        pub fn enhanced_monitoring(
-            mut self,
-            input: impl Into<crate::model::EnhancedMetrics>,
-        ) -> Self {
+        pub fn enhanced_monitoring(mut self, input: crate::model::EnhancedMetrics) -> Self {
             let mut v = self.enhanced_monitoring.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enhanced_monitoring = Some(v);
             self
         }
@@ -2662,9 +2659,9 @@ pub mod enhanced_metrics {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
         /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
         /// Kinesis Data Streams Developer Guide</i>.</p>
-        pub fn shard_level_metrics(mut self, input: impl Into<crate::model::MetricsName>) -> Self {
+        pub fn shard_level_metrics(mut self, input: crate::model::MetricsName) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shard_level_metrics = Some(v);
             self
         }
@@ -3327,9 +3324,9 @@ pub mod stream_description {
         /// To override the contents of this collection use [`set_shards`](Self::set_shards).
         ///
         /// <p>The shards that comprise the stream.</p>
-        pub fn shards(mut self, input: impl Into<crate::model::Shard>) -> Self {
+        pub fn shards(mut self, input: crate::model::Shard) -> Self {
             let mut v = self.shards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shards = Some(v);
             self
         }
@@ -3383,12 +3380,9 @@ pub mod stream_description {
         /// To override the contents of this collection use [`set_enhanced_monitoring`](Self::set_enhanced_monitoring).
         ///
         /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-        pub fn enhanced_monitoring(
-            mut self,
-            input: impl Into<crate::model::EnhancedMetrics>,
-        ) -> Self {
+        pub fn enhanced_monitoring(mut self, input: crate::model::EnhancedMetrics) -> Self {
             let mut v = self.enhanced_monitoring.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enhanced_monitoring = Some(v);
             self
         }

@@ -722,8 +722,8 @@ pub mod fluent_builders {
         /// <p>Contain less than 64 characters.</p>
         /// </li>
         /// </ul>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the rule set to create. The name must:</p>
@@ -747,8 +747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule set to clone.</p>
-        pub fn original_rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.original_rule_set_name(inp);
+        pub fn original_rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.original_rule_set_name(signature.into());
             self
         }
         /// <p>The name of the rule set to clone.</p>
@@ -824,8 +824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A data structure that contains the name of the configuration set.</p>
-        pub fn configuration_set(mut self, inp: crate::model::ConfigurationSet) -> Self {
-            self.inner = self.inner.configuration_set(inp);
+        pub fn configuration_set(mut self, signature: crate::model::ConfigurationSet) -> Self {
+            self.inner = self.inner.configuration_set(signature);
             self
         }
         /// <p>A data structure that contains the name of the configuration set.</p>
@@ -909,8 +909,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that the event destination should be associated
         /// with.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set that the event destination should be associated
@@ -924,8 +924,8 @@ pub mod fluent_builders {
         }
         /// <p>An object that describes the AWS service that email sending event information will
         /// be published to.</p>
-        pub fn event_destination(mut self, inp: crate::model::EventDestination) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(mut self, signature: crate::model::EventDestination) -> Self {
+            self.inner = self.inner.event_destination(signature);
             self
         }
         /// <p>An object that describes the AWS service that email sending event information will
@@ -1005,8 +1005,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that the tracking options should be associated
         /// with.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set that the tracking options should be associated
@@ -1023,8 +1023,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
         /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
         /// Developer Guide</i>.</p>
-        pub fn tracking_options(mut self, inp: crate::model::TrackingOptions) -> Self {
-            self.inner = self.inner.tracking_options(inp);
+        pub fn tracking_options(mut self, signature: crate::model::TrackingOptions) -> Self {
+            self.inner = self.inner.tracking_options(signature);
             self
         }
         /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
@@ -1105,8 +1105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the custom verification email template.</p>
@@ -1118,8 +1118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(signature.into());
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
@@ -1131,8 +1131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_subject(inp);
+        pub fn template_subject(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_subject(signature.into());
             self
         }
         /// <p>The subject line of the custom verification email.</p>
@@ -1147,8 +1147,8 @@ pub mod fluent_builders {
         /// than 10 MB. The message body may contain HTML, with some limitations. For more
         /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
         /// Developer Guide</i>.</p>
-        pub fn template_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_content(inp);
+        pub fn template_content(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_content(signature.into());
             self
         }
         /// <p>The content of the custom verification email. The total size of the email must be less
@@ -1164,8 +1164,11 @@ pub mod fluent_builders {
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.success_redirection_url(inp);
+        pub fn success_redirection_url(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.success_redirection_url(signature.into());
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
@@ -1179,8 +1182,11 @@ pub mod fluent_builders {
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.failure_redirection_url(inp);
+        pub fn failure_redirection_url(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.failure_redirection_url(signature.into());
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
@@ -1256,8 +1262,8 @@ pub mod fluent_builders {
         }
         /// <p>A data structure that describes the IP address filter to create, which consists of a
         /// name, an IP address range, and whether to allow or block mail from it.</p>
-        pub fn filter(mut self, inp: crate::model::ReceiptFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::ReceiptFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>A data structure that describes the IP address filter to create, which consists of a
@@ -1333,8 +1339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule set that the receipt rule will be added to.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the rule set that the receipt rule will be added to.</p>
@@ -1348,8 +1354,8 @@ pub mod fluent_builders {
         /// <p>The name of an existing rule after which the new rule will be placed. If this
         /// parameter is null, the new rule will be inserted at the beginning of the rule
         /// list.</p>
-        pub fn after(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after(inp);
+        pub fn after(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after(signature.into());
             self
         }
         /// <p>The name of an existing rule after which the new rule will be placed. If this
@@ -1361,8 +1367,8 @@ pub mod fluent_builders {
         }
         /// <p>A data structure that contains the specified rule's name, actions, recipients,
         /// domains, enabled status, scan status, and TLS policy.</p>
-        pub fn rule(mut self, inp: crate::model::ReceiptRule) -> Self {
-            self.inner = self.inner.rule(inp);
+        pub fn rule(mut self, signature: crate::model::ReceiptRule) -> Self {
+            self.inner = self.inner.rule(signature);
             self
         }
         /// <p>A data structure that contains the specified rule's name, actions, recipients,
@@ -1447,8 +1453,8 @@ pub mod fluent_builders {
         /// <p>Contain less than 64 characters.</p>
         /// </li>
         /// </ul>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the rule set to create. The name must:</p>
@@ -1536,8 +1542,8 @@ pub mod fluent_builders {
         }
         /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
         /// part.</p>
-        pub fn template(mut self, inp: crate::model::Template) -> Self {
-            self.inner = self.inner.template(inp);
+        pub fn template(mut self, signature: crate::model::Template) -> Self {
+            self.inner = self.inner.template(signature);
             self
         }
         /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
@@ -1609,8 +1615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set to delete.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set to delete.</p>
@@ -1687,8 +1693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set from which to delete the event destination.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set from which to delete the event destination.</p>
@@ -1700,8 +1706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the event destination to delete.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(signature.into());
             self
         }
         /// <p>The name of the event destination to delete.</p>
@@ -1785,8 +1791,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set from which you want to delete the tracking
         /// options.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set from which you want to delete the tracking
@@ -1864,8 +1870,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to delete.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the custom verification email template that you want to delete.</p>
@@ -1939,8 +1945,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
@@ -2024,8 +2030,8 @@ pub mod fluent_builders {
         /// Examples: <code>user@example.com</code>, <code>example.com</code>,
         /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity that is associated with the policy that you want to delete. You can
@@ -2038,8 +2044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy to be deleted.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the policy to be deleted.</p>
@@ -2111,8 +2117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP address filter to delete.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(signature.into());
             self
         }
         /// <p>The name of the IP address filter to delete.</p>
@@ -2184,8 +2190,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
@@ -2197,8 +2203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the receipt rule to delete.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule to delete.</p>
@@ -2273,8 +2279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the receipt rule set to delete.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule set to delete.</p>
@@ -2347,8 +2353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template to be deleted.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the template to be deleted.</p>
@@ -2421,8 +2427,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An email address to be removed from the list of verified addresses.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(signature.into());
             self
         }
         /// <p>An email address to be removed from the list of verified addresses.</p>
@@ -2561,8 +2567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set to describe.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set to describe.</p>
@@ -2580,9 +2586,9 @@ pub mod fluent_builders {
         /// <p>A list of configuration set attributes to return.</p>
         pub fn configuration_set_attribute_names(
             mut self,
-            inp: impl Into<crate::model::ConfigurationSetAttribute>,
+            input: crate::model::ConfigurationSetAttribute,
         ) -> Self {
-            self.inner = self.inner.configuration_set_attribute_names(inp);
+            self.inner = self.inner.configuration_set_attribute_names(input);
             self
         }
         /// <p>A list of configuration set attributes to return.</p>
@@ -2657,8 +2663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
@@ -2670,8 +2676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the receipt rule.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule.</p>
@@ -2742,8 +2748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the receipt rule set to describe.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule set to describe.</p>
@@ -2882,8 +2888,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to retrieve.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the custom verification email template that you want to retrieve.</p>
@@ -2981,8 +2987,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
         /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-        pub fn identities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identities(inp);
+        pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identities(input.into());
             self
         }
         /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
@@ -3063,8 +3069,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
         /// <p>A list of one or more identities.</p>
-        pub fn identities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identities(inp);
+        pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identities(input.into());
             self
         }
         /// <p>A list of one or more identities.</p>
@@ -3148,8 +3154,8 @@ pub mod fluent_builders {
         /// using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
         /// <code>example.com</code>,
         /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-        pub fn identities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identities(inp);
+        pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identities(input.into());
             self
         }
         /// <p>A list of one or more identities. You can specify an identity by using its name or by
@@ -3239,8 +3245,8 @@ pub mod fluent_builders {
         /// <code>user@example.com</code>, <code>example.com</code>,
         /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity for which the policies will be retrieved. You can specify an identity by
@@ -3259,8 +3265,8 @@ pub mod fluent_builders {
         /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
         /// policies at a time. If you do not know the names of the policies that are attached to
         /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_names(inp);
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_names(input.into());
             self
         }
         /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
@@ -3353,8 +3359,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
         /// <p>A list of identities.</p>
-        pub fn identities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identities(inp);
+        pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identities(input.into());
             self
         }
         /// <p>A list of identities.</p>
@@ -3552,8 +3558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template you want to retrieve.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the template you want to retrieve.</p>
@@ -3635,8 +3641,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
         /// indicate the position of the configuration set in the configuration set list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
@@ -3646,8 +3652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of configuration sets to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The number of configuration sets to return.</p>
@@ -3723,8 +3729,8 @@ pub mod fluent_builders {
         }
         /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
         /// account.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
@@ -3737,8 +3743,8 @@ pub mod fluent_builders {
         /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
         /// specify a value less than 1 or greater than 50, the operation will return up to 50
         /// results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of custom verification email templates to return. This value must
@@ -3813,8 +3819,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain".
         /// If this parameter is omitted, then all identities will be listed.</p>
-        pub fn identity_type(mut self, inp: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(inp);
+        pub fn identity_type(mut self, signature: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(signature);
             self
         }
         /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain".
@@ -3827,8 +3833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use for pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use for pagination.</p>
@@ -3838,8 +3844,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of identities per page. Possible values are 1-1000
         /// inclusive.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of identities per page. Possible values are 1-1000
@@ -3924,8 +3930,8 @@ pub mod fluent_builders {
         /// (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
         /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity that is associated with the policy for which the policies will be listed.
@@ -4068,8 +4074,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
         /// the position in the receipt rule set list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
@@ -4142,8 +4148,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the
         /// position in the list of email templates.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the
@@ -4155,8 +4161,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of templates to return. This value must be at least 1 and less than
         /// or equal to 10. If you do not specify a value, or if you specify a value less than 1 or
         /// greater than 10, the operation will return up to 10 results.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of templates to return. This value must be at least 1 and less than
@@ -4291,8 +4297,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that you want to specify the delivery options
         /// for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set that you want to specify the delivery options
@@ -4306,8 +4312,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether messages that use the configuration set are required to use
         /// Transport Layer Security (TLS).</p>
-        pub fn delivery_options(mut self, inp: crate::model::DeliveryOptions) -> Self {
-            self.inner = self.inner.delivery_options(inp);
+        pub fn delivery_options(mut self, signature: crate::model::DeliveryOptions) -> Self {
+            self.inner = self.inner.delivery_options(signature);
             self
         }
         /// <p>Specifies whether messages that use the configuration set are required to use
@@ -4394,8 +4400,8 @@ pub mod fluent_builders {
         /// <code>user@example.com</code>, <code>example.com</code>,
         /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity that the policy will apply to. You can specify an identity by using its
@@ -4410,8 +4416,8 @@ pub mod fluent_builders {
         /// <p>The name of the policy.</p>
         /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
         /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the policy.</p>
@@ -4424,8 +4430,8 @@ pub mod fluent_builders {
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
         /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
         /// Guide</a>. </p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
@@ -4503,8 +4509,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the receipt rule set to reorder.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule set to reorder.</p>
@@ -4521,8 +4527,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
         /// put them.</p>
-        pub fn rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_names(inp);
+        pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_names(input.into());
             self
         }
         /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
@@ -4603,8 +4609,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The message ID of the message to be bounced.</p>
-        pub fn original_message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.original_message_id(inp);
+        pub fn original_message_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.original_message_id(signature.into());
             self
         }
         /// <p>The message ID of the message to be bounced.</p>
@@ -4617,8 +4623,8 @@ pub mod fluent_builders {
         }
         /// <p>The address to use in the "From" header of the bounce message. This must be an
         /// identity that you have verified with Amazon SES.</p>
-        pub fn bounce_sender(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bounce_sender(inp);
+        pub fn bounce_sender(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bounce_sender(signature.into());
             self
         }
         /// <p>The address to use in the "From" header of the bounce message. This must be an
@@ -4632,8 +4638,8 @@ pub mod fluent_builders {
         }
         /// <p>Human-readable text for the bounce message to explain the failure. If not specified,
         /// the text will be auto-generated based on the bounced recipient information.</p>
-        pub fn explanation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explanation(inp);
+        pub fn explanation(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explanation(signature.into());
             self
         }
         /// <p>Human-readable text for the bounce message to explain the failure. If not specified,
@@ -4643,8 +4649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
-        pub fn message_dsn(mut self, inp: crate::model::MessageDsn) -> Self {
-            self.inner = self.inner.message_dsn(inp);
+        pub fn message_dsn(mut self, signature: crate::model::MessageDsn) -> Self {
+            self.inner = self.inner.message_dsn(signature);
             self
         }
         /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
@@ -4664,9 +4670,9 @@ pub mod fluent_builders {
         /// least one <code>BouncedRecipientInfo</code> in the list.</p>
         pub fn bounced_recipient_info_list(
             mut self,
-            inp: impl Into<crate::model::BouncedRecipientInfo>,
+            input: crate::model::BouncedRecipientInfo,
         ) -> Self {
-            self.inner = self.inner.bounced_recipient_info_list(inp);
+            self.inner = self.inner.bounced_recipient_info_list(input);
             self
         }
         /// <p>A list of recipients of the bounced message, including the information required to
@@ -4684,8 +4690,8 @@ pub mod fluent_builders {
         /// address in the "From" header of the bounce. For more information about sending
         /// authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn bounce_sender_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bounce_sender_arn(inp);
+        pub fn bounce_sender_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bounce_sender_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -4821,8 +4827,8 @@ pub mod fluent_builders {
         /// syntax uses the following form:
         /// <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(signature.into());
             self
         }
         /// <p>The email address that is sending the email. This email address must be either
@@ -4859,8 +4865,8 @@ pub mod fluent_builders {
         /// <code>Source</code> to be <code>user@example.com</code>.</p>
         /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -4884,8 +4890,8 @@ pub mod fluent_builders {
         ///
         /// <p>The reply-to email address(es) for the message. If the recipient replies to the
         /// message, each reply-to address will receive the reply.</p>
-        pub fn reply_to_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reply_to_addresses(inp);
+        pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reply_to_addresses(input.into());
             self
         }
         /// <p>The reply-to email address(es) for the message. If the recipient replies to the
@@ -4904,8 +4910,8 @@ pub mod fluent_builders {
         /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
         /// either individually verified with Amazon SES, or from a domain that has been verified with
         /// Amazon SES. </p>
-        pub fn return_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.return_path(inp);
+        pub fn return_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.return_path(signature.into());
             self
         }
         /// <p>The email address that bounces and complaints will be forwarded to when feedback
@@ -4930,8 +4936,8 @@ pub mod fluent_builders {
         /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
         /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn return_path_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.return_path_arn(inp);
+        pub fn return_path_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.return_path_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -4954,8 +4960,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set to use when you send an email using
         /// <code>SendBulkTemplatedEmail</code>.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set to use when you send an email using
@@ -4973,8 +4979,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
         /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
-        pub fn default_tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
-            self.inner = self.inner.default_tags(inp);
+        pub fn default_tags(mut self, input: crate::model::MessageTag) -> Self {
+            self.inner = self.inner.default_tags(input);
             self
         }
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
@@ -4987,8 +4993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template to use when sending this email.</p>
-        pub fn template(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(inp);
+        pub fn template(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(signature.into());
             self
         }
         /// <p>The template to use when sending this email.</p>
@@ -4997,8 +5003,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the template to use when sending this email.</p>
-        pub fn template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_arn(inp);
+        pub fn template_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_arn(signature.into());
             self
         }
         /// <p>The ARN of the template to use when sending this email.</p>
@@ -5011,8 +5017,8 @@ pub mod fluent_builders {
         /// no other data is available.</p>
         /// <p>The template data is a JSON object, typically consisting of key-value pairs in which
         /// the keys correspond to replacement tags in the email template.</p>
-        pub fn default_template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_template_data(inp);
+        pub fn default_template_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_template_data(signature.into());
             self
         }
         /// <p>A list of replacement values to apply to the template when replacement data is not
@@ -5035,8 +5041,8 @@ pub mod fluent_builders {
         /// <code>Destination</code> will receive the same version of the email. You can specify
         /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
         /// array.</p>
-        pub fn destinations(mut self, inp: impl Into<crate::model::BulkEmailDestination>) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: crate::model::BulkEmailDestination) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
         /// <p>One or more <code>Destination</code> objects. All of the recipients in a
@@ -5119,8 +5125,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address to verify.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(signature.into());
             self
         }
         /// <p>The email address to verify.</p>
@@ -5133,8 +5139,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the custom verification email template to use when sending the
         /// verification email.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the custom verification email template to use when sending the
@@ -5147,8 +5153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a configuration set to use when sending the verification email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>Name of a configuration set to use when sending the verification email.</p>
@@ -5282,8 +5288,8 @@ pub mod fluent_builders {
         /// syntax uses the following form:
         /// <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(signature.into());
             self
         }
         /// <p>The email address that is sending the email. This email address must be either
@@ -5310,8 +5316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
-        pub fn destination(mut self, inp: crate::model::Destination) -> Self {
-            self.inner = self.inner.destination(inp);
+        pub fn destination(mut self, signature: crate::model::Destination) -> Self {
+            self.inner = self.inner.destination(signature);
             self
         }
         /// <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
@@ -5323,8 +5329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The message to be sent.</p>
-        pub fn message(mut self, inp: crate::model::Message) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, signature: crate::model::Message) -> Self {
+            self.inner = self.inner.message(signature);
             self
         }
         /// <p>The message to be sent.</p>
@@ -5338,8 +5344,8 @@ pub mod fluent_builders {
         ///
         /// <p>The reply-to email address(es) for the message. If the recipient replies to the
         /// message, each reply-to address will receive the reply.</p>
-        pub fn reply_to_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reply_to_addresses(inp);
+        pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reply_to_addresses(input.into());
             self
         }
         /// <p>The reply-to email address(es) for the message. If the recipient replies to the
@@ -5358,8 +5364,8 @@ pub mod fluent_builders {
         /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
         /// either individually verified with Amazon SES, or from a domain that has been verified with
         /// Amazon SES. </p>
-        pub fn return_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.return_path(inp);
+        pub fn return_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.return_path(signature.into());
             self
         }
         /// <p>The email address that bounces and complaints will be forwarded to when feedback
@@ -5384,8 +5390,8 @@ pub mod fluent_builders {
         /// <code>Source</code> to be <code>user@example.com</code>.</p>
         /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -5414,8 +5420,8 @@ pub mod fluent_builders {
         /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
         /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn return_path_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.return_path_arn(inp);
+        pub fn return_path_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.return_path_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -5443,8 +5449,8 @@ pub mod fluent_builders {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
         /// define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
@@ -5459,8 +5465,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set to use when you send an email using
         /// <code>SendEmail</code>.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set to use when you send an email using
@@ -5660,8 +5666,8 @@ pub mod fluent_builders {
         /// then bounces and complaints will be sent to this email address. This takes precedence
         /// over any Return-Path header that you might include in the raw text of the
         /// message.</p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(signature.into());
             self
         }
         /// <p>The identity's email address. If you do not provide a value for this parameter, you
@@ -5694,8 +5700,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
         /// addresses.</p>
-        pub fn destinations(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destinations(input.into());
             self
         }
         /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
@@ -5739,8 +5745,8 @@ pub mod fluent_builders {
         /// <CRLF>, must not exceed 1,000 characters.</p>
         /// </li>
         /// </ul>
-        pub fn raw_message(mut self, inp: crate::model::RawMessage) -> Self {
-            self.inner = self.inner.raw_message(inp);
+        pub fn raw_message(mut self, signature: crate::model::RawMessage) -> Self {
+            self.inner = self.inner.raw_message(signature);
             self
         }
         /// <p>The raw email message itself. The message has to meet the following criteria:</p>
@@ -5793,8 +5799,8 @@ pub mod fluent_builders {
         /// <p>For information about when to use this parameter, see the description of
         /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
-        pub fn from_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_arn(inp);
+        pub fn from_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -5829,8 +5835,8 @@ pub mod fluent_builders {
         /// <p>For information about when to use this parameter, see the description of
         /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -5871,8 +5877,8 @@ pub mod fluent_builders {
         /// <p>For information about when to use this parameter, see the description of
         /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
-        pub fn return_path_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.return_path_arn(inp);
+        pub fn return_path_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.return_path_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -5906,8 +5912,8 @@ pub mod fluent_builders {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
         /// you define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
@@ -5922,8 +5928,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set to use when you send an email using
         /// <code>SendRawEmail</code>.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set to use when you send an email using
@@ -6063,8 +6069,8 @@ pub mod fluent_builders {
         /// syntax uses the following form:
         /// <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(signature.into());
             self
         }
         /// <p>The email address that is sending the email. This email address must be either
@@ -6092,8 +6098,8 @@ pub mod fluent_builders {
         }
         /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination
         /// can include up to 50 recipients across these three fields.</p>
-        pub fn destination(mut self, inp: crate::model::Destination) -> Self {
-            self.inner = self.inner.destination(inp);
+        pub fn destination(mut self, signature: crate::model::Destination) -> Self {
+            self.inner = self.inner.destination(signature);
             self
         }
         /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination
@@ -6111,8 +6117,8 @@ pub mod fluent_builders {
         ///
         /// <p>The reply-to email address(es) for the message. If the recipient replies to the
         /// message, each reply-to address will receive the reply.</p>
-        pub fn reply_to_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reply_to_addresses(inp);
+        pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reply_to_addresses(input.into());
             self
         }
         /// <p>The reply-to email address(es) for the message. If the recipient replies to the
@@ -6131,8 +6137,8 @@ pub mod fluent_builders {
         /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
         /// either individually verified with Amazon SES, or from a domain that has been verified with
         /// Amazon SES. </p>
-        pub fn return_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.return_path(inp);
+        pub fn return_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.return_path(signature.into());
             self
         }
         /// <p>The email address that bounces and complaints will be forwarded to when feedback
@@ -6157,8 +6163,8 @@ pub mod fluent_builders {
         /// <code>Source</code> to be <code>user@example.com</code>.</p>
         /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -6187,8 +6193,8 @@ pub mod fluent_builders {
         /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
         /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn return_path_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.return_path_arn(inp);
+        pub fn return_path_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.return_path_arn(signature.into());
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -6216,8 +6222,8 @@ pub mod fluent_builders {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
         /// that you define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
@@ -6232,8 +6238,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set to use when you send an email using
         /// <code>SendTemplatedEmail</code>.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set to use when you send an email using
@@ -6246,8 +6252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template to use when sending this email.</p>
-        pub fn template(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(inp);
+        pub fn template(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(signature.into());
             self
         }
         /// <p>The template to use when sending this email.</p>
@@ -6256,8 +6262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the template to use when sending this email.</p>
-        pub fn template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_arn(inp);
+        pub fn template_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_arn(signature.into());
             self
         }
         /// <p>The ARN of the template to use when sending this email.</p>
@@ -6268,8 +6274,8 @@ pub mod fluent_builders {
         /// <p>A list of replacement values to apply to the template. This parameter is a JSON
         /// object, typically consisting of key-value pairs in which the keys correspond to
         /// replacement tags in the email template.</p>
-        pub fn template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_data(inp);
+        pub fn template_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_data(signature.into());
             self
         }
         /// <p>A list of replacement values to apply to the template. This parameter is a JSON
@@ -6350,8 +6356,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the receipt rule set to make active. Setting this value to null disables
         /// all email receiving.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule set to make active. Setting this value to null disables
@@ -6436,8 +6442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
@@ -6447,8 +6453,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
         /// enable DKIM signing for this identity; <code>false</code> to disable it. </p>
-        pub fn dkim_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dkim_enabled(inp);
+        pub fn dkim_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dkim_enabled(signature);
             self
         }
         /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
@@ -6531,8 +6537,8 @@ pub mod fluent_builders {
         }
         /// <p>The identity for which to set bounce and complaint notification forwarding. Examples:
         /// <code>user@example.com</code>, <code>example.com</code>.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity for which to set bounce and complaint notification forwarding. Examples:
@@ -6548,8 +6554,8 @@ pub mod fluent_builders {
         /// notifications only through Amazon SNS. This value can only be set to <code>false</code> when
         /// Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
         /// notification types.</p>
-        pub fn forwarding_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.forwarding_enabled(inp);
+        pub fn forwarding_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.forwarding_enabled(signature);
             self
         }
         /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email.
@@ -6632,8 +6638,8 @@ pub mod fluent_builders {
         }
         /// <p>The identity for which to enable or disable headers in notifications. Examples:
         /// <code>user@example.com</code>, <code>example.com</code>.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity for which to enable or disable headers in notifications. Examples:
@@ -6643,8 +6649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification type for which to enable or disable headers in notifications. </p>
-        pub fn notification_type(mut self, inp: crate::model::NotificationType) -> Self {
-            self.inner = self.inner.notification_type(inp);
+        pub fn notification_type(mut self, signature: crate::model::NotificationType) -> Self {
+            self.inner = self.inner.notification_type(signature);
             self
         }
         /// <p>The notification type for which to enable or disable headers in notifications. </p>
@@ -6661,8 +6667,8 @@ pub mod fluent_builders {
         /// will not include headers in notifications.</p>
         /// <p>This value can only be set when <code>NotificationType</code> is already set to use a
         /// particular Amazon SNS topic.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the
@@ -6746,8 +6752,8 @@ pub mod fluent_builders {
         }
         /// <p>The verified identity for which you want to enable or disable the specified custom
         /// MAIL FROM domain.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The verified identity for which you want to enable or disable the specified custom
@@ -6762,8 +6768,8 @@ pub mod fluent_builders {
         /// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
         /// 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
         /// FROM setting for the identity.</p>
-        pub fn mail_from_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mail_from_domain(inp);
+        pub fn mail_from_domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mail_from_domain(signature.into());
             self
         }
         /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
@@ -6787,8 +6793,11 @@ pub mod fluent_builders {
         /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL
         /// FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and
         /// <code>TemporaryFailure</code> states.</p>
-        pub fn behavior_on_mx_failure(mut self, inp: crate::model::BehaviorOnMxFailure) -> Self {
-            self.inner = self.inner.behavior_on_mx_failure(inp);
+        pub fn behavior_on_mx_failure(
+            mut self,
+            signature: crate::model::BehaviorOnMxFailure,
+        ) -> Self {
+            self.inner = self.inner.behavior_on_mx_failure(signature);
             self
         }
         /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX
@@ -6883,8 +6892,8 @@ pub mod fluent_builders {
         /// (ARN). The following examples are all valid identities: <code>sender@example.com</code>,
         /// <code>example.com</code>,
         /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(signature.into());
             self
         }
         /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic
@@ -6901,8 +6910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
-        pub fn notification_type(mut self, inp: crate::model::NotificationType) -> Self {
-            self.inner = self.inner.notification_type(inp);
+        pub fn notification_type(mut self, signature: crate::model::NotificationType) -> Self {
+            self.inner = self.inner.notification_type(signature);
             self
         }
         /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
@@ -6916,8 +6925,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from
         /// the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
         /// is disabled.</p>
-        pub fn sns_topic(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic(inp);
+        pub fn sns_topic(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from
@@ -6991,8 +7000,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
@@ -7004,8 +7013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the receipt rule to reposition.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule to reposition.</p>
@@ -7014,8 +7023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
-        pub fn after(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after(inp);
+        pub fn after(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after(signature.into());
             self
         }
         /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
@@ -7086,8 +7095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template that you want to render.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the template that you want to render.</p>
@@ -7101,8 +7110,8 @@ pub mod fluent_builders {
         /// <p>A list of replacement values to apply to the template. This parameter is a JSON
         /// object, typically consisting of key-value pairs in which the keys correspond to
         /// replacement tags in the email template.</p>
-        pub fn template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_data(inp);
+        pub fn template_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_data(signature.into());
             self
         }
         /// <p>A list of replacement values to apply to the template. This parameter is a JSON
@@ -7182,8 +7191,8 @@ pub mod fluent_builders {
         }
         /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
         /// current AWS Region.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
@@ -7267,8 +7276,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set that contains the event destination that you want to
         /// update.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set that contains the event destination that you want to
@@ -7282,8 +7291,8 @@ pub mod fluent_builders {
         }
         /// <p>The event destination object that you want to apply to the specified configuration
         /// set.</p>
-        pub fn event_destination(mut self, inp: crate::model::EventDestination) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(mut self, signature: crate::model::EventDestination) -> Self {
+            self.inner = self.inner.event_destination(signature);
             self
         }
         /// <p>The event destination object that you want to apply to the specified configuration
@@ -7353,8 +7362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set that you want to update.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set that you want to update.</p>
@@ -7367,8 +7376,8 @@ pub mod fluent_builders {
         }
         /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
         /// set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
@@ -7445,8 +7454,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set that you want to update.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set that you want to update.</p>
@@ -7459,8 +7468,8 @@ pub mod fluent_builders {
         }
         /// <p>Describes whether email sending is enabled or disabled for the configuration set.
         /// </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Describes whether email sending is enabled or disabled for the configuration set.
@@ -7537,8 +7546,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration set for which you want to update the custom tracking
         /// domain.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// <p>The name of the configuration set for which you want to update the custom tracking
@@ -7555,8 +7564,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
         /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
         /// Developer Guide</i>.</p>
-        pub fn tracking_options(mut self, inp: crate::model::TrackingOptions) -> Self {
-            self.inner = self.inner.tracking_options(inp);
+        pub fn tracking_options(mut self, signature: crate::model::TrackingOptions) -> Self {
+            self.inner = self.inner.tracking_options(signature);
             self
         }
         /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
@@ -7637,8 +7646,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to update.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the custom verification email template that you want to update.</p>
@@ -7650,8 +7659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(signature.into());
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
@@ -7663,8 +7672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_subject(inp);
+        pub fn template_subject(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_subject(signature.into());
             self
         }
         /// <p>The subject line of the custom verification email.</p>
@@ -7679,8 +7688,8 @@ pub mod fluent_builders {
         /// than 10 MB. The message body may contain HTML, with some limitations. For more
         /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
         /// Developer Guide</i>.</p>
-        pub fn template_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_content(inp);
+        pub fn template_content(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_content(signature.into());
             self
         }
         /// <p>The content of the custom verification email. The total size of the email must be less
@@ -7696,8 +7705,11 @@ pub mod fluent_builders {
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.success_redirection_url(inp);
+        pub fn success_redirection_url(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.success_redirection_url(signature.into());
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
@@ -7711,8 +7723,11 @@ pub mod fluent_builders {
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.failure_redirection_url(inp);
+        pub fn failure_redirection_url(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.failure_redirection_url(signature.into());
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
@@ -7788,8 +7803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
@@ -7801,8 +7816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A data structure that contains the updated receipt rule information.</p>
-        pub fn rule(mut self, inp: crate::model::ReceiptRule) -> Self {
-            self.inner = self.inner.rule(inp);
+        pub fn rule(mut self, signature: crate::model::ReceiptRule) -> Self {
+            self.inner = self.inner.rule(signature);
             self
         }
         /// <p>A data structure that contains the updated receipt rule information.</p>
@@ -7875,8 +7890,8 @@ pub mod fluent_builders {
         }
         /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
         /// part.</p>
-        pub fn template(mut self, inp: crate::model::Template) -> Self {
-            self.inner = self.inner.template(inp);
+        pub fn template(mut self, signature: crate::model::Template) -> Self {
+            self.inner = self.inner.template(signature);
             self
         }
         /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
@@ -7984,8 +7999,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
@@ -8060,8 +8075,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain to be verified.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>The domain to be verified.</p>
@@ -8131,8 +8146,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address to be verified.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(signature.into());
             self
         }
         /// <p>The email address to be verified.</p>
@@ -8207,8 +8222,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address to be verified.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(signature.into());
             self
         }
         /// <p>The email address to be verified.</p>

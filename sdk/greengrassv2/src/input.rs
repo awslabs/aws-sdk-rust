@@ -19,10 +19,10 @@ pub mod batch_associate_client_device_with_core_device_input {
         /// <p>The list of client devices to associate.</p>
         pub fn entries(
             mut self,
-            input: impl Into<crate::model::AssociateClientDeviceWithCoreDeviceEntry>,
+            input: crate::model::AssociateClientDeviceWithCoreDeviceEntry,
         ) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -225,10 +225,10 @@ pub mod batch_disassociate_client_device_from_core_device_input {
         /// <p>The list of client devices to disassociate.</p>
         pub fn entries(
             mut self,
-            input: impl Into<crate::model::DisassociateClientDeviceFromCoreDeviceEntry>,
+            input: crate::model::DisassociateClientDeviceFromCoreDeviceEntry,
         ) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -857,10 +857,10 @@ pub mod create_deployment_input {
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentDeploymentSpecification>,
+            v: crate::model::ComponentDeploymentSpecification,
         ) -> Self {
             let mut hash_map = self.components.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.components = Some(hash_map);
             self
         }
@@ -3871,12 +3871,9 @@ pub mod resolve_component_candidates_input {
         /// To override the contents of this collection use [`set_component_candidates`](Self::set_component_candidates).
         ///
         /// <p>The list of components to resolve.</p>
-        pub fn component_candidates(
-            mut self,
-            input: impl Into<crate::model::ComponentCandidate>,
-        ) -> Self {
+        pub fn component_candidates(mut self, input: crate::model::ComponentCandidate) -> Self {
             let mut v = self.component_candidates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_candidates = Some(v);
             self
         }

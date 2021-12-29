@@ -265,9 +265,9 @@ pub mod associate_subnets_input {
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
         /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
@@ -481,9 +481,9 @@ pub mod create_firewall_input {
         /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
         /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
         /// subnet. </p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
@@ -557,9 +557,9 @@ pub mod create_firewall_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -770,9 +770,9 @@ pub mod create_firewall_policy_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1132,9 +1132,9 @@ pub mod create_rule_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4083,9 +4083,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

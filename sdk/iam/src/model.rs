@@ -953,9 +953,9 @@ pub mod role {
         ///
         /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1484,9 +1484,9 @@ pub mod evaluation_result {
         /// scenario. Remember that even if multiple statements allow the operation on the resource, if
         /// only one statement denies that operation, then the explicit deny overrides any allow. In
         /// addition, the deny statement is the only entry included in the result.</p>
-        pub fn matched_statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
+        pub fn matched_statements(mut self, input: crate::model::Statement) -> Self {
             let mut v = self.matched_statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matched_statements = Some(v);
             self
         }
@@ -1588,10 +1588,10 @@ pub mod evaluation_result {
         pub fn eval_decision_details(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PolicyEvaluationDecisionType>,
+            v: crate::model::PolicyEvaluationDecisionType,
         ) -> Self {
             let mut hash_map = self.eval_decision_details.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.eval_decision_details = Some(hash_map);
             self
         }
@@ -1628,10 +1628,10 @@ pub mod evaluation_result {
         /// EvalActionName on each resource.</p>
         pub fn resource_specific_results(
             mut self,
-            input: impl Into<crate::model::ResourceSpecificResult>,
+            input: crate::model::ResourceSpecificResult,
         ) -> Self {
             let mut v = self.resource_specific_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_specific_results = Some(v);
             self
         }
@@ -1830,9 +1830,9 @@ pub mod resource_specific_result {
         /// resource, if <i>any</i> statement denies that operation, then the explicit
         /// deny overrides any allow. In addition, the deny statement is the only entry included in the
         /// result.</p>
-        pub fn matched_statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
+        pub fn matched_statements(mut self, input: crate::model::Statement) -> Self {
             let mut v = self.matched_statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matched_statements = Some(v);
             self
         }
@@ -1891,10 +1891,10 @@ pub mod resource_specific_result {
         pub fn eval_decision_details(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PolicyEvaluationDecisionType>,
+            v: crate::model::PolicyEvaluationDecisionType,
         ) -> Self {
             let mut hash_map = self.eval_decision_details.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.eval_decision_details = Some(hash_map);
             self
         }
@@ -3105,9 +3105,9 @@ pub mod virtual_mfa_device {
         ///
         /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3444,9 +3444,9 @@ pub mod user {
         ///
         /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4180,12 +4180,9 @@ pub mod list_policies_granting_service_access_entry {
         ///
         /// <p>The <code>PoliciesGrantingServiceAccess</code> object that contains details about the
         /// policy.</p>
-        pub fn policies(
-            mut self,
-            input: impl Into<crate::model::PolicyGrantingServiceAccess>,
-        ) -> Self {
+        pub fn policies(mut self, input: crate::model::PolicyGrantingServiceAccess) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -4828,9 +4825,9 @@ pub mod policy {
         ///
         /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5332,9 +5329,9 @@ pub mod instance_profile {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p>The role associated with the instance profile.</p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -5352,9 +5349,9 @@ pub mod instance_profile {
         ///
         /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6219,9 +6216,9 @@ pub mod deletion_task_failure_reason_type {
         /// linked service, the role can't be deleted. This parameter includes a list of the resources
         /// that are associated with the role and the Region in which the resources are being
         /// used.</p>
-        pub fn role_usage_list(mut self, input: impl Into<crate::model::RoleUsageType>) -> Self {
+        pub fn role_usage_list(mut self, input: crate::model::RoleUsageType) -> Self {
             let mut v = self.role_usage_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.role_usage_list = Some(v);
             self
         }
@@ -7035,10 +7032,10 @@ pub mod service_last_accessed {
         /// <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
         pub fn tracked_actions_last_accessed(
             mut self,
-            input: impl Into<crate::model::TrackedActionLastAccessed>,
+            input: crate::model::TrackedActionLastAccessed,
         ) -> Self {
             let mut v = self.tracked_actions_last_accessed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tracked_actions_last_accessed = Some(v);
             self
         }
@@ -7406,9 +7403,9 @@ pub mod server_certificate {
         ///
         /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8656,12 +8653,9 @@ pub mod managed_policy_detail {
         /// To override the contents of this collection use [`set_policy_version_list`](Self::set_policy_version_list).
         ///
         /// <p>A list containing information about the versions of the policy.</p>
-        pub fn policy_version_list(
-            mut self,
-            input: impl Into<crate::model::PolicyVersion>,
-        ) -> Self {
+        pub fn policy_version_list(mut self, input: crate::model::PolicyVersion) -> Self {
             let mut v = self.policy_version_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_version_list = Some(v);
             self
         }
@@ -8945,12 +8939,9 @@ pub mod role_detail {
         /// To override the contents of this collection use [`set_instance_profile_list`](Self::set_instance_profile_list).
         ///
         /// <p>A list of instance profiles that contain this role.</p>
-        pub fn instance_profile_list(
-            mut self,
-            input: impl Into<crate::model::InstanceProfile>,
-        ) -> Self {
+        pub fn instance_profile_list(mut self, input: crate::model::InstanceProfile) -> Self {
             let mut v = self.instance_profile_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_profile_list = Some(v);
             self
         }
@@ -8968,9 +8959,9 @@ pub mod role_detail {
         ///
         /// <p>A list of inline policies embedded in the role. These policies are the role's access
         /// (permissions) policies.</p>
-        pub fn role_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
+        pub fn role_policy_list(mut self, input: crate::model::PolicyDetail) -> Self {
             let mut v = self.role_policy_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.role_policy_list = Some(v);
             self
         }
@@ -8989,12 +8980,9 @@ pub mod role_detail {
         ///
         /// <p>A list of managed policies attached to the role. These policies are the role's access
         /// (permissions) policies.</p>
-        pub fn attached_managed_policies(
-            mut self,
-            input: impl Into<crate::model::AttachedPolicy>,
-        ) -> Self {
+        pub fn attached_managed_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_managed_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attached_managed_policies = Some(v);
             self
         }
@@ -9033,9 +9021,9 @@ pub mod role_detail {
         ///
         /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9338,9 +9326,9 @@ pub mod group_detail {
         /// To override the contents of this collection use [`set_group_policy_list`](Self::set_group_policy_list).
         ///
         /// <p>A list of the inline policies embedded in the group.</p>
-        pub fn group_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
+        pub fn group_policy_list(mut self, input: crate::model::PolicyDetail) -> Self {
             let mut v = self.group_policy_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_policy_list = Some(v);
             self
         }
@@ -9357,12 +9345,9 @@ pub mod group_detail {
         /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
         ///
         /// <p>A list of the managed policies attached to the group.</p>
-        pub fn attached_managed_policies(
-            mut self,
-            input: impl Into<crate::model::AttachedPolicy>,
-        ) -> Self {
+        pub fn attached_managed_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_managed_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attached_managed_policies = Some(v);
             self
         }
@@ -9592,9 +9577,9 @@ pub mod user_detail {
         /// To override the contents of this collection use [`set_user_policy_list`](Self::set_user_policy_list).
         ///
         /// <p>A list of the inline policies embedded in the user.</p>
-        pub fn user_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
+        pub fn user_policy_list(mut self, input: crate::model::PolicyDetail) -> Self {
             let mut v = self.user_policy_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_policy_list = Some(v);
             self
         }
@@ -9630,12 +9615,9 @@ pub mod user_detail {
         /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
         ///
         /// <p>A list of the managed policies attached to the user.</p>
-        pub fn attached_managed_policies(
-            mut self,
-            input: impl Into<crate::model::AttachedPolicy>,
-        ) -> Self {
+        pub fn attached_managed_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_managed_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attached_managed_policies = Some(v);
             self
         }
@@ -9673,9 +9655,9 @@ pub mod user_detail {
         ///
         /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

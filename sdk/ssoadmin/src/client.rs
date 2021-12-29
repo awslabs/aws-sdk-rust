@@ -418,8 +418,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -430,8 +430,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the <a>PermissionSet</a> that the managed policy should be attached
         /// to.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the <a>PermissionSet</a> that the managed policy should be attached
@@ -444,8 +444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
-        pub fn managed_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_policy_arn(inp);
+        pub fn managed_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_policy_arn(signature.into());
             self
         }
         /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
@@ -532,8 +532,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -543,8 +543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-        pub fn target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(inp);
+        pub fn target_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(signature.into());
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
@@ -553,8 +553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn target_type(mut self, inp: crate::model::TargetType) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, signature: crate::model::TargetType) -> Self {
+            self.inner = self.inner.target_type(signature);
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
@@ -567,8 +567,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the permission set that the admin wants to grant the principal access
         /// to.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set that the admin wants to grant the principal access
@@ -581,8 +581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn principal_type(mut self, inp: crate::model::PrincipalType) -> Self {
-            self.inner = self.inner.principal_type(inp);
+        pub fn principal_type(mut self, signature: crate::model::PrincipalType) -> Self {
+            self.inner = self.inner.principal_type(signature);
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
@@ -594,8 +594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
@@ -659,8 +659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
@@ -676,11 +676,11 @@ pub mod fluent_builders {
         /// store.</p>
         pub fn instance_access_control_attribute_configuration(
             mut self,
-            inp: crate::model::InstanceAccessControlAttributeConfiguration,
+            signature: crate::model::InstanceAccessControlAttributeConfiguration,
         ) -> Self {
             self.inner = self
                 .inner
-                .instance_access_control_attribute_configuration(inp);
+                .instance_access_control_attribute_configuration(signature);
             self
         }
         /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration.
@@ -764,8 +764,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <a>PermissionSet</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the <a>PermissionSet</a>.</p>
@@ -774,8 +774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the <a>PermissionSet</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the <a>PermissionSet</a>.</p>
@@ -785,8 +785,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -797,8 +797,8 @@ pub mod fluent_builders {
         }
         /// <p>The length of time that the application user sessions are valid in the ISO-8601
         /// standard.</p>
-        pub fn session_duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_duration(inp);
+        pub fn session_duration(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_duration(signature.into());
             self
         }
         /// <p>The length of time that the application user sessions are valid in the ISO-8601
@@ -812,8 +812,8 @@ pub mod fluent_builders {
         }
         /// <p>Used to redirect users within the application during the federation authentication
         /// process.</p>
-        pub fn relay_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relay_state(inp);
+        pub fn relay_state(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.relay_state(signature.into());
             self
         }
         /// <p>Used to redirect users within the application during the federation authentication
@@ -827,8 +827,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new <a>PermissionSet</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new <a>PermissionSet</a>.</p>
@@ -902,8 +902,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -913,8 +913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-        pub fn target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(inp);
+        pub fn target_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(signature.into());
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
@@ -923,8 +923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
-        pub fn target_type(mut self, inp: crate::model::TargetType) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, signature: crate::model::TargetType) -> Self {
+            self.inner = self.inner.target_type(signature);
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
@@ -936,8 +936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
@@ -949,8 +949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
-        pub fn principal_type(mut self, inp: crate::model::PrincipalType) -> Self {
-            self.inner = self.inner.principal_type(inp);
+        pub fn principal_type(mut self, signature: crate::model::PrincipalType) -> Self {
+            self.inner = self.inner.principal_type(signature);
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
@@ -962,8 +962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
@@ -1035,8 +1035,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1046,8 +1046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
@@ -1115,8 +1115,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
@@ -1186,8 +1186,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1197,8 +1197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set that should be deleted.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set that should be deleted.</p>
@@ -1273,8 +1273,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1286,9 +1286,11 @@ pub mod fluent_builders {
         /// <p>The identifier that is used to track the request operation progress.</p>
         pub fn account_assignment_creation_request_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.account_assignment_creation_request_id(inp);
+            self.inner = self
+                .inner
+                .account_assignment_creation_request_id(signature.into());
             self
         }
         /// <p>The identifier that is used to track the request operation progress.</p>
@@ -1363,8 +1365,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1376,9 +1378,11 @@ pub mod fluent_builders {
         /// <p>The identifier that is used to track the request operation progress.</p>
         pub fn account_assignment_deletion_request_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.account_assignment_deletion_request_id(inp);
+            self.inner = self
+                .inner
+                .account_assignment_deletion_request_id(signature.into());
             self
         }
         /// <p>The identifier that is used to track the request operation progress.</p>
@@ -1447,8 +1451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
@@ -1518,8 +1522,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1529,8 +1533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -1605,8 +1609,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1619,9 +1623,11 @@ pub mod fluent_builders {
         /// retrieve the current status of the provisioning workflow.</p>
         pub fn provision_permission_set_request_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.provision_permission_set_request_id(inp);
+            self.inner = self
+                .inner
+                .provision_permission_set_request_id(signature.into());
             self
         }
         /// <p>The identifier that is provided by the <a>ProvisionPermissionSet</a> call to
@@ -1697,8 +1703,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1709,8 +1715,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the <a>PermissionSet</a> from which the policy should be
         /// detached.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the <a>PermissionSet</a> from which the policy should be
@@ -1723,8 +1729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
-        pub fn managed_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_policy_arn(inp);
+        pub fn managed_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_policy_arn(signature.into());
             self
         }
         /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
@@ -1797,8 +1803,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1808,8 +1814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -1885,8 +1891,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -1896,8 +1902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -1906,8 +1912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -1916,8 +1922,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn filter(mut self, inp: crate::model::OperationStatusFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::OperationStatusFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
@@ -1993,8 +1999,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2004,8 +2010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2014,8 +2020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2024,8 +2030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn filter(mut self, inp: crate::model::OperationStatusFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::OperationStatusFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
@@ -2099,8 +2105,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2110,8 +2116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
@@ -2120,8 +2126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set from which to list assignments.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set from which to list assignments.</p>
@@ -2133,8 +2139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2143,8 +2149,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2216,8 +2222,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2228,8 +2234,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts
         /// will be listed.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts
@@ -2242,8 +2248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
-        pub fn provisioning_status(mut self, inp: crate::model::ProvisioningStatus) -> Self {
-            self.inner = self.inner.provisioning_status(inp);
+        pub fn provisioning_status(mut self, signature: crate::model::ProvisioningStatus) -> Self {
+            self.inner = self.inner.provisioning_status(signature);
             self
         }
         /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
@@ -2255,8 +2261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
@@ -2265,8 +2271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2335,8 +2341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to display for the instance.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the instance.</p>
@@ -2345,8 +2351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2418,8 +2424,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2430,8 +2436,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the <a>PermissionSet</a> whose managed policies will be
         /// listed.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the <a>PermissionSet</a> whose managed policies will be
@@ -2444,8 +2450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
@@ -2454,8 +2460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2528,8 +2534,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2539,8 +2545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2549,8 +2555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2559,8 +2565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn filter(mut self, inp: crate::model::OperationStatusFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::OperationStatusFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
@@ -2633,8 +2639,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2644,8 +2650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2654,8 +2660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2727,8 +2733,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2738,8 +2744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
@@ -2748,8 +2754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status object for the permission set provisioning operation.</p>
-        pub fn provisioning_status(mut self, inp: crate::model::ProvisioningStatus) -> Self {
-            self.inner = self.inner.provisioning_status(inp);
+        pub fn provisioning_status(mut self, signature: crate::model::ProvisioningStatus) -> Self {
+            self.inner = self.inner.provisioning_status(signature);
             self
         }
         /// <p>The status object for the permission set provisioning operation.</p>
@@ -2761,8 +2767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2771,8 +2777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2842,8 +2848,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2853,8 +2859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
@@ -2863,8 +2869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2935,8 +2941,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -2946,8 +2952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -2959,8 +2965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-        pub fn target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(inp);
+        pub fn target_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(signature.into());
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
@@ -2969,8 +2975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn target_type(mut self, inp: crate::model::ProvisionTargetType) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, signature: crate::model::ProvisionTargetType) -> Self {
+            self.inner = self.inner.target_type(signature);
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
@@ -3050,8 +3056,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -3061,8 +3067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -3074,8 +3080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
-        pub fn inline_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.inline_policy(inp);
+        pub fn inline_policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inline_policy(signature.into());
             self
         }
         /// <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
@@ -3148,8 +3154,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -3159,8 +3165,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
@@ -3173,8 +3179,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of key-value pairs that are used to manage the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A set of key-value pairs that are used to manage the resource.</p>
@@ -3247,8 +3253,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -3258,8 +3264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
@@ -3272,8 +3278,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of tags that are attached to the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of tags that are attached to the resource.</p>
@@ -3343,8 +3349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
@@ -3355,11 +3361,11 @@ pub mod fluent_builders {
         /// <p>Updates the attributes for your ABAC configuration.</p>
         pub fn instance_access_control_attribute_configuration(
             mut self,
-            inp: crate::model::InstanceAccessControlAttributeConfiguration,
+            signature: crate::model::InstanceAccessControlAttributeConfiguration,
         ) -> Self {
             self.inner = self
                 .inner
-                .instance_access_control_attribute_configuration(inp);
+                .instance_access_control_attribute_configuration(signature);
             self
         }
         /// <p>Updates the attributes for your ABAC configuration.</p>
@@ -3434,8 +3440,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
         /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
@@ -3445,8 +3451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(signature.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -3458,8 +3464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the <a>PermissionSet</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the <a>PermissionSet</a>.</p>
@@ -3469,8 +3475,8 @@ pub mod fluent_builders {
         }
         /// <p>The length of time that the application user sessions are valid for in the ISO-8601
         /// standard.</p>
-        pub fn session_duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_duration(inp);
+        pub fn session_duration(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_duration(signature.into());
             self
         }
         /// <p>The length of time that the application user sessions are valid for in the ISO-8601
@@ -3484,8 +3490,8 @@ pub mod fluent_builders {
         }
         /// <p>Used to redirect users within the application during the federation authentication
         /// process.</p>
-        pub fn relay_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relay_state(inp);
+        pub fn relay_state(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.relay_state(signature.into());
             self
         }
         /// <p>Used to redirect users within the application during the federation authentication

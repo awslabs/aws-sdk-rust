@@ -254,12 +254,9 @@ pub mod start_text_detection_filters {
         ///
         /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region
         /// of the screen.</p>
-        pub fn regions_of_interest(
-            mut self,
-            input: impl Into<crate::model::RegionOfInterest>,
-        ) -> Self {
+        pub fn regions_of_interest(mut self, input: crate::model::RegionOfInterest) -> Self {
             let mut v = self.regions_of_interest.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions_of_interest = Some(v);
             self
         }
@@ -1881,9 +1878,9 @@ pub mod compared_face {
         /// To override the contents of this collection use [`set_landmarks`](Self::set_landmarks).
         ///
         /// <p>An array of facial landmarks.</p>
-        pub fn landmarks(mut self, input: impl Into<crate::model::Landmark>) -> Self {
+        pub fn landmarks(mut self, input: crate::model::Landmark) -> Self {
             let mut v = self.landmarks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.landmarks = Some(v);
             self
         }
@@ -1926,9 +1923,9 @@ pub mod compared_face {
         /// and the confidence level in the determination. Valid values include "Happy", "Sad",
         /// "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".
         /// </p>
-        pub fn emotions(mut self, input: impl Into<crate::model::Emotion>) -> Self {
+        pub fn emotions(mut self, input: crate::model::Emotion) -> Self {
             let mut v = self.emotions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.emotions = Some(v);
             self
         }
@@ -3427,9 +3424,9 @@ pub mod unindexed_face {
         /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p>
         /// </li>
         /// </ul>
-        pub fn reasons(mut self, input: impl Into<crate::model::Reason>) -> Self {
+        pub fn reasons(mut self, input: crate::model::Reason) -> Self {
             let mut v = self.reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reasons = Some(v);
             self
         }
@@ -3823,9 +3820,9 @@ pub mod face_detail {
         /// The API is only making a determination of the physical appearance of a person's face. It is not a determination
         /// of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have
         /// a sad face might not be sad emotionally.</p>
-        pub fn emotions(mut self, input: impl Into<crate::model::Emotion>) -> Self {
+        pub fn emotions(mut self, input: crate::model::Emotion) -> Self {
             let mut v = self.emotions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.emotions = Some(v);
             self
         }
@@ -3845,9 +3842,9 @@ pub mod face_detail {
         /// To override the contents of this collection use [`set_landmarks`](Self::set_landmarks).
         ///
         /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
-        pub fn landmarks(mut self, input: impl Into<crate::model::Landmark>) -> Self {
+        pub fn landmarks(mut self, input: crate::model::Landmark) -> Self {
             let mut v = self.landmarks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.landmarks = Some(v);
             self
         }
@@ -5123,9 +5120,9 @@ pub mod geometry {
         /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
         ///
         /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-        pub fn polygon(mut self, input: impl Into<crate::model::Point>) -> Self {
+        pub fn polygon(mut self, input: crate::model::Point) -> Self {
             let mut v = self.polygon.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.polygon = Some(v);
             self
         }
@@ -6724,9 +6721,9 @@ pub mod label {
         ///
         /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object.
         /// Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -6744,9 +6741,9 @@ pub mod label {
         /// To override the contents of this collection use [`set_parents`](Self::set_parents).
         ///
         /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
-        pub fn parents(mut self, input: impl Into<crate::model::Parent>) -> Self {
+        pub fn parents(mut self, input: crate::model::Parent) -> Self {
             let mut v = self.parents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parents = Some(v);
             self
         }
@@ -7036,9 +7033,9 @@ pub mod person_match {
         /// To override the contents of this collection use [`set_face_matches`](Self::set_face_matches).
         ///
         /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
-        pub fn face_matches(mut self, input: impl Into<crate::model::FaceMatch>) -> Self {
+        pub fn face_matches(mut self, input: crate::model::FaceMatch) -> Self {
             let mut v = self.face_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_matches = Some(v);
             self
         }
@@ -7876,12 +7873,9 @@ pub mod detect_text_filters {
         ///
         /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region
         /// of the image.</p>
-        pub fn regions_of_interest(
-            mut self,
-            input: impl Into<crate::model::RegionOfInterest>,
-        ) -> Self {
+        pub fn regions_of_interest(mut self, input: crate::model::RegionOfInterest) -> Self {
             let mut v = self.regions_of_interest.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions_of_interest = Some(v);
             self
         }
@@ -7990,9 +7984,9 @@ pub mod protective_equipment_summary {
         ///
         /// <p>An array of IDs for persons who are wearing detected personal protective equipment.
         /// </p>
-        pub fn persons_with_required_equipment(mut self, input: impl Into<i32>) -> Self {
+        pub fn persons_with_required_equipment(mut self, input: i32) -> Self {
             let mut v = self.persons_with_required_equipment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons_with_required_equipment = Some(v);
             self
         }
@@ -8012,9 +8006,9 @@ pub mod protective_equipment_summary {
         /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of
         /// the detected personal protective equipment.
         /// </p>
-        pub fn persons_without_required_equipment(mut self, input: impl Into<i32>) -> Self {
+        pub fn persons_without_required_equipment(mut self, input: i32) -> Self {
             let mut v = self.persons_without_required_equipment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons_without_required_equipment = Some(v);
             self
         }
@@ -8034,9 +8028,9 @@ pub mod protective_equipment_summary {
         ///
         /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment.
         /// </p>
-        pub fn persons_indeterminate(mut self, input: impl Into<i32>) -> Self {
+        pub fn persons_indeterminate(mut self, input: i32) -> Self {
             let mut v = self.persons_indeterminate.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons_indeterminate = Some(v);
             self
         }
@@ -8129,12 +8123,9 @@ pub mod protective_equipment_person {
         /// To override the contents of this collection use [`set_body_parts`](Self::set_body_parts).
         ///
         /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-        pub fn body_parts(
-            mut self,
-            input: impl Into<crate::model::ProtectiveEquipmentBodyPart>,
-        ) -> Self {
+        pub fn body_parts(mut self, input: crate::model::ProtectiveEquipmentBodyPart) -> Self {
             let mut v = self.body_parts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.body_parts = Some(v);
             self
         }
@@ -8276,12 +8267,9 @@ pub mod protective_equipment_body_part {
         /// To override the contents of this collection use [`set_equipment_detections`](Self::set_equipment_detections).
         ///
         /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-        pub fn equipment_detections(
-            mut self,
-            input: impl Into<crate::model::EquipmentDetection>,
-        ) -> Self {
+        pub fn equipment_detections(mut self, input: crate::model::EquipmentDetection) -> Self {
             let mut v = self.equipment_detections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.equipment_detections = Some(v);
             self
         }
@@ -8733,10 +8721,10 @@ pub mod protective_equipment_summarization_attributes {
         /// by <code>DetectProtectiveEquipment</code>.  </p>
         pub fn required_equipment_types(
             mut self,
-            input: impl Into<crate::model::ProtectiveEquipmentType>,
+            input: crate::model::ProtectiveEquipmentType,
         ) -> Self {
             let mut v = self.required_equipment_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.required_equipment_types = Some(v);
             self
         }
@@ -9042,12 +9030,9 @@ pub mod human_loop_data_attributes {
         /// To override the contents of this collection use [`set_content_classifiers`](Self::set_content_classifiers).
         ///
         /// <p>Sets whether the input image is free of personally identifiable information.</p>
-        pub fn content_classifiers(
-            mut self,
-            input: impl Into<crate::model::ContentClassifier>,
-        ) -> Self {
+        pub fn content_classifiers(mut self, input: crate::model::ContentClassifier) -> Self {
             let mut v = self.content_classifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_classifiers = Some(v);
             self
         }
@@ -10322,9 +10307,9 @@ pub mod validation_data {
         /// To override the contents of this collection use [`set_assets`](Self::set_assets).
         ///
         /// <p>The assets that comprise the validation data. </p>
-        pub fn assets(mut self, input: impl Into<crate::model::Asset>) -> Self {
+        pub fn assets(mut self, input: crate::model::Asset) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assets = Some(v);
             self
         }
@@ -10459,9 +10444,9 @@ pub mod testing_data {
         /// To override the contents of this collection use [`set_assets`](Self::set_assets).
         ///
         /// <p>The assets used for testing.</p>
-        pub fn assets(mut self, input: impl Into<crate::model::Asset>) -> Self {
+        pub fn assets(mut self, input: crate::model::Asset) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assets = Some(v);
             self
         }
@@ -10633,9 +10618,9 @@ pub mod training_data {
         /// To override the contents of this collection use [`set_assets`](Self::set_assets).
         ///
         /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
-        pub fn assets(mut self, input: impl Into<crate::model::Asset>) -> Self {
+        pub fn assets(mut self, input: crate::model::Asset) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assets = Some(v);
             self
         }
@@ -10838,9 +10823,9 @@ pub mod project_description {
         /// <p>
         /// Information about the training and test datasets in the project.
         /// </p>
-        pub fn datasets(mut self, input: impl Into<crate::model::DatasetMetadata>) -> Self {
+        pub fn datasets(mut self, input: crate::model::DatasetMetadata) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }

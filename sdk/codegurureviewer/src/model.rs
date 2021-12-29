@@ -1367,9 +1367,9 @@ pub mod recommendation_feedback_summary {
         /// <p>
         /// List for storing reactions. Reactions are utf-8 text code for emojis.
         /// </p>
-        pub fn reactions(mut self, input: impl Into<crate::model::Reaction>) -> Self {
+        pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
             let mut v = self.reactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactions = Some(v);
             self
         }
@@ -4145,9 +4145,9 @@ pub mod recommendation_feedback {
         /// <p>
         /// List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.
         /// </p>
-        pub fn reactions(mut self, input: impl Into<crate::model::Reaction>) -> Self {
+        pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
             let mut v = self.reactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactions = Some(v);
             self
         }
@@ -4778,9 +4778,9 @@ pub mod code_review {
         ///
         /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
         /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-        pub fn analysis_types(mut self, input: impl Into<crate::model::AnalysisType>) -> Self {
+        pub fn analysis_types(mut self, input: crate::model::AnalysisType) -> Self {
             let mut v = self.analysis_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_types = Some(v);
             self
         }
@@ -5062,9 +5062,9 @@ pub mod code_review_type {
         ///
         /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
         /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-        pub fn analysis_types(mut self, input: impl Into<crate::model::AnalysisType>) -> Self {
+        pub fn analysis_types(mut self, input: crate::model::AnalysisType) -> Self {
             let mut v = self.analysis_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_types = Some(v);
             self
         }

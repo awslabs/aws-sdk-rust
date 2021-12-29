@@ -279,10 +279,10 @@ pub mod list_repository_associations_output {
         /// <p>A list of repository associations that meet the criteria of the request.</p>
         pub fn repository_association_summaries(
             mut self,
-            input: impl Into<crate::model::RepositoryAssociationSummary>,
+            input: crate::model::RepositoryAssociationSummary,
         ) -> Self {
             let mut v = self.repository_association_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repository_association_summaries = Some(v);
             self
         }
@@ -384,10 +384,10 @@ pub mod list_recommendations_output {
         /// </p>
         pub fn recommendation_summaries(
             mut self,
-            input: impl Into<crate::model::RecommendationSummary>,
+            input: crate::model::RecommendationSummary,
         ) -> Self {
             let mut v = self.recommendation_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_summaries = Some(v);
             self
         }
@@ -488,10 +488,10 @@ pub mod list_recommendation_feedback_output {
         /// <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
         pub fn recommendation_feedback_summaries(
             mut self,
-            input: impl Into<crate::model::RecommendationFeedbackSummary>,
+            input: crate::model::RecommendationFeedbackSummary,
         ) -> Self {
             let mut v = self.recommendation_feedback_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_feedback_summaries = Some(v);
             self
         }
@@ -588,12 +588,9 @@ pub mod list_code_reviews_output {
         /// <p>
         /// A list of code reviews that meet the criteria of the request.
         /// </p>
-        pub fn code_review_summaries(
-            mut self,
-            input: impl Into<crate::model::CodeReviewSummary>,
-        ) -> Self {
+        pub fn code_review_summaries(mut self, input: crate::model::CodeReviewSummary) -> Self {
             let mut v = self.code_review_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.code_review_summaries = Some(v);
             self
         }

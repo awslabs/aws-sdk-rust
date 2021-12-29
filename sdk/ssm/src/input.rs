@@ -110,9 +110,9 @@ pub mod add_tags_to_resource_input {
         /// <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -942,9 +942,9 @@ pub mod create_activation_input {
         /// managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
         /// prefixed with "mi-". For information about how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed nodes,
         /// see <a>RemoveTagsFromResource</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -988,10 +988,10 @@ pub mod create_activation_input {
         /// <p>Reserved for internal use.</p>
         pub fn registration_metadata(
             mut self,
-            input: impl Into<crate::model::RegistrationMetadataItem>,
+            input: crate::model::RegistrationMetadataItem,
         ) -> Self {
             let mut v = self.registration_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.registration_metadata = Some(v);
             self
         }
@@ -1270,10 +1270,10 @@ pub mod create_association_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -1296,9 +1296,9 @@ pub mod create_association_input {
         /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
         /// <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -1526,9 +1526,9 @@ pub mod create_association_input {
         /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
         /// association. Use this action to create an association in multiple Regions and multiple
         /// accounts.</p>
-        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_locations = Some(v);
             self
         }
@@ -1707,12 +1707,9 @@ pub mod create_association_batch_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>One or more associations.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::CreateAssociationBatchRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::CreateAssociationBatchRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1942,9 +1939,9 @@ pub mod create_document_input {
         /// <code>ApplicationConfigurationSchema</code> document for validation purposes. For more
         /// information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the
         /// <i>AppConfig User Guide</i>.</p>
-        pub fn requires(mut self, input: impl Into<crate::model::DocumentRequires>) -> Self {
+        pub fn requires(mut self, input: crate::model::DocumentRequires) -> Self {
             let mut v = self.requires.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requires = Some(v);
             self
         }
@@ -1967,9 +1964,9 @@ pub mod create_document_input {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::AttachmentsSource>) -> Self {
+        pub fn attachments(mut self, input: crate::model::AttachmentsSource) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -2133,9 +2130,9 @@ pub mod create_document_input {
         /// <p>To add tags to an existing SSM document, use the <a>AddTagsToResource</a>
         /// operation.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2514,9 +2511,9 @@ pub mod create_maintenance_window_input {
         /// <p>To add tags to an existing maintenance window, use the <a>AddTagsToResource</a>
         /// operation.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2781,10 +2778,10 @@ pub mod create_ops_item_input {
         pub fn operational_data(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OpsItemDataValue>,
+            v: crate::model::OpsItemDataValue,
         ) -> Self {
             let mut hash_map = self.operational_data.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.operational_data = Some(hash_map);
             self
         }
@@ -2821,12 +2818,9 @@ pub mod create_ops_item_input {
         ///
         /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
         /// OpsItem is edited or changed.</p>
-        pub fn notifications(
-            mut self,
-            input: impl Into<crate::model::OpsItemNotification>,
-        ) -> Self {
+        pub fn notifications(mut self, input: crate::model::OpsItemNotification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notifications = Some(v);
             self
         }
@@ -2856,9 +2850,9 @@ pub mod create_ops_item_input {
         /// <p>One or more OpsItems that share something in common with the current OpsItems. For example,
         /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
         /// statuses for the impacted resource.</p>
-        pub fn related_ops_items(mut self, input: impl Into<crate::model::RelatedOpsItem>) -> Self {
+        pub fn related_ops_items(mut self, input: crate::model::RelatedOpsItem) -> Self {
             let mut v = self.related_ops_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_ops_items = Some(v);
             self
         }
@@ -2916,9 +2910,9 @@ pub mod create_ops_item_input {
         /// To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
         /// operation.</p>
         /// </important>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3201,10 +3195,10 @@ pub mod create_ops_metadata_input {
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MetadataValue>,
+            v: crate::model::MetadataValue,
         ) -> Self {
             let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metadata = Some(hash_map);
             self
         }
@@ -3239,9 +3233,9 @@ pub mod create_ops_metadata_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3639,9 +3633,9 @@ pub mod create_patch_baseline_input {
         ///
         /// <p>Information about the patches to use to update the managed nodes, including target operating
         /// systems and source repositories. Applies to Linux managed nodes only.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::PatchSource>) -> Self {
+        pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -3688,9 +3682,9 @@ pub mod create_patch_baseline_input {
         /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
         /// operation.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6527,12 +6521,9 @@ pub mod describe_activations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A filter to view information about your activations.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::DescribeActivationsFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::DescribeActivationsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6939,12 +6930,9 @@ pub mod describe_association_executions_input {
         /// <p>ExecutionId (EQUAL)</p>
         /// <p>Status (EQUAL)</p>
         /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::AssociationExecutionFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::AssociationExecutionFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7167,12 +7155,9 @@ pub mod describe_association_execution_targets_input {
         /// <p>Status (EQUAL)</p>
         /// <p>ResourceId (EQUAL)</p>
         /// <p>ResourceType (EQUAL)</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::AssociationExecutionTargetsFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::AssociationExecutionTargetsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7370,12 +7355,9 @@ pub mod describe_automation_executions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters used to limit the scope of executions that are requested.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::AutomationExecutionFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::AutomationExecutionFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7582,9 +7564,9 @@ pub mod describe_automation_step_executions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters to limit the number of step executions returned by the request.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::StepExecutionFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::StepExecutionFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7973,9 +7955,9 @@ pub mod describe_available_patches_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::PatchOrchestratorFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9302,10 +9284,10 @@ pub mod describe_instance_information_input {
         /// </note>
         pub fn instance_information_filter_list(
             mut self,
-            input: impl Into<crate::model::InstanceInformationFilter>,
+            input: crate::model::InstanceInformationFilter,
         ) -> Self {
             let mut v = self.instance_information_filter_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_information_filter_list = Some(v);
             self
         }
@@ -9330,12 +9312,9 @@ pub mod describe_instance_information_input {
         /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can
         /// filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
         /// <code>InstanceInformationFilterList</code>, which is deprecated.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::InstanceInformationStringFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::InstanceInformationStringFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9583,9 +9562,9 @@ pub mod describe_instance_patches_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::PatchOrchestratorFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10032,9 +10011,9 @@ pub mod describe_instance_patch_states_for_patch_group_input {
         /// <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::InstancePatchStateFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::InstancePatchStateFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10447,9 +10426,9 @@ pub mod describe_maintenance_window_executions_input {
         /// <code>2021-11-04T05:00:00Z</code>.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::MaintenanceWindowFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10682,9 +10661,9 @@ pub mod describe_maintenance_window_execution_task_invocations_input {
         /// is <code>STATUS</code> with the corresponding values <code>PENDING</code>,
         /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
         /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::MaintenanceWindowFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10903,9 +10882,9 @@ pub mod describe_maintenance_window_execution_tasks_input {
         /// <code>STATUS</code> with the corresponding values <code>PENDING</code>,
         /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
         /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::MaintenanceWindowFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -11104,9 +11083,9 @@ pub mod describe_maintenance_windows_input {
         /// <p>Optional filters used to narrow down the scope of the returned maintenance windows.
         /// Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example,
         /// <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::MaintenanceWindowFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -11314,9 +11293,9 @@ pub mod describe_maintenance_window_schedule_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -11349,9 +11328,9 @@ pub mod describe_maintenance_window_schedule_input {
         ///
         /// <p>Filters used to limit the range of results. For example, you can limit maintenance window
         /// executions to only those scheduled before or after a certain date and time.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::PatchOrchestratorFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -11548,9 +11527,9 @@ pub mod describe_maintenance_windows_for_target_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -11772,9 +11751,9 @@ pub mod describe_maintenance_window_targets_input {
         /// <p>Optional filters that can be used to narrow down the scope of the returned window targets.
         /// The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and
         /// <code>OwnerInformation</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::MaintenanceWindowFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -11983,9 +11962,9 @@ pub mod describe_maintenance_window_tasks_input {
         /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter
         /// keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and
         /// <code>TaskType</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::MaintenanceWindowFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12240,9 +12219,9 @@ pub mod describe_ops_items_input {
         /// limit.</p>
         /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair
         /// by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-        pub fn ops_item_filters(mut self, input: impl Into<crate::model::OpsItemFilter>) -> Self {
+        pub fn ops_item_filters(mut self, input: crate::model::OpsItemFilter) -> Self {
             let mut v = self.ops_item_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ops_item_filters = Some(v);
             self
         }
@@ -12490,9 +12469,9 @@ pub mod describe_parameters_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ParametersFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ParametersFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12509,12 +12488,9 @@ pub mod describe_parameters_input {
         /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).
         ///
         /// <p>Filters to limit the request results.</p>
-        pub fn parameter_filters(
-            mut self,
-            input: impl Into<crate::model::ParameterStringFilter>,
-        ) -> Self {
+        pub fn parameter_filters(mut self, input: crate::model::ParameterStringFilter) -> Self {
             let mut v = self.parameter_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_filters = Some(v);
             self
         }
@@ -12735,9 +12711,9 @@ pub mod describe_patch_baselines_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::PatchOrchestratorFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12987,9 +12963,9 @@ pub mod describe_patch_groups_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::PatchOrchestratorFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -13595,9 +13571,9 @@ pub mod describe_sessions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters to limit the type of sessions returned by the request.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SessionFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SessionFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -15184,9 +15160,9 @@ pub mod get_inventory_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::InventoryFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::InventoryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -15206,9 +15182,9 @@ pub mod get_inventory_input {
         /// aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code>
         /// type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried
         /// fleet.</p>
-        pub fn aggregators(mut self, input: impl Into<crate::model::InventoryAggregator>) -> Self {
+        pub fn aggregators(mut self, input: crate::model::InventoryAggregator) -> Self {
             let mut v = self.aggregators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregators = Some(v);
             self
         }
@@ -15228,12 +15204,9 @@ pub mod get_inventory_input {
         /// To override the contents of this collection use [`set_result_attributes`](Self::set_result_attributes).
         ///
         /// <p>The list of inventory item types to return.</p>
-        pub fn result_attributes(
-            mut self,
-            input: impl Into<crate::model::ResultAttribute>,
-        ) -> Self {
+        pub fn result_attributes(mut self, input: crate::model::ResultAttribute) -> Self {
             let mut v = self.result_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_attributes = Some(v);
             self
         }
@@ -16837,9 +16810,9 @@ pub mod get_ops_summary_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters used to scope down the returned OpsData. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::OpsFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::OpsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -16856,9 +16829,9 @@ pub mod get_ops_summary_input {
         /// To override the contents of this collection use [`set_aggregators`](Self::set_aggregators).
         ///
         /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-        pub fn aggregators(mut self, input: impl Into<crate::model::OpsAggregator>) -> Self {
+        pub fn aggregators(mut self, input: crate::model::OpsAggregator) -> Self {
             let mut v = self.aggregators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregators = Some(v);
             self
         }
@@ -16875,12 +16848,9 @@ pub mod get_ops_summary_input {
         /// To override the contents of this collection use [`set_result_attributes`](Self::set_result_attributes).
         ///
         /// <p>The OpsData data type to return.</p>
-        pub fn result_attributes(
-            mut self,
-            input: impl Into<crate::model::OpsResultAttribute>,
-        ) -> Self {
+        pub fn result_attributes(mut self, input: crate::model::OpsResultAttribute) -> Self {
             let mut v = self.result_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_attributes = Some(v);
             self
         }
@@ -17672,12 +17642,9 @@ pub mod get_parameters_by_path_input {
         /// <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>,
         /// <code>Path</code>, and <code>Tier</code>.</p>
         /// </note>
-        pub fn parameter_filters(
-            mut self,
-            input: impl Into<crate::model::ParameterStringFilter>,
-        ) -> Self {
+        pub fn parameter_filters(mut self, input: crate::model::ParameterStringFilter) -> Self {
             let mut v = self.parameter_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_filters = Some(v);
             self
         }
@@ -18642,12 +18609,9 @@ pub mod list_associations_input {
         /// managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
         /// aren't returned.</p>
         /// </note>
-        pub fn association_filter_list(
-            mut self,
-            input: impl Into<crate::model::AssociationFilter>,
-        ) -> Self {
+        pub fn association_filter_list(mut self, input: crate::model::AssociationFilter) -> Self {
             let mut v = self.association_filter_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.association_filter_list = Some(v);
             self
         }
@@ -19076,9 +19040,9 @@ pub mod list_command_invocations_input {
         ///
         /// <p>(Optional) One or more filters. Use a filter to return a more specific list of
         /// results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::CommandFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::CommandFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -19316,9 +19280,9 @@ pub mod list_commands_input {
         ///
         /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::CommandFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::CommandFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -19489,9 +19453,9 @@ pub mod list_compliance_items_input {
         ///
         /// <p>One or more compliance filters. Use a filter to return a more specific list of
         /// results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ComplianceStringFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ComplianceStringFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -19725,9 +19689,9 @@ pub mod list_compliance_summaries_input {
         ///
         /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of
         /// results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ComplianceStringFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ComplianceStringFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20139,12 +20103,9 @@ pub mod list_documents_input {
         /// To override the contents of this collection use [`set_document_filter_list`](Self::set_document_filter_list).
         ///
         /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-        pub fn document_filter_list(
-            mut self,
-            input: impl Into<crate::model::DocumentFilter>,
-        ) -> Self {
+        pub fn document_filter_list(mut self, input: crate::model::DocumentFilter) -> Self {
             let mut v = self.document_filter_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_filter_list = Some(v);
             self
         }
@@ -20171,9 +20132,9 @@ pub mod list_documents_input {
         /// more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
         /// </p>
         /// </note>
-        pub fn filters(mut self, input: impl Into<crate::model::DocumentKeyValuesFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DocumentKeyValuesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20578,9 +20539,9 @@ pub mod list_inventory_entries_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::InventoryFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::InventoryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20773,9 +20734,9 @@ pub mod list_ops_item_events_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::OpsItemEventFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::OpsItemEventFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20974,12 +20935,9 @@ pub mod list_ops_item_related_items_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::OpsItemRelatedItemsFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::OpsItemRelatedItemsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -21172,9 +21130,9 @@ pub mod list_ops_metadata_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::OpsMetadataFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::OpsMetadataFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -21362,9 +21320,9 @@ pub mod list_resource_compliance_summaries_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ComplianceStringFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ComplianceStringFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -22218,9 +22176,9 @@ pub mod put_compliance_items_input {
         /// <p>Information about the compliance as defined by the resource type. For example, for a patch
         /// compliance type, <code>Items</code> includes information about the PatchSeverity, Classification,
         /// and so on.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ComplianceItemEntry>) -> Self {
+        pub fn items(mut self, input: crate::model::ComplianceItemEntry) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -22448,9 +22406,9 @@ pub mod put_inventory_input {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The inventory items that you want to add or update on managed nodes.</p>
-        pub fn items(mut self, input: impl Into<crate::model::InventoryItem>) -> Self {
+        pub fn items(mut self, input: crate::model::InventoryItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -22875,9 +22833,9 @@ pub mod put_parameter_input {
         /// <p>To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a>
         /// operation.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -23688,9 +23646,9 @@ pub mod register_target_with_maintenance_window_input {
         /// <p>For more information about these examples formats, including the best use case for each one,
         /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register
         /// targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -24002,9 +23960,9 @@ pub mod register_task_with_maintenance_window_input {
         /// <p>
         /// <code>Key=WindowTargetIds,Values=<window-target-id-1>,<window-target-id-2></code>
         /// </p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -24119,10 +24077,10 @@ pub mod register_task_with_maintenance_window_input {
         pub fn task_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MaintenanceWindowTaskParameterValueExpression>,
+            v: crate::model::MaintenanceWindowTaskParameterValueExpression,
         ) -> Self {
             let mut hash_map = self.task_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.task_parameters = Some(hash_map);
             self
         }
@@ -25175,10 +25133,10 @@ pub mod send_automation_signal_input {
         pub fn payload(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.payload.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.payload = Some(hash_map);
             self
         }
@@ -25425,9 +25383,9 @@ pub mod send_command_input {
         /// <code>InstanceIds</code> option instead.</p>
         /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a
         /// fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -25567,10 +25525,10 @@ pub mod send_command_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -26091,10 +26049,10 @@ pub mod start_automation_execution_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -26153,9 +26111,9 @@ pub mod start_automation_execution_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -26175,12 +26133,13 @@ pub mod start_automation_execution_input {
         /// can't be specified together.</p>
         pub fn target_maps(
             mut self,
-            input: impl Into<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
             >,
         ) -> Self {
             let mut v = self.target_maps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_maps = Some(v);
             self
         }
@@ -26253,9 +26212,9 @@ pub mod start_automation_execution_input {
         /// automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple
         /// Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
-        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_locations = Some(v);
             self
         }
@@ -26295,9 +26254,9 @@ pub mod start_automation_execution_input {
         /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
         /// operation.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -26555,10 +26514,10 @@ pub mod start_change_request_execution_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -26637,9 +26596,9 @@ pub mod start_change_request_execution_input {
         /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
         /// approvals for the change request have been received.</p>
         /// </note>
-        pub fn runbooks(mut self, input: impl Into<crate::model::Runbook>) -> Self {
+        pub fn runbooks(mut self, input: crate::model::Runbook) -> Self {
             let mut v = self.runbooks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.runbooks = Some(v);
             self
         }
@@ -26676,9 +26635,9 @@ pub mod start_change_request_execution_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -26946,10 +26905,10 @@ pub mod start_session_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -27673,10 +27632,10 @@ pub mod update_association_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -27781,9 +27740,9 @@ pub mod update_association_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets of the association.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -28003,9 +27962,9 @@ pub mod update_association_input {
         /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
         /// association. Use this action to update an association in multiple Regions and multiple
         /// accounts.</p>
-        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_locations = Some(v);
             self
         }
@@ -28385,9 +28344,9 @@ pub mod update_document_input {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::AttachmentsSource>) -> Self {
+        pub fn attachments(mut self, input: crate::model::AttachmentsSource) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -29364,9 +29323,9 @@ pub mod update_maintenance_window_target_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets to add or replace.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -29637,9 +29596,9 @@ pub mod update_maintenance_window_task_input {
         /// maintenance window tasks without targets</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// </note>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -29738,10 +29697,10 @@ pub mod update_maintenance_window_task_input {
         pub fn task_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MaintenanceWindowTaskParameterValueExpression>,
+            v: crate::model::MaintenanceWindowTaskParameterValueExpression,
         ) -> Self {
             let mut hash_map = self.task_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.task_parameters = Some(hash_map);
             self
         }
@@ -30381,10 +30340,10 @@ pub mod update_ops_item_input {
         pub fn operational_data(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OpsItemDataValue>,
+            v: crate::model::OpsItemDataValue,
         ) -> Self {
             let mut hash_map = self.operational_data.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.operational_data = Some(hash_map);
             self
         }
@@ -30442,12 +30401,9 @@ pub mod update_ops_item_input {
         ///
         /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
         /// OpsItem is edited or changed.</p>
-        pub fn notifications(
-            mut self,
-            input: impl Into<crate::model::OpsItemNotification>,
-        ) -> Self {
+        pub fn notifications(mut self, input: crate::model::OpsItemNotification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notifications = Some(v);
             self
         }
@@ -30477,9 +30433,9 @@ pub mod update_ops_item_input {
         /// <p>One or more OpsItems that share something in common with the current OpsItems. For example,
         /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
         /// statuses for the impacted resource.</p>
-        pub fn related_ops_items(mut self, input: impl Into<crate::model::RelatedOpsItem>) -> Self {
+        pub fn related_ops_items(mut self, input: crate::model::RelatedOpsItem) -> Self {
             let mut v = self.related_ops_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_ops_items = Some(v);
             self
         }
@@ -30791,10 +30747,10 @@ pub mod update_ops_metadata_input {
         pub fn metadata_to_update(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MetadataValue>,
+            v: crate::model::MetadataValue,
         ) -> Self {
             let mut hash_map = self.metadata_to_update.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metadata_to_update = Some(hash_map);
             self
         }
@@ -31187,9 +31143,9 @@ pub mod update_patch_baseline_input {
         ///
         /// <p>Information about the patches to use to update the managed nodes, including target operating
         /// systems and source repositories. Applies to Linux managed nodes only.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::PatchSource>) -> Self {
+        pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }

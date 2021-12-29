@@ -365,9 +365,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags assigned to the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -450,10 +450,10 @@ pub mod list_application_versions_output {
         /// <p>To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a> operation.</p>
         pub fn application_version_summaries(
             mut self,
-            input: impl Into<crate::model::ApplicationVersionSummary>,
+            input: crate::model::ApplicationVersionSummary,
         ) -> Self {
             let mut v = self.application_version_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_version_summaries = Some(v);
             self
         }
@@ -539,12 +539,9 @@ pub mod list_application_snapshots_output {
         /// To override the contents of this collection use [`set_snapshot_summaries`](Self::set_snapshot_summaries).
         ///
         /// <p>A collection of objects containing information about the application snapshots.</p>
-        pub fn snapshot_summaries(
-            mut self,
-            input: impl Into<crate::model::SnapshotDetails>,
-        ) -> Self {
+        pub fn snapshot_summaries(mut self, input: crate::model::SnapshotDetails) -> Self {
             let mut v = self.snapshot_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_summaries = Some(v);
             self
         }
@@ -633,12 +630,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_application_summaries`](Self::set_application_summaries).
         ///
         /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-        pub fn application_summaries(
-            mut self,
-            input: impl Into<crate::model::ApplicationSummary>,
-        ) -> Self {
+        pub fn application_summaries(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_summaries = Some(v);
             self
         }
@@ -770,12 +764,9 @@ pub mod discover_input_schema_output {
         ///
         /// <p>An array of elements, where each element corresponds to a row in a stream record
         /// (a stream record can have more than one row).</p>
-        pub fn parsed_input_records(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn parsed_input_records(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.parsed_input_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parsed_input_records = Some(v);
             self
         }
@@ -1458,12 +1449,12 @@ pub mod delete_application_cloud_watch_logging_option_output {
         /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
         pub fn cloud_watch_logging_option_descriptions(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOptionDescription>,
+            input: crate::model::CloudWatchLoggingOptionDescription,
         ) -> Self {
             let mut v = self
                 .cloud_watch_logging_option_descriptions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_option_descriptions = Some(v);
             self
         }
@@ -1884,10 +1875,10 @@ pub mod add_application_reference_data_source_output {
         /// </p>
         pub fn reference_data_source_descriptions(
             mut self,
-            input: impl Into<crate::model::ReferenceDataSourceDescription>,
+            input: crate::model::ReferenceDataSourceDescription,
         ) -> Self {
             let mut v = self.reference_data_source_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_data_source_descriptions = Some(v);
             self
         }
@@ -2010,12 +2001,9 @@ pub mod add_application_output_output {
         /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
         ///
         /// </p>
-        pub fn output_descriptions(
-            mut self,
-            input: impl Into<crate::model::OutputDescription>,
-        ) -> Self {
+        pub fn output_descriptions(mut self, input: crate::model::OutputDescription) -> Self {
             let mut v = self.output_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_descriptions = Some(v);
             self
         }
@@ -2268,12 +2256,9 @@ pub mod add_application_input_output {
         ///
         ///
         /// </p>
-        pub fn input_descriptions(
-            mut self,
-            input: impl Into<crate::model::InputDescription>,
-        ) -> Self {
+        pub fn input_descriptions(mut self, input: crate::model::InputDescription) -> Self {
             let mut v = self.input_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_descriptions = Some(v);
             self
         }
@@ -2395,12 +2380,12 @@ pub mod add_application_cloud_watch_logging_option_output {
         /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
         pub fn cloud_watch_logging_option_descriptions(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOptionDescription>,
+            input: crate::model::CloudWatchLoggingOptionDescription,
         ) -> Self {
             let mut v = self
                 .cloud_watch_logging_option_descriptions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_option_descriptions = Some(v);
             self
         }

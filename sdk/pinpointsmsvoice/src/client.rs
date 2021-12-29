@@ -216,8 +216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name that you want to give the configuration set.
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// The name that you want to give the configuration set.
@@ -291,8 +291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// ConfigurationSetName
@@ -304,8 +304,11 @@ pub mod fluent_builders {
             self
         }
         /// An object that defines a single event destination.
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(
+            mut self,
+            signature: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.inner = self.inner.event_destination(signature);
             self
         }
         /// An object that defines a single event destination.
@@ -317,8 +320,8 @@ pub mod fluent_builders {
             self
         }
         /// A name that identifies the event destination.
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(signature.into());
             self
         }
         /// A name that identifies the event destination.
@@ -390,8 +393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// ConfigurationSetName
@@ -465,8 +468,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// ConfigurationSetName
@@ -478,8 +481,8 @@ pub mod fluent_builders {
             self
         }
         /// EventDestinationName
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(signature.into());
             self
         }
         /// EventDestinationName
@@ -553,8 +556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// ConfigurationSetName
@@ -626,8 +629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A token returned from a previous call to the API that indicates the position in the list of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token returned from a previous call to the API that indicates the position in the list of results.
@@ -636,8 +639,8 @@ pub mod fluent_builders {
             self
         }
         /// Used to specify the number of items that should be returned in the response.
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(signature.into());
             self
         }
         /// Used to specify the number of items that should be returned in the response.
@@ -706,8 +709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The phone number that appears on recipients' devices when they receive the message.
-        pub fn caller_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_id(inp);
+        pub fn caller_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_id(signature.into());
             self
         }
         /// The phone number that appears on recipients' devices when they receive the message.
@@ -716,8 +719,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the configuration set that you want to use to send the message.
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// The name of the configuration set that you want to use to send the message.
@@ -729,8 +732,8 @@ pub mod fluent_builders {
             self
         }
         /// An object that contains a voice message and information about the recipient that you want to send it to.
-        pub fn content(mut self, inp: crate::model::VoiceMessageContent) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, signature: crate::model::VoiceMessageContent) -> Self {
+            self.inner = self.inner.content(signature);
             self
         }
         /// An object that contains a voice message and information about the recipient that you want to send it to.
@@ -742,8 +745,11 @@ pub mod fluent_builders {
             self
         }
         /// The phone number that you want to send the voice message to.
-        pub fn destination_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_phone_number(inp);
+        pub fn destination_phone_number(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_phone_number(signature.into());
             self
         }
         /// The phone number that you want to send the voice message to.
@@ -755,8 +761,11 @@ pub mod fluent_builders {
             self
         }
         /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-        pub fn origination_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origination_phone_number(inp);
+        pub fn origination_phone_number(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.origination_phone_number(signature.into());
             self
         }
         /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
@@ -830,8 +839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(signature.into());
             self
         }
         /// ConfigurationSetName
@@ -843,8 +852,11 @@ pub mod fluent_builders {
             self
         }
         /// An object that defines a single event destination.
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(
+            mut self,
+            signature: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.inner = self.inner.event_destination(signature);
             self
         }
         /// An object that defines a single event destination.
@@ -856,8 +868,8 @@ pub mod fluent_builders {
             self
         }
         /// EventDestinationName
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(signature.into());
             self
         }
         /// EventDestinationName

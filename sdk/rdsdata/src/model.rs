@@ -1104,9 +1104,9 @@ pub mod result_frame {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>The records in the result set.</p>
-        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -1168,9 +1168,9 @@ pub mod record {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values returned in the record.</p>
-        pub fn values(mut self, input: impl Into<crate::model::Value>) -> Self {
+        pub fn values(mut self, input: crate::model::Value) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -1408,9 +1408,9 @@ pub mod struct_value {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes returned in the record.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Value>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Value) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1490,9 +1490,9 @@ pub mod result_set_metadata {
         /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
         ///
         /// <p>The metadata of the columns in the result set.</p>
-        pub fn column_metadata(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_metadata(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_metadata = Some(v);
             self
         }
@@ -1554,9 +1554,9 @@ pub mod update_result {
         /// To override the contents of this collection use [`set_generated_fields`](Self::set_generated_fields).
         ///
         /// <p>Values for fields generated during the request.</p>
-        pub fn generated_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn generated_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.generated_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.generated_fields = Some(v);
             self
         }

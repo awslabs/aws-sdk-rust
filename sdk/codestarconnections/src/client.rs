@@ -239,8 +239,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the external provider where your third-party code repository is
         /// configured.</p>
-        pub fn provider_type(mut self, inp: crate::model::ProviderType) -> Self {
-            self.inner = self.inner.provider_type(inp);
+        pub fn provider_type(mut self, signature: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_type(signature);
             self
         }
         /// <p>The name of the external provider where your third-party code repository is
@@ -254,8 +254,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the connection to be created. The name must be unique in the calling AWS
         /// account.</p>
-        pub fn connection_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(inp);
+        pub fn connection_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(signature.into());
             self
         }
         /// <p>The name of the connection to be created. The name must be unique in the calling AWS
@@ -272,8 +272,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pair to use when tagging the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value pair to use when tagging the resource.</p>
@@ -285,8 +285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
-        pub fn host_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn(inp);
+        pub fn host_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
@@ -363,8 +363,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the host to be created. The name must be unique in the calling AWS
         /// account.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the host to be created. The name must be unique in the calling AWS
@@ -376,8 +376,8 @@ pub mod fluent_builders {
         /// <p>The name of the installed provider to be associated with your connection. The host
         /// resource represents the infrastructure where your provider type is installed. The valid
         /// provider type is GitHub Enterprise Server.</p>
-        pub fn provider_type(mut self, inp: crate::model::ProviderType) -> Self {
-            self.inner = self.inner.provider_type(inp);
+        pub fn provider_type(mut self, signature: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_type(signature);
             self
         }
         /// <p>The name of the installed provider to be associated with your connection. The host
@@ -392,8 +392,8 @@ pub mod fluent_builders {
         }
         /// <p>The endpoint of the infrastructure to be represented by the host after it is
         /// created.</p>
-        pub fn provider_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_endpoint(inp);
+        pub fn provider_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_endpoint(signature.into());
             self
         }
         /// <p>The endpoint of the infrastructure to be represented by the host after it is
@@ -407,8 +407,8 @@ pub mod fluent_builders {
         }
         /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
         /// infrastructure to be represented by the host must already be connected to the VPC.</p>
-        pub fn vpc_configuration(mut self, inp: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(inp);
+        pub fn vpc_configuration(mut self, signature: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(signature);
             self
         }
         /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
@@ -425,8 +425,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         #[allow(missing_docs)] // documentation missing in model
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -501,8 +501,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
-        pub fn connection_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(inp);
+        pub fn connection_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
@@ -580,8 +580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
-        pub fn host_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn(inp);
+        pub fn host_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
@@ -650,8 +650,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of a connection.</p>
-        pub fn connection_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(inp);
+        pub fn connection_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a connection.</p>
@@ -724,8 +724,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
-        pub fn host_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn(inp);
+        pub fn host_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
@@ -795,8 +795,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the list of connections to those associated with a specified provider, such as
         /// Bitbucket.</p>
-        pub fn provider_type_filter(mut self, inp: crate::model::ProviderType) -> Self {
-            self.inner = self.inner.provider_type_filter(inp);
+        pub fn provider_type_filter(mut self, signature: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_type_filter(signature);
             self
         }
         /// <p>Filters the list of connections to those associated with a specified provider, such as
@@ -809,8 +809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of connections to those associated with a specified host.</p>
-        pub fn host_arn_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn_filter(inp);
+        pub fn host_arn_filter(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn_filter(signature.into());
             self
         }
         /// <p>Filters the list of connections to those associated with a specified host.</p>
@@ -823,8 +823,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -835,8 +835,8 @@ pub mod fluent_builders {
         }
         /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
         /// can be used to return the next set of connections in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
@@ -907,8 +907,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -919,8 +919,8 @@ pub mod fluent_builders {
         }
         /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
         /// used to return the next set of hosts in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
@@ -990,8 +990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
@@ -1061,8 +1061,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
@@ -1075,8 +1075,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags you want to modify or add to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags you want to modify or add to the resource.</p>
@@ -1148,8 +1148,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
@@ -1162,8 +1162,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of keys for the tags to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of keys for the tags to be removed from the resource.</p>
@@ -1235,8 +1235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
-        pub fn host_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn(inp);
+        pub fn host_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
@@ -1245,8 +1245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL or endpoint of the host to be updated.</p>
-        pub fn provider_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_endpoint(inp);
+        pub fn provider_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_endpoint(signature.into());
             self
         }
         /// <p>The URL or endpoint of the host to be updated.</p>
@@ -1259,8 +1259,8 @@ pub mod fluent_builders {
         }
         /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
         /// infrastructure to be represented by the host must already be connected to the VPC.</p>
-        pub fn vpc_configuration(mut self, inp: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(inp);
+        pub fn vpc_configuration(mut self, signature: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(signature);
             self
         }
         /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the

@@ -4982,9 +4982,9 @@ pub mod invalid_parameter_exception {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>Fields that caused the exception.</p>
-        pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
+        pub fn fields(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }

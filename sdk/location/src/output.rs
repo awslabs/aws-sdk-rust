@@ -135,12 +135,9 @@ pub mod list_device_positions_output {
         ///
         /// <p>Contains details about each device's last known position. These details includes the device ID,
         /// the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::ListDevicePositionsResponseEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::ListDevicePositionsResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -228,9 +225,9 @@ pub mod get_device_position_history_output {
         /// To override the contents of this collection use [`set_device_positions`](Self::set_device_positions).
         ///
         /// <p>Contains the position history details for the requested device.</p>
-        pub fn device_positions(mut self, input: impl Into<crate::model::DevicePosition>) -> Self {
+        pub fn device_positions(mut self, input: crate::model::DevicePosition) -> Self {
             let mut v = self.device_positions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_positions = Some(v);
             self
         }
@@ -372,9 +369,9 @@ pub mod get_device_position_output {
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
         /// <p>The last known device position.</p>
-        pub fn position(mut self, input: impl Into<f64>) -> Self {
+        pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.position = Some(v);
             self
         }
@@ -466,12 +463,9 @@ pub mod batch_update_device_position_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Contains  error details for each device that failed to update its position.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchUpdateDevicePositionError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchUpdateDevicePositionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -547,12 +541,9 @@ pub mod batch_get_device_position_output {
         ///
         /// <p>Contains  error details for each device that failed to send its position to the tracker
         /// resource.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchGetDevicePositionError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchGetDevicePositionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -571,9 +562,9 @@ pub mod batch_get_device_position_output {
         ///
         /// <p>Contains device position details such as the device ID, position, and timestamps for
         /// when the position was received and sampled.</p>
-        pub fn device_positions(mut self, input: impl Into<crate::model::DevicePosition>) -> Self {
+        pub fn device_positions(mut self, input: crate::model::DevicePosition) -> Self {
             let mut v = self.device_positions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_positions = Some(v);
             self
         }
@@ -642,10 +633,10 @@ pub mod batch_delete_device_position_history_output {
         /// <p>Contains error details for each device history that failed to delete.</p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchDeleteDevicePositionHistoryError>,
+            input: crate::model::BatchDeleteDevicePositionHistoryError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -752,12 +743,9 @@ pub mod list_trackers_output {
         ///
         /// <p>Contains tracker resources in your AWS account. Details include tracker name,
         /// description and timestamps for when the tracker was created and last updated.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::ListTrackersResponseEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::ListTrackersResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1516,9 +1504,9 @@ pub mod calculate_route_output {
         /// <code>EndPosition</code> is the destination position.</p>
         /// </li>
         /// </ul>
-        pub fn legs(mut self, input: impl Into<crate::model::Leg>) -> Self {
+        pub fn legs(mut self, input: crate::model::Leg) -> Self {
             let mut v = self.legs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.legs = Some(v);
             self
         }
@@ -1637,12 +1625,9 @@ pub mod list_route_calculators_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>Lists the route calculator resources that exist in your AWS account</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::ListRouteCalculatorsResponseEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::ListRouteCalculatorsResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -2477,9 +2462,9 @@ pub mod search_place_index_for_text_output {
         ///
         /// <p>A list of Places matching the input text. Each result contains additional
         /// information about the specific point of interest. </p>
-        pub fn results(mut self, input: impl Into<crate::model::SearchForTextResult>) -> Self {
+        pub fn results(mut self, input: crate::model::SearchForTextResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -2577,9 +2562,9 @@ pub mod search_place_index_for_position_output {
         ///
         /// <p>Returns a list of Places closest to the specified position. Each result contains
         /// additional information about the Places returned.</p>
-        pub fn results(mut self, input: impl Into<crate::model::SearchForPositionResult>) -> Self {
+        pub fn results(mut self, input: crate::model::SearchForPositionResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -2653,12 +2638,9 @@ pub mod list_place_indexes_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>Lists the place index resources that exist in your AWS account</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::ListPlaceIndexesResponseEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::ListPlaceIndexesResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -3681,9 +3663,9 @@ pub mod list_maps_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>Contains a list of maps in your AWS account</p>
-        pub fn entries(mut self, input: impl Into<crate::model::ListMapsResponseEntry>) -> Self {
+        pub fn entries(mut self, input: crate::model::ListMapsResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -4455,12 +4437,9 @@ pub mod list_geofences_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>Contains a list of geofences stored in the geofence collection.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::ListGeofenceResponseEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::ListGeofenceResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -4800,12 +4779,9 @@ pub mod batch_put_geofence_output {
         /// To override the contents of this collection use [`set_successes`](Self::set_successes).
         ///
         /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
-        pub fn successes(
-            mut self,
-            input: impl Into<crate::model::BatchPutGeofenceSuccess>,
-        ) -> Self {
+        pub fn successes(mut self, input: crate::model::BatchPutGeofenceSuccess) -> Self {
             let mut v = self.successes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successes = Some(v);
             self
         }
@@ -4823,9 +4799,9 @@ pub mod batch_put_geofence_output {
         ///
         /// <p>Contains additional error details for each geofence that failed to be stored in a
         /// geofence collection.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchPutGeofenceError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchPutGeofenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -4892,12 +4868,9 @@ pub mod batch_evaluate_geofences_output {
         ///
         /// <p>Contains error details for each device that failed to evaluate its position against
         /// the given geofence collection.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchEvaluateGeofencesError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchEvaluateGeofencesError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -4960,9 +4933,9 @@ pub mod batch_delete_geofence_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Contains error details for each geofence that failed to delete.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchDeleteGeofenceError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchDeleteGeofenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -5039,10 +5012,10 @@ pub mod list_geofence_collections_output {
         /// <p>Lists the geofence collections that exist in your AWS account.</p>
         pub fn entries(
             mut self,
-            input: impl Into<crate::model::ListGeofenceCollectionsResponseEntry>,
+            input: crate::model::ListGeofenceCollectionsResponseEntry,
         ) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }

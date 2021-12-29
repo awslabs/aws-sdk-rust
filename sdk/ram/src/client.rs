@@ -344,9 +344,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
         pub fn resource_share_invitation_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_share_invitation_arn(inp);
+            self.inner = self.inner.resource_share_invitation_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
@@ -358,8 +358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -428,8 +428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -445,8 +445,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
@@ -484,8 +484,8 @@ pub mod fluent_builders {
         /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
         /// Guide</i>.</p>
         /// </note>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
         /// <p>The principals to associate with the resource share. The possible values are:</p>
@@ -519,8 +519,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -589,8 +589,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -603,8 +603,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
         /// resource share.</p>
-        pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arn(inp);
+        pub fn permission_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
@@ -619,8 +619,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether the permission should replace the permissions that are currently
         /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
         /// <code>false</code> to add the permission to the current permission.</p>
-        pub fn replace(mut self, inp: bool) -> Self {
-            self.inner = self.inner.replace(inp);
+        pub fn replace(mut self, signature: bool) -> Self {
+            self.inner = self.inner.replace(signature);
             self
         }
         /// <p>Indicates whether the permission should replace the permissions that are currently
@@ -631,8 +631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -641,8 +641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the RAM permissions to associate with the resource share.</p>
-        pub fn permission_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.permission_version(inp);
+        pub fn permission_version(mut self, signature: i32) -> Self {
+            self.inner = self.inner.permission_version(signature);
             self
         }
         /// <p>The version of the RAM permissions to associate with the resource share.</p>
@@ -718,8 +718,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource share.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the resource share.</p>
@@ -732,8 +732,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
         /// <p>The ARNs of the resources to associate with the resource share.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
         /// <p>The ARNs of the resources to associate with the resource share.</p>
@@ -771,8 +771,8 @@ pub mod fluent_builders {
         /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
         /// Guide</i>.</p>
         /// </note>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
         /// <p>The principals to associate with the resource share. The possible values are:</p>
@@ -810,8 +810,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -824,8 +824,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether principals outside your organization in Organizations can be associated
         /// with a resource share.</p>
-        pub fn allow_external_principals(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_external_principals(inp);
+        pub fn allow_external_principals(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_external_principals(signature);
             self
         }
         /// <p>Indicates whether principals outside your organization in Organizations can be associated
@@ -835,8 +835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -852,8 +852,8 @@ pub mod fluent_builders {
         /// do not specify an ARN for the permission, RAM automatically attaches the default
         /// version of the permission for each resource type. Only one permission can be associated
         /// with each resource type in a resource share.</p>
-        pub fn permission_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arns(inp);
+        pub fn permission_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
@@ -928,8 +928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -941,8 +941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -1011,8 +1011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
@@ -1045,8 +1045,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The principals.</p>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
         /// <p>The principals.</p>
@@ -1058,8 +1058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -1130,8 +1130,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -1143,8 +1143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
-        pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arn(inp);
+        pub fn permission_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
@@ -1156,8 +1156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -1287,8 +1287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the permission.</p>
-        pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arn(inp);
+        pub fn permission_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the permission.</p>
@@ -1300,8 +1300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the version of the permission.</p>
-        pub fn permission_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.permission_version(inp);
+        pub fn permission_version(mut self, signature: i32) -> Self {
+            self.inner = self.inner.permission_version(signature);
             self
         }
         /// <p>The identifier for the version of the permission.</p>
@@ -1374,8 +1374,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
@@ -1387,8 +1387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(signature.into());
             self
         }
         /// <p>The principal.</p>
@@ -1397,8 +1397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1408,8 +1408,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1481,8 +1481,11 @@ pub mod fluent_builders {
         /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
         /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
         /// that are associated with the specified resource share.</p>
-        pub fn association_type(mut self, inp: crate::model::ResourceShareAssociationType) -> Self {
-            self.inner = self.inner.association_type(inp);
+        pub fn association_type(
+            mut self,
+            signature: crate::model::ResourceShareAssociationType,
+        ) -> Self {
+            self.inner = self.inner.association_type(signature);
             self
         }
         /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
@@ -1500,8 +1503,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
@@ -1514,8 +1517,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
         /// the association type is <code>PRINCIPAL</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
@@ -1526,8 +1529,8 @@ pub mod fluent_builders {
         }
         /// <p>The principal. You cannot specify this parameter if the association type is
         /// <code>RESOURCE</code>.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(signature.into());
             self
         }
         /// <p>The principal. You cannot specify this parameter if the association type is
@@ -1539,9 +1542,9 @@ pub mod fluent_builders {
         /// <p>The association status.</p>
         pub fn association_status(
             mut self,
-            inp: crate::model::ResourceShareAssociationStatus,
+            signature: crate::model::ResourceShareAssociationStatus,
         ) -> Self {
-            self.inner = self.inner.association_status(inp);
+            self.inner = self.inner.association_status(signature);
             self
         }
         /// <p>The association status.</p>
@@ -1553,8 +1556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1564,8 +1567,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1641,9 +1644,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
         pub fn resource_share_invitation_arns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_share_invitation_arns(inp);
+            self.inner = self.inner.resource_share_invitation_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
@@ -1659,8 +1662,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
@@ -1672,8 +1675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1683,8 +1686,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1758,8 +1761,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
         /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
@@ -1771,8 +1774,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the resource share.</p>
-        pub fn resource_share_status(mut self, inp: crate::model::ResourceShareStatus) -> Self {
-            self.inner = self.inner.resource_share_status(inp);
+        pub fn resource_share_status(
+            mut self,
+            signature: crate::model::ResourceShareStatus,
+        ) -> Self {
+            self.inner = self.inner.resource_share_status(signature);
             self
         }
         /// <p>The status of the resource share.</p>
@@ -1784,8 +1790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of owner.</p>
-        pub fn resource_owner(mut self, inp: crate::model::ResourceOwner) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        pub fn resource_owner(mut self, signature: crate::model::ResourceOwner) -> Self {
+            self.inner = self.inner.resource_owner(signature);
             self
         }
         /// <p>The type of owner.</p>
@@ -1797,8 +1803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resource share.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the resource share.</p>
@@ -1811,8 +1817,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
         /// <p>One or more tag filters.</p>
-        pub fn tag_filters(mut self, inp: impl Into<crate::model::TagFilter>) -> Self {
-            self.inner = self.inner.tag_filters(inp);
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filters(input);
             self
         }
         /// <p>One or more tag filters.</p>
@@ -1824,8 +1830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1835,8 +1841,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1847,8 +1853,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
         /// resource share.</p>
-        pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arn(inp);
+        pub fn permission_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
@@ -1924,9 +1930,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
         pub fn resource_share_invitation_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_share_invitation_arn(inp);
+            self.inner = self.inner.resource_share_invitation_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
@@ -1938,8 +1944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1949,8 +1955,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -2021,8 +2027,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the resource type for which to list permissions. For example, to list only
         /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// <p>Specifies the resource type for which to list permissions. For example, to list only
@@ -2035,8 +2041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2046,8 +2052,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -2118,8 +2124,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of owner.</p>
-        pub fn resource_owner(mut self, inp: crate::model::ResourceOwner) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        pub fn resource_owner(mut self, signature: crate::model::ResourceOwner) -> Self {
+            self.inner = self.inner.resource_owner(signature);
             self
         }
         /// <p>The type of owner.</p>
@@ -2131,8 +2137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2145,8 +2151,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The principals.</p>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
         /// <p>The principals.</p>
@@ -2160,8 +2166,8 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
         /// </p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// <p>The resource type.</p>
@@ -2179,8 +2185,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
@@ -2192,8 +2198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2203,8 +2209,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -2275,8 +2281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of owner.</p>
-        pub fn resource_owner(mut self, inp: crate::model::ResourceOwner) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        pub fn resource_owner(mut self, signature: crate::model::ResourceOwner) -> Self {
+            self.inner = self.inner.resource_owner(signature);
             self
         }
         /// <p>The type of owner.</p>
@@ -2288,8 +2294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(signature.into());
             self
         }
         /// <p>The principal.</p>
@@ -2300,8 +2306,8 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
         /// </p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// <p>The resource type.</p>
@@ -2319,8 +2325,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
@@ -2336,8 +2342,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
@@ -2349,8 +2355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2360,8 +2366,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -2431,8 +2437,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -2444,8 +2450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2455,8 +2461,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -2526,8 +2532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2537,8 +2543,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -2622,8 +2628,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
@@ -2697,9 +2703,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
         pub fn resource_share_invitation_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_share_invitation_arn(inp);
+            self.inner = self.inner.resource_share_invitation_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
@@ -2711,8 +2717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -2781,8 +2787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -2798,8 +2804,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -2871,8 +2877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -2888,8 +2894,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys of the tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys of the tags to remove.</p>
@@ -2961,8 +2967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        pub fn resource_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -2974,8 +2980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resource share.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the resource share.</p>
@@ -2985,8 +2991,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether principals outside your organization in Organizations can be associated
         /// with a resource share.</p>
-        pub fn allow_external_principals(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_external_principals(inp);
+        pub fn allow_external_principals(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_external_principals(signature);
             self
         }
         /// <p>Indicates whether principals outside your organization in Organizations can be associated
@@ -2996,8 +3002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>

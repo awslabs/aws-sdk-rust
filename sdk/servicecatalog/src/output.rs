@@ -322,11 +322,11 @@ pub mod update_provisioned_product_properties_output {
         /// <p>A map that contains the properties updated.</p>
         pub fn provisioned_product_properties(
             mut self,
-            k: impl Into<crate::model::PropertyKey>,
+            k: crate::model::PropertyKey,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.provisioned_product_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.provisioned_product_properties = Some(hash_map);
             self
         }
@@ -493,9 +493,9 @@ pub mod update_product_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags associated with the product.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -662,9 +662,9 @@ pub mod update_portfolio_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags associated with the portfolio.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -903,10 +903,10 @@ pub mod search_provisioned_products_output {
         /// <p>Information about the provisioned products.</p>
         pub fn provisioned_products(
             mut self,
-            input: impl Into<crate::model::ProvisionedProductAttribute>,
+            input: crate::model::ProvisionedProductAttribute,
         ) -> Self {
             let mut v = self.provisioned_products.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_products = Some(v);
             self
         }
@@ -1001,12 +1001,9 @@ pub mod search_products_as_admin_output {
         /// To override the contents of this collection use [`set_product_view_details`](Self::set_product_view_details).
         ///
         /// <p>Information about the product views.</p>
-        pub fn product_view_details(
-            mut self,
-            input: impl Into<crate::model::ProductViewDetail>,
-        ) -> Self {
+        pub fn product_view_details(mut self, input: crate::model::ProductViewDetail) -> Self {
             let mut v = self.product_view_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_view_details = Some(v);
             self
         }
@@ -1118,12 +1115,9 @@ pub mod search_products_output {
         /// To override the contents of this collection use [`set_product_view_summaries`](Self::set_product_view_summaries).
         ///
         /// <p>Information about the product views.</p>
-        pub fn product_view_summaries(
-            mut self,
-            input: impl Into<crate::model::ProductViewSummary>,
-        ) -> Self {
+        pub fn product_view_summaries(mut self, input: crate::model::ProductViewSummary) -> Self {
             let mut v = self.product_view_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_view_summaries = Some(v);
             self
         }
@@ -1143,10 +1137,10 @@ pub mod search_products_output {
         pub fn product_view_aggregations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ProductViewAggregationValue>>,
+            v: std::vec::Vec<crate::model::ProductViewAggregationValue>,
         ) -> Self {
             let mut hash_map = self.product_view_aggregations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.product_view_aggregations = Some(hash_map);
             self
         }
@@ -1241,10 +1235,10 @@ pub mod scan_provisioned_products_output {
         /// <p>Information about the provisioned products.</p>
         pub fn provisioned_products(
             mut self,
-            input: impl Into<crate::model::ProvisionedProductDetail>,
+            input: crate::model::ProvisionedProductDetail,
         ) -> Self {
             let mut v = self.provisioned_products.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_products = Some(v);
             self
         }
@@ -1415,12 +1409,9 @@ pub mod list_tag_options_output {
         /// To override the contents of this collection use [`set_tag_option_details`](Self::set_tag_option_details).
         ///
         /// <p>Information about the TagOptions.</p>
-        pub fn tag_option_details(
-            mut self,
-            input: impl Into<crate::model::TagOptionDetail>,
-        ) -> Self {
+        pub fn tag_option_details(mut self, input: crate::model::TagOptionDetail) -> Self {
             let mut v = self.tag_option_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_option_details = Some(v);
             self
         }
@@ -1500,9 +1491,9 @@ pub mod list_stack_instances_for_provisioned_product_output {
         /// To override the contents of this collection use [`set_stack_instances`](Self::set_stack_instances).
         ///
         /// <p>List of stack instances.</p>
-        pub fn stack_instances(mut self, input: impl Into<crate::model::StackInstance>) -> Self {
+        pub fn stack_instances(mut self, input: crate::model::StackInstance) -> Self {
             let mut v = self.stack_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_instances = Some(v);
             self
         }
@@ -1592,10 +1583,10 @@ pub mod list_service_actions_for_provisioning_artifact_output {
         /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
         pub fn service_action_summaries(
             mut self,
-            input: impl Into<crate::model::ServiceActionSummary>,
+            input: crate::model::ServiceActionSummary,
         ) -> Self {
             let mut v = self.service_action_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_action_summaries = Some(v);
             self
         }
@@ -1685,10 +1676,10 @@ pub mod list_service_actions_output {
         /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
         pub fn service_action_summaries(
             mut self,
-            input: impl Into<crate::model::ServiceActionSummary>,
+            input: crate::model::ServiceActionSummary,
         ) -> Self {
             let mut v = self.service_action_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_action_summaries = Some(v);
             self
         }
@@ -1772,9 +1763,9 @@ pub mod list_resources_for_tag_option_output {
         /// To override the contents of this collection use [`set_resource_details`](Self::set_resource_details).
         ///
         /// <p>Information about the resources.</p>
-        pub fn resource_details(mut self, input: impl Into<crate::model::ResourceDetail>) -> Self {
+        pub fn resource_details(mut self, input: crate::model::ResourceDetail) -> Self {
             let mut v = self.resource_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_details = Some(v);
             self
         }
@@ -1854,9 +1845,9 @@ pub mod list_record_history_output {
         /// To override the contents of this collection use [`set_record_details`](Self::set_record_details).
         ///
         /// <p>The records, in reverse chronological order.</p>
-        pub fn record_details(mut self, input: impl Into<crate::model::RecordDetail>) -> Self {
+        pub fn record_details(mut self, input: crate::model::RecordDetail) -> Self {
             let mut v = self.record_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_details = Some(v);
             self
         }
@@ -1948,10 +1939,10 @@ pub mod list_provisioning_artifacts_for_service_action_output {
         /// <p>An array of objects with information about product views and provisioning artifacts.</p>
         pub fn provisioning_artifact_views(
             mut self,
-            input: impl Into<crate::model::ProvisioningArtifactView>,
+            input: crate::model::ProvisioningArtifactView,
         ) -> Self {
             let mut v = self.provisioning_artifact_views.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_artifact_views = Some(v);
             self
         }
@@ -2044,10 +2035,10 @@ pub mod list_provisioning_artifacts_output {
         /// <p>Information about the provisioning artifacts.</p>
         pub fn provisioning_artifact_details(
             mut self,
-            input: impl Into<crate::model::ProvisioningArtifactDetail>,
+            input: crate::model::ProvisioningArtifactDetail,
         ) -> Self {
             let mut v = self.provisioning_artifact_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_artifact_details = Some(v);
             self
         }
@@ -2136,10 +2127,10 @@ pub mod list_provisioned_product_plans_output {
         /// <p>Information about the plans.</p>
         pub fn provisioned_product_plans(
             mut self,
-            input: impl Into<crate::model::ProvisionedProductPlanSummary>,
+            input: crate::model::ProvisionedProductPlanSummary,
         ) -> Self {
             let mut v = self.provisioned_product_plans.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_product_plans = Some(v);
             self
         }
@@ -2222,9 +2213,9 @@ pub mod list_principals_for_portfolio_output {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The IAM principals (users or roles) associated with the portfolio.</p>
-        pub fn principals(mut self, input: impl Into<crate::model::Principal>) -> Self {
+        pub fn principals(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principals = Some(v);
             self
         }
@@ -2308,12 +2299,9 @@ pub mod list_portfolios_for_product_output {
         /// To override the contents of this collection use [`set_portfolio_details`](Self::set_portfolio_details).
         ///
         /// <p>Information about the portfolios.</p>
-        pub fn portfolio_details(
-            mut self,
-            input: impl Into<crate::model::PortfolioDetail>,
-        ) -> Self {
+        pub fn portfolio_details(mut self, input: crate::model::PortfolioDetail) -> Self {
             let mut v = self.portfolio_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.portfolio_details = Some(v);
             self
         }
@@ -2397,12 +2385,9 @@ pub mod list_portfolios_output {
         /// To override the contents of this collection use [`set_portfolio_details`](Self::set_portfolio_details).
         ///
         /// <p>Information about the portfolios.</p>
-        pub fn portfolio_details(
-            mut self,
-            input: impl Into<crate::model::PortfolioDetail>,
-        ) -> Self {
+        pub fn portfolio_details(mut self, input: crate::model::PortfolioDetail) -> Self {
             let mut v = self.portfolio_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.portfolio_details = Some(v);
             self
         }
@@ -2571,12 +2556,9 @@ pub mod list_organization_portfolio_access_output {
         /// To override the contents of this collection use [`set_organization_nodes`](Self::set_organization_nodes).
         ///
         /// <p>Displays information about the organization nodes.</p>
-        pub fn organization_nodes(
-            mut self,
-            input: impl Into<crate::model::OrganizationNode>,
-        ) -> Self {
+        pub fn organization_nodes(mut self, input: crate::model::OrganizationNode) -> Self {
             let mut v = self.organization_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_nodes = Some(v);
             self
         }
@@ -2660,12 +2642,9 @@ pub mod list_launch_paths_output {
         /// To override the contents of this collection use [`set_launch_path_summaries`](Self::set_launch_path_summaries).
         ///
         /// <p>Information about the launch path.</p>
-        pub fn launch_path_summaries(
-            mut self,
-            input: impl Into<crate::model::LaunchPathSummary>,
-        ) -> Self {
+        pub fn launch_path_summaries(mut self, input: crate::model::LaunchPathSummary) -> Self {
             let mut v = self.launch_path_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_path_summaries = Some(v);
             self
         }
@@ -2749,12 +2728,9 @@ pub mod list_constraints_for_portfolio_output {
         /// To override the contents of this collection use [`set_constraint_details`](Self::set_constraint_details).
         ///
         /// <p>Information about the constraints.</p>
-        pub fn constraint_details(
-            mut self,
-            input: impl Into<crate::model::ConstraintDetail>,
-        ) -> Self {
+        pub fn constraint_details(mut self, input: crate::model::ConstraintDetail) -> Self {
             let mut v = self.constraint_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.constraint_details = Some(v);
             self
         }
@@ -2837,9 +2813,9 @@ pub mod list_budgets_for_resource_output {
         /// To override the contents of this collection use [`set_budgets`](Self::set_budgets).
         ///
         /// <p>Information about the associated budgets.</p>
-        pub fn budgets(mut self, input: impl Into<crate::model::BudgetDetail>) -> Self {
+        pub fn budgets(mut self, input: crate::model::BudgetDetail) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.budgets = Some(v);
             self
         }
@@ -2923,12 +2899,9 @@ pub mod list_accepted_portfolio_shares_output {
         /// To override the contents of this collection use [`set_portfolio_details`](Self::set_portfolio_details).
         ///
         /// <p>Information about the portfolios.</p>
-        pub fn portfolio_details(
-            mut self,
-            input: impl Into<crate::model::PortfolioDetail>,
-        ) -> Self {
+        pub fn portfolio_details(mut self, input: crate::model::PortfolioDetail) -> Self {
             let mut v = self.portfolio_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.portfolio_details = Some(v);
             self
         }
@@ -3071,9 +3044,9 @@ pub mod get_provisioned_product_outputs_output {
         ///
         /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
         /// </p>
-        pub fn outputs(mut self, input: impl Into<crate::model::RecordOutput>) -> Self {
+        pub fn outputs(mut self, input: crate::model::RecordOutput) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -3597,10 +3570,10 @@ pub mod describe_service_action_execution_parameters_output {
         /// <p>The parameters of the self-service action.</p>
         pub fn service_action_parameters(
             mut self,
-            input: impl Into<crate::model::ExecutionParameter>,
+            input: crate::model::ExecutionParameter,
         ) -> Self {
             let mut v = self.service_action_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_action_parameters = Some(v);
             self
         }
@@ -3751,9 +3724,9 @@ pub mod describe_record_output {
         ///
         /// <p>Information about the product created as the result of a request. For example, the output for  
         /// a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
-        pub fn record_outputs(mut self, input: impl Into<crate::model::RecordOutput>) -> Self {
+        pub fn record_outputs(mut self, input: crate::model::RecordOutput) -> Self {
             let mut v = self.record_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_outputs = Some(v);
             self
         }
@@ -3897,10 +3870,10 @@ pub mod describe_provisioning_parameters_output {
         /// <p>Information about the parameters used to provision the product.</p>
         pub fn provisioning_artifact_parameters(
             mut self,
-            input: impl Into<crate::model::ProvisioningArtifactParameter>,
+            input: crate::model::ProvisioningArtifactParameter,
         ) -> Self {
             let mut v = self.provisioning_artifact_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_artifact_parameters = Some(v);
             self
         }
@@ -3917,12 +3890,9 @@ pub mod describe_provisioning_parameters_output {
         /// To override the contents of this collection use [`set_constraint_summaries`](Self::set_constraint_summaries).
         ///
         /// <p>Information about the constraints used to provision the product.</p>
-        pub fn constraint_summaries(
-            mut self,
-            input: impl Into<crate::model::ConstraintSummary>,
-        ) -> Self {
+        pub fn constraint_summaries(mut self, input: crate::model::ConstraintSummary) -> Self {
             let mut v = self.constraint_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.constraint_summaries = Some(v);
             self
         }
@@ -3940,12 +3910,9 @@ pub mod describe_provisioning_parameters_output {
         ///
         /// <p>Any additional metadata specifically related to the provisioning of the product. For
         /// example, see the <code>Version</code> field of the CloudFormation template.</p>
-        pub fn usage_instructions(
-            mut self,
-            input: impl Into<crate::model::UsageInstruction>,
-        ) -> Self {
+        pub fn usage_instructions(mut self, input: crate::model::UsageInstruction) -> Self {
             let mut v = self.usage_instructions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_instructions = Some(v);
             self
         }
@@ -3963,9 +3930,9 @@ pub mod describe_provisioning_parameters_output {
         /// To override the contents of this collection use [`set_tag_options`](Self::set_tag_options).
         ///
         /// <p>Information about the TagOptions associated with the resource.</p>
-        pub fn tag_options(mut self, input: impl Into<crate::model::TagOptionSummary>) -> Self {
+        pub fn tag_options(mut self, input: crate::model::TagOptionSummary) -> Self {
             let mut v = self.tag_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_options = Some(v);
             self
         }
@@ -4000,10 +3967,10 @@ pub mod describe_provisioning_parameters_output {
         /// <p>The output of the provisioning artifact.</p>
         pub fn provisioning_artifact_outputs(
             mut self,
-            input: impl Into<crate::model::ProvisioningArtifactOutput>,
+            input: crate::model::ProvisioningArtifactOutput,
         ) -> Self {
             let mut v = self.provisioning_artifact_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_artifact_outputs = Some(v);
             self
         }
@@ -4234,9 +4201,9 @@ pub mod describe_provisioned_product_plan_output {
         /// To override the contents of this collection use [`set_resource_changes`](Self::set_resource_changes).
         ///
         /// <p>Information about the resource changes that will occur when the plan is executed.</p>
-        pub fn resource_changes(mut self, input: impl Into<crate::model::ResourceChange>) -> Self {
+        pub fn resource_changes(mut self, input: crate::model::ResourceChange) -> Self {
             let mut v = self.resource_changes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_changes = Some(v);
             self
         }
@@ -4346,12 +4313,9 @@ pub mod describe_provisioned_product_output {
         /// To override the contents of this collection use [`set_cloud_watch_dashboards`](Self::set_cloud_watch_dashboards).
         ///
         /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-        pub fn cloud_watch_dashboards(
-            mut self,
-            input: impl Into<crate::model::CloudWatchDashboard>,
-        ) -> Self {
+        pub fn cloud_watch_dashboards(mut self, input: crate::model::CloudWatchDashboard) -> Self {
             let mut v = self.cloud_watch_dashboards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_dashboards = Some(v);
             self
         }
@@ -4438,12 +4402,9 @@ pub mod describe_product_view_output {
         /// To override the contents of this collection use [`set_provisioning_artifacts`](Self::set_provisioning_artifacts).
         ///
         /// <p>Information about the provisioning artifacts for the product.</p>
-        pub fn provisioning_artifacts(
-            mut self,
-            input: impl Into<crate::model::ProvisioningArtifact>,
-        ) -> Self {
+        pub fn provisioning_artifacts(mut self, input: crate::model::ProvisioningArtifact) -> Self {
             let mut v = self.provisioning_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_artifacts = Some(v);
             self
         }
@@ -4559,10 +4520,10 @@ pub mod describe_product_as_admin_output {
         /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
         pub fn provisioning_artifact_summaries(
             mut self,
-            input: impl Into<crate::model::ProvisioningArtifactSummary>,
+            input: crate::model::ProvisioningArtifactSummary,
         ) -> Self {
             let mut v = self.provisioning_artifact_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_artifact_summaries = Some(v);
             self
         }
@@ -4579,9 +4540,9 @@ pub mod describe_product_as_admin_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags associated with the product.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4598,9 +4559,9 @@ pub mod describe_product_as_admin_output {
         /// To override the contents of this collection use [`set_tag_options`](Self::set_tag_options).
         ///
         /// <p>Information about the TagOptions associated with the product.</p>
-        pub fn tag_options(mut self, input: impl Into<crate::model::TagOptionDetail>) -> Self {
+        pub fn tag_options(mut self, input: crate::model::TagOptionDetail) -> Self {
             let mut v = self.tag_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_options = Some(v);
             self
         }
@@ -4617,9 +4578,9 @@ pub mod describe_product_as_admin_output {
         /// To override the contents of this collection use [`set_budgets`](Self::set_budgets).
         ///
         /// <p>Information about the associated budgets.</p>
-        pub fn budgets(mut self, input: impl Into<crate::model::BudgetDetail>) -> Self {
+        pub fn budgets(mut self, input: crate::model::BudgetDetail) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.budgets = Some(v);
             self
         }
@@ -4725,12 +4686,9 @@ pub mod describe_product_output {
         /// To override the contents of this collection use [`set_provisioning_artifacts`](Self::set_provisioning_artifacts).
         ///
         /// <p>Information about the provisioning artifacts for the specified product.</p>
-        pub fn provisioning_artifacts(
-            mut self,
-            input: impl Into<crate::model::ProvisioningArtifact>,
-        ) -> Self {
+        pub fn provisioning_artifacts(mut self, input: crate::model::ProvisioningArtifact) -> Self {
             let mut v = self.provisioning_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_artifacts = Some(v);
             self
         }
@@ -4747,9 +4705,9 @@ pub mod describe_product_output {
         /// To override the contents of this collection use [`set_budgets`](Self::set_budgets).
         ///
         /// <p>Information about the associated budgets.</p>
-        pub fn budgets(mut self, input: impl Into<crate::model::BudgetDetail>) -> Self {
+        pub fn budgets(mut self, input: crate::model::BudgetDetail) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.budgets = Some(v);
             self
         }
@@ -4766,9 +4724,9 @@ pub mod describe_product_output {
         /// To override the contents of this collection use [`set_launch_paths`](Self::set_launch_paths).
         ///
         /// <p>Information about the associated launch paths.</p>
-        pub fn launch_paths(mut self, input: impl Into<crate::model::LaunchPath>) -> Self {
+        pub fn launch_paths(mut self, input: crate::model::LaunchPath) -> Self {
             let mut v = self.launch_paths.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_paths = Some(v);
             self
         }
@@ -4998,10 +4956,10 @@ pub mod describe_portfolio_shares_output {
         /// <p>Summaries about each of the portfolio shares.</p>
         pub fn portfolio_share_details(
             mut self,
-            input: impl Into<crate::model::PortfolioShareDetail>,
+            input: crate::model::PortfolioShareDetail,
         ) -> Self {
             let mut v = self.portfolio_share_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.portfolio_share_details = Some(v);
             self
         }
@@ -5100,9 +5058,9 @@ pub mod describe_portfolio_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags associated with the portfolio.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5119,9 +5077,9 @@ pub mod describe_portfolio_output {
         /// To override the contents of this collection use [`set_tag_options`](Self::set_tag_options).
         ///
         /// <p>Information about the TagOptions associated with the portfolio.</p>
-        pub fn tag_options(mut self, input: impl Into<crate::model::TagOptionDetail>) -> Self {
+        pub fn tag_options(mut self, input: crate::model::TagOptionDetail) -> Self {
             let mut v = self.tag_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_options = Some(v);
             self
         }
@@ -5138,9 +5096,9 @@ pub mod describe_portfolio_output {
         /// To override the contents of this collection use [`set_budgets`](Self::set_budgets).
         ///
         /// <p>Information about the associated budgets.</p>
-        pub fn budgets(mut self, input: impl Into<crate::model::BudgetDetail>) -> Self {
+        pub fn budgets(mut self, input: crate::model::BudgetDetail) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.budgets = Some(v);
             self
         }
@@ -6143,9 +6101,9 @@ pub mod create_product_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags associated with the product.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6286,9 +6244,9 @@ pub mod create_portfolio_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags associated with the portfolio.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6515,10 +6473,10 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_output {
         /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
         pub fn failed_service_action_associations(
             mut self,
-            input: impl Into<crate::model::FailedServiceActionAssociation>,
+            input: crate::model::FailedServiceActionAssociation,
         ) -> Self {
             let mut v = self.failed_service_action_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_service_action_associations = Some(v);
             self
         }
@@ -6593,10 +6551,10 @@ pub mod batch_associate_service_action_with_provisioning_artifact_output {
         /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
         pub fn failed_service_action_associations(
             mut self,
-            input: impl Into<crate::model::FailedServiceActionAssociation>,
+            input: crate::model::FailedServiceActionAssociation,
         ) -> Self {
             let mut v = self.failed_service_action_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_service_action_associations = Some(v);
             self
         }

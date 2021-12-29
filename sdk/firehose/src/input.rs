@@ -250,9 +250,9 @@ pub mod create_delivery_stream_input {
         /// Tags</a> in the AWS Billing and Cost Management User Guide.</p>
         ///
         /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1409,9 +1409,9 @@ pub mod put_record_batch_input {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>One or more records.</p>
-        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -1933,9 +1933,9 @@ pub mod tag_delivery_stream_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of key-value pairs to use to create the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

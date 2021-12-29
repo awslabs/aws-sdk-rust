@@ -409,9 +409,9 @@ pub mod start_import_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags added to the imported bot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -625,12 +625,9 @@ pub mod put_slot_type_output {
         ///
         /// <p>A list of <code>EnumerationValue</code> objects that defines the
         /// values that the slot type can take.</p>
-        pub fn enumeration_values(
-            mut self,
-            input: impl Into<crate::model::EnumerationValue>,
-        ) -> Self {
+        pub fn enumeration_values(mut self, input: crate::model::EnumerationValue) -> Self {
             let mut v = self.enumeration_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enumeration_values = Some(v);
             self
         }
@@ -752,10 +749,10 @@ pub mod put_slot_type_output {
         /// type.</p>
         pub fn slot_type_configurations(
             mut self,
-            input: impl Into<crate::model::SlotTypeConfiguration>,
+            input: crate::model::SlotTypeConfiguration,
         ) -> Self {
             let mut v = self.slot_type_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_configurations = Some(v);
             self
         }
@@ -1040,9 +1037,9 @@ pub mod put_intent_output {
         ///
         /// <p>An array of intent slots that are configured for the
         /// intent.</p>
-        pub fn slots(mut self, input: impl Into<crate::model::Slot>) -> Self {
+        pub fn slots(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slots = Some(v);
             self
         }
@@ -1281,9 +1278,9 @@ pub mod put_intent_output {
         /// <p>An array of <code>InputContext</code> objects that lists the contexts
         /// that must be active for Amazon Lex to choose the intent in a conversation with
         /// the user.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -1303,9 +1300,9 @@ pub mod put_intent_output {
         ///
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts
         /// that the intent activates when the intent is fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -1552,9 +1549,9 @@ pub mod put_bot_alias_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with a bot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1930,9 +1927,9 @@ pub mod put_bot_output {
         ///
         /// <p>An array of <code>Intent</code> objects. For more information, see
         /// <a>PutBot</a>.</p>
-        pub fn intents(mut self, input: impl Into<crate::model::Intent>) -> Self {
+        pub fn intents(mut self, input: crate::model::Intent) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intents = Some(v);
             self
         }
@@ -2254,9 +2251,9 @@ pub mod put_bot_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the bot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2336,9 +2333,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2434,9 +2431,9 @@ pub mod get_utterances_view_output {
         /// maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex
         /// returns the most frequent utterances received by the bot in the last 15
         /// days.</p>
-        pub fn utterances(mut self, input: impl Into<crate::model::UtteranceList>) -> Self {
+        pub fn utterances(mut self, input: crate::model::UtteranceList) -> Self {
             let mut v = self.utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.utterances = Some(v);
             self
         }
@@ -2523,9 +2520,9 @@ pub mod get_slot_type_versions_output {
         /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each
         /// numbered version of the slot type plus one for the <code>$LATEST</code>
         /// version.</p>
-        pub fn slot_types(mut self, input: impl Into<crate::model::SlotTypeMetadata>) -> Self {
+        pub fn slot_types(mut self, input: crate::model::SlotTypeMetadata) -> Self {
             let mut v = self.slot_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_types = Some(v);
             self
         }
@@ -2623,9 +2620,9 @@ pub mod get_slot_types_output {
         /// <p>An array of objects, one for each slot type, that provides
         /// information such as the name of the slot type, the version, and a
         /// description.</p>
-        pub fn slot_types(mut self, input: impl Into<crate::model::SlotTypeMetadata>) -> Self {
+        pub fn slot_types(mut self, input: crate::model::SlotTypeMetadata) -> Self {
             let mut v = self.slot_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_types = Some(v);
             self
         }
@@ -2817,12 +2814,9 @@ pub mod get_slot_type_output {
         ///
         /// <p>A list of <code>EnumerationValue</code> objects that defines the
         /// values that the slot type can take.</p>
-        pub fn enumeration_values(
-            mut self,
-            input: impl Into<crate::model::EnumerationValue>,
-        ) -> Self {
+        pub fn enumeration_values(mut self, input: crate::model::EnumerationValue) -> Self {
             let mut v = self.enumeration_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enumeration_values = Some(v);
             self
         }
@@ -2924,10 +2918,10 @@ pub mod get_slot_type_output {
         /// type.</p>
         pub fn slot_type_configurations(
             mut self,
-            input: impl Into<crate::model::SlotTypeConfiguration>,
+            input: crate::model::SlotTypeConfiguration,
         ) -> Self {
             let mut v = self.slot_type_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_configurations = Some(v);
             self
         }
@@ -3020,12 +3014,9 @@ pub mod get_migrations_output {
         /// details of the migration, use the <code>migrationId</code> from the
         /// summary in a call to the
         /// operation.</p>
-        pub fn migration_summaries(
-            mut self,
-            input: impl Into<crate::model::MigrationSummary>,
-        ) -> Self {
+        pub fn migration_summaries(mut self, input: crate::model::MigrationSummary) -> Self {
             let mut v = self.migration_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.migration_summaries = Some(v);
             self
         }
@@ -3373,9 +3364,9 @@ pub mod get_migration_output {
         /// feature has a different implementation if Amazon Lex V2.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2
         /// developer guide</i>.</p>
-        pub fn alerts(mut self, input: impl Into<crate::model::MigrationAlert>) -> Self {
+        pub fn alerts(mut self, input: crate::model::MigrationAlert) -> Self {
             let mut v = self.alerts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alerts = Some(v);
             self
         }
@@ -3469,9 +3460,9 @@ pub mod get_intent_versions_output {
         /// <p>An array of <code>IntentMetadata</code> objects, one for each
         /// numbered version of the intent plus one for the <code>$LATEST</code>
         /// version.</p>
-        pub fn intents(mut self, input: impl Into<crate::model::IntentMetadata>) -> Self {
+        pub fn intents(mut self, input: crate::model::IntentMetadata) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intents = Some(v);
             self
         }
@@ -3566,9 +3557,9 @@ pub mod get_intents_output {
         ///
         /// <p>An array of <code>Intent</code> objects. For more information, see
         /// <a>PutBot</a>.</p>
-        pub fn intents(mut self, input: impl Into<crate::model::IntentMetadata>) -> Self {
+        pub fn intents(mut self, input: crate::model::IntentMetadata) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intents = Some(v);
             self
         }
@@ -3829,9 +3820,9 @@ pub mod get_intent_output {
         /// To override the contents of this collection use [`set_slots`](Self::set_slots).
         ///
         /// <p>An array of intent slots configured for the intent.</p>
-        pub fn slots(mut self, input: impl Into<crate::model::Slot>) -> Self {
+        pub fn slots(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slots = Some(v);
             self
         }
@@ -4041,9 +4032,9 @@ pub mod get_intent_output {
         /// <p>An array of <code>InputContext</code> objects that lists the contexts
         /// that must be active for Amazon Lex to choose the intent in a conversation with
         /// the user.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -4063,9 +4054,9 @@ pub mod get_intent_output {
         ///
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts
         /// that the intent activates when the intent is fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -4625,12 +4616,9 @@ pub mod get_builtin_slot_types_output {
         ///
         /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry
         /// for each slot type returned.</p>
-        pub fn slot_types(
-            mut self,
-            input: impl Into<crate::model::BuiltinSlotTypeMetadata>,
-        ) -> Self {
+        pub fn slot_types(mut self, input: crate::model::BuiltinSlotTypeMetadata) -> Self {
             let mut v = self.slot_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_types = Some(v);
             self
         }
@@ -4724,9 +4712,9 @@ pub mod get_builtin_intents_output {
         ///
         /// <p>An array of <code>builtinIntentMetadata</code> objects, one for
         /// each intent in the response.</p>
-        pub fn intents(mut self, input: impl Into<crate::model::BuiltinIntentMetadata>) -> Self {
+        pub fn intents(mut self, input: crate::model::BuiltinIntentMetadata) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intents = Some(v);
             self
         }
@@ -4833,9 +4821,9 @@ pub mod get_builtin_intent_output {
         /// To override the contents of this collection use [`set_supported_locales`](Self::set_supported_locales).
         ///
         /// <p>A list of locales that the intent supports.</p>
-        pub fn supported_locales(mut self, input: impl Into<crate::model::Locale>) -> Self {
+        pub fn supported_locales(mut self, input: crate::model::Locale) -> Self {
             let mut v = self.supported_locales.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_locales = Some(v);
             self
         }
@@ -4853,9 +4841,9 @@ pub mod get_builtin_intent_output {
         ///
         /// <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for
         /// each slot type in the intent.</p>
-        pub fn slots(mut self, input: impl Into<crate::model::BuiltinIntentSlot>) -> Self {
+        pub fn slots(mut self, input: crate::model::BuiltinIntentSlot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slots = Some(v);
             self
         }
@@ -4939,9 +4927,9 @@ pub mod get_bot_versions_output {
         /// <p>An array of <code>BotMetadata</code> objects, one for each numbered
         /// version of the bot plus one for the <code>$LATEST</code>
         /// version.</p>
-        pub fn bots(mut self, input: impl Into<crate::model::BotMetadata>) -> Self {
+        pub fn bots(mut self, input: crate::model::BotMetadata) -> Self {
             let mut v = self.bots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bots = Some(v);
             self
         }
@@ -5036,9 +5024,9 @@ pub mod get_bots_output {
         ///
         /// <p>An array of <code>botMetadata</code> objects, with one entry for
         /// each bot. </p>
-        pub fn bots(mut self, input: impl Into<crate::model::BotMetadata>) -> Self {
+        pub fn bots(mut self, input: crate::model::BotMetadata) -> Self {
             let mut v = self.bots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bots = Some(v);
             self
         }
@@ -5141,10 +5129,10 @@ pub mod get_bot_channel_associations_output {
         /// </p>
         pub fn bot_channel_associations(
             mut self,
-            input: impl Into<crate::model::BotChannelAssociation>,
+            input: crate::model::BotChannelAssociation,
         ) -> Self {
             let mut v = self.bot_channel_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_channel_associations = Some(v);
             self
         }
@@ -5573,9 +5561,9 @@ pub mod get_bot_aliases_output {
         ///
         /// <p>An array of <code>BotAliasMetadata</code> objects, each describing
         /// a bot alias.</p>
-        pub fn bot_aliases(mut self, input: impl Into<crate::model::BotAliasMetadata>) -> Self {
+        pub fn bot_aliases(mut self, input: crate::model::BotAliasMetadata) -> Self {
             let mut v = self.bot_aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_aliases = Some(v);
             self
         }
@@ -6139,9 +6127,9 @@ pub mod get_bot_output {
         ///
         /// <p>An array of <code>intent</code> objects. For more information, see
         /// <a>PutBot</a>.</p>
-        pub fn intents(mut self, input: impl Into<crate::model::Intent>) -> Self {
+        pub fn intents(mut self, input: crate::model::Intent) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intents = Some(v);
             self
         }
@@ -6882,12 +6870,9 @@ pub mod create_slot_type_version_output {
         ///
         /// <p>A list of <code>EnumerationValue</code> objects that defines the
         /// values that the slot type can take.</p>
-        pub fn enumeration_values(
-            mut self,
-            input: impl Into<crate::model::EnumerationValue>,
-        ) -> Self {
+        pub fn enumeration_values(mut self, input: crate::model::EnumerationValue) -> Self {
             let mut v = self.enumeration_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enumeration_values = Some(v);
             self
         }
@@ -6989,10 +6974,10 @@ pub mod create_slot_type_version_output {
         /// type.</p>
         pub fn slot_type_configurations(
             mut self,
-            input: impl Into<crate::model::SlotTypeConfiguration>,
+            input: crate::model::SlotTypeConfiguration,
         ) -> Self {
             let mut v = self.slot_type_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_configurations = Some(v);
             self
         }
@@ -7246,9 +7231,9 @@ pub mod create_intent_version_output {
         ///
         /// <p>An array of slot types that defines the information required to
         /// fulfill the intent.</p>
-        pub fn slots(mut self, input: impl Into<crate::model::Slot>) -> Self {
+        pub fn slots(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slots = Some(v);
             self
         }
@@ -7455,9 +7440,9 @@ pub mod create_intent_version_output {
         /// <p>An array of <code>InputContext</code> objects that lists the contexts
         /// that must be active for Amazon Lex to choose the intent in a conversation with
         /// the user.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -7477,9 +7462,9 @@ pub mod create_intent_version_output {
         ///
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts
         /// that the intent activates when the intent is fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -7792,9 +7777,9 @@ pub mod create_bot_version_output {
         ///
         /// <p>An array of <code>Intent</code> objects. For more information, see
         /// <a>PutBot</a>.</p>
-        pub fn intents(mut self, input: impl Into<crate::model::Intent>) -> Self {
+        pub fn intents(mut self, input: crate::model::Intent) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intents = Some(v);
             self
         }

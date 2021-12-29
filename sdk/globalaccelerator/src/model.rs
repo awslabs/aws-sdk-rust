@@ -144,9 +144,9 @@ pub mod byoip_cidr {
         ///
         /// <p>A history of status changes for an IP address range that you bring to AWS Global Accelerator
         /// through bring your own IP address (BYOIP).</p>
-        pub fn events(mut self, input: impl Into<crate::model::ByoipCidrEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::ByoipCidrEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -455,9 +455,9 @@ pub mod listener {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The list of port ranges for the connections from clients to the accelerator.</p>
-        pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_ranges = Some(v);
             self
         }
@@ -881,12 +881,9 @@ pub mod endpoint_group {
         /// To override the contents of this collection use [`set_endpoint_descriptions`](Self::set_endpoint_descriptions).
         ///
         /// <p>The list of endpoint objects.</p>
-        pub fn endpoint_descriptions(
-            mut self,
-            input: impl Into<crate::model::EndpointDescription>,
-        ) -> Self {
+        pub fn endpoint_descriptions(mut self, input: crate::model::EndpointDescription) -> Self {
             let mut v = self.endpoint_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_descriptions = Some(v);
             self
         }
@@ -995,9 +992,9 @@ pub mod endpoint_group {
         /// Using a port override lets you to map a list of external destination ports (that your
         /// users send traffic to) to a list of internal destination ports that you want an application
         /// endpoint to receive traffic on. </p>
-        pub fn port_overrides(mut self, input: impl Into<crate::model::PortOverride>) -> Self {
+        pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
             let mut v = self.port_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_overrides = Some(v);
             self
         }
@@ -1639,9 +1636,9 @@ pub mod custom_routing_listener {
         /// <p>The port range to support for connections from clients to your accelerator.</p>
         /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
         /// endpoints for custom routing accelerators</a>.</p>
-        pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_ranges = Some(v);
             self
         }
@@ -1967,9 +1964,9 @@ pub mod custom_routing_accelerator {
         /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
         ///
         /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
-        pub fn ip_sets(mut self, input: impl Into<crate::model::IpSet>) -> Self {
+        pub fn ip_sets(mut self, input: crate::model::IpSet) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_sets = Some(v);
             self
         }
@@ -2552,9 +2549,9 @@ pub mod accelerator {
         /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
         ///
         /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
-        pub fn ip_sets(mut self, input: impl Into<crate::model::IpSet>) -> Self {
+        pub fn ip_sets(mut self, input: crate::model::IpSet) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_sets = Some(v);
             self
         }
@@ -2978,12 +2975,9 @@ pub mod destination_port_mapping {
         ///
         /// <p>The IP address/port combinations (sockets) that map to a given destination socket
         /// address.</p>
-        pub fn accelerator_socket_addresses(
-            mut self,
-            input: impl Into<crate::model::SocketAddress>,
-        ) -> Self {
+        pub fn accelerator_socket_addresses(mut self, input: crate::model::SocketAddress) -> Self {
             let mut v = self.accelerator_socket_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_socket_addresses = Some(v);
             self
         }
@@ -3359,9 +3353,9 @@ pub mod port_mapping {
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
         /// <p>The protocols supported by the endpoint group.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::CustomRoutingProtocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::CustomRoutingProtocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -3566,10 +3560,10 @@ pub mod custom_routing_endpoint_group {
         /// (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
         pub fn destination_descriptions(
             mut self,
-            input: impl Into<crate::model::CustomRoutingDestinationDescription>,
+            input: crate::model::CustomRoutingDestinationDescription,
         ) -> Self {
             let mut v = self.destination_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_descriptions = Some(v);
             self
         }
@@ -3592,10 +3586,10 @@ pub mod custom_routing_endpoint_group {
         /// endpoint group to accept client traffic on.</p>
         pub fn endpoint_descriptions(
             mut self,
-            input: impl Into<crate::model::CustomRoutingEndpointDescription>,
+            input: crate::model::CustomRoutingEndpointDescription,
         ) -> Self {
             let mut v = self.endpoint_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_descriptions = Some(v);
             self
         }
@@ -3758,9 +3752,9 @@ pub mod custom_routing_destination_description {
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
         /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -3861,9 +3855,9 @@ pub mod custom_routing_destination_configuration {
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
         /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::CustomRoutingProtocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::CustomRoutingProtocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }

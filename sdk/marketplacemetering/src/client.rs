@@ -195,8 +195,8 @@ pub mod fluent_builders {
         ///
         /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at
         /// a time.</p>
-        pub fn usage_records(mut self, inp: impl Into<crate::model::UsageRecord>) -> Self {
-            self.inner = self.inner.usage_records(inp);
+        pub fn usage_records(mut self, input: crate::model::UsageRecord) -> Self {
+            self.inner = self.inner.usage_records(input);
             self
         }
         /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at
@@ -211,8 +211,8 @@ pub mod fluent_builders {
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
         /// code should be the same as the one used during the publishing of a new
         /// product.</p>
-        pub fn product_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_code(inp);
+        pub fn product_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_code(signature.into());
             self
         }
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
@@ -291,8 +291,8 @@ pub mod fluent_builders {
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
         /// code should be the same as the one used during the publishing of a new
         /// product.</p>
-        pub fn product_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_code(inp);
+        pub fn product_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_code(signature.into());
             self
         }
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
@@ -305,8 +305,8 @@ pub mod fluent_builders {
         /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
         /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
         /// the start of the software usage.</p>
-        pub fn timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.timestamp(inp);
+        pub fn timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.timestamp(signature);
             self
         }
         /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
@@ -321,8 +321,8 @@ pub mod fluent_builders {
         }
         /// <p>It will be one of the fcp dimension name provided during the publishing of the
         /// product.</p>
-        pub fn usage_dimension(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_dimension(inp);
+        pub fn usage_dimension(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_dimension(signature.into());
             self
         }
         /// <p>It will be one of the fcp dimension name provided during the publishing of the
@@ -336,8 +336,8 @@ pub mod fluent_builders {
         }
         /// <p>Consumption value for the hour. Defaults to <code>0</code> if not
         /// specified.</p>
-        pub fn usage_quantity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.usage_quantity(inp);
+        pub fn usage_quantity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.usage_quantity(signature);
             self
         }
         /// <p>Consumption value for the hour. Defaults to <code>0</code> if not
@@ -350,8 +350,8 @@ pub mod fluent_builders {
         /// the request. If you have the permissions, the request returns DryRunOperation;
         /// otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not
         /// specified.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Checks whether you have the permissions required for the action, but does not make
@@ -370,8 +370,8 @@ pub mod fluent_builders {
         /// <p>The sum of all UsageAllocation quantities must equal the
         /// UsageQuantity of the MeterUsage request, and each UsageAllocation must have a
         /// unique set of tags (include no tags).</p>
-        pub fn usage_allocations(mut self, inp: impl Into<crate::model::UsageAllocation>) -> Self {
-            self.inner = self.inner.usage_allocations(inp);
+        pub fn usage_allocations(mut self, input: crate::model::UsageAllocation) -> Self {
+            self.inner = self.inner.usage_allocations(input);
             self
         }
         /// <p>The set of UsageAllocations to submit.</p>
@@ -486,8 +486,8 @@ pub mod fluent_builders {
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
         /// code should be the same as the one used during the publishing of a new
         /// product.</p>
-        pub fn product_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_code(inp);
+        pub fn product_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_code(signature.into());
             self
         }
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
@@ -498,8 +498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Public Key Version provided by AWS Marketplace</p>
-        pub fn public_key_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.public_key_version(inp);
+        pub fn public_key_version(mut self, signature: i32) -> Self {
+            self.inner = self.inner.public_key_version(signature);
             self
         }
         /// <p>Public Key Version provided by AWS Marketplace</p>
@@ -509,8 +509,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) To scope down the registration to a specific running software instance
         /// and guard against replay attacks.</p>
-        pub fn nonce(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nonce(inp);
+        pub fn nonce(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nonce(signature.into());
             self
         }
         /// <p>(Optional) To scope down the registration to a specific running software instance
@@ -585,8 +585,8 @@ pub mod fluent_builders {
         /// <p>When a buyer visits your website during the registration process, the buyer submits
         /// a registration token through the browser. The registration token is resolved to obtain a
         /// CustomerIdentifier and product code.</p>
-        pub fn registration_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registration_token(inp);
+        pub fn registration_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registration_token(signature.into());
             self
         }
         /// <p>When a buyer visits your website during the registration process, the buyer submits

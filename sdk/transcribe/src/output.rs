@@ -735,12 +735,9 @@ pub mod list_vocabulary_filters_output {
         /// <p>The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
         /// filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter
         /// in the request set to the value of the <code>NextToken</code> field in the response.</p>
-        pub fn vocabulary_filters(
-            mut self,
-            input: impl Into<crate::model::VocabularyFilterInfo>,
-        ) -> Self {
+        pub fn vocabulary_filters(mut self, input: crate::model::VocabularyFilterInfo) -> Self {
             let mut v = self.vocabulary_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vocabulary_filters = Some(v);
             self
         }
@@ -855,9 +852,9 @@ pub mod list_vocabularies_output {
         /// To override the contents of this collection use [`set_vocabularies`](Self::set_vocabularies).
         ///
         /// <p>A list of objects that describe the vocabularies that match the search criteria in the request.</p>
-        pub fn vocabularies(mut self, input: impl Into<crate::model::VocabularyInfo>) -> Self {
+        pub fn vocabularies(mut self, input: crate::model::VocabularyInfo) -> Self {
             let mut v = self.vocabularies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vocabularies = Some(v);
             self
         }
@@ -980,10 +977,10 @@ pub mod list_transcription_jobs_output {
         /// <p>A list of objects containing summary information for a transcription job.</p>
         pub fn transcription_job_summaries(
             mut self,
-            input: impl Into<crate::model::TranscriptionJobSummary>,
+            input: crate::model::TranscriptionJobSummary,
         ) -> Self {
             let mut v = self.transcription_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transcription_job_summaries = Some(v);
             self
         }
@@ -1064,9 +1061,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Lists all tags associated with the given transcription job, vocabulary, or resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1183,9 +1180,9 @@ pub mod list_medical_vocabularies_output {
         /// To override the contents of this collection use [`set_vocabularies`](Self::set_vocabularies).
         ///
         /// <p>A list of objects that describe the vocabularies that match your search criteria.</p>
-        pub fn vocabularies(mut self, input: impl Into<crate::model::VocabularyInfo>) -> Self {
+        pub fn vocabularies(mut self, input: crate::model::VocabularyInfo) -> Self {
             let mut v = self.vocabularies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vocabularies = Some(v);
             self
         }
@@ -1308,10 +1305,10 @@ pub mod list_medical_transcription_jobs_output {
         /// <p>A list of objects containing summary information for a transcription job.</p>
         pub fn medical_transcription_job_summaries(
             mut self,
-            input: impl Into<crate::model::MedicalTranscriptionJobSummary>,
+            input: crate::model::MedicalTranscriptionJobSummary,
         ) -> Self {
             let mut v = self.medical_transcription_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.medical_transcription_job_summaries = Some(v);
             self
         }
@@ -1400,9 +1397,9 @@ pub mod list_language_models_output {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>A list of objects containing information about custom language models.</p>
-        pub fn models(mut self, input: impl Into<crate::model::LanguageModel>) -> Self {
+        pub fn models(mut self, input: crate::model::LanguageModel) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }
@@ -1532,10 +1529,10 @@ pub mod list_call_analytics_jobs_output {
         /// <p>A list of objects containing summary information for a transcription job.</p>
         pub fn call_analytics_job_summaries(
             mut self,
-            input: impl Into<crate::model::CallAnalyticsJobSummary>,
+            input: crate::model::CallAnalyticsJobSummary,
         ) -> Self {
             let mut v = self.call_analytics_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.call_analytics_job_summaries = Some(v);
             self
         }
@@ -1632,9 +1629,9 @@ pub mod list_call_analytics_categories_output {
         /// To override the contents of this collection use [`set_categories`](Self::set_categories).
         ///
         /// <p>A list of objects containing information about analytics categories.</p>
-        pub fn categories(mut self, input: impl Into<crate::model::CategoryProperties>) -> Self {
+        pub fn categories(mut self, input: crate::model::CategoryProperties) -> Self {
             let mut v = self.categories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categories = Some(v);
             self
         }

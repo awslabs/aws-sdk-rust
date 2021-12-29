@@ -556,9 +556,9 @@ pub mod list_types_output {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>The <code>Type</code> objects.</p>
-        pub fn types(mut self, input: impl Into<crate::model::Type>) -> Self {
+        pub fn types(mut self, input: crate::model::Type) -> Self {
             let mut v = self.types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.types = Some(v);
             self
         }
@@ -713,9 +713,9 @@ pub mod list_resolvers_by_function_output {
         /// To override the contents of this collection use [`set_resolvers`](Self::set_resolvers).
         ///
         /// <p>The list of resolvers.</p>
-        pub fn resolvers(mut self, input: impl Into<crate::model::Resolver>) -> Self {
+        pub fn resolvers(mut self, input: crate::model::Resolver) -> Self {
             let mut v = self.resolvers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolvers = Some(v);
             self
         }
@@ -797,9 +797,9 @@ pub mod list_resolvers_output {
         /// To override the contents of this collection use [`set_resolvers`](Self::set_resolvers).
         ///
         /// <p>The <code>Resolver</code> objects.</p>
-        pub fn resolvers(mut self, input: impl Into<crate::model::Resolver>) -> Self {
+        pub fn resolvers(mut self, input: crate::model::Resolver) -> Self {
             let mut v = self.resolvers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolvers = Some(v);
             self
         }
@@ -883,9 +883,9 @@ pub mod list_graphql_apis_output {
         /// To override the contents of this collection use [`set_graphql_apis`](Self::set_graphql_apis).
         ///
         /// <p>The <code>GraphqlApi</code> objects.</p>
-        pub fn graphql_apis(mut self, input: impl Into<crate::model::GraphqlApi>) -> Self {
+        pub fn graphql_apis(mut self, input: crate::model::GraphqlApi) -> Self {
             let mut v = self.graphql_apis.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.graphql_apis = Some(v);
             self
         }
@@ -970,9 +970,9 @@ pub mod list_functions_output {
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
         /// <p>A list of <code>Function</code> objects.</p>
-        pub fn functions(mut self, input: impl Into<crate::model::FunctionConfiguration>) -> Self {
+        pub fn functions(mut self, input: crate::model::FunctionConfiguration) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.functions = Some(v);
             self
         }
@@ -1056,9 +1056,9 @@ pub mod list_data_sources_output {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The <code>DataSource</code> objects.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -1142,9 +1142,9 @@ pub mod list_api_keys_output {
         /// To override the contents of this collection use [`set_api_keys`](Self::set_api_keys).
         ///
         /// <p>The <code>ApiKey</code> objects.</p>
-        pub fn api_keys(mut self, input: impl Into<crate::model::ApiKey>) -> Self {
+        pub fn api_keys(mut self, input: crate::model::ApiKey) -> Self {
             let mut v = self.api_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.api_keys = Some(v);
             self
         }

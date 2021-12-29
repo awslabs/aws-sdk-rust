@@ -531,9 +531,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags on the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -610,9 +610,9 @@ pub mod disassociate_file_system_aliases_output {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::Alias>) -> Self {
+        pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }
@@ -685,9 +685,9 @@ pub mod describe_volumes_output {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -781,10 +781,10 @@ pub mod describe_storage_virtual_machines_output {
         /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
         pub fn storage_virtual_machines(
             mut self,
-            input: impl Into<crate::model::StorageVirtualMachine>,
+            input: crate::model::StorageVirtualMachine,
         ) -> Self {
             let mut v = self.storage_virtual_machines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_virtual_machines = Some(v);
             self
         }
@@ -872,9 +872,9 @@ pub mod describe_snapshots_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>An array of snapshots.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -962,9 +962,9 @@ pub mod describe_file_systems_output {
         /// To override the contents of this collection use [`set_file_systems`](Self::set_file_systems).
         ///
         /// <p>An array of file system descriptions.</p>
-        pub fn file_systems(mut self, input: impl Into<crate::model::FileSystem>) -> Self {
+        pub fn file_systems(mut self, input: crate::model::FileSystem) -> Self {
             let mut v = self.file_systems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_systems = Some(v);
             self
         }
@@ -1052,9 +1052,9 @@ pub mod describe_file_system_aliases_output {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::Alias>) -> Self {
+        pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }
@@ -1145,12 +1145,9 @@ pub mod describe_data_repository_tasks_output {
         /// To override the contents of this collection use [`set_data_repository_tasks`](Self::set_data_repository_tasks).
         ///
         /// <p>The collection of data repository task descriptions returned.</p>
-        pub fn data_repository_tasks(
-            mut self,
-            input: impl Into<crate::model::DataRepositoryTask>,
-        ) -> Self {
+        pub fn data_repository_tasks(mut self, input: crate::model::DataRepositoryTask) -> Self {
             let mut v = self.data_repository_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_repository_tasks = Some(v);
             self
         }
@@ -1239,12 +1236,9 @@ pub mod describe_data_repository_associations_output {
         /// To override the contents of this collection use [`set_associations`](Self::set_associations).
         ///
         /// <p>An array of one ore more data repository association descriptions.</p>
-        pub fn associations(
-            mut self,
-            input: impl Into<crate::model::DataRepositoryAssociation>,
-        ) -> Self {
+        pub fn associations(mut self, input: crate::model::DataRepositoryAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associations = Some(v);
             self
         }
@@ -1332,9 +1326,9 @@ pub mod describe_backups_output {
         /// To override the contents of this collection use [`set_backups`](Self::set_backups).
         ///
         /// <p>An array of backups.</p>
-        pub fn backups(mut self, input: impl Into<crate::model::Backup>) -> Self {
+        pub fn backups(mut self, input: crate::model::Backup) -> Self {
             let mut v = self.backups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backups = Some(v);
             self
         }
@@ -2809,9 +2803,9 @@ pub mod associate_file_system_aliases_output {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::Alias>) -> Self {
+        pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }

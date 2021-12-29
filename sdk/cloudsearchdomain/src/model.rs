@@ -178,9 +178,9 @@ pub mod suggest_model {
         /// To override the contents of this collection use [`set_suggestions`](Self::set_suggestions).
         ///
         /// <p>The documents that match the query string.</p>
-        pub fn suggestions(mut self, input: impl Into<crate::model::SuggestionMatch>) -> Self {
+        pub fn suggestions(mut self, input: crate::model::SuggestionMatch) -> Self {
             let mut v = self.suggestions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suggestions = Some(v);
             self
         }
@@ -607,9 +607,9 @@ pub mod bucket_info {
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
         /// <p>A list of the calculated facet values and counts.</p>
-        pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
+        pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buckets = Some(v);
             self
         }
@@ -797,9 +797,9 @@ pub mod hits {
         /// To override the contents of this collection use [`set_hit`](Self::set_hit).
         ///
         /// <p>A document that matches the search request.</p>
-        pub fn hit(mut self, input: impl Into<crate::model::Hit>) -> Self {
+        pub fn hit(mut self, input: crate::model::Hit) -> Self {
             let mut v = self.hit.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hit = Some(v);
             self
         }
@@ -920,10 +920,10 @@ pub mod hit {
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.fields = Some(hash_map);
             self
         }

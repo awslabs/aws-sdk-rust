@@ -485,9 +485,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> Any tags associated with the resource. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -571,9 +571,9 @@ pub mod list_models_output {
         ///
         /// <p>Provides information on the specified model, including created time, model and dataset
         /// ARNs, and status. </p>
-        pub fn model_summaries(mut self, input: impl Into<crate::model::ModelSummary>) -> Self {
+        pub fn model_summaries(mut self, input: crate::model::ModelSummary) -> Self {
             let mut v = self.model_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_summaries = Some(v);
             self
         }
@@ -670,10 +670,10 @@ pub mod list_inference_schedulers_output {
         /// frequency, model name and ARN, and status. </p>
         pub fn inference_scheduler_summaries(
             mut self,
-            input: impl Into<crate::model::InferenceSchedulerSummary>,
+            input: crate::model::InferenceSchedulerSummary,
         ) -> Self {
             let mut v = self.inference_scheduler_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_scheduler_summaries = Some(v);
             self
         }
@@ -773,10 +773,10 @@ pub mod list_inference_executions_output {
         /// scheduler, data configuration, and so on. </p>
         pub fn inference_execution_summaries(
             mut self,
-            input: impl Into<crate::model::InferenceExecutionSummary>,
+            input: crate::model::InferenceExecutionSummary,
         ) -> Self {
             let mut v = self.inference_execution_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_execution_summaries = Some(v);
             self
         }
@@ -866,9 +866,9 @@ pub mod list_datasets_output {
         ///
         /// <p>Provides information about the specified dataset, including creation time, dataset ARN,
         /// and status. </p>
-        pub fn dataset_summaries(mut self, input: impl Into<crate::model::DatasetSummary>) -> Self {
+        pub fn dataset_summaries(mut self, input: crate::model::DatasetSummary) -> Self {
             let mut v = self.dataset_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_summaries = Some(v);
             self
         }
@@ -965,10 +965,10 @@ pub mod list_data_ingestion_jobs_output {
         /// status. </p>
         pub fn data_ingestion_job_summaries(
             mut self,
-            input: impl Into<crate::model::DataIngestionJobSummary>,
+            input: crate::model::DataIngestionJobSummary,
         ) -> Self {
             let mut v = self.data_ingestion_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_ingestion_job_summaries = Some(v);
             self
         }

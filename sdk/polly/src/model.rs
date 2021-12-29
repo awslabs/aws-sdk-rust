@@ -1165,9 +1165,9 @@ pub mod synthesis_task {
         /// To override the contents of this collection use [`set_speech_mark_types`](Self::set_speech_mark_types).
         ///
         /// <p>The type of speech marks returned for the input text.</p>
-        pub fn speech_mark_types(mut self, input: impl Into<crate::model::SpeechMarkType>) -> Self {
+        pub fn speech_mark_types(mut self, input: crate::model::SpeechMarkType) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.speech_mark_types = Some(v);
             self
         }
@@ -1811,12 +1811,9 @@ pub mod voice {
         /// because it was first used for that language. Since Aditi is bilingual and
         /// fluent in both Indian English and Hindi, this parameter would show the
         /// code <code>hi-IN</code>.</p>
-        pub fn additional_language_codes(
-            mut self,
-            input: impl Into<crate::model::LanguageCode>,
-        ) -> Self {
+        pub fn additional_language_codes(mut self, input: crate::model::LanguageCode) -> Self {
             let mut v = self.additional_language_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_language_codes = Some(v);
             self
         }
@@ -1839,9 +1836,9 @@ pub mod voice {
         ///
         /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>)
         /// that are supported by a given voice.</p>
-        pub fn supported_engines(mut self, input: impl Into<crate::model::Engine>) -> Self {
+        pub fn supported_engines(mut self, input: crate::model::Engine) -> Self {
             let mut v = self.supported_engines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_engines = Some(v);
             self
         }

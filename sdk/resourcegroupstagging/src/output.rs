@@ -53,10 +53,10 @@ pub mod untag_resources_output {
         pub fn failed_resources_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailureInfo>,
+            v: crate::model::FailureInfo,
         ) -> Self {
             let mut hash_map = self.failed_resources_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_resources_map = Some(hash_map);
             self
         }
@@ -142,10 +142,10 @@ pub mod tag_resources_output {
         pub fn failed_resources_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailureInfo>,
+            v: crate::model::FailureInfo,
         ) -> Self {
             let mut hash_map = self.failed_resources_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_resources_map = Some(hash_map);
             self
         }
@@ -469,10 +469,10 @@ pub mod get_resources_output {
         /// each.</p>
         pub fn resource_tag_mapping_list(
             mut self,
-            input: impl Into<crate::model::ResourceTagMapping>,
+            input: crate::model::ResourceTagMapping,
         ) -> Self {
             let mut v = self.resource_tag_mapping_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tag_mapping_list = Some(v);
             self
         }
@@ -547,9 +547,9 @@ pub mod get_compliance_summary_output {
         /// To override the contents of this collection use [`set_summary_list`](Self::set_summary_list).
         ///
         /// <p>A table that shows counts of noncompliant resources.</p>
-        pub fn summary_list(mut self, input: impl Into<crate::model::Summary>) -> Self {
+        pub fn summary_list(mut self, input: crate::model::Summary) -> Self {
             let mut v = self.summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_list = Some(v);
             self
         }

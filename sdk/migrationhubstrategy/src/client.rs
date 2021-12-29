@@ -304,8 +304,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-        pub fn application_component_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_component_id(inp);
+        pub fn application_component_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_component_id(signature.into());
             self
         }
         /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
@@ -378,8 +381,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-        pub fn application_component_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_component_id(inp);
+        pub fn application_component_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_component_id(signature.into());
             self
         }
         /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
@@ -451,8 +457,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</p>
@@ -522,8 +528,8 @@ pub mod fluent_builders {
         }
         /// <p> The ID of the import file task. This ID is returned in the response of
         /// <a>StartImportFileTask</a>. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p> The ID of the import file task. This ID is returned in the response of
@@ -715,8 +721,8 @@ pub mod fluent_builders {
         }
         /// <p> The recommendation report generation task <code>id</code> returned by
         /// <a>StartRecommendationReportGeneration</a>. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p> The recommendation report generation task <code>id</code> returned by
@@ -786,8 +792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the server. </p>
-        pub fn server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(inp);
+        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(signature.into());
             self
         }
         /// <p> The ID of the server. </p>
@@ -798,8 +804,8 @@ pub mod fluent_builders {
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
         /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
         /// with a token. You then use the returned token to retrieve the next set of 10. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
@@ -810,8 +816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
@@ -880,8 +886,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the server. </p>
-        pub fn server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(inp);
+        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(signature.into());
             self
         }
         /// <p> The ID of the server. </p>
@@ -952,9 +958,9 @@ pub mod fluent_builders {
         /// <p> Criteria for filtering the list of application components. </p>
         pub fn application_component_criteria(
             mut self,
-            inp: crate::model::ApplicationComponentCriteria,
+            signature: crate::model::ApplicationComponentCriteria,
         ) -> Self {
-            self.inner = self.inner.application_component_criteria(inp);
+            self.inner = self.inner.application_component_criteria(signature);
             self
         }
         /// <p> Criteria for filtering the list of application components. </p>
@@ -969,8 +975,8 @@ pub mod fluent_builders {
         /// <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and
         /// <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on
         /// server1. </p>
-        pub fn filter_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_value(inp);
+        pub fn filter_value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_value(signature.into());
             self
         }
         /// <p> Specify the value based on the application component criteria type. For example, if
@@ -983,8 +989,8 @@ pub mod fluent_builders {
         }
         /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
         /// (<code>DESC</code>) order. </p>
-        pub fn sort(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, signature: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort(signature);
             self
         }
         /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
@@ -998,8 +1004,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> The group ID specified in to filter on. </p>
-        pub fn group_id_filter(mut self, inp: impl Into<crate::model::Group>) -> Self {
-            self.inner = self.inner.group_id_filter(inp);
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
+            self.inner = self.inner.group_id_filter(input);
             self
         }
         /// <p> The group ID specified in to filter on. </p>
@@ -1013,8 +1019,8 @@ pub mod fluent_builders {
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
         /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
         /// with a token. You then use the returned token to retrieve the next set of 10. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
@@ -1025,8 +1031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
@@ -1097,8 +1103,8 @@ pub mod fluent_builders {
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
         /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
         /// with a token. You then use the returned token to retrieve the next set of 10. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
@@ -1109,8 +1115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
@@ -1181,8 +1187,8 @@ pub mod fluent_builders {
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
         /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
         /// with a token. You then use the returned token to retrieve the next set of 10. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
@@ -1193,8 +1199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The total number of items to return. The maximum value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> The total number of items to return. The maximum value is 100. </p>
@@ -1263,8 +1269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> Criteria for filtering servers. </p>
-        pub fn server_criteria(mut self, inp: crate::model::ServerCriteria) -> Self {
-            self.inner = self.inner.server_criteria(inp);
+        pub fn server_criteria(mut self, signature: crate::model::ServerCriteria) -> Self {
+            self.inner = self.inner.server_criteria(signature);
             self
         }
         /// <p> Criteria for filtering servers. </p>
@@ -1279,8 +1285,8 @@ pub mod fluent_builders {
         /// if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is
         /// equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers
         /// matching the OS name <code>WindowsServer</code>. </p>
-        pub fn filter_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_value(inp);
+        pub fn filter_value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_value(signature.into());
             self
         }
         /// <p> Specifies the filter value, which is based on the type of server criteria. For example,
@@ -1293,8 +1299,8 @@ pub mod fluent_builders {
         }
         /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
         /// (<code>DESC</code>) order. </p>
-        pub fn sort(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, signature: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort(signature);
             self
         }
         /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
@@ -1308,8 +1314,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> Specifies the group ID to filter on. </p>
-        pub fn group_id_filter(mut self, inp: impl Into<crate::model::Group>) -> Self {
-            self.inner = self.inner.group_id_filter(inp);
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
+            self.inner = self.inner.group_id_filter(input);
             self
         }
         /// <p> Specifies the group ID to filter on. </p>
@@ -1323,8 +1329,8 @@ pub mod fluent_builders {
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
         /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
         /// with a token. You then use the returned token to retrieve the next set of 10. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
@@ -1335,8 +1341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
@@ -1407,9 +1413,9 @@ pub mod fluent_builders {
         /// <p> The rank of the business goals based on priority. </p>
         pub fn prioritize_business_goals(
             mut self,
-            inp: crate::model::PrioritizeBusinessGoals,
+            signature: crate::model::PrioritizeBusinessGoals,
         ) -> Self {
-            self.inner = self.inner.prioritize_business_goals(inp);
+            self.inner = self.inner.prioritize_business_goals(signature);
             self
         }
         /// <p> The rank of the business goals based on priority. </p>
@@ -1423,9 +1429,9 @@ pub mod fluent_builders {
         /// <p> The transformation preferences for non-database applications. </p>
         pub fn application_preferences(
             mut self,
-            inp: crate::model::ApplicationPreferences,
+            signature: crate::model::ApplicationPreferences,
         ) -> Self {
-            self.inner = self.inner.application_preferences(inp);
+            self.inner = self.inner.application_preferences(signature);
             self
         }
         /// <p> The transformation preferences for non-database applications. </p>
@@ -1437,8 +1443,11 @@ pub mod fluent_builders {
             self
         }
         /// <p> The transformation preferences for database applications. </p>
-        pub fn database_preferences(mut self, inp: crate::model::DatabasePreferences) -> Self {
-            self.inner = self.inner.database_preferences(inp);
+        pub fn database_preferences(
+            mut self,
+            signature: crate::model::DatabasePreferences,
+        ) -> Self {
+            self.inner = self.inner.database_preferences(signature);
             self
         }
         /// <p> The transformation preferences for database applications. </p>
@@ -1513,8 +1522,11 @@ pub mod fluent_builders {
         /// The S3 bucket used by the collectors to send analysis data to the service.
         /// The bucket name must begin with <code>migrationhub-strategy-</code>.
         /// </p>
-        pub fn s3bucket_for_analysis_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3bucket_for_analysis_data(inp);
+        pub fn s3bucket_for_analysis_data(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.s3bucket_for_analysis_data(signature.into());
             self
         }
         /// <p>
@@ -1532,8 +1544,11 @@ pub mod fluent_builders {
         /// The S3 bucket where all the reports generated by the service are stored.
         /// The bucket name must begin with <code>migrationhub-strategy-</code>.
         /// </p>
-        pub fn s3bucket_for_report_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3bucket_for_report_data(inp);
+        pub fn s3bucket_for_report_data(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.s3bucket_for_report_data(signature.into());
             self
         }
         /// <p>
@@ -1608,8 +1623,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> A descriptive name for the request. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p> A descriptive name for the request. </p>
@@ -1619,8 +1634,8 @@ pub mod fluent_builders {
         }
         /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with
         /// <code>migrationhub-strategy-</code>.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(inp);
+        pub fn s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(signature.into());
             self
         }
         /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with
@@ -1630,8 +1645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The Amazon S3 key name of the import file. </p>
-        pub fn s3key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3key(inp);
+        pub fn s3key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3key(signature.into());
             self
         }
         /// <p> The Amazon S3 key name of the import file. </p>
@@ -1641,8 +1656,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that
         /// the servers specified in the import file are available in AWS Application Discovery Service. </p>
-        pub fn data_source_type(mut self, inp: crate::model::DataSourceType) -> Self {
-            self.inner = self.inner.data_source_type(inp);
+        pub fn data_source_type(mut self, signature: crate::model::DataSourceType) -> Self {
+            self.inner = self.inner.data_source_type(signature);
             self
         }
         /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that
@@ -1660,8 +1675,8 @@ pub mod fluent_builders {
         ///
         /// <p>Groups the resources in the import file together with a unique name. This ID can be as
         /// filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
-        pub fn group_id(mut self, inp: impl Into<crate::model::Group>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: crate::model::Group) -> Self {
+            self.inner = self.inner.group_id(input);
             self
         }
         /// <p>Groups the resources in the import file together with a unique name. This ID can be as
@@ -1675,8 +1690,11 @@ pub mod fluent_builders {
         }
         /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to
         /// begin with migrationhub-strategy-. </p>
-        pub fn s3bucket_for_report_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3bucket_for_report_data(inp);
+        pub fn s3bucket_for_report_data(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.s3bucket_for_report_data(signature.into());
             self
         }
         /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to
@@ -1751,8 +1769,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
-        pub fn output_format(mut self, inp: crate::model::OutputFormat) -> Self {
-            self.inner = self.inner.output_format(inp);
+        pub fn output_format(mut self, signature: crate::model::OutputFormat) -> Self {
+            self.inner = self.inner.output_format(signature);
             self
         }
         /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
@@ -1768,8 +1786,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> Groups the resources in the recommendation report with a unique name. </p>
-        pub fn group_id_filter(mut self, inp: impl Into<crate::model::Group>) -> Self {
-            self.inner = self.inner.group_id_filter(inp);
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
+            self.inner = self.inner.group_id_filter(input);
             self
         }
         /// <p> Groups the resources in the recommendation report with a unique name. </p>
@@ -1841,8 +1859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The <code>assessmentId</code> returned by <a>StartAssessment</a>. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(signature.into());
             self
         }
         /// <p> The <code>assessmentId</code> returned by <a>StartAssessment</a>. </p>
@@ -1914,8 +1932,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-        pub fn application_component_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_component_id(inp);
+        pub fn application_component_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_component_id(signature.into());
             self
         }
         /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
@@ -1928,8 +1949,8 @@ pub mod fluent_builders {
         }
         /// <p> Indicates whether the application component has been included for server recommendation
         /// or not. </p>
-        pub fn inclusion_status(mut self, inp: crate::model::InclusionStatus) -> Self {
-            self.inner = self.inner.inclusion_status(inp);
+        pub fn inclusion_status(mut self, signature: crate::model::InclusionStatus) -> Self {
+            self.inner = self.inner.inclusion_status(signature);
             self
         }
         /// <p> Indicates whether the application component has been included for server recommendation
@@ -1942,8 +1963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The preferred strategy options for the application component. Use values from the <a>GetApplicationComponentStrategies</a> response. </p>
-        pub fn strategy_option(mut self, inp: crate::model::StrategyOption) -> Self {
-            self.inner = self.inner.strategy_option(inp);
+        pub fn strategy_option(mut self, signature: crate::model::StrategyOption) -> Self {
+            self.inner = self.inner.strategy_option(signature);
             self
         }
         /// <p> The preferred strategy options for the application component. Use values from the <a>GetApplicationComponentStrategies</a> response. </p>
@@ -1959,8 +1980,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_source_code_list`](Self::set_source_code_list).
         ///
         /// <p> The list of source code configurations to update for the application component. </p>
-        pub fn source_code_list(mut self, inp: impl Into<crate::model::SourceCode>) -> Self {
-            self.inner = self.inner.source_code_list(inp);
+        pub fn source_code_list(mut self, input: crate::model::SourceCode) -> Self {
+            self.inner = self.inner.source_code_list(input);
             self
         }
         /// <p> The list of source code configurations to update for the application component. </p>
@@ -1972,8 +1993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Database credentials. </p>
-        pub fn secrets_manager_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secrets_manager_key(inp);
+        pub fn secrets_manager_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secrets_manager_key(signature.into());
             self
         }
         /// <p> Database credentials. </p>
@@ -2045,8 +2066,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the server. </p>
-        pub fn server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(inp);
+        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(signature.into());
             self
         }
         /// <p> The ID of the server. </p>
@@ -2055,8 +2076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The preferred strategy options for the application component. See the response from <a>GetServerStrategies</a>.</p>
-        pub fn strategy_option(mut self, inp: crate::model::StrategyOption) -> Self {
-            self.inner = self.inner.strategy_option(inp);
+        pub fn strategy_option(mut self, signature: crate::model::StrategyOption) -> Self {
+            self.inner = self.inner.strategy_option(signature);
             self
         }
         /// <p> The preferred strategy options for the application component. See the response from <a>GetServerStrategies</a>.</p>

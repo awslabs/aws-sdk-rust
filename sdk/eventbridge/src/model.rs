@@ -310,12 +310,9 @@ pub mod connection_http_parameters {
         /// To override the contents of this collection use [`set_header_parameters`](Self::set_header_parameters).
         ///
         /// <p>Contains additional header parameters for the connection.</p>
-        pub fn header_parameters(
-            mut self,
-            input: impl Into<crate::model::ConnectionHeaderParameter>,
-        ) -> Self {
+        pub fn header_parameters(mut self, input: crate::model::ConnectionHeaderParameter) -> Self {
             let mut v = self.header_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.header_parameters = Some(v);
             self
         }
@@ -334,10 +331,10 @@ pub mod connection_http_parameters {
         /// <p>Contains additional query string parameters for the connection.</p>
         pub fn query_string_parameters(
             mut self,
-            input: impl Into<crate::model::ConnectionQueryStringParameter>,
+            input: crate::model::ConnectionQueryStringParameter,
         ) -> Self {
             let mut v = self.query_string_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_string_parameters = Some(v);
             self
         }
@@ -354,12 +351,9 @@ pub mod connection_http_parameters {
         /// To override the contents of this collection use [`set_body_parameters`](Self::set_body_parameters).
         ///
         /// <p>Contains additional body string parameters for the connection.</p>
-        pub fn body_parameters(
-            mut self,
-            input: impl Into<crate::model::ConnectionBodyParameter>,
-        ) -> Self {
+        pub fn body_parameters(mut self, input: crate::model::ConnectionBodyParameter) -> Self {
             let mut v = self.body_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.body_parameters = Some(v);
             self
         }
@@ -2516,10 +2510,10 @@ pub mod sage_maker_pipeline_parameters {
         /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
         pub fn pipeline_parameter_list(
             mut self,
-            input: impl Into<crate::model::SageMakerPipelineParameter>,
+            input: crate::model::SageMakerPipelineParameter,
         ) -> Self {
             let mut v = self.pipeline_parameter_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_parameter_list = Some(v);
             self
         }
@@ -3583,10 +3577,10 @@ pub mod ecs_parameters {
         /// specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
         pub fn capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_provider_strategy = Some(v);
             self
         }
@@ -3636,12 +3630,9 @@ pub mod ecs_parameters {
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
         /// constraints per task (including constraints in the task definition and those specified at
         /// runtime).</p>
-        pub fn placement_constraints(
-            mut self,
-            input: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_constraints = Some(v);
             self
         }
@@ -3661,12 +3652,9 @@ pub mod ecs_parameters {
         ///
         /// <p>The placement strategy objects to use for the task. You can specify a maximum of five
         /// strategy rules per task. </p>
-        pub fn placement_strategy(
-            mut self,
-            input: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_strategy = Some(v);
             self
         }
@@ -3712,9 +3700,9 @@ pub mod ecs_parameters {
         ///
         /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag
         /// consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4590,12 +4578,9 @@ pub mod run_command_parameters {
         ///
         /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an
         /// array of InstanceIds or a tag.</p>
-        pub fn run_command_targets(
-            mut self,
-            input: impl Into<crate::model::RunCommandTarget>,
-        ) -> Self {
+        pub fn run_command_targets(mut self, input: crate::model::RunCommandTarget) -> Self {
             let mut v = self.run_command_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.run_command_targets = Some(v);
             self
         }

@@ -1591,9 +1591,9 @@ pub mod connection {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1663,9 +1663,9 @@ pub mod connection {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -2169,12 +2169,12 @@ pub mod direct_connect_gateway_association {
         /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
         pub fn allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
@@ -3642,12 +3642,9 @@ pub mod virtual_interface {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -3664,9 +3661,9 @@ pub mod virtual_interface {
         /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
         ///
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn bgp_peers(mut self, input: impl Into<crate::model::BgpPeer>) -> Self {
+        pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bgp_peers = Some(v);
             self
         }
@@ -3721,9 +3718,9 @@ pub mod virtual_interface {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3988,9 +3985,9 @@ pub mod resource_tag {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4884,9 +4881,9 @@ pub mod lag {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>The connections bundled by the LAG.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -4936,9 +4933,9 @@ pub mod lag {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the LAG.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4993,9 +4990,9 @@ pub mod lag {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -5469,9 +5466,9 @@ pub mod interconnect {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the interconnect.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6323,12 +6320,12 @@ pub mod direct_connect_gateway_association_proposal {
         /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
         pub fn existing_allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .existing_allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.existing_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
@@ -6347,12 +6344,12 @@ pub mod direct_connect_gateway_association_proposal {
         /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
         pub fn requested_allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .requested_allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requested_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
@@ -6808,9 +6805,9 @@ pub mod new_transit_virtual_interface {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the transitive virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7042,12 +7039,9 @@ pub mod new_public_virtual_interface {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -7064,9 +7058,9 @@ pub mod new_public_virtual_interface {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the public virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7345,9 +7339,9 @@ pub mod new_private_virtual_interface {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the private virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7728,9 +7722,9 @@ pub mod new_transit_virtual_interface_allocation {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the transitive virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7950,12 +7944,9 @@ pub mod new_public_virtual_interface_allocation {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -7972,9 +7963,9 @@ pub mod new_public_virtual_interface_allocation {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the public virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8203,9 +8194,9 @@ pub mod new_private_virtual_interface_allocation {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the private virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -2135,11 +2135,11 @@ pub mod self_managed_event_source {
         /// ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
         pub fn endpoints(
             mut self,
-            k: impl Into<crate::model::EndPointType>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::EndPointType,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.endpoints.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.endpoints = Some(hash_map);
             self
         }
@@ -2593,9 +2593,9 @@ pub mod filter_criteria {
         /// <p>
         /// A list of filters.
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3175,10 +3175,10 @@ pub mod alias_routing_configuration {
         pub fn additional_version_weights(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<f64>,
+            v: f64,
         ) -> Self {
             let mut hash_map = self.additional_version_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.additional_version_weights = Some(hash_map);
             self
         }
@@ -4043,9 +4043,9 @@ pub mod function_configuration {
         ///
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
         /// layers</a>.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -4144,12 +4144,9 @@ pub mod function_configuration {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }
@@ -4222,9 +4219,9 @@ pub mod function_configuration {
         ///
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
         /// valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -4610,9 +4607,9 @@ pub mod layer_versions_list_item {
         /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
         ///
         /// <p>The layer's compatible runtimes.</p>
-        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_runtimes = Some(v);
             self
         }
@@ -4640,12 +4637,9 @@ pub mod layer_versions_list_item {
         ///
         /// <p>A list of compatible  
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn compatible_architectures(
-            mut self,
-            input: impl Into<crate::model::Architecture>,
-        ) -> Self {
+        pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
@@ -5541,10 +5535,10 @@ pub mod event_source_mapping_configuration {
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            input: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_access_configurations = Some(v);
             self
         }
@@ -5629,10 +5623,10 @@ pub mod event_source_mapping_configuration {
         /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            input: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_response_types = Some(v);
             self
         }

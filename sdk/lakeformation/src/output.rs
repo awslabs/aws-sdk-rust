@@ -306,9 +306,9 @@ pub mod search_tables_by_lf_tags_output {
         /// To override the contents of this collection use [`set_table_list`](Self::set_table_list).
         ///
         /// <p>A list of tables that meet the LF-tag conditions.</p>
-        pub fn table_list(mut self, input: impl Into<crate::model::TaggedTable>) -> Self {
+        pub fn table_list(mut self, input: crate::model::TaggedTable) -> Self {
             let mut v = self.table_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_list = Some(v);
             self
         }
@@ -388,9 +388,9 @@ pub mod search_databases_by_lf_tags_output {
         /// To override the contents of this collection use [`set_database_list`](Self::set_database_list).
         ///
         /// <p>A list of databases that meet the LF-tag conditions.</p>
-        pub fn database_list(mut self, input: impl Into<crate::model::TaggedDatabase>) -> Self {
+        pub fn database_list(mut self, input: crate::model::TaggedDatabase) -> Self {
             let mut v = self.database_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_list = Some(v);
             self
         }
@@ -482,9 +482,9 @@ pub mod remove_lf_tags_from_resource_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>A list of failures to untag a resource.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::LfTagError>) -> Self {
+        pub fn failures(mut self, input: crate::model::LfTagError) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -614,12 +614,9 @@ pub mod list_transactions_output {
         /// To override the contents of this collection use [`set_transactions`](Self::set_transactions).
         ///
         /// <p>A list of transactions. The record for each transaction is a <code>TransactionDescription</code> object.</p>
-        pub fn transactions(
-            mut self,
-            input: impl Into<crate::model::TransactionDescription>,
-        ) -> Self {
+        pub fn transactions(mut self, input: crate::model::TransactionDescription) -> Self {
             let mut v = self.transactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transactions = Some(v);
             self
         }
@@ -700,12 +697,9 @@ pub mod list_table_storage_optimizers_output {
         /// To override the contents of this collection use [`set_storage_optimizer_list`](Self::set_storage_optimizer_list).
         ///
         /// <p>A list of the storage optimizers associated with a table.</p>
-        pub fn storage_optimizer_list(
-            mut self,
-            input: impl Into<crate::model::StorageOptimizer>,
-        ) -> Self {
+        pub fn storage_optimizer_list(mut self, input: crate::model::StorageOptimizer) -> Self {
             let mut v = self.storage_optimizer_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_optimizer_list = Some(v);
             self
         }
@@ -786,9 +780,9 @@ pub mod list_resources_output {
         /// To override the contents of this collection use [`set_resource_info_list`](Self::set_resource_info_list).
         ///
         /// <p>A summary of the data lake resources.</p>
-        pub fn resource_info_list(mut self, input: impl Into<crate::model::ResourceInfo>) -> Self {
+        pub fn resource_info_list(mut self, input: crate::model::ResourceInfo) -> Self {
             let mut v = self.resource_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_info_list = Some(v);
             self
         }
@@ -877,10 +871,10 @@ pub mod list_permissions_output {
         /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
         pub fn principal_resource_permissions(
             mut self,
-            input: impl Into<crate::model::PrincipalResourcePermissions>,
+            input: crate::model::PrincipalResourcePermissions,
         ) -> Self {
             let mut v = self.principal_resource_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principal_resource_permissions = Some(v);
             self
         }
@@ -960,9 +954,9 @@ pub mod list_lf_tags_output {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>A list of LF-tags that the requested has permission to view.</p>
-        pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags = Some(v);
             self
         }
@@ -1043,12 +1037,9 @@ pub mod list_data_cells_filter_output {
         /// To override the contents of this collection use [`set_data_cells_filters`](Self::set_data_cells_filters).
         ///
         /// <p>A list of <code>DataCellFilter</code> structures.</p>
-        pub fn data_cells_filters(
-            mut self,
-            input: impl Into<crate::model::DataCellsFilter>,
-        ) -> Self {
+        pub fn data_cells_filters(mut self, input: crate::model::DataCellsFilter) -> Self {
             let mut v = self.data_cells_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_cells_filters = Some(v);
             self
         }
@@ -1187,9 +1178,9 @@ pub mod get_work_units_output {
         /// To override the contents of this collection use [`set_work_unit_ranges`](Self::set_work_unit_ranges).
         ///
         /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-        pub fn work_unit_ranges(mut self, input: impl Into<crate::model::WorkUnitRange>) -> Self {
+        pub fn work_unit_ranges(mut self, input: crate::model::WorkUnitRange) -> Self {
             let mut v = self.work_unit_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.work_unit_ranges = Some(v);
             self
         }
@@ -1316,9 +1307,9 @@ pub mod get_table_objects_output {
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>A list of objects organized by partition keys.</p>
-        pub fn objects(mut self, input: impl Into<crate::model::PartitionObjects>) -> Self {
+        pub fn objects(mut self, input: crate::model::PartitionObjects) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.objects = Some(v);
             self
         }
@@ -1407,9 +1398,9 @@ pub mod get_resource_lf_tags_output {
         /// To override the contents of this collection use [`set_lf_tag_on_database`](Self::set_lf_tag_on_database).
         ///
         /// <p>A list of LF-tags applied to a database resource.</p>
-        pub fn lf_tag_on_database(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tag_on_database(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tag_on_database.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tag_on_database = Some(v);
             self
         }
@@ -1426,9 +1417,9 @@ pub mod get_resource_lf_tags_output {
         /// To override the contents of this collection use [`set_lf_tags_on_table`](Self::set_lf_tags_on_table).
         ///
         /// <p>A list of LF-tags applied to a table resource.</p>
-        pub fn lf_tags_on_table(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags_on_table(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags_on_table.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags_on_table = Some(v);
             self
         }
@@ -1445,9 +1436,9 @@ pub mod get_resource_lf_tags_output {
         /// To override the contents of this collection use [`set_lf_tags_on_columns`](Self::set_lf_tags_on_columns).
         ///
         /// <p>A list of LF-tags applied to a column resource.</p>
-        pub fn lf_tags_on_columns(mut self, input: impl Into<crate::model::ColumnLfTag>) -> Self {
+        pub fn lf_tags_on_columns(mut self, input: crate::model::ColumnLfTag) -> Self {
             let mut v = self.lf_tags_on_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags_on_columns = Some(v);
             self
         }
@@ -1859,12 +1850,9 @@ pub mod get_effective_permissions_for_path_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
-        pub fn permissions(
-            mut self,
-            input: impl Into<crate::model::PrincipalResourcePermissions>,
-        ) -> Self {
+        pub fn permissions(mut self, input: crate::model::PrincipalResourcePermissions) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -2411,12 +2399,9 @@ pub mod batch_revoke_permissions_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>A list of failures to revoke permissions to the resources.</p>
-        pub fn failures(
-            mut self,
-            input: impl Into<crate::model::BatchPermissionsFailureEntry>,
-        ) -> Self {
+        pub fn failures(mut self, input: crate::model::BatchPermissionsFailureEntry) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -2478,12 +2463,9 @@ pub mod batch_grant_permissions_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>A list of failures to grant permissions to the resources.</p>
-        pub fn failures(
-            mut self,
-            input: impl Into<crate::model::BatchPermissionsFailureEntry>,
-        ) -> Self {
+        pub fn failures(mut self, input: crate::model::BatchPermissionsFailureEntry) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -2544,9 +2526,9 @@ pub mod add_lf_tags_to_resource_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>A list of failures to tag the resource.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::LfTagError>) -> Self {
+        pub fn failures(mut self, input: crate::model::LfTagError) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }

@@ -533,9 +533,9 @@ pub mod list_change_sets_input {
         /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
         ///
         /// <p>An array of filter objects.</p>
-        pub fn filter_list(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filter_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_list = Some(v);
             self
         }
@@ -761,9 +761,9 @@ pub mod list_entities_input {
         ///
         /// <p>An array of filter objects. Each filter object contains two attributes,
         /// <code>filterName</code> and <code>filterValues</code>.</p>
-        pub fn filter_list(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filter_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_list = Some(v);
             self
         }
@@ -973,9 +973,9 @@ pub mod start_change_set_input {
         /// To override the contents of this collection use [`set_change_set`](Self::set_change_set).
         ///
         /// <p>Array of <code>change</code> object.</p>
-        pub fn change_set(mut self, input: impl Into<crate::model::Change>) -> Self {
+        pub fn change_set(mut self, input: crate::model::Change) -> Self {
             let mut v = self.change_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.change_set = Some(v);
             self
         }

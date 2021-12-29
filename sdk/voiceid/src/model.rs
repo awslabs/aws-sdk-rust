@@ -3320,9 +3320,9 @@ pub mod fraud_detection_result {
         /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud
         /// detection Decision is <code>HIGH_RISK</code>, and only has one possible value:
         /// <code>KNOWN_FRAUDSTER</code>.</p>
-        pub fn reasons(mut self, input: impl Into<crate::model::FraudDetectionReason>) -> Self {
+        pub fn reasons(mut self, input: crate::model::FraudDetectionReason) -> Self {
             let mut v = self.reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reasons = Some(v);
             self
         }

@@ -463,9 +463,9 @@ pub mod list_flows_output {
         /// To override the contents of this collection use [`set_flows`](Self::set_flows).
         ///
         /// <p> The list of flows associated with your account. </p>
-        pub fn flows(mut self, input: impl Into<crate::model::FlowDefinition>) -> Self {
+        pub fn flows(mut self, input: crate::model::FlowDefinition) -> Self {
             let mut v = self.flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.flows = Some(v);
             self
         }
@@ -563,10 +563,10 @@ pub mod list_connector_entities_output {
         pub fn connector_entity_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ConnectorEntity>>,
+            v: std::vec::Vec<crate::model::ConnectorEntity>,
         ) -> Self {
             let mut hash_map = self.connector_entity_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.connector_entity_map = Some(hash_map);
             self
         }
@@ -643,9 +643,9 @@ pub mod describe_flow_execution_records_output {
         /// To override the contents of this collection use [`set_flow_executions`](Self::set_flow_executions).
         ///
         /// <p> Returns a list of all instances when this flow was run. </p>
-        pub fn flow_executions(mut self, input: impl Into<crate::model::ExecutionRecord>) -> Self {
+        pub fn flow_executions(mut self, input: crate::model::ExecutionRecord) -> Self {
             let mut v = self.flow_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.flow_executions = Some(v);
             self
         }
@@ -965,10 +965,10 @@ pub mod describe_flow_output {
         /// connector. </p>
         pub fn destination_flow_config_list(
             mut self,
-            input: impl Into<crate::model::DestinationFlowConfig>,
+            input: crate::model::DestinationFlowConfig,
         ) -> Self {
             let mut v = self.destination_flow_config_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_flow_config_list = Some(v);
             self
         }
@@ -1013,9 +1013,9 @@ pub mod describe_flow_output {
         ///
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
         /// </p>
-        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -1193,11 +1193,11 @@ pub mod describe_connectors_output {
         /// <p> The configuration that is applied to the connectors used in the flow. </p>
         pub fn connector_configurations(
             mut self,
-            k: impl Into<crate::model::ConnectorType>,
-            v: impl Into<crate::model::ConnectorConfiguration>,
+            k: crate::model::ConnectorType,
+            v: crate::model::ConnectorConfiguration,
         ) -> Self {
             let mut hash_map = self.connector_configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.connector_configurations = Some(hash_map);
             self
         }
@@ -1288,12 +1288,9 @@ pub mod describe_connector_profiles_output {
         /// To override the contents of this collection use [`set_connector_profile_details`](Self::set_connector_profile_details).
         ///
         /// <p> Returns information about the connector profiles associated with the flow. </p>
-        pub fn connector_profile_details(
-            mut self,
-            input: impl Into<crate::model::ConnectorProfile>,
-        ) -> Self {
+        pub fn connector_profile_details(mut self, input: crate::model::ConnectorProfile) -> Self {
             let mut v = self.connector_profile_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connector_profile_details = Some(v);
             self
         }
@@ -1379,10 +1376,10 @@ pub mod describe_connector_entity_output {
         /// <i>account ID</i>, and so on. </p>
         pub fn connector_entity_fields(
             mut self,
-            input: impl Into<crate::model::ConnectorEntityField>,
+            input: crate::model::ConnectorEntityField,
         ) -> Self {
             let mut v = self.connector_entity_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connector_entity_fields = Some(v);
             self
         }

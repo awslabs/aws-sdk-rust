@@ -730,10 +730,10 @@ pub mod inline_archive_rule {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
@@ -979,10 +979,10 @@ pub mod archive_rule_summary {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
@@ -1191,9 +1191,9 @@ pub mod validate_policy_finding {
         ///
         /// <p>The list of locations in the policy document that are related to the finding. The issue
         /// code provides a summary of an issue identified by the finding.</p>
-        pub fn locations(mut self, input: impl Into<crate::model::Location>) -> Self {
+        pub fn locations(mut self, input: crate::model::Location) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.locations = Some(v);
             self
         }
@@ -1268,9 +1268,9 @@ pub mod location {
         /// To override the contents of this collection use [`set_path`](Self::set_path).
         ///
         /// <p>A path in a policy, represented as a sequence of path elements.</p>
-        pub fn path(mut self, input: impl Into<crate::model::PathElement>) -> Self {
+        pub fn path(mut self, input: crate::model::PathElement) -> Self {
             let mut v = self.path.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.path = Some(v);
             self
         }
@@ -2040,9 +2040,9 @@ pub mod cloud_trail_details {
         /// To override the contents of this collection use [`set_trails`](Self::set_trails).
         ///
         /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
-        pub fn trails(mut self, input: impl Into<crate::model::Trail>) -> Self {
+        pub fn trails(mut self, input: crate::model::Trail) -> Self {
             let mut v = self.trails.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trails = Some(v);
             self
         }
@@ -2856,9 +2856,9 @@ pub mod finding_summary {
         ///
         /// <p>The sources of the finding. This indicates how the access that generated the finding is
         /// granted. It is populated for Amazon S3 bucket findings.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::FindingSource>) -> Self {
+        pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -4343,9 +4343,9 @@ pub mod access_preview_finding {
         ///
         /// <p>The sources of the finding. This indicates how the access that generated the finding is
         /// granted. It is populated for Amazon S3 bucket findings.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::FindingSource>) -> Self {
+        pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -4509,12 +4509,9 @@ pub mod generated_policy_result {
         ///
         /// <p>The text to use as the content for the new policy. The policy is created using the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-        pub fn generated_policies(
-            mut self,
-            input: impl Into<crate::model::GeneratedPolicy>,
-        ) -> Self {
+        pub fn generated_policies(mut self, input: crate::model::GeneratedPolicy) -> Self {
             let mut v = self.generated_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.generated_policies = Some(v);
             self
         }
@@ -4769,9 +4766,9 @@ pub mod cloud_trail_properties {
         ///
         /// <p>A <code>TrailProperties</code> object that contains settings for trail
         /// properties.</p>
-        pub fn trail_properties(mut self, input: impl Into<crate::model::TrailProperties>) -> Self {
+        pub fn trail_properties(mut self, input: crate::model::TrailProperties) -> Self {
             let mut v = self.trail_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trail_properties = Some(v);
             self
         }
@@ -5590,9 +5587,9 @@ pub mod finding {
         ///
         /// <p>The sources of the finding. This indicates how the access that generated the finding is
         /// granted. It is populated for Amazon S3 bucket findings.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::FindingSource>) -> Self {
+        pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -6066,10 +6063,10 @@ pub mod access_preview {
         pub fn configurations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Configuration>,
+            v: crate::model::Configuration,
         ) -> Self {
             let mut hash_map = self.configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configurations = Some(hash_map);
             self
         }
@@ -6454,10 +6451,10 @@ pub mod s3_bucket_configuration {
         /// grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
         pub fn bucket_acl_grants(
             mut self,
-            input: impl Into<crate::model::S3BucketAclGrantConfiguration>,
+            input: crate::model::S3BucketAclGrantConfiguration,
         ) -> Self {
             let mut v = self.bucket_acl_grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bucket_acl_grants = Some(v);
             self
         }
@@ -6497,10 +6494,10 @@ pub mod s3_bucket_configuration {
         pub fn access_points(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::S3AccessPointConfiguration>,
+            v: crate::model::S3AccessPointConfiguration,
         ) -> Self {
             let mut hash_map = self.access_points.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.access_points = Some(hash_map);
             self
         }
@@ -7295,9 +7292,9 @@ pub mod kms_key_configuration {
         /// configuration is for an existing key, the access preview uses the proposed list of grant
         /// configurations in place of the existing grants. Otherwise, the access preview uses the
         /// existing grants for the key.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::KmsGrantConfiguration>) -> Self {
+        pub fn grants(mut self, input: crate::model::KmsGrantConfiguration) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -7404,9 +7401,9 @@ pub mod kms_grant_configuration {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that the grant permits.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::KmsGrantOperation>) -> Self {
+        pub fn operations(mut self, input: crate::model::KmsGrantOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }

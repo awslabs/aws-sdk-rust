@@ -251,8 +251,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
         /// the <code>ListTasks</code> operation.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
@@ -326,8 +326,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>A list of managed device IDs.</p>
-        pub fn targets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.targets(inp);
+        pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.targets(input.into());
             self
         }
         /// <p>A list of managed device IDs.</p>
@@ -339,8 +339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
-        pub fn command(mut self, inp: crate::model::Command) -> Self {
-            self.inner = self.inner.command(inp);
+        pub fn command(mut self, signature: crate::model::Command) -> Self {
+            self.inner = self.inner.command(signature);
             self
         }
         /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
@@ -349,8 +349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the task and its targets.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the task and its targets.</p>
@@ -369,7 +369,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
@@ -384,8 +384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token ensuring that the action is called only once with the specified details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the action is called only once with the specified details.</p>
@@ -455,8 +455,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the device that you are checking the information of.</p>
-        pub fn managed_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_device_id(inp);
+        pub fn managed_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_device_id(signature.into());
             self
         }
         /// <p>The ID of the device that you are checking the information of.</p>
@@ -530,8 +530,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the managed device.</p>
-        pub fn managed_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_device_id(inp);
+        pub fn managed_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_device_id(signature.into());
             self
         }
         /// <p>The ID of the managed device.</p>
@@ -547,8 +547,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>A list of instance IDs associated with the managed device.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>A list of instance IDs associated with the managed device.</p>
@@ -620,8 +620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the task that the action is describing.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>The ID of the task that the action is describing.</p>
@@ -630,8 +630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the managed device.</p>
-        pub fn managed_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_device_id(inp);
+        pub fn managed_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_device_id(signature.into());
             self
         }
         /// <p>The ID of the managed device.</p>
@@ -703,8 +703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the task to be described.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>The ID of the task to be described.</p>
@@ -773,8 +773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the managed device that you are listing the resources of.</p>
-        pub fn managed_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_device_id(inp);
+        pub fn managed_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_device_id(signature.into());
             self
         }
         /// <p>The ID of the managed device that you are listing the resources of.</p>
@@ -786,8 +786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure used to filter the results by type of resource.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(signature.into());
             self
         }
         /// <p>A structure used to filter the results by type of resource.</p>
@@ -796,8 +796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resources per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of resources per page.</p>
@@ -806,8 +806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A pagination token to continue to the next page of results.</p>
@@ -877,8 +877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the job used to order the device.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID of the job used to order the device.</p>
@@ -887,8 +887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of devices to list per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of devices to list per page.</p>
@@ -897,8 +897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A pagination token to continue to the next page of results.</p>
@@ -967,8 +967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the task.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>The ID of the task.</p>
@@ -977,8 +977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure used to filter the tasks by their current state.</p>
-        pub fn state(mut self, inp: crate::model::ExecutionState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, signature: crate::model::ExecutionState) -> Self {
+            self.inner = self.inner.state(signature);
             self
         }
         /// <p>A structure used to filter the tasks by their current state.</p>
@@ -990,8 +990,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tasks to list per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of tasks to list per page.</p>
@@ -1000,8 +1000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to continue to the next page of tasks.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A pagination token to continue to the next page of tasks.</p>
@@ -1070,8 +1070,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
@@ -1140,8 +1140,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A structure used to filter the list of tasks.</p>
-        pub fn state(mut self, inp: crate::model::TaskState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, signature: crate::model::TaskState) -> Self {
+            self.inner = self.inner.state(signature);
             self
         }
         /// <p>A structure used to filter the list of tasks.</p>
@@ -1150,8 +1150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tasks per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of tasks per page.</p>
@@ -1160,8 +1160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to continue to the next page of tasks.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A pagination token to continue to the next page of tasks.</p>
@@ -1230,8 +1230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
@@ -1250,7 +1250,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
@@ -1325,8 +1325,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
@@ -1340,8 +1340,8 @@ pub mod fluent_builders {
         ///
         /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
         /// in different ways, such as by purpose, owner, or environment.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource

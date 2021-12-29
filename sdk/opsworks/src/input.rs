@@ -815,11 +815,11 @@ pub mod clone_stack_input {
         /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -1603,9 +1603,9 @@ pub mod create_app_input {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The app's data source.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -1696,11 +1696,11 @@ pub mod create_app_input {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::AppAttributesKeys>,
+            k: crate::model::AppAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -1725,9 +1725,9 @@ pub mod create_app_input {
         /// <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::EnvironmentVariable>) -> Self {
+        pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
@@ -2430,12 +2430,9 @@ pub mod create_instance_input {
         /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
         /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
         /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -2778,11 +2775,11 @@ pub mod create_layer_input {
         /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::LayerAttributesKeys>,
+            k: crate::model::LayerAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -2892,12 +2889,9 @@ pub mod create_layer_input {
         /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
         ///
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn volume_configurations(
-            mut self,
-            input: impl Into<crate::model::VolumeConfiguration>,
-        ) -> Self {
+        pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
             let mut v = self.volume_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_configurations = Some(v);
             self
         }
@@ -3328,11 +3322,11 @@ pub mod create_stack_input {
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -13608,9 +13602,9 @@ pub mod update_app_input {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The app's data sources.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -13695,11 +13689,11 @@ pub mod update_app_input {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::AppAttributesKeys>,
+            k: crate::model::AppAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -13724,9 +13718,9 @@ pub mod update_app_input {
         /// <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::EnvironmentVariable>) -> Self {
+        pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
@@ -14565,11 +14559,11 @@ pub mod update_layer_input {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::LayerAttributesKeys>,
+            k: crate::model::LayerAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -14680,12 +14674,9 @@ pub mod update_layer_input {
         /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
         ///
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn volume_configurations(
-            mut self,
-            input: impl Into<crate::model::VolumeConfiguration>,
-        ) -> Self {
+        pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
             let mut v = self.volume_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_configurations = Some(v);
             self
         }
@@ -15350,11 +15341,11 @@ pub mod update_stack_input {
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }

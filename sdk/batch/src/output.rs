@@ -596,10 +596,10 @@ pub mod list_scheduling_policies_output {
         /// <p>A list of scheduling policies that match the request.</p>
         pub fn scheduling_policies(
             mut self,
-            input: impl Into<crate::model::SchedulingPolicyListingDetail>,
+            input: crate::model::SchedulingPolicyListingDetail,
         ) -> Self {
             let mut v = self.scheduling_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduling_policies = Some(v);
             self
         }
@@ -687,9 +687,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_job_summary_list`](Self::set_job_summary_list).
         ///
         /// <p>A list of job summaries that match the request.</p>
-        pub fn job_summary_list(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
+        pub fn job_summary_list(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.job_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_summary_list = Some(v);
             self
         }
@@ -769,12 +769,9 @@ pub mod describe_scheduling_policies_output {
         /// To override the contents of this collection use [`set_scheduling_policies`](Self::set_scheduling_policies).
         ///
         /// <p>The list of scheduling policies.</p>
-        pub fn scheduling_policies(
-            mut self,
-            input: impl Into<crate::model::SchedulingPolicyDetail>,
-        ) -> Self {
+        pub fn scheduling_policies(mut self, input: crate::model::SchedulingPolicyDetail) -> Self {
             let mut v = self.scheduling_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduling_policies = Some(v);
             self
         }
@@ -835,9 +832,9 @@ pub mod describe_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>The list of jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::JobDetail>) -> Self {
+        pub fn jobs(mut self, input: crate::model::JobDetail) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -908,9 +905,9 @@ pub mod describe_job_queues_output {
         /// To override the contents of this collection use [`set_job_queues`](Self::set_job_queues).
         ///
         /// <p>The list of job queues.</p>
-        pub fn job_queues(mut self, input: impl Into<crate::model::JobQueueDetail>) -> Self {
+        pub fn job_queues(mut self, input: crate::model::JobQueueDetail) -> Self {
             let mut v = self.job_queues.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_queues = Some(v);
             self
         }
@@ -998,9 +995,9 @@ pub mod describe_job_definitions_output {
         /// To override the contents of this collection use [`set_job_definitions`](Self::set_job_definitions).
         ///
         /// <p>The list of job definitions.</p>
-        pub fn job_definitions(mut self, input: impl Into<crate::model::JobDefinition>) -> Self {
+        pub fn job_definitions(mut self, input: crate::model::JobDefinition) -> Self {
             let mut v = self.job_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_definitions = Some(v);
             self
         }
@@ -1096,10 +1093,10 @@ pub mod describe_compute_environments_output {
         /// <p>The list of compute environments.</p>
         pub fn compute_environments(
             mut self,
-            input: impl Into<crate::model::ComputeEnvironmentDetail>,
+            input: crate::model::ComputeEnvironmentDetail,
         ) -> Self {
             let mut v = self.compute_environments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compute_environments = Some(v);
             self
         }

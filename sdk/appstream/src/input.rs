@@ -355,10 +355,10 @@ pub mod batch_associate_user_stack_input {
         /// <p>The list of UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            input: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
             let mut v = self.user_stack_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_stack_associations = Some(v);
             self
         }
@@ -525,10 +525,10 @@ pub mod batch_disassociate_user_stack_input {
         /// <p>The list of UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            input: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
             let mut v = self.user_stack_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_stack_associations = Some(v);
             self
         }
@@ -1219,9 +1219,9 @@ pub mod create_application_input {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::PlatformType>) -> Self {
+        pub fn platforms(mut self, input: crate::model::PlatformType) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -2780,9 +2780,9 @@ pub mod create_image_builder_input {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_endpoints = Some(v);
             self
         }
@@ -3170,12 +3170,9 @@ pub mod create_stack_input {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            input: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
             let mut v = self.storage_connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_connectors = Some(v);
             self
         }
@@ -3212,9 +3209,9 @@ pub mod create_stack_input {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
-        pub fn user_settings(mut self, input: impl Into<crate::model::UserSetting>) -> Self {
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
             let mut v = self.user_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_settings = Some(v);
             self
         }
@@ -3283,9 +3280,9 @@ pub mod create_stack_input {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_endpoints = Some(v);
             self
         }
@@ -10794,12 +10791,9 @@ pub mod update_application_input {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The attributes to delete for an application.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            input: impl Into<crate::model::ApplicationAttribute>,
-        ) -> Self {
+        pub fn attributes_to_delete(mut self, input: crate::model::ApplicationAttribute) -> Self {
             let mut v = self.attributes_to_delete.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes_to_delete = Some(v);
             self
         }
@@ -11608,12 +11602,9 @@ pub mod update_fleet_input {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The fleet attributes to delete.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            input: impl Into<crate::model::FleetAttribute>,
-        ) -> Self {
+        pub fn attributes_to_delete(mut self, input: crate::model::FleetAttribute) -> Self {
             let mut v = self.attributes_to_delete.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes_to_delete = Some(v);
             self
         }
@@ -12095,12 +12086,9 @@ pub mod update_stack_input {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            input: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
             let mut v = self.storage_connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_connectors = Some(v);
             self
         }
@@ -12147,12 +12135,9 @@ pub mod update_stack_input {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The stack attributes to delete.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            input: impl Into<crate::model::StackAttribute>,
-        ) -> Self {
+        pub fn attributes_to_delete(mut self, input: crate::model::StackAttribute) -> Self {
             let mut v = self.attributes_to_delete.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes_to_delete = Some(v);
             self
         }
@@ -12169,9 +12154,9 @@ pub mod update_stack_input {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-        pub fn user_settings(mut self, input: impl Into<crate::model::UserSetting>) -> Self {
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
             let mut v = self.user_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_settings = Some(v);
             self
         }
@@ -12201,9 +12186,9 @@ pub mod update_stack_input {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_endpoints = Some(v);
             self
         }

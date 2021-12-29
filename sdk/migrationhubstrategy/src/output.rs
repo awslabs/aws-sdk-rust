@@ -330,9 +330,9 @@ pub mod list_servers_output {
         /// To override the contents of this collection use [`set_server_infos`](Self::set_server_infos).
         ///
         /// <p> The list of servers with detailed information about each server. </p>
-        pub fn server_infos(mut self, input: impl Into<crate::model::ServerDetail>) -> Self {
+        pub fn server_infos(mut self, input: crate::model::ServerDetail) -> Self {
             let mut v = self.server_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_infos = Some(v);
             self
         }
@@ -413,12 +413,9 @@ pub mod list_import_file_task_output {
         /// To override the contents of this collection use [`set_task_infos`](Self::set_task_infos).
         ///
         /// <p> Lists information about the files you import.</p>
-        pub fn task_infos(
-            mut self,
-            input: impl Into<crate::model::ImportFileTaskInformation>,
-        ) -> Self {
+        pub fn task_infos(mut self, input: crate::model::ImportFileTaskInformation) -> Self {
             let mut v = self.task_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_infos = Some(v);
             self
         }
@@ -498,9 +495,9 @@ pub mod list_collectors_output {
         /// To override the contents of this collection use [`set_collectors`](Self::set_collectors).
         ///
         /// <p> The list of all the installed collectors. </p>
-        pub fn collectors(mut self, input: impl Into<crate::model::Collector>) -> Self {
+        pub fn collectors(mut self, input: crate::model::Collector) -> Self {
             let mut v = self.collectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.collectors = Some(v);
             self
         }
@@ -592,10 +589,10 @@ pub mod list_application_components_output {
         /// </p>
         pub fn application_component_infos(
             mut self,
-            input: impl Into<crate::model::ApplicationComponentDetail>,
+            input: crate::model::ApplicationComponentDetail,
         ) -> Self {
             let mut v = self.application_component_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_component_infos = Some(v);
             self
         }
@@ -669,9 +666,9 @@ pub mod get_server_strategies_output {
         /// To override the contents of this collection use [`set_server_strategies`](Self::set_server_strategies).
         ///
         /// <p> A list of strategy recommendations for the server. </p>
-        pub fn server_strategies(mut self, input: impl Into<crate::model::ServerStrategy>) -> Self {
+        pub fn server_strategies(mut self, input: crate::model::ServerStrategy) -> Self {
             let mut v = self.server_strategies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_strategies = Some(v);
             self
         }
@@ -780,10 +777,10 @@ pub mod get_server_details_output {
         /// </p>
         pub fn associated_applications(
             mut self,
-            input: impl Into<crate::model::AssociatedApplication>,
+            input: crate::model::AssociatedApplication,
         ) -> Self {
             let mut v = self.associated_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_applications = Some(v);
             self
         }
@@ -1464,10 +1461,10 @@ pub mod get_application_component_strategies_output {
         /// <p> A list of application component strategy recommendations. </p>
         pub fn application_component_strategies(
             mut self,
-            input: impl Into<crate::model::ApplicationComponentStrategy>,
+            input: crate::model::ApplicationComponentStrategy,
         ) -> Self {
             let mut v = self.application_component_strategies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_component_strategies = Some(v);
             self
         }
@@ -1582,10 +1579,10 @@ pub mod get_application_component_details_output {
         /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
         pub fn associated_applications(
             mut self,
-            input: impl Into<crate::model::AssociatedApplication>,
+            input: crate::model::AssociatedApplication,
         ) -> Self {
             let mut v = self.associated_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_applications = Some(v);
             self
         }

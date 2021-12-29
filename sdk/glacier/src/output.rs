@@ -367,9 +367,9 @@ pub mod list_vaults_output {
         /// To override the contents of this collection use [`set_vault_list`](Self::set_vault_list).
         ///
         /// <p>List of vaults.</p>
-        pub fn vault_list(mut self, input: impl Into<crate::model::DescribeVaultOutput>) -> Self {
+        pub fn vault_list(mut self, input: crate::model::DescribeVaultOutput) -> Self {
             let mut v = self.vault_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vault_list = Some(v);
             self
         }
@@ -522,10 +522,10 @@ pub mod list_provisioned_capacity_output {
         /// <p>The response body contains the following JSON fields.</p>
         pub fn provisioned_capacity_list(
             mut self,
-            input: impl Into<crate::model::ProvisionedCapacityDescription>,
+            input: crate::model::ProvisionedCapacityDescription,
         ) -> Self {
             let mut v = self.provisioned_capacity_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_capacity_list = Some(v);
             self
         }
@@ -715,9 +715,9 @@ pub mod list_parts_output {
         /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a
         /// <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
         /// pair.</p>
-        pub fn parts(mut self, input: impl Into<crate::model::PartListElement>) -> Self {
+        pub fn parts(mut self, input: crate::model::PartListElement) -> Self {
             let mut v = self.parts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parts = Some(v);
             self
         }
@@ -813,9 +813,9 @@ pub mod list_multipart_uploads_output {
         /// To override the contents of this collection use [`set_uploads_list`](Self::set_uploads_list).
         ///
         /// <p>A list of in-progress multipart uploads.</p>
-        pub fn uploads_list(mut self, input: impl Into<crate::model::UploadListElement>) -> Self {
+        pub fn uploads_list(mut self, input: crate::model::UploadListElement) -> Self {
             let mut v = self.uploads_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.uploads_list = Some(v);
             self
         }
@@ -911,9 +911,9 @@ pub mod list_jobs_output {
         ///
         /// <p>A list of job objects. Each job object contains metadata describing the
         /// job.</p>
-        pub fn job_list(mut self, input: impl Into<crate::model::GlacierJobDescription>) -> Self {
+        pub fn job_list(mut self, input: crate::model::GlacierJobDescription) -> Self {
             let mut v = self.job_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_list = Some(v);
             self
         }

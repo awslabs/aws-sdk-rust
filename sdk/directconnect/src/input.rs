@@ -60,12 +60,12 @@ pub mod accept_direct_connect_gateway_association_proposal_input {
         /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
         pub fn override_allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .override_allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.override_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
@@ -521,9 +521,9 @@ pub mod allocate_hosted_connection_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3080,9 +3080,9 @@ pub mod create_connection_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the lag.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3483,12 +3483,12 @@ pub mod create_direct_connect_gateway_association_input {
         /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
         pub fn add_allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .add_allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
@@ -3718,12 +3718,12 @@ pub mod create_direct_connect_gateway_association_proposal_input {
         /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
         pub fn add_allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .add_allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
@@ -3742,12 +3742,12 @@ pub mod create_direct_connect_gateway_association_proposal_input {
         /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
         pub fn remove_allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .remove_allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remove_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
@@ -3968,9 +3968,9 @@ pub mod create_interconnect_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the interconnect.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4217,9 +4217,9 @@ pub mod create_lag_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the LAG.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4236,9 +4236,9 @@ pub mod create_lag_input {
         /// To override the contents of this collection use [`set_child_connection_tags`](Self::set_child_connection_tags).
         ///
         /// <p>The tags to associate with the automtically created LAGs.</p>
-        pub fn child_connection_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn child_connection_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.child_connection_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.child_connection_tags = Some(v);
             self
         }
@@ -10367,9 +10367,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11091,12 +11091,12 @@ pub mod update_direct_connect_gateway_association_input {
         /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
         pub fn add_allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .add_allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
@@ -11115,12 +11115,12 @@ pub mod update_direct_connect_gateway_association_input {
         /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
         pub fn remove_allowed_prefixes_to_direct_connect_gateway(
             mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
+            input: crate::model::RouteFilterPrefix,
         ) -> Self {
             let mut v = self
                 .remove_allowed_prefixes_to_direct_connect_gateway
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remove_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }

@@ -153,9 +153,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -224,9 +224,9 @@ pub mod list_predictors_output {
         /// To override the contents of this collection use [`set_predictors`](Self::set_predictors).
         ///
         /// <p>An array of objects that summarize each predictor's properties.</p>
-        pub fn predictors(mut self, input: impl Into<crate::model::PredictorSummary>) -> Self {
+        pub fn predictors(mut self, input: crate::model::PredictorSummary) -> Self {
             let mut v = self.predictors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.predictors = Some(v);
             self
         }
@@ -322,10 +322,10 @@ pub mod list_predictor_backtest_export_jobs_output {
         /// job.</p>
         pub fn predictor_backtest_export_jobs(
             mut self,
-            input: impl Into<crate::model::PredictorBacktestExportJobSummary>,
+            input: crate::model::PredictorBacktestExportJobSummary,
         ) -> Self {
             let mut v = self.predictor_backtest_export_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.predictor_backtest_export_jobs = Some(v);
             self
         }
@@ -412,9 +412,9 @@ pub mod list_forecasts_output {
         /// To override the contents of this collection use [`set_forecasts`](Self::set_forecasts).
         ///
         /// <p>An array of objects that summarize each forecast's properties.</p>
-        pub fn forecasts(mut self, input: impl Into<crate::model::ForecastSummary>) -> Self {
+        pub fn forecasts(mut self, input: crate::model::ForecastSummary) -> Self {
             let mut v = self.forecasts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.forecasts = Some(v);
             self
         }
@@ -504,10 +504,10 @@ pub mod list_forecast_export_jobs_output {
         /// <p>An array of objects that summarize each export job's properties.</p>
         pub fn forecast_export_jobs(
             mut self,
-            input: impl Into<crate::model::ForecastExportJobSummary>,
+            input: crate::model::ForecastExportJobSummary,
         ) -> Self {
             let mut v = self.forecast_export_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.forecast_export_jobs = Some(v);
             self
         }
@@ -600,10 +600,10 @@ pub mod list_explainability_exports_output {
         /// export.</p>
         pub fn explainability_exports(
             mut self,
-            input: impl Into<crate::model::ExplainabilityExportSummary>,
+            input: crate::model::ExplainabilityExportSummary,
         ) -> Self {
             let mut v = self.explainability_exports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.explainability_exports = Some(v);
             self
         }
@@ -692,12 +692,9 @@ pub mod list_explainabilities_output {
         ///
         /// <p>An array of objects that summarize the properties of each Explainability
         /// resource.</p>
-        pub fn explainabilities(
-            mut self,
-            input: impl Into<crate::model::ExplainabilitySummary>,
-        ) -> Self {
+        pub fn explainabilities(mut self, input: crate::model::ExplainabilitySummary) -> Self {
             let mut v = self.explainabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.explainabilities = Some(v);
             self
         }
@@ -782,9 +779,9 @@ pub mod list_datasets_output {
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
         /// <p>An array of objects that summarize each dataset's properties.</p>
-        pub fn datasets(mut self, input: impl Into<crate::model::DatasetSummary>) -> Self {
+        pub fn datasets(mut self, input: crate::model::DatasetSummary) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }
@@ -872,12 +869,9 @@ pub mod list_dataset_import_jobs_output {
         /// To override the contents of this collection use [`set_dataset_import_jobs`](Self::set_dataset_import_jobs).
         ///
         /// <p>An array of objects that summarize each dataset import job's properties.</p>
-        pub fn dataset_import_jobs(
-            mut self,
-            input: impl Into<crate::model::DatasetImportJobSummary>,
-        ) -> Self {
+        pub fn dataset_import_jobs(mut self, input: crate::model::DatasetImportJobSummary) -> Self {
             let mut v = self.dataset_import_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_import_jobs = Some(v);
             self
         }
@@ -962,12 +956,9 @@ pub mod list_dataset_groups_output {
         /// To override the contents of this collection use [`set_dataset_groups`](Self::set_dataset_groups).
         ///
         /// <p>An array of objects that summarize each dataset group's properties.</p>
-        pub fn dataset_groups(
-            mut self,
-            input: impl Into<crate::model::DatasetGroupSummary>,
-        ) -> Self {
+        pub fn dataset_groups(mut self, input: crate::model::DatasetGroupSummary) -> Self {
             let mut v = self.dataset_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_groups = Some(v);
             self
         }
@@ -1091,10 +1082,10 @@ pub mod get_accuracy_metrics_output {
         /// <p>An array of results from evaluating the predictor.</p>
         pub fn predictor_evaluation_results(
             mut self,
-            input: impl Into<crate::model::EvaluationResult>,
+            input: crate::model::EvaluationResult,
         ) -> Self {
             let mut v = self.predictor_evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.predictor_evaluation_results = Some(v);
             self
         }
@@ -4727,10 +4718,10 @@ pub mod describe_dataset_import_job_output {
         pub fn field_statistics(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Statistics>,
+            v: crate::model::Statistics,
         ) -> Self {
             let mut hash_map = self.field_statistics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.field_statistics = Some(hash_map);
             self
         }

@@ -892,9 +892,9 @@ pub mod list_schedules_output {
         /// To override the contents of this collection use [`set_schedules`](Self::set_schedules).
         ///
         /// <p>A list of schedules that are defined.</p>
-        pub fn schedules(mut self, input: impl Into<crate::model::Schedule>) -> Self {
+        pub fn schedules(mut self, input: crate::model::Schedule) -> Self {
             let mut v = self.schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schedules = Some(v);
             self
         }
@@ -978,9 +978,9 @@ pub mod list_rulesets_output {
         /// To override the contents of this collection use [`set_rulesets`](Self::set_rulesets).
         ///
         /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
-        pub fn rulesets(mut self, input: impl Into<crate::model::RulesetItem>) -> Self {
+        pub fn rulesets(mut self, input: crate::model::RulesetItem) -> Self {
             let mut v = self.rulesets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rulesets = Some(v);
             self
         }
@@ -1076,9 +1076,9 @@ pub mod list_recipe_versions_output {
         /// To override the contents of this collection use [`set_recipes`](Self::set_recipes).
         ///
         /// <p>A list of versions for the specified recipe.</p>
-        pub fn recipes(mut self, input: impl Into<crate::model::Recipe>) -> Self {
+        pub fn recipes(mut self, input: crate::model::Recipe) -> Self {
             let mut v = self.recipes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recipes = Some(v);
             self
         }
@@ -1150,9 +1150,9 @@ pub mod list_recipes_output {
         /// To override the contents of this collection use [`set_recipes`](Self::set_recipes).
         ///
         /// <p>A list of recipes that are defined.</p>
-        pub fn recipes(mut self, input: impl Into<crate::model::Recipe>) -> Self {
+        pub fn recipes(mut self, input: crate::model::Recipe) -> Self {
             let mut v = self.recipes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recipes = Some(v);
             self
         }
@@ -1236,9 +1236,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>A list of projects that are defined .</p>
-        pub fn projects(mut self, input: impl Into<crate::model::Project>) -> Self {
+        pub fn projects(mut self, input: crate::model::Project) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -1322,9 +1322,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of jobs that are defined.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1408,9 +1408,9 @@ pub mod list_job_runs_output {
         /// To override the contents of this collection use [`set_job_runs`](Self::set_job_runs).
         ///
         /// <p>A list of job runs that have occurred for the specified job.</p>
-        pub fn job_runs(mut self, input: impl Into<crate::model::JobRun>) -> Self {
+        pub fn job_runs(mut self, input: crate::model::JobRun) -> Self {
             let mut v = self.job_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_runs = Some(v);
             self
         }
@@ -1494,9 +1494,9 @@ pub mod list_datasets_output {
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
         /// <p>A list of datasets that are defined.</p>
-        pub fn datasets(mut self, input: impl Into<crate::model::Dataset>) -> Self {
+        pub fn datasets(mut self, input: crate::model::Dataset) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }
@@ -1941,9 +1941,9 @@ pub mod describe_ruleset_output {
         ///
         /// <p>A list of rules that are defined with the ruleset. A rule includes one
         /// or more checks to be validated on a DataBrew dataset.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -2305,9 +2305,9 @@ pub mod describe_recipe_output {
         ///
         /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
         /// the conditions under which the action should succeed.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::RecipeStep>) -> Self {
+        pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -3081,10 +3081,10 @@ pub mod describe_job_run_output {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            input: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_configurations = Some(v);
             self
         }
@@ -3149,9 +3149,9 @@ pub mod describe_job_run_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more output artifacts from a job run.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -3168,12 +3168,9 @@ pub mod describe_job_run_output {
         /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            input: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalog_outputs = Some(v);
             self
         }
@@ -3191,9 +3188,9 @@ pub mod describe_job_run_output {
         ///
         /// <p>Represents a list of JDBC database output objects which defines the output
         /// destination for a DataBrew recipe job to write into.</p>
-        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_outputs = Some(v);
             self
         }
@@ -3776,9 +3773,9 @@ pub mod describe_job_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more artifacts that represent the output from running the job.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -3795,12 +3792,9 @@ pub mod describe_job_output {
         /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            input: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalog_outputs = Some(v);
             self
         }
@@ -3818,9 +3812,9 @@ pub mod describe_job_output {
         ///
         /// <p>Represents a list of JDBC database output objects which defines the output
         /// destination for a DataBrew recipe job to write into.</p>
-        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_outputs = Some(v);
             self
         }
@@ -3867,10 +3861,10 @@ pub mod describe_job_output {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            input: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_configurations = Some(v);
             self
         }
@@ -5079,9 +5073,9 @@ pub mod batch_delete_recipe_version_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::RecipeVersionErrorDetail>) -> Self {
+        pub fn errors(mut self, input: crate::model::RecipeVersionErrorDetail) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

@@ -38,9 +38,9 @@ pub mod analyze_document_input {
         /// To perform both types of analysis, add TABLES and FORMS to
         /// <code>FeatureTypes</code>. All lines and words detected in the document are included in
         /// the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-        pub fn feature_types(mut self, input: impl Into<crate::model::FeatureType>) -> Self {
+        pub fn feature_types(mut self, input: crate::model::FeatureType) -> Self {
             let mut v = self.feature_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.feature_types = Some(v);
             self
         }
@@ -406,9 +406,9 @@ pub mod analyze_id_input {
         /// To override the contents of this collection use [`set_document_pages`](Self::set_document_pages).
         ///
         /// <p>The document being passed to AnalyzeID.</p>
-        pub fn document_pages(mut self, input: impl Into<crate::model::Document>) -> Self {
+        pub fn document_pages(mut self, input: crate::model::Document) -> Self {
             let mut v = self.document_pages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_pages = Some(v);
             self
         }
@@ -1311,9 +1311,9 @@ pub mod start_document_analysis_input {
         /// and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are
         /// included in the response (including text that isn't related to the value of
         /// <code>FeatureTypes</code>). </p>
-        pub fn feature_types(mut self, input: impl Into<crate::model::FeatureType>) -> Self {
+        pub fn feature_types(mut self, input: crate::model::FeatureType) -> Self {
             let mut v = self.feature_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.feature_types = Some(v);
             self
         }

@@ -274,8 +274,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
         /// </p>
-        pub fn event_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_arn(inp);
+        pub fn event_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_arn(signature.into());
             self
         }
         /// <p>The unique identifier for the event. The event ARN has the
@@ -294,8 +294,8 @@ pub mod fluent_builders {
         /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
         /// retrieve the next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the results of a search are large, only a portion of the
@@ -307,8 +307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -394,8 +394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Values to narrow the results returned. At least one event ARN is required.</p>
-        pub fn filter(mut self, inp: crate::model::EntityFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::EntityFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Values to narrow the results returned. At least one event ARN is required.</p>
@@ -407,8 +407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(signature.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -420,8 +420,8 @@ pub mod fluent_builders {
         /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
         /// retrieve the next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the results of a search are large, only a portion of the
@@ -433,8 +433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -531,9 +531,9 @@ pub mod fluent_builders {
         /// <code>eventArn</code>.</p>
         pub fn organization_entity_filters(
             mut self,
-            inp: impl Into<crate::model::EventAccountFilter>,
+            input: crate::model::EventAccountFilter,
         ) -> Self {
-            self.inner = self.inner.organization_entity_filters(inp);
+            self.inner = self.inner.organization_entity_filters(input);
             self
         }
         /// <p>A JSON set of elements including the <code>awsAccountId</code> and the
@@ -546,8 +546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(signature.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -559,8 +559,8 @@ pub mod fluent_builders {
         /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
         /// retrieve the next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the results of a search are large, only a portion of the
@@ -572,8 +572,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -647,8 +647,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
         /// </p>
-        pub fn event_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_arns(inp);
+        pub fn event_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_arns(input.into());
             self
         }
         /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
@@ -726,8 +726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Values to narrow the results returned.</p>
-        pub fn filter(mut self, inp: crate::model::EventFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::EventFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Values to narrow the results returned.</p>
@@ -736,8 +736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-        pub fn aggregate_field(mut self, inp: crate::model::EventAggregateField) -> Self {
-            self.inner = self.inner.aggregate_field(inp);
+        pub fn aggregate_field(mut self, signature: crate::model::EventAggregateField) -> Self {
+            self.inner = self.inner.aggregate_field(signature);
             self
         }
         /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
@@ -749,8 +749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -762,8 +762,8 @@ pub mod fluent_builders {
         /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
         /// retrieve the next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the results of a search are large, only a portion of the
@@ -849,8 +849,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
         /// </p>
-        pub fn event_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_arns(inp);
+        pub fn event_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_arns(input.into());
             self
         }
         /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
@@ -863,8 +863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(signature.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -974,9 +974,9 @@ pub mod fluent_builders {
         /// <code>eventArn</code>.</p>
         pub fn organization_event_detail_filters(
             mut self,
-            inp: impl Into<crate::model::EventAccountFilter>,
+            input: crate::model::EventAccountFilter,
         ) -> Self {
-            self.inner = self.inner.organization_event_detail_filters(inp);
+            self.inner = self.inner.organization_event_detail_filters(input);
             self
         }
         /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the
@@ -989,8 +989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(signature.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -1081,8 +1081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Values to narrow the results returned.</p>
-        pub fn filter(mut self, inp: crate::model::EventFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::EventFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Values to narrow the results returned.</p>
@@ -1094,8 +1094,8 @@ pub mod fluent_builders {
         /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
         /// retrieve the next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the results of a search are large, only a portion of the
@@ -1107,8 +1107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -1117,8 +1117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(signature.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Values to narrow the results returned.</p>
-        pub fn filter(mut self, inp: crate::model::OrganizationEventFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::OrganizationEventFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Values to narrow the results returned.</p>
@@ -1234,8 +1234,8 @@ pub mod fluent_builders {
         /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
         /// retrieve the next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the results of a search are large, only a portion of the
@@ -1247,8 +1247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -1257,8 +1257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(signature.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -1334,8 +1334,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Values to narrow the results returned.</p>
-        pub fn filter(mut self, inp: crate::model::EventTypeFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::EventTypeFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>Values to narrow the results returned.</p>
@@ -1347,8 +1347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(signature.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -1360,8 +1360,8 @@ pub mod fluent_builders {
         /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
         /// retrieve the next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the results of a search are large, only a portion of the
@@ -1373,8 +1373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>

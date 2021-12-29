@@ -288,8 +288,8 @@ pub mod fluent_builders {
         /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by.
         /// If you use this parameter, the count of returned noncompliant resources includes only
         /// resources with the specified target IDs.</p>
-        pub fn target_id_filters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id_filters(inp);
+        pub fn target_id_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id_filters(input.into());
             self
         }
         /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by.
@@ -309,8 +309,8 @@ pub mod fluent_builders {
         /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
         /// the count of returned noncompliant resources includes only resources in the specified
         /// Regions.</p>
-        pub fn region_filters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_filters(inp);
+        pub fn region_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_filters(input.into());
             self
         }
         /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
@@ -354,8 +354,8 @@ pub mod fluent_builders {
         /// <p>You can specify multiple resource types by using a comma separated array. The array
         /// can include up to 100 items. Note that the length constraint requirement applies to each
         /// resource type filter. </p>
-        pub fn resource_type_filters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type_filters(inp);
+        pub fn resource_type_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type_filters(input.into());
             self
         }
         /// <p>Specifies that you want the response to include information for only resources of the
@@ -399,8 +399,8 @@ pub mod fluent_builders {
         /// <p>Specifies that you want the response to include information for only resources that
         /// have tags with the specified tag keys. If you use this parameter, the count of returned
         /// noncompliant resources includes only resources that have the specified tag keys.</p>
-        pub fn tag_key_filters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key_filters(inp);
+        pub fn tag_key_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key_filters(input.into());
             self
         }
         /// <p>Specifies that you want the response to include information for only resources that
@@ -419,8 +419,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
         /// supplied, the counts are sorted by those attributes.</p>
-        pub fn group_by(mut self, inp: impl Into<crate::model::GroupByAttribute>) -> Self {
-            self.inner = self.inner.group_by(inp);
+        pub fn group_by(mut self, input: crate::model::GroupByAttribute) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
         /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
@@ -436,8 +436,8 @@ pub mod fluent_builders {
         /// query can return fewer than this maximum, even if there are more results still to return. You
         /// should always check the <code>PaginationToken</code> response value to see if there are more
         /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Specifies the maximum number of results to be returned in each page. A
@@ -451,8 +451,8 @@ pub mod fluent_builders {
         /// <p>Specifies a <code>PaginationToken</code> response value from a
         /// previous request to indicate that you want the next page of results. Leave this parameter empty
         /// in your initial request.</p>
-        pub fn pagination_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(inp);
+        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(signature.into());
             self
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a
@@ -551,8 +551,8 @@ pub mod fluent_builders {
         /// <p>Specifies a <code>PaginationToken</code> response value from a
         /// previous request to indicate that you want the next page of results. Leave this parameter empty
         /// in your initial request.</p>
-        pub fn pagination_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(inp);
+        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(signature.into());
             self
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a
@@ -625,8 +625,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn tag_filters(mut self, inp: impl Into<crate::model::TagFilter>) -> Self {
-            self.inner = self.inner.tag_filters(inp);
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filters(input);
             self
         }
         /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
@@ -696,8 +696,8 @@ pub mod fluent_builders {
         /// query can return fewer than this maximum, even if there are more results still to return. You
         /// should always check the <code>PaginationToken</code> response value to see if there are more
         /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
-        pub fn resources_per_page(mut self, inp: i32) -> Self {
-            self.inner = self.inner.resources_per_page(inp);
+        pub fn resources_per_page(mut self, signature: i32) -> Self {
+            self.inner = self.inner.resources_per_page(signature);
             self
         }
         /// <p>Specifies the maximum number of results to be returned in each page. A
@@ -724,8 +724,8 @@ pub mod fluent_builders {
         /// third page displays the remaining 2 resources, each with its 10 tags.</p>
         /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500
         /// items.</p>
-        pub fn tags_per_page(mut self, inp: i32) -> Self {
-            self.inner = self.inner.tags_per_page(inp);
+        pub fn tags_per_page(mut self, signature: i32) -> Self {
+            self.inner = self.inner.tags_per_page(signature);
             self
         }
         /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
@@ -767,8 +767,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>ec2:instance,s3:bucket,auditmanager</code>
         /// </p>
-        pub fn resource_type_filters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type_filters(inp);
+        pub fn resource_type_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type_filters(input.into());
             self
         }
         /// <p>Specifies the resource types that you want included in the response. The format of
@@ -796,8 +796,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether to include details regarding the compliance with the effective tag
         /// policy. Set this to <code>true</code> to determine whether resources are compliant with
         /// the tag policy and to get details.</p>
-        pub fn include_compliance_details(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_compliance_details(inp);
+        pub fn include_compliance_details(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_compliance_details(signature);
             self
         }
         /// <p>Specifies whether to include details regarding the compliance with the effective tag
@@ -812,8 +812,8 @@ pub mod fluent_builders {
         /// noncompliant resources only.</p>
         /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
         /// is also set to <code>true</code>.</p>
-        pub fn exclude_compliant_resources(mut self, inp: bool) -> Self {
-            self.inner = self.inner.exclude_compliant_resources(inp);
+        pub fn exclude_compliant_resources(mut self, signature: bool) -> Self {
+            self.inner = self.inner.exclude_compliant_resources(signature);
             self
         }
         /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set
@@ -840,8 +840,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
         /// <i>Amazon Web Services General Reference</i>.</p>
-        pub fn resource_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn_list(inp);
+        pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn_list(input.into());
             self
         }
         /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You
@@ -932,8 +932,8 @@ pub mod fluent_builders {
         /// <p>Specifies a <code>PaginationToken</code> response value from a
         /// previous request to indicate that you want the next page of results. Leave this parameter empty
         /// in your initial request.</p>
-        pub fn pagination_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(inp);
+        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(signature.into());
             self
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a
@@ -1016,8 +1016,8 @@ pub mod fluent_builders {
         /// <p>Specifies a <code>PaginationToken</code> response value from a
         /// previous request to indicate that you want the next page of results. Leave this parameter empty
         /// in your initial request.</p>
-        pub fn pagination_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(inp);
+        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(signature.into());
             self
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a
@@ -1032,8 +1032,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the tag key for which you want to list all existing values that are
         /// currently used in the specified Amazon Web Services Region for the calling account.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Specifies the tag key for which you want to list all existing values that are
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>For more information on S3 bucket requirements, including an example bucket policy,
         /// see the example S3 bucket policy on this page.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(inp);
+        pub fn s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
@@ -1248,8 +1248,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
-        pub fn resource_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn_list(inp);
+        pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn_list(input.into());
             self
         }
         /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
@@ -1275,7 +1275,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Specifies a list of tags that you want to add to the specified resources. A tag
@@ -1394,8 +1394,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
         /// General Reference</i>.</p>
-        pub fn resource_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn_list(inp);
+        pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn_list(input.into());
             self
         }
         /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
@@ -1416,8 +1416,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies a list of tag keys that you want to remove from the specified
         /// resources.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Specifies a list of tag keys that you want to remove from the specified

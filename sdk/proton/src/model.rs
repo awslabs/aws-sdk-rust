@@ -846,10 +846,10 @@ pub mod service_template_version {
         /// <p>An array of compatible environment template names for the major version of a service template.</p>
         pub fn compatible_environment_templates(
             mut self,
-            input: impl Into<crate::model::CompatibleEnvironmentTemplate>,
+            input: crate::model::CompatibleEnvironmentTemplate,
         ) -> Self {
             let mut v = self.compatible_environment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_environment_templates = Some(v);
             self
         }
@@ -7083,9 +7083,9 @@ pub mod resource_sync_attempt {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>An array of events with detail data.</p>
-        pub fn events(mut self, input: impl Into<crate::model::ResourceSyncEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::ResourceSyncEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -7371,9 +7371,9 @@ pub mod repository_sync_attempt {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>Detail data for sync attempt events.</p>
-        pub fn events(mut self, input: impl Into<crate::model::RepositorySyncEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::RepositorySyncEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }

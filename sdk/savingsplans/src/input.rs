@@ -427,9 +427,9 @@ pub mod describe_savings_plan_rates_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SavingsPlanRateFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SavingsPlanRateFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -678,9 +678,9 @@ pub mod describe_savings_plans_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states.</p>
-        pub fn states(mut self, input: impl Into<crate::model::SavingsPlanState>) -> Self {
+        pub fn states(mut self, input: crate::model::SavingsPlanState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -697,9 +697,9 @@ pub mod describe_savings_plans_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SavingsPlanFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SavingsPlanFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -898,10 +898,10 @@ pub mod describe_savings_plans_offering_rates_input {
         /// <p>The payment options.</p>
         pub fn savings_plan_payment_options(
             mut self,
-            input: impl Into<crate::model::SavingsPlanPaymentOption>,
+            input: crate::model::SavingsPlanPaymentOption,
         ) -> Self {
             let mut v = self.savings_plan_payment_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.savings_plan_payment_options = Some(v);
             self
         }
@@ -918,12 +918,9 @@ pub mod describe_savings_plans_offering_rates_input {
         /// To override the contents of this collection use [`set_savings_plan_types`](Self::set_savings_plan_types).
         ///
         /// <p>The plan types.</p>
-        pub fn savings_plan_types(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanType>,
-        ) -> Self {
+        pub fn savings_plan_types(mut self, input: crate::model::SavingsPlanType) -> Self {
             let mut v = self.savings_plan_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.savings_plan_types = Some(v);
             self
         }
@@ -940,9 +937,9 @@ pub mod describe_savings_plans_offering_rates_input {
         /// To override the contents of this collection use [`set_products`](Self::set_products).
         ///
         /// <p>The AWS products.</p>
-        pub fn products(mut self, input: impl Into<crate::model::SavingsPlanProductType>) -> Self {
+        pub fn products(mut self, input: crate::model::SavingsPlanProductType) -> Self {
             let mut v = self.products.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.products = Some(v);
             self
         }
@@ -959,12 +956,9 @@ pub mod describe_savings_plans_offering_rates_input {
         /// To override the contents of this collection use [`set_service_codes`](Self::set_service_codes).
         ///
         /// <p>The services.</p>
-        pub fn service_codes(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanRateServiceCode>,
-        ) -> Self {
+        pub fn service_codes(mut self, input: crate::model::SavingsPlanRateServiceCode) -> Self {
             let mut v = self.service_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_codes = Some(v);
             self
         }
@@ -1021,10 +1015,10 @@ pub mod describe_savings_plans_offering_rates_input {
         /// <p>The filters.</p>
         pub fn filters(
             mut self,
-            input: impl Into<crate::model::SavingsPlanOfferingRateFilterElement>,
+            input: crate::model::SavingsPlanOfferingRateFilterElement,
         ) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1250,12 +1244,9 @@ pub mod describe_savings_plans_offerings_input {
         /// To override the contents of this collection use [`set_payment_options`](Self::set_payment_options).
         ///
         /// <p>The payment options.</p>
-        pub fn payment_options(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanPaymentOption>,
-        ) -> Self {
+        pub fn payment_options(mut self, input: crate::model::SavingsPlanPaymentOption) -> Self {
             let mut v = self.payment_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.payment_options = Some(v);
             self
         }
@@ -1285,9 +1276,9 @@ pub mod describe_savings_plans_offerings_input {
         /// To override the contents of this collection use [`set_plan_types`](Self::set_plan_types).
         ///
         /// <p>The plan type.</p>
-        pub fn plan_types(mut self, input: impl Into<crate::model::SavingsPlanType>) -> Self {
+        pub fn plan_types(mut self, input: crate::model::SavingsPlanType) -> Self {
             let mut v = self.plan_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.plan_types = Some(v);
             self
         }
@@ -1304,9 +1295,9 @@ pub mod describe_savings_plans_offerings_input {
         /// To override the contents of this collection use [`set_durations`](Self::set_durations).
         ///
         /// <p>The durations, in seconds.</p>
-        pub fn durations(mut self, input: impl Into<i64>) -> Self {
+        pub fn durations(mut self, input: i64) -> Self {
             let mut v = self.durations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.durations = Some(v);
             self
         }
@@ -1320,9 +1311,9 @@ pub mod describe_savings_plans_offerings_input {
         /// To override the contents of this collection use [`set_currencies`](Self::set_currencies).
         ///
         /// <p>The currencies.</p>
-        pub fn currencies(mut self, input: impl Into<crate::model::CurrencyCode>) -> Self {
+        pub fn currencies(mut self, input: crate::model::CurrencyCode) -> Self {
             let mut v = self.currencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.currencies = Some(v);
             self
         }
@@ -1415,12 +1406,9 @@ pub mod describe_savings_plans_offerings_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanOfferingFilterElement>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::SavingsPlanOfferingFilterElement) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }

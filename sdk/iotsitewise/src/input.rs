@@ -858,12 +858,9 @@ pub mod batch_put_asset_property_value_input {
         ///
         /// <p>The list of asset property value entries for the batch put request. You can specify up to
         /// 10 entries per request.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::PutAssetPropertyValueEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::PutAssetPropertyValueEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1511,10 +1508,10 @@ pub mod create_asset_model_input {
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_properties(
             mut self,
-            input: impl Into<crate::model::AssetModelPropertyDefinition>,
+            input: crate::model::AssetModelPropertyDefinition,
         ) -> Self {
             let mut v = self.asset_model_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_properties = Some(v);
             self
         }
@@ -1540,10 +1537,10 @@ pub mod create_asset_model_input {
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_hierarchies(
             mut self,
-            input: impl Into<crate::model::AssetModelHierarchyDefinition>,
+            input: crate::model::AssetModelHierarchyDefinition,
         ) -> Self {
             let mut v = self.asset_model_hierarchies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_hierarchies = Some(v);
             self
         }
@@ -1569,10 +1566,10 @@ pub mod create_asset_model_input {
         /// models to define alarms on this asset model.</p>
         pub fn asset_model_composite_models(
             mut self,
-            input: impl Into<crate::model::AssetModelCompositeModelDefinition>,
+            input: crate::model::AssetModelCompositeModelDefinition,
         ) -> Self {
             let mut v = self.asset_model_composite_models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_composite_models = Some(v);
             self
         }
@@ -6779,9 +6776,9 @@ pub mod get_asset_property_aggregates_input {
         /// To override the contents of this collection use [`set_aggregate_types`](Self::set_aggregate_types).
         ///
         /// <p>The data aggregating function.</p>
-        pub fn aggregate_types(mut self, input: impl Into<crate::model::AggregateType>) -> Self {
+        pub fn aggregate_types(mut self, input: crate::model::AggregateType) -> Self {
             let mut v = self.aggregate_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_types = Some(v);
             self
         }
@@ -6808,9 +6805,9 @@ pub mod get_asset_property_aggregates_input {
         /// To override the contents of this collection use [`set_qualities`](Self::set_qualities).
         ///
         /// <p>The quality by which to filter asset data.</p>
-        pub fn qualities(mut self, input: impl Into<crate::model::Quality>) -> Self {
+        pub fn qualities(mut self, input: crate::model::Quality) -> Self {
             let mut v = self.qualities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualities = Some(v);
             self
         }
@@ -7362,9 +7359,9 @@ pub mod get_asset_property_value_history_input {
         /// To override the contents of this collection use [`set_qualities`](Self::set_qualities).
         ///
         /// <p>The quality by which to filter asset data.</p>
-        pub fn qualities(mut self, input: impl Into<crate::model::Quality>) -> Self {
+        pub fn qualities(mut self, input: crate::model::Quality) -> Self {
             let mut v = self.qualities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualities = Some(v);
             self
         }
@@ -12008,12 +12005,9 @@ pub mod update_asset_model_input {
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>You can specify up to 200 properties per asset model. For more
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn asset_model_properties(
-            mut self,
-            input: impl Into<crate::model::AssetModelProperty>,
-        ) -> Self {
+        pub fn asset_model_properties(mut self, input: crate::model::AssetModelProperty) -> Self {
             let mut v = self.asset_model_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_properties = Some(v);
             self
         }
@@ -12037,12 +12031,9 @@ pub mod update_asset_model_input {
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>You can specify up to 10 hierarchies per asset model. For more
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn asset_model_hierarchies(
-            mut self,
-            input: impl Into<crate::model::AssetModelHierarchy>,
-        ) -> Self {
+        pub fn asset_model_hierarchies(mut self, input: crate::model::AssetModelHierarchy) -> Self {
             let mut v = self.asset_model_hierarchies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_hierarchies = Some(v);
             self
         }
@@ -12068,10 +12059,10 @@ pub mod update_asset_model_input {
         /// models to define alarms on this asset model.</p>
         pub fn asset_model_composite_models(
             mut self,
-            input: impl Into<crate::model::AssetModelCompositeModel>,
+            input: crate::model::AssetModelCompositeModel,
         ) -> Self {
             let mut v = self.asset_model_composite_models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_composite_models = Some(v);
             self
         }

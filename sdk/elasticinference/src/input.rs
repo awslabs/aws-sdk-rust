@@ -234,9 +234,9 @@ pub mod describe_accelerators_input {
         /// accelerator-types: can provide a list of accelerator type names to filter for.
         /// instance-id: can provide a list of EC2 instance ids to filter for.
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }

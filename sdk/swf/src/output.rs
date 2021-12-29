@@ -695,9 +695,9 @@ pub mod poll_for_decision_task_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
-        pub fn events(mut self, input: impl Into<crate::model::HistoryEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::HistoryEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -962,9 +962,9 @@ pub mod list_workflow_types_output {
         /// To override the contents of this collection use [`set_type_infos`](Self::set_type_infos).
         ///
         /// <p>The list of workflow type information.</p>
-        pub fn type_infos(mut self, input: impl Into<crate::model::WorkflowTypeInfo>) -> Self {
+        pub fn type_infos(mut self, input: crate::model::WorkflowTypeInfo) -> Self {
             let mut v = self.type_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.type_infos = Some(v);
             self
         }
@@ -1045,9 +1045,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tags associated with the domain.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1121,12 +1121,9 @@ pub mod list_open_workflow_executions_output {
         /// To override the contents of this collection use [`set_execution_infos`](Self::set_execution_infos).
         ///
         /// <p>The list of workflow information structures.</p>
-        pub fn execution_infos(
-            mut self,
-            input: impl Into<crate::model::WorkflowExecutionInfo>,
-        ) -> Self {
+        pub fn execution_infos(mut self, input: crate::model::WorkflowExecutionInfo) -> Self {
             let mut v = self.execution_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.execution_infos = Some(v);
             self
         }
@@ -1221,9 +1218,9 @@ pub mod list_domains_output {
         /// To override the contents of this collection use [`set_domain_infos`](Self::set_domain_infos).
         ///
         /// <p>A list of DomainInfo structures.</p>
-        pub fn domain_infos(mut self, input: impl Into<crate::model::DomainInfo>) -> Self {
+        pub fn domain_infos(mut self, input: crate::model::DomainInfo) -> Self {
             let mut v = self.domain_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_infos = Some(v);
             self
         }
@@ -1319,12 +1316,9 @@ pub mod list_closed_workflow_executions_output {
         /// To override the contents of this collection use [`set_execution_infos`](Self::set_execution_infos).
         ///
         /// <p>The list of workflow information structures.</p>
-        pub fn execution_infos(
-            mut self,
-            input: impl Into<crate::model::WorkflowExecutionInfo>,
-        ) -> Self {
+        pub fn execution_infos(mut self, input: crate::model::WorkflowExecutionInfo) -> Self {
             let mut v = self.execution_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.execution_infos = Some(v);
             self
         }
@@ -1419,9 +1413,9 @@ pub mod list_activity_types_output {
         /// To override the contents of this collection use [`set_type_infos`](Self::set_type_infos).
         ///
         /// <p>List of activity type information.</p>
-        pub fn type_infos(mut self, input: impl Into<crate::model::ActivityTypeInfo>) -> Self {
+        pub fn type_infos(mut self, input: crate::model::ActivityTypeInfo) -> Self {
             let mut v = self.type_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.type_infos = Some(v);
             self
         }
@@ -1516,9 +1510,9 @@ pub mod get_workflow_execution_history_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The list of history events.</p>
-        pub fn events(mut self, input: impl Into<crate::model::HistoryEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::HistoryEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }

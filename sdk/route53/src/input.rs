@@ -641,9 +641,9 @@ pub mod change_tags_for_resource_input {
         /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags
         /// that you want to edit <code>Value</code> for.</p>
         /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
-        pub fn add_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn add_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.add_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_tags = Some(v);
             self
         }
@@ -12096,9 +12096,9 @@ pub mod update_health_check_input {
         ///
         /// <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check
         /// the specified endpoint from.</p>
-        pub fn regions(mut self, input: impl Into<crate::model::HealthCheckRegion>) -> Self {
+        pub fn regions(mut self, input: crate::model::HealthCheckRegion) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions = Some(v);
             self
         }
@@ -12206,12 +12206,9 @@ pub mod update_health_check_input {
         /// to null.</p>
         /// </li>
         /// </ul>
-        pub fn reset_elements(
-            mut self,
-            input: impl Into<crate::model::ResettableElementName>,
-        ) -> Self {
+        pub fn reset_elements(mut self, input: crate::model::ResettableElementName) -> Self {
             let mut v = self.reset_elements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reset_elements = Some(v);
             self
         }

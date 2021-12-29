@@ -1178,12 +1178,9 @@ pub mod no_database_migration_preference {
         /// <p>
         /// The target database engine for database migration preference that you specify.
         /// </p>
-        pub fn target_database_engine(
-            mut self,
-            input: impl Into<crate::model::TargetDatabaseEngine>,
-        ) -> Self {
+        pub fn target_database_engine(mut self, input: crate::model::TargetDatabaseEngine) -> Self {
             let mut v = self.target_database_engine.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_database_engine = Some(v);
             self
         }
@@ -1358,10 +1355,10 @@ pub mod homogeneous {
         /// </p>
         pub fn target_database_engine(
             mut self,
-            input: impl Into<crate::model::HomogeneousTargetDatabaseEngine>,
+            input: crate::model::HomogeneousTargetDatabaseEngine,
         ) -> Self {
             let mut v = self.target_database_engine.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_database_engine = Some(v);
             self
         }
@@ -1491,10 +1488,10 @@ pub mod heterogeneous {
         /// </p>
         pub fn target_database_engine(
             mut self,
-            input: impl Into<crate::model::HeterogeneousTargetDatabaseEngine>,
+            input: crate::model::HeterogeneousTargetDatabaseEngine,
         ) -> Self {
             let mut v = self.target_database_engine.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_database_engine = Some(v);
             self
         }
@@ -1879,10 +1876,10 @@ pub mod no_management_preference {
         /// </p>
         pub fn target_destination(
             mut self,
-            input: impl Into<crate::model::NoPreferenceTargetDestination>,
+            input: crate::model::NoPreferenceTargetDestination,
         ) -> Self {
             let mut v = self.target_destination.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_destination = Some(v);
             self
         }
@@ -2041,10 +2038,10 @@ pub mod self_manage_resources {
         /// <p> Self-managed resources target destination. </p>
         pub fn target_destination(
             mut self,
-            input: impl Into<crate::model::SelfManageTargetDestination>,
+            input: crate::model::SelfManageTargetDestination,
         ) -> Self {
             let mut v = self.target_destination.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_destination = Some(v);
             self
         }
@@ -2199,10 +2196,10 @@ pub mod aws_managed_resources {
         /// </p>
         pub fn target_destination(
             mut self,
-            input: impl Into<crate::model::AwsManagedTargetDestination>,
+            input: crate::model::AwsManagedTargetDestination,
         ) -> Self {
             let mut v = self.target_destination.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_destination = Some(v);
             self
         }
@@ -2746,10 +2743,10 @@ pub mod server_detail {
         /// <p> A list of anti-pattern severity summaries. </p>
         pub fn list_antipattern_severity_summary(
             mut self,
-            input: impl Into<crate::model::AntipatternSeveritySummary>,
+            input: crate::model::AntipatternSeveritySummary,
         ) -> Self {
             let mut v = self.list_antipattern_severity_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_antipattern_severity_summary = Some(v);
             self
         }
@@ -2781,12 +2778,12 @@ pub mod server_detail {
         /// <p> A list of strategy summaries. </p>
         pub fn application_component_strategy_summary(
             mut self,
-            input: impl Into<crate::model::StrategySummary>,
+            input: crate::model::StrategySummary,
         ) -> Self {
             let mut v = self
                 .application_component_strategy_summary
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_component_strategy_summary = Some(v);
             self
         }
@@ -3225,9 +3222,9 @@ pub mod system_info {
         /// <p>
         /// Networking information related to a server.
         /// </p>
-        pub fn network_info_list(mut self, input: impl Into<crate::model::NetworkInfo>) -> Self {
+        pub fn network_info_list(mut self, input: crate::model::NetworkInfo) -> Self {
             let mut v = self.network_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_info_list = Some(v);
             self
         }
@@ -5104,10 +5101,10 @@ pub mod application_component_detail {
         /// <p> A list of anti-pattern severity summaries. </p>
         pub fn list_antipattern_severity_summary(
             mut self,
-            input: impl Into<crate::model::AntipatternSeveritySummary>,
+            input: crate::model::AntipatternSeveritySummary,
         ) -> Self {
             let mut v = self.list_antipattern_severity_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_antipattern_severity_summary = Some(v);
             self
         }
@@ -5140,10 +5137,10 @@ pub mod application_component_detail {
         /// </p>
         pub fn source_code_repositories(
             mut self,
-            input: impl Into<crate::model::SourceCodeRepository>,
+            input: crate::model::SourceCodeRepository,
         ) -> Self {
             let mut v = self.source_code_repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_code_repositories = Some(v);
             self
         }
@@ -6533,10 +6530,10 @@ pub mod assessment_summary {
         /// </p>
         pub fn list_server_strategy_summary(
             mut self,
-            input: impl Into<crate::model::StrategySummary>,
+            input: crate::model::StrategySummary,
         ) -> Self {
             let mut v = self.list_server_strategy_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_server_strategy_summary = Some(v);
             self
         }
@@ -6559,12 +6556,12 @@ pub mod assessment_summary {
         /// </p>
         pub fn list_application_component_strategy_summary(
             mut self,
-            input: impl Into<crate::model::StrategySummary>,
+            input: crate::model::StrategySummary,
         ) -> Self {
             let mut v = self
                 .list_application_component_strategy_summary
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_application_component_strategy_summary = Some(v);
             self
         }
@@ -6587,10 +6584,10 @@ pub mod assessment_summary {
         /// </p>
         pub fn list_antipattern_severity_summary(
             mut self,
-            input: impl Into<crate::model::AntipatternSeveritySummary>,
+            input: crate::model::AntipatternSeveritySummary,
         ) -> Self {
             let mut v = self.list_antipattern_severity_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_antipattern_severity_summary = Some(v);
             self
         }
@@ -6613,10 +6610,10 @@ pub mod assessment_summary {
         /// </p>
         pub fn list_application_component_summary(
             mut self,
-            input: impl Into<crate::model::ApplicationComponentSummary>,
+            input: crate::model::ApplicationComponentSummary,
         ) -> Self {
             let mut v = self.list_application_component_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_application_component_summary = Some(v);
             self
         }
@@ -6637,12 +6634,9 @@ pub mod assessment_summary {
         /// <p>
         /// List of ServerSummary.
         /// </p>
-        pub fn list_server_summary(
-            mut self,
-            input: impl Into<crate::model::ServerSummary>,
-        ) -> Self {
+        pub fn list_server_summary(mut self, input: crate::model::ServerSummary) -> Self {
             let mut v = self.list_server_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_server_summary = Some(v);
             self
         }

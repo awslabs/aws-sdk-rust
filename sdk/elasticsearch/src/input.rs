@@ -192,9 +192,9 @@ pub mod add_tags_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -875,11 +875,11 @@ pub mod create_elasticsearch_domain_input {
         /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             let mut hash_map = self.log_publishing_options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.log_publishing_options = Some(hash_map);
             self
         }
@@ -943,9 +943,9 @@ pub mod create_elasticsearch_domain_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of <code>Tag</code> added during domain creation.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -3205,9 +3205,9 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
         /// <li>destination-domain-info.domain-name</li>
         /// </ul>
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3414,9 +3414,9 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
         /// <li>source-domain-info.domain-name</li>
         /// </ul>
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3614,9 +3614,9 @@ pub mod describe_packages_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::DescribePackagesFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DescribePackagesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6985,11 +6985,11 @@ pub mod update_elasticsearch_domain_config_input {
         /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             let mut hash_map = self.log_publishing_options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.log_publishing_options = Some(hash_map);
             self
         }

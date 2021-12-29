@@ -1383,9 +1383,9 @@ pub mod customized_metric_specification {
         /// <p>The dimensions of the metric. </p>
         /// <p>Conditional: If you published your metric with dimensions, you must specify the same
         /// dimensions in your scaling policy.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::MetricDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -2192,9 +2192,9 @@ pub mod step_scaling_policy_configuration {
         /// breach.</p>
         /// <p>At least one step adjustment is required if you are adding a new step scaling policy
         /// configuration.</p>
-        pub fn step_adjustments(mut self, input: impl Into<crate::model::StepAdjustment>) -> Self {
+        pub fn step_adjustments(mut self, input: crate::model::StepAdjustment) -> Self {
             let mut v = self.step_adjustments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.step_adjustments = Some(v);
             self
         }
@@ -4532,9 +4532,9 @@ pub mod scaling_policy {
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
         /// <p>The CloudWatch alarms associated with the scaling policy.</p>
-        pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarms = Some(v);
             self
         }

@@ -27,9 +27,9 @@ pub mod activate_pipeline_input {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-        pub fn parameter_values(mut self, input: impl Into<crate::model::ParameterValue>) -> Self {
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_values = Some(v);
             self
         }
@@ -216,9 +216,9 @@ pub mod add_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add, as key/value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -426,9 +426,9 @@ pub mod create_pipeline_input {
         /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
         /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
         /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1995,9 +1995,9 @@ pub mod put_pipeline_definition_input {
         /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
         ///
         /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-        pub fn pipeline_objects(mut self, input: impl Into<crate::model::PipelineObject>) -> Self {
+        pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_objects = Some(v);
             self
         }
@@ -2014,12 +2014,9 @@ pub mod put_pipeline_definition_input {
         /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
         ///
         /// <p>The parameter objects used with the pipeline.</p>
-        pub fn parameter_objects(
-            mut self,
-            input: impl Into<crate::model::ParameterObject>,
-        ) -> Self {
+        pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
             let mut v = self.parameter_objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_objects = Some(v);
             self
         }
@@ -2036,9 +2033,9 @@ pub mod put_pipeline_definition_input {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>The parameter values used with the pipeline.</p>
-        pub fn parameter_values(mut self, input: impl Into<crate::model::ParameterValue>) -> Self {
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_values = Some(v);
             self
         }
@@ -2600,9 +2597,9 @@ pub mod report_task_progress_input {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-        pub fn fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }
@@ -3373,9 +3370,9 @@ pub mod validate_pipeline_definition_input {
         /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
         ///
         /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-        pub fn pipeline_objects(mut self, input: impl Into<crate::model::PipelineObject>) -> Self {
+        pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_objects = Some(v);
             self
         }
@@ -3392,12 +3389,9 @@ pub mod validate_pipeline_definition_input {
         /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
         ///
         /// <p>The parameter objects used with the pipeline.</p>
-        pub fn parameter_objects(
-            mut self,
-            input: impl Into<crate::model::ParameterObject>,
-        ) -> Self {
+        pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
             let mut v = self.parameter_objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_objects = Some(v);
             self
         }
@@ -3414,9 +3408,9 @@ pub mod validate_pipeline_definition_input {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>The parameter values used with the pipeline.</p>
-        pub fn parameter_values(mut self, input: impl Into<crate::model::ParameterValue>) -> Self {
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_values = Some(v);
             self
         }

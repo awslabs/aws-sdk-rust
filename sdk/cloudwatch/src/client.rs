@@ -423,8 +423,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
         ///
         /// <p>The alarms to be deleted.</p>
-        pub fn alarm_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_names(inp);
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_names(input.into());
             self
         }
         /// <p>The alarms to be deleted.</p>
@@ -496,8 +496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
@@ -506,8 +506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric name associated with the anomaly detection model to delete.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>The metric name associated with the anomaly detection model to delete.</p>
@@ -520,8 +520,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
@@ -533,8 +533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The statistic associated with the anomaly detection model to delete.</p>
-        pub fn stat(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stat(inp);
+        pub fn stat(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stat(signature.into());
             self
         }
         /// <p>The statistic associated with the anomaly detection model to delete.</p>
@@ -576,9 +576,9 @@ pub mod fluent_builders {
         /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
         pub fn single_metric_anomaly_detector(
             mut self,
-            inp: crate::model::SingleMetricAnomalyDetector,
+            signature: crate::model::SingleMetricAnomalyDetector,
         ) -> Self {
-            self.inner = self.inner.single_metric_anomaly_detector(inp);
+            self.inner = self.inner.single_metric_anomaly_detector(signature);
             self
         }
         /// <p>A single metric anomaly detector to be deleted.</p>
@@ -653,9 +653,9 @@ pub mod fluent_builders {
         /// <code>MetricMathAnomalyDetector</code> property.</p>
         pub fn metric_math_anomaly_detector(
             mut self,
-            inp: crate::model::MetricMathAnomalyDetector,
+            signature: crate::model::MetricMathAnomalyDetector,
         ) -> Self {
-            self.inner = self.inner.metric_math_anomaly_detector(inp);
+            self.inner = self.inner.metric_math_anomaly_detector(signature);
             self
         }
         /// <p>The metric math anomaly detector to be deleted.</p>
@@ -763,8 +763,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dashboard_names`](Self::set_dashboard_names).
         ///
         /// <p>The dashboards to be deleted. This parameter is required.</p>
-        pub fn dashboard_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_names(inp);
+        pub fn dashboard_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_names(input.into());
             self
         }
         /// <p>The dashboards to be deleted. This parameter is required.</p>
@@ -843,8 +843,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
         ///
         /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_names(inp);
+        pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_names(input.into());
             self
         }
         /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
@@ -916,8 +916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric stream to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the metric stream to delete.</p>
@@ -991,8 +991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(signature.into());
             self
         }
         /// <p>The name of the alarm.</p>
@@ -1006,8 +1006,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
         /// only metric alarms are returned.</p>
-        pub fn alarm_types(mut self, inp: impl Into<crate::model::AlarmType>) -> Self {
-            self.inner = self.inner.alarm_types(inp);
+        pub fn alarm_types(mut self, input: crate::model::AlarmType) -> Self {
+            self.inner = self.inner.alarm_types(input);
             self
         }
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
@@ -1020,8 +1020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of alarm histories to retrieve.</p>
-        pub fn history_item_type(mut self, inp: crate::model::HistoryItemType) -> Self {
-            self.inner = self.inner.history_item_type(inp);
+        pub fn history_item_type(mut self, signature: crate::model::HistoryItemType) -> Self {
+            self.inner = self.inner.history_item_type(signature);
             self
         }
         /// <p>The type of alarm histories to retrieve.</p>
@@ -1033,8 +1033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(signature);
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
@@ -1046,8 +1046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(signature);
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
@@ -1059,8 +1059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of alarm history records to retrieve.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of alarm history records to retrieve.</p>
@@ -1070,8 +1070,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned by a previous call to indicate that there is more data
         /// available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token returned by a previous call to indicate that there is more data
@@ -1082,8 +1082,8 @@ pub mod fluent_builders {
         }
         /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest
         /// event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
-        pub fn scan_by(mut self, inp: crate::model::ScanBy) -> Self {
-            self.inner = self.inner.scan_by(inp);
+        pub fn scan_by(mut self, signature: crate::model::ScanBy) -> Self {
+            self.inner = self.inner.scan_by(signature);
             self
         }
         /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest
@@ -1161,8 +1161,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
         ///
         /// <p>The names of the alarms to retrieve information about.</p>
-        pub fn alarm_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_names(inp);
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_names(input.into());
             self
         }
         /// <p>The names of the alarms to retrieve information about.</p>
@@ -1177,8 +1177,8 @@ pub mod fluent_builders {
         /// that start with this prefix.</p>
         /// <p>If this parameter
         /// is specified, you cannot specify <code>AlarmNames</code>.</p>
-        pub fn alarm_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name_prefix(inp);
+        pub fn alarm_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name_prefix(signature.into());
             self
         }
         /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names
@@ -1198,8 +1198,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
         /// only metric alarms are returned.</p>
-        pub fn alarm_types(mut self, inp: impl Into<crate::model::AlarmType>) -> Self {
-            self.inner = self.inner.alarm_types(inp);
+        pub fn alarm_types(mut self, input: crate::model::AlarmType) -> Self {
+            self.inner = self.inner.alarm_types(input);
             self
         }
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
@@ -1228,8 +1228,8 @@ pub mod fluent_builders {
         /// these alarms, perform another <code>DescribeAlarms</code> operation and specify
         /// the parent alarm names in the <code>AlarmNames</code> parameter.</p>
         /// </note>
-        pub fn children_of_alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.children_of_alarm_name(inp);
+        pub fn children_of_alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.children_of_alarm_name(signature.into());
             self
         }
         /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns
@@ -1270,8 +1270,8 @@ pub mod fluent_builders {
         /// these alarms, perform another <code>DescribeAlarms</code> operation and specify
         /// the parent alarm names in the <code>AlarmNames</code> parameter.</p>
         /// </note>
-        pub fn parents_of_alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parents_of_alarm_name(inp);
+        pub fn parents_of_alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parents_of_alarm_name(signature.into());
             self
         }
         /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns
@@ -1296,8 +1296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
-        pub fn state_value(mut self, inp: crate::model::StateValue) -> Self {
-            self.inner = self.inner.state_value(inp);
+        pub fn state_value(mut self, signature: crate::model::StateValue) -> Self {
+            self.inner = self.inner.state_value(signature);
             self
         }
         /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
@@ -1311,8 +1311,8 @@ pub mod fluent_builders {
         /// <p>Use this parameter to filter the results of the operation to only those alarms that
         /// use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all
         /// alarms that send notifications to that topic.</p>
-        pub fn action_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_prefix(inp);
+        pub fn action_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_prefix(signature.into());
             self
         }
         /// <p>Use this parameter to filter the results of the operation to only those alarms that
@@ -1326,8 +1326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of alarm descriptions to retrieve.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of alarm descriptions to retrieve.</p>
@@ -1337,8 +1337,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned by a previous call to indicate that there is more data
         /// available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token returned by a previous call to indicate that there is more data
@@ -1412,8 +1412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>The name of the metric.</p>
@@ -1422,8 +1422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace of the metric.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>The namespace of the metric.</p>
@@ -1433,8 +1433,8 @@ pub mod fluent_builders {
         }
         /// <p>The statistic for the metric, other than percentiles.
         /// For percentile statistics, use <code>ExtendedStatistics</code>.</p>
-        pub fn statistic(mut self, inp: crate::model::Statistic) -> Self {
-            self.inner = self.inner.statistic(inp);
+        pub fn statistic(mut self, signature: crate::model::Statistic) -> Self {
+            self.inner = self.inner.statistic(signature);
             self
         }
         /// <p>The statistic for the metric, other than percentiles.
@@ -1448,8 +1448,8 @@ pub mod fluent_builders {
         }
         /// <p>The percentile statistic for the metric. Specify a value between
         /// p0.0 and p100.</p>
-        pub fn extended_statistic(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extended_statistic(inp);
+        pub fn extended_statistic(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extended_statistic(signature.into());
             self
         }
         /// <p>The percentile statistic for the metric. Specify a value between
@@ -1467,8 +1467,8 @@ pub mod fluent_builders {
         ///
         /// <p>The dimensions associated with the metric. If the metric has any associated
         /// dimensions, you must specify them in order for the call to succeed.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The dimensions associated with the metric. If the metric has any associated
@@ -1481,8 +1481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The period, in seconds, over which the statistic is applied.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The period, in seconds, over which the statistic is applied.</p>
@@ -1491,8 +1491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unit for the metric.</p>
-        pub fn unit(mut self, inp: crate::model::StandardUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: crate::model::StandardUnit) -> Self {
+            self.inner = self.inner.unit(signature);
             self
         }
         /// <p>The unit for the metric.</p>
@@ -1567,8 +1567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -1580,8 +1580,8 @@ pub mod fluent_builders {
         /// value that you can specify is 100.</p>
         /// <p>To retrieve the remaining results, make another call with the returned
         /// <code>NextToken</code> value. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in one operation. The maximum
@@ -1594,8 +1594,8 @@ pub mod fluent_builders {
         }
         /// <p>Limits the results to only the anomaly detection models that
         /// are associated with the specified namespace.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>Limits the results to only the anomaly detection models that
@@ -1607,8 +1607,8 @@ pub mod fluent_builders {
         /// <p>Limits the results to only the anomaly detection models that are associated with the
         /// specified metric name. If there are multiple metrics with this name in different
         /// namespaces that have anomaly detection models, they're all returned.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>Limits the results to only the anomaly detection models that are associated with the
@@ -1625,8 +1625,8 @@ pub mod fluent_builders {
         /// <p>Limits the results to only the anomaly detection models that are associated with the
         /// specified metric dimensions. If there are multiple metrics that have these dimensions
         /// and have anomaly detection models associated, they're all returned.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>Limits the results to only the anomaly detection models that are associated with the
@@ -1645,11 +1645,8 @@ pub mod fluent_builders {
         ///
         /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
         /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-        pub fn anomaly_detector_types(
-            mut self,
-            inp: impl Into<crate::model::AnomalyDetectorType>,
-        ) -> Self {
-            self.inner = self.inner.anomaly_detector_types(inp);
+        pub fn anomaly_detector_types(mut self, input: crate::model::AnomalyDetectorType) -> Self {
+            self.inner = self.inner.anomaly_detector_types(input);
             self
         }
         /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
@@ -1725,8 +1722,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
@@ -1736,8 +1733,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in one operation. If you omit this
         /// parameter, the default of 500 is used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in one operation. If you omit this
@@ -1812,8 +1809,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
         ///
         /// <p>The names of the alarms.</p>
-        pub fn alarm_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_names(inp);
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_names(input.into());
             self
         }
         /// <p>The names of the alarms.</p>
@@ -1890,8 +1887,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
         ///
         /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_names(inp);
+        pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_names(input.into());
             self
         }
         /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
@@ -1967,8 +1964,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
         ///
         /// <p>The names of the alarms.</p>
-        pub fn alarm_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_names(inp);
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_names(input.into());
             self
         }
         /// <p>The names of the alarms.</p>
@@ -2044,8 +2041,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
         ///
         /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_names(inp);
+        pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_names(input.into());
             self
         }
         /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
@@ -2120,8 +2117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dashboard to be described.</p>
-        pub fn dashboard_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name(inp);
+        pub fn dashboard_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name(signature.into());
             self
         }
         /// <p>The name of the dashboard to be described.</p>
@@ -2229,8 +2226,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule that you want to see data from.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the rule that you want to see data from.</p>
@@ -2241,8 +2238,8 @@ pub mod fluent_builders {
         /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
         /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
@@ -2258,8 +2255,8 @@ pub mod fluent_builders {
         /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
         /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
@@ -2273,8 +2270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
@@ -2283,8 +2280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
-        pub fn max_contributor_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_contributor_count(inp);
+        pub fn max_contributor_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_contributor_count(signature);
             self
         }
         /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
@@ -2332,8 +2329,8 @@ pub mod fluent_builders {
         /// <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p>
         /// </li>
         /// </ul>
-        pub fn metrics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metrics(input.into());
             self
         }
         /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more
@@ -2380,8 +2377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
-        pub fn order_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.order_by(inp);
+        pub fn order_by(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.order_by(signature.into());
             self
         }
         /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
@@ -2490,11 +2487,8 @@ pub mod fluent_builders {
         ///
         /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code>
         /// structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
-        pub fn metric_data_queries(
-            mut self,
-            inp: impl Into<crate::model::MetricDataQuery>,
-        ) -> Self {
-            self.inner = self.inner.metric_data_queries(inp);
+        pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
+            self.inner = self.inner.metric_data_queries(input);
             self
         }
         /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code>
@@ -2536,8 +2530,8 @@ pub mod fluent_builders {
         /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The time stamp indicating the earliest data to be returned.</p>
@@ -2584,8 +2578,8 @@ pub mod fluent_builders {
         /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
         /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The time stamp indicating the latest data to be returned.</p>
@@ -2604,8 +2598,8 @@ pub mod fluent_builders {
         }
         /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation,
         /// to get the next set of data points.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation,
@@ -2617,8 +2611,8 @@ pub mod fluent_builders {
         /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates
         /// when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates
         /// when the <code>MaxDatapoints</code> limit is reached.</p>
-        pub fn scan_by(mut self, inp: crate::model::ScanBy) -> Self {
-            self.inner = self.inner.scan_by(inp);
+        pub fn scan_by(mut self, signature: crate::model::ScanBy) -> Self {
+            self.inner = self.inner.scan_by(signature);
             self
         }
         /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates
@@ -2630,8 +2624,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of data points the request should return before paginating. If you omit
         /// this, the default of 100,800 is used.</p>
-        pub fn max_datapoints(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_datapoints(inp);
+        pub fn max_datapoints(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_datapoints(signature);
             self
         }
         /// <p>The maximum number of data points the request should return before paginating. If you omit
@@ -2644,8 +2638,8 @@ pub mod fluent_builders {
         /// to specify your time zone so that the labels of returned data display the
         /// correct time
         /// for your time zone. </p>
-        pub fn label_options(mut self, inp: crate::model::LabelOptions) -> Self {
-            self.inner = self.inner.label_options(inp);
+        pub fn label_options(mut self, signature: crate::model::LabelOptions) -> Self {
+            self.inner = self.inner.label_options(signature);
             self
         }
         /// <p>This structure includes the <code>Timezone</code> parameter, which you can use
@@ -2771,8 +2765,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace of the metric, with or without spaces.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>The namespace of the metric, with or without spaces.</p>
@@ -2781,8 +2775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric, with or without spaces.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>The name of the metric, with or without spaces.</p>
@@ -2800,8 +2794,8 @@ pub mod fluent_builders {
         /// You must specify the same dimensions that were used when the metrics were created. For an example,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the
         /// <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension.
@@ -2844,8 +2838,8 @@ pub mod fluent_builders {
         /// period of 5 seconds, you receive data
         /// timestamped between 15:02:15 and 15:07:15.
         /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The time stamp that determines the first data point to return. Start times are
@@ -2885,8 +2879,8 @@ pub mod fluent_builders {
         /// <p>The time stamp that determines the last data point to return.</p>
         /// <p>The value specified is exclusive; results include data points up to the specified time stamp.
         /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The time stamp that determines the last data point to return.</p>
@@ -2916,8 +2910,8 @@ pub mod fluent_builders {
         /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
         /// </li>
         /// </ul>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
@@ -2948,8 +2942,8 @@ pub mod fluent_builders {
         /// <p>The metric statistics, other than percentile. For percentile statistics,
         /// use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must
         /// specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
-        pub fn statistics(mut self, inp: impl Into<crate::model::Statistic>) -> Self {
-            self.inner = self.inner.statistics(inp);
+        pub fn statistics(mut self, input: crate::model::Statistic) -> Self {
+            self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The metric statistics, other than percentile. For percentile statistics,
@@ -2969,8 +2963,8 @@ pub mod fluent_builders {
         /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must
         /// specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not
         /// available for metrics when any of the metric values are negative numbers.</p>
-        pub fn extended_statistics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extended_statistics(inp);
+        pub fn extended_statistics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extended_statistics(input.into());
             self
         }
         /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must
@@ -2987,8 +2981,8 @@ pub mod fluent_builders {
         /// If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified
         /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
         /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
-        pub fn unit(mut self, inp: crate::model::StandardUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: crate::model::StandardUnit) -> Self {
+            self.inner = self.inner.unit(signature);
             self
         }
         /// <p>The unit for a given metric.
@@ -3060,8 +3054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric stream to retrieve information about.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the metric stream to retrieve information about.</p>
@@ -3154,8 +3148,8 @@ pub mod fluent_builders {
         ///
         /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation
         /// point appears next to the graph legend.</p>
-        pub fn metric_widget(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_widget(inp);
+        pub fn metric_widget(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_widget(signature.into());
             self
         }
         /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the
@@ -3215,8 +3209,8 @@ pub mod fluent_builders {
         /// use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify
         /// <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>,
         /// and the body of the response is a PNG image. </p>
-        pub fn output_format(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_format(inp);
+        pub fn output_format(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_format(signature.into());
             self
         }
         /// <p>The format of the resulting image. Only PNG images are supported.</p>
@@ -3341,8 +3335,8 @@ pub mod fluent_builders {
         /// valid characters are A-Z, a-z, 0-9, ".", "-", and "_".
         ///
         /// </p>
-        pub fn dashboard_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name_prefix(inp);
+        pub fn dashboard_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name_prefix(signature.into());
             self
         }
         /// <p>If you specify this parameter, only
@@ -3358,8 +3352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
@@ -3442,8 +3436,8 @@ pub mod fluent_builders {
         }
         /// <p>The metric namespace to filter against. Only the namespace that matches exactly
         /// will be returned.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>The metric namespace to filter against. Only the namespace that matches exactly
@@ -3454,8 +3448,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the metric to filter against.  Only the metrics with names that match exactly
         /// will be returned.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>The name of the metric to filter against.  Only the metrics with names that match exactly
@@ -3470,8 +3464,8 @@ pub mod fluent_builders {
         ///
         /// <p>The dimensions to filter against.  Only the dimensions that match exactly
         /// will be returned.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::DimensionFilter>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::DimensionFilter) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The dimensions to filter against.  Only the dimensions that match exactly
@@ -3485,8 +3479,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned by a previous call to indicate that there is more data
         /// available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token returned by a previous call to indicate that there is more data
@@ -3502,8 +3496,8 @@ pub mod fluent_builders {
         /// <p>The results that are returned are an approximation of the value you specify. There
         /// is a low probability that the returned results include metrics with last published
         /// data as much as 40 minutes more than the specified time interval.</p>
-        pub fn recently_active(mut self, inp: crate::model::RecentlyActive) -> Self {
-            self.inner = self.inner.recently_active(inp);
+        pub fn recently_active(mut self, signature: crate::model::RecentlyActive) -> Self {
+            self.inner = self.inner.recently_active(signature);
             self
         }
         /// <p>To filter the results to show only metrics that have had data points published
@@ -3581,8 +3575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
@@ -3591,8 +3585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in one operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in one operation.</p>
@@ -3673,8 +3667,8 @@ pub mod fluent_builders {
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
         /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
         /// Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
@@ -3756,8 +3750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
@@ -3766,8 +3760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric to create the anomaly detection model for.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>The name of the metric to create the anomaly detection model for.</p>
@@ -3780,8 +3774,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
@@ -3793,8 +3787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The statistic to use for the metric and the anomaly detection model.</p>
-        pub fn stat(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stat(inp);
+        pub fn stat(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stat(signature.into());
             self
         }
         /// <p>The statistic to use for the metric and the anomaly detection model.</p>
@@ -3808,8 +3802,11 @@ pub mod fluent_builders {
         /// You can specify as many as 10 time ranges.</p>
         /// <p>The configuration can also include the time zone to use for
         /// the metric.</p>
-        pub fn configuration(mut self, inp: crate::model::AnomalyDetectorConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(
+            mut self,
+            signature: crate::model::AnomalyDetectorConfiguration,
+        ) -> Self {
+            self.inner = self.inner.configuration(signature);
             self
         }
         /// <p>The configuration specifies details about how the
@@ -3860,9 +3857,9 @@ pub mod fluent_builders {
         /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
         pub fn single_metric_anomaly_detector(
             mut self,
-            inp: crate::model::SingleMetricAnomalyDetector,
+            signature: crate::model::SingleMetricAnomalyDetector,
         ) -> Self {
-            self.inner = self.inner.single_metric_anomaly_detector(inp);
+            self.inner = self.inner.single_metric_anomaly_detector(signature);
             self
         }
         /// <p>A single metric anomaly detector to be created.</p>
@@ -3940,9 +3937,9 @@ pub mod fluent_builders {
         /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
         pub fn metric_math_anomaly_detector(
             mut self,
-            inp: crate::model::MetricMathAnomalyDetector,
+            signature: crate::model::MetricMathAnomalyDetector,
         ) -> Self {
-            self.inner = self.inner.metric_math_anomaly_detector(inp);
+            self.inner = self.inner.metric_math_anomaly_detector(signature);
             self
         }
         /// <p>The metric math anomaly detector to be created.</p>
@@ -4086,8 +4083,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is
         /// <code>TRUE</code>.</p>
-        pub fn actions_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.actions_enabled(inp);
+        pub fn actions_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.actions_enabled(signature);
             self
         }
         /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is
@@ -4108,8 +4105,8 @@ pub mod fluent_builders {
         /// | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
         /// </code>
         /// </p>
-        pub fn alarm_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_actions(inp);
+        pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_actions(input.into());
             self
         }
         /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
@@ -4128,8 +4125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the composite alarm.</p>
-        pub fn alarm_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_description(inp);
+        pub fn alarm_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_description(signature.into());
             self
         }
         /// <p>The description for the composite alarm.</p>
@@ -4141,8 +4138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(signature.into());
             self
         }
         /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
@@ -4213,8 +4210,8 @@ pub mod fluent_builders {
         /// "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements
         /// are child alarms, TRUE or FALSE statements, and
         /// parentheses.</p>
-        pub fn alarm_rule(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_rule(inp);
+        pub fn alarm_rule(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_rule(signature.into());
             self
         }
         /// <p>An expression that specifies which other alarms are to be evaluated to determine this
@@ -4294,8 +4291,8 @@ pub mod fluent_builders {
         /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
         /// </code>
         /// </p>
-        pub fn insufficient_data_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insufficient_data_actions(inp);
+        pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insufficient_data_actions(input.into());
             self
         }
         /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state.
@@ -4322,8 +4319,8 @@ pub mod fluent_builders {
         /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
         /// </code>
         /// </p>
-        pub fn ok_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ok_actions(inp);
+        pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ok_actions(input.into());
             self
         }
         /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state
@@ -4348,8 +4345,8 @@ pub mod fluent_builders {
         /// <p>Tags can help you organize and categorize your
         /// resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with
         /// certain tag values.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
@@ -4439,8 +4436,8 @@ pub mod fluent_builders {
         /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing
         /// its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are
         /// A-Z, a-z, 0-9, "-", and "_".  This parameter is required.</p>
-        pub fn dashboard_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name(inp);
+        pub fn dashboard_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name(signature.into());
             self
         }
         /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing
@@ -4457,8 +4454,8 @@ pub mod fluent_builders {
         /// on the dashboard.  This parameter is required.</p>
         /// <p>For more information about the syntax,
         /// see  <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
-        pub fn dashboard_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_body(inp);
+        pub fn dashboard_body(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_body(signature.into());
             self
         }
         /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location
@@ -4537,8 +4534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the rule.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>A unique name for the rule.</p>
@@ -4547,8 +4544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
-        pub fn rule_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_state(inp);
+        pub fn rule_state(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_state(signature.into());
             self
         }
         /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
@@ -4559,8 +4556,8 @@ pub mod fluent_builders {
         /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
         /// Rule Syntax</a>.</p>
-        pub fn rule_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_definition(inp);
+        pub fn rule_definition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_definition(signature.into());
             self
         }
         /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see
@@ -4588,8 +4585,8 @@ pub mod fluent_builders {
         /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags
         /// you specify in this parameter are ignored. To change the tags of an existing rule, use
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of key-value pairs to associate with the Contributor Insights rule.
@@ -4734,8 +4731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the alarm. This name must be unique within the Region.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(signature.into());
             self
         }
         /// <p>The name for the alarm. This name must be unique within the Region.</p>
@@ -4744,8 +4741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the alarm.</p>
-        pub fn alarm_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_description(inp);
+        pub fn alarm_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_description(signature.into());
             self
         }
         /// <p>The description for the alarm.</p>
@@ -4758,8 +4755,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is
         /// <code>TRUE</code>.</p>
-        pub fn actions_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.actions_enabled(inp);
+        pub fn actions_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.actions_enabled(signature);
             self
         }
         /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is
@@ -4791,8 +4788,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
         /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
         /// </p>
-        pub fn ok_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ok_actions(inp);
+        pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ok_actions(input.into());
             self
         }
         /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state
@@ -4848,8 +4845,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
         /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
         /// </p>
-        pub fn alarm_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_actions(inp);
+        pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_actions(input.into());
             self
         }
         /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
@@ -4904,8 +4901,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
         /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
         /// </p>
-        pub fn insufficient_data_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insufficient_data_actions(inp);
+        pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insufficient_data_actions(input.into());
             self
         }
         /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state.
@@ -4939,8 +4936,8 @@ pub mod fluent_builders {
         /// <code>Dimensions</code>, <code>Period</code>,
         /// <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify
         /// all this information in the <code>Metrics</code> array.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code>
@@ -4954,8 +4951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
@@ -4967,8 +4964,8 @@ pub mod fluent_builders {
         /// For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify
         /// a <code>MetricName</code>, you must
         /// specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-        pub fn statistic(mut self, inp: crate::model::Statistic) -> Self {
-            self.inner = self.inner.statistic(inp);
+        pub fn statistic(mut self, signature: crate::model::Statistic) -> Self {
+            self.inner = self.inner.statistic(signature);
             self
         }
         /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile.
@@ -4986,8 +4983,8 @@ pub mod fluent_builders {
         /// between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify
         /// a <code>MetricName</code>, you must
         /// specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-        pub fn extended_statistic(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extended_statistic(inp);
+        pub fn extended_statistic(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extended_statistic(signature.into());
             self
         }
         /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value
@@ -5006,8 +5003,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
@@ -5032,8 +5029,8 @@ pub mod fluent_builders {
         /// which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
         /// <p>An alarm's total current evaluation period can
         /// be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is
@@ -5070,8 +5067,8 @@ pub mod fluent_builders {
         /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
         /// specify an incorrect unit that is not published for this metric. Doing so
         /// causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
-        pub fn unit(mut self, inp: crate::model::StandardUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: crate::model::StandardUnit) -> Self {
+            self.inner = self.inner.unit(signature);
             self
         }
         /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2
@@ -5100,8 +5097,8 @@ pub mod fluent_builders {
         /// alarm, this value is the N.</p>
         /// <p>An alarm's total current evaluation period can
         /// be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
-        pub fn evaluation_periods(mut self, inp: i32) -> Self {
-            self.inner = self.inner.evaluation_periods(inp);
+        pub fn evaluation_periods(mut self, signature: i32) -> Self {
+            self.inner = self.inner.evaluation_periods(signature);
             self
         }
         /// <p>The number of periods over which data is compared to the specified threshold. If you are
@@ -5118,8 +5115,8 @@ pub mod fluent_builders {
         /// an "M out of N" alarm. In that case, this value is the M. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the
         /// <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn datapoints_to_alarm(mut self, inp: i32) -> Self {
-            self.inner = self.inner.datapoints_to_alarm(inp);
+        pub fn datapoints_to_alarm(mut self, signature: i32) -> Self {
+            self.inner = self.inner.datapoints_to_alarm(signature);
             self
         }
         /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting
@@ -5133,8 +5130,8 @@ pub mod fluent_builders {
         /// <p>The value against which the specified statistic is compared.</p>
         /// <p>This parameter is required for alarms based on static thresholds, but should
         /// not be used for alarms based on anomaly detection models.</p>
-        pub fn threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.threshold(inp);
+        pub fn threshold(mut self, signature: f64) -> Self {
+            self.inner = self.inner.threshold(signature);
             self
         }
         /// <p>The value against which the specified statistic is compared.</p>
@@ -5149,8 +5146,8 @@ pub mod fluent_builders {
         /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>,
         /// <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code>
         /// are used only for alarms based on anomaly detection models.</p>
-        pub fn comparison_operator(mut self, inp: crate::model::ComparisonOperator) -> Self {
-            self.inner = self.inner.comparison_operator(inp);
+        pub fn comparison_operator(mut self, signature: crate::model::ComparisonOperator) -> Self {
+            self.inner = self.inner.comparison_operator(signature);
             self
         }
         /// <p> The arithmetic operation to use when comparing the specified statistic and
@@ -5170,8 +5167,8 @@ pub mod fluent_builders {
         /// Alarms Treats Missing Data</a>.</p>
         /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code>
         /// </p>
-        pub fn treat_missing_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.treat_missing_data(inp);
+        pub fn treat_missing_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.treat_missing_data(signature.into());
             self
         }
         /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used.
@@ -5193,9 +5190,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn evaluate_low_sample_count_percentile(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.evaluate_low_sample_count_percentile(inp);
+            self.inner = self
+                .inner
+                .evaluate_low_sample_count_percentile(signature.into());
             self
         }
         /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be
@@ -5224,8 +5223,8 @@ pub mod fluent_builders {
         /// <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation.
         /// Instead, you retrieve
         /// the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-        pub fn metrics(mut self, inp: impl Into<crate::model::MetricDataQuery>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        pub fn metrics(mut self, input: crate::model::MetricDataQuery) -> Self {
+            self.inner = self.inner.metrics(input);
             self
         }
         /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
@@ -5257,8 +5256,8 @@ pub mod fluent_builders {
         /// you specify in this parameter are ignored. To change the tags of an existing alarm, use
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p>
@@ -5283,8 +5282,8 @@ pub mod fluent_builders {
         /// <b>Anomaly Detection
         /// Model Alarm</b> example on this page.</p>
         /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
-        pub fn threshold_metric_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.threshold_metric_id(inp);
+        pub fn threshold_metric_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.threshold_metric_id(signature.into());
             self
         }
         /// <p>If this is an alarm based on an anomaly detection model, make this value match
@@ -5409,8 +5408,8 @@ pub mod fluent_builders {
         /// <p>To avoid conflicts
         /// with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code>
         /// </p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(signature.into());
             self
         }
         /// <p>The namespace for the metric data.</p>
@@ -5426,8 +5425,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
-        pub fn metric_data(mut self, inp: impl Into<crate::model::MetricDatum>) -> Self {
-            self.inner = self.inner.metric_data(inp);
+        pub fn metric_data(mut self, input: crate::model::MetricDatum) -> Self {
+            self.inner = self.inner.metric_data(input);
             self
         }
         /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
@@ -5529,8 +5528,8 @@ pub mod fluent_builders {
         /// must be different than the names of other metric streams in this account and Region.</p>
         /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
         /// <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>If you are creating a new metric stream, this is the name for the new stream. The name
@@ -5549,8 +5548,8 @@ pub mod fluent_builders {
         /// metrics from the metric namespaces that you specify here.</p>
         /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code>
         /// in the same operation.</p>
-        pub fn include_filters(mut self, inp: impl Into<crate::model::MetricStreamFilter>) -> Self {
-            self.inner = self.inner.include_filters(inp);
+        pub fn include_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
+            self.inner = self.inner.include_filters(input);
             self
         }
         /// <p>If you specify this parameter, the stream sends only the
@@ -5572,8 +5571,8 @@ pub mod fluent_builders {
         /// metric namespaces except for the namespaces that you specify here.</p>
         /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in
         /// the same operation.</p>
-        pub fn exclude_filters(mut self, inp: impl Into<crate::model::MetricStreamFilter>) -> Self {
-            self.inner = self.inner.exclude_filters(inp);
+        pub fn exclude_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
+            self.inner = self.inner.exclude_filters(input);
             self
         }
         /// <p>If you specify this parameter, the stream sends metrics from all
@@ -5590,8 +5589,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream.
         /// This Amazon Kinesis Firehose delivery stream must already exist and must be in the same
         /// account as the metric stream.</p>
-        pub fn firehose_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firehose_arn(inp);
+        pub fn firehose_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firehose_arn(signature.into());
             self
         }
         /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream.
@@ -5612,8 +5611,8 @@ pub mod fluent_builders {
         /// <p>firehose:PutRecordBatch</p>
         /// </li>
         /// </ul>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of an IAM role that this metric stream will use to access
@@ -5636,8 +5635,8 @@ pub mod fluent_builders {
         /// output formats, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
         /// Metric streams output formats</a>.</p>
-        pub fn output_format(mut self, inp: crate::model::MetricStreamOutputFormat) -> Self {
-            self.inner = self.inner.output_format(inp);
+        pub fn output_format(mut self, signature: crate::model::MetricStreamOutputFormat) -> Self {
+            self.inner = self.inner.output_format(signature);
             self
         }
         /// <p>The output format for the stream. Valid values are <code>json</code>
@@ -5665,8 +5664,8 @@ pub mod fluent_builders {
         /// you specify in this parameter are ignored. To change the tags of an existing metric stream, use
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of key-value pairs to associate with the metric stream. You can associate as
@@ -5761,8 +5760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(signature.into());
             self
         }
         /// <p>The name of the alarm.</p>
@@ -5771,8 +5770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the state.</p>
-        pub fn state_value(mut self, inp: crate::model::StateValue) -> Self {
-            self.inner = self.inner.state_value(inp);
+        pub fn state_value(mut self, signature: crate::model::StateValue) -> Self {
+            self.inner = self.inner.state_value(signature);
             self
         }
         /// <p>The value of the state.</p>
@@ -5784,8 +5783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason that this alarm is set to this specific state, in text format.</p>
-        pub fn state_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_reason(inp);
+        pub fn state_reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_reason(signature.into());
             self
         }
         /// <p>The reason that this alarm is set to this specific state, in text format.</p>
@@ -5796,8 +5795,8 @@ pub mod fluent_builders {
         /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
         /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling
         /// alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-        pub fn state_reason_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_reason_data(inp);
+        pub fn state_reason_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_reason_data(signature.into());
             self
         }
         /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
@@ -5878,8 +5877,8 @@ pub mod fluent_builders {
         /// <p>This is an "all or nothing" operation. If you do not have
         /// permission to access all of the metric streams that you list here, then none of the streams that you list
         /// in the operation will start streaming.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The array of the names of metric streams to start streaming.</p>
@@ -5961,8 +5960,8 @@ pub mod fluent_builders {
         /// <p>This is an "all or nothing" operation. If you do not have
         /// permission to access all of the metric streams that you list here, then none of the streams that you list
         /// in the operation will stop streaming.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The array of the names of metric streams to stop streaming.</p>
@@ -6058,8 +6057,8 @@ pub mod fluent_builders {
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
         /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
         /// Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
@@ -6083,8 +6082,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the alarm.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of key-value pairs to associate with the alarm.</p>
@@ -6167,8 +6166,8 @@ pub mod fluent_builders {
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
         /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
         /// Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>
@@ -6192,8 +6191,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>

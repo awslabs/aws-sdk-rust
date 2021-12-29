@@ -515,10 +515,10 @@ pub mod batch_enable_standards_input {
         /// <p>The list of standards checks to enable.</p>
         pub fn standards_subscription_requests(
             mut self,
-            input: impl Into<crate::model::StandardsSubscriptionRequest>,
+            input: crate::model::StandardsSubscriptionRequest,
         ) -> Self {
             let mut v = self.standards_subscription_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standards_subscription_requests = Some(v);
             self
         }
@@ -677,9 +677,9 @@ pub mod batch_import_findings_input {
         ///
         /// <p>A list of findings to import. To successfully import a finding, it must follow the
         /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::AwsSecurityFinding>) -> Self {
+        pub fn findings(mut self, input: crate::model::AwsSecurityFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -854,10 +854,10 @@ pub mod batch_update_findings_input {
         /// provider.</p>
         pub fn finding_identifiers(
             mut self,
-            input: impl Into<crate::model::AwsSecurityFindingIdentifier>,
+            input: crate::model::AwsSecurityFindingIdentifier,
         ) -> Self {
             let mut v = self.finding_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_identifiers = Some(v);
             self
         }
@@ -1088,9 +1088,9 @@ pub mod batch_update_findings_input {
         /// To override the contents of this collection use [`set_related_findings`](Self::set_related_findings).
         ///
         /// <p>A list of findings that are related to the updated findings.</p>
-        pub fn related_findings(mut self, input: impl Into<crate::model::RelatedFinding>) -> Self {
+        pub fn related_findings(mut self, input: crate::model::RelatedFinding) -> Self {
             let mut v = self.related_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_findings = Some(v);
             self
         }
@@ -1834,9 +1834,9 @@ pub mod create_members_input {
         ///
         /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
         /// list includes the account ID and optionally the email address.</p>
-        pub fn account_details(mut self, input: impl Into<crate::model::AccountDetails>) -> Self {
+        pub fn account_details(mut self, input: crate::model::AccountDetails) -> Self {
             let mut v = self.account_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_details = Some(v);
             self
         }
@@ -5798,9 +5798,9 @@ pub mod get_findings_input {
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
         /// <p>The finding attributes used to sort the list of returned findings.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::SortCriterion>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::SortCriterion) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }

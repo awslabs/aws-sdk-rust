@@ -593,9 +593,9 @@ pub mod get_app_monitor_data_input {
         ///
         /// <p>An array of structures that you can use to filter the results to those that match one or
         /// more sets of key-value pairs that you specify.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::QueryFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::QueryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1157,9 +1157,9 @@ pub mod put_rum_events_input {
         /// To override the contents of this collection use [`set_rum_events`](Self::set_rum_events).
         ///
         /// <p>An array of structures that contain the telemetry event data.</p>
-        pub fn rum_events(mut self, input: impl Into<crate::model::RumEvent>) -> Self {
+        pub fn rum_events(mut self, input: crate::model::RumEvent) -> Self {
             let mut v = self.rum_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rum_events = Some(v);
             self
         }

@@ -1120,9 +1120,9 @@ pub mod list_revision_assets_output {
         /// To override the contents of this collection use [`set_assets`](Self::set_assets).
         ///
         /// <p>The asset objects listed by the request.</p>
-        pub fn assets(mut self, input: impl Into<crate::model::AssetEntry>) -> Self {
+        pub fn assets(mut self, input: crate::model::AssetEntry) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assets = Some(v);
             self
         }
@@ -1202,9 +1202,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>The jobs listed by the request.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::JobEntry>) -> Self {
+        pub fn jobs(mut self, input: crate::model::JobEntry) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1285,9 +1285,9 @@ pub mod list_event_actions_output {
         /// To override the contents of this collection use [`set_event_actions`](Self::set_event_actions).
         ///
         /// <p>The event action objects listed by the request.</p>
-        pub fn event_actions(mut self, input: impl Into<crate::model::EventActionEntry>) -> Self {
+        pub fn event_actions(mut self, input: crate::model::EventActionEntry) -> Self {
             let mut v = self.event_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_actions = Some(v);
             self
         }
@@ -1367,9 +1367,9 @@ pub mod list_data_sets_output {
         /// To override the contents of this collection use [`set_data_sets`](Self::set_data_sets).
         ///
         /// <p>The data set objects listed by the request.</p>
-        pub fn data_sets(mut self, input: impl Into<crate::model::DataSetEntry>) -> Self {
+        pub fn data_sets(mut self, input: crate::model::DataSetEntry) -> Self {
             let mut v = self.data_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sets = Some(v);
             self
         }
@@ -1459,9 +1459,9 @@ pub mod list_data_set_revisions_output {
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
         /// <p>The asset objects listed by the request.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::RevisionEntry>) -> Self {
+        pub fn revisions(mut self, input: crate::model::RevisionEntry) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }
@@ -1848,9 +1848,9 @@ pub mod get_job_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors associated with jobs.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::JobError>) -> Self {
+        pub fn errors(mut self, input: crate::model::JobError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -3075,9 +3075,9 @@ pub mod create_job_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors associated with jobs.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::JobError>) -> Self {
+        pub fn errors(mut self, input: crate::model::JobError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

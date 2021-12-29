@@ -277,8 +277,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// </p>
-        pub fn data_set_type(mut self, inp: crate::model::DataSetType) -> Self {
-            self.inner = self.inner.data_set_type(inp);
+        pub fn data_set_type(mut self, signature: crate::model::DataSetType) -> Self {
+            self.inner = self.inner.data_set_type(signature);
             self
         }
         /// <p>The desired data set type.</p>
@@ -397,8 +397,8 @@ pub mod fluent_builders {
         /// For daily data sets, provide a date with day-level granularity for the desired day.
         /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
         /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-        pub fn data_set_publication_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.data_set_publication_date(inp);
+        pub fn data_set_publication_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.data_set_publication_date(signature);
             self
         }
         /// The date a data set was published.
@@ -414,8 +414,8 @@ pub mod fluent_builders {
         }
         /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
         /// AWS services.
-        pub fn role_name_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name_arn(inp);
+        pub fn role_name_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
@@ -428,8 +428,11 @@ pub mod fluent_builders {
             self
         }
         /// The name (friendly name, not ARN) of the destination S3 bucket.
-        pub fn destination_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_s3_bucket_name(inp);
+        pub fn destination_s3_bucket_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_s3_bucket_name(signature.into());
             self
         }
         /// The name (friendly name, not ARN) of the destination S3 bucket.
@@ -445,8 +448,8 @@ pub mod fluent_builders {
         /// "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
         /// If the prefix directory structure does not exist, it will be created.
         /// If no prefix is provided, the data set will be published to the S3 bucket root.
-        pub fn destination_s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_s3_prefix(inp);
+        pub fn destination_s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_s3_prefix(signature.into());
             self
         }
         /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems.
@@ -463,8 +466,8 @@ pub mod fluent_builders {
         }
         /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
         /// error has occurred.
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(signature.into());
             self
         }
         /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
@@ -489,7 +492,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.customer_defined_values(k, v);
+            self.inner = self.inner.customer_defined_values(k.into(), v.into());
             self
         }
         /// (Optional) Key-value pairs which will be returned, unmodified, in the
@@ -584,8 +587,8 @@ pub mod fluent_builders {
         /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
         /// </ul>
         /// </p>
-        pub fn data_set_type(mut self, inp: crate::model::SupportDataSetType) -> Self {
-            self.inner = self.inner.data_set_type(inp);
+        pub fn data_set_type(mut self, signature: crate::model::SupportDataSetType) -> Self {
+            self.inner = self.inner.data_set_type(signature);
             self
         }
         /// <p>
@@ -608,8 +611,8 @@ pub mod fluent_builders {
             self
         }
         /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
-        pub fn from_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from_date(inp);
+        pub fn from_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from_date(signature);
             self
         }
         /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
@@ -622,8 +625,8 @@ pub mod fluent_builders {
         }
         /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
         /// AWS services.
-        pub fn role_name_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name_arn(inp);
+        pub fn role_name_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
@@ -636,8 +639,11 @@ pub mod fluent_builders {
             self
         }
         /// The name (friendly name, not ARN) of the destination S3 bucket.
-        pub fn destination_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_s3_bucket_name(inp);
+        pub fn destination_s3_bucket_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_s3_bucket_name(signature.into());
             self
         }
         /// The name (friendly name, not ARN) of the destination S3 bucket.
@@ -653,8 +659,8 @@ pub mod fluent_builders {
         /// "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
         /// If the prefix directory structure does not exist, it will be created.
         /// If no prefix is provided, the data set will be published to the S3 bucket root.
-        pub fn destination_s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_s3_prefix(inp);
+        pub fn destination_s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_s3_prefix(signature.into());
             self
         }
         /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems.
@@ -671,8 +677,8 @@ pub mod fluent_builders {
         }
         /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
         /// error has occurred.
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(signature.into());
             self
         }
         /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
@@ -695,7 +701,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.customer_defined_values(k, v);
+            self.inner = self.inner.customer_defined_values(k.into(), v.into());
             self
         }
         /// (Optional) Key-value pairs which will be returned, unmodified, in the

@@ -1393,9 +1393,9 @@ pub mod search_game_sessions_output {
         ///
         /// <p>A collection of objects containing game session properties for each session that
         /// matches the request.</p>
-        pub fn game_sessions(mut self, input: impl Into<crate::model::GameSession>) -> Self {
+        pub fn game_sessions(mut self, input: crate::model::GameSession) -> Self {
             let mut v = self.game_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_sessions = Some(v);
             self
         }
@@ -1820,9 +1820,9 @@ pub mod list_tags_for_resource_output {
         /// <p>
         /// The collection of tags that have been assigned to the specified resource.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1891,9 +1891,9 @@ pub mod list_scripts_output {
         /// To override the contents of this collection use [`set_scripts`](Self::set_scripts).
         ///
         /// <p>A set of properties describing the requested script.</p>
-        pub fn scripts(mut self, input: impl Into<crate::model::Script>) -> Self {
+        pub fn scripts(mut self, input: crate::model::Script) -> Self {
             let mut v = self.scripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scripts = Some(v);
             self
         }
@@ -1973,9 +1973,9 @@ pub mod list_game_servers_output {
         /// To override the contents of this collection use [`set_game_servers`](Self::set_game_servers).
         ///
         /// <p>A collection of game server objects that match the request.</p>
-        pub fn game_servers(mut self, input: impl Into<crate::model::GameServer>) -> Self {
+        pub fn game_servers(mut self, input: crate::model::GameServer) -> Self {
             let mut v = self.game_servers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_servers = Some(v);
             self
         }
@@ -2056,12 +2056,9 @@ pub mod list_game_server_groups_output {
         /// To override the contents of this collection use [`set_game_server_groups`](Self::set_game_server_groups).
         ///
         /// <p>A collection of game server group objects that match the request.</p>
-        pub fn game_server_groups(
-            mut self,
-            input: impl Into<crate::model::GameServerGroup>,
-        ) -> Self {
+        pub fn game_server_groups(mut self, input: crate::model::GameServerGroup) -> Self {
             let mut v = self.game_server_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_server_groups = Some(v);
             self
         }
@@ -2235,9 +2232,9 @@ pub mod list_builds_output {
         /// To override the contents of this collection use [`set_builds`](Self::set_builds).
         ///
         /// <p>A collection of build resources that match the request.</p>
-        pub fn builds(mut self, input: impl Into<crate::model::Build>) -> Self {
+        pub fn builds(mut self, input: crate::model::Build) -> Self {
             let mut v = self.builds.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.builds = Some(v);
             self
         }
@@ -2317,9 +2314,9 @@ pub mod list_aliases_output {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>A collection of alias resources that match the request parameters.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::Alias>) -> Self {
+        pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }
@@ -2527,10 +2524,10 @@ pub mod describe_vpc_peering_connections_output {
         /// <p>A collection of VPC peering connection records that match the request.</p>
         pub fn vpc_peering_connections(
             mut self,
-            input: impl Into<crate::model::VpcPeeringConnection>,
+            input: crate::model::VpcPeeringConnection,
         ) -> Self {
             let mut v = self.vpc_peering_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_peering_connections = Some(v);
             self
         }
@@ -2603,10 +2600,10 @@ pub mod describe_vpc_peering_authorizations_output {
         /// current AWS account.</p>
         pub fn vpc_peering_authorizations(
             mut self,
-            input: impl Into<crate::model::VpcPeeringAuthorization>,
+            input: crate::model::VpcPeeringAuthorization,
         ) -> Self {
             let mut v = self.vpc_peering_authorizations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_peering_authorizations = Some(v);
             self
         }
@@ -2734,9 +2731,9 @@ pub mod describe_scaling_policies_output {
         ///
         /// <p>A collection of objects containing the scaling policies matching the
         /// request.</p>
-        pub fn scaling_policies(mut self, input: impl Into<crate::model::ScalingPolicy>) -> Self {
+        pub fn scaling_policies(mut self, input: crate::model::ScalingPolicy) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_policies = Some(v);
             self
         }
@@ -2883,9 +2880,9 @@ pub mod describe_player_sessions_output {
         ///
         /// <p>A collection of objects containing properties for each player session that matches
         /// the request.</p>
-        pub fn player_sessions(mut self, input: impl Into<crate::model::PlayerSession>) -> Self {
+        pub fn player_sessions(mut self, input: crate::model::PlayerSession) -> Self {
             let mut v = self.player_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.player_sessions = Some(v);
             self
         }
@@ -2966,9 +2963,9 @@ pub mod describe_matchmaking_rule_sets_output {
         /// To override the contents of this collection use [`set_rule_sets`](Self::set_rule_sets).
         ///
         /// <p>A collection of requested matchmaking rule set objects. </p>
-        pub fn rule_sets(mut self, input: impl Into<crate::model::MatchmakingRuleSet>) -> Self {
+        pub fn rule_sets(mut self, input: crate::model::MatchmakingRuleSet) -> Self {
             let mut v = self.rule_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_sets = Some(v);
             self
         }
@@ -3049,12 +3046,9 @@ pub mod describe_matchmaking_configurations_output {
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>A collection of requested matchmaking configurations.</p>
-        pub fn configurations(
-            mut self,
-            input: impl Into<crate::model::MatchmakingConfiguration>,
-        ) -> Self {
+        pub fn configurations(mut self, input: crate::model::MatchmakingConfiguration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -3126,9 +3120,9 @@ pub mod describe_matchmaking_output {
         /// To override the contents of this collection use [`set_ticket_list`](Self::set_ticket_list).
         ///
         /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-        pub fn ticket_list(mut self, input: impl Into<crate::model::MatchmakingTicket>) -> Self {
+        pub fn ticket_list(mut self, input: crate::model::MatchmakingTicket) -> Self {
             let mut v = self.ticket_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ticket_list = Some(v);
             self
         }
@@ -3197,9 +3191,9 @@ pub mod describe_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>A collection of objects containing properties for each instance returned.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -3279,9 +3273,9 @@ pub mod describe_game_sessions_output {
         /// To override the contents of this collection use [`set_game_sessions`](Self::set_game_sessions).
         ///
         /// <p>A collection of properties for each game session that matches the request.</p>
-        pub fn game_sessions(mut self, input: impl Into<crate::model::GameSession>) -> Self {
+        pub fn game_sessions(mut self, input: crate::model::GameSession) -> Self {
             let mut v = self.game_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_sessions = Some(v);
             self
         }
@@ -3362,12 +3356,9 @@ pub mod describe_game_session_queues_output {
         /// To override the contents of this collection use [`set_game_session_queues`](Self::set_game_session_queues).
         ///
         /// <p>A collection of objects that describe the requested game session queues.</p>
-        pub fn game_session_queues(
-            mut self,
-            input: impl Into<crate::model::GameSessionQueue>,
-        ) -> Self {
+        pub fn game_session_queues(mut self, input: crate::model::GameSessionQueue) -> Self {
             let mut v = self.game_session_queues.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_session_queues = Some(v);
             self
         }
@@ -3507,12 +3498,9 @@ pub mod describe_game_session_details_output {
         /// To override the contents of this collection use [`set_game_session_details`](Self::set_game_session_details).
         ///
         /// <p>A collection of properties for each game session that matches the request.</p>
-        pub fn game_session_details(
-            mut self,
-            input: impl Into<crate::model::GameSessionDetail>,
-        ) -> Self {
+        pub fn game_session_details(mut self, input: crate::model::GameSessionDetail) -> Self {
             let mut v = self.game_session_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_session_details = Some(v);
             self
         }
@@ -3605,12 +3593,9 @@ pub mod describe_game_server_instances_output {
         /// <p>
         /// The collection of requested game server instances.
         /// </p>
-        pub fn game_server_instances(
-            mut self,
-            input: impl Into<crate::model::GameServerInstance>,
-        ) -> Self {
+        pub fn game_server_instances(mut self, input: crate::model::GameServerInstance) -> Self {
             let mut v = self.game_server_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_server_instances = Some(v);
             self
         }
@@ -3814,12 +3799,9 @@ pub mod describe_fleet_utilization_output {
         ///
         /// <p>A collection of objects containing utilization information for each requested fleet
         /// ID. Utilization objects are returned only for fleets that currently exist.</p>
-        pub fn fleet_utilization(
-            mut self,
-            input: impl Into<crate::model::FleetUtilization>,
-        ) -> Self {
+        pub fn fleet_utilization(mut self, input: crate::model::FleetUtilization) -> Self {
             let mut v = self.fleet_utilization.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_utilization = Some(v);
             self
         }
@@ -3951,9 +3933,9 @@ pub mod describe_fleet_port_settings_output {
         /// To override the contents of this collection use [`set_inbound_permissions`](Self::set_inbound_permissions).
         ///
         /// <p>The port settings for the requested fleet ID.</p>
-        pub fn inbound_permissions(mut self, input: impl Into<crate::model::IpPermission>) -> Self {
+        pub fn inbound_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.inbound_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inbound_permissions = Some(v);
             self
         }
@@ -4214,12 +4196,9 @@ pub mod describe_fleet_location_attributes_output {
         /// To override the contents of this collection use [`set_location_attributes`](Self::set_location_attributes).
         ///
         /// <p> Location-specific information on the requested fleet's remote locations. </p>
-        pub fn location_attributes(
-            mut self,
-            input: impl Into<crate::model::LocationAttributes>,
-        ) -> Self {
+        pub fn location_attributes(mut self, input: crate::model::LocationAttributes) -> Self {
             let mut v = self.location_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.location_attributes = Some(v);
             self
         }
@@ -4304,9 +4283,9 @@ pub mod describe_fleet_events_output {
         ///
         /// <p>A collection of objects containing event log entries for the specified
         /// fleet.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -4390,9 +4369,9 @@ pub mod describe_fleet_capacity_output {
         ///
         /// <p>A collection of objects that contains capacity information for each requested fleet
         /// ID. Capacity objects are returned only for fleets that currently exist.</p>
-        pub fn fleet_capacity(mut self, input: impl Into<crate::model::FleetCapacity>) -> Self {
+        pub fn fleet_capacity(mut self, input: crate::model::FleetCapacity) -> Self {
             let mut v = self.fleet_capacity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_capacity = Some(v);
             self
         }
@@ -4477,9 +4456,9 @@ pub mod describe_fleet_attributes_output {
         ///
         /// <p>A collection of objects containing attribute metadata for each requested fleet ID.
         /// Attribute objects are returned only for fleets that currently exist.</p>
-        pub fn fleet_attributes(mut self, input: impl Into<crate::model::FleetAttributes>) -> Self {
+        pub fn fleet_attributes(mut self, input: crate::model::FleetAttributes) -> Self {
             let mut v = self.fleet_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_attributes = Some(v);
             self
         }
@@ -4556,12 +4535,9 @@ pub mod describe_ec2_instance_limits_output {
         ///
         /// <p>The maximum number of instances for the specified instance
         /// type.</p>
-        pub fn ec2_instance_limits(
-            mut self,
-            input: impl Into<crate::model::Ec2InstanceLimit>,
-        ) -> Self {
+        pub fn ec2_instance_limits(mut self, input: crate::model::Ec2InstanceLimit) -> Self {
             let mut v = self.ec2_instance_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_instance_limits = Some(v);
             self
         }
@@ -5073,9 +5049,9 @@ pub mod delete_fleet_locations_output {
         ///
         /// <p>The remote locations that are being deleted, with each location status set to
         /// <code>DELETING</code>.</p>
-        pub fn location_states(mut self, input: impl Into<crate::model::LocationState>) -> Self {
+        pub fn location_states(mut self, input: crate::model::LocationState) -> Self {
             let mut v = self.location_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.location_states = Some(v);
             self
         }
@@ -5396,9 +5372,9 @@ pub mod create_player_sessions_output {
         /// To override the contents of this collection use [`set_player_sessions`](Self::set_player_sessions).
         ///
         /// <p>A collection of player session objects created for the added players.</p>
-        pub fn player_sessions(mut self, input: impl Into<crate::model::PlayerSession>) -> Self {
+        pub fn player_sessions(mut self, input: crate::model::PlayerSession) -> Self {
             let mut v = self.player_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.player_sessions = Some(v);
             self
         }
@@ -5864,9 +5840,9 @@ pub mod create_fleet_locations_output {
         /// are deployed there and prepared for game hosting.
         /// This list does not include the fleet home Region or any remote locations that were already
         /// added to the fleet.</p>
-        pub fn location_states(mut self, input: impl Into<crate::model::LocationState>) -> Self {
+        pub fn location_states(mut self, input: crate::model::LocationState) -> Self {
             let mut v = self.location_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.location_states = Some(v);
             self
         }
@@ -5971,9 +5947,9 @@ pub mod create_fleet_output {
         /// updates each location status as instances are deployed there and prepared for game
         /// hosting. This list includes an entry for the fleet's home Region. For fleets with no
         /// remote locations, only one entry, representing the home Region, is returned.</p>
-        pub fn location_states(mut self, input: impl Into<crate::model::LocationState>) -> Self {
+        pub fn location_states(mut self, input: crate::model::LocationState) -> Self {
             let mut v = self.location_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.location_states = Some(v);
             self
         }

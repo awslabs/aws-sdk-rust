@@ -835,9 +835,9 @@ pub mod create_domain_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tag key-value pairs for the domain.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1066,9 +1066,9 @@ pub mod create_repository_input {
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
         /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
         /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn upstreams(mut self, input: impl Into<crate::model::UpstreamRepository>) -> Self {
+        pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
             let mut v = self.upstreams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upstreams = Some(v);
             self
         }
@@ -1087,9 +1087,9 @@ pub mod create_repository_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tag key-value pairs for the repository.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8309,9 +8309,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags you want to modify or add to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9171,9 +9171,9 @@ pub mod update_repository_input {
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
         /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
         /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn upstreams(mut self, input: impl Into<crate::model::UpstreamRepository>) -> Self {
+        pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
             let mut v = self.upstreams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upstreams = Some(v);
             self
         }

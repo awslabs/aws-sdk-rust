@@ -64,12 +64,9 @@ pub mod list_realtime_contact_analysis_segments_output {
         /// To override the contents of this collection use [`set_segments`](Self::set_segments).
         ///
         /// <p>An analyzed transcript or category.</p>
-        pub fn segments(
-            mut self,
-            input: impl Into<crate::model::RealtimeContactAnalysisSegment>,
-        ) -> Self {
+        pub fn segments(mut self, input: crate::model::RealtimeContactAnalysisSegment) -> Self {
             let mut v = self.segments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.segments = Some(v);
             self
         }

@@ -393,9 +393,9 @@ pub mod domain_association {
         /// To override the contents of this collection use [`set_sub_domains`](Self::set_sub_domains).
         ///
         /// <p> The subdomains for the domain association. </p>
-        pub fn sub_domains(mut self, input: impl Into<crate::model::SubDomain>) -> Self {
+        pub fn sub_domains(mut self, input: crate::model::SubDomain) -> Self {
             let mut v = self.sub_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_domains = Some(v);
             self
         }
@@ -1872,9 +1872,9 @@ pub mod app {
         /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
         ///
         /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
-        pub fn custom_rules(mut self, input: impl Into<crate::model::CustomRule>) -> Self {
+        pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
             let mut v = self.custom_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_rules = Some(v);
             self
         }
@@ -3329,9 +3329,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p> The execution steps for an execution job, for an Amplify app. </p>
-        pub fn steps(mut self, input: impl Into<crate::model::Step>) -> Self {
+        pub fn steps(mut self, input: crate::model::Step) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }

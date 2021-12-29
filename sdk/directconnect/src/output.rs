@@ -624,12 +624,9 @@ pub mod update_virtual_interface_attributes_output {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -646,9 +643,9 @@ pub mod update_virtual_interface_attributes_output {
         /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
         ///
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn bgp_peers(mut self, input: impl Into<crate::model::BgpPeer>) -> Self {
+        pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bgp_peers = Some(v);
             self
         }
@@ -703,9 +700,9 @@ pub mod update_virtual_interface_attributes_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1229,9 +1226,9 @@ pub mod update_lag_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>The connections bundled by the LAG.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -1281,9 +1278,9 @@ pub mod update_lag_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the LAG.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1338,9 +1335,9 @@ pub mod update_lag_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -2061,9 +2058,9 @@ pub mod update_connection_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2133,9 +2130,9 @@ pub mod update_connection_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -2420,10 +2417,10 @@ pub mod list_virtual_interface_test_history_output {
         /// <p>The ID of the tested virtual interface.</p>
         pub fn virtual_interface_test_history(
             mut self,
-            input: impl Into<crate::model::VirtualInterfaceTestHistory>,
+            input: crate::model::VirtualInterfaceTestHistory,
         ) -> Self {
             let mut v = self.virtual_interface_test_history.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_interface_test_history = Some(v);
             self
         }
@@ -2516,9 +2513,9 @@ pub mod disassociate_mac_sec_key_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -3094,9 +3091,9 @@ pub mod disassociate_connection_from_lag_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3166,9 +3163,9 @@ pub mod disassociate_connection_from_lag_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -3251,12 +3248,9 @@ pub mod describe_virtual_interfaces_output {
         /// To override the contents of this collection use [`set_virtual_interfaces`](Self::set_virtual_interfaces).
         ///
         /// <p>The virtual interfaces</p>
-        pub fn virtual_interfaces(
-            mut self,
-            input: impl Into<crate::model::VirtualInterface>,
-        ) -> Self {
+        pub fn virtual_interfaces(mut self, input: crate::model::VirtualInterface) -> Self {
             let mut v = self.virtual_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_interfaces = Some(v);
             self
         }
@@ -3318,9 +3312,9 @@ pub mod describe_virtual_gateways_output {
         /// To override the contents of this collection use [`set_virtual_gateways`](Self::set_virtual_gateways).
         ///
         /// <p>The virtual private gateways.</p>
-        pub fn virtual_gateways(mut self, input: impl Into<crate::model::VirtualGateway>) -> Self {
+        pub fn virtual_gateways(mut self, input: crate::model::VirtualGateway) -> Self {
             let mut v = self.virtual_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_gateways = Some(v);
             self
         }
@@ -3381,9 +3375,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>Information about the tags.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -3564,9 +3558,9 @@ pub mod describe_locations_output {
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
         /// <p>The locations.</p>
-        pub fn locations(mut self, input: impl Into<crate::model::Location>) -> Self {
+        pub fn locations(mut self, input: crate::model::Location) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.locations = Some(v);
             self
         }
@@ -3706,9 +3700,9 @@ pub mod describe_lags_output {
         /// To override the contents of this collection use [`set_lags`](Self::set_lags).
         ///
         /// <p>The LAGs.</p>
-        pub fn lags(mut self, input: impl Into<crate::model::Lag>) -> Self {
+        pub fn lags(mut self, input: crate::model::Lag) -> Self {
             let mut v = self.lags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lags = Some(v);
             self
         }
@@ -3767,9 +3761,9 @@ pub mod describe_interconnects_output {
         /// To override the contents of this collection use [`set_interconnects`](Self::set_interconnects).
         ///
         /// <p>The interconnects.</p>
-        pub fn interconnects(mut self, input: impl Into<crate::model::Interconnect>) -> Self {
+        pub fn interconnects(mut self, input: crate::model::Interconnect) -> Self {
             let mut v = self.interconnects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.interconnects = Some(v);
             self
         }
@@ -3882,9 +3876,9 @@ pub mod describe_hosted_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>The connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -3959,10 +3953,10 @@ pub mod describe_direct_connect_gateways_output {
         /// <p>The Direct Connect gateways.</p>
         pub fn direct_connect_gateways(
             mut self,
-            input: impl Into<crate::model::DirectConnectGateway>,
+            input: crate::model::DirectConnectGateway,
         ) -> Self {
             let mut v = self.direct_connect_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.direct_connect_gateways = Some(v);
             self
         }
@@ -4051,10 +4045,10 @@ pub mod describe_direct_connect_gateway_attachments_output {
         /// <p>The attachments.</p>
         pub fn direct_connect_gateway_attachments(
             mut self,
-            input: impl Into<crate::model::DirectConnectGatewayAttachment>,
+            input: crate::model::DirectConnectGatewayAttachment,
         ) -> Self {
             let mut v = self.direct_connect_gateway_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.direct_connect_gateway_attachments = Some(v);
             self
         }
@@ -4143,10 +4137,10 @@ pub mod describe_direct_connect_gateway_associations_output {
         /// <p>Information about the associations.</p>
         pub fn direct_connect_gateway_associations(
             mut self,
-            input: impl Into<crate::model::DirectConnectGatewayAssociation>,
+            input: crate::model::DirectConnectGatewayAssociation,
         ) -> Self {
             let mut v = self.direct_connect_gateway_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.direct_connect_gateway_associations = Some(v);
             self
         }
@@ -4240,12 +4234,12 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
         /// <p>Describes the Direct Connect gateway association proposals.</p>
         pub fn direct_connect_gateway_association_proposals(
             mut self,
-            input: impl Into<crate::model::DirectConnectGatewayAssociationProposal>,
+            input: crate::model::DirectConnectGatewayAssociationProposal,
         ) -> Self {
             let mut v = self
                 .direct_connect_gateway_association_proposals
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.direct_connect_gateway_association_proposals = Some(v);
             self
         }
@@ -4353,9 +4347,9 @@ pub mod describe_customer_metadata_output {
         /// To override the contents of this collection use [`set_agreements`](Self::set_agreements).
         ///
         /// <p>The list of customer agreements.</p>
-        pub fn agreements(mut self, input: impl Into<crate::model::CustomerAgreement>) -> Self {
+        pub fn agreements(mut self, input: crate::model::CustomerAgreement) -> Self {
             let mut v = self.agreements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agreements = Some(v);
             self
         }
@@ -4452,9 +4446,9 @@ pub mod describe_connections_on_interconnect_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>The connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -4515,9 +4509,9 @@ pub mod describe_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>The connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -5273,9 +5267,9 @@ pub mod delete_lag_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>The connections bundled by the LAG.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -5325,9 +5319,9 @@ pub mod delete_lag_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the LAG.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5382,9 +5376,9 @@ pub mod delete_lag_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -6355,9 +6349,9 @@ pub mod delete_connection_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6427,9 +6421,9 @@ pub mod delete_connection_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -7216,12 +7210,9 @@ pub mod create_public_virtual_interface_output {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -7238,9 +7229,9 @@ pub mod create_public_virtual_interface_output {
         /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
         ///
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn bgp_peers(mut self, input: impl Into<crate::model::BgpPeer>) -> Self {
+        pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bgp_peers = Some(v);
             self
         }
@@ -7295,9 +7286,9 @@ pub mod create_public_virtual_interface_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7984,12 +7975,9 @@ pub mod create_private_virtual_interface_output {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -8006,9 +7994,9 @@ pub mod create_private_virtual_interface_output {
         /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
         ///
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn bgp_peers(mut self, input: impl Into<crate::model::BgpPeer>) -> Self {
+        pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bgp_peers = Some(v);
             self
         }
@@ -8063,9 +8051,9 @@ pub mod create_private_virtual_interface_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8589,9 +8577,9 @@ pub mod create_lag_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>The connections bundled by the LAG.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -8641,9 +8629,9 @@ pub mod create_lag_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the LAG.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8698,9 +8686,9 @@ pub mod create_lag_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -9174,9 +9162,9 @@ pub mod create_interconnect_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the interconnect.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9973,9 +9961,9 @@ pub mod create_connection_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10045,9 +10033,9 @@ pub mod create_connection_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -11693,12 +11681,9 @@ pub mod associate_virtual_interface_output {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -11715,9 +11700,9 @@ pub mod associate_virtual_interface_output {
         /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
         ///
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn bgp_peers(mut self, input: impl Into<crate::model::BgpPeer>) -> Self {
+        pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bgp_peers = Some(v);
             self
         }
@@ -11772,9 +11757,9 @@ pub mod associate_virtual_interface_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11891,9 +11876,9 @@ pub mod associate_mac_sec_key_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -12469,9 +12454,9 @@ pub mod associate_hosted_connection_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12541,9 +12526,9 @@ pub mod associate_hosted_connection_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -13139,9 +13124,9 @@ pub mod associate_connection_with_lag_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13211,9 +13196,9 @@ pub mod associate_connection_with_lag_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -13943,12 +13928,9 @@ pub mod allocate_public_virtual_interface_output {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -13965,9 +13947,9 @@ pub mod allocate_public_virtual_interface_output {
         /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
         ///
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn bgp_peers(mut self, input: impl Into<crate::model::BgpPeer>) -> Self {
+        pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bgp_peers = Some(v);
             self
         }
@@ -14022,9 +14004,9 @@ pub mod allocate_public_virtual_interface_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14711,12 +14693,9 @@ pub mod allocate_private_virtual_interface_output {
         /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
         ///
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn route_filter_prefixes(
-            mut self,
-            input: impl Into<crate::model::RouteFilterPrefix>,
-        ) -> Self {
+        pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_filter_prefixes = Some(v);
             self
         }
@@ -14733,9 +14712,9 @@ pub mod allocate_private_virtual_interface_output {
         /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
         ///
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn bgp_peers(mut self, input: impl Into<crate::model::BgpPeer>) -> Self {
+        pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bgp_peers = Some(v);
             self
         }
@@ -14790,9 +14769,9 @@ pub mod allocate_private_virtual_interface_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15402,9 +15381,9 @@ pub mod allocate_hosted_connection_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15474,9 +15453,9 @@ pub mod allocate_hosted_connection_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }
@@ -16072,9 +16051,9 @@ pub mod allocate_connection_on_interconnect_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the connection.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16144,9 +16123,9 @@ pub mod allocate_connection_on_interconnect_output {
         /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
         ///
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
+        pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mac_sec_keys = Some(v);
             self
         }

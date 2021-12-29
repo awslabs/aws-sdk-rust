@@ -311,9 +311,9 @@ pub mod item {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Provides information about the attachments.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::AttachmentItem>) -> Self {
+        pub fn attachments(mut self, input: crate::model::AttachmentItem) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }

@@ -659,12 +659,9 @@ pub mod filters {
         /// To override the contents of this collection use [`set_extended_key_usage`](Self::set_extended_key_usage).
         ///
         /// <p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>
-        pub fn extended_key_usage(
-            mut self,
-            input: impl Into<crate::model::ExtendedKeyUsageName>,
-        ) -> Self {
+        pub fn extended_key_usage(mut self, input: crate::model::ExtendedKeyUsageName) -> Self {
             let mut v = self.extended_key_usage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extended_key_usage = Some(v);
             self
         }
@@ -681,9 +678,9 @@ pub mod filters {
         /// To override the contents of this collection use [`set_key_usage`](Self::set_key_usage).
         ///
         /// <p>Specify one or more <a>KeyUsage</a> extension values.</p>
-        pub fn key_usage(mut self, input: impl Into<crate::model::KeyUsageName>) -> Self {
+        pub fn key_usage(mut self, input: crate::model::KeyUsageName) -> Self {
             let mut v = self.key_usage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_usage = Some(v);
             self
         }
@@ -705,9 +702,9 @@ pub mod filters {
         /// desired type signatures in a comma-separated list. For example, <code>"keyTypes":
         /// ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code>
         /// certificates.</p>
-        pub fn key_types(mut self, input: impl Into<crate::model::KeyAlgorithm>) -> Self {
+        pub fn key_types(mut self, input: crate::model::KeyAlgorithm) -> Self {
             let mut v = self.key_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_types = Some(v);
             self
         }
@@ -1485,12 +1482,9 @@ pub mod certificate_detail {
         /// <p>Contains information about the initial validation of each domain name that occurs as a
         /// result of the <a>RequestCertificate</a> request. This field exists only when the
         /// certificate type is <code>AMAZON_ISSUED</code>. </p>
-        pub fn domain_validation_options(
-            mut self,
-            input: impl Into<crate::model::DomainValidation>,
-        ) -> Self {
+        pub fn domain_validation_options(mut self, input: crate::model::DomainValidation) -> Self {
             let mut v = self.domain_validation_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_validation_options = Some(v);
             self
         }
@@ -1757,9 +1751,9 @@ pub mod certificate_detail {
         /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that
         /// identifies the purpose of the public key contained in the certificate. Possible extension
         /// values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
-        pub fn key_usages(mut self, input: impl Into<crate::model::KeyUsage>) -> Self {
+        pub fn key_usages(mut self, input: crate::model::KeyUsage) -> Self {
             let mut v = self.key_usages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_usages = Some(v);
             self
         }
@@ -1780,12 +1774,9 @@ pub mod certificate_detail {
         /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a
         /// purpose for which the certificate public key can be used and consists of a name and an object
         /// identifier (OID). </p>
-        pub fn extended_key_usages(
-            mut self,
-            input: impl Into<crate::model::ExtendedKeyUsage>,
-        ) -> Self {
+        pub fn extended_key_usages(mut self, input: crate::model::ExtendedKeyUsage) -> Self {
             let mut v = self.extended_key_usages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extended_key_usages = Some(v);
             self
         }
@@ -2366,12 +2357,9 @@ pub mod renewal_summary {
         /// renewal</a>. This is different from the initial validation that occurs as a result of
         /// the <a>RequestCertificate</a> request. This field exists only when the certificate
         /// type is <code>AMAZON_ISSUED</code>.</p>
-        pub fn domain_validation_options(
-            mut self,
-            input: impl Into<crate::model::DomainValidation>,
-        ) -> Self {
+        pub fn domain_validation_options(mut self, input: crate::model::DomainValidation) -> Self {
             let mut v = self.domain_validation_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_validation_options = Some(v);
             self
         }

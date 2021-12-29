@@ -913,12 +913,9 @@ pub mod list_xss_match_sets_output {
         /// To override the contents of this collection use [`set_xss_match_sets`](Self::set_xss_match_sets).
         ///
         /// <p>An array of <a>XssMatchSetSummary</a> objects.</p>
-        pub fn xss_match_sets(
-            mut self,
-            input: impl Into<crate::model::XssMatchSetSummary>,
-        ) -> Self {
+        pub fn xss_match_sets(mut self, input: crate::model::XssMatchSetSummary) -> Self {
             let mut v = self.xss_match_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.xss_match_sets = Some(v);
             self
         }
@@ -1010,9 +1007,9 @@ pub mod list_web_ac_ls_output {
         /// To override the contents of this collection use [`set_web_ac_ls`](Self::set_web_ac_ls).
         ///
         /// <p>An array of <a>WebACLSummary</a> objects.</p>
-        pub fn web_ac_ls(mut self, input: impl Into<crate::model::WebAclSummary>) -> Self {
+        pub fn web_ac_ls(mut self, input: crate::model::WebAclSummary) -> Self {
             let mut v = self.web_ac_ls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.web_ac_ls = Some(v);
             self
         }
@@ -1181,12 +1178,9 @@ pub mod list_subscribed_rule_groups_output {
         /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
         ///
         /// <p>An array of <a>RuleGroup</a> objects.</p>
-        pub fn rule_groups(
-            mut self,
-            input: impl Into<crate::model::SubscribedRuleGroupSummary>,
-        ) -> Self {
+        pub fn rule_groups(mut self, input: crate::model::SubscribedRuleGroupSummary) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_groups = Some(v);
             self
         }
@@ -1284,10 +1278,10 @@ pub mod list_sql_injection_match_sets_output {
         /// <p>An array of <a>SqlInjectionMatchSetSummary</a> objects.</p>
         pub fn sql_injection_match_sets(
             mut self,
-            input: impl Into<crate::model::SqlInjectionMatchSetSummary>,
+            input: crate::model::SqlInjectionMatchSetSummary,
         ) -> Self {
             let mut v = self.sql_injection_match_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sql_injection_match_sets = Some(v);
             self
         }
@@ -1385,10 +1379,10 @@ pub mod list_size_constraint_sets_output {
         /// <p>An array of <a>SizeConstraintSetSummary</a> objects.</p>
         pub fn size_constraint_sets(
             mut self,
-            input: impl Into<crate::model::SizeConstraintSetSummary>,
+            input: crate::model::SizeConstraintSetSummary,
         ) -> Self {
             let mut v = self.size_constraint_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.size_constraint_sets = Some(v);
             self
         }
@@ -1476,9 +1470,9 @@ pub mod list_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>An array of <a>RuleSummary</a> objects.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::RuleSummary>) -> Self {
+        pub fn rules(mut self, input: crate::model::RuleSummary) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1558,9 +1552,9 @@ pub mod list_rule_groups_output {
         /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
         ///
         /// <p>An array of <a>RuleGroup</a> objects.</p>
-        pub fn rule_groups(mut self, input: impl Into<crate::model::RuleGroupSummary>) -> Self {
+        pub fn rule_groups(mut self, input: crate::model::RuleGroupSummary) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_groups = Some(v);
             self
         }
@@ -1719,12 +1713,9 @@ pub mod list_regex_pattern_sets_output {
         /// To override the contents of this collection use [`set_regex_pattern_sets`](Self::set_regex_pattern_sets).
         ///
         /// <p>An array of <a>RegexPatternSetSummary</a> objects.</p>
-        pub fn regex_pattern_sets(
-            mut self,
-            input: impl Into<crate::model::RegexPatternSetSummary>,
-        ) -> Self {
+        pub fn regex_pattern_sets(mut self, input: crate::model::RegexPatternSetSummary) -> Self {
             let mut v = self.regex_pattern_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regex_pattern_sets = Some(v);
             self
         }
@@ -1817,12 +1808,9 @@ pub mod list_regex_match_sets_output {
         /// To override the contents of this collection use [`set_regex_match_sets`](Self::set_regex_match_sets).
         ///
         /// <p>An array of <a>RegexMatchSetSummary</a> objects.</p>
-        pub fn regex_match_sets(
-            mut self,
-            input: impl Into<crate::model::RegexMatchSetSummary>,
-        ) -> Self {
+        pub fn regex_match_sets(mut self, input: crate::model::RegexMatchSetSummary) -> Self {
             let mut v = self.regex_match_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regex_match_sets = Some(v);
             self
         }
@@ -1918,9 +1906,9 @@ pub mod list_rate_based_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>An array of <a>RuleSummary</a> objects.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::RuleSummary>) -> Self {
+        pub fn rules(mut self, input: crate::model::RuleSummary) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1994,12 +1982,9 @@ pub mod list_logging_configurations_output {
         /// To override the contents of this collection use [`set_logging_configurations`](Self::set_logging_configurations).
         ///
         /// <p>An array of <a>LoggingConfiguration</a> objects.</p>
-        pub fn logging_configurations(
-            mut self,
-            input: impl Into<crate::model::LoggingConfiguration>,
-        ) -> Self {
+        pub fn logging_configurations(mut self, input: crate::model::LoggingConfiguration) -> Self {
             let mut v = self.logging_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.logging_configurations = Some(v);
             self
         }
@@ -2097,9 +2082,9 @@ pub mod list_ip_sets_output {
         /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
         ///
         /// <p>An array of <a>IPSetSummary</a> objects.</p>
-        pub fn ip_sets(mut self, input: impl Into<crate::model::IpSetSummary>) -> Self {
+        pub fn ip_sets(mut self, input: crate::model::IpSetSummary) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_sets = Some(v);
             self
         }
@@ -2192,12 +2177,9 @@ pub mod list_geo_match_sets_output {
         /// To override the contents of this collection use [`set_geo_match_sets`](Self::set_geo_match_sets).
         ///
         /// <p>An array of <a>GeoMatchSetSummary</a> objects.</p>
-        pub fn geo_match_sets(
-            mut self,
-            input: impl Into<crate::model::GeoMatchSetSummary>,
-        ) -> Self {
+        pub fn geo_match_sets(mut self, input: crate::model::GeoMatchSetSummary) -> Self {
             let mut v = self.geo_match_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.geo_match_sets = Some(v);
             self
         }
@@ -2290,12 +2272,9 @@ pub mod list_byte_match_sets_output {
         /// To override the contents of this collection use [`set_byte_match_sets`](Self::set_byte_match_sets).
         ///
         /// <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
-        pub fn byte_match_sets(
-            mut self,
-            input: impl Into<crate::model::ByteMatchSetSummary>,
-        ) -> Self {
+        pub fn byte_match_sets(mut self, input: crate::model::ByteMatchSetSummary) -> Self {
             let mut v = self.byte_match_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.byte_match_sets = Some(v);
             self
         }
@@ -2375,9 +2354,9 @@ pub mod list_activated_rules_in_rule_group_output {
         /// To override the contents of this collection use [`set_activated_rules`](Self::set_activated_rules).
         ///
         /// <p>An array of <code>ActivatedRules</code> objects.</p>
-        pub fn activated_rules(mut self, input: impl Into<crate::model::ActivatedRule>) -> Self {
+        pub fn activated_rules(mut self, input: crate::model::ActivatedRule) -> Self {
             let mut v = self.activated_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.activated_rules = Some(v);
             self
         }
@@ -3083,12 +3062,9 @@ pub mod get_sampled_requests_output {
         /// To override the contents of this collection use [`set_sampled_requests`](Self::set_sampled_requests).
         ///
         /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
-        pub fn sampled_requests(
-            mut self,
-            input: impl Into<crate::model::SampledHttpRequest>,
-        ) -> Self {
+        pub fn sampled_requests(mut self, input: crate::model::SampledHttpRequest) -> Self {
             let mut v = self.sampled_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampled_requests = Some(v);
             self
         }

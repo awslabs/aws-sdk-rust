@@ -1392,9 +1392,9 @@ pub mod route_summary {
         ///
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
         /// only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn methods(mut self, input: impl Into<crate::model::HttpMethod>) -> Self {
+        pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.methods = Some(v);
             self
         }
@@ -3598,9 +3598,9 @@ pub mod uri_path_route_input {
         ///
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
         /// only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn methods(mut self, input: impl Into<crate::model::HttpMethod>) -> Self {
+        pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.methods = Some(v);
             self
         }

@@ -1320,9 +1320,9 @@ pub mod create_document_classifier_input {
         /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
         /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1748,9 +1748,9 @@ pub mod create_endpoint_input {
         /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds
         /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an
         /// endpoint to indicate its use by the sales department. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1997,9 +1997,9 @@ pub mod create_entity_recognizer_input {
         /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
         /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8271,9 +8271,9 @@ pub mod start_document_classification_job_input {
         /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that
         /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
         /// key might be added to a resource to indicate its use by the sales department.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8581,9 +8581,9 @@ pub mod start_dominant_language_detection_job_input {
         /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair
         /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
         /// the key might be added to a resource to indicate its use by the sales department.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8928,9 +8928,9 @@ pub mod start_entities_detection_job_input {
         /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds
         /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
         /// might be added to a resource to indicate its use by the sales department.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9215,9 +9215,9 @@ pub mod start_events_detection_job_input {
         /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds
         /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
         /// might be added to a resource to indicate its use by the sales department.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9542,9 +9542,9 @@ pub mod start_key_phrases_detection_job_input {
         /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that
         /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
         /// key might be added to a resource to indicate its use by the sales department.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9843,9 +9843,9 @@ pub mod start_pii_entities_detection_job_input {
         /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that
         /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
         /// key might be added to a resource to indicate its use by the sales department.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10169,9 +10169,9 @@ pub mod start_sentiment_detection_job_input {
         /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that
         /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
         /// key might be added to a resource to indicate its use by the sales department.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10493,9 +10493,9 @@ pub mod start_topics_detection_job_input {
         /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds
         /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
         /// might be added to a resource to indicate its use by the sales department.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11949,9 +11949,9 @@ pub mod tag_resource_input {
         ///
         /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
         /// of 50 tags (both existing and pending) associated with a specific resource. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

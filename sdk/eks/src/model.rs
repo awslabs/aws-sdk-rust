@@ -106,9 +106,9 @@ pub mod update {
         /// To override the contents of this collection use [`set_params`](Self::set_params).
         ///
         /// <p>A key-value map that contains the parameters associated with the update.</p>
-        pub fn params(mut self, input: impl Into<crate::model::UpdateParam>) -> Self {
+        pub fn params(mut self, input: crate::model::UpdateParam) -> Self {
             let mut v = self.params.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.params = Some(v);
             self
         }
@@ -138,9 +138,9 @@ pub mod update {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Any errors associated with a <code>Failed</code> update.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
+        pub fn errors(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -1375,9 +1375,9 @@ pub mod update_taints_payload {
         /// To override the contents of this collection use [`set_add_or_update_taints`](Self::set_add_or_update_taints).
         ///
         /// <p>Kubernetes taints to be added or updated.</p>
-        pub fn add_or_update_taints(mut self, input: impl Into<crate::model::Taint>) -> Self {
+        pub fn add_or_update_taints(mut self, input: crate::model::Taint) -> Self {
             let mut v = self.add_or_update_taints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_or_update_taints = Some(v);
             self
         }
@@ -1394,9 +1394,9 @@ pub mod update_taints_payload {
         /// To override the contents of this collection use [`set_remove_taints`](Self::set_remove_taints).
         ///
         /// <p>Kubernetes taints to be removed.</p>
-        pub fn remove_taints(mut self, input: impl Into<crate::model::Taint>) -> Self {
+        pub fn remove_taints(mut self, input: crate::model::Taint) -> Self {
             let mut v = self.remove_taints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remove_taints = Some(v);
             self
         }
@@ -1712,9 +1712,9 @@ pub mod logging {
         /// To override the contents of this collection use [`set_cluster_logging`](Self::set_cluster_logging).
         ///
         /// <p>The cluster control plane logging configuration for your cluster.</p>
-        pub fn cluster_logging(mut self, input: impl Into<crate::model::LogSetup>) -> Self {
+        pub fn cluster_logging(mut self, input: crate::model::LogSetup) -> Self {
             let mut v = self.cluster_logging.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_logging = Some(v);
             self
         }
@@ -1788,9 +1788,9 @@ pub mod log_setup {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>The available cluster control plane log types.</p>
-        pub fn types(mut self, input: impl Into<crate::model::LogType>) -> Self {
+        pub fn types(mut self, input: crate::model::LogType) -> Self {
             let mut v = self.types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.types = Some(v);
             self
         }
@@ -2683,12 +2683,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
         ///
         /// <p>The encryption configuration for the cluster.</p>
-        pub fn encryption_config(
-            mut self,
-            input: impl Into<crate::model::EncryptionConfig>,
-        ) -> Self {
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             let mut v = self.encryption_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.encryption_config = Some(v);
             self
         }
@@ -4418,9 +4415,9 @@ pub mod nodegroup {
         /// created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
         /// can be used together with tolerations to control how workloads are scheduled to your
         /// nodes.</p>
-        pub fn taints(mut self, input: impl Into<crate::model::Taint>) -> Self {
+        pub fn taints(mut self, input: crate::model::Taint) -> Self {
             let mut v = self.taints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.taints = Some(v);
             self
         }
@@ -4609,9 +4606,9 @@ pub mod nodegroup_health {
         /// To override the contents of this collection use [`set_issues`](Self::set_issues).
         ///
         /// <p>Any issues that are associated with the node group. </p>
-        pub fn issues(mut self, input: impl Into<crate::model::Issue>) -> Self {
+        pub fn issues(mut self, input: crate::model::Issue) -> Self {
             let mut v = self.issues.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.issues = Some(v);
             self
         }
@@ -5329,12 +5326,9 @@ pub mod nodegroup_resources {
         /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
         ///
         /// <p>The Auto Scaling groups associated with the node group.</p>
-        pub fn auto_scaling_groups(
-            mut self,
-            input: impl Into<crate::model::AutoScalingGroup>,
-        ) -> Self {
+        pub fn auto_scaling_groups(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.auto_scaling_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_scaling_groups = Some(v);
             self
         }
@@ -6449,9 +6443,9 @@ pub mod fargate_profile {
         /// To override the contents of this collection use [`set_selectors`](Self::set_selectors).
         ///
         /// <p>The selectors to match for pods to use this Fargate profile.</p>
-        pub fn selectors(mut self, input: impl Into<crate::model::FargateProfileSelector>) -> Self {
+        pub fn selectors(mut self, input: crate::model::FargateProfileSelector) -> Self {
             let mut v = self.selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.selectors = Some(v);
             self
         }
@@ -6775,9 +6769,9 @@ pub mod addon_info {
         ///
         /// <p>An object that represents information about available add-on versions and compatible
         /// Kubernetes versions.</p>
-        pub fn addon_versions(mut self, input: impl Into<crate::model::AddonVersionInfo>) -> Self {
+        pub fn addon_versions(mut self, input: crate::model::AddonVersionInfo) -> Self {
             let mut v = self.addon_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.addon_versions = Some(v);
             self
         }
@@ -6889,9 +6883,9 @@ pub mod addon_version_info {
         /// To override the contents of this collection use [`set_compatibilities`](Self::set_compatibilities).
         ///
         /// <p>An object that represents the compatibilities of a version.</p>
-        pub fn compatibilities(mut self, input: impl Into<crate::model::Compatibility>) -> Self {
+        pub fn compatibilities(mut self, input: crate::model::Compatibility) -> Self {
             let mut v = self.compatibilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatibilities = Some(v);
             self
         }
@@ -7333,9 +7327,9 @@ pub mod addon_health {
         /// To override the contents of this collection use [`set_issues`](Self::set_issues).
         ///
         /// <p>An object that represents the add-on's health issues.</p>
-        pub fn issues(mut self, input: impl Into<crate::model::AddonIssue>) -> Self {
+        pub fn issues(mut self, input: crate::model::AddonIssue) -> Self {
             let mut v = self.issues.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.issues = Some(v);
             self
         }

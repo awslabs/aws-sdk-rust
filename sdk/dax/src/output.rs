@@ -201,9 +201,9 @@ pub mod untag_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag keys that have been removed from the cluster.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -262,9 +262,9 @@ pub mod tag_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are associated with the DAX resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -387,9 +387,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags currently associated with the DAX cluster.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -535,9 +535,9 @@ pub mod describe_subnet_groups_output {
         /// To override the contents of this collection use [`set_subnet_groups`](Self::set_subnet_groups).
         ///
         /// <p>An array of subnet groups.  Each element in the array represents a single subnet group.</p>
-        pub fn subnet_groups(mut self, input: impl Into<crate::model::SubnetGroup>) -> Self {
+        pub fn subnet_groups(mut self, input: crate::model::SubnetGroup) -> Self {
             let mut v = self.subnet_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_groups = Some(v);
             self
         }
@@ -617,9 +617,9 @@ pub mod describe_parameters_output {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of parameters within a parameter group.  Each element in the list represents one parameter.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -700,9 +700,9 @@ pub mod describe_parameter_groups_output {
         /// To override the contents of this collection use [`set_parameter_groups`](Self::set_parameter_groups).
         ///
         /// <p>An array of parameter groups.  Each element in the array represents one parameter group.</p>
-        pub fn parameter_groups(mut self, input: impl Into<crate::model::ParameterGroup>) -> Self {
+        pub fn parameter_groups(mut self, input: crate::model::ParameterGroup) -> Self {
             let mut v = self.parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_groups = Some(v);
             self
         }
@@ -782,9 +782,9 @@ pub mod describe_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>An array of events.  Each element in the array represents one event.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -864,9 +864,9 @@ pub mod describe_default_parameters_output {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of parameters.  Each element in the list represents one parameter.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -949,9 +949,9 @@ pub mod describe_clusters_output {
         ///
         /// <p>The descriptions of your DAX clusters, in response to a
         /// <i>DescribeClusters</i> request.</p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }

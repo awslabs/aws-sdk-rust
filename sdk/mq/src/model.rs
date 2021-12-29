@@ -2170,12 +2170,9 @@ pub mod broker_instance_option {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>The list of available az.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -2231,12 +2228,9 @@ pub mod broker_instance_option {
         /// To override the contents of this collection use [`set_supported_deployment_modes`](Self::set_supported_deployment_modes).
         ///
         /// <p>The list of supported deployment modes.</p>
-        pub fn supported_deployment_modes(
-            mut self,
-            input: impl Into<crate::model::DeploymentMode>,
-        ) -> Self {
+        pub fn supported_deployment_modes(mut self, input: crate::model::DeploymentMode) -> Self {
             let mut v = self.supported_deployment_modes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_deployment_modes = Some(v);
             self
         }
@@ -2449,9 +2443,9 @@ pub mod broker_engine_type {
         /// To override the contents of this collection use [`set_engine_versions`](Self::set_engine_versions).
         ///
         /// <p>The list of engine versions.</p>
-        pub fn engine_versions(mut self, input: impl Into<crate::model::EngineVersion>) -> Self {
+        pub fn engine_versions(mut self, input: crate::model::EngineVersion) -> Self {
             let mut v = self.engine_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_versions = Some(v);
             self
         }
@@ -2879,9 +2873,9 @@ pub mod configurations {
         /// To override the contents of this collection use [`set_history`](Self::set_history).
         ///
         /// <p>The history of configurations applied to the broker.</p>
-        pub fn history(mut self, input: impl Into<crate::model::ConfigurationId>) -> Self {
+        pub fn history(mut self, input: crate::model::ConfigurationId) -> Self {
             let mut v = self.history.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.history = Some(v);
             self
         }

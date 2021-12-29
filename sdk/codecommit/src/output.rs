@@ -678,10 +678,10 @@ pub mod test_repository_triggers_output {
         /// triggers that could not be tested, separated by commas.</p>
         pub fn failed_executions(
             mut self,
-            input: impl Into<crate::model::RepositoryTriggerExecutionFailure>,
+            input: crate::model::RepositoryTriggerExecutionFailure,
         ) -> Self {
             let mut v = self.failed_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_executions = Some(v);
             self
         }
@@ -2015,12 +2015,9 @@ pub mod list_repositories_output {
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>Lists the repositories called by the list repositories operation.</p>
-        pub fn repositories(
-            mut self,
-            input: impl Into<crate::model::RepositoryNameIdPair>,
-        ) -> Self {
+        pub fn repositories(mut self, input: crate::model::RepositoryNameIdPair) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -2463,9 +2460,9 @@ pub mod get_repository_triggers_output {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>The JSON block of configuration information for each trigger.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::RepositoryTrigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::RepositoryTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -2657,9 +2654,9 @@ pub mod get_pull_request_approval_states_output {
         /// To override the contents of this collection use [`set_approvals`](Self::set_approvals).
         ///
         /// <p>Information about users who have approved the pull request.</p>
-        pub fn approvals(mut self, input: impl Into<crate::model::Approval>) -> Self {
+        pub fn approvals(mut self, input: crate::model::Approval) -> Self {
             let mut v = self.approvals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.approvals = Some(v);
             self
         }
@@ -2802,12 +2799,9 @@ pub mod get_merge_options_output {
         /// To override the contents of this collection use [`set_merge_options`](Self::set_merge_options).
         ///
         /// <p>The merge option or strategy used to merge the code.</p>
-        pub fn merge_options(
-            mut self,
-            input: impl Into<crate::model::MergeOptionTypeEnum>,
-        ) -> Self {
+        pub fn merge_options(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
             let mut v = self.merge_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.merge_options = Some(v);
             self
         }
@@ -3003,12 +2997,9 @@ pub mod get_merge_conflicts_output {
         ///
         /// <p>A list of metadata for any conflicting files. If the specified merge strategy is
         /// FAST_FORWARD_MERGE, this list is always empty.</p>
-        pub fn conflict_metadata_list(
-            mut self,
-            input: impl Into<crate::model::ConflictMetadata>,
-        ) -> Self {
+        pub fn conflict_metadata_list(mut self, input: crate::model::ConflictMetadata) -> Self {
             let mut v = self.conflict_metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conflict_metadata_list = Some(v);
             self
         }
@@ -3300,9 +3291,9 @@ pub mod get_folder_output {
         /// To override the contents of this collection use [`set_sub_folders`](Self::set_sub_folders).
         ///
         /// <p>The list of folders that exist under the specified folder, if any.</p>
-        pub fn sub_folders(mut self, input: impl Into<crate::model::Folder>) -> Self {
+        pub fn sub_folders(mut self, input: crate::model::Folder) -> Self {
             let mut v = self.sub_folders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_folders = Some(v);
             self
         }
@@ -3319,9 +3310,9 @@ pub mod get_folder_output {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The list of files in the specified folder, if any.</p>
-        pub fn files(mut self, input: impl Into<crate::model::File>) -> Self {
+        pub fn files(mut self, input: crate::model::File) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -3339,9 +3330,9 @@ pub mod get_folder_output {
         ///
         /// <p>The list of symbolic links to other files and folders in the specified folder, if
         /// any.</p>
-        pub fn symbolic_links(mut self, input: impl Into<crate::model::SymbolicLink>) -> Self {
+        pub fn symbolic_links(mut self, input: crate::model::SymbolicLink) -> Self {
             let mut v = self.symbolic_links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.symbolic_links = Some(v);
             self
         }
@@ -3359,9 +3350,9 @@ pub mod get_folder_output {
         /// To override the contents of this collection use [`set_sub_modules`](Self::set_sub_modules).
         ///
         /// <p>The list of submodules in the specified folder, if any.</p>
-        pub fn sub_modules(mut self, input: impl Into<crate::model::SubModule>) -> Self {
+        pub fn sub_modules(mut self, input: crate::model::SubModule) -> Self {
             let mut v = self.sub_modules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_modules = Some(v);
             self
         }
@@ -3618,9 +3609,9 @@ pub mod get_differences_output {
         ///
         /// <p>A data type object that contains information about the differences, including whether
         /// the difference is added, modified, or deleted (A, D, M).</p>
-        pub fn differences(mut self, input: impl Into<crate::model::Difference>) -> Self {
+        pub fn differences(mut self, input: crate::model::Difference) -> Self {
             let mut v = self.differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.differences = Some(v);
             self
         }
@@ -3764,10 +3755,10 @@ pub mod get_comments_for_pull_request_output {
         /// <p>An array of comment objects on the pull request.</p>
         pub fn comments_for_pull_request_data(
             mut self,
-            input: impl Into<crate::model::CommentsForPullRequest>,
+            input: crate::model::CommentsForPullRequest,
         ) -> Self {
             let mut v = self.comments_for_pull_request_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comments_for_pull_request_data = Some(v);
             self
         }
@@ -3856,10 +3847,10 @@ pub mod get_comments_for_compared_commit_output {
         /// <p>A list of comment objects on the compared commit.</p>
         pub fn comments_for_compared_commit_data(
             mut self,
-            input: impl Into<crate::model::CommentsForComparedCommit>,
+            input: crate::model::CommentsForComparedCommit,
         ) -> Self {
             let mut v = self.comments_for_compared_commit_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comments_for_compared_commit_data = Some(v);
             self
         }
@@ -3942,12 +3933,9 @@ pub mod get_comment_reactions_output {
         /// To override the contents of this collection use [`set_reactions_for_comment`](Self::set_reactions_for_comment).
         ///
         /// <p>An array of reactions to the specified comment.</p>
-        pub fn reactions_for_comment(
-            mut self,
-            input: impl Into<crate::model::ReactionForComment>,
-        ) -> Self {
+        pub fn reactions_for_comment(mut self, input: crate::model::ReactionForComment) -> Self {
             let mut v = self.reactions_for_comment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactions_for_comment = Some(v);
             self
         }
@@ -4342,12 +4330,9 @@ pub mod describe_pull_request_events_output {
         /// To override the contents of this collection use [`set_pull_request_events`](Self::set_pull_request_events).
         ///
         /// <p>Information about the pull request events.</p>
-        pub fn pull_request_events(
-            mut self,
-            input: impl Into<crate::model::PullRequestEvent>,
-        ) -> Self {
+        pub fn pull_request_events(mut self, input: crate::model::PullRequestEvent) -> Self {
             let mut v = self.pull_request_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pull_request_events = Some(v);
             self
         }
@@ -4472,9 +4457,9 @@ pub mod describe_merge_conflicts_output {
         /// To override the contents of this collection use [`set_merge_hunks`](Self::set_merge_hunks).
         ///
         /// <p>A list of merge hunks of the differences between the files or lines.</p>
-        pub fn merge_hunks(mut self, input: impl Into<crate::model::MergeHunk>) -> Self {
+        pub fn merge_hunks(mut self, input: crate::model::MergeHunk) -> Self {
             let mut v = self.merge_hunks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.merge_hunks = Some(v);
             self
         }
@@ -5302,9 +5287,9 @@ pub mod create_commit_output {
         /// To override the contents of this collection use [`set_files_added`](Self::set_files_added).
         ///
         /// <p>The files added as part of the committed file changes.</p>
-        pub fn files_added(mut self, input: impl Into<crate::model::FileMetadata>) -> Self {
+        pub fn files_added(mut self, input: crate::model::FileMetadata) -> Self {
             let mut v = self.files_added.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files_added = Some(v);
             self
         }
@@ -5321,9 +5306,9 @@ pub mod create_commit_output {
         /// To override the contents of this collection use [`set_files_updated`](Self::set_files_updated).
         ///
         /// <p>The files updated as part of the commited file changes.</p>
-        pub fn files_updated(mut self, input: impl Into<crate::model::FileMetadata>) -> Self {
+        pub fn files_updated(mut self, input: crate::model::FileMetadata) -> Self {
             let mut v = self.files_updated.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files_updated = Some(v);
             self
         }
@@ -5340,9 +5325,9 @@ pub mod create_commit_output {
         /// To override the contents of this collection use [`set_files_deleted`](Self::set_files_deleted).
         ///
         /// <p>The files deleted as part of the committed file changes.</p>
-        pub fn files_deleted(mut self, input: impl Into<crate::model::FileMetadata>) -> Self {
+        pub fn files_deleted(mut self, input: crate::model::FileMetadata) -> Self {
             let mut v = self.files_deleted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files_deleted = Some(v);
             self
         }
@@ -5505,9 +5490,9 @@ pub mod batch_get_repositories_output {
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>A list of repositories returned by the batch get repositories operation.</p>
-        pub fn repositories(mut self, input: impl Into<crate::model::RepositoryMetadata>) -> Self {
+        pub fn repositories(mut self, input: crate::model::RepositoryMetadata) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -5600,9 +5585,9 @@ pub mod batch_get_commits_output {
         /// To override the contents of this collection use [`set_commits`](Self::set_commits).
         ///
         /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
-        pub fn commits(mut self, input: impl Into<crate::model::Commit>) -> Self {
+        pub fn commits(mut self, input: crate::model::Commit) -> Self {
             let mut v = self.commits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.commits = Some(v);
             self
         }
@@ -5621,9 +5606,9 @@ pub mod batch_get_commits_output {
         /// <p>Returns any commit IDs for which information could not be found. For example, if one
         /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
         /// repository, the ID returns an error object with more information.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchGetCommitsError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchGetCommitsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -5736,10 +5721,10 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_output {
         /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
+            input: crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -5850,9 +5835,9 @@ pub mod batch_describe_merge_conflicts_output {
         /// To override the contents of this collection use [`set_conflicts`](Self::set_conflicts).
         ///
         /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
-        pub fn conflicts(mut self, input: impl Into<crate::model::Conflict>) -> Self {
+        pub fn conflicts(mut self, input: crate::model::Conflict) -> Self {
             let mut v = self.conflicts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conflicts = Some(v);
             self
         }
@@ -5879,12 +5864,9 @@ pub mod batch_describe_merge_conflicts_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of any errors returned while describing the merge conflicts for each file.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchDescribeMergeConflictsError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchDescribeMergeConflictsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -6035,10 +6017,10 @@ pub mod batch_associate_approval_rule_template_with_repositories_output {
         /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
+            input: crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

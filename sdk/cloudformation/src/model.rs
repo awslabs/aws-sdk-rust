@@ -1346,12 +1346,9 @@ pub mod rollback_configuration {
         /// </ul>
         /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
         /// </p>
-        pub fn rollback_triggers(
-            mut self,
-            input: impl Into<crate::model::RollbackTrigger>,
-        ) -> Self {
+        pub fn rollback_triggers(mut self, input: crate::model::RollbackTrigger) -> Self {
             let mut v = self.rollback_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rollback_triggers = Some(v);
             self
         }
@@ -8608,10 +8605,10 @@ pub mod stack_resource_drift {
         /// that contains the targeted resource.</p>
         pub fn physical_resource_id_context(
             mut self,
-            input: impl Into<crate::model::PhysicalResourceIdContextKeyValuePair>,
+            input: crate::model::PhysicalResourceIdContextKeyValuePair,
         ) -> Self {
             let mut v = self.physical_resource_id_context.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.physical_resource_id_context = Some(v);
             self
         }
@@ -8685,12 +8682,9 @@ pub mod stack_resource_drift {
         /// values. These will be present only for resources whose
         /// <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.
         /// </p>
-        pub fn property_differences(
-            mut self,
-            input: impl Into<crate::model::PropertyDifference>,
-        ) -> Self {
+        pub fn property_differences(mut self, input: crate::model::PropertyDifference) -> Self {
             let mut v = self.property_differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_differences = Some(v);
             self
         }
@@ -9285,9 +9279,9 @@ pub mod required_activated_type {
         /// To override the contents of this collection use [`set_supported_major_versions`](Self::set_supported_major_versions).
         ///
         /// <p>A list of the major versions of the extension type that the macro supports.</p>
-        pub fn supported_major_versions(mut self, input: impl Into<i32>) -> Self {
+        pub fn supported_major_versions(mut self, input: i32) -> Self {
             let mut v = self.supported_major_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_major_versions = Some(v);
             self
         }
@@ -10869,9 +10863,9 @@ pub mod stack_set {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of input parameters for a stack set.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -10892,9 +10886,9 @@ pub mod stack_set {
         /// example, by creating new Identity and Access Management (IAM) users. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a>
         /// </p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -10916,9 +10910,9 @@ pub mod stack_set {
         ///
         /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags
         /// can be specified.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11428,9 +11422,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of <code>Parameter</code> structures.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -11591,9 +11585,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>The capabilities allowed in the stack.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -11610,9 +11604,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>A list of output structures.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -11643,9 +11637,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13168,9 +13162,9 @@ pub mod stack_instance {
         ///
         /// <p>A list of parameters from the stack set template whose values have been overridden in
         /// this stack instance.</p>
-        pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameter_overrides(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_overrides = Some(v);
             self
         }
@@ -14176,9 +14170,9 @@ pub mod resource_change {
         /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering
         /// this update, such as a change in the resource attribute's <code>Metadata</code>,
         /// <code>Properties</code>, or <code>Tags</code>.</p>
-        pub fn scope(mut self, input: impl Into<crate::model::ResourceAttribute>) -> Self {
+        pub fn scope(mut self, input: crate::model::ResourceAttribute) -> Self {
             let mut v = self.scope.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scope = Some(v);
             self
         }
@@ -14199,9 +14193,9 @@ pub mod resource_change {
         /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code>
         /// structures that describes the changes that CloudFormation will make to the
         /// resource. </p>
-        pub fn details(mut self, input: impl Into<crate::model::ResourceChangeDetail>) -> Self {
+        pub fn details(mut self, input: crate::model::ResourceChangeDetail) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.details = Some(v);
             self
         }

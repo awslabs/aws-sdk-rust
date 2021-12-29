@@ -164,10 +164,10 @@ pub mod finding_criteria {
         pub fn criterion(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CriterionAdditionalProperties>,
+            v: crate::model::CriterionAdditionalProperties,
         ) -> Self {
             let mut hash_map = self.criterion.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.criterion = Some(hash_map);
             self
         }
@@ -1753,9 +1753,9 @@ pub mod search_resources_criteria_block {
         /// To override the contents of this collection use [`set_and`](Self::set_and).
         ///
         /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-        pub fn and(mut self, input: impl Into<crate::model::SearchResourcesCriteria>) -> Self {
+        pub fn and(mut self, input: crate::model::SearchResourcesCriteria) -> Self {
             let mut v = self.and.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.and = Some(v);
             self
         }
@@ -1924,12 +1924,9 @@ pub mod search_resources_tag_criterion {
         /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
         ///
         /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-        pub fn tag_values(
-            mut self,
-            input: impl Into<crate::model::SearchResourcesTagCriterionPair>,
-        ) -> Self {
+        pub fn tag_values(mut self, input: crate::model::SearchResourcesTagCriterionPair) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_values = Some(v);
             self
         }
@@ -3693,12 +3690,9 @@ pub mod job_summary {
         /// To override the contents of this collection use [`set_bucket_definitions`](Self::set_bucket_definitions).
         ///
         /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
-        pub fn bucket_definitions(
-            mut self,
-            input: impl Into<crate::model::S3BucketDefinitionForJob>,
-        ) -> Self {
+        pub fn bucket_definitions(mut self, input: crate::model::S3BucketDefinitionForJob) -> Self {
             let mut v = self.bucket_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bucket_definitions = Some(v);
             self
         }
@@ -3941,9 +3935,9 @@ pub mod criteria_block_for_job {
         /// To override the contents of this collection use [`set_and`](Self::set_and).
         ///
         /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-        pub fn and(mut self, input: impl Into<crate::model::CriteriaForJob>) -> Self {
+        pub fn and(mut self, input: crate::model::CriteriaForJob) -> Self {
             let mut v = self.and.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.and = Some(v);
             self
         }
@@ -4103,12 +4097,9 @@ pub mod tag_criterion_for_job {
         /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
         ///
         /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-        pub fn tag_values(
-            mut self,
-            input: impl Into<crate::model::TagCriterionPairForJob>,
-        ) -> Self {
+        pub fn tag_values(mut self, input: crate::model::TagCriterionPairForJob) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_values = Some(v);
             self
         }
@@ -5013,9 +5004,9 @@ pub mod list_jobs_filter_criteria {
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
         /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-        pub fn excludes(mut self, input: impl Into<crate::model::ListJobsFilterTerm>) -> Self {
+        pub fn excludes(mut self, input: crate::model::ListJobsFilterTerm) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excludes = Some(v);
             self
         }
@@ -5032,9 +5023,9 @@ pub mod list_jobs_filter_criteria {
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
         /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-        pub fn includes(mut self, input: impl Into<crate::model::ListJobsFilterTerm>) -> Self {
+        pub fn includes(mut self, input: crate::model::ListJobsFilterTerm) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.includes = Some(v);
             self
         }
@@ -5561,9 +5552,9 @@ pub mod usage_record {
         /// To override the contents of this collection use [`set_usage`](Self::set_usage).
         ///
         /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
-        pub fn usage(mut self, input: impl Into<crate::model::UsageByAccount>) -> Self {
+        pub fn usage(mut self, input: crate::model::UsageByAccount) -> Self {
             let mut v = self.usage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage = Some(v);
             self
         }
@@ -7483,9 +7474,9 @@ pub mod s3_object {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are associated with the object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn tags(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8027,9 +8018,9 @@ pub mod s3_bucket {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are associated with the bucket.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn tags(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11162,9 +11153,9 @@ pub mod classification_result {
         /// To override the contents of this collection use [`set_sensitive_data`](Self::set_sensitive_data).
         ///
         /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-        pub fn sensitive_data(mut self, input: impl Into<crate::model::SensitiveDataItem>) -> Self {
+        pub fn sensitive_data(mut self, input: crate::model::SensitiveDataItem) -> Self {
             let mut v = self.sensitive_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sensitive_data = Some(v);
             self
         }
@@ -11355,9 +11346,9 @@ pub mod sensitive_data_item {
         /// To override the contents of this collection use [`set_detections`](Self::set_detections).
         ///
         /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
-        pub fn detections(mut self, input: impl Into<crate::model::DefaultDetection>) -> Self {
+        pub fn detections(mut self, input: crate::model::DefaultDetection) -> Self {
             let mut v = self.detections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detections = Some(v);
             self
         }
@@ -11557,9 +11548,9 @@ pub mod occurrences {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p><p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
-        pub fn cells(mut self, input: impl Into<crate::model::Cell>) -> Self {
+        pub fn cells(mut self, input: crate::model::Cell) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cells = Some(v);
             self
         }
@@ -11576,9 +11567,9 @@ pub mod occurrences {
         /// To override the contents of this collection use [`set_line_ranges`](Self::set_line_ranges).
         ///
         /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p> <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
-        pub fn line_ranges(mut self, input: impl Into<crate::model::Range>) -> Self {
+        pub fn line_ranges(mut self, input: crate::model::Range) -> Self {
             let mut v = self.line_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_ranges = Some(v);
             self
         }
@@ -11595,9 +11586,9 @@ pub mod occurrences {
         /// To override the contents of this collection use [`set_offset_ranges`](Self::set_offset_ranges).
         ///
         /// <p>Reserved for future use.</p>
-        pub fn offset_ranges(mut self, input: impl Into<crate::model::Range>) -> Self {
+        pub fn offset_ranges(mut self, input: crate::model::Range) -> Self {
             let mut v = self.offset_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offset_ranges = Some(v);
             self
         }
@@ -11614,9 +11605,9 @@ pub mod occurrences {
         /// To override the contents of this collection use [`set_pages`](Self::set_pages).
         ///
         /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p><p>Each Page object specifies a page that contains the sensitive data.</p>
-        pub fn pages(mut self, input: impl Into<crate::model::Page>) -> Self {
+        pub fn pages(mut self, input: crate::model::Page) -> Self {
             let mut v = self.pages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pages = Some(v);
             self
         }
@@ -11633,9 +11624,9 @@ pub mod occurrences {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p> <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
-        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -12079,9 +12070,9 @@ pub mod custom_data_identifiers {
         /// To override the contents of this collection use [`set_detections`](Self::set_detections).
         ///
         /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
-        pub fn detections(mut self, input: impl Into<crate::model::CustomDetection>) -> Self {
+        pub fn detections(mut self, input: crate::model::CustomDetection) -> Self {
             let mut v = self.detections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detections = Some(v);
             self
         }
@@ -13325,12 +13316,9 @@ pub mod s3_job_definition {
         /// To override the contents of this collection use [`set_bucket_definitions`](Self::set_bucket_definitions).
         ///
         /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
-        pub fn bucket_definitions(
-            mut self,
-            input: impl Into<crate::model::S3BucketDefinitionForJob>,
-        ) -> Self {
+        pub fn bucket_definitions(mut self, input: crate::model::S3BucketDefinitionForJob) -> Self {
             let mut v = self.bucket_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bucket_definitions = Some(v);
             self
         }
@@ -13495,9 +13483,9 @@ pub mod job_scoping_block {
         /// To override the contents of this collection use [`set_and`](Self::set_and).
         ///
         /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-        pub fn and(mut self, input: impl Into<crate::model::JobScopeTerm>) -> Self {
+        pub fn and(mut self, input: crate::model::JobScopeTerm) -> Self {
             let mut v = self.and.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.and = Some(v);
             self
         }
@@ -13682,9 +13670,9 @@ pub mod tag_scope_term {
         /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
         ///
         /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
-        pub fn tag_values(mut self, input: impl Into<crate::model::TagValuePair>) -> Self {
+        pub fn tag_values(mut self, input: crate::model::TagValuePair) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_values = Some(v);
             self
         }
@@ -14576,9 +14564,9 @@ pub mod bucket_metadata {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn tags(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

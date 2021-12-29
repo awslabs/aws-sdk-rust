@@ -196,8 +196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the snapshot.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the snapshot.</p>
@@ -206,8 +206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of blocks that were written to the snapshot.</p>
-        pub fn changed_blocks_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.changed_blocks_count(inp);
+        pub fn changed_blocks_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.changed_blocks_count(signature);
             self
         }
         /// <p>The number of blocks that were written to the snapshot.</p>
@@ -221,8 +221,8 @@ pub mod fluent_builders {
         /// checksums for each written block in ascending order of their block index, concatenate
         /// them to form a single string, and then generate the checksum on the entire string using
         /// the SHA256 algorithm.</p>
-        pub fn checksum(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(inp);
+        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(signature.into());
             self
         }
         /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written
@@ -237,8 +237,8 @@ pub mod fluent_builders {
         }
         /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
         /// is <code>SHA256</code>.</p>
-        pub fn checksum_algorithm(mut self, inp: crate::model::ChecksumAlgorithm) -> Self {
-            self.inner = self.inner.checksum_algorithm(inp);
+        pub fn checksum_algorithm(mut self, signature: crate::model::ChecksumAlgorithm) -> Self {
+            self.inner = self.inner.checksum_algorithm(signature);
             self
         }
         /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
@@ -254,9 +254,9 @@ pub mod fluent_builders {
         /// aggregation method is <code>LINEAR</code>.</p>
         pub fn checksum_aggregation_method(
             mut self,
-            inp: crate::model::ChecksumAggregationMethod,
+            signature: crate::model::ChecksumAggregationMethod,
         ) -> Self {
-            self.inner = self.inner.checksum_aggregation_method(inp);
+            self.inner = self.inner.checksum_aggregation_method(signature);
             self
         }
         /// <p>The aggregation method used to generate the checksum. Currently, the only supported
@@ -329,8 +329,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the snapshot containing the block from which to get data.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the snapshot containing the block from which to get data.</p>
@@ -343,8 +343,8 @@ pub mod fluent_builders {
         ///
         /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
         /// <code>ListSnapshotBlocks</code> operations.</p>
-        pub fn block_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.block_index(inp);
+        pub fn block_index(mut self, signature: i32) -> Self {
+            self.inner = self.inner.block_index(signature);
             self
         }
         /// <p>The block index of the block from which to get data.</p>
@@ -361,8 +361,8 @@ pub mod fluent_builders {
         ///
         /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
         /// <code>ListSnapshotBlocks</code> operations.</p>
-        pub fn block_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.block_token(inp);
+        pub fn block_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.block_token(signature.into());
             self
         }
         /// <p>The block token of the block from which to get data.</p>
@@ -440,8 +440,8 @@ pub mod fluent_builders {
         /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a
         /// <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
         /// </important>
-        pub fn first_snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_snapshot_id(inp);
+        pub fn first_snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the first snapshot to use for the comparison.</p>
@@ -461,8 +461,8 @@ pub mod fluent_builders {
         /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a
         /// <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
         /// </important>
-        pub fn second_snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.second_snapshot_id(inp);
+        pub fn second_snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.second_snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the second snapshot to use for the comparison.</p>
@@ -478,8 +478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -488,8 +488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of results to return.</p>
@@ -500,8 +500,8 @@ pub mod fluent_builders {
         /// <p>The block index from which the comparison should start.</p>
         /// <p>The list in the response will start from this block index or the next valid block
         /// index in the snapshots.</p>
-        pub fn starting_block_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.starting_block_index(inp);
+        pub fn starting_block_index(mut self, signature: i32) -> Self {
+            self.inner = self.inner.starting_block_index(signature);
             self
         }
         /// <p>The block index from which the comparison should start.</p>
@@ -572,8 +572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
@@ -582,8 +582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -592,8 +592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of results to return.</p>
@@ -603,8 +603,8 @@ pub mod fluent_builders {
         }
         /// <p>The block index from which the list should start. The list in the response will start
         /// from this block index or the next valid block index in the snapshot.</p>
-        pub fn starting_block_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.starting_block_index(inp);
+        pub fn starting_block_index(mut self, signature: i32) -> Self {
+            self.inner = self.inner.starting_block_index(signature);
             self
         }
         /// <p>The block index from which the list should start. The list in the response will start
@@ -677,8 +677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the snapshot.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the snapshot.</p>
@@ -691,8 +691,8 @@ pub mod fluent_builders {
         /// the logical offset of the data in the logical volume by the block size (logical offset of
         /// data/<code>524288</code>). The logical offset of the data must be <code>512</code>
         /// KiB aligned.</p>
-        pub fn block_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.block_index(inp);
+        pub fn block_index(mut self, signature: i32) -> Self {
+            self.inner = self.inner.block_index(signature);
             self
         }
         /// <p>The block index of the block in which to write the data. A block index is a logical
@@ -715,8 +715,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
         /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.</p>
-        pub fn block_data(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.block_data(inp);
+        pub fn block_data(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.block_data(signature);
             self
         }
         /// <p>The data to write to the block.</p>
@@ -741,8 +741,8 @@ pub mod fluent_builders {
         /// size is <code>524288</code> bytes.</p>
         /// <p>Valid values: <code>524288</code>
         /// </p>
-        pub fn data_length(mut self, inp: i32) -> Self {
-            self.inner = self.inner.data_length(inp);
+        pub fn data_length(mut self, signature: i32) -> Self {
+            self.inner = self.inner.data_length(signature);
             self
         }
         /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
@@ -754,8 +754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The progress of the write process, as a percentage.</p>
-        pub fn progress(mut self, inp: i32) -> Self {
-            self.inner = self.inner.progress(inp);
+        pub fn progress(mut self, signature: i32) -> Self {
+            self.inner = self.inner.progress(signature);
             self
         }
         /// <p>The progress of the write process, as a percentage.</p>
@@ -765,8 +765,8 @@ pub mod fluent_builders {
         }
         /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
         /// supported.</p>
-        pub fn checksum(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(inp);
+        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(signature.into());
             self
         }
         /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
@@ -777,8 +777,8 @@ pub mod fluent_builders {
         }
         /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
         /// is <code>SHA256</code>.</p>
-        pub fn checksum_algorithm(mut self, inp: crate::model::ChecksumAlgorithm) -> Self {
-            self.inner = self.inner.checksum_algorithm(inp);
+        pub fn checksum_algorithm(mut self, signature: crate::model::ChecksumAlgorithm) -> Self {
+            self.inner = self.inner.checksum_algorithm(signature);
             self
         }
         /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
@@ -855,8 +855,8 @@ pub mod fluent_builders {
         }
         /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
         /// TiB).</p>
-        pub fn volume_size(mut self, inp: i64) -> Self {
-            self.inner = self.inner.volume_size(inp);
+        pub fn volume_size(mut self, signature: i64) -> Self {
+            self.inner = self.inner.volume_size(signature);
             self
         }
         /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
@@ -870,8 +870,8 @@ pub mod fluent_builders {
         /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted
         /// snapshot as a parent snapshot. You must first create an encrypted copy of the parent
         /// snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
-        pub fn parent_snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_snapshot_id(inp);
+        pub fn parent_snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating
@@ -891,8 +891,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the snapshot.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the snapshot.</p>
@@ -904,8 +904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the snapshot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description for the snapshot.</p>
@@ -921,8 +921,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
         /// Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -952,8 +952,8 @@ pub mod fluent_builders {
         ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
         /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-        pub fn encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.encrypted(inp);
+        pub fn encrypted(mut self, signature: bool) -> Self {
+            self.inner = self.inner.encrypted(signature);
             self
         }
         /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify
@@ -983,8 +983,8 @@ pub mod fluent_builders {
         /// the parent snapshot.</p>
         /// <p>If <b>Encrypted</b> is set to <code>true</code>,
         /// you must specify a KMS key ARN. </p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS)
@@ -1010,8 +1010,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, signature: i32) -> Self {
+            self.inner = self.inner.timeout(signature);
             self
         }
         /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled

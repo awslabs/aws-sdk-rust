@@ -75,9 +75,9 @@ pub mod validate_template_output {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of <code>TemplateParameter</code> structures.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::TemplateParameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::TemplateParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -108,9 +108,9 @@ pub mod validate_template_output {
         /// use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your
         /// template; otherwise, those actions return an InsufficientCapabilities error.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -968,12 +968,9 @@ pub mod list_type_versions_output {
         ///
         /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the
         /// specified extension's versions.</p>
-        pub fn type_version_summaries(
-            mut self,
-            input: impl Into<crate::model::TypeVersionSummary>,
-        ) -> Self {
+        pub fn type_version_summaries(mut self, input: crate::model::TypeVersionSummary) -> Self {
             let mut v = self.type_version_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.type_version_summaries = Some(v);
             self
         }
@@ -1069,9 +1066,9 @@ pub mod list_types_output {
         ///
         /// <p>A list of <code>TypeSummary</code> structures that contain information about the
         /// specified extensions.</p>
-        pub fn type_summaries(mut self, input: impl Into<crate::model::TypeSummary>) -> Self {
+        pub fn type_summaries(mut self, input: crate::model::TypeSummary) -> Self {
             let mut v = self.type_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.type_summaries = Some(v);
             self
         }
@@ -1277,9 +1274,9 @@ pub mod list_stack_sets_output {
         ///
         /// <p>A list of <code>StackSetSummary</code> structures that contain information about the
         /// user's stack sets.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::StackSetSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::StackSetSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -1376,12 +1373,9 @@ pub mod list_stack_set_operations_output {
         ///
         /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary
         /// information about operations for the specified stack set.</p>
-        pub fn summaries(
-            mut self,
-            input: impl Into<crate::model::StackSetOperationSummary>,
-        ) -> Self {
+        pub fn summaries(mut self, input: crate::model::StackSetOperationSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -1483,12 +1477,9 @@ pub mod list_stack_set_operation_results_output {
         /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
         /// information about the specified operation results, for accounts and Regions that are
         /// included in the operation.</p>
-        pub fn summaries(
-            mut self,
-            input: impl Into<crate::model::StackSetOperationResultSummary>,
-        ) -> Self {
+        pub fn summaries(mut self, input: crate::model::StackSetOperationResultSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -1581,9 +1572,9 @@ pub mod list_stacks_output {
         ///
         /// <p>A list of <code>StackSummary</code> structures containing information about the
         /// specified stacks.</p>
-        pub fn stack_summaries(mut self, input: impl Into<crate::model::StackSummary>) -> Self {
+        pub fn stack_summaries(mut self, input: crate::model::StackSummary) -> Self {
             let mut v = self.stack_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_summaries = Some(v);
             self
         }
@@ -1674,10 +1665,10 @@ pub mod list_stack_resources_output {
         /// <p>A list of <code>StackResourceSummary</code> structures.</p>
         pub fn stack_resource_summaries(
             mut self,
-            input: impl Into<crate::model::StackResourceSummary>,
+            input: crate::model::StackResourceSummary,
         ) -> Self {
             let mut v = self.stack_resource_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_resource_summaries = Some(v);
             self
         }
@@ -1769,9 +1760,9 @@ pub mod list_stack_instances_output {
         ///
         /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about
         /// the specified stack instances.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::StackInstanceSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::StackInstanceSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -1946,9 +1937,9 @@ pub mod list_exports_output {
         /// To override the contents of this collection use [`set_exports`](Self::set_exports).
         ///
         /// <p>The output for the <a>ListExports</a> action.</p>
-        pub fn exports(mut self, input: impl Into<crate::model::Export>) -> Self {
+        pub fn exports(mut self, input: crate::model::Export) -> Self {
             let mut v = self.exports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exports = Some(v);
             self
         }
@@ -2035,9 +2026,9 @@ pub mod list_change_sets_output {
         ///
         /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of
         /// each change set for the specified stack.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::ChangeSetSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::ChangeSetSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -2267,9 +2258,9 @@ pub mod get_template_summary_output {
         ///
         /// <p>A list of parameter declarations that describe various properties for each
         /// parameter.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::ParameterDeclaration>) -> Self {
+        pub fn parameters(mut self, input: crate::model::ParameterDeclaration) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -2304,9 +2295,9 @@ pub mod get_template_summary_output {
         /// otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation
         /// Templates</a>.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -2412,10 +2403,10 @@ pub mod get_template_summary_output {
         /// <code>AWS::S3::Bucket</code> resource.</p>
         pub fn resource_identifier_summaries(
             mut self,
-            input: impl Into<crate::model::ResourceIdentifierSummary>,
+            input: crate::model::ResourceIdentifierSummary,
         ) -> Self {
             let mut v = self.resource_identifier_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifier_summaries = Some(v);
             self
         }
@@ -2529,9 +2520,9 @@ pub mod get_template_output {
         /// <code>Original</code> template is always available. After CloudFormation
         /// finishes creating the change set, the <code>Processed</code> template becomes
         /// available.</p>
-        pub fn stages_available(mut self, input: impl Into<crate::model::TemplateStage>) -> Self {
+        pub fn stages_available(mut self, input: crate::model::TemplateStage) -> Self {
             let mut v = self.stages_available.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stages_available = Some(v);
             self
         }
@@ -3948,10 +3939,10 @@ pub mod describe_type_output {
         /// activated in your account in order for the module itself to be activated.</p>
         pub fn required_activated_types(
             mut self,
-            input: impl Into<crate::model::RequiredActivatedType>,
+            input: crate::model::RequiredActivatedType,
         ) -> Self {
             let mut v = self.required_activated_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.required_activated_types = Some(v);
             self
         }
@@ -4448,9 +4439,9 @@ pub mod describe_stacks_output {
         /// To override the contents of this collection use [`set_stacks`](Self::set_stacks).
         ///
         /// <p>A list of stack structures.</p>
-        pub fn stacks(mut self, input: impl Into<crate::model::Stack>) -> Self {
+        pub fn stacks(mut self, input: crate::model::Stack) -> Self {
             let mut v = self.stacks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stacks = Some(v);
             self
         }
@@ -4524,9 +4515,9 @@ pub mod describe_stack_resources_output {
         /// To override the contents of this collection use [`set_stack_resources`](Self::set_stack_resources).
         ///
         /// <p>A list of <code>StackResource</code> structures.</p>
-        pub fn stack_resources(mut self, input: impl Into<crate::model::StackResource>) -> Self {
+        pub fn stack_resources(mut self, input: crate::model::StackResource) -> Self {
             let mut v = self.stack_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_resources = Some(v);
             self
         }
@@ -4627,12 +4618,9 @@ pub mod describe_stack_resource_drifts_output {
         /// drift are not included. Resources that do not currently support drift detection are not
         /// checked, and so not included. For a list of resources that support drift detection, see
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
-        pub fn stack_resource_drifts(
-            mut self,
-            input: impl Into<crate::model::StackResourceDrift>,
-        ) -> Self {
+        pub fn stack_resource_drifts(mut self, input: crate::model::StackResourceDrift) -> Self {
             let mut v = self.stack_resource_drifts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_resource_drifts = Some(v);
             self
         }
@@ -4847,9 +4835,9 @@ pub mod describe_stack_events_output {
         /// To override the contents of this collection use [`set_stack_events`](Self::set_stack_events).
         ///
         /// <p>A list of <code>StackEvents</code> structures.</p>
-        pub fn stack_events(mut self, input: impl Into<crate::model::StackEvent>) -> Self {
+        pub fn stack_events(mut self, input: crate::model::StackEvent) -> Self {
             let mut v = self.stack_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_events = Some(v);
             self
         }
@@ -5668,9 +5656,9 @@ pub mod describe_change_set_output {
         ///
         /// <p>A list of <code>Parameter</code> structures that describes the input parameters and
         /// their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -5792,9 +5780,9 @@ pub mod describe_change_set_output {
         ///
         /// <p>If you execute the change set, the list of capabilities that were explicitly
         /// acknowledged when the change set was created.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -5812,9 +5800,9 @@ pub mod describe_change_set_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5831,9 +5819,9 @@ pub mod describe_change_set_output {
         /// To override the contents of this collection use [`set_changes`](Self::set_changes).
         ///
         /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
-        pub fn changes(mut self, input: impl Into<crate::model::Change>) -> Self {
+        pub fn changes(mut self, input: crate::model::Change) -> Self {
             let mut v = self.changes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.changes = Some(v);
             self
         }
@@ -5977,9 +5965,9 @@ pub mod describe_account_limits_output {
         ///
         /// <p>An account limit structure that contain a list of CloudFormation account limits
         /// and their values.</p>
-        pub fn account_limits(mut self, input: impl Into<crate::model::AccountLimit>) -> Self {
+        pub fn account_limits(mut self, input: crate::model::AccountLimit) -> Self {
             let mut v = self.account_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_limits = Some(v);
             self
         }
@@ -6591,12 +6579,9 @@ pub mod batch_describe_type_configurations_output {
         ///
         /// <p>A list of information concerning any errors generated during the setting of the
         /// specified configurations.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchDescribeTypeConfigurationsError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchDescribeTypeConfigurationsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -6619,10 +6604,10 @@ pub mod batch_describe_type_configurations_output {
         /// process for any reason.</p>
         pub fn unprocessed_type_configurations(
             mut self,
-            input: impl Into<crate::model::TypeConfigurationIdentifier>,
+            input: crate::model::TypeConfigurationIdentifier,
         ) -> Self {
             let mut v = self.unprocessed_type_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_type_configurations = Some(v);
             self
         }
@@ -6643,10 +6628,10 @@ pub mod batch_describe_type_configurations_output {
         /// registry.</p>
         pub fn type_configurations(
             mut self,
-            input: impl Into<crate::model::TypeConfigurationDetails>,
+            input: crate::model::TypeConfigurationDetails,
         ) -> Self {
             let mut v = self.type_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.type_configurations = Some(v);
             self
         }

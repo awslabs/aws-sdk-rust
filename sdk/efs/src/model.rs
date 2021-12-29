@@ -912,9 +912,9 @@ pub mod resource_id_preference {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -1772,9 +1772,9 @@ pub mod file_system_description {
         ///
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
         /// objects.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1946,9 +1946,9 @@ pub mod access_point_description {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2367,9 +2367,9 @@ pub mod posix_user {
         /// To override the contents of this collection use [`set_secondary_gids`](Self::set_secondary_gids).
         ///
         /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-        pub fn secondary_gids(mut self, input: impl Into<i64>) -> Self {
+        pub fn secondary_gids(mut self, input: i64) -> Self {
             let mut v = self.secondary_gids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_gids = Some(v);
             self
         }

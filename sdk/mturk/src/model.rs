@@ -686,9 +686,9 @@ pub mod notification_specification {
         /// HITReviewable | HITExpired | Ping. The Ping event is only valid for
         /// the SendTestEventNotification operation.
         /// </p>
-        pub fn event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_types = Some(v);
             self
         }
@@ -1548,12 +1548,9 @@ pub mod review_report {
         /// <p> A list of ReviewResults objects for each action specified in
         /// the Review Policy.
         /// </p>
-        pub fn review_results(
-            mut self,
-            input: impl Into<crate::model::ReviewResultDetail>,
-        ) -> Self {
+        pub fn review_results(mut self, input: crate::model::ReviewResultDetail) -> Self {
             let mut v = self.review_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.review_results = Some(v);
             self
         }
@@ -1574,12 +1571,9 @@ pub mod review_report {
         /// <p> A list of ReviewAction objects for each action specified in
         /// the Review Policy.
         /// </p>
-        pub fn review_actions(
-            mut self,
-            input: impl Into<crate::model::ReviewActionDetail>,
-        ) -> Self {
+        pub fn review_actions(mut self, input: crate::model::ReviewActionDetail) -> Self {
             let mut v = self.review_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.review_actions = Some(v);
             self
         }
@@ -2162,9 +2156,9 @@ pub mod review_policy {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Name of the parameter from the Review policy.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::PolicyParameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::PolicyParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -2279,9 +2273,9 @@ pub mod policy_parameter {
         ///
         /// <p> List of ParameterMapEntry objects.
         /// </p>
-        pub fn map_entries(mut self, input: impl Into<crate::model::ParameterMapEntry>) -> Self {
+        pub fn map_entries(mut self, input: crate::model::ParameterMapEntry) -> Self {
             let mut v = self.map_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.map_entries = Some(v);
             self
         }
@@ -2968,10 +2962,10 @@ pub mod hit {
         /// </p>
         pub fn qualification_requirements(
             mut self,
-            input: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
             let mut v = self.qualification_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualification_requirements = Some(v);
             self
         }
@@ -3395,9 +3389,9 @@ pub mod qualification_requirement {
         /// In or the NotIn comparator, you can use up to 15 IntegerValue
         /// elements in a QualificationRequirement data structure.
         /// </p>
-        pub fn integer_values(mut self, input: impl Into<i32>) -> Self {
+        pub fn integer_values(mut self, input: i32) -> Self {
             let mut v = self.integer_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.integer_values = Some(v);
             self
         }
@@ -3430,9 +3424,9 @@ pub mod qualification_requirement {
         /// NotIn comparator, you can use up to 30 LocaleValue elements in a
         /// QualificationRequirement data structure.
         /// </p>
-        pub fn locale_values(mut self, input: impl Into<crate::model::Locale>) -> Self {
+        pub fn locale_values(mut self, input: crate::model::Locale) -> Self {
             let mut v = self.locale_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.locale_values = Some(v);
             self
         }

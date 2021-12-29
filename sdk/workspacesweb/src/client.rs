@@ -470,8 +470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -480,8 +480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the browser settings.</p>
-        pub fn browser_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_settings_arn(inp);
+        pub fn browser_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the browser settings.</p>
@@ -553,8 +553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -563,8 +563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the network settings.</p>
-        pub fn network_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_settings_arn(inp);
+        pub fn network_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the network settings.</p>
@@ -636,8 +636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -646,8 +646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the trust store.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(signature.into());
             self
         }
         /// <p>The ARN of the trust store.</p>
@@ -719,8 +719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -729,8 +729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the user settings.</p>
-        pub fn user_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_settings_arn(inp);
+        pub fn user_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the user settings.</p>
@@ -808,8 +808,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
@@ -821,8 +821,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The custom managed key of the browser settings.</p>
-        pub fn customer_managed_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_managed_key(inp);
+        pub fn customer_managed_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_managed_key(signature.into());
             self
         }
         /// <p>The custom managed key of the browser settings.</p>
@@ -843,7 +843,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.additional_encryption_context(k, v);
+            self.inner = self.inner.additional_encryption_context(k.into(), v.into());
             self
         }
         /// <p>Additional encryption context of the browser settings.</p>
@@ -858,8 +858,8 @@ pub mod fluent_builders {
         }
         /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
         /// streaming sessions.</p>
-        pub fn browser_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_policy(inp);
+        pub fn browser_policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_policy(signature.into());
             self
         }
         /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
@@ -876,8 +876,8 @@ pub mod fluent_builders {
         /// request, if the original request completes successfully, subsequent retries with the same
         /// client token returns the result from the original successful request.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -950,8 +950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -960,8 +960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider name.</p>
-        pub fn identity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_name(inp);
+        pub fn identity_provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_name(signature.into());
             self
         }
         /// <p>The identity provider name.</p>
@@ -973,8 +973,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider type.</p>
-        pub fn identity_provider_type(mut self, inp: crate::model::IdentityProviderType) -> Self {
-            self.inner = self.inner.identity_provider_type(inp);
+        pub fn identity_provider_type(
+            mut self,
+            signature: crate::model::IdentityProviderType,
+        ) -> Self {
+            self.inner = self.inner.identity_provider_type(signature);
             self
         }
         /// <p>The identity provider type.</p>
@@ -1147,7 +1150,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_provider_details(k, v);
+            self.inner = self.inner.identity_provider_details(k.into(), v.into());
             self
         }
         /// <p>The identity provider details. The following list describes the provider detail keys for
@@ -1318,8 +1321,8 @@ pub mod fluent_builders {
         /// client token returns the result from the original successful request.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1395,8 +1398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The VPC that streaming instances will connect to.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(signature.into());
             self
         }
         /// <p>The VPC that streaming instances will connect to.</p>
@@ -1409,8 +1412,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
@@ -1426,8 +1429,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
@@ -1443,8 +1446,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
@@ -1461,8 +1464,8 @@ pub mod fluent_builders {
         /// client token returns the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1536,8 +1539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
@@ -1550,8 +1553,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the web portal. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the web portal. A tag is a key-value pair.</p>
@@ -1563,8 +1566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer managed key of the web portal.</p>
-        pub fn customer_managed_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_managed_key(inp);
+        pub fn customer_managed_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_managed_key(signature.into());
             self
         }
         /// <p>The customer managed key of the web portal.</p>
@@ -1585,7 +1588,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.additional_encryption_context(k, v);
+            self.inner = self.inner.additional_encryption_context(k.into(), v.into());
             self
         }
         /// <p>The additional encryption context of the portal.</p>
@@ -1604,8 +1607,8 @@ pub mod fluent_builders {
         /// client token returns the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1687,8 +1690,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_certificate_list`](Self::set_certificate_list).
         ///
         /// <p>A list of CA certificates to be added to the trust store.</p>
-        pub fn certificate_list(mut self, inp: impl Into<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.certificate_list(inp);
+        pub fn certificate_list(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificate_list(input);
             self
         }
         /// <p>A list of CA certificates to be added to the trust store.</p>
@@ -1704,8 +1707,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
@@ -1722,8 +1725,8 @@ pub mod fluent_builders {
         /// client token returns the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1800,8 +1803,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the user can copy text from the streaming session to the local
         /// device.</p>
-        pub fn copy_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.copy_allowed(inp);
+        pub fn copy_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.copy_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can copy text from the streaming session to the local
@@ -1815,8 +1818,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the user can paste text from the local device to the streaming
         /// session.</p>
-        pub fn paste_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.paste_allowed(inp);
+        pub fn paste_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.paste_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can paste text from the local device to the streaming
@@ -1830,8 +1833,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the user can download files from the streaming session to the local
         /// device.</p>
-        pub fn download_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.download_allowed(inp);
+        pub fn download_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.download_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can download files from the streaming session to the local
@@ -1845,8 +1848,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the user can upload files from the local device to the streaming
         /// session.</p>
-        pub fn upload_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.upload_allowed(inp);
+        pub fn upload_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.upload_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can upload files from the local device to the streaming
@@ -1859,8 +1862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the user can print to the local device.</p>
-        pub fn print_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.print_allowed(inp);
+        pub fn print_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.print_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can print to the local device.</p>
@@ -1876,8 +1879,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
@@ -1894,8 +1897,8 @@ pub mod fluent_builders {
         /// client token returns the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1969,8 +1972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the browser settings.</p>
-        pub fn browser_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_settings_arn(inp);
+        pub fn browser_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the browser settings.</p>
@@ -2042,8 +2045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the identity provider.</p>
-        pub fn identity_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_arn(inp);
+        pub fn identity_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_arn(signature.into());
             self
         }
         /// <p>The ARN of the identity provider.</p>
@@ -2115,8 +2118,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network settings.</p>
-        pub fn network_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_settings_arn(inp);
+        pub fn network_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the network settings.</p>
@@ -2188,8 +2191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2258,8 +2261,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(signature.into());
             self
         }
         /// <p>The ARN of the trust store.</p>
@@ -2331,8 +2334,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user settings.</p>
-        pub fn user_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_settings_arn(inp);
+        pub fn user_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the user settings.</p>
@@ -2404,8 +2407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2474,8 +2477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2544,8 +2547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2614,8 +2617,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2684,8 +2687,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the browser settings.</p>
-        pub fn browser_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_settings_arn(inp);
+        pub fn browser_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the browser settings.</p>
@@ -2757,8 +2760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the identity provider.</p>
-        pub fn identity_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_arn(inp);
+        pub fn identity_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_arn(signature.into());
             self
         }
         /// <p>The ARN of the identity provider.</p>
@@ -2830,8 +2833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network settings.</p>
-        pub fn network_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_settings_arn(inp);
+        pub fn network_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the network settings.</p>
@@ -2903,8 +2906,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2973,8 +2976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -3043,8 +3046,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(signature.into());
             self
         }
         /// <p>The ARN of the trust store.</p>
@@ -3116,8 +3119,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store certificate.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(signature.into());
             self
         }
         /// <p>The ARN of the trust store certificate.</p>
@@ -3129,8 +3132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The thumbprint of the trust store certificate.</p>
-        pub fn thumbprint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thumbprint(inp);
+        pub fn thumbprint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thumbprint(signature.into());
             self
         }
         /// <p>The thumbprint of the trust store certificate.</p>
@@ -3199,8 +3202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user settings.</p>
-        pub fn user_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_settings_arn(inp);
+        pub fn user_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the user settings.</p>
@@ -3272,8 +3275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3282,8 +3285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3352,8 +3355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3362,8 +3365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3372,8 +3375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -3442,8 +3445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3452,8 +3455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3522,8 +3525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
@@ -3532,8 +3535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3602,8 +3605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -3672,8 +3675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(signature.into());
             self
         }
         /// <p>The ARN of the trust store</p>
@@ -3685,8 +3688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3695,8 +3698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3765,8 +3768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3775,8 +3778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3845,8 +3848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
@@ -3855,8 +3858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3925,8 +3928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -3939,8 +3942,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags of the resource.</p>
@@ -3957,8 +3960,8 @@ pub mod fluent_builders {
         /// client token returns the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4032,8 +4035,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -4046,8 +4049,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -4119,8 +4122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the browser settings.</p>
-        pub fn browser_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_settings_arn(inp);
+        pub fn browser_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the browser settings.</p>
@@ -4133,8 +4136,8 @@ pub mod fluent_builders {
         }
         /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
         /// streaming sessions. </p>
-        pub fn browser_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_policy(inp);
+        pub fn browser_policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_policy(signature.into());
             self
         }
         /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
@@ -4152,8 +4155,8 @@ pub mod fluent_builders {
         /// client token return the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4227,8 +4230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the identity provider.</p>
-        pub fn identity_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_arn(inp);
+        pub fn identity_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_arn(signature.into());
             self
         }
         /// <p>The ARN of the identity provider.</p>
@@ -4240,8 +4243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the identity provider.</p>
-        pub fn identity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_name(inp);
+        pub fn identity_provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_name(signature.into());
             self
         }
         /// <p>The name of the identity provider.</p>
@@ -4253,8 +4256,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the identity provider.</p>
-        pub fn identity_provider_type(mut self, inp: crate::model::IdentityProviderType) -> Self {
-            self.inner = self.inner.identity_provider_type(inp);
+        pub fn identity_provider_type(
+            mut self,
+            signature: crate::model::IdentityProviderType,
+        ) -> Self {
+            self.inner = self.inner.identity_provider_type(signature);
             self
         }
         /// <p>The type of the identity provider.</p>
@@ -4275,7 +4281,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_provider_details(k, v);
+            self.inner = self.inner.identity_provider_details(k.into(), v.into());
             self
         }
         /// <p>The details of the identity provider.</p>
@@ -4294,8 +4300,8 @@ pub mod fluent_builders {
         /// client token return the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4369,8 +4375,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network settings.</p>
-        pub fn network_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_settings_arn(inp);
+        pub fn network_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the network settings.</p>
@@ -4382,8 +4388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC that streaming instances will connect to.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(signature.into());
             self
         }
         /// <p>The VPC that streaming instances will connect to.</p>
@@ -4396,8 +4402,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
@@ -4413,8 +4419,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
@@ -4431,8 +4437,8 @@ pub mod fluent_builders {
         /// client token return the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4506,8 +4512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(signature.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -4516,8 +4522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
@@ -4586,8 +4592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(signature.into());
             self
         }
         /// <p>The ARN of the trust store.</p>
@@ -4603,8 +4609,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_certificates_to_add`](Self::set_certificates_to_add).
         ///
         /// <p>A list of CA certificates to add to the trust store.</p>
-        pub fn certificates_to_add(mut self, inp: impl Into<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.certificates_to_add(inp);
+        pub fn certificates_to_add(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificates_to_add(input);
             self
         }
         /// <p>A list of CA certificates to add to the trust store.</p>
@@ -4620,8 +4626,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_certificates_to_delete`](Self::set_certificates_to_delete).
         ///
         /// <p>A list of CA certificates to delete from a trust store.</p>
-        pub fn certificates_to_delete(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificates_to_delete(inp);
+        pub fn certificates_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificates_to_delete(input.into());
             self
         }
         /// <p>A list of CA certificates to delete from a trust store.</p>
@@ -4638,8 +4644,8 @@ pub mod fluent_builders {
         /// client token return the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4713,8 +4719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user settings.</p>
-        pub fn user_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_settings_arn(inp);
+        pub fn user_settings_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_settings_arn(signature.into());
             self
         }
         /// <p>The ARN of the user settings.</p>
@@ -4727,8 +4733,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the user can copy text from the streaming session to the local
         /// device.</p>
-        pub fn copy_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.copy_allowed(inp);
+        pub fn copy_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.copy_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can copy text from the streaming session to the local
@@ -4742,8 +4748,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the user can paste text from the local device to the streaming
         /// session.</p>
-        pub fn paste_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.paste_allowed(inp);
+        pub fn paste_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.paste_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can paste text from the local device to the streaming
@@ -4757,8 +4763,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the user can download files from the streaming session to the local
         /// device.</p>
-        pub fn download_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.download_allowed(inp);
+        pub fn download_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.download_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can download files from the streaming session to the local
@@ -4772,8 +4778,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the user can upload files from the local device to the streaming
         /// session.</p>
-        pub fn upload_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.upload_allowed(inp);
+        pub fn upload_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.upload_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can upload files from the local device to the streaming
@@ -4786,8 +4792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the user can print to the local device.</p>
-        pub fn print_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.print_allowed(inp);
+        pub fn print_allowed(mut self, signature: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.print_allowed(signature);
             self
         }
         /// <p>Specifies whether the user can print to the local device.</p>
@@ -4804,8 +4810,8 @@ pub mod fluent_builders {
         /// client token return the result from the original successful request. </p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the

@@ -254,10 +254,10 @@ pub mod remove_attributes_from_findings_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }
@@ -363,9 +363,9 @@ pub mod preview_agents_output {
         /// To override the contents of this collection use [`set_agent_previews`](Self::set_agent_previews).
         ///
         /// <p>The resulting list of agents.</p>
-        pub fn agent_previews(mut self, input: impl Into<crate::model::AgentPreview>) -> Self {
+        pub fn agent_previews(mut self, input: crate::model::AgentPreview) -> Self {
             let mut v = self.agent_previews.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_previews = Some(v);
             self
         }
@@ -441,9 +441,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -788,9 +788,9 @@ pub mod list_event_subscriptions_output {
         /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
         ///
         /// <p>Details of the returned event subscriptions.</p>
-        pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
+        pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscriptions = Some(v);
             self
         }
@@ -1164,12 +1164,9 @@ pub mod list_assessment_run_agents_output {
         /// To override the contents of this collection use [`set_assessment_run_agents`](Self::set_assessment_run_agents).
         ///
         /// <p>A list of ARNs that specifies the agents returned by the action.</p>
-        pub fn assessment_run_agents(
-            mut self,
-            input: impl Into<crate::model::AssessmentRunAgent>,
-        ) -> Self {
+        pub fn assessment_run_agents(mut self, input: crate::model::AssessmentRunAgent) -> Self {
             let mut v = self.assessment_run_agents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_run_agents = Some(v);
             self
         }
@@ -1246,12 +1243,9 @@ pub mod get_telemetry_metadata_output {
         /// To override the contents of this collection use [`set_telemetry_metadata`](Self::set_telemetry_metadata).
         ///
         /// <p>Telemetry details.</p>
-        pub fn telemetry_metadata(
-            mut self,
-            input: impl Into<crate::model::TelemetryMetadata>,
-        ) -> Self {
+        pub fn telemetry_metadata(mut self, input: crate::model::TelemetryMetadata) -> Self {
             let mut v = self.telemetry_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.telemetry_metadata = Some(v);
             self
         }
@@ -1348,12 +1342,9 @@ pub mod get_exclusions_preview_output {
         /// To override the contents of this collection use [`set_exclusion_previews`](Self::set_exclusion_previews).
         ///
         /// <p>Information about the exclusions included in the preview.</p>
-        pub fn exclusion_previews(
-            mut self,
-            input: impl Into<crate::model::ExclusionPreview>,
-        ) -> Self {
+        pub fn exclusion_previews(mut self, input: crate::model::ExclusionPreview) -> Self {
             let mut v = self.exclusion_previews.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exclusion_previews = Some(v);
             self
         }
@@ -1530,9 +1521,9 @@ pub mod describe_rules_packages_output {
         /// To override the contents of this collection use [`set_rules_packages`](Self::set_rules_packages).
         ///
         /// <p>Information about the rules package.</p>
-        pub fn rules_packages(mut self, input: impl Into<crate::model::RulesPackage>) -> Self {
+        pub fn rules_packages(mut self, input: crate::model::RulesPackage) -> Self {
             let mut v = self.rules_packages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules_packages = Some(v);
             self
         }
@@ -1553,10 +1544,10 @@ pub mod describe_rules_packages_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }
@@ -1639,9 +1630,9 @@ pub mod describe_resource_groups_output {
         /// To override the contents of this collection use [`set_resource_groups`](Self::set_resource_groups).
         ///
         /// <p>Information about a resource group.</p>
-        pub fn resource_groups(mut self, input: impl Into<crate::model::ResourceGroup>) -> Self {
+        pub fn resource_groups(mut self, input: crate::model::ResourceGroup) -> Self {
             let mut v = self.resource_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_groups = Some(v);
             self
         }
@@ -1662,10 +1653,10 @@ pub mod describe_resource_groups_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }
@@ -1748,9 +1739,9 @@ pub mod describe_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>Information about the finding.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::Finding>) -> Self {
+        pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -1771,10 +1762,10 @@ pub mod describe_findings_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }
@@ -1867,10 +1858,10 @@ pub mod describe_exclusions_output {
         pub fn exclusions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Exclusion>,
+            v: crate::model::Exclusion,
         ) -> Self {
             let mut hash_map = self.exclusions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.exclusions = Some(hash_map);
             self
         }
@@ -1893,10 +1884,10 @@ pub mod describe_exclusions_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }
@@ -2083,12 +2074,9 @@ pub mod describe_assessment_templates_output {
         /// To override the contents of this collection use [`set_assessment_templates`](Self::set_assessment_templates).
         ///
         /// <p>Information about the assessment templates.</p>
-        pub fn assessment_templates(
-            mut self,
-            input: impl Into<crate::model::AssessmentTemplate>,
-        ) -> Self {
+        pub fn assessment_templates(mut self, input: crate::model::AssessmentTemplate) -> Self {
             let mut v = self.assessment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_templates = Some(v);
             self
         }
@@ -2109,10 +2097,10 @@ pub mod describe_assessment_templates_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }
@@ -2196,12 +2184,9 @@ pub mod describe_assessment_targets_output {
         /// To override the contents of this collection use [`set_assessment_targets`](Self::set_assessment_targets).
         ///
         /// <p>Information about the assessment targets.</p>
-        pub fn assessment_targets(
-            mut self,
-            input: impl Into<crate::model::AssessmentTarget>,
-        ) -> Self {
+        pub fn assessment_targets(mut self, input: crate::model::AssessmentTarget) -> Self {
             let mut v = self.assessment_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_targets = Some(v);
             self
         }
@@ -2222,10 +2207,10 @@ pub mod describe_assessment_targets_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }
@@ -2308,9 +2293,9 @@ pub mod describe_assessment_runs_output {
         /// To override the contents of this collection use [`set_assessment_runs`](Self::set_assessment_runs).
         ///
         /// <p>Information about the assessment run.</p>
-        pub fn assessment_runs(mut self, input: impl Into<crate::model::AssessmentRun>) -> Self {
+        pub fn assessment_runs(mut self, input: crate::model::AssessmentRun) -> Self {
             let mut v = self.assessment_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_runs = Some(v);
             self
         }
@@ -2331,10 +2316,10 @@ pub mod describe_assessment_runs_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }
@@ -2739,10 +2724,10 @@ pub mod add_attributes_to_findings_output {
         pub fn failed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailedItemDetails>,
+            v: crate::model::FailedItemDetails,
         ) -> Self {
             let mut hash_map = self.failed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_items = Some(hash_map);
             self
         }

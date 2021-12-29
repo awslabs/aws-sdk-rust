@@ -882,10 +882,10 @@ pub mod reject_data_share_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -1320,9 +1320,9 @@ pub mod modify_usage_limit_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1488,9 +1488,9 @@ pub mod modify_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional set of tags describing the schedule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1507,9 +1507,9 @@ pub mod modify_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p></p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -1538,10 +1538,10 @@ pub mod modify_snapshot_schedule_output {
         /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
         pub fn associated_clusters(
             mut self,
-            input: impl Into<crate::model::ClusterAssociatedToSchedule>,
+            input: crate::model::ClusterAssociatedToSchedule,
         ) -> Self {
             let mut v = self.associated_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_clusters = Some(v);
             self
         }
@@ -1861,9 +1861,9 @@ pub mod modify_scheduled_action_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -2191,10 +2191,10 @@ pub mod modify_endpoint_access_output {
         /// <p>The security groups associated with the endpoint.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -2913,10 +2913,10 @@ pub mod get_reserved_node_exchange_offerings_output {
         /// <p>Returns an array of <a>ReservedNodeOffering</a> objects.</p>
         pub fn reserved_node_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedNodeOffering>,
+            input: crate::model::ReservedNodeOffering,
         ) -> Self {
             let mut v = self.reserved_node_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_node_offerings = Some(v);
             self
         }
@@ -3014,12 +3014,12 @@ pub mod get_reserved_node_exchange_configuration_options_output {
         /// type.</p>
         pub fn reserved_node_configuration_option_list(
             mut self,
-            input: impl Into<crate::model::ReservedNodeConfigurationOption>,
+            input: crate::model::ReservedNodeConfigurationOption,
         ) -> Self {
             let mut v = self
                 .reserved_node_configuration_option_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_node_configuration_option_list = Some(v);
             self
         }
@@ -3501,10 +3501,10 @@ pub mod disassociate_data_share_consumer_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -3813,9 +3813,9 @@ pub mod describe_usage_limits_output {
         ///
         /// <p>Contains the output from the <a>DescribeUsageLimits</a>
         /// action. </p>
-        pub fn usage_limits(mut self, input: impl Into<crate::model::UsageLimit>) -> Self {
+        pub fn usage_limits(mut self, input: crate::model::UsageLimit) -> Self {
             let mut v = self.usage_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_limits = Some(v);
             self
         }
@@ -3913,9 +3913,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tagged_resources`](Self::set_tagged_resources).
         ///
         /// <p>A list of tags with their associated resources.</p>
-        pub fn tagged_resources(mut self, input: impl Into<crate::model::TaggedResource>) -> Self {
+        pub fn tagged_resources(mut self, input: crate::model::TaggedResource) -> Self {
             let mut v = self.tagged_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tagged_resources = Some(v);
             self
         }
@@ -4012,10 +4012,10 @@ pub mod describe_table_restore_status_output {
         /// <p>A list of status details for one or more table restore requests.</p>
         pub fn table_restore_status_details(
             mut self,
-            input: impl Into<crate::model::TableRestoreStatus>,
+            input: crate::model::TableRestoreStatus,
         ) -> Self {
             let mut v = self.table_restore_status_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_restore_status_details = Some(v);
             self
         }
@@ -4193,12 +4193,9 @@ pub mod describe_snapshot_schedules_output {
         /// To override the contents of this collection use [`set_snapshot_schedules`](Self::set_snapshot_schedules).
         ///
         /// <p>A list of SnapshotSchedules.</p>
-        pub fn snapshot_schedules(
-            mut self,
-            input: impl Into<crate::model::SnapshotSchedule>,
-        ) -> Self {
+        pub fn snapshot_schedules(mut self, input: crate::model::SnapshotSchedule) -> Self {
             let mut v = self.snapshot_schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_schedules = Some(v);
             self
         }
@@ -4321,12 +4318,9 @@ pub mod describe_snapshot_copy_grants_output {
         /// To override the contents of this collection use [`set_snapshot_copy_grants`](Self::set_snapshot_copy_grants).
         ///
         /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
-        pub fn snapshot_copy_grants(
-            mut self,
-            input: impl Into<crate::model::SnapshotCopyGrant>,
-        ) -> Self {
+        pub fn snapshot_copy_grants(mut self, input: crate::model::SnapshotCopyGrant) -> Self {
             let mut v = self.snapshot_copy_grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_copy_grants = Some(v);
             self
         }
@@ -4427,12 +4421,9 @@ pub mod describe_scheduled_actions_output {
         /// To override the contents of this collection use [`set_scheduled_actions`](Self::set_scheduled_actions).
         ///
         /// <p>List of retrieved scheduled actions. </p>
-        pub fn scheduled_actions(
-            mut self,
-            input: impl Into<crate::model::ScheduledAction>,
-        ) -> Self {
+        pub fn scheduled_actions(mut self, input: crate::model::ScheduledAction) -> Self {
             let mut v = self.scheduled_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_actions = Some(v);
             self
         }
@@ -5031,9 +5022,9 @@ pub mod describe_reserved_nodes_output {
         /// To override the contents of this collection use [`set_reserved_nodes`](Self::set_reserved_nodes).
         ///
         /// <p>The list of <code>ReservedNode</code> objects.</p>
-        pub fn reserved_nodes(mut self, input: impl Into<crate::model::ReservedNode>) -> Self {
+        pub fn reserved_nodes(mut self, input: crate::model::ReservedNode) -> Self {
             let mut v = self.reserved_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_nodes = Some(v);
             self
         }
@@ -5135,10 +5126,10 @@ pub mod describe_reserved_node_offerings_output {
         /// <p>A list of <code>ReservedNodeOffering</code> objects.</p>
         pub fn reserved_node_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedNodeOffering>,
+            input: crate::model::ReservedNodeOffering,
         ) -> Self {
             let mut v = self.reserved_node_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_node_offerings = Some(v);
             self
         }
@@ -5220,12 +5211,12 @@ pub mod describe_reserved_node_exchange_status_output {
         /// time, source reserved-node identifier, and additional details.</p>
         pub fn reserved_node_exchange_status_details(
             mut self,
-            input: impl Into<crate::model::ReservedNodeExchangeStatus>,
+            input: crate::model::ReservedNodeExchangeStatus,
         ) -> Self {
             let mut v = self
                 .reserved_node_exchange_status_details
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_node_exchange_status_details = Some(v);
             self
         }
@@ -5307,10 +5298,10 @@ pub mod describe_partners_output {
         /// <p>A list of partner integrations.</p>
         pub fn partner_integration_info_list(
             mut self,
-            input: impl Into<crate::model::PartnerIntegrationInfo>,
+            input: crate::model::PartnerIntegrationInfo,
         ) -> Self {
             let mut v = self.partner_integration_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partner_integration_info_list = Some(v);
             self
         }
@@ -5397,10 +5388,10 @@ pub mod describe_orderable_cluster_options_output {
         /// orderable options for the cluster.</p>
         pub fn orderable_cluster_options(
             mut self,
-            input: impl Into<crate::model::OrderableClusterOption>,
+            input: crate::model::OrderableClusterOption,
         ) -> Self {
             let mut v = self.orderable_cluster_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.orderable_cluster_options = Some(v);
             self
         }
@@ -5506,10 +5497,10 @@ pub mod describe_node_configuration_options_output {
         /// <p>A list of valid node configurations.</p>
         pub fn node_configuration_option_list(
             mut self,
-            input: impl Into<crate::model::NodeConfigurationOption>,
+            input: crate::model::NodeConfigurationOption,
         ) -> Self {
             let mut v = self.node_configuration_option_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_configuration_option_list = Some(v);
             self
         }
@@ -5794,12 +5785,9 @@ pub mod describe_hsm_configurations_output {
         /// To override the contents of this collection use [`set_hsm_configurations`](Self::set_hsm_configurations).
         ///
         /// <p>A list of <code>HsmConfiguration</code> objects.</p>
-        pub fn hsm_configurations(
-            mut self,
-            input: impl Into<crate::model::HsmConfiguration>,
-        ) -> Self {
+        pub fn hsm_configurations(mut self, input: crate::model::HsmConfiguration) -> Self {
             let mut v = self.hsm_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hsm_configurations = Some(v);
             self
         }
@@ -5904,10 +5892,10 @@ pub mod describe_hsm_client_certificates_output {
         /// clusters to store and retrieve database encryption keys in an HSM.</p>
         pub fn hsm_client_certificates(
             mut self,
-            input: impl Into<crate::model::HsmClientCertificate>,
+            input: crate::model::HsmClientCertificate,
         ) -> Self {
             let mut v = self.hsm_client_certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hsm_client_certificates = Some(v);
             self
         }
@@ -6008,12 +5996,9 @@ pub mod describe_event_subscriptions_output {
         /// To override the contents of this collection use [`set_event_subscriptions_list`](Self::set_event_subscriptions_list).
         ///
         /// <p>A list of event subscriptions.</p>
-        pub fn event_subscriptions_list(
-            mut self,
-            input: impl Into<crate::model::EventSubscription>,
-        ) -> Self {
+        pub fn event_subscriptions_list(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_subscriptions_list = Some(v);
             self
         }
@@ -6109,9 +6094,9 @@ pub mod describe_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A list of <code>Event</code> instances. </p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -6179,10 +6164,10 @@ pub mod describe_event_categories_output {
         /// <p>A list of event categories descriptions.</p>
         pub fn event_categories_map_list(
             mut self,
-            input: impl Into<crate::model::EventCategoriesMap>,
+            input: crate::model::EventCategoriesMap,
         ) -> Self {
             let mut v = self.event_categories_map_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_categories_map_list = Some(v);
             self
         }
@@ -6266,10 +6251,10 @@ pub mod describe_endpoint_authorization_output {
         /// <p>The authorizations to an endpoint.</p>
         pub fn endpoint_authorization_list(
             mut self,
-            input: impl Into<crate::model::EndpointAuthorization>,
+            input: crate::model::EndpointAuthorization,
         ) -> Self {
             let mut v = self.endpoint_authorization_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_authorization_list = Some(v);
             self
         }
@@ -6362,12 +6347,9 @@ pub mod describe_endpoint_access_output {
         /// To override the contents of this collection use [`set_endpoint_access_list`](Self::set_endpoint_access_list).
         ///
         /// <p>The list of endpoints with access to the cluster.</p>
-        pub fn endpoint_access_list(
-            mut self,
-            input: impl Into<crate::model::EndpointAccess>,
-        ) -> Self {
+        pub fn endpoint_access_list(mut self, input: crate::model::EndpointAccess) -> Self {
             let mut v = self.endpoint_access_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_access_list = Some(v);
             self
         }
@@ -6529,9 +6511,9 @@ pub mod describe_data_shares_for_producer_output {
         /// To override the contents of this collection use [`set_data_shares`](Self::set_data_shares).
         ///
         /// <p>Shows the results of datashares available for producers.</p>
-        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+        pub fn data_shares(mut self, input: crate::model::DataShare) -> Self {
             let mut v = self.data_shares.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_shares = Some(v);
             self
         }
@@ -6631,9 +6613,9 @@ pub mod describe_data_shares_for_consumer_output {
         /// To override the contents of this collection use [`set_data_shares`](Self::set_data_shares).
         ///
         /// <p>Shows the results of datashares available for consumers.</p>
-        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+        pub fn data_shares(mut self, input: crate::model::DataShare) -> Self {
             let mut v = self.data_shares.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_shares = Some(v);
             self
         }
@@ -6723,9 +6705,9 @@ pub mod describe_data_shares_output {
         /// To override the contents of this collection use [`set_data_shares`](Self::set_data_shares).
         ///
         /// <p>The results returned from describing datashares.</p>
-        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+        pub fn data_shares(mut self, input: crate::model::DataShare) -> Self {
             let mut v = self.data_shares.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_shares = Some(v);
             self
         }
@@ -6833,9 +6815,9 @@ pub mod describe_cluster_versions_output {
         /// To override the contents of this collection use [`set_cluster_versions`](Self::set_cluster_versions).
         ///
         /// <p>A list of <code>Version</code> elements. </p>
-        pub fn cluster_versions(mut self, input: impl Into<crate::model::ClusterVersion>) -> Self {
+        pub fn cluster_versions(mut self, input: crate::model::ClusterVersion) -> Self {
             let mut v = self.cluster_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_versions = Some(v);
             self
         }
@@ -6913,12 +6895,9 @@ pub mod describe_cluster_tracks_output {
         ///
         /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code>
         /// operation. </p>
-        pub fn maintenance_tracks(
-            mut self,
-            input: impl Into<crate::model::MaintenanceTrack>,
-        ) -> Self {
+        pub fn maintenance_tracks(mut self, input: crate::model::MaintenanceTrack) -> Self {
             let mut v = self.maintenance_tracks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.maintenance_tracks = Some(v);
             self
         }
@@ -7033,12 +7012,9 @@ pub mod describe_cluster_subnet_groups_output {
         /// To override the contents of this collection use [`set_cluster_subnet_groups`](Self::set_cluster_subnet_groups).
         ///
         /// <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
-        pub fn cluster_subnet_groups(
-            mut self,
-            input: impl Into<crate::model::ClusterSubnetGroup>,
-        ) -> Self {
+        pub fn cluster_subnet_groups(mut self, input: crate::model::ClusterSubnetGroup) -> Self {
             let mut v = self.cluster_subnet_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_subnet_groups = Some(v);
             self
         }
@@ -7135,9 +7111,9 @@ pub mod describe_cluster_snapshots_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>A list of <a>Snapshot</a> instances. </p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -7239,10 +7215,10 @@ pub mod describe_cluster_security_groups_output {
         /// <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
         pub fn cluster_security_groups(
             mut self,
-            input: impl Into<crate::model::ClusterSecurityGroup>,
+            input: crate::model::ClusterSecurityGroup,
         ) -> Self {
             let mut v = self.cluster_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_security_groups = Some(v);
             self
         }
@@ -7341,9 +7317,9 @@ pub mod describe_clusters_output {
         ///
         /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster.
         /// </p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }
@@ -7426,9 +7402,9 @@ pub mod describe_cluster_parameters_output {
         ///
         /// <p>A list of <a>Parameter</a> instances. Each instance lists the parameters
         /// of one cluster parameter group. </p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -7548,12 +7524,9 @@ pub mod describe_cluster_parameter_groups_output {
         ///
         /// <p>A list of <a>ClusterParameterGroup</a> instances. Each instance
         /// describes one cluster parameter group. </p>
-        pub fn parameter_groups(
-            mut self,
-            input: impl Into<crate::model::ClusterParameterGroup>,
-        ) -> Self {
+        pub fn parameter_groups(mut self, input: crate::model::ClusterParameterGroup) -> Self {
             let mut v = self.parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_groups = Some(v);
             self
         }
@@ -7647,12 +7620,9 @@ pub mod describe_cluster_db_revisions_output {
         /// To override the contents of this collection use [`set_cluster_db_revisions`](Self::set_cluster_db_revisions).
         ///
         /// <p>A list of revisions.</p>
-        pub fn cluster_db_revisions(
-            mut self,
-            input: impl Into<crate::model::ClusterDbRevision>,
-        ) -> Self {
+        pub fn cluster_db_revisions(mut self, input: crate::model::ClusterDbRevision) -> Self {
             let mut v = self.cluster_db_revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_db_revisions = Some(v);
             self
         }
@@ -7720,10 +7690,10 @@ pub mod describe_authentication_profiles_output {
         /// <p>The list of authentication profiles.</p>
         pub fn authentication_profiles(
             mut self,
-            input: impl Into<crate::model::AuthenticationProfile>,
+            input: crate::model::AuthenticationProfile,
         ) -> Self {
             let mut v = self.authentication_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.authentication_profiles = Some(v);
             self
         }
@@ -7785,12 +7755,9 @@ pub mod describe_account_attributes_output {
         /// To override the contents of this collection use [`set_account_attributes`](Self::set_account_attributes).
         ///
         /// <p>A list of attributes assigned to an account.</p>
-        pub fn account_attributes(
-            mut self,
-            input: impl Into<crate::model::AccountAttribute>,
-        ) -> Self {
+        pub fn account_attributes(mut self, input: crate::model::AccountAttribute) -> Self {
             let mut v = self.account_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_attributes = Some(v);
             self
         }
@@ -8343,10 +8310,10 @@ pub mod delete_endpoint_access_output {
         /// <p>The security groups associated with the endpoint.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -8759,10 +8726,10 @@ pub mod deauthorize_data_share_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -9028,9 +8995,9 @@ pub mod create_usage_limit_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9226,9 +9193,9 @@ pub mod create_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional set of tags describing the schedule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9245,9 +9212,9 @@ pub mod create_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p></p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -9276,10 +9243,10 @@ pub mod create_snapshot_schedule_output {
         /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
         pub fn associated_clusters(
             mut self,
-            input: impl Into<crate::model::ClusterAssociatedToSchedule>,
+            input: crate::model::ClusterAssociatedToSchedule,
         ) -> Self {
             let mut v = self.associated_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_clusters = Some(v);
             self
         }
@@ -9630,9 +9597,9 @@ pub mod create_scheduled_action_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -10092,10 +10059,10 @@ pub mod create_endpoint_access_output {
         /// <p>The security groups associated with the endpoint.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -11140,9 +11107,9 @@ pub mod batch_modify_cluster_snapshots_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of any errors returned.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::SnapshotErrorMessage>) -> Self {
+        pub fn errors(mut self, input: crate::model::SnapshotErrorMessage) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -11231,9 +11198,9 @@ pub mod batch_delete_cluster_snapshots_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of any errors returned.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::SnapshotErrorMessage>) -> Self {
+        pub fn errors(mut self, input: crate::model::SnapshotErrorMessage) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -11645,10 +11612,10 @@ pub mod authorize_data_share_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -11842,10 +11809,10 @@ pub mod associate_data_share_consumer_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }

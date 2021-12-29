@@ -34,10 +34,10 @@ pub mod batch_get_aggregate_resource_config_input {
         /// <p>A list of aggregate ResourceIdentifiers objects. </p>
         pub fn resource_identifiers(
             mut self,
-            input: impl Into<crate::model::AggregateResourceIdentifier>,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
@@ -204,9 +204,9 @@ pub mod batch_get_resource_config_input {
         /// <p>A list of resource keys to be processed with the current
         /// request. Each element in the list consists of the resource type and
         /// resource ID.</p>
-        pub fn resource_keys(mut self, input: impl Into<crate::model::ResourceKey>) -> Self {
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -2211,10 +2211,10 @@ pub mod delete_remediation_exceptions_input {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            input: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -3652,9 +3652,9 @@ pub mod describe_compliance_by_config_rule_input {
         ///
         /// <p>Filters the results by compliance.</p>
         /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
-        pub fn compliance_types(mut self, input: impl Into<crate::model::ComplianceType>) -> Self {
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_types = Some(v);
             self
         }
@@ -3876,9 +3876,9 @@ pub mod describe_compliance_by_resource_input {
         ///
         /// <p>Filters the results by compliance.</p>
         /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
-        pub fn compliance_types(mut self, input: impl Into<crate::model::ComplianceType>) -> Self {
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_types = Some(v);
             self
         }
@@ -4706,12 +4706,9 @@ pub mod describe_configuration_aggregator_sources_status_input {
         /// recent.</p>
         /// </li>
         /// </ul>
-        pub fn update_status(
-            mut self,
-            input: impl Into<crate::model::AggregatedSourceStatusType>,
-        ) -> Self {
+        pub fn update_status(mut self, input: crate::model::AggregatedSourceStatusType) -> Self {
             let mut v = self.update_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_status = Some(v);
             self
         }
@@ -7323,10 +7320,10 @@ pub mod describe_remediation_exceptions_input {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            input: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -7531,9 +7528,9 @@ pub mod describe_remediation_execution_status_input {
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
         /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-        pub fn resource_keys(mut self, input: impl Into<crate::model::ResourceKey>) -> Self {
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -9067,9 +9064,9 @@ pub mod get_compliance_details_by_config_rule_input {
         /// <p>The allowed values are <code>COMPLIANT</code>,
         /// <code>NON_COMPLIANT</code>, and
         /// <code>NOT_APPLICABLE</code>.</p>
-        pub fn compliance_types(mut self, input: impl Into<crate::model::ComplianceType>) -> Self {
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_types = Some(v);
             self
         }
@@ -9301,9 +9298,9 @@ pub mod get_compliance_details_by_resource_input {
         /// <p>The allowed values are <code>COMPLIANT</code>,
         /// <code>NON_COMPLIANT</code>, and
         /// <code>NOT_APPLICABLE</code>.</p>
-        pub fn compliance_types(mut self, input: impl Into<crate::model::ComplianceType>) -> Self {
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_types = Some(v);
             self
         }
@@ -12087,9 +12084,9 @@ pub mod put_aggregation_authorization_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12268,9 +12265,9 @@ pub mod put_config_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12457,10 +12454,10 @@ pub mod put_configuration_aggregator_input {
         /// </p>
         pub fn account_aggregation_sources(
             mut self,
-            input: impl Into<crate::model::AccountAggregationSource>,
+            input: crate::model::AccountAggregationSource,
         ) -> Self {
             let mut v = self.account_aggregation_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_aggregation_sources = Some(v);
             self
         }
@@ -12495,9 +12492,9 @@ pub mod put_configuration_aggregator_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12926,10 +12923,10 @@ pub mod put_conformance_pack_input {
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
-            input: impl Into<crate::model::ConformancePackInputParameter>,
+            input: crate::model::ConformancePackInputParameter,
         ) -> Self {
             let mut v = self.conformance_pack_input_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_input_parameters = Some(v);
             self
         }
@@ -13261,9 +13258,9 @@ pub mod put_evaluations_input {
         /// evaluation identifies an Amazon Web Services resource and indicates whether it
         /// complies with the Config rule that invokes the Lambda
         /// function.</p>
-        pub fn evaluations(mut self, input: impl Into<crate::model::Evaluation>) -> Self {
+        pub fn evaluations(mut self, input: crate::model::Evaluation) -> Self {
             let mut v = self.evaluations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluations = Some(v);
             self
         }
@@ -13966,10 +13963,10 @@ pub mod put_organization_conformance_pack_input {
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
-            input: impl Into<crate::model::ConformancePackInputParameter>,
+            input: crate::model::ConformancePackInputParameter,
         ) -> Self {
             let mut v = self.conformance_pack_input_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_input_parameters = Some(v);
             self
         }
@@ -14161,10 +14158,10 @@ pub mod put_remediation_configurations_input {
         /// <p>A list of remediation configuration objects.</p>
         pub fn remediation_configurations(
             mut self,
-            input: impl Into<crate::model::RemediationConfiguration>,
+            input: crate::model::RemediationConfiguration,
         ) -> Self {
             let mut v = self.remediation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remediation_configurations = Some(v);
             self
         }
@@ -14347,10 +14344,10 @@ pub mod put_remediation_exceptions_input {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            input: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -14988,9 +14985,9 @@ pub mod put_stored_query_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tags</code> object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15889,9 +15886,9 @@ pub mod start_remediation_execution_input {
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
         /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-        pub fn resource_keys(mut self, input: impl Into<crate::model::ResourceKey>) -> Self {
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -16230,9 +16227,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

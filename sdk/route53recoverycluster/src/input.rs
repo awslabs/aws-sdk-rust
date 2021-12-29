@@ -351,12 +351,12 @@ pub mod update_routing_control_states_input {
         /// <p>A set of routing control entries that you want to update.</p>
         pub fn update_routing_control_state_entries(
             mut self,
-            input: impl Into<crate::model::UpdateRoutingControlStateEntry>,
+            input: crate::model::UpdateRoutingControlStateEntry,
         ) -> Self {
             let mut v = self
                 .update_routing_control_state_entries
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_routing_control_state_entries = Some(v);
             self
         }

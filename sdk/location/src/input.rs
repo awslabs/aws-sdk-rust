@@ -640,10 +640,10 @@ pub mod batch_evaluate_geofences_input {
         /// collection.</p>
         pub fn device_position_updates(
             mut self,
-            input: impl Into<crate::model::DevicePositionUpdate>,
+            input: crate::model::DevicePositionUpdate,
         ) -> Self {
             let mut v = self.device_position_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_position_updates = Some(v);
             self
         }
@@ -1049,12 +1049,9 @@ pub mod batch_put_geofence_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>The batch of geofences to be stored in a geofence collection.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::BatchPutGeofenceRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::BatchPutGeofenceRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1244,9 +1241,9 @@ pub mod batch_update_device_position_input {
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
         /// <p>Contains the position update details for each device.</p>
-        pub fn updates(mut self, input: impl Into<crate::model::DevicePositionUpdate>) -> Self {
+        pub fn updates(mut self, input: crate::model::DevicePositionUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updates = Some(v);
             self
         }
@@ -1467,9 +1464,9 @@ pub mod calculate_route_input {
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
         /// </p>
-        pub fn departure_position(mut self, input: impl Into<f64>) -> Self {
+        pub fn departure_position(mut self, input: f64) -> Self {
             let mut v = self.departure_position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.departure_position = Some(v);
             self
         }
@@ -1512,9 +1509,9 @@ pub mod calculate_route_input {
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
         /// </p>
-        pub fn destination_position(mut self, input: impl Into<f64>) -> Self {
+        pub fn destination_position(mut self, input: f64) -> Self {
             let mut v = self.destination_position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_position = Some(v);
             self
         }
@@ -1561,9 +1558,9 @@ pub mod calculate_route_input {
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
         /// </p>
-        pub fn waypoint_positions(mut self, input: impl Into<std::vec::Vec<f64>>) -> Self {
+        pub fn waypoint_positions(mut self, input: std::vec::Vec<f64>) -> Self {
             let mut v = self.waypoint_positions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.waypoint_positions = Some(v);
             self
         }
@@ -8945,9 +8942,9 @@ pub mod search_place_index_for_position_input {
         /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
         /// longitude <code>-123.1174</code> and
         /// latitude <code>49.2847</code>.</p>
-        pub fn position(mut self, input: impl Into<f64>) -> Self {
+        pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.position = Some(v);
             self
         }
@@ -9207,9 +9204,9 @@ pub mod search_place_index_for_text_input {
         /// results in an error.
         /// </p>
         /// </note>
-        pub fn bias_position(mut self, input: impl Into<f64>) -> Self {
+        pub fn bias_position(mut self, input: f64) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bias_position = Some(v);
             self
         }
@@ -9248,9 +9245,9 @@ pub mod search_place_index_for_text_input {
         /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
         /// </p>
         /// </note>
-        pub fn filter_b_box(mut self, input: impl Into<f64>) -> Self {
+        pub fn filter_b_box(mut self, input: f64) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_b_box = Some(v);
             self
         }

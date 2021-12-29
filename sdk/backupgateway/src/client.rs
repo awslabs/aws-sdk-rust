@@ -274,8 +274,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
         /// to return a list of gateways for your account and Amazon Web Services Region.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
@@ -285,8 +285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
-        pub fn server_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_arn(inp);
+        pub fn server_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
@@ -356,8 +356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The activation key of the created gateway.</p>
-        pub fn activation_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activation_key(inp);
+        pub fn activation_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activation_key(signature.into());
             self
         }
         /// <p>The activation key of the created gateway.</p>
@@ -369,8 +369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the created gateway.</p>
-        pub fn gateway_display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_display_name(inp);
+        pub fn gateway_display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_display_name(signature.into());
             self
         }
         /// <p>The display name of the created gateway.</p>
@@ -382,8 +382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of created gateway.</p>
-        pub fn gateway_type(mut self, inp: crate::model::GatewayType) -> Self {
-            self.inner = self.inner.gateway_type(inp);
+        pub fn gateway_type(mut self, signature: crate::model::GatewayType) -> Self {
+            self.inner = self.inner.gateway_type(signature);
             self
         }
         /// <p>The type of created gateway.</p>
@@ -399,8 +399,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
@@ -472,8 +472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
@@ -542,8 +542,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-        pub fn hypervisor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hypervisor_arn(inp);
+        pub fn hypervisor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
@@ -616,8 +616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
@@ -686,8 +686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the hypervisor.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the hypervisor.</p>
@@ -697,8 +697,8 @@ pub mod fluent_builders {
         }
         /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
         /// domain name (FQDN).</p>
-        pub fn host(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host(inp);
+        pub fn host(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host(signature.into());
             self
         }
         /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
@@ -708,8 +708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username for the hypervisor.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(signature.into());
             self
         }
         /// <p>The username for the hypervisor.</p>
@@ -718,8 +718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the hypervisor.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The password for the hypervisor.</p>
@@ -728,8 +728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Key Management Service for the hypervisor.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(signature.into());
             self
         }
         /// <p>The Key Management Service for the hypervisor.</p>
@@ -742,8 +742,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the hypervisor configuration to import.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags of the hypervisor configuration to import.</p>
@@ -815,8 +815,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of gateways to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of gateways to list.</p>
@@ -828,8 +828,8 @@ pub mod fluent_builders {
         /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is
@@ -901,8 +901,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of hypervisors to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of hypervisors to list.</p>
@@ -914,8 +914,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is
@@ -988,8 +988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource's tags to list.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource's tags to list.</p>
@@ -1058,8 +1058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of virtual machines to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of virtual machines to list.</p>
@@ -1071,8 +1071,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
         /// time.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
@@ -1156,8 +1156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The hour of the day to start maintenance on a gateway.</p>
-        pub fn hour_of_day(mut self, inp: i32) -> Self {
-            self.inner = self.inner.hour_of_day(inp);
+        pub fn hour_of_day(mut self, signature: i32) -> Self {
+            self.inner = self.inner.hour_of_day(signature);
             self
         }
         /// <p>The hour of the day to start maintenance on a gateway.</p>
@@ -1166,8 +1166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minute of the hour to start maintenance on a gateway.</p>
-        pub fn minute_of_hour(mut self, inp: i32) -> Self {
-            self.inner = self.inner.minute_of_hour(inp);
+        pub fn minute_of_hour(mut self, signature: i32) -> Self {
+            self.inner = self.inner.minute_of_hour(signature);
             self
         }
         /// <p>The minute of the hour to start maintenance on a gateway.</p>
@@ -1176,8 +1176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The day of the week to start maintenance on a gateway.</p>
-        pub fn day_of_week(mut self, inp: i32) -> Self {
-            self.inner = self.inner.day_of_week(inp);
+        pub fn day_of_week(mut self, signature: i32) -> Self {
+            self.inner = self.inner.day_of_week(signature);
             self
         }
         /// <p>The day of the week to start maintenance on a gateway.</p>
@@ -1187,8 +1187,8 @@ pub mod fluent_builders {
         }
         /// <p>The day of the month start maintenance on a gateway.</p>
         /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
-        pub fn day_of_month(mut self, inp: i32) -> Self {
-            self.inner = self.inner.day_of_month(inp);
+        pub fn day_of_month(mut self, signature: i32) -> Self {
+            self.inner = self.inner.day_of_month(signature);
             self
         }
         /// <p>The day of the month start maintenance on a gateway.</p>
@@ -1258,8 +1258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to tag.</p>
@@ -1272,8 +1272,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to assign to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to assign to the resource.</p>
@@ -1346,8 +1346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
@@ -1357,8 +1357,8 @@ pub mod fluent_builders {
         }
         /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
         /// domain name (FQDN).</p>
-        pub fn host(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host(inp);
+        pub fn host(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host(signature.into());
             self
         }
         /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
@@ -1368,8 +1368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username for the hypervisor.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(signature.into());
             self
         }
         /// <p>The username for the hypervisor.</p>
@@ -1378,8 +1378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the hypervisor.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The password for the hypervisor.</p>
@@ -1448,8 +1448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags.</p>
@@ -1462,8 +1462,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys specifying which tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys specifying which tags to remove.</p>
@@ -1536,8 +1536,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
@@ -1546,8 +1546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated display name of the gateway.</p>
-        pub fn gateway_display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_display_name(inp);
+        pub fn gateway_display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_display_name(signature.into());
             self
         }
         /// <p>The updated display name of the gateway.</p>
@@ -1621,8 +1621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
-        pub fn hypervisor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hypervisor_arn(inp);
+        pub fn hypervisor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
@@ -1635,8 +1635,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
         /// domain name (FQDN).</p>
-        pub fn host(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host(inp);
+        pub fn host(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host(signature.into());
             self
         }
         /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
@@ -1646,8 +1646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated username for the hypervisor.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(signature.into());
             self
         }
         /// <p>The updated username for the hypervisor.</p>
@@ -1656,8 +1656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated password for the hypervisor.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The updated password for the hypervisor.</p>

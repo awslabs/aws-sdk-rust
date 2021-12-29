@@ -509,12 +509,9 @@ pub mod put_insight_selectors_output {
         /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
         ///
         /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
-        pub fn insight_selectors(
-            mut self,
-            input: impl Into<crate::model::InsightSelector>,
-        ) -> Self {
+        pub fn insight_selectors(mut self, input: crate::model::InsightSelector) -> Self {
             let mut v = self.insight_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_selectors = Some(v);
             self
         }
@@ -618,9 +615,9 @@ pub mod put_event_selectors_output {
         /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
         ///
         /// <p>Specifies the event selectors configured for your trail.</p>
-        pub fn event_selectors(mut self, input: impl Into<crate::model::EventSelector>) -> Self {
+        pub fn event_selectors(mut self, input: crate::model::EventSelector) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_selectors = Some(v);
             self
         }
@@ -639,10 +636,10 @@ pub mod put_event_selectors_output {
         /// <p>Specifies the advanced event selectors configured for your trail.</p>
         pub fn advanced_event_selectors(
             mut self,
-            input: impl Into<crate::model::AdvancedEventSelector>,
+            input: crate::model::AdvancedEventSelector,
         ) -> Self {
             let mut v = self.advanced_event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_event_selectors = Some(v);
             self
         }
@@ -719,9 +716,9 @@ pub mod lookup_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -813,9 +810,9 @@ pub mod list_trails_output {
         /// To override the contents of this collection use [`set_trails`](Self::set_trails).
         ///
         /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
-        pub fn trails(mut self, input: impl Into<crate::model::TrailInfo>) -> Self {
+        pub fn trails(mut self, input: crate::model::TrailInfo) -> Self {
             let mut v = self.trails.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trails = Some(v);
             self
         }
@@ -901,9 +898,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_resource_tag_list`](Self::set_resource_tag_list).
         ///
         /// <p>A list of resource tags.</p>
-        pub fn resource_tag_list(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tag_list(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tag_list = Some(v);
             self
         }
@@ -992,9 +989,9 @@ pub mod list_public_keys_output {
         /// <note>
         /// <p>The returned public keys may have validity time ranges that overlap.</p>
         /// </note>
-        pub fn public_key_list(mut self, input: impl Into<crate::model::PublicKey>) -> Self {
+        pub fn public_key_list(mut self, input: crate::model::PublicKey) -> Self {
             let mut v = self.public_key_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.public_key_list = Some(v);
             self
         }
@@ -1666,12 +1663,9 @@ pub mod get_insight_selectors_output {
         /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
         ///
         /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
-        pub fn insight_selectors(
-            mut self,
-            input: impl Into<crate::model::InsightSelector>,
-        ) -> Self {
+        pub fn insight_selectors(mut self, input: crate::model::InsightSelector) -> Self {
             let mut v = self.insight_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_selectors = Some(v);
             self
         }
@@ -1767,9 +1761,9 @@ pub mod get_event_selectors_output {
         /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
         ///
         /// <p>The event selectors that are configured for the trail.</p>
-        pub fn event_selectors(mut self, input: impl Into<crate::model::EventSelector>) -> Self {
+        pub fn event_selectors(mut self, input: crate::model::EventSelector) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_selectors = Some(v);
             self
         }
@@ -1790,10 +1784,10 @@ pub mod get_event_selectors_output {
         /// </p>
         pub fn advanced_event_selectors(
             mut self,
-            input: impl Into<crate::model::AdvancedEventSelector>,
+            input: crate::model::AdvancedEventSelector,
         ) -> Self {
             let mut v = self.advanced_event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_event_selectors = Some(v);
             self
         }
@@ -1864,9 +1858,9 @@ pub mod describe_trails_output {
         /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration.
         /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
         /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
-        pub fn trail_list(mut self, input: impl Into<crate::model::Trail>) -> Self {
+        pub fn trail_list(mut self, input: crate::model::Trail) -> Self {
             let mut v = self.trail_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trail_list = Some(v);
             self
         }

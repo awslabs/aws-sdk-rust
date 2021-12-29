@@ -101,9 +101,9 @@ pub mod list_attendees_output {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The Amazon Chime SDK attendee information.</p>
-        pub fn attendees(mut self, input: impl Into<crate::model::Attendee>) -> Self {
+        pub fn attendees(mut self, input: crate::model::Attendee) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -373,9 +373,9 @@ pub mod create_meeting_with_attendees_output {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(mut self, input: impl Into<crate::model::Attendee>) -> Self {
+        pub fn attendees(mut self, input: crate::model::Attendee) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -392,9 +392,9 @@ pub mod create_meeting_with_attendees_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::CreateAttendeeError>) -> Self {
+        pub fn errors(mut self, input: crate::model::CreateAttendeeError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -577,9 +577,9 @@ pub mod batch_create_attendee_output {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(mut self, input: impl Into<crate::model::Attendee>) -> Self {
+        pub fn attendees(mut self, input: crate::model::Attendee) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -596,9 +596,9 @@ pub mod batch_create_attendee_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::CreateAttendeeError>) -> Self {
+        pub fn errors(mut self, input: crate::model::CreateAttendeeError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

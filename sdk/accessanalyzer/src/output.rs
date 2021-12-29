@@ -41,9 +41,9 @@ pub mod list_analyzers_output {
         /// To override the contents of this collection use [`set_analyzers`](Self::set_analyzers).
         ///
         /// <p>The analyzers retrieved.</p>
-        pub fn analyzers(mut self, input: impl Into<crate::model::AnalyzerSummary>) -> Self {
+        pub fn analyzers(mut self, input: crate::model::AnalyzerSummary) -> Self {
             let mut v = self.analyzers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analyzers = Some(v);
             self
         }
@@ -267,9 +267,9 @@ pub mod list_archive_rules_output {
         /// To override the contents of this collection use [`set_archive_rules`](Self::set_archive_rules).
         ///
         /// <p>A list of archive rules created for the specified analyzer.</p>
-        pub fn archive_rules(mut self, input: impl Into<crate::model::ArchiveRuleSummary>) -> Self {
+        pub fn archive_rules(mut self, input: crate::model::ArchiveRuleSummary) -> Self {
             let mut v = self.archive_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.archive_rules = Some(v);
             self
         }
@@ -500,9 +500,9 @@ pub mod validate_policy_output {
         ///
         /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
         /// checks.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::ValidatePolicyFinding>) -> Self {
+        pub fn findings(mut self, input: crate::model::ValidatePolicyFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -846,12 +846,9 @@ pub mod list_policy_generations_output {
         ///
         /// <p>A <code>PolicyGeneration</code> object that contains details about the generated
         /// policy.</p>
-        pub fn policy_generations(
-            mut self,
-            input: impl Into<crate::model::PolicyGeneration>,
-        ) -> Self {
+        pub fn policy_generations(mut self, input: crate::model::PolicyGeneration) -> Self {
             let mut v = self.policy_generations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_generations = Some(v);
             self
         }
@@ -935,9 +932,9 @@ pub mod list_findings_output {
         ///
         /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified,
         /// if any.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::FindingSummary>) -> Self {
+        pub fn findings(mut self, input: crate::model::FindingSummary) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -1022,12 +1019,9 @@ pub mod list_analyzed_resources_output {
         /// To override the contents of this collection use [`set_analyzed_resources`](Self::set_analyzed_resources).
         ///
         /// <p>A list of resources that were analyzed.</p>
-        pub fn analyzed_resources(
-            mut self,
-            input: impl Into<crate::model::AnalyzedResourceSummary>,
-        ) -> Self {
+        pub fn analyzed_resources(mut self, input: crate::model::AnalyzedResourceSummary) -> Self {
             let mut v = self.analyzed_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analyzed_resources = Some(v);
             self
         }
@@ -1108,12 +1102,9 @@ pub mod list_access_previews_output {
         /// To override the contents of this collection use [`set_access_previews`](Self::set_access_previews).
         ///
         /// <p>A list of access previews retrieved for the analyzer.</p>
-        pub fn access_previews(
-            mut self,
-            input: impl Into<crate::model::AccessPreviewSummary>,
-        ) -> Self {
+        pub fn access_previews(mut self, input: crate::model::AccessPreviewSummary) -> Self {
             let mut v = self.access_previews.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_previews = Some(v);
             self
         }
@@ -1193,9 +1184,9 @@ pub mod list_access_preview_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>A list of access preview findings that match the specified filter criteria.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::AccessPreviewFinding>) -> Self {
+        pub fn findings(mut self, input: crate::model::AccessPreviewFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }

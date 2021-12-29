@@ -542,9 +542,9 @@ pub mod list_workflows_output {
         /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
         ///
         /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-        pub fn workflows(mut self, input: impl Into<crate::model::ListedWorkflow>) -> Self {
+        pub fn workflows(mut self, input: crate::model::ListedWorkflow) -> Self {
             let mut v = self.workflows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workflows = Some(v);
             self
         }
@@ -657,9 +657,9 @@ pub mod list_users_output {
         ///
         /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that
         /// you specify.</p>
-        pub fn users(mut self, input: impl Into<crate::model::ListedUser>) -> Self {
+        pub fn users(mut self, input: crate::model::ListedUser) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -774,9 +774,9 @@ pub mod list_tags_for_resource_output {
         ///
         /// <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and
         /// searching for items. Tags are metadata that you define.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -866,9 +866,9 @@ pub mod list_servers_output {
         /// To override the contents of this collection use [`set_servers`](Self::set_servers).
         ///
         /// <p>An array of servers that were listed.</p>
-        pub fn servers(mut self, input: impl Into<crate::model::ListedServer>) -> Self {
+        pub fn servers(mut self, input: crate::model::ListedServer) -> Self {
             let mut v = self.servers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.servers = Some(v);
             self
         }
@@ -1134,9 +1134,9 @@ pub mod list_executions_output {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn executions(mut self, input: impl Into<crate::model::ListedExecution>) -> Self {
+        pub fn executions(mut self, input: crate::model::ListedExecution) -> Self {
             let mut v = self.executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.executions = Some(v);
             self
         }
@@ -1272,9 +1272,9 @@ pub mod list_accesses_output {
         ///
         /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you
         /// specify.</p>
-        pub fn accesses(mut self, input: impl Into<crate::model::ListedAccess>) -> Self {
+        pub fn accesses(mut self, input: crate::model::ListedAccess) -> Self {
             let mut v = self.accesses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accesses = Some(v);
             self
         }

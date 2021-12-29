@@ -8771,9 +8771,9 @@ pub mod internal_server_error_exception {
         /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
         ///
         /// Details about the error.
-        pub fn error_details(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
+        pub fn error_details(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_details = Some(v);
             self
         }
@@ -8865,9 +8865,9 @@ pub mod bad_request_exception {
         /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
         ///
         /// Details about the error.
-        pub fn error_details(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
+        pub fn error_details(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_details = Some(v);
             self
         }

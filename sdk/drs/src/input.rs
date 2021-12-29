@@ -222,9 +222,9 @@ pub mod create_replication_configuration_template_input {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: impl Into<crate::model::PitPolicyRule>) -> Self {
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
             let mut v = self.pit_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pit_policy = Some(v);
             self
         }
@@ -3544,10 +3544,10 @@ pub mod start_recovery_input {
         /// <p>The Source Servers that we want to start a Recovery Job for.</p>
         pub fn source_servers(
             mut self,
-            input: impl Into<crate::model::StartRecoveryRequestSourceServer>,
+            input: crate::model::StartRecoveryRequestSourceServer,
         ) -> Self {
             let mut v = self.source_servers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_servers = Some(v);
             self
         }
@@ -5009,10 +5009,10 @@ pub mod update_replication_configuration_input {
         /// <p>The configuration of the disks of the Source Server to be replicated.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::ReplicationConfigurationReplicatedDisk>,
+            input: crate::model::ReplicationConfigurationReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }
@@ -5121,9 +5121,9 @@ pub mod update_replication_configuration_input {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: impl Into<crate::model::PitPolicyRule>) -> Self {
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
             let mut v = self.pit_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pit_policy = Some(v);
             self
         }
@@ -5531,9 +5531,9 @@ pub mod update_replication_configuration_template_input {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: impl Into<crate::model::PitPolicyRule>) -> Self {
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
             let mut v = self.pit_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pit_policy = Some(v);
             self
         }

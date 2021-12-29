@@ -89,9 +89,9 @@ pub mod assume_role_input {
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn policy_arns(mut self, input: impl Into<crate::model::PolicyDescriptorType>) -> Self {
+        pub fn policy_arns(mut self, input: crate::model::PolicyDescriptorType) -> Self {
             let mut v = self.policy_arns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_arns = Some(v);
             self
         }
@@ -272,9 +272,9 @@ pub mod assume_role_input {
         /// session tag with the same key as an inherited tag, the operation fails. To view the
         /// inherited tags for a session, see the CloudTrail logs. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session Tags in CloudTrail</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -694,9 +694,9 @@ pub mod assume_role_with_saml_input {
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn policy_arns(mut self, input: impl Into<crate::model::PolicyDescriptorType>) -> Self {
+        pub fn policy_arns(mut self, input: crate::model::PolicyDescriptorType) -> Self {
             let mut v = self.policy_arns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_arns = Some(v);
             self
         }
@@ -1091,9 +1091,9 @@ pub mod assume_role_with_web_identity_input {
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn policy_arns(mut self, input: impl Into<crate::model::PolicyDescriptorType>) -> Self {
+        pub fn policy_arns(mut self, input: crate::model::PolicyDescriptorType) -> Self {
             let mut v = self.policy_arns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_arns = Some(v);
             self
         }
@@ -1946,9 +1946,9 @@ pub mod get_federation_token_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy_arns(mut self, input: impl Into<crate::model::PolicyDescriptorType>) -> Self {
+        pub fn policy_arns(mut self, input: crate::model::PolicyDescriptorType) -> Self {
             let mut v = self.policy_arns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_arns = Some(v);
             self
         }
@@ -2041,9 +2041,9 @@ pub mod get_federation_token_input {
         /// <code>department</code>=<code>engineering</code> session tag. <code>Department</code>
         /// and <code>department</code> are not saved as separate tags, and the session tag passed in
         /// the request takes precedence over the role tag.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

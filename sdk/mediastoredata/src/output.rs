@@ -151,9 +151,9 @@ pub mod list_items_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The metadata entries for the folders and objects at the requested path.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Item>) -> Self {
+        pub fn items(mut self, input: crate::model::Item) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }

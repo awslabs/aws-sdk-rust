@@ -252,9 +252,9 @@ pub mod add_tags_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -855,9 +855,9 @@ pub mod create_action_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to apply to the action.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1209,9 +1209,9 @@ pub mod create_algorithm_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1432,9 +1432,9 @@ pub mod create_app_input {
         ///
         /// <p>Each tag consists of a key and an optional value.
         /// Tag keys must be unique per resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1625,9 +1625,9 @@ pub mod create_app_image_config_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to apply to the AppImageConfig.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1892,9 +1892,9 @@ pub mod create_artifact_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to apply to the artifact.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2087,9 +2087,9 @@ pub mod create_auto_ml_job_input {
         /// <p>An array of channel objects that describes the input data and its location. Each channel
         /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum
         /// of 500 rows.</p>
-        pub fn input_data_config(mut self, input: impl Into<crate::model::AutoMlChannel>) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::AutoMlChannel) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -2200,9 +2200,9 @@ pub mod create_auto_ml_job_input {
         ///
         /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per
         /// resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2425,9 +2425,9 @@ pub mod create_code_repository_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2757,9 +2757,9 @@ pub mod create_compilation_job_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3007,9 +3007,9 @@ pub mod create_context_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to apply to the context.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3318,9 +3318,9 @@ pub mod create_data_quality_job_definition_input {
         ///
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3545,9 +3545,9 @@ pub mod create_device_fleet_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Creates tags for the specified fleet.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3818,9 +3818,9 @@ pub mod create_domain_input {
         /// <code>Search</code> API.</p>
         /// <p>Tags that you specify for the Domain are also added to all Apps that the
         /// Domain launches.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4188,9 +4188,9 @@ pub mod create_edge_packaging_job_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Creates tags for the packaging job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4411,9 +4411,9 @@ pub mod create_endpoint_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4600,12 +4600,9 @@ pub mod create_endpoint_config_input {
         ///
         /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want
         /// to host at this endpoint.</p>
-        pub fn production_variants(
-            mut self,
-            input: impl Into<crate::model::ProductionVariant>,
-        ) -> Self {
+        pub fn production_variants(mut self, input: crate::model::ProductionVariant) -> Self {
             let mut v = self.production_variants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.production_variants = Some(v);
             self
         }
@@ -4639,9 +4636,9 @@ pub mod create_endpoint_config_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4966,9 +4963,9 @@ pub mod create_experiment_input {
         ///
         /// <p>A list of tags to associate with the experiment. You can use <a>Search</a> API
         /// to search on the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5291,12 +5288,9 @@ pub mod create_feature_group_input {
         /// </p>
         /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per
         /// <code>FeatureGroup</code>.</p>
-        pub fn feature_definitions(
-            mut self,
-            input: impl Into<crate::model::FeatureDefinition>,
-        ) -> Self {
+        pub fn feature_definitions(mut self, input: crate::model::FeatureDefinition) -> Self {
             let mut v = self.feature_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.feature_definitions = Some(v);
             self
         }
@@ -5412,9 +5406,9 @@ pub mod create_feature_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5674,9 +5668,9 @@ pub mod create_flow_definition_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5873,9 +5867,9 @@ pub mod create_human_task_ui_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6120,10 +6114,10 @@ pub mod create_hyper_parameter_tuning_job_input {
         /// for this tuning job.</p>
         pub fn training_job_definitions(
             mut self,
-            input: impl Into<crate::model::HyperParameterTrainingJobDefinition>,
+            input: crate::model::HyperParameterTrainingJobDefinition,
         ) -> Self {
             let mut v = self.training_job_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.training_job_definitions = Some(v);
             self
         }
@@ -6192,9 +6186,9 @@ pub mod create_hyper_parameter_tuning_job_input {
         /// Resources</a>.</p>
         /// <p>Tags that you specify for the tuning job are also added to all training jobs that the
         /// tuning job launches.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6412,9 +6406,9 @@ pub mod create_image_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to apply to the image.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6867,9 +6861,9 @@ pub mod create_inference_recommendations_job_input {
         /// which you define. For more information, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
         /// in the Amazon Web Services General Reference.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7442,9 +7436,9 @@ pub mod create_labeling_job_input {
         ///
         /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7651,9 +7645,9 @@ pub mod create_model_input {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>Specifies the containers in the inference pipeline.</p>
-        pub fn containers(mut self, input: impl Into<crate::model::ContainerDefinition>) -> Self {
+        pub fn containers(mut self, input: crate::model::ContainerDefinition) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.containers = Some(v);
             self
         }
@@ -7718,9 +7712,9 @@ pub mod create_model_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8067,9 +8061,9 @@ pub mod create_model_bias_job_definition_input {
         ///
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8393,9 +8387,9 @@ pub mod create_model_explainability_job_definition_input {
         ///
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8737,9 +8731,9 @@ pub mod create_model_package_input {
         ///
         /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8900,10 +8894,10 @@ pub mod create_model_package_input {
         /// compiled artifacts. </p>
         pub fn additional_inference_specifications(
             mut self,
-            input: impl Into<crate::model::AdditionalInferenceSpecificationDefinition>,
+            input: crate::model::AdditionalInferenceSpecificationDefinition,
         ) -> Self {
             let mut v = self.additional_inference_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_inference_specifications = Some(v);
             self
         }
@@ -9122,9 +9116,9 @@ pub mod create_model_package_group_input {
         /// <p>A list of key value pairs associated with the model group. For more information, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9437,9 +9431,9 @@ pub mod create_model_quality_job_definition_input {
         ///
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9650,9 +9644,9 @@ pub mod create_monitoring_schedule_input {
         ///
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9939,9 +9933,9 @@ pub mod create_notebook_instance_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10019,10 +10013,10 @@ pub mod create_notebook_instance_input {
         /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
         pub fn accelerator_types(
             mut self,
-            input: impl Into<crate::model::NotebookInstanceAcceleratorType>,
+            input: crate::model::NotebookInstanceAcceleratorType,
         ) -> Self {
             let mut v = self.accelerator_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_types = Some(v);
             self
         }
@@ -10320,12 +10314,9 @@ pub mod create_notebook_instance_lifecycle_config_input {
         ///
         /// <p>A shell script that runs only once, when you create a notebook instance. The shell
         /// script must be a base64-encoded string.</p>
-        pub fn on_create(
-            mut self,
-            input: impl Into<crate::model::NotebookInstanceLifecycleHook>,
-        ) -> Self {
+        pub fn on_create(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             let mut v = self.on_create.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_create = Some(v);
             self
         }
@@ -10344,12 +10335,9 @@ pub mod create_notebook_instance_lifecycle_config_input {
         ///
         /// <p>A shell script that runs every time you start a notebook instance, including when you
         /// create the notebook instance. The shell script must be a base64-encoded string.</p>
-        pub fn on_start(
-            mut self,
-            input: impl Into<crate::model::NotebookInstanceLifecycleHook>,
-        ) -> Self {
+        pub fn on_start(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             let mut v = self.on_start.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_start = Some(v);
             self
         }
@@ -10600,9 +10588,9 @@ pub mod create_pipeline_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to apply to the created pipeline.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11164,12 +11152,9 @@ pub mod create_processing_job_input {
         ///
         /// <p>An array of inputs configuring the data to download into the
         /// processing container.</p>
-        pub fn processing_inputs(
-            mut self,
-            input: impl Into<crate::model::ProcessingInput>,
-        ) -> Self {
+        pub fn processing_inputs(mut self, input: crate::model::ProcessingInput) -> Self {
             let mut v = self.processing_inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processing_inputs = Some(v);
             self
         }
@@ -11319,9 +11304,9 @@ pub mod create_processing_job_input {
         ///
         /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11592,9 +11577,9 @@ pub mod create_project_input {
         ///
         /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services
         /// resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11810,9 +11795,9 @@ pub mod create_studio_lifecycle_config_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12124,9 +12109,9 @@ pub mod create_training_job_input {
         /// available as input streams. For example, if you specify an EFS location, input data
         /// files will be made available as input streams. They do not need to be
         /// downloaded.</p>
-        pub fn input_data_config(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -12241,9 +12226,9 @@ pub mod create_training_job_input {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12367,10 +12352,10 @@ pub mod create_training_job_input {
         /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
         pub fn debug_rule_configurations(
             mut self,
-            input: impl Into<crate::model::DebugRuleConfiguration>,
+            input: crate::model::DebugRuleConfiguration,
         ) -> Self {
             let mut v = self.debug_rule_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.debug_rule_configurations = Some(v);
             self
         }
@@ -12470,10 +12455,10 @@ pub mod create_training_job_input {
         /// metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
-            input: impl Into<crate::model::ProfilerRuleConfiguration>,
+            input: crate::model::ProfilerRuleConfiguration,
         ) -> Self {
             let mut v = self.profiler_rule_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profiler_rule_configurations = Some(v);
             self
         }
@@ -12948,9 +12933,9 @@ pub mod create_transform_job_input {
         /// array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
         /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User
         /// Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13231,9 +13216,9 @@ pub mod create_trial_input {
         ///
         /// <p>A list of tags to associate with the trial. You can use <a>Search</a> API to
         /// search on the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13509,10 +13494,10 @@ pub mod create_trial_component_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentParameterValue>,
+            v: crate::model::TrialComponentParameterValue,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -13538,10 +13523,10 @@ pub mod create_trial_component_input {
         pub fn input_artifacts(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentArtifact>,
+            v: crate::model::TrialComponentArtifact,
         ) -> Self {
             let mut hash_map = self.input_artifacts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.input_artifacts = Some(hash_map);
             self
         }
@@ -13568,10 +13553,10 @@ pub mod create_trial_component_input {
         pub fn output_artifacts(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentArtifact>,
+            v: crate::model::TrialComponentArtifact,
         ) -> Self {
             let mut hash_map = self.output_artifacts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.output_artifacts = Some(hash_map);
             self
         }
@@ -13608,9 +13593,9 @@ pub mod create_trial_component_input {
         ///
         /// <p>A list of tags to associate with the component. You can use <a>Search</a> API
         /// to search on the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13851,9 +13836,9 @@ pub mod create_user_profile_input {
         /// Tag keys must be unique per resource.</p>
         /// <p>Tags that you specify for the User Profile are also added to all Apps that the
         /// User Profile launches.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14113,9 +14098,9 @@ pub mod create_workforce_input {
         /// <p>An array of key-value pairs that contain metadata to help you categorize and
         /// organize our workforce. Each tag consists of a key and a value,
         /// both of which you define.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14331,12 +14316,9 @@ pub mod create_workteam_input {
         /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to
         /// include in your private work team in <code>OidcMemberDefinition</code> by listing those groups
         /// in <code>Groups</code>.</p>
-        pub fn member_definitions(
-            mut self,
-            input: impl Into<crate::model::MemberDefinition>,
-        ) -> Self {
+        pub fn member_definitions(mut self, input: crate::model::MemberDefinition) -> Self {
             let mut v = self.member_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_definitions = Some(v);
             self
         }
@@ -14399,9 +14381,9 @@ pub mod create_workteam_input {
         /// Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
         /// Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User
         /// Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -45383,9 +45365,9 @@ pub mod register_devices_input {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -45402,9 +45384,9 @@ pub mod register_devices_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with devices.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -46402,12 +46384,9 @@ pub mod send_pipeline_execution_step_success_input {
         /// To override the contents of this collection use [`set_output_parameters`](Self::set_output_parameters).
         ///
         /// <p>A list of the output parameters of the callback step.</p>
-        pub fn output_parameters(
-            mut self,
-            input: impl Into<crate::model::OutputParameter>,
-        ) -> Self {
+        pub fn output_parameters(mut self, input: crate::model::OutputParameter) -> Self {
             let mut v = self.output_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_parameters = Some(v);
             self
         }
@@ -46943,9 +46922,9 @@ pub mod start_pipeline_execution_input {
         /// To override the contents of this collection use [`set_pipeline_parameters`](Self::set_pipeline_parameters).
         ///
         /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-        pub fn pipeline_parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn pipeline_parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.pipeline_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_parameters = Some(v);
             self
         }
@@ -50323,9 +50302,9 @@ pub mod update_devices_input {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>List of devices to register with Edge Manager agent.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -50735,10 +50714,10 @@ pub mod update_endpoint_input {
         /// </p>
         pub fn exclude_retained_variant_properties(
             mut self,
-            input: impl Into<crate::model::VariantProperty>,
+            input: crate::model::VariantProperty,
         ) -> Self {
             let mut v = self.exclude_retained_variant_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exclude_retained_variant_properties = Some(v);
             self
         }
@@ -50953,10 +50932,10 @@ pub mod update_endpoint_weights_and_capacities_input {
         /// <p>An object that provides new capacity and weight values for a variant.</p>
         pub fn desired_weights_and_capacities(
             mut self,
-            input: impl Into<crate::model::DesiredWeightAndCapacity>,
+            input: crate::model::DesiredWeightAndCapacity,
         ) -> Self {
             let mut v = self.desired_weights_and_capacities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.desired_weights_and_capacities = Some(v);
             self
         }
@@ -51620,12 +51599,12 @@ pub mod update_model_package_input {
         /// Generally used with SageMaker Neo to store the compiled artifacts.</p>
         pub fn additional_inference_specifications_to_add(
             mut self,
-            input: impl Into<crate::model::AdditionalInferenceSpecificationDefinition>,
+            input: crate::model::AdditionalInferenceSpecificationDefinition,
         ) -> Self {
             let mut v = self
                 .additional_inference_specifications_to_add
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_inference_specifications_to_add = Some(v);
             self
         }
@@ -52157,10 +52136,10 @@ pub mod update_notebook_instance_input {
         /// SageMaker</a>.</p>
         pub fn accelerator_types(
             mut self,
-            input: impl Into<crate::model::NotebookInstanceAcceleratorType>,
+            input: crate::model::NotebookInstanceAcceleratorType,
         ) -> Self {
             let mut v = self.accelerator_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_types = Some(v);
             self
         }
@@ -52450,12 +52429,9 @@ pub mod update_notebook_instance_lifecycle_config_input {
         ///
         /// <p>The shell script that runs only once, when you create a notebook instance. The shell
         /// script must be a base64-encoded string.</p>
-        pub fn on_create(
-            mut self,
-            input: impl Into<crate::model::NotebookInstanceLifecycleHook>,
-        ) -> Self {
+        pub fn on_create(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             let mut v = self.on_create.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_create = Some(v);
             self
         }
@@ -52475,12 +52451,9 @@ pub mod update_notebook_instance_lifecycle_config_input {
         /// <p>The shell script that runs every time you start a notebook instance, including when
         /// you create the notebook instance. The shell script must be a base64-encoded
         /// string.</p>
-        pub fn on_start(
-            mut self,
-            input: impl Into<crate::model::NotebookInstanceLifecycleHook>,
-        ) -> Self {
+        pub fn on_start(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             let mut v = self.on_start.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_start = Some(v);
             self
         }
@@ -53112,9 +53085,9 @@ pub mod update_project_input {
         /// <p>An array of key-value pairs. You can use tags to categorize your
         /// Amazon Web Services resources in different ways, for example, by purpose, owner, or
         /// environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -53314,10 +53287,10 @@ pub mod update_training_job_input {
         /// metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
-            input: impl Into<crate::model::ProfilerRuleConfiguration>,
+            input: crate::model::ProfilerRuleConfiguration,
         ) -> Self {
             let mut v = self.profiler_rule_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profiler_rule_configurations = Some(v);
             self
         }
@@ -53738,10 +53711,10 @@ pub mod update_trial_component_input {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentParameterValue>,
+            v: crate::model::TrialComponentParameterValue,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -53785,10 +53758,10 @@ pub mod update_trial_component_input {
         pub fn input_artifacts(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentArtifact>,
+            v: crate::model::TrialComponentArtifact,
         ) -> Self {
             let mut hash_map = self.input_artifacts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.input_artifacts = Some(hash_map);
             self
         }
@@ -53832,10 +53805,10 @@ pub mod update_trial_component_input {
         pub fn output_artifacts(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentArtifact>,
+            v: crate::model::TrialComponentArtifact,
         ) -> Self {
             let mut hash_map = self.output_artifacts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.output_artifacts = Some(hash_map);
             self
         }
@@ -54448,12 +54421,9 @@ pub mod update_workteam_input {
         /// work team must also be listed in <code>Groups</code> when you make this request to
         /// remain on the work team. If you do not include these user groups, they will no longer be
         /// associated with the work team you update. </p>
-        pub fn member_definitions(
-            mut self,
-            input: impl Into<crate::model::MemberDefinition>,
-        ) -> Self {
+        pub fn member_definitions(mut self, input: crate::model::MemberDefinition) -> Self {
             let mut v = self.member_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_definitions = Some(v);
             self
         }

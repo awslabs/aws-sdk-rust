@@ -3372,9 +3372,9 @@ pub mod create_authorizer_input {
         /// <p>For the cli-input-json file use format: "tags":
         /// "key1=value1&key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3605,9 +3605,9 @@ pub mod create_billing_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the billing group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4026,9 +4026,9 @@ pub mod create_custom_metric_input {
         /// <p>
         /// Metadata that can be used to manage the custom metric.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4279,9 +4279,9 @@ pub mod create_dimension_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the dimension.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4578,9 +4578,9 @@ pub mod create_domain_configuration_input {
         /// <p>For the cli-input-json file use format: "tags":
         /// "key1=value1&key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4852,9 +4852,9 @@ pub mod create_dynamic_thing_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5151,9 +5151,9 @@ pub mod create_fleet_metric_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata, which can be used to manage the fleet metric.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5514,9 +5514,9 @@ pub mod create_job_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5904,9 +5904,9 @@ pub mod create_job_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the job template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6277,9 +6277,9 @@ pub mod create_mitigation_action_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the mitigation action.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6519,9 +6519,9 @@ pub mod create_ota_update_input {
         ///
         /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
         /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -6624,9 +6624,9 @@ pub mod create_ota_update_input {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The files to be streamed by the OTA update.</p>
-        pub fn files(mut self, input: impl Into<crate::model::OtaUpdateFile>) -> Self {
+        pub fn files(mut self, input: crate::model::OtaUpdateFile) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -6680,9 +6680,9 @@ pub mod create_ota_update_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage updates.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6904,9 +6904,9 @@ pub mod create_policy_input {
         /// <p>For the cli-input-json file use format: "tags":
         /// "key1=value1&key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7548,9 +7548,9 @@ pub mod create_provisioning_template_input {
         /// <p>For the cli-input-json file use format: "tags":
         /// "key1=value1&key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7980,9 +7980,9 @@ pub mod create_role_alias_input {
         /// <p>For the cli-input-json file use format: "tags":
         /// "key1=value1&key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8275,9 +8275,9 @@ pub mod create_scheduled_audit_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the scheduled audit.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8499,9 +8499,9 @@ pub mod create_security_profile_input {
         /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
         ///
         /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-        pub fn behaviors(mut self, input: impl Into<crate::model::Behavior>) -> Self {
+        pub fn behaviors(mut self, input: crate::model::Behavior) -> Self {
             let mut v = self.behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.behaviors = Some(v);
             self
         }
@@ -8521,11 +8521,11 @@ pub mod create_security_profile_input {
         /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
         pub fn alert_targets(
             mut self,
-            k: impl Into<crate::model::AlertTargetType>,
-            v: impl Into<crate::model::AlertTarget>,
+            k: crate::model::AlertTargetType,
+            v: crate::model::AlertTarget,
         ) -> Self {
             let mut hash_map = self.alert_targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.alert_targets = Some(hash_map);
             self
         }
@@ -8579,10 +8579,10 @@ pub mod create_security_profile_input {
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain_v2(
             mut self,
-            input: impl Into<crate::model::MetricToRetain>,
+            input: crate::model::MetricToRetain,
         ) -> Self {
             let mut v = self.additional_metrics_to_retain_v2.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_metrics_to_retain_v2 = Some(v);
             self
         }
@@ -8599,9 +8599,9 @@ pub mod create_security_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the security profile.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8809,9 +8809,9 @@ pub mod create_stream_input {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The files to stream.</p>
-        pub fn files(mut self, input: impl Into<crate::model::StreamFile>) -> Self {
+        pub fn files(mut self, input: crate::model::StreamFile) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -8838,9 +8838,9 @@ pub mod create_stream_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage streams.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9278,9 +9278,9 @@ pub mod create_thing_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the thing group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9491,9 +9491,9 @@ pub mod create_thing_type_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the thing type.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -23274,9 +23274,9 @@ pub mod get_percentiles_input {
         /// To override the contents of this collection use [`set_percents`](Self::set_percents).
         ///
         /// <p>The percentile groups returned.</p>
-        pub fn percents(mut self, input: impl Into<f64>) -> Self {
+        pub fn percents(mut self, input: f64) -> Self {
             let mut v = self.percents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.percents = Some(v);
             self
         }
@@ -36115,9 +36115,9 @@ pub mod register_ca_certificate_input {
         /// <p>For the cli-input-json file use format: "tags":
         /// "key1=value1&key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -38704,10 +38704,10 @@ pub mod start_audit_mitigation_actions_task_input {
         pub fn audit_check_to_actions_mapping(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.audit_check_to_actions_mapping.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_check_to_actions_mapping = Some(hash_map);
             self
         }
@@ -39740,9 +39740,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The new or modified tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -39927,9 +39927,9 @@ pub mod test_authorization_input {
         ///
         /// <p>A list of authorization info objects. Simulating authorization will create a response
         /// for each <code>authInfo</code> object in the list.</p>
-        pub fn auth_infos(mut self, input: impl Into<crate::model::AuthInfo>) -> Self {
+        pub fn auth_infos(mut self, input: crate::model::AuthInfo) -> Self {
             let mut v = self.auth_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auth_infos = Some(v);
             self
         }
@@ -40824,13 +40824,13 @@ pub mod update_account_audit_configuration_input {
         /// <p>Information about the targets to which audit notifications are sent.</p>
         pub fn audit_notification_target_configurations(
             mut self,
-            k: impl Into<crate::model::AuditNotificationType>,
-            v: impl Into<crate::model::AuditNotificationTarget>,
+            k: crate::model::AuditNotificationType,
+            v: crate::model::AuditNotificationTarget,
         ) -> Self {
             let mut hash_map = self
                 .audit_notification_target_configurations
                 .unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.audit_notification_target_configurations = Some(hash_map);
             self
         }
@@ -40867,10 +40867,10 @@ pub mod update_account_audit_configuration_input {
         pub fn audit_check_configurations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AuditCheckConfiguration>,
+            v: crate::model::AuditCheckConfiguration,
         ) -> Self {
             let mut hash_map = self.audit_check_configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_check_configurations = Some(hash_map);
             self
         }
@@ -43047,11 +43047,11 @@ pub mod update_event_configurations_input {
         /// <p>The new event configuration values.</p>
         pub fn event_configurations(
             mut self,
-            k: impl Into<crate::model::EventType>,
-            v: impl Into<crate::model::Configuration>,
+            k: crate::model::EventType,
+            v: crate::model::Configuration,
         ) -> Self {
             let mut hash_map = self.event_configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.event_configurations = Some(hash_map);
             self
         }
@@ -44921,9 +44921,9 @@ pub mod update_security_profile_input {
         /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
         ///
         /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-        pub fn behaviors(mut self, input: impl Into<crate::model::Behavior>) -> Self {
+        pub fn behaviors(mut self, input: crate::model::Behavior) -> Self {
             let mut v = self.behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.behaviors = Some(v);
             self
         }
@@ -44942,11 +44942,11 @@ pub mod update_security_profile_input {
         /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
         pub fn alert_targets(
             mut self,
-            k: impl Into<crate::model::AlertTargetType>,
-            v: impl Into<crate::model::AlertTarget>,
+            k: crate::model::AlertTargetType,
+            v: crate::model::AlertTarget,
         ) -> Self {
             let mut hash_map = self.alert_targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.alert_targets = Some(hash_map);
             self
         }
@@ -45007,10 +45007,10 @@ pub mod update_security_profile_input {
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain_v2(
             mut self,
-            input: impl Into<crate::model::MetricToRetain>,
+            input: crate::model::MetricToRetain,
         ) -> Self {
             let mut v = self.additional_metrics_to_retain_v2.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_metrics_to_retain_v2 = Some(v);
             self
         }
@@ -45291,9 +45291,9 @@ pub mod update_stream_input {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The files associated with the stream.</p>
-        pub fn files(mut self, input: impl Into<crate::model::StreamFile>) -> Self {
+        pub fn files(mut self, input: crate::model::StreamFile) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -46358,9 +46358,9 @@ pub mod validate_security_profile_behaviors_input {
         /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
         ///
         /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-        pub fn behaviors(mut self, input: impl Into<crate::model::Behavior>) -> Self {
+        pub fn behaviors(mut self, input: crate::model::Behavior) -> Self {
             let mut v = self.behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.behaviors = Some(v);
             self
         }

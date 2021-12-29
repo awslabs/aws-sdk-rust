@@ -73,9 +73,9 @@ pub mod posix_profile {
         /// To override the contents of this collection use [`set_secondary_gids`](Self::set_secondary_gids).
         ///
         /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
-        pub fn secondary_gids(mut self, input: impl Into<i64>) -> Self {
+        pub fn secondary_gids(mut self, input: i64) -> Self {
             let mut v = self.secondary_gids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_gids = Some(v);
             self
         }
@@ -281,9 +281,9 @@ pub mod workflow_details {
         /// To override the contents of this collection use [`set_on_upload`](Self::set_on_upload).
         ///
         /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
-        pub fn on_upload(mut self, input: impl Into<crate::model::WorkflowDetail>) -> Self {
+        pub fn on_upload(mut self, input: crate::model::WorkflowDetail) -> Self {
             let mut v = self.on_upload.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_upload = Some(v);
             self
         }
@@ -2929,9 +2929,9 @@ pub mod described_workflow {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+        pub fn steps(mut self, input: crate::model::WorkflowStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -2948,9 +2948,9 @@ pub mod described_workflow {
         /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
         ///
         /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-        pub fn on_exception_steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+        pub fn on_exception_steps(mut self, input: crate::model::WorkflowStep) -> Self {
             let mut v = self.on_exception_steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_exception_steps = Some(v);
             self
         }
@@ -2977,9 +2977,9 @@ pub mod described_workflow {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3365,9 +3365,9 @@ pub mod tag_step_details {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Array that contains from 1 to 10 key/value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4209,10 +4209,10 @@ pub mod described_user {
         /// parameter value.</p>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }
@@ -4314,9 +4314,9 @@ pub mod described_user {
         ///
         /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described
         /// user.</p>
-        pub fn ssh_public_keys(mut self, input: impl Into<crate::model::SshPublicKey>) -> Self {
+        pub fn ssh_public_keys(mut self, input: crate::model::SshPublicKey) -> Self {
             let mut v = self.ssh_public_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ssh_public_keys = Some(v);
             self
         }
@@ -4335,9 +4335,9 @@ pub mod described_user {
         ///
         /// <p>Specifies the key-value pairs for the user requested. Tag can be used to search for and
         /// group users for a variety of purposes.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4980,9 +4980,9 @@ pub mod described_server {
         /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
         /// </li>
         /// </ul>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -5067,9 +5067,9 @@ pub mod described_server {
         ///
         /// <p>Specifies the key-value pairs that you can use to search for and group servers that were
         /// assigned to the server that was described.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5633,9 +5633,9 @@ pub mod execution_results {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::ExecutionStepResult>) -> Self {
+        pub fn steps(mut self, input: crate::model::ExecutionStepResult) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -5652,12 +5652,9 @@ pub mod execution_results {
         /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
         ///
         /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-        pub fn on_exception_steps(
-            mut self,
-            input: impl Into<crate::model::ExecutionStepResult>,
-        ) -> Self {
+        pub fn on_exception_steps(mut self, input: crate::model::ExecutionStepResult) -> Self {
             let mut v = self.on_exception_steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_exception_steps = Some(v);
             self
         }
@@ -6259,10 +6256,10 @@ pub mod described_access {
         /// <code>HomeDirectory</code> parameter value.</p>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }

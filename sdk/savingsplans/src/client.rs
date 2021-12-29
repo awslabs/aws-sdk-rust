@@ -221,8 +221,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the offering.</p>
-        pub fn savings_plan_offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.savings_plan_offering_id(inp);
+        pub fn savings_plan_offering_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.savings_plan_offering_id(signature.into());
             self
         }
         /// <p>The ID of the offering.</p>
@@ -235,8 +238,8 @@ pub mod fluent_builders {
         }
         /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
         /// than three digits after the decimal point.</p>
-        pub fn commitment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commitment(inp);
+        pub fn commitment(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commitment(signature.into());
             self
         }
         /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
@@ -247,8 +250,8 @@ pub mod fluent_builders {
         }
         /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
         /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
-        pub fn upfront_payment_amount(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upfront_payment_amount(inp);
+        pub fn upfront_payment_amount(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upfront_payment_amount(signature.into());
             self
         }
         /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
@@ -261,8 +264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
-        pub fn purchase_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.purchase_time(inp);
+        pub fn purchase_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.purchase_time(signature);
             self
         }
         /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
@@ -274,8 +277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -293,7 +296,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -367,8 +370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Savings Plan.</p>
-        pub fn savings_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.savings_plan_id(inp);
+        pub fn savings_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.savings_plan_id(signature.into());
             self
         }
         /// <p>The ID of the Savings Plan.</p>
@@ -440,8 +443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Savings Plan.</p>
-        pub fn savings_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.savings_plan_id(inp);
+        pub fn savings_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.savings_plan_id(signature.into());
             self
         }
         /// <p>The ID of the Savings Plan.</p>
@@ -457,8 +460,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SavingsPlanRateFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SavingsPlanRateFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filters.</p>
@@ -470,8 +473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -481,8 +484,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
         /// call with the returned token value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
@@ -556,8 +559,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_savings_plan_arns`](Self::set_savings_plan_arns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-        pub fn savings_plan_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.savings_plan_arns(inp);
+        pub fn savings_plan_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.savings_plan_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
@@ -573,8 +576,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_savings_plan_ids`](Self::set_savings_plan_ids).
         ///
         /// <p>The IDs of the Savings Plans.</p>
-        pub fn savings_plan_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.savings_plan_ids(inp);
+        pub fn savings_plan_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.savings_plan_ids(input.into());
             self
         }
         /// <p>The IDs of the Savings Plans.</p>
@@ -586,8 +589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -597,8 +600,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
         /// call with the returned token value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
@@ -612,8 +615,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states.</p>
-        pub fn states(mut self, inp: impl Into<crate::model::SavingsPlanState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::SavingsPlanState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The states.</p>
@@ -629,8 +632,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SavingsPlanFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SavingsPlanFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filters.</p>
@@ -706,8 +709,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_savings_plan_offering_ids`](Self::set_savings_plan_offering_ids).
         ///
         /// <p>The IDs of the offerings.</p>
-        pub fn savings_plan_offering_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.savings_plan_offering_ids(inp);
+        pub fn savings_plan_offering_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.savings_plan_offering_ids(input.into());
             self
         }
         /// <p>The IDs of the offerings.</p>
@@ -725,9 +728,9 @@ pub mod fluent_builders {
         /// <p>The payment options.</p>
         pub fn savings_plan_payment_options(
             mut self,
-            inp: impl Into<crate::model::SavingsPlanPaymentOption>,
+            input: crate::model::SavingsPlanPaymentOption,
         ) -> Self {
-            self.inner = self.inner.savings_plan_payment_options(inp);
+            self.inner = self.inner.savings_plan_payment_options(input);
             self
         }
         /// <p>The payment options.</p>
@@ -743,8 +746,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_savings_plan_types`](Self::set_savings_plan_types).
         ///
         /// <p>The plan types.</p>
-        pub fn savings_plan_types(mut self, inp: impl Into<crate::model::SavingsPlanType>) -> Self {
-            self.inner = self.inner.savings_plan_types(inp);
+        pub fn savings_plan_types(mut self, input: crate::model::SavingsPlanType) -> Self {
+            self.inner = self.inner.savings_plan_types(input);
             self
         }
         /// <p>The plan types.</p>
@@ -760,8 +763,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_products`](Self::set_products).
         ///
         /// <p>The AWS products.</p>
-        pub fn products(mut self, inp: impl Into<crate::model::SavingsPlanProductType>) -> Self {
-            self.inner = self.inner.products(inp);
+        pub fn products(mut self, input: crate::model::SavingsPlanProductType) -> Self {
+            self.inner = self.inner.products(input);
             self
         }
         /// <p>The AWS products.</p>
@@ -777,11 +780,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_service_codes`](Self::set_service_codes).
         ///
         /// <p>The services.</p>
-        pub fn service_codes(
-            mut self,
-            inp: impl Into<crate::model::SavingsPlanRateServiceCode>,
-        ) -> Self {
-            self.inner = self.inner.service_codes(inp);
+        pub fn service_codes(mut self, input: crate::model::SavingsPlanRateServiceCode) -> Self {
+            self.inner = self.inner.service_codes(input);
             self
         }
         /// <p>The services.</p>
@@ -797,8 +797,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_usage_types`](Self::set_usage_types).
         ///
         /// <p>The usage details of the line item in the billing report.</p>
-        pub fn usage_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_types(inp);
+        pub fn usage_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_types(input.into());
             self
         }
         /// <p>The usage details of the line item in the billing report.</p>
@@ -814,8 +814,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>The specific AWS operation for the line item in the billing report.</p>
-        pub fn operations(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operations(inp);
+        pub fn operations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operations(input.into());
             self
         }
         /// <p>The specific AWS operation for the line item in the billing report.</p>
@@ -833,9 +833,9 @@ pub mod fluent_builders {
         /// <p>The filters.</p>
         pub fn filters(
             mut self,
-            inp: impl Into<crate::model::SavingsPlanOfferingRateFilterElement>,
+            input: crate::model::SavingsPlanOfferingRateFilterElement,
         ) -> Self {
-            self.inner = self.inner.filters(inp);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filters.</p>
@@ -849,8 +849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -860,8 +860,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
         /// call with the returned token value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
@@ -935,8 +935,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_offering_ids`](Self::set_offering_ids).
         ///
         /// <p>The IDs of the offerings.</p>
-        pub fn offering_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_ids(inp);
+        pub fn offering_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_ids(input.into());
             self
         }
         /// <p>The IDs of the offerings.</p>
@@ -952,11 +952,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_payment_options`](Self::set_payment_options).
         ///
         /// <p>The payment options.</p>
-        pub fn payment_options(
-            mut self,
-            inp: impl Into<crate::model::SavingsPlanPaymentOption>,
-        ) -> Self {
-            self.inner = self.inner.payment_options(inp);
+        pub fn payment_options(mut self, input: crate::model::SavingsPlanPaymentOption) -> Self {
+            self.inner = self.inner.payment_options(input);
             self
         }
         /// <p>The payment options.</p>
@@ -968,8 +965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product type.</p>
-        pub fn product_type(mut self, inp: crate::model::SavingsPlanProductType) -> Self {
-            self.inner = self.inner.product_type(inp);
+        pub fn product_type(mut self, signature: crate::model::SavingsPlanProductType) -> Self {
+            self.inner = self.inner.product_type(signature);
             self
         }
         /// <p>The product type.</p>
@@ -985,8 +982,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_plan_types`](Self::set_plan_types).
         ///
         /// <p>The plan type.</p>
-        pub fn plan_types(mut self, inp: impl Into<crate::model::SavingsPlanType>) -> Self {
-            self.inner = self.inner.plan_types(inp);
+        pub fn plan_types(mut self, input: crate::model::SavingsPlanType) -> Self {
+            self.inner = self.inner.plan_types(input);
             self
         }
         /// <p>The plan type.</p>
@@ -1002,8 +999,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_durations`](Self::set_durations).
         ///
         /// <p>The durations, in seconds.</p>
-        pub fn durations(mut self, inp: impl Into<i64>) -> Self {
-            self.inner = self.inner.durations(inp);
+        pub fn durations(mut self, input: i64) -> Self {
+            self.inner = self.inner.durations(input);
             self
         }
         /// <p>The durations, in seconds.</p>
@@ -1016,8 +1013,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_currencies`](Self::set_currencies).
         ///
         /// <p>The currencies.</p>
-        pub fn currencies(mut self, inp: impl Into<crate::model::CurrencyCode>) -> Self {
-            self.inner = self.inner.currencies(inp);
+        pub fn currencies(mut self, input: crate::model::CurrencyCode) -> Self {
+            self.inner = self.inner.currencies(input);
             self
         }
         /// <p>The currencies.</p>
@@ -1033,8 +1030,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_descriptions`](Self::set_descriptions).
         ///
         /// <p>The descriptions.</p>
-        pub fn descriptions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.descriptions(inp);
+        pub fn descriptions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.descriptions(input.into());
             self
         }
         /// <p>The descriptions.</p>
@@ -1050,8 +1047,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_service_codes`](Self::set_service_codes).
         ///
         /// <p>The services.</p>
-        pub fn service_codes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_codes(inp);
+        pub fn service_codes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_codes(input.into());
             self
         }
         /// <p>The services.</p>
@@ -1067,8 +1064,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_usage_types`](Self::set_usage_types).
         ///
         /// <p>The usage details of the line item in the billing report.</p>
-        pub fn usage_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_types(inp);
+        pub fn usage_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_types(input.into());
             self
         }
         /// <p>The usage details of the line item in the billing report.</p>
@@ -1084,8 +1081,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>The specific AWS operation for the line item in the billing report.</p>
-        pub fn operations(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operations(inp);
+        pub fn operations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operations(input.into());
             self
         }
         /// <p>The specific AWS operation for the line item in the billing report.</p>
@@ -1101,11 +1098,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters.</p>
-        pub fn filters(
-            mut self,
-            inp: impl Into<crate::model::SavingsPlanOfferingFilterElement>,
-        ) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SavingsPlanOfferingFilterElement) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filters.</p>
@@ -1119,8 +1113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1130,8 +1124,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
         /// call with the returned token value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
@@ -1201,8 +1195,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1271,8 +1265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1290,7 +1284,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
@@ -1364,8 +1358,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1378,8 +1372,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>

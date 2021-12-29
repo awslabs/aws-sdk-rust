@@ -286,8 +286,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of the connector profile. The name is unique for each
         /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
-        pub fn connector_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_profile_name(inp);
+        pub fn connector_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_profile_name(signature.into());
             self
         }
         /// <p> The name of the connector profile. The name is unique for each
@@ -303,8 +303,8 @@ pub mod fluent_builders {
         /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
         /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
         /// </p>
-        pub fn kms_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_arn(inp);
+        pub fn kms_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_arn(signature.into());
             self
         }
         /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
@@ -316,8 +316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn connector_type(mut self, inp: crate::model::ConnectorType) -> Self {
-            self.inner = self.inner.connector_type(inp);
+        pub fn connector_type(mut self, signature: crate::model::ConnectorType) -> Self {
+            self.inner = self.inner.connector_type(signature);
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
@@ -331,8 +331,8 @@ pub mod fluent_builders {
         /// <p> Indicates the connection mode and specifies whether it is public or private. Private
         /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
         /// public internet. </p>
-        pub fn connection_mode(mut self, inp: crate::model::ConnectionMode) -> Self {
-            self.inner = self.inner.connection_mode(inp);
+        pub fn connection_mode(mut self, signature: crate::model::ConnectionMode) -> Self {
+            self.inner = self.inner.connection_mode(signature);
             self
         }
         /// <p> Indicates the connection mode and specifies whether it is public or private. Private
@@ -348,9 +348,9 @@ pub mod fluent_builders {
         /// <p> Defines the connector-specific configuration and credentials. </p>
         pub fn connector_profile_config(
             mut self,
-            inp: crate::model::ConnectorProfileConfig,
+            signature: crate::model::ConnectorProfileConfig,
         ) -> Self {
-            self.inner = self.inner.connector_profile_config(inp);
+            self.inner = self.inner.connector_profile_config(signature);
             self
         }
         /// <p> Defines the connector-specific configuration and credentials. </p>
@@ -426,8 +426,8 @@ pub mod fluent_builders {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
         /// (-) only. </p>
-        pub fn flow_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_name(inp);
+        pub fn flow_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_name(signature.into());
             self
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
@@ -437,8 +437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A description of the flow you want to create. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p> A description of the flow you want to create. </p>
@@ -450,8 +450,8 @@ pub mod fluent_builders {
         /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
         /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
         /// </p>
-        pub fn kms_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_arn(inp);
+        pub fn kms_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_arn(signature.into());
             self
         }
         /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
@@ -463,8 +463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
-        pub fn trigger_config(mut self, inp: crate::model::TriggerConfig) -> Self {
-            self.inner = self.inner.trigger_config(inp);
+        pub fn trigger_config(mut self, signature: crate::model::TriggerConfig) -> Self {
+            self.inner = self.inner.trigger_config(signature);
             self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
@@ -477,8 +477,8 @@ pub mod fluent_builders {
         }
         /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
         /// connector. </p>
-        pub fn source_flow_config(mut self, inp: crate::model::SourceFlowConfig) -> Self {
-            self.inner = self.inner.source_flow_config(inp);
+        pub fn source_flow_config(mut self, signature: crate::model::SourceFlowConfig) -> Self {
+            self.inner = self.inner.source_flow_config(signature);
             self
         }
         /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
@@ -498,9 +498,9 @@ pub mod fluent_builders {
         /// connector. </p>
         pub fn destination_flow_config_list(
             mut self,
-            inp: impl Into<crate::model::DestinationFlowConfig>,
+            input: crate::model::DestinationFlowConfig,
         ) -> Self {
-            self.inner = self.inner.destination_flow_config_list(inp);
+            self.inner = self.inner.destination_flow_config_list(input);
             self
         }
         /// <p> The configuration that controls how Amazon AppFlow places data in the destination
@@ -518,8 +518,8 @@ pub mod fluent_builders {
         ///
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
         /// </p>
-        pub fn tasks(mut self, inp: impl Into<crate::model::Task>) -> Self {
-            self.inner = self.inner.tasks(inp);
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
+            self.inner = self.inner.tasks(input);
             self
         }
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
@@ -541,7 +541,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags used to organize, track, or control access for your flow. </p>
@@ -616,8 +616,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of the connector profile. The name is unique for each
         /// <code>ConnectorProfile</code> in your account. </p>
-        pub fn connector_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_profile_name(inp);
+        pub fn connector_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_profile_name(signature.into());
             self
         }
         /// <p> The name of the connector profile. The name is unique for each
@@ -631,8 +631,8 @@ pub mod fluent_builders {
         }
         /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
         /// use in one or more flows. </p>
-        pub fn force_delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete(inp);
+        pub fn force_delete(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_delete(signature);
             self
         }
         /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
@@ -705,8 +705,8 @@ pub mod fluent_builders {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
         /// (-) only. </p>
-        pub fn flow_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_name(inp);
+        pub fn flow_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_name(signature.into());
             self
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
@@ -717,8 +717,8 @@ pub mod fluent_builders {
         }
         /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
         /// </p>
-        pub fn force_delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete(inp);
+        pub fn force_delete(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_delete(signature);
             self
         }
         /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
@@ -789,8 +789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The entity name for that connector. </p>
-        pub fn connector_entity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_entity_name(inp);
+        pub fn connector_entity_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_entity_name(signature.into());
             self
         }
         /// <p> The entity name for that connector. </p>
@@ -802,8 +802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-        pub fn connector_type(mut self, inp: crate::model::ConnectorType) -> Self {
-            self.inner = self.inner.connector_type(inp);
+        pub fn connector_type(mut self, signature: crate::model::ConnectorType) -> Self {
+            self.inner = self.inner.connector_type(signature);
             self
         }
         /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
@@ -816,8 +816,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of the connector profile. The name is unique for each
         /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-        pub fn connector_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_profile_name(inp);
+        pub fn connector_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_profile_name(signature.into());
             self
         }
         /// <p> The name of the connector profile. The name is unique for each
@@ -899,8 +899,8 @@ pub mod fluent_builders {
         ///
         /// <p> The name of the connector profile. The name is unique for each
         /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-        pub fn connector_profile_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_profile_names(inp);
+        pub fn connector_profile_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_profile_names(input.into());
             self
         }
         /// <p> The name of the connector profile. The name is unique for each
@@ -913,8 +913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn connector_type(mut self, inp: crate::model::ConnectorType) -> Self {
-            self.inner = self.inner.connector_type(inp);
+        pub fn connector_type(mut self, signature: crate::model::ConnectorType) -> Self {
+            self.inner = self.inner.connector_type(signature);
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
@@ -927,8 +927,8 @@ pub mod fluent_builders {
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The
         /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The
@@ -938,8 +938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token for the next page of data. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The pagination token for the next page of data. </p>
@@ -1016,8 +1016,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_connector_types`](Self::set_connector_types).
         ///
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn connector_types(mut self, inp: impl Into<crate::model::ConnectorType>) -> Self {
-            self.inner = self.inner.connector_types(inp);
+        pub fn connector_types(mut self, input: crate::model::ConnectorType) -> Self {
+            self.inner = self.inner.connector_types(input);
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
@@ -1029,8 +1029,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token for the next page of data. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The pagination token for the next page of data. </p>
@@ -1100,8 +1100,8 @@ pub mod fluent_builders {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
         /// (-) only. </p>
-        pub fn flow_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_name(inp);
+        pub fn flow_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_name(signature.into());
             self
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
@@ -1172,8 +1172,8 @@ pub mod fluent_builders {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
         /// (-) only. </p>
-        pub fn flow_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_name(inp);
+        pub fn flow_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_name(signature.into());
             self
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
@@ -1184,8 +1184,8 @@ pub mod fluent_builders {
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The
         /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The
@@ -1195,8 +1195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token for the next page of data. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The pagination token for the next page of data. </p>
@@ -1270,8 +1270,8 @@ pub mod fluent_builders {
         /// <p> The name of the connector profile. The name is unique for each
         /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
         /// connector. </p>
-        pub fn connector_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_profile_name(inp);
+        pub fn connector_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_profile_name(signature.into());
             self
         }
         /// <p> The name of the connector profile. The name is unique for each
@@ -1285,8 +1285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn connector_type(mut self, inp: crate::model::ConnectorType) -> Self {
-            self.inner = self.inner.connector_type(inp);
+        pub fn connector_type(mut self, signature: crate::model::ConnectorType) -> Self {
+            self.inner = self.inner.connector_type(signature);
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
@@ -1302,8 +1302,8 @@ pub mod fluent_builders {
         /// providers by sending a request without the <code>entitiesPath</code> parameter. If the
         /// connector supports entities at different roots, this initial request returns the list of
         /// roots. Otherwise, this request returns all entities supported by the provider. </p>
-        pub fn entities_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entities_path(inp);
+        pub fn entities_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entities_path(signature.into());
             self
         }
         /// <p> This optional parameter is specific to connector implementation. Some connectors support
@@ -1379,8 +1379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
@@ -1389,8 +1389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token for next page of data. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The pagination token for next page of data. </p>
@@ -1459,8 +1459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
@@ -1531,8 +1531,8 @@ pub mod fluent_builders {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
         /// (-) only. </p>
-        pub fn flow_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_name(inp);
+        pub fn flow_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_name(signature.into());
             self
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
@@ -1605,8 +1605,8 @@ pub mod fluent_builders {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
         /// (-) only. </p>
-        pub fn flow_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_name(inp);
+        pub fn flow_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_name(signature.into());
             self
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
@@ -1676,8 +1676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
@@ -1695,7 +1695,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags used to organize, track, or control access for your flow. </p>
@@ -1769,8 +1769,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
@@ -1783,8 +1783,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
@@ -1857,8 +1857,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
         /// the Amazon Web Services account. </p>
-        pub fn connector_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_profile_name(inp);
+        pub fn connector_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_profile_name(signature.into());
             self
         }
         /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
@@ -1871,8 +1871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Indicates the connection mode and if it is public or private. </p>
-        pub fn connection_mode(mut self, inp: crate::model::ConnectionMode) -> Self {
-            self.inner = self.inner.connection_mode(inp);
+        pub fn connection_mode(mut self, signature: crate::model::ConnectionMode) -> Self {
+            self.inner = self.inner.connection_mode(signature);
             self
         }
         /// <p> Indicates the connection mode and if it is public or private. </p>
@@ -1886,9 +1886,9 @@ pub mod fluent_builders {
         /// <p> Defines the connector-specific profile configuration and credentials. </p>
         pub fn connector_profile_config(
             mut self,
-            inp: crate::model::ConnectorProfileConfig,
+            signature: crate::model::ConnectorProfileConfig,
         ) -> Self {
-            self.inner = self.inner.connector_profile_config(inp);
+            self.inner = self.inner.connector_profile_config(signature);
             self
         }
         /// <p> Defines the connector-specific profile configuration and credentials. </p>
@@ -1961,8 +1961,8 @@ pub mod fluent_builders {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
         /// (-) only. </p>
-        pub fn flow_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_name(inp);
+        pub fn flow_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_name(signature.into());
             self
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
@@ -1972,8 +1972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A description of the flow. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p> A description of the flow. </p>
@@ -1982,8 +1982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
-        pub fn trigger_config(mut self, inp: crate::model::TriggerConfig) -> Self {
-            self.inner = self.inner.trigger_config(inp);
+        pub fn trigger_config(mut self, signature: crate::model::TriggerConfig) -> Self {
+            self.inner = self.inner.trigger_config(signature);
             self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
@@ -1996,8 +1996,8 @@ pub mod fluent_builders {
         }
         /// <p> Contains information about the configuration of the source connector used in the flow.
         /// </p>
-        pub fn source_flow_config(mut self, inp: crate::model::SourceFlowConfig) -> Self {
-            self.inner = self.inner.source_flow_config(inp);
+        pub fn source_flow_config(mut self, signature: crate::model::SourceFlowConfig) -> Self {
+            self.inner = self.inner.source_flow_config(signature);
             self
         }
         /// <p> Contains information about the configuration of the source connector used in the flow.
@@ -2017,9 +2017,9 @@ pub mod fluent_builders {
         /// connector. </p>
         pub fn destination_flow_config_list(
             mut self,
-            inp: impl Into<crate::model::DestinationFlowConfig>,
+            input: crate::model::DestinationFlowConfig,
         ) -> Self {
-            self.inner = self.inner.destination_flow_config_list(inp);
+            self.inner = self.inner.destination_flow_config_list(input);
             self
         }
         /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
@@ -2037,8 +2037,8 @@ pub mod fluent_builders {
         ///
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
         /// </p>
-        pub fn tasks(mut self, inp: impl Into<crate::model::Task>) -> Self {
-            self.inner = self.inner.tasks(inp);
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
+            self.inner = self.inner.tasks(input);
             self
         }
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.

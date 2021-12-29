@@ -621,8 +621,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -635,8 +635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facet(mut self, inp: crate::model::SchemaFacet) -> Self {
-            self.inner = self.inner.schema_facet(inp);
+        pub fn schema_facet(mut self, signature: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.schema_facet(signature);
             self
         }
         /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
@@ -652,11 +652,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
         ///
         /// <p>Attributes on the facet that you are adding to the object.</p>
-        pub fn object_attribute_list(
-            mut self,
-            inp: impl Into<crate::model::AttributeKeyAndValue>,
-        ) -> Self {
-            self.inner = self.inner.object_attribute_list(inp);
+        pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
+            self.inner = self.inner.object_attribute_list(input);
             self
         }
         /// <p>Attributes on the facet that you are adding to the object.</p>
@@ -668,8 +665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object you are adding the specified facet to.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>A reference to the object you are adding the specified facet to.</p>
@@ -743,8 +740,8 @@ pub mod fluent_builders {
         }
         /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
         /// information, see <a>arns</a>.</p>
-        pub fn published_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.published_schema_arn(inp);
+        pub fn published_schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.published_schema_arn(signature.into());
             self
         }
         /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
@@ -758,8 +755,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// into which the schema is copied. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -843,8 +840,8 @@ pub mod fluent_builders {
         }
         /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where both objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -857,8 +854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parent object reference.</p>
-        pub fn parent_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.parent_reference(inp);
+        pub fn parent_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.parent_reference(signature);
             self
         }
         /// <p>The parent object reference.</p>
@@ -870,8 +867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The child object reference to be attached to the object.</p>
-        pub fn child_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.child_reference(inp);
+        pub fn child_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.child_reference(signature);
             self
         }
         /// <p>The child object reference to be attached to the object.</p>
@@ -883,8 +880,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The link name with which the child object is attached to the parent.</p>
-        pub fn link_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_name(inp);
+        pub fn link_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_name(signature.into());
             self
         }
         /// <p>The link name with which the child object is attached to the parent.</p>
@@ -955,8 +952,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where both objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -969,8 +966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that is associated with the policy object.</p>
-        pub fn policy_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.policy_reference(inp);
+        pub fn policy_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.policy_reference(signature);
             self
         }
         /// <p>The reference that is associated with the policy object.</p>
@@ -983,8 +980,8 @@ pub mod fluent_builders {
         }
         /// <p>The reference that identifies the object to which the policy will be
         /// attached.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>The reference that identifies the object to which the policy will be
@@ -1058,8 +1055,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
         /// exist.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
@@ -1072,8 +1069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the index that you are attaching the object to.</p>
-        pub fn index_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.index_reference(inp);
+        pub fn index_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.index_reference(signature);
             self
         }
         /// <p>A reference to the index that you are attaching the object to.</p>
@@ -1085,8 +1082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object that you are attaching to the index.</p>
-        pub fn target_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.target_reference(inp);
+        pub fn target_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.target_reference(signature);
             self
         }
         /// <p>A reference to the object that you are attaching to the index.</p>
@@ -1159,8 +1156,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
         /// link.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
@@ -1173,8 +1170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the source object that the typed link will attach to.</p>
-        pub fn source_object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.source_object_reference(inp);
+        pub fn source_object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.source_object_reference(signature);
             self
         }
         /// <p>Identifies the source object that the typed link will attach to.</p>
@@ -1186,8 +1183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the target object that the typed link will attach to.</p>
-        pub fn target_object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.target_object_reference(inp);
+        pub fn target_object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.target_object_reference(signature);
             self
         }
         /// <p>Identifies the target object that the typed link will attach to.</p>
@@ -1199,8 +1196,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-        pub fn typed_link_facet(mut self, inp: crate::model::TypedLinkSchemaAndFacetName) -> Self {
-            self.inner = self.inner.typed_link_facet(inp);
+        pub fn typed_link_facet(
+            mut self,
+            signature: crate::model::TypedLinkSchemaAndFacetName,
+        ) -> Self {
+            self.inner = self.inner.typed_link_facet(signature);
             self
         }
         /// <p>Identifies the typed link facet that is associated with the typed link.</p>
@@ -1216,8 +1216,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A set of attributes that are associated with the typed link.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::AttributeNameAndValue>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::AttributeNameAndValue) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>A set of attributes that are associated with the typed link.</p>
@@ -1290,8 +1290,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
         /// For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
@@ -1308,8 +1308,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that are part of the batch.</p>
-        pub fn operations(mut self, inp: impl Into<crate::model::BatchReadOperation>) -> Self {
-            self.inner = self.inner.operations(inp);
+        pub fn operations(mut self, input: crate::model::BatchReadOperation) -> Self {
+            self.inner = self.inner.operations(input);
             self
         }
         /// <p>A list of operations that are part of the batch.</p>
@@ -1322,8 +1322,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
         /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
@@ -1398,8 +1398,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
         /// For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
@@ -1416,8 +1416,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that are part of the batch.</p>
-        pub fn operations(mut self, inp: impl Into<crate::model::BatchWriteOperation>) -> Self {
-            self.inner = self.inner.operations(inp);
+        pub fn operations(mut self, input: crate::model::BatchWriteOperation) -> Self {
+            self.inner = self.inner.operations(input);
             self
         }
         /// <p>A list of operations that are part of the batch.</p>
@@ -1493,8 +1493,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the <a>Directory</a>. Should be unique per account, per
         /// region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the <a>Directory</a>. Should be unique per account, per
@@ -1505,8 +1505,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
         /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
@@ -1578,8 +1578,8 @@ pub mod fluent_builders {
         }
         /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
         /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
@@ -1589,8 +1589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
@@ -1603,8 +1603,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes that are associated with the <a>Facet</a>.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::FacetAttribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::FacetAttribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>The attributes that are associated with the <a>Facet</a>.</p>
@@ -1638,8 +1638,8 @@ pub mod fluent_builders {
         /// <p>Index: Can be created with the Index API.</p>
         /// </li>
         /// </ul>
-        pub fn object_type(mut self, inp: crate::model::ObjectType) -> Self {
-            self.inner = self.inner.object_type(inp);
+        pub fn object_type(mut self, signature: crate::model::ObjectType) -> Self {
+            self.inner = self.inner.object_type(signature);
             self
         }
         /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
@@ -1673,8 +1673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-        pub fn facet_style(mut self, inp: crate::model::FacetStyle) -> Self {
-            self.inner = self.inner.facet_style(inp);
+        pub fn facet_style(mut self, signature: crate::model::FacetStyle) -> Self {
+            self.inner = self.inner.facet_style(signature);
             self
         }
         /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
@@ -1746,8 +1746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory where the index should be created.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory where the index should be created.</p>
@@ -1764,11 +1764,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
         /// is supported.</p>
-        pub fn ordered_indexed_attribute_list(
-            mut self,
-            inp: impl Into<crate::model::AttributeKey>,
-        ) -> Self {
-            self.inner = self.inner.ordered_indexed_attribute_list(inp);
+        pub fn ordered_indexed_attribute_list(mut self, input: crate::model::AttributeKey) -> Self {
+            self.inner = self.inner.ordered_indexed_attribute_list(input);
             self
         }
         /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
@@ -1782,8 +1779,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the attribute that is being indexed has unique values or
         /// not.</p>
-        pub fn is_unique(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_unique(inp);
+        pub fn is_unique(mut self, signature: bool) -> Self {
+            self.inner = self.inner.is_unique(signature);
             self
         }
         /// <p>Indicates whether the attribute that is being indexed has unique values or
@@ -1793,8 +1790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the parent object that contains the index object.</p>
-        pub fn parent_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.parent_reference(inp);
+        pub fn parent_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.parent_reference(signature);
             self
         }
         /// <p>A reference to the parent object that contains the index object.</p>
@@ -1806,8 +1803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the link between the parent object and the index object.</p>
-        pub fn link_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_name(inp);
+        pub fn link_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_name(signature.into());
             self
         }
         /// <p>The name of the link between the parent object and the index object.</p>
@@ -1880,8 +1877,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// in which the object will be created. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -1898,8 +1895,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
         ///
         /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facets(mut self, inp: impl Into<crate::model::SchemaFacet>) -> Self {
-            self.inner = self.inner.schema_facets(inp);
+        pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.schema_facets(input);
             self
         }
         /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
@@ -1916,11 +1913,8 @@ pub mod fluent_builders {
         ///
         /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
         /// value.</p>
-        pub fn object_attribute_list(
-            mut self,
-            inp: impl Into<crate::model::AttributeKeyAndValue>,
-        ) -> Self {
-            self.inner = self.inner.object_attribute_list(inp);
+        pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
+            self.inner = self.inner.object_attribute_list(input);
             self
         }
         /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
@@ -1933,8 +1927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If specified, the parent reference to which this object will be attached.</p>
-        pub fn parent_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.parent_reference(inp);
+        pub fn parent_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.parent_reference(signature);
             self
         }
         /// <p>If specified, the parent reference to which this object will be attached.</p>
@@ -1946,8 +1940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of link that is used to attach this object to a parent.</p>
-        pub fn link_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_name(inp);
+        pub fn link_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_name(signature.into());
             self
         }
         /// <p>The name of link that is used to attach this object to a parent.</p>
@@ -2037,8 +2031,8 @@ pub mod fluent_builders {
         }
         /// <p>The name that is associated with the schema. This is unique to each account and in each
         /// region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name that is associated with the schema. This is unique to each account and in each
@@ -2109,8 +2103,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
         /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
@@ -2122,8 +2116,8 @@ pub mod fluent_builders {
         /// <p>
         /// <a>Facet</a> structure that is associated with the typed link
         /// facet.</p>
-        pub fn facet(mut self, inp: crate::model::TypedLinkFacet) -> Self {
-            self.inner = self.inner.facet(inp);
+        pub fn facet(mut self, signature: crate::model::TypedLinkFacet) -> Self {
+            self.inner = self.inner.facet(signature);
             self
         }
         /// <p>
@@ -2199,8 +2193,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory to delete.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory to delete.</p>
@@ -2275,8 +2269,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
         /// For more information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
@@ -2286,8 +2280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the facet to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the facet to delete.</p>
@@ -2358,8 +2352,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -2372,8 +2366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference that identifies the object.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>A reference that identifies the object.</p>
@@ -2446,8 +2440,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
         /// <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
@@ -2518,8 +2512,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
         /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
@@ -2529,8 +2523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The unique name of the typed link facet.</p>
@@ -2600,8 +2594,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
         /// in.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
@@ -2614,8 +2608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the index object.</p>
-        pub fn index_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.index_reference(inp);
+        pub fn index_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.index_reference(signature);
             self
         }
         /// <p>A reference to the index object.</p>
@@ -2627,8 +2621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object being detached from the index.</p>
-        pub fn target_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.target_reference(inp);
+        pub fn target_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.target_reference(signature);
             self
         }
         /// <p>A reference to the object being detached from the index.</p>
@@ -2702,8 +2696,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -2717,8 +2711,8 @@ pub mod fluent_builders {
         }
         /// <p>The parent reference from which the object with the specified link name is
         /// detached.</p>
-        pub fn parent_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.parent_reference(inp);
+        pub fn parent_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.parent_reference(signature);
             self
         }
         /// <p>The parent reference from which the object with the specified link name is
@@ -2731,8 +2725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The link name associated with the object that needs to be detached.</p>
-        pub fn link_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_name(inp);
+        pub fn link_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_name(signature.into());
             self
         }
         /// <p>The link name associated with the object that needs to be detached.</p>
@@ -2802,8 +2796,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where both objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -2816,8 +2810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the policy object.</p>
-        pub fn policy_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.policy_reference(inp);
+        pub fn policy_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.policy_reference(signature);
             self
         }
         /// <p>Reference that identifies the policy object.</p>
@@ -2829,8 +2823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object whose policy object will be detached.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>Reference that identifies the object whose policy object will be detached.</p>
@@ -2903,8 +2897,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
         /// link.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
@@ -2917,8 +2911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to accept a typed link specifier as input.</p>
-        pub fn typed_link_specifier(mut self, inp: crate::model::TypedLinkSpecifier) -> Self {
-            self.inner = self.inner.typed_link_specifier(inp);
+        pub fn typed_link_specifier(mut self, signature: crate::model::TypedLinkSpecifier) -> Self {
+            self.inner = self.inner.typed_link_specifier(signature);
             self
         }
         /// <p>Used to accept a typed link specifier as input.</p>
@@ -2991,8 +2985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory to disable.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory to disable.</p>
@@ -3065,8 +3059,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory to enable.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory to enable.</p>
@@ -3138,8 +3132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the applied schema.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The ARN of the applied schema.</p>
@@ -3208,8 +3202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory.</p>
@@ -3283,8 +3277,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
         /// For more information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
@@ -3294,8 +3288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the facet to retrieve.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the facet to retrieve.</p>
@@ -3364,8 +3358,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
@@ -3377,8 +3371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
-        pub fn typed_link_specifier(mut self, inp: crate::model::TypedLinkSpecifier) -> Self {
-            self.inner = self.inner.typed_link_specifier(inp);
+        pub fn typed_link_specifier(mut self, signature: crate::model::TypedLinkSpecifier) -> Self {
+            self.inner = self.inner.typed_link_specifier(signature);
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -3394,8 +3388,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
         ///
         /// <p>A list of attribute names whose values will be retrieved.</p>
-        pub fn attribute_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_names(inp);
+        pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_names(input.into());
             self
         }
         /// <p>A list of attribute names whose values will be retrieved.</p>
@@ -3407,8 +3401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
@@ -3480,8 +3474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
@@ -3493,8 +3487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
@@ -3506,8 +3500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level at which to retrieve the attributes on an object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>The consistency level at which to retrieve the attributes on an object.</p>
@@ -3519,8 +3513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facet(mut self, inp: crate::model::SchemaFacet) -> Self {
-            self.inner = self.inner.schema_facet(inp);
+        pub fn schema_facet(mut self, signature: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.schema_facet(signature);
             self
         }
         /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
@@ -3536,8 +3530,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
         ///
         /// <p>List of attribute names whose values will be retrieved.</p>
-        pub fn attribute_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_names(inp);
+        pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_names(input.into());
             self
         }
         /// <p>List of attribute names whose values will be retrieved.</p>
@@ -3609,8 +3603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory being retrieved.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory being retrieved.</p>
@@ -3622,8 +3616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>A reference to the object.</p>
@@ -3635,8 +3629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level at which to retrieve the object information.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>The consistency level at which to retrieve the object information.</p>
@@ -3708,8 +3702,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the schema to retrieve.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The ARN of the schema to retrieve.</p>
@@ -3779,8 +3773,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
         /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
@@ -3790,8 +3784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The unique name of the typed link facet.</p>
@@ -3860,8 +3854,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory you are listing.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory you are listing.</p>
@@ -3873,8 +3867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
@@ -3883,8 +3877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -3893,8 +3887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -3963,8 +3957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory.</p>
@@ -3976,8 +3970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object that has indices attached.</p>
-        pub fn target_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.target_reference(inp);
+        pub fn target_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.target_reference(signature);
             self
         }
         /// <p>A reference to the object that has indices attached.</p>
@@ -3989,8 +3983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -3999,8 +3993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4009,8 +4003,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level to use for this operation.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>The consistency level to use for this operation.</p>
@@ -4083,8 +4077,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4093,8 +4087,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4163,8 +4157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4173,8 +4167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4184,8 +4178,8 @@ pub mod fluent_builders {
         }
         /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
         /// Deleted.</p>
-        pub fn state(mut self, inp: crate::model::DirectoryState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, signature: crate::model::DirectoryState) -> Self {
+            self.inner = self.inner.state(signature);
             self
         }
         /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
@@ -4258,8 +4252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the schema where the facet resides.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The ARN of the schema where the facet resides.</p>
@@ -4268,8 +4262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the facet whose attributes will be retrieved.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the facet whose attributes will be retrieved.</p>
@@ -4278,8 +4272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4288,8 +4282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4358,8 +4352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
@@ -4368,8 +4362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4378,8 +4372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4451,8 +4445,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
         /// links.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
@@ -4465,8 +4459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object whose attributes will be listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>Reference that identifies the object whose attributes will be listed.</p>
@@ -4486,9 +4480,9 @@ pub mod fluent_builders {
         /// range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
-            inp: impl Into<crate::model::TypedLinkAttributeRange>,
+            input: crate::model::TypedLinkAttributeRange,
         ) -> Self {
-            self.inner = self.inner.filter_attribute_ranges(inp);
+            self.inner = self.inner.filter_attribute_ranges(input);
             self
         }
         /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
@@ -4503,8 +4497,11 @@ pub mod fluent_builders {
         }
         /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
         /// order in which they are supplied to any API calls.</p>
-        pub fn filter_typed_link(mut self, inp: crate::model::TypedLinkSchemaAndFacetName) -> Self {
-            self.inner = self.inner.filter_typed_link(inp);
+        pub fn filter_typed_link(
+            mut self,
+            signature: crate::model::TypedLinkSchemaAndFacetName,
+        ) -> Self {
+            self.inner = self.inner.filter_typed_link(signature);
             self
         }
         /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
@@ -4517,8 +4514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4527,8 +4524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4537,8 +4534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level to execute the request at.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>The consistency level to execute the request at.</p>
@@ -4610,8 +4607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory that the index exists in.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory that the index exists in.</p>
@@ -4629,9 +4626,9 @@ pub mod fluent_builders {
         /// <p>Specifies the ranges of indexed values that you want to query.</p>
         pub fn ranges_on_indexed_values(
             mut self,
-            inp: impl Into<crate::model::ObjectAttributeRange>,
+            input: crate::model::ObjectAttributeRange,
         ) -> Self {
-            self.inner = self.inner.ranges_on_indexed_values(inp);
+            self.inner = self.inner.ranges_on_indexed_values(input);
             self
         }
         /// <p>Specifies the ranges of indexed values that you want to query.</p>
@@ -4643,8 +4640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference to the index to list.</p>
-        pub fn index_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.index_reference(inp);
+        pub fn index_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.index_reference(signature);
             self
         }
         /// <p>The reference to the index to list.</p>
@@ -4656,8 +4653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
@@ -4666,8 +4663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4676,8 +4673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level to execute the request at.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>The consistency level to execute the request at.</p>
@@ -4749,8 +4746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
@@ -4759,8 +4756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4769,8 +4766,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4841,8 +4838,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -4855,8 +4852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that identifies the object whose attributes will be listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>The reference that identifies the object whose attributes will be listed.</p>
@@ -4868,8 +4865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4879,8 +4876,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
         /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
@@ -4891,8 +4888,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
         /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
@@ -4906,8 +4903,8 @@ pub mod fluent_builders {
         }
         /// <p>Used to filter the list of object attributes that are associated with a certain
         /// facet.</p>
-        pub fn facet_filter(mut self, inp: crate::model::SchemaFacet) -> Self {
-            self.inner = self.inner.facet_filter(inp);
+        pub fn facet_filter(mut self, signature: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.facet_filter(signature);
             self
         }
         /// <p>Used to filter the list of object attributes that are associated with a certain
@@ -4982,8 +4979,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -4997,8 +4994,8 @@ pub mod fluent_builders {
         }
         /// <p>The reference that identifies the object for which child objects are being
         /// listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>The reference that identifies the object for which child objects are being
@@ -5011,8 +5008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5022,8 +5019,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
         /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
@@ -5034,8 +5031,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
         /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
@@ -5115,8 +5112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory to which the parent path applies.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory to which the parent path applies.</p>
@@ -5128,8 +5125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that identifies the object whose parent paths are listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>The reference that identifies the object whose parent paths are listed.</p>
@@ -5141,8 +5138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5152,8 +5149,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
         /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
@@ -5225,8 +5222,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -5240,8 +5237,8 @@ pub mod fluent_builders {
         }
         /// <p>The reference that identifies the object for which parent objects are being
         /// listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>The reference that identifies the object for which parent objects are being
@@ -5254,8 +5251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5265,8 +5262,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
         /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
@@ -5277,8 +5274,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
         /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
@@ -5291,8 +5288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
-        pub fn include_all_links_to_each_parent(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_all_links_to_each_parent(inp);
+        pub fn include_all_links_to_each_parent(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_all_links_to_each_parent(signature);
             self
         }
         /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
@@ -5365,8 +5362,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -5379,8 +5376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object for which policies will be listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>Reference that identifies the object for which policies will be listed.</p>
@@ -5392,8 +5389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5403,8 +5400,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
         /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
@@ -5415,8 +5412,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
         /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
@@ -5492,8 +5489,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
         /// links.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
@@ -5506,8 +5503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference that identifies the object whose attributes will be listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>A reference that identifies the object whose attributes will be listed.</p>
@@ -5527,9 +5524,9 @@ pub mod fluent_builders {
         /// range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
-            inp: impl Into<crate::model::TypedLinkAttributeRange>,
+            input: crate::model::TypedLinkAttributeRange,
         ) -> Self {
-            self.inner = self.inner.filter_attribute_ranges(inp);
+            self.inner = self.inner.filter_attribute_ranges(input);
             self
         }
         /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
@@ -5544,8 +5541,11 @@ pub mod fluent_builders {
         }
         /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
         /// not the order they are supplied to any API calls.</p>
-        pub fn filter_typed_link(mut self, inp: crate::model::TypedLinkSchemaAndFacetName) -> Self {
-            self.inner = self.inner.filter_typed_link(inp);
+        pub fn filter_typed_link(
+            mut self,
+            signature: crate::model::TypedLinkSchemaAndFacetName,
+        ) -> Self {
+            self.inner = self.inner.filter_typed_link(signature);
             self
         }
         /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
@@ -5558,8 +5558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5568,8 +5568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -5578,8 +5578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level to execute the request at.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>The consistency level to execute the request at.</p>
@@ -5652,8 +5652,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -5666,8 +5666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that identifies the policy object.</p>
-        pub fn policy_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.policy_reference(inp);
+        pub fn policy_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.policy_reference(signature);
             self
         }
         /// <p>The reference that identifies the policy object.</p>
@@ -5679,8 +5679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5690,8 +5690,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
         /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
@@ -5702,8 +5702,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
         /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, signature: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(signature);
             self
         }
         /// <p>Represents the manner and timing in which the successful write or update of an object
@@ -5776,8 +5776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
@@ -5786,8 +5786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5796,8 +5796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -5869,8 +5869,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
         /// directories.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
@@ -5881,8 +5881,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token. This is for future use. Currently pagination is not supported for
         /// tagging.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token. This is for future use. Currently pagination is not supported for
@@ -5893,8 +5893,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
         /// single page. This is for future use and is not supported currently.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
@@ -5965,8 +5965,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
         /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
@@ -5976,8 +5976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The unique name of the typed link facet.</p>
@@ -5986,8 +5986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5996,8 +5996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -6068,8 +6068,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
         /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
@@ -6079,8 +6079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -6089,8 +6089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -6165,8 +6165,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
         /// For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
@@ -6179,8 +6179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object whose policies will be looked up.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>Reference that identifies the object whose policies will be looked up.</p>
@@ -6192,8 +6192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -6203,8 +6203,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
         /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
@@ -6275,8 +6275,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
         /// more information, see <a>arns</a>.</p>
-        pub fn development_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.development_schema_arn(inp);
+        pub fn development_schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.development_schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
@@ -6289,8 +6289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
@@ -6299,8 +6299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(signature.into());
             self
         }
         /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
@@ -6313,8 +6313,8 @@ pub mod fluent_builders {
         }
         /// <p>The new name under which the schema will be published. If this is not provided, the
         /// development schema is considered.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The new name under which the schema will be published. If this is not provided, the
@@ -6384,8 +6384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the schema to update.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The ARN of the schema to update.</p>
@@ -6394,8 +6394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The replacement JSON schema.</p>
-        pub fn document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document(inp);
+        pub fn document(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document(signature.into());
             self
         }
         /// <p>The replacement JSON schema.</p>
@@ -6464,8 +6464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory in which the object resides.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN of the directory in which the object resides.</p>
@@ -6477,8 +6477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facet(mut self, inp: crate::model::SchemaFacet) -> Self {
-            self.inner = self.inner.schema_facet(inp);
+        pub fn schema_facet(mut self, signature: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.schema_facet(signature);
             self
         }
         /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
@@ -6490,8 +6490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object to remove the facet from.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>A reference to the object to remove the facet from.</p>
@@ -6564,8 +6564,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
         /// directories.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
@@ -6579,8 +6579,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key-value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tag key-value pairs.</p>
@@ -6653,8 +6653,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
         /// directories.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
@@ -6668,8 +6668,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys of the tag that need to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys of the tag that need to be removed from the resource.</p>
@@ -6753,8 +6753,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
         /// For more information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
@@ -6764,8 +6764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the facet.</p>
@@ -6780,11 +6780,8 @@ pub mod fluent_builders {
         /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
         /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
         /// operation to perform. </p>
-        pub fn attribute_updates(
-            mut self,
-            inp: impl Into<crate::model::FacetAttributeUpdate>,
-        ) -> Self {
-            self.inner = self.inner.attribute_updates(inp);
+        pub fn attribute_updates(mut self, input: crate::model::FacetAttributeUpdate) -> Self {
+            self.inner = self.inner.attribute_updates(input);
             self
         }
         /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
@@ -6798,8 +6795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
-        pub fn object_type(mut self, inp: crate::model::ObjectType) -> Self {
-            self.inner = self.inner.object_type(inp);
+        pub fn object_type(mut self, signature: crate::model::ObjectType) -> Self {
+            self.inner = self.inner.object_type(signature);
             self
         }
         /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
@@ -6871,8 +6868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
@@ -6884,8 +6881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
-        pub fn typed_link_specifier(mut self, inp: crate::model::TypedLinkSpecifier) -> Self {
-            self.inner = self.inner.typed_link_specifier(inp);
+        pub fn typed_link_specifier(mut self, signature: crate::model::TypedLinkSpecifier) -> Self {
+            self.inner = self.inner.typed_link_specifier(signature);
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -6901,11 +6898,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
         /// <p>The attributes update structure.</p>
-        pub fn attribute_updates(
-            mut self,
-            inp: impl Into<crate::model::LinkAttributeUpdate>,
-        ) -> Self {
-            self.inner = self.inner.attribute_updates(inp);
+        pub fn attribute_updates(mut self, input: crate::model::LinkAttributeUpdate) -> Self {
+            self.inner = self.inner.attribute_updates(input);
             self
         }
         /// <p>The attributes update structure.</p>
@@ -6978,8 +6972,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
         /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -6992,8 +6986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that identifies the object.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, signature: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(signature);
             self
         }
         /// <p>The reference that identifies the object.</p>
@@ -7009,11 +7003,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
         /// <p>The attributes update structure.</p>
-        pub fn attribute_updates(
-            mut self,
-            inp: impl Into<crate::model::ObjectAttributeUpdate>,
-        ) -> Self {
-            self.inner = self.inner.attribute_updates(inp);
+        pub fn attribute_updates(mut self, input: crate::model::ObjectAttributeUpdate) -> Self {
+            self.inner = self.inner.attribute_updates(input);
             self
         }
         /// <p>The attributes update structure.</p>
@@ -7087,8 +7078,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
         /// <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
@@ -7098,8 +7089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -7169,8 +7160,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
         /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
@@ -7180,8 +7171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The unique name of the typed link facet.</p>
@@ -7196,9 +7187,9 @@ pub mod fluent_builders {
         /// <p>Attributes update structure.</p>
         pub fn attribute_updates(
             mut self,
-            inp: impl Into<crate::model::TypedLinkFacetAttributeUpdate>,
+            input: crate::model::TypedLinkFacetAttributeUpdate,
         ) -> Self {
-            self.inner = self.inner.attribute_updates(inp);
+            self.inner = self.inner.attribute_updates(input);
             self
         }
         /// <p>Attributes update structure.</p>
@@ -7219,8 +7210,8 @@ pub mod fluent_builders {
         /// Any attributes that do not have a range specified are presumed to match the entire range.
         /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
         /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn identity_attribute_order(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_attribute_order(inp);
+        pub fn identity_attribute_order(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_attribute_order(input.into());
             self
         }
         /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
@@ -7297,8 +7288,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The revision of the published schema to upgrade the directory to.</p>
-        pub fn published_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.published_schema_arn(inp);
+        pub fn published_schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.published_schema_arn(signature.into());
             self
         }
         /// <p>The revision of the published schema to upgrade the directory to.</p>
@@ -7310,8 +7301,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(signature.into());
             self
         }
         /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
@@ -7323,8 +7314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
@@ -7393,8 +7384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
-        pub fn development_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.development_schema_arn(inp);
+        pub fn development_schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.development_schema_arn(signature.into());
             self
         }
         /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
@@ -7406,8 +7397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the published schema to be upgraded.</p>
-        pub fn published_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.published_schema_arn(inp);
+        pub fn published_schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.published_schema_arn(signature.into());
             self
         }
         /// <p>The ARN of the published schema to be upgraded.</p>
@@ -7419,8 +7410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(signature.into());
             self
         }
         /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
@@ -7432,8 +7423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>

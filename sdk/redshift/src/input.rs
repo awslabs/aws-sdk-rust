@@ -1330,12 +1330,9 @@ pub mod batch_delete_cluster_snapshots_input {
         /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
         ///
         /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-        pub fn identifiers(
-            mut self,
-            input: impl Into<crate::model::DeleteClusterSnapshotMessage>,
-        ) -> Self {
+        pub fn identifiers(mut self, input: crate::model::DeleteClusterSnapshotMessage) -> Self {
             let mut v = self.identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identifiers = Some(v);
             self
         }
@@ -2994,9 +2991,9 @@ pub mod create_cluster_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3439,9 +3436,9 @@ pub mod create_cluster_parameter_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3660,9 +3657,9 @@ pub mod create_cluster_security_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3910,9 +3907,9 @@ pub mod create_cluster_snapshot_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4150,9 +4147,9 @@ pub mod create_cluster_subnet_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4707,9 +4704,9 @@ pub mod create_event_subscription_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4894,9 +4891,9 @@ pub mod create_hsm_client_certificate_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5146,9 +5143,9 @@ pub mod create_hsm_configuration_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5648,9 +5645,9 @@ pub mod create_snapshot_copy_grant_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5865,9 +5862,9 @@ pub mod create_snapshot_schedule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional set of tags you can use to search for the schedule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6071,9 +6068,9 @@ pub mod create_tags_input {
         /// <code>Value</code> parameters are separated by a comma (,). Separate multiple tags
         /// with a space. For example, <code>--tags "Key"="owner","Value"="admin"
         /// "Key"="environment","Value"="test" "Key"="version","Value"="1.0"</code>. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6329,9 +6326,9 @@ pub mod create_usage_limit_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11209,12 +11206,9 @@ pub mod describe_cluster_snapshots_input {
         /// To override the contents of this collection use [`set_sorting_entities`](Self::set_sorting_entities).
         ///
         /// <p></p>
-        pub fn sorting_entities(
-            mut self,
-            input: impl Into<crate::model::SnapshotSortingEntity>,
-        ) -> Self {
+        pub fn sorting_entities(mut self, input: crate::model::SnapshotSortingEntity) -> Self {
             let mut v = self.sorting_entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sorting_entities = Some(v);
             self
         }
@@ -14896,12 +14890,9 @@ pub mod describe_node_configuration_options_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A set of name, operator, and value items to filter the results.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::NodeConfigurationOptionsFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::NodeConfigurationOptionsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -16368,9 +16359,9 @@ pub mod describe_scheduled_actions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>List of scheduled action filters. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::ScheduledActionFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ScheduledActionFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -21657,9 +21648,9 @@ pub mod modify_cluster_parameter_group_input {
         /// parameter value; other name-value pairs of the parameter are optional.</p>
         /// <p>For the workload management (WLM) configuration, you must supply all the name-value
         /// pairs in the wlm_json_configuration parameter.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -24342,9 +24333,9 @@ pub mod reset_cluster_parameter_group_input {
         /// <i>ResetAllParameters</i> option is not used, then at least one
         /// parameter name must be supplied. </p>
         /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }

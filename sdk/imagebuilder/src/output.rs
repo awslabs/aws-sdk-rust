@@ -906,12 +906,12 @@ pub mod list_infrastructure_configurations_output {
         /// <p>The list of infrastructure configurations.</p>
         pub fn infrastructure_configuration_summary_list(
             mut self,
-            input: impl Into<crate::model::InfrastructureConfigurationSummary>,
+            input: crate::model::InfrastructureConfigurationSummary,
         ) -> Self {
             let mut v = self
                 .infrastructure_configuration_summary_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.infrastructure_configuration_summary_list = Some(v);
             self
         }
@@ -1049,9 +1049,9 @@ pub mod list_images_output {
         /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
         /// wildcards.</p>
         /// </note>
-        pub fn image_version_list(mut self, input: impl Into<crate::model::ImageVersion>) -> Self {
+        pub fn image_version_list(mut self, input: crate::model::ImageVersion) -> Self {
             let mut v = self.image_version_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_version_list = Some(v);
             self
         }
@@ -1173,10 +1173,10 @@ pub mod list_image_recipes_output {
         /// <p>The list of image pipelines.</p>
         pub fn image_recipe_summary_list(
             mut self,
-            input: impl Into<crate::model::ImageRecipeSummary>,
+            input: crate::model::ImageRecipeSummary,
         ) -> Self {
             let mut v = self.image_recipe_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_recipe_summary_list = Some(v);
             self
         }
@@ -1284,12 +1284,9 @@ pub mod list_image_pipelines_output {
         /// To override the contents of this collection use [`set_image_pipeline_list`](Self::set_image_pipeline_list).
         ///
         /// <p>The list of image pipelines.</p>
-        pub fn image_pipeline_list(
-            mut self,
-            input: impl Into<crate::model::ImagePipeline>,
-        ) -> Self {
+        pub fn image_pipeline_list(mut self, input: crate::model::ImagePipeline) -> Self {
             let mut v = self.image_pipeline_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_pipeline_list = Some(v);
             self
         }
@@ -1397,9 +1394,9 @@ pub mod list_image_pipeline_images_output {
         /// To override the contents of this collection use [`set_image_summary_list`](Self::set_image_summary_list).
         ///
         /// <p>The list of images built by this pipeline.</p>
-        pub fn image_summary_list(mut self, input: impl Into<crate::model::ImageSummary>) -> Self {
+        pub fn image_summary_list(mut self, input: crate::model::ImageSummary) -> Self {
             let mut v = self.image_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_summary_list = Some(v);
             self
         }
@@ -1503,9 +1500,9 @@ pub mod list_image_packages_output {
         /// To override the contents of this collection use [`set_image_package_list`](Self::set_image_package_list).
         ///
         /// <p>The list of Image Packages returned in the response.</p>
-        pub fn image_package_list(mut self, input: impl Into<crate::model::ImagePackage>) -> Self {
+        pub fn image_package_list(mut self, input: crate::model::ImagePackage) -> Self {
             let mut v = self.image_package_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_package_list = Some(v);
             self
         }
@@ -1609,9 +1606,9 @@ pub mod list_image_build_versions_output {
         /// To override the contents of this collection use [`set_image_summary_list`](Self::set_image_summary_list).
         ///
         /// <p>The list of image build versions.</p>
-        pub fn image_summary_list(mut self, input: impl Into<crate::model::ImageSummary>) -> Self {
+        pub fn image_summary_list(mut self, input: crate::model::ImageSummary) -> Self {
             let mut v = self.image_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_summary_list = Some(v);
             self
         }
@@ -1727,12 +1724,12 @@ pub mod list_distribution_configurations_output {
         /// <p>The list of distributions.</p>
         pub fn distribution_configuration_summary_list(
             mut self,
-            input: impl Into<crate::model::DistributionConfigurationSummary>,
+            input: crate::model::DistributionConfigurationSummary,
         ) -> Self {
             let mut v = self
                 .distribution_configuration_summary_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.distribution_configuration_summary_list = Some(v);
             self
         }
@@ -1847,10 +1844,10 @@ pub mod list_container_recipes_output {
         /// <p>The list of container recipes returned for the request.</p>
         pub fn container_recipe_summary_list(
             mut self,
-            input: impl Into<crate::model::ContainerRecipeSummary>,
+            input: crate::model::ContainerRecipeSummary,
         ) -> Self {
             let mut v = self.container_recipe_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.container_recipe_summary_list = Some(v);
             self
         }
@@ -1966,12 +1963,9 @@ pub mod list_components_output {
         /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
         /// You can assign values for the first three, and can filter on all of them.</p>
         /// </note>
-        pub fn component_version_list(
-            mut self,
-            input: impl Into<crate::model::ComponentVersion>,
-        ) -> Self {
+        pub fn component_version_list(mut self, input: crate::model::ComponentVersion) -> Self {
             let mut v = self.component_version_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_version_list = Some(v);
             self
         }
@@ -2083,12 +2077,9 @@ pub mod list_component_build_versions_output {
         /// To override the contents of this collection use [`set_component_summary_list`](Self::set_component_summary_list).
         ///
         /// <p>The list of component summaries for the specified semantic version.</p>
-        pub fn component_summary_list(
-            mut self,
-            input: impl Into<crate::model::ComponentSummary>,
-        ) -> Self {
+        pub fn component_summary_list(mut self, input: crate::model::ComponentSummary) -> Self {
             let mut v = self.component_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_summary_list = Some(v);
             self
         }

@@ -194,12 +194,9 @@ pub mod list_app_monitors_output {
         /// To override the contents of this collection use [`set_app_monitor_summaries`](Self::set_app_monitor_summaries).
         ///
         /// <p>An array of structures that contain information about the returned app monitors.</p>
-        pub fn app_monitor_summaries(
-            mut self,
-            input: impl Into<crate::model::AppMonitorSummary>,
-        ) -> Self {
+        pub fn app_monitor_summaries(mut self, input: crate::model::AppMonitorSummary) -> Self {
             let mut v = self.app_monitor_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_monitor_summaries = Some(v);
             self
         }

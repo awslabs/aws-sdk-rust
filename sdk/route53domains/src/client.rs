@@ -383,8 +383,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
         /// request.
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that was specified when another AWS account submitted a
@@ -399,8 +399,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
         /// request.
         /// </p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The password that was returned by the
@@ -489,8 +489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain for which you want to cancel the transfer to another AWS account.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain for which you want to cancel the transfer to another AWS account.</p>
@@ -584,8 +584,8 @@ pub mod fluent_builders {
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
@@ -618,8 +618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn idn_lang_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idn_lang_code(inp);
+        pub fn idn_lang_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idn_lang_code(signature.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -709,8 +709,8 @@ pub mod fluent_builders {
         /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
         /// </li>
         /// </ul>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
@@ -738,8 +738,8 @@ pub mod fluent_builders {
         }
         /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
         /// the code that you got from the current registrar for the domain.</p>
-        pub fn auth_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auth_code(inp);
+        pub fn auth_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_code(signature.into());
             self
         }
         /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
@@ -810,8 +810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain for which you want to delete one or more tags.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain for which you want to delete one or more tags.</p>
@@ -824,8 +824,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags_to_delete`](Self::set_tags_to_delete).
         ///
         /// <p>A list of tag keys to delete.</p>
-        pub fn tags_to_delete(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags_to_delete(inp);
+        pub fn tags_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tags_to_delete(input.into());
             self
         }
         /// <p>A list of tag keys to delete.</p>
@@ -897,8 +897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to disable automatic renewal for.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to disable automatic renewal for.</p>
@@ -972,8 +972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to remove the transfer lock for.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to remove the transfer lock for.</p>
@@ -1047,8 +1047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to enable automatic renewal for.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to enable automatic renewal for.</p>
@@ -1119,8 +1119,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to set the transfer lock for.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to set the transfer lock for.</p>
@@ -1191,8 +1191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
@@ -1262,8 +1262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to get detailed information about.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to get detailed information about.</p>
@@ -1354,8 +1354,8 @@ pub mod fluent_builders {
         /// supports internationalized domain names, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com,
@@ -1386,8 +1386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
-        pub fn suggestion_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.suggestion_count(inp);
+        pub fn suggestion_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.suggestion_count(signature);
             self
         }
         /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
@@ -1399,8 +1399,8 @@ pub mod fluent_builders {
         /// If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're
         /// available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
         /// for each suggestion.</p>
-        pub fn only_available(mut self, inp: bool) -> Self {
-            self.inner = self.inner.only_available(inp);
+        pub fn only_available(mut self, signature: bool) -> Self {
+            self.inner = self.inner.only_available(signature);
             self
         }
         /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available.
@@ -1473,8 +1473,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
         /// in the response to the original request.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(signature.into());
             self
         }
         /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
@@ -1549,8 +1549,8 @@ pub mod fluent_builders {
         /// <code>NextPageMarker</code> from the previous response, and submit another request that includes the
         /// value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
         /// <p>Constraints: The marker must match the value specified in the previous request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>For an initial request for a list of domains, omit this element. If the number of domains
@@ -1565,8 +1565,8 @@ pub mod fluent_builders {
         }
         /// <p>Number of domains to be returned.</p>
         /// <p>Default: 20</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>Number of domains to be returned.</p>
@@ -1638,8 +1638,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
         /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn submitted_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.submitted_since(inp);
+        pub fn submitted_since(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.submitted_since(signature);
             self
         }
         /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
@@ -1655,8 +1655,8 @@ pub mod fluent_builders {
         /// not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
         /// to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response,
         /// and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are
@@ -1669,8 +1669,8 @@ pub mod fluent_builders {
         }
         /// <p>Number of domains to be returned.</p>
         /// <p>Default: 20</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>Number of domains to be returned.</p>
@@ -1741,8 +1741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain for which you want to get a list of tags.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain for which you want to get a list of tags.</p>
@@ -1860,8 +1860,8 @@ pub mod fluent_builders {
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
@@ -1894,8 +1894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn idn_lang_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idn_lang_code(inp);
+        pub fn idn_lang_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idn_lang_code(signature.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1911,8 +1911,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
         /// <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>Default: 1</p>
-        pub fn duration_in_years(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_in_years(inp);
+        pub fn duration_in_years(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_in_years(signature);
             self
         }
         /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
@@ -1928,8 +1928,8 @@ pub mod fluent_builders {
         /// Autorenewal only takes effect after the account is charged.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn auto_renew(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_renew(inp);
+        pub fn auto_renew(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_renew(signature);
             self
         }
         /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
@@ -1942,8 +1942,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-        pub fn admin_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.admin_contact(inp);
+        pub fn admin_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.admin_contact(signature);
             self
         }
         /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
@@ -1957,8 +1957,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-        pub fn registrant_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.registrant_contact(inp);
+        pub fn registrant_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.registrant_contact(signature);
             self
         }
         /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
@@ -1972,8 +1972,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-        pub fn tech_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.tech_contact(inp);
+        pub fn tech_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.tech_contact(signature);
             self
         }
         /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
@@ -1991,8 +1991,8 @@ pub mod fluent_builders {
         /// WHOIS queries return the information that you entered for the admin contact.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn privacy_protect_admin_contact(mut self, inp: bool) -> Self {
-            self.inner = self.inner.privacy_protect_admin_contact(inp);
+        pub fn privacy_protect_admin_contact(mut self, signature: bool) -> Self {
+            self.inner = self.inner.privacy_protect_admin_contact(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -2014,8 +2014,8 @@ pub mod fluent_builders {
         /// WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn privacy_protect_registrant_contact(mut self, inp: bool) -> Self {
-            self.inner = self.inner.privacy_protect_registrant_contact(inp);
+        pub fn privacy_protect_registrant_contact(mut self, signature: bool) -> Self {
+            self.inner = self.inner.privacy_protect_registrant_contact(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -2037,8 +2037,8 @@ pub mod fluent_builders {
         /// WHOIS queries return the information that you entered for the technical contact.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn privacy_protect_tech_contact(mut self, inp: bool) -> Self {
-            self.inner = self.inner.privacy_protect_tech_contact(inp);
+        pub fn privacy_protect_tech_contact(mut self, signature: bool) -> Self {
+            self.inner = self.inner.privacy_protect_tech_contact(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -2130,8 +2130,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
         /// request.
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that was specified when another AWS account submitted a
@@ -2207,8 +2207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to renew.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to renew.</p>
@@ -2221,8 +2221,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
         /// <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>Default: 1</p>
-        pub fn duration_in_years(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_in_years(inp);
+        pub fn duration_in_years(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_in_years(signature);
             self
         }
         /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain.
@@ -2235,8 +2235,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
-        pub fn current_expiry_year(mut self, inp: i32) -> Self {
-            self.inner = self.inner.current_expiry_year(inp);
+        pub fn current_expiry_year(mut self, signature: i32) -> Self {
+            self.inner = self.inner.current_expiry_year(signature);
             self
         }
         /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
@@ -2306,8 +2306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
@@ -2376,8 +2376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to get an authorization code for.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to get an authorization code for.</p>
@@ -2497,8 +2497,8 @@ pub mod fluent_builders {
         /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
         /// </li>
         /// </ul>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
@@ -2525,8 +2525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn idn_lang_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idn_lang_code(inp);
+        pub fn idn_lang_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idn_lang_code(signature.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -2540,8 +2540,8 @@ pub mod fluent_builders {
         /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
         /// The maximum period depends on the top-level domain.</p>
         /// <p>Default: 1</p>
-        pub fn duration_in_years(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_in_years(inp);
+        pub fn duration_in_years(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_in_years(signature);
             self
         }
         /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
@@ -2556,8 +2556,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
         ///
         /// <p>Contains details for the host and glue IP addresses.</p>
-        pub fn nameservers(mut self, inp: impl Into<crate::model::Nameserver>) -> Self {
-            self.inner = self.inner.nameservers(inp);
+        pub fn nameservers(mut self, input: crate::model::Nameserver) -> Self {
+            self.inner = self.inner.nameservers(input);
             self
         }
         /// <p>Contains details for the host and glue IP addresses.</p>
@@ -2569,8 +2569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
-        pub fn auth_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auth_code(inp);
+        pub fn auth_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_code(signature.into());
             self
         }
         /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
@@ -2581,8 +2581,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
         /// after the account is charged.</p>
         /// <p>Default: true</p>
-        pub fn auto_renew(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_renew(inp);
+        pub fn auto_renew(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_renew(signature);
             self
         }
         /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
@@ -2593,8 +2593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides detailed contact information.</p>
-        pub fn admin_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.admin_contact(inp);
+        pub fn admin_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.admin_contact(signature);
             self
         }
         /// <p>Provides detailed contact information.</p>
@@ -2606,8 +2606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides detailed contact information.</p>
-        pub fn registrant_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.registrant_contact(inp);
+        pub fn registrant_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.registrant_contact(signature);
             self
         }
         /// <p>Provides detailed contact information.</p>
@@ -2619,8 +2619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides detailed contact information.</p>
-        pub fn tech_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.tech_contact(inp);
+        pub fn tech_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.tech_contact(signature);
             self
         }
         /// <p>Provides detailed contact information.</p>
@@ -2637,8 +2637,8 @@ pub mod fluent_builders {
         /// WHOIS queries return the information that you entered for the admin contact.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn privacy_protect_admin_contact(mut self, inp: bool) -> Self {
-            self.inner = self.inner.privacy_protect_admin_contact(inp);
+        pub fn privacy_protect_admin_contact(mut self, signature: bool) -> Self {
+            self.inner = self.inner.privacy_protect_admin_contact(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -2660,8 +2660,8 @@ pub mod fluent_builders {
         /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn privacy_protect_registrant_contact(mut self, inp: bool) -> Self {
-            self.inner = self.inner.privacy_protect_registrant_contact(inp);
+        pub fn privacy_protect_registrant_contact(mut self, signature: bool) -> Self {
+            self.inner = self.inner.privacy_protect_registrant_contact(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -2683,8 +2683,8 @@ pub mod fluent_builders {
         /// WHOIS queries return the information that you entered for the technical contact.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn privacy_protect_tech_contact(mut self, inp: bool) -> Self {
-            self.inner = self.inner.privacy_protect_tech_contact(inp);
+        pub fn privacy_protect_tech_contact(mut self, signature: bool) -> Self {
+            self.inner = self.inner.privacy_protect_tech_contact(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -2795,8 +2795,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to transfer from the current AWS account to another account.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to transfer from the current AWS account to another account.</p>
@@ -2805,8 +2805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
@@ -2878,8 +2878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to update contact information for.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to update contact information for.</p>
@@ -2888,8 +2888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides detailed contact information.</p>
-        pub fn admin_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.admin_contact(inp);
+        pub fn admin_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.admin_contact(signature);
             self
         }
         /// <p>Provides detailed contact information.</p>
@@ -2901,8 +2901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides detailed contact information.</p>
-        pub fn registrant_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.registrant_contact(inp);
+        pub fn registrant_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.registrant_contact(signature);
             self
         }
         /// <p>Provides detailed contact information.</p>
@@ -2914,8 +2914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides detailed contact information.</p>
-        pub fn tech_contact(mut self, inp: crate::model::ContactDetail) -> Self {
-            self.inner = self.inner.tech_contact(inp);
+        pub fn tech_contact(mut self, signature: crate::model::ContactDetail) -> Self {
+            self.inner = self.inner.tech_contact(signature);
             self
         }
         /// <p>Provides detailed contact information.</p>
@@ -3001,8 +3001,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to update the privacy setting for.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to update the privacy setting for.</p>
@@ -3014,8 +3014,8 @@ pub mod fluent_builders {
         /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
         /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
         /// WHOIS queries return the information that you entered for the admin contact.</p>
-        pub fn admin_privacy(mut self, inp: bool) -> Self {
-            self.inner = self.inner.admin_privacy(inp);
+        pub fn admin_privacy(mut self, signature: bool) -> Self {
+            self.inner = self.inner.admin_privacy(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -3030,8 +3030,8 @@ pub mod fluent_builders {
         /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
         /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
         /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
-        pub fn registrant_privacy(mut self, inp: bool) -> Self {
-            self.inner = self.inner.registrant_privacy(inp);
+        pub fn registrant_privacy(mut self, signature: bool) -> Self {
+            self.inner = self.inner.registrant_privacy(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -3046,8 +3046,8 @@ pub mod fluent_builders {
         /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
         /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
         /// WHOIS queries return the information that you entered for the technical contact.</p>
-        pub fn tech_privacy(mut self, inp: bool) -> Self {
-            self.inner = self.inner.tech_privacy(inp);
+        pub fn tech_privacy(mut self, signature: bool) -> Self {
+            self.inner = self.inner.tech_privacy(signature);
             self
         }
         /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
@@ -3122,8 +3122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to change name servers for.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to change name servers for.</p>
@@ -3132,8 +3132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorization key for .fi domains</p>
-        pub fn fi_auth_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fi_auth_key(inp);
+        pub fn fi_auth_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fi_auth_key(signature.into());
             self
         }
         /// <p>The authorization key for .fi domains</p>
@@ -3146,8 +3146,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
         ///
         /// <p>A list of new name servers for the domain.</p>
-        pub fn nameservers(mut self, inp: impl Into<crate::model::Nameserver>) -> Self {
-            self.inner = self.inner.nameservers(inp);
+        pub fn nameservers(mut self, input: crate::model::Nameserver) -> Self {
+            self.inner = self.inner.nameservers(input);
             self
         }
         /// <p>A list of new name servers for the domain.</p>
@@ -3220,8 +3220,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain for which you want to add or update tags.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain for which you want to add or update tags.</p>
@@ -3235,8 +3235,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
         /// that already exists, the corresponding value will be replaced.</p>
-        pub fn tags_to_update(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags_to_update(inp);
+        pub fn tags_to_update(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags_to_update(input);
             self
         }
         /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
@@ -3310,8 +3310,8 @@ pub mod fluent_builders {
         }
         /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
         /// in Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn start(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start(inp);
+        pub fn start(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start(signature);
             self
         }
         /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
@@ -3322,8 +3322,8 @@ pub mod fluent_builders {
         }
         /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
         /// in Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn end(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end(inp);
+        pub fn end(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end(signature);
             self
         }
         /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
@@ -3339,8 +3339,8 @@ pub mod fluent_builders {
         /// the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
         /// </p>
         /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records
@@ -3356,8 +3356,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of billing records to be returned.</p>
         /// <p>Default: 20</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The number of billing records to be returned.</p>

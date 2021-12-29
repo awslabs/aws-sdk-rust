@@ -456,8 +456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -469,8 +469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -479,8 +479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the version.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The ID of the version.</p>
@@ -550,8 +550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user.</p>
@@ -560,8 +560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -635,8 +635,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -648,8 +648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource.</p>
@@ -662,8 +662,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The users, groups, or organization being granted permission.</p>
-        pub fn principals(mut self, inp: impl Into<crate::model::SharePrincipal>) -> Self {
-            self.inner = self.inner.principals(inp);
+        pub fn principals(mut self, input: crate::model::SharePrincipal) -> Self {
+            self.inner = self.inner.principals(input);
             self
         }
         /// <p>The users, groups, or organization being granted permission.</p>
@@ -675,8 +675,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification options.</p>
-        pub fn notification_options(mut self, inp: crate::model::NotificationOptions) -> Self {
-            self.inner = self.inner.notification_options(inp);
+        pub fn notification_options(
+            mut self,
+            signature: crate::model::NotificationOptions,
+        ) -> Self {
+            self.inner = self.inner.notification_options(signature);
             self
         }
         /// <p>The notification options.</p>
@@ -748,8 +751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -761,8 +764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -771,8 +774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document version.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The ID of the document version.</p>
@@ -781,8 +784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the parent comment.</p>
-        pub fn parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_id(inp);
+        pub fn parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_id(signature.into());
             self
         }
         /// <p>The ID of the parent comment.</p>
@@ -791,8 +794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the root comment in the thread.</p>
-        pub fn thread_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thread_id(inp);
+        pub fn thread_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thread_id(signature.into());
             self
         }
         /// <p>The ID of the root comment in the thread.</p>
@@ -801,8 +804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The text of the comment.</p>
-        pub fn text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(inp);
+        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(signature.into());
             self
         }
         /// <p>The text of the comment.</p>
@@ -813,8 +816,8 @@ pub mod fluent_builders {
         /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
         /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
         /// the comment is visible to document owners, co-owners, and contributors.</p>
-        pub fn visibility(mut self, inp: crate::model::CommentVisibilityType) -> Self {
-            self.inner = self.inner.visibility(inp);
+        pub fn visibility(mut self, signature: crate::model::CommentVisibilityType) -> Self {
+            self.inner = self.inner.visibility(signature);
             self
         }
         /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
@@ -829,8 +832,8 @@ pub mod fluent_builders {
         }
         /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
         /// the comment is created.</p>
-        pub fn notify_collaborators(mut self, inp: bool) -> Self {
-            self.inner = self.inner.notify_collaborators(inp);
+        pub fn notify_collaborators(mut self, signature: bool) -> Self {
+            self.inner = self.inner.notify_collaborators(signature);
             self
         }
         /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
@@ -901,8 +904,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -914,8 +917,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource.</p>
@@ -925,8 +928,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the version, if the custom metadata is being added to a document
         /// version.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The ID of the version, if the custom metadata is being added to a document
@@ -945,7 +948,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_metadata(k, v);
+            self.inner = self.inner.custom_metadata(k.into(), v.into());
             self
         }
         /// <p>Custom metadata in the form of name-value pairs.</p>
@@ -1019,8 +1022,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1032,8 +1035,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new folder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new folder.</p>
@@ -1042,8 +1045,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the parent folder.</p>
-        pub fn parent_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_folder_id(inp);
+        pub fn parent_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_folder_id(signature.into());
             self
         }
         /// <p>The ID of the parent folder.</p>
@@ -1116,8 +1119,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource.</p>
@@ -1130,8 +1133,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
         /// <p>List of labels to add to the resource.</p>
-        pub fn labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labels(inp);
+        pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labels(input.into());
             self
         }
         /// <p>List of labels to add to the resource.</p>
@@ -1143,8 +1146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1220,8 +1223,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The ID of the organization.</p>
@@ -1234,8 +1237,8 @@ pub mod fluent_builders {
         }
         /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
         /// is a URL that begins with <code>https</code>.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint(inp);
+        pub fn endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint(signature.into());
             self
         }
         /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
@@ -1246,8 +1249,8 @@ pub mod fluent_builders {
         }
         /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
         /// messages using HTTPS POST.</p>
-        pub fn protocol(mut self, inp: crate::model::SubscriptionProtocolType) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, signature: crate::model::SubscriptionProtocolType) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
@@ -1260,8 +1263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification type.</p>
-        pub fn subscription_type(mut self, inp: crate::model::SubscriptionType) -> Self {
-            self.inner = self.inner.subscription_type(inp);
+        pub fn subscription_type(mut self, signature: crate::model::SubscriptionType) -> Self {
+            self.inner = self.inner.subscription_type(signature);
             self
         }
         /// <p>The notification type.</p>
@@ -1334,8 +1337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The ID of the organization.</p>
@@ -1347,8 +1350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The login name of the user.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(signature.into());
             self
         }
         /// <p>The login name of the user.</p>
@@ -1357,8 +1360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address of the user.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(signature.into());
             self
         }
         /// <p>The email address of the user.</p>
@@ -1370,8 +1373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The given name of the user.</p>
-        pub fn given_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.given_name(inp);
+        pub fn given_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.given_name(signature.into());
             self
         }
         /// <p>The given name of the user.</p>
@@ -1380,8 +1383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The surname of the user.</p>
-        pub fn surname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.surname(inp);
+        pub fn surname(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.surname(signature.into());
             self
         }
         /// <p>The surname of the user.</p>
@@ -1390,8 +1393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password of the user.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The password of the user.</p>
@@ -1400,8 +1403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone ID of the user.</p>
-        pub fn time_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone_id(inp);
+        pub fn time_zone_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone_id(signature.into());
             self
         }
         /// <p>The time zone ID of the user.</p>
@@ -1410,8 +1413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of storage for the user.</p>
-        pub fn storage_rule(mut self, inp: crate::model::StorageRuleType) -> Self {
-            self.inner = self.inner.storage_rule(inp);
+        pub fn storage_rule(mut self, signature: crate::model::StorageRuleType) -> Self {
+            self.inner = self.inner.storage_rule(signature);
             self
         }
         /// <p>The amount of storage for the user.</p>
@@ -1423,8 +1426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1497,8 +1500,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user.</p>
@@ -1507,8 +1510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1580,8 +1583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1593,8 +1596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -1603,8 +1606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document version.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The ID of the document version.</p>
@@ -1613,8 +1616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the comment.</p>
-        pub fn comment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(inp);
+        pub fn comment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(signature.into());
             self
         }
         /// <p>The ID of the comment.</p>
@@ -1683,8 +1686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1696,8 +1699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource, either a document or folder.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource, either a document or folder.</p>
@@ -1707,8 +1710,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the version, if the custom metadata is being deleted from a document
         /// version.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The ID of the version, if the custom metadata is being deleted from a document
@@ -1722,8 +1725,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
         /// <p>List of properties to remove.</p>
-        pub fn keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keys(inp);
+        pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keys(input.into());
             self
         }
         /// <p>List of properties to remove.</p>
@@ -1736,8 +1739,8 @@ pub mod fluent_builders {
         }
         /// <p>Flag to indicate removal of all custom metadata properties from the specified
         /// resource.</p>
-        pub fn delete_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_all(inp);
+        pub fn delete_all(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_all(signature);
             self
         }
         /// <p>Flag to indicate removal of all custom metadata properties from the specified
@@ -1807,8 +1810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1820,8 +1823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -1890,8 +1893,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1903,8 +1906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(inp);
+        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(signature.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -1973,8 +1976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -1986,8 +1989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(inp);
+        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(signature.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -2056,8 +2059,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource.</p>
@@ -2066,8 +2069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -2083,8 +2086,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
         /// <p>List of labels to delete from the resource.</p>
-        pub fn labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labels(inp);
+        pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labels(input.into());
             self
         }
         /// <p>List of labels to delete from the resource.</p>
@@ -2096,8 +2099,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Flag to request removal of all labels from the specified resource.</p>
-        pub fn delete_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_all(inp);
+        pub fn delete_all(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_all(signature);
             self
         }
         /// <p>Flag to request removal of all labels from the specified resource.</p>
@@ -2166,8 +2169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the subscription.</p>
-        pub fn subscription_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_id(inp);
+        pub fn subscription_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_id(signature.into());
             self
         }
         /// <p>The ID of the subscription.</p>
@@ -2179,8 +2182,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The ID of the organization.</p>
@@ -2253,8 +2256,8 @@ pub mod fluent_builders {
         }
         /// <p>Amazon WorkDocs authentication token. Do not set this field when using
         /// administrative API actions, as in accessing the API using AWS credentials.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Do not set this field when using
@@ -2267,8 +2270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user.</p>
@@ -2337,8 +2340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -2351,8 +2354,8 @@ pub mod fluent_builders {
         }
         /// <p>The timestamp that determines the starting time of the activities. The response
         /// includes the activities performed after the specified timestamp.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The timestamp that determines the starting time of the activities. The response
@@ -2366,8 +2369,8 @@ pub mod fluent_builders {
         }
         /// <p>The timestamp that determines the end time of the activities. The response includes
         /// the activities performed before the specified timestamp.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The timestamp that determines the end time of the activities. The response includes
@@ -2381,8 +2384,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the organization. This is a mandatory parameter when using administrative
         /// API (SigV4) requests.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The ID of the organization. This is a mandatory parameter when using administrative
@@ -2396,8 +2399,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies which activity types to include in the response. If this field is left
         /// empty, all activity types are returned.</p>
-        pub fn activity_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activity_types(inp);
+        pub fn activity_types(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activity_types(signature.into());
             self
         }
         /// <p>Specifies which activity types to include in the response. If this field is left
@@ -2410,8 +2413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The document or folder ID for which to describe activity types.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The document or folder ID for which to describe activity types.</p>
@@ -2422,8 +2425,8 @@ pub mod fluent_builders {
         /// <p>The ID of the user who performed the action. The response includes activities
         /// pertaining to this user. This is an optional parameter and is only applicable for
         /// administrative API (SigV4) requests.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user who performed the action. The response includes activities
@@ -2437,8 +2440,8 @@ pub mod fluent_builders {
         /// performed on a parent resource. For example, sharing a parent folder (the direct
         /// activity) shares all of the subfolders and documents within the parent folder (the
         /// indirect activity).</p>
-        pub fn include_indirect_activities(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_indirect_activities(inp);
+        pub fn include_indirect_activities(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_indirect_activities(signature);
             self
         }
         /// <p>Includes indirect activities. An indirect activity results from a direct activity
@@ -2450,8 +2453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -2460,8 +2463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The marker for the next set of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results.</p>
@@ -2530,8 +2533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -2543,8 +2546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -2553,8 +2556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document version.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The ID of the document version.</p>
@@ -2563,8 +2566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -2574,8 +2577,8 @@ pub mod fluent_builders {
         }
         /// <p>The marker for the next set of results. This marker was received from a previous
         /// call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. This marker was received from a previous
@@ -2646,8 +2649,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -2659,8 +2662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -2670,8 +2673,8 @@ pub mod fluent_builders {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
         /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
@@ -2681,8 +2684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of versions to return with this call.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of versions to return with this call.</p>
@@ -2692,8 +2695,8 @@ pub mod fluent_builders {
         }
         /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
         /// versions.</p>
-        pub fn include(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include(signature.into());
             self
         }
         /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
@@ -2704,8 +2707,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
         /// document.</p>
-        pub fn fields(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fields(inp);
+        pub fn fields(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fields(signature.into());
             self
         }
         /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
@@ -2780,8 +2783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -2793,8 +2796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(inp);
+        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(signature.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -2803,8 +2806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sorting criteria.</p>
-        pub fn sort(mut self, inp: crate::model::ResourceSortType) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, signature: crate::model::ResourceSortType) -> Self {
+            self.inner = self.inner.sort(signature);
             self
         }
         /// <p>The sorting criteria.</p>
@@ -2816,8 +2819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The order for the contents of the folder.</p>
-        pub fn order(mut self, inp: crate::model::OrderType) -> Self {
-            self.inner = self.inner.order(inp);
+        pub fn order(mut self, signature: crate::model::OrderType) -> Self {
+            self.inner = self.inner.order(signature);
             self
         }
         /// <p>The order for the contents of the folder.</p>
@@ -2826,8 +2829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -2837,8 +2840,8 @@ pub mod fluent_builders {
         }
         /// <p>The marker for the next set of results. This marker was received from a previous
         /// call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. This marker was received from a previous
@@ -2848,8 +2851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of items.</p>
-        pub fn r#type(mut self, inp: crate::model::FolderContentType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::FolderContentType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of items.</p>
@@ -2862,8 +2865,8 @@ pub mod fluent_builders {
         }
         /// <p>The contents to include. Specify "INITIALIZED" to include initialized
         /// documents.</p>
-        pub fn include(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include(signature.into());
             self
         }
         /// <p>The contents to include. Specify "INITIALIZED" to include initialized
@@ -2934,8 +2937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -2947,8 +2950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A query to describe groups by group name.</p>
-        pub fn search_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_query(inp);
+        pub fn search_query(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_query(signature.into());
             self
         }
         /// <p>A query to describe groups by group name.</p>
@@ -2957,8 +2960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The ID of the organization.</p>
@@ -2971,8 +2974,8 @@ pub mod fluent_builders {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
         /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
@@ -2982,8 +2985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -3052,8 +3055,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The ID of the organization.</p>
@@ -3066,8 +3069,8 @@ pub mod fluent_builders {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
         /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
@@ -3077,8 +3080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -3147,8 +3150,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -3160,8 +3163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource.</p>
@@ -3170,8 +3173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the principal to filter permissions by.</p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>The ID of the principal to filter permissions by.</p>
@@ -3180,8 +3183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -3191,8 +3194,8 @@ pub mod fluent_builders {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
         /// call)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
@@ -3270,8 +3273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token.</p>
@@ -3283,8 +3286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3294,8 +3297,8 @@ pub mod fluent_builders {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
         /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
@@ -3369,8 +3372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -3382,8 +3385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The ID of the organization.</p>
@@ -3395,8 +3398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IDs of the users.</p>
-        pub fn user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_ids(inp);
+        pub fn user_ids(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_ids(signature.into());
             self
         }
         /// <p>The IDs of the users.</p>
@@ -3405,8 +3408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A query to filter users by user name.</p>
-        pub fn query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query(inp);
+        pub fn query(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query(signature.into());
             self
         }
         /// <p>A query to filter users by user name.</p>
@@ -3415,8 +3418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
-        pub fn include(mut self, inp: crate::model::UserFilterType) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, signature: crate::model::UserFilterType) -> Self {
+            self.inner = self.inner.include(signature);
             self
         }
         /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
@@ -3428,8 +3431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The order for the results.</p>
-        pub fn order(mut self, inp: crate::model::OrderType) -> Self {
-            self.inner = self.inner.order(inp);
+        pub fn order(mut self, signature: crate::model::OrderType) -> Self {
+            self.inner = self.inner.order(signature);
             self
         }
         /// <p>The order for the results.</p>
@@ -3438,8 +3441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sorting criteria.</p>
-        pub fn sort(mut self, inp: crate::model::UserSortType) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, signature: crate::model::UserSortType) -> Self {
+            self.inner = self.inner.sort(signature);
             self
         }
         /// <p>The sorting criteria.</p>
@@ -3449,8 +3452,8 @@ pub mod fluent_builders {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
         /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous
@@ -3460,8 +3463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3471,8 +3474,8 @@ pub mod fluent_builders {
         }
         /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
         /// storage quota and utilization information.</p>
-        pub fn fields(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fields(inp);
+        pub fn fields(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fields(signature.into());
             self
         }
         /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
@@ -3548,8 +3551,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token.</p>
@@ -3621,8 +3624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -3634,8 +3637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -3644,8 +3647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
-        pub fn include_custom_metadata(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_custom_metadata(inp);
+        pub fn include_custom_metadata(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_custom_metadata(signature);
             self
         }
         /// <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
@@ -3719,8 +3722,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -3732,8 +3735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -3742,8 +3745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of levels in the hierarchy to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of levels in the hierarchy to return.</p>
@@ -3753,8 +3756,8 @@ pub mod fluent_builders {
         }
         /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
         /// the parent folders.</p>
-        pub fn fields(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fields(inp);
+        pub fn fields(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fields(signature.into());
             self
         }
         /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
@@ -3764,8 +3767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This value is not supported.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>This value is not supported.</p>
@@ -3834,8 +3837,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -3847,8 +3850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -3857,8 +3860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the document.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version ID of the document.</p>
@@ -3868,8 +3871,8 @@ pub mod fluent_builders {
         }
         /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
         /// document.</p>
-        pub fn fields(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fields(inp);
+        pub fn fields(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fields(signature.into());
             self
         }
         /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
@@ -3879,8 +3882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this to TRUE to include custom metadata in the response.</p>
-        pub fn include_custom_metadata(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_custom_metadata(inp);
+        pub fn include_custom_metadata(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_custom_metadata(signature);
             self
         }
         /// <p>Set this to TRUE to include custom metadata in the response.</p>
@@ -3949,8 +3952,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -3962,8 +3965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(inp);
+        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(signature.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -3972,8 +3975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to TRUE to include custom metadata in the response.</p>
-        pub fn include_custom_metadata(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_custom_metadata(inp);
+        pub fn include_custom_metadata(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_custom_metadata(signature);
             self
         }
         /// <p>Set to TRUE to include custom metadata in the response.</p>
@@ -4047,8 +4050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4060,8 +4063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(inp);
+        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(signature.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -4070,8 +4073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of levels in the hierarchy to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of levels in the hierarchy to return.</p>
@@ -4081,8 +4084,8 @@ pub mod fluent_builders {
         }
         /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
         /// folders.</p>
-        pub fn fields(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fields(inp);
+        pub fn fields(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fields(signature.into());
             self
         }
         /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
@@ -4092,8 +4095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This value is not supported.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>This value is not supported.</p>
@@ -4163,8 +4166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>The Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4177,8 +4180,8 @@ pub mod fluent_builders {
         }
         /// <p>The user ID for the resource collection. This is a required field for accessing the
         /// API operation using IAM credentials.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The user ID for the resource collection. This is a required field for accessing the
@@ -4188,8 +4191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The collection type.</p>
-        pub fn collection_type(mut self, inp: crate::model::ResourceCollectionType) -> Self {
-            self.inner = self.inner.collection_type(inp);
+        pub fn collection_type(mut self, signature: crate::model::ResourceCollectionType) -> Self {
+            self.inner = self.inner.collection_type(signature);
             self
         }
         /// <p>The collection type.</p>
@@ -4201,8 +4204,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resources to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of resources to return.</p>
@@ -4211,8 +4214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
@@ -4286,8 +4289,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4299,8 +4302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -4309,8 +4312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the document.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the document.</p>
@@ -4319,8 +4322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp when the content of the document was originally created.</p>
-        pub fn content_created_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.content_created_timestamp(inp);
+        pub fn content_created_timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.content_created_timestamp(signature);
             self
         }
         /// <p>The timestamp when the content of the document was originally created.</p>
@@ -4332,8 +4335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp when the content of the document was modified.</p>
-        pub fn content_modified_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.content_modified_timestamp(inp);
+        pub fn content_modified_timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.content_modified_timestamp(signature);
             self
         }
         /// <p>The timestamp when the content of the document was modified.</p>
@@ -4345,8 +4348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content type of the document.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>The content type of the document.</p>
@@ -4355,8 +4358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the document, in bytes.</p>
-        pub fn document_size_in_bytes(mut self, inp: i64) -> Self {
-            self.inner = self.inner.document_size_in_bytes(inp);
+        pub fn document_size_in_bytes(mut self, signature: i64) -> Self {
+            self.inner = self.inner.document_size_in_bytes(signature);
             self
         }
         /// <p>The size of the document, in bytes.</p>
@@ -4365,8 +4368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the parent folder.</p>
-        pub fn parent_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_folder_id(inp);
+        pub fn parent_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_folder_id(signature.into());
             self
         }
         /// <p>The ID of the parent folder.</p>
@@ -4438,8 +4441,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4451,8 +4454,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource.</p>
@@ -4522,8 +4525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4535,8 +4538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource.</p>
@@ -4545,8 +4548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal ID of the resource.</p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>The principal ID of the resource.</p>
@@ -4555,8 +4558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal type of the resource.</p>
-        pub fn principal_type(mut self, inp: crate::model::PrincipalType) -> Self {
-            self.inner = self.inner.principal_type(inp);
+        pub fn principal_type(mut self, signature: crate::model::PrincipalType) -> Self {
+            self.inner = self.inner.principal_type(signature);
             self
         }
         /// <p>The principal type of the resource.</p>
@@ -4629,8 +4632,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4642,8 +4645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -4652,8 +4655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the document.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the document.</p>
@@ -4662,8 +4665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the parent folder.</p>
-        pub fn parent_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_folder_id(inp);
+        pub fn parent_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_folder_id(signature.into());
             self
         }
         /// <p>The ID of the parent folder.</p>
@@ -4676,8 +4679,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
         /// supported.</p>
-        pub fn resource_state(mut self, inp: crate::model::ResourceStateType) -> Self {
-            self.inner = self.inner.resource_state(inp);
+        pub fn resource_state(mut self, signature: crate::model::ResourceStateType) -> Self {
+            self.inner = self.inner.resource_state(signature);
             self
         }
         /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
@@ -4753,8 +4756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4766,8 +4769,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the document.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(signature.into());
             self
         }
         /// <p>The ID of the document.</p>
@@ -4776,8 +4779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the document.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version ID of the document.</p>
@@ -4786,8 +4789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the version.</p>
-        pub fn version_status(mut self, inp: crate::model::DocumentVersionStatus) -> Self {
-            self.inner = self.inner.version_status(inp);
+        pub fn version_status(mut self, signature: crate::model::DocumentVersionStatus) -> Self {
+            self.inner = self.inner.version_status(signature);
             self
         }
         /// <p>The status of the version.</p>
@@ -4860,8 +4863,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4873,8 +4876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(inp);
+        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(signature.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -4883,8 +4886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the folder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the folder.</p>
@@ -4893,8 +4896,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the parent folder.</p>
-        pub fn parent_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_folder_id(inp);
+        pub fn parent_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_folder_id(signature.into());
             self
         }
         /// <p>The ID of the parent folder.</p>
@@ -4907,8 +4910,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
         /// the API.</p>
-        pub fn resource_state(mut self, inp: crate::model::ResourceStateType) -> Self {
-            self.inner = self.inner.resource_state(inp);
+        pub fn resource_state(mut self, signature: crate::model::ResourceStateType) -> Self {
+            self.inner = self.inner.resource_state(signature);
             self
         }
         /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
@@ -4982,8 +4985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-        pub fn authentication_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_token(inp);
+        pub fn authentication_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_token(signature.into());
             self
         }
         /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
@@ -4995,8 +4998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user.</p>
@@ -5005,8 +5008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The given name of the user.</p>
-        pub fn given_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.given_name(inp);
+        pub fn given_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.given_name(signature.into());
             self
         }
         /// <p>The given name of the user.</p>
@@ -5015,8 +5018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The surname of the user.</p>
-        pub fn surname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.surname(inp);
+        pub fn surname(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.surname(signature.into());
             self
         }
         /// <p>The surname of the user.</p>
@@ -5025,8 +5028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the user.</p>
-        pub fn r#type(mut self, inp: crate::model::UserType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::UserType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of the user.</p>
@@ -5035,8 +5038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of storage for the user.</p>
-        pub fn storage_rule(mut self, inp: crate::model::StorageRuleType) -> Self {
-            self.inner = self.inner.storage_rule(inp);
+        pub fn storage_rule(mut self, signature: crate::model::StorageRuleType) -> Self {
+            self.inner = self.inner.storage_rule(signature);
             self
         }
         /// <p>The amount of storage for the user.</p>
@@ -5048,8 +5051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone ID of the user.</p>
-        pub fn time_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone_id(inp);
+        pub fn time_zone_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone_id(signature.into());
             self
         }
         /// <p>The time zone ID of the user.</p>
@@ -5058,8 +5061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale of the user.</p>
-        pub fn locale(mut self, inp: crate::model::LocaleType) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: crate::model::LocaleType) -> Self {
+            self.inner = self.inner.locale(signature);
             self
         }
         /// <p>The locale of the user.</p>
@@ -5068,8 +5071,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
-        pub fn grant_poweruser_privileges(mut self, inp: crate::model::BooleanEnumType) -> Self {
-            self.inner = self.inner.grant_poweruser_privileges(inp);
+        pub fn grant_poweruser_privileges(
+            mut self,
+            signature: crate::model::BooleanEnumType,
+        ) -> Self {
+            self.inner = self.inner.grant_poweruser_privileges(signature);
             self
         }
         /// <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>

@@ -1017,9 +1017,9 @@ pub mod list_notifications_output {
         /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
         ///
         /// <p> The returned list of notifications. </p>
-        pub fn notifications(mut self, input: impl Into<crate::model::Notification>) -> Self {
+        pub fn notifications(mut self, input: crate::model::Notification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notifications = Some(v);
             self
         }
@@ -1185,12 +1185,9 @@ pub mod list_controls_output {
         ///
         /// <p> The list of control metadata objects that the <code>ListControls</code> API returned.
         /// </p>
-        pub fn control_metadata_list(
-            mut self,
-            input: impl Into<crate::model::ControlMetadata>,
-        ) -> Self {
+        pub fn control_metadata_list(mut self, input: crate::model::ControlMetadata) -> Self {
             let mut v = self.control_metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_metadata_list = Some(v);
             self
         }
@@ -1280,10 +1277,10 @@ pub mod list_control_insights_by_control_domain_output {
         /// returned. </p>
         pub fn control_insights_metadata(
             mut self,
-            input: impl Into<crate::model::ControlInsightsMetadataItem>,
+            input: crate::model::ControlInsightsMetadataItem,
         ) -> Self {
             let mut v = self.control_insights_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_insights_metadata = Some(v);
             self
         }
@@ -1373,10 +1370,10 @@ pub mod list_control_domain_insights_by_assessment_output {
         /// <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
         pub fn control_domain_insights(
             mut self,
-            input: impl Into<crate::model::ControlDomainInsights>,
+            input: crate::model::ControlDomainInsights,
         ) -> Self {
             let mut v = self.control_domain_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_domain_insights = Some(v);
             self
         }
@@ -1466,10 +1463,10 @@ pub mod list_control_domain_insights_output {
         /// returned. </p>
         pub fn control_domain_insights(
             mut self,
-            input: impl Into<crate::model::ControlDomainInsights>,
+            input: crate::model::ControlDomainInsights,
         ) -> Self {
             let mut v = self.control_domain_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_domain_insights = Some(v);
             self
         }
@@ -1554,12 +1551,9 @@ pub mod list_assessments_output {
         /// To override the contents of this collection use [`set_assessment_metadata`](Self::set_assessment_metadata).
         ///
         /// <p> The metadata that's associated with the assessment. </p>
-        pub fn assessment_metadata(
-            mut self,
-            input: impl Into<crate::model::AssessmentMetadataItem>,
-        ) -> Self {
+        pub fn assessment_metadata(mut self, input: crate::model::AssessmentMetadataItem) -> Self {
             let mut v = self.assessment_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_metadata = Some(v);
             self
         }
@@ -1646,12 +1640,9 @@ pub mod list_assessment_reports_output {
         ///
         /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API
         /// returned. </p>
-        pub fn assessment_reports(
-            mut self,
-            input: impl Into<crate::model::AssessmentReportMetadata>,
-        ) -> Self {
+        pub fn assessment_reports(mut self, input: crate::model::AssessmentReportMetadata) -> Self {
             let mut v = self.assessment_reports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_reports = Some(v);
             self
         }
@@ -1744,10 +1735,10 @@ pub mod list_assessment_framework_share_requests_output {
         /// API returned. </p>
         pub fn assessment_framework_share_requests(
             mut self,
-            input: impl Into<crate::model::AssessmentFrameworkShareRequest>,
+            input: crate::model::AssessmentFrameworkShareRequest,
         ) -> Self {
             let mut v = self.assessment_framework_share_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_framework_share_requests = Some(v);
             self
         }
@@ -1836,10 +1827,10 @@ pub mod list_assessment_frameworks_output {
         /// <p> The list of metadata objects for the framework. </p>
         pub fn framework_metadata_list(
             mut self,
-            input: impl Into<crate::model::AssessmentFrameworkMetadata>,
+            input: crate::model::AssessmentFrameworkMetadata,
         ) -> Self {
             let mut v = self.framework_metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.framework_metadata_list = Some(v);
             self
         }
@@ -1932,10 +1923,10 @@ pub mod list_assessment_control_insights_by_control_domain_output {
         /// <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
         pub fn control_insights_by_assessment(
             mut self,
-            input: impl Into<crate::model::ControlInsightsMetadataByAssessmentItem>,
+            input: crate::model::ControlInsightsMetadataByAssessmentItem,
         ) -> Self {
             let mut v = self.control_insights_by_assessment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_insights_by_assessment = Some(v);
             self
         }
@@ -2066,9 +2057,9 @@ pub mod get_services_in_scope_output {
         /// To override the contents of this collection use [`set_service_metadata`](Self::set_service_metadata).
         ///
         /// <p> The metadata that's associated with the Amazon Web Service. </p>
-        pub fn service_metadata(mut self, input: impl Into<crate::model::ServiceMetadata>) -> Self {
+        pub fn service_metadata(mut self, input: crate::model::ServiceMetadata) -> Self {
             let mut v = self.service_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_metadata = Some(v);
             self
         }
@@ -2338,12 +2329,9 @@ pub mod get_evidence_folders_by_assessment_control_output {
         ///
         /// <p> The list of evidence folders that the
         /// <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
-        pub fn evidence_folders(
-            mut self,
-            input: impl Into<crate::model::AssessmentEvidenceFolder>,
-        ) -> Self {
+        pub fn evidence_folders(mut self, input: crate::model::AssessmentEvidenceFolder) -> Self {
             let mut v = self.evidence_folders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evidence_folders = Some(v);
             self
         }
@@ -2431,12 +2419,9 @@ pub mod get_evidence_folders_by_assessment_output {
         ///
         /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API
         /// returned. </p>
-        pub fn evidence_folders(
-            mut self,
-            input: impl Into<crate::model::AssessmentEvidenceFolder>,
-        ) -> Self {
+        pub fn evidence_folders(mut self, input: crate::model::AssessmentEvidenceFolder) -> Self {
             let mut v = self.evidence_folders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evidence_folders = Some(v);
             self
         }
@@ -2577,9 +2562,9 @@ pub mod get_evidence_by_evidence_folder_output {
         ///
         /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned.
         /// </p>
-        pub fn evidence(mut self, input: impl Into<crate::model::Evidence>) -> Self {
+        pub fn evidence(mut self, input: crate::model::Evidence) -> Self {
             let mut v = self.evidence.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evidence = Some(v);
             self
         }
@@ -2715,9 +2700,9 @@ pub mod get_delegations_output {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::DelegationMetadata>) -> Self {
+        pub fn delegations(mut self, input: crate::model::DelegationMetadata) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -2851,9 +2836,9 @@ pub mod get_change_logs_output {
         /// To override the contents of this collection use [`set_change_logs`](Self::set_change_logs).
         ///
         /// <p>The list of user activity for the control. </p>
-        pub fn change_logs(mut self, input: impl Into<crate::model::ChangeLog>) -> Self {
+        pub fn change_logs(mut self, input: crate::model::ChangeLog) -> Self {
             let mut v = self.change_logs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.change_logs = Some(v);
             self
         }
@@ -3709,10 +3694,10 @@ pub mod batch_import_evidence_to_assessment_control_output {
         /// returned. </p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchImportEvidenceToAssessmentControlError>,
+            input: crate::model::BatchImportEvidenceToAssessmentControlError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -3807,12 +3792,9 @@ pub mod batch_disassociate_assessment_report_evidence_output {
         ///
         /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API
         /// returned. </p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::AssessmentReportEvidenceError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::AssessmentReportEvidenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -3886,10 +3868,10 @@ pub mod batch_delete_delegation_by_assessment_output {
         /// </p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchDeleteDelegationByAssessmentError>,
+            input: crate::model::BatchDeleteDelegationByAssessmentError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -3968,9 +3950,9 @@ pub mod batch_create_delegation_by_assessment_output {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The delegations that are associated with the assessment. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::Delegation>) -> Self {
+        pub fn delegations(mut self, input: crate::model::Delegation) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -3990,10 +3972,10 @@ pub mod batch_create_delegation_by_assessment_output {
         /// </p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchCreateDelegationByAssessmentError>,
+            input: crate::model::BatchCreateDelegationByAssessmentError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -4089,12 +4071,9 @@ pub mod batch_associate_assessment_report_evidence_output {
         ///
         /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API
         /// returned. </p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::AssessmentReportEvidenceError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::AssessmentReportEvidenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

@@ -219,8 +219,8 @@ pub mod fluent_builders {
         /// <p>
         /// Name of the project.
         /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>
@@ -233,8 +233,8 @@ pub mod fluent_builders {
         /// <p>
         /// Default region where project resources should be created.
         /// </p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region(inp);
+        pub fn region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region(signature.into());
             self
         }
         /// <p>
@@ -249,8 +249,8 @@ pub mod fluent_builders {
         /// the project. This may be the contents of the file downloaded from the URL provided
         /// in an export project operation.
         /// </p>
-        pub fn contents(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.contents(inp);
+        pub fn contents(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.contents(signature);
             self
         }
         /// <p>
@@ -266,8 +266,8 @@ pub mod fluent_builders {
         /// Unique identifier for an exported snapshot of project configuration. This
         /// snapshot identifier is included in the share URL when a project is exported.
         /// </p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(signature.into());
             self
         }
         /// <p>
@@ -343,8 +343,8 @@ pub mod fluent_builders {
         /// <p>
         /// Unique project identifier.
         /// </p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(signature.into());
             self
         }
         /// <p>
@@ -419,8 +419,8 @@ pub mod fluent_builders {
         /// <p>
         /// Unique bundle identifier.
         /// </p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(signature.into());
             self
         }
         /// <p>
@@ -495,8 +495,8 @@ pub mod fluent_builders {
         /// <p>
         /// Unique project identifier.
         /// </p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(signature.into());
             self
         }
         /// <p>
@@ -509,8 +509,8 @@ pub mod fluent_builders {
         /// <p>
         /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
         /// </p>
-        pub fn sync_from_resources(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sync_from_resources(inp);
+        pub fn sync_from_resources(mut self, signature: bool) -> Self {
+            self.inner = self.inner.sync_from_resources(signature);
             self
         }
         /// <p>
@@ -586,8 +586,8 @@ pub mod fluent_builders {
         /// <p>
         /// Unique bundle identifier.
         /// </p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(signature.into());
             self
         }
         /// <p>
@@ -600,8 +600,8 @@ pub mod fluent_builders {
         /// <p>
         /// Unique project identifier.
         /// </p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(signature.into());
             self
         }
         /// <p>
@@ -614,8 +614,8 @@ pub mod fluent_builders {
         /// <p>
         /// Developer desktop or target application platform.
         /// </p>
-        pub fn platform(mut self, inp: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, signature: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(signature);
             self
         }
         /// <p>
@@ -692,8 +692,8 @@ pub mod fluent_builders {
         /// <p>
         /// Unique project identifier.
         /// </p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(signature.into());
             self
         }
         /// <p>
@@ -768,8 +768,8 @@ pub mod fluent_builders {
         /// <p>
         /// Maximum number of records to list in a single response.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -784,8 +784,8 @@ pub mod fluent_builders {
         /// If non-null pagination token is returned in a result, then pass its
         /// value in here in another request to list more bundles.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -862,8 +862,8 @@ pub mod fluent_builders {
         /// <p>
         /// Maximum number of records to list in a single response.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -878,8 +878,8 @@ pub mod fluent_builders {
         /// If non-null pagination token is returned in a result, then pass its
         /// value in here in another request to list more projects.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -958,8 +958,8 @@ pub mod fluent_builders {
         /// be the contents of the file downloaded from the URL provided in an export project
         /// operation.
         /// </p>
-        pub fn contents(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.contents(inp);
+        pub fn contents(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.contents(signature);
             self
         }
         /// <p>
@@ -974,8 +974,8 @@ pub mod fluent_builders {
         /// <p>
         /// Unique project identifier.
         /// </p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(signature.into());
             self
         }
         /// <p>

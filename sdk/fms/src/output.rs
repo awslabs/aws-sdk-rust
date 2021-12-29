@@ -354,9 +354,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags associated with the resource.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -430,12 +430,9 @@ pub mod list_protocols_lists_output {
         /// To override the contents of this collection use [`set_protocols_lists`](Self::set_protocols_lists).
         ///
         /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
-        pub fn protocols_lists(
-            mut self,
-            input: impl Into<crate::model::ProtocolsListDataSummary>,
-        ) -> Self {
+        pub fn protocols_lists(mut self, input: crate::model::ProtocolsListDataSummary) -> Self {
             let mut v = self.protocols_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols_lists = Some(v);
             self
         }
@@ -525,9 +522,9 @@ pub mod list_policies_output {
         /// To override the contents of this collection use [`set_policy_list`](Self::set_policy_list).
         ///
         /// <p>An array of <code>PolicySummary</code> objects.</p>
-        pub fn policy_list(mut self, input: impl Into<crate::model::PolicySummary>) -> Self {
+        pub fn policy_list(mut self, input: crate::model::PolicySummary) -> Self {
             let mut v = self.policy_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_list = Some(v);
             self
         }
@@ -732,10 +729,10 @@ pub mod list_compliance_status_output {
         /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
         pub fn policy_compliance_status_list(
             mut self,
-            input: impl Into<crate::model::PolicyComplianceStatus>,
+            input: crate::model::PolicyComplianceStatus,
         ) -> Self {
             let mut v = self.policy_compliance_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_compliance_status_list = Some(v);
             self
         }
@@ -828,9 +825,9 @@ pub mod list_apps_lists_output {
         /// To override the contents of this collection use [`set_apps_lists`](Self::set_apps_lists).
         ///
         /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
-        pub fn apps_lists(mut self, input: impl Into<crate::model::AppsListDataSummary>) -> Self {
+        pub fn apps_lists(mut self, input: crate::model::AppsListDataSummary) -> Self {
             let mut v = self.apps_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.apps_lists = Some(v);
             self
         }

@@ -133,12 +133,9 @@ pub mod fairshare_policy {
         ///
         /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for
         /// the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-        pub fn share_distribution(
-            mut self,
-            input: impl Into<crate::model::ShareAttributes>,
-        ) -> Self {
+        pub fn share_distribution(mut self, input: crate::model::ShareAttributes) -> Self {
             let mut v = self.share_distribution.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.share_distribution = Some(v);
             self
         }
@@ -836,9 +833,9 @@ pub mod retry_strategy {
         ///
         /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
         /// parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
-        pub fn evaluate_on_exit(mut self, input: impl Into<crate::model::EvaluateOnExit>) -> Self {
+        pub fn evaluate_on_exit(mut self, input: crate::model::EvaluateOnExit) -> Self {
             let mut v = self.evaluate_on_exit.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluate_on_exit = Some(v);
             self
         }
@@ -1212,10 +1209,10 @@ pub mod node_overrides {
         /// <p>The node property overrides for the job.</p>
         pub fn node_property_overrides(
             mut self,
-            input: impl Into<crate::model::NodePropertyOverride>,
+            input: crate::model::NodePropertyOverride,
         ) -> Self {
             let mut v = self.node_property_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_property_overrides = Some(v);
             self
         }
@@ -1558,9 +1555,9 @@ pub mod container_overrides {
         /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
         /// convention is reserved for variables that are set by the Batch service.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn environment(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
@@ -1584,12 +1581,9 @@ pub mod container_overrides {
         ///
         /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition.
         /// The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-        pub fn resource_requirements(
-            mut self,
-            input: impl Into<crate::model::ResourceRequirement>,
-        ) -> Self {
+        pub fn resource_requirements(mut self, input: crate::model::ResourceRequirement) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_requirements = Some(v);
             self
         }
@@ -2615,12 +2609,9 @@ pub mod node_properties {
         /// To override the contents of this collection use [`set_node_range_properties`](Self::set_node_range_properties).
         ///
         /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
-        pub fn node_range_properties(
-            mut self,
-            input: impl Into<crate::model::NodeRangeProperty>,
-        ) -> Self {
+        pub fn node_range_properties(mut self, input: crate::model::NodeRangeProperty) -> Self {
             let mut v = self.node_range_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_range_properties = Some(v);
             self
         }
@@ -3307,9 +3298,9 @@ pub mod container_properties {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>A list of data volumes used in a job.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -3335,9 +3326,9 @@ pub mod container_properties {
         /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
         /// convention is reserved for variables that are set by the Batch service.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn environment(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
@@ -3364,9 +3355,9 @@ pub mod container_properties {
         ///
         /// <p>The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the
         /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-        pub fn mount_points(mut self, input: impl Into<crate::model::MountPoint>) -> Self {
+        pub fn mount_points(mut self, input: crate::model::MountPoint) -> Self {
             let mut v = self.mount_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mount_points = Some(v);
             self
         }
@@ -3427,9 +3418,9 @@ pub mod container_properties {
         /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
         /// provided.</p>
         /// </note>
-        pub fn ulimits(mut self, input: impl Into<crate::model::Ulimit>) -> Self {
+        pub fn ulimits(mut self, input: crate::model::Ulimit) -> Self {
             let mut v = self.ulimits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ulimits = Some(v);
             self
         }
@@ -3487,12 +3478,9 @@ pub mod container_properties {
         ///
         /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
         /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
-        pub fn resource_requirements(
-            mut self,
-            input: impl Into<crate::model::ResourceRequirement>,
-        ) -> Self {
+        pub fn resource_requirements(mut self, input: crate::model::ResourceRequirement) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_requirements = Some(v);
             self
         }
@@ -3579,9 +3567,9 @@ pub mod container_properties {
         ///
         /// <p>The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the
         /// <i>Batch User Guide</i>.</p>
-        pub fn secrets(mut self, input: impl Into<crate::model::Secret>) -> Self {
+        pub fn secrets(mut self, input: crate::model::Secret) -> Self {
             let mut v = self.secrets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secrets = Some(v);
             self
         }
@@ -4303,9 +4291,9 @@ pub mod log_configuration {
         ///
         /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the
         /// <i>Batch User Guide</i>.</p>
-        pub fn secret_options(mut self, input: impl Into<crate::model::Secret>) -> Self {
+        pub fn secret_options(mut self, input: crate::model::Secret) -> Self {
             let mut v = self.secret_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secret_options = Some(v);
             self
         }
@@ -4621,9 +4609,9 @@ pub mod linux_parameters {
         /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
         /// provided.</p>
         /// </note>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -4690,9 +4678,9 @@ pub mod linux_parameters {
         /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
         /// provided.</p>
         /// </note>
-        pub fn tmpfs(mut self, input: impl Into<crate::model::Tmpfs>) -> Self {
+        pub fn tmpfs(mut self, input: crate::model::Tmpfs) -> Self {
             let mut v = self.tmpfs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tmpfs = Some(v);
             self
         }
@@ -5056,12 +5044,9 @@ pub mod device {
         ///
         /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions
         /// for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-        pub fn permissions(
-            mut self,
-            input: impl Into<crate::model::DeviceCgroupPermission>,
-        ) -> Self {
+        pub fn permissions(mut self, input: crate::model::DeviceCgroupPermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -7323,9 +7308,9 @@ pub mod job_detail {
         /// To override the contents of this collection use [`set_attempts`](Self::set_attempts).
         ///
         /// <p>A list of job attempts associated with this job.</p>
-        pub fn attempts(mut self, input: impl Into<crate::model::AttemptDetail>) -> Self {
+        pub fn attempts(mut self, input: crate::model::AttemptDetail) -> Self {
             let mut v = self.attempts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attempts = Some(v);
             self
         }
@@ -7410,9 +7395,9 @@ pub mod job_detail {
         /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
         ///
         /// <p>A list of job IDs that this job depends on.</p>
-        pub fn depends_on(mut self, input: impl Into<crate::model::JobDependency>) -> Self {
+        pub fn depends_on(mut self, input: crate::model::JobDependency) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.depends_on = Some(v);
             self
         }
@@ -7579,12 +7564,9 @@ pub mod job_detail {
         ///
         /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
         /// <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-        pub fn platform_capabilities(
-            mut self,
-            input: impl Into<crate::model::PlatformCapability>,
-        ) -> Self {
+        pub fn platform_capabilities(mut self, input: crate::model::PlatformCapability) -> Self {
             let mut v = self.platform_capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_capabilities = Some(v);
             self
         }
@@ -7693,13 +7675,9 @@ pub mod array_properties_detail {
         ///
         /// <p>A summary of the number of array job children in each available job status. This parameter is returned for
         /// parent array jobs.</p>
-        pub fn status_summary(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn status_summary(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.status_summary.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.status_summary = Some(hash_map);
             self
         }
@@ -8310,9 +8288,9 @@ pub mod container_detail {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>A list of volumes associated with the job.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -8333,9 +8311,9 @@ pub mod container_detail {
         /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
         /// convention is reserved for variables that are set by the Batch service.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn environment(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
@@ -8356,9 +8334,9 @@ pub mod container_detail {
         /// To override the contents of this collection use [`set_mount_points`](Self::set_mount_points).
         ///
         /// <p>The mount points for data volumes in your container.</p>
-        pub fn mount_points(mut self, input: impl Into<crate::model::MountPoint>) -> Self {
+        pub fn mount_points(mut self, input: crate::model::MountPoint) -> Self {
             let mut v = self.mount_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mount_points = Some(v);
             self
         }
@@ -8397,9 +8375,9 @@ pub mod container_detail {
         /// <note>
         /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
         /// </note>
-        pub fn ulimits(mut self, input: impl Into<crate::model::Ulimit>) -> Self {
+        pub fn ulimits(mut self, input: crate::model::Ulimit) -> Self {
             let mut v = self.ulimits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ulimits = Some(v);
             self
         }
@@ -8535,12 +8513,9 @@ pub mod container_detail {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>The network interfaces associated with the job.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -8558,12 +8533,9 @@ pub mod container_detail {
         ///
         /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
         /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
-        pub fn resource_requirements(
-            mut self,
-            input: impl Into<crate::model::ResourceRequirement>,
-        ) -> Self {
+        pub fn resource_requirements(mut self, input: crate::model::ResourceRequirement) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_requirements = Some(v);
             self
         }
@@ -8652,9 +8624,9 @@ pub mod container_detail {
         ///
         /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the
         /// <i>Batch User Guide</i>.</p>
-        pub fn secrets(mut self, input: impl Into<crate::model::Secret>) -> Self {
+        pub fn secrets(mut self, input: crate::model::Secret) -> Self {
             let mut v = self.secrets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secrets = Some(v);
             self
         }
@@ -9110,12 +9082,9 @@ pub mod attempt_container_detail {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>The network interfaces associated with the job attempt.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -9388,10 +9357,10 @@ pub mod job_queue_detail {
         /// Compute environments are selected for job placement in ascending order.</p>
         pub fn compute_environment_order(
             mut self,
-            input: impl Into<crate::model::ComputeEnvironmentOrder>,
+            input: crate::model::ComputeEnvironmentOrder,
         ) -> Self {
             let mut v = self.compute_environment_order.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compute_environment_order = Some(v);
             self
         }
@@ -9918,12 +9887,9 @@ pub mod job_definition {
         ///
         /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
         /// <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-        pub fn platform_capabilities(
-            mut self,
-            input: impl Into<crate::model::PlatformCapability>,
-        ) -> Self {
+        pub fn platform_capabilities(mut self, input: crate::model::PlatformCapability) -> Self {
             let mut v = self.platform_capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_capabilities = Some(v);
             self
         }
@@ -11323,12 +11289,9 @@ pub mod compute_resource {
         /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
         /// specified.</p>
         /// </note>
-        pub fn ec2_configuration(
-            mut self,
-            input: impl Into<crate::model::Ec2Configuration>,
-        ) -> Self {
+        pub fn ec2_configuration(mut self, input: crate::model::Ec2Configuration) -> Self {
             let mut v = self.ec2_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_configuration = Some(v);
             self
         }

@@ -83,10 +83,10 @@ pub mod forecast {
         pub fn predictions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::DataPoint>>,
+            v: std::vec::Vec<crate::model::DataPoint>,
         ) -> Self {
             let mut hash_map = self.predictions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.predictions = Some(hash_map);
             self
         }

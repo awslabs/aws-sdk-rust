@@ -1079,12 +1079,9 @@ pub mod migration_task {
         ///
         /// <p>Information about the resource that is being migrated. This data will be used to map the
         /// task to a resource in the Application Discovery Service repository.</p>
-        pub fn resource_attribute_list(
-            mut self,
-            input: impl Into<crate::model::ResourceAttribute>,
-        ) -> Self {
+        pub fn resource_attribute_list(mut self, input: crate::model::ResourceAttribute) -> Self {
             let mut v = self.resource_attribute_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_attribute_list = Some(v);
             self
         }

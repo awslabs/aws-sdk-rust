@@ -180,9 +180,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the Cloud9 development environment.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -527,9 +527,9 @@ pub mod describe_environments_output {
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
         /// <p>Information about the environments that are returned.</p>
-        pub fn environments(mut self, input: impl Into<crate::model::Environment>) -> Self {
+        pub fn environments(mut self, input: crate::model::Environment) -> Self {
             let mut v = self.environments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environments = Some(v);
             self
         }
@@ -602,9 +602,9 @@ pub mod describe_environment_memberships_output {
         /// To override the contents of this collection use [`set_memberships`](Self::set_memberships).
         ///
         /// <p>Information about the environment members for the environment.</p>
-        pub fn memberships(mut self, input: impl Into<crate::model::EnvironmentMember>) -> Self {
+        pub fn memberships(mut self, input: crate::model::EnvironmentMember) -> Self {
             let mut v = self.memberships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.memberships = Some(v);
             self
         }

@@ -377,9 +377,9 @@ pub mod create_members_input {
         /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
         /// You can invite up to 50 accounts at a time. For each invited account, the account list
         /// contains the account identifier and the AWS account root user email address.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::Account>) -> Self {
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }

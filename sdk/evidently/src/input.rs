@@ -25,9 +25,9 @@ pub mod batch_evaluate_feature_input {
         /// To override the contents of this collection use [`set_requests`](Self::set_requests).
         ///
         /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-        pub fn requests(mut self, input: impl Into<crate::model::EvaluationRequest>) -> Self {
+        pub fn requests(mut self, input: crate::model::EvaluationRequest) -> Self {
             let mut v = self.requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requests = Some(v);
             self
         }
@@ -244,9 +244,9 @@ pub mod create_experiment_input {
         /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
         ///
         /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-        pub fn treatments(mut self, input: impl Into<crate::model::TreatmentConfig>) -> Self {
+        pub fn treatments(mut self, input: crate::model::TreatmentConfig) -> Self {
             let mut v = self.treatments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.treatments = Some(v);
             self
         }
@@ -264,9 +264,9 @@ pub mod create_experiment_input {
         ///
         /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
         /// or lower value for each metric is the goal.</p>
-        pub fn metric_goals(mut self, input: impl Into<crate::model::MetricGoalConfig>) -> Self {
+        pub fn metric_goals(mut self, input: crate::model::MetricGoalConfig) -> Self {
             let mut v = self.metric_goals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_goals = Some(v);
             self
         }
@@ -600,9 +600,9 @@ pub mod create_feature_input {
         /// To override the contents of this collection use [`set_variations`](Self::set_variations).
         ///
         /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-        pub fn variations(mut self, input: impl Into<crate::model::VariationConfig>) -> Self {
+        pub fn variations(mut self, input: crate::model::VariationConfig) -> Self {
             let mut v = self.variations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variations = Some(v);
             self
         }
@@ -933,12 +933,9 @@ pub mod create_launch_input {
         ///
         /// <p>An array of structures that define the metrics that will be used to monitor
         /// the launch performance.</p>
-        pub fn metric_monitors(
-            mut self,
-            input: impl Into<crate::model::MetricMonitorConfig>,
-        ) -> Self {
+        pub fn metric_monitors(mut self, input: crate::model::MetricMonitorConfig) -> Self {
             let mut v = self.metric_monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_monitors = Some(v);
             self
         }
@@ -956,9 +953,9 @@ pub mod create_launch_input {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::LaunchGroupConfig>) -> Self {
+        pub fn groups(mut self, input: crate::model::LaunchGroupConfig) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -2671,12 +2668,9 @@ pub mod get_experiment_results_input {
         /// of the values collected for each variation.</p>
         /// </li>
         /// </ul>
-        pub fn result_stats(
-            mut self,
-            input: impl Into<crate::model::ExperimentResultRequestType>,
-        ) -> Self {
+        pub fn result_stats(mut self, input: crate::model::ExperimentResultRequestType) -> Self {
             let mut v = self.result_stats.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_stats = Some(v);
             self
         }
@@ -2722,12 +2716,9 @@ pub mod get_experiment_results_input {
         ///
         /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code>
         /// is the only valid value.</p>
-        pub fn report_names(
-            mut self,
-            input: impl Into<crate::model::ExperimentReportName>,
-        ) -> Self {
+        pub fn report_names(mut self, input: crate::model::ExperimentReportName) -> Self {
             let mut v = self.report_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_names = Some(v);
             self
         }
@@ -4365,9 +4356,9 @@ pub mod put_project_events_input {
         ///
         /// <p>An array of event structures that contain the performance data that is being sent to
         /// Evidently.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -5804,9 +5795,9 @@ pub mod update_experiment_input {
         /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
         ///
         /// <p>An array of structures that define the variations being tested in the experiment.</p>
-        pub fn treatments(mut self, input: impl Into<crate::model::TreatmentConfig>) -> Self {
+        pub fn treatments(mut self, input: crate::model::TreatmentConfig) -> Self {
             let mut v = self.treatments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.treatments = Some(v);
             self
         }
@@ -5824,9 +5815,9 @@ pub mod update_experiment_input {
         ///
         /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
         /// or lower value for each metric is the goal.</p>
-        pub fn metric_goals(mut self, input: impl Into<crate::model::MetricGoalConfig>) -> Self {
+        pub fn metric_goals(mut self, input: crate::model::MetricGoalConfig) -> Self {
             let mut v = self.metric_goals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_goals = Some(v);
             self
         }
@@ -6142,12 +6133,9 @@ pub mod update_feature_input {
         /// In this array, include any variations that you want to add or update. If the array includes a variation name that
         /// already exists for this feature, it is updated. If it includes a new variation name, it is added
         /// as a new variation.</p>
-        pub fn add_or_update_variations(
-            mut self,
-            input: impl Into<crate::model::VariationConfig>,
-        ) -> Self {
+        pub fn add_or_update_variations(mut self, input: crate::model::VariationConfig) -> Self {
             let mut v = self.add_or_update_variations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_or_update_variations = Some(v);
             self
         }
@@ -6460,9 +6448,9 @@ pub mod update_launch_input {
         ///
         /// <p>An array of structures that contains the feature and variations that are to be used for
         /// the launch.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::LaunchGroupConfig>) -> Self {
+        pub fn groups(mut self, input: crate::model::LaunchGroupConfig) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -6481,12 +6469,9 @@ pub mod update_launch_input {
         ///
         /// <p>An array of structures that define the metrics that will be used to monitor
         /// the launch performance.</p>
-        pub fn metric_monitors(
-            mut self,
-            input: impl Into<crate::model::MetricMonitorConfig>,
-        ) -> Self {
+        pub fn metric_monitors(mut self, input: crate::model::MetricMonitorConfig) -> Self {
             let mut v = self.metric_monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_monitors = Some(v);
             self
         }

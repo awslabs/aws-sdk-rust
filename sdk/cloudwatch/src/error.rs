@@ -4683,10 +4683,10 @@ pub mod dashboard_invalid_input_error {
         ///
         pub fn dashboard_validation_messages(
             mut self,
-            input: impl Into<crate::model::DashboardValidationMessage>,
+            input: crate::model::DashboardValidationMessage,
         ) -> Self {
             let mut v = self.dashboard_validation_messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_validation_messages = Some(v);
             self
         }

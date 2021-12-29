@@ -529,9 +529,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -600,9 +600,9 @@ pub mod list_inputs_output {
         /// To override the contents of this collection use [`set_input_summaries`](Self::set_input_summaries).
         ///
         /// <p>Summary information about the inputs.</p>
-        pub fn input_summaries(mut self, input: impl Into<crate::model::InputSummary>) -> Self {
+        pub fn input_summaries(mut self, input: crate::model::InputSummary) -> Self {
             let mut v = self.input_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_summaries = Some(v);
             self
         }
@@ -697,9 +697,9 @@ pub mod list_input_routings_output {
         /// <p>
         /// Summary information about the routed resources.
         /// </p>
-        pub fn routed_resources(mut self, input: impl Into<crate::model::RoutedResource>) -> Self {
+        pub fn routed_resources(mut self, input: crate::model::RoutedResource) -> Self {
             let mut v = self.routed_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routed_resources = Some(v);
             self
         }
@@ -798,10 +798,10 @@ pub mod list_detector_model_versions_output {
         /// <p>Summary information about the detector model versions.</p>
         pub fn detector_model_version_summaries(
             mut self,
-            input: impl Into<crate::model::DetectorModelVersionSummary>,
+            input: crate::model::DetectorModelVersionSummary,
         ) -> Self {
             let mut v = self.detector_model_version_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detector_model_version_summaries = Some(v);
             self
         }
@@ -891,10 +891,10 @@ pub mod list_detector_models_output {
         /// <p>Summary information about the detector models.</p>
         pub fn detector_model_summaries(
             mut self,
-            input: impl Into<crate::model::DetectorModelSummary>,
+            input: crate::model::DetectorModelSummary,
         ) -> Self {
             let mut v = self.detector_model_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detector_model_summaries = Some(v);
             self
         }
@@ -987,10 +987,10 @@ pub mod list_alarm_model_versions_output {
         /// <p>A list that summarizes each alarm model version.</p>
         pub fn alarm_model_version_summaries(
             mut self,
-            input: impl Into<crate::model::AlarmModelVersionSummary>,
+            input: crate::model::AlarmModelVersionSummary,
         ) -> Self {
             let mut v = self.alarm_model_version_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_model_version_summaries = Some(v);
             self
         }
@@ -1075,12 +1075,9 @@ pub mod list_alarm_models_output {
         /// To override the contents of this collection use [`set_alarm_model_summaries`](Self::set_alarm_model_summaries).
         ///
         /// <p>A list that summarizes each alarm model.</p>
-        pub fn alarm_model_summaries(
-            mut self,
-            input: impl Into<crate::model::AlarmModelSummary>,
-        ) -> Self {
+        pub fn alarm_model_summaries(mut self, input: crate::model::AlarmModelSummary) -> Self {
             let mut v = self.alarm_model_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_model_summaries = Some(v);
             self
         }
@@ -1165,9 +1162,9 @@ pub mod get_detector_model_analysis_results_output {
         /// To override the contents of this collection use [`set_analysis_results`](Self::set_analysis_results).
         ///
         /// <p>Contains information about one or more analysis results.</p>
-        pub fn analysis_results(mut self, input: impl Into<crate::model::AnalysisResult>) -> Self {
+        pub fn analysis_results(mut self, input: crate::model::AnalysisResult) -> Self {
             let mut v = self.analysis_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_results = Some(v);
             self
         }

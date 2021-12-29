@@ -188,8 +188,8 @@ pub mod fluent_builders {
         }
         /// <p>The path (including the file name) where the object is stored in the container.
         /// Format: <folder name>/<folder name>/<file name></p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(signature.into());
             self
         }
         /// <p>The path (including the file name) where the object is stored in the container.
@@ -260,8 +260,8 @@ pub mod fluent_builders {
         }
         /// <p>The path (including the file name) where the object is stored in the container.
         /// Format: <folder name>/<folder name>/<file name></p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(signature.into());
             self
         }
         /// <p>The path (including the file name) where the object is stored in the container.
@@ -348,8 +348,8 @@ pub mod fluent_builders {
         /// <p>The file name is the name that is assigned to the file that you upload. The file can
         /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
         /// name. The file name can include or omit an extension. </p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(signature.into());
             self
         }
         /// <p>The path (including the file name) where the object is stored in the container.
@@ -376,8 +376,8 @@ pub mod fluent_builders {
         }
         /// <p>The range bytes of an object to retrieve. For more information about the
         /// <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
-        pub fn range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.range(inp);
+        pub fn range(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.range(signature.into());
             self
         }
         /// <p>The range bytes of an object to retrieve. For more information about the
@@ -449,8 +449,8 @@ pub mod fluent_builders {
         }
         /// <p>The path in the container from which to retrieve items. Format: <folder
         /// name>/<folder name>/<file name></p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(signature.into());
             self
         }
         /// <p>The path in the container from which to retrieve items. Format: <folder
@@ -467,8 +467,8 @@ pub mod fluent_builders {
         /// value.</p>
         /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to
         /// pagination with a maximum of 1,000 results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per API request. For example, you submit a
@@ -489,8 +489,8 @@ pub mod fluent_builders {
         /// To see the next batch of results, you can submit the <code>ListItems</code> request a
         /// second time and specify the <code>NextToken</code> value.</p>
         /// <p>Tokens expire after 15 minutes.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that identifies which batch of results that you want to see. For example,
@@ -564,8 +564,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bytes to be stored. </p>
-        pub fn body(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.body(signature);
             self
         }
         /// <p>The bytes to be stored. </p>
@@ -594,8 +594,8 @@ pub mod fluent_builders {
         /// <p>The file name is the name that is assigned to the file that you upload. The file can
         /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
         /// name. The file name can include or omit an extension. </p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(signature.into());
             self
         }
         /// <p>The path (including the file name) where the object is stored in the container.
@@ -621,8 +621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content type of the object.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>The content type of the object.</p>
@@ -633,8 +633,8 @@ pub mod fluent_builders {
         /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
         /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         /// <p>Headers with a custom user-defined value are also accepted.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_control(inp);
+        pub fn cache_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_control(signature.into());
             self
         }
         /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
@@ -650,8 +650,8 @@ pub mod fluent_builders {
         /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to
         /// high-performance temporal storage class, and objects are persisted into durable storage
         /// shortly after being received.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.inner = self.inner.storage_class(inp);
+        pub fn storage_class(mut self, signature: crate::model::StorageClass) -> Self {
+            self.inner = self.inner.storage_class(signature);
             self
         }
         /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to
@@ -668,8 +668,8 @@ pub mod fluent_builders {
         /// downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is
         /// available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
         /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
-        pub fn upload_availability(mut self, inp: crate::model::UploadAvailability) -> Self {
-            self.inner = self.inner.upload_availability(inp);
+        pub fn upload_availability(mut self, signature: crate::model::UploadAvailability) -> Self {
+            self.inner = self.inner.upload_availability(signature);
             self
         }
         /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for

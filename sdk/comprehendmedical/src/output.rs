@@ -502,12 +502,12 @@ pub mod list_rx_norm_inference_jobs_output {
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
         pub fn comprehend_medical_async_job_properties_list(
             mut self,
-            input: impl Into<crate::model::ComprehendMedicalAsyncJobProperties>,
+            input: crate::model::ComprehendMedicalAsyncJobProperties,
         ) -> Self {
             let mut v = self
                 .comprehend_medical_async_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comprehend_medical_async_job_properties_list = Some(v);
             self
         }
@@ -599,12 +599,12 @@ pub mod list_phi_detection_jobs_output {
         /// <p>A list containing the properties of each job returned.</p>
         pub fn comprehend_medical_async_job_properties_list(
             mut self,
-            input: impl Into<crate::model::ComprehendMedicalAsyncJobProperties>,
+            input: crate::model::ComprehendMedicalAsyncJobProperties,
         ) -> Self {
             let mut v = self
                 .comprehend_medical_async_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comprehend_medical_async_job_properties_list = Some(v);
             self
         }
@@ -696,12 +696,12 @@ pub mod list_icd10_cm_inference_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn comprehend_medical_async_job_properties_list(
             mut self,
-            input: impl Into<crate::model::ComprehendMedicalAsyncJobProperties>,
+            input: crate::model::ComprehendMedicalAsyncJobProperties,
         ) -> Self {
             let mut v = self
                 .comprehend_medical_async_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comprehend_medical_async_job_properties_list = Some(v);
             self
         }
@@ -793,12 +793,12 @@ pub mod list_entities_detection_v2_jobs_output {
         /// <p>A list containing the properties of each job returned.</p>
         pub fn comprehend_medical_async_job_properties_list(
             mut self,
-            input: impl Into<crate::model::ComprehendMedicalAsyncJobProperties>,
+            input: crate::model::ComprehendMedicalAsyncJobProperties,
         ) -> Self {
             let mut v = self
                 .comprehend_medical_async_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comprehend_medical_async_job_properties_list = Some(v);
             self
         }
@@ -901,9 +901,9 @@ pub mod infer_rx_norm_output {
         /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is
         /// successful, the service sends back an HTTP 200 response, as well as the entities
         /// detected.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::RxNormEntity>) -> Self {
+        pub fn entities(mut self, input: crate::model::RxNormEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -1028,9 +1028,9 @@ pub mod infer_icd10_cm_output {
         /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is
         /// successful, the service sends back an HTTP 200 response, as well as the entities
         /// detected.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Icd10CmEntity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Icd10CmEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -1158,9 +1158,9 @@ pub mod detect_phi_output {
         /// information. For each entity, the response provides the entity text, the entity category,
         /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in its
         /// detection. </p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -1298,9 +1298,9 @@ pub mod detect_entities_v2_output {
         /// information. For each entity, the response provides the entity text, the entity category,
         /// where the entity text begins and ends, and the level of confidence in the detection and
         /// analysis. Attributes and traits of the entity are also returned.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -1320,12 +1320,9 @@ pub mod detect_entities_v2_output {
         /// To override the contents of this collection use [`set_unmapped_attributes`](Self::set_unmapped_attributes).
         ///
         /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
-        pub fn unmapped_attributes(
-            mut self,
-            input: impl Into<crate::model::UnmappedAttribute>,
-        ) -> Self {
+        pub fn unmapped_attributes(mut self, input: crate::model::UnmappedAttribute) -> Self {
             let mut v = self.unmapped_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unmapped_attributes = Some(v);
             self
         }
@@ -1463,9 +1460,9 @@ pub mod detect_entities_output {
         /// information. For each entity, the response provides the entity text, the entity category,
         /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the
         /// detection and analysis. Attributes and traits of the entity are also returned.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -1486,12 +1483,9 @@ pub mod detect_entities_output {
         ///
         /// <p> Attributes extracted from the input text that we were unable to relate to an
         /// entity.</p>
-        pub fn unmapped_attributes(
-            mut self,
-            input: impl Into<crate::model::UnmappedAttribute>,
-        ) -> Self {
+        pub fn unmapped_attributes(mut self, input: crate::model::UnmappedAttribute) -> Self {
             let mut v = self.unmapped_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unmapped_attributes = Some(v);
             self
         }

@@ -41,9 +41,9 @@ pub mod list_endpoints_output {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>Returns an array of endpoints associated with AWS Outposts.</p>
-        pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }

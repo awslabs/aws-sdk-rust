@@ -6520,9 +6520,9 @@ pub mod computer {
         ///
         /// <p>An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the
         /// computer account.</p>
-        pub fn computer_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn computer_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.computer_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.computer_attributes = Some(v);
             self
         }

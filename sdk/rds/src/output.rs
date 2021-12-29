@@ -2497,9 +2497,9 @@ pub mod register_db_proxy_targets_output {
         /// To override the contents of this collection use [`set_db_proxy_targets`](Self::set_db_proxy_targets).
         ///
         /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-        pub fn db_proxy_targets(mut self, input: impl Into<crate::model::DbProxyTarget>) -> Self {
+        pub fn db_proxy_targets(mut self, input: crate::model::DbProxyTarget) -> Self {
             let mut v = self.db_proxy_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_proxy_targets = Some(v);
             self
         }
@@ -4820,12 +4820,9 @@ pub mod modify_custom_db_engine_version_output {
         ///
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
         /// </p>
-        pub fn supported_character_sets(
-            mut self,
-            input: impl Into<crate::model::CharacterSet>,
-        ) -> Self {
+        pub fn supported_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_character_sets = Some(v);
             self
         }
@@ -4844,12 +4841,9 @@ pub mod modify_custom_db_engine_version_output {
         ///
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
         /// </p>
-        pub fn supported_nchar_character_sets(
-            mut self,
-            input: impl Into<crate::model::CharacterSet>,
-        ) -> Self {
+        pub fn supported_nchar_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_nchar_character_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_nchar_character_sets = Some(v);
             self
         }
@@ -4867,12 +4861,9 @@ pub mod modify_custom_db_engine_version_output {
         /// To override the contents of this collection use [`set_valid_upgrade_target`](Self::set_valid_upgrade_target).
         ///
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn valid_upgrade_target(
-            mut self,
-            input: impl Into<crate::model::UpgradeTarget>,
-        ) -> Self {
+        pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.valid_upgrade_target = Some(v);
             self
         }
@@ -4891,9 +4882,9 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>A list of the time zones supported by this engine for the
         /// <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.  
         /// </p>
-        pub fn supported_timezones(mut self, input: impl Into<crate::model::Timezone>) -> Self {
+        pub fn supported_timezones(mut self, input: crate::model::Timezone) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_timezones = Some(v);
             self
         }
@@ -5137,9 +5128,9 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -5430,9 +5421,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>List of tags returned by the ListTagsForResource operation.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -6138,9 +6129,9 @@ pub mod describe_source_regions_output {
         ///
         /// <p>A list of SourceRegion instances that contains each source Amazon Web Services Region that the
         /// current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
-        pub fn source_regions(mut self, input: impl Into<crate::model::SourceRegion>) -> Self {
+        pub fn source_regions(mut self, input: crate::model::SourceRegion) -> Self {
             let mut v = self.source_regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_regions = Some(v);
             self
         }
@@ -6252,10 +6243,10 @@ pub mod describe_reserved_db_instances_offerings_output {
         /// <p>A list of reserved DB instance offerings.</p>
         pub fn reserved_db_instances_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedDbInstancesOffering>,
+            input: crate::model::ReservedDbInstancesOffering,
         ) -> Self {
             let mut v = self.reserved_db_instances_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_db_instances_offerings = Some(v);
             self
         }
@@ -6360,12 +6351,9 @@ pub mod describe_reserved_db_instances_output {
         /// To override the contents of this collection use [`set_reserved_db_instances`](Self::set_reserved_db_instances).
         ///
         /// <p>A list of reserved DB instances.</p>
-        pub fn reserved_db_instances(
-            mut self,
-            input: impl Into<crate::model::ReservedDbInstance>,
-        ) -> Self {
+        pub fn reserved_db_instances(mut self, input: crate::model::ReservedDbInstance) -> Self {
             let mut v = self.reserved_db_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_db_instances = Some(v);
             self
         }
@@ -6456,10 +6444,10 @@ pub mod describe_pending_maintenance_actions_output {
         /// <p>A list of the pending maintenance actions for the resource.</p>
         pub fn pending_maintenance_actions(
             mut self,
-            input: impl Into<crate::model::ResourcePendingMaintenanceActions>,
+            input: crate::model::ResourcePendingMaintenanceActions,
         ) -> Self {
             let mut v = self.pending_maintenance_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_maintenance_actions = Some(v);
             self
         }
@@ -6576,10 +6564,10 @@ pub mod describe_orderable_db_instance_options_output {
         /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
         pub fn orderable_db_instance_options(
             mut self,
-            input: impl Into<crate::model::OrderableDbInstanceOption>,
+            input: crate::model::OrderableDbInstanceOption,
         ) -> Self {
             let mut v = self.orderable_db_instance_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.orderable_db_instance_options = Some(v);
             self
         }
@@ -6680,9 +6668,9 @@ pub mod describe_option_groups_output {
         /// To override the contents of this collection use [`set_option_groups_list`](Self::set_option_groups_list).
         ///
         /// <p>List of option groups.</p>
-        pub fn option_groups_list(mut self, input: impl Into<crate::model::OptionGroup>) -> Self {
+        pub fn option_groups_list(mut self, input: crate::model::OptionGroup) -> Self {
             let mut v = self.option_groups_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_groups_list = Some(v);
             self
         }
@@ -6777,12 +6765,9 @@ pub mod describe_option_group_options_output {
         /// To override the contents of this collection use [`set_option_group_options`](Self::set_option_group_options).
         ///
         /// <p>List of available option group options.</p>
-        pub fn option_group_options(
-            mut self,
-            input: impl Into<crate::model::OptionGroupOption>,
-        ) -> Self {
+        pub fn option_group_options(mut self, input: crate::model::OptionGroupOption) -> Self {
             let mut v = self.option_group_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_group_options = Some(v);
             self
         }
@@ -6895,12 +6880,9 @@ pub mod describe_installation_media_output {
         /// To override the contents of this collection use [`set_installation_media`](Self::set_installation_media).
         ///
         /// <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.</p>
-        pub fn installation_media(
-            mut self,
-            input: impl Into<crate::model::InstallationMedia>,
-        ) -> Self {
+        pub fn installation_media(mut self, input: crate::model::InstallationMedia) -> Self {
             let mut v = self.installation_media.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.installation_media = Some(v);
             self
         }
@@ -7002,9 +6984,9 @@ pub mod describe_global_clusters_output {
         /// <p>
         /// The list of global clusters returned by this request.
         /// </p>
-        pub fn global_clusters(mut self, input: impl Into<crate::model::GlobalCluster>) -> Self {
+        pub fn global_clusters(mut self, input: crate::model::GlobalCluster) -> Self {
             let mut v = self.global_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_clusters = Some(v);
             self
         }
@@ -7094,9 +7076,9 @@ pub mod describe_export_tasks_output {
         /// To override the contents of this collection use [`set_export_tasks`](Self::set_export_tasks).
         ///
         /// <p>Information about an export of a snapshot to Amazon S3.</p>
-        pub fn export_tasks(mut self, input: impl Into<crate::model::ExportTask>) -> Self {
+        pub fn export_tasks(mut self, input: crate::model::ExportTask) -> Self {
             let mut v = self.export_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_tasks = Some(v);
             self
         }
@@ -7204,12 +7186,9 @@ pub mod describe_event_subscriptions_output {
         /// To override the contents of this collection use [`set_event_subscriptions_list`](Self::set_event_subscriptions_list).
         ///
         /// <p>A list of EventSubscriptions data types.</p>
-        pub fn event_subscriptions_list(
-            mut self,
-            input: impl Into<crate::model::EventSubscription>,
-        ) -> Self {
+        pub fn event_subscriptions_list(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_subscriptions_list = Some(v);
             self
         }
@@ -7321,9 +7300,9 @@ pub mod describe_events_output {
         /// <p>
         /// A list of <code>Event</code> instances.
         /// </p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -7393,10 +7372,10 @@ pub mod describe_event_categories_output {
         /// <p>A list of EventCategoriesMap data types.</p>
         pub fn event_categories_map_list(
             mut self,
-            input: impl Into<crate::model::EventCategoriesMap>,
+            input: crate::model::EventCategoriesMap,
         ) -> Self {
             let mut v = self.event_categories_map_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_categories_map_list = Some(v);
             self
         }
@@ -7634,9 +7613,9 @@ pub mod describe_db_subnet_groups_output {
         /// <p>
         /// A list of <code>DBSubnetGroup</code> instances.
         /// </p>
-        pub fn db_subnet_groups(mut self, input: impl Into<crate::model::DbSubnetGroup>) -> Self {
+        pub fn db_subnet_groups(mut self, input: crate::model::DbSubnetGroup) -> Self {
             let mut v = self.db_subnet_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_subnet_groups = Some(v);
             self
         }
@@ -7746,9 +7725,9 @@ pub mod describe_db_snapshots_output {
         /// <p>
         /// A list of <code>DBSnapshot</code> instances.
         /// </p>
-        pub fn db_snapshots(mut self, input: impl Into<crate::model::DbSnapshot>) -> Self {
+        pub fn db_snapshots(mut self, input: crate::model::DbSnapshot) -> Self {
             let mut v = self.db_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_snapshots = Some(v);
             self
         }
@@ -7942,12 +7921,9 @@ pub mod describe_db_security_groups_output {
         /// <p>
         /// A list of <code>DBSecurityGroup</code> instances.
         /// </p>
-        pub fn db_security_groups(
-            mut self,
-            input: impl Into<crate::model::DbSecurityGroup>,
-        ) -> Self {
+        pub fn db_security_groups(mut self, input: crate::model::DbSecurityGroup) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_security_groups = Some(v);
             self
         }
@@ -8027,9 +8003,9 @@ pub mod describe_db_proxy_targets_output {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::DbProxyTarget>) -> Self {
+        pub fn targets(mut self, input: crate::model::DbProxyTarget) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -8126,9 +8102,9 @@ pub mod describe_db_proxy_target_groups_output {
         /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
         ///
         /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
-        pub fn target_groups(mut self, input: impl Into<crate::model::DbProxyTargetGroup>) -> Self {
+        pub fn target_groups(mut self, input: crate::model::DbProxyTargetGroup) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_groups = Some(v);
             self
         }
@@ -8225,12 +8201,9 @@ pub mod describe_db_proxy_endpoints_output {
         /// To override the contents of this collection use [`set_db_proxy_endpoints`](Self::set_db_proxy_endpoints).
         ///
         /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
-        pub fn db_proxy_endpoints(
-            mut self,
-            input: impl Into<crate::model::DbProxyEndpoint>,
-        ) -> Self {
+        pub fn db_proxy_endpoints(mut self, input: crate::model::DbProxyEndpoint) -> Self {
             let mut v = self.db_proxy_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_proxy_endpoints = Some(v);
             self
         }
@@ -8326,9 +8299,9 @@ pub mod describe_db_proxies_output {
         /// To override the contents of this collection use [`set_db_proxies`](Self::set_db_proxies).
         ///
         /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
-        pub fn db_proxies(mut self, input: impl Into<crate::model::DbProxy>) -> Self {
+        pub fn db_proxies(mut self, input: crate::model::DbProxy) -> Self {
             let mut v = self.db_proxies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_proxies = Some(v);
             self
         }
@@ -8434,9 +8407,9 @@ pub mod describe_db_parameters_output {
         /// <p>
         /// A list of <code>Parameter</code> values.
         /// </p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -8567,12 +8540,9 @@ pub mod describe_db_parameter_groups_output {
         /// <p>
         /// A list of <code>DBParameterGroup</code> instances.
         /// </p>
-        pub fn db_parameter_groups(
-            mut self,
-            input: impl Into<crate::model::DbParameterGroup>,
-        ) -> Self {
+        pub fn db_parameter_groups(mut self, input: crate::model::DbParameterGroup) -> Self {
             let mut v = self.db_parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_parameter_groups = Some(v);
             self
         }
@@ -8652,10 +8622,10 @@ pub mod describe_db_log_files_output {
         /// <p>The DB log files returned.</p>
         pub fn describe_db_log_files(
             mut self,
-            input: impl Into<crate::model::DescribeDbLogFilesDetails>,
+            input: crate::model::DescribeDbLogFilesDetails,
         ) -> Self {
             let mut v = self.describe_db_log_files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.describe_db_log_files = Some(v);
             self
         }
@@ -8773,9 +8743,9 @@ pub mod describe_db_instances_output {
         /// <p>
         /// A list of <code>DBInstance</code> instances.
         /// </p>
-        pub fn db_instances(mut self, input: impl Into<crate::model::DbInstance>) -> Self {
+        pub fn db_instances(mut self, input: crate::model::DbInstance) -> Self {
             let mut v = self.db_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_instances = Some(v);
             self
         }
@@ -8894,10 +8864,10 @@ pub mod describe_db_instance_automated_backups_output {
         /// </p>
         pub fn db_instance_automated_backups(
             mut self,
-            input: impl Into<crate::model::DbInstanceAutomatedBackup>,
+            input: crate::model::DbInstanceAutomatedBackup,
         ) -> Self {
             let mut v = self.db_instance_automated_backups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_instance_automated_backups = Some(v);
             self
         }
@@ -9008,12 +8978,9 @@ pub mod describe_db_engine_versions_output {
         /// <p>
         /// A list of <code>DBEngineVersion</code> elements.
         /// </p>
-        pub fn db_engine_versions(
-            mut self,
-            input: impl Into<crate::model::DbEngineVersion>,
-        ) -> Self {
+        pub fn db_engine_versions(mut self, input: crate::model::DbEngineVersion) -> Self {
             let mut v = self.db_engine_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_engine_versions = Some(v);
             self
         }
@@ -9122,12 +9089,9 @@ pub mod describe_db_cluster_snapshots_output {
         /// To override the contents of this collection use [`set_db_cluster_snapshots`](Self::set_db_cluster_snapshots).
         ///
         /// <p>Provides a list of DB cluster snapshots for the user.</p>
-        pub fn db_cluster_snapshots(
-            mut self,
-            input: impl Into<crate::model::DbClusterSnapshot>,
-        ) -> Self {
+        pub fn db_cluster_snapshots(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             let mut v = self.db_cluster_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_snapshots = Some(v);
             self
         }
@@ -9290,9 +9254,9 @@ pub mod describe_db_clusters_output {
         /// To override the contents of this collection use [`set_db_clusters`](Self::set_db_clusters).
         ///
         /// <p>Contains a list of DB clusters for the user.</p>
-        pub fn db_clusters(mut self, input: impl Into<crate::model::DbCluster>) -> Self {
+        pub fn db_clusters(mut self, input: crate::model::DbCluster) -> Self {
             let mut v = self.db_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_clusters = Some(v);
             self
         }
@@ -9374,9 +9338,9 @@ pub mod describe_db_cluster_parameters_output {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -9511,10 +9475,10 @@ pub mod describe_db_cluster_parameter_groups_output {
         /// <p>A list of DB cluster parameter groups.</p>
         pub fn db_cluster_parameter_groups(
             mut self,
-            input: impl Into<crate::model::DbClusterParameterGroup>,
+            input: crate::model::DbClusterParameterGroup,
         ) -> Self {
             let mut v = self.db_cluster_parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_parameter_groups = Some(v);
             self
         }
@@ -9618,12 +9582,9 @@ pub mod describe_db_cluster_endpoints_output {
         ///
         /// <p>Contains the details of the endpoints associated with the cluster
         /// and matching any filter conditions.</p>
-        pub fn db_cluster_endpoints(
-            mut self,
-            input: impl Into<crate::model::DbClusterEndpoint>,
-        ) -> Self {
+        pub fn db_cluster_endpoints(mut self, input: crate::model::DbClusterEndpoint) -> Self {
             let mut v = self.db_cluster_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_endpoints = Some(v);
             self
         }
@@ -9707,12 +9668,9 @@ pub mod describe_db_cluster_backtracks_output {
         /// To override the contents of this collection use [`set_db_cluster_backtracks`](Self::set_db_cluster_backtracks).
         ///
         /// <p>Contains a list of backtracks for the user.</p>
-        pub fn db_cluster_backtracks(
-            mut self,
-            input: impl Into<crate::model::DbClusterBacktrack>,
-        ) -> Self {
+        pub fn db_cluster_backtracks(mut self, input: crate::model::DbClusterBacktrack) -> Self {
             let mut v = self.db_cluster_backtracks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_backtracks = Some(v);
             self
         }
@@ -9814,10 +9772,10 @@ pub mod describe_custom_availability_zones_output {
         /// <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.</p>
         pub fn custom_availability_zones(
             mut self,
-            input: impl Into<crate::model::CustomAvailabilityZone>,
+            input: crate::model::CustomAvailabilityZone,
         ) -> Self {
             let mut v = self.custom_availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_availability_zones = Some(v);
             self
         }
@@ -9899,9 +9857,9 @@ pub mod describe_certificates_output {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -9988,9 +9946,9 @@ pub mod describe_account_attributes_output {
         ///
         /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name,
         /// a count of usage toward the quota maximum, and a maximum value for the quota.</p>
-        pub fn account_quotas(mut self, input: impl Into<crate::model::AccountQuota>) -> Self {
+        pub fn account_quotas(mut self, input: crate::model::AccountQuota) -> Self {
             let mut v = self.account_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_quotas = Some(v);
             self
         }
@@ -11797,12 +11755,9 @@ pub mod delete_custom_db_engine_version_output {
         ///
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
         /// </p>
-        pub fn supported_character_sets(
-            mut self,
-            input: impl Into<crate::model::CharacterSet>,
-        ) -> Self {
+        pub fn supported_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_character_sets = Some(v);
             self
         }
@@ -11821,12 +11776,9 @@ pub mod delete_custom_db_engine_version_output {
         ///
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
         /// </p>
-        pub fn supported_nchar_character_sets(
-            mut self,
-            input: impl Into<crate::model::CharacterSet>,
-        ) -> Self {
+        pub fn supported_nchar_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_nchar_character_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_nchar_character_sets = Some(v);
             self
         }
@@ -11844,12 +11796,9 @@ pub mod delete_custom_db_engine_version_output {
         /// To override the contents of this collection use [`set_valid_upgrade_target`](Self::set_valid_upgrade_target).
         ///
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn valid_upgrade_target(
-            mut self,
-            input: impl Into<crate::model::UpgradeTarget>,
-        ) -> Self {
+        pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.valid_upgrade_target = Some(v);
             self
         }
@@ -11868,9 +11817,9 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>A list of the time zones supported by this engine for the
         /// <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.  
         /// </p>
-        pub fn supported_timezones(mut self, input: impl Into<crate::model::Timezone>) -> Self {
+        pub fn supported_timezones(mut self, input: crate::model::Timezone) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_timezones = Some(v);
             self
         }
@@ -12114,9 +12063,9 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -14000,12 +13949,9 @@ pub mod create_custom_db_engine_version_output {
         ///
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
         /// </p>
-        pub fn supported_character_sets(
-            mut self,
-            input: impl Into<crate::model::CharacterSet>,
-        ) -> Self {
+        pub fn supported_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_character_sets = Some(v);
             self
         }
@@ -14024,12 +13970,9 @@ pub mod create_custom_db_engine_version_output {
         ///
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
         /// </p>
-        pub fn supported_nchar_character_sets(
-            mut self,
-            input: impl Into<crate::model::CharacterSet>,
-        ) -> Self {
+        pub fn supported_nchar_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_nchar_character_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_nchar_character_sets = Some(v);
             self
         }
@@ -14047,12 +13990,9 @@ pub mod create_custom_db_engine_version_output {
         /// To override the contents of this collection use [`set_valid_upgrade_target`](Self::set_valid_upgrade_target).
         ///
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn valid_upgrade_target(
-            mut self,
-            input: impl Into<crate::model::UpgradeTarget>,
-        ) -> Self {
+        pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.valid_upgrade_target = Some(v);
             self
         }
@@ -14071,9 +14011,9 @@ pub mod create_custom_db_engine_version_output {
         /// <p>A list of the time zones supported by this engine for the
         /// <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.  
         /// </p>
-        pub fn supported_timezones(mut self, input: impl Into<crate::model::Timezone>) -> Self {
+        pub fn supported_timezones(mut self, input: crate::model::Timezone) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_timezones = Some(v);
             self
         }
@@ -14317,9 +14257,9 @@ pub mod create_custom_db_engine_version_output {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }

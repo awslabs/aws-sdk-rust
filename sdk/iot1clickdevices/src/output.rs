@@ -272,9 +272,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>A list of devices.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceDescription>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceDescription) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -357,9 +357,9 @@ pub mod list_device_events_output {
         ///
         /// <p>An array of zero or more elements describing the event(s) associated with the
         /// device.</p>
-        pub fn events(mut self, input: impl Into<crate::model::DeviceEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::DeviceEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -541,9 +541,9 @@ pub mod get_device_methods_output {
         /// To override the contents of this collection use [`set_device_methods`](Self::set_device_methods).
         ///
         /// <p>List of available device APIs.</p>
-        pub fn device_methods(mut self, input: impl Into<crate::model::DeviceMethod>) -> Self {
+        pub fn device_methods(mut self, input: crate::model::DeviceMethod) -> Self {
             let mut v = self.device_methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_methods = Some(v);
             self
         }

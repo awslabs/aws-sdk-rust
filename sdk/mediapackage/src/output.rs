@@ -1184,9 +1184,9 @@ pub mod list_origin_endpoints_output {
         /// To override the contents of this collection use [`set_origin_endpoints`](Self::set_origin_endpoints).
         ///
         /// A list of OriginEndpoint records.
-        pub fn origin_endpoints(mut self, input: impl Into<crate::model::OriginEndpoint>) -> Self {
+        pub fn origin_endpoints(mut self, input: crate::model::OriginEndpoint) -> Self {
             let mut v = self.origin_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.origin_endpoints = Some(v);
             self
         }
@@ -1256,9 +1256,9 @@ pub mod list_harvest_jobs_output {
         /// To override the contents of this collection use [`set_harvest_jobs`](Self::set_harvest_jobs).
         ///
         /// A list of HarvestJob records.
-        pub fn harvest_jobs(mut self, input: impl Into<crate::model::HarvestJob>) -> Self {
+        pub fn harvest_jobs(mut self, input: crate::model::HarvestJob) -> Self {
             let mut v = self.harvest_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.harvest_jobs = Some(v);
             self
         }
@@ -1338,9 +1338,9 @@ pub mod list_channels_output {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// A list of Channel records.
-        pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }

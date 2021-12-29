@@ -483,10 +483,10 @@ pub mod finding_criteria {
         pub fn criterion(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Condition>,
+            v: crate::model::Condition,
         ) -> Self {
             let mut hash_map = self.criterion.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.criterion = Some(hash_map);
             self
         }
@@ -1839,12 +1839,9 @@ pub mod usage_statistics {
         /// To override the contents of this collection use [`set_sum_by_account`](Self::set_sum_by_account).
         ///
         /// <p>The usage statistic sum organized by account ID.</p>
-        pub fn sum_by_account(
-            mut self,
-            input: impl Into<crate::model::UsageAccountResult>,
-        ) -> Self {
+        pub fn sum_by_account(mut self, input: crate::model::UsageAccountResult) -> Self {
             let mut v = self.sum_by_account.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sum_by_account = Some(v);
             self
         }
@@ -1861,12 +1858,9 @@ pub mod usage_statistics {
         /// To override the contents of this collection use [`set_sum_by_data_source`](Self::set_sum_by_data_source).
         ///
         /// <p>The usage statistic sum organized by on data source.</p>
-        pub fn sum_by_data_source(
-            mut self,
-            input: impl Into<crate::model::UsageDataSourceResult>,
-        ) -> Self {
+        pub fn sum_by_data_source(mut self, input: crate::model::UsageDataSourceResult) -> Self {
             let mut v = self.sum_by_data_source.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sum_by_data_source = Some(v);
             self
         }
@@ -1883,12 +1877,9 @@ pub mod usage_statistics {
         /// To override the contents of this collection use [`set_sum_by_resource`](Self::set_sum_by_resource).
         ///
         /// <p>The usage statistic sum organized by resource.</p>
-        pub fn sum_by_resource(
-            mut self,
-            input: impl Into<crate::model::UsageResourceResult>,
-        ) -> Self {
+        pub fn sum_by_resource(mut self, input: crate::model::UsageResourceResult) -> Self {
             let mut v = self.sum_by_resource.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sum_by_resource = Some(v);
             self
         }
@@ -1906,12 +1897,9 @@ pub mod usage_statistics {
         ///
         /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from
         /// most to least expensive.</p>
-        pub fn top_resources(
-            mut self,
-            input: impl Into<crate::model::UsageResourceResult>,
-        ) -> Self {
+        pub fn top_resources(mut self, input: crate::model::UsageResourceResult) -> Self {
             let mut v = self.top_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.top_resources = Some(v);
             self
         }
@@ -2371,9 +2359,9 @@ pub mod usage_criteria {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The data sources to aggregate usage statistics from.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -3463,13 +3451,9 @@ pub mod finding_statistics {
         /// To override the contents of this collection use [`set_count_by_severity`](Self::set_count_by_severity).
         ///
         /// <p>Represents a map of severity to count statistics for a set of findings.</p>
-        pub fn count_by_severity(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn count_by_severity(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.count_by_severity.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.count_by_severity = Some(hash_map);
             self
         }
@@ -4163,10 +4147,10 @@ pub mod evidence {
         /// <p>A list of threat intelligence details related to the evidence.</p>
         pub fn threat_intelligence_details(
             mut self,
-            input: impl Into<crate::model::ThreatIntelligenceDetail>,
+            input: crate::model::ThreatIntelligenceDetail,
         ) -> Self {
             let mut v = self.threat_intelligence_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.threat_intelligence_details = Some(v);
             self
         }
@@ -4484,12 +4468,9 @@ pub mod port_probe_action {
         /// To override the contents of this collection use [`set_port_probe_details`](Self::set_port_probe_details).
         ///
         /// <p>A list of objects related to port probe details.</p>
-        pub fn port_probe_details(
-            mut self,
-            input: impl Into<crate::model::PortProbeDetail>,
-        ) -> Self {
+        pub fn port_probe_details(mut self, input: crate::model::PortProbeDetail) -> Self {
             let mut v = self.port_probe_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_probe_details = Some(v);
             self
         }
@@ -5800,9 +5781,9 @@ pub mod resource {
         /// To override the contents of this collection use [`set_s3_bucket_details`](Self::set_s3_bucket_details).
         ///
         /// <p>Contains information on the S3 bucket.</p>
-        pub fn s3_bucket_details(mut self, input: impl Into<crate::model::S3BucketDetail>) -> Self {
+        pub fn s3_bucket_details(mut self, input: crate::model::S3BucketDetail) -> Self {
             let mut v = self.s3_bucket_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.s3_bucket_details = Some(v);
             self
         }
@@ -6100,12 +6081,9 @@ pub mod instance_details {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>The elastic network interface information of the EC2 instance.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -6132,9 +6110,9 @@ pub mod instance_details {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>The product code of the EC2 instance.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -6151,9 +6129,9 @@ pub mod instance_details {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the EC2 instance.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6508,10 +6486,10 @@ pub mod network_interface {
         /// <p>Other private IP address information of the EC2 instance.</p>
         pub fn private_ip_addresses(
             mut self,
-            input: impl Into<crate::model::PrivateIpAddressDetails>,
+            input: crate::model::PrivateIpAddressDetails,
         ) -> Self {
             let mut v = self.private_ip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.private_ip_addresses = Some(v);
             self
         }
@@ -6551,9 +6529,9 @@ pub mod network_interface {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The security groups associated with the EC2 instance.</p>
-        pub fn security_groups(mut self, input: impl Into<crate::model::SecurityGroup>) -> Self {
+        pub fn security_groups(mut self, input: crate::model::SecurityGroup) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_groups = Some(v);
             self
         }
@@ -6984,9 +6962,9 @@ pub mod s3_bucket_detail {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>All tags attached to the S3 bucket</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

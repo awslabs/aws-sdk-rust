@@ -146,12 +146,9 @@ pub mod metric_policy {
         /// To override the contents of this collection use [`set_metric_policy_rules`](Self::set_metric_policy_rules).
         ///
         /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
-        pub fn metric_policy_rules(
-            mut self,
-            input: impl Into<crate::model::MetricPolicyRule>,
-        ) -> Self {
+        pub fn metric_policy_rules(mut self, input: crate::model::MetricPolicyRule) -> Self {
             let mut v = self.metric_policy_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_policy_rules = Some(v);
             self
         }
@@ -443,9 +440,9 @@ pub mod cors_rule {
         /// execute.</p>
         /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one
         /// <code>AllowedOrigins</code> element.</p>
-        pub fn allowed_methods(mut self, input: impl Into<crate::model::MethodName>) -> Self {
+        pub fn allowed_methods(mut self, input: crate::model::MethodName) -> Self {
             let mut v = self.allowed_methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_methods = Some(v);
             self
         }

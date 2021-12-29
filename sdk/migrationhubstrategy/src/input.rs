@@ -1434,9 +1434,9 @@ pub mod list_application_components_input {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> The group ID specified in to filter on. </p>
-        pub fn group_id_filter(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_id_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_id_filter = Some(v);
             self
         }
@@ -2006,9 +2006,9 @@ pub mod list_servers_input {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> Specifies the group ID to filter on. </p>
-        pub fn group_id_filter(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_id_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_id_filter = Some(v);
             self
         }
@@ -2617,9 +2617,9 @@ pub mod start_import_file_task_input {
         ///
         /// <p>Groups the resources in the import file together with a unique name. This ID can be as
         /// filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
-        pub fn group_id(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_id(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_id = Some(v);
             self
         }
@@ -2812,9 +2812,9 @@ pub mod start_recommendation_report_generation_input {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> Groups the resources in the recommendation report with a unique name. </p>
-        pub fn group_id_filter(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_id_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_id_filter = Some(v);
             self
         }
@@ -3172,9 +3172,9 @@ pub mod update_application_component_config_input {
         /// To override the contents of this collection use [`set_source_code_list`](Self::set_source_code_list).
         ///
         /// <p> The list of source code configurations to update for the application component. </p>
-        pub fn source_code_list(mut self, input: impl Into<crate::model::SourceCode>) -> Self {
+        pub fn source_code_list(mut self, input: crate::model::SourceCode) -> Self {
             let mut v = self.source_code_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_code_list = Some(v);
             self
         }

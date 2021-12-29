@@ -1001,9 +1001,9 @@ pub mod permission {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The private CA actions that can be performed by the designated AWS service.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::ActionType>) -> Self {
+        pub fn actions(mut self, input: crate::model::ActionType) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -1800,10 +1800,10 @@ pub mod csr_extensions {
         /// Access</a> in RFC 5280.</p>
         pub fn subject_information_access(
             mut self,
-            input: impl Into<crate::model::AccessDescription>,
+            input: crate::model::AccessDescription,
         ) -> Self {
             let mut v = self.subject_information_access.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subject_information_access = Some(v);
             self
         }
@@ -3855,12 +3855,9 @@ pub mod extensions {
         /// certificate was issued and the purposes for which it may be used. In a CA certificate,
         /// these terms limit the set of policies for certification paths that include this
         /// certificate.</p>
-        pub fn certificate_policies(
-            mut self,
-            input: impl Into<crate::model::PolicyInformation>,
-        ) -> Self {
+        pub fn certificate_policies(mut self, input: crate::model::PolicyInformation) -> Self {
             let mut v = self.certificate_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_policies = Some(v);
             self
         }
@@ -3885,12 +3882,9 @@ pub mod extensions {
         ///
         /// <p>Specifies additional purposes for which the certified public key may be used other
         /// than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
-        pub fn extended_key_usage(
-            mut self,
-            input: impl Into<crate::model::ExtendedKeyUsage>,
-        ) -> Self {
+        pub fn extended_key_usage(mut self, input: crate::model::ExtendedKeyUsage) -> Self {
             let mut v = self.extended_key_usage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extended_key_usage = Some(v);
             self
         }
@@ -3922,12 +3916,9 @@ pub mod extensions {
         /// <p>The subject alternative name extension allows identities to be bound to the subject of
         /// the certificate. These identities may be included in addition to or in place of the
         /// identity in the subject field of the certificate.</p>
-        pub fn subject_alternative_names(
-            mut self,
-            input: impl Into<crate::model::GeneralName>,
-        ) -> Self {
+        pub fn subject_alternative_names(mut self, input: crate::model::GeneralName) -> Self {
             let mut v = self.subject_alternative_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subject_alternative_names = Some(v);
             self
         }
@@ -4214,12 +4205,9 @@ pub mod policy_information {
         ///
         /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the
         /// certification practice statement (CPS) qualifier.</p>
-        pub fn policy_qualifiers(
-            mut self,
-            input: impl Into<crate::model::PolicyQualifierInfo>,
-        ) -> Self {
+        pub fn policy_qualifiers(mut self, input: crate::model::PolicyQualifierInfo) -> Self {
             let mut v = self.policy_qualifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_qualifiers = Some(v);
             self
         }

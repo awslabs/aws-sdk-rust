@@ -136,9 +136,9 @@ pub mod create_certificate_authority_input {
         /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to
         /// 50 tags with a private CA. For information using tags with IAM to manage permissions,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -562,9 +562,9 @@ pub mod create_permission_input {
         /// <p>The actions that the specified AWS service principal can use. These include
         /// <code>IssueCertificate</code>, <code>GetCertificate</code>, and
         /// <code>ListPermissions</code>.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::ActionType>) -> Self {
+        pub fn actions(mut self, input: crate::model::ActionType) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -4059,9 +4059,9 @@ pub mod tag_certificate_authority_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>List of tags to be associated with the CA.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4248,9 +4248,9 @@ pub mod untag_certificate_authority_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>List of tags to be removed from the CA.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

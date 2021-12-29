@@ -912,9 +912,9 @@ pub mod create_grant_input {
         /// asymmetric KMS key that allows the <a>GenerateDataKey</a> operation. If you try,
         /// KMS returns a <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
         /// operations</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::GrantOperation>) -> Self {
+        pub fn operations(mut self, input: crate::model::GrantOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1620,9 +1620,9 @@ pub mod create_key_input {
         /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
         /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8914,9 +8914,9 @@ pub mod replicate_key_input {
         /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
         /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10021,9 +10021,9 @@ pub mod tag_resource_input {
         /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an
         /// existing tag key with a different tag value, KMS replaces the current tag value with the
         /// specified one.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

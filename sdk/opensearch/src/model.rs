@@ -1476,10 +1476,10 @@ pub mod auto_tune_options {
         /// </p>
         pub fn maintenance_schedules(
             mut self,
-            input: impl Into<crate::model::AutoTuneMaintenanceSchedule>,
+            input: crate::model::AutoTuneMaintenanceSchedule,
         ) -> Self {
             let mut v = self.maintenance_schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.maintenance_schedules = Some(v);
             self
         }
@@ -2893,11 +2893,11 @@ pub mod log_publishing_options_status {
         /// <p>The log publishing options configured for the domain.</p>
         pub fn options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             let mut hash_map = self.options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.options = Some(hash_map);
             self
         }
@@ -7975,9 +7975,9 @@ pub mod upgrade_history {
         /// </code>
         /// s representing information about each step performed as part of a specific upgrade or upgrade eligibility check.
         /// </p>
-        pub fn steps_list(mut self, input: impl Into<crate::model::UpgradeStepItem>) -> Self {
+        pub fn steps_list(mut self, input: crate::model::UpgradeStepItem) -> Self {
             let mut v = self.steps_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps_list = Some(v);
             self
         }
@@ -8706,12 +8706,9 @@ pub mod reserved_instance {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -9081,12 +9078,9 @@ pub mod reserved_instance_offering {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -9905,9 +9899,9 @@ pub mod limits {
         /// <p>Storage-related types and attributes
         /// that are available for a given InstanceType.
         /// </p>
-        pub fn storage_types(mut self, input: impl Into<crate::model::StorageType>) -> Self {
+        pub fn storage_types(mut self, input: crate::model::StorageType) -> Self {
             let mut v = self.storage_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_types = Some(v);
             self
         }
@@ -9947,12 +9941,9 @@ pub mod limits {
         /// </code>
         /// .
         /// </p>
-        pub fn additional_limits(
-            mut self,
-            input: impl Into<crate::model::AdditionalLimit>,
-        ) -> Self {
+        pub fn additional_limits(mut self, input: crate::model::AdditionalLimit) -> Self {
             let mut v = self.additional_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_limits = Some(v);
             self
         }
@@ -10539,12 +10530,9 @@ pub mod storage_type {
         ///
         /// <p>Limits that are applicable for the given storage type.
         /// </p>
-        pub fn storage_type_limits(
-            mut self,
-            input: impl Into<crate::model::StorageTypeLimit>,
-        ) -> Self {
+        pub fn storage_type_limits(mut self, input: crate::model::StorageTypeLimit) -> Self {
             let mut v = self.storage_type_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_type_limits = Some(v);
             self
         }
@@ -11372,11 +11360,11 @@ pub mod domain_status {
         /// <p>Log publishing options for the given domain.</p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             let mut hash_map = self.log_publishing_options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.log_publishing_options = Some(hash_map);
             self
         }
@@ -12101,10 +12089,10 @@ pub mod auto_tune_options_input {
         /// </p>
         pub fn maintenance_schedules(
             mut self,
-            input: impl Into<crate::model::AutoTuneMaintenanceSchedule>,
+            input: crate::model::AutoTuneMaintenanceSchedule,
         ) -> Self {
             let mut v = self.maintenance_schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.maintenance_schedules = Some(v);
             self
         }

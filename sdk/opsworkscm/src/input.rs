@@ -69,12 +69,9 @@ pub mod associate_node_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_attributes(
-            mut self,
-            input: impl Into<crate::model::EngineAttribute>,
-        ) -> Self {
+        pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_attributes = Some(v);
             self
         }
@@ -311,9 +308,9 @@ pub mod create_backup_input {
         /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -718,12 +715,9 @@ pub mod create_server_input {
         /// PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p>
         /// </li>
         /// </ul>
-        pub fn engine_attributes(
-            mut self,
-            input: impl Into<crate::model::EngineAttribute>,
-        ) -> Self {
+        pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_attributes = Some(v);
             self
         }
@@ -1076,9 +1070,9 @@ pub mod create_server_input {
         /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2531,12 +2525,9 @@ pub mod disassociate_node_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_attributes(
-            mut self,
-            input: impl Into<crate::model::EngineAttribute>,
-        ) -> Self {
+        pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_attributes = Some(v);
             self
         }
@@ -2765,9 +2756,9 @@ pub mod export_server_engine_attribute_input {
         /// this parameter is ignored.</p>
         /// </li>
         /// </ul>
-        pub fn input_attributes(mut self, input: impl Into<crate::model::EngineAttribute>) -> Self {
+        pub fn input_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.input_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attributes = Some(v);
             self
         }
@@ -3389,12 +3380,9 @@ pub mod start_maintenance_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_attributes(
-            mut self,
-            input: impl Into<crate::model::EngineAttribute>,
-        ) -> Self {
+        pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_attributes = Some(v);
             self
         }
@@ -3600,9 +3588,9 @@ pub mod tag_resource_input {
         /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

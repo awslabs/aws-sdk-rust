@@ -188,8 +188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the stream.</p>
@@ -198,8 +198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
@@ -209,8 +209,11 @@ pub mod fluent_builders {
         }
         /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
         /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
-        pub fn exclusive_start_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_shard_id(inp);
+        pub fn exclusive_start_shard_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.exclusive_start_shard_id(signature.into());
             self
         }
         /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
@@ -293,8 +296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-        pub fn shard_iterator(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_iterator(inp);
+        pub fn shard_iterator(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_iterator(signature.into());
             self
         }
         /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
@@ -306,8 +309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
@@ -383,8 +386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the stream.</p>
@@ -393,8 +396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_id(inp);
+        pub fn shard_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_id(signature.into());
             self
         }
         /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
@@ -427,8 +430,8 @@ pub mod fluent_builders {
         /// shard, so that you always read the most recent data in the shard.</p>
         /// </li>
         /// </ul>
-        pub fn shard_iterator_type(mut self, inp: crate::model::ShardIteratorType) -> Self {
-            self.inner = self.inner.shard_iterator_type(inp);
+        pub fn shard_iterator_type(mut self, signature: crate::model::ShardIteratorType) -> Self {
+            self.inner = self.inner.shard_iterator_type(signature);
             self
         }
         /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
@@ -464,8 +467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sequence_number(inp);
+        pub fn sequence_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sequence_number(signature.into());
             self
         }
         /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
@@ -542,8 +545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(signature.into());
             self
         }
         /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
@@ -552,8 +555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of streams to return. The upper limit is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of streams to return. The upper limit is 100.</p>
@@ -564,8 +567,11 @@ pub mod fluent_builders {
         /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
         /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
         /// </p>
-        pub fn exclusive_start_stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_stream_arn(inp);
+        pub fn exclusive_start_stream_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.exclusive_start_stream_arn(signature.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the

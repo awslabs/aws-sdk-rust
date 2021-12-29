@@ -388,9 +388,9 @@ pub mod describe_subscribers_for_notification_output {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p>A list of subscribers that are associated with a notification.</p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }
@@ -470,9 +470,9 @@ pub mod describe_notifications_for_budget_output {
         /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
         ///
         /// <p>A list of notifications that are associated with a budget.</p>
-        pub fn notifications(mut self, input: impl Into<crate::model::Notification>) -> Self {
+        pub fn notifications(mut self, input: crate::model::Notification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notifications = Some(v);
             self
         }
@@ -552,9 +552,9 @@ pub mod describe_budgets_output {
         /// To override the contents of this collection use [`set_budgets`](Self::set_budgets).
         ///
         /// <p>A list of budgets.</p>
-        pub fn budgets(mut self, input: impl Into<crate::model::Budget>) -> Self {
+        pub fn budgets(mut self, input: crate::model::Budget) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.budgets = Some(v);
             self
         }
@@ -729,9 +729,9 @@ pub mod describe_budget_actions_for_budget_output {
         /// <p>
         /// A list of the budget action resources information.
         /// </p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -819,9 +819,9 @@ pub mod describe_budget_actions_for_account_output {
         /// <p>
         /// A list of the budget action resources information.
         /// </p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -910,9 +910,9 @@ pub mod describe_budget_action_histories_output {
         /// <p>
         /// The historical record of the budget action resource.
         /// </p>
-        pub fn action_histories(mut self, input: impl Into<crate::model::ActionHistory>) -> Self {
+        pub fn action_histories(mut self, input: crate::model::ActionHistory) -> Self {
             let mut v = self.action_histories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.action_histories = Some(v);
             self
         }

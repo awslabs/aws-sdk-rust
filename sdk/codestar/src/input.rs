@@ -281,9 +281,9 @@ pub mod create_project_input {
         ///
         /// <p>A list of the Code objects submitted with the project request. If this
         /// parameter is specified, the request must also include the toolchain parameter.</p>
-        pub fn source_code(mut self, input: impl Into<crate::model::Code>) -> Self {
+        pub fn source_code(mut self, input: crate::model::Code) -> Self {
             let mut v = self.source_code.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_code = Some(v);
             self
         }

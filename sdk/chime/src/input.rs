@@ -687,12 +687,9 @@ pub mod associate_signin_delegate_groups_with_account_input {
         /// To override the contents of this collection use [`set_signin_delegate_groups`](Self::set_signin_delegate_groups).
         ///
         /// <p>The sign-in delegate groups.</p>
-        pub fn signin_delegate_groups(
-            mut self,
-            input: impl Into<crate::model::SigninDelegateGroup>,
-        ) -> Self {
+        pub fn signin_delegate_groups(mut self, input: crate::model::SigninDelegateGroup) -> Self {
             let mut v = self.signin_delegate_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.signin_delegate_groups = Some(v);
             self
         }
@@ -891,12 +888,9 @@ pub mod batch_create_attendee_input {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The request containing the attendees to create.</p>
-        pub fn attendees(
-            mut self,
-            input: impl Into<crate::model::CreateAttendeeRequestItem>,
-        ) -> Self {
+        pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -1368,12 +1362,9 @@ pub mod batch_create_room_membership_input {
         /// To override the contents of this collection use [`set_membership_item_list`](Self::set_membership_item_list).
         ///
         /// <p>The list of membership items.</p>
-        pub fn membership_item_list(
-            mut self,
-            input: impl Into<crate::model::MembershipItem>,
-        ) -> Self {
+        pub fn membership_item_list(mut self, input: crate::model::MembershipItem) -> Self {
             let mut v = self.membership_item_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.membership_item_list = Some(v);
             self
         }
@@ -2149,10 +2140,10 @@ pub mod batch_update_phone_number_input {
         /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
         pub fn update_phone_number_request_items(
             mut self,
-            input: impl Into<crate::model::UpdatePhoneNumberRequestItem>,
+            input: crate::model::UpdatePhoneNumberRequestItem,
         ) -> Self {
             let mut v = self.update_phone_number_request_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_phone_number_request_items = Some(v);
             self
         }
@@ -2333,10 +2324,10 @@ pub mod batch_update_user_input {
         /// <p>The request containing the user IDs and details to update.</p>
         pub fn update_user_request_items(
             mut self,
-            input: impl Into<crate::model::UpdateUserRequestItem>,
+            input: crate::model::UpdateUserRequestItem,
         ) -> Self {
             let mut v = self.update_user_request_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_user_request_items = Some(v);
             self
         }
@@ -2695,9 +2686,9 @@ pub mod create_app_instance_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3116,9 +3107,9 @@ pub mod create_app_instance_user_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3311,9 +3302,9 @@ pub mod create_attendee_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3759,9 +3750,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the creation request.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5021,9 +5012,9 @@ pub mod create_meeting_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5558,9 +5549,9 @@ pub mod create_meeting_with_attendees_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5597,12 +5588,9 @@ pub mod create_meeting_with_attendees_input {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The request containing the attendees to create.</p>
-        pub fn attendees(
-            mut self,
-            input: impl Into<crate::model::CreateAttendeeRequestItem>,
-        ) -> Self {
+        pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -6014,9 +6002,9 @@ pub mod create_proxy_session_input {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>The proxy session capabilities.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -6688,12 +6676,9 @@ pub mod create_sip_media_application_input {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-        pub fn endpoints(
-            mut self,
-            input: impl Into<crate::model::SipMediaApplicationEndpoint>,
-        ) -> Self {
+        pub fn endpoints(mut self, input: crate::model::SipMediaApplicationEndpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -7151,10 +7136,10 @@ pub mod create_sip_rule_input {
         /// <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
         pub fn target_applications(
             mut self,
-            input: impl Into<crate::model::SipRuleTargetApplication>,
+            input: crate::model::SipRuleTargetApplication,
         ) -> Self {
             let mut v = self.target_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_applications = Some(v);
             self
         }
@@ -7725,12 +7710,9 @@ pub mod create_voice_connector_group_input {
         /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
         ///
         /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
-        pub fn voice_connector_items(
-            mut self,
-            input: impl Into<crate::model::VoiceConnectorItem>,
-        ) -> Self {
+        pub fn voice_connector_items(mut self, input: crate::model::VoiceConnectorItem) -> Self {
             let mut v = self.voice_connector_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.voice_connector_items = Some(v);
             self
         }
@@ -27299,12 +27281,12 @@ pub mod put_app_instance_streaming_configurations_input {
         /// <p>The streaming configurations set for an <code>AppInstance</code>.</p>
         pub fn app_instance_streaming_configurations(
             mut self,
-            input: impl Into<crate::model::AppInstanceStreamingConfiguration>,
+            input: crate::model::AppInstanceStreamingConfiguration,
         ) -> Self {
             let mut v = self
                 .app_instance_streaming_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instance_streaming_configurations = Some(v);
             self
         }
@@ -29318,9 +29300,9 @@ pub mod put_voice_connector_termination_credentials_input {
         /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
         ///
         /// <p>The termination SIP credentials.</p>
-        pub fn credentials(mut self, input: impl Into<crate::model::Credential>) -> Self {
+        pub fn credentials(mut self, input: crate::model::Credential) -> Self {
             let mut v = self.credentials.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.credentials = Some(v);
             self
         }
@@ -31672,9 +31654,9 @@ pub mod tag_attendee_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -31887,9 +31869,9 @@ pub mod tag_meeting_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -32081,9 +32063,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -35067,9 +35049,9 @@ pub mod update_proxy_session_input {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>The proxy session capabilities.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -35750,12 +35732,9 @@ pub mod update_sip_media_application_input {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>The new set of endpoints for the specified SIP media application.</p>
-        pub fn endpoints(
-            mut self,
-            input: impl Into<crate::model::SipMediaApplicationEndpoint>,
-        ) -> Self {
+        pub fn endpoints(mut self, input: crate::model::SipMediaApplicationEndpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -36207,10 +36186,10 @@ pub mod update_sip_rule_input {
         /// <p>The new value of the list of target applications.</p>
         pub fn target_applications(
             mut self,
-            input: impl Into<crate::model::SipRuleTargetApplication>,
+            input: crate::model::SipRuleTargetApplication,
         ) -> Self {
             let mut v = self.target_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_applications = Some(v);
             self
         }
@@ -37065,12 +37044,9 @@ pub mod update_voice_connector_group_input {
         /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
         ///
         /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
-        pub fn voice_connector_items(
-            mut self,
-            input: impl Into<crate::model::VoiceConnectorItem>,
-        ) -> Self {
+        pub fn voice_connector_items(mut self, input: crate::model::VoiceConnectorItem) -> Self {
             let mut v = self.voice_connector_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.voice_connector_items = Some(v);
             self
         }

@@ -139,10 +139,10 @@ pub mod update_package_versions_status_output {
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::SuccessfulPackageVersionInfo>,
+            v: crate::model::SuccessfulPackageVersionInfo,
         ) -> Self {
             let mut hash_map = self.successful_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.successful_versions = Some(hash_map);
             self
         }
@@ -171,10 +171,10 @@ pub mod update_package_versions_status_output {
         pub fn failed_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PackageVersionError>,
+            v: crate::model::PackageVersionError,
         ) -> Self {
             let mut hash_map = self.failed_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_versions = Some(hash_map);
             self
         }
@@ -413,9 +413,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key and value pairs associated with the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -493,9 +493,9 @@ pub mod list_repositories_in_domain_output {
         /// <p>
         /// The returned list of repositories.
         /// </p>
-        pub fn repositories(mut self, input: impl Into<crate::model::RepositorySummary>) -> Self {
+        pub fn repositories(mut self, input: crate::model::RepositorySummary) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -595,9 +595,9 @@ pub mod list_repositories_output {
         /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
         /// objects.
         /// </p>
-        pub fn repositories(mut self, input: impl Into<crate::model::RepositorySummary>) -> Self {
+        pub fn repositories(mut self, input: crate::model::RepositorySummary) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -1007,9 +1007,9 @@ pub mod list_package_versions_output {
         /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
         /// objects.
         /// </p>
-        pub fn versions(mut self, input: impl Into<crate::model::PackageVersionSummary>) -> Self {
+        pub fn versions(mut self, input: crate::model::PackageVersionSummary) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -1406,9 +1406,9 @@ pub mod list_package_version_dependencies_output {
         /// <p>
         /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.
         /// </p>
-        pub fn dependencies(mut self, input: impl Into<crate::model::PackageDependency>) -> Self {
+        pub fn dependencies(mut self, input: crate::model::PackageDependency) -> Self {
             let mut v = self.dependencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dependencies = Some(v);
             self
         }
@@ -1721,9 +1721,9 @@ pub mod list_package_version_assets_output {
         /// <p>
         /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.
         /// </p>
-        pub fn assets(mut self, input: impl Into<crate::model::AssetSummary>) -> Self {
+        pub fn assets(mut self, input: crate::model::AssetSummary) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assets = Some(v);
             self
         }
@@ -1813,9 +1813,9 @@ pub mod list_packages_output {
         /// The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
         /// objects.
         /// </p>
-        pub fn packages(mut self, input: impl Into<crate::model::PackageSummary>) -> Self {
+        pub fn packages(mut self, input: crate::model::PackageSummary) -> Self {
             let mut v = self.packages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.packages = Some(v);
             self
         }
@@ -1912,9 +1912,9 @@ pub mod list_domains_output {
         /// <p>
         /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects.
         /// </p>
-        pub fn domains(mut self, input: impl Into<crate::model::DomainSummary>) -> Self {
+        pub fn domains(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domains = Some(v);
             self
         }
@@ -2878,10 +2878,10 @@ pub mod dispose_package_versions_output {
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::SuccessfulPackageVersionInfo>,
+            v: crate::model::SuccessfulPackageVersionInfo,
         ) -> Self {
             let mut hash_map = self.successful_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.successful_versions = Some(hash_map);
             self
         }
@@ -2943,10 +2943,10 @@ pub mod dispose_package_versions_output {
         pub fn failed_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PackageVersionError>,
+            v: crate::model::PackageVersionError,
         ) -> Self {
             let mut hash_map = self.failed_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_versions = Some(hash_map);
             self
         }
@@ -3549,10 +3549,10 @@ pub mod delete_package_versions_output {
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::SuccessfulPackageVersionInfo>,
+            v: crate::model::SuccessfulPackageVersionInfo,
         ) -> Self {
             let mut hash_map = self.successful_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.successful_versions = Some(hash_map);
             self
         }
@@ -3614,10 +3614,10 @@ pub mod delete_package_versions_output {
         pub fn failed_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PackageVersionError>,
+            v: crate::model::PackageVersionError,
         ) -> Self {
             let mut hash_map = self.failed_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_versions = Some(hash_map);
             self
         }
@@ -4082,10 +4082,10 @@ pub mod copy_package_versions_output {
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::SuccessfulPackageVersionInfo>,
+            v: crate::model::SuccessfulPackageVersionInfo,
         ) -> Self {
             let mut hash_map = self.successful_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.successful_versions = Some(hash_map);
             self
         }
@@ -4147,10 +4147,10 @@ pub mod copy_package_versions_output {
         pub fn failed_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PackageVersionError>,
+            v: crate::model::PackageVersionError,
         ) -> Self {
             let mut hash_map = self.failed_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_versions = Some(hash_map);
             self
         }

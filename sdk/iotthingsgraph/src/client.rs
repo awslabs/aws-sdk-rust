@@ -408,8 +408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing to which the entity is to be associated.</p>
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(signature.into());
             self
         }
         /// <p>The name of the thing to which the entity is to be associated.</p>
@@ -422,8 +422,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
         /// </p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The ID of the device to be associated with the thing.</p>
@@ -436,8 +436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-        pub fn namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.namespace_version(inp);
+        pub fn namespace_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.namespace_version(signature);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -508,8 +508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The workflow <code>DefinitionDocument</code>.</p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, signature: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(signature);
             self
         }
         /// <p>The workflow <code>DefinitionDocument</code>.</p>
@@ -522,8 +522,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace version in which the workflow is to be created.</p>
         /// <p>If no value is specified, the latest version is used by default.</p>
-        pub fn compatible_namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.compatible_namespace_version(inp);
+        pub fn compatible_namespace_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.compatible_namespace_version(signature);
             self
         }
         /// <p>The namespace version in which the workflow is to be created.</p>
@@ -605,8 +605,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
@@ -618,8 +618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A document that defines an entity. </p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, signature: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(signature);
             self
         }
         /// <p>A document that defines an entity. </p>
@@ -631,8 +631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
-        pub fn target(mut self, inp: crate::model::DeploymentTarget) -> Self {
-            self.inner = self.inner.target(inp);
+        pub fn target(mut self, signature: crate::model::DeploymentTarget) -> Self {
+            self.inner = self.inner.target(signature);
             self
         }
         /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
@@ -645,8 +645,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
         /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-        pub fn greengrass_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.greengrass_group_name(inp);
+        pub fn greengrass_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.greengrass_group_name(signature.into());
             self
         }
         /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
@@ -660,8 +660,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
         /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(signature.into());
             self
         }
         /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
@@ -674,8 +674,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-        pub fn metrics_configuration(mut self, inp: crate::model::MetricsConfiguration) -> Self {
-            self.inner = self.inner.metrics_configuration(inp);
+        pub fn metrics_configuration(
+            mut self,
+            signature: crate::model::MetricsConfiguration,
+        ) -> Self {
+            self.inner = self.inner.metrics_configuration(signature);
             self
         }
         /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
@@ -689,8 +692,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
         /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
         /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
-        pub fn flow_actions_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_actions_role_arn(inp);
+        pub fn flow_actions_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_actions_role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
@@ -765,8 +768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, signature: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(signature);
             self
         }
         /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
@@ -779,8 +782,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace version in which the system is to be created.</p>
         /// <p>If no value is specified, the latest version is used by default.</p>
-        pub fn compatible_namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.compatible_namespace_version(inp);
+        pub fn compatible_namespace_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.compatible_namespace_version(signature);
             self
         }
         /// <p>The namespace version in which the system is to be created.</p>
@@ -855,8 +858,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
@@ -991,8 +994,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the system instance to be deleted.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system instance to be deleted.</p>
@@ -1066,8 +1069,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system to be deleted.</p>
@@ -1155,8 +1158,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
@@ -1233,8 +1236,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
@@ -1311,8 +1314,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system to delete.</p>
@@ -1385,8 +1388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-        pub fn namespace_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace_name(inp);
+        pub fn namespace_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_name(signature.into());
             self
         }
         /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
@@ -1459,8 +1462,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing to disassociate.</p>
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(signature.into());
             self
         }
         /// <p>The name of the thing to disassociate.</p>
@@ -1469,8 +1472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type from which to disassociate the thing.</p>
-        pub fn entity_type(mut self, inp: crate::model::EntityType) -> Self {
-            self.inner = self.inner.entity_type(inp);
+        pub fn entity_type(mut self, signature: crate::model::EntityType) -> Self {
+            self.inner = self.inner.entity_type(signature);
             self
         }
         /// <p>The entity type from which to disassociate the thing.</p>
@@ -1581,8 +1584,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
         /// </p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>An array of entity IDs.</p>
@@ -1598,8 +1601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-        pub fn namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.namespace_version(inp);
+        pub fn namespace_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.namespace_version(signature);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -1672,8 +1675,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the workflow.</p>
@@ -1686,8 +1689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of the workflow revision to retrieve.</p>
-        pub fn revision_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.revision_number(inp);
+        pub fn revision_number(mut self, signature: i64) -> Self {
+            self.inner = self.inner.revision_number(signature);
             self
         }
         /// <p>The number of the workflow revision to retrieve.</p>
@@ -1761,8 +1764,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the workflow.</p>
@@ -1775,8 +1778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -1785,8 +1788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1919,8 +1922,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
@@ -1997,8 +2000,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
@@ -2011,8 +2014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number that specifies the revision of the system to get.</p>
-        pub fn revision_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.revision_number(inp);
+        pub fn revision_number(mut self, signature: i64) -> Self {
+            self.inner = self.inner.revision_number(signature);
             self
         }
         /// <p>The number that specifies the revision of the system to get.</p>
@@ -2086,8 +2089,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system template.</p>
@@ -2100,8 +2103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2110,8 +2113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2180,8 +2183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
@@ -2250,8 +2253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the flow execution.</p>
-        pub fn flow_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_execution_id(inp);
+        pub fn flow_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_execution_id(signature.into());
             self
         }
         /// <p>The ID of the flow execution.</p>
@@ -2263,8 +2266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2273,8 +2276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2343,8 +2346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of tags to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of tags to return.</p>
@@ -2353,8 +2356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be returned.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be returned.</p>
@@ -2363,8 +2366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that specifies the next page of results to return.</p>
@@ -2437,8 +2440,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
         ///
         /// <p>The entity types for which to search.</p>
-        pub fn entity_types(mut self, inp: impl Into<crate::model::EntityType>) -> Self {
-            self.inner = self.inner.entity_types(inp);
+        pub fn entity_types(mut self, input: crate::model::EntityType) -> Self {
+            self.inner = self.inner.entity_types(input);
             self
         }
         /// <p>The entity types for which to search.</p>
@@ -2458,8 +2461,8 @@ pub mod fluent_builders {
         /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
         /// you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::EntityFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::EntityFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
@@ -2475,8 +2478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2485,8 +2488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2495,8 +2498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-        pub fn namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.namespace_version(inp);
+        pub fn namespace_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.namespace_version(signature);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -2565,8 +2568,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the system instance that contains the flow.</p>
-        pub fn system_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.system_instance_id(inp);
+        pub fn system_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.system_instance_id(signature.into());
             self
         }
         /// <p>The ID of the system instance that contains the flow.</p>
@@ -2578,8 +2581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of a flow execution.</p>
-        pub fn flow_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_execution_id(inp);
+        pub fn flow_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_execution_id(signature.into());
             self
         }
         /// <p>The ID of a flow execution.</p>
@@ -2591,8 +2594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the earliest flow execution to return.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The date and time of the earliest flow execution to return.</p>
@@ -2604,8 +2607,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the latest flow execution to return.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The date and time of the latest flow execution to return.</p>
@@ -2617,8 +2620,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2627,8 +2630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2701,8 +2704,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::FlowTemplateFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::FlowTemplateFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
@@ -2714,8 +2717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2724,8 +2727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2800,8 +2803,8 @@ pub mod fluent_builders {
         /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
         /// <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SystemInstanceFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SystemInstanceFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
@@ -2815,8 +2818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2825,8 +2828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2899,8 +2902,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SystemTemplateFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SystemTemplateFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
@@ -2912,8 +2915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2922,8 +2925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2999,8 +3002,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
         /// </p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The ID of the entity to which the things are associated.</p>
@@ -3013,8 +3016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -3023,8 +3026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -3033,8 +3036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-        pub fn namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.namespace_version(inp);
+        pub fn namespace_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.namespace_version(signature);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -3103,8 +3106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
@@ -3117,8 +3120,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to add to the resource.></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to add to the resource.></p>
@@ -3190,8 +3193,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the system instance to remove from its target.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system instance to remove from its target.</p>
@@ -3260,8 +3263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be removed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be removed.</p>
@@ -3275,8 +3278,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed. </p>
         /// <p>This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed. </p>
@@ -3354,8 +3357,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the workflow to be updated.</p>
@@ -3368,8 +3371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, signature: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(signature);
             self
         }
         /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
@@ -3383,8 +3386,8 @@ pub mod fluent_builders {
         /// <p>The version of the user's namespace.</p>
         /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
         /// to update.</p>
-        pub fn compatible_namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.compatible_namespace_version(inp);
+        pub fn compatible_namespace_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.compatible_namespace_version(signature);
             self
         }
         /// <p>The version of the user's namespace.</p>
@@ -3459,8 +3462,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
         /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the system to be updated.</p>
@@ -3473,8 +3476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, signature: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(signature);
             self
         }
         /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
@@ -3487,8 +3490,8 @@ pub mod fluent_builders {
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
         /// <p>If no value is specified, the latest version is used by default.</p>
-        pub fn compatible_namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.compatible_namespace_version(inp);
+        pub fn compatible_namespace_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.compatible_namespace_version(signature);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -3568,8 +3571,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
-        pub fn document(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.document(inp);
+        pub fn document(mut self, signature: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.document(signature);
             self
         }
         /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
@@ -3581,8 +3584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
-        pub fn sync_with_public_namespace(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sync_with_public_namespace(inp);
+        pub fn sync_with_public_namespace(mut self, signature: bool) -> Self {
+            self.inner = self.inner.sync_with_public_namespace(signature);
             self
         }
         /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
@@ -3592,8 +3595,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
         /// If set to <code>true</code>, the upload will create a new namespace version.</p>
-        pub fn deprecate_existing_entities(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deprecate_existing_entities(inp);
+        pub fn deprecate_existing_entities(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deprecate_existing_entities(signature);
             self
         }
         /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.

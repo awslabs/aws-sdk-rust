@@ -204,12 +204,9 @@ pub mod update_container_instances_state_output {
         /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
         ///
         /// <p>The list of container instances.</p>
-        pub fn container_instances(
-            mut self,
-            input: impl Into<crate::model::ContainerInstance>,
-        ) -> Self {
+        pub fn container_instances(mut self, input: crate::model::ContainerInstance) -> Self {
             let mut v = self.container_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.container_instances = Some(v);
             self
         }
@@ -226,9 +223,9 @@ pub mod update_container_instances_state_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -806,9 +803,9 @@ pub mod start_task_output {
         ///
         /// <p>A full description of the tasks that were started. Each task that was successfully
         /// placed on your container instances is described.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -826,9 +823,9 @@ pub mod start_task_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -901,9 +898,9 @@ pub mod run_task_output {
         ///
         /// <p>A full description of the tasks that were run. The tasks that were successfully placed
         /// on your cluster are described here.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -921,9 +918,9 @@ pub mod run_task_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -1006,9 +1003,9 @@ pub mod register_task_definition_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the task definition.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1181,9 +1178,9 @@ pub mod put_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes applied to your resource.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1654,9 +1651,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2037,9 +2034,9 @@ pub mod list_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A list of attribute objects that meet the criteria of the request.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -2135,9 +2132,9 @@ pub mod list_account_settings_output {
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
         /// <p>The account settings for the resource.</p>
-        pub fn settings(mut self, input: impl Into<crate::model::Setting>) -> Self {
+        pub fn settings(mut self, input: crate::model::Setting) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.settings = Some(v);
             self
         }
@@ -2468,9 +2465,9 @@ pub mod describe_task_sets_output {
         /// To override the contents of this collection use [`set_task_sets`](Self::set_task_sets).
         ///
         /// <p>The list of task sets described.</p>
-        pub fn task_sets(mut self, input: impl Into<crate::model::TaskSet>) -> Self {
+        pub fn task_sets(mut self, input: crate::model::TaskSet) -> Self {
             let mut v = self.task_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_sets = Some(v);
             self
         }
@@ -2487,9 +2484,9 @@ pub mod describe_task_sets_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -2559,9 +2556,9 @@ pub mod describe_tasks_output {
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
         /// <p>The list of tasks.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -2578,9 +2575,9 @@ pub mod describe_tasks_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -2759,9 +2756,9 @@ pub mod describe_task_definition_output {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2863,9 +2860,9 @@ pub mod describe_services_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>The list of services described.</p>
-        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
+        pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -2882,9 +2879,9 @@ pub mod describe_services_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -2955,12 +2952,9 @@ pub mod describe_container_instances_output {
         /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
         ///
         /// <p>The list of container instances.</p>
-        pub fn container_instances(
-            mut self,
-            input: impl Into<crate::model::ContainerInstance>,
-        ) -> Self {
+        pub fn container_instances(mut self, input: crate::model::ContainerInstance) -> Self {
             let mut v = self.container_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.container_instances = Some(v);
             self
         }
@@ -2977,9 +2971,9 @@ pub mod describe_container_instances_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -3049,9 +3043,9 @@ pub mod describe_clusters_output {
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
         /// <p>The list of clusters.</p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }
@@ -3068,9 +3062,9 @@ pub mod describe_clusters_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -3157,12 +3151,9 @@ pub mod describe_capacity_providers_output {
         /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
         ///
         /// <p>The list of capacity providers.</p>
-        pub fn capacity_providers(
-            mut self,
-            input: impl Into<crate::model::CapacityProvider>,
-        ) -> Self {
+        pub fn capacity_providers(mut self, input: crate::model::CapacityProvider) -> Self {
             let mut v = self.capacity_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_providers = Some(v);
             self
         }
@@ -3179,9 +3170,9 @@ pub mod describe_capacity_providers_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::Failure>) -> Self {
+        pub fn failures(mut self, input: crate::model::Failure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -3595,9 +3586,9 @@ pub mod delete_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A list of attribute objects that were successfully deleted from your resource.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }

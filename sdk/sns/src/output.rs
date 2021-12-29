@@ -411,12 +411,9 @@ pub mod publish_batch_output {
         /// To override the contents of this collection use [`set_successful`](Self::set_successful).
         ///
         /// <p>A list of successful <code>PublishBatch</code> responses.</p>
-        pub fn successful(
-            mut self,
-            input: impl Into<crate::model::PublishBatchResultEntry>,
-        ) -> Self {
+        pub fn successful(mut self, input: crate::model::PublishBatchResultEntry) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -433,9 +430,9 @@ pub mod publish_batch_output {
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
         /// <p>A list of failed <code>PublishBatch</code> responses. </p>
-        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
@@ -633,9 +630,9 @@ pub mod list_topics_output {
         /// To override the contents of this collection use [`set_topics`](Self::set_topics).
         ///
         /// <p>A list of topic ARNs.</p>
-        pub fn topics(mut self, input: impl Into<crate::model::Topic>) -> Self {
+        pub fn topics(mut self, input: crate::model::Topic) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topics = Some(v);
             self
         }
@@ -709,9 +706,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the specified topic.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -780,9 +777,9 @@ pub mod list_subscriptions_by_topic_output {
         /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
         ///
         /// <p>A list of subscriptions.</p>
-        pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
+        pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscriptions = Some(v);
             self
         }
@@ -866,9 +863,9 @@ pub mod list_subscriptions_output {
         /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
         ///
         /// <p>A list of subscriptions.</p>
-        pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
+        pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscriptions = Some(v);
             self
         }
@@ -955,12 +952,9 @@ pub mod list_sms_sandbox_phone_numbers_output {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>A list of the calling account's pending and verified phone numbers.</p>
-        pub fn phone_numbers(
-            mut self,
-            input: impl Into<crate::model::SmsSandboxPhoneNumber>,
-        ) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::SmsSandboxPhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -1050,12 +1044,9 @@ pub mod list_platform_applications_output {
         /// To override the contents of this collection use [`set_platform_applications`](Self::set_platform_applications).
         ///
         /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
-        pub fn platform_applications(
-            mut self,
-            input: impl Into<crate::model::PlatformApplication>,
-        ) -> Self {
+        pub fn platform_applications(mut self, input: crate::model::PlatformApplication) -> Self {
             let mut v = self.platform_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_applications = Some(v);
             self
         }
@@ -1250,12 +1241,9 @@ pub mod list_origination_numbers_output {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>A list of the calling account's verified and pending origination numbers.</p>
-        pub fn phone_numbers(
-            mut self,
-            input: impl Into<crate::model::PhoneNumberInformation>,
-        ) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumberInformation) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -1327,9 +1315,9 @@ pub mod list_endpoints_by_platform_application_output {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-        pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }

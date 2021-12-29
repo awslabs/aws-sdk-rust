@@ -40,9 +40,9 @@ pub mod add_attachments_to_set_input {
         /// <code>data</code> appear as <code>blob</code>, which is represented as a
         /// base64-encoded string. The value for <code>fileName</code> is the name of the
         /// attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
+        pub fn attachments(mut self, input: crate::model::Attachment) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }

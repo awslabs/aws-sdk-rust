@@ -584,9 +584,9 @@ pub mod lookup_policy_output {
         /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
         /// <code>PolicyType</code>. For more
         /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        pub fn policy_to_path_list(mut self, input: impl Into<crate::model::PolicyToPath>) -> Self {
+        pub fn policy_to_path_list(mut self, input: crate::model::PolicyToPath) -> Self {
             let mut v = self.policy_to_path_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_to_path_list = Some(v);
             self
         }
@@ -751,12 +751,9 @@ pub mod list_typed_link_facet_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>An ordered set of attributes associate with the typed link.</p>
-        pub fn attributes(
-            mut self,
-            input: impl Into<crate::model::TypedLinkAttributeDefinition>,
-        ) -> Self {
+        pub fn attributes(mut self, input: crate::model::TypedLinkAttributeDefinition) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -836,9 +833,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key value pairs that are associated with the response.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1085,12 +1082,9 @@ pub mod list_outgoing_typed_links_output {
         /// To override the contents of this collection use [`set_typed_link_specifiers`](Self::set_typed_link_specifiers).
         ///
         /// <p>Returns a typed link specifier as output.</p>
-        pub fn typed_link_specifiers(
-            mut self,
-            input: impl Into<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
+        pub fn typed_link_specifiers(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
             let mut v = self.typed_link_specifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.typed_link_specifiers = Some(v);
             self
         }
@@ -1315,10 +1309,10 @@ pub mod list_object_parents_output {
         /// <p>Returns a list of parent reference and LinkName Tuples.</p>
         pub fn parent_links(
             mut self,
-            input: impl Into<crate::model::ObjectIdentifierAndLinkNameTuple>,
+            input: crate::model::ObjectIdentifierAndLinkNameTuple,
         ) -> Self {
             let mut v = self.parent_links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parent_links = Some(v);
             self
         }
@@ -1403,10 +1397,10 @@ pub mod list_object_parent_paths_output {
         /// directory.</p>
         pub fn path_to_object_identifiers_list(
             mut self,
-            input: impl Into<crate::model::PathToObjectIdentifiers>,
+            input: crate::model::PathToObjectIdentifiers,
         ) -> Self {
             let mut v = self.path_to_object_identifiers_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.path_to_object_identifiers_list = Some(v);
             self
         }
@@ -1589,9 +1583,9 @@ pub mod list_object_attributes_output {
         ///
         /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the
         /// key, and attribute value is the value.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeKeyAndValue>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1755,12 +1749,9 @@ pub mod list_index_output {
         /// To override the contents of this collection use [`set_index_attachments`](Self::set_index_attachments).
         ///
         /// <p>The objects and indexed values attached to the index.</p>
-        pub fn index_attachments(
-            mut self,
-            input: impl Into<crate::model::IndexAttachment>,
-        ) -> Self {
+        pub fn index_attachments(mut self, input: crate::model::IndexAttachment) -> Self {
             let mut v = self.index_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.index_attachments = Some(v);
             self
         }
@@ -1841,12 +1832,9 @@ pub mod list_incoming_typed_links_output {
         /// To override the contents of this collection use [`set_link_specifiers`](Self::set_link_specifiers).
         ///
         /// <p>Returns one or more typed link specifiers as output.</p>
-        pub fn link_specifiers(
-            mut self,
-            input: impl Into<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
+        pub fn link_specifiers(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
             let mut v = self.link_specifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.link_specifiers = Some(v);
             self
         }
@@ -2008,9 +1996,9 @@ pub mod list_facet_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes attached to the facet.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::FacetAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::FacetAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -2093,9 +2081,9 @@ pub mod list_directories_output {
         ///
         /// <p>Lists all directories that are associated with your account in pagination
         /// fashion.</p>
-        pub fn directories(mut self, input: impl Into<crate::model::Directory>) -> Self {
+        pub fn directories(mut self, input: crate::model::Directory) -> Self {
             let mut v = self.directories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.directories = Some(v);
             self
         }
@@ -2259,12 +2247,9 @@ pub mod list_attached_indices_output {
         /// To override the contents of this collection use [`set_index_attachments`](Self::set_index_attachments).
         ///
         /// <p>The indices attached to the specified object.</p>
-        pub fn index_attachments(
-            mut self,
-            input: impl Into<crate::model::IndexAttachment>,
-        ) -> Self {
+        pub fn index_attachments(mut self, input: crate::model::IndexAttachment) -> Self {
             let mut v = self.index_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.index_attachments = Some(v);
             self
         }
@@ -2583,9 +2568,9 @@ pub mod get_object_information_output {
         /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
         ///
         /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
-        pub fn schema_facets(mut self, input: impl Into<crate::model::SchemaFacet>) -> Self {
+        pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
             let mut v = self.schema_facets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_facets = Some(v);
             self
         }
@@ -2661,9 +2646,9 @@ pub mod get_object_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes that are associated with the object.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeKeyAndValue>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -2725,9 +2710,9 @@ pub mod get_link_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes that are associated with the typed link.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeKeyAndValue>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -3818,12 +3803,9 @@ pub mod batch_write_output {
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
         /// <p>A list of all the responses for each batch write.</p>
-        pub fn responses(
-            mut self,
-            input: impl Into<crate::model::BatchWriteOperationResponse>,
-        ) -> Self {
+        pub fn responses(mut self, input: crate::model::BatchWriteOperationResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.responses = Some(v);
             self
         }
@@ -3885,12 +3867,9 @@ pub mod batch_read_output {
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
         /// <p>A list of all the responses for each batch read.</p>
-        pub fn responses(
-            mut self,
-            input: impl Into<crate::model::BatchReadOperationResponse>,
-        ) -> Self {
+        pub fn responses(mut self, input: crate::model::BatchReadOperationResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.responses = Some(v);
             self
         }

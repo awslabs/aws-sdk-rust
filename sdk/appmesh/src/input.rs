@@ -76,9 +76,9 @@ pub mod create_gateway_route_input {
         /// and organization. Each tag consists of a key and an optional value, both of which you
         /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -345,9 +345,9 @@ pub mod create_mesh_input {
         /// and organization. Each tag consists of a key and an optional value, both of which you
         /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -577,9 +577,9 @@ pub mod create_route_input {
         /// organization. Each tag consists of a key and an optional value, both of which you define.
         /// Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -863,9 +863,9 @@ pub mod create_virtual_gateway_input {
         /// categorization and organization. Each tag consists of a key and an optional value, both of
         /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1135,9 +1135,9 @@ pub mod create_virtual_node_input {
         /// and organization. Each tag consists of a key and an optional value, both of which you
         /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1405,9 +1405,9 @@ pub mod create_virtual_router_input {
         /// and organization. Each tag consists of a key and an optional value, both of which you
         /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1675,9 +1675,9 @@ pub mod create_virtual_service_input {
         /// categorization and organization. Each tag consists of a key and an optional value, both of
         /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6733,9 +6733,9 @@ pub mod tag_resource_input {
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
         /// Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

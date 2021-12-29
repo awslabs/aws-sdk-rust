@@ -443,8 +443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the inbound connection you want to accept.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(signature.into());
             self
         }
         /// <p>The ID of the inbound connection you want to accept.</p>
@@ -521,8 +521,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the <code>ARN</code> of the domain you want to add tags to.
         /// </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>Specify the <code>ARN</code> of the domain you want to add tags to.
@@ -537,8 +537,8 @@ pub mod fluent_builders {
         ///
         /// <p>List of <code>Tag</code> to add to the domain.
         /// </p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>List of <code>Tag</code> to add to the domain.
@@ -613,8 +613,8 @@ pub mod fluent_builders {
         /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
         /// this value.
         /// </p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
@@ -625,8 +625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain to associate the package with.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain to associate the package with.</p>
@@ -697,8 +697,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to stop the latest service software update on.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to stop the latest service software update on.</p>
@@ -773,8 +773,8 @@ pub mod fluent_builders {
         /// an account within an AWS region. Domain names must start with a lowercase letter and can contain the following
         /// characters: a-z (lowercase), 0-9, and - (hyphen).
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by
@@ -790,8 +790,8 @@ pub mod fluent_builders {
         /// see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains
         /// </a>.
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain.
@@ -809,8 +809,8 @@ pub mod fluent_builders {
         /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the
         /// domain.
         /// </p>
-        pub fn cluster_config(mut self, inp: crate::model::ClusterConfig) -> Self {
-            self.inner = self.inner.cluster_config(inp);
+        pub fn cluster_config(mut self, signature: crate::model::ClusterConfig) -> Self {
+            self.inner = self.inner.cluster_config(signature);
             self
         }
         /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the
@@ -824,8 +824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
-        pub fn ebs_options(mut self, inp: crate::model::EbsOptions) -> Self {
-            self.inner = self.inner.ebs_options(inp);
+        pub fn ebs_options(mut self, signature: crate::model::EbsOptions) -> Self {
+            self.inner = self.inner.ebs_options(signature);
             self
         }
         /// <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
@@ -837,8 +837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>IAM access policy as a JSON-formatted string.</p>
-        pub fn access_policies(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policies(inp);
+        pub fn access_policies(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policies(signature.into());
             self
         }
         /// <p>IAM access policy as a JSON-formatted string.</p>
@@ -850,8 +850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
-        pub fn snapshot_options(mut self, inp: crate::model::SnapshotOptions) -> Self {
-            self.inner = self.inner.snapshot_options(inp);
+        pub fn snapshot_options(mut self, signature: crate::model::SnapshotOptions) -> Self {
+            self.inner = self.inner.snapshot_options(signature);
             self
         }
         /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
@@ -865,8 +865,8 @@ pub mod fluent_builders {
         /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
         /// </a>.
         /// </p>
-        pub fn vpc_options(mut self, inp: crate::model::VpcOptions) -> Self {
-            self.inner = self.inner.vpc_options(inp);
+        pub fn vpc_options(mut self, signature: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.vpc_options(signature);
             self
         }
         /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
@@ -881,8 +881,8 @@ pub mod fluent_builders {
         }
         /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
         /// </p>
-        pub fn cognito_options(mut self, inp: crate::model::CognitoOptions) -> Self {
-            self.inner = self.inner.cognito_options(inp);
+        pub fn cognito_options(mut self, signature: crate::model::CognitoOptions) -> Self {
+            self.inner = self.inner.cognito_options(signature);
             self
         }
         /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
@@ -897,9 +897,9 @@ pub mod fluent_builders {
         /// <p>Options for encryption of data at rest.</p>
         pub fn encryption_at_rest_options(
             mut self,
-            inp: crate::model::EncryptionAtRestOptions,
+            signature: crate::model::EncryptionAtRestOptions,
         ) -> Self {
-            self.inner = self.inner.encryption_at_rest_options(inp);
+            self.inner = self.inner.encryption_at_rest_options(signature);
             self
         }
         /// <p>Options for encryption of data at rest.</p>
@@ -913,9 +913,9 @@ pub mod fluent_builders {
         /// <p>Node-to-node encryption options.</p>
         pub fn node_to_node_encryption_options(
             mut self,
-            inp: crate::model::NodeToNodeEncryptionOptions,
+            signature: crate::model::NodeToNodeEncryptionOptions,
         ) -> Self {
-            self.inner = self.inner.node_to_node_encryption_options(inp);
+            self.inner = self.inner.node_to_node_encryption_options(signature);
             self
         }
         /// <p>Node-to-node encryption options.</p>
@@ -940,7 +940,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.advanced_options(k, v);
+            self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
         /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
@@ -966,8 +966,8 @@ pub mod fluent_builders {
         /// </p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             self.inner = self.inner.log_publishing_options(k, v);
             self
@@ -985,8 +985,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Options to specify configurations that will be applied to the domain endpoint.</p>
-        pub fn domain_endpoint_options(mut self, inp: crate::model::DomainEndpointOptions) -> Self {
-            self.inner = self.inner.domain_endpoint_options(inp);
+        pub fn domain_endpoint_options(
+            mut self,
+            signature: crate::model::DomainEndpointOptions,
+        ) -> Self {
+            self.inner = self.inner.domain_endpoint_options(signature);
             self
         }
         /// <p>Options to specify configurations that will be applied to the domain endpoint.</p>
@@ -1000,9 +1003,9 @@ pub mod fluent_builders {
         /// <p>Specifies advanced security options.</p>
         pub fn advanced_security_options(
             mut self,
-            inp: crate::model::AdvancedSecurityOptionsInput,
+            signature: crate::model::AdvancedSecurityOptionsInput,
         ) -> Self {
-            self.inner = self.inner.advanced_security_options(inp);
+            self.inner = self.inner.advanced_security_options(signature);
             self
         }
         /// <p>Specifies advanced security options.</p>
@@ -1019,8 +1022,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of <code>Tag</code> added during domain creation.
         /// </p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>A list of <code>Tag</code> added during domain creation.
@@ -1033,8 +1036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies Auto-Tune options.</p>
-        pub fn auto_tune_options(mut self, inp: crate::model::AutoTuneOptionsInput) -> Self {
-            self.inner = self.inner.auto_tune_options(inp);
+        pub fn auto_tune_options(mut self, signature: crate::model::AutoTuneOptionsInput) -> Self {
+            self.inner = self.inner.auto_tune_options(signature);
             self
         }
         /// <p>Specifies Auto-Tune options.</p>
@@ -1111,8 +1114,11 @@ pub mod fluent_builders {
         /// </code>
         /// for the local OpenSearch domain.
         /// </p>
-        pub fn local_domain_info(mut self, inp: crate::model::DomainInformationContainer) -> Self {
-            self.inner = self.inner.local_domain_info(inp);
+        pub fn local_domain_info(
+            mut self,
+            signature: crate::model::DomainInformationContainer,
+        ) -> Self {
+            self.inner = self.inner.local_domain_info(signature);
             self
         }
         /// <p>The
@@ -1134,8 +1140,11 @@ pub mod fluent_builders {
         /// </code>
         /// for the remote OpenSearch domain.
         /// </p>
-        pub fn remote_domain_info(mut self, inp: crate::model::DomainInformationContainer) -> Self {
-            self.inner = self.inner.remote_domain_info(inp);
+        pub fn remote_domain_info(
+            mut self,
+            signature: crate::model::DomainInformationContainer,
+        ) -> Self {
+            self.inner = self.inner.remote_domain_info(signature);
             self
         }
         /// <p>The
@@ -1152,8 +1161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
-        pub fn connection_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_alias(inp);
+        pub fn connection_alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_alias(signature.into());
             self
         }
         /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
@@ -1225,8 +1234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique identifier for the package.</p>
-        pub fn package_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_name(inp);
+        pub fn package_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_name(signature.into());
             self
         }
         /// <p>Unique identifier for the package.</p>
@@ -1235,8 +1244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.inner = self.inner.package_type(inp);
+        pub fn package_type(mut self, signature: crate::model::PackageType) -> Self {
+            self.inner = self.inner.package_type(signature);
             self
         }
         /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
@@ -1248,8 +1257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the package.</p>
-        pub fn package_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_description(inp);
+        pub fn package_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_description(signature.into());
             self
         }
         /// <p>Description of the package.</p>
@@ -1262,8 +1271,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon S3 location from which to import the package.
         /// </p>
-        pub fn package_source(mut self, inp: crate::model::PackageSource) -> Self {
-            self.inner = self.inner.package_source(inp);
+        pub fn package_source(mut self, signature: crate::model::PackageSource) -> Self {
+            self.inner = self.inner.package_source(signature);
             self
         }
         /// <p>The Amazon S3 location from which to import the package.
@@ -1338,8 +1347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to permanently delete.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain you want to permanently delete.</p>
@@ -1408,8 +1417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the inbound connection to permanently delete.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(signature.into());
             self
         }
         /// <p>The ID of the inbound connection to permanently delete.</p>
@@ -1481,8 +1490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the outbound connection you want to permanently delete.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(signature.into());
             self
         }
         /// <p>The ID of the outbound connection you want to permanently delete.</p>
@@ -1555,8 +1564,8 @@ pub mod fluent_builders {
         }
         /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.
         /// </p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.
@@ -1628,8 +1637,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain for which you want information.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain for which you want information.</p>
@@ -1700,8 +1709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain name for which you want Auto-Tune action details.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain name for which you want Auto-Tune action details.</p>
@@ -1710,8 +1719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -1720,8 +1729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
@@ -1792,8 +1801,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain you want to get information about.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain you want to get information about.</p>
@@ -1868,8 +1877,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
         ///
         /// <p>The domains for which you want information.</p>
-        pub fn domain_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_names(inp);
+        pub fn domain_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_names(input.into());
             self
         }
         /// <p>The domains for which you want information.</p>
@@ -1959,8 +1968,8 @@ pub mod fluent_builders {
         /// <li>remote-domain-info.domain-name</li>
         /// </ul>
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>
@@ -1986,8 +1995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -1997,8 +2006,8 @@ pub mod fluent_builders {
         }
         /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
         /// NextToken to paginate the remaining results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
@@ -2082,8 +2091,8 @@ pub mod fluent_builders {
         /// </code>
         /// for an existing domain.
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>
@@ -2105,8 +2114,11 @@ pub mod fluent_builders {
         /// </code>
         /// are needed.
         /// </p>
-        pub fn instance_type(mut self, inp: crate::model::OpenSearchPartitionInstanceType) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(
+            mut self,
+            signature: crate::model::OpenSearchPartitionInstanceType,
+        ) -> Self {
+            self.inner = self.inner.instance_type(signature);
             self
         }
         /// <p>
@@ -2130,8 +2142,8 @@ pub mod fluent_builders {
         /// </code>
         /// are needed.
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>
@@ -2227,8 +2239,8 @@ pub mod fluent_builders {
         /// <li>local-domain-info.domain-name</li>
         /// </ul>
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>
@@ -2254,8 +2266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -2264,8 +2276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
@@ -2341,8 +2353,8 @@ pub mod fluent_builders {
         ///
         /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::DescribePackagesFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::DescribePackagesFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.
@@ -2355,8 +2367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits results to a maximum number of packages.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Limits results to a maximum number of packages.</p>
@@ -2367,8 +2379,8 @@ pub mod fluent_builders {
         /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
         /// returns results for the next page.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
@@ -2443,9 +2455,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn reserved_instance_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_instance_offering_id(inp);
+            self.inner = self.inner.reserved_instance_offering_id(signature.into());
             self
         }
         /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the
@@ -2459,8 +2471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -2470,8 +2482,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.
@@ -2543,8 +2555,8 @@ pub mod fluent_builders {
         /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the
         /// specified reserved OpenSearch instance ID.
         /// </p>
-        pub fn reserved_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_instance_id(inp);
+        pub fn reserved_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_instance_id(signature.into());
             self
         }
         /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the
@@ -2558,8 +2570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -2569,8 +2581,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.
@@ -2642,8 +2654,8 @@ pub mod fluent_builders {
         /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
         /// this value.
         /// </p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
@@ -2654,8 +2666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain to associate the package with.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain to associate the package with.</p>
@@ -2734,8 +2746,8 @@ pub mod fluent_builders {
         /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
         /// and - (hyphen).
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
@@ -2807,8 +2819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Returns an audit history of package versions.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>Returns an audit history of package versions.</p>
@@ -2817,8 +2829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits results to a maximum number of package versions.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Limits results to a maximum number of package versions.</p>
@@ -2829,8 +2841,8 @@ pub mod fluent_builders {
         /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
         /// returns results for the next page.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
@@ -2904,8 +2916,8 @@ pub mod fluent_builders {
         /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
         /// and - (hyphen).
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
@@ -2919,8 +2931,8 @@ pub mod fluent_builders {
         /// <p>
         /// Set this value to limit the number of results returned.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -2934,8 +2946,8 @@ pub mod fluent_builders {
         /// Paginated APIs accept the NextToken input to return the next page of results and provide
         /// a NextToken output in the response, which you can use to retrieve more results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -3011,8 +3023,8 @@ pub mod fluent_builders {
         /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
         /// and - (hyphen).
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
@@ -3084,8 +3096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
-        pub fn engine_type(mut self, inp: crate::model::EngineType) -> Self {
-            self.inner = self.inner.engine_type(inp);
+        pub fn engine_type(mut self, signature: crate::model::EngineType) -> Self {
+            self.inner = self.inner.engine_type(signature);
             self
         }
         /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
@@ -3157,8 +3169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The package for which to list associated domains.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>The package for which to list associated domains.</p>
@@ -3167,8 +3179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the results to a maximum number of domains.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Limits the results to a maximum number of domains.</p>
@@ -3179,8 +3191,8 @@ pub mod fluent_builders {
         /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
         /// returns results for the next page.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
@@ -3250,8 +3262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3266,8 +3278,8 @@ pub mod fluent_builders {
         /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
         /// and - (hyphen).
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
@@ -3281,8 +3293,8 @@ pub mod fluent_builders {
         /// <p>
         /// Set this value to limit the number of results returned.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -3296,8 +3308,8 @@ pub mod fluent_builders {
         /// Paginated APIs accept the NextToken input to return the next page of results and provide
         /// a NextToken output in the response, which you can use to retrieve more results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -3369,8 +3381,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain for which you want to list associated packages.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain for which you want to list associated packages.</p>
@@ -3379,8 +3391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits results to a maximum number of packages.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Limits results to a maximum number of packages.</p>
@@ -3391,8 +3403,8 @@ pub mod fluent_builders {
         /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
         /// returns results for the next page.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
@@ -3465,8 +3477,8 @@ pub mod fluent_builders {
         /// <p>Specify the <code>ARN</code> of the domain that the tags you want
         /// to view are attached to.
         /// </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>Specify the <code>ARN</code> of the domain that the tags you want
@@ -3540,8 +3552,8 @@ pub mod fluent_builders {
         /// Set this value to limit the number of results returned.
         /// Value must be greater than 10 or it won't be honored.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>
@@ -3556,8 +3568,8 @@ pub mod fluent_builders {
         /// Paginated APIs accept the NextToken input to return the next page of results and provide
         /// a NextToken output in the response, which you can use to retrieve more results.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -3631,9 +3643,9 @@ pub mod fluent_builders {
         /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
         pub fn reserved_instance_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_instance_offering_id(inp);
+            self.inner = self.inner.reserved_instance_offering_id(signature.into());
             self
         }
         /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
@@ -3645,8 +3657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A customer-specified identifier to track this reservation.</p>
-        pub fn reservation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_name(inp);
+        pub fn reservation_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_name(signature.into());
             self
         }
         /// <p>A customer-specified identifier to track this reservation.</p>
@@ -3658,8 +3670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of OpenSearch instances to reserve.</p>
-        pub fn instance_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.instance_count(inp);
+        pub fn instance_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.instance_count(signature);
             self
         }
         /// <p>The number of OpenSearch instances to reserve.</p>
@@ -3728,8 +3740,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the inbound connection to reject.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(signature.into());
             self
         }
         /// <p>The ID of the inbound connection to reject.</p>
@@ -3802,8 +3814,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags.
         /// </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags.
@@ -3818,8 +3830,8 @@ pub mod fluent_builders {
         ///
         /// <p>The <code>TagKey</code> list you want to remove from the domain.
         /// </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The <code>TagKey</code> list you want to remove from the domain.
@@ -3892,8 +3904,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to update to the latest service software.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain that you want to update to the latest service software.</p>
@@ -3964,8 +3976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you're updating.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain you're updating.</p>
@@ -3974,8 +3986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type and number of instances to instantiate for the domain cluster.</p>
-        pub fn cluster_config(mut self, inp: crate::model::ClusterConfig) -> Self {
-            self.inner = self.inner.cluster_config(inp);
+        pub fn cluster_config(mut self, signature: crate::model::ClusterConfig) -> Self {
+            self.inner = self.inner.cluster_config(signature);
             self
         }
         /// <p>The type and number of instances to instantiate for the domain cluster.</p>
@@ -3987,8 +3999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the type and size of the EBS volume to use.</p>
-        pub fn ebs_options(mut self, inp: crate::model::EbsOptions) -> Self {
-            self.inner = self.inner.ebs_options(inp);
+        pub fn ebs_options(mut self, signature: crate::model::EbsOptions) -> Self {
+            self.inner = self.inner.ebs_options(signature);
             self
         }
         /// <p>Specify the type and size of the EBS volume to use.</p>
@@ -4001,8 +4013,8 @@ pub mod fluent_builders {
         }
         /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.
         /// </p>
-        pub fn snapshot_options(mut self, inp: crate::model::SnapshotOptions) -> Self {
-            self.inner = self.inner.snapshot_options(inp);
+        pub fn snapshot_options(mut self, signature: crate::model::SnapshotOptions) -> Self {
+            self.inner = self.inner.snapshot_options(signature);
             self
         }
         /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.
@@ -4017,8 +4029,8 @@ pub mod fluent_builders {
         /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
         /// </a>.
         /// </p>
-        pub fn vpc_options(mut self, inp: crate::model::VpcOptions) -> Self {
-            self.inner = self.inner.vpc_options(inp);
+        pub fn vpc_options(mut self, signature: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.vpc_options(signature);
             self
         }
         /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
@@ -4033,8 +4045,8 @@ pub mod fluent_builders {
         }
         /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
         /// </p>
-        pub fn cognito_options(mut self, inp: crate::model::CognitoOptions) -> Self {
-            self.inner = self.inner.cognito_options(inp);
+        pub fn cognito_options(mut self, signature: crate::model::CognitoOptions) -> Self {
+            self.inner = self.inner.cognito_options(signature);
             self
         }
         /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
@@ -4060,7 +4072,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.advanced_options(k, v);
+            self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
         /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when
@@ -4078,8 +4090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>IAM access policy as a JSON-formatted string.</p>
-        pub fn access_policies(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policies(inp);
+        pub fn access_policies(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policies(signature.into());
             self
         }
         /// <p>IAM access policy as a JSON-formatted string.</p>
@@ -4099,8 +4111,8 @@ pub mod fluent_builders {
         /// </p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             self.inner = self.inner.log_publishing_options(k, v);
             self
@@ -4120,9 +4132,9 @@ pub mod fluent_builders {
         /// <p>Specifies encryption of data at rest options.</p>
         pub fn encryption_at_rest_options(
             mut self,
-            inp: crate::model::EncryptionAtRestOptions,
+            signature: crate::model::EncryptionAtRestOptions,
         ) -> Self {
-            self.inner = self.inner.encryption_at_rest_options(inp);
+            self.inner = self.inner.encryption_at_rest_options(signature);
             self
         }
         /// <p>Specifies encryption of data at rest options.</p>
@@ -4134,8 +4146,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
-        pub fn domain_endpoint_options(mut self, inp: crate::model::DomainEndpointOptions) -> Self {
-            self.inner = self.inner.domain_endpoint_options(inp);
+        pub fn domain_endpoint_options(
+            mut self,
+            signature: crate::model::DomainEndpointOptions,
+        ) -> Self {
+            self.inner = self.inner.domain_endpoint_options(signature);
             self
         }
         /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
@@ -4149,9 +4164,9 @@ pub mod fluent_builders {
         /// <p>Specifies node-to-node encryption options.</p>
         pub fn node_to_node_encryption_options(
             mut self,
-            inp: crate::model::NodeToNodeEncryptionOptions,
+            signature: crate::model::NodeToNodeEncryptionOptions,
         ) -> Self {
-            self.inner = self.inner.node_to_node_encryption_options(inp);
+            self.inner = self.inner.node_to_node_encryption_options(signature);
             self
         }
         /// <p>Specifies node-to-node encryption options.</p>
@@ -4165,9 +4180,9 @@ pub mod fluent_builders {
         /// <p>Specifies advanced security options.</p>
         pub fn advanced_security_options(
             mut self,
-            inp: crate::model::AdvancedSecurityOptionsInput,
+            signature: crate::model::AdvancedSecurityOptionsInput,
         ) -> Self {
-            self.inner = self.inner.advanced_security_options(inp);
+            self.inner = self.inner.advanced_security_options(signature);
             self
         }
         /// <p>Specifies advanced security options.</p>
@@ -4179,8 +4194,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies Auto-Tune options.</p>
-        pub fn auto_tune_options(mut self, inp: crate::model::AutoTuneOptions) -> Self {
-            self.inner = self.inner.auto_tune_options(inp);
+        pub fn auto_tune_options(mut self, signature: crate::model::AutoTuneOptions) -> Self {
+            self.inner = self.inner.auto_tune_options(signature);
             self
         }
         /// <p>Specifies Auto-Tune options.</p>
@@ -4192,8 +4207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
@@ -4262,8 +4277,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the package.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(signature.into());
             self
         }
         /// <p>The unique identifier for the package.</p>
@@ -4274,8 +4289,8 @@ pub mod fluent_builders {
         /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and
         /// <code>S3Key</code>
         /// </p>
-        pub fn package_source(mut self, inp: crate::model::PackageSource) -> Self {
-            self.inner = self.inner.package_source(inp);
+        pub fn package_source(mut self, signature: crate::model::PackageSource) -> Self {
+            self.inner = self.inner.package_source(signature);
             self
         }
         /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and
@@ -4289,8 +4304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description of the package.</p>
-        pub fn package_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_description(inp);
+        pub fn package_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_description(signature.into());
             self
         }
         /// <p>A new description of the package.</p>
@@ -4303,8 +4318,8 @@ pub mod fluent_builders {
         }
         /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
         /// </p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(signature.into());
             self
         }
         /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
@@ -4381,8 +4396,8 @@ pub mod fluent_builders {
         /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
         /// and - (hyphen).
         /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
@@ -4394,8 +4409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of OpenSearch you intend to upgrade the domain to.</p>
-        pub fn target_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_version(inp);
+        pub fn target_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_version(signature.into());
             self
         }
         /// <p>The version of OpenSearch you intend to upgrade the domain to.</p>
@@ -4410,8 +4425,8 @@ pub mod fluent_builders {
         /// When true, indicates that an upgrade eligibility check needs to be performed.
         /// Does not actually perform the upgrade.
         /// </p>
-        pub fn perform_check_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.perform_check_only(inp);
+        pub fn perform_check_only(mut self, signature: bool) -> Self {
+            self.inner = self.inner.perform_check_only(signature);
             self
         }
         /// <p>
@@ -4447,7 +4462,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.advanced_options(k, v);
+            self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
         /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the

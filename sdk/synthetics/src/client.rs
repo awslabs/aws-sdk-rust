@@ -261,8 +261,8 @@ pub mod fluent_builders {
         /// makes up part of the canary ARN, and the ARN is included in outbound calls over the
         /// internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security
         /// Considerations for Synthetics Canaries</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for this canary. Be sure to give it a descriptive name
@@ -279,8 +279,8 @@ pub mod fluent_builders {
         /// running your script. If the script is stored in
         /// an S3 bucket, the bucket name, key, and version are also included.
         /// </p>
-        pub fn code(mut self, inp: crate::model::CanaryCodeInput) -> Self {
-            self.inner = self.inner.code(inp);
+        pub fn code(mut self, signature: crate::model::CanaryCodeInput) -> Self {
+            self.inner = self.inner.code(signature);
             self
         }
         /// <p>A structure that includes the entry point from which the canary should start
@@ -297,8 +297,8 @@ pub mod fluent_builders {
         /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this
         /// canary. Artifacts include the log file, screenshots, and HAR files.  The name of the
         /// S3 bucket can't include a period (.).</p>
-        pub fn artifact_s3_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_s3_location(inp);
+        pub fn artifact_s3_location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_s3_location(signature.into());
             self
         }
         /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this
@@ -351,8 +351,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist,
@@ -404,8 +404,8 @@ pub mod fluent_builders {
         }
         /// <p>A structure that contains information about how often the canary is to run and when
         /// these test runs are to stop.</p>
-        pub fn schedule(mut self, inp: crate::model::CanaryScheduleInput) -> Self {
-            self.inner = self.inner.schedule(inp);
+        pub fn schedule(mut self, signature: crate::model::CanaryScheduleInput) -> Self {
+            self.inner = self.inner.schedule(signature);
             self
         }
         /// <p>A structure that contains information about how often the canary is to run and when
@@ -419,8 +419,8 @@ pub mod fluent_builders {
         }
         /// <p>A structure that contains the configuration for individual canary runs,
         /// such as timeout value.</p>
-        pub fn run_config(mut self, inp: crate::model::CanaryRunConfigInput) -> Self {
-            self.inner = self.inner.run_config(inp);
+        pub fn run_config(mut self, signature: crate::model::CanaryRunConfigInput) -> Self {
+            self.inner = self.inner.run_config(signature);
             self
         }
         /// <p>A structure that contains the configuration for individual canary runs,
@@ -434,8 +434,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of days to retain data about successful runs of this canary. If you omit
         /// this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
-        pub fn success_retention_period_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.success_retention_period_in_days(inp);
+        pub fn success_retention_period_in_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.success_retention_period_in_days(signature);
             self
         }
         /// <p>The number of days to retain data about successful runs of this canary. If you omit
@@ -449,8 +449,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of days to retain data about failed runs of this canary. If you omit
         /// this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
-        pub fn failure_retention_period_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.failure_retention_period_in_days(inp);
+        pub fn failure_retention_period_in_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.failure_retention_period_in_days(signature);
             self
         }
         /// <p>The number of days to retain data about failed runs of this canary. If you omit
@@ -466,8 +466,8 @@ pub mod fluent_builders {
         /// runtime versions and more information about
         /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
         /// Canary Runtime Versions</a>.</p>
-        pub fn runtime_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.runtime_version(inp);
+        pub fn runtime_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.runtime_version(signature.into());
             self
         }
         /// <p>Specifies the runtime version to use for the canary. For a list of valid
@@ -485,8 +485,8 @@ pub mod fluent_builders {
         /// information about the subnet and security groups of the VPC endpoint.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
         /// Running a Canary in a VPC</a>.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfigInput) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, signature: crate::model::VpcConfigInput) -> Self {
+            self.inner = self.inner.vpc_config(signature);
             self
         }
         /// <p>If this canary is to test an endpoint in a VPC, this structure contains
@@ -515,7 +515,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of key-value pairs to associate with the canary.
@@ -535,8 +535,8 @@ pub mod fluent_builders {
         }
         /// <p>A structure that contains the configuration for canary artifacts, including
         /// the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-        pub fn artifact_config(mut self, inp: crate::model::ArtifactConfigInput) -> Self {
-            self.inner = self.inner.artifact_config(inp);
+        pub fn artifact_config(mut self, signature: crate::model::ArtifactConfigInput) -> Self {
+            self.inner = self.inner.artifact_config(signature);
             self
         }
         /// <p>A structure that contains the configuration for canary artifacts, including
@@ -643,8 +643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -720,8 +720,8 @@ pub mod fluent_builders {
         /// <p>A token that indicates that there is more data
         /// available. You can use this token in a subsequent operation to retrieve the next
         /// set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates that there is more data
@@ -733,8 +733,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify this parameter to limit how many canaries are returned each time you use
         /// the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Specify this parameter to limit how many canaries are returned each time you use
@@ -806,8 +806,8 @@ pub mod fluent_builders {
         /// <p>A token that indicates that there is more data
         /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
         /// set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates that there is more data
@@ -819,8 +819,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify this parameter to limit how many runs are returned each time you use
         /// the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Specify this parameter to limit how many runs are returned each time you use
@@ -894,8 +894,8 @@ pub mod fluent_builders {
         /// <p>A token that indicates that there is more data
         /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
         /// set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates that there is more data
@@ -907,8 +907,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify this parameter to limit how many runs are returned each time you use
         /// the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Specify this parameter to limit how many runs are returned each time you use
@@ -980,8 +980,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the canary that you want details for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the canary that you want details for.</p>
@@ -1050,8 +1050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the canary that you want to see runs for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the canary that you want to see runs for.</p>
@@ -1062,8 +1062,8 @@ pub mod fluent_builders {
         /// <p>A token that indicates that there is more data
         /// available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next
         /// set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates that there is more data
@@ -1075,8 +1075,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify this parameter to limit how many runs are returned each time you use
         /// the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Specify this parameter to limit how many runs are returned each time you use
@@ -1149,8 +1149,8 @@ pub mod fluent_builders {
         /// <p>The ARN format of a canary is
         /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
         /// </code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the canary that you want to view tags for.</p>
@@ -1225,8 +1225,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the canary that you want to run. To find
         /// canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the canary that you want to run. To find
@@ -1302,8 +1302,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the canary that you want to stop. To find the names of your
         /// canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the canary that you want to stop. To find the names of your
@@ -1385,8 +1385,8 @@ pub mod fluent_builders {
         /// <p>The ARN format of a canary is
         /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
         /// </code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the canary that you're adding tags to.</p>
@@ -1407,7 +1407,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The list of key-value pairs to associate with the canary.</p>
@@ -1484,8 +1484,8 @@ pub mod fluent_builders {
         /// <p>The ARN format of a canary is
         /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
         /// </code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the canary that you're removing tags from.</p>
@@ -1501,8 +1501,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -1580,8 +1580,8 @@ pub mod fluent_builders {
         /// <p>The name of the canary that you want to update. To find the names of your
         /// canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         /// <p>You cannot change the name of a canary that has already been created.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the canary that you want to update. To find the names of your
@@ -1595,8 +1595,8 @@ pub mod fluent_builders {
         /// running your script. If the script is stored in
         /// an S3 bucket, the bucket name, key, and version are also included.
         /// </p>
-        pub fn code(mut self, inp: crate::model::CanaryCodeInput) -> Self {
-            self.inner = self.inner.code(inp);
+        pub fn code(mut self, signature: crate::model::CanaryCodeInput) -> Self {
+            self.inner = self.inner.code(signature);
             self
         }
         /// <p>A structure that includes the entry point from which the canary should start
@@ -1650,8 +1650,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist,
@@ -1705,8 +1705,8 @@ pub mod fluent_builders {
         /// For a list of valid runtime versions and for more information about
         /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
         /// Canary Runtime Versions</a>.</p>
-        pub fn runtime_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.runtime_version(inp);
+        pub fn runtime_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.runtime_version(signature.into());
             self
         }
         /// <p>Specifies the runtime version to use for the canary.  
@@ -1722,8 +1722,8 @@ pub mod fluent_builders {
         }
         /// <p>A structure that contains information about how often the canary is to run, and when
         /// these runs are to stop.</p>
-        pub fn schedule(mut self, inp: crate::model::CanaryScheduleInput) -> Self {
-            self.inner = self.inner.schedule(inp);
+        pub fn schedule(mut self, signature: crate::model::CanaryScheduleInput) -> Self {
+            self.inner = self.inner.schedule(signature);
             self
         }
         /// <p>A structure that contains information about how often the canary is to run, and when
@@ -1737,8 +1737,8 @@ pub mod fluent_builders {
         }
         /// <p>A structure that contains the timeout value that is used for each individual run of the
         /// canary.</p>
-        pub fn run_config(mut self, inp: crate::model::CanaryRunConfigInput) -> Self {
-            self.inner = self.inner.run_config(inp);
+        pub fn run_config(mut self, signature: crate::model::CanaryRunConfigInput) -> Self {
+            self.inner = self.inner.run_config(signature);
             self
         }
         /// <p>A structure that contains the timeout value that is used for each individual run of the
@@ -1751,8 +1751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days to retain data about successful runs of this canary.</p>
-        pub fn success_retention_period_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.success_retention_period_in_days(inp);
+        pub fn success_retention_period_in_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.success_retention_period_in_days(signature);
             self
         }
         /// <p>The number of days to retain data about successful runs of this canary.</p>
@@ -1764,8 +1764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days to retain data about failed runs of this canary.</p>
-        pub fn failure_retention_period_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.failure_retention_period_in_days(inp);
+        pub fn failure_retention_period_in_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.failure_retention_period_in_days(signature);
             self
         }
         /// <p>The number of days to retain data about failed runs of this canary.</p>
@@ -1780,8 +1780,8 @@ pub mod fluent_builders {
         /// information about the subnet and security groups of the VPC endpoint.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
         /// Running a Canary in a VPC</a>.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfigInput) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, signature: crate::model::VpcConfigInput) -> Self {
+            self.inner = self.inner.vpc_config(signature);
             self
         }
         /// <p>If this canary is to test an endpoint in a VPC, this structure contains
@@ -1802,8 +1802,8 @@ pub mod fluent_builders {
         /// Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
         /// Visual monitoring blueprint</a>
         /// </p>
-        pub fn visual_reference(mut self, inp: crate::model::VisualReferenceInput) -> Self {
-            self.inner = self.inner.visual_reference(inp);
+        pub fn visual_reference(mut self, signature: crate::model::VisualReferenceInput) -> Self {
+            self.inner = self.inner.visual_reference(signature);
             self
         }
         /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this
@@ -1823,8 +1823,8 @@ pub mod fluent_builders {
         /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary.
         /// Artifacts include the log file, screenshots, and HAR files. The name of the
         /// S3 bucket can't include a period (.).</p>
-        pub fn artifact_s3_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_s3_location(inp);
+        pub fn artifact_s3_location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_s3_location(signature.into());
             self
         }
         /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary.
@@ -1840,8 +1840,8 @@ pub mod fluent_builders {
         /// <p>A structure that contains the configuration for canary artifacts,
         /// including the encryption-at-rest settings for artifacts that
         /// the canary uploads to Amazon S3.</p>
-        pub fn artifact_config(mut self, inp: crate::model::ArtifactConfigInput) -> Self {
-            self.inner = self.inner.artifact_config(inp);
+        pub fn artifact_config(mut self, signature: crate::model::ArtifactConfigInput) -> Self {
+            self.inner = self.inner.artifact_config(signature);
             self
         }
         /// <p>A structure that contains the configuration for canary artifacts,

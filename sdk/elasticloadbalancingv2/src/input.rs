@@ -27,9 +27,9 @@ pub mod add_listener_certificates_input {
         /// <p>The certificate to add. You can specify one certificate per call. Set
         /// <code>CertificateArn</code> to the certificate ARN but do not set
         /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -211,9 +211,9 @@ pub mod add_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -436,9 +436,9 @@ pub mod create_listener_input {
         /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
         /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
         /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -457,9 +457,9 @@ pub mod create_listener_input {
         /// To override the contents of this collection use [`set_default_actions`](Self::set_default_actions).
         ///
         /// <p>The actions for the default rule.</p>
-        pub fn default_actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn default_actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.default_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_actions = Some(v);
             self
         }
@@ -555,9 +555,9 @@ pub mod create_listener_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the listener.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -796,9 +796,9 @@ pub mod create_load_balancer_input {
         /// can specify one IPv6 address per subnet.</p>
         /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You
         /// cannot specify Elastic IP addresses for your subnets.</p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
@@ -878,9 +878,9 @@ pub mod create_load_balancer_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the load balancer.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1103,9 +1103,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>The conditions.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::RuleCondition>) -> Self {
+        pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
@@ -1132,9 +1132,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -1151,9 +1151,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1627,9 +1627,9 @@ pub mod create_target_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the target group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2437,9 +2437,9 @@ pub mod deregister_targets_input {
         ///
         /// <p>The targets. If you specified a port override when you registered a target, you must
         /// specify both the target ID and the port when you deregister it.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetDescription>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -4449,9 +4449,9 @@ pub mod describe_target_health_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetDescription>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -4675,9 +4675,9 @@ pub mod modify_listener_input {
         /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
         /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
         /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -4696,9 +4696,9 @@ pub mod modify_listener_input {
         /// To override the contents of this collection use [`set_default_actions`](Self::set_default_actions).
         ///
         /// <p>The actions for the default rule.</p>
-        pub fn default_actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn default_actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.default_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_actions = Some(v);
             self
         }
@@ -4954,9 +4954,9 @@ pub mod modify_load_balancer_attributes_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The load balancer attributes.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::LoadBalancerAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::LoadBalancerAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -5128,9 +5128,9 @@ pub mod modify_rule_input {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>The conditions.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::RuleCondition>) -> Self {
+        pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
@@ -5147,9 +5147,9 @@ pub mod modify_rule_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -5629,9 +5629,9 @@ pub mod modify_target_group_attributes_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::TargetGroupAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::TargetGroupAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -5804,9 +5804,9 @@ pub mod register_targets_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetDescription>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -5976,9 +5976,9 @@ pub mod remove_listener_certificates_input {
         /// <p>The certificate to remove. You can specify one certificate per call. Set
         /// <code>CertificateArn</code> to the certificate ARN but do not set
         /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -6492,9 +6492,9 @@ pub mod set_rule_priorities_input {
         /// To override the contents of this collection use [`set_rule_priorities`](Self::set_rule_priorities).
         ///
         /// <p>The rule priorities.</p>
-        pub fn rule_priorities(mut self, input: impl Into<crate::model::RulePriorityPair>) -> Self {
+        pub fn rule_priorities(mut self, input: crate::model::RulePriorityPair) -> Self {
             let mut v = self.rule_priorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_priorities = Some(v);
             self
         }
@@ -6885,9 +6885,9 @@ pub mod set_subnets_input {
         /// internet-facing load balancer. For internal load balancers, you can specify one private IP
         /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
         /// can specify one IPv6 address per subnet.</p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }

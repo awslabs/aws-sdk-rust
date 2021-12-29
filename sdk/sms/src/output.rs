@@ -92,9 +92,9 @@ pub mod update_app_output {
         /// To override the contents of this collection use [`set_server_groups`](Self::set_server_groups).
         ///
         /// <p>The updated server groups in the application.</p>
-        pub fn server_groups(mut self, input: impl Into<crate::model::ServerGroup>) -> Self {
+        pub fn server_groups(mut self, input: crate::model::ServerGroup) -> Self {
             let mut v = self.server_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_groups = Some(v);
             self
         }
@@ -111,9 +111,9 @@ pub mod update_app_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -483,9 +483,9 @@ pub mod list_apps_output {
         /// To override the contents of this collection use [`set_apps`](Self::set_apps).
         ///
         /// <p>The application summaries.</p>
-        pub fn apps(mut self, input: impl Into<crate::model::AppSummary>) -> Self {
+        pub fn apps(mut self, input: crate::model::AppSummary) -> Self {
             let mut v = self.apps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.apps = Some(v);
             self
         }
@@ -701,9 +701,9 @@ pub mod get_servers_output {
         /// To override the contents of this collection use [`set_server_list`](Self::set_server_list).
         ///
         /// <p>Information about the servers.</p>
-        pub fn server_list(mut self, input: impl Into<crate::model::Server>) -> Self {
+        pub fn server_list(mut self, input: crate::model::Server) -> Self {
             let mut v = self.server_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_list = Some(v);
             self
         }
@@ -811,12 +811,9 @@ pub mod get_replication_runs_output {
         /// To override the contents of this collection use [`set_replication_run_list`](Self::set_replication_run_list).
         ///
         /// <p>Information about the replication runs.</p>
-        pub fn replication_run_list(
-            mut self,
-            input: impl Into<crate::model::ReplicationRun>,
-        ) -> Self {
+        pub fn replication_run_list(mut self, input: crate::model::ReplicationRun) -> Self {
             let mut v = self.replication_run_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_run_list = Some(v);
             self
         }
@@ -902,12 +899,9 @@ pub mod get_replication_jobs_output {
         /// To override the contents of this collection use [`set_replication_job_list`](Self::set_replication_job_list).
         ///
         /// <p>Information about the replication jobs.</p>
-        pub fn replication_job_list(
-            mut self,
-            input: impl Into<crate::model::ReplicationJob>,
-        ) -> Self {
+        pub fn replication_job_list(mut self, input: crate::model::ReplicationJob) -> Self {
             let mut v = self.replication_job_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_job_list = Some(v);
             self
         }
@@ -991,9 +985,9 @@ pub mod get_connectors_output {
         /// To override the contents of this collection use [`set_connector_list`](Self::set_connector_list).
         ///
         /// <p>Information about the registered connectors.</p>
-        pub fn connector_list(mut self, input: impl Into<crate::model::Connector>) -> Self {
+        pub fn connector_list(mut self, input: crate::model::Connector) -> Self {
             let mut v = self.connector_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connector_list = Some(v);
             self
         }
@@ -1068,12 +1062,9 @@ pub mod get_app_validation_output_output {
         /// To override the contents of this collection use [`set_validation_output_list`](Self::set_validation_output_list).
         ///
         /// <p>The validation output.</p>
-        pub fn validation_output_list(
-            mut self,
-            input: impl Into<crate::model::ValidationOutput>,
-        ) -> Self {
+        pub fn validation_output_list(mut self, input: crate::model::ValidationOutput) -> Self {
             let mut v = self.validation_output_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_output_list = Some(v);
             self
         }
@@ -1158,10 +1149,10 @@ pub mod get_app_validation_configuration_output {
         /// <p>The configuration for application validation.</p>
         pub fn app_validation_configurations(
             mut self,
-            input: impl Into<crate::model::AppValidationConfiguration>,
+            input: crate::model::AppValidationConfiguration,
         ) -> Self {
             let mut v = self.app_validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_validation_configurations = Some(v);
             self
         }
@@ -1180,12 +1171,12 @@ pub mod get_app_validation_configuration_output {
         /// <p>The configuration for instance validation.</p>
         pub fn server_group_validation_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupValidationConfiguration>,
+            input: crate::model::ServerGroupValidationConfiguration,
         ) -> Self {
             let mut v = self
                 .server_group_validation_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_validation_configurations = Some(v);
             self
         }
@@ -1258,12 +1249,12 @@ pub mod get_app_replication_configuration_output {
         /// <p>The replication configurations associated with server groups in this application.</p>
         pub fn server_group_replication_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupReplicationConfiguration>,
+            input: crate::model::ServerGroupReplicationConfiguration,
         ) -> Self {
             let mut v = self
                 .server_group_replication_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_replication_configurations = Some(v);
             self
         }
@@ -1394,10 +1385,10 @@ pub mod get_app_launch_configuration_output {
         /// <p>The launch configurations for server groups in this application.</p>
         pub fn server_group_launch_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupLaunchConfiguration>,
+            input: crate::model::ServerGroupLaunchConfiguration,
         ) -> Self {
             let mut v = self.server_group_launch_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_launch_configurations = Some(v);
             self
         }
@@ -1490,9 +1481,9 @@ pub mod get_app_output {
         /// To override the contents of this collection use [`set_server_groups`](Self::set_server_groups).
         ///
         /// <p>The server groups that belong to the application.</p>
-        pub fn server_groups(mut self, input: impl Into<crate::model::ServerGroup>) -> Self {
+        pub fn server_groups(mut self, input: crate::model::ServerGroup) -> Self {
             let mut v = self.server_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_groups = Some(v);
             self
         }
@@ -1509,9 +1500,9 @@ pub mod get_app_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1984,9 +1975,9 @@ pub mod create_app_output {
         /// To override the contents of this collection use [`set_server_groups`](Self::set_server_groups).
         ///
         /// <p>The server groups included in the application.</p>
-        pub fn server_groups(mut self, input: impl Into<crate::model::ServerGroup>) -> Self {
+        pub fn server_groups(mut self, input: crate::model::ServerGroup) -> Self {
             let mut v = self.server_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_groups = Some(v);
             self
         }
@@ -2003,9 +1994,9 @@ pub mod create_app_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

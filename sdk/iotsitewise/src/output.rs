@@ -991,12 +991,9 @@ pub mod list_time_series_output {
         /// To override the contents of this collection use [`set_time_series_summaries`](Self::set_time_series_summaries).
         ///
         /// <p>One or more time series summaries to list.</p>
-        pub fn time_series_summaries(
-            mut self,
-            input: impl Into<crate::model::TimeSeriesSummary>,
-        ) -> Self {
+        pub fn time_series_summaries(mut self, input: crate::model::TimeSeriesSummary) -> Self {
             let mut v = self.time_series_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.time_series_summaries = Some(v);
             self
         }
@@ -1158,9 +1155,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_project_summaries`](Self::set_project_summaries).
         ///
         /// <p>A list that summarizes each project in the portal.</p>
-        pub fn project_summaries(mut self, input: impl Into<crate::model::ProjectSummary>) -> Self {
+        pub fn project_summaries(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.project_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.project_summaries = Some(v);
             self
         }
@@ -1323,9 +1320,9 @@ pub mod list_portals_output {
         /// To override the contents of this collection use [`set_portal_summaries`](Self::set_portal_summaries).
         ///
         /// <p>A list that summarizes each portal.</p>
-        pub fn portal_summaries(mut self, input: impl Into<crate::model::PortalSummary>) -> Self {
+        pub fn portal_summaries(mut self, input: crate::model::PortalSummary) -> Self {
             let mut v = self.portal_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.portal_summaries = Some(v);
             self
         }
@@ -1406,9 +1403,9 @@ pub mod list_gateways_output {
         /// To override the contents of this collection use [`set_gateway_summaries`](Self::set_gateway_summaries).
         ///
         /// <p>A list that summarizes each gateway.</p>
-        pub fn gateway_summaries(mut self, input: impl Into<crate::model::GatewaySummary>) -> Self {
+        pub fn gateway_summaries(mut self, input: crate::model::GatewaySummary) -> Self {
             let mut v = self.gateway_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateway_summaries = Some(v);
             self
         }
@@ -1489,12 +1486,9 @@ pub mod list_dashboards_output {
         /// To override the contents of this collection use [`set_dashboard_summaries`](Self::set_dashboard_summaries).
         ///
         /// <p>A list that summarizes each dashboard in the project.</p>
-        pub fn dashboard_summaries(
-            mut self,
-            input: impl Into<crate::model::DashboardSummary>,
-        ) -> Self {
+        pub fn dashboard_summaries(mut self, input: crate::model::DashboardSummary) -> Self {
             let mut v = self.dashboard_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_summaries = Some(v);
             self
         }
@@ -1575,12 +1569,9 @@ pub mod list_associated_assets_output {
         /// To override the contents of this collection use [`set_asset_summaries`](Self::set_asset_summaries).
         ///
         /// <p>A list that summarizes the associated assets.</p>
-        pub fn asset_summaries(
-            mut self,
-            input: impl Into<crate::model::AssociatedAssetsSummary>,
-        ) -> Self {
+        pub fn asset_summaries(mut self, input: crate::model::AssociatedAssetsSummary) -> Self {
             let mut v = self.asset_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_summaries = Some(v);
             self
         }
@@ -1660,9 +1651,9 @@ pub mod list_assets_output {
         /// To override the contents of this collection use [`set_asset_summaries`](Self::set_asset_summaries).
         ///
         /// <p>A list that summarizes each asset.</p>
-        pub fn asset_summaries(mut self, input: impl Into<crate::model::AssetSummary>) -> Self {
+        pub fn asset_summaries(mut self, input: crate::model::AssetSummary) -> Self {
             let mut v = self.asset_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_summaries = Some(v);
             self
         }
@@ -1751,10 +1742,10 @@ pub mod list_asset_relationships_output {
         /// <p>A list that summarizes each asset relationship.</p>
         pub fn asset_relationship_summaries(
             mut self,
-            input: impl Into<crate::model::AssetRelationshipSummary>,
+            input: crate::model::AssetRelationshipSummary,
         ) -> Self {
             let mut v = self.asset_relationship_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_relationship_summaries = Some(v);
             self
         }
@@ -1835,12 +1826,9 @@ pub mod list_asset_models_output {
         /// To override the contents of this collection use [`set_asset_model_summaries`](Self::set_asset_model_summaries).
         ///
         /// <p>A list that summarizes each asset model.</p>
-        pub fn asset_model_summaries(
-            mut self,
-            input: impl Into<crate::model::AssetModelSummary>,
-        ) -> Self {
+        pub fn asset_model_summaries(mut self, input: crate::model::AssetModelSummary) -> Self {
             let mut v = self.asset_model_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_summaries = Some(v);
             self
         }
@@ -1924,12 +1912,9 @@ pub mod list_access_policies_output {
         /// To override the contents of this collection use [`set_access_policy_summaries`](Self::set_access_policy_summaries).
         ///
         /// <p>A list that summarizes each access policy.</p>
-        pub fn access_policy_summaries(
-            mut self,
-            input: impl Into<crate::model::AccessPolicySummary>,
-        ) -> Self {
+        pub fn access_policy_summaries(mut self, input: crate::model::AccessPolicySummary) -> Self {
             let mut v = self.access_policy_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_policy_summaries = Some(v);
             self
         }
@@ -2018,10 +2003,10 @@ pub mod get_interpolated_asset_property_values_output {
         /// <p>The requested interpolated values.</p>
         pub fn interpolated_asset_property_values(
             mut self,
-            input: impl Into<crate::model::InterpolatedAssetPropertyValue>,
+            input: crate::model::InterpolatedAssetPropertyValue,
         ) -> Self {
             let mut v = self.interpolated_asset_property_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.interpolated_asset_property_values = Some(v);
             self
         }
@@ -2110,10 +2095,10 @@ pub mod get_asset_property_value_history_output {
         /// <p>The asset property's value history.</p>
         pub fn asset_property_value_history(
             mut self,
-            input: impl Into<crate::model::AssetPropertyValue>,
+            input: crate::model::AssetPropertyValue,
         ) -> Self {
             let mut v = self.asset_property_value_history.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_property_value_history = Some(v);
             self
         }
@@ -2251,12 +2236,9 @@ pub mod get_asset_property_aggregates_output {
         /// To override the contents of this collection use [`set_aggregated_values`](Self::set_aggregated_values).
         ///
         /// <p>The requested aggregated values.</p>
-        pub fn aggregated_values(
-            mut self,
-            input: impl Into<crate::model::AggregatedValue>,
-        ) -> Self {
+        pub fn aggregated_values(mut self, input: crate::model::AggregatedValue) -> Self {
             let mut v = self.aggregated_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregated_values = Some(v);
             self
         }
@@ -3838,10 +3820,10 @@ pub mod describe_gateway_output {
         /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
         pub fn gateway_capability_summaries(
             mut self,
-            input: impl Into<crate::model::GatewayCapabilitySummary>,
+            input: crate::model::GatewayCapabilitySummary,
         ) -> Self {
             let mut v = self.gateway_capability_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateway_capability_summaries = Some(v);
             self
         }
@@ -4591,12 +4573,9 @@ pub mod describe_asset_model_output {
         /// <p>The list of asset properties for the asset model.</p>
         /// <p>This object doesn't include properties that you define in composite models. You can find
         /// composite model properties in the <code>assetModelCompositeModels</code> object.</p>
-        pub fn asset_model_properties(
-            mut self,
-            input: impl Into<crate::model::AssetModelProperty>,
-        ) -> Self {
+        pub fn asset_model_properties(mut self, input: crate::model::AssetModelProperty) -> Self {
             let mut v = self.asset_model_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_properties = Some(v);
             self
         }
@@ -4617,12 +4596,9 @@ pub mod describe_asset_model_output {
         /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a
         /// <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child
         /// asset relationships for an asset model.</p>
-        pub fn asset_model_hierarchies(
-            mut self,
-            input: impl Into<crate::model::AssetModelHierarchy>,
-        ) -> Self {
+        pub fn asset_model_hierarchies(mut self, input: crate::model::AssetModelHierarchy) -> Self {
             let mut v = self.asset_model_hierarchies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_hierarchies = Some(v);
             self
         }
@@ -4643,10 +4619,10 @@ pub mod describe_asset_model_output {
         /// <p>The list of composite asset models for the asset model.</p>
         pub fn asset_model_composite_models(
             mut self,
-            input: impl Into<crate::model::AssetModelCompositeModel>,
+            input: crate::model::AssetModelCompositeModel,
         ) -> Self {
             let mut v = self.asset_model_composite_models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_model_composite_models = Some(v);
             self
         }
@@ -4896,9 +4872,9 @@ pub mod describe_asset_output {
         /// <p>The list of asset properties for the asset.</p>
         /// <p>This object doesn't include properties that you define in composite models. You can find
         /// composite model properties in the <code>assetCompositeModels</code> object.</p>
-        pub fn asset_properties(mut self, input: impl Into<crate::model::AssetProperty>) -> Self {
+        pub fn asset_properties(mut self, input: crate::model::AssetProperty) -> Self {
             let mut v = self.asset_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_properties = Some(v);
             self
         }
@@ -4917,9 +4893,9 @@ pub mod describe_asset_output {
         /// To override the contents of this collection use [`set_asset_hierarchies`](Self::set_asset_hierarchies).
         ///
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-        pub fn asset_hierarchies(mut self, input: impl Into<crate::model::AssetHierarchy>) -> Self {
+        pub fn asset_hierarchies(mut self, input: crate::model::AssetHierarchy) -> Self {
             let mut v = self.asset_hierarchies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_hierarchies = Some(v);
             self
         }
@@ -4936,12 +4912,9 @@ pub mod describe_asset_output {
         /// To override the contents of this collection use [`set_asset_composite_models`](Self::set_asset_composite_models).
         ///
         /// <p>The composite models for the asset.</p>
-        pub fn asset_composite_models(
-            mut self,
-            input: impl Into<crate::model::AssetCompositeModel>,
-        ) -> Self {
+        pub fn asset_composite_models(mut self, input: crate::model::AssetCompositeModel) -> Self {
             let mut v = self.asset_composite_models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_composite_models = Some(v);
             self
         }
@@ -6357,10 +6330,10 @@ pub mod batch_put_asset_property_value_output {
         /// contains the <code>entryId</code> of the entry that failed.</p>
         pub fn error_entries(
             mut self,
-            input: impl Into<crate::model::BatchPutAssetPropertyErrorEntry>,
+            input: crate::model::BatchPutAssetPropertyErrorEntry,
         ) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
@@ -6424,9 +6397,9 @@ pub mod batch_disassociate_project_assets_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of associated error information, if any.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::AssetErrorDetails>) -> Self {
+        pub fn errors(mut self, input: crate::model::AssetErrorDetails) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -6487,9 +6460,9 @@ pub mod batch_associate_project_assets_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of associated error information, if any.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::AssetErrorDetails>) -> Self {
+        pub fn errors(mut self, input: crate::model::AssetErrorDetails) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

@@ -639,8 +639,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization under which the resource exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization under which the resource exists.</p>
@@ -652,8 +652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource for which members (users or groups) are associated.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The resource for which members (users or groups) are associated.</p>
@@ -662,8 +662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member (user or group) to associate to the resource.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The member (user or group) to associate to the resource.</p>
@@ -732,8 +732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization under which the group exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization under which the group exists.</p>
@@ -745,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The group to which the member (user or group) is associated.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(signature.into());
             self
         }
         /// <p>The group to which the member (user or group) is associated.</p>
@@ -755,8 +755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member (user or group) to associate to the group.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(signature.into());
             self
         }
         /// <p>The member (user or group) to associate to the group.</p>
@@ -829,8 +829,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The idempotency token for the client request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for the client request.</p>
@@ -839,8 +839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The job ID.</p>
@@ -849,8 +849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -922,8 +922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization under which the member (user or group) exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization under which the member (user or group) exists.</p>
@@ -935,8 +935,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member (user or group) to which this alias is added.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The member (user or group) to which this alias is added.</p>
@@ -945,8 +945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias to add to the member set.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(signature.into());
             self
         }
         /// <p>The alias to add to the member set.</p>
@@ -1015,8 +1015,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization under which the group is to be created.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization under which the group is to be created.</p>
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -1098,8 +1098,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
@@ -1111,8 +1111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the client request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for the client request.</p>
@@ -1121,8 +1121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The rule name.</p>
@@ -1131,8 +1131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The rule description.</p>
@@ -1141,8 +1141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn effect(mut self, inp: crate::model::MobileDeviceAccessRuleEffect) -> Self {
-            self.inner = self.inner.effect(inp);
+        pub fn effect(mut self, signature: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.inner = self.inner.effect(signature);
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
@@ -1158,8 +1158,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_types`](Self::set_device_types).
         ///
         /// <p>Device types that the rule will match.</p>
-        pub fn device_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_types(inp);
+        pub fn device_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_types(input.into());
             self
         }
         /// <p>Device types that the rule will match.</p>
@@ -1175,8 +1175,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_types`](Self::set_not_device_types).
         ///
         /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
-        pub fn not_device_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_types(inp);
+        pub fn not_device_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_types(input.into());
             self
         }
         /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
@@ -1192,8 +1192,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
         ///
         /// <p>Device models that the rule will match.</p>
-        pub fn device_models(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_models(inp);
+        pub fn device_models(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_models(input.into());
             self
         }
         /// <p>Device models that the rule will match.</p>
@@ -1209,8 +1209,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_models`](Self::set_not_device_models).
         ///
         /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
-        pub fn not_device_models(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_models(inp);
+        pub fn not_device_models(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_models(input.into());
             self
         }
         /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
@@ -1226,8 +1226,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
         ///
         /// <p>Device operating systems that the rule will match.</p>
-        pub fn device_operating_systems(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_operating_systems(inp);
+        pub fn device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_operating_systems(input.into());
             self
         }
         /// <p>Device operating systems that the rule will match.</p>
@@ -1243,8 +1243,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_operating_systems`](Self::set_not_device_operating_systems).
         ///
         /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
-        pub fn not_device_operating_systems(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_operating_systems(inp);
+        pub fn not_device_operating_systems(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.not_device_operating_systems(input.into());
             self
         }
         /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
@@ -1260,8 +1263,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
         ///
         /// <p>Device user agents that the rule will match.</p>
-        pub fn device_user_agents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_user_agents(inp);
+        pub fn device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_user_agents(input.into());
             self
         }
         /// <p>Device user agents that the rule will match.</p>
@@ -1277,8 +1280,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).
         ///
         /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
-        pub fn not_device_user_agents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_user_agents(inp);
+        pub fn not_device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_user_agents(input.into());
             self
         }
         /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
@@ -1354,8 +1357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS Directory Service directory ID.</p>
-        pub fn directory_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(inp);
+        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(signature.into());
             self
         }
         /// <p>The AWS Directory Service directory ID.</p>
@@ -1364,8 +1367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization alias.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(signature.into());
             self
         }
         /// <p>The organization alias.</p>
@@ -1374,8 +1377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token associated with the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token associated with the request.</p>
@@ -1388,8 +1391,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
         /// <p>The email domains to associate with the organization.</p>
-        pub fn domains(mut self, inp: impl Into<crate::model::Domain>) -> Self {
-            self.inner = self.inner.domains(inp);
+        pub fn domains(mut self, input: crate::model::Domain) -> Self {
+            self.inner = self.inner.domains(input);
             self
         }
         /// <p>The email domains to associate with the organization.</p>
@@ -1402,8 +1405,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
         /// KMS.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
@@ -1413,8 +1416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
-        pub fn enable_interoperability(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_interoperability(inp);
+        pub fn enable_interoperability(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_interoperability(signature);
             self
         }
         /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
@@ -1484,8 +1487,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier associated with the organization for which the resource is
         /// created.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier associated with the organization for which the resource is
@@ -1498,8 +1501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -1509,8 +1512,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the new resource. The available types are <code>equipment</code> and
         /// <code>room</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of the new resource. The available types are <code>equipment</code> and
@@ -1580,8 +1583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the organization for which the user is created.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier of the organization for which the user is created.</p>
@@ -1593,8 +1596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
@@ -1603,8 +1606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name for the new user.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The display name for the new user.</p>
@@ -1613,8 +1616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the new user.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The password for the new user.</p>
@@ -1686,8 +1689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization.</p>
@@ -1699,8 +1702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the access control rule.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the access control rule.</p>
@@ -1770,8 +1773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the user exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the user exists.</p>
@@ -1784,8 +1787,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the member (user or group) from which to have the aliases
         /// removed.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier for the member (user or group) from which to have the aliases
@@ -1796,8 +1799,8 @@ pub mod fluent_builders {
         }
         /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
         /// list are collapsed into single entries (the list is transformed into a set).</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(signature.into());
             self
         }
         /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
@@ -1867,8 +1870,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization that contains the group.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization that contains the group.</p>
@@ -1880,8 +1883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the group to be deleted.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(signature.into());
             self
         }
         /// <p>The identifier of the group to be deleted.</p>
@@ -1951,8 +1954,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the organization under which the member (user or group)
         /// exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier of the organization under which the member (user or group)
@@ -1965,8 +1968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
@@ -1976,8 +1979,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the member (user or group) for which to delete granted
         /// permissions.</p>
-        pub fn grantee_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grantee_id(inp);
+        pub fn grantee_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grantee_id(signature.into());
             self
         }
         /// <p>The identifier of the member (user or group) for which to delete granted
@@ -2050,8 +2053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
@@ -2077,8 +2080,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
@@ -2101,8 +2104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
@@ -2174,8 +2177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
@@ -2187,8 +2190,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the rule to be deleted.</p>
-        pub fn mobile_device_access_rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mobile_device_access_rule_id(inp);
+        pub fn mobile_device_access_rule_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.mobile_device_access_rule_id(signature.into());
             self
         }
         /// <p>The identifier of the rule to be deleted.</p>
@@ -2260,8 +2266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The idempotency token associated with the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token associated with the request.</p>
@@ -2270,8 +2276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -2283,8 +2289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
-        pub fn delete_directory(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_directory(inp);
+        pub fn delete_directory(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_directory(signature);
             self
         }
         /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
@@ -2354,8 +2360,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier associated with the organization from which the resource is
         /// deleted.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier associated with the organization from which the resource is
@@ -2368,8 +2374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the resource to be deleted.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The identifier of the resource to be deleted.</p>
@@ -2438,8 +2444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -2451,8 +2457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention policy ID.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The retention policy ID.</p>
@@ -2525,8 +2531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization that contains the user to be deleted.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization that contains the user to be deleted.</p>
@@ -2538,8 +2544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user to be deleted.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The identifier of the user to be deleted.</p>
@@ -2611,8 +2617,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
@@ -2624,8 +2630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the member (user or group) to be updated.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier for the member (user or group) to be updated.</p>
@@ -2695,8 +2701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
@@ -2708,8 +2714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain to deregister in WorkMail and SES. </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain to deregister in WorkMail and SES. </p>
@@ -2778,8 +2784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the group exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the group exists.</p>
@@ -2791,8 +2797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the group to be described.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(signature.into());
             self
         }
         /// <p>The identifier for the group to be described.</p>
@@ -2861,8 +2867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Lists the ID of the given organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>Lists the ID of the given organization.</p>
@@ -2934,8 +2940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The mailbox export job ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The mailbox export job ID.</p>
@@ -2944,8 +2950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -3018,8 +3024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization to be described.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization to be described.</p>
@@ -3092,8 +3098,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier associated with the organization for which the resource is
         /// described.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier associated with the organization for which the resource is
@@ -3106,8 +3112,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the resource to be described.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The identifier of the resource to be described.</p>
@@ -3176,8 +3182,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the user exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the user exists.</p>
@@ -3189,8 +3195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the user to be described.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The identifier for the user to be described.</p>
@@ -3259,8 +3265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the resource exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the resource exists.</p>
@@ -3273,8 +3279,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the resource from which delegates' set members are removed.
         /// </p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The identifier of the resource from which delegates' set members are removed.
@@ -3285,8 +3291,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the member (user, group) to be removed from the resource's
         /// delegates.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier for the member (user, group) to be removed from the resource's
@@ -3356,8 +3362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the group exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the group exists.</p>
@@ -3369,8 +3375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the group from which members are removed.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(signature.into());
             self
         }
         /// <p>The identifier for the group from which members are removed.</p>
@@ -3379,8 +3385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the member to be removed to the group.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(signature.into());
             self
         }
         /// <p>The identifier for the member to be removed to the group.</p>
@@ -3450,8 +3456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization.</p>
@@ -3463,8 +3469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IPv4 address.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_address(inp);
+        pub fn ip_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_address(signature.into());
             self
         }
         /// <p>The IPv4 address.</p>
@@ -3475,8 +3481,8 @@ pub mod fluent_builders {
         /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
         /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
         /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(signature.into());
             self
         }
         /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
@@ -3487,8 +3493,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The user ID.</p>
@@ -3557,8 +3563,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -3631,8 +3637,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the organization that contains the user whose mailbox details are
         /// being requested.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization that contains the user whose mailbox details are
@@ -3645,8 +3651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the user whose mailbox details are being requested.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The identifier for the user whose mailbox details are being requested.</p>
@@ -3715,8 +3721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
@@ -3728,8 +3734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain from which you want to retrieve details.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain from which you want to retrieve details.</p>
@@ -3799,8 +3805,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
@@ -3812,8 +3818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Device type the simulated user will report.</p>
-        pub fn device_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_type(inp);
+        pub fn device_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_type(signature.into());
             self
         }
         /// <p>Device type the simulated user will report.</p>
@@ -3822,8 +3828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Device model the simulated user will report.</p>
-        pub fn device_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_model(inp);
+        pub fn device_model(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_model(signature.into());
             self
         }
         /// <p>Device model the simulated user will report.</p>
@@ -3832,8 +3838,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Device operating system the simulated user will report.</p>
-        pub fn device_operating_system(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_operating_system(inp);
+        pub fn device_operating_system(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.device_operating_system(signature.into());
             self
         }
         /// <p>Device operating system the simulated user will report.</p>
@@ -3845,8 +3854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Device user agent the simulated user will report.</p>
-        pub fn device_user_agent(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_user_agent(inp);
+        pub fn device_user_agent(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_user_agent(signature.into());
             self
         }
         /// <p>Device user agent the simulated user will report.</p>
@@ -3918,8 +3927,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
@@ -3945,8 +3954,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
@@ -3969,8 +3978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
@@ -4039,8 +4048,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization.</p>
@@ -4113,8 +4122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the entity exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the entity exists.</p>
@@ -4126,8 +4135,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the entity for which to list the aliases.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier for the entity for which to list the aliases.</p>
@@ -4137,8 +4146,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
         /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
@@ -4148,8 +4157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4219,8 +4228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the group exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the group exists.</p>
@@ -4233,8 +4242,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the group to which the members (users or groups) are
         /// associated.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(signature.into());
             self
         }
         /// <p>The identifier for the group to which the members (users or groups) are
@@ -4245,8 +4254,8 @@ pub mod fluent_builders {
         }
         /// <p> The token to use to retrieve the next page of results. The first call does not
         /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The token to use to retrieve the next page of results. The first call does not
@@ -4256,8 +4265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4326,8 +4335,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the groups exist.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the groups exist.</p>
@@ -4340,8 +4349,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
         /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
@@ -4351,8 +4360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4422,8 +4431,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -4435,8 +4444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -4445,8 +4454,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4517,8 +4526,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the organization under which the user, group, or resource
         /// exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier of the organization under which the user, group, or resource
@@ -4532,8 +4541,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the user, group, or resource for which to list mailbox
         /// permissions.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier of the user, group, or resource for which to list mailbox
@@ -4544,8 +4553,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
         /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
@@ -4555,8 +4564,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4625,8 +4634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which to list domains.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which to list domains.</p>
@@ -4638,8 +4647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4648,8 +4657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
@@ -4718,8 +4727,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
@@ -4745,8 +4754,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
@@ -4769,8 +4778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mobile device to which the access override applies.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The mobile device to which the access override applies.</p>
@@ -4779,8 +4788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
@@ -4789,8 +4798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4859,8 +4868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which to list the rules.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which to list the rules.</p>
@@ -4933,8 +4942,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
         /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
@@ -4944,8 +4953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -5016,8 +5025,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the organization that contains the resource for which delegates
         /// are listed.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization that contains the resource for which delegates
@@ -5030,8 +5039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the resource whose delegates are listed.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The identifier for the resource whose delegates are listed.</p>
@@ -5041,8 +5050,8 @@ pub mod fluent_builders {
         }
         /// <p>The token used to paginate through the delegates associated with a
         /// resource.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token used to paginate through the delegates associated with a
@@ -5052,8 +5061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of maximum results in a page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of maximum results in a page.</p>
@@ -5122,8 +5131,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the resources exist.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the resources exist.</p>
@@ -5136,8 +5145,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
         /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
@@ -5147,8 +5156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -5217,8 +5226,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -5287,8 +5296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the users exist.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the users exist.</p>
@@ -5301,8 +5310,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
         /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
@@ -5312,8 +5321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -5385,8 +5394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The rule name.</p>
@@ -5395,8 +5404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule effect.</p>
-        pub fn effect(mut self, inp: crate::model::AccessControlRuleEffect) -> Self {
-            self.inner = self.inner.effect(inp);
+        pub fn effect(mut self, signature: crate::model::AccessControlRuleEffect) -> Self {
+            self.inner = self.inner.effect(signature);
             self
         }
         /// <p>The rule effect.</p>
@@ -5408,8 +5417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The rule description.</p>
@@ -5422,8 +5431,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ip_ranges`](Self::set_ip_ranges).
         ///
         /// <p>IPv4 CIDR ranges to include in the rule.</p>
-        pub fn ip_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_ranges(inp);
+        pub fn ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_ranges(input.into());
             self
         }
         /// <p>IPv4 CIDR ranges to include in the rule.</p>
@@ -5439,8 +5448,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_ip_ranges`](Self::set_not_ip_ranges).
         ///
         /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
-        pub fn not_ip_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_ip_ranges(inp);
+        pub fn not_ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_ip_ranges(input.into());
             self
         }
         /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
@@ -5458,8 +5467,8 @@ pub mod fluent_builders {
         /// <p>Access protocol actions to include in the rule. Valid values include
         /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
         /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-        pub fn actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.actions(input.into());
             self
         }
         /// <p>Access protocol actions to include in the rule. Valid values include
@@ -5479,8 +5488,8 @@ pub mod fluent_builders {
         /// <p>Access protocol actions to exclude from the rule. Valid values include
         /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
         /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-        pub fn not_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_actions(inp);
+        pub fn not_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_actions(input.into());
             self
         }
         /// <p>Access protocol actions to exclude from the rule. Valid values include
@@ -5498,8 +5507,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
         ///
         /// <p>User IDs to include in the rule.</p>
-        pub fn user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_ids(inp);
+        pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_ids(input.into());
             self
         }
         /// <p>User IDs to include in the rule.</p>
@@ -5515,8 +5524,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_user_ids`](Self::set_not_user_ids).
         ///
         /// <p>User IDs to exclude from the rule.</p>
-        pub fn not_user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_user_ids(inp);
+        pub fn not_user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_user_ids(input.into());
             self
         }
         /// <p>User IDs to exclude from the rule.</p>
@@ -5528,8 +5537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier of the organization.</p>
@@ -5601,8 +5610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
@@ -5614,8 +5623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enforces or suspends a policy after it's applied.</p>
-        pub fn enforced(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enforced(inp);
+        pub fn enforced(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enforced(signature);
             self
         }
         /// <p>Enforces or suspends a policy after it's applied.</p>
@@ -5686,8 +5695,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the organization under which the user, group, or resource
         /// exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier of the organization under which the user, group, or resource
@@ -5701,8 +5710,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the user, group, or resource for which to update mailbox
         /// permissions.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier of the user, group, or resource for which to update mailbox
@@ -5713,8 +5722,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the user, group, or resource to which to grant the
         /// permissions.</p>
-        pub fn grantee_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grantee_id(inp);
+        pub fn grantee_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grantee_id(signature.into());
             self
         }
         /// <p>The identifier of the user, group, or resource to which to grant the
@@ -5733,8 +5742,8 @@ pub mod fluent_builders {
         /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
         /// access to the mailbox, irrespective of other folder-level permissions set on the
         /// mailbox.</p>
-        pub fn permission_values(mut self, inp: impl Into<crate::model::PermissionType>) -> Self {
-            self.inner = self.inner.permission_values(inp);
+        pub fn permission_values(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.permission_values(input);
             self
         }
         /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
@@ -5811,8 +5820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
@@ -5838,8 +5847,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
@@ -5862,8 +5871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
@@ -5872,8 +5881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn effect(mut self, inp: crate::model::MobileDeviceAccessRuleEffect) -> Self {
-            self.inner = self.inner.effect(inp);
+        pub fn effect(mut self, signature: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.inner = self.inner.effect(signature);
             self
         }
         /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
@@ -5885,8 +5894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the override.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the override.</p>
@@ -5955,8 +5964,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -5968,8 +5977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention policy ID.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The retention policy ID.</p>
@@ -5978,8 +5987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention policy name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The retention policy name.</p>
@@ -5988,8 +5997,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention policy description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The retention policy description.</p>
@@ -6002,11 +6011,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_folder_configurations`](Self::set_folder_configurations).
         ///
         /// <p>The retention policy folder configurations.</p>
-        pub fn folder_configurations(
-            mut self,
-            inp: impl Into<crate::model::FolderConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.folder_configurations(inp);
+        pub fn folder_configurations(mut self, input: crate::model::FolderConfiguration) -> Self {
+            self.inner = self.inner.folder_configurations(input);
             self
         }
         /// <p>The retention policy folder configurations.</p>
@@ -6079,8 +6085,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Idempotency token used when retrying requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Idempotency token used when retrying requests.</p>
@@ -6089,8 +6095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
@@ -6102,8 +6108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
@@ -6179,8 +6185,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the organization under which the user, group, or resource
         /// exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization under which the user, group, or resource
@@ -6193,8 +6199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the user, group, or resource to be updated.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier for the user, group, or resource to be updated.</p>
@@ -6203,8 +6209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email for the user, group, or resource to be updated.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(signature.into());
             self
         }
         /// <p>The email for the user, group, or resource to be updated.</p>
@@ -6274,8 +6280,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the organization that contains the user for which the password is
         /// reset.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier of the organization that contains the user for which the password is
@@ -6288,8 +6294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user for whom the password is reset.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The identifier of the user for whom the password is reset.</p>
@@ -6298,8 +6304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new password for the user.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The new password for the user.</p>
@@ -6371,8 +6377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The idempotency token for the client request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for the client request.</p>
@@ -6381,8 +6387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier associated with the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier associated with the organization.</p>
@@ -6394,8 +6400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user or resource associated with the mailbox.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The identifier of the user or resource associated with the mailbox.</p>
@@ -6404,8 +6410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mailbox export job description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The mailbox export job description.</p>
@@ -6415,8 +6421,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
         /// bucket.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
@@ -6427,8 +6433,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
         /// key that encrypts the exported mailbox content.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
@@ -6438,8 +6444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the S3 bucket.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(signature.into());
             self
         }
         /// <p>The name of the S3 bucket.</p>
@@ -6451,8 +6457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 bucket prefix.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(inp);
+        pub fn s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(signature.into());
             self
         }
         /// <p>The S3 bucket prefix.</p>
@@ -6522,8 +6528,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -6536,8 +6542,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag key-value pairs.</p>
@@ -6610,8 +6616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -6624,8 +6630,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -6697,8 +6703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which to list domains.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which to list domains.</p>
@@ -6710,8 +6716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name that will become the default domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain name that will become the default domain.</p>
@@ -6782,8 +6788,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the organization that contains the user for whom to update the
         /// mailbox quota.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier for the organization that contains the user for whom to update the
@@ -6796,8 +6802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifer for the user for whom to update the mailbox quota.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The identifer for the user for whom to update the mailbox quota.</p>
@@ -6806,8 +6812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated mailbox quota, in MB, for the specified user.</p>
-        pub fn mailbox_quota(mut self, inp: i32) -> Self {
-            self.inner = self.inner.mailbox_quota(inp);
+        pub fn mailbox_quota(mut self, signature: i32) -> Self {
+            self.inner = self.inner.mailbox_quota(signature);
             self
         }
         /// <p>The updated mailbox quota, in MB, for the specified user.</p>
@@ -6876,8 +6882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
@@ -6889,8 +6895,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the rule to be updated.</p>
-        pub fn mobile_device_access_rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mobile_device_access_rule_id(inp);
+        pub fn mobile_device_access_rule_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.mobile_device_access_rule_id(signature.into());
             self
         }
         /// <p>The identifier of the rule to be updated.</p>
@@ -6902,8 +6911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated rule name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The updated rule name.</p>
@@ -6912,8 +6921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The updated rule description.</p>
@@ -6922,8 +6931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn effect(mut self, inp: crate::model::MobileDeviceAccessRuleEffect) -> Self {
-            self.inner = self.inner.effect(inp);
+        pub fn effect(mut self, signature: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.inner = self.inner.effect(signature);
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
@@ -6939,8 +6948,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_types`](Self::set_device_types).
         ///
         /// <p>Device types that the updated rule will match.</p>
-        pub fn device_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_types(inp);
+        pub fn device_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_types(input.into());
             self
         }
         /// <p>Device types that the updated rule will match.</p>
@@ -6956,8 +6965,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_types`](Self::set_not_device_types).
         ///
         /// <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
-        pub fn not_device_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_types(inp);
+        pub fn not_device_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_types(input.into());
             self
         }
         /// <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
@@ -6973,8 +6982,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
         ///
         /// <p>Device models that the updated rule will match.</p>
-        pub fn device_models(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_models(inp);
+        pub fn device_models(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_models(input.into());
             self
         }
         /// <p>Device models that the updated rule will match.</p>
@@ -6990,8 +6999,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_models`](Self::set_not_device_models).
         ///
         /// <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
-        pub fn not_device_models(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_models(inp);
+        pub fn not_device_models(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_models(input.into());
             self
         }
         /// <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
@@ -7007,8 +7016,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
         ///
         /// <p>Device operating systems that the updated rule will match.</p>
-        pub fn device_operating_systems(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_operating_systems(inp);
+        pub fn device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_operating_systems(input.into());
             self
         }
         /// <p>Device operating systems that the updated rule will match.</p>
@@ -7024,8 +7033,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_operating_systems`](Self::set_not_device_operating_systems).
         ///
         /// <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
-        pub fn not_device_operating_systems(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_operating_systems(inp);
+        pub fn not_device_operating_systems(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.not_device_operating_systems(input.into());
             self
         }
         /// <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
@@ -7041,8 +7053,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
         ///
         /// <p>User agents that the updated rule will match.</p>
-        pub fn device_user_agents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_user_agents(inp);
+        pub fn device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_user_agents(input.into());
             self
         }
         /// <p>User agents that the updated rule will match.</p>
@@ -7058,8 +7070,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).
         ///
         /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
-        pub fn not_device_user_agents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_user_agents(inp);
+        pub fn not_device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_user_agents(input.into());
             self
         }
         /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
@@ -7133,8 +7145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization that contains the user, group, or resource to update.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The organization that contains the user, group, or resource to update.</p>
@@ -7146,8 +7158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user, group, or resource to update.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The user, group, or resource to update.</p>
@@ -7156,8 +7168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the email to be updated as primary.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(signature.into());
             self
         }
         /// <p>The value of the email to be updated as primary.</p>
@@ -7229,8 +7241,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier associated with the organization for which the resource is
         /// updated.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>The identifier associated with the organization for which the resource is
@@ -7243,8 +7255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the resource to be updated.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The identifier of the resource to be updated.</p>
@@ -7253,8 +7265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resource to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the resource to be updated.</p>
@@ -7263,8 +7275,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource's booking options to be updated.</p>
-        pub fn booking_options(mut self, inp: crate::model::BookingOptions) -> Self {
-            self.inner = self.inner.booking_options(inp);
+        pub fn booking_options(mut self, signature: crate::model::BookingOptions) -> Self {
+            self.inner = self.inner.booking_options(signature);
             self
         }
         /// <p>The resource's booking options to be updated.</p>

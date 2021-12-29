@@ -360,8 +360,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>Array of ARNs, one per channel.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>Array of ARNs, one per channel.</p>
@@ -437,8 +437,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>Array of ARNs, one per channel.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>Array of ARNs, one per channel.</p>
@@ -510,8 +510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Channel name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Channel name.</p>
@@ -523,8 +523,8 @@ pub mod fluent_builders {
         /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
         /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
         /// Standard, respectively.) Default: <code>LOW</code>.</p>
-        pub fn latency_mode(mut self, inp: crate::model::ChannelLatencyMode) -> Self {
-            self.inner = self.inner.latency_mode(inp);
+        pub fn latency_mode(mut self, signature: crate::model::ChannelLatencyMode) -> Self {
+            self.inner = self.inner.latency_mode(signature);
             self
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
@@ -556,8 +556,8 @@ pub mod fluent_builders {
         /// bitrate can be up to 1.5 Mbps.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::ChannelType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::ChannelType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
@@ -584,8 +584,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether the channel is private (enabled for playback authorization). Default:
         /// <code>false</code>.</p>
-        pub fn authorized(mut self, inp: bool) -> Self {
-            self.inner = self.inner.authorized(inp);
+        pub fn authorized(mut self, signature: bool) -> Self {
+            self.inner = self.inner.authorized(signature);
             self
         }
         /// <p>Whether the channel is private (enabled for playback authorization). Default:
@@ -595,8 +595,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
-        pub fn recording_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recording_configuration_arn(inp);
+        pub fn recording_configuration_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.recording_configuration_arn(signature.into());
             self
         }
         /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
@@ -617,7 +620,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
@@ -702,8 +705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
@@ -715,9 +718,9 @@ pub mod fluent_builders {
         /// stored.</p>
         pub fn destination_configuration(
             mut self,
-            inp: crate::model::DestinationConfiguration,
+            signature: crate::model::DestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.destination_configuration(inp);
+            self.inner = self.inner.destination_configuration(signature);
             self
         }
         /// <p>A complex type that contains a destination configuration for where recorded video will be
@@ -739,7 +742,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
@@ -816,8 +819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel for which to create the stream key.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>ARN of the channel for which to create the stream key.</p>
@@ -835,7 +838,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
@@ -914,8 +917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN of the channel to be deleted.</p>
@@ -986,8 +989,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the key pair to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN of the key pair to be deleted.</p>
@@ -1061,8 +1064,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the recording configuration to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN of the recording configuration to be deleted.</p>
@@ -1132,8 +1135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the stream key to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN of the stream key to be deleted.</p>
@@ -1202,8 +1205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
@@ -1276,8 +1279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the key pair to be returned.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN of the key pair to be returned.</p>
@@ -1346,8 +1349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the recording configuration to be retrieved.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN of the recording configuration to be retrieved.</p>
@@ -1416,8 +1419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Channel ARN for stream to be accessed.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>Channel ARN for stream to be accessed.</p>
@@ -1486,8 +1489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN for the stream key to be retrieved.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN for the stream key to be retrieved.</p>
@@ -1556,8 +1559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel resource</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>ARN of the channel resource</p>
@@ -1568,8 +1571,8 @@ pub mod fluent_builders {
         /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
         /// <code>streamId</code> is provided, this returns the most recent stream session for the
         /// channel, if it exists.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(signature.into());
             self
         }
         /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
@@ -1644,8 +1647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The public portion of a customer-generated key pair.</p>
-        pub fn public_key_material(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_key_material(inp);
+        pub fn public_key_material(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_key_material(signature.into());
             self
         }
         /// <p>The public portion of a customer-generated key pair.</p>
@@ -1657,8 +1660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Playback-key-pair name. The value does not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Playback-key-pair name. The value does not need to be unique.</p>
@@ -1676,7 +1679,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
@@ -1753,8 +1756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filters the channel list to match the specified name.</p>
-        pub fn filter_by_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_by_name(inp);
+        pub fn filter_by_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_by_name(signature.into());
             self
         }
         /// <p>Filters the channel list to match the specified name.</p>
@@ -1768,9 +1771,11 @@ pub mod fluent_builders {
         /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
         pub fn filter_by_recording_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.filter_by_recording_configuration_arn(inp);
+            self.inner = self
+                .inner
+                .filter_by_recording_configuration_arn(signature.into());
             self
         }
         /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
@@ -1783,8 +1788,8 @@ pub mod fluent_builders {
         }
         /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
         /// response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
@@ -1794,8 +1799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of channels to return. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of channels to return. Default: 50.</p>
@@ -1865,8 +1870,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of key pairs to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Maximum number of key pairs to return.</p>
@@ -1876,8 +1881,8 @@ pub mod fluent_builders {
         }
         /// <p>The first key pair to retrieve. This is used for pagination; see the
         /// <code>nextToken</code> response field. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The first key pair to retrieve. This is used for pagination; see the
@@ -1949,8 +1954,8 @@ pub mod fluent_builders {
         }
         /// <p>The first recording configuration to retrieve. This is used for pagination; see the
         /// <code>nextToken</code> response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The first recording configuration to retrieve. This is used for pagination; see the
@@ -1960,8 +1965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of recording configurations to return. Default: 50. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of recording configurations to return. Default: 50. </p>
@@ -2030,8 +2035,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Channel ARN used to filter the list.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>Channel ARN used to filter the list.</p>
@@ -2041,8 +2046,8 @@ pub mod fluent_builders {
         }
         /// <p>The first stream key to retrieve. This is used for pagination; see the
         /// <code>nextToken</code> response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The first stream key to retrieve. This is used for pagination; see the
@@ -2052,8 +2057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of streamKeys to return. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of streamKeys to return. Default: 50.</p>
@@ -2123,8 +2128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filters the stream list to match the specified criterion.</p>
-        pub fn filter_by(mut self, inp: crate::model::StreamFilters) -> Self {
-            self.inner = self.inner.filter_by(inp);
+        pub fn filter_by(mut self, signature: crate::model::StreamFilters) -> Self {
+            self.inner = self.inner.filter_by(signature);
             self
         }
         /// <p>Filters the stream list to match the specified criterion.</p>
@@ -2137,8 +2142,8 @@ pub mod fluent_builders {
         }
         /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
         /// response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
@@ -2148,8 +2153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of streams to return. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of streams to return. Default: 50.</p>
@@ -2219,8 +2224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Channel ARN used to filter the list.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>Channel ARN used to filter the list.</p>
@@ -2230,8 +2235,8 @@ pub mod fluent_builders {
         }
         /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
         /// response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
@@ -2241,8 +2246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of streams to return. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of streams to return. Default: 50.</p>
@@ -2311,8 +2316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to be retrieved.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to be retrieved.</p>
@@ -2386,8 +2391,8 @@ pub mod fluent_builders {
         }
         /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
         /// stream.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
@@ -2397,8 +2402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(signature.into());
             self
         }
         /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
@@ -2474,8 +2479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel for which the stream is to be stopped.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>ARN of the channel for which the stream is to be stopped.</p>
@@ -2544,8 +2549,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the resource for which tags are to be added or updated.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>ARN of the resource for which tags are to be added or updated.</p>
@@ -2563,7 +2568,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of tags to be added or updated.</p>
@@ -2637,8 +2642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the resource for which tags are to be removed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>ARN of the resource for which tags are to be removed.</p>
@@ -2651,8 +2656,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Array of tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Array of tags to be removed.</p>
@@ -2725,8 +2730,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel to be updated.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>ARN of the channel to be updated.</p>
@@ -2735,8 +2740,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Channel name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Channel name.</p>
@@ -2748,8 +2753,8 @@ pub mod fluent_builders {
         /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
         /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
         /// Standard, respectively.)</p>
-        pub fn latency_mode(mut self, inp: crate::model::ChannelLatencyMode) -> Self {
-            self.inner = self.inner.latency_mode(inp);
+        pub fn latency_mode(mut self, signature: crate::model::ChannelLatencyMode) -> Self {
+            self.inner = self.inner.latency_mode(signature);
             self
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
@@ -2781,8 +2786,8 @@ pub mod fluent_builders {
         /// bitrate can be up to 1.5 Mbps.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::ChannelType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::ChannelType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
@@ -2808,8 +2813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the channel is private (enabled for playback authorization).</p>
-        pub fn authorized(mut self, inp: bool) -> Self {
-            self.inner = self.inner.authorized(inp);
+        pub fn authorized(mut self, signature: bool) -> Self {
+            self.inner = self.inner.authorized(signature);
             self
         }
         /// <p>Whether the channel is private (enabled for playback authorization).</p>
@@ -2819,8 +2824,11 @@ pub mod fluent_builders {
         }
         /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
         /// value other than an empty string indicates that recording is enabled</p>
-        pub fn recording_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recording_configuration_arn(inp);
+        pub fn recording_configuration_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.recording_configuration_arn(signature.into());
             self
         }
         /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A

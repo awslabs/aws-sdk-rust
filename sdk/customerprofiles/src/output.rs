@@ -414,9 +414,9 @@ pub mod search_profiles_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of SearchProfiles instances.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Profile>) -> Self {
+        pub fn items(mut self, input: crate::model::Profile) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -717,10 +717,10 @@ pub mod put_profile_object_type_output {
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ObjectTypeField>,
+            v: crate::model::ObjectTypeField,
         ) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.fields = Some(hash_map);
             self
         }
@@ -742,10 +742,10 @@ pub mod put_profile_object_type_output {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ObjectTypeKey>>,
+            v: std::vec::Vec<crate::model::ObjectTypeKey>,
         ) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.keys = Some(hash_map);
             self
         }
@@ -1245,12 +1245,9 @@ pub mod list_profile_object_type_templates_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of ListProfileObjectType template instances.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ListProfileObjectTypeTemplateItem>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ListProfileObjectTypeTemplateItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1333,9 +1330,9 @@ pub mod list_profile_object_types_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of ListProfileObjectTypes instances.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ListProfileObjectTypeItem>) -> Self {
+        pub fn items(mut self, input: crate::model::ListProfileObjectTypeItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1415,9 +1412,9 @@ pub mod list_profile_objects_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of ListProfileObject instances.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ListProfileObjectsItem>) -> Self {
+        pub fn items(mut self, input: crate::model::ListProfileObjectsItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1497,9 +1494,9 @@ pub mod list_integrations_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of ListIntegrations instances.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ListIntegrationItem>) -> Self {
+        pub fn items(mut self, input: crate::model::ListIntegrationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1588,10 +1585,10 @@ pub mod list_identity_resolution_jobs_output {
         /// <p>A list of Identity Resolution Jobs.</p>
         pub fn identity_resolution_jobs_list(
             mut self,
-            input: impl Into<crate::model::IdentityResolutionJob>,
+            input: crate::model::IdentityResolutionJob,
         ) -> Self {
             let mut v = self.identity_resolution_jobs_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identity_resolution_jobs_list = Some(v);
             self
         }
@@ -1671,9 +1668,9 @@ pub mod list_domains_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of ListDomains instances.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ListDomainItem>) -> Self {
+        pub fn items(mut self, input: crate::model::ListDomainItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1753,9 +1750,9 @@ pub mod list_account_integrations_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of ListAccountIntegration instances.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ListIntegrationItem>) -> Self {
+        pub fn items(mut self, input: crate::model::ListIntegrationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1979,10 +1976,10 @@ pub mod get_profile_object_type_template_output {
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ObjectTypeField>,
+            v: crate::model::ObjectTypeField,
         ) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.fields = Some(hash_map);
             self
         }
@@ -2004,10 +2001,10 @@ pub mod get_profile_object_type_template_output {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ObjectTypeKey>>,
+            v: std::vec::Vec<crate::model::ObjectTypeKey>,
         ) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.keys = Some(hash_map);
             self
         }
@@ -2304,10 +2301,10 @@ pub mod get_profile_object_type_output {
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ObjectTypeField>,
+            v: crate::model::ObjectTypeField,
         ) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.fields = Some(hash_map);
             self
         }
@@ -2329,10 +2326,10 @@ pub mod get_profile_object_type_output {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ObjectTypeKey>>,
+            v: std::vec::Vec<crate::model::ObjectTypeKey>,
         ) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.keys = Some(hash_map);
             self
         }
@@ -2517,9 +2514,9 @@ pub mod get_matches_output {
         /// To override the contents of this collection use [`set_matches`](Self::set_matches).
         ///
         /// <p>The list of matched profiles for this instance.</p>
-        pub fn matches(mut self, input: impl Into<crate::model::MatchItem>) -> Self {
+        pub fn matches(mut self, input: crate::model::MatchItem) -> Self {
             let mut v = self.matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matches = Some(v);
             self
         }

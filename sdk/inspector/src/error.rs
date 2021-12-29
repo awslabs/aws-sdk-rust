@@ -5725,12 +5725,9 @@ pub mod agents_already_running_assessment_exception {
         /// To override the contents of this collection use [`set_agents`](Self::set_agents).
         ///
         /// <p></p>
-        pub fn agents(
-            mut self,
-            input: impl Into<crate::model::AgentAlreadyRunningAssessment>,
-        ) -> Self {
+        pub fn agents(mut self, input: crate::model::AgentAlreadyRunningAssessment) -> Self {
             let mut v = self.agents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agents = Some(v);
             self
         }

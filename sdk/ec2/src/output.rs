@@ -201,12 +201,9 @@ pub mod unmonitor_instances_output {
         /// To override the contents of this collection use [`set_instance_monitorings`](Self::set_instance_monitorings).
         ///
         /// <p>The monitoring information.</p>
-        pub fn instance_monitorings(
-            mut self,
-            input: impl Into<crate::model::InstanceMonitoring>,
-        ) -> Self {
+        pub fn instance_monitorings(mut self, input: crate::model::InstanceMonitoring) -> Self {
             let mut v = self.instance_monitorings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_monitorings = Some(v);
             self
         }
@@ -416,12 +413,9 @@ pub mod terminate_instances_output {
         /// To override the contents of this collection use [`set_terminating_instances`](Self::set_terminating_instances).
         ///
         /// <p>Information about the terminated instances.</p>
-        pub fn terminating_instances(
-            mut self,
-            input: impl Into<crate::model::InstanceStateChange>,
-        ) -> Self {
+        pub fn terminating_instances(mut self, input: crate::model::InstanceStateChange) -> Self {
             let mut v = self.terminating_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.terminating_instances = Some(v);
             self
         }
@@ -527,10 +521,10 @@ pub mod terminate_client_vpn_connections_output {
         /// <p>The current state of the client connections.</p>
         pub fn connection_statuses(
             mut self,
-            input: impl Into<crate::model::TerminateConnectionStatus>,
+            input: crate::model::TerminateConnectionStatus,
         ) -> Self {
             let mut v = self.connection_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_statuses = Some(v);
             self
         }
@@ -594,12 +588,9 @@ pub mod stop_instances_output {
         /// To override the contents of this collection use [`set_stopping_instances`](Self::set_stopping_instances).
         ///
         /// <p>Information about the stopped instances.</p>
-        pub fn stopping_instances(
-            mut self,
-            input: impl Into<crate::model::InstanceStateChange>,
-        ) -> Self {
+        pub fn stopping_instances(mut self, input: crate::model::InstanceStateChange) -> Self {
             let mut v = self.stopping_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stopping_instances = Some(v);
             self
         }
@@ -848,12 +839,9 @@ pub mod start_instances_output {
         /// To override the contents of this collection use [`set_starting_instances`](Self::set_starting_instances).
         ///
         /// <p>Information about the started instances.</p>
-        pub fn starting_instances(
-            mut self,
-            input: impl Into<crate::model::InstanceStateChange>,
-        ) -> Self {
+        pub fn starting_instances(mut self, input: crate::model::InstanceStateChange) -> Self {
             let mut v = self.starting_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.starting_instances = Some(v);
             self
         }
@@ -955,9 +943,9 @@ pub mod search_transit_gateway_routes_output {
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
         /// <p>Information about the routes.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::TransitGatewayRoute>) -> Self {
+        pub fn routes(mut self, input: crate::model::TransitGatewayRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -1043,10 +1031,10 @@ pub mod search_transit_gateway_multicast_groups_output {
         /// <p>Information about the  transit gateway multicast group.</p>
         pub fn multicast_groups(
             mut self,
-            input: impl Into<crate::model::TransitGatewayMulticastGroup>,
+            input: crate::model::TransitGatewayMulticastGroup,
         ) -> Self {
             let mut v = self.multicast_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.multicast_groups = Some(v);
             self
         }
@@ -1126,9 +1114,9 @@ pub mod search_local_gateway_routes_output {
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
         /// <p>Information about the routes.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::LocalGatewayRoute>) -> Self {
+        pub fn routes(mut self, input: crate::model::LocalGatewayRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -1299,9 +1287,9 @@ pub mod run_instances_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>[EC2-Classic only] The security groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupIdentifier) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -1318,9 +1306,9 @@ pub mod run_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -1445,12 +1433,9 @@ pub mod revoke_security_group_ingress_output {
         /// <p>The inbound rules that were unknown to the service. In some cases,
         /// <code>unknownIpPermissionSet</code> might be in a different format from the request
         /// parameter. </p>
-        pub fn unknown_ip_permissions(
-            mut self,
-            input: impl Into<crate::model::IpPermission>,
-        ) -> Self {
+        pub fn unknown_ip_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.unknown_ip_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unknown_ip_permissions = Some(v);
             self
         }
@@ -1539,12 +1524,9 @@ pub mod revoke_security_group_egress_output {
         /// <p>The outbound rules that were unknown to the service. In some cases,
         /// <code>unknownIpPermissionSet</code> might be in a different format from the request
         /// parameter. </p>
-        pub fn unknown_ip_permissions(
-            mut self,
-            input: impl Into<crate::model::IpPermission>,
-        ) -> Self {
+        pub fn unknown_ip_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.unknown_ip_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unknown_ip_permissions = Some(v);
             self
         }
@@ -2441,12 +2423,9 @@ pub mod request_spot_instances_output {
         /// To override the contents of this collection use [`set_spot_instance_requests`](Self::set_spot_instance_requests).
         ///
         /// <p>One or more Spot Instance requests.</p>
-        pub fn spot_instance_requests(
-            mut self,
-            input: impl Into<crate::model::SpotInstanceRequest>,
-        ) -> Self {
+        pub fn spot_instance_requests(mut self, input: crate::model::SpotInstanceRequest) -> Self {
             let mut v = self.spot_instance_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_instance_requests = Some(v);
             self
         }
@@ -3001,9 +2980,9 @@ pub mod release_hosts_output {
         ///
         /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
         /// message.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -3150,9 +3129,9 @@ pub mod reject_vpc_endpoint_connections_output {
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
         /// <p>Information about the endpoints that were not rejected, if applicable.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -3699,12 +3678,9 @@ pub mod purchase_scheduled_instances_output {
         /// To override the contents of this collection use [`set_scheduled_instance_set`](Self::set_scheduled_instance_set).
         ///
         /// <p>Information about the Scheduled Instances.</p>
-        pub fn scheduled_instance_set(
-            mut self,
-            input: impl Into<crate::model::ScheduledInstance>,
-        ) -> Self {
+        pub fn scheduled_instance_set(mut self, input: crate::model::ScheduledInstance) -> Self {
             let mut v = self.scheduled_instance_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_instance_set = Some(v);
             self
         }
@@ -3893,9 +3869,9 @@ pub mod purchase_host_reservation_output {
         /// To override the contents of this collection use [`set_purchase`](Self::set_purchase).
         ///
         /// <p>Describes the details of the purchase.</p>
-        pub fn purchase(mut self, input: impl Into<crate::model::Purchase>) -> Self {
+        pub fn purchase(mut self, input: crate::model::Purchase) -> Self {
             let mut v = self.purchase.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.purchase = Some(v);
             self
         }
@@ -4314,12 +4290,9 @@ pub mod monitor_instances_output {
         /// To override the contents of this collection use [`set_instance_monitorings`](Self::set_instance_monitorings).
         ///
         /// <p>The monitoring information.</p>
-        pub fn instance_monitorings(
-            mut self,
-            input: impl Into<crate::model::InstanceMonitoring>,
-        ) -> Self {
+        pub fn instance_monitorings(mut self, input: crate::model::InstanceMonitoring) -> Self {
             let mut v = self.instance_monitorings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_monitorings = Some(v);
             self
         }
@@ -6479,12 +6452,12 @@ pub mod modify_instance_credit_specification_output {
         /// modified.</p>
         pub fn successful_instance_credit_specifications(
             mut self,
-            input: impl Into<crate::model::SuccessfulInstanceCreditSpecificationItem>,
+            input: crate::model::SuccessfulInstanceCreditSpecificationItem,
         ) -> Self {
             let mut v = self
                 .successful_instance_credit_specifications
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_instance_credit_specifications = Some(v);
             self
         }
@@ -6507,12 +6480,12 @@ pub mod modify_instance_credit_specification_output {
         /// modified.</p>
         pub fn unsuccessful_instance_credit_specifications(
             mut self,
-            input: impl Into<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
+            input: crate::model::UnsuccessfulInstanceCreditSpecificationItem,
         ) -> Self {
             let mut v = self
                 .unsuccessful_instance_credit_specifications
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful_instance_credit_specifications = Some(v);
             self
         }
@@ -6784,9 +6757,9 @@ pub mod modify_hosts_output {
         ///
         /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
         /// setting you requested can be used.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -7363,9 +7336,9 @@ pub mod list_snapshots_in_recycle_bin_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>Information about the snapshots.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::SnapshotRecycleBinInfo>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::SnapshotRecycleBinInfo) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -7554,9 +7527,9 @@ pub mod import_snapshot_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the import snapshot task.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7677,9 +7650,9 @@ pub mod import_key_pair_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags applied to the imported key pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8029,9 +8002,9 @@ pub mod import_image_output {
         /// To override the contents of this collection use [`set_snapshot_details`](Self::set_snapshot_details).
         ///
         /// <p>Information about the snapshots.</p>
-        pub fn snapshot_details(mut self, input: impl Into<crate::model::SnapshotDetail>) -> Self {
+        pub fn snapshot_details(mut self, input: crate::model::SnapshotDetail) -> Self {
             let mut v = self.snapshot_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_details = Some(v);
             self
         }
@@ -8073,10 +8046,10 @@ pub mod import_image_output {
         /// <p>The ARNs of the license configurations.</p>
         pub fn license_specifications(
             mut self,
-            input: impl Into<crate::model::ImportImageLicenseConfigurationResponse>,
+            input: crate::model::ImportImageLicenseConfigurationResponse,
         ) -> Self {
             let mut v = self.license_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_specifications = Some(v);
             self
         }
@@ -8095,9 +8068,9 @@ pub mod import_image_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the import image task.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8270,10 +8243,10 @@ pub mod get_vpn_connection_device_types_output {
         /// use.</p>
         pub fn vpn_connection_device_types(
             mut self,
-            input: impl Into<crate::model::VpnConnectionDeviceType>,
+            input: crate::model::VpnConnectionDeviceType,
         ) -> Self {
             let mut v = self.vpn_connection_device_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpn_connection_device_types = Some(v);
             self
         }
@@ -8437,12 +8410,12 @@ pub mod get_transit_gateway_route_table_propagations_output {
         /// <p>Information about the route table propagations.</p>
         pub fn transit_gateway_route_table_propagations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayRouteTablePropagation>,
+            input: crate::model::TransitGatewayRouteTablePropagation,
         ) -> Self {
             let mut v = self
                 .transit_gateway_route_table_propagations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_route_table_propagations = Some(v);
             self
         }
@@ -8532,10 +8505,10 @@ pub mod get_transit_gateway_route_table_associations_output {
         /// <p>Information about the associations.</p>
         pub fn associations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayRouteTableAssociation>,
+            input: crate::model::TransitGatewayRouteTableAssociation,
         ) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associations = Some(v);
             self
         }
@@ -8627,12 +8600,12 @@ pub mod get_transit_gateway_prefix_list_references_output {
         /// <p>Information about the prefix list references.</p>
         pub fn transit_gateway_prefix_list_references(
             mut self,
-            input: impl Into<crate::model::TransitGatewayPrefixListReference>,
+            input: crate::model::TransitGatewayPrefixListReference,
         ) -> Self {
             let mut v = self
                 .transit_gateway_prefix_list_references
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_prefix_list_references = Some(v);
             self
         }
@@ -8724,10 +8697,10 @@ pub mod get_transit_gateway_multicast_domain_associations_output {
         /// <p>Information about the multicast domain associations.</p>
         pub fn multicast_domain_associations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayMulticastDomainAssociation>,
+            input: crate::model::TransitGatewayMulticastDomainAssociation,
         ) -> Self {
             let mut v = self.multicast_domain_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.multicast_domain_associations = Some(v);
             self
         }
@@ -8819,12 +8792,12 @@ pub mod get_transit_gateway_attachment_propagations_output {
         /// <p>Information about the propagation route tables.</p>
         pub fn transit_gateway_attachment_propagations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayAttachmentPropagation>,
+            input: crate::model::TransitGatewayAttachmentPropagation,
         ) -> Self {
             let mut v = self
                 .transit_gateway_attachment_propagations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_attachment_propagations = Some(v);
             self
         }
@@ -8931,10 +8904,10 @@ pub mod get_subnet_cidr_reservations_output {
         /// <p>Information about the IPv4 subnet CIDR reservations.</p>
         pub fn subnet_ipv4_cidr_reservations(
             mut self,
-            input: impl Into<crate::model::SubnetCidrReservation>,
+            input: crate::model::SubnetCidrReservation,
         ) -> Self {
             let mut v = self.subnet_ipv4_cidr_reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_ipv4_cidr_reservations = Some(v);
             self
         }
@@ -8953,10 +8926,10 @@ pub mod get_subnet_cidr_reservations_output {
         /// <p>Information about the IPv6 subnet CIDR reservations.</p>
         pub fn subnet_ipv6_cidr_reservations(
             mut self,
-            input: impl Into<crate::model::SubnetCidrReservation>,
+            input: crate::model::SubnetCidrReservation,
         ) -> Self {
             let mut v = self.subnet_ipv6_cidr_reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_ipv6_cidr_reservations = Some(v);
             self
         }
@@ -9085,12 +9058,9 @@ pub mod get_spot_placement_scores_output {
         /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
         /// Spot request will be fully or partially fulfilled.</p>
         /// </note>
-        pub fn spot_placement_scores(
-            mut self,
-            input: impl Into<crate::model::SpotPlacementScore>,
-        ) -> Self {
+        pub fn spot_placement_scores(mut self, input: crate::model::SpotPlacementScore) -> Self {
             let mut v = self.spot_placement_scores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_placement_scores = Some(v);
             self
         }
@@ -9408,10 +9378,10 @@ pub mod get_reserved_instances_exchange_quote_output {
         /// <p>The configuration of your Convertible Reserved Instances.</p>
         pub fn reserved_instance_value_set(
             mut self,
-            input: impl Into<crate::model::ReservedInstanceReservationValue>,
+            input: crate::model::ReservedInstanceReservationValue,
         ) -> Self {
             let mut v = self.reserved_instance_value_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instance_value_set = Some(v);
             self
         }
@@ -9448,10 +9418,10 @@ pub mod get_reserved_instances_exchange_quote_output {
         /// <p>The values of the target Convertible Reserved Instances.</p>
         pub fn target_configuration_value_set(
             mut self,
-            input: impl Into<crate::model::TargetReservationValue>,
+            input: crate::model::TargetReservationValue,
         ) -> Self {
             let mut v = self.target_configuration_value_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_configuration_value_set = Some(v);
             self
         }
@@ -9766,10 +9736,10 @@ pub mod get_network_insights_access_scope_analysis_findings_output {
         /// <p>The findings associated with Network Access Scope Analysis.</p>
         pub fn analysis_findings(
             mut self,
-            input: impl Into<crate::model::AccessScopeAnalysisFinding>,
+            input: crate::model::AccessScopeAnalysisFinding,
         ) -> Self {
             let mut v = self.analysis_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_findings = Some(v);
             self
         }
@@ -9854,9 +9824,9 @@ pub mod get_managed_prefix_list_entries_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>Information about the prefix list entries.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::PrefixListEntry>) -> Self {
+        pub fn entries(mut self, input: crate::model::PrefixListEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -9942,10 +9912,10 @@ pub mod get_managed_prefix_list_associations_output {
         /// <p>Information about the associations.</p>
         pub fn prefix_list_associations(
             mut self,
-            input: impl Into<crate::model::PrefixListAssociation>,
+            input: crate::model::PrefixListAssociation,
         ) -> Self {
             let mut v = self.prefix_list_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prefix_list_associations = Some(v);
             self
         }
@@ -10099,12 +10069,9 @@ pub mod get_ipam_resource_cidrs_output {
         /// To override the contents of this collection use [`set_ipam_resource_cidrs`](Self::set_ipam_resource_cidrs).
         ///
         /// <p>The resource CIDRs.</p>
-        pub fn ipam_resource_cidrs(
-            mut self,
-            input: impl Into<crate::model::IpamResourceCidr>,
-        ) -> Self {
+        pub fn ipam_resource_cidrs(mut self, input: crate::model::IpamResourceCidr) -> Self {
             let mut v = self.ipam_resource_cidrs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_resource_cidrs = Some(v);
             self
         }
@@ -10174,9 +10141,9 @@ pub mod get_ipam_pool_cidrs_output {
         /// To override the contents of this collection use [`set_ipam_pool_cidrs`](Self::set_ipam_pool_cidrs).
         ///
         /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
-        pub fn ipam_pool_cidrs(mut self, input: impl Into<crate::model::IpamPoolCidr>) -> Self {
+        pub fn ipam_pool_cidrs(mut self, input: crate::model::IpamPoolCidr) -> Self {
             let mut v = self.ipam_pool_cidrs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_pool_cidrs = Some(v);
             self
         }
@@ -10259,12 +10226,9 @@ pub mod get_ipam_pool_allocations_output {
         /// To override the contents of this collection use [`set_ipam_pool_allocations`](Self::set_ipam_pool_allocations).
         ///
         /// <p>The IPAM pool allocations you want information on.</p>
-        pub fn ipam_pool_allocations(
-            mut self,
-            input: impl Into<crate::model::IpamPoolAllocation>,
-        ) -> Self {
+        pub fn ipam_pool_allocations(mut self, input: crate::model::IpamPoolAllocation) -> Self {
             let mut v = self.ipam_pool_allocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_pool_allocations = Some(v);
             self
         }
@@ -10347,12 +10311,9 @@ pub mod get_ipam_address_history_output {
         /// To override the contents of this collection use [`set_history_records`](Self::set_history_records).
         ///
         /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
-        pub fn history_records(
-            mut self,
-            input: impl Into<crate::model::IpamAddressHistoryRecord>,
-        ) -> Self {
+        pub fn history_records(mut self, input: crate::model::IpamAddressHistoryRecord) -> Self {
             let mut v = self.history_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.history_records = Some(v);
             self
         }
@@ -10439,10 +10400,10 @@ pub mod get_instance_types_from_instance_requirements_output {
         /// <p>The instance types with the specified instance attributes.</p>
         pub fn instance_types(
             mut self,
-            input: impl Into<crate::model::InstanceTypeInfoFromInstanceRequirements>,
+            input: crate::model::InstanceTypeInfoFromInstanceRequirements,
         ) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_types = Some(v);
             self
         }
@@ -10565,9 +10526,9 @@ pub mod get_host_reservation_purchase_preview_output {
         ///
         /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
         /// associated with it.</p>
-        pub fn purchase(mut self, input: impl Into<crate::model::Purchase>) -> Self {
+        pub fn purchase(mut self, input: crate::model::Purchase) -> Self {
             let mut v = self.purchase.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.purchase = Some(v);
             self
         }
@@ -10685,10 +10646,10 @@ pub mod get_groups_for_capacity_reservation_output {
         /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
         pub fn capacity_reservation_groups(
             mut self,
-            input: impl Into<crate::model::CapacityReservationGroup>,
+            input: crate::model::CapacityReservationGroup,
         ) -> Self {
             let mut v = self.capacity_reservation_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_reservation_groups = Some(v);
             self
         }
@@ -11181,12 +11142,9 @@ pub mod get_coip_pool_usage_output {
         /// To override the contents of this collection use [`set_coip_address_usages`](Self::set_coip_address_usages).
         ///
         /// <p>Information about the address usage.</p>
-        pub fn coip_address_usages(
-            mut self,
-            input: impl Into<crate::model::CoipAddressUsage>,
-        ) -> Self {
+        pub fn coip_address_usages(mut self, input: crate::model::CoipAddressUsage) -> Self {
             let mut v = self.coip_address_usages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.coip_address_usages = Some(v);
             self
         }
@@ -11490,9 +11448,9 @@ pub mod get_capacity_reservation_usage_output {
         /// To override the contents of this collection use [`set_instance_usages`](Self::set_instance_usages).
         ///
         /// <p>Information about the Capacity Reservation usage.</p>
-        pub fn instance_usages(mut self, input: impl Into<crate::model::InstanceUsage>) -> Self {
+        pub fn instance_usages(mut self, input: crate::model::InstanceUsage) -> Self {
             let mut v = self.instance_usages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_usages = Some(v);
             self
         }
@@ -11571,12 +11529,9 @@ pub mod get_associated_ipv6_pool_cidrs_output {
         /// To override the contents of this collection use [`set_ipv6_cidr_associations`](Self::set_ipv6_cidr_associations).
         ///
         /// <p>Information about the IPv6 CIDR block associations.</p>
-        pub fn ipv6_cidr_associations(
-            mut self,
-            input: impl Into<crate::model::Ipv6CidrAssociation>,
-        ) -> Self {
+        pub fn ipv6_cidr_associations(mut self, input: crate::model::Ipv6CidrAssociation) -> Self {
             let mut v = self.ipv6_cidr_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipv6_cidr_associations = Some(v);
             self
         }
@@ -11649,9 +11604,9 @@ pub mod get_associated_enclave_certificate_iam_roles_output {
         /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
         ///
         /// <p>Information about the associated IAM roles.</p>
-        pub fn associated_roles(mut self, input: impl Into<crate::model::AssociatedRole>) -> Self {
+        pub fn associated_roles(mut self, input: crate::model::AssociatedRole) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_roles = Some(v);
             self
         }
@@ -11953,9 +11908,9 @@ pub mod export_image_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the export image task.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12594,10 +12549,10 @@ pub mod enable_fast_snapshot_restores_output {
         /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
         pub fn successful(
             mut self,
-            input: impl Into<crate::model::EnableFastSnapshotRestoreSuccessItem>,
+            input: crate::model::EnableFastSnapshotRestoreSuccessItem,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -12618,10 +12573,10 @@ pub mod enable_fast_snapshot_restores_output {
         /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
         pub fn unsuccessful(
             mut self,
-            input: impl Into<crate::model::EnableFastSnapshotRestoreErrorItem>,
+            input: crate::model::EnableFastSnapshotRestoreErrorItem,
         ) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -13847,10 +13802,10 @@ pub mod disable_fast_snapshot_restores_output {
         /// <p>Information about the snapshots for which fast snapshot restores were successfully disabled.</p>
         pub fn successful(
             mut self,
-            input: impl Into<crate::model::DisableFastSnapshotRestoreSuccessItem>,
+            input: crate::model::DisableFastSnapshotRestoreSuccessItem,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -13871,10 +13826,10 @@ pub mod disable_fast_snapshot_restores_output {
         /// <p>Information about the snapshots for which fast snapshot restores could not be disabled.</p>
         pub fn unsuccessful(
             mut self,
-            input: impl Into<crate::model::DisableFastSnapshotRestoreErrorItem>,
+            input: crate::model::DisableFastSnapshotRestoreErrorItem,
         ) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -14291,9 +14246,9 @@ pub mod describe_vpn_gateways_output {
         /// To override the contents of this collection use [`set_vpn_gateways`](Self::set_vpn_gateways).
         ///
         /// <p>Information about one or more virtual private gateways.</p>
-        pub fn vpn_gateways(mut self, input: impl Into<crate::model::VpnGateway>) -> Self {
+        pub fn vpn_gateways(mut self, input: crate::model::VpnGateway) -> Self {
             let mut v = self.vpn_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpn_gateways = Some(v);
             self
         }
@@ -14354,9 +14309,9 @@ pub mod describe_vpn_connections_output {
         /// To override the contents of this collection use [`set_vpn_connections`](Self::set_vpn_connections).
         ///
         /// <p>Information about one or more VPN connections.</p>
-        pub fn vpn_connections(mut self, input: impl Into<crate::model::VpnConnection>) -> Self {
+        pub fn vpn_connections(mut self, input: crate::model::VpnConnection) -> Self {
             let mut v = self.vpn_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpn_connections = Some(v);
             self
         }
@@ -14425,9 +14380,9 @@ pub mod describe_vpcs_output {
         /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
         ///
         /// <p>Information about one or more VPCs.</p>
-        pub fn vpcs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
+        pub fn vpcs(mut self, input: crate::model::Vpc) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpcs = Some(v);
             self
         }
@@ -14513,10 +14468,10 @@ pub mod describe_vpc_peering_connections_output {
         /// <p>Information about the VPC peering connections.</p>
         pub fn vpc_peering_connections(
             mut self,
-            input: impl Into<crate::model::VpcPeeringConnection>,
+            input: crate::model::VpcPeeringConnection,
         ) -> Self {
             let mut v = self.vpc_peering_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_peering_connections = Some(v);
             self
         }
@@ -14623,9 +14578,9 @@ pub mod describe_vpc_endpoint_services_output {
         /// To override the contents of this collection use [`set_service_details`](Self::set_service_details).
         ///
         /// <p>Information about the service.</p>
-        pub fn service_details(mut self, input: impl Into<crate::model::ServiceDetail>) -> Self {
+        pub fn service_details(mut self, input: crate::model::ServiceDetail) -> Self {
             let mut v = self.service_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_details = Some(v);
             self
         }
@@ -14707,12 +14662,9 @@ pub mod describe_vpc_endpoint_service_permissions_output {
         /// To override the contents of this collection use [`set_allowed_principals`](Self::set_allowed_principals).
         ///
         /// <p>Information about one or more allowed principals.</p>
-        pub fn allowed_principals(
-            mut self,
-            input: impl Into<crate::model::AllowedPrincipal>,
-        ) -> Self {
+        pub fn allowed_principals(mut self, input: crate::model::AllowedPrincipal) -> Self {
             let mut v = self.allowed_principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_principals = Some(v);
             self
         }
@@ -14796,12 +14748,9 @@ pub mod describe_vpc_endpoint_service_configurations_output {
         /// To override the contents of this collection use [`set_service_configurations`](Self::set_service_configurations).
         ///
         /// <p>Information about one or more services.</p>
-        pub fn service_configurations(
-            mut self,
-            input: impl Into<crate::model::ServiceConfiguration>,
-        ) -> Self {
+        pub fn service_configurations(mut self, input: crate::model::ServiceConfiguration) -> Self {
             let mut v = self.service_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_configurations = Some(v);
             self
         }
@@ -14882,9 +14831,9 @@ pub mod describe_vpc_endpoints_output {
         /// To override the contents of this collection use [`set_vpc_endpoints`](Self::set_vpc_endpoints).
         ///
         /// <p>Information about the endpoints.</p>
-        pub fn vpc_endpoints(mut self, input: impl Into<crate::model::VpcEndpoint>) -> Self {
+        pub fn vpc_endpoints(mut self, input: crate::model::VpcEndpoint) -> Self {
             let mut v = self.vpc_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_endpoints = Some(v);
             self
         }
@@ -14970,10 +14919,10 @@ pub mod describe_vpc_endpoint_connections_output {
         /// <p>Information about one or more VPC endpoint connections.</p>
         pub fn vpc_endpoint_connections(
             mut self,
-            input: impl Into<crate::model::VpcEndpointConnection>,
+            input: crate::model::VpcEndpointConnection,
         ) -> Self {
             let mut v = self.vpc_endpoint_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_endpoint_connections = Some(v);
             self
         }
@@ -15064,10 +15013,10 @@ pub mod describe_vpc_endpoint_connection_notifications_output {
         /// <p>One or more notifications.</p>
         pub fn connection_notification_set(
             mut self,
-            input: impl Into<crate::model::ConnectionNotification>,
+            input: crate::model::ConnectionNotification,
         ) -> Self {
             let mut v = self.connection_notification_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_notification_set = Some(v);
             self
         }
@@ -15160,9 +15109,9 @@ pub mod describe_vpc_classic_link_dns_support_output {
         /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
         ///
         /// <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-        pub fn vpcs(mut self, input: impl Into<crate::model::ClassicLinkDnsSupport>) -> Self {
+        pub fn vpcs(mut self, input: crate::model::ClassicLinkDnsSupport) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpcs = Some(v);
             self
         }
@@ -15224,9 +15173,9 @@ pub mod describe_vpc_classic_link_output {
         /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
         ///
         /// <p>The ClassicLink status of one or more VPCs.</p>
-        pub fn vpcs(mut self, input: impl Into<crate::model::VpcClassicLink>) -> Self {
+        pub fn vpcs(mut self, input: crate::model::VpcClassicLink) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpcs = Some(v);
             self
         }
@@ -15428,9 +15377,9 @@ pub mod describe_volume_status_output {
         /// To override the contents of this collection use [`set_volume_statuses`](Self::set_volume_statuses).
         ///
         /// <p>Information about the status of the volumes.</p>
-        pub fn volume_statuses(mut self, input: impl Into<crate::model::VolumeStatusItem>) -> Self {
+        pub fn volume_statuses(mut self, input: crate::model::VolumeStatusItem) -> Self {
             let mut v = self.volume_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_statuses = Some(v);
             self
         }
@@ -15503,12 +15452,9 @@ pub mod describe_volumes_modifications_output {
         /// To override the contents of this collection use [`set_volumes_modifications`](Self::set_volumes_modifications).
         ///
         /// <p>Information about the volume modifications.</p>
-        pub fn volumes_modifications(
-            mut self,
-            input: impl Into<crate::model::VolumeModification>,
-        ) -> Self {
+        pub fn volumes_modifications(mut self, input: crate::model::VolumeModification) -> Self {
             let mut v = self.volumes_modifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes_modifications = Some(v);
             self
         }
@@ -15594,9 +15540,9 @@ pub mod describe_volumes_output {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>Information about the volumes.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -15703,9 +15649,9 @@ pub mod describe_volume_attribute_output {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>A list of product codes.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -15792,10 +15738,10 @@ pub mod describe_trunk_interface_associations_output {
         /// <p>Information about the trunk associations.</p>
         pub fn interface_associations(
             mut self,
-            input: impl Into<crate::model::TrunkInterfaceAssociation>,
+            input: crate::model::TrunkInterfaceAssociation,
         ) -> Self {
             let mut v = self.interface_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.interface_associations = Some(v);
             self
         }
@@ -15884,10 +15830,10 @@ pub mod describe_transit_gateway_vpc_attachments_output {
         /// <p>Information about the VPC attachments.</p>
         pub fn transit_gateway_vpc_attachments(
             mut self,
-            input: impl Into<crate::model::TransitGatewayVpcAttachment>,
+            input: crate::model::TransitGatewayVpcAttachment,
         ) -> Self {
             let mut v = self.transit_gateway_vpc_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_vpc_attachments = Some(v);
             self
         }
@@ -15968,9 +15914,9 @@ pub mod describe_transit_gateways_output {
         /// To override the contents of this collection use [`set_transit_gateways`](Self::set_transit_gateways).
         ///
         /// <p>Information about the transit gateways.</p>
-        pub fn transit_gateways(mut self, input: impl Into<crate::model::TransitGateway>) -> Self {
+        pub fn transit_gateways(mut self, input: crate::model::TransitGateway) -> Self {
             let mut v = self.transit_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateways = Some(v);
             self
         }
@@ -16059,10 +16005,10 @@ pub mod describe_transit_gateway_route_tables_output {
         /// <p>Information about the transit gateway route tables.</p>
         pub fn transit_gateway_route_tables(
             mut self,
-            input: impl Into<crate::model::TransitGatewayRouteTable>,
+            input: crate::model::TransitGatewayRouteTable,
         ) -> Self {
             let mut v = self.transit_gateway_route_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_route_tables = Some(v);
             self
         }
@@ -16151,10 +16097,10 @@ pub mod describe_transit_gateway_peering_attachments_output {
         /// <p>The transit gateway peering attachments.</p>
         pub fn transit_gateway_peering_attachments(
             mut self,
-            input: impl Into<crate::model::TransitGatewayPeeringAttachment>,
+            input: crate::model::TransitGatewayPeeringAttachment,
         ) -> Self {
             let mut v = self.transit_gateway_peering_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_peering_attachments = Some(v);
             self
         }
@@ -16246,10 +16192,10 @@ pub mod describe_transit_gateway_multicast_domains_output {
         /// <p>Information about the transit gateway multicast domains.</p>
         pub fn transit_gateway_multicast_domains(
             mut self,
-            input: impl Into<crate::model::TransitGatewayMulticastDomain>,
+            input: crate::model::TransitGatewayMulticastDomain,
         ) -> Self {
             let mut v = self.transit_gateway_multicast_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_multicast_domains = Some(v);
             self
         }
@@ -16335,10 +16281,10 @@ pub mod describe_transit_gateway_connects_output {
         /// <p>Information about the Connect attachments.</p>
         pub fn transit_gateway_connects(
             mut self,
-            input: impl Into<crate::model::TransitGatewayConnect>,
+            input: crate::model::TransitGatewayConnect,
         ) -> Self {
             let mut v = self.transit_gateway_connects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_connects = Some(v);
             self
         }
@@ -16427,10 +16373,10 @@ pub mod describe_transit_gateway_connect_peers_output {
         /// <p>Information about the Connect peers.</p>
         pub fn transit_gateway_connect_peers(
             mut self,
-            input: impl Into<crate::model::TransitGatewayConnectPeer>,
+            input: crate::model::TransitGatewayConnectPeer,
         ) -> Self {
             let mut v = self.transit_gateway_connect_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_connect_peers = Some(v);
             self
         }
@@ -16519,10 +16465,10 @@ pub mod describe_transit_gateway_attachments_output {
         /// <p>Information about the attachments.</p>
         pub fn transit_gateway_attachments(
             mut self,
-            input: impl Into<crate::model::TransitGatewayAttachment>,
+            input: crate::model::TransitGatewayAttachment,
         ) -> Self {
             let mut v = self.transit_gateway_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_attachments = Some(v);
             self
         }
@@ -16606,12 +16552,9 @@ pub mod describe_traffic_mirror_targets_output {
         /// To override the contents of this collection use [`set_traffic_mirror_targets`](Self::set_traffic_mirror_targets).
         ///
         /// <p>Information about one or more Traffic Mirror targets.</p>
-        pub fn traffic_mirror_targets(
-            mut self,
-            input: impl Into<crate::model::TrafficMirrorTarget>,
-        ) -> Self {
+        pub fn traffic_mirror_targets(mut self, input: crate::model::TrafficMirrorTarget) -> Self {
             let mut v = self.traffic_mirror_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_mirror_targets = Some(v);
             self
         }
@@ -16697,10 +16640,10 @@ pub mod describe_traffic_mirror_sessions_output {
         /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
         pub fn traffic_mirror_sessions(
             mut self,
-            input: impl Into<crate::model::TrafficMirrorSession>,
+            input: crate::model::TrafficMirrorSession,
         ) -> Self {
             let mut v = self.traffic_mirror_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_mirror_sessions = Some(v);
             self
         }
@@ -16784,12 +16727,9 @@ pub mod describe_traffic_mirror_filters_output {
         /// To override the contents of this collection use [`set_traffic_mirror_filters`](Self::set_traffic_mirror_filters).
         ///
         /// <p>Information about one or more Traffic Mirror filters.</p>
-        pub fn traffic_mirror_filters(
-            mut self,
-            input: impl Into<crate::model::TrafficMirrorFilter>,
-        ) -> Self {
+        pub fn traffic_mirror_filters(mut self, input: crate::model::TrafficMirrorFilter) -> Self {
             let mut v = self.traffic_mirror_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_mirror_filters = Some(v);
             self
         }
@@ -16883,9 +16823,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagDescription) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16955,9 +16895,9 @@ pub mod describe_subnets_output {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>Information about one or more subnets.</p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -17045,10 +16985,10 @@ pub mod describe_store_image_tasks_output {
         /// <p>The information about the AMI store tasks.</p>
         pub fn store_image_task_results(
             mut self,
-            input: impl Into<crate::model::StoreImageTaskResult>,
+            input: crate::model::StoreImageTaskResult,
         ) -> Self {
             let mut v = self.store_image_task_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.store_image_task_results = Some(v);
             self
         }
@@ -17144,12 +17084,9 @@ pub mod describe_stale_security_groups_output {
         /// To override the contents of this collection use [`set_stale_security_group_set`](Self::set_stale_security_group_set).
         ///
         /// <p>Information about the stale security groups.</p>
-        pub fn stale_security_group_set(
-            mut self,
-            input: impl Into<crate::model::StaleSecurityGroup>,
-        ) -> Self {
+        pub fn stale_security_group_set(mut self, input: crate::model::StaleSecurityGroup) -> Self {
             let mut v = self.stale_security_group_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stale_security_group_set = Some(v);
             self
         }
@@ -17233,9 +17170,9 @@ pub mod describe_spot_price_history_output {
         /// To override the contents of this collection use [`set_spot_price_history`](Self::set_spot_price_history).
         ///
         /// <p>The historical Spot prices.</p>
-        pub fn spot_price_history(mut self, input: impl Into<crate::model::SpotPrice>) -> Self {
+        pub fn spot_price_history(mut self, input: crate::model::SpotPrice) -> Self {
             let mut v = self.spot_price_history.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_price_history = Some(v);
             self
         }
@@ -17311,12 +17248,9 @@ pub mod describe_spot_instance_requests_output {
         /// To override the contents of this collection use [`set_spot_instance_requests`](Self::set_spot_instance_requests).
         ///
         /// <p>One or more Spot Instance requests.</p>
-        pub fn spot_instance_requests(
-            mut self,
-            input: impl Into<crate::model::SpotInstanceRequest>,
-        ) -> Self {
+        pub fn spot_instance_requests(mut self, input: crate::model::SpotInstanceRequest) -> Self {
             let mut v = self.spot_instance_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_instance_requests = Some(v);
             self
         }
@@ -17421,10 +17355,10 @@ pub mod describe_spot_fleet_requests_output {
         /// <p>Information about the configuration of your Spot Fleet.</p>
         pub fn spot_fleet_request_configs(
             mut self,
-            input: impl Into<crate::model::SpotFleetRequestConfig>,
+            input: crate::model::SpotFleetRequestConfig,
         ) -> Self {
             let mut v = self.spot_fleet_request_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_fleet_request_configs = Some(v);
             self
         }
@@ -17530,9 +17464,9 @@ pub mod describe_spot_fleet_request_history_output {
         /// To override the contents of this collection use [`set_history_records`](Self::set_history_records).
         ///
         /// <p>Information about the events in the history of the Spot Fleet request.</p>
-        pub fn history_records(mut self, input: impl Into<crate::model::HistoryRecord>) -> Self {
+        pub fn history_records(mut self, input: crate::model::HistoryRecord) -> Self {
             let mut v = self.history_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.history_records = Some(v);
             self
         }
@@ -17680,9 +17614,9 @@ pub mod describe_spot_fleet_instances_output {
         ///
         /// <p>The running instances. This list is refreshed periodically and might be out of
         /// date.</p>
-        pub fn active_instances(mut self, input: impl Into<crate::model::ActiveInstance>) -> Self {
+        pub fn active_instances(mut self, input: crate::model::ActiveInstance) -> Self {
             let mut v = self.active_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_instances = Some(v);
             self
         }
@@ -17849,12 +17783,9 @@ pub mod describe_snapshot_tier_status_output {
         /// To override the contents of this collection use [`set_snapshot_tier_statuses`](Self::set_snapshot_tier_statuses).
         ///
         /// <p>Information about the snapshot's storage tier.</p>
-        pub fn snapshot_tier_statuses(
-            mut self,
-            input: impl Into<crate::model::SnapshotTierStatus>,
-        ) -> Self {
+        pub fn snapshot_tier_statuses(mut self, input: crate::model::SnapshotTierStatus) -> Self {
             let mut v = self.snapshot_tier_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_tier_statuses = Some(v);
             self
         }
@@ -17940,9 +17871,9 @@ pub mod describe_snapshots_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>Information about the snapshots.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -18045,10 +17976,10 @@ pub mod describe_snapshot_attribute_output {
         /// snapshot.</p>
         pub fn create_volume_permissions(
             mut self,
-            input: impl Into<crate::model::CreateVolumePermission>,
+            input: crate::model::CreateVolumePermission,
         ) -> Self {
             let mut v = self.create_volume_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_volume_permissions = Some(v);
             self
         }
@@ -18066,9 +17997,9 @@ pub mod describe_snapshot_attribute_output {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>The product codes.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -18149,9 +18080,9 @@ pub mod describe_security_groups_output {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>Information about the security groups.</p>
-        pub fn security_groups(mut self, input: impl Into<crate::model::SecurityGroup>) -> Self {
+        pub fn security_groups(mut self, input: crate::model::SecurityGroup) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_groups = Some(v);
             self
         }
@@ -18232,12 +18163,9 @@ pub mod describe_security_group_rules_output {
         /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
         ///
         /// <p>Information about security group rules.</p>
-        pub fn security_group_rules(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupRule>,
-        ) -> Self {
+        pub fn security_group_rules(mut self, input: crate::model::SecurityGroupRule) -> Self {
             let mut v = self.security_group_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_group_rules = Some(v);
             self
         }
@@ -18318,10 +18246,10 @@ pub mod describe_security_group_references_output {
         /// <p>Information about the VPCs with the referencing security groups.</p>
         pub fn security_group_reference_set(
             mut self,
-            input: impl Into<crate::model::SecurityGroupReference>,
+            input: crate::model::SecurityGroupReference,
         ) -> Self {
             let mut v = self.security_group_reference_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_group_reference_set = Some(v);
             self
         }
@@ -18403,12 +18331,9 @@ pub mod describe_scheduled_instances_output {
         /// To override the contents of this collection use [`set_scheduled_instance_set`](Self::set_scheduled_instance_set).
         ///
         /// <p>Information about the Scheduled Instances.</p>
-        pub fn scheduled_instance_set(
-            mut self,
-            input: impl Into<crate::model::ScheduledInstance>,
-        ) -> Self {
+        pub fn scheduled_instance_set(mut self, input: crate::model::ScheduledInstance) -> Self {
             let mut v = self.scheduled_instance_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_instance_set = Some(v);
             self
         }
@@ -18497,10 +18422,10 @@ pub mod describe_scheduled_instance_availability_output {
         /// <p>Information about the available Scheduled Instances.</p>
         pub fn scheduled_instance_availability_set(
             mut self,
-            input: impl Into<crate::model::ScheduledInstanceAvailability>,
+            input: crate::model::ScheduledInstanceAvailability,
         ) -> Self {
             let mut v = self.scheduled_instance_availability_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_instance_availability_set = Some(v);
             self
         }
@@ -18570,9 +18495,9 @@ pub mod describe_route_tables_output {
         /// To override the contents of this collection use [`set_route_tables`](Self::set_route_tables).
         ///
         /// <p>Information about one or more route tables.</p>
-        pub fn route_tables(mut self, input: impl Into<crate::model::RouteTable>) -> Self {
+        pub fn route_tables(mut self, input: crate::model::RouteTable) -> Self {
             let mut v = self.route_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_tables = Some(v);
             self
         }
@@ -18663,10 +18588,10 @@ pub mod describe_reserved_instances_offerings_output {
         /// <p>A list of Reserved Instances offerings.</p>
         pub fn reserved_instances_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesOffering>,
+            input: crate::model::ReservedInstancesOffering,
         ) -> Self {
             let mut v = self.reserved_instances_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_offerings = Some(v);
             self
         }
@@ -18771,10 +18696,10 @@ pub mod describe_reserved_instances_modifications_output {
         /// <p>The Reserved Instance modification information.</p>
         pub fn reserved_instances_modifications(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesModification>,
+            input: crate::model::ReservedInstancesModification,
         ) -> Self {
             let mut v = self.reserved_instances_modifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_modifications = Some(v);
             self
         }
@@ -18845,10 +18770,10 @@ pub mod describe_reserved_instances_listings_output {
         /// <p>Information about the Reserved Instance listing.</p>
         pub fn reserved_instances_listings(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesListing>,
+            input: crate::model::ReservedInstancesListing,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_listings = Some(v);
             self
         }
@@ -18910,12 +18835,9 @@ pub mod describe_reserved_instances_output {
         /// To override the contents of this collection use [`set_reserved_instances`](Self::set_reserved_instances).
         ///
         /// <p>A list of Reserved Instances.</p>
-        pub fn reserved_instances(
-            mut self,
-            input: impl Into<crate::model::ReservedInstances>,
-        ) -> Self {
+        pub fn reserved_instances(mut self, input: crate::model::ReservedInstances) -> Self {
             let mut v = self.reserved_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances = Some(v);
             self
         }
@@ -18990,10 +18912,10 @@ pub mod describe_replace_root_volume_tasks_output {
         /// <p>Information about the root volume replacement task.</p>
         pub fn replace_root_volume_tasks(
             mut self,
-            input: impl Into<crate::model::ReplaceRootVolumeTask>,
+            input: crate::model::ReplaceRootVolumeTask,
         ) -> Self {
             let mut v = self.replace_root_volume_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replace_root_volume_tasks = Some(v);
             self
         }
@@ -19065,9 +18987,9 @@ pub mod describe_regions_output {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>Information about the Regions.</p>
-        pub fn regions(mut self, input: impl Into<crate::model::Region>) -> Self {
+        pub fn regions(mut self, input: crate::model::Region) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions = Some(v);
             self
         }
@@ -19137,9 +19059,9 @@ pub mod describe_public_ipv4_pools_output {
         /// To override the contents of this collection use [`set_public_ipv4_pools`](Self::set_public_ipv4_pools).
         ///
         /// <p>Information about the address pools.</p>
-        pub fn public_ipv4_pools(mut self, input: impl Into<crate::model::PublicIpv4Pool>) -> Self {
+        pub fn public_ipv4_pools(mut self, input: crate::model::PublicIpv4Pool) -> Self {
             let mut v = self.public_ipv4_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.public_ipv4_pools = Some(v);
             self
         }
@@ -19219,9 +19141,9 @@ pub mod describe_principal_id_format_output {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>Information about the ID format settings for the ARN.</p>
-        pub fn principals(mut self, input: impl Into<crate::model::PrincipalIdFormat>) -> Self {
+        pub fn principals(mut self, input: crate::model::PrincipalIdFormat) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principals = Some(v);
             self
         }
@@ -19311,9 +19233,9 @@ pub mod describe_prefix_lists_output {
         /// To override the contents of this collection use [`set_prefix_lists`](Self::set_prefix_lists).
         ///
         /// <p>All available prefix lists.</p>
-        pub fn prefix_lists(mut self, input: impl Into<crate::model::PrefixList>) -> Self {
+        pub fn prefix_lists(mut self, input: crate::model::PrefixList) -> Self {
             let mut v = self.prefix_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prefix_lists = Some(v);
             self
         }
@@ -19376,9 +19298,9 @@ pub mod describe_placement_groups_output {
         /// To override the contents of this collection use [`set_placement_groups`](Self::set_placement_groups).
         ///
         /// <p>Information about the placement groups.</p>
-        pub fn placement_groups(mut self, input: impl Into<crate::model::PlacementGroup>) -> Self {
+        pub fn placement_groups(mut self, input: crate::model::PlacementGroup) -> Self {
             let mut v = self.placement_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_groups = Some(v);
             self
         }
@@ -19448,12 +19370,9 @@ pub mod describe_network_interfaces_output {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>Information about one or more network interfaces.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -19542,10 +19461,10 @@ pub mod describe_network_interface_permissions_output {
         /// <p>The network interface permissions.</p>
         pub fn network_interface_permissions(
             mut self,
-            input: impl Into<crate::model::NetworkInterfacePermission>,
+            input: crate::model::NetworkInterfacePermission,
         ) -> Self {
             let mut v = self.network_interface_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interface_permissions = Some(v);
             self
         }
@@ -19675,9 +19594,9 @@ pub mod describe_network_interface_attribute_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The security groups associated with the network interface.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupIdentifier) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -19780,12 +19699,9 @@ pub mod describe_network_insights_paths_output {
         /// To override the contents of this collection use [`set_network_insights_paths`](Self::set_network_insights_paths).
         ///
         /// <p>Information about the paths.</p>
-        pub fn network_insights_paths(
-            mut self,
-            input: impl Into<crate::model::NetworkInsightsPath>,
-        ) -> Self {
+        pub fn network_insights_paths(mut self, input: crate::model::NetworkInsightsPath) -> Self {
             let mut v = self.network_insights_paths.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_insights_paths = Some(v);
             self
         }
@@ -19871,10 +19787,10 @@ pub mod describe_network_insights_analyses_output {
         /// <p>Information about the network insights analyses.</p>
         pub fn network_insights_analyses(
             mut self,
-            input: impl Into<crate::model::NetworkInsightsAnalysis>,
+            input: crate::model::NetworkInsightsAnalysis,
         ) -> Self {
             let mut v = self.network_insights_analyses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_insights_analyses = Some(v);
             self
         }
@@ -19963,10 +19879,10 @@ pub mod describe_network_insights_access_scopes_output {
         /// <p>The Network Access Scopes.</p>
         pub fn network_insights_access_scopes(
             mut self,
-            input: impl Into<crate::model::NetworkInsightsAccessScope>,
+            input: crate::model::NetworkInsightsAccessScope,
         ) -> Self {
             let mut v = self.network_insights_access_scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_insights_access_scopes = Some(v);
             self
         }
@@ -20055,12 +19971,12 @@ pub mod describe_network_insights_access_scope_analyses_output {
         /// <p>The Network Access Scope analyses.</p>
         pub fn network_insights_access_scope_analyses(
             mut self,
-            input: impl Into<crate::model::NetworkInsightsAccessScopeAnalysis>,
+            input: crate::model::NetworkInsightsAccessScopeAnalysis,
         ) -> Self {
             let mut v = self
                 .network_insights_access_scope_analyses
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_insights_access_scope_analyses = Some(v);
             self
         }
@@ -20143,9 +20059,9 @@ pub mod describe_network_acls_output {
         /// To override the contents of this collection use [`set_network_acls`](Self::set_network_acls).
         ///
         /// <p>Information about one or more network ACLs.</p>
-        pub fn network_acls(mut self, input: impl Into<crate::model::NetworkAcl>) -> Self {
+        pub fn network_acls(mut self, input: crate::model::NetworkAcl) -> Self {
             let mut v = self.network_acls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_acls = Some(v);
             self
         }
@@ -20225,9 +20141,9 @@ pub mod describe_nat_gateways_output {
         /// To override the contents of this collection use [`set_nat_gateways`](Self::set_nat_gateways).
         ///
         /// <p>Information about the NAT gateways.</p>
-        pub fn nat_gateways(mut self, input: impl Into<crate::model::NatGateway>) -> Self {
+        pub fn nat_gateways(mut self, input: crate::model::NatGateway) -> Self {
             let mut v = self.nat_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nat_gateways = Some(v);
             self
         }
@@ -20311,12 +20227,9 @@ pub mod describe_moving_addresses_output {
         /// To override the contents of this collection use [`set_moving_address_statuses`](Self::set_moving_address_statuses).
         ///
         /// <p>The status for each Elastic IP address.</p>
-        pub fn moving_address_statuses(
-            mut self,
-            input: impl Into<crate::model::MovingAddressStatus>,
-        ) -> Self {
+        pub fn moving_address_statuses(mut self, input: crate::model::MovingAddressStatus) -> Self {
             let mut v = self.moving_address_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.moving_address_statuses = Some(v);
             self
         }
@@ -20407,9 +20320,9 @@ pub mod describe_managed_prefix_lists_output {
         /// To override the contents of this collection use [`set_prefix_lists`](Self::set_prefix_lists).
         ///
         /// <p>Information about the prefix lists.</p>
-        pub fn prefix_lists(mut self, input: impl Into<crate::model::ManagedPrefixList>) -> Self {
+        pub fn prefix_lists(mut self, input: crate::model::ManagedPrefixList) -> Self {
             let mut v = self.prefix_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prefix_lists = Some(v);
             self
         }
@@ -20488,10 +20401,10 @@ pub mod describe_local_gateway_virtual_interfaces_output {
         /// <p>Information about the virtual interfaces.</p>
         pub fn local_gateway_virtual_interfaces(
             mut self,
-            input: impl Into<crate::model::LocalGatewayVirtualInterface>,
+            input: crate::model::LocalGatewayVirtualInterface,
         ) -> Self {
             let mut v = self.local_gateway_virtual_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_virtual_interfaces = Some(v);
             self
         }
@@ -20580,12 +20493,12 @@ pub mod describe_local_gateway_virtual_interface_groups_output {
         /// <p>The virtual interface groups.</p>
         pub fn local_gateway_virtual_interface_groups(
             mut self,
-            input: impl Into<crate::model::LocalGatewayVirtualInterfaceGroup>,
+            input: crate::model::LocalGatewayVirtualInterfaceGroup,
         ) -> Self {
             let mut v = self
                 .local_gateway_virtual_interface_groups
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_virtual_interface_groups = Some(v);
             self
         }
@@ -20668,9 +20581,9 @@ pub mod describe_local_gateways_output {
         /// To override the contents of this collection use [`set_local_gateways`](Self::set_local_gateways).
         ///
         /// <p>Information about the local gateways.</p>
-        pub fn local_gateways(mut self, input: impl Into<crate::model::LocalGateway>) -> Self {
+        pub fn local_gateways(mut self, input: crate::model::LocalGateway) -> Self {
             let mut v = self.local_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateways = Some(v);
             self
         }
@@ -20759,12 +20672,12 @@ pub mod describe_local_gateway_route_table_vpc_associations_output {
         /// <p>Information about the associations.</p>
         pub fn local_gateway_route_table_vpc_associations(
             mut self,
-            input: impl Into<crate::model::LocalGatewayRouteTableVpcAssociation>,
+            input: crate::model::LocalGatewayRouteTableVpcAssociation,
         ) -> Self {
             let mut v = self
                 .local_gateway_route_table_vpc_associations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_route_table_vpc_associations = Some(v);
             self
         }
@@ -20864,12 +20777,12 @@ pub mod describe_local_gateway_route_table_virtual_interface_group_associations_
         /// <p>Information about the associations.</p>
         pub fn local_gateway_route_table_virtual_interface_group_associations(
             mut self,
-            input: impl Into<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
+            input: crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
         ) -> Self {
             let mut v = self
                 .local_gateway_route_table_virtual_interface_group_associations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_route_table_virtual_interface_group_associations = Some(v);
             self
         }
@@ -20964,10 +20877,10 @@ pub mod describe_local_gateway_route_tables_output {
         /// <p>Information about the local gateway route tables.</p>
         pub fn local_gateway_route_tables(
             mut self,
-            input: impl Into<crate::model::LocalGatewayRouteTable>,
+            input: crate::model::LocalGatewayRouteTable,
         ) -> Self {
             let mut v = self.local_gateway_route_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_route_tables = Some(v);
             self
         }
@@ -21055,10 +20968,10 @@ pub mod describe_launch_template_versions_output {
         /// <p>Information about the launch template versions.</p>
         pub fn launch_template_versions(
             mut self,
-            input: impl Into<crate::model::LaunchTemplateVersion>,
+            input: crate::model::LaunchTemplateVersion,
         ) -> Self {
             let mut v = self.launch_template_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_template_versions = Some(v);
             self
         }
@@ -21143,9 +21056,9 @@ pub mod describe_launch_templates_output {
         /// To override the contents of this collection use [`set_launch_templates`](Self::set_launch_templates).
         ///
         /// <p>Information about the launch templates.</p>
-        pub fn launch_templates(mut self, input: impl Into<crate::model::LaunchTemplate>) -> Self {
+        pub fn launch_templates(mut self, input: crate::model::LaunchTemplate) -> Self {
             let mut v = self.launch_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_templates = Some(v);
             self
         }
@@ -21219,9 +21132,9 @@ pub mod describe_key_pairs_output {
         /// To override the contents of this collection use [`set_key_pairs`](Self::set_key_pairs).
         ///
         /// <p>Information about the key pairs.</p>
-        pub fn key_pairs(mut self, input: impl Into<crate::model::KeyPairInfo>) -> Self {
+        pub fn key_pairs(mut self, input: crate::model::KeyPairInfo) -> Self {
             let mut v = self.key_pairs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_pairs = Some(v);
             self
         }
@@ -21290,9 +21203,9 @@ pub mod describe_ipv6_pools_output {
         /// To override the contents of this collection use [`set_ipv6_pools`](Self::set_ipv6_pools).
         ///
         /// <p>Information about the IPv6 address pools.</p>
-        pub fn ipv6_pools(mut self, input: impl Into<crate::model::Ipv6Pool>) -> Self {
+        pub fn ipv6_pools(mut self, input: crate::model::Ipv6Pool) -> Self {
             let mut v = self.ipv6_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipv6_pools = Some(v);
             self
         }
@@ -21382,9 +21295,9 @@ pub mod describe_ipam_scopes_output {
         /// To override the contents of this collection use [`set_ipam_scopes`](Self::set_ipam_scopes).
         ///
         /// <p>The scopes you want information on.</p>
-        pub fn ipam_scopes(mut self, input: impl Into<crate::model::IpamScope>) -> Self {
+        pub fn ipam_scopes(mut self, input: crate::model::IpamScope) -> Self {
             let mut v = self.ipam_scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_scopes = Some(v);
             self
         }
@@ -21464,9 +21377,9 @@ pub mod describe_ipams_output {
         /// To override the contents of this collection use [`set_ipams`](Self::set_ipams).
         ///
         /// <p>Information about the IPAMs.</p>
-        pub fn ipams(mut self, input: impl Into<crate::model::Ipam>) -> Self {
+        pub fn ipams(mut self, input: crate::model::Ipam) -> Self {
             let mut v = self.ipams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipams = Some(v);
             self
         }
@@ -21546,9 +21459,9 @@ pub mod describe_ipam_pools_output {
         /// To override the contents of this collection use [`set_ipam_pools`](Self::set_ipam_pools).
         ///
         /// <p>Information about the IPAM pools.</p>
-        pub fn ipam_pools(mut self, input: impl Into<crate::model::IpamPool>) -> Self {
+        pub fn ipam_pools(mut self, input: crate::model::IpamPool) -> Self {
             let mut v = self.ipam_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_pools = Some(v);
             self
         }
@@ -21619,12 +21532,9 @@ pub mod describe_internet_gateways_output {
         /// To override the contents of this collection use [`set_internet_gateways`](Self::set_internet_gateways).
         ///
         /// <p>Information about one or more internet gateways.</p>
-        pub fn internet_gateways(
-            mut self,
-            input: impl Into<crate::model::InternetGateway>,
-        ) -> Self {
+        pub fn internet_gateways(mut self, input: crate::model::InternetGateway) -> Self {
             let mut v = self.internet_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.internet_gateways = Some(v);
             self
         }
@@ -21707,9 +21617,9 @@ pub mod describe_instance_types_output {
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
         /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-        pub fn instance_types(mut self, input: impl Into<crate::model::InstanceTypeInfo>) -> Self {
+        pub fn instance_types(mut self, input: crate::model::InstanceTypeInfo) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_types = Some(v);
             self
         }
@@ -21799,10 +21709,10 @@ pub mod describe_instance_type_offerings_output {
         /// <p>The instance types offered.</p>
         pub fn instance_type_offerings(
             mut self,
-            input: impl Into<crate::model::InstanceTypeOffering>,
+            input: crate::model::InstanceTypeOffering,
         ) -> Self {
             let mut v = self.instance_type_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_type_offerings = Some(v);
             self
         }
@@ -21887,9 +21797,9 @@ pub mod describe_instance_status_output {
         /// To override the contents of this collection use [`set_instance_statuses`](Self::set_instance_statuses).
         ///
         /// <p>Information about the status of the instances.</p>
-        pub fn instance_statuses(mut self, input: impl Into<crate::model::InstanceStatus>) -> Self {
+        pub fn instance_statuses(mut self, input: crate::model::InstanceStatus) -> Self {
             let mut v = self.instance_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_statuses = Some(v);
             self
         }
@@ -21973,9 +21883,9 @@ pub mod describe_instances_output {
         /// To override the contents of this collection use [`set_reservations`](Self::set_reservations).
         ///
         /// <p>Information about the reservations.</p>
-        pub fn reservations(mut self, input: impl Into<crate::model::Reservation>) -> Self {
+        pub fn reservations(mut self, input: crate::model::Reservation) -> Self {
             let mut v = self.reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reservations = Some(v);
             self
         }
@@ -22061,12 +21971,9 @@ pub mod describe_instance_event_windows_output {
         /// To override the contents of this collection use [`set_instance_event_windows`](Self::set_instance_event_windows).
         ///
         /// <p>Information about the event windows.</p>
-        pub fn instance_event_windows(
-            mut self,
-            input: impl Into<crate::model::InstanceEventWindow>,
-        ) -> Self {
+        pub fn instance_event_windows(mut self, input: crate::model::InstanceEventWindow) -> Self {
             let mut v = self.instance_event_windows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_event_windows = Some(v);
             self
         }
@@ -22221,10 +22128,10 @@ pub mod describe_instance_credit_specifications_output {
         /// <p>Information about the credit option for CPU usage of an instance.</p>
         pub fn instance_credit_specifications(
             mut self,
-            input: impl Into<crate::model::InstanceCreditSpecification>,
+            input: crate::model::InstanceCreditSpecification,
         ) -> Self {
             let mut v = self.instance_credit_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_credit_specifications = Some(v);
             self
         }
@@ -22451,9 +22358,9 @@ pub mod describe_instance_attribute_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The security groups associated with the instance.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupIdentifier) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -22472,10 +22379,10 @@ pub mod describe_instance_attribute_output {
         /// <p>The block device mapping of the instance.</p>
         pub fn block_device_mappings(
             mut self,
-            input: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: crate::model::InstanceBlockDeviceMapping,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -22605,9 +22512,9 @@ pub mod describe_instance_attribute_output {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>A list of product codes.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -22778,12 +22685,9 @@ pub mod describe_import_snapshot_tasks_output {
         ///
         /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
         /// previous 7 days.</p>
-        pub fn import_snapshot_tasks(
-            mut self,
-            input: impl Into<crate::model::ImportSnapshotTask>,
-        ) -> Self {
+        pub fn import_snapshot_tasks(mut self, input: crate::model::ImportSnapshotTask) -> Self {
             let mut v = self.import_snapshot_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_snapshot_tasks = Some(v);
             self
         }
@@ -22872,12 +22776,9 @@ pub mod describe_import_image_tasks_output {
         ///
         /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
         /// previous 7 days.</p>
-        pub fn import_image_tasks(
-            mut self,
-            input: impl Into<crate::model::ImportImageTask>,
-        ) -> Self {
+        pub fn import_image_tasks(mut self, input: crate::model::ImportImageTask) -> Self {
             let mut v = self.import_image_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_image_tasks = Some(v);
             self
         }
@@ -22952,9 +22853,9 @@ pub mod describe_images_output {
         /// To override the contents of this collection use [`set_images`](Self::set_images).
         ///
         /// <p>Information about the images.</p>
-        pub fn images(mut self, input: impl Into<crate::model::Image>) -> Self {
+        pub fn images(mut self, input: crate::model::Image) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.images = Some(v);
             self
         }
@@ -23083,12 +22984,9 @@ pub mod describe_image_attribute_output {
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
         /// <p>The block device mapping entries.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -23115,12 +23013,9 @@ pub mod describe_image_attribute_output {
         /// To override the contents of this collection use [`set_launch_permissions`](Self::set_launch_permissions).
         ///
         /// <p>The launch permissions.</p>
-        pub fn launch_permissions(
-            mut self,
-            input: impl Into<crate::model::LaunchPermission>,
-        ) -> Self {
+        pub fn launch_permissions(mut self, input: crate::model::LaunchPermission) -> Self {
             let mut v = self.launch_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_permissions = Some(v);
             self
         }
@@ -23137,9 +23032,9 @@ pub mod describe_image_attribute_output {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>The product codes.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -23273,9 +23168,9 @@ pub mod describe_id_format_output {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>Information about the ID format for the resource.</p>
-        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: crate::model::IdFormat) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -23336,9 +23231,9 @@ pub mod describe_identity_id_format_output {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>Information about the ID format for the resources.</p>
-        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: crate::model::IdFormat) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -23416,10 +23311,10 @@ pub mod describe_iam_instance_profile_associations_output {
         /// <p>Information about the IAM instance profile associations.</p>
         pub fn iam_instance_profile_associations(
             mut self,
-            input: impl Into<crate::model::IamInstanceProfileAssociation>,
+            input: crate::model::IamInstanceProfileAssociation,
         ) -> Self {
             let mut v = self.iam_instance_profile_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.iam_instance_profile_associations = Some(v);
             self
         }
@@ -23499,9 +23394,9 @@ pub mod describe_hosts_output {
         /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
         ///
         /// <p>Information about the Dedicated Hosts.</p>
-        pub fn hosts(mut self, input: impl Into<crate::model::Host>) -> Self {
+        pub fn hosts(mut self, input: crate::model::Host) -> Self {
             let mut v = self.hosts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hosts = Some(v);
             self
         }
@@ -23582,12 +23477,9 @@ pub mod describe_host_reservations_output {
         /// To override the contents of this collection use [`set_host_reservation_set`](Self::set_host_reservation_set).
         ///
         /// <p>Details about the reservation's configuration.</p>
-        pub fn host_reservation_set(
-            mut self,
-            input: impl Into<crate::model::HostReservation>,
-        ) -> Self {
+        pub fn host_reservation_set(mut self, input: crate::model::HostReservation) -> Self {
             let mut v = self.host_reservation_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.host_reservation_set = Some(v);
             self
         }
@@ -23677,9 +23569,9 @@ pub mod describe_host_reservation_offerings_output {
         /// To override the contents of this collection use [`set_offering_set`](Self::set_offering_set).
         ///
         /// <p>Information about the offerings.</p>
-        pub fn offering_set(mut self, input: impl Into<crate::model::HostOffering>) -> Self {
+        pub fn offering_set(mut self, input: crate::model::HostOffering) -> Self {
             let mut v = self.offering_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offering_set = Some(v);
             self
         }
@@ -23749,9 +23641,9 @@ pub mod describe_fpga_images_output {
         /// To override the contents of this collection use [`set_fpga_images`](Self::set_fpga_images).
         ///
         /// <p>Information about the FPGA images.</p>
-        pub fn fpga_images(mut self, input: impl Into<crate::model::FpgaImage>) -> Self {
+        pub fn fpga_images(mut self, input: crate::model::FpgaImage) -> Self {
             let mut v = self.fpga_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fpga_images = Some(v);
             self
         }
@@ -23888,9 +23780,9 @@ pub mod describe_flow_logs_output {
         /// To override the contents of this collection use [`set_flow_logs`](Self::set_flow_logs).
         ///
         /// <p>Information about the flow logs.</p>
-        pub fn flow_logs(mut self, input: impl Into<crate::model::FlowLog>) -> Self {
+        pub fn flow_logs(mut self, input: crate::model::FlowLog) -> Self {
             let mut v = self.flow_logs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.flow_logs = Some(v);
             self
         }
@@ -23980,9 +23872,9 @@ pub mod describe_fleets_output {
         /// To override the contents of this collection use [`set_fleets`](Self::set_fleets).
         ///
         /// <p>Information about the EC2 Fleets.</p>
-        pub fn fleets(mut self, input: impl Into<crate::model::FleetData>) -> Self {
+        pub fn fleets(mut self, input: crate::model::FleetData) -> Self {
             let mut v = self.fleets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleets = Some(v);
             self
         }
@@ -24064,9 +23956,9 @@ pub mod describe_fleet_instances_output {
         ///
         /// <p>The running instances. This list is refreshed periodically and might be out of
         /// date.</p>
-        pub fn active_instances(mut self, input: impl Into<crate::model::ActiveInstance>) -> Self {
+        pub fn active_instances(mut self, input: crate::model::ActiveInstance) -> Self {
             let mut v = self.active_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_instances = Some(v);
             self
         }
@@ -24193,12 +24085,9 @@ pub mod describe_fleet_history_output {
         /// To override the contents of this collection use [`set_history_records`](Self::set_history_records).
         ///
         /// <p>Information about the events in the history of the EC2 Fleet.</p>
-        pub fn history_records(
-            mut self,
-            input: impl Into<crate::model::HistoryRecordEntry>,
-        ) -> Self {
+        pub fn history_records(mut self, input: crate::model::HistoryRecordEntry) -> Self {
             let mut v = self.history_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.history_records = Some(v);
             self
         }
@@ -24334,10 +24223,10 @@ pub mod describe_fast_snapshot_restores_output {
         /// <p>Information about the state of fast snapshot restores.</p>
         pub fn fast_snapshot_restores(
             mut self,
-            input: impl Into<crate::model::DescribeFastSnapshotRestoreSuccessItem>,
+            input: crate::model::DescribeFastSnapshotRestoreSuccessItem,
         ) -> Self {
             let mut v = self.fast_snapshot_restores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fast_snapshot_restores = Some(v);
             self
         }
@@ -24411,9 +24300,9 @@ pub mod describe_export_tasks_output {
         /// To override the contents of this collection use [`set_export_tasks`](Self::set_export_tasks).
         ///
         /// <p>Information about the export tasks.</p>
-        pub fn export_tasks(mut self, input: impl Into<crate::model::ExportTask>) -> Self {
+        pub fn export_tasks(mut self, input: crate::model::ExportTask) -> Self {
             let mut v = self.export_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_tasks = Some(v);
             self
         }
@@ -24485,12 +24374,9 @@ pub mod describe_export_image_tasks_output {
         /// To override the contents of this collection use [`set_export_image_tasks`](Self::set_export_image_tasks).
         ///
         /// <p>Information about the export image tasks.</p>
-        pub fn export_image_tasks(
-            mut self,
-            input: impl Into<crate::model::ExportImageTask>,
-        ) -> Self {
+        pub fn export_image_tasks(mut self, input: crate::model::ExportImageTask) -> Self {
             let mut v = self.export_image_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_image_tasks = Some(v);
             self
         }
@@ -24586,9 +24472,9 @@ pub mod describe_elastic_gpus_output {
         /// To override the contents of this collection use [`set_elastic_gpu_set`](Self::set_elastic_gpu_set).
         ///
         /// <p>Information about the Elastic Graphics accelerators.</p>
-        pub fn elastic_gpu_set(mut self, input: impl Into<crate::model::ElasticGpus>) -> Self {
+        pub fn elastic_gpu_set(mut self, input: crate::model::ElasticGpus) -> Self {
             let mut v = self.elastic_gpu_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.elastic_gpu_set = Some(v);
             self
         }
@@ -24694,10 +24580,10 @@ pub mod describe_egress_only_internet_gateways_output {
         /// <p>Information about the egress-only internet gateways.</p>
         pub fn egress_only_internet_gateways(
             mut self,
-            input: impl Into<crate::model::EgressOnlyInternetGateway>,
+            input: crate::model::EgressOnlyInternetGateway,
         ) -> Self {
             let mut v = self.egress_only_internet_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_only_internet_gateways = Some(v);
             self
         }
@@ -24777,9 +24663,9 @@ pub mod describe_dhcp_options_output {
         /// To override the contents of this collection use [`set_dhcp_options`](Self::set_dhcp_options).
         ///
         /// <p>Information about one or more DHCP options sets.</p>
-        pub fn dhcp_options(mut self, input: impl Into<crate::model::DhcpOptions>) -> Self {
+        pub fn dhcp_options(mut self, input: crate::model::DhcpOptions) -> Self {
             let mut v = self.dhcp_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dhcp_options = Some(v);
             self
         }
@@ -24852,12 +24738,9 @@ pub mod describe_customer_gateways_output {
         /// To override the contents of this collection use [`set_customer_gateways`](Self::set_customer_gateways).
         ///
         /// <p>Information about one or more customer gateways.</p>
-        pub fn customer_gateways(
-            mut self,
-            input: impl Into<crate::model::CustomerGateway>,
-        ) -> Self {
+        pub fn customer_gateways(mut self, input: crate::model::CustomerGateway) -> Self {
             let mut v = self.customer_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.customer_gateways = Some(v);
             self
         }
@@ -24919,9 +24802,9 @@ pub mod describe_conversion_tasks_output {
         /// To override the contents of this collection use [`set_conversion_tasks`](Self::set_conversion_tasks).
         ///
         /// <p>Information about the conversion tasks.</p>
-        pub fn conversion_tasks(mut self, input: impl Into<crate::model::ConversionTask>) -> Self {
+        pub fn conversion_tasks(mut self, input: crate::model::ConversionTask) -> Self {
             let mut v = self.conversion_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conversion_tasks = Some(v);
             self
         }
@@ -24990,9 +24873,9 @@ pub mod describe_coip_pools_output {
         /// To override the contents of this collection use [`set_coip_pools`](Self::set_coip_pools).
         ///
         /// <p>Information about the address pools.</p>
-        pub fn coip_pools(mut self, input: impl Into<crate::model::CoipPool>) -> Self {
+        pub fn coip_pools(mut self, input: crate::model::CoipPool) -> Self {
             let mut v = self.coip_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.coip_pools = Some(v);
             self
         }
@@ -25078,12 +24961,9 @@ pub mod describe_client_vpn_target_networks_output {
         /// To override the contents of this collection use [`set_client_vpn_target_networks`](Self::set_client_vpn_target_networks).
         ///
         /// <p>Information about the associated target networks.</p>
-        pub fn client_vpn_target_networks(
-            mut self,
-            input: impl Into<crate::model::TargetNetwork>,
-        ) -> Self {
+        pub fn client_vpn_target_networks(mut self, input: crate::model::TargetNetwork) -> Self {
             let mut v = self.client_vpn_target_networks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.client_vpn_target_networks = Some(v);
             self
         }
@@ -25163,9 +25043,9 @@ pub mod describe_client_vpn_routes_output {
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
         /// <p>Information about the Client VPN endpoint routes.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::ClientVpnRoute>) -> Self {
+        pub fn routes(mut self, input: crate::model::ClientVpnRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -25246,12 +25126,9 @@ pub mod describe_client_vpn_endpoints_output {
         /// To override the contents of this collection use [`set_client_vpn_endpoints`](Self::set_client_vpn_endpoints).
         ///
         /// <p>Information about the Client VPN endpoints.</p>
-        pub fn client_vpn_endpoints(
-            mut self,
-            input: impl Into<crate::model::ClientVpnEndpoint>,
-        ) -> Self {
+        pub fn client_vpn_endpoints(mut self, input: crate::model::ClientVpnEndpoint) -> Self {
             let mut v = self.client_vpn_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.client_vpn_endpoints = Some(v);
             self
         }
@@ -25332,9 +25209,9 @@ pub mod describe_client_vpn_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>Information about the active and terminated client connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::ClientVpnConnection>) -> Self {
+        pub fn connections(mut self, input: crate::model::ClientVpnConnection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -25415,12 +25292,9 @@ pub mod describe_client_vpn_authorization_rules_output {
         /// To override the contents of this collection use [`set_authorization_rules`](Self::set_authorization_rules).
         ///
         /// <p>Information about the authorization rules.</p>
-        pub fn authorization_rules(
-            mut self,
-            input: impl Into<crate::model::AuthorizationRule>,
-        ) -> Self {
+        pub fn authorization_rules(mut self, input: crate::model::AuthorizationRule) -> Self {
             let mut v = self.authorization_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.authorization_rules = Some(v);
             self
         }
@@ -25500,9 +25374,9 @@ pub mod describe_classic_link_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>Information about one or more linked EC2-Classic instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::ClassicLinkInstance>) -> Self {
+        pub fn instances(mut self, input: crate::model::ClassicLinkInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -25583,9 +25457,9 @@ pub mod describe_carrier_gateways_output {
         /// To override the contents of this collection use [`set_carrier_gateways`](Self::set_carrier_gateways).
         ///
         /// <p>Information about the carrier gateway.</p>
-        pub fn carrier_gateways(mut self, input: impl Into<crate::model::CarrierGateway>) -> Self {
+        pub fn carrier_gateways(mut self, input: crate::model::CarrierGateway) -> Self {
             let mut v = self.carrier_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.carrier_gateways = Some(v);
             self
         }
@@ -25679,12 +25553,9 @@ pub mod describe_capacity_reservations_output {
         /// To override the contents of this collection use [`set_capacity_reservations`](Self::set_capacity_reservations).
         ///
         /// <p>Information about the Capacity Reservations.</p>
-        pub fn capacity_reservations(
-            mut self,
-            input: impl Into<crate::model::CapacityReservation>,
-        ) -> Self {
+        pub fn capacity_reservations(mut self, input: crate::model::CapacityReservation) -> Self {
             let mut v = self.capacity_reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_reservations = Some(v);
             self
         }
@@ -25763,10 +25634,10 @@ pub mod describe_capacity_reservation_fleets_output {
         /// <p>Information about the Capacity Reservation Fleets.</p>
         pub fn capacity_reservation_fleets(
             mut self,
-            input: impl Into<crate::model::CapacityReservationFleet>,
+            input: crate::model::CapacityReservationFleet,
         ) -> Self {
             let mut v = self.capacity_reservation_fleets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_reservation_fleets = Some(v);
             self
         }
@@ -25846,9 +25717,9 @@ pub mod describe_byoip_cidrs_output {
         /// To override the contents of this collection use [`set_byoip_cidrs`](Self::set_byoip_cidrs).
         ///
         /// <p>Information about your address ranges.</p>
-        pub fn byoip_cidrs(mut self, input: impl Into<crate::model::ByoipCidr>) -> Self {
+        pub fn byoip_cidrs(mut self, input: crate::model::ByoipCidr) -> Self {
             let mut v = self.byoip_cidrs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.byoip_cidrs = Some(v);
             self
         }
@@ -25920,9 +25791,9 @@ pub mod describe_bundle_tasks_output {
         /// To override the contents of this collection use [`set_bundle_tasks`](Self::set_bundle_tasks).
         ///
         /// <p>Information about the bundle tasks.</p>
-        pub fn bundle_tasks(mut self, input: impl Into<crate::model::BundleTask>) -> Self {
+        pub fn bundle_tasks(mut self, input: crate::model::BundleTask) -> Self {
             let mut v = self.bundle_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bundle_tasks = Some(v);
             self
         }
@@ -25984,12 +25855,9 @@ pub mod describe_availability_zones_output {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -26076,9 +25944,9 @@ pub mod describe_aggregate_id_format_output {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>Information about each resource's ID format.</p>
-        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: crate::model::IdFormat) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -26148,9 +26016,9 @@ pub mod describe_addresses_attribute_output {
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
         /// <p>Information about the IP addresses.</p>
-        pub fn addresses(mut self, input: impl Into<crate::model::AddressAttribute>) -> Self {
+        pub fn addresses(mut self, input: crate::model::AddressAttribute) -> Self {
             let mut v = self.addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.addresses = Some(v);
             self
         }
@@ -26222,9 +26090,9 @@ pub mod describe_addresses_output {
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
         /// <p>Information about the Elastic IP addresses.</p>
-        pub fn addresses(mut self, input: impl Into<crate::model::Address>) -> Self {
+        pub fn addresses(mut self, input: crate::model::Address) -> Self {
             let mut v = self.addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.addresses = Some(v);
             self
         }
@@ -26286,12 +26154,9 @@ pub mod describe_account_attributes_output {
         /// To override the contents of this collection use [`set_account_attributes`](Self::set_account_attributes).
         ///
         /// <p>Information about the account attributes.</p>
-        pub fn account_attributes(
-            mut self,
-            input: impl Into<crate::model::AccountAttribute>,
-        ) -> Self {
+        pub fn account_attributes(mut self, input: crate::model::AccountAttribute) -> Self {
             let mut v = self.account_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_attributes = Some(v);
             self
         }
@@ -26929,9 +26794,9 @@ pub mod delete_vpc_endpoint_service_configurations_output {
         ///
         /// <p>Information about the service configurations that were not deleted, if
         /// applicable.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -26993,9 +26858,9 @@ pub mod delete_vpc_endpoints_output {
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
         /// <p>Information about the VPC endpoints that were not successfully deleted.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -27059,9 +26924,9 @@ pub mod delete_vpc_endpoint_connection_notifications_output {
         ///
         /// <p>Information about the notifications that could not be deleted
         /// successfully.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -28294,12 +28159,12 @@ pub mod delete_queued_reserved_instances_output {
         /// <p>Information about the queued purchases that were successfully deleted.</p>
         pub fn successful_queued_purchase_deletions(
             mut self,
-            input: impl Into<crate::model::SuccessfulQueuedPurchaseDeletion>,
+            input: crate::model::SuccessfulQueuedPurchaseDeletion,
         ) -> Self {
             let mut v = self
                 .successful_queued_purchase_deletions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_queued_purchase_deletions = Some(v);
             self
         }
@@ -28320,10 +28185,10 @@ pub mod delete_queued_reserved_instances_output {
         /// <p>Information about the queued purchases that could not be deleted.</p>
         pub fn failed_queued_purchase_deletions(
             mut self,
-            input: impl Into<crate::model::FailedQueuedPurchaseDeletion>,
+            input: crate::model::FailedQueuedPurchaseDeletion,
         ) -> Self {
             let mut v = self.failed_queued_purchase_deletions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_queued_purchase_deletions = Some(v);
             self
         }
@@ -29133,12 +28998,12 @@ pub mod delete_launch_template_versions_output {
         /// deleted.</p>
         pub fn successfully_deleted_launch_template_versions(
             mut self,
-            input: impl Into<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
+            input: crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem,
         ) -> Self {
             let mut v = self
                 .successfully_deleted_launch_template_versions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successfully_deleted_launch_template_versions = Some(v);
             self
         }
@@ -29160,12 +29025,12 @@ pub mod delete_launch_template_versions_output {
         /// <p>Information about the launch template versions that could not be deleted.</p>
         pub fn unsuccessfully_deleted_launch_template_versions(
             mut self,
-            input: impl Into<crate::model::DeleteLaunchTemplateVersionsResponseErrorItem>,
+            input: crate::model::DeleteLaunchTemplateVersionsResponseErrorItem,
         ) -> Self {
             let mut v = self
                 .unsuccessfully_deleted_launch_template_versions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessfully_deleted_launch_template_versions = Some(v);
             self
         }
@@ -29632,9 +29497,9 @@ pub mod delete_flow_logs_output {
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
         /// <p>Information about the flow logs that could not be deleted successfully.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -29719,10 +29584,10 @@ pub mod delete_fleets_output {
         /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
         pub fn successful_fleet_deletions(
             mut self,
-            input: impl Into<crate::model::DeleteFleetSuccessItem>,
+            input: crate::model::DeleteFleetSuccessItem,
         ) -> Self {
             let mut v = self.successful_fleet_deletions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_fleet_deletions = Some(v);
             self
         }
@@ -29741,10 +29606,10 @@ pub mod delete_fleets_output {
         /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
         pub fn unsuccessful_fleet_deletions(
             mut self,
-            input: impl Into<crate::model::DeleteFleetErrorItem>,
+            input: crate::model::DeleteFleetErrorItem,
         ) -> Self {
             let mut v = self.unsuccessful_fleet_deletions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful_fleet_deletions = Some(v);
             self
         }
@@ -30720,9 +30585,9 @@ pub mod create_volume_output {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Information about the volume attachments.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::VolumeAttachment>) -> Self {
+        pub fn attachments(mut self, input: crate::model::VolumeAttachment) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -30851,9 +30716,9 @@ pub mod create_volume_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the volume.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -32130,9 +31995,9 @@ pub mod create_snapshots_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>List of snapshots.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::SnapshotInfo>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::SnapshotInfo) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -32529,9 +32394,9 @@ pub mod create_snapshot_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the snapshot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -32660,9 +32525,9 @@ pub mod create_security_group_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the security group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -32898,10 +32763,10 @@ pub mod create_reserved_instances_listing_output {
         /// <p>Information about the Standard Reserved Instance listing.</p>
         pub fn reserved_instances_listings(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesListing>,
+            input: crate::model::ReservedInstancesListing,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_listings = Some(v);
             self
         }
@@ -34014,9 +33879,9 @@ pub mod create_key_pair_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags applied to the key pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -34597,9 +34462,9 @@ pub mod create_flow_logs_output {
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
         /// <p>Information about the flow logs that could not be created successfully.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -34693,9 +34558,9 @@ pub mod create_fleet_output {
         ///
         /// <p>Information about the instances that could not be launched by the fleet. Supported only for
         /// fleets of type <code>instant</code>.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::CreateFleetError>) -> Self {
+        pub fn errors(mut self, input: crate::model::CreateFleetError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -34714,9 +34579,9 @@ pub mod create_fleet_output {
         ///
         /// <p>Information about the instances that were launched by the fleet. Supported only for
         /// fleets of type <code>instant</code>.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::CreateFleetInstance>) -> Self {
+        pub fn instances(mut self, input: crate::model::CreateFleetInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -35513,10 +35378,10 @@ pub mod create_capacity_reservation_fleet_output {
         /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
         pub fn fleet_capacity_reservations(
             mut self,
-            input: impl Into<crate::model::FleetCapacityReservation>,
+            input: crate::model::FleetCapacityReservation,
         ) -> Self {
             let mut v = self.fleet_capacity_reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_capacity_reservations = Some(v);
             self
         }
@@ -35533,9 +35398,9 @@ pub mod create_capacity_reservation_fleet_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -35681,9 +35546,9 @@ pub mod copy_snapshot_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags applied to the new snapshot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -35946,10 +35811,10 @@ pub mod cancel_spot_instance_requests_output {
         /// <p>One or more Spot Instance requests.</p>
         pub fn cancelled_spot_instance_requests(
             mut self,
-            input: impl Into<crate::model::CancelledSpotInstanceRequest>,
+            input: crate::model::CancelledSpotInstanceRequest,
         ) -> Self {
             let mut v = self.cancelled_spot_instance_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cancelled_spot_instance_requests = Some(v);
             self
         }
@@ -36031,10 +35896,10 @@ pub mod cancel_spot_fleet_requests_output {
         /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
         pub fn successful_fleet_requests(
             mut self,
-            input: impl Into<crate::model::CancelSpotFleetRequestsSuccessItem>,
+            input: crate::model::CancelSpotFleetRequestsSuccessItem,
         ) -> Self {
             let mut v = self.successful_fleet_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_fleet_requests = Some(v);
             self
         }
@@ -36055,10 +35920,10 @@ pub mod cancel_spot_fleet_requests_output {
         /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
         pub fn unsuccessful_fleet_requests(
             mut self,
-            input: impl Into<crate::model::CancelSpotFleetRequestsErrorItem>,
+            input: crate::model::CancelSpotFleetRequestsErrorItem,
         ) -> Self {
             let mut v = self.unsuccessful_fleet_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful_fleet_requests = Some(v);
             self
         }
@@ -36131,10 +35996,10 @@ pub mod cancel_reserved_instances_listing_output {
         /// <p>The Reserved Instance listing.</p>
         pub fn reserved_instances_listings(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesListing>,
+            input: crate::model::ReservedInstancesListing,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_listings = Some(v);
             self
         }
@@ -36381,10 +36246,10 @@ pub mod cancel_capacity_reservation_fleets_output {
         /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
         pub fn successful_fleet_cancellations(
             mut self,
-            input: impl Into<crate::model::CapacityReservationFleetCancellationState>,
+            input: crate::model::CapacityReservationFleetCancellationState,
         ) -> Self {
             let mut v = self.successful_fleet_cancellations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_fleet_cancellations = Some(v);
             self
         }
@@ -36405,10 +36270,10 @@ pub mod cancel_capacity_reservation_fleets_output {
         /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
         pub fn failed_fleet_cancellations(
             mut self,
-            input: impl Into<crate::model::FailedCapacityReservationFleetCancellationResult>,
+            input: crate::model::FailedCapacityReservationFleetCancellationResult,
         ) -> Self {
             let mut v = self.failed_fleet_cancellations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_fleet_cancellations = Some(v);
             self
         }
@@ -36659,12 +36524,9 @@ pub mod authorize_security_group_ingress_output {
         /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
         ///
         /// <p>Information about the inbound (ingress) security group rules that were added.</p>
-        pub fn security_group_rules(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupRule>,
-        ) -> Self {
+        pub fn security_group_rules(mut self, input: crate::model::SecurityGroupRule) -> Self {
             let mut v = self.security_group_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_group_rules = Some(v);
             self
         }
@@ -36745,12 +36607,9 @@ pub mod authorize_security_group_egress_output {
         /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
         ///
         /// <p>Information about the outbound (egress) security group rules that were added.</p>
-        pub fn security_group_rules(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupRule>,
-        ) -> Self {
+        pub fn security_group_rules(mut self, input: crate::model::SecurityGroupRule) -> Self {
             let mut v = self.security_group_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_group_rules = Some(v);
             self
         }
@@ -38178,10 +38037,10 @@ pub mod assign_private_ip_addresses_output {
         /// <p>The private IP addresses assigned to the network interface.</p>
         pub fn assigned_private_ip_addresses(
             mut self,
-            input: impl Into<crate::model::AssignedPrivateIpAddress>,
+            input: crate::model::AssignedPrivateIpAddress,
         ) -> Self {
             let mut v = self.assigned_private_ip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assigned_private_ip_addresses = Some(v);
             self
         }
@@ -38200,10 +38059,10 @@ pub mod assign_private_ip_addresses_output {
         /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
         pub fn assigned_ipv4_prefixes(
             mut self,
-            input: impl Into<crate::model::Ipv4PrefixSpecification>,
+            input: crate::model::Ipv4PrefixSpecification,
         ) -> Self {
             let mut v = self.assigned_ipv4_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assigned_ipv4_prefixes = Some(v);
             self
         }
@@ -38904,9 +38763,9 @@ pub mod accept_vpc_endpoint_connections_output {
         ///
         /// <p>Information about the interface endpoints that were not accepted, if
         /// applicable.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }

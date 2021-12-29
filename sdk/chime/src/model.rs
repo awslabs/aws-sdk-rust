@@ -229,12 +229,9 @@ pub mod voice_connector_group {
         /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
         ///
         /// <p>The Amazon Chime Voice Connectors to which to route inbound calls.</p>
-        pub fn voice_connector_items(
-            mut self,
-            input: impl Into<crate::model::VoiceConnectorItem>,
-        ) -> Self {
+        pub fn voice_connector_items(mut self, input: crate::model::VoiceConnectorItem) -> Self {
             let mut v = self.voice_connector_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.voice_connector_items = Some(v);
             self
         }
@@ -1626,10 +1623,10 @@ pub mod sip_rule {
         /// specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
         pub fn target_applications(
             mut self,
-            input: impl Into<crate::model::SipRuleTargetApplication>,
+            input: crate::model::SipRuleTargetApplication,
         ) -> Self {
             let mut v = self.target_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_applications = Some(v);
             self
         }
@@ -2006,12 +2003,9 @@ pub mod sip_media_application {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
-        pub fn endpoints(
-            mut self,
-            input: impl Into<crate::model::SipMediaApplicationEndpoint>,
-        ) -> Self {
+        pub fn endpoints(mut self, input: crate::model::SipMediaApplicationEndpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -2853,9 +2847,9 @@ pub mod proxy_session {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>The proxy session capabilities.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -2911,9 +2905,9 @@ pub mod proxy_session {
         /// To override the contents of this collection use [`set_participants`](Self::set_participants).
         ///
         /// <p>The proxy session participants.</p>
-        pub fn participants(mut self, input: impl Into<crate::model::Participant>) -> Self {
+        pub fn participants(mut self, input: crate::model::Participant) -> Self {
             let mut v = self.participants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.participants = Some(v);
             self
         }
@@ -3587,12 +3581,9 @@ pub mod phone_number {
         /// To override the contents of this collection use [`set_associations`](Self::set_associations).
         ///
         /// <p>The phone number associations.</p>
-        pub fn associations(
-            mut self,
-            input: impl Into<crate::model::PhoneNumberAssociation>,
-        ) -> Self {
+        pub fn associations(mut self, input: crate::model::PhoneNumberAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associations = Some(v);
             self
         }
@@ -4985,9 +4976,9 @@ pub mod account {
         /// To override the contents of this collection use [`set_supported_licenses`](Self::set_supported_licenses).
         ///
         /// <p>Supported licenses for the Amazon Chime account.</p>
-        pub fn supported_licenses(mut self, input: impl Into<crate::model::License>) -> Self {
+        pub fn supported_licenses(mut self, input: crate::model::License) -> Self {
             let mut v = self.supported_licenses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_licenses = Some(v);
             self
         }
@@ -5017,12 +5008,9 @@ pub mod account {
         /// To override the contents of this collection use [`set_signin_delegate_groups`](Self::set_signin_delegate_groups).
         ///
         /// <p>The sign-in delegate groups associated with the account.</p>
-        pub fn signin_delegate_groups(
-            mut self,
-            input: impl Into<crate::model::SigninDelegateGroup>,
-        ) -> Self {
+        pub fn signin_delegate_groups(mut self, input: crate::model::SigninDelegateGroup) -> Self {
             let mut v = self.signin_delegate_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.signin_delegate_groups = Some(v);
             self
         }
@@ -7090,10 +7078,10 @@ pub mod streaming_configuration {
         /// <p>The streaming notification targets.</p>
         pub fn streaming_notification_targets(
             mut self,
-            input: impl Into<crate::model::StreamingNotificationTarget>,
+            input: crate::model::StreamingNotificationTarget,
         ) -> Self {
             let mut v = self.streaming_notification_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streaming_notification_targets = Some(v);
             self
         }
@@ -7418,9 +7406,9 @@ pub mod origination {
         ///
         /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1.
         /// Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::OriginationRoute>) -> Self {
+        pub fn routes(mut self, input: crate::model::OriginationRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -7751,12 +7739,9 @@ pub mod emergency_calling_configuration {
         /// To override the contents of this collection use [`set_dnis`](Self::set_dnis).
         ///
         /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
-        pub fn dnis(
-            mut self,
-            input: impl Into<crate::model::DnisEmergencyCallingConfiguration>,
-        ) -> Self {
+        pub fn dnis(mut self, input: crate::model::DnisEmergencyCallingConfiguration) -> Self {
             let mut v = self.dnis.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dnis = Some(v);
             self
         }
@@ -8566,10 +8551,10 @@ pub mod phone_number_country {
         /// <p>The supported phone number types. </p>
         pub fn supported_phone_number_types(
             mut self,
-            input: impl Into<crate::model::PhoneNumberType>,
+            input: crate::model::PhoneNumberType,
         ) -> Self {
             let mut v = self.supported_phone_number_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_phone_number_types = Some(v);
             self
         }
@@ -8716,12 +8701,9 @@ pub mod phone_number_order {
         ///
         /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone
         /// number status.</p>
-        pub fn ordered_phone_numbers(
-            mut self,
-            input: impl Into<crate::model::OrderedPhoneNumber>,
-        ) -> Self {
+        pub fn ordered_phone_numbers(mut self, input: crate::model::OrderedPhoneNumber) -> Self {
             let mut v = self.ordered_phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ordered_phone_numbers = Some(v);
             self
         }
@@ -13670,9 +13652,9 @@ pub mod create_attendee_request_item {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14463,9 +14445,9 @@ pub mod batch_channel_memberships {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>The users successfully added to the request.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Identity>) -> Self {
+        pub fn members(mut self, input: crate::model::Identity) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }

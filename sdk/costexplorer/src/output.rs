@@ -317,10 +317,10 @@ pub mod list_cost_category_definitions_output {
         /// </p>
         pub fn cost_category_references(
             mut self,
-            input: impl Into<crate::model::CostCategoryReference>,
+            input: crate::model::CostCategoryReference,
         ) -> Self {
             let mut v = self.cost_category_references.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cost_category_references = Some(v);
             self
         }
@@ -420,12 +420,9 @@ pub mod get_usage_forecast_output {
         ///
         /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
         /// this is a list of months.</p>
-        pub fn forecast_results_by_time(
-            mut self,
-            input: impl Into<crate::model::ForecastResult>,
-        ) -> Self {
+        pub fn forecast_results_by_time(mut self, input: crate::model::ForecastResult) -> Self {
             let mut v = self.forecast_results_by_time.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.forecast_results_by_time = Some(v);
             self
         }
@@ -644,10 +641,10 @@ pub mod get_savings_plans_utilization_details_output {
         /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
         pub fn savings_plans_utilization_details(
             mut self,
-            input: impl Into<crate::model::SavingsPlansUtilizationDetail>,
+            input: crate::model::SavingsPlansUtilizationDetail,
         ) -> Self {
             let mut v = self.savings_plans_utilization_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.savings_plans_utilization_details = Some(v);
             self
         }
@@ -764,10 +761,10 @@ pub mod get_savings_plans_utilization_output {
         /// <p>The amount of cost/commitment you used your Savings Plans. This allows you to specify date ranges.</p>
         pub fn savings_plans_utilizations_by_time(
             mut self,
-            input: impl Into<crate::model::SavingsPlansUtilizationByTime>,
+            input: crate::model::SavingsPlansUtilizationByTime,
         ) -> Self {
             let mut v = self.savings_plans_utilizations_by_time.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.savings_plans_utilizations_by_time = Some(v);
             self
         }
@@ -973,10 +970,10 @@ pub mod get_savings_plans_coverage_output {
         /// <p>The amount of spend that your Savings Plans covered.</p>
         pub fn savings_plans_coverages(
             mut self,
-            input: impl Into<crate::model::SavingsPlansCoverage>,
+            input: crate::model::SavingsPlansCoverage,
         ) -> Self {
             let mut v = self.savings_plans_coverages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.savings_plans_coverages = Some(v);
             self
         }
@@ -1128,10 +1125,10 @@ pub mod get_rightsizing_recommendation_output {
         /// <p>Recommendations to rightsize resources.</p>
         pub fn rightsizing_recommendations(
             mut self,
-            input: impl Into<crate::model::RightsizingRecommendation>,
+            input: crate::model::RightsizingRecommendation,
         ) -> Self {
             let mut v = self.rightsizing_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rightsizing_recommendations = Some(v);
             self
         }
@@ -1250,12 +1247,9 @@ pub mod get_reservation_utilization_output {
         /// To override the contents of this collection use [`set_utilizations_by_time`](Self::set_utilizations_by_time).
         ///
         /// <p>The amount of time that you used your RIs.</p>
-        pub fn utilizations_by_time(
-            mut self,
-            input: impl Into<crate::model::UtilizationByTime>,
-        ) -> Self {
+        pub fn utilizations_by_time(mut self, input: crate::model::UtilizationByTime) -> Self {
             let mut v = self.utilizations_by_time.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.utilizations_by_time = Some(v);
             self
         }
@@ -1385,10 +1379,10 @@ pub mod get_reservation_purchase_recommendation_output {
         /// <p>Recommendations for reservations to purchase.</p>
         pub fn recommendations(
             mut self,
-            input: impl Into<crate::model::ReservationPurchaseRecommendation>,
+            input: crate::model::ReservationPurchaseRecommendation,
         ) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendations = Some(v);
             self
         }
@@ -1483,9 +1477,9 @@ pub mod get_reservation_coverage_output {
         /// To override the contents of this collection use [`set_coverages_by_time`](Self::set_coverages_by_time).
         ///
         /// <p>The amount of time that your reservations covered.</p>
-        pub fn coverages_by_time(mut self, input: impl Into<crate::model::CoverageByTime>) -> Self {
+        pub fn coverages_by_time(mut self, input: crate::model::CoverageByTime) -> Self {
             let mut v = self.coverages_by_time.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.coverages_by_time = Some(v);
             self
         }
@@ -1922,10 +1916,10 @@ pub mod get_dimension_values_output {
         /// </ul>
         pub fn dimension_values(
             mut self,
-            input: impl Into<crate::model::DimensionValuesWithAttributes>,
+            input: crate::model::DimensionValuesWithAttributes,
         ) -> Self {
             let mut v = self.dimension_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_values = Some(v);
             self
         }
@@ -2151,12 +2145,9 @@ pub mod get_cost_forecast_output {
         ///
         /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
         /// this is a list of months.</p>
-        pub fn forecast_results_by_time(
-            mut self,
-            input: impl Into<crate::model::ForecastResult>,
-        ) -> Self {
+        pub fn forecast_results_by_time(mut self, input: crate::model::ForecastResult) -> Self {
             let mut v = self.forecast_results_by_time.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.forecast_results_by_time = Some(v);
             self
         }
@@ -2426,12 +2417,9 @@ pub mod get_cost_and_usage_with_resources_output {
         ///
         /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code>
         /// parameters in the request.</p>
-        pub fn group_definitions(
-            mut self,
-            input: impl Into<crate::model::GroupDefinition>,
-        ) -> Self {
+        pub fn group_definitions(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_definitions = Some(v);
             self
         }
@@ -2449,9 +2437,9 @@ pub mod get_cost_and_usage_with_resources_output {
         /// To override the contents of this collection use [`set_results_by_time`](Self::set_results_by_time).
         ///
         /// <p>The time period that is covered by the results in the response.</p>
-        pub fn results_by_time(mut self, input: impl Into<crate::model::ResultByTime>) -> Self {
+        pub fn results_by_time(mut self, input: crate::model::ResultByTime) -> Self {
             let mut v = self.results_by_time.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results_by_time = Some(v);
             self
         }
@@ -2470,10 +2458,10 @@ pub mod get_cost_and_usage_with_resources_output {
         /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
         pub fn dimension_value_attributes(
             mut self,
-            input: impl Into<crate::model::DimensionValuesWithAttributes>,
+            input: crate::model::DimensionValuesWithAttributes,
         ) -> Self {
             let mut v = self.dimension_value_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_value_attributes = Some(v);
             self
         }
@@ -2582,12 +2570,9 @@ pub mod get_cost_and_usage_output {
         /// To override the contents of this collection use [`set_group_definitions`](Self::set_group_definitions).
         ///
         /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-        pub fn group_definitions(
-            mut self,
-            input: impl Into<crate::model::GroupDefinition>,
-        ) -> Self {
+        pub fn group_definitions(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_definitions = Some(v);
             self
         }
@@ -2604,9 +2589,9 @@ pub mod get_cost_and_usage_output {
         /// To override the contents of this collection use [`set_results_by_time`](Self::set_results_by_time).
         ///
         /// <p>The time period that's covered by the results in the response.</p>
-        pub fn results_by_time(mut self, input: impl Into<crate::model::ResultByTime>) -> Self {
+        pub fn results_by_time(mut self, input: crate::model::ResultByTime) -> Self {
             let mut v = self.results_by_time.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results_by_time = Some(v);
             self
         }
@@ -2625,10 +2610,10 @@ pub mod get_cost_and_usage_output {
         /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
         pub fn dimension_value_attributes(
             mut self,
-            input: impl Into<crate::model::DimensionValuesWithAttributes>,
+            input: crate::model::DimensionValuesWithAttributes,
         ) -> Self {
             let mut v = self.dimension_value_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_value_attributes = Some(v);
             self
         }
@@ -2706,12 +2691,9 @@ pub mod get_anomaly_subscriptions_output {
         /// To override the contents of this collection use [`set_anomaly_subscriptions`](Self::set_anomaly_subscriptions).
         ///
         /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
-        pub fn anomaly_subscriptions(
-            mut self,
-            input: impl Into<crate::model::AnomalySubscription>,
-        ) -> Self {
+        pub fn anomaly_subscriptions(mut self, input: crate::model::AnomalySubscription) -> Self {
             let mut v = self.anomaly_subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_subscriptions = Some(v);
             self
         }
@@ -2799,9 +2781,9 @@ pub mod get_anomaly_monitors_output {
         /// To override the contents of this collection use [`set_anomaly_monitors`](Self::set_anomaly_monitors).
         ///
         /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
-        pub fn anomaly_monitors(mut self, input: impl Into<crate::model::AnomalyMonitor>) -> Self {
+        pub fn anomaly_monitors(mut self, input: crate::model::AnomalyMonitor) -> Self {
             let mut v = self.anomaly_monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_monitors = Some(v);
             self
         }
@@ -2888,9 +2870,9 @@ pub mod get_anomalies_output {
         /// To override the contents of this collection use [`set_anomalies`](Self::set_anomalies).
         ///
         /// <p>A list of cost anomalies. </p>
-        pub fn anomalies(mut self, input: impl Into<crate::model::Anomaly>) -> Self {
+        pub fn anomalies(mut self, input: crate::model::Anomaly) -> Self {
             let mut v = self.anomalies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomalies = Some(v);
             self
         }

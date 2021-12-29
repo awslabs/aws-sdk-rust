@@ -460,9 +460,9 @@ pub mod transcript {
         /// <p>
         /// <a>Result</a> objects that contain the results of transcribing a portion of the
         /// input audio stream. The array can be empty.</p>
-        pub fn results(mut self, input: impl Into<crate::model::Result>) -> Self {
+        pub fn results(mut self, input: crate::model::Result) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -658,9 +658,9 @@ pub mod result {
         ///
         /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one
         /// <code>item</code> that contains the result of the transcription.</p>
-        pub fn alternatives(mut self, input: impl Into<crate::model::Alternative>) -> Self {
+        pub fn alternatives(mut self, input: crate::model::Alternative) -> Self {
             let mut v = self.alternatives.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alternatives = Some(v);
             self
         }
@@ -707,12 +707,9 @@ pub mod result {
         /// To override the contents of this collection use [`set_language_identification`](Self::set_language_identification).
         ///
         /// <p>The language code of the dominant language identified in your media.</p>
-        pub fn language_identification(
-            mut self,
-            input: impl Into<crate::model::LanguageWithScore>,
-        ) -> Self {
+        pub fn language_identification(mut self, input: crate::model::LanguageWithScore) -> Self {
             let mut v = self.language_identification.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.language_identification = Some(v);
             self
         }
@@ -892,9 +889,9 @@ pub mod alternative {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>One or more alternative interpretations of the input audio. </p>
-        pub fn items(mut self, input: impl Into<crate::model::Item>) -> Self {
+        pub fn items(mut self, input: crate::model::Item) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -911,9 +908,9 @@ pub mod alternative {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -1730,9 +1727,9 @@ pub mod medical_transcript {
         /// <p>
         /// <a>MedicalResult</a> objects that contain the results of transcribing a
         /// portion of the input audio stream. The array can be empty.</p>
-        pub fn results(mut self, input: impl Into<crate::model::MedicalResult>) -> Self {
+        pub fn results(mut self, input: crate::model::MedicalResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -1913,9 +1910,9 @@ pub mod medical_result {
         ///
         /// <p>A list of possible transcriptions of the audio. Each alternative typically contains
         /// one <code>Item</code> that contains the result of the transcription.</p>
-        pub fn alternatives(mut self, input: impl Into<crate::model::MedicalAlternative>) -> Self {
+        pub fn alternatives(mut self, input: crate::model::MedicalAlternative) -> Self {
             let mut v = self.alternatives.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alternatives = Some(v);
             self
         }
@@ -2027,9 +2024,9 @@ pub mod medical_alternative {
         ///
         /// <p>A list of objects that contains words and punctuation marks that represents one or
         /// more interpretations of the input audio.</p>
-        pub fn items(mut self, input: impl Into<crate::model::MedicalItem>) -> Self {
+        pub fn items(mut self, input: crate::model::MedicalItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2047,9 +2044,9 @@ pub mod medical_alternative {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::MedicalEntity>) -> Self {
+        pub fn entities(mut self, input: crate::model::MedicalEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }

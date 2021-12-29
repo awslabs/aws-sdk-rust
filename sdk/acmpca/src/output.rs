@@ -223,9 +223,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with your private CA.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -312,9 +312,9 @@ pub mod list_permissions_output {
         ///
         /// <p>Summary information about each permission assigned by the specified private CA,
         /// including the action enabled, the policy provided, and the time of creation.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -405,10 +405,10 @@ pub mod list_certificate_authorities_output {
         /// <p>Summary information about each certificate authority you have created.</p>
         pub fn certificate_authorities(
             mut self,
-            input: impl Into<crate::model::CertificateAuthority>,
+            input: crate::model::CertificateAuthority,
         ) -> Self {
             let mut v = self.certificate_authorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_authorities = Some(v);
             self
         }

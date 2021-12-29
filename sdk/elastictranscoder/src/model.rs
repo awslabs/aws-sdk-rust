@@ -1301,9 +1301,9 @@ pub mod pipeline_output_config {
         /// <p> If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files
         /// and playlists to the owner of the role specified by <code>Role</code>, and grants no
         /// other permissions to any other user or group.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -4878,9 +4878,9 @@ pub mod video_parameters {
         /// you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job
         /// than you specify watermark settings in the preset, which allows you to use the same preset
         /// for up to four watermarks that have different dimensions.</p>
-        pub fn watermarks(mut self, input: impl Into<crate::model::PresetWatermark>) -> Self {
+        pub fn watermarks(mut self, input: crate::model::PresetWatermark) -> Self {
             let mut v = self.watermarks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.watermarks = Some(v);
             self
         }
@@ -7438,9 +7438,9 @@ pub mod job {
         ///
         /// <p>Information about the files that you're transcoding. If you specified multiple files for this
         /// job, Elastic Transcoder stitches the files together to make one output.</p>
-        pub fn inputs(mut self, input: impl Into<crate::model::JobInput>) -> Self {
+        pub fn inputs(mut self, input: crate::model::JobInput) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -7487,9 +7487,9 @@ pub mod job {
         /// the same request. You can create a maximum of 30 outputs per job. </p>
         /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output
         /// in the order in which you specify them in the job.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::JobOutput>) -> Self {
+        pub fn outputs(mut self, input: crate::model::JobOutput) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -7535,9 +7535,9 @@ pub mod job {
         /// <code>Playlists</code> contains information about the master playlists that you want
         /// Elastic Transcoder to create.</p>
         /// <p>The maximum number of master playlists in a job is 30.</p>
-        pub fn playlists(mut self, input: impl Into<crate::model::Playlist>) -> Self {
+        pub fn playlists(mut self, input: crate::model::Playlist) -> Self {
             let mut v = self.playlists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.playlists = Some(v);
             self
         }
@@ -9480,9 +9480,9 @@ pub mod job_output {
         /// in a preset cause Elastic Transcoder to place all watermarks in the same location, the second watermark
         /// that you add covers the first one, the third one covers the second, and the
         /// fourth one covers the third.</p>
-        pub fn watermarks(mut self, input: impl Into<crate::model::JobWatermark>) -> Self {
+        pub fn watermarks(mut self, input: crate::model::JobWatermark) -> Self {
             let mut v = self.watermarks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.watermarks = Some(v);
             self
         }
@@ -9524,9 +9524,9 @@ pub mod job_output {
         /// a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings
         /// for the clips that make up an output file. For the current release, you can only specify settings for a
         /// single clip per output file. The Composition object cannot be null.</p>
-        pub fn composition(mut self, input: impl Into<crate::model::Clip>) -> Self {
+        pub fn composition(mut self, input: crate::model::Clip) -> Self {
             let mut v = self.composition.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.composition = Some(v);
             self
         }
@@ -10241,9 +10241,9 @@ pub mod captions {
         ///
         /// <p>Source files for the input sidecar captions used during the transcoding
         /// process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-        pub fn caption_sources(mut self, input: impl Into<crate::model::CaptionSource>) -> Self {
+        pub fn caption_sources(mut self, input: crate::model::CaptionSource) -> Self {
             let mut v = self.caption_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_sources = Some(v);
             self
         }
@@ -10261,9 +10261,9 @@ pub mod captions {
         /// To override the contents of this collection use [`set_caption_formats`](Self::set_caption_formats).
         ///
         /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
-        pub fn caption_formats(mut self, input: impl Into<crate::model::CaptionFormat>) -> Self {
+        pub fn caption_formats(mut self, input: crate::model::CaptionFormat) -> Self {
             let mut v = self.caption_formats.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_formats = Some(v);
             self
         }
@@ -11161,9 +11161,9 @@ pub mod job_album_art {
         /// <p>The file to be used as album art. There can be multiple artworks associated with an audio file,
         /// to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code>
         /// </p>
-        pub fn artwork(mut self, input: impl Into<crate::model::Artwork>) -> Self {
+        pub fn artwork(mut self, input: crate::model::Artwork) -> Self {
             let mut v = self.artwork.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.artwork = Some(v);
             self
         }
@@ -12545,9 +12545,9 @@ pub mod input_captions {
         ///
         /// <p>Source files for the input sidecar captions used during the transcoding
         /// process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-        pub fn caption_sources(mut self, input: impl Into<crate::model::CaptionSource>) -> Self {
+        pub fn caption_sources(mut self, input: crate::model::CaptionSource) -> Self {
             let mut v = self.caption_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_sources = Some(v);
             self
         }
@@ -13460,9 +13460,9 @@ pub mod create_job_output {
         /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding.
         /// You can specify up to four watermarks for each output. Settings for each watermark must be defined
         /// in the preset for the current output.</p>
-        pub fn watermarks(mut self, input: impl Into<crate::model::JobWatermark>) -> Self {
+        pub fn watermarks(mut self, input: crate::model::JobWatermark) -> Self {
             let mut v = self.watermarks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.watermarks = Some(v);
             self
         }
@@ -13501,9 +13501,9 @@ pub mod create_job_output {
         /// clip, can come from the beginning, middle, or end of the file. The Composition object contains settings
         /// for the clips that make up an output file. For the current release, you can only specify settings for a
         /// single clip per output file. The Composition object cannot be null.</p>
-        pub fn composition(mut self, input: impl Into<crate::model::Clip>) -> Self {
+        pub fn composition(mut self, input: crate::model::Clip) -> Self {
             let mut v = self.composition.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.composition = Some(v);
             self
         }

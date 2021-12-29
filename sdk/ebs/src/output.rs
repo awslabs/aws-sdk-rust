@@ -184,9 +184,9 @@ pub mod start_snapshot_output {
         /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2
         /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -391,9 +391,9 @@ pub mod list_snapshot_blocks_output {
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
         /// <p>An array of objects containing information about the blocks.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }
@@ -537,9 +537,9 @@ pub mod list_changed_blocks_output {
         /// To override the contents of this collection use [`set_changed_blocks`](Self::set_changed_blocks).
         ///
         /// <p>An array of objects containing information about the changed blocks.</p>
-        pub fn changed_blocks(mut self, input: impl Into<crate::model::ChangedBlock>) -> Self {
+        pub fn changed_blocks(mut self, input: crate::model::ChangedBlock) -> Self {
             let mut v = self.changed_blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.changed_blocks = Some(v);
             self
         }

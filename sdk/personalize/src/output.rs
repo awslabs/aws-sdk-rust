@@ -185,12 +185,9 @@ pub mod list_solution_versions_output {
         /// To override the contents of this collection use [`set_solution_versions`](Self::set_solution_versions).
         ///
         /// <p>A list of solution versions describing the version properties.</p>
-        pub fn solution_versions(
-            mut self,
-            input: impl Into<crate::model::SolutionVersionSummary>,
-        ) -> Self {
+        pub fn solution_versions(mut self, input: crate::model::SolutionVersionSummary) -> Self {
             let mut v = self.solution_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.solution_versions = Some(v);
             self
         }
@@ -270,9 +267,9 @@ pub mod list_solutions_output {
         /// To override the contents of this collection use [`set_solutions`](Self::set_solutions).
         ///
         /// <p>A list of the current solutions.</p>
-        pub fn solutions(mut self, input: impl Into<crate::model::SolutionSummary>) -> Self {
+        pub fn solutions(mut self, input: crate::model::SolutionSummary) -> Self {
             let mut v = self.solutions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.solutions = Some(v);
             self
         }
@@ -352,9 +349,9 @@ pub mod list_schemas_output {
         /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
         ///
         /// <p>A list of schemas.</p>
-        pub fn schemas(mut self, input: impl Into<crate::model::DatasetSchemaSummary>) -> Self {
+        pub fn schemas(mut self, input: crate::model::DatasetSchemaSummary) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schemas = Some(v);
             self
         }
@@ -435,9 +432,9 @@ pub mod list_recommenders_output {
         /// To override the contents of this collection use [`set_recommenders`](Self::set_recommenders).
         ///
         /// <p>A list of the recommenders.</p>
-        pub fn recommenders(mut self, input: impl Into<crate::model::RecommenderSummary>) -> Self {
+        pub fn recommenders(mut self, input: crate::model::RecommenderSummary) -> Self {
             let mut v = self.recommenders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommenders = Some(v);
             self
         }
@@ -517,9 +514,9 @@ pub mod list_recipes_output {
         /// To override the contents of this collection use [`set_recipes`](Self::set_recipes).
         ///
         /// <p>The list of available recipes.</p>
-        pub fn recipes(mut self, input: impl Into<crate::model::RecipeSummary>) -> Self {
+        pub fn recipes(mut self, input: crate::model::RecipeSummary) -> Self {
             let mut v = self.recipes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recipes = Some(v);
             self
         }
@@ -599,9 +596,9 @@ pub mod list_filters_output {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of returned filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::FilterSummary>) -> Self {
+        pub fn filters(mut self, input: crate::model::FilterSummary) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -682,12 +679,9 @@ pub mod list_event_trackers_output {
         /// To override the contents of this collection use [`set_event_trackers`](Self::set_event_trackers).
         ///
         /// <p>A list of event trackers.</p>
-        pub fn event_trackers(
-            mut self,
-            input: impl Into<crate::model::EventTrackerSummary>,
-        ) -> Self {
+        pub fn event_trackers(mut self, input: crate::model::EventTrackerSummary) -> Self {
             let mut v = self.event_trackers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_trackers = Some(v);
             self
         }
@@ -770,9 +764,9 @@ pub mod list_datasets_output {
         ///
         /// <p>An array of <code>Dataset</code> objects. Each object provides metadata
         /// information.</p>
-        pub fn datasets(mut self, input: impl Into<crate::model::DatasetSummary>) -> Self {
+        pub fn datasets(mut self, input: crate::model::DatasetSummary) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }
@@ -857,12 +851,9 @@ pub mod list_dataset_import_jobs_output {
         /// To override the contents of this collection use [`set_dataset_import_jobs`](Self::set_dataset_import_jobs).
         ///
         /// <p>The list of dataset import jobs.</p>
-        pub fn dataset_import_jobs(
-            mut self,
-            input: impl Into<crate::model::DatasetImportJobSummary>,
-        ) -> Self {
+        pub fn dataset_import_jobs(mut self, input: crate::model::DatasetImportJobSummary) -> Self {
             let mut v = self.dataset_import_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_import_jobs = Some(v);
             self
         }
@@ -943,12 +934,9 @@ pub mod list_dataset_groups_output {
         /// To override the contents of this collection use [`set_dataset_groups`](Self::set_dataset_groups).
         ///
         /// <p>The list of your dataset groups.</p>
-        pub fn dataset_groups(
-            mut self,
-            input: impl Into<crate::model::DatasetGroupSummary>,
-        ) -> Self {
+        pub fn dataset_groups(mut self, input: crate::model::DatasetGroupSummary) -> Self {
             let mut v = self.dataset_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_groups = Some(v);
             self
         }
@@ -1032,12 +1020,9 @@ pub mod list_dataset_export_jobs_output {
         /// To override the contents of this collection use [`set_dataset_export_jobs`](Self::set_dataset_export_jobs).
         ///
         /// <p>The list of dataset export jobs.</p>
-        pub fn dataset_export_jobs(
-            mut self,
-            input: impl Into<crate::model::DatasetExportJobSummary>,
-        ) -> Self {
+        pub fn dataset_export_jobs(mut self, input: crate::model::DatasetExportJobSummary) -> Self {
             let mut v = self.dataset_export_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_export_jobs = Some(v);
             self
         }
@@ -1117,9 +1102,9 @@ pub mod list_campaigns_output {
         /// To override the contents of this collection use [`set_campaigns`](Self::set_campaigns).
         ///
         /// <p>A list of the campaigns.</p>
-        pub fn campaigns(mut self, input: impl Into<crate::model::CampaignSummary>) -> Self {
+        pub fn campaigns(mut self, input: crate::model::CampaignSummary) -> Self {
             let mut v = self.campaigns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.campaigns = Some(v);
             self
         }
@@ -1205,12 +1190,9 @@ pub mod list_batch_segment_jobs_output {
         /// To override the contents of this collection use [`set_batch_segment_jobs`](Self::set_batch_segment_jobs).
         ///
         /// <p>A list containing information on each job that is returned.</p>
-        pub fn batch_segment_jobs(
-            mut self,
-            input: impl Into<crate::model::BatchSegmentJobSummary>,
-        ) -> Self {
+        pub fn batch_segment_jobs(mut self, input: crate::model::BatchSegmentJobSummary) -> Self {
             let mut v = self.batch_segment_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.batch_segment_jobs = Some(v);
             self
         }
@@ -1300,10 +1282,10 @@ pub mod list_batch_inference_jobs_output {
         /// <p>A list containing information on each job that is returned.</p>
         pub fn batch_inference_jobs(
             mut self,
-            input: impl Into<crate::model::BatchInferenceJobSummary>,
+            input: crate::model::BatchInferenceJobSummary,
         ) -> Self {
             let mut v = self.batch_inference_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.batch_inference_jobs = Some(v);
             self
         }
@@ -1401,9 +1383,9 @@ pub mod get_solution_metrics_output {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>The metrics for the solution version.</p>
-        pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
+        pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }

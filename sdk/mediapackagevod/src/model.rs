@@ -597,9 +597,9 @@ pub mod mss_package {
         /// To override the contents of this collection use [`set_mss_manifests`](Self::set_mss_manifests).
         ///
         /// A list of MSS manifest configurations.
-        pub fn mss_manifests(mut self, input: impl Into<crate::model::MssManifest>) -> Self {
+        pub fn mss_manifests(mut self, input: crate::model::MssManifest) -> Self {
             let mut v = self.mss_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mss_manifests = Some(v);
             self
         }
@@ -1118,9 +1118,9 @@ pub mod hls_package {
         /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
         ///
         /// A list of HLS manifest configurations.
-        pub fn hls_manifests(mut self, input: impl Into<crate::model::HlsManifest>) -> Self {
+        pub fn hls_manifests(mut self, input: crate::model::HlsManifest) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hls_manifests = Some(v);
             self
         }
@@ -1718,9 +1718,9 @@ pub mod dash_package {
         /// To override the contents of this collection use [`set_dash_manifests`](Self::set_dash_manifests).
         ///
         /// A list of DASH manifest configurations.
-        pub fn dash_manifests(mut self, input: impl Into<crate::model::DashManifest>) -> Self {
+        pub fn dash_manifests(mut self, input: crate::model::DashManifest) -> Self {
             let mut v = self.dash_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dash_manifests = Some(v);
             self
         }
@@ -1766,12 +1766,9 @@ pub mod dash_package {
         /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
         /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
         /// the Asset contains SCTE-35 ad markers.
-        pub fn period_triggers(
-            mut self,
-            input: impl Into<crate::model::PeriodTriggersElement>,
-        ) -> Self {
+        pub fn period_triggers(mut self, input: crate::model::PeriodTriggersElement) -> Self {
             let mut v = self.period_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.period_triggers = Some(v);
             self
         }
@@ -2332,9 +2329,9 @@ pub mod cmaf_package {
         /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
         ///
         /// A list of HLS manifest configurations.
-        pub fn hls_manifests(mut self, input: impl Into<crate::model::HlsManifest>) -> Self {
+        pub fn hls_manifests(mut self, input: crate::model::HlsManifest) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hls_manifests = Some(v);
             self
         }

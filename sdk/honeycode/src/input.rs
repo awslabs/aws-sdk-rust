@@ -57,9 +57,9 @@ pub mod batch_create_table_rows_input {
         /// Note that if one of the column ids in any of the rows in the request does not exist in the table, then the
         /// request fails and no updates are made to the table.
         /// </p>
-        pub fn rows_to_create(mut self, input: impl Into<crate::model::CreateRowData>) -> Self {
+        pub fn rows_to_create(mut self, input: crate::model::CreateRowData) -> Self {
             let mut v = self.rows_to_create.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rows_to_create = Some(v);
             self
         }
@@ -620,9 +620,9 @@ pub mod batch_update_table_rows_input {
         /// Note that if one of the row or column ids in the request does not exist in the table, then the request fails
         /// and no updates are made to the table.
         /// </p>
-        pub fn rows_to_update(mut self, input: impl Into<crate::model::UpdateRowData>) -> Self {
+        pub fn rows_to_update(mut self, input: crate::model::UpdateRowData) -> Self {
             let mut v = self.rows_to_update.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rows_to_update = Some(v);
             self
         }
@@ -906,9 +906,9 @@ pub mod batch_upsert_table_rows_input {
         /// column ids in any of the rows does not exist in the table, then the request fails
         /// and no updates are made to the table.
         /// </p>
-        pub fn rows_to_upsert(mut self, input: impl Into<crate::model::UpsertRowData>) -> Self {
+        pub fn rows_to_upsert(mut self, input: crate::model::UpsertRowData) -> Self {
             let mut v = self.rows_to_upsert.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rows_to_upsert = Some(v);
             self
         }
@@ -1423,10 +1423,10 @@ pub mod get_screen_data_input {
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::VariableValue>,
+            v: crate::model::VariableValue,
         ) -> Self {
             let mut hash_map = self.variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.variables = Some(hash_map);
             self
         }
@@ -1696,10 +1696,10 @@ pub mod invoke_screen_automation_input {
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::VariableValue>,
+            v: crate::model::VariableValue,
         ) -> Self {
             let mut hash_map = self.variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.variables = Some(hash_map);
             self
         }

@@ -263,9 +263,9 @@ pub mod update_simulation_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -505,9 +505,9 @@ pub mod update_robot_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -919,10 +919,10 @@ pub mod sync_deployment_job_output {
         /// <p>Information about the deployment application configurations.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -1544,10 +1544,10 @@ pub mod start_simulation_job_batch_output {
         /// simulation job. Failed requests do not have a simulation job ID. </p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedCreateSimulationJobRequest>,
+            input: crate::model::FailedCreateSimulationJobRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
@@ -1568,12 +1568,9 @@ pub mod start_simulation_job_batch_output {
         ///
         /// <p>A list of pending simulation job requests. These requests have not yet been created into
         /// simulation jobs.</p>
-        pub fn pending_requests(
-            mut self,
-            input: impl Into<crate::model::SimulationJobRequest>,
-        ) -> Self {
+        pub fn pending_requests(mut self, input: crate::model::SimulationJobRequest) -> Self {
             let mut v = self.pending_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_requests = Some(v);
             self
         }
@@ -1591,12 +1588,9 @@ pub mod start_simulation_job_batch_output {
         /// To override the contents of this collection use [`set_created_requests`](Self::set_created_requests).
         ///
         /// <p>A list of created simulation job request summaries.</p>
-        pub fn created_requests(
-            mut self,
-            input: impl Into<crate::model::SimulationJobSummary>,
-        ) -> Self {
+        pub fn created_requests(mut self, input: crate::model::SimulationJobSummary) -> Self {
             let mut v = self.created_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.created_requests = Some(v);
             self
         }
@@ -1814,12 +1808,9 @@ pub mod list_world_templates_output {
         /// To override the contents of this collection use [`set_template_summaries`](Self::set_template_summaries).
         ///
         /// <p>Summary information for templates.</p>
-        pub fn template_summaries(
-            mut self,
-            input: impl Into<crate::model::TemplateSummary>,
-        ) -> Self {
+        pub fn template_summaries(mut self, input: crate::model::TemplateSummary) -> Self {
             let mut v = self.template_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_summaries = Some(v);
             self
         }
@@ -1915,9 +1906,9 @@ pub mod list_worlds_output {
         /// To override the contents of this collection use [`set_world_summaries`](Self::set_world_summaries).
         ///
         /// <p>Summary information for worlds.</p>
-        pub fn world_summaries(mut self, input: impl Into<crate::model::WorldSummary>) -> Self {
+        pub fn world_summaries(mut self, input: crate::model::WorldSummary) -> Self {
             let mut v = self.world_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.world_summaries = Some(v);
             self
         }
@@ -2022,10 +2013,10 @@ pub mod list_world_generation_jobs_output {
         /// <p>Summary information for world generator jobs.</p>
         pub fn world_generation_job_summaries(
             mut self,
-            input: impl Into<crate::model::WorldGenerationJobSummary>,
+            input: crate::model::WorldGenerationJobSummary,
         ) -> Self {
             let mut v = self.world_generation_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.world_generation_job_summaries = Some(v);
             self
         }
@@ -2130,10 +2121,10 @@ pub mod list_world_export_jobs_output {
         /// <p>Summary information for world export jobs.</p>
         pub fn world_export_job_summaries(
             mut self,
-            input: impl Into<crate::model::WorldExportJobSummary>,
+            input: crate::model::WorldExportJobSummary,
         ) -> Self {
             let mut v = self.world_export_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.world_export_job_summaries = Some(v);
             self
         }
@@ -2308,10 +2299,10 @@ pub mod list_simulation_jobs_output {
         /// <p>A list of simulation job summaries that meet the criteria of the request.</p>
         pub fn simulation_job_summaries(
             mut self,
-            input: impl Into<crate::model::SimulationJobSummary>,
+            input: crate::model::SimulationJobSummary,
         ) -> Self {
             let mut v = self.simulation_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_job_summaries = Some(v);
             self
         }
@@ -2416,10 +2407,10 @@ pub mod list_simulation_job_batches_output {
         /// <p>A list of simulation job batch summaries.</p>
         pub fn simulation_job_batch_summaries(
             mut self,
-            input: impl Into<crate::model::SimulationJobBatchSummary>,
+            input: crate::model::SimulationJobBatchSummary,
         ) -> Self {
             let mut v = self.simulation_job_batch_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_job_batch_summaries = Some(v);
             self
         }
@@ -2524,10 +2515,10 @@ pub mod list_simulation_applications_output {
         /// <p>A list of simulation application summaries that meet the criteria of the request.</p>
         pub fn simulation_application_summaries(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationSummary>,
+            input: crate::model::SimulationApplicationSummary,
         ) -> Self {
             let mut v = self.simulation_application_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_application_summaries = Some(v);
             self
         }
@@ -2623,9 +2614,9 @@ pub mod list_robots_output {
         /// To override the contents of this collection use [`set_robots`](Self::set_robots).
         ///
         /// <p>A list of robots that meet the criteria of the request.</p>
-        pub fn robots(mut self, input: impl Into<crate::model::Robot>) -> Self {
+        pub fn robots(mut self, input: crate::model::Robot) -> Self {
             let mut v = self.robots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robots = Some(v);
             self
         }
@@ -2730,10 +2721,10 @@ pub mod list_robot_applications_output {
         /// <p>A list of robot application summaries that meet the criteria of the request.</p>
         pub fn robot_application_summaries(
             mut self,
-            input: impl Into<crate::model::RobotApplicationSummary>,
+            input: crate::model::RobotApplicationSummary,
         ) -> Self {
             let mut v = self.robot_application_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_application_summaries = Some(v);
             self
         }
@@ -2829,9 +2820,9 @@ pub mod list_fleets_output {
         /// To override the contents of this collection use [`set_fleet_details`](Self::set_fleet_details).
         ///
         /// <p>A list of fleet details meeting the request criteria.</p>
-        pub fn fleet_details(mut self, input: impl Into<crate::model::Fleet>) -> Self {
+        pub fn fleet_details(mut self, input: crate::model::Fleet) -> Self {
             let mut v = self.fleet_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_details = Some(v);
             self
         }
@@ -2927,9 +2918,9 @@ pub mod list_deployment_jobs_output {
         /// To override the contents of this collection use [`set_deployment_jobs`](Self::set_deployment_jobs).
         ///
         /// <p>A list of deployment jobs that meet the criteria of the request.</p>
-        pub fn deployment_jobs(mut self, input: impl Into<crate::model::DeploymentJob>) -> Self {
+        pub fn deployment_jobs(mut self, input: crate::model::DeploymentJob) -> Self {
             let mut v = self.deployment_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_jobs = Some(v);
             self
         }
@@ -4907,10 +4898,10 @@ pub mod describe_simulation_job_batch_output {
         /// simulation job. Failed requests do not have a simulation job ID. </p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedCreateSimulationJobRequest>,
+            input: crate::model::FailedCreateSimulationJobRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
@@ -4931,12 +4922,9 @@ pub mod describe_simulation_job_batch_output {
         ///
         /// <p>A list of pending simulation job requests. These requests have not yet been created into
         /// simulation jobs.</p>
-        pub fn pending_requests(
-            mut self,
-            input: impl Into<crate::model::SimulationJobRequest>,
-        ) -> Self {
+        pub fn pending_requests(mut self, input: crate::model::SimulationJobRequest) -> Self {
             let mut v = self.pending_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_requests = Some(v);
             self
         }
@@ -4954,12 +4942,9 @@ pub mod describe_simulation_job_batch_output {
         /// To override the contents of this collection use [`set_created_requests`](Self::set_created_requests).
         ///
         /// <p>A list of created simulation job summaries.</p>
-        pub fn created_requests(
-            mut self,
-            input: impl Into<crate::model::SimulationJobSummary>,
-        ) -> Self {
+        pub fn created_requests(mut self, input: crate::model::SimulationJobSummary) -> Self {
             let mut v = self.created_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.created_requests = Some(v);
             self
         }
@@ -5670,12 +5655,9 @@ pub mod describe_simulation_job_output {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>A list of robot applications.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -5694,10 +5676,10 @@ pub mod describe_simulation_job_output {
         /// <p>A list of simulation applications.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -5714,9 +5696,9 @@ pub mod describe_simulation_job_output {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The data sources for the simulation job.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -5994,9 +5976,9 @@ pub mod describe_simulation_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -6299,9 +6281,9 @@ pub mod describe_robot_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -6802,9 +6784,9 @@ pub mod describe_fleet_output {
         /// To override the contents of this collection use [`set_robots`](Self::set_robots).
         ///
         /// <p>A list of robots.</p>
-        pub fn robots(mut self, input: impl Into<crate::model::Robot>) -> Self {
+        pub fn robots(mut self, input: crate::model::Robot) -> Self {
             let mut v = self.robots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robots = Some(v);
             self
         }
@@ -7085,10 +7067,10 @@ pub mod describe_deployment_job_output {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -7144,12 +7126,9 @@ pub mod describe_deployment_job_output {
         /// To override the contents of this collection use [`set_robot_deployment_summary`](Self::set_robot_deployment_summary).
         ///
         /// <p>A list of robot deployment summaries.</p>
-        pub fn robot_deployment_summary(
-            mut self,
-            input: impl Into<crate::model::RobotDeployment>,
-        ) -> Self {
+        pub fn robot_deployment_summary(mut self, input: crate::model::RobotDeployment) -> Self {
             let mut v = self.robot_deployment_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_deployment_summary = Some(v);
             self
         }
@@ -9143,12 +9122,9 @@ pub mod create_simulation_job_output {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>The robot application used by the simulation job.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -9167,10 +9143,10 @@ pub mod create_simulation_job_output {
         /// <p>The simulation application used by the simulation job.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -9187,9 +9163,9 @@ pub mod create_simulation_job_output {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The data sources for the simulation job.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -9427,9 +9403,9 @@ pub mod create_simulation_application_version_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -9704,9 +9680,9 @@ pub mod create_simulation_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -9974,9 +9950,9 @@ pub mod create_robot_application_version_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -10201,9 +10177,9 @@ pub mod create_robot_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -10896,10 +10872,10 @@ pub mod create_deployment_job_output {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -11323,9 +11299,9 @@ pub mod batch_describe_simulation_job_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of simulation jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::SimulationJob>) -> Self {
+        pub fn jobs(mut self, input: crate::model::SimulationJob) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }

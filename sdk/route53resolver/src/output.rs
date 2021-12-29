@@ -795,9 +795,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -917,9 +917,9 @@ pub mod list_resolver_rules_output {
         /// To override the contents of this collection use [`set_resolver_rules`](Self::set_resolver_rules).
         ///
         /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
-        pub fn resolver_rules(mut self, input: impl Into<crate::model::ResolverRule>) -> Self {
+        pub fn resolver_rules(mut self, input: crate::model::ResolverRule) -> Self {
             let mut v = self.resolver_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_rules = Some(v);
             self
         }
@@ -1038,10 +1038,10 @@ pub mod list_resolver_rule_associations_output {
         /// specified filters, if any.</p>
         pub fn resolver_rule_associations(
             mut self,
-            input: impl Into<crate::model::ResolverRuleAssociation>,
+            input: crate::model::ResolverRuleAssociation,
         ) -> Self {
             let mut v = self.resolver_rule_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_rule_associations = Some(v);
             self
         }
@@ -1191,10 +1191,10 @@ pub mod list_resolver_query_log_configs_output {
         /// values that you specified for <code>Filter</code>.</p>
         pub fn resolver_query_log_configs(
             mut self,
-            input: impl Into<crate::model::ResolverQueryLogConfig>,
+            input: crate::model::ResolverQueryLogConfig,
         ) -> Self {
             let mut v = self.resolver_query_log_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_query_log_configs = Some(v);
             self
         }
@@ -1345,12 +1345,12 @@ pub mod list_resolver_query_log_config_associations_output {
         /// values that you specified for <code>Filter</code>.</p>
         pub fn resolver_query_log_config_associations(
             mut self,
-            input: impl Into<crate::model::ResolverQueryLogConfigAssociation>,
+            input: crate::model::ResolverQueryLogConfigAssociation,
         ) -> Self {
             let mut v = self
                 .resolver_query_log_config_associations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_query_log_config_associations = Some(v);
             self
         }
@@ -1458,12 +1458,9 @@ pub mod list_resolver_endpoints_output {
         /// To override the contents of this collection use [`set_resolver_endpoints`](Self::set_resolver_endpoints).
         ///
         /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-        pub fn resolver_endpoints(
-            mut self,
-            input: impl Into<crate::model::ResolverEndpoint>,
-        ) -> Self {
+        pub fn resolver_endpoints(mut self, input: crate::model::ResolverEndpoint) -> Self {
             let mut v = self.resolver_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_endpoints = Some(v);
             self
         }
@@ -1574,9 +1571,9 @@ pub mod list_resolver_endpoint_ip_addresses_output {
         ///
         /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
         /// DNS queries to (for inbound endpoints).</p>
-        pub fn ip_addresses(mut self, input: impl Into<crate::model::IpAddressResponse>) -> Self {
+        pub fn ip_addresses(mut self, input: crate::model::IpAddressResponse) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_addresses = Some(v);
             self
         }
@@ -1690,10 +1687,10 @@ pub mod list_resolver_dnssec_configs_output {
         /// for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
         pub fn resolver_dnssec_configs(
             mut self,
-            input: impl Into<crate::model::ResolverDnssecConfig>,
+            input: crate::model::ResolverDnssecConfig,
         ) -> Self {
             let mut v = self.resolver_dnssec_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_dnssec_configs = Some(v);
             self
         }
@@ -1803,9 +1800,9 @@ pub mod list_resolver_configs_output {
         ///
         /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
         /// with the current Amazon Web Services account.</p>
-        pub fn resolver_configs(mut self, input: impl Into<crate::model::ResolverConfig>) -> Self {
+        pub fn resolver_configs(mut self, input: crate::model::ResolverConfig) -> Self {
             let mut v = self.resolver_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_configs = Some(v);
             self
         }
@@ -1896,9 +1893,9 @@ pub mod list_firewall_rules_output {
         /// <p>A list of the rules that you have defined.  </p>
         /// <p>This might be a partial list of the firewall rules that you've defined. For information,
         /// see <code>MaxResults</code>. </p>
-        pub fn firewall_rules(mut self, input: impl Into<crate::model::FirewallRule>) -> Self {
+        pub fn firewall_rules(mut self, input: crate::model::FirewallRule) -> Self {
             let mut v = self.firewall_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_rules = Some(v);
             self
         }
@@ -1993,10 +1990,10 @@ pub mod list_firewall_rule_groups_output {
         /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
         pub fn firewall_rule_groups(
             mut self,
-            input: impl Into<crate::model::FirewallRuleGroupMetadata>,
+            input: crate::model::FirewallRuleGroupMetadata,
         ) -> Self {
             let mut v = self.firewall_rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_rule_groups = Some(v);
             self
         }
@@ -2093,10 +2090,10 @@ pub mod list_firewall_rule_group_associations_output {
         /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
         pub fn firewall_rule_group_associations(
             mut self,
-            input: impl Into<crate::model::FirewallRuleGroupAssociation>,
+            input: crate::model::FirewallRuleGroupAssociation,
         ) -> Self {
             let mut v = self.firewall_rule_group_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_rule_group_associations = Some(v);
             self
         }
@@ -2287,10 +2284,10 @@ pub mod list_firewall_domain_lists_output {
         /// see <code>MaxResults</code>. </p>
         pub fn firewall_domain_lists(
             mut self,
-            input: impl Into<crate::model::FirewallDomainListMetadata>,
+            input: crate::model::FirewallDomainListMetadata,
         ) -> Self {
             let mut v = self.firewall_domain_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_domain_lists = Some(v);
             self
         }
@@ -2380,9 +2377,9 @@ pub mod list_firewall_configs_output {
         ///
         /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from
         /// Amazon Virtual Private Cloud (Amazon VPC). </p>
-        pub fn firewall_configs(mut self, input: impl Into<crate::model::FirewallConfig>) -> Self {
+        pub fn firewall_configs(mut self, input: crate::model::FirewallConfig) -> Self {
             let mut v = self.firewall_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_configs = Some(v);
             self
         }

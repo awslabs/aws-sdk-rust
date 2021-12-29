@@ -612,9 +612,9 @@ pub mod create_connector_definition_version_input {
         /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
         ///
         /// A list of references to connectors in this version, with their corresponding configuration settings.
-        pub fn connectors(mut self, input: impl Into<crate::model::Connector>) -> Self {
+        pub fn connectors(mut self, input: crate::model::Connector) -> Self {
             let mut v = self.connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connectors = Some(v);
             self
         }
@@ -1081,9 +1081,9 @@ pub mod create_core_definition_version_input {
         /// To override the contents of this collection use [`set_cores`](Self::set_cores).
         ///
         /// A list of cores in the core definition version.
-        pub fn cores(mut self, input: impl Into<crate::model::Core>) -> Self {
+        pub fn cores(mut self, input: crate::model::Core) -> Self {
             let mut v = self.cores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cores = Some(v);
             self
         }
@@ -1802,9 +1802,9 @@ pub mod create_device_definition_version_input {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// A list of devices in the definition version.
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -2286,9 +2286,9 @@ pub mod create_function_definition_version_input {
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
         /// A list of Lambda functions in this function definition version.
-        pub fn functions(mut self, input: impl Into<crate::model::Function>) -> Self {
+        pub fn functions(mut self, input: crate::model::Function) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.functions = Some(v);
             self
         }
@@ -3517,9 +3517,9 @@ pub mod create_logger_definition_version_input {
         /// To override the contents of this collection use [`set_loggers`](Self::set_loggers).
         ///
         /// A list of loggers.
-        pub fn loggers(mut self, input: impl Into<crate::model::Logger>) -> Self {
+        pub fn loggers(mut self, input: crate::model::Logger) -> Self {
             let mut v = self.loggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.loggers = Some(v);
             self
         }
@@ -3987,9 +3987,9 @@ pub mod create_resource_definition_version_input {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of resources.
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -4745,9 +4745,9 @@ pub mod create_subscription_definition_version_input {
         /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
         ///
         /// A list of subscriptions.
-        pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
+        pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscriptions = Some(v);
             self
         }
@@ -15419,12 +15419,9 @@ pub mod update_connectivity_info_input {
         /// To override the contents of this collection use [`set_connectivity_info`](Self::set_connectivity_info).
         ///
         /// A list of connectivity info.
-        pub fn connectivity_info(
-            mut self,
-            input: impl Into<crate::model::ConnectivityInfo>,
-        ) -> Self {
+        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
             let mut v = self.connectivity_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connectivity_info = Some(v);
             self
         }

@@ -926,11 +926,11 @@ pub mod problem {
         /// <p>Feedback provided by the user about the problem.</p>
         pub fn feedback(
             mut self,
-            k: impl Into<crate::model::FeedbackKey>,
-            v: impl Into<crate::model::FeedbackValue>,
+            k: crate::model::FeedbackKey,
+            v: crate::model::FeedbackValue,
         ) -> Self {
             let mut hash_map = self.feedback.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.feedback = Some(hash_map);
             self
         }
@@ -1765,11 +1765,11 @@ pub mod application_component {
         /// </p>
         pub fn detected_workload(
             mut self,
-            k: impl Into<crate::model::Tier>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            k: crate::model::Tier,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.detected_workload.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.detected_workload = Some(hash_map);
             self
         }
@@ -1898,9 +1898,9 @@ pub mod related_observations {
         /// To override the contents of this collection use [`set_observation_list`](Self::set_observation_list).
         ///
         /// <p>The list of observations related to the problem.</p>
-        pub fn observation_list(mut self, input: impl Into<crate::model::Observation>) -> Self {
+        pub fn observation_list(mut self, input: crate::model::Observation) -> Self {
             let mut v = self.observation_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.observation_list = Some(v);
             self
         }

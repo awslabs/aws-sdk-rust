@@ -598,9 +598,9 @@ pub mod list_web_ac_ls_output {
         /// To override the contents of this collection use [`set_web_ac_ls`](Self::set_web_ac_ls).
         ///
         /// <p></p>
-        pub fn web_ac_ls(mut self, input: impl Into<crate::model::WebAclSummary>) -> Self {
+        pub fn web_ac_ls(mut self, input: crate::model::WebAclSummary) -> Self {
             let mut v = self.web_ac_ls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.web_ac_ls = Some(v);
             self
         }
@@ -772,9 +772,9 @@ pub mod list_rule_groups_output {
         /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
         ///
         /// <p></p>
-        pub fn rule_groups(mut self, input: impl Into<crate::model::RuleGroupSummary>) -> Self {
+        pub fn rule_groups(mut self, input: crate::model::RuleGroupSummary) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_groups = Some(v);
             self
         }
@@ -929,12 +929,9 @@ pub mod list_regex_pattern_sets_output {
         /// To override the contents of this collection use [`set_regex_pattern_sets`](Self::set_regex_pattern_sets).
         ///
         /// <p></p>
-        pub fn regex_pattern_sets(
-            mut self,
-            input: impl Into<crate::model::RegexPatternSetSummary>,
-        ) -> Self {
+        pub fn regex_pattern_sets(mut self, input: crate::model::RegexPatternSetSummary) -> Self {
             let mut v = self.regex_pattern_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regex_pattern_sets = Some(v);
             self
         }
@@ -1023,12 +1020,9 @@ pub mod list_managed_rule_sets_output {
         /// To override the contents of this collection use [`set_managed_rule_sets`](Self::set_managed_rule_sets).
         ///
         /// <p>Your managed rule sets. </p>
-        pub fn managed_rule_sets(
-            mut self,
-            input: impl Into<crate::model::ManagedRuleSetSummary>,
-        ) -> Self {
+        pub fn managed_rule_sets(mut self, input: crate::model::ManagedRuleSetSummary) -> Self {
             let mut v = self.managed_rule_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_rule_sets = Some(v);
             self
         }
@@ -1106,12 +1100,9 @@ pub mod list_logging_configurations_output {
         /// To override the contents of this collection use [`set_logging_configurations`](Self::set_logging_configurations).
         ///
         /// <p></p>
-        pub fn logging_configurations(
-            mut self,
-            input: impl Into<crate::model::LoggingConfiguration>,
-        ) -> Self {
+        pub fn logging_configurations(mut self, input: crate::model::LoggingConfiguration) -> Self {
             let mut v = self.logging_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.logging_configurations = Some(v);
             self
         }
@@ -1216,9 +1207,9 @@ pub mod list_ip_sets_output {
         ///
         /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the
         /// <code>Limit</code> specification for this request.</p>
-        pub fn ip_sets(mut self, input: impl Into<crate::model::IpSetSummary>) -> Self {
+        pub fn ip_sets(mut self, input: crate::model::IpSetSummary) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_sets = Some(v);
             self
         }
@@ -1308,9 +1299,9 @@ pub mod list_available_managed_rule_group_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// <p>The versions that are currently available for the specified managed rule group. </p>
-        pub fn versions(mut self, input: impl Into<crate::model::ManagedRuleGroupVersion>) -> Self {
+        pub fn versions(mut self, input: crate::model::ManagedRuleGroupVersion) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -1402,12 +1393,9 @@ pub mod list_available_managed_rule_groups_output {
         /// To override the contents of this collection use [`set_managed_rule_groups`](Self::set_managed_rule_groups).
         ///
         /// <p></p>
-        pub fn managed_rule_groups(
-            mut self,
-            input: impl Into<crate::model::ManagedRuleGroupSummary>,
-        ) -> Self {
+        pub fn managed_rule_groups(mut self, input: crate::model::ManagedRuleGroupSummary) -> Self {
             let mut v = self.managed_rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_rule_groups = Some(v);
             self
         }
@@ -1638,12 +1626,9 @@ pub mod get_sampled_requests_output {
         ///
         /// <p>A complex type that contains detailed information about each of the requests in the
         /// sample.</p>
-        pub fn sampled_requests(
-            mut self,
-            input: impl Into<crate::model::SampledHttpRequest>,
-        ) -> Self {
+        pub fn sampled_requests(mut self, input: crate::model::SampledHttpRequest) -> Self {
             let mut v = self.sampled_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampled_requests = Some(v);
             self
         }
@@ -2420,9 +2405,9 @@ pub mod describe_managed_rule_group_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p></p>
-        pub fn rules(mut self, input: impl Into<crate::model::RuleSummary>) -> Self {
+        pub fn rules(mut self, input: crate::model::RuleSummary) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -2480,9 +2465,9 @@ pub mod describe_managed_rule_group_output {
         /// To override the contents of this collection use [`set_available_labels`](Self::set_available_labels).
         ///
         /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
-        pub fn available_labels(mut self, input: impl Into<crate::model::LabelSummary>) -> Self {
+        pub fn available_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.available_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.available_labels = Some(v);
             self
         }
@@ -2499,9 +2484,9 @@ pub mod describe_managed_rule_group_output {
         /// To override the contents of this collection use [`set_consumed_labels`](Self::set_consumed_labels).
         ///
         /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
-        pub fn consumed_labels(mut self, input: impl Into<crate::model::LabelSummary>) -> Self {
+        pub fn consumed_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.consumed_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_labels = Some(v);
             self
         }

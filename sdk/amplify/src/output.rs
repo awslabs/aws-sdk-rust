@@ -495,9 +495,9 @@ pub mod list_webhooks_output {
         /// To override the contents of this collection use [`set_webhooks`](Self::set_webhooks).
         ///
         /// <p> A list of webhooks. </p>
-        pub fn webhooks(mut self, input: impl Into<crate::model::Webhook>) -> Self {
+        pub fn webhooks(mut self, input: crate::model::Webhook) -> Self {
             let mut v = self.webhooks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.webhooks = Some(v);
             self
         }
@@ -654,9 +654,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_job_summaries`](Self::set_job_summaries).
         ///
         /// <p> The result structure for the list job result request. </p>
-        pub fn job_summaries(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
+        pub fn job_summaries(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_summaries = Some(v);
             self
         }
@@ -741,12 +741,9 @@ pub mod list_domain_associations_output {
         /// To override the contents of this collection use [`set_domain_associations`](Self::set_domain_associations).
         ///
         /// <p> A list of domain associations. </p>
-        pub fn domain_associations(
-            mut self,
-            input: impl Into<crate::model::DomainAssociation>,
-        ) -> Self {
+        pub fn domain_associations(mut self, input: crate::model::DomainAssociation) -> Self {
             let mut v = self.domain_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_associations = Some(v);
             self
         }
@@ -830,9 +827,9 @@ pub mod list_branches_output {
         /// To override the contents of this collection use [`set_branches`](Self::set_branches).
         ///
         /// <p> A list of branches for an Amplify app. </p>
-        pub fn branches(mut self, input: impl Into<crate::model::Branch>) -> Self {
+        pub fn branches(mut self, input: crate::model::Branch) -> Self {
             let mut v = self.branches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.branches = Some(v);
             self
         }
@@ -917,12 +914,9 @@ pub mod list_backend_environments_output {
         /// To override the contents of this collection use [`set_backend_environments`](Self::set_backend_environments).
         ///
         /// <p> The list of backend environments for an Amplify app. </p>
-        pub fn backend_environments(
-            mut self,
-            input: impl Into<crate::model::BackendEnvironment>,
-        ) -> Self {
+        pub fn backend_environments(mut self, input: crate::model::BackendEnvironment) -> Self {
             let mut v = self.backend_environments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backend_environments = Some(v);
             self
         }
@@ -1006,9 +1000,9 @@ pub mod list_artifacts_output {
         /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
         ///
         /// <p> A list of artifacts. </p>
-        pub fn artifacts(mut self, input: impl Into<crate::model::Artifact>) -> Self {
+        pub fn artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.artifacts = Some(v);
             self
         }
@@ -1094,9 +1088,9 @@ pub mod list_apps_output {
         /// To override the contents of this collection use [`set_apps`](Self::set_apps).
         ///
         /// <p> A list of Amplify apps. </p>
-        pub fn apps(mut self, input: impl Into<crate::model::App>) -> Self {
+        pub fn apps(mut self, input: crate::model::App) -> Self {
             let mut v = self.apps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.apps = Some(v);
             self
         }

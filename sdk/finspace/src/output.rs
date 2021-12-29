@@ -233,9 +233,9 @@ pub mod list_environments_output {
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
         /// <p>A list of all of your FinSpace environments.</p>
-        pub fn environments(mut self, input: impl Into<crate::model::Environment>) -> Self {
+        pub fn environments(mut self, input: crate::model::Environment) -> Self {
             let mut v = self.environments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environments = Some(v);
             self
         }

@@ -1273,9 +1273,9 @@ pub mod cloud_watch_alarm_configuration {
         /// For information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a>
         /// in the <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -2794,9 +2794,9 @@ pub mod health_check_config {
         /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks
         /// from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with
         /// four different regions). </p>
-        pub fn regions(mut self, input: impl Into<crate::model::HealthCheckRegion>) -> Self {
+        pub fn regions(mut self, input: crate::model::HealthCheckRegion) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions = Some(v);
             self
         }
@@ -4045,9 +4045,9 @@ pub mod resource_tag_set {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6090,9 +6090,9 @@ pub mod resource_record_set {
         /// <note>
         /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
         /// </note>
-        pub fn resource_records(mut self, input: impl Into<crate::model::ResourceRecord>) -> Self {
+        pub fn resource_records(mut self, input: crate::model::ResourceRecord) -> Self {
             let mut v = self.resource_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_records = Some(v);
             self
         }
@@ -10864,9 +10864,9 @@ pub mod change_batch {
         /// To override the contents of this collection use [`set_changes`](Self::set_changes).
         ///
         /// <p>Information about the changes to make to the record sets.</p>
-        pub fn changes(mut self, input: impl Into<crate::model::Change>) -> Self {
+        pub fn changes(mut self, input: crate::model::Change) -> Self {
             let mut v = self.changes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.changes = Some(v);
             self
         }

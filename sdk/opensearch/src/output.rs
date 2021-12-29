@@ -790,9 +790,9 @@ pub mod list_tags_output {
         ///
         /// <p>List of <code>Tag</code> for the requested domain.
         /// </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -880,10 +880,10 @@ pub mod list_packages_for_domain_output {
         /// </p>
         pub fn domain_package_details_list(
             mut self,
-            input: impl Into<crate::model::DomainPackageDetails>,
+            input: crate::model::DomainPackageDetails,
         ) -> Self {
             let mut v = self.domain_package_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_package_details_list = Some(v);
             self
         }
@@ -973,12 +973,9 @@ pub mod list_instance_type_details_output {
         ///
         /// To override the contents of this collection use [`set_instance_type_details`](Self::set_instance_type_details).
         ///
-        pub fn instance_type_details(
-            mut self,
-            input: impl Into<crate::model::InstanceTypeDetails>,
-        ) -> Self {
+        pub fn instance_type_details(mut self, input: crate::model::InstanceTypeDetails) -> Self {
             let mut v = self.instance_type_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_type_details = Some(v);
             self
         }
@@ -1082,10 +1079,10 @@ pub mod list_domains_for_package_output {
         /// </p>
         pub fn domain_package_details_list(
             mut self,
-            input: impl Into<crate::model::DomainPackageDetails>,
+            input: crate::model::DomainPackageDetails,
         ) -> Self {
             let mut v = self.domain_package_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_package_details_list = Some(v);
             self
         }
@@ -1158,9 +1155,9 @@ pub mod list_domain_names_output {
         /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
         ///
         /// <p>List of domain names and respective engine types.</p>
-        pub fn domain_names(mut self, input: impl Into<crate::model::DomainInfo>) -> Self {
+        pub fn domain_names(mut self, input: crate::model::DomainInfo) -> Self {
             let mut v = self.domain_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_names = Some(v);
             self
         }
@@ -1446,9 +1443,9 @@ pub mod get_upgrade_history_output {
         /// </code>
         /// object.
         /// </p>
-        pub fn upgrade_histories(mut self, input: impl Into<crate::model::UpgradeHistory>) -> Self {
+        pub fn upgrade_histories(mut self, input: crate::model::UpgradeHistory) -> Self {
             let mut v = self.upgrade_histories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upgrade_histories = Some(v);
             self
         }
@@ -1574,10 +1571,10 @@ pub mod get_package_version_history_output {
         /// </p>
         pub fn package_version_history_list(
             mut self,
-            input: impl Into<crate::model::PackageVersionHistory>,
+            input: crate::model::PackageVersionHistory,
         ) -> Self {
             let mut v = self.package_version_history_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.package_version_history_list = Some(v);
             self
         }
@@ -1679,12 +1676,9 @@ pub mod get_compatible_versions_output {
         /// </code>
         /// operation.
         /// </p>
-        pub fn compatible_versions(
-            mut self,
-            input: impl Into<crate::model::CompatibleVersionsMap>,
-        ) -> Self {
+        pub fn compatible_versions(mut self, input: crate::model::CompatibleVersionsMap) -> Self {
             let mut v = self.compatible_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_versions = Some(v);
             self
         }
@@ -1845,12 +1839,9 @@ pub mod describe_reserved_instances_output {
         /// To override the contents of this collection use [`set_reserved_instances`](Self::set_reserved_instances).
         ///
         /// <p>List of reserved OpenSearch instances.</p>
-        pub fn reserved_instances(
-            mut self,
-            input: impl Into<crate::model::ReservedInstance>,
-        ) -> Self {
+        pub fn reserved_instances(mut self, input: crate::model::ReservedInstance) -> Self {
             let mut v = self.reserved_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances = Some(v);
             self
         }
@@ -1941,10 +1932,10 @@ pub mod describe_reserved_instance_offerings_output {
         /// <p>List of reserved OpenSearch instance offerings</p>
         pub fn reserved_instance_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedInstanceOffering>,
+            input: crate::model::ReservedInstanceOffering,
         ) -> Self {
             let mut v = self.reserved_instance_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instance_offerings = Some(v);
             self
         }
@@ -2024,12 +2015,9 @@ pub mod describe_packages_output {
         ///
         /// <p>List of <code>PackageDetails</code> objects.
         /// </p>
-        pub fn package_details_list(
-            mut self,
-            input: impl Into<crate::model::PackageDetails>,
-        ) -> Self {
+        pub fn package_details_list(mut self, input: crate::model::PackageDetails) -> Self {
             let mut v = self.package_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.package_details_list = Some(v);
             self
         }
@@ -2135,9 +2123,9 @@ pub mod describe_outbound_connections_output {
         /// </code>
         /// matching the specified filter criteria.
         /// </p>
-        pub fn connections(mut self, input: impl Into<crate::model::OutboundConnection>) -> Self {
+        pub fn connections(mut self, input: crate::model::OutboundConnection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -2260,10 +2248,10 @@ pub mod describe_instance_type_limits_output {
         pub fn limits_by_role(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Limits>,
+            v: crate::model::Limits,
         ) -> Self {
             let mut hash_map = self.limits_by_role.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.limits_by_role = Some(hash_map);
             self
         }
@@ -2367,9 +2355,9 @@ pub mod describe_inbound_connections_output {
         /// </code>
         /// matching the specified filter criteria.
         /// </p>
-        pub fn connections(mut self, input: impl Into<crate::model::InboundConnection>) -> Self {
+        pub fn connections(mut self, input: crate::model::InboundConnection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -2456,9 +2444,9 @@ pub mod describe_domains_output {
         ///
         /// <p>The status of the domains requested in the <code>DescribeDomains</code> request.
         /// </p>
-        pub fn domain_status_list(mut self, input: impl Into<crate::model::DomainStatus>) -> Self {
+        pub fn domain_status_list(mut self, input: crate::model::DomainStatus) -> Self {
             let mut v = self.domain_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_status_list = Some(v);
             self
         }
@@ -2603,9 +2591,9 @@ pub mod describe_domain_auto_tunes_output {
         /// Auto-Tune for Amazon OpenSearch Service
         /// </a> for more information.
         /// </p>
-        pub fn auto_tunes(mut self, input: impl Into<crate::model::AutoTune>) -> Self {
+        pub fn auto_tunes(mut self, input: crate::model::AutoTune) -> Self {
             let mut v = self.auto_tunes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_tunes = Some(v);
             self
         }

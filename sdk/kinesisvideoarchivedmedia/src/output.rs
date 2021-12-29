@@ -48,9 +48,9 @@ pub mod list_fragments_output {
         ///
         /// <p>A list of archived <a>Fragment</a> objects from the stream that meet the
         /// selector criteria. Results are in no specific order, even across pages.</p>
-        pub fn fragments(mut self, input: impl Into<crate::model::Fragment>) -> Self {
+        pub fn fragments(mut self, input: crate::model::Fragment) -> Self {
             let mut v = self.fragments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fragments = Some(v);
             self
         }

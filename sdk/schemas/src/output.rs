@@ -819,9 +819,9 @@ pub mod search_schemas_output {
         /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
         ///
         /// <p>An array of SearchSchemaSummary information.</p>
-        pub fn schemas(mut self, input: impl Into<crate::model::SearchSchemaSummary>) -> Self {
+        pub fn schemas(mut self, input: crate::model::SearchSchemaSummary) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schemas = Some(v);
             self
         }
@@ -1171,12 +1171,9 @@ pub mod list_schema_versions_output {
         /// To override the contents of this collection use [`set_schema_versions`](Self::set_schema_versions).
         ///
         /// <p>An array of schema version summaries.</p>
-        pub fn schema_versions(
-            mut self,
-            input: impl Into<crate::model::SchemaVersionSummary>,
-        ) -> Self {
+        pub fn schema_versions(mut self, input: crate::model::SchemaVersionSummary) -> Self {
             let mut v = self.schema_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_versions = Some(v);
             self
         }
@@ -1256,9 +1253,9 @@ pub mod list_schemas_output {
         /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
         ///
         /// <p>An array of schema summaries.</p>
-        pub fn schemas(mut self, input: impl Into<crate::model::SchemaSummary>) -> Self {
+        pub fn schemas(mut self, input: crate::model::SchemaSummary) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schemas = Some(v);
             self
         }
@@ -1338,9 +1335,9 @@ pub mod list_registries_output {
         /// To override the contents of this collection use [`set_registries`](Self::set_registries).
         ///
         /// <p>An array of registry summaries.</p>
-        pub fn registries(mut self, input: impl Into<crate::model::RegistrySummary>) -> Self {
+        pub fn registries(mut self, input: crate::model::RegistrySummary) -> Self {
             let mut v = self.registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.registries = Some(v);
             self
         }
@@ -1410,9 +1407,9 @@ pub mod list_discoverers_output {
         /// To override the contents of this collection use [`set_discoverers`](Self::set_discoverers).
         ///
         /// <p>An array of DiscovererSummary information.</p>
-        pub fn discoverers(mut self, input: impl Into<crate::model::DiscovererSummary>) -> Self {
+        pub fn discoverers(mut self, input: crate::model::DiscovererSummary) -> Self {
             let mut v = self.discoverers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.discoverers = Some(v);
             self
         }

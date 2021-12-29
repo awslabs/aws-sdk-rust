@@ -17,10 +17,10 @@ pub mod batch_acknowledge_alarm_input {
         /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
         pub fn acknowledge_action_requests(
             mut self,
-            input: impl Into<crate::model::AcknowledgeAlarmActionRequest>,
+            input: crate::model::AcknowledgeAlarmActionRequest,
         ) -> Self {
             let mut v = self.acknowledge_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.acknowledge_action_requests = Some(v);
             self
         }
@@ -181,10 +181,10 @@ pub mod batch_disable_alarm_input {
         /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
         pub fn disable_action_requests(
             mut self,
-            input: impl Into<crate::model::DisableAlarmActionRequest>,
+            input: crate::model::DisableAlarmActionRequest,
         ) -> Self {
             let mut v = self.disable_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disable_action_requests = Some(v);
             self
         }
@@ -343,10 +343,10 @@ pub mod batch_enable_alarm_input {
         /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
         pub fn enable_action_requests(
             mut self,
-            input: impl Into<crate::model::EnableAlarmActionRequest>,
+            input: crate::model::EnableAlarmActionRequest,
         ) -> Self {
             let mut v = self.enable_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enable_action_requests = Some(v);
             self
         }
@@ -504,9 +504,9 @@ pub mod batch_put_message_input {
         /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
         /// "string", "inputName": "string", "payload": "string"}'</code>
         /// </p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -667,10 +667,10 @@ pub mod batch_reset_alarm_input {
         /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
         pub fn reset_action_requests(
             mut self,
-            input: impl Into<crate::model::ResetAlarmActionRequest>,
+            input: crate::model::ResetAlarmActionRequest,
         ) -> Self {
             let mut v = self.reset_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reset_action_requests = Some(v);
             self
         }
@@ -829,10 +829,10 @@ pub mod batch_snooze_alarm_input {
         /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
         pub fn snooze_action_requests(
             mut self,
-            input: impl Into<crate::model::SnoozeAlarmActionRequest>,
+            input: crate::model::SnoozeAlarmActionRequest,
         ) -> Self {
             let mut v = self.snooze_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snooze_action_requests = Some(v);
             self
         }
@@ -989,9 +989,9 @@ pub mod batch_update_detector_input {
         /// To override the contents of this collection use [`set_detectors`](Self::set_detectors).
         ///
         /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-        pub fn detectors(mut self, input: impl Into<crate::model::UpdateDetectorRequest>) -> Self {
+        pub fn detectors(mut self, input: crate::model::UpdateDetectorRequest) -> Self {
             let mut v = self.detectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detectors = Some(v);
             self
         }

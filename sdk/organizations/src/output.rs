@@ -319,9 +319,9 @@ pub mod list_targets_for_policy_output {
         ///
         /// <p>A list of structures, each of which contains details about one of the entities to
         /// which the specified policy is attached.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::PolicyTargetSummary>) -> Self {
+        pub fn targets(mut self, input: crate::model::PolicyTargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -414,9 +414,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -508,9 +508,9 @@ pub mod list_roots_output {
         /// To override the contents of this collection use [`set_roots`](Self::set_roots).
         ///
         /// <p>A list of roots that are defined in an organization.</p>
-        pub fn roots(mut self, input: impl Into<crate::model::Root>) -> Self {
+        pub fn roots(mut self, input: crate::model::Root) -> Self {
             let mut v = self.roots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roots = Some(v);
             self
         }
@@ -602,9 +602,9 @@ pub mod list_policies_for_target_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>The list of policies that match the criteria in the request.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::PolicySummary>) -> Self {
+        pub fn policies(mut self, input: crate::model::PolicySummary) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -699,9 +699,9 @@ pub mod list_policies_output {
         ///
         /// <p>A list of policies that match the filter criteria in the request. The output list
         /// doesn't include the policy contents. To see the content for a policy, see <a>DescribePolicy</a>.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::PolicySummary>) -> Self {
+        pub fn policies(mut self, input: crate::model::PolicySummary) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -794,9 +794,9 @@ pub mod list_parents_output {
         /// To override the contents of this collection use [`set_parents`](Self::set_parents).
         ///
         /// <p>A list of parents for the specified child account or OU.</p>
-        pub fn parents(mut self, input: impl Into<crate::model::Parent>) -> Self {
+        pub fn parents(mut self, input: crate::model::Parent) -> Self {
             let mut v = self.parents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parents = Some(v);
             self
         }
@@ -889,12 +889,9 @@ pub mod list_organizational_units_for_parent_output {
         /// To override the contents of this collection use [`set_organizational_units`](Self::set_organizational_units).
         ///
         /// <p>A list of the OUs in the specified root or parent OU.</p>
-        pub fn organizational_units(
-            mut self,
-            input: impl Into<crate::model::OrganizationalUnit>,
-        ) -> Self {
+        pub fn organizational_units(mut self, input: crate::model::OrganizationalUnit) -> Self {
             let mut v = self.organizational_units.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organizational_units = Some(v);
             self
         }
@@ -989,9 +986,9 @@ pub mod list_handshakes_for_organization_output {
         ///
         /// <p>A list of <a>Handshake</a> objects with details about each of the
         /// handshakes that are associated with an organization.</p>
-        pub fn handshakes(mut self, input: impl Into<crate::model::Handshake>) -> Self {
+        pub fn handshakes(mut self, input: crate::model::Handshake) -> Self {
             let mut v = self.handshakes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.handshakes = Some(v);
             self
         }
@@ -1087,9 +1084,9 @@ pub mod list_handshakes_for_account_output {
         ///
         /// <p>A list of <a>Handshake</a> objects with details about each of the
         /// handshakes that is associated with the specified account.</p>
-        pub fn handshakes(mut self, input: impl Into<crate::model::Handshake>) -> Self {
+        pub fn handshakes(mut self, input: crate::model::Handshake) -> Self {
             let mut v = self.handshakes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.handshakes = Some(v);
             self
         }
@@ -1183,12 +1180,9 @@ pub mod list_delegated_services_for_account_output {
         /// To override the contents of this collection use [`set_delegated_services`](Self::set_delegated_services).
         ///
         /// <p>The services for which the account is a delegated administrator.</p>
-        pub fn delegated_services(
-            mut self,
-            input: impl Into<crate::model::DelegatedService>,
-        ) -> Self {
+        pub fn delegated_services(mut self, input: crate::model::DelegatedService) -> Self {
             let mut v = self.delegated_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegated_services = Some(v);
             self
         }
@@ -1286,10 +1280,10 @@ pub mod list_delegated_administrators_output {
         /// <p>The list of delegated administrators in your organization.</p>
         pub fn delegated_administrators(
             mut self,
-            input: impl Into<crate::model::DelegatedAdministrator>,
+            input: crate::model::DelegatedAdministrator,
         ) -> Self {
             let mut v = self.delegated_administrators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegated_administrators = Some(v);
             self
         }
@@ -1391,12 +1385,9 @@ pub mod list_create_account_status_output {
         /// <p>A list of objects with details about the requests. Certain elements, such as the
         /// accountId number, are present in the output only after the account has been successfully
         /// created.</p>
-        pub fn create_account_statuses(
-            mut self,
-            input: impl Into<crate::model::CreateAccountStatus>,
-        ) -> Self {
+        pub fn create_account_statuses(mut self, input: crate::model::CreateAccountStatus) -> Self {
             let mut v = self.create_account_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_account_statuses = Some(v);
             self
         }
@@ -1490,9 +1481,9 @@ pub mod list_children_output {
         /// To override the contents of this collection use [`set_children`](Self::set_children).
         ///
         /// <p>The list of children of the specified parent container.</p>
-        pub fn children(mut self, input: impl Into<crate::model::Child>) -> Self {
+        pub fn children(mut self, input: crate::model::Child) -> Self {
             let mut v = self.children.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.children = Some(v);
             self
         }
@@ -1599,10 +1590,10 @@ pub mod list_aws_service_access_for_organization_output {
         /// that it was enabled for integration with AWS Organizations.</p>
         pub fn enabled_service_principals(
             mut self,
-            input: impl Into<crate::model::EnabledServicePrincipal>,
+            input: crate::model::EnabledServicePrincipal,
         ) -> Self {
             let mut v = self.enabled_service_principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enabled_service_principals = Some(v);
             self
         }
@@ -1696,9 +1687,9 @@ pub mod list_accounts_for_parent_output {
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
         /// <p>A list of the accounts in the specified root or OU.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::Account>) -> Self {
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }
@@ -1790,9 +1781,9 @@ pub mod list_accounts_output {
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
         /// <p>A list of objects in the organization.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::Account>) -> Self {
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }

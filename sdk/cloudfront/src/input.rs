@@ -2180,9 +2180,9 @@ pub mod create_realtime_log_config_input {
         ///
         /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
         /// log data.</p>
-        pub fn end_points(mut self, input: impl Into<crate::model::EndPoint>) -> Self {
+        pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
             let mut v = self.end_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_points = Some(v);
             self
         }
@@ -16090,9 +16090,9 @@ pub mod update_realtime_log_config_input {
         ///
         /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
         /// log data.</p>
-        pub fn end_points(mut self, input: impl Into<crate::model::EndPoint>) -> Self {
+        pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
             let mut v = self.end_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_points = Some(v);
             self
         }

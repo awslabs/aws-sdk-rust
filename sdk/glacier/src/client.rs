@@ -406,8 +406,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -420,8 +420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -430,8 +430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upload ID of the multipart upload to delete.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>The upload ID of the multipart upload to delete.</p>
@@ -517,8 +517,8 @@ pub mod fluent_builders {
         /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
         /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
         /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
@@ -531,8 +531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -610,8 +610,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -624,8 +624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -644,7 +644,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the vault. Each tag is composed of a key and a value. The value
@@ -760,8 +760,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -774,8 +774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -784,8 +784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upload ID of the multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>The upload ID of the multipart upload.</p>
@@ -795,8 +795,8 @@ pub mod fluent_builders {
         }
         /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all
         /// the sizes of the individual parts that you uploaded.</p>
-        pub fn archive_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.archive_size(inp);
+        pub fn archive_size(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.archive_size(signature.into());
             self
         }
         /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all
@@ -809,8 +809,8 @@ pub mod fluent_builders {
         /// of the individual parts. If the value you specify in the request does not match the SHA256
         /// tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier),
         /// Glacier returns an error and the request fails.</p>
-        pub fn checksum(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(inp);
+        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(signature.into());
             self
         }
         /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash
@@ -899,8 +899,8 @@ pub mod fluent_builders {
         /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
         /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
         /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
@@ -913,8 +913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -923,8 +923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>lockId</code> value is the lock ID obtained from a <a>InitiateVaultLock</a> request.</p>
-        pub fn lock_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_id(inp);
+        pub fn lock_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_id(signature.into());
             self
         }
         /// <p>The <code>lockId</code> value is the lock ID obtained from a <a>InitiateVaultLock</a> request.</p>
@@ -1020,8 +1020,8 @@ pub mod fluent_builders {
         /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
         /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
         /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
@@ -1034,8 +1034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -1134,8 +1134,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -1148,8 +1148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -1158,8 +1158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the archive to delete.</p>
-        pub fn archive_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.archive_id(inp);
+        pub fn archive_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.archive_id(signature.into());
             self
         }
         /// <p>The ID of the archive to delete.</p>
@@ -1251,8 +1251,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -1265,8 +1265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -1345,8 +1345,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -1359,8 +1359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -1445,8 +1445,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -1459,8 +1459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -1556,8 +1556,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -1570,8 +1570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -1580,8 +1580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the job to describe.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID of the job to describe.</p>
@@ -1671,8 +1671,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -1685,8 +1685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -1761,8 +1761,8 @@ pub mod fluent_builders {
         /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
         /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
         /// If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
@@ -1875,8 +1875,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -1889,8 +1889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -1899,8 +1899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job ID whose data is downloaded.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The job ID whose data is downloaded.</p>
@@ -1944,8 +1944,8 @@ pub mod fluent_builders {
         /// <p></p>
         /// </li>
         /// </ol>
-        pub fn range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.range(inp);
+        pub fn range(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.range(signature.into());
             self
         }
         /// <p>The range of bytes to retrieve from the output. For example, if you want to download
@@ -2058,8 +2058,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -2072,8 +2072,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -2173,8 +2173,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -2187,8 +2187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -2276,8 +2276,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -2290,8 +2290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -2368,8 +2368,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -2382,8 +2382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -2392,8 +2392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides options for specifying job information.</p>
-        pub fn job_parameters(mut self, inp: crate::model::JobParameters) -> Self {
-            self.inner = self.inner.job_parameters(inp);
+        pub fn job_parameters(mut self, signature: crate::model::JobParameters) -> Self {
+            self.inner = self.inner.job_parameters(signature);
             self
         }
         /// <p>Provides options for specifying job information.</p>
@@ -2502,8 +2502,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -2516,8 +2516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -2529,8 +2529,8 @@ pub mod fluent_builders {
         /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example
         /// 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum
         /// allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-        pub fn archive_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.archive_description(inp);
+        pub fn archive_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.archive_description(signature.into());
             self
         }
         /// <p>The archive description that you are uploading in parts.</p>
@@ -2546,8 +2546,8 @@ pub mod fluent_builders {
         }
         /// <p>The size of each part except the last, in bytes. The last part can be smaller than
         /// this part size.</p>
-        pub fn part_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.part_size(inp);
+        pub fn part_size(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.part_size(signature.into());
             self
         }
         /// <p>The size of each part except the last, in bytes. The last part can be smaller than
@@ -2655,8 +2655,8 @@ pub mod fluent_builders {
         /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
         /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
         /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
@@ -2669,8 +2669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -2680,8 +2680,8 @@ pub mod fluent_builders {
         }
         /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
         /// character.</p>
-        pub fn policy(mut self, inp: crate::model::VaultLockPolicy) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: crate::model::VaultLockPolicy) -> Self {
+            self.inner = self.inner.policy(signature);
             self
         }
         /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
@@ -2793,8 +2793,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -2807,8 +2807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -2819,8 +2819,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of
         /// jobs returned might be fewer than the specified limit, but the number of returned jobs
         /// never exceeds the limit.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of
@@ -2834,8 +2834,8 @@ pub mod fluent_builders {
         /// listing of jobs should begin. Get the marker value from a previous List Jobs response. You
         /// only need to include the marker if you are continuing the pagination of results started in
         /// a previous List Jobs request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An opaque string used for pagination. This value specifies the job at which the
@@ -2848,8 +2848,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of job status to return. You can specify the following values:
         /// <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
-        pub fn statuscode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statuscode(inp);
+        pub fn statuscode(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statuscode(signature.into());
             self
         }
         /// <p>The type of job status to return. You can specify the following values:
@@ -2860,8 +2860,8 @@ pub mod fluent_builders {
         }
         /// <p>The state of the jobs to return. You can specify <code>true</code> or
         /// <code>false</code>.</p>
-        pub fn completed(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.completed(inp);
+        pub fn completed(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.completed(signature.into());
             self
         }
         /// <p>The state of the jobs to return. You can specify <code>true</code> or
@@ -2960,8 +2960,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -2974,8 +2974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -2985,8 +2985,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the maximum number of uploads returned in the response body. If this value
         /// is not specified, the List Uploads operation returns up to 50 uploads.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>Specifies the maximum number of uploads returned in the response body. If this value
@@ -2999,8 +2999,8 @@ pub mod fluent_builders {
         /// listing of uploads should begin. Get the marker value from a previous List Uploads
         /// response. You need only include the marker if you are continuing the pagination of results
         /// started in a previous List Uploads request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An opaque string used for pagination. This value specifies the upload at which the
@@ -3097,8 +3097,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -3111,8 +3111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -3121,8 +3121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upload ID of the multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>The upload ID of the multipart upload.</p>
@@ -3134,8 +3134,8 @@ pub mod fluent_builders {
         /// listing of parts should begin. Get the marker value from the response of a previous List
         /// Parts response. You need only include the marker if you are continuing the pagination of
         /// results started in a previous List Parts request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An opaque string used for pagination. This value specifies the part at which the
@@ -3149,8 +3149,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of parts to be returned. The default limit is 50. The number of
         /// parts returned might be fewer than the specified limit, but the number of returned parts
         /// never exceeds the limit.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of parts to be returned. The default limit is 50. The number of
@@ -3225,8 +3225,8 @@ pub mod fluent_builders {
         /// account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS
         /// account ID associated with the credentials used to sign the request. If you use an account
         /// ID, don't include any hyphens ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS
@@ -3304,8 +3304,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -3318,8 +3318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -3410,8 +3410,8 @@ pub mod fluent_builders {
         /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
         /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
         /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
@@ -3425,8 +3425,8 @@ pub mod fluent_builders {
         }
         /// <p>A string used for pagination. The marker specifies the vault ARN after which the
         /// listing of vaults should begin.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>A string used for pagination. The marker specifies the vault ARN after which the
@@ -3438,8 +3438,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of vaults to be returned. The default limit is 10. The number of
         /// vaults returned might be fewer than the specified limit, but the number of returned vaults
         /// never exceeds the limit.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of vaults to be returned. The default limit is 10. The number of
@@ -3513,8 +3513,8 @@ pub mod fluent_builders {
         /// account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS
         /// account ID associated with the credentials used to sign the request. If you use an account
         /// ID, don't include any hyphens ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS
@@ -3593,8 +3593,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -3607,8 +3607,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -3621,8 +3621,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
@@ -3703,8 +3703,8 @@ pub mod fluent_builders {
         /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
         /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
         /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
@@ -3717,8 +3717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data retrieval policy in JSON format.</p>
-        pub fn policy(mut self, inp: crate::model::DataRetrievalPolicy) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: crate::model::DataRetrievalPolicy) -> Self {
+            self.inner = self.inner.policy(signature);
             self
         }
         /// <p>The data retrieval policy in JSON format.</p>
@@ -3799,8 +3799,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -3813,8 +3813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -3823,8 +3823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The vault access policy as a JSON string.</p>
-        pub fn policy(mut self, inp: crate::model::VaultAccessPolicy) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: crate::model::VaultAccessPolicy) -> Self {
+            self.inner = self.inner.policy(signature);
             self
         }
         /// <p>The vault access policy as a JSON string.</p>
@@ -3937,8 +3937,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -3951,8 +3951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -3963,9 +3963,9 @@ pub mod fluent_builders {
         /// <p>Provides options for specifying notification configuration.</p>
         pub fn vault_notification_config(
             mut self,
-            inp: crate::model::VaultNotificationConfig,
+            signature: crate::model::VaultNotificationConfig,
         ) -> Self {
-            self.inner = self.inner.vault_notification_config(inp);
+            self.inner = self.inner.vault_notification_config(signature);
             self
         }
         /// <p>Provides options for specifying notification configuration.</p>
@@ -4068,8 +4068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -4082,8 +4082,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -4096,8 +4096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional description of the archive you are uploading.</p>
-        pub fn archive_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.archive_description(inp);
+        pub fn archive_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.archive_description(signature.into());
             self
         }
         /// <p>The optional description of the archive you are uploading.</p>
@@ -4109,8 +4109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SHA256 tree hash of the data being uploaded.</p>
-        pub fn checksum(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(inp);
+        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(signature.into());
             self
         }
         /// <p>The SHA256 tree hash of the data being uploaded.</p>
@@ -4119,8 +4119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data to upload.</p>
-        pub fn body(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.body(signature);
             self
         }
         /// <p>The data to upload.</p>
@@ -4246,8 +4246,8 @@ pub mod fluent_builders {
         /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any hyphens
         /// ('-') in the ID. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
@@ -4260,8 +4260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the vault.</p>
-        pub fn vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vault_name(inp);
+        pub fn vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vault_name(signature.into());
             self
         }
         /// <p>The name of the vault.</p>
@@ -4270,8 +4270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upload ID of the multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>The upload ID of the multipart upload.</p>
@@ -4280,8 +4280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SHA256 tree hash of the data being uploaded.</p>
-        pub fn checksum(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(inp);
+        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(signature.into());
             self
         }
         /// <p>The SHA256 tree hash of the data being uploaded.</p>
@@ -4293,8 +4293,8 @@ pub mod fluent_builders {
         /// part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence.
         /// The format of this header follows RFC 2616. An example header is Content-Range:bytes
         /// 0-4194303/*.</p>
-        pub fn range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.range(inp);
+        pub fn range(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.range(signature.into());
             self
         }
         /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this
@@ -4306,8 +4306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data to upload.</p>
-        pub fn body(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.body(signature);
             self
         }
         /// <p>The data to upload.</p>

@@ -644,8 +644,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster to associate the IAM role with.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The name of the DB cluster to associate the IAM role with.</p>
@@ -658,8 +658,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster,
         /// for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster,
@@ -670,8 +670,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with.
         /// For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(inp);
+        pub fn feature_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(signature.into());
             self
         }
         /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with.
@@ -742,8 +742,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the event notification subscription you want to add a source identifier
         /// to.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the event notification subscription you want to add a source identifier
@@ -775,8 +775,8 @@ pub mod fluent_builders {
         /// supplied.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(signature.into());
             self
         }
         /// <p>The identifier of the event source to be added.</p>
@@ -871,8 +871,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Neptune resource that the tags are added to. This value is an Amazon Resource
         /// Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
         /// Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The Amazon Neptune resource that the tags are added to. This value is an Amazon Resource
@@ -890,8 +890,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
@@ -965,8 +965,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies
         /// to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
         /// Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies
@@ -982,8 +982,8 @@ pub mod fluent_builders {
         /// <p>The pending maintenance action to apply to this resource.</p>
         /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>
         /// </p>
-        pub fn apply_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.apply_action(inp);
+        pub fn apply_action(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.apply_action(signature.into());
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
@@ -1012,8 +1012,8 @@ pub mod fluent_builders {
         /// requests.</p>
         /// </li>
         /// </ul>
-        pub fn opt_in_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.opt_in_type(inp);
+        pub fn opt_in_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.opt_in_type(signature.into());
             self
         }
         /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in
@@ -1120,9 +1120,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_cluster_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_cluster_parameter_group_identifier(inp);
+            self.inner = self
+                .inner
+                .source_db_cluster_parameter_group_identifier(signature.into());
             self
         }
         /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group.
@@ -1173,9 +1175,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_cluster_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_cluster_parameter_group_identifier(inp);
+            self.inner = self
+                .inner
+                .target_db_cluster_parameter_group_identifier(signature.into());
             self
         }
         /// <p>The identifier for the copied DB cluster parameter group.</p>
@@ -1208,11 +1212,11 @@ pub mod fluent_builders {
         /// <p>A description for the copied DB cluster parameter group.</p>
         pub fn target_db_cluster_parameter_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .target_db_cluster_parameter_group_description(inp);
+                .target_db_cluster_parameter_group_description(signature.into());
             self
         }
         /// <p>A description for the copied DB cluster parameter group.</p>
@@ -1230,8 +1234,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the copied DB cluster parameter group.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the copied DB cluster parameter group.</p>
@@ -1320,9 +1324,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn source_db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_cluster_snapshot_identifier(inp);
+            self.inner = self
+                .inner
+                .source_db_cluster_snapshot_identifier(signature.into());
             self
         }
         /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not
@@ -1363,9 +1369,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_cluster_snapshot_identifier(inp);
+            self.inner = self
+                .inner
+                .target_db_cluster_snapshot_identifier(signature.into());
             self
         }
         /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster
@@ -1407,8 +1415,8 @@ pub mod fluent_builders {
         /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to
         /// copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an
         /// error is returned.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon
@@ -1432,8 +1440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not currently supported.</p>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(inp);
+        pub fn pre_signed_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(signature.into());
             self
         }
         /// <p>Not currently supported.</p>
@@ -1446,8 +1454,8 @@ pub mod fluent_builders {
         }
         /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster
         /// snapshot, and otherwise false. The default is false.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags(inp);
+        pub fn copy_tags(mut self, signature: bool) -> Self {
+            self.inner = self.inner.copy_tags(signature);
             self
         }
         /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster
@@ -1461,8 +1469,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
@@ -1550,9 +1558,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_parameter_group_identifier(inp);
+            self.inner = self
+                .inner
+                .source_db_parameter_group_identifier(signature.into());
             self
         }
         /// <p>The identifier or ARN for the source DB parameter group. For information about creating
@@ -1598,9 +1608,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_parameter_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_parameter_group_identifier(inp);
+            self.inner = self
+                .inner
+                .target_db_parameter_group_identifier(signature.into());
             self
         }
         /// <p>The identifier for the copied DB parameter group.</p>
@@ -1632,9 +1644,11 @@ pub mod fluent_builders {
         /// <p>A description for the copied DB parameter group.</p>
         pub fn target_db_parameter_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_parameter_group_description(inp);
+            self.inner = self
+                .inner
+                .target_db_parameter_group_description(signature.into());
             self
         }
         /// <p>A description for the copied DB parameter group.</p>
@@ -1650,8 +1664,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the copied DB parameter group.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the copied DB parameter group.</p>
@@ -1734,8 +1748,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created
         /// in.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created
@@ -1756,8 +1770,8 @@ pub mod fluent_builders {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(signature);
             self
         }
         /// <p>The number of days for which automated backups are retained. You must specify a minimum
@@ -1776,8 +1790,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.character_set_name(inp);
+        pub fn character_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.character_set_name(signature.into());
             self
         }
         /// <p>
@@ -1794,8 +1808,8 @@ pub mod fluent_builders {
         /// <i>If set to <code>true</code>, tags are copied to any snapshot of
         /// the DB cluster that is created.</i>
         /// </p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(signature);
             self
         }
         /// <p>
@@ -1808,8 +1822,8 @@ pub mod fluent_builders {
         }
         /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a
         /// name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a
@@ -1836,8 +1850,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -1872,9 +1886,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p> The name of the DB cluster parameter group to associate with this DB cluster. If this
@@ -1897,8 +1911,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
         /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
         /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
@@ -1913,8 +1927,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>A DB subnet group to associate with this DB cluster.</p>
@@ -1931,8 +1945,8 @@ pub mod fluent_builders {
         /// <p>The name of the database engine to be used for this DB cluster.</p>
         /// <p>Valid Values: <code>neptune</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
@@ -1945,8 +1959,8 @@ pub mod fluent_builders {
         /// <p>The version number of the database engine to use for the new DB cluster.</p>
         /// <p>Example: <code>1.0.2.1</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The version number of the database engine to use for the new DB cluster.</p>
@@ -1962,8 +1976,8 @@ pub mod fluent_builders {
         /// <p>The port number on which the instances in the DB cluster accept connections.</p>
         /// <p> Default: <code>8182</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port number on which the instances in the DB cluster accept connections.</p>
@@ -1974,8 +1988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(inp);
+        pub fn master_username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(signature.into());
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -1987,8 +2001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(signature.into());
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -2002,8 +2016,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(signature.into());
             self
         }
         /// <p>
@@ -2037,8 +2051,11 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_backup_window(signature.into());
             self
         }
         /// <p>The daily time range during which automated backups are created if automated backups are
@@ -2080,8 +2097,11 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated
@@ -2106,9 +2126,9 @@ pub mod fluent_builders {
         /// is created as a Read Replica.</p>
         pub fn replication_source_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_source_identifier(inp);
+            self.inner = self.inner.replication_source_identifier(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster
@@ -2125,8 +2145,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the new DB cluster.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the new DB cluster.</p>
@@ -2138,8 +2158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the DB cluster is encrypted.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(inp);
+        pub fn storage_encrypted(mut self, signature: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(signature);
             self
         }
         /// <p>Specifies whether the DB cluster is encrypted.</p>
@@ -2170,8 +2190,8 @@ pub mod fluent_builders {
         /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must
         /// set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This
         /// key is used to encrypt the Read Replica in that Amazon Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The Amazon KMS key identifier for an encrypted DB cluster.</p>
@@ -2202,8 +2222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is not currently supported.</p>
-        pub fn pre_signed_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(inp);
+        pub fn pre_signed_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(signature.into());
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -2218,8 +2238,8 @@ pub mod fluent_builders {
         /// (IAM) authentication for the entire DB cluster (this cannot be set at an
         /// instance level).</p>
         /// <p>Default: <code>false</code>.</p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(signature);
             self
         }
         /// <p>If set to <code>true</code>, enables Amazon Identity and Access Management
@@ -2240,9 +2260,9 @@ pub mod fluent_builders {
         /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.enable_cloudwatch_logs_exports(input.into());
             self
         }
         /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
@@ -2256,8 +2276,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is enabled.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deletion_protection(signature);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -2329,8 +2349,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
@@ -2345,9 +2365,9 @@ pub mod fluent_builders {
         /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.db_cluster_endpoint_identifier(signature.into());
             self
         }
         /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
@@ -2359,8 +2379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        pub fn endpoint_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_type(signature.into());
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
@@ -2376,8 +2396,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_static_members`](Self::set_static_members).
         ///
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-        pub fn static_members(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.static_members(inp);
+        pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.static_members(input.into());
             self
         }
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
@@ -2395,8 +2415,8 @@ pub mod fluent_builders {
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
         /// All other eligible instances are reachable through the custom endpoint.
         /// Only relevant if the list of static members is empty.</p>
-        pub fn excluded_members(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.excluded_members(inp);
+        pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.excluded_members(input.into());
             self
         }
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
@@ -2414,8 +2434,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
@@ -2522,9 +2542,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB cluster parameter group.</p>
@@ -2548,8 +2568,11 @@ pub mod fluent_builders {
         /// with one and only one DB cluster parameter group family, and can be applied only to a DB
         /// cluster running a database engine and engine version compatible with that DB cluster parameter
         /// group family.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_family(signature.into());
             self
         }
         /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated
@@ -2564,8 +2587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the DB cluster parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description for the DB cluster parameter group.</p>
@@ -2578,8 +2601,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the new DB cluster parameter group.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the new DB cluster parameter group.</p>
@@ -2668,9 +2691,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
             self
         }
         /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase
@@ -2706,8 +2729,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not
@@ -2732,8 +2755,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the DB cluster snapshot.</p>
@@ -2805,8 +2828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Not supported.</p>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(inp);
+        pub fn db_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(signature.into());
             self
         }
         /// <p>Not supported.</p>
@@ -2829,8 +2852,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(signature.into());
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -2856,8 +2879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        pub fn allocated_storage(mut self, signature: i32) -> Self {
+            self.inner = self.inner.allocated_storage(signature);
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -2867,8 +2890,8 @@ pub mod fluent_builders {
         }
         /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
         /// Not all DB instance classes are available in all Amazon Regions.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(signature.into());
             self
         }
         /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
@@ -2883,8 +2906,8 @@ pub mod fluent_builders {
         /// <p>The name of the database engine to be used for this instance.</p>
         /// <p>Valid Values: <code>neptune</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The name of the database engine to be used for this instance.</p>
@@ -2895,8 +2918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(inp);
+        pub fn master_username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(signature.into());
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -2908,8 +2931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(signature.into());
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -2926,8 +2949,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of DB security groups to associate with this DB instance.</p>
         /// <p>Default: The default DB security group for the database engine.</p>
-        pub fn db_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_groups(inp);
+        pub fn db_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_groups(input.into());
             self
         }
         /// <p>A list of DB security groups to associate with this DB instance.</p>
@@ -2947,8 +2970,8 @@ pub mod fluent_builders {
         /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB
         /// cluster. For more information, see <a>CreateDBCluster</a>.</p>
         /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
         /// <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
@@ -2969,8 +2992,8 @@ pub mod fluent_builders {
         /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is
         /// set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as
         /// the current endpoint.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p> The EC2 Availability Zone that the DB instance is created in</p>
@@ -2989,8 +3012,8 @@ pub mod fluent_builders {
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
         /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
@@ -3010,8 +3033,11 @@ pub mod fluent_builders {
         /// Amazon Region, occurring on a random day of the week.</p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>The time range each week during which system maintenance can occur, in Universal
@@ -3043,8 +3069,11 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is
@@ -3082,8 +3111,8 @@ pub mod fluent_builders {
         /// <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(signature);
             self
         }
         /// <p>The number of days for which automated backups are
@@ -3107,8 +3136,11 @@ pub mod fluent_builders {
         /// <p> The daily time range during which automated backups are created.</p>
         /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB
         /// cluster. For more information, see <a>CreateDBCluster</a>.</p>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_backup_window(signature.into());
             self
         }
         /// <p> The daily time range during which automated backups are created.</p>
@@ -3126,8 +3158,8 @@ pub mod fluent_builders {
         /// <p> Default: <code>8182</code>
         /// </p>
         /// <p>Type: Integer</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -3141,8 +3173,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
         /// parameter if the MultiAZ parameter is set to true.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, signature: bool) -> Self {
+            self.inner = self.inner.multi_az(signature);
             self
         }
         /// <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
@@ -3153,8 +3185,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number of the database engine to use. Currently, setting this
         /// parameter has no effect.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The version number of the database engine to use. Currently, setting this
@@ -3170,8 +3202,8 @@ pub mod fluent_builders {
         /// the maintenance window.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(signature);
             self
         }
         /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during
@@ -3186,8 +3218,8 @@ pub mod fluent_builders {
         /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
         /// <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(signature.into());
             self
         }
         /// <p>License model information for this DB instance.</p>
@@ -3203,8 +3235,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially
         /// allocated for the DB instance.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.inner = self.inner.iops(inp);
+        pub fn iops(mut self, signature: i32) -> Self {
+            self.inner = self.inner.iops(signature);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially
@@ -3216,8 +3248,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(signature.into());
             self
         }
         /// <p>
@@ -3233,8 +3265,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.character_set_name(inp);
+        pub fn character_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.character_set_name(signature.into());
             self
         }
         /// <p>
@@ -3248,8 +3280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This flag should no longer be used.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, signature: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(signature);
             self
         }
         /// <p>This flag should no longer be used.</p>
@@ -3262,8 +3294,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the new instance.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the new instance.</p>
@@ -3277,8 +3309,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the DB cluster that the instance will belong to.</p>
         /// <p>For information on creating a DB cluster, see <a>CreateDBCluster</a>.</p>
         /// <p>Type: String</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The identifier of the DB cluster that the instance will belong to.</p>
@@ -3293,8 +3325,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
         /// <p>Not applicable. Storage is managed by the DB Cluster.</p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(signature.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -3304,8 +3336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(inp);
+        pub fn tde_credential_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(signature.into());
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -3317,8 +3349,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_password(inp);
+        pub fn tde_credential_password(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tde_credential_password(signature.into());
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
@@ -3333,8 +3368,8 @@ pub mod fluent_builders {
         /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster. For more
         /// information, see <a>CreateDBCluster</a>.</p>
         /// <p>Default: false</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(inp);
+        pub fn storage_encrypted(mut self, signature: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(signature);
             self
         }
         /// <p>Specifies whether the DB instance is encrypted.</p>
@@ -3356,8 +3391,8 @@ pub mod fluent_builders {
         /// the <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key.
         /// Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a
         /// different default encryption key for each Amazon Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The Amazon KMS key identifier for an encrypted DB instance.</p>
@@ -3376,8 +3411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the Active Directory Domain to create the instance in.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>Specify the Active Directory Domain to create the instance in.</p>
@@ -3387,8 +3422,8 @@ pub mod fluent_builders {
         }
         /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
         /// false. The default is false.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(signature);
             self
         }
         /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
@@ -3404,8 +3439,8 @@ pub mod fluent_builders {
         /// <code>MonitoringInterval</code> to a value other than 0.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(inp);
+        pub fn monitoring_interval(mut self, signature: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(signature);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected
@@ -3424,8 +3459,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
         /// <code>MonitoringRoleArn</code> value.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(inp);
+        pub fn monitoring_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(signature.into());
             self
         }
         /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to
@@ -3442,8 +3477,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory
         /// Service.</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(signature.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory
@@ -3460,8 +3495,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
-        pub fn promotion_tier(mut self, inp: i32) -> Self {
-            self.inner = self.inner.promotion_tier(inp);
+        pub fn promotion_tier(mut self, signature: i32) -> Self {
+            self.inner = self.inner.promotion_tier(signature);
             self
         }
         /// <p>A value that specifies the order in which an Read Replica is promoted to the primary
@@ -3474,8 +3509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone of the DB instance.</p>
-        pub fn timezone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(inp);
+        pub fn timezone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(signature.into());
             self
         }
         /// <p>The time zone of the DB instance.</p>
@@ -3484,8 +3519,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune (ignored).</p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(signature);
             self
         }
         /// <p>Not supported by Neptune (ignored).</p>
@@ -3499,8 +3534,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(inp);
+        pub fn enable_performance_insights(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(signature);
             self
         }
         /// <p>
@@ -3515,9 +3550,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(inp);
+            self.inner = self.inner.performance_insights_kms_key_id(signature.into());
             self
         }
         /// <p>
@@ -3537,9 +3572,9 @@ pub mod fluent_builders {
         /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.enable_cloudwatch_logs_exports(input.into());
             self
         }
         /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
@@ -3557,8 +3592,8 @@ pub mod fluent_builders {
         ///
         /// <p>DB instances in a DB cluster can be deleted even when deletion
         /// protection is enabled in their parent DB cluster.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deletion_protection(signature);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -3669,8 +3704,11 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB parameter group.</p>
@@ -3699,8 +3737,11 @@ pub mod fluent_builders {
         /// <p>The DB parameter group family name. A DB parameter group can be associated with one and
         /// only one DB parameter group family, and can be applied only to a DB instance running a
         /// database engine and engine version compatible with that DB parameter group family.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_family(signature.into());
             self
         }
         /// <p>The DB parameter group family name. A DB parameter group can be associated with one and
@@ -3714,8 +3755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the DB parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description for the DB parameter group.</p>
@@ -3728,8 +3769,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the new DB parameter group.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the new DB parameter group.</p>
@@ -3806,8 +3847,8 @@ pub mod fluent_builders {
         /// or hyphens. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
@@ -3823,8 +3864,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the DB subnet group.</p>
-        pub fn db_subnet_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_description(inp);
+        pub fn db_subnet_group_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_subnet_group_description(signature.into());
             self
         }
         /// <p>The description for the DB subnet group.</p>
@@ -3840,8 +3884,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
@@ -3857,8 +3901,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the new DB subnet group.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the new DB subnet group.</p>
@@ -3945,8 +3989,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the subscription.</p>
         /// <p>Constraints: The name must be less than 255 characters.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the subscription.</p>
@@ -3960,8 +4004,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is
         /// created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is
@@ -3980,8 +4024,8 @@ pub mod fluent_builders {
         /// <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> |
         /// <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(signature.into());
             self
         }
         /// <p>The type of source that is generating the events. For example, if you want to be notified
@@ -4002,8 +4046,8 @@ pub mod fluent_builders {
         /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a
         /// list of the categories for a given SourceType by using the
         /// <b>DescribeEventCategories</b> action.</p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
         /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a
@@ -4046,8 +4090,8 @@ pub mod fluent_builders {
         /// supplied.</p>
         /// </li>
         /// </ul>
-        pub fn source_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_ids(inp);
+        pub fn source_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ids(input.into());
             self
         }
         /// <p>The list of identifiers of the event sources for which events are returned. If not
@@ -4086,8 +4130,8 @@ pub mod fluent_builders {
         /// <p> A Boolean value; set to <b>true</b> to activate the
         /// subscription, set to <b>false</b> to create the subscription but not
         /// active it.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p> A Boolean value; set to <b>true</b> to activate the
@@ -4102,8 +4146,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be applied to the new event subscription.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be applied to the new event subscription.</p>
@@ -4188,8 +4232,8 @@ pub mod fluent_builders {
         /// <p>Must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't
@@ -4217,8 +4261,8 @@ pub mod fluent_builders {
         /// </note>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_final_snapshot(inp);
+        pub fn skip_final_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.skip_final_snapshot(signature);
             self
         }
         /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is
@@ -4253,8 +4297,11 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn final_db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.final_db_snapshot_identifier(inp);
+        pub fn final_db_snapshot_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.final_db_snapshot_identifier(signature.into());
             self
         }
         /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when
@@ -4345,9 +4392,9 @@ pub mod fluent_builders {
         /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.db_cluster_endpoint_identifier(signature.into());
             self
         }
         /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
@@ -4434,9 +4481,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB cluster parameter group.</p>
@@ -4529,9 +4576,9 @@ pub mod fluent_builders {
         /// <code>available</code> state.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
             self
         }
         /// <p>The identifier of the DB cluster snapshot to delete.</p>
@@ -4625,8 +4672,8 @@ pub mod fluent_builders {
         /// <p>Must match the name of an existing DB instance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(signature.into());
             self
         }
         /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't
@@ -4657,8 +4704,8 @@ pub mod fluent_builders {
         /// </note>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_final_snapshot(inp);
+        pub fn skip_final_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.skip_final_snapshot(signature);
             self
         }
         /// <p> Determines whether a final DB snapshot is created before the DB instance is deleted. If
@@ -4699,8 +4746,11 @@ pub mod fluent_builders {
         /// <p>Cannot be specified when deleting a Read Replica.</p>
         /// </li>
         /// </ul>
-        pub fn final_db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.final_db_snapshot_identifier(inp);
+        pub fn final_db_snapshot_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.final_db_snapshot_identifier(signature.into());
             self
         }
         /// <p> The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to
@@ -4805,8 +4855,11 @@ pub mod fluent_builders {
         /// <p>Cannot be associated with any DB instances</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB parameter group.</p>
@@ -4900,8 +4953,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>The name of the database subnet group to delete.</p>
@@ -4980,8 +5033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event notification subscription you want to delete.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the event notification subscription you want to delete.</p>
@@ -5058,8 +5111,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
@@ -5074,9 +5127,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.db_cluster_endpoint_identifier(signature.into());
             self
         }
         /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
@@ -5099,8 +5152,8 @@ pub mod fluent_builders {
         /// <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>.
         /// <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of name-value pairs that define which endpoints to include in the output.
@@ -5124,8 +5177,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -5144,8 +5197,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -5229,9 +5282,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of a specific DB cluster parameter group to return details for.</p>
@@ -5253,8 +5306,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -5270,8 +5323,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -5287,8 +5340,8 @@ pub mod fluent_builders {
         /// <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the
         /// response includes only records beyond the marker, up to the value specified by
         /// <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -5368,9 +5421,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
@@ -5389,8 +5442,8 @@ pub mod fluent_builders {
         }
         /// <p> A value that indicates to return only parameters for a specific source. Parameter sources
         /// can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(signature.into());
             self
         }
         /// <p> A value that indicates to return only parameters for a specific source. Parameter sources
@@ -5404,8 +5457,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -5421,8 +5474,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -5438,8 +5491,8 @@ pub mod fluent_builders {
         /// <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response
         /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -5524,8 +5577,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from
@@ -5565,8 +5618,8 @@ pub mod fluent_builders {
         ///
         /// <p>For example, to invoke this API from the Amazon CLI and filter so that only
         /// Neptune DB clusters are returned, you could use the following command:</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A filter that specifies one or more DB clusters to describe.</p>
@@ -5599,8 +5652,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -5615,8 +5668,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous <a>DescribeDBClusters</a>
         /// request. If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional pagination token provided by a previous <a>DescribeDBClusters</a>
@@ -5700,9 +5753,9 @@ pub mod fluent_builders {
         /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
             self
         }
         /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
@@ -5783,8 +5836,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter
@@ -5818,9 +5871,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
             self
         }
         /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in
@@ -5877,8 +5930,8 @@ pub mod fluent_builders {
         /// <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to
         /// <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
         /// <code>SnapshotType</code> is set to <code>public</code>.</p>
-        pub fn snapshot_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_type(inp);
+        pub fn snapshot_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_type(signature.into());
             self
         }
         /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following
@@ -5927,8 +5980,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -5944,8 +5997,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -5961,8 +6014,8 @@ pub mod fluent_builders {
         /// <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response
         /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -5979,8 +6032,8 @@ pub mod fluent_builders {
         /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from
         /// another Amazon account by the <a>ModifyDBClusterSnapshotAttribute</a> API
         /// action.</p>
-        pub fn include_shared(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_shared(inp);
+        pub fn include_shared(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_shared(signature);
             self
         }
         /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon
@@ -5997,8 +6050,8 @@ pub mod fluent_builders {
         /// by any Amazon account, and otherwise false. The default is <code>false</code>. The default is
         /// false.</p>
         /// <p>You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
-        pub fn include_public(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_public(inp);
+        pub fn include_public(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_public(signature);
             self
         }
         /// <p>True to include manual DB cluster snapshots that are public and can be copied or restored
@@ -6070,8 +6123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The database engine to return.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The database engine to return.</p>
@@ -6082,8 +6135,8 @@ pub mod fluent_builders {
         /// <p>The database engine version to return.</p>
         /// <p>Example: <code>5.1.49</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The database engine version to return.</p>
@@ -6103,8 +6156,11 @@ pub mod fluent_builders {
         /// <p>If supplied, must match an existing DBParameterGroupFamily.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_family(signature.into());
             self
         }
         /// <p>The name of a specific DB parameter group family to return details for.</p>
@@ -6126,8 +6182,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Not currently supported.</p>
@@ -6143,8 +6199,8 @@ pub mod fluent_builders {
         /// the response so that the following results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more than the
@@ -6159,8 +6215,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified by
         /// <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -6172,8 +6228,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates that only the default version of the specified engine or engine and major
         /// version combination is returned.</p>
-        pub fn default_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.default_only(inp);
+        pub fn default_only(mut self, signature: bool) -> Self {
+            self.inner = self.inner.default_only(signature);
             self
         }
         /// <p>Indicates that only the default version of the specified engine or engine and major
@@ -6185,8 +6241,8 @@ pub mod fluent_builders {
         /// <p>If this parameter is specified and the requested engine supports the
         /// <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response
         /// includes a list of supported character sets for each engine version.</p>
-        pub fn list_supported_character_sets(mut self, inp: bool) -> Self {
-            self.inner = self.inner.list_supported_character_sets(inp);
+        pub fn list_supported_character_sets(mut self, signature: bool) -> Self {
+            self.inner = self.inner.list_supported_character_sets(signature);
             self
         }
         /// <p>If this parameter is specified and the requested engine supports the
@@ -6202,8 +6258,8 @@ pub mod fluent_builders {
         /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code>
         /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported time
         /// zones for each engine version.</p>
-        pub fn list_supported_timezones(mut self, inp: bool) -> Self {
-            self.inner = self.inner.list_supported_timezones(inp);
+        pub fn list_supported_timezones(mut self, signature: bool) -> Self {
+            self.inner = self.inner.list_supported_timezones(signature);
             self
         }
         /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code>
@@ -6286,8 +6342,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(signature.into());
             self
         }
         /// <p>The user-supplied instance identifier. If this parameter is specified, information from
@@ -6327,8 +6383,8 @@ pub mod fluent_builders {
         ///
         /// <p>For example, to invoke this API from the Amazon CLI and filter so that only
         /// Neptune DB instances are returned, you could use the following command:</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A filter that specifies one or more DB instances to describe.</p>
@@ -6361,8 +6417,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -6377,8 +6433,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous <code>DescribeDBInstances</code>
         /// request. If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous <code>DescribeDBInstances</code>
@@ -6457,8 +6513,11 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of a specific DB parameter group to return details for.</p>
@@ -6480,8 +6539,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -6497,8 +6556,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6513,8 +6572,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous
         /// <code>DescribeDBParameterGroups</code> request. If this parameter is specified, the response
         /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -6591,8 +6650,11 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing DBParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of a specific DB parameter group to return details for.</p>
@@ -6613,8 +6675,8 @@ pub mod fluent_builders {
         /// <p>Default: All parameter types returned</p>
         /// <p>Valid Values: <code>user | system | engine-default</code>
         /// </p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(signature.into());
             self
         }
         /// <p>The parameter types to return.</p>
@@ -6630,8 +6692,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -6647,8 +6709,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6663,8 +6725,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous <code>DescribeDBParameters</code>
         /// request. If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeDBParameters</code>
@@ -6737,8 +6799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB subnet group to return details for.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>The name of the DB subnet group to return details for.</p>
@@ -6754,8 +6816,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -6771,8 +6833,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -6787,8 +6849,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous DescribeDBSubnetGroups request. If
         /// this parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous DescribeDBSubnetGroups request. If
@@ -6863,8 +6925,11 @@ pub mod fluent_builders {
         }
         /// <p>The name of the DB cluster parameter group family to return engine parameter information
         /// for.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_family(signature.into());
             self
         }
         /// <p>The name of the DB cluster parameter group family to return engine parameter information
@@ -6881,8 +6946,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -6898,8 +6963,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -6915,8 +6980,8 @@ pub mod fluent_builders {
         /// <code>DescribeEngineDefaultClusterParameters</code> request. If this parameter is specified,
         /// the response includes only records beyond the marker, up to the value specified by
         /// <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -6989,8 +7054,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB parameter group family.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_family(inp);
+        pub fn db_parameter_group_family(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_family(signature.into());
             self
         }
         /// <p>The name of the DB parameter group family.</p>
@@ -7006,8 +7074,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Not currently supported.</p>
@@ -7023,8 +7091,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -7040,8 +7108,8 @@ pub mod fluent_builders {
         /// <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the
         /// response includes only records beyond the marker, up to the value specified by
         /// <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -7115,8 +7183,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of source that is generating the events.</p>
         /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(signature.into());
             self
         }
         /// <p>The type of source that is generating the events.</p>
@@ -7130,8 +7198,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -7232,8 +7300,8 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(signature.into());
             self
         }
         /// <p>The identifier of the event source for which events are returned. If not specified, then
@@ -7272,8 +7340,8 @@ pub mod fluent_builders {
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are
         /// returned.</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(signature);
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are
@@ -7289,8 +7357,8 @@ pub mod fluent_builders {
         /// For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
         /// </p>
         /// <p>Example: 2009-07-08T18:00Z</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
@@ -7308,8 +7376,8 @@ pub mod fluent_builders {
         /// For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
         /// </p>
         /// <p>Example: 2009-07-08T18:00Z</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format.
@@ -7325,8 +7393,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of minutes to retrieve events for.</p>
         /// <p>Default: 60</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration(signature);
             self
         }
         /// <p>The number of minutes to retrieve events for.</p>
@@ -7341,8 +7409,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of event categories that trigger notifications for a event notification
         /// subscription.</p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
         /// <p>A list of event categories that trigger notifications for a event notification
@@ -7359,8 +7427,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -7376,8 +7444,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -7392,8 +7460,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous DescribeEvents request. If this
         /// parameter is specified, the response includes only records beyond the marker, up to the value
         /// specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous DescribeEvents request. If this
@@ -7467,8 +7535,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event notification subscription you want to describe.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the event notification subscription you want to describe.</p>
@@ -7484,8 +7552,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -7501,8 +7569,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -7517,8 +7585,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
         /// request. If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
@@ -7591,8 +7659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the engine to retrieve DB instance options for.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The name of the engine to retrieve DB instance options for.</p>
@@ -7602,8 +7670,8 @@ pub mod fluent_builders {
         }
         /// <p>The engine version filter value. Specify this parameter to show only the available
         /// offerings matching the specified engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The engine version filter value. Specify this parameter to show only the available
@@ -7617,8 +7685,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available
         /// offerings matching the specified DB instance class.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(signature.into());
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available
@@ -7632,8 +7700,8 @@ pub mod fluent_builders {
         }
         /// <p>The license model filter value. Specify this parameter to show only the available
         /// offerings matching the specified license model.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(signature.into());
             self
         }
         /// <p>The license model filter value. Specify this parameter to show only the available
@@ -7647,8 +7715,8 @@ pub mod fluent_builders {
         }
         /// <p>The VPC filter value. Specify this parameter to show only the available VPC or non-VPC
         /// offerings.</p>
-        pub fn vpc(mut self, inp: bool) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, signature: bool) -> Self {
+            self.inner = self.inner.vpc(signature);
             self
         }
         /// <p>The VPC filter value. Specify this parameter to show only the available VPC or non-VPC
@@ -7662,8 +7730,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -7679,8 +7747,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -7695,8 +7763,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
         /// request. If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
@@ -7768,8 +7836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of a resource to return pending maintenance actions for.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// <p>The ARN of a resource to return pending maintenance actions for.</p>
@@ -7801,8 +7869,8 @@ pub mod fluent_builders {
         /// identified by these ARNs.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A filter that specifies one or more resources to return pending maintenance actions
@@ -7833,8 +7901,8 @@ pub mod fluent_builders {
         /// <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the
         /// response includes only records beyond the marker, up to a number of records specified by
         /// <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -7850,8 +7918,8 @@ pub mod fluent_builders {
         /// response so that the remaining results can be retrieved.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than the
@@ -7928,8 +7996,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The customer identifier or the ARN of your DB instance.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(signature.into());
             self
         }
         /// <p>The customer identifier or the ARN of your DB instance.</p>
@@ -8015,8 +8083,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>A DB cluster identifier to force a failover for. This parameter is not
@@ -8039,9 +8107,9 @@ pub mod fluent_builders {
         /// example, <code>mydbcluster-replica1</code>.</p>
         pub fn target_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_instance_identifier(inp);
+            self.inner = self.inner.target_db_instance_identifier(signature.into());
             self
         }
         /// <p>The name of the instance to promote to the primary instance.</p>
@@ -8117,8 +8185,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name
         /// (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
         /// Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name
@@ -8136,8 +8204,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>This parameter is not currently supported.</p>
@@ -8217,8 +8285,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The DB cluster identifier for the cluster being modified. This parameter is not
@@ -8252,8 +8320,11 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster2</code>
         /// </p>
-        pub fn new_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_db_cluster_identifier(inp);
+        pub fn new_db_cluster_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.new_db_cluster_identifier(signature.into());
             self
         }
         /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is
@@ -8291,8 +8362,8 @@ pub mod fluent_builders {
         /// <code>ApplyImmediately</code> parameter.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>A value that specifies whether the modifications in this request and any pending
@@ -8320,8 +8391,8 @@ pub mod fluent_builders {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(signature);
             self
         }
         /// <p>The number of days for which automated backups are retained. You must specify a minimum
@@ -8340,9 +8411,9 @@ pub mod fluent_builders {
         /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
@@ -8358,8 +8429,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
         /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
         /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
@@ -8374,8 +8445,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port number on which the DB cluster accepts connections.</p>
@@ -8387,8 +8458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(signature.into());
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -8402,8 +8473,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>Not supported by Neptune.</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(signature.into());
             self
         }
         /// <p>
@@ -8435,8 +8506,11 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_backup_window(signature.into());
             self
         }
         /// <p>The daily time range during which automated backups are created if automated backups are
@@ -8474,8 +8548,11 @@ pub mod fluent_builders {
         /// week.</p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated
@@ -8498,8 +8575,8 @@ pub mod fluent_builders {
         /// accounts, and otherwise false.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(signature);
             self
         }
         /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database
@@ -8517,9 +8594,9 @@ pub mod fluent_builders {
         /// for a specific DB cluster.</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
-            inp: crate::model::CloudwatchLogsExportConfiguration,
+            signature: crate::model::CloudwatchLogsExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloudwatch_logs_export_configuration(inp);
+            self.inner = self.inner.cloudwatch_logs_export_configuration(signature);
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs
@@ -8536,8 +8613,8 @@ pub mod fluent_builders {
         /// unless the <code>ApplyImmediately</code> parameter is set to true.</p>
         /// <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
         /// Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The version number of the database engine to which you want to upgrade. Changing this
@@ -8556,8 +8633,8 @@ pub mod fluent_builders {
         /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an
         /// <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current
         /// version.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(inp);
+        pub fn allow_major_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(signature);
             self
         }
         /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
@@ -8588,9 +8665,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_instance_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_instance_parameter_group_name(inp);
+            self.inner = self
+                .inner
+                .db_instance_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
@@ -8621,8 +8700,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deletion_protection(signature);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -8636,8 +8715,8 @@ pub mod fluent_builders {
         /// <i>If set to <code>true</code>, tags are copied to any snapshot of
         /// the DB cluster that is created.</i>
         /// </p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(signature);
             self
         }
         /// <p>
@@ -8711,9 +8790,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(inp);
+            self.inner = self.inner.db_cluster_endpoint_identifier(signature.into());
             self
         }
         /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
@@ -8725,8 +8804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        pub fn endpoint_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_type(signature.into());
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
@@ -8742,8 +8821,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_static_members`](Self::set_static_members).
         ///
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-        pub fn static_members(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.static_members(inp);
+        pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.static_members(input.into());
             self
         }
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
@@ -8761,8 +8840,8 @@ pub mod fluent_builders {
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
         /// All other eligible instances are reachable through the custom endpoint.
         /// Only relevant if the list of static members is empty.</p>
-        pub fn excluded_members(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.excluded_members(inp);
+        pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.excluded_members(input.into());
             self
         }
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
@@ -8858,9 +8937,9 @@ pub mod fluent_builders {
         /// <p>The name of the DB cluster parameter group to modify.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to modify.</p>
@@ -8876,8 +8955,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
@@ -8964,9 +9043,9 @@ pub mod fluent_builders {
         /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(inp);
+            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
             self
         }
         /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
@@ -8980,8 +9059,8 @@ pub mod fluent_builders {
         /// <p>The name of the DB cluster snapshot attribute to modify.</p>
         /// <p>To manage authorization for other Amazon accounts to copy or restore a manual DB cluster
         /// snapshot, set this value to <code>restore</code>.</p>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(signature.into());
             self
         }
         /// <p>The name of the DB cluster snapshot attribute to modify.</p>
@@ -9005,8 +9084,8 @@ pub mod fluent_builders {
         /// snapshot restorable by any Amazon account. Do not add the <code>all</code> value for any manual
         /// DB cluster snapshots that contain private information that you don't want available to all Amazon
         /// accounts.</p>
-        pub fn values_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.values_to_add(inp);
+        pub fn values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.values_to_add(input.into());
             self
         }
         /// <p>A list of DB cluster snapshot attributes to add to the attribute specified by
@@ -9034,8 +9113,8 @@ pub mod fluent_builders {
         /// remove authorization for any Amazon account to copy or restore the DB cluster snapshot. If you
         /// specify <code>all</code>, an Amazon account whose account ID is explicitly added to the
         /// <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.</p>
-        pub fn values_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.values_to_remove(inp);
+        pub fn values_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.values_to_remove(input.into());
             self
         }
         /// <p>A list of DB cluster snapshot attributes to remove from the attribute specified by
@@ -9121,8 +9200,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(signature.into());
             self
         }
         /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -9140,8 +9219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        pub fn allocated_storage(mut self, signature: i32) -> Self {
+            self.inner = self.inner.allocated_storage(signature);
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -9156,8 +9235,8 @@ pub mod fluent_builders {
         /// applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified
         /// as <code>true</code> for this request.</p>
         /// <p>Default: Uses existing setting</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(inp);
+        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(signature.into());
             self
         }
         /// <p>The new compute and memory capacity of the DB instance, for example,
@@ -9182,8 +9261,8 @@ pub mod fluent_builders {
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetGroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB
@@ -9214,8 +9293,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match existing DBSecurityGroups.</p>
         /// </li>
         /// </ul>
-        pub fn db_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_groups(inp);
+        pub fn db_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_groups(input.into());
             self
         }
         /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting
@@ -9248,8 +9327,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match existing VpcSecurityGroupIds.</p>
         /// </li>
         /// </ul>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
         /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is
@@ -9278,8 +9357,8 @@ pub mod fluent_builders {
         /// failure reboot.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>Specifies whether the modifications in this request and any pending modifications are
@@ -9296,8 +9375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(signature.into());
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -9316,8 +9395,11 @@ pub mod fluent_builders {
         /// <p>Default: Uses existing setting</p>
         /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this
         /// DB instance.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB parameter group to apply to the DB instance. Changing this setting
@@ -9338,8 +9420,8 @@ pub mod fluent_builders {
         /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster.
         /// For more information, see <a>ModifyDBCluster</a>.</p>
         /// <p>Default: Uses existing setting</p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(inp);
+        pub fn backup_retention_period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(signature);
             self
         }
         /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster.
@@ -9368,8 +9450,11 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_backup_window(signature.into());
             self
         }
         /// <p> The daily time range during which automated backups are created if automated backups are
@@ -9409,8 +9494,11 @@ pub mod fluent_builders {
         /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
         /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
         /// <p>Constraints: Must be at least 30 minutes</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
@@ -9434,8 +9522,8 @@ pub mod fluent_builders {
         /// <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't
         /// result in an outage and the change is applied during the next maintenance window unless the
         /// <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, signature: bool) -> Self {
+            self.inner = self.inner.multi_az(signature);
             self
         }
         /// <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't
@@ -9448,8 +9536,8 @@ pub mod fluent_builders {
         /// <p>The version number of the database engine to upgrade to. Currently, setting this
         /// parameter has no effect. To upgrade your database engine to the most recent release,
         /// use the <a>ApplyPendingMaintenanceAction</a> API.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The version number of the database engine to upgrade to. Currently, setting this
@@ -9464,8 +9552,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result
         /// in an outage and the change is asynchronously applied as soon as possible.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(inp);
+        pub fn allow_major_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(signature);
             self
         }
         /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result
@@ -9480,8 +9568,8 @@ pub mod fluent_builders {
         /// result if this parameter is set to <code>true</code> during the maintenance window, and a
         /// newer minor version is available, and Neptune has enabled auto patching for that engine
         /// version.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(signature);
             self
         }
         /// <p> Indicates that minor version upgrades are applied automatically to the DB instance during
@@ -9495,8 +9583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported by Neptune.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(inp);
+        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(signature.into());
             self
         }
         /// <p>Not supported by Neptune.</p>
@@ -9512,8 +9600,8 @@ pub mod fluent_builders {
         /// next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
         /// <code>true</code> for this request.</p>
         /// <p>Default: Uses existing setting</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.inner = self.inner.iops(inp);
+        pub fn iops(mut self, signature: i32) -> Self {
+            self.inner = self.inner.iops(signature);
             self
         }
         /// <p>The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
@@ -9528,8 +9616,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(signature.into());
             self
         }
         /// <p>
@@ -9560,8 +9648,11 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn new_db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_db_instance_identifier(inp);
+        pub fn new_db_instance_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.new_db_instance_identifier(signature.into());
             self
         }
         /// <p> The new DB instance identifier for the DB instance when renaming a DB instance. When you
@@ -9590,8 +9681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported.</p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(signature.into());
             self
         }
         /// <p>Not supported.</p>
@@ -9600,8 +9691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(inp);
+        pub fn tde_credential_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(signature.into());
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -9613,8 +9704,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
-        pub fn tde_credential_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_password(inp);
+        pub fn tde_credential_password(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tde_credential_password(signature.into());
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
@@ -9626,8 +9720,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates the certificate that needs to be associated with the instance.</p>
-        pub fn ca_certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ca_certificate_identifier(inp);
+        pub fn ca_certificate_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ca_certificate_identifier(signature.into());
             self
         }
         /// <p>Indicates the certificate that needs to be associated with the instance.</p>
@@ -9639,8 +9736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>Not supported.</p>
@@ -9650,8 +9747,8 @@ pub mod fluent_builders {
         }
         /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
         /// false. The default is false.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(signature);
             self
         }
         /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
@@ -9667,8 +9764,8 @@ pub mod fluent_builders {
         /// <code>MonitoringInterval</code> to a value other than 0.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(inp);
+        pub fn monitoring_interval(mut self, signature: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(signature);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected
@@ -9689,8 +9786,8 @@ pub mod fluent_builders {
         /// of the value of the <code>ApplyImmediately</code> parameter.</p>
         /// <p> Default: <code>8182</code>
         /// </p>
-        pub fn db_port_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.db_port_number(inp);
+        pub fn db_port_number(mut self, signature: i32) -> Self {
+            self.inner = self.inner.db_port_number(signature);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -9705,8 +9802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This flag should no longer be used.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, signature: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(signature);
             self
         }
         /// <p>This flag should no longer be used.</p>
@@ -9718,8 +9815,8 @@ pub mod fluent_builders {
         /// Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
         /// <code>MonitoringRoleArn</code> value.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(inp);
+        pub fn monitoring_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(signature.into());
             self
         }
         /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to
@@ -9734,8 +9831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported</p>
-        pub fn domain_iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(inp);
+        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(signature.into());
             self
         }
         /// <p>Not supported</p>
@@ -9750,8 +9847,8 @@ pub mod fluent_builders {
         /// instance after a failure of the existing primary instance.</p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
-        pub fn promotion_tier(mut self, inp: i32) -> Self {
-            self.inner = self.inner.promotion_tier(inp);
+        pub fn promotion_tier(mut self, signature: i32) -> Self {
+            self.inner = self.inner.promotion_tier(signature);
             self
         }
         /// <p>A value that specifies the order in which a Read Replica is promoted to the primary
@@ -9769,8 +9866,8 @@ pub mod fluent_builders {
         /// cluster. For more information, see <a>ModifyDBCluster</a>.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(signature);
             self
         }
         /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database
@@ -9790,8 +9887,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn enable_performance_insights(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(inp);
+        pub fn enable_performance_insights(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(signature);
             self
         }
         /// <p>
@@ -9806,9 +9903,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(inp);
+            self.inner = self.inner.performance_insights_kms_key_id(signature.into());
             self
         }
         /// <p>
@@ -9825,9 +9922,9 @@ pub mod fluent_builders {
         /// for a specific DB instance or DB cluster.</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
-            inp: crate::model::CloudwatchLogsExportConfiguration,
+            signature: crate::model::CloudwatchLogsExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloudwatch_logs_export_configuration(inp);
+            self.inner = self.inner.cloudwatch_logs_export_configuration(signature);
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs
@@ -9843,8 +9940,8 @@ pub mod fluent_builders {
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.  See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
         /// a DB Instance</a>.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deletion_protection(signature);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -9941,8 +10038,11 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing DBParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB parameter group.</p>
@@ -9973,8 +10073,8 @@ pub mod fluent_builders {
         /// pending-reboot value for both dynamic and static parameters, and changes are applied when
         /// you reboot the DB instance without failover.</p>
         /// </note>
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>An array of parameter names, values, and the apply method for the parameter update. At
@@ -10060,8 +10160,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't
@@ -10077,8 +10177,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the DB subnet group.</p>
-        pub fn db_subnet_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_description(inp);
+        pub fn db_subnet_group_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_subnet_group_description(signature.into());
             self
         }
         /// <p>The description for the DB subnet group.</p>
@@ -10094,8 +10197,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The EC2 subnet IDs for the DB subnet group.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The EC2 subnet IDs for the DB subnet group.</p>
@@ -10171,8 +10274,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event notification subscription.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the event notification subscription.</p>
@@ -10185,8 +10288,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is
         /// created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is
@@ -10202,8 +10305,8 @@ pub mod fluent_builders {
         /// of events generated by a DB instance, you would set this parameter to db-instance. if this
         /// value is not specified, all events are returned.</p>
         /// <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(signature.into());
             self
         }
         /// <p>The type of source that is generating the events. For example, if you want to be notified
@@ -10222,8 +10325,8 @@ pub mod fluent_builders {
         /// list of the categories for a given SourceType
         ///
         /// by using the <b>DescribeEventCategories</b> action.</p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
         /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a
@@ -10239,8 +10342,8 @@ pub mod fluent_builders {
         }
         /// <p> A Boolean value; set to <b>true</b> to activate the
         /// subscription.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p> A Boolean value; set to <b>true</b> to activate the
@@ -10310,8 +10413,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Not supported.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>Not supported.</p>
@@ -10393,8 +10496,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(inp);
+        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(signature.into());
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -10414,8 +10517,8 @@ pub mod fluent_builders {
         /// <p> When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>
         /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for
         /// MultiAZ.</p>
-        pub fn force_failover(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_failover(inp);
+        pub fn force_failover(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_failover(signature);
             self
         }
         /// <p> When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>
@@ -10486,8 +10589,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
@@ -10500,8 +10603,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for
         /// example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for
@@ -10512,8 +10615,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
         /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(inp);
+        pub fn feature_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(signature.into());
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
@@ -10586,8 +10689,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the event notification subscription you want to remove a source identifier
         /// from.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the event notification subscription you want to remove a source identifier
@@ -10601,8 +10704,8 @@ pub mod fluent_builders {
         }
         /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security
         /// group.</p>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(signature.into());
             self
         }
         /// <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security
@@ -10677,8 +10780,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Neptune resource that the tags are removed from. This value is an Amazon
         /// Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an
         /// Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The Amazon Neptune resource that the tags are removed from. This value is an Amazon
@@ -10696,8 +10799,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag key (name) of the tag to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag key (name) of the tag to be removed.</p>
@@ -10778,9 +10881,9 @@ pub mod fluent_builders {
         /// <p>The name of the DB cluster parameter group to reset.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to reset.</p>
@@ -10795,8 +10898,8 @@ pub mod fluent_builders {
         /// parameter group to their default values, and <code>false</code> otherwise. You can't use this
         /// parameter if there is a list of parameter names specified for the <code>Parameters</code>
         /// parameter.</p>
-        pub fn reset_all_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reset_all_parameters(inp);
+        pub fn reset_all_parameters(mut self, signature: bool) -> Self {
+            self.inner = self.inner.reset_all_parameters(signature);
             self
         }
         /// <p>A value that is set to <code>true</code> to reset all parameters in the DB cluster
@@ -10814,8 +10917,8 @@ pub mod fluent_builders {
         /// <p>A list of parameter names in the DB cluster parameter group to reset to the default
         /// values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set
         /// to <code>true</code>.</p>
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>A list of parameter names in the DB cluster parameter group to reset to the default
@@ -10901,8 +11004,11 @@ pub mod fluent_builders {
         /// <p>Must match the name of an existing DBParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_parameter_group_name(inp);
+        pub fn db_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.db_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB parameter group.</p>
@@ -10923,8 +11029,8 @@ pub mod fluent_builders {
         /// in the DB parameter group to default values.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn reset_all_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reset_all_parameters(inp);
+        pub fn reset_all_parameters(mut self, signature: bool) -> Self {
+            self.inner = self.inner.reset_all_parameters(signature);
             self
         }
         /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters
@@ -10945,8 +11051,8 @@ pub mod fluent_builders {
         /// parameters can be modified in a single request.</p>
         /// <p>Valid Values (for Apply method): <code>pending-reboot</code>
         /// </p>
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
@@ -11033,8 +11139,8 @@ pub mod fluent_builders {
         ///
         /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can
         /// be created in.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can
@@ -11062,8 +11168,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This
@@ -11098,8 +11204,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing Snapshot.</p>
         /// </li>
         /// </ul>
-        pub fn snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(inp);
+        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(signature.into());
             self
         }
         /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
@@ -11121,8 +11227,8 @@ pub mod fluent_builders {
         /// <p>The database engine to use for the new DB cluster.</p>
         /// <p>Default: The same as source</p>
         /// <p>Constraint: Must be compatible with the engine of the source</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The database engine to use for the new DB cluster.</p>
@@ -11133,8 +11239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the database engine to use for the new DB cluster.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The version of the database engine to use for the new DB cluster.</p>
@@ -11149,8 +11255,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port number on which the new DB cluster accepts connections.</p>
@@ -11165,8 +11271,8 @@ pub mod fluent_builders {
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
@@ -11181,8 +11287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not supported.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>Not supported.</p>
@@ -11196,8 +11302,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(signature.into());
             self
         }
         /// <p>
@@ -11215,8 +11321,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
         /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
         /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
@@ -11232,8 +11338,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the restored DB cluster.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be assigned to the restored DB cluster.</p>
@@ -11263,8 +11369,8 @@ pub mod fluent_builders {
         /// encrypted, then the restored DB cluster is not encrypted.</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB
@@ -11294,8 +11400,8 @@ pub mod fluent_builders {
         /// accounts, and otherwise false.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(signature);
             self
         }
         /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database
@@ -11316,9 +11422,9 @@ pub mod fluent_builders {
         /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.enable_cloudwatch_logs_exports(input.into());
             self
         }
         /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.</p>
@@ -11338,9 +11444,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
@@ -11361,8 +11467,8 @@ pub mod fluent_builders {
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deletion_protection(signature);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -11377,8 +11483,8 @@ pub mod fluent_builders {
         /// <i>If set to <code>true</code>, tags are copied to any snapshot of
         /// the restored DB cluster that is created.</i>
         /// </p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(inp);
+        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(signature);
             self
         }
         /// <p>
@@ -11474,8 +11580,8 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The name of the new DB cluster to be created.</p>
@@ -11513,8 +11619,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored
         /// as a full copy of the source DB cluster.</p>
-        pub fn restore_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.restore_type(inp);
+        pub fn restore_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore_type(signature.into());
             self
         }
         /// <p>The type of restore to be performed. You can specify one of the following values:</p>
@@ -11543,8 +11649,11 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn source_db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_db_cluster_identifier(inp);
+        pub fn source_db_cluster_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.source_db_cluster_identifier(signature.into());
             self
         }
         /// <p>The identifier of the source DB cluster from which to restore.</p>
@@ -11583,8 +11692,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>2015-03-07T23:45:00Z</code>
         /// </p>
-        pub fn restore_to_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.restore_to_time(inp);
+        pub fn restore_to_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.restore_to_time(signature);
             self
         }
         /// <p>The date and time to restore the DB cluster to.</p>
@@ -11622,8 +11731,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is
         /// provided.</p>
-        pub fn use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_time(inp);
+        pub fn use_latest_restorable_time(mut self, signature: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_time(signature);
             self
         }
         /// <p>A value that is set to <code>true</code> to restore the DB cluster to the latest
@@ -11640,8 +11749,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port number on which the new DB cluster accepts connections.</p>
@@ -11656,8 +11765,8 @@ pub mod fluent_builders {
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(inp);
+        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(signature.into());
             self
         }
         /// <p>The DB subnet group name to use for the new DB cluster.</p>
@@ -11674,8 +11783,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(inp);
+        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(signature.into());
             self
         }
         /// <p>
@@ -11693,8 +11802,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
         /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
         /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
@@ -11710,8 +11819,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be applied to the restored DB cluster.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be applied to the restored DB cluster.</p>
@@ -11745,8 +11854,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the
         /// restore request is rejected.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted
@@ -11780,8 +11889,8 @@ pub mod fluent_builders {
         /// accounts, and otherwise false.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(inp);
+        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(signature);
             self
         }
         /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database
@@ -11802,9 +11911,9 @@ pub mod fluent_builders {
         /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.enable_cloudwatch_logs_exports(inp);
+            self.inner = self.inner.enable_cloudwatch_logs_exports(input.into());
             self
         }
         /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
@@ -11824,9 +11933,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(inp);
+            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
@@ -11847,8 +11956,8 @@ pub mod fluent_builders {
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deletion_protection(signature);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -11922,8 +12031,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the Neptune DB cluster to be started.
         /// This parameter is stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The DB cluster identifier of the Neptune DB cluster to be started.
@@ -12002,8 +12111,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped.
         /// This parameter is stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(inp);
+        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(signature.into());
             self
         }
         /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped.

@@ -41,9 +41,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags to assign to the retention rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -80,9 +80,9 @@ pub mod create_rule_input {
         /// any of the specified tag key and value pairs, it is immediately deleted without being retained
         /// by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -579,9 +579,9 @@ pub mod list_rules_input {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags used to identify resources that are to be retained by the retention rule.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -897,9 +897,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags to assign to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1311,9 +1311,9 @@ pub mod update_rule_input {
         /// any of the specified tag key and value pairs, it is immediately deleted without being retained
         /// by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }

@@ -889,12 +889,9 @@ pub mod list_vpce_configurations_output {
         ///
         /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
         /// configuration.</p>
-        pub fn vpce_configurations(
-            mut self,
-            input: impl Into<crate::model::VpceConfiguration>,
-        ) -> Self {
+        pub fn vpce_configurations(mut self, input: crate::model::VpceConfiguration) -> Self {
             let mut v = self.vpce_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpce_configurations = Some(v);
             self
         }
@@ -981,9 +978,9 @@ pub mod list_uploads_output {
         /// To override the contents of this collection use [`set_uploads`](Self::set_uploads).
         ///
         /// <p>Information about the uploads.</p>
-        pub fn uploads(mut self, input: impl Into<crate::model::Upload>) -> Self {
+        pub fn uploads(mut self, input: crate::model::Upload) -> Self {
             let mut v = self.uploads.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.uploads = Some(v);
             self
         }
@@ -1162,11 +1159,11 @@ pub mod list_unique_problems_output {
         /// </ul>
         pub fn unique_problems(
             mut self,
-            k: impl Into<crate::model::ExecutionResult>,
-            v: impl Into<std::vec::Vec<crate::model::UniqueProblem>>,
+            k: crate::model::ExecutionResult,
+            v: std::vec::Vec<crate::model::UniqueProblem>,
         ) -> Self {
             let mut hash_map = self.unique_problems.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.unique_problems = Some(hash_map);
             self
         }
@@ -1283,9 +1280,9 @@ pub mod list_tests_output {
         /// To override the contents of this collection use [`set_tests`](Self::set_tests).
         ///
         /// <p>Information about the tests.</p>
-        pub fn tests(mut self, input: impl Into<crate::model::Test>) -> Self {
+        pub fn tests(mut self, input: crate::model::Test) -> Self {
             let mut v = self.tests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tests = Some(v);
             self
         }
@@ -1370,12 +1367,9 @@ pub mod list_test_grid_sessions_output {
         /// To override the contents of this collection use [`set_test_grid_sessions`](Self::set_test_grid_sessions).
         ///
         /// <p>The sessions that match the criteria in a <a>ListTestGridSessionsRequest</a>. </p>
-        pub fn test_grid_sessions(
-            mut self,
-            input: impl Into<crate::model::TestGridSession>,
-        ) -> Self {
+        pub fn test_grid_sessions(mut self, input: crate::model::TestGridSession) -> Self {
             let mut v = self.test_grid_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_grid_sessions = Some(v);
             self
         }
@@ -1456,12 +1450,9 @@ pub mod list_test_grid_session_artifacts_output {
         /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
         ///
         /// <p>A list of test grid session artifacts for a <a>TestGridSession</a>.</p>
-        pub fn artifacts(
-            mut self,
-            input: impl Into<crate::model::TestGridSessionArtifact>,
-        ) -> Self {
+        pub fn artifacts(mut self, input: crate::model::TestGridSessionArtifact) -> Self {
             let mut v = self.artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.artifacts = Some(v);
             self
         }
@@ -1541,9 +1532,9 @@ pub mod list_test_grid_session_actions_output {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The action taken by the session.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::TestGridSessionAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::TestGridSessionAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -1626,12 +1617,9 @@ pub mod list_test_grid_projects_output {
         /// To override the contents of this collection use [`set_test_grid_projects`](Self::set_test_grid_projects).
         ///
         /// <p>The list of TestGridProjects, based on a <a>ListTestGridProjectsRequest</a>.</p>
-        pub fn test_grid_projects(
-            mut self,
-            input: impl Into<crate::model::TestGridProject>,
-        ) -> Self {
+        pub fn test_grid_projects(mut self, input: crate::model::TestGridProject) -> Self {
             let mut v = self.test_grid_projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_grid_projects = Some(v);
             self
         }
@@ -1708,9 +1696,9 @@ pub mod list_tags_for_resource_output {
         ///
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
         /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1782,9 +1770,9 @@ pub mod list_suites_output {
         /// To override the contents of this collection use [`set_suites`](Self::set_suites).
         ///
         /// <p>Information about the suites.</p>
-        pub fn suites(mut self, input: impl Into<crate::model::Suite>) -> Self {
+        pub fn suites(mut self, input: crate::model::Suite) -> Self {
             let mut v = self.suites.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suites = Some(v);
             self
         }
@@ -1872,9 +1860,9 @@ pub mod list_samples_output {
         /// To override the contents of this collection use [`set_samples`](Self::set_samples).
         ///
         /// <p>Information about the samples.</p>
-        pub fn samples(mut self, input: impl Into<crate::model::Sample>) -> Self {
+        pub fn samples(mut self, input: crate::model::Sample) -> Self {
             let mut v = self.samples.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.samples = Some(v);
             self
         }
@@ -1962,9 +1950,9 @@ pub mod list_runs_output {
         /// To override the contents of this collection use [`set_runs`](Self::set_runs).
         ///
         /// <p>Information about the runs.</p>
-        pub fn runs(mut self, input: impl Into<crate::model::Run>) -> Self {
+        pub fn runs(mut self, input: crate::model::Run) -> Self {
             let mut v = self.runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.runs = Some(v);
             self
         }
@@ -2058,12 +2046,9 @@ pub mod list_remote_access_sessions_output {
         ///
         /// <p>A container that represents the metadata from the service about each remote access session you are
         /// requesting.</p>
-        pub fn remote_access_sessions(
-            mut self,
-            input: impl Into<crate::model::RemoteAccessSession>,
-        ) -> Self {
+        pub fn remote_access_sessions(mut self, input: crate::model::RemoteAccessSession) -> Self {
             let mut v = self.remote_access_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remote_access_sessions = Some(v);
             self
         }
@@ -2150,9 +2135,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>Information about the projects.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::Project>) -> Self {
+        pub fn projects(mut self, input: crate::model::Project) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -2245,12 +2230,9 @@ pub mod list_offering_transactions_output {
         ///
         /// <p>The audit log of subscriptions you have purchased and modified through AWS Device
         /// Farm.</p>
-        pub fn offering_transactions(
-            mut self,
-            input: impl Into<crate::model::OfferingTransaction>,
-        ) -> Self {
+        pub fn offering_transactions(mut self, input: crate::model::OfferingTransaction) -> Self {
             let mut v = self.offering_transactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offering_transactions = Some(v);
             self
         }
@@ -2335,9 +2317,9 @@ pub mod list_offerings_output {
         /// To override the contents of this collection use [`set_offerings`](Self::set_offerings).
         ///
         /// <p>A value that represents the list offering results.</p>
-        pub fn offerings(mut self, input: impl Into<crate::model::Offering>) -> Self {
+        pub fn offerings(mut self, input: crate::model::Offering) -> Self {
             let mut v = self.offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offerings = Some(v);
             self
         }
@@ -2422,12 +2404,9 @@ pub mod list_offering_promotions_output {
         /// To override the contents of this collection use [`set_offering_promotions`](Self::set_offering_promotions).
         ///
         /// <p>Information about the offering promotions.</p>
-        pub fn offering_promotions(
-            mut self,
-            input: impl Into<crate::model::OfferingPromotion>,
-        ) -> Self {
+        pub fn offering_promotions(mut self, input: crate::model::OfferingPromotion) -> Self {
             let mut v = self.offering_promotions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offering_promotions = Some(v);
             self
         }
@@ -2512,9 +2491,9 @@ pub mod list_network_profiles_output {
         /// To override the contents of this collection use [`set_network_profiles`](Self::set_network_profiles).
         ///
         /// <p>A list of the available network profiles.</p>
-        pub fn network_profiles(mut self, input: impl Into<crate::model::NetworkProfile>) -> Self {
+        pub fn network_profiles(mut self, input: crate::model::NetworkProfile) -> Self {
             let mut v = self.network_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_profiles = Some(v);
             self
         }
@@ -2600,9 +2579,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>Information about the jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -2689,12 +2668,9 @@ pub mod list_instance_profiles_output {
         /// To override the contents of this collection use [`set_instance_profiles`](Self::set_instance_profiles).
         ///
         /// <p>An object that contains information about your instance profiles.</p>
-        pub fn instance_profiles(
-            mut self,
-            input: impl Into<crate::model::InstanceProfile>,
-        ) -> Self {
+        pub fn instance_profiles(mut self, input: crate::model::InstanceProfile) -> Self {
             let mut v = self.instance_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_profiles = Some(v);
             self
         }
@@ -2780,9 +2756,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>Information about the devices.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -2870,9 +2846,9 @@ pub mod list_device_pools_output {
         /// To override the contents of this collection use [`set_device_pools`](Self::set_device_pools).
         ///
         /// <p>Information about the device pools.</p>
-        pub fn device_pools(mut self, input: impl Into<crate::model::DevicePool>) -> Self {
+        pub fn device_pools(mut self, input: crate::model::DevicePool) -> Self {
             let mut v = self.device_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_pools = Some(v);
             self
         }
@@ -2959,9 +2935,9 @@ pub mod list_device_instances_output {
         /// To override the contents of this collection use [`set_device_instances`](Self::set_device_instances).
         ///
         /// <p>An object that contains information about your device instances.</p>
-        pub fn device_instances(mut self, input: impl Into<crate::model::DeviceInstance>) -> Self {
+        pub fn device_instances(mut self, input: crate::model::DeviceInstance) -> Self {
             let mut v = self.device_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_instances = Some(v);
             self
         }
@@ -3047,9 +3023,9 @@ pub mod list_artifacts_output {
         /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
         ///
         /// <p>Information about the artifacts.</p>
-        pub fn artifacts(mut self, input: impl Into<crate::model::Artifact>) -> Self {
+        pub fn artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.artifacts = Some(v);
             self
         }
@@ -3718,10 +3694,10 @@ pub mod get_offering_status_output {
         pub fn current(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OfferingStatus>,
+            v: crate::model::OfferingStatus,
         ) -> Self {
             let mut hash_map = self.current.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.current = Some(hash_map);
             self
         }
@@ -3743,10 +3719,10 @@ pub mod get_offering_status_output {
         pub fn next_period(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OfferingStatus>,
+            v: crate::model::OfferingStatus,
         ) -> Self {
             let mut hash_map = self.next_period.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.next_period = Some(hash_map);
             self
         }
@@ -4007,10 +3983,10 @@ pub mod get_device_pool_compatibility_output {
         /// <p>Information about compatible devices.</p>
         pub fn compatible_devices(
             mut self,
-            input: impl Into<crate::model::DevicePoolCompatibilityResult>,
+            input: crate::model::DevicePoolCompatibilityResult,
         ) -> Self {
             let mut v = self.compatible_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_devices = Some(v);
             self
         }
@@ -4029,10 +4005,10 @@ pub mod get_device_pool_compatibility_output {
         /// <p>Information about incompatible devices.</p>
         pub fn incompatible_devices(
             mut self,
-            input: impl Into<crate::model::DevicePoolCompatibilityResult>,
+            input: crate::model::DevicePoolCompatibilityResult,
         ) -> Self {
             let mut v = self.incompatible_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.incompatible_devices = Some(v);
             self
         }

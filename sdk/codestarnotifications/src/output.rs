@@ -280,9 +280,9 @@ pub mod list_targets_output {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The list of notification rule targets. </p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetSummary>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -451,12 +451,9 @@ pub mod list_notification_rules_output {
         /// To override the contents of this collection use [`set_notification_rules`](Self::set_notification_rules).
         ///
         /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
-        pub fn notification_rules(
-            mut self,
-            input: impl Into<crate::model::NotificationRuleSummary>,
-        ) -> Self {
+        pub fn notification_rules(mut self, input: crate::model::NotificationRuleSummary) -> Self {
             let mut v = self.notification_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_rules = Some(v);
             self
         }
@@ -529,9 +526,9 @@ pub mod list_event_types_output {
         ///
         /// <p>Information about each event, including service name, resource type, event ID, and event
         /// name.</p>
-        pub fn event_types(mut self, input: impl Into<crate::model::EventTypeSummary>) -> Self {
+        pub fn event_types(mut self, input: crate::model::EventTypeSummary) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_types = Some(v);
             self
         }
@@ -720,9 +717,9 @@ pub mod describe_notification_rule_output {
         /// To override the contents of this collection use [`set_event_types`](Self::set_event_types).
         ///
         /// <p>A list of the event types associated with the notification rule.</p>
-        pub fn event_types(mut self, input: impl Into<crate::model::EventTypeSummary>) -> Self {
+        pub fn event_types(mut self, input: crate::model::EventTypeSummary) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_types = Some(v);
             self
         }
@@ -751,9 +748,9 @@ pub mod describe_notification_rule_output {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>A list of the SNS topics associated with the notification rule.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetSummary>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }

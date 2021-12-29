@@ -2069,10 +2069,10 @@ pub mod channel_message_summary {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -2516,9 +2516,9 @@ pub mod channel_flow_summary {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions.</p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }
@@ -2932,10 +2932,10 @@ pub mod channel_message {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -3333,9 +3333,9 @@ pub mod channel_flow {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions.</p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }
@@ -4037,9 +4037,9 @@ pub mod batch_channel_memberships {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>The users successfully added to the request.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Identity>) -> Self {
+        pub fn members(mut self, input: crate::model::Identity) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }

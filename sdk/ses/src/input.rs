@@ -3496,10 +3496,10 @@ pub mod describe_configuration_set_input {
         /// <p>A list of configuration set attributes to return.</p>
         pub fn configuration_set_attribute_names(
             mut self,
-            input: impl Into<crate::model::ConfigurationSetAttribute>,
+            input: crate::model::ConfigurationSetAttribute,
         ) -> Self {
             let mut v = self.configuration_set_attribute_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_set_attribute_names = Some(v);
             self
         }
@@ -7352,10 +7352,10 @@ pub mod send_bounce_input {
         /// least one <code>BouncedRecipientInfo</code> in the list.</p>
         pub fn bounced_recipient_info_list(
             mut self,
-            input: impl Into<crate::model::BouncedRecipientInfo>,
+            input: crate::model::BouncedRecipientInfo,
         ) -> Self {
             let mut v = self.bounced_recipient_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bounced_recipient_info_list = Some(v);
             self
         }
@@ -7717,9 +7717,9 @@ pub mod send_bulk_templated_email_input {
         ///
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
         /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
-        pub fn default_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn default_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.default_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_tags = Some(v);
             self
         }
@@ -7781,12 +7781,9 @@ pub mod send_bulk_templated_email_input {
         /// <code>Destination</code> will receive the same version of the email. You can specify
         /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
         /// array.</p>
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::BulkEmailDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::BulkEmailDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -8328,9 +8325,9 @@ pub mod send_email_input {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
         /// define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8776,9 +8773,9 @@ pub mod send_raw_email_input {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
         /// you define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9136,9 +9133,9 @@ pub mod send_templated_email_input {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
         /// that you define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

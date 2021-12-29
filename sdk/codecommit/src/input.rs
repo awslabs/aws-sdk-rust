@@ -1830,9 +1830,9 @@ pub mod create_commit_input {
         /// To override the contents of this collection use [`set_put_files`](Self::set_put_files).
         ///
         /// <p>The files to add or update in this commit.</p>
-        pub fn put_files(mut self, input: impl Into<crate::model::PutFileEntry>) -> Self {
+        pub fn put_files(mut self, input: crate::model::PutFileEntry) -> Self {
             let mut v = self.put_files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.put_files = Some(v);
             self
         }
@@ -1849,9 +1849,9 @@ pub mod create_commit_input {
         /// To override the contents of this collection use [`set_delete_files`](Self::set_delete_files).
         ///
         /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-        pub fn delete_files(mut self, input: impl Into<crate::model::DeleteFileEntry>) -> Self {
+        pub fn delete_files(mut self, input: crate::model::DeleteFileEntry) -> Self {
             let mut v = self.delete_files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delete_files = Some(v);
             self
         }
@@ -1868,9 +1868,9 @@ pub mod create_commit_input {
         /// To override the contents of this collection use [`set_set_file_modes`](Self::set_set_file_modes).
         ///
         /// <p>The file modes to update for files in this commit.</p>
-        pub fn set_file_modes(mut self, input: impl Into<crate::model::SetFileModeEntry>) -> Self {
+        pub fn set_file_modes(mut self, input: crate::model::SetFileModeEntry) -> Self {
             let mut v = self.set_file_modes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.set_file_modes = Some(v);
             self
         }
@@ -2066,9 +2066,9 @@ pub mod create_pull_request_input {
         /// <p>The targets for the pull request, including the source of the code to be reviewed (the
         /// source branch) and the destination where the creator of the pull request intends the
         /// code to be merged after the pull request is closed (the destination branch).</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -13080,9 +13080,9 @@ pub mod put_repository_triggers_input {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>The JSON block of configuration information for each trigger.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::RepositoryTrigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::RepositoryTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -13442,9 +13442,9 @@ pub mod test_repository_triggers_input {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>The list of triggers to test.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::RepositoryTrigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::RepositoryTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }

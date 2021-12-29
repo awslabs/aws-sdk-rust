@@ -26,12 +26,9 @@ pub mod add_custom_attributes_input {
         /// To override the contents of this collection use [`set_custom_attributes`](Self::set_custom_attributes).
         ///
         /// <p>An array of custom attributes, such as Mutable and Name.</p>
-        pub fn custom_attributes(
-            mut self,
-            input: impl Into<crate::model::SchemaAttributeType>,
-        ) -> Self {
+        pub fn custom_attributes(mut self, input: crate::model::SchemaAttributeType) -> Self {
             let mut v = self.custom_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_attributes = Some(v);
             self
         }
@@ -697,9 +694,9 @@ pub mod admin_create_user_input {
         /// parameter.</p>
         /// </li>
         /// </ul>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
@@ -757,9 +754,9 @@ pub mod admin_create_user_input {
         /// user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger
         /// receives the validation data and uses it in the validation process.</p>
         /// <p>The user's validation data is not persisted.</p>
-        pub fn validation_data(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn validation_data(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.validation_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_data = Some(v);
             self
         }
@@ -865,12 +862,9 @@ pub mod admin_create_user_input {
         /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message.
         /// Specify <code>"SMS"</code> if the phone number will be used. The default value is
         /// <code>"SMS"</code>. More than one value can be specified.</p>
-        pub fn desired_delivery_mediums(
-            mut self,
-            input: impl Into<crate::model::DeliveryMediumType>,
-        ) -> Self {
+        pub fn desired_delivery_mediums(mut self, input: crate::model::DeliveryMediumType) -> Self {
             let mut v = self.desired_delivery_mediums.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.desired_delivery_mediums = Some(v);
             self
         }
@@ -5220,9 +5214,9 @@ pub mod admin_set_user_settings_input {
         ///
         /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
         /// delivery.</p>
-        pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
+        pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_options = Some(v);
             self
         }
@@ -5811,9 +5805,9 @@ pub mod admin_update_user_attributes_input {
         /// <p>An array of name-value pairs representing user attributes.</p>
         /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
         /// attribute name.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
@@ -8217,9 +8211,9 @@ pub mod create_resource_server_input {
         ///
         /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
         /// <code>description</code>.</p>
-        pub fn scopes(mut self, input: impl Into<crate::model::ResourceServerScopeType>) -> Self {
+        pub fn scopes(mut self, input: crate::model::ResourceServerScopeType) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scopes = Some(v);
             self
         }
@@ -8656,10 +8650,10 @@ pub mod create_user_pool_input {
         /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
         pub fn auto_verified_attributes(
             mut self,
-            input: impl Into<crate::model::VerifiedAttributeType>,
+            input: crate::model::VerifiedAttributeType,
         ) -> Self {
             let mut v = self.auto_verified_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_verified_attributes = Some(v);
             self
         }
@@ -8677,12 +8671,9 @@ pub mod create_user_pool_input {
         ///
         /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or
         /// <b>preferred_username</b>.</p>
-        pub fn alias_attributes(
-            mut self,
-            input: impl Into<crate::model::AliasAttributeType>,
-        ) -> Self {
+        pub fn alias_attributes(mut self, input: crate::model::AliasAttributeType) -> Self {
             let mut v = self.alias_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alias_attributes = Some(v);
             self
         }
@@ -8701,12 +8692,9 @@ pub mod create_user_pool_input {
         ///
         /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
         /// a user signs up.</p>
-        pub fn username_attributes(
-            mut self,
-            input: impl Into<crate::model::UsernameAttributeType>,
-        ) -> Self {
+        pub fn username_attributes(mut self, input: crate::model::UsernameAttributeType) -> Self {
             let mut v = self.username_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.username_attributes = Some(v);
             self
         }
@@ -8899,9 +8887,9 @@ pub mod create_user_pool_input {
         ///
         /// <p>An array of schema attributes for the new user pool. These attributes can be standard
         /// or custom attributes.</p>
-        pub fn schema(mut self, input: impl Into<crate::model::SchemaAttributeType>) -> Self {
+        pub fn schema(mut self, input: crate::model::SchemaAttributeType) -> Self {
             let mut v = self.schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema = Some(v);
             self
         }
@@ -9343,12 +9331,9 @@ pub mod create_user_pool_client_input {
         /// tokens.</p>
         /// </li>
         /// </ul>
-        pub fn explicit_auth_flows(
-            mut self,
-            input: impl Into<crate::model::ExplicitAuthFlowsType>,
-        ) -> Self {
+        pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             let mut v = self.explicit_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.explicit_auth_flows = Some(v);
             self
         }
@@ -9552,12 +9537,9 @@ pub mod create_user_pool_client_input {
         /// <p>Set to <code>client_credentials</code> to specify that the client should get the
         /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
         /// a combination of client and client_secret.</p>
-        pub fn allowed_o_auth_flows(
-            mut self,
-            input: impl Into<crate::model::OAuthFlowType>,
-        ) -> Self {
+        pub fn allowed_o_auth_flows(mut self, input: crate::model::OAuthFlowType) -> Self {
             let mut v = self.allowed_o_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_o_auth_flows = Some(v);
             self
         }
@@ -19079,9 +19061,9 @@ pub mod set_user_settings_input {
         ///
         /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
         /// delivery.</p>
-        pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
+        pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_options = Some(v);
             self
         }
@@ -19299,9 +19281,9 @@ pub mod sign_up_input {
         /// <p>An array of name-value pairs representing user attributes.</p>
         /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
         /// attribute name.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
@@ -19320,9 +19302,9 @@ pub mod sign_up_input {
         /// To override the contents of this collection use [`set_validation_data`](Self::set_validation_data).
         ///
         /// <p>The validation data in the request to register a user.</p>
-        pub fn validation_data(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn validation_data(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.validation_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_data = Some(v);
             self
         }
@@ -21183,9 +21165,9 @@ pub mod update_resource_server_input {
         /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
         ///
         /// <p>The scope values to be set for the resource server.</p>
-        pub fn scopes(mut self, input: impl Into<crate::model::ResourceServerScopeType>) -> Self {
+        pub fn scopes(mut self, input: crate::model::ResourceServerScopeType) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scopes = Some(v);
             self
         }
@@ -21357,9 +21339,9 @@ pub mod update_user_attributes_input {
         /// <p>An array of name-value pairs representing user attributes.</p>
         /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
         /// attribute name.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
@@ -21685,10 +21667,10 @@ pub mod update_user_pool_input {
         /// request to update user pools.</p>
         pub fn auto_verified_attributes(
             mut self,
-            input: impl Into<crate::model::VerifiedAttributeType>,
+            input: crate::model::VerifiedAttributeType,
         ) -> Self {
             let mut v = self.auto_verified_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_verified_attributes = Some(v);
             self
         }
@@ -22290,12 +22272,9 @@ pub mod update_user_pool_client_input {
         /// tokens.</p>
         /// </li>
         /// </ul>
-        pub fn explicit_auth_flows(
-            mut self,
-            input: impl Into<crate::model::ExplicitAuthFlowsType>,
-        ) -> Self {
+        pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             let mut v = self.explicit_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.explicit_auth_flows = Some(v);
             self
         }
@@ -22497,12 +22476,9 @@ pub mod update_user_pool_client_input {
         /// <p>Set to <code>client_credentials</code> to specify that the client should get the
         /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
         /// a combination of client and client_secret.</p>
-        pub fn allowed_o_auth_flows(
-            mut self,
-            input: impl Into<crate::model::OAuthFlowType>,
-        ) -> Self {
+        pub fn allowed_o_auth_flows(mut self, input: crate::model::OAuthFlowType) -> Self {
             let mut v = self.allowed_o_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_o_auth_flows = Some(v);
             self
         }

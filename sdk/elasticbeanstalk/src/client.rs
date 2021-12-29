@@ -519,8 +519,8 @@ pub mod fluent_builders {
         }
         /// <p>This specifies the ID of the environment with the in-progress update that you want to
         /// cancel.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>This specifies the ID of the environment with the in-progress update that you want to
@@ -534,8 +534,8 @@ pub mod fluent_builders {
         }
         /// <p>This specifies the name of the environment with the in-progress update that you want to
         /// cancel.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>This specifies the name of the environment with the in-progress update that you want to
@@ -610,8 +610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the target environment.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the target environment.</p>
@@ -623,8 +623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment ID of the target environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The environment ID of the target environment.</p>
@@ -636,8 +636,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action ID of the scheduled managed action to execute.</p>
-        pub fn action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(inp);
+        pub fn action_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(signature.into());
             self
         }
         /// <p>The action ID of the scheduled managed action to execute.</p>
@@ -711,8 +711,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment to which to set the operations role.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to which to set the operations role.</p>
@@ -725,8 +725,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
         /// operations role.</p>
-        pub fn operations_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operations_role(inp);
+        pub fn operations_role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operations_role(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
@@ -799,8 +799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The prefix used when this CNAME is reserved.</p>
-        pub fn cname_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cname_prefix(inp);
+        pub fn cname_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cname_prefix(signature.into());
             self
         }
         /// <p>The prefix used when this CNAME is reserved.</p>
@@ -874,8 +874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to which the specified source bundles belong.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to which the specified source bundles belong.</p>
@@ -890,8 +890,8 @@ pub mod fluent_builders {
         /// only if the environment name defined in each target environment's manifest ends with a +
         /// (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
         /// (env.yaml)</a> for details.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The name of the group to which the target environments belong. Specify a group name
@@ -910,8 +910,8 @@ pub mod fluent_builders {
         /// to the target application. Each source bundle must include an environment manifest that
         /// specifies the name of the environment and the name of the solution stack to use, and
         /// optionally can specify environment links to create.</p>
-        pub fn version_labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_labels(inp);
+        pub fn version_labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_labels(input.into());
             self
         }
         /// <p>A list of version labels, specifying one or more application source bundles that belong
@@ -987,8 +987,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application. Must be unique within your account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application. Must be unique within your account.</p>
@@ -1000,8 +1000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Your description of the application.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Your description of the application.</p>
@@ -1013,9 +1013,9 @@ pub mod fluent_builders {
         /// from accumulating too many versions.</p>
         pub fn resource_lifecycle_config(
             mut self,
-            inp: crate::model::ApplicationResourceLifecycleConfig,
+            signature: crate::model::ApplicationResourceLifecycleConfig,
         ) -> Self {
-            self.inner = self.inner.resource_lifecycle_config(inp);
+            self.inner = self.inner.resource_lifecycle_config(signature);
             self
         }
         /// <p>Specifies an application resource lifecycle configuration to prevent your application
@@ -1034,8 +1034,8 @@ pub mod fluent_builders {
         /// <p>Specifies the tags applied to the application.</p>
         /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the
         /// application don't inherit the tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Specifies the tags applied to the application.</p>
@@ -1127,8 +1127,8 @@ pub mod fluent_builders {
         /// <p> The name of the application. If no application is found with this name, and
         /// <code>AutoCreateApplication</code> is <code>false</code>, returns an
         /// <code>InvalidParameterValue</code> error. </p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p> The name of the application. If no application is found with this name, and
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
         /// <p>Constraint: Must be unique per application. If an application version already exists
         /// with this label for the specified application, AWS Elastic Beanstalk returns an
         /// <code>InvalidParameterValue</code> error. </p>
-        pub fn version_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_label(inp);
+        pub fn version_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_label(signature.into());
             self
         }
         /// <p>A label identifying this version.</p>
@@ -1161,8 +1161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of this application version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of this application version.</p>
@@ -1174,9 +1174,9 @@ pub mod fluent_builders {
         /// application version.</p>
         pub fn source_build_information(
             mut self,
-            inp: crate::model::SourceBuildInformation,
+            signature: crate::model::SourceBuildInformation,
         ) -> Self {
-            self.inner = self.inner.source_build_information(inp);
+            self.inner = self.inner.source_build_information(signature);
             self
         }
         /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the
@@ -1198,8 +1198,8 @@ pub mod fluent_builders {
         /// <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
         /// <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample
         /// application.</p>
-        pub fn source_bundle(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.source_bundle(inp);
+        pub fn source_bundle(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.source_bundle(signature);
             self
         }
         /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this
@@ -1220,8 +1220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings for an AWS CodeBuild build.</p>
-        pub fn build_configuration(mut self, inp: crate::model::BuildConfiguration) -> Self {
-            self.inner = self.inner.build_configuration(inp);
+        pub fn build_configuration(mut self, signature: crate::model::BuildConfiguration) -> Self {
+            self.inner = self.inner.build_configuration(signature);
             self
         }
         /// <p>Settings for an AWS CodeBuild build.</p>
@@ -1234,8 +1234,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't
         /// already exist.</p>
-        pub fn auto_create_application(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_create_application(inp);
+        pub fn auto_create_application(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_create_application(signature);
             self
         }
         /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't
@@ -1256,8 +1256,8 @@ pub mod fluent_builders {
         /// doesn't validate your application's configuration files, like proxy server or Docker
         /// configuration.</p>
         /// </note>
-        pub fn process(mut self, inp: bool) -> Self {
-            self.inner = self.inner.process(inp);
+        pub fn process(mut self, signature: bool) -> Self {
+            self.inner = self.inner.process(signature);
             self
         }
         /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and
@@ -1283,8 +1283,8 @@ pub mod fluent_builders {
         /// <p>Specifies the tags applied to the application version.</p>
         /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the
         /// application version don't inherit the tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Specifies the tags applied to the application version.</p>
@@ -1382,8 +1382,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Elastic Beanstalk application to associate with this configuration
         /// template.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the Elastic Beanstalk application to associate with this configuration
@@ -1397,8 +1397,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration template.</p>
         /// <p>Constraint: This name must be unique per application.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the configuration template.</p>
@@ -1423,8 +1423,8 @@ pub mod fluent_builders {
         /// <code>ListAvailableSolutionStacks</code>
         /// </a> API to obtain a list of available
         /// solution stacks.</p>
-        pub fn solution_stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_stack_name(inp);
+        pub fn solution_stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_stack_name(signature.into());
             self
         }
         /// <p>The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For
@@ -1454,8 +1454,8 @@ pub mod fluent_builders {
         /// <p>If you specify <code>PlatformArn</code>, then don't specify
         /// <code>SolutionStackName</code>.</p>
         /// </note>
-        pub fn platform_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_arn(inp);
+        pub fn platform_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom
@@ -1479,8 +1479,11 @@ pub mod fluent_builders {
         /// <p>Constraint: If both solution stack name and source configuration are specified, the
         /// solution stack of the source configuration template must match the specified solution stack
         /// name.</p>
-        pub fn source_configuration(mut self, inp: crate::model::SourceConfiguration) -> Self {
-            self.inner = self.inner.source_configuration(inp);
+        pub fn source_configuration(
+            mut self,
+            signature: crate::model::SourceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.source_configuration(signature);
             self
         }
         /// <p>An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the configuration values from the specified
@@ -1504,8 +1507,8 @@ pub mod fluent_builders {
         /// template. You must specify <code>EnvironmentId</code> if you don't specify
         /// <code>PlatformArn</code>, <code>SolutionStackName</code>, or
         /// <code>SourceConfiguration</code>.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The ID of an environment whose settings you want to use to create the configuration
@@ -1520,8 +1523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for this configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>An optional description for this configuration.</p>
@@ -1537,11 +1540,8 @@ pub mod fluent_builders {
         /// values override the values obtained from the solution stack or the source configuration
         /// template. For a complete list of Elastic Beanstalk configuration options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
         /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-        pub fn option_settings(
-            mut self,
-            inp: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
-            self.inner = self.inner.option_settings(inp);
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
+            self.inner = self.inner.option_settings(input);
             self
         }
         /// <p>Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these
@@ -1560,8 +1560,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to the configuration template.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Specifies the tags applied to the configuration template.</p>
@@ -1634,8 +1634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application that is associated with this environment.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application that is associated with this environment.</p>
@@ -1653,8 +1653,8 @@ pub mod fluent_builders {
         /// <code>InvalidParameterValue</code> error. </p>
         /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of
         /// the CNAME, and therefore part of the visible URL for your application.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>A unique name for the environment.</p>
@@ -1675,8 +1675,8 @@ pub mod fluent_builders {
         /// only if the environment's name is specified in an environment manifest and not with the
         /// environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
         /// (env.yaml)</a> for details.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The name of the group to which the target environment belongs. Specify a group name
@@ -1688,8 +1688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Your description for this environment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Your description for this environment.</p>
@@ -1700,8 +1700,8 @@ pub mod fluent_builders {
         /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in
         /// your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by
         /// appending a random alphanumeric string to the environment name.</p>
-        pub fn cname_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cname_prefix(inp);
+        pub fn cname_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cname_prefix(signature.into());
             self
         }
         /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in
@@ -1714,8 +1714,8 @@ pub mod fluent_builders {
         /// <p>Specifies the tier to use in creating this environment. The environment tier that you
         /// choose determines whether Elastic Beanstalk provisions resources to support a web application that handles
         /// HTTP(S) requests or a web application that handles background-processing tasks.</p>
-        pub fn tier(mut self, inp: crate::model::EnvironmentTier) -> Self {
-            self.inner = self.inner.tier(inp);
+        pub fn tier(mut self, signature: crate::model::EnvironmentTier) -> Self {
+            self.inner = self.inner.tier(signature);
             self
         }
         /// <p>Specifies the tier to use in creating this environment. The environment tier that you
@@ -1733,8 +1733,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to resources in the environment.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Specifies the tags applied to resources in the environment.</p>
@@ -1747,8 +1747,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the application version to deploy.</p>
         /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
-        pub fn version_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_label(inp);
+        pub fn version_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_label(signature.into());
             self
         }
         /// <p>The name of the application version to deploy.</p>
@@ -1765,8 +1765,8 @@ pub mod fluent_builders {
         /// <p>If you specify <code>TemplateName</code>, then don't specify
         /// <code>SolutionStackName</code>.</p>
         /// </note>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p>
@@ -1789,8 +1789,8 @@ pub mod fluent_builders {
         /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
         /// <code>TemplateName</code>.</p>
         /// </note>
-        pub fn solution_stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_stack_name(inp);
+        pub fn solution_stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_stack_name(signature.into());
             self
         }
         /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If
@@ -1816,8 +1816,8 @@ pub mod fluent_builders {
         /// <p>If you specify <code>PlatformArn</code>, don't specify
         /// <code>SolutionStackName</code>.</p>
         /// </note>
-        pub fn platform_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_arn(inp);
+        pub fn platform_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For
@@ -1839,11 +1839,8 @@ pub mod fluent_builders {
         /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the
         /// requested value in the configuration set for the new environment. These override the values
         /// obtained from the solution stack or the configuration template.</p>
-        pub fn option_settings(
-            mut self,
-            inp: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
-            self.inner = self.inner.option_settings(inp);
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
+            self.inner = self.inner.option_settings(input);
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the
@@ -1862,11 +1859,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of custom user-defined configuration options to remove from the configuration
         /// set for this new environment.</p>
-        pub fn options_to_remove(
-            mut self,
-            inp: impl Into<crate::model::OptionSpecification>,
-        ) -> Self {
-            self.inner = self.inner.options_to_remove(inp);
+        pub fn options_to_remove(mut self, input: crate::model::OptionSpecification) -> Self {
+            self.inner = self.inner.options_to_remove(input);
             self
         }
         /// <p>A list of custom user-defined configuration options to remove from the configuration
@@ -1884,8 +1878,8 @@ pub mod fluent_builders {
         /// an operations role, you must have the <code>iam:PassRole</code> permission for the role. For
         /// more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
         /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-        pub fn operations_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operations_role(inp);
+        pub fn operations_role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operations_role(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
@@ -1962,8 +1956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your custom platform.</p>
-        pub fn platform_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_name(inp);
+        pub fn platform_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_name(signature.into());
             self
         }
         /// <p>The name of your custom platform.</p>
@@ -1975,8 +1969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number, such as 1.0.2, for the new platform version.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        pub fn platform_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(signature.into());
             self
         }
         /// <p>The number, such as 1.0.2, for the new platform version.</p>
@@ -1988,8 +1982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the platform definition archive in Amazon S3.</p>
-        pub fn platform_definition_bundle(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.platform_definition_bundle(inp);
+        pub fn platform_definition_bundle(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.platform_definition_bundle(signature);
             self
         }
         /// <p>The location of the platform definition archive in Amazon S3.</p>
@@ -2001,8 +1995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the builder environment.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the builder environment.</p>
@@ -2018,11 +2012,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
         ///
         /// <p>The configuration option settings to apply to the builder environment.</p>
-        pub fn option_settings(
-            mut self,
-            inp: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
-            self.inner = self.inner.option_settings(inp);
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
+            self.inner = self.inner.option_settings(input);
             self
         }
         /// <p>The configuration option settings to apply to the builder environment.</p>
@@ -2040,8 +2031,8 @@ pub mod fluent_builders {
         /// <p>Specifies the tags applied to the new platform version.</p>
         /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using
         /// the platform version don't inherit the tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Specifies the tags applied to the new platform version.</p>
@@ -2184,8 +2175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to delete.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to delete.</p>
@@ -2198,8 +2189,8 @@ pub mod fluent_builders {
         }
         /// <p>When set to true, running environments will be terminated before deleting the
         /// application.</p>
-        pub fn terminate_env_by_force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.terminate_env_by_force(inp);
+        pub fn terminate_env_by_force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.terminate_env_by_force(signature);
             self
         }
         /// <p>When set to true, running environments will be terminated before deleting the
@@ -2273,8 +2264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to which the version belongs.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to which the version belongs.</p>
@@ -2286,8 +2277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The label of the version to delete.</p>
-        pub fn version_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_label(inp);
+        pub fn version_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_label(signature.into());
             self
         }
         /// <p>The label of the version to delete.</p>
@@ -2301,8 +2292,8 @@ pub mod fluent_builders {
         /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket.
         /// Otherwise, the application version is deleted only from Elastic Beanstalk and the source
         /// bundle remains in Amazon S3.</p>
-        pub fn delete_source_bundle(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_source_bundle(inp);
+        pub fn delete_source_bundle(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_source_bundle(signature);
             self
         }
         /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket.
@@ -2378,8 +2369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to delete the configuration template from.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to delete the configuration template from.</p>
@@ -2391,8 +2382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the configuration template to delete.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the configuration template to delete.</p>
@@ -2469,8 +2460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application the environment is associated with.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application the environment is associated with.</p>
@@ -2482,8 +2473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment to delete the draft configuration from.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to delete the draft configuration from.</p>
@@ -2555,8 +2546,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the version of the custom platform.</p>
-        pub fn platform_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_arn(inp);
+        pub fn platform_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_arn(signature.into());
             self
         }
         /// <p>The ARN of the version of the custom platform.</p>
@@ -2692,8 +2683,8 @@ pub mod fluent_builders {
         ///
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
         /// those with the specified names.</p>
-        pub fn application_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_names(inp);
+        pub fn application_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_names(input.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
@@ -2767,8 +2758,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify an application name to show only application versions for that
         /// application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>Specify an application name to show only application versions for that
@@ -2785,8 +2776,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_version_labels`](Self::set_version_labels).
         ///
         /// <p>Specify a version label to show a specific application version.</p>
-        pub fn version_labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_labels(inp);
+        pub fn version_labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_labels(input.into());
             self
         }
         /// <p>Specify a version label to show a specific application version.</p>
@@ -2801,8 +2792,8 @@ pub mod fluent_builders {
         /// each response.</p>
         /// <p>If no <code>MaxRecords</code> is specified, all available application versions are
         /// retrieved in a single response.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>For a paginated request. Specify a maximum number of application versions to include in
@@ -2816,8 +2807,8 @@ pub mod fluent_builders {
         /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other
         /// parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other
@@ -2893,8 +2884,8 @@ pub mod fluent_builders {
         /// <p>The name of the application associated with the configuration template or environment.
         /// Only needed if you want to describe the configuration options associated with either the
         /// configuration template or environment.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application associated with the configuration template or environment.
@@ -2909,8 +2900,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration template whose configuration options you want to
         /// describe.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the configuration template whose configuration options you want to
@@ -2923,8 +2914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment whose configuration options you want to describe.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment whose configuration options you want to describe.</p>
@@ -2937,8 +2928,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the solution stack whose configuration options you want to
         /// describe.</p>
-        pub fn solution_stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_stack_name(inp);
+        pub fn solution_stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_stack_name(signature.into());
             self
         }
         /// <p>The name of the solution stack whose configuration options you want to
@@ -2951,8 +2942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the custom platform.</p>
-        pub fn platform_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_arn(inp);
+        pub fn platform_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_arn(signature.into());
             self
         }
         /// <p>The ARN of the custom platform.</p>
@@ -2965,8 +2956,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_options`](Self::set_options).
         ///
         /// <p>If specified, restricts the descriptions to only the specified options.</p>
-        pub fn options(mut self, inp: impl Into<crate::model::OptionSpecification>) -> Self {
-            self.inner = self.inner.options(inp);
+        pub fn options(mut self, input: crate::model::OptionSpecification) -> Self {
+            self.inner = self.inner.options(input);
             self
         }
         /// <p>If specified, restricts the descriptions to only the specified options.</p>
@@ -3052,8 +3043,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application for the environment or configuration template.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The application for the environment or configuration template.</p>
@@ -3069,8 +3060,8 @@ pub mod fluent_builders {
         /// both. If you specify both, AWS Elastic Beanstalk returns an
         /// <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic
         /// Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the configuration template to describe.</p>
@@ -3090,8 +3081,8 @@ pub mod fluent_builders {
         /// specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
         /// If you do not specify either, AWS Elastic Beanstalk returns
         /// <code>MissingRequiredParameter</code> error. </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to describe.</p>
@@ -3170,8 +3161,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the environment by name.</p>
         /// <p>You must specify either this or an EnvironmentName, or both.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>Specify the environment by name.</p>
@@ -3185,8 +3176,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the environment by ID.</p>
         /// <p>You must specify either this or an EnvironmentName, or both.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>Specify the environment by ID.</p>
@@ -3205,11 +3196,8 @@ pub mod fluent_builders {
         /// <p>Specify the response elements to return. To retrieve all attributes, set to
         /// <code>All</code>. If no attribute names are specified, returns the name of the
         /// environment.</p>
-        pub fn attribute_names(
-            mut self,
-            inp: impl Into<crate::model::EnvironmentHealthAttribute>,
-        ) -> Self {
-            self.inner = self.inner.attribute_names(inp);
+        pub fn attribute_names(mut self, input: crate::model::EnvironmentHealthAttribute) -> Self {
+            self.inner = self.inner.attribute_names(input);
             self
         }
         /// <p>Specify the response elements to return. To retrieve all attributes, set to
@@ -3285,8 +3273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The environment ID of the target environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The environment ID of the target environment.</p>
@@ -3298,8 +3286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the target environment.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the target environment.</p>
@@ -3311,8 +3299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token returned by a previous request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token returned by a previous request.</p>
@@ -3321,8 +3309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return for a single request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of items to return for a single request.</p>
@@ -3391,8 +3379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the target environment.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the target environment.</p>
@@ -3404,8 +3392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment ID of the target environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The environment ID of the target environment.</p>
@@ -3417,8 +3405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To show only actions with a particular status, specify a status.</p>
-        pub fn status(mut self, inp: crate::model::ActionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::ActionStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>To show only actions with a particular status, specify a status.</p>
@@ -3493,8 +3481,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
@@ -3512,8 +3500,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to retrieve AWS resource usage data.</p>
@@ -3589,8 +3577,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
         /// those that are associated with this application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
@@ -3604,8 +3592,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
         /// those that are associated with this application version.</p>
-        pub fn version_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_label(inp);
+        pub fn version_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_label(signature.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
@@ -3623,8 +3611,8 @@ pub mod fluent_builders {
         ///
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
         /// those that have the specified IDs.</p>
-        pub fn environment_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_ids(inp);
+        pub fn environment_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_ids(input.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
@@ -3642,8 +3630,8 @@ pub mod fluent_builders {
         ///
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
         /// those that have the specified names.</p>
-        pub fn environment_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_names(inp);
+        pub fn environment_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_names(input.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
@@ -3661,8 +3649,8 @@ pub mod fluent_builders {
         /// <code>IncludedDeletedBackTo</code> are displayed.</p>
         /// <p>
         /// <code>false</code>: Do not include deleted environments.</p>
-        pub fn include_deleted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_deleted(inp);
+        pub fn include_deleted(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_deleted(signature);
             self
         }
         /// <p>Indicates whether to include deleted environments:</p>
@@ -3677,8 +3665,8 @@ pub mod fluent_builders {
         }
         /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then
         /// environments deleted after this date are displayed. </p>
-        pub fn included_deleted_back_to(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.included_deleted_back_to(inp);
+        pub fn included_deleted_back_to(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.included_deleted_back_to(signature);
             self
         }
         /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then
@@ -3694,8 +3682,8 @@ pub mod fluent_builders {
         /// each response.</p>
         /// <p>If no <code>MaxRecords</code> is specified, all available environments are
         /// retrieved in a single response.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>For a paginated request. Specify a maximum number of environments to include in
@@ -3709,8 +3697,8 @@ pub mod fluent_builders {
         /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other
         /// parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other
@@ -3786,8 +3774,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
         /// those associated with this application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only
@@ -3801,8 +3789,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
         /// associated with this application version.</p>
-        pub fn version_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_label(inp);
+        pub fn version_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_label(signature.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
@@ -3816,8 +3804,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
         /// are associated with this environment configuration.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
@@ -3831,8 +3819,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
         /// associated with this environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
@@ -3846,8 +3834,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
         /// associated with this environment.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
@@ -3861,8 +3849,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the
         /// returned descriptions to those associated with this custom platform version.</p>
-        pub fn platform_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_arn(inp);
+        pub fn platform_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_arn(signature.into());
             self
         }
         /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the
@@ -3873,8 +3861,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only
         /// those associated with this request ID.</p>
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(signature.into());
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only
@@ -3885,8 +3873,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, limits the events returned from this call to include only those with the
         /// specified severity or higher.</p>
-        pub fn severity(mut self, inp: crate::model::EventSeverity) -> Self {
-            self.inner = self.inner.severity(inp);
+        pub fn severity(mut self, signature: crate::model::EventSeverity) -> Self {
+            self.inner = self.inner.severity(signature);
             self
         }
         /// <p>If specified, limits the events returned from this call to include only those with the
@@ -3900,8 +3888,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
         /// occur on or after this time.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
@@ -3915,8 +3903,8 @@ pub mod fluent_builders {
         }
         /// <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
         /// occur up to, but not including, the <code>EndTime</code>. </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
@@ -3930,8 +3918,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the maximum number of events that can be returned, beginning with the most
         /// recent event.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>Specifies the maximum number of events that can be returned, beginning with the most
@@ -3941,8 +3929,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token. If specified, the events return the next batch of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token. If specified, the events return the next batch of results.</p>
@@ -4013,8 +4001,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
@@ -4026,8 +4014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
@@ -4045,11 +4033,8 @@ pub mod fluent_builders {
         /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to
         /// <code>All</code>. If no attribute names are specified, returns a list of
         /// instances.</p>
-        pub fn attribute_names(
-            mut self,
-            inp: impl Into<crate::model::InstancesHealthAttribute>,
-        ) -> Self {
-            self.inner = self.inner.attribute_names(inp);
+        pub fn attribute_names(mut self, input: crate::model::InstancesHealthAttribute) -> Self {
+            self.inner = self.inner.attribute_names(input);
             self
         }
         /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to
@@ -4063,8 +4048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token returned by a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token returned by a previous call.</p>
@@ -4136,8 +4121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the platform version.</p>
-        pub fn platform_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_arn(inp);
+        pub fn platform_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_arn(signature.into());
             self
         }
         /// <p>The ARN of the platform version.</p>
@@ -4211,8 +4196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment from which to disassociate the operations role.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment from which to disassociate the operations role.</p>
@@ -4421,8 +4406,8 @@ pub mod fluent_builders {
         /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
         /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10
         /// items.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SearchFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SearchFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated
@@ -4503,8 +4488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of platform branch values returned in one call.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of platform branch values returned in one call.</p>
@@ -4516,8 +4501,8 @@ pub mod fluent_builders {
         /// next response page. All other parameter values must be identical to the ones specified in the
         /// initial request.</p>
         /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>For a paginated request. Specify a token from a previous response page to retrieve the
@@ -4599,8 +4584,8 @@ pub mod fluent_builders {
         /// <p>Criteria for restricting the resulting list of platform versions. The filter is
         /// interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code>
         /// terms.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::PlatformFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::PlatformFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Criteria for restricting the resulting list of platform versions. The filter is
@@ -4614,8 +4599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of platform version values returned in one call.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of platform version values returned in one call.</p>
@@ -4627,8 +4612,8 @@ pub mod fluent_builders {
         /// next response page. All other parameter values must be identical to the ones specified in the
         /// initial request.</p>
         /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>For a paginated request. Specify a token from a previous response page to retrieve the
@@ -4704,8 +4689,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
         /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
@@ -4779,8 +4764,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The ID of the environment to rebuild.</p>
@@ -4798,8 +4783,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to rebuild.</p>
@@ -4894,8 +4879,8 @@ pub mod fluent_builders {
         /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The ID of the environment of the requested data.</p>
@@ -4917,8 +4902,8 @@ pub mod fluent_builders {
         /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment of the requested data.</p>
@@ -4935,8 +4920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of information to request.</p>
-        pub fn info_type(mut self, inp: crate::model::EnvironmentInfoType) -> Self {
-            self.inner = self.inner.info_type(inp);
+        pub fn info_type(mut self, signature: crate::model::EnvironmentInfoType) -> Self {
+            self.inner = self.inner.info_type(signature);
             self
         }
         /// <p>The type of information to request.</p>
@@ -5012,8 +4997,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The ID of the environment to restart the server for.</p>
@@ -5031,8 +5016,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to restart the server for.</p>
@@ -5121,8 +5106,8 @@ pub mod fluent_builders {
         /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
         /// error.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The ID of the data's environment.</p>
@@ -5143,8 +5128,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the data's environment.</p>
@@ -5160,8 +5145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of information to retrieve.</p>
-        pub fn info_type(mut self, inp: crate::model::EnvironmentInfoType) -> Self {
-            self.inner = self.inner.info_type(inp);
+        pub fn info_type(mut self, signature: crate::model::EnvironmentInfoType) -> Self {
+            self.inner = self.inner.info_type(signature);
             self
         }
         /// <p>The type of information to retrieve.</p>
@@ -5237,8 +5222,8 @@ pub mod fluent_builders {
         /// <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
         /// <code>SourceEnvironmentId</code>, you must specify the
         /// <code>DestinationEnvironmentId</code>. </p>
-        pub fn source_environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_environment_id(inp);
+        pub fn source_environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_environment_id(signature.into());
             self
         }
         /// <p>The ID of the source environment.</p>
@@ -5258,8 +5243,11 @@ pub mod fluent_builders {
         /// <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
         /// <code>SourceEnvironmentName</code>, you must specify the
         /// <code>DestinationEnvironmentName</code>. </p>
-        pub fn source_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_environment_name(inp);
+        pub fn source_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.source_environment_name(signature.into());
             self
         }
         /// <p>The name of the source environment.</p>
@@ -5278,8 +5266,11 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
         /// <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
         /// <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
-        pub fn destination_environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_environment_id(inp);
+        pub fn destination_environment_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_environment_id(signature.into());
             self
         }
         /// <p>The ID of the destination environment.</p>
@@ -5298,8 +5289,11 @@ pub mod fluent_builders {
         /// <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
         /// <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
         /// </p>
-        pub fn destination_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_environment_name(inp);
+        pub fn destination_environment_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_environment_name(signature.into());
             self
         }
         /// <p>The name of the destination environment.</p>
@@ -5378,8 +5372,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The ID of the environment to terminate.</p>
@@ -5397,8 +5391,8 @@ pub mod fluent_builders {
         /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to terminate.</p>
@@ -5432,8 +5426,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p> Valid Values: <code>true</code> | <code>false</code>
         /// </p>
-        pub fn terminate_resources(mut self, inp: bool) -> Self {
-            self.inner = self.inner.terminate_resources(inp);
+        pub fn terminate_resources(mut self, signature: bool) -> Self {
+            self.inner = self.inner.terminate_resources(signature);
             self
         }
         /// <p>Indicates whether the associated AWS resources should shut down when the environment is
@@ -5462,8 +5456,8 @@ pub mod fluent_builders {
         }
         /// <p>Terminates the target environment even if another environment in the same group is
         /// dependent on it.</p>
-        pub fn force_terminate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_terminate(inp);
+        pub fn force_terminate(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_terminate(signature);
             self
         }
         /// <p>Terminates the target environment even if another environment in the same group is
@@ -5539,8 +5533,8 @@ pub mod fluent_builders {
         /// <p>The name of the application to update. If no such application is found,
         /// <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.
         /// </p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to update. If no such application is found,
@@ -5556,8 +5550,8 @@ pub mod fluent_builders {
         /// <p>A new description for the application.</p>
         /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the
         /// description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A new description for the application.</p>
@@ -5630,8 +5624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -5645,9 +5639,9 @@ pub mod fluent_builders {
         /// <p>The lifecycle configuration.</p>
         pub fn resource_lifecycle_config(
             mut self,
-            inp: crate::model::ApplicationResourceLifecycleConfig,
+            signature: crate::model::ApplicationResourceLifecycleConfig,
         ) -> Self {
-            self.inner = self.inner.resource_lifecycle_config(inp);
+            self.inner = self.inner.resource_lifecycle_config(signature);
             self
         }
         /// <p>The lifecycle configuration.</p>
@@ -5725,8 +5719,8 @@ pub mod fluent_builders {
         /// <p>The name of the application associated with this version.</p>
         /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an
         /// <code>InvalidParameterValue</code> error.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application associated with this version.</p>
@@ -5742,8 +5736,8 @@ pub mod fluent_builders {
         /// <p>The name of the version to update.</p>
         /// <p>If no application version is found with this label, <code>UpdateApplication</code>
         /// returns an <code>InvalidParameterValue</code> error. </p>
-        pub fn version_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_label(inp);
+        pub fn version_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_label(signature.into());
             self
         }
         /// <p>The name of the version to update.</p>
@@ -5757,8 +5751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for this version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A new description for this version.</p>
@@ -5843,8 +5837,8 @@ pub mod fluent_builders {
         /// update.</p>
         /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code>
         /// returns an <code>InvalidParameterValue</code> error. </p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application associated with the configuration template to
@@ -5862,8 +5856,8 @@ pub mod fluent_builders {
         /// <p> If no configuration template is found with this name,
         /// <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code>
         /// error. </p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the configuration template to update.</p>
@@ -5878,8 +5872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for the configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A new description for the configuration.</p>
@@ -5893,11 +5887,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of configuration option settings to update with the new specified option
         /// value.</p>
-        pub fn option_settings(
-            mut self,
-            inp: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
-            self.inner = self.inner.option_settings(inp);
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
+            self.inner = self.inner.option_settings(input);
             self
         }
         /// <p>A list of configuration option settings to update with the new specified option
@@ -5916,11 +5907,8 @@ pub mod fluent_builders {
         /// <p>A list of configuration options to remove from the configuration set.</p>
         /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options.
         /// </p>
-        pub fn options_to_remove(
-            mut self,
-            inp: impl Into<crate::model::OptionSpecification>,
-        ) -> Self {
-            self.inner = self.inner.options_to_remove(inp);
+        pub fn options_to_remove(mut self, input: crate::model::OptionSpecification) -> Self {
+            self.inner = self.inner.options_to_remove(input);
             self
         }
         /// <p>A list of configuration options to remove from the configuration set.</p>
@@ -6002,8 +5990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application with which the environment is associated.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application with which the environment is associated.</p>
@@ -6020,8 +6008,8 @@ pub mod fluent_builders {
         /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The ID of the environment to update.</p>
@@ -6042,8 +6030,8 @@ pub mod fluent_builders {
         /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
         /// </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to update. If no environment with this name exists, AWS
@@ -6062,8 +6050,8 @@ pub mod fluent_builders {
         /// only if the environment's name is specified in an environment manifest and not with the
         /// environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
         /// (env.yaml)</a> for details.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The name of the group to which the target environment belongs. Specify a group name
@@ -6076,8 +6064,8 @@ pub mod fluent_builders {
         }
         /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this
         /// environment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this
@@ -6089,8 +6077,8 @@ pub mod fluent_builders {
         /// <p>This specifies the tier to use to update the environment.</p>
         /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic
         /// Beanstalk returns <code>InvalidParameterValue</code> error. </p>
-        pub fn tier(mut self, inp: crate::model::EnvironmentTier) -> Self {
-            self.inner = self.inner.tier(inp);
+        pub fn tier(mut self, signature: crate::model::EnvironmentTier) -> Self {
+            self.inner = self.inner.tier(signature);
             self
         }
         /// <p>This specifies the tier to use to update the environment.</p>
@@ -6106,8 +6094,8 @@ pub mod fluent_builders {
         /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application
         /// version to the environment. If no such application version is found, returns an
         /// <code>InvalidParameterValue</code> error. </p>
-        pub fn version_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_label(inp);
+        pub fn version_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_label(signature.into());
             self
         }
         /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application
@@ -6123,8 +6111,8 @@ pub mod fluent_builders {
         /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration
         /// template to the environment. If no such configuration template is found, AWS Elastic Beanstalk
         /// returns an <code>InvalidParameterValue</code> error. </p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration
@@ -6139,8 +6127,8 @@ pub mod fluent_builders {
         }
         /// <p>This specifies the platform version that the environment will run after the environment
         /// is updated.</p>
-        pub fn solution_stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_stack_name(inp);
+        pub fn solution_stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_stack_name(signature.into());
             self
         }
         /// <p>This specifies the platform version that the environment will run after the environment
@@ -6153,8 +6141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the platform, if used.</p>
-        pub fn platform_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_arn(inp);
+        pub fn platform_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_arn(signature.into());
             self
         }
         /// <p>The ARN of the platform, if used.</p>
@@ -6169,11 +6157,8 @@ pub mod fluent_builders {
         /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the
         /// running environment and sets the specified configuration options to the requested
         /// value.</p>
-        pub fn option_settings(
-            mut self,
-            inp: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
-            self.inner = self.inner.option_settings(inp);
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
+            self.inner = self.inner.option_settings(input);
             self
         }
         /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the
@@ -6192,11 +6177,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of custom user-defined configuration options to remove from the configuration
         /// set for this environment.</p>
-        pub fn options_to_remove(
-            mut self,
-            inp: impl Into<crate::model::OptionSpecification>,
-        ) -> Self {
-            self.inner = self.inner.options_to_remove(inp);
+        pub fn options_to_remove(mut self, input: crate::model::OptionSpecification) -> Self {
+            self.inner = self.inner.options_to_remove(input);
             self
         }
         /// <p>A list of custom user-defined configuration options to remove from the configuration
@@ -6289,8 +6271,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
         /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
@@ -6307,8 +6289,8 @@ pub mod fluent_builders {
         /// updated.</p>
         /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>,
         /// <code>TagsToRemove</code>.</p>
-        pub fn tags_to_add(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags_to_add(inp);
+        pub fn tags_to_add(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags_to_add(input);
             self
         }
         /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is
@@ -6329,8 +6311,8 @@ pub mod fluent_builders {
         /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
         /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>,
         /// <code>TagsToRemove</code>.</p>
-        pub fn tags_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags_to_remove(inp);
+        pub fn tags_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tags_to_remove(input.into());
             self
         }
         /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
@@ -6408,8 +6390,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the application that the configuration template or environment belongs
         /// to.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application that the configuration template or environment belongs
@@ -6423,8 +6405,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the configuration template to validate the settings against.</p>
         /// <p>Condition: You cannot specify both this and an environment name.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(signature.into());
             self
         }
         /// <p>The name of the configuration template to validate the settings against.</p>
@@ -6438,8 +6420,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the environment to validate the settings against.</p>
         /// <p>Condition: You cannot specify both this and a configuration template name.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(signature.into());
             self
         }
         /// <p>The name of the environment to validate the settings against.</p>
@@ -6456,11 +6438,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
         ///
         /// <p>A list of the options and desired values to evaluate.</p>
-        pub fn option_settings(
-            mut self,
-            inp: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
-            self.inner = self.inner.option_settings(inp);
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
+            self.inner = self.inner.option_settings(input);
             self
         }
         /// <p>A list of the options and desired values to evaluate.</p>

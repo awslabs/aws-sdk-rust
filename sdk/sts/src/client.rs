@@ -276,8 +276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
@@ -295,8 +295,8 @@ pub mod fluent_builders {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn role_session_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_session_name(inp);
+        pub fn role_session_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_session_name(signature.into());
             self
         }
         /// <p>An identifier for the assumed role session.</p>
@@ -344,8 +344,8 @@ pub mod fluent_builders {
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn policy_arns(mut self, inp: impl Into<crate::model::PolicyDescriptorType>) -> Self {
-            self.inner = self.inner.policy_arns(inp);
+        pub fn policy_arns(mut self, input: crate::model::PolicyDescriptorType) -> Self {
+            self.inner = self.inner.policy_arns(input);
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as
@@ -402,8 +402,8 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -458,8 +458,8 @@ pub mod fluent_builders {
         /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_seconds(inp);
+        pub fn duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_seconds(signature);
             self
         }
         /// <p>The duration, in seconds, of the role session. The value specified can range from 900
@@ -525,8 +525,8 @@ pub mod fluent_builders {
         /// session tag with the same key as an inherited tag, the operation fails. To view the
         /// inherited tags for a session, see the CloudTrail logs. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session Tags in CloudTrail</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of session tags that you want to pass. Each session tag consists of a key name
@@ -578,8 +578,8 @@ pub mod fluent_builders {
         /// and session tags packed binary limit is not affected.</p>
         /// <p>If you choose not to specify a transitive tag key, then no tags are passed from this
         /// session to any subsequent sessions.</p>
-        pub fn transitive_tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transitive_tag_keys(inp);
+        pub fn transitive_tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transitive_tag_keys(input.into());
             self
         }
         /// <p>A list of keys for session tags that you want to set as transitive. If you set a tag key
@@ -610,8 +610,8 @@ pub mod fluent_builders {
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
-        pub fn external_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(inp);
+        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(signature.into());
             self
         }
         /// <p>A unique identifier that might be required when you assume a role in another account. If
@@ -640,8 +640,8 @@ pub mod fluent_builders {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(signature.into());
             self
         }
         /// <p>The identification number of the MFA device that is associated with the user who is
@@ -666,8 +666,8 @@ pub mod fluent_builders {
         /// expired, the <code>AssumeRole</code> call returns an "access denied" error.</p>
         /// <p>The format for this parameter, as described by its regex pattern, is a sequence of six
         /// numeric digits.</p>
-        pub fn token_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token_code(inp);
+        pub fn token_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_code(signature.into());
             self
         }
         /// <p>The value provided by the MFA device, if the trust policy of the role being assumed
@@ -694,8 +694,8 @@ pub mod fluent_builders {
         /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
         /// any of the following characters: =,.@-. You cannot use a value that begins with the text
         /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
-        pub fn source_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identity(inp);
+        pub fn source_identity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identity(signature.into());
             self
         }
         /// <p>The source identity specified by the principal that is calling the
@@ -911,8 +911,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
@@ -922,8 +922,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
         /// IdP.</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
@@ -938,8 +938,8 @@ pub mod fluent_builders {
         /// <p>The base64 encoded SAML authentication response provided by the IdP.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying Party and
         /// Adding Claims</a> in the <i>IAM User Guide</i>. </p>
-        pub fn saml_assertion(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_assertion(inp);
+        pub fn saml_assertion(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_assertion(signature.into());
             self
         }
         /// <p>The base64 encoded SAML authentication response provided by the IdP.</p>
@@ -980,8 +980,8 @@ pub mod fluent_builders {
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn policy_arns(mut self, inp: impl Into<crate::model::PolicyDescriptorType>) -> Self {
-            self.inner = self.inner.policy_arns(inp);
+        pub fn policy_arns(mut self, input: crate::model::PolicyDescriptorType) -> Self {
+            self.inner = self.inner.policy_arns(input);
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as
@@ -1038,8 +1038,8 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -1090,8 +1090,8 @@ pub mod fluent_builders {
         /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_seconds(inp);
+        pub fn duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_seconds(signature);
             self
         }
         /// <p>The duration, in seconds, of the role session. Your role session lasts for the duration
@@ -1315,8 +1315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
@@ -1332,8 +1332,8 @@ pub mod fluent_builders {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn role_session_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_session_name(inp);
+        pub fn role_session_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_session_name(signature.into());
             self
         }
         /// <p>An identifier for the assumed role session. Typically, you pass the name or identifier
@@ -1355,8 +1355,8 @@ pub mod fluent_builders {
         /// provider. Your application must get this token by authenticating the user who is using your
         /// application with a web identity provider before the application makes an
         /// <code>AssumeRoleWithWebIdentity</code> call. </p>
-        pub fn web_identity_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_identity_token(inp);
+        pub fn web_identity_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_identity_token(signature.into());
             self
         }
         /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity
@@ -1376,8 +1376,8 @@ pub mod fluent_builders {
         /// identity providers for OAuth 2.0 access tokens. Do not include URL schemes and port
         /// numbers.</p>
         /// <p>Do not specify this value for OpenID Connect ID tokens.</p>
-        pub fn provider_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_id(inp);
+        pub fn provider_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_id(signature.into());
             self
         }
         /// <p>The fully qualified host component of the domain name of the identity provider.</p>
@@ -1418,8 +1418,8 @@ pub mod fluent_builders {
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn policy_arns(mut self, inp: impl Into<crate::model::PolicyDescriptorType>) -> Self {
-            self.inner = self.inner.policy_arns(inp);
+        pub fn policy_arns(mut self, input: crate::model::PolicyDescriptorType) -> Self {
+            self.inner = self.inner.policy_arns(input);
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as
@@ -1476,8 +1476,8 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -1525,8 +1525,8 @@ pub mod fluent_builders {
         /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_seconds(inp);
+        pub fn duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_seconds(signature);
             self
         }
         /// <p>The duration, in seconds, of the role session. The value can range from 900 seconds (15
@@ -1647,8 +1647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The encoded message that was returned with the response.</p>
-        pub fn encoded_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encoded_message(inp);
+        pub fn encoded_message(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encoded_message(signature.into());
             self
         }
         /// <p>The encoded message that was returned with the response.</p>
@@ -1739,8 +1739,8 @@ pub mod fluent_builders {
         /// <p>The identifier of an access key.</p>
         /// <p>This parameter allows (through its regex pattern) a string of characters that can
         /// consist of any upper- or lowercase letter or digit.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key_id(inp);
+        pub fn access_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(signature.into());
             self
         }
         /// <p>The identifier of an access key.</p>
@@ -1973,8 +1973,8 @@ pub mod fluent_builders {
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the federated user. The name is used as an identifier for the temporary
@@ -2019,8 +2019,8 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -2096,8 +2096,8 @@ pub mod fluent_builders {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        pub fn policy_arns(mut self, inp: impl Into<crate::model::PolicyDescriptorType>) -> Self {
-            self.inner = self.inner.policy_arns(inp);
+        pub fn policy_arns(mut self, input: crate::model::PolicyDescriptorType) -> Self {
+            self.inner = self.inner.policy_arns(input);
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as a
@@ -2146,8 +2146,8 @@ pub mod fluent_builders {
         /// credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified
         /// duration is longer than one hour, the session obtained by using root user credentials
         /// defaults to one hour.</p>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_seconds(inp);
+        pub fn duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_seconds(signature);
             self
         }
         /// <p>The duration, in seconds, that the session should last. Acceptable durations for
@@ -2189,8 +2189,8 @@ pub mod fluent_builders {
         /// <code>department</code>=<code>engineering</code> session tag. <code>Department</code>
         /// and <code>department</code> are not saved as separate tags, and the session tag passed in
         /// the request takes precedence over the role tag.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of session tags. Each session tag consists of a key name and an associated value.
@@ -2341,8 +2341,8 @@ pub mod fluent_builders {
         /// with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are
         /// restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one
         /// hour, the session for Amazon Web Services account owners defaults to one hour.</p>
-        pub fn duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_seconds(inp);
+        pub fn duration_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_seconds(signature);
             self
         }
         /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations
@@ -2364,8 +2364,8 @@ pub mod fluent_builders {
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(signature.into());
             self
         }
         /// <p>The identification number of the MFA device that is associated with the IAM user who
@@ -2392,8 +2392,8 @@ pub mod fluent_builders {
         /// resources that require MFA authentication.</p>
         /// <p>The format for this parameter, as described by its regex pattern, is a sequence of six
         /// numeric digits.</p>
-        pub fn token_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token_code(inp);
+        pub fn token_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_code(signature.into());
             self
         }
         /// <p>The value provided by the MFA device, if MFA is required. If any policy requires the

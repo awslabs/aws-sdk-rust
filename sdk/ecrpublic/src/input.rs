@@ -237,9 +237,9 @@ pub mod batch_delete_image_input {
         /// <p>A list of image ID references that correspond to images to delete. The format of the
         /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
         /// <code>imageDigest=digest</code>.</p>
-        pub fn image_ids(mut self, input: impl Into<crate::model::ImageIdentifier>) -> Self {
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_ids = Some(v);
             self
         }
@@ -650,9 +650,9 @@ pub mod create_repository_input {
         /// <p>The metadata that you apply to the repository to help you categorize and organize them.
         /// Each tag consists of a key and an optional value, both of which you define.
         /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1204,9 +1204,9 @@ pub mod describe_images_input {
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
         /// <p>The list of image IDs for the requested repository.</p>
-        pub fn image_ids(mut self, input: impl Into<crate::model::ImageIdentifier>) -> Self {
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_ids = Some(v);
             self
         }
@@ -3811,9 +3811,9 @@ pub mod tag_resource_input {
         ///
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
         /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

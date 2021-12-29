@@ -547,8 +547,8 @@ pub mod fluent_builders {
         /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-).
         /// The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or
         /// "<code>fargate</code>".</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include
@@ -562,9 +562,9 @@ pub mod fluent_builders {
         /// <p>The details of the Auto Scaling group for the capacity provider.</p>
         pub fn auto_scaling_group_provider(
             mut self,
-            inp: crate::model::AutoScalingGroupProvider,
+            signature: crate::model::AutoScalingGroupProvider,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_group_provider(inp);
+            self.inner = self.inner.auto_scaling_group_provider(signature);
             self
         }
         /// <p>The details of the Auto Scaling group for the capacity provider.</p>
@@ -613,8 +613,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the capacity provider to categorize and organize them
@@ -731,8 +731,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a
         /// cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a
@@ -778,8 +778,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
@@ -830,8 +830,8 @@ pub mod fluent_builders {
         /// Container Insights for a cluster. If this value is specified, it overrides the
         /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
         /// <a>PutAccountSettingDefault</a>.</p>
-        pub fn settings(mut self, inp: impl Into<crate::model::ClusterSetting>) -> Self {
-            self.inner = self.inner.settings(inp);
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
@@ -847,8 +847,8 @@ pub mod fluent_builders {
         }
         /// <p>The
         /// execute command configuration for the cluster.</p>
-        pub fn configuration(mut self, inp: crate::model::ClusterConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(mut self, signature: crate::model::ClusterConfiguration) -> Self {
+            self.inner = self.inner.configuration(signature);
             self
         }
         /// <p>The
@@ -879,8 +879,8 @@ pub mod fluent_builders {
         /// used.</p>
         /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
         /// list of available capacity providers for a cluster after the cluster is created.</p>
-        pub fn capacity_providers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capacity_providers(inp);
+        pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capacity_providers(input.into());
             self
         }
         /// <p>The short name of one or more capacity providers to associate with the cluster. A
@@ -918,9 +918,9 @@ pub mod fluent_builders {
         /// API operation.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.default_capacity_provider_strategy(inp);
+            self.inner = self.inner.default_capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to set as the default for the cluster. After a default
@@ -1105,8 +1105,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on.
@@ -1118,8 +1118,8 @@ pub mod fluent_builders {
         /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
         /// a cluster, but you can have similarly named services in multiple clusters within a
         /// Region or across multiple Regions.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
@@ -1134,8 +1134,8 @@ pub mod fluent_builders {
         /// isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
         /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or
         /// <code>CODE_DEPLOY</code> deployment controllers.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        pub fn task_definition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(signature.into());
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
@@ -1192,8 +1192,8 @@ pub mod fluent_builders {
         /// choose <code>ip</code> as the target type, not <code>instance</code>. This is because
         /// tasks that use the <code>awsvpc</code> network mode are associated with an elastic
         /// network interface, not an Amazon EC2 instance.</p>
-        pub fn load_balancers(mut self, inp: impl Into<crate::model::LoadBalancer>) -> Self {
-            self.inner = self.inner.load_balancers(inp);
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
+            self.inner = self.inner.load_balancers(input);
             self
         }
         /// <p>A load balancer object representing the load balancers to use with your service. For
@@ -1252,8 +1252,8 @@ pub mod fluent_builders {
         /// <p>Each service may be associated with one service registry. Multiple service
         /// registries for each service isn't supported.</p>
         /// </note>
-        pub fn service_registries(mut self, inp: impl Into<crate::model::ServiceRegistry>) -> Self {
-            self.inner = self.inner.service_registries(inp);
+        pub fn service_registries(mut self, input: crate::model::ServiceRegistry) -> Self {
+            self.inner = self.inner.service_registries(input);
             self
         }
         /// <p>The details of the service discovery registry to associate with this service. For more
@@ -1275,8 +1275,8 @@ pub mod fluent_builders {
         /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't
         /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
         /// required.</p>
-        pub fn desired_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_count(inp);
+        pub fn desired_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.desired_count(signature);
             self
         }
         /// <p>The number of instantiations of the specified task definition to place and keep
@@ -1290,8 +1290,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that you provide to ensure the idempotency of the request. It must be
         /// unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>An identifier that you provide to ensure the idempotency of the request. It must be
@@ -1316,8 +1316,8 @@ pub mod fluent_builders {
         /// <p>A service can use either a launch type or a capacity provider strategy. If a
         /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
         /// parameter must be omitted.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        pub fn launch_type(mut self, signature: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(signature);
             self
         }
         /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
@@ -1355,9 +1355,9 @@ pub mod fluent_builders {
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.capacity_provider_strategy(inp);
+            self.inner = self.inner.capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to use for the service.</p>
@@ -1378,8 +1378,8 @@ pub mod fluent_builders {
         /// specified, the <code>LATEST</code> platform version is used. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
         /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        pub fn platform_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(signature.into());
             self
         }
         /// <p>The platform version that your tasks in the service are running on. A platform version
@@ -1414,8 +1414,8 @@ pub mod fluent_builders {
         /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
         /// then you would specify <code>/foo/bar</code> as the role name. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(signature.into());
             self
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
@@ -1446,9 +1446,9 @@ pub mod fluent_builders {
         /// and the ordering of stopping and starting tasks.</p>
         pub fn deployment_configuration(
             mut self,
-            inp: crate::model::DeploymentConfiguration,
+            signature: crate::model::DeploymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.deployment_configuration(inp);
+            self.inner = self.inner.deployment_configuration(signature);
             self
         }
         /// <p>Optional deployment parameters that control how many tasks run during the deployment
@@ -1467,11 +1467,8 @@ pub mod fluent_builders {
         /// <p>An array of placement constraint objects to use for tasks in your service. You can
         /// specify a maximum of 10 constraints for each task. This limit includes constraints in
         /// the task definition and those specified at runtime.</p>
-        pub fn placement_constraints(
-            mut self,
-            inp: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
-            self.inner = self.inner.placement_constraints(inp);
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
+            self.inner = self.inner.placement_constraints(input);
             self
         }
         /// <p>An array of placement constraint objects to use for tasks in your service. You can
@@ -1490,11 +1487,8 @@ pub mod fluent_builders {
         ///
         /// <p>The placement strategy objects to use for tasks in your service. You can specify a
         /// maximum of 5 strategy rules for each service.</p>
-        pub fn placement_strategy(
-            mut self,
-            inp: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
-            self.inner = self.inner.placement_strategy(inp);
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
+            self.inner = self.inner.placement_strategy(input);
             self
         }
         /// <p>The placement strategy objects to use for tasks in your service. You can specify a
@@ -1511,8 +1505,11 @@ pub mod fluent_builders {
         /// network interface, and it isn't supported for other network modes. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        pub fn network_configuration(
+            mut self,
+            signature: crate::model::NetworkConfiguration,
+        ) -> Self {
+            self.inner = self.inner.network_configuration(signature);
             self
         }
         /// <p>The network configuration for the service. This parameter is required for task
@@ -1539,8 +1536,8 @@ pub mod fluent_builders {
         /// scheduler ignores health check status. This grace period can prevent the service
         /// scheduler from marking tasks as unhealthy and stopping them before they have time to
         /// come up.</p>
-        pub fn health_check_grace_period_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_grace_period_seconds(inp);
+        pub fn health_check_grace_period_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.health_check_grace_period_seconds(signature);
             self
         }
         /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
@@ -1590,8 +1587,8 @@ pub mod fluent_builders {
         /// </note>
         /// </li>
         /// </ul>
-        pub fn scheduling_strategy(mut self, inp: crate::model::SchedulingStrategy) -> Self {
-            self.inner = self.inner.scheduling_strategy(inp);
+        pub fn scheduling_strategy(mut self, signature: crate::model::SchedulingStrategy) -> Self {
+            self.inner = self.inner.scheduling_strategy(signature);
             self
         }
         /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
@@ -1631,8 +1628,11 @@ pub mod fluent_builders {
         }
         /// <p>The deployment controller to use for the service. If no deployment controller is
         /// specified, the default value of <code>ECS</code> is used.</p>
-        pub fn deployment_controller(mut self, inp: crate::model::DeploymentController) -> Self {
-            self.inner = self.inner.deployment_controller(inp);
+        pub fn deployment_controller(
+            mut self,
+            signature: crate::model::DeploymentController,
+        ) -> Self {
+            self.inner = self.inner.deployment_controller(signature);
             self
         }
         /// <p>The deployment controller to use for the service. If no deployment controller is
@@ -1682,8 +1682,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the service to help you categorize and organize them.
@@ -1730,8 +1730,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
         /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn enable_ecs_managed_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_ecs_managed_tags(inp);
+        pub fn enable_ecs_managed_tags(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_ecs_managed_tags(signature);
             self
         }
         /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For
@@ -1746,8 +1746,8 @@ pub mod fluent_builders {
         /// only be propagated to the tasks within the service during service creation. To add tags
         /// to a task after service creation or task creation, use the <a>TagResource</a>
         /// API action.</p>
-        pub fn propagate_tags(mut self, inp: crate::model::PropagateTags) -> Self {
-            self.inner = self.inner.propagate_tags(inp);
+        pub fn propagate_tags(mut self, signature: crate::model::PropagateTags) -> Self {
+            self.inner = self.inner.propagate_tags(signature);
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
@@ -1765,8 +1765,8 @@ pub mod fluent_builders {
         /// <p>Determines whether the execute command functionality is enabled for the service. If
         /// <code>true</code>, this enables execute command functionality on all containers in
         /// the service tasks.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_execute_command(inp);
+        pub fn enable_execute_command(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_execute_command(signature);
             self
         }
         /// <p>Determines whether the execute command functionality is enabled for the service. If
@@ -1840,8 +1840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
@@ -1851,8 +1851,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the
         /// task set in.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the
@@ -1865,8 +1865,8 @@ pub mod fluent_builders {
         /// task set is associated with a service discovery registry, the tasks in this task set
         /// will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided
         /// value.</p>
-        pub fn external_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(inp);
+        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(signature.into());
             self
         }
         /// <p>An optional non-unique tag that identifies this task set in external systems. If the
@@ -1878,8 +1878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task definition for the tasks in the task set to use.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        pub fn task_definition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(signature.into());
             self
         }
         /// <p>The task definition for the tasks in the task set to use.</p>
@@ -1891,8 +1891,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object representing the network configuration for a task set.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        pub fn network_configuration(
+            mut self,
+            signature: crate::model::NetworkConfiguration,
+        ) -> Self {
+            self.inner = self.inner.network_configuration(signature);
             self
         }
         /// <p>An object representing the network configuration for a task set.</p>
@@ -1909,8 +1912,8 @@ pub mod fluent_builders {
         ///
         /// <p>A load balancer object representing the load balancer to use with the task set. The
         /// supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-        pub fn load_balancers(mut self, inp: impl Into<crate::model::LoadBalancer>) -> Self {
-            self.inner = self.inner.load_balancers(inp);
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
+            self.inner = self.inner.load_balancers(input);
             self
         }
         /// <p>A load balancer object representing the load balancer to use with the task set. The
@@ -1929,8 +1932,8 @@ pub mod fluent_builders {
         /// <p>The details of the service discovery registries to assign to this task set. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.</p>
-        pub fn service_registries(mut self, inp: impl Into<crate::model::ServiceRegistry>) -> Self {
-            self.inner = self.inner.service_registries(inp);
+        pub fn service_registries(mut self, input: crate::model::ServiceRegistry) -> Self {
+            self.inner = self.inner.service_registries(input);
             self
         }
         /// <p>The details of the service discovery registries to assign to this task set. For more
@@ -1947,8 +1950,8 @@ pub mod fluent_builders {
         /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
         /// parameter must be omitted.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        pub fn launch_type(mut self, signature: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(signature);
             self
         }
         /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
@@ -1987,9 +1990,9 @@ pub mod fluent_builders {
         /// list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.capacity_provider_strategy(inp);
+            self.inner = self.inner.capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to use for the task set.</p>
@@ -2021,8 +2024,8 @@ pub mod fluent_builders {
         /// <p>The platform version that the tasks in the task set uses. A platform version is
         /// specified only for tasks using the Fargate launch type. If one isn't
         /// specified, the <code>LATEST</code> platform version is used.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        pub fn platform_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(signature.into());
             self
         }
         /// <p>The platform version that the tasks in the task set uses. A platform version is
@@ -2037,8 +2040,8 @@ pub mod fluent_builders {
         }
         /// <p>A floating-point percentage of the desired number of tasks to place and keep running
         /// in the task set.</p>
-        pub fn scale(mut self, inp: crate::model::Scale) -> Self {
-            self.inner = self.inner.scale(inp);
+        pub fn scale(mut self, signature: crate::model::Scale) -> Self {
+            self.inner = self.inner.scale(signature);
             self
         }
         /// <p>A floating-point percentage of the desired number of tasks to place and keep running
@@ -2049,8 +2052,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier that you provide to ensure the idempotency of the request. It's case
         /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The identifier that you provide to ensure the idempotency of the request. It's case
@@ -2097,8 +2100,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the task set to help you categorize and organize them.
@@ -2210,8 +2213,8 @@ pub mod fluent_builders {
         /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
         /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
         /// instances is affected.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: crate::model::SettingName) -> Self {
+            self.inner = self.inner.name(signature);
             self
         }
         /// <p>The resource name to disable the account setting for. If
@@ -2230,8 +2233,8 @@ pub mod fluent_builders {
         /// users, IAM roles, and the root user of the account unless an IAM user or role explicitly
         /// overrides these settings. If this field is omitted, the setting is changed only for the
         /// authenticated user.</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or
@@ -2308,8 +2311,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
         /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
@@ -2326,8 +2329,8 @@ pub mod fluent_builders {
         /// each request. For custom attributes, specify the attribute name and target ID, but don't
         /// specify the value. If you specify the target ID using the short form, you must also
         /// specify the target type.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for
@@ -2416,8 +2419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
-        pub fn capacity_provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capacity_provider(inp);
+        pub fn capacity_provider(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capacity_provider(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
@@ -2494,8 +2497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
@@ -2585,8 +2588,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete.
@@ -2596,8 +2599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service to delete.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(signature.into());
             self
         }
         /// <p>The name of the service to delete.</p>
@@ -2608,8 +2611,8 @@ pub mod fluent_builders {
         /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to
         /// zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code>
         /// scheduling strategy.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to
@@ -2682,8 +2685,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
         /// set found in to delete.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
@@ -2694,8 +2697,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to
         /// delete.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to
@@ -2705,8 +2708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
-        pub fn task_set(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_set(inp);
+        pub fn task_set(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_set(signature.into());
             self
         }
         /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
@@ -2716,8 +2719,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to
         /// zero.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to
@@ -2801,8 +2804,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
         /// deregister. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
@@ -2813,8 +2816,8 @@ pub mod fluent_builders {
         }
         /// <p>The container instance ID or full ARN of the container instance to deregister.
         /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
-        pub fn container_instance(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance(inp);
+        pub fn container_instance(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance(signature.into());
             self
         }
         /// <p>The container instance ID or full ARN of the container instance to deregister.
@@ -2836,8 +2839,8 @@ pub mod fluent_builders {
         /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer
         /// target group are deregistered. They begin connection draining according to the settings
         /// on the load balancer or target group.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>Forces the container instance to be deregistered. If you have tasks running on the
@@ -2931,8 +2934,8 @@ pub mod fluent_builders {
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
         /// full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a
         /// <code>revision</code>.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        pub fn task_definition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(signature.into());
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
@@ -3011,8 +3014,8 @@ pub mod fluent_builders {
         ///
         /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to
         /// <code>100</code> capacity providers can be described in an action.</p>
-        pub fn capacity_providers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capacity_providers(inp);
+        pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capacity_providers(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to
@@ -3031,8 +3034,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
         /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
         /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::CapacityProviderField>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, input: crate::model::CapacityProviderField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
         /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
@@ -3056,8 +3059,8 @@ pub mod fluent_builders {
         /// parameter is not used, then <code>DescribeCapacityProviders</code> returns up to
         /// 10 results and a <code>nextToken</code> value
         /// if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of account setting results returned by
@@ -3083,8 +3086,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3165,8 +3168,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn clusters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.clusters(inp);
+        pub fn clusters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.clusters(input.into());
             self
         }
         /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries.
@@ -3194,8 +3197,8 @@ pub mod fluent_builders {
         /// separated by launch type.</p>
         /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
         /// included.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::ClusterField>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, input: crate::model::ClusterField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
         /// <p>Determines whether to include additional information about the clusters in the
@@ -3282,8 +3285,8 @@ pub mod fluent_builders {
         /// describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance
         /// or container instances you are describing were launched in any cluster other than the
         /// default cluster.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
@@ -3299,8 +3302,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
         ///
         /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-        pub fn container_instances(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instances(inp);
+        pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instances(input.into());
             self
         }
         /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
@@ -3320,8 +3323,8 @@ pub mod fluent_builders {
         /// <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health
         /// is included in the response. If this field is omitted, tags and container instance
         /// health status aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::ContainerInstanceField>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, input: crate::model::ContainerInstanceField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
         /// <p>Specifies whether you want to see the resource tags for the container instance. If
@@ -3399,8 +3402,8 @@ pub mod fluent_builders {
         /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe.
         /// If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are
         /// describing were launched in any cluster other than the default cluster.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe.
@@ -3416,8 +3419,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of services to describe. You may specify up to 10 services to describe in a
         /// single operation.</p>
-        pub fn services(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.services(inp);
+        pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.services(input.into());
             self
         }
         /// <p>A list of services to describe. You may specify up to 10 services to describe in a
@@ -3436,8 +3439,8 @@ pub mod fluent_builders {
         /// <p>Determines whether you want to see the resource tags for the service. If
         /// <code>TAGS</code> is specified, the tags are included in the response. If this field
         /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::ServiceField>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, input: crate::model::ServiceField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
         /// <p>Determines whether you want to see the resource tags for the service. If
@@ -3521,8 +3524,8 @@ pub mod fluent_builders {
         /// <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a
         /// specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to
         /// describe.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        pub fn task_definition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(signature.into());
             self
         }
         /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,
@@ -3543,8 +3546,8 @@ pub mod fluent_builders {
         /// <p>Determines whether to see the resource tags for the task definition. If
         /// <code>TAGS</code> is specified, the tags are included in the response. If this field
         /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::TaskDefinitionField>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, input: crate::model::TaskDefinitionField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
         /// <p>Determines whether to see the resource tags for the task definition. If
@@ -3620,8 +3623,8 @@ pub mod fluent_builders {
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to
         /// describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you
         /// are describing were launched in any cluster other than the default cluster.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to
@@ -3636,8 +3639,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
         /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-        pub fn tasks(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tasks(inp);
+        pub fn tasks(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tasks(input.into());
             self
         }
         /// <p>A list of up to 100 task IDs or full ARN entries.</p>
@@ -3655,8 +3658,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
         /// is specified, the tags are included in the response. If this field is omitted, tags
         /// aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::TaskField>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, input: crate::model::TaskField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
         /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
@@ -3734,8 +3737,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
         /// sets exist in.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
@@ -3745,8 +3748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
@@ -3760,8 +3763,8 @@ pub mod fluent_builders {
         ///
         /// <p>The ID or full Amazon Resource Name (ARN) of task sets to
         /// describe.</p>
-        pub fn task_sets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_sets(inp);
+        pub fn task_sets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_sets(input.into());
             self
         }
         /// <p>The ID or full Amazon Resource Name (ARN) of task sets to
@@ -3780,8 +3783,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
         /// specified, the tags are included in the response. If this field is omitted, tags aren't
         /// included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::TaskSetField>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, input: crate::model::TaskSetField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
         /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
@@ -3859,8 +3862,8 @@ pub mod fluent_builders {
         }
         /// <p>The container instance ID or full ARN of the container instance.
         /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
-        pub fn container_instance(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance(inp);
+        pub fn container_instance(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance(signature.into());
             self
         }
         /// <p>The container instance ID or full ARN of the container instance.
@@ -3874,8 +3877,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs
         /// to.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs
@@ -3946,8 +3949,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in.
@@ -3958,8 +3961,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the container to execute the command on. A container name only needs to be
         /// specified for tasks containing multiple containers.</p>
-        pub fn container(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container(inp);
+        pub fn container(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container(signature.into());
             self
         }
         /// <p>The name of the container to execute the command on. A container name only needs to be
@@ -3969,8 +3972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The command to run on the container.</p>
-        pub fn command(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.command(inp);
+        pub fn command(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.command(signature.into());
             self
         }
         /// <p>The command to run on the container.</p>
@@ -3979,8 +3982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use this flag to run your command in interactive mode.</p>
-        pub fn interactive(mut self, inp: bool) -> Self {
-            self.inner = self.inner.interactive(inp);
+        pub fn interactive(mut self, signature: bool) -> Self {
+            self.inner = self.inner.interactive(signature);
             self
         }
         /// <p>Use this flag to run your command in interactive mode.</p>
@@ -3989,8 +3992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
-        pub fn task(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
@@ -4059,8 +4062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the account setting you want to list the settings for.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: crate::model::SettingName) -> Self {
+            self.inner = self.inner.name(signature);
             self
         }
         /// <p>The name of the account setting you want to list the settings for.</p>
@@ -4070,8 +4073,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the account settings to filter results with. You must also specify an
         /// account setting name to use this parameter.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(signature.into());
             self
         }
         /// <p>The value of the account settings to filter results with. You must also specify an
@@ -4087,8 +4090,8 @@ pub mod fluent_builders {
         /// <p>Federated users assume the account setting of the root user and can't have
         /// explicit account settings set for them.</p>
         /// </note>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(signature.into());
             self
         }
         /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
@@ -4109,8 +4112,8 @@ pub mod fluent_builders {
         /// settings for the root user or the default setting for the <code>principalArn</code> are
         /// returned. If <code>false</code>, the account settings for the <code>principalArn</code>
         /// are returned if they're set. Otherwise, no account settings are returned.</p>
-        pub fn effective_settings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.effective_settings(inp);
+        pub fn effective_settings(mut self, signature: bool) -> Self {
+            self.inner = self.inner.effective_settings(signature);
             self
         }
         /// <p>Determines whether to return the effective settings. If <code>true</code>, the account
@@ -4129,8 +4132,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
@@ -4155,8 +4158,8 @@ pub mod fluent_builders {
         /// parameter isn't used, then <code>ListAccountSettings</code> returns up to
         /// 10 results and a <code>nextToken</code> value
         /// if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of account setting results returned by
@@ -4241,8 +4244,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes.
@@ -4252,8 +4255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the target to list attributes with.</p>
-        pub fn target_type(mut self, inp: crate::model::TargetType) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, signature: crate::model::TargetType) -> Self {
+            self.inner = self.inner.target_type(signature);
             self
         }
         /// <p>The type of the target to list attributes with.</p>
@@ -4265,8 +4268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the attribute to filter the results with. </p>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(signature.into());
             self
         }
         /// <p>The name of the attribute to filter the results with. </p>
@@ -4279,8 +4282,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the attribute to filter results with. You must also specify an attribute
         /// name to use this parameter.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_value(inp);
+        pub fn attribute_value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_value(signature.into());
             self
         }
         /// <p>The value of the attribute to filter results with. You must also specify an attribute
@@ -4300,8 +4303,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
@@ -4324,8 +4327,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If this
         /// parameter isn't used, then <code>ListAttributes</code> returns up to
         /// 100 results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in
@@ -4408,8 +4411,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request
@@ -4432,8 +4435,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If this
         /// parameter isn't used, then <code>ListClusters</code> returns up to 100
         /// results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in
@@ -4513,8 +4516,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
         /// list. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
@@ -4526,8 +4529,8 @@ pub mod fluent_builders {
         /// <p>You can filter the results of a <code>ListContainerInstances</code> operation with
         /// cluster query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter(signature.into());
             self
         }
         /// <p>You can filter the results of a <code>ListContainerInstances</code> operation with
@@ -4545,8 +4548,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
@@ -4571,8 +4574,8 @@ pub mod fluent_builders {
         /// 100. If this parameter isn't used, then
         /// <code>ListContainerInstances</code> returns up to 100 results and
         /// a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of container instance results that
@@ -4594,8 +4597,8 @@ pub mod fluent_builders {
         /// been set to <code>DRAINING</code> using <a>UpdateContainerInstancesState</a>.
         /// If you don't specify this parameter, the default is to include container instances set
         /// to all states other than <code>INACTIVE</code>.</p>
-        pub fn status(mut self, inp: crate::model::ContainerInstanceStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::ContainerInstanceStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Filters the container instances by status. For example, if you specify the
@@ -4673,8 +4676,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
         /// <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
@@ -4691,8 +4694,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListServices</code> request
@@ -4716,8 +4719,8 @@ pub mod fluent_builders {
         /// this parameter isn't used, then <code>ListServices</code> returns up to
         /// 10 results and a <code>nextToken</code> value if
         /// applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of service results that <code>ListServices</code> returned in
@@ -4734,8 +4737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        pub fn launch_type(mut self, signature: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(signature);
             self
         }
         /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
@@ -4748,8 +4751,8 @@ pub mod fluent_builders {
         }
         /// <p>The scheduling strategy to use when filtering the <code>ListServices</code>
         /// results.</p>
-        pub fn scheduling_strategy(mut self, inp: crate::model::SchedulingStrategy) -> Self {
-            self.inner = self.inner.scheduling_strategy(inp);
+        pub fn scheduling_strategy(mut self, signature: crate::model::SchedulingStrategy) -> Self {
+            self.inner = self.inner.scheduling_strategy(signature);
             self
         }
         /// <p>The scheduling strategy to use when filtering the <code>ListServices</code>
@@ -4824,8 +4827,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
         /// supported resources are Amazon ECS tasks, services, task definitions, clusters, and container
         /// instances.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
@@ -4905,8 +4908,8 @@ pub mod fluent_builders {
         /// <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>,
         /// only task definition family names that begin with the <code>familyPrefix</code> string
         /// are returned.</p>
-        pub fn family_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family_prefix(inp);
+        pub fn family_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family_prefix(signature.into());
             self
         }
         /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of
@@ -4929,8 +4932,8 @@ pub mod fluent_builders {
         /// <code>ACTIVE</code> task definition revisions are returned. If you paginate the
         /// resulting output, be sure to keep the <code>status</code> value constant in each
         /// subsequent request.</p>
-        pub fn status(mut self, inp: crate::model::TaskDefinitionFamilyStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::TaskDefinitionFamilyStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The task definition family status to filter the
@@ -4958,8 +4961,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a
@@ -4985,8 +4988,8 @@ pub mod fluent_builders {
         /// 100. If this parameter isn't used, then
         /// <code>ListTaskDefinitionFamilies</code> returns up to 100 results
         /// and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of task definition family results that
@@ -5068,8 +5071,8 @@ pub mod fluent_builders {
         /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with.
         /// Specifying a <code>familyPrefix</code> limits the listed task definitions to task
         /// definition revisions that belong to that family.</p>
-        pub fn family_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family_prefix(inp);
+        pub fn family_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family_prefix(signature.into());
             self
         }
         /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with.
@@ -5088,8 +5091,8 @@ pub mod fluent_builders {
         /// <code>INACTIVE</code> as long as an active task or service still references them. If
         /// you paginate the resulting output, be sure to keep the <code>status</code> value
         /// constant in each subsequent request.</p>
-        pub fn status(mut self, inp: crate::model::TaskDefinitionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::TaskDefinitionStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results
@@ -5111,8 +5114,8 @@ pub mod fluent_builders {
         /// the newest task definitions in a family are listed last. Setting this parameter to
         /// <code>DESC</code> reverses the sort order on family name and revision. This is so
         /// that the newest task definitions in a family are listed first.</p>
-        pub fn sort(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, signature: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort(signature);
             self
         }
         /// <p>The order to sort the results in. Valid values are <code>ASC</code> and
@@ -5133,8 +5136,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitions</code>
@@ -5158,8 +5161,8 @@ pub mod fluent_builders {
         /// 1 and 100. If this parameter isn't used, then
         /// <code>ListTaskDefinitions</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code>
@@ -5241,8 +5244,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
         /// <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
@@ -5255,8 +5258,8 @@ pub mod fluent_builders {
         /// filtering the <code>ListTasks</code> results. Specifying a
         /// <code>containerInstance</code> limits the results to tasks that belong to that
         /// container instance.</p>
-        pub fn container_instance(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance(inp);
+        pub fn container_instance(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance(signature.into());
             self
         }
         /// <p>The container instance ID or full ARN of the container instance to use when
@@ -5273,8 +5276,8 @@ pub mod fluent_builders {
         /// <p>The name of the task definition family to use when filtering the
         /// <code>ListTasks</code> results. Specifying a <code>family</code> limits the results
         /// to tasks that belong to that family.</p>
-        pub fn family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family(inp);
+        pub fn family(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family(signature.into());
             self
         }
         /// <p>The name of the task definition family to use when filtering the
@@ -5292,8 +5295,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request
@@ -5316,8 +5319,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 100. If this parameter
         /// isn't used, then <code>ListTasks</code> returns up to 100 results and
         /// a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated
@@ -5335,8 +5338,8 @@ pub mod fluent_builders {
         /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a
         /// <code>startedBy</code> value limits the results to tasks that were started with that
         /// value.</p>
-        pub fn started_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.started_by(inp);
+        pub fn started_by(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.started_by(signature.into());
             self
         }
         /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a
@@ -5349,8 +5352,8 @@ pub mod fluent_builders {
         /// <p>The name of the service to use when filtering the <code>ListTasks</code> results.
         /// Specifying a <code>serviceName</code> limits the results to tasks that belong to that
         /// service.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the service to use when filtering the <code>ListTasks</code> results.
@@ -5372,8 +5375,8 @@ pub mod fluent_builders {
         /// that value (only a task's <code>lastStatus</code> may have a value of
         /// <code>PENDING</code>).</p>
         /// </note>
-        pub fn desired_status(mut self, inp: crate::model::DesiredStatus) -> Self {
-            self.inner = self.inner.desired_status(inp);
+        pub fn desired_status(mut self, signature: crate::model::DesiredStatus) -> Self {
+            self.inner = self.inner.desired_status(signature);
             self
         }
         /// <p>The task desired status to use when filtering the <code>ListTasks</code> results.
@@ -5396,8 +5399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        pub fn launch_type(mut self, signature: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(signature);
             self
         }
         /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
@@ -5500,8 +5503,8 @@ pub mod fluent_builders {
         /// for your Amazon ECS container instances is affected. If <code>containerInsights</code> is
         /// specified, the default setting for CloudWatch Container Insights for your clusters is
         /// affected.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: crate::model::SettingName) -> Self {
+            self.inner = self.inner.name(signature);
             self
         }
         /// <p>The Amazon ECS resource name for which to modify the account setting. If
@@ -5519,8 +5522,8 @@ pub mod fluent_builders {
         }
         /// <p>The account setting value for the specified principal ARN. Accepted values are
         /// <code>enabled</code> and <code>disabled</code>.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(signature.into());
             self
         }
         /// <p>The account setting value for the specified principal ARN. Accepted values are
@@ -5538,8 +5541,8 @@ pub mod fluent_builders {
         /// <p>Federated users assume the account setting of the root user and can't have
         /// explicit account settings set for them.</p>
         /// </note>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(signature.into());
             self
         }
         /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
@@ -5628,8 +5631,8 @@ pub mod fluent_builders {
         /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
         /// instances is affected. If <code>containerInsights</code> is specified, the default
         /// setting for CloudWatch Container Insights for your clusters is affected.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: crate::model::SettingName) -> Self {
+            self.inner = self.inner.name(signature);
             self
         }
         /// <p>The resource name for which to modify the account setting. If
@@ -5646,8 +5649,8 @@ pub mod fluent_builders {
         }
         /// <p>The account setting value for the specified principal ARN. Accepted values are
         /// <code>enabled</code> and <code>disabled</code>.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(signature.into());
             self
         }
         /// <p>The account setting value for the specified principal ARN. Accepted values are
@@ -5722,8 +5725,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply
         /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply
@@ -5738,8 +5741,8 @@ pub mod fluent_builders {
         ///
         /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
         /// for each resource. You can specify up to 10 attributes in a single call.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
@@ -5826,8 +5829,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
         /// settings for. If you don't specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
@@ -5847,8 +5850,8 @@ pub mod fluent_builders {
         /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
         /// available to all accounts and only need to be associated with a cluster to be
         /// used.</p>
-        pub fn capacity_providers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capacity_providers(inp);
+        pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capacity_providers(input.into());
             self
         }
         /// <p>The name of one or more capacity providers to associate with the cluster.</p>
@@ -5887,9 +5890,9 @@ pub mod fluent_builders {
         /// used.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.default_capacity_provider_strategy(inp);
+            self.inner = self.inner.default_capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to use by default for the cluster.</p>
@@ -5981,8 +5984,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
         /// with. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
@@ -5995,8 +5998,11 @@ pub mod fluent_builders {
         /// found by running the following command from the instance: <code>curl
         /// http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
         /// </p>
-        pub fn instance_identity_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_identity_document(inp);
+        pub fn instance_identity_document(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.instance_identity_document(signature.into());
             self
         }
         /// <p>The instance identity document for the EC2 instance to register. This document can be
@@ -6016,9 +6022,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn instance_identity_document_signature(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.instance_identity_document_signature(inp);
+            self.inner = self
+                .inner
+                .instance_identity_document_signature(signature.into());
             self
         }
         /// <p>The instance identity document signature for the EC2 instance to register. This
@@ -6037,8 +6045,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_total_resources`](Self::set_total_resources).
         ///
         /// <p>The resources available on the instance.</p>
-        pub fn total_resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
-            self.inner = self.inner.total_resources(inp);
+        pub fn total_resources(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.total_resources(input);
             self
         }
         /// <p>The resources available on the instance.</p>
@@ -6051,8 +6059,8 @@ pub mod fluent_builders {
         }
         /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on
         /// the container instance.</p>
-        pub fn version_info(mut self, inp: crate::model::VersionInfo) -> Self {
-            self.inner = self.inner.version_info(inp);
+        pub fn version_info(mut self, signature: crate::model::VersionInfo) -> Self {
+            self.inner = self.inner.version_info(signature);
             self
         }
         /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on
@@ -6065,8 +6073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the container instance (if it was previously registered).</p>
-        pub fn container_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance_arn(inp);
+        pub fn container_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the container instance (if it was previously registered).</p>
@@ -6082,8 +6090,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The container instance attributes that this container instance supports.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>The container instance attributes that this container instance supports.</p>
@@ -6100,8 +6108,8 @@ pub mod fluent_builders {
         ///
         /// <p>The devices that are available on the container instance. The only supported device
         /// type is a GPU.</p>
-        pub fn platform_devices(mut self, inp: impl Into<crate::model::PlatformDevice>) -> Self {
-            self.inner = self.inner.platform_devices(inp);
+        pub fn platform_devices(mut self, input: crate::model::PlatformDevice) -> Self {
+            self.inner = self.inner.platform_devices(input);
             self
         }
         /// <p>The devices that are available on the container instance. The only supported device
@@ -6150,8 +6158,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the container instance to help you categorize and
@@ -6274,8 +6282,8 @@ pub mod fluent_builders {
         /// <p>You must specify a <code>family</code> for a task definition. You can use it track
         /// multiple versions of the same task definition. The <code>family</code> is used as a name
         /// for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
-        pub fn family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family(inp);
+        pub fn family(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family(signature.into());
             self
         }
         /// <p>You must specify a <code>family</code> for a task definition. You can use it track
@@ -6289,8 +6297,8 @@ pub mod fluent_builders {
         /// assume. All containers in this task are granted the permissions that are specified in
         /// this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
         /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn task_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_role_arn(inp);
+        pub fn task_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_role_arn(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can
@@ -6308,8 +6316,8 @@ pub mod fluent_builders {
         /// permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required
         /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
         /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
@@ -6351,8 +6359,8 @@ pub mod fluent_builders {
         /// same task on a single container instance when port mappings are used.</p>
         /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
         /// settings</a> in the <i>Docker run reference</i>.</p>
-        pub fn network_mode(mut self, inp: crate::model::NetworkMode) -> Self {
-            self.inner = self.inner.network_mode(inp);
+        pub fn network_mode(mut self, signature: crate::model::NetworkMode) -> Self {
+            self.inner = self.inner.network_mode(signature);
             self
         }
         /// <p>The Docker networking mode to use for the containers in the task. The valid values are
@@ -6396,11 +6404,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of container definitions in JSON format that describe the different containers
         /// that make up your task.</p>
-        pub fn container_definitions(
-            mut self,
-            inp: impl Into<crate::model::ContainerDefinition>,
-        ) -> Self {
-            self.inner = self.inner.container_definitions(inp);
+        pub fn container_definitions(mut self, input: crate::model::ContainerDefinition) -> Self {
+            self.inner = self.inner.container_definitions(input);
             self
         }
         /// <p>A list of container definitions in JSON format that describe the different containers
@@ -6418,8 +6423,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of volume definitions in JSON format that containers in your task might
         /// use.</p>
-        pub fn volumes(mut self, inp: impl Into<crate::model::Volume>) -> Self {
-            self.inner = self.inner.volumes(inp);
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
+            self.inner = self.inner.volumes(input);
             self
         }
         /// <p>A list of volume definitions in JSON format that containers in your task might
@@ -6440,9 +6445,9 @@ pub mod fluent_builders {
         /// definition and those specified at runtime.</p>
         pub fn placement_constraints(
             mut self,
-            inp: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
+            input: crate::model::TaskDefinitionPlacementConstraint,
         ) -> Self {
-            self.inner = self.inner.placement_constraints(inp);
+            self.inner = self.inner.placement_constraints(input);
             self
         }
         /// <p>An array of placement constraint objects to use for the task. You can specify a
@@ -6465,11 +6470,8 @@ pub mod fluent_builders {
         /// exception is returned if the task definition doesn't validate against the
         /// compatibilities specified. If no value is specified, the parameter is omitted from the
         /// response.</p>
-        pub fn requires_compatibilities(
-            mut self,
-            inp: impl Into<crate::model::Compatibility>,
-        ) -> Self {
-            self.inner = self.inner.requires_compatibilities(inp);
+        pub fn requires_compatibilities(mut self, input: crate::model::Compatibility) -> Self {
+            self.inner = self.inner.requires_compatibilities(input);
             self
         }
         /// <p>The task launch type that Amazon ECS validates the task definition against. A client
@@ -6517,8 +6519,8 @@ pub mod fluent_builders {
         /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
         /// </li>
         /// </ul>
-        pub fn cpu(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cpu(inp);
+        pub fn cpu(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cpu(signature.into());
             self
         }
         /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU
@@ -6591,8 +6593,8 @@ pub mod fluent_builders {
         /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
         /// </li>
         /// </ul>
-        pub fn memory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.memory(inp);
+        pub fn memory(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.memory(signature.into());
             self
         }
         /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer
@@ -6668,8 +6670,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the task definition to help you categorize and organize
@@ -6728,8 +6730,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
         /// </note>
-        pub fn pid_mode(mut self, inp: crate::model::PidMode) -> Self {
-            self.inner = self.inner.pid_mode(inp);
+        pub fn pid_mode(mut self, signature: crate::model::PidMode) -> Self {
+            self.inner = self.inner.pid_mode(signature);
             self
         }
         /// <p>The process namespace to use for the containers in the task. The valid
@@ -6784,8 +6786,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
         /// </note>
-        pub fn ipc_mode(mut self, inp: crate::model::IpcMode) -> Self {
-            self.inner = self.inner.ipc_mode(inp);
+        pub fn ipc_mode(mut self, signature: crate::model::IpcMode) -> Self {
+            self.inner = self.inner.ipc_mode(signature);
             self
         }
         /// <p>The IPC resource namespace to use for the containers in the task. The valid values are
@@ -6832,8 +6834,8 @@ pub mod fluent_builders {
         /// AMI version <code>20190301</code> or later, then they contain the required versions of
         /// the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI versions</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn proxy_configuration(mut self, inp: crate::model::ProxyConfiguration) -> Self {
-            self.inner = self.inner.proxy_configuration(inp);
+        pub fn proxy_configuration(mut self, signature: crate::model::ProxyConfiguration) -> Self {
+            self.inner = self.inner.proxy_configuration(signature);
             self
         }
         /// <p>The configuration details for the App Mesh proxy.</p>
@@ -6856,11 +6858,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
         ///
         /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-        pub fn inference_accelerators(
-            mut self,
-            inp: impl Into<crate::model::InferenceAccelerator>,
-        ) -> Self {
-            self.inner = self.inner.inference_accelerators(inp);
+        pub fn inference_accelerators(mut self, input: crate::model::InferenceAccelerator) -> Self {
+            self.inner = self.inner.inference_accelerators(input);
             self
         }
         /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
@@ -6887,8 +6886,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// </note>
-        pub fn ephemeral_storage(mut self, inp: crate::model::EphemeralStorage) -> Self {
-            self.inner = self.inner.ephemeral_storage(inp);
+        pub fn ephemeral_storage(mut self, signature: crate::model::EphemeralStorage) -> Self {
+            self.inner = self.inner.ephemeral_storage(signature);
             self
         }
         /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to
@@ -6918,8 +6917,8 @@ pub mod fluent_builders {
         /// specified only for tasks using the Fargate launch type. </p>
         /// <p>When you specify a task definition in a service, this value must match the
         /// <code>runtimePlatform</code> value of the service.</p>
-        pub fn runtime_platform(mut self, inp: crate::model::RuntimePlatform) -> Self {
-            self.inner = self.inner.runtime_platform(inp);
+        pub fn runtime_platform(mut self, signature: crate::model::RuntimePlatform) -> Self {
+            self.inner = self.inner.runtime_platform(signature);
             self
         }
         /// <p>The operating system that your tasks definitions run on. A platform family is
@@ -7035,9 +7034,9 @@ pub mod fluent_builders {
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.capacity_provider_strategy(inp);
+            self.inner = self.inner.capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to use for the task.</p>
@@ -7057,8 +7056,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on.
@@ -7069,8 +7068,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of instantiations of the specified task to place on your cluster. You can
         /// specify up to 10 tasks for each call.</p>
-        pub fn count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.count(inp);
+        pub fn count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.count(signature);
             self
         }
         /// <p>The number of instantiations of the specified task to place on your cluster. You can
@@ -7082,8 +7081,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
         /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn enable_ecs_managed_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_ecs_managed_tags(inp);
+        pub fn enable_ecs_managed_tags(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_ecs_managed_tags(signature);
             self
         }
         /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
@@ -7096,8 +7095,8 @@ pub mod fluent_builders {
         /// <p>Determines whether to enable the execute command functionality for the containers in
         /// this task. If <code>true</code>, this enables execute command functionality on all
         /// containers in the task.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_execute_command(inp);
+        pub fn enable_execute_command(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_execute_command(signature);
             self
         }
         /// <p>Determines whether to enable the execute command functionality for the containers in
@@ -7109,8 +7108,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the task group to associate with the task. The default value is the family
         /// name of the task definition (for example, <code>family:my-family-name</code>).</p>
-        pub fn group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(inp);
+        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(signature.into());
             self
         }
         /// <p>The name of the task group to associate with the task. The default value is the family
@@ -7137,8 +7136,8 @@ pub mod fluent_builders {
         /// parameter must be omitted.</p>
         /// <p>When you use cluster auto scaling, you must specify
         /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        pub fn launch_type(mut self, signature: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(signature);
             self
         }
         /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
@@ -7171,8 +7170,11 @@ pub mod fluent_builders {
         /// network interface, and it isn't supported for other network modes. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        pub fn network_configuration(
+            mut self,
+            signature: crate::model::NetworkConfiguration,
+        ) -> Self {
+            self.inner = self.inner.network_configuration(signature);
             self
         }
         /// <p>The network configuration for the task. This parameter is required for task
@@ -7195,8 +7197,8 @@ pub mod fluent_builders {
         /// add new environment variables to it with an <code>environment</code> override.</p>
         /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
         /// formatting characters of the override structure.</p>
-        pub fn overrides(mut self, inp: crate::model::TaskOverride) -> Self {
-            self.inner = self.inner.overrides(inp);
+        pub fn overrides(mut self, signature: crate::model::TaskOverride) -> Self {
+            self.inner = self.inner.overrides(signature);
             self
         }
         /// <p>A list of container overrides in JSON format that specify the name of a container in
@@ -7221,11 +7223,8 @@ pub mod fluent_builders {
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
         /// constraints for each task (including constraints in the task definition and those
         /// specified at runtime).</p>
-        pub fn placement_constraints(
-            mut self,
-            inp: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
-            self.inner = self.inner.placement_constraints(inp);
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
+            self.inner = self.inner.placement_constraints(input);
             self
         }
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
@@ -7244,11 +7243,8 @@ pub mod fluent_builders {
         ///
         /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
         /// strategy rules for each task.</p>
-        pub fn placement_strategy(
-            mut self,
-            inp: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
-            self.inner = self.inner.placement_strategy(inp);
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
+            self.inner = self.inner.placement_strategy(input);
             self
         }
         /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
@@ -7264,8 +7260,8 @@ pub mod fluent_builders {
         /// hosted on Fargate. If one isn't specified, the <code>LATEST</code>
         /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
         /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        pub fn platform_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(signature.into());
             self
         }
         /// <p>The platform version the task uses. A platform version is only specified for tasks
@@ -7286,8 +7282,8 @@ pub mod fluent_builders {
         /// <p>An error will be received if you specify the <code>SERVICE</code> option when
         /// running a task.</p>
         /// </note>
-        pub fn propagate_tags(mut self, inp: crate::model::PropagateTags) -> Self {
-            self.inner = self.inner.propagate_tags(inp);
+        pub fn propagate_tags(mut self, signature: crate::model::PropagateTags) -> Self {
+            self.inner = self.inner.propagate_tags(signature);
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
@@ -7306,8 +7302,8 @@ pub mod fluent_builders {
         }
         /// <p>The reference ID to use for the task. The reference ID can have a maximum length of
         /// 1024 characters.</p>
-        pub fn reference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_id(inp);
+        pub fn reference_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_id(signature.into());
             self
         }
         /// <p>The reference ID to use for the task. The reference ID can have a maximum length of
@@ -7324,8 +7320,8 @@ pub mod fluent_builders {
         /// numbers, hyphens (-), and underscores (_) are allowed.</p>
         /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
         /// contains the deployment ID of the service that starts it.</p>
-        pub fn started_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.started_by(inp);
+        pub fn started_by(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.started_by(signature.into());
             self
         }
         /// <p>An optional tag specified when a task is started. For example, if you automatically
@@ -7377,8 +7373,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
@@ -7430,8 +7426,8 @@ pub mod fluent_builders {
         /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
         /// <code>taskDefinition</code> ARN value must be
         /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        pub fn task_definition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(signature.into());
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
@@ -7516,8 +7512,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task.
@@ -7532,8 +7528,8 @@ pub mod fluent_builders {
         ///
         /// <p>The container instance IDs or full ARN entries for the container instances where you
         /// would like to place your task. You can specify up to 10 container instances.</p>
-        pub fn container_instances(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instances(inp);
+        pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instances(input.into());
             self
         }
         /// <p>The container instance IDs or full ARN entries for the container instances where you
@@ -7548,8 +7544,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
         /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn enable_ecs_managed_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_ecs_managed_tags(inp);
+        pub fn enable_ecs_managed_tags(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_ecs_managed_tags(signature);
             self
         }
         /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
@@ -7562,8 +7558,8 @@ pub mod fluent_builders {
         /// <p>Whether or not the execute command functionality is enabled for the task. If
         /// <code>true</code>, this enables execute command functionality on all containers in
         /// the task.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_execute_command(inp);
+        pub fn enable_execute_command(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_execute_command(signature);
             self
         }
         /// <p>Whether or not the execute command functionality is enabled for the task. If
@@ -7575,8 +7571,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the task group to associate with the task. The default value is the family
         /// name of the task definition (for example, family:my-family-name).</p>
-        pub fn group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(inp);
+        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(signature.into());
             self
         }
         /// <p>The name of the task group to associate with the task. The default value is the family
@@ -7587,8 +7583,11 @@ pub mod fluent_builders {
         }
         /// <p>The VPC subnet and security group configuration for tasks that receive their own
         /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        pub fn network_configuration(
+            mut self,
+            signature: crate::model::NetworkConfiguration,
+        ) -> Self {
+            self.inner = self.inner.network_configuration(signature);
             self
         }
         /// <p>The VPC subnet and security group configuration for tasks that receive their own
@@ -7610,8 +7609,8 @@ pub mod fluent_builders {
         /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
         /// formatting characters of the override structure.</p>
         /// </note>
-        pub fn overrides(mut self, inp: crate::model::TaskOverride) -> Self {
-            self.inner = self.inner.overrides(inp);
+        pub fn overrides(mut self, signature: crate::model::TaskOverride) -> Self {
+            self.inner = self.inner.overrides(signature);
             self
         }
         /// <p>A list of container overrides in JSON format that specify the name of a container in
@@ -7633,8 +7632,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
         /// task. If no value is specified, the tags aren't propagated.</p>
-        pub fn propagate_tags(mut self, inp: crate::model::PropagateTags) -> Self {
-            self.inner = self.inner.propagate_tags(inp);
+        pub fn propagate_tags(mut self, signature: crate::model::PropagateTags) -> Self {
+            self.inner = self.inner.propagate_tags(signature);
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
@@ -7647,8 +7646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference ID to use for the task.</p>
-        pub fn reference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_id(inp);
+        pub fn reference_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_id(signature.into());
             self
         }
         /// <p>The reference ID to use for the task.</p>
@@ -7664,8 +7663,8 @@ pub mod fluent_builders {
         /// numbers, hyphens (-), and underscores (_) are allowed.</p>
         /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
         /// contains the deployment ID of the service that starts it.</p>
-        pub fn started_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.started_by(inp);
+        pub fn started_by(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.started_by(signature.into());
             self
         }
         /// <p>An optional tag specified when a task is started. For example, if you automatically
@@ -7717,8 +7716,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
@@ -7764,8 +7763,8 @@ pub mod fluent_builders {
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
         /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
         /// the latest <code>ACTIVE</code> revision is used.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        pub fn task_definition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(signature.into());
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
@@ -7852,8 +7851,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop.
@@ -7863,8 +7862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
-        pub fn task(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(signature.into());
             self
         }
         /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
@@ -7876,8 +7875,8 @@ pub mod fluent_builders {
         /// custom scheduler, you can use this parameter to specify the reason for stopping the task
         /// here, and the message appears in subsequent <a>DescribeTasks</a> API
         /// operations on this task. Up to 255 characters are allowed in this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>An optional message specified when a task is stopped. For example, if you're using a
@@ -7953,8 +7952,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full ARN of the cluster that hosts the container instance the
         /// attachment belongs to.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full ARN of the cluster that hosts the container instance the
@@ -7968,8 +7967,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Any attachments associated with the state change request.</p>
-        pub fn attachments(mut self, inp: impl Into<crate::model::AttachmentStateChange>) -> Self {
-            self.inner = self.inner.attachments(inp);
+        pub fn attachments(mut self, input: crate::model::AttachmentStateChange) -> Self {
+            self.inner = self.inner.attachments(input);
             self
         }
         /// <p>Any attachments associated with the state change request.</p>
@@ -8044,8 +8043,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full ARN of the cluster that hosts the container.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full ARN of the cluster that hosts the container.</p>
@@ -8054,8 +8053,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
-        pub fn task(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(signature.into());
             self
         }
         /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
@@ -8064,8 +8063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the container.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container.</p>
@@ -8077,8 +8076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Docker container.</p>
-        pub fn runtime_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.runtime_id(inp);
+        pub fn runtime_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.runtime_id(signature.into());
             self
         }
         /// <p>The ID of the Docker container.</p>
@@ -8087,8 +8086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the state change request.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(signature.into());
             self
         }
         /// <p>The status of the state change request.</p>
@@ -8097,8 +8096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The exit code that's returned for the state change request.</p>
-        pub fn exit_code(mut self, inp: i32) -> Self {
-            self.inner = self.inner.exit_code(inp);
+        pub fn exit_code(mut self, signature: i32) -> Self {
+            self.inner = self.inner.exit_code(signature);
             self
         }
         /// <p>The exit code that's returned for the state change request.</p>
@@ -8107,8 +8106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason for the state change request.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>The reason for the state change request.</p>
@@ -8121,8 +8120,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_network_bindings`](Self::set_network_bindings).
         ///
         /// <p>The network bindings of the container.</p>
-        pub fn network_bindings(mut self, inp: impl Into<crate::model::NetworkBinding>) -> Self {
-            self.inner = self.inner.network_bindings(inp);
+        pub fn network_bindings(mut self, input: crate::model::NetworkBinding) -> Self {
+            self.inner = self.inner.network_bindings(input);
             self
         }
         /// <p>The network bindings of the container.</p>
@@ -8197,8 +8196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
@@ -8207,8 +8206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task ID or full ARN of the task in the state change request.</p>
-        pub fn task(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(signature.into());
             self
         }
         /// <p>The task ID or full ARN of the task in the state change request.</p>
@@ -8217,8 +8216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the state change request.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(signature.into());
             self
         }
         /// <p>The status of the state change request.</p>
@@ -8227,8 +8226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason for the state change request.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>The reason for the state change request.</p>
@@ -8241,8 +8240,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>Any containers that's associated with the state change request.</p>
-        pub fn containers(mut self, inp: impl Into<crate::model::ContainerStateChange>) -> Self {
-            self.inner = self.inner.containers(inp);
+        pub fn containers(mut self, input: crate::model::ContainerStateChange) -> Self {
+            self.inner = self.inner.containers(input);
             self
         }
         /// <p>Any containers that's associated with the state change request.</p>
@@ -8258,8 +8257,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Any attachments associated with the state change request.</p>
-        pub fn attachments(mut self, inp: impl Into<crate::model::AttachmentStateChange>) -> Self {
-            self.inner = self.inner.attachments(inp);
+        pub fn attachments(mut self, input: crate::model::AttachmentStateChange) -> Self {
+            self.inner = self.inner.attachments(input);
             self
         }
         /// <p>Any attachments associated with the state change request.</p>
@@ -8275,11 +8274,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_managed_agents`](Self::set_managed_agents).
         ///
         /// <p>The details for the managed agent that's associated with the task.</p>
-        pub fn managed_agents(
-            mut self,
-            inp: impl Into<crate::model::ManagedAgentStateChange>,
-        ) -> Self {
-            self.inner = self.inner.managed_agents(inp);
+        pub fn managed_agents(mut self, input: crate::model::ManagedAgentStateChange) -> Self {
+            self.inner = self.inner.managed_agents(input);
             self
         }
         /// <p>The details for the managed agent that's associated with the task.</p>
@@ -8291,8 +8287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Unix timestamp for the time when the container image pull started.</p>
-        pub fn pull_started_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.pull_started_at(inp);
+        pub fn pull_started_at(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.pull_started_at(signature);
             self
         }
         /// <p>The Unix timestamp for the time when the container image pull started.</p>
@@ -8304,8 +8300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-        pub fn pull_stopped_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.pull_stopped_at(inp);
+        pub fn pull_stopped_at(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.pull_stopped_at(signature);
             self
         }
         /// <p>The Unix timestamp for the time when the container image pull completed.</p>
@@ -8317,8 +8313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-        pub fn execution_stopped_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.execution_stopped_at(inp);
+        pub fn execution_stopped_at(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.execution_stopped_at(signature);
             self
         }
         /// <p>The Unix timestamp for the time when the task execution stopped.</p>
@@ -8395,8 +8391,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
         /// Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
         /// instances.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
@@ -8442,8 +8438,8 @@ pub mod fluent_builders {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
@@ -8548,8 +8544,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
         /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
         /// instances.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
@@ -8564,8 +8560,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to be removed.</p>
@@ -8637,8 +8633,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the capacity provider to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the capacity provider to update.</p>
@@ -8650,9 +8646,9 @@ pub mod fluent_builders {
         /// provider.</p>
         pub fn auto_scaling_group_provider(
             mut self,
-            inp: crate::model::AutoScalingGroupProviderUpdate,
+            signature: crate::model::AutoScalingGroupProviderUpdate,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_group_provider(inp);
+            self.inner = self.inner.auto_scaling_group_provider(signature);
             self
         }
         /// <p>An object that represent the parameters to update for the Auto Scaling group capacity
@@ -8725,8 +8721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to modify the settings for.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The name of the cluster to modify the settings for.</p>
@@ -8739,8 +8735,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
         /// <p>The cluster settings for your cluster.</p>
-        pub fn settings(mut self, inp: impl Into<crate::model::ClusterSetting>) -> Self {
-            self.inner = self.inner.settings(inp);
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>The cluster settings for your cluster.</p>
@@ -8752,8 +8748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The execute command configuration for the cluster.</p>
-        pub fn configuration(mut self, inp: crate::model::ClusterConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(mut self, signature: crate::model::ClusterConfiguration) -> Self {
+            self.inner = self.inner.configuration(signature);
             self
         }
         /// <p>The execute command configuration for the cluster.</p>
@@ -8825,8 +8821,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to modify the settings for.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The name of the cluster to modify the settings for.</p>
@@ -8842,8 +8838,8 @@ pub mod fluent_builders {
         /// Container Insights for a cluster. If this value is specified, it overrides the
         /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
         /// <a>PutAccountSettingDefault</a>.</p>
-        pub fn settings(mut self, inp: impl Into<crate::model::ClusterSetting>) -> Self {
-            self.inner = self.inner.settings(inp);
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
@@ -8934,8 +8930,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is
         /// running on. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is
@@ -8946,8 +8942,8 @@ pub mod fluent_builders {
         }
         /// <p>The container instance ID or full ARN entries for the container instance where you
         /// would like to update the Amazon ECS container agent.</p>
-        pub fn container_instance(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance(inp);
+        pub fn container_instance(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance(signature.into());
             self
         }
         /// <p>The container instance ID or full ARN entries for the container instance where you
@@ -9069,8 +9065,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
         /// update. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
@@ -9084,8 +9080,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
         ///
         /// <p>A list of container instance IDs or full ARN entries.</p>
-        pub fn container_instances(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instances(inp);
+        pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instances(input.into());
             self
         }
         /// <p>A list of container instance IDs or full ARN entries.</p>
@@ -9102,8 +9098,8 @@ pub mod fluent_builders {
         /// <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>,
         /// <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
         /// describe the container instance but can't update the container instance state.</p>
-        pub fn status(mut self, inp: crate::model::ContainerInstanceStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::ContainerInstanceStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The container instance state to update the container instance with. The only valid
@@ -9289,8 +9285,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on.
         /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on.
@@ -9300,8 +9296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service to update.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(signature.into());
             self
         }
         /// <p>The name of the service to update.</p>
@@ -9311,8 +9307,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of instantiations of the task to place and keep running in your
         /// service.</p>
-        pub fn desired_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_count(inp);
+        pub fn desired_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.desired_count(signature);
             self
         }
         /// <p>The number of instantiations of the task to place and keep running in your
@@ -9326,8 +9322,8 @@ pub mod fluent_builders {
         /// not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task
         /// definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of
         /// the task definition and then stops an old task after the new version is running.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        pub fn task_definition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(signature.into());
             self
         }
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
@@ -9369,9 +9365,9 @@ pub mod fluent_builders {
         /// <p></p>
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.capacity_provider_strategy(inp);
+            self.inner = self.inner.capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to update the service to use.</p>
@@ -9406,9 +9402,9 @@ pub mod fluent_builders {
         /// and the ordering of stopping and starting tasks.</p>
         pub fn deployment_configuration(
             mut self,
-            inp: crate::model::DeploymentConfiguration,
+            signature: crate::model::DeploymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.deployment_configuration(inp);
+            self.inner = self.inner.deployment_configuration(signature);
             self
         }
         /// <p>Optional deployment parameters that control how many tasks run during the deployment
@@ -9421,8 +9417,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object representing the network configuration for the service.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        pub fn network_configuration(
+            mut self,
+            signature: crate::model::NetworkConfiguration,
+        ) -> Self {
+            self.inner = self.inner.network_configuration(signature);
             self
         }
         /// <p>An object representing the network configuration for the service.</p>
@@ -9444,11 +9443,8 @@ pub mod fluent_builders {
         /// specify an empty array.</p>
         /// <p>You can specify a maximum of 10 constraints for each task. This limit includes
         /// constraints in the task definition and those specified at runtime.</p>
-        pub fn placement_constraints(
-            mut self,
-            inp: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
-            self.inner = self.inner.placement_constraints(inp);
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
+            self.inner = self.inner.placement_constraints(input);
             self
         }
         /// <p>An array of task placement constraint objects to update the service to use. If no
@@ -9474,11 +9470,8 @@ pub mod fluent_builders {
         /// this value is specified, it will override the existing placement strategy defined for
         /// the service. To remove an existing placement strategy, specify an empty object.</p>
         /// <p>You can specify a maximum of five strategy rules for each service.</p>
-        pub fn placement_strategy(
-            mut self,
-            inp: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
-            self.inner = self.inner.placement_strategy(inp);
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
+            self.inner = self.inner.placement_strategy(input);
             self
         }
         /// <p>The task placement strategy objects to update the service to use. If no value is
@@ -9498,8 +9491,8 @@ pub mod fluent_builders {
         /// is not specified, the <code>LATEST</code> platform version is used. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        pub fn platform_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(signature.into());
             self
         }
         /// <p>The platform version that your tasks in the service run on. A platform version is only
@@ -9519,8 +9512,8 @@ pub mod fluent_builders {
         /// definition changes. For example, you can update a service's tasks to use a newer Docker
         /// image with the same image/tag combination (<code>my_image:latest</code>) or to roll
         /// Fargate tasks onto a newer platform version.</p>
-        pub fn force_new_deployment(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_new_deployment(inp);
+        pub fn force_new_deployment(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_new_deployment(signature);
             self
         }
         /// <p>Determines whether to force a new deployment of the service. By default, deployments
@@ -9540,8 +9533,8 @@ pub mod fluent_builders {
         /// the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler
         /// from marking tasks as unhealthy and stopping them before they have time to come
         /// up.</p>
-        pub fn health_check_grace_period_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_grace_period_seconds(inp);
+        pub fn health_check_grace_period_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.health_check_grace_period_seconds(signature);
             self
         }
         /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
@@ -9563,8 +9556,8 @@ pub mod fluent_builders {
         /// containers.</p>
         /// <p>If you do not want to override the value that was set when the service was created,
         /// you can set this to <code>null</code> when performing this action.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_execute_command(inp);
+        pub fn enable_execute_command(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_execute_command(signature);
             self
         }
         /// <p>If <code>true</code>, this enables execute command functionality on all task
@@ -9641,8 +9634,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
         /// set exists in.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
@@ -9652,8 +9645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
@@ -9663,8 +9656,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the
         /// deployment.</p>
-        pub fn primary_task_set(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_task_set(inp);
+        pub fn primary_task_set(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_task_set(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the
@@ -9740,8 +9733,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
         /// set is found in.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
@@ -9751,8 +9744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
@@ -9761,8 +9754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
-        pub fn task_set(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_set(inp);
+        pub fn task_set(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_set(signature.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
@@ -9772,8 +9765,8 @@ pub mod fluent_builders {
         }
         /// <p>A floating-point percentage of the desired number of tasks to place and keep running
         /// in the task set.</p>
-        pub fn scale(mut self, inp: crate::model::Scale) -> Self {
-            self.inner = self.inner.scale(inp);
+        pub fn scale(mut self, signature: crate::model::Scale) -> Self {
+            self.inner = self.inner.scale(signature);
             self
         }
         /// <p>A floating-point percentage of the desired number of tasks to place and keep running

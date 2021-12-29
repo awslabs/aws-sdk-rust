@@ -678,9 +678,9 @@ pub mod create_account_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
         /// an account, then the entire request fails and the account is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -974,9 +974,9 @@ pub mod create_gov_cloud_account_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
         /// an account, then the entire request fails and the account is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1417,9 +1417,9 @@ pub mod create_organizational_unit_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
         /// an OU, then the entire request fails and the OU is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1697,9 +1697,9 @@ pub mod create_policy_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
         /// a policy, then the entire request fails and the policy is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5047,9 +5047,9 @@ pub mod invite_account_to_organization_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
         /// an account, then the entire request fails and invitations are not sent.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6196,9 +6196,9 @@ pub mod list_create_account_status_input {
         ///
         /// <p>A list of one or more states that you want included in the response. If this parameter
         /// isn't present, all requests are included in the response.</p>
-        pub fn states(mut self, input: impl Into<crate::model::CreateAccountState>) -> Self {
+        pub fn states(mut self, input: crate::model::CreateAccountState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -9511,9 +9511,9 @@ pub mod tag_resource_input {
         /// an account user, then the entire request fails and the account is not
         /// created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

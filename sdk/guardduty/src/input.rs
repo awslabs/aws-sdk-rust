@@ -1515,9 +1515,9 @@ pub mod create_members_input {
         ///
         /// <p>A list of account ID and email address pairs of the accounts that you want to associate
         /// with the GuardDuty administrator account.</p>
-        pub fn account_details(mut self, input: impl Into<crate::model::AccountDetail>) -> Self {
+        pub fn account_details(mut self, input: crate::model::AccountDetail) -> Self {
             let mut v = self.account_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_details = Some(v);
             self
         }
@@ -5351,10 +5351,10 @@ pub mod get_findings_statistics_input {
         /// <p>The types of finding statistics to retrieve.</p>
         pub fn finding_statistic_types(
             mut self,
-            input: impl Into<crate::model::FindingStatisticType>,
+            input: crate::model::FindingStatisticType,
         ) -> Self {
             let mut v = self.finding_statistic_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_statistic_types = Some(v);
             self
         }

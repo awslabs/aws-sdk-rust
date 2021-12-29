@@ -876,9 +876,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of tags for the resource.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -1030,9 +1030,9 @@ pub mod describe_table_statistics_output {
         /// To override the contents of this collection use [`set_table_statistics`](Self::set_table_statistics).
         ///
         /// <p>The table statistics.</p>
-        pub fn table_statistics(mut self, input: impl Into<crate::model::TableStatistics>) -> Self {
+        pub fn table_statistics(mut self, input: crate::model::TableStatistics) -> Self {
             let mut v = self.table_statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_statistics = Some(v);
             self
         }
@@ -1226,12 +1226,9 @@ pub mod describe_replication_tasks_output {
         /// To override the contents of this collection use [`set_replication_tasks`](Self::set_replication_tasks).
         ///
         /// <p>A description of the replication tasks.</p>
-        pub fn replication_tasks(
-            mut self,
-            input: impl Into<crate::model::ReplicationTask>,
-        ) -> Self {
+        pub fn replication_tasks(mut self, input: crate::model::ReplicationTask) -> Self {
             let mut v = self.replication_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_tasks = Some(v);
             self
         }
@@ -1332,12 +1329,12 @@ pub mod describe_replication_task_individual_assessments_output {
         /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
         pub fn replication_task_individual_assessments(
             mut self,
-            input: impl Into<crate::model::ReplicationTaskIndividualAssessment>,
+            input: crate::model::ReplicationTaskIndividualAssessment,
         ) -> Self {
             let mut v = self
                 .replication_task_individual_assessments
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_task_individual_assessments = Some(v);
             self
         }
@@ -1442,10 +1439,10 @@ pub mod describe_replication_task_assessment_runs_output {
         /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
         pub fn replication_task_assessment_runs(
             mut self,
-            input: impl Into<crate::model::ReplicationTaskAssessmentRun>,
+            input: crate::model::ReplicationTaskAssessmentRun,
         ) -> Self {
             let mut v = self.replication_task_assessment_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_task_assessment_runs = Some(v);
             self
         }
@@ -1560,10 +1557,10 @@ pub mod describe_replication_task_assessment_results_output {
         /// <p> The task assessment report. </p>
         pub fn replication_task_assessment_results(
             mut self,
-            input: impl Into<crate::model::ReplicationTaskAssessmentResult>,
+            input: crate::model::ReplicationTaskAssessmentResult,
         ) -> Self {
             let mut v = self.replication_task_assessment_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_task_assessment_results = Some(v);
             self
         }
@@ -1661,10 +1658,10 @@ pub mod describe_replication_subnet_groups_output {
         /// <p>A description of the replication subnet groups.</p>
         pub fn replication_subnet_groups(
             mut self,
-            input: impl Into<crate::model::ReplicationSubnetGroup>,
+            input: crate::model::ReplicationSubnetGroup,
         ) -> Self {
             let mut v = self.replication_subnet_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_subnet_groups = Some(v);
             self
         }
@@ -1771,10 +1768,10 @@ pub mod describe_replication_instance_task_logs_output {
         /// replication task name, ARN, and task log size (in bytes). </p>
         pub fn replication_instance_task_logs(
             mut self,
-            input: impl Into<crate::model::ReplicationInstanceTaskLog>,
+            input: crate::model::ReplicationInstanceTaskLog,
         ) -> Self {
             let mut v = self.replication_instance_task_logs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_instance_task_logs = Some(v);
             self
         }
@@ -1882,12 +1879,9 @@ pub mod describe_replication_instances_output {
         /// To override the contents of this collection use [`set_replication_instances`](Self::set_replication_instances).
         ///
         /// <p>The replication instances described.</p>
-        pub fn replication_instances(
-            mut self,
-            input: impl Into<crate::model::ReplicationInstance>,
-        ) -> Self {
+        pub fn replication_instances(mut self, input: crate::model::ReplicationInstance) -> Self {
             let mut v = self.replication_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_instances = Some(v);
             self
         }
@@ -2029,10 +2023,10 @@ pub mod describe_pending_maintenance_actions_output {
         /// <p>The pending maintenance action.</p>
         pub fn pending_maintenance_actions(
             mut self,
-            input: impl Into<crate::model::ResourcePendingMaintenanceActions>,
+            input: crate::model::ResourcePendingMaintenanceActions,
         ) -> Self {
             let mut v = self.pending_maintenance_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_maintenance_actions = Some(v);
             self
         }
@@ -2131,10 +2125,10 @@ pub mod describe_orderable_replication_instances_output {
         /// <p>The order-able replication instances available.</p>
         pub fn orderable_replication_instances(
             mut self,
-            input: impl Into<crate::model::OrderableReplicationInstance>,
+            input: crate::model::OrderableReplicationInstance,
         ) -> Self {
             let mut v = self.orderable_replication_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.orderable_replication_instances = Some(v);
             self
         }
@@ -2240,12 +2234,9 @@ pub mod describe_event_subscriptions_output {
         /// To override the contents of this collection use [`set_event_subscriptions_list`](Self::set_event_subscriptions_list).
         ///
         /// <p>A list of event subscriptions.</p>
-        pub fn event_subscriptions_list(
-            mut self,
-            input: impl Into<crate::model::EventSubscription>,
-        ) -> Self {
+        pub fn event_subscriptions_list(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_subscriptions_list = Some(v);
             self
         }
@@ -2333,9 +2324,9 @@ pub mod describe_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The events described.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -2403,10 +2394,10 @@ pub mod describe_event_categories_output {
         /// <p>A list of event categories.</p>
         pub fn event_category_group_list(
             mut self,
-            input: impl Into<crate::model::EventCategoryGroup>,
+            input: crate::model::EventCategoryGroup,
         ) -> Self {
             let mut v = self.event_category_group_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_category_group_list = Some(v);
             self
         }
@@ -2499,10 +2490,10 @@ pub mod describe_endpoint_types_output {
         /// <p>The types of endpoints that are supported.</p>
         pub fn supported_endpoint_types(
             mut self,
-            input: impl Into<crate::model::SupportedEndpointType>,
+            input: crate::model::SupportedEndpointType,
         ) -> Self {
             let mut v = self.supported_endpoint_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_endpoint_types = Some(v);
             self
         }
@@ -2587,12 +2578,9 @@ pub mod describe_endpoint_settings_output {
         /// To override the contents of this collection use [`set_endpoint_settings`](Self::set_endpoint_settings).
         ///
         /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-        pub fn endpoint_settings(
-            mut self,
-            input: impl Into<crate::model::EndpointSetting>,
-        ) -> Self {
+        pub fn endpoint_settings(mut self, input: crate::model::EndpointSetting) -> Self {
             let mut v = self.endpoint_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_settings = Some(v);
             self
         }
@@ -2680,9 +2668,9 @@ pub mod describe_endpoints_output {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>Endpoint description.</p>
-        pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -2770,9 +2758,9 @@ pub mod describe_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>A description of the connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -2855,9 +2843,9 @@ pub mod describe_certificates_output {
         ///
         /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
         /// instance.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -3071,9 +3059,9 @@ pub mod describe_account_attributes_output {
         /// To override the contents of this collection use [`set_account_quotas`](Self::set_account_quotas).
         ///
         /// <p>Account quota information.</p>
-        pub fn account_quotas(mut self, input: impl Into<crate::model::AccountQuota>) -> Self {
+        pub fn account_quotas(mut self, input: crate::model::AccountQuota) -> Self {
             let mut v = self.account_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_quotas = Some(v);
             self
         }

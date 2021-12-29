@@ -545,9 +545,9 @@ pub mod fluent_builders {
         /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
         pub fn endpoint_configurations(
             mut self,
-            inp: impl Into<crate::model::CustomRoutingEndpointConfiguration>,
+            input: crate::model::CustomRoutingEndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.endpoint_configurations(inp);
+            self.inner = self.inner.endpoint_configurations(input);
             self
         }
         /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
@@ -561,8 +561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
@@ -641,8 +641,8 @@ pub mod fluent_builders {
         }
         /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
         /// You can't advertise only a portion of the provisioned range.</p>
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr(inp);
+        pub fn cidr(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(signature.into());
             self
         }
         /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
@@ -717,8 +717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -730,8 +730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(signature.into());
             self
         }
         /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
@@ -748,8 +748,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
         /// not specified.</p>
-        pub fn destination_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_addresses(inp);
+        pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_addresses(input.into());
             self
         }
         /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
@@ -769,8 +769,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
         ///
         /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-        pub fn destination_ports(mut self, inp: impl Into<i32>) -> Self {
-            self.inner = self.inner.destination_ports(inp);
+        pub fn destination_ports(mut self, input: i32) -> Self {
+            self.inner = self.inner.destination_ports(input);
             self
         }
         /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
@@ -789,8 +789,8 @@ pub mod fluent_builders {
         /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
         /// the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
-        pub fn allow_all_traffic_to_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_all_traffic_to_endpoint(inp);
+        pub fn allow_all_traffic_to_endpoint(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_all_traffic_to_endpoint(signature);
             self
         }
         /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
@@ -875,8 +875,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
         /// hyphens (-), and must not begin or end with a hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
@@ -886,8 +886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
@@ -912,8 +912,8 @@ pub mod fluent_builders {
         /// accelerator with the new addresses.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
         /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn ip_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_addresses(inp);
+        pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_addresses(input.into());
             self
         }
         /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
@@ -935,8 +935,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
         /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -947,8 +947,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
         /// uniqueness—of an accelerator.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
@@ -967,8 +967,8 @@ pub mod fluent_builders {
         /// <p>Create tags for an accelerator.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
         /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for an accelerator.</p>
@@ -1052,8 +1052,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
         /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
@@ -1063,8 +1063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
@@ -1089,8 +1089,8 @@ pub mod fluent_builders {
         /// accelerator with the new addresses.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
         /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn ip_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_addresses(inp);
+        pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_addresses(input.into());
             self
         }
         /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
@@ -1112,8 +1112,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
         /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -1124,8 +1124,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
         /// is, the uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
@@ -1144,8 +1144,8 @@ pub mod fluent_builders {
         /// <p>Create tags for an accelerator.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
         /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for an accelerator.</p>
@@ -1221,8 +1221,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
@@ -1232,8 +1232,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
         /// specific Region.</p>
-        pub fn endpoint_group_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_region(inp);
+        pub fn endpoint_group_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_region(signature.into());
             self
         }
         /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
@@ -1253,9 +1253,9 @@ pub mod fluent_builders {
         /// client traffic on.</p>
         pub fn destination_configurations(
             mut self,
-            inp: impl Into<crate::model::CustomRoutingDestinationConfiguration>,
+            input: crate::model::CustomRoutingDestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.destination_configurations(inp);
+            self.inner = self.inner.destination_configurations(input);
             self
         }
         /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
@@ -1271,8 +1271,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
         /// uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
@@ -1346,8 +1346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
@@ -1365,8 +1365,8 @@ pub mod fluent_builders {
         /// <p>The port range to support for connections from clients to your accelerator.</p>
         /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
         /// endpoints for custom routing accelerators</a>.</p>
-        pub fn port_ranges(mut self, inp: impl Into<crate::model::PortRange>) -> Self {
-            self.inner = self.inner.port_ranges(inp);
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
+            self.inner = self.inner.port_ranges(input);
             self
         }
         /// <p>The port range to support for connections from clients to your accelerator.</p>
@@ -1381,8 +1381,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
         /// uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
@@ -1456,8 +1456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -1467,8 +1467,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
         /// specific Region.</p>
-        pub fn endpoint_group_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_region(inp);
+        pub fn endpoint_group_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_region(signature.into());
             self
         }
         /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
@@ -1487,9 +1487,9 @@ pub mod fluent_builders {
         /// <p>The list of endpoint objects.</p>
         pub fn endpoint_configurations(
             mut self,
-            inp: impl Into<crate::model::EndpointConfiguration>,
+            input: crate::model::EndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.endpoint_configurations(inp);
+            self.inner = self.inner.endpoint_configurations(input);
             self
         }
         /// <p>The list of endpoint objects.</p>
@@ -1505,8 +1505,8 @@ pub mod fluent_builders {
         /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
         /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
-        pub fn traffic_dial_percentage(mut self, inp: f32) -> Self {
-            self.inner = self.inner.traffic_dial_percentage(inp);
+        pub fn traffic_dial_percentage(mut self, signature: f32) -> Self {
+            self.inner = self.inner.traffic_dial_percentage(signature);
             self
         }
         /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
@@ -1521,8 +1521,8 @@ pub mod fluent_builders {
         /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
         /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
         /// first port in the list.</p>
-        pub fn health_check_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_port(inp);
+        pub fn health_check_port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.health_check_port(signature);
             self
         }
         /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
@@ -1534,8 +1534,11 @@ pub mod fluent_builders {
         }
         /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
         /// value is TCP.</p>
-        pub fn health_check_protocol(mut self, inp: crate::model::HealthCheckProtocol) -> Self {
-            self.inner = self.inner.health_check_protocol(inp);
+        pub fn health_check_protocol(
+            mut self,
+            signature: crate::model::HealthCheckProtocol,
+        ) -> Self {
+            self.inner = self.inner.health_check_protocol(signature);
             self
         }
         /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
@@ -1549,8 +1552,8 @@ pub mod fluent_builders {
         }
         /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
         /// default value is slash (/).</p>
-        pub fn health_check_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_path(inp);
+        pub fn health_check_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_path(signature.into());
             self
         }
         /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
@@ -1563,8 +1566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
-        pub fn health_check_interval_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_interval_seconds(inp);
+        pub fn health_check_interval_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.health_check_interval_seconds(signature);
             self
         }
         /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
@@ -1577,8 +1580,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
         /// unhealthy endpoint to healthy. The default value is 3.</p>
-        pub fn threshold_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.threshold_count(inp);
+        pub fn threshold_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.threshold_count(signature);
             self
         }
         /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
@@ -1589,8 +1592,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
         /// uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
@@ -1612,8 +1615,8 @@ pub mod fluent_builders {
         /// and 1443, respectively, on the endpoints.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
         /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn port_overrides(mut self, inp: impl Into<crate::model::PortOverride>) -> Self {
-            self.inner = self.inner.port_overrides(inp);
+        pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
+            self.inner = self.inner.port_overrides(input);
             self
         }
         /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
@@ -1691,8 +1694,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
@@ -1708,8 +1711,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
-        pub fn port_ranges(mut self, inp: impl Into<crate::model::PortRange>) -> Self {
-            self.inner = self.inner.port_ranges(inp);
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
+            self.inner = self.inner.port_ranges(input);
             self
         }
         /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
@@ -1721,8 +1724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The protocol for connections from clients to your accelerator.</p>
-        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, signature: crate::model::Protocol) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// <p>The protocol for connections from clients to your accelerator.</p>
@@ -1742,8 +1745,8 @@ pub mod fluent_builders {
         /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
         /// source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
-        pub fn client_affinity(mut self, inp: crate::model::ClientAffinity) -> Self {
-            self.inner = self.inner.client_affinity(inp);
+        pub fn client_affinity(mut self, signature: crate::model::ClientAffinity) -> Self {
+            self.inner = self.inner.client_affinity(signature);
             self
         }
         /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
@@ -1767,8 +1770,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
         /// uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
@@ -1854,8 +1857,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
@@ -1940,8 +1943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
@@ -2013,8 +2016,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
@@ -2086,8 +2089,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
@@ -2156,8 +2159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
@@ -2229,8 +2232,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -2304,8 +2307,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -2317,8 +2320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(signature.into());
             self
         }
         /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
@@ -2333,8 +2336,8 @@ pub mod fluent_builders {
         /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
         /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
         /// endpoint group.</p>
-        pub fn destination_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_addresses(inp);
+        pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_addresses(input.into());
             self
         }
         /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
@@ -2353,8 +2356,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
         /// receiving traffic.</p>
-        pub fn destination_ports(mut self, inp: impl Into<i32>) -> Self {
-            self.inner = self.inner.destination_ports(inp);
+        pub fn destination_ports(mut self, input: i32) -> Self {
+            self.inner = self.inner.destination_ports(input);
             self
         }
         /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
@@ -2374,8 +2377,8 @@ pub mod fluent_builders {
         /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
         /// the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
-        pub fn deny_all_traffic_to_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deny_all_traffic_to_endpoint(inp);
+        pub fn deny_all_traffic_to_endpoint(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deny_all_traffic_to_endpoint(signature);
             self
         }
         /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
@@ -2461,8 +2464,8 @@ pub mod fluent_builders {
         }
         /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
         /// when you provisioned the address range.</p>
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr(inp);
+        pub fn cidr(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(signature.into());
             self
         }
         /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
@@ -2532,8 +2535,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
@@ -2606,8 +2609,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
@@ -2679,8 +2682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
@@ -2754,8 +2757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
@@ -2829,8 +2832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
@@ -2902,8 +2905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
@@ -2972,8 +2975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
@@ -3045,8 +3048,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
@@ -3115,8 +3118,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
@@ -3125,8 +3128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3197,8 +3200,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
         /// another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
@@ -3208,8 +3211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -3278,8 +3281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
@@ -3288,8 +3291,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3358,8 +3361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
@@ -3368,8 +3371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
@@ -3378,8 +3381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3448,8 +3451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
@@ -3461,8 +3464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
@@ -3471,8 +3474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3549,8 +3552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
@@ -3562,8 +3565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
@@ -3575,8 +3578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
@@ -3585,8 +3588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3660,8 +3663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(signature.into());
             self
         }
         /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
@@ -3671,8 +3674,8 @@ pub mod fluent_builders {
         }
         /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
         /// mappings.</p>
-        pub fn destination_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_address(inp);
+        pub fn destination_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_address(signature.into());
             self
         }
         /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
@@ -3685,8 +3688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
@@ -3695,8 +3698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3765,8 +3768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -3775,8 +3778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
@@ -3785,8 +3788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3855,8 +3858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
@@ -3868,8 +3871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
@@ -3878,8 +3881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3950,8 +3953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
@@ -4027,8 +4030,8 @@ pub mod fluent_builders {
         /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
         /// specify is /24. The address range cannot overlap with another address range that you've brought
         /// to this or another Region.</p>
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr(inp);
+        pub fn cidr(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(signature.into());
             self
         }
         /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
@@ -4043,9 +4046,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn cidr_authorization_context(
             mut self,
-            inp: crate::model::CidrAuthorizationContext,
+            signature: crate::model::CidrAuthorizationContext,
         ) -> Self {
-            self.inner = self.inner.cidr_authorization_context(inp);
+            self.inner = self.inner.cidr_authorization_context(signature);
             self
         }
         /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
@@ -4124,8 +4127,8 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
         /// subnet IDs. </p>
-        pub fn endpoint_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_ids(inp);
+        pub fn endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_ids(input.into());
             self
         }
         /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
@@ -4138,8 +4141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
@@ -4213,8 +4216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.</p>
@@ -4227,8 +4230,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
@@ -4303,8 +4306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.</p>
@@ -4317,8 +4320,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag key pairs that you want to remove from the specified resources.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag key pairs that you want to remove from the specified resources.</p>
@@ -4395,8 +4398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
@@ -4409,8 +4412,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
         /// hyphens (-), and must not begin or end with a hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
@@ -4420,8 +4423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP address type, which must be IPv4.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The IP address type, which must be IPv4.</p>
@@ -4434,8 +4437,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
         /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -4505,8 +4508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
@@ -4521,8 +4524,8 @@ pub mod fluent_builders {
         /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
         /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn flow_logs_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.flow_logs_enabled(inp);
+        pub fn flow_logs_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.flow_logs_enabled(signature);
             self
         }
         /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
@@ -4536,8 +4539,8 @@ pub mod fluent_builders {
         /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
         /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
         /// bucket.</p>
-        pub fn flow_logs_s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_logs_s3_bucket(inp);
+        pub fn flow_logs_s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_logs_s3_bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
@@ -4555,8 +4558,8 @@ pub mod fluent_builders {
         /// <p>If you don’t specify a prefix, the flow logs are stored in the
         /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
-        pub fn flow_logs_s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_logs_s3_prefix(inp);
+        pub fn flow_logs_s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_logs_s3_prefix(signature.into());
             self
         }
         /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
@@ -4632,8 +4635,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
@@ -4646,8 +4649,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
         /// hyphens (-), and must not begin or end with a hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
@@ -4657,8 +4660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
@@ -4671,8 +4674,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
         /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -4744,8 +4747,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
@@ -4760,8 +4763,8 @@ pub mod fluent_builders {
         /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
         /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn flow_logs_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.flow_logs_enabled(inp);
+        pub fn flow_logs_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.flow_logs_enabled(signature);
             self
         }
         /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
@@ -4775,8 +4778,8 @@ pub mod fluent_builders {
         /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
         /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
         /// bucket.</p>
-        pub fn flow_logs_s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_logs_s3_bucket(inp);
+        pub fn flow_logs_s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_logs_s3_bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
@@ -4794,8 +4797,8 @@ pub mod fluent_builders {
         /// <p>If you don’t specify a prefix, the flow logs are stored in the
         /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
-        pub fn flow_logs_s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_logs_s3_prefix(inp);
+        pub fn flow_logs_s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_logs_s3_prefix(signature.into());
             self
         }
         /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
@@ -4871,8 +4874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
@@ -4888,8 +4891,8 @@ pub mod fluent_builders {
         /// currently being used by a subnet endpoint, the call fails.</p>
         /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
         /// endpoints for custom routing accelerators</a>.</p>
-        pub fn port_ranges(mut self, inp: impl Into<crate::model::PortRange>) -> Self {
-            self.inner = self.inner.port_ranges(inp);
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
+            self.inner = self.inner.port_ranges(input);
             self
         }
         /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
@@ -4964,8 +4967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -4983,9 +4986,9 @@ pub mod fluent_builders {
         /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
         pub fn endpoint_configurations(
             mut self,
-            inp: impl Into<crate::model::EndpointConfiguration>,
+            input: crate::model::EndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.endpoint_configurations(inp);
+            self.inner = self.inner.endpoint_configurations(input);
             self
         }
         /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
@@ -5001,8 +5004,8 @@ pub mod fluent_builders {
         /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
         /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
-        pub fn traffic_dial_percentage(mut self, inp: f32) -> Self {
-            self.inner = self.inner.traffic_dial_percentage(inp);
+        pub fn traffic_dial_percentage(mut self, signature: f32) -> Self {
+            self.inner = self.inner.traffic_dial_percentage(signature);
             self
         }
         /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
@@ -5017,8 +5020,8 @@ pub mod fluent_builders {
         /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
         /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
         /// the first port in the list.</p>
-        pub fn health_check_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_port(inp);
+        pub fn health_check_port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.health_check_port(signature);
             self
         }
         /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
@@ -5030,8 +5033,11 @@ pub mod fluent_builders {
         }
         /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
         /// value is TCP.</p>
-        pub fn health_check_protocol(mut self, inp: crate::model::HealthCheckProtocol) -> Self {
-            self.inner = self.inner.health_check_protocol(inp);
+        pub fn health_check_protocol(
+            mut self,
+            signature: crate::model::HealthCheckProtocol,
+        ) -> Self {
+            self.inner = self.inner.health_check_protocol(signature);
             self
         }
         /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
@@ -5045,8 +5051,8 @@ pub mod fluent_builders {
         }
         /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
         /// default value is slash (/).</p>
-        pub fn health_check_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_path(inp);
+        pub fn health_check_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_path(signature.into());
             self
         }
         /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
@@ -5059,8 +5065,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
-        pub fn health_check_interval_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_interval_seconds(inp);
+        pub fn health_check_interval_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.health_check_interval_seconds(signature);
             self
         }
         /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
@@ -5073,8 +5079,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
         /// unhealthy endpoint to healthy. The default value is 3.</p>
-        pub fn threshold_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.threshold_count(inp);
+        pub fn threshold_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.threshold_count(signature);
             self
         }
         /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
@@ -5093,8 +5099,8 @@ pub mod fluent_builders {
         /// and 1443, respectively, on the endpoints.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
         /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn port_overrides(mut self, inp: impl Into<crate::model::PortOverride>) -> Self {
-            self.inner = self.inner.port_overrides(inp);
+        pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
+            self.inner = self.inner.port_overrides(input);
             self
         }
         /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
@@ -5171,8 +5177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
@@ -5185,8 +5191,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
-        pub fn port_ranges(mut self, inp: impl Into<crate::model::PortRange>) -> Self {
-            self.inner = self.inner.port_ranges(inp);
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
+            self.inner = self.inner.port_ranges(input);
             self
         }
         /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
@@ -5198,8 +5204,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated protocol for the connections from clients to the accelerator.</p>
-        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, signature: crate::model::Protocol) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// <p>The updated protocol for the connections from clients to the accelerator.</p>
@@ -5219,8 +5225,8 @@ pub mod fluent_builders {
         /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
         /// source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
-        pub fn client_affinity(mut self, inp: crate::model::ClientAffinity) -> Self {
-            self.inner = self.inner.client_affinity(inp);
+        pub fn client_affinity(mut self, signature: crate::model::ClientAffinity) -> Self {
+            self.inner = self.inner.client_affinity(signature);
             self
         }
         /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
@@ -5309,8 +5315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The address range, in CIDR notation.</p>
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr(inp);
+        pub fn cidr(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(signature.into());
             self
         }
         /// <p>The address range, in CIDR notation.</p>

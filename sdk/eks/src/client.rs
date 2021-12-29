@@ -403,8 +403,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster that you are associating with encryption configuration.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster that you are associating with encryption configuration.</p>
@@ -417,8 +417,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
         ///
         /// <p>The configuration you are using for encryption.</p>
-        pub fn encryption_config(mut self, inp: impl Into<crate::model::EncryptionConfig>) -> Self {
-            self.inner = self.inner.encryption_config(inp);
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(input);
             self
         }
         /// <p>The configuration you are using for encryption.</p>
@@ -430,8 +430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client request token you are using with the encryption configuration.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>The client request token you are using with the encryption configuration.</p>
@@ -510,8 +510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to associate the configuration to.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster to associate the configuration to.</p>
@@ -521,8 +521,8 @@ pub mod fluent_builders {
         }
         /// <p>An object that represents an OpenID Connect (OIDC) identity provider
         /// configuration.</p>
-        pub fn oidc(mut self, inp: crate::model::OidcIdentityProviderConfigRequest) -> Self {
-            self.inner = self.inner.oidc(inp);
+        pub fn oidc(mut self, signature: crate::model::OidcIdentityProviderConfigRequest) -> Self {
+            self.inner = self.inner.oidc(signature);
             self
         }
         /// <p>An object that represents an OpenID Connect (OIDC) identity provider
@@ -545,7 +545,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The metadata to apply to the configuration to assist with categorization and
@@ -561,8 +561,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -641,8 +641,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to create the add-on for.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster to create the add-on for.</p>
@@ -653,8 +653,8 @@ pub mod fluent_builders {
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
         /// <code>DescribeAddonVersions</code>
         /// </a>.</p>
-        pub fn addon_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_name(inp);
+        pub fn addon_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_name(signature.into());
             self
         }
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
@@ -667,8 +667,8 @@ pub mod fluent_builders {
         /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
         /// <code>DescribeAddonVersions</code>
         /// </a>.</p>
-        pub fn addon_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_version(inp);
+        pub fn addon_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_version(signature.into());
             self
         }
         /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
@@ -689,8 +689,11 @@ pub mod fluent_builders {
         /// IAM roles for service accounts on your cluster</a> in the
         /// <i>Amazon EKS User Guide</i>.</p>
         /// </note>
-        pub fn service_account_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_account_role_arn(inp);
+        pub fn service_account_role_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.service_account_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
@@ -710,8 +713,8 @@ pub mod fluent_builders {
         }
         /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS
         /// add-on.</p>
-        pub fn resolve_conflicts(mut self, inp: crate::model::ResolveConflicts) -> Self {
-            self.inner = self.inner.resolve_conflicts(inp);
+        pub fn resolve_conflicts(mut self, signature: crate::model::ResolveConflicts) -> Self {
+            self.inner = self.inner.resolve_conflicts(signature);
             self
         }
         /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS
@@ -725,8 +728,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -749,7 +752,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
@@ -842,8 +845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name to give to your cluster.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The unique name to give to your cluster.</p>
@@ -853,8 +856,8 @@ pub mod fluent_builders {
         }
         /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here,
         /// the latest version available in Amazon EKS is used.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here,
@@ -869,8 +872,8 @@ pub mod fluent_builders {
         /// Service IAM Role</a> in the <i>
         /// <i>Amazon EKS User Guide</i>
         /// </i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
@@ -889,8 +892,8 @@ pub mod fluent_builders {
         /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
         /// security groups. However, we recommend that you use a dedicated security group for your
         /// cluster control plane.</p>
-        pub fn resources_vpc_config(mut self, inp: crate::model::VpcConfigRequest) -> Self {
-            self.inner = self.inner.resources_vpc_config(inp);
+        pub fn resources_vpc_config(mut self, signature: crate::model::VpcConfigRequest) -> Self {
+            self.inner = self.inner.resources_vpc_config(signature);
             self
         }
         /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
@@ -909,9 +912,9 @@ pub mod fluent_builders {
         /// <p>The Kubernetes network configuration for the cluster.</p>
         pub fn kubernetes_network_config(
             mut self,
-            inp: crate::model::KubernetesNetworkConfigRequest,
+            signature: crate::model::KubernetesNetworkConfigRequest,
         ) -> Self {
-            self.inner = self.inner.kubernetes_network_config(inp);
+            self.inner = self.inner.kubernetes_network_config(signature);
             self
         }
         /// <p>The Kubernetes network configuration for the cluster.</p>
@@ -932,8 +935,8 @@ pub mod fluent_builders {
         /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
         /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
         /// </note>
-        pub fn logging(mut self, inp: crate::model::Logging) -> Self {
-            self.inner = self.inner.logging(inp);
+        pub fn logging(mut self, signature: crate::model::Logging) -> Self {
+            self.inner = self.inner.logging(signature);
             self
         }
         /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
@@ -952,8 +955,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -976,7 +979,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
@@ -995,8 +998,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
         ///
         /// <p>The encryption configuration for the cluster.</p>
-        pub fn encryption_config(mut self, inp: impl Into<crate::model::EncryptionConfig>) -> Self {
-            self.inner = self.inner.encryption_config(inp);
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(input);
             self
         }
         /// <p>The encryption configuration for the cluster.</p>
@@ -1091,8 +1094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Fargate profile.</p>
-        pub fn fargate_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fargate_profile_name(inp);
+        pub fn fargate_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fargate_profile_name(signature.into());
             self
         }
         /// <p>The name of the Fargate profile.</p>
@@ -1104,8 +1107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
@@ -1118,8 +1121,8 @@ pub mod fluent_builders {
         /// your cluster as a node, and it provides read access to Amazon ECR image repositories. For
         /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
         /// <i>Amazon EKS User Guide</i>.</p>
-        pub fn pod_execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pod_execution_role_arn(inp);
+        pub fn pod_execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pod_execution_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
@@ -1141,8 +1144,8 @@ pub mod fluent_builders {
         /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are
         /// not assigned public IP addresses, so only private subnets (with no direct route to an
         /// Internet Gateway) are accepted for this parameter.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
         /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are
@@ -1162,8 +1165,8 @@ pub mod fluent_builders {
         /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an
         /// associated namespace. Optionally, you can also specify labels for a namespace. You may
         /// specify up to five selectors in a Fargate profile.</p>
-        pub fn selectors(mut self, inp: impl Into<crate::model::FargateProfileSelector>) -> Self {
-            self.inner = self.inner.selectors(inp);
+        pub fn selectors(mut self, input: crate::model::FargateProfileSelector) -> Self {
+            self.inner = self.inner.selectors(input);
             self
         }
         /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an
@@ -1178,8 +1181,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1204,7 +1207,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The metadata to apply to the Fargate profile to assist with categorization and
@@ -1290,8 +1293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to create the node group in.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster to create the node group in.</p>
@@ -1300,8 +1303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name to give your node group.</p>
-        pub fn nodegroup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nodegroup_name(inp);
+        pub fn nodegroup_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nodegroup_name(signature.into());
             self
         }
         /// <p>The unique name to give your node group.</p>
@@ -1314,8 +1317,8 @@ pub mod fluent_builders {
         }
         /// <p>The scaling configuration details for the Auto Scaling group that is created for your
         /// node group.</p>
-        pub fn scaling_config(mut self, inp: crate::model::NodegroupScalingConfig) -> Self {
-            self.inner = self.inner.scaling_config(inp);
+        pub fn scaling_config(mut self, signature: crate::model::NodegroupScalingConfig) -> Self {
+            self.inner = self.inner.scaling_config(signature);
             self
         }
         /// <p>The scaling configuration details for the Auto Scaling group that is created for your
@@ -1330,8 +1333,8 @@ pub mod fluent_builders {
         /// <p>The root device disk size (in GiB) for your node group instances. The default disk
         /// size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify  <code>diskSize</code>,
         /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn disk_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.disk_size(inp);
+        pub fn disk_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.disk_size(signature);
             self
         }
         /// <p>The root device disk size (in GiB) for your node group instances. The default disk
@@ -1350,8 +1353,8 @@ pub mod fluent_builders {
         /// <code>SubnetId</code>
         /// </a> in your launch template, or the node group
         /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
         /// <p>The subnets to use for the Auto Scaling group that is created for your node group.
@@ -1381,8 +1384,8 @@ pub mod fluent_builders {
         /// specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
         /// multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in
         /// the <i>Amazon EKS User Guide</i>.</p>
-        pub fn instance_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_types(inp);
+        pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_types(input.into());
             self
         }
         /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be
@@ -1409,8 +1412,8 @@ pub mod fluent_builders {
         /// <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI.
         /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>,
         /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn ami_type(mut self, inp: crate::model::AmiTypes) -> Self {
-            self.inner = self.inner.ami_type(inp);
+        pub fn ami_type(mut self, signature: crate::model::AmiTypes) -> Self {
+            self.inner = self.inner.ami_type(signature);
             self
         }
         /// <p>The AMI type for your node group. GPU instance types should use the
@@ -1426,8 +1429,8 @@ pub mod fluent_builders {
         /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>,
         /// then don't specify  <code>remoteAccess</code>, or the node group  deployment
         /// will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn remote_access(mut self, inp: crate::model::RemoteAccessConfig) -> Self {
-            self.inner = self.inner.remote_access(inp);
+        pub fn remote_access(mut self, signature: crate::model::RemoteAccessConfig) -> Self {
+            self.inner = self.inner.remote_access(signature);
             self
         }
         /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>,
@@ -1452,8 +1455,8 @@ pub mod fluent_builders {
         /// <code>IamInstanceProfile</code>
         /// </a> in your launch template,
         /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn node_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_role(inp);
+        pub fn node_role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_role(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
@@ -1483,7 +1486,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.labels(k, v);
+            self.inner = self.inner.labels(k.into(), v.into());
             self
         }
         /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are
@@ -1502,8 +1505,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_taints`](Self::set_taints).
         ///
         /// <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
-        pub fn taints(mut self, inp: impl Into<crate::model::Taint>) -> Self {
-            self.inner = self.inner.taints(inp);
+        pub fn taints(mut self, input: crate::model::Taint) -> Self {
+            self.inner = self.inner.taints(input);
             self
         }
         /// <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
@@ -1527,7 +1530,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The metadata to apply to the node group to assist with categorization and
@@ -1545,8 +1548,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1562,8 +1565,11 @@ pub mod fluent_builders {
         /// then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or
         /// <code>remoteAccess</code> and make sure that the launch template meets the
         /// requirements in <code>launchTemplateSpecification</code>.</p>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplateSpecification) -> Self {
-            self.inner = self.inner.launch_template(inp);
+        pub fn launch_template(
+            mut self,
+            signature: crate::model::LaunchTemplateSpecification,
+        ) -> Self {
+            self.inner = self.inner.launch_template(signature);
             self
         }
         /// <p>An object representing a node group's launch template specification. If specified,
@@ -1578,8 +1584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The node group update configuration.</p>
-        pub fn update_config(mut self, inp: crate::model::NodegroupUpdateConfig) -> Self {
-            self.inner = self.inner.update_config(inp);
+        pub fn update_config(mut self, signature: crate::model::NodegroupUpdateConfig) -> Self {
+            self.inner = self.inner.update_config(signature);
             self
         }
         /// <p>The node group update configuration.</p>
@@ -1591,8 +1597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The capacity type for your node group.</p>
-        pub fn capacity_type(mut self, inp: crate::model::CapacityTypes) -> Self {
-            self.inner = self.inner.capacity_type(inp);
+        pub fn capacity_type(mut self, signature: crate::model::CapacityTypes) -> Self {
+            self.inner = self.inner.capacity_type(signature);
             self
         }
         /// <p>The capacity type for your node group.</p>
@@ -1607,8 +1613,8 @@ pub mod fluent_builders {
         /// version of the cluster is used, and this is the only accepted specified value.
         /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify  <code>version</code>,
         /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes
@@ -1625,8 +1631,8 @@ pub mod fluent_builders {
         /// optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>,
         /// and your launch template uses a custom AMI, then don't specify  <code>releaseVersion</code>, or the node group
         /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn release_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_version(inp);
+        pub fn release_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_version(signature.into());
             self
         }
         /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default,
@@ -1705,8 +1711,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to delete the add-on from.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster to delete the add-on from.</p>
@@ -1717,8 +1723,8 @@ pub mod fluent_builders {
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
         /// <code>ListAddons</code>
         /// </a>.</p>
-        pub fn addon_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_name(inp);
+        pub fn addon_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_name(signature.into());
             self
         }
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
@@ -1729,8 +1735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
-        pub fn preserve(mut self, inp: bool) -> Self {
-            self.inner = self.inner.preserve(inp);
+        pub fn preserve(mut self, signature: bool) -> Self {
+            self.inner = self.inner.preserve(signature);
             self
         }
         /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
@@ -1806,8 +1812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the cluster to delete.</p>
@@ -1883,8 +1889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
@@ -1893,8 +1899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Fargate profile to delete.</p>
-        pub fn fargate_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fargate_profile_name(inp);
+        pub fn fargate_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fargate_profile_name(signature.into());
             self
         }
         /// <p>The name of the Fargate profile to delete.</p>
@@ -1966,8 +1972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
@@ -1976,8 +1982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the node group to delete.</p>
-        pub fn nodegroup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nodegroup_name(inp);
+        pub fn nodegroup_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nodegroup_name(signature.into());
             self
         }
         /// <p>The name of the node group to delete.</p>
@@ -2049,8 +2055,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the connected cluster to deregister.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the connected cluster to deregister.</p>
@@ -2119,8 +2125,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster.</p>
@@ -2131,8 +2137,8 @@ pub mod fluent_builders {
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
         /// <code>ListAddons</code>
         /// </a>.</p>
-        pub fn addon_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_name(inp);
+        pub fn addon_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_name(signature.into());
             self
         }
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
@@ -2203,8 +2209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kubernetes versions that the add-on can be used with.</p>
-        pub fn kubernetes_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kubernetes_version(inp);
+        pub fn kubernetes_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kubernetes_version(signature.into());
             self
         }
         /// <p>The Kubernetes versions that the add-on can be used with.</p>
@@ -2216,8 +2222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2233,8 +2239,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is used only to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2252,8 +2258,8 @@ pub mod fluent_builders {
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
         /// <code>ListAddons</code>
         /// </a>.</p>
-        pub fn addon_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_name(inp);
+        pub fn addon_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_name(signature.into());
             self
         }
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
@@ -2332,8 +2338,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to describe.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the cluster to describe.</p>
@@ -2402,8 +2408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
@@ -2412,8 +2418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Fargate profile to describe.</p>
-        pub fn fargate_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fargate_profile_name(inp);
+        pub fn fargate_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fargate_profile_name(signature.into());
             self
         }
         /// <p>The name of the Fargate profile to describe.</p>
@@ -2485,8 +2491,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster name that the identity provider configuration is associated to.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The cluster name that the identity provider configuration is associated to.</p>
@@ -2497,9 +2503,9 @@ pub mod fluent_builders {
         /// <p>An object that represents an identity provider configuration.</p>
         pub fn identity_provider_config(
             mut self,
-            inp: crate::model::IdentityProviderConfig,
+            signature: crate::model::IdentityProviderConfig,
         ) -> Self {
-            self.inner = self.inner.identity_provider_config(inp);
+            self.inner = self.inner.identity_provider_config(signature);
             self
         }
         /// <p>An object that represents an identity provider configuration.</p>
@@ -2571,8 +2577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
@@ -2581,8 +2587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the node group to describe.</p>
-        pub fn nodegroup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nodegroup_name(inp);
+        pub fn nodegroup_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nodegroup_name(signature.into());
             self
         }
         /// <p>The name of the node group to describe.</p>
@@ -2658,8 +2664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster associated with the update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster associated with the update.</p>
@@ -2668,8 +2674,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the update to describe.</p>
-        pub fn update_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_id(inp);
+        pub fn update_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_id(signature.into());
             self
         }
         /// <p>The ID of the update to describe.</p>
@@ -2678,8 +2684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon EKS node group associated with the update.</p>
-        pub fn nodegroup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nodegroup_name(inp);
+        pub fn nodegroup_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nodegroup_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS node group associated with the update.</p>
@@ -2693,8 +2699,8 @@ pub mod fluent_builders {
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
         /// <code>ListAddons</code>
         /// </a>.</p>
-        pub fn addon_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_name(inp);
+        pub fn addon_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_name(signature.into());
             self
         }
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
@@ -2770,8 +2776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to disassociate an identity provider from.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster to disassociate an identity provider from.</p>
@@ -2782,9 +2788,9 @@ pub mod fluent_builders {
         /// <p>An object that represents an identity provider configuration.</p>
         pub fn identity_provider_config(
             mut self,
-            inp: crate::model::IdentityProviderConfig,
+            signature: crate::model::IdentityProviderConfig,
         ) -> Self {
-            self.inner = self.inner.identity_provider_config(inp);
+            self.inner = self.inner.identity_provider_config(signature);
             self
         }
         /// <p>An object that represents an identity provider configuration.</p>
@@ -2797,8 +2803,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2871,8 +2877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster.</p>
@@ -2889,8 +2895,8 @@ pub mod fluent_builders {
         /// 100. If you don't use this parameter, <code>ListAddonsRequest</code>
         /// returns up to 100 results and a <code>nextToken</code> value, if
         /// applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in
@@ -2914,8 +2920,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is used only to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2998,8 +3004,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If you don't
         /// use this parameter, <code>ListClusters</code> returns up to 100
         /// results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
@@ -3022,8 +3028,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is used only to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3043,8 +3049,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
         /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
-        pub fn include(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include(inp);
+        pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include(input.into());
             self
         }
         /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
@@ -3117,8 +3123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster that you would like to list Fargate profiles in.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster that you would like to list Fargate profiles in.</p>
@@ -3135,8 +3141,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If you don't
         /// use this parameter, <code>ListFargateProfiles</code> returns up to 100
         /// results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of Fargate profile results returned by
@@ -3156,8 +3162,8 @@ pub mod fluent_builders {
         /// <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and
         /// the results exceeded the value of that parameter. Pagination continues from the end of
         /// the previous results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3229,8 +3235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster name that you want to list identity provider configurations for.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The cluster name that you want to list identity provider configurations for.</p>
@@ -3248,8 +3254,8 @@ pub mod fluent_builders {
         /// 100. If you don't use this parameter,
         /// <code>ListIdentityProviderConfigs</code> returns up to 100 results
         /// and a <code>nextToken</code> value, if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of identity provider configurations returned by
@@ -3270,8 +3276,8 @@ pub mod fluent_builders {
         /// <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used
         /// and the results exceeded the value of that parameter. Pagination continues from the end
         /// of the previous results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3344,8 +3350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
@@ -3361,8 +3367,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If you don't
         /// use this parameter, <code>ListNodegroups</code> returns up to 100
         /// results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in
@@ -3381,8 +3387,8 @@ pub mod fluent_builders {
         /// <code>ListNodegroups</code> request where <code>maxResults</code> was used and the
         /// results exceeded the value of that parameter. Pagination continues from the end of the
         /// previous results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3455,8 +3461,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
         /// supported resources are Amazon EKS clusters and managed node groups.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
@@ -3527,8 +3533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster to list updates for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster to list updates for.</p>
@@ -3537,8 +3543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
-        pub fn nodegroup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nodegroup_name(inp);
+        pub fn nodegroup_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nodegroup_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
@@ -3550,8 +3556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The names of the installed add-ons that have available updates.</p>
-        pub fn addon_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_name(inp);
+        pub fn addon_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_name(signature.into());
             self
         }
         /// <p>The names of the installed add-ons that have available updates.</p>
@@ -3563,8 +3569,8 @@ pub mod fluent_builders {
         /// <code>ListUpdates</code> request where <code>maxResults</code> was used and the
         /// results exceeded the value of that parameter. Pagination continues from the end of the
         /// previous results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3583,8 +3589,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 100. If you don't use this
         /// parameter, <code>ListUpdates</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated
@@ -3669,8 +3675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Define a unique name for this cluster for your Region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Define a unique name for this cluster for your Region.</p>
@@ -3679,8 +3685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
-        pub fn connector_config(mut self, inp: crate::model::ConnectorConfigRequest) -> Self {
-            self.inner = self.inner.connector_config(inp);
+        pub fn connector_config(mut self, signature: crate::model::ConnectorConfigRequest) -> Self {
+            self.inner = self.inner.connector_config(signature);
             self
         }
         /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
@@ -3692,8 +3698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -3717,7 +3723,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The metadata that you apply to the cluster to assist with categorization and
@@ -3801,8 +3807,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
         /// are Amazon EKS clusters and managed node groups.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
@@ -3821,7 +3827,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
@@ -3896,8 +3902,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
         /// resources are Amazon EKS clusters and managed node groups.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
@@ -3911,8 +3917,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to be removed.</p>
@@ -3984,8 +3990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the cluster.</p>
@@ -3996,8 +4002,8 @@ pub mod fluent_builders {
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
         /// <code>ListAddons</code>
         /// </a>.</p>
-        pub fn addon_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_name(inp);
+        pub fn addon_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_name(signature.into());
             self
         }
         /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
@@ -4010,8 +4016,8 @@ pub mod fluent_builders {
         /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
         /// <code>DescribeAddonVersions</code>
         /// </a>.</p>
-        pub fn addon_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addon_version(inp);
+        pub fn addon_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addon_version(signature.into());
             self
         }
         /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
@@ -4032,8 +4038,11 @@ pub mod fluent_builders {
         /// IAM roles for service accounts on your cluster</a> in the
         /// <i>Amazon EKS User Guide</i>.</p>
         /// </note>
-        pub fn service_account_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_account_role_arn(inp);
+        pub fn service_account_role_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.service_account_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
@@ -4053,8 +4062,8 @@ pub mod fluent_builders {
         }
         /// <p>How to resolve parameter value conflicts when applying the new version of the add-on
         /// to the cluster.</p>
-        pub fn resolve_conflicts(mut self, inp: crate::model::ResolveConflicts) -> Self {
-            self.inner = self.inner.resolve_conflicts(inp);
+        pub fn resolve_conflicts(mut self, signature: crate::model::ResolveConflicts) -> Self {
+            self.inner = self.inner.resolve_conflicts(signature);
             self
         }
         /// <p>How to resolve parameter value conflicts when applying the new version of the add-on
@@ -4068,8 +4077,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4168,8 +4177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -4178,8 +4187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
-        pub fn resources_vpc_config(mut self, inp: crate::model::VpcConfigRequest) -> Self {
-            self.inner = self.inner.resources_vpc_config(inp);
+        pub fn resources_vpc_config(mut self, signature: crate::model::VpcConfigRequest) -> Self {
+            self.inner = self.inner.resources_vpc_config(signature);
             self
         }
         /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
@@ -4200,8 +4209,8 @@ pub mod fluent_builders {
         /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
         /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
         /// </note>
-        pub fn logging(mut self, inp: crate::model::Logging) -> Self {
-            self.inner = self.inner.logging(inp);
+        pub fn logging(mut self, signature: crate::model::Logging) -> Self {
+            self.inner = self.inner.logging(signature);
             self
         }
         /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
@@ -4220,8 +4229,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4304,8 +4313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -4314,8 +4323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired Kubernetes version following a successful update.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>The desired Kubernetes version following a successful update.</p>
@@ -4325,8 +4334,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4403,8 +4412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
@@ -4413,8 +4422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the managed node group to update.</p>
-        pub fn nodegroup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nodegroup_name(inp);
+        pub fn nodegroup_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nodegroup_name(signature.into());
             self
         }
         /// <p>The name of the managed node group to update.</p>
@@ -4427,8 +4436,8 @@ pub mod fluent_builders {
         }
         /// <p>The Kubernetes labels to be applied to the nodes in the node group after the
         /// update.</p>
-        pub fn labels(mut self, inp: crate::model::UpdateLabelsPayload) -> Self {
-            self.inner = self.inner.labels(inp);
+        pub fn labels(mut self, signature: crate::model::UpdateLabelsPayload) -> Self {
+            self.inner = self.inner.labels(signature);
             self
         }
         /// <p>The Kubernetes labels to be applied to the nodes in the node group after the
@@ -4442,8 +4451,8 @@ pub mod fluent_builders {
         }
         /// <p>The Kubernetes taints to be applied to the nodes in the node group after the
         /// update.</p>
-        pub fn taints(mut self, inp: crate::model::UpdateTaintsPayload) -> Self {
-            self.inner = self.inner.taints(inp);
+        pub fn taints(mut self, signature: crate::model::UpdateTaintsPayload) -> Self {
+            self.inner = self.inner.taints(signature);
             self
         }
         /// <p>The Kubernetes taints to be applied to the nodes in the node group after the
@@ -4456,8 +4465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
-        pub fn scaling_config(mut self, inp: crate::model::NodegroupScalingConfig) -> Self {
-            self.inner = self.inner.scaling_config(inp);
+        pub fn scaling_config(mut self, signature: crate::model::NodegroupScalingConfig) -> Self {
+            self.inner = self.inner.scaling_config(signature);
             self
         }
         /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
@@ -4469,8 +4478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The node group update configuration.</p>
-        pub fn update_config(mut self, inp: crate::model::NodegroupUpdateConfig) -> Self {
-            self.inner = self.inner.update_config(inp);
+        pub fn update_config(mut self, signature: crate::model::NodegroupUpdateConfig) -> Self {
+            self.inner = self.inner.update_config(signature);
             self
         }
         /// <p>The node group update configuration.</p>
@@ -4483,8 +4492,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4575,8 +4584,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to
         /// update.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to
@@ -4586,8 +4595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the managed node group to update.</p>
-        pub fn nodegroup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nodegroup_name(inp);
+        pub fn nodegroup_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nodegroup_name(signature.into());
             self
         }
         /// <p>The name of the managed node group to update.</p>
@@ -4604,8 +4613,8 @@ pub mod fluent_builders {
         /// version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
         /// <code>version</code>, or the node group  update will fail.
         /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes
@@ -4624,8 +4633,8 @@ pub mod fluent_builders {
         /// <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
         /// <code>releaseVersion</code>, or the node group  update will fail.
         /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
-        pub fn release_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_version(inp);
+        pub fn release_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_version(signature.into());
             self
         }
         /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the
@@ -4644,8 +4653,11 @@ pub mod fluent_builders {
         /// <p>An object representing a node group's launch template specification. You can only
         /// update a node group using a launch template if the node group was originally deployed
         /// with a launch template.</p>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplateSpecification) -> Self {
-            self.inner = self.inner.launch_template(inp);
+        pub fn launch_template(
+            mut self,
+            signature: crate::model::LaunchTemplateSpecification,
+        ) -> Self {
+            self.inner = self.inner.launch_template(signature);
             self
         }
         /// <p>An object representing a node group's launch template specification. You can only
@@ -4662,8 +4674,8 @@ pub mod fluent_builders {
         /// pod disruption budget issue. If an update fails because pods could not be drained, you
         /// can force the update after it fails to terminate the old node whether or not any pods
         /// are running on the node.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>Force the update if the existing node group's pods are unable to be drained due to a
@@ -4676,8 +4688,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the

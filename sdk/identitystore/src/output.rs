@@ -47,9 +47,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>A list of <code>User</code> objects in the identity store.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -141,9 +141,9 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>A list of <code>Group</code> objects in the identity store.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }

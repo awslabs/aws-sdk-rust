@@ -640,8 +640,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
@@ -653,8 +653,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -738,8 +741,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -755,8 +761,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
@@ -848,8 +854,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -866,8 +875,8 @@ pub mod fluent_builders {
         ///
         /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
         /// groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-        pub fn target_group_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_ar_ns(inp);
+        pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_ar_ns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
@@ -940,8 +949,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -958,8 +970,8 @@ pub mod fluent_builders {
         ///
         /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.
         /// </p>
-        pub fn scheduled_action_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_names(inp);
+        pub fn scheduled_action_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_names(input.into());
             self
         }
         /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.
@@ -1034,8 +1046,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -1053,9 +1068,9 @@ pub mod fluent_builders {
         /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
         pub fn scheduled_update_group_actions(
             mut self,
-            inp: impl Into<crate::model::ScheduledUpdateGroupActionRequest>,
+            input: crate::model::ScheduledUpdateGroupActionRequest,
         ) -> Self {
-            self.inner = self.inner.scheduled_update_group_actions(inp);
+            self.inner = self.inner.scheduled_update_group_actions(input);
             self
         }
         /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
@@ -1134,8 +1149,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -1239,8 +1257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the lifecycle hook.</p>
-        pub fn lifecycle_hook_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_hook_name(inp);
+        pub fn lifecycle_hook_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_hook_name(signature.into());
             self
         }
         /// <p>The name of the lifecycle hook.</p>
@@ -1252,8 +1270,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -1267,8 +1288,8 @@ pub mod fluent_builders {
         /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action
         /// associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you
         /// specified when you created the lifecycle hook.</p>
-        pub fn lifecycle_action_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_action_token(inp);
+        pub fn lifecycle_action_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_action_token(signature.into());
             self
         }
         /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action
@@ -1283,8 +1304,11 @@ pub mod fluent_builders {
         }
         /// <p>The action for the group to take. This parameter can be either <code>CONTINUE</code>
         /// or <code>ABANDON</code>.</p>
-        pub fn lifecycle_action_result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_action_result(inp);
+        pub fn lifecycle_action_result(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.lifecycle_action_result(signature.into());
             self
         }
         /// <p>The action for the group to take. This parameter can be either <code>CONTINUE</code>
@@ -1297,8 +1321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>The ID of the instance.</p>
@@ -1385,8 +1409,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -1401,8 +1428,11 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
         /// <code>MixedInstancesPolicy</code>) or a launch configuration
         /// (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
-        pub fn launch_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_configuration_name(inp);
+        pub fn launch_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_name(signature.into());
             self
         }
         /// <p>The name of the launch configuration to use to launch instances. </p>
@@ -1426,8 +1456,11 @@ pub mod fluent_builders {
         /// template for an Auto Scaling group</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// </note>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplateSpecification) -> Self {
-            self.inner = self.inner.launch_template(inp);
+        pub fn launch_template(
+            mut self,
+            signature: crate::model::LaunchTemplateSpecification,
+        ) -> Self {
+            self.inner = self.inner.launch_template(signature);
             self
         }
         /// <p>Parameters used to specify the launch template and version to use to launch instances. </p>
@@ -1454,8 +1487,11 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
-        pub fn mixed_instances_policy(mut self, inp: crate::model::MixedInstancesPolicy) -> Self {
-            self.inner = self.inner.mixed_instances_policy(inp);
+        pub fn mixed_instances_policy(
+            mut self,
+            signature: crate::model::MixedInstancesPolicy,
+        ) -> Self {
+            self.inner = self.inner.mixed_instances_policy(signature);
             self
         }
         /// <p>An embedded object that specifies a mixed instances policy.</p>
@@ -1476,8 +1512,8 @@ pub mod fluent_builders {
         /// EC2 Auto Scaling uses the configuration values from the specified instance to create a
         /// new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating an Auto Scaling group using an EC2 instance</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>The ID of the instance used to base the launch configuration on. If specified, Amazon
@@ -1489,8 +1525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum size of the group.</p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        pub fn min_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_size(signature);
             self
         }
         /// <p>The minimum size of the group.</p>
@@ -1506,8 +1542,8 @@ pub mod fluent_builders {
         /// weight (weights that define how many units each instance contributes to the desired
         /// capacity of the group).</p>
         /// </note>
-        pub fn max_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_size(inp);
+        pub fn max_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_size(signature);
             self
         }
         /// <p>The maximum size of the group.</p>
@@ -1527,8 +1563,8 @@ pub mod fluent_builders {
         /// you configure auto scaling. This number must be greater than or equal to the minimum
         /// size of the group and less than or equal to the maximum size of the group. If you do not
         /// specify a desired capacity, the default is the minimum size of the group.</p>
-        pub fn desired_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_capacity(inp);
+        pub fn desired_capacity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.desired_capacity(signature);
             self
         }
         /// <p>The desired capacity is the initial capacity of the Auto Scaling group at the time of its
@@ -1545,8 +1581,8 @@ pub mod fluent_builders {
         /// when using simple scaling policies, but not when using other scaling policies or
         /// scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a>
         /// in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn default_cooldown(mut self, inp: i32) -> Self {
-            self.inner = self.inner.default_cooldown(inp);
+        pub fn default_cooldown(mut self, signature: i32) -> Self {
+            self.inner = self.inner.default_cooldown(signature);
             self
         }
         /// <p>The amount of time, in seconds, after a scaling activity completes before another
@@ -1567,8 +1603,8 @@ pub mod fluent_builders {
         /// <code>VPCZoneIdentifier</code>.</p>
         /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
         /// to launch instances into EC2-Classic.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. This
@@ -1590,8 +1626,8 @@ pub mod fluent_builders {
         /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
         /// Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify
         /// the <code>TargetGroupARNs</code> property instead.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
@@ -1612,8 +1648,8 @@ pub mod fluent_builders {
         /// Instances are registered as targets in a target group, and traffic is routed to the
         /// target group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
         /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn target_group_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_ar_ns(inp);
+        pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_ar_ns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group.
@@ -1632,8 +1668,8 @@ pub mod fluent_builders {
         /// (ELB) health checks, it considers the instance unhealthy if it fails either the EC2
         /// status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks
         /// for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn health_check_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_type(inp);
+        pub fn health_check_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_type(signature.into());
             self
         }
         /// <p>The service to use for the health checks. The valid values are <code>EC2</code>
@@ -1653,8 +1689,8 @@ pub mod fluent_builders {
         /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
-        pub fn health_check_grace_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_grace_period(inp);
+        pub fn health_check_grace_period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.health_check_grace_period(signature);
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
@@ -1671,8 +1707,8 @@ pub mod fluent_builders {
         /// You cannot specify multiple Availability Zones and a placement group. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
         /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        pub fn placement_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_group(inp);
+        pub fn placement_group(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_group(signature.into());
             self
         }
         /// <p>The name of an existing placement group into which to launch your instances, if any. A
@@ -1693,8 +1729,8 @@ pub mod fluent_builders {
         /// reside in those Availability Zones.</p>
         /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
         /// to launch instances into a VPC.</p>
-        pub fn vpc_zone_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_zone_identifier(inp);
+        pub fn vpc_zone_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_zone_identifier(signature.into());
             self
         }
         /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances
@@ -1719,8 +1755,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling
         /// instances terminate during scale in</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn termination_policies(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.termination_policies(inp);
+        pub fn termination_policies(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.termination_policies(input.into());
             self
         }
         /// <p>A policy or a list of policies that are used to select the instance to terminate.
@@ -1740,8 +1776,8 @@ pub mod fluent_builders {
         /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
         /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn new_instances_protected_from_scale_in(mut self, inp: bool) -> Self {
-            self.inner = self.inner.new_instances_protected_from_scale_in(inp);
+        pub fn new_instances_protected_from_scale_in(mut self, signature: bool) -> Self {
+            self.inner = self.inner.new_instances_protected_from_scale_in(signature);
             self
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
@@ -1762,8 +1798,8 @@ pub mod fluent_builders {
         /// interruption. After launching a new instance, it then terminates an old instance. For
         /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
         /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn capacity_rebalance(mut self, inp: bool) -> Self {
-            self.inner = self.inner.capacity_rebalance(inp);
+        pub fn capacity_rebalance(mut self, signature: bool) -> Self {
+            self.inner = self.inner.capacity_rebalance(signature);
             self
         }
         /// <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing is
@@ -1784,9 +1820,9 @@ pub mod fluent_builders {
         /// Amazon EC2 Auto Scaling launches or terminates instances.</p>
         pub fn lifecycle_hook_specification_list(
             mut self,
-            inp: impl Into<crate::model::LifecycleHookSpecification>,
+            input: crate::model::LifecycleHookSpecification,
         ) -> Self {
-            self.inner = self.inner.lifecycle_hook_specification_list(inp);
+            self.inner = self.inner.lifecycle_hook_specification_list(input);
             self
         }
         /// <p>One or more lifecycle hooks for the group, which specify actions to perform when
@@ -1809,8 +1845,8 @@ pub mod fluent_builders {
         /// overrides the value of that instance tag with the value specified by the Auto Scaling group. For
         /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
         /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2
@@ -1832,8 +1868,11 @@ pub mod fluent_builders {
         /// named <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not exist.
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
         /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn service_linked_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_linked_role_arn(inp);
+        pub fn service_linked_role_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.service_linked_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
@@ -1852,8 +1891,8 @@ pub mod fluent_builders {
         /// default is null. If specified, the value must be either 0 or a number equal to or
         /// greater than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn max_instance_lifetime(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_instance_lifetime(inp);
+        pub fn max_instance_lifetime(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_instance_lifetime(signature);
             self
         }
         /// <p>The maximum amount of time, in seconds, that an instance can be in service. The
@@ -1865,8 +1904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context(inp);
+        pub fn context(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context(signature.into());
             self
         }
         /// <p>Reserved.</p>
@@ -1884,8 +1923,8 @@ pub mod fluent_builders {
         ///
         /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code>
         /// </p>
-        pub fn desired_capacity_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.desired_capacity_type(inp);
+        pub fn desired_capacity_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.desired_capacity_type(signature.into());
             self
         }
         /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling
@@ -1973,8 +2012,11 @@ pub mod fluent_builders {
         }
         /// <p>The name of the launch configuration. This name must be unique per Region per
         /// account.</p>
-        pub fn launch_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_configuration_name(inp);
+        pub fn launch_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_name(signature.into());
             self
         }
         /// <p>The name of the launch configuration. This name must be unique per Region per
@@ -1991,8 +2033,8 @@ pub mod fluent_builders {
         /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>If you do not specify <code>InstanceId</code>, you must specify
         /// <code>ImageId</code>.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(signature.into());
             self
         }
         /// <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For
@@ -2006,8 +2048,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
         /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(inp);
+        pub fn key_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(signature.into());
             self
         }
         /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
@@ -2027,8 +2069,8 @@ pub mod fluent_builders {
         /// <p>[EC2-Classic] Specify either the security group names or the security group IDs. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
         /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling
@@ -2050,8 +2092,8 @@ pub mod fluent_builders {
         /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
         /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>This parameter can only be used if you are launching EC2-Classic instances.</p>
-        pub fn classic_link_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.classic_link_vpc_id(inp);
+        pub fn classic_link_vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.classic_link_vpc_id(signature.into());
             self
         }
         /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
@@ -2078,9 +2120,9 @@ pub mod fluent_builders {
         /// parameter.</p>
         pub fn classic_link_vpc_security_groups(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.classic_link_vpc_security_groups(inp);
+            self.inner = self.inner.classic_link_vpc_security_groups(input.into());
             self
         }
         /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For
@@ -2101,8 +2143,8 @@ pub mod fluent_builders {
         /// user data</a> (Windows). If you are using a command line tool, base64-encoding
         /// is performed for you, and you can load the text from a file. Otherwise, you must provide
         /// base64-encoded text. User data is limited to 16 KB.</p>
-        pub fn user_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_data(inp);
+        pub fn user_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_data(signature.into());
             self
         }
         /// <p>The user data to make available to the launched EC2 instances. For more information,
@@ -2124,8 +2166,8 @@ pub mod fluent_builders {
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>If you do not specify <code>InstanceId</code>, you must specify both
         /// <code>ImageId</code> and <code>InstanceType</code>.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>The ID of the instance to use to create the launch configuration. The new launch
@@ -2147,8 +2189,8 @@ pub mod fluent_builders {
         /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>If you do not specify <code>InstanceId</code>, you must specify
         /// <code>InstanceType</code>.</p>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(signature.into());
             self
         }
         /// <p>Specifies the instance type of the EC2 instance.</p>
@@ -2164,8 +2206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the kernel associated with the AMI.</p>
-        pub fn kernel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kernel_id(inp);
+        pub fn kernel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kernel_id(signature.into());
             self
         }
         /// <p>The ID of the kernel associated with the AMI.</p>
@@ -2174,8 +2216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the RAM disk to select.</p>
-        pub fn ramdisk_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ramdisk_id(inp);
+        pub fn ramdisk_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ramdisk_id(signature.into());
             self
         }
         /// <p>The ID of the RAM disk to select.</p>
@@ -2190,11 +2232,8 @@ pub mod fluent_builders {
         /// <p>A block device mapping, which specifies the block devices for the instance. You can
         /// specify virtual devices and EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
         /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        pub fn block_device_mappings(
-            mut self,
-            inp: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
-            self.inner = self.inner.block_device_mappings(inp);
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
+            self.inner = self.inner.block_device_mappings(input);
             self
         }
         /// <p>A block device mapping, which specifies the block devices for the instance. You can
@@ -2217,8 +2256,8 @@ pub mod fluent_builders {
         /// Monitoring for Auto Scaling Instances</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// </important>
-        pub fn instance_monitoring(mut self, inp: crate::model::InstanceMonitoring) -> Self {
-            self.inner = self.inner.instance_monitoring(inp);
+        pub fn instance_monitoring(mut self, signature: crate::model::InstanceMonitoring) -> Self {
+            self.inner = self.inner.instance_monitoring(signature);
             self
         }
         /// <p>Controls whether instances in this group are launched with detailed
@@ -2247,8 +2286,8 @@ pub mod fluent_builders {
         /// instances will continue to run as long as the maximum price for those running
         /// instances is higher than the current Spot price.</p>
         /// </note>
-        pub fn spot_price(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spot_price(inp);
+        pub fn spot_price(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spot_price(signature.into());
             self
         }
         /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the
@@ -2268,8 +2307,8 @@ pub mod fluent_builders {
         /// IAM role for the instance. The instance profile contains the IAM role.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run
         /// on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn iam_instance_profile(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_instance_profile(inp);
+        pub fn iam_instance_profile(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_instance_profile(signature.into());
             self
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the
@@ -2291,8 +2330,8 @@ pub mod fluent_builders {
         /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in
         /// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>The default value is <code>false</code>.</p>
-        pub fn ebs_optimized(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ebs_optimized(inp);
+        pub fn ebs_optimized(mut self, signature: bool) -> Self {
+            self.inner = self.inner.ebs_optimized(signature);
             self
         }
         /// <p>Specifies whether the launch configuration is optimized for EBS I/O
@@ -2321,8 +2360,8 @@ pub mod fluent_builders {
         /// to assign a public IP address, unless you enabled the option to assign a public IP
         /// address on the subnet.</p>
         /// </note>
-        pub fn associate_public_ip_address(mut self, inp: bool) -> Self {
-            self.inner = self.inner.associate_public_ip_address(inp);
+        pub fn associate_public_ip_address(mut self, signature: bool) -> Self {
+            self.inner = self.inner.associate_public_ip_address(signature);
             self
         }
         /// <p>For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether
@@ -2355,8 +2394,8 @@ pub mod fluent_builders {
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Valid Values: <code>default</code> | <code>dedicated</code>
         /// </p>
-        pub fn placement_tenancy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_tenancy(inp);
+        pub fn placement_tenancy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_tenancy(signature.into());
             self
         }
         /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on
@@ -2380,8 +2419,11 @@ pub mod fluent_builders {
         }
         /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn metadata_options(mut self, inp: crate::model::InstanceMetadataOptions) -> Self {
-            self.inner = self.inner.metadata_options(inp);
+        pub fn metadata_options(
+            mut self,
+            signature: crate::model::InstanceMetadataOptions,
+        ) -> Self {
+            self.inner = self.inner.metadata_options(signature);
             self
         }
         /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the
@@ -2462,8 +2504,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -2544,8 +2586,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -2559,8 +2604,8 @@ pub mod fluent_builders {
         /// <p>Specifies that the group is to be deleted along with all instances associated with the
         /// group, without waiting for all instances to be terminated. This parameter also deletes
         /// any outstanding lifecycle actions associated with the group.</p>
-        pub fn force_delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete(inp);
+        pub fn force_delete(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_delete(signature);
             self
         }
         /// <p>Specifies that the group is to be deleted along with all instances associated with the
@@ -2633,8 +2678,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the launch configuration.</p>
-        pub fn launch_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_configuration_name(inp);
+        pub fn launch_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_name(signature.into());
             self
         }
         /// <p>The name of the launch configuration.</p>
@@ -2709,8 +2757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the lifecycle hook.</p>
-        pub fn lifecycle_hook_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_hook_name(inp);
+        pub fn lifecycle_hook_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_hook_name(signature.into());
             self
         }
         /// <p>The name of the lifecycle hook.</p>
@@ -2722,8 +2770,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -2795,8 +2846,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -2808,8 +2862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
@@ -2883,8 +2937,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -2896,8 +2953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the policy.</p>
@@ -2966,8 +3023,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -2979,8 +3039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the action to delete.</p>
-        pub fn scheduled_action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_name(inp);
+        pub fn scheduled_action_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_name(signature.into());
             self
         }
         /// <p>The name of the action to delete.</p>
@@ -3056,8 +3116,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -3131,8 +3191,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -3147,8 +3210,8 @@ pub mod fluent_builders {
         /// instances, without waiting for all instances to be terminated. This parameter also
         /// deletes any outstanding lifecycle actions associated with the warm pool
         /// instances.</p>
-        pub fn force_delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete(inp);
+        pub fn force_delete(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_delete(signature);
             self
         }
         /// <p>Specifies that the warm pool is to be deleted along with all of its associated
@@ -3375,8 +3438,8 @@ pub mod fluent_builders {
         /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can
         /// optionally increase this limit using the <code>MaxRecords</code> parameter.</p>
         /// <p>If you omit this parameter, all Auto Scaling groups are described.</p>
-        pub fn auto_scaling_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_names(inp);
+        pub fn auto_scaling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_group_names(input.into());
             self
         }
         /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can
@@ -3391,8 +3454,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -3403,8 +3466,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>50</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -3419,8 +3482,8 @@ pub mod fluent_builders {
         ///
         /// <p>One or more filters to limit the results based on specific tags.
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>One or more filters to limit the results based on specific tags.
@@ -3499,8 +3562,8 @@ pub mod fluent_builders {
         /// <p>The IDs of the instances. If you omit this parameter, all Auto Scaling instances are
         /// described. If you specify an ID that does not exist, it is ignored with no error.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>The IDs of the instances. If you omit this parameter, all Auto Scaling instances are
@@ -3515,8 +3578,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>50</code> and the maximum value is <code>50</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -3527,8 +3590,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -3698,8 +3761,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -3715,8 +3781,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_refresh_ids`](Self::set_instance_refresh_ids).
         ///
         /// <p>One or more instance refresh IDs.</p>
-        pub fn instance_refresh_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_refresh_ids(inp);
+        pub fn instance_refresh_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_refresh_ids(input.into());
             self
         }
         /// <p>One or more instance refresh IDs.</p>
@@ -3729,8 +3795,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -3741,8 +3807,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>50</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -3818,8 +3884,8 @@ pub mod fluent_builders {
         /// <p>The launch configuration names. If you omit this parameter, all launch configurations
         /// are described.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
-        pub fn launch_configuration_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_configuration_names(inp);
+        pub fn launch_configuration_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_configuration_names(input.into());
             self
         }
         /// <p>The launch configuration names. If you omit this parameter, all launch configurations
@@ -3834,8 +3900,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -3846,8 +3912,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>50</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -3917,8 +3983,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -3935,8 +4004,8 @@ pub mod fluent_builders {
         ///
         /// <p>The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle
         /// hooks are described.</p>
-        pub fn lifecycle_hook_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_hook_names(inp);
+        pub fn lifecycle_hook_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_hook_names(input.into());
             self
         }
         /// <p>The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle
@@ -4103,8 +4172,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -4117,8 +4189,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -4129,8 +4201,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>100</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -4219,8 +4291,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -4233,8 +4308,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -4245,8 +4320,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>100</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -4385,8 +4460,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_auto_scaling_group_names`](Self::set_auto_scaling_group_names).
         ///
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_names(inp);
+        pub fn auto_scaling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_group_names(input.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -4399,8 +4474,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -4411,8 +4486,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>50</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -4482,8 +4557,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -4502,8 +4580,8 @@ pub mod fluent_builders {
         /// described. If a group name is provided, the results are limited to that group. If you
         /// specify an unknown policy name, it is ignored with no error.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_names(inp);
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_names(input.into());
             self
         }
         /// <p>The names of one or more policies. If you omit this parameter, all policies are
@@ -4524,8 +4602,8 @@ pub mod fluent_builders {
         /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
         /// <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
         /// <code>PredictiveScaling</code>.</p>
-        pub fn policy_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_types(inp);
+        pub fn policy_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_types(input.into());
             self
         }
         /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
@@ -4540,8 +4618,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -4552,8 +4630,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to be returned with each call. The default value is
         /// <code>50</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to be returned with each call. The default value is
@@ -4639,8 +4717,8 @@ pub mod fluent_builders {
         /// they are ignored with no error. If you specify an Auto Scaling group, the results are limited to
         /// that group.</p>
         /// <p>Array Members: Maximum number of 50 IDs.</p>
-        pub fn activity_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activity_ids(inp);
+        pub fn activity_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activity_ids(input.into());
             self
         }
         /// <p>The activity IDs of the desired scaling activities. If you omit this parameter, all
@@ -4656,8 +4734,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -4669,8 +4750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
-        pub fn include_deleted_groups(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_deleted_groups(inp);
+        pub fn include_deleted_groups(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_deleted_groups(signature);
             self
         }
         /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
@@ -4680,8 +4761,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>100</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -4692,8 +4773,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -4827,8 +4908,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -4847,8 +4931,8 @@ pub mod fluent_builders {
         /// actions are described. If you specify an unknown scheduled action, it is ignored with no
         /// error.</p>
         /// <p>Array Members: Maximum number of 50 actions.</p>
-        pub fn scheduled_action_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_names(inp);
+        pub fn scheduled_action_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_names(input.into());
             self
         }
         /// <p>The names of one or more scheduled actions. If you omit this parameter, all scheduled
@@ -4864,8 +4948,8 @@ pub mod fluent_builders {
         }
         /// <p>The earliest scheduled start time to return. If scheduled action names are provided,
         /// this parameter is ignored.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The earliest scheduled start time to return. If scheduled action names are provided,
@@ -4879,8 +4963,8 @@ pub mod fluent_builders {
         }
         /// <p>The latest scheduled start time to return. If scheduled action names are provided,
         /// this parameter is ignored.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The latest scheduled start time to return. If scheduled action names are provided,
@@ -4894,8 +4978,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -4906,8 +4990,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>50</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -4990,8 +5074,8 @@ pub mod fluent_builders {
         ///
         /// <p>One or more filters to scope the tags to return. The maximum number of filters per
         /// filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>One or more filters to scope the tags to return. The maximum number of filters per
@@ -5005,8 +5089,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a
@@ -5017,8 +5101,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return with this call. The default value is
         /// <code>50</code> and the maximum value is <code>100</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of items to return with this call. The default value is
@@ -5153,8 +5237,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -5167,8 +5254,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of instances to return with this call. The maximum value is
         /// <code>50</code>.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of instances to return with this call. The maximum value is
@@ -5179,8 +5266,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of instances to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of instances to return. (You received this token from a
@@ -5263,8 +5350,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
@@ -5276,8 +5363,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -5290,8 +5380,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number
         /// of instances detached.</p>
-        pub fn should_decrement_desired_capacity(mut self, inp: bool) -> Self {
-            self.inner = self.inner.should_decrement_desired_capacity(inp);
+        pub fn should_decrement_desired_capacity(mut self, signature: bool) -> Self {
+            self.inner = self.inner.should_decrement_desired_capacity(signature);
             self
         }
         /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number
@@ -5369,8 +5459,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -5386,8 +5479,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
@@ -5459,8 +5552,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -5477,8 +5573,8 @@ pub mod fluent_builders {
         ///
         /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
         /// groups.</p>
-        pub fn target_group_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_ar_ns(inp);
+        pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_ar_ns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
@@ -5551,8 +5647,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -5671,8 +5770,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>If you omit this parameter, all metrics are disabled. </p>
-        pub fn metrics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metrics(input.into());
             self
         }
         /// <p>Specifies one or more of the following metrics:</p>
@@ -5848,8 +5947,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -5975,8 +6077,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>If you omit this parameter, all metrics are enabled. </p>
-        pub fn metrics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metrics(input.into());
             self
         }
         /// <p>Specifies which group-level metrics to start collecting. You can specify one or more
@@ -6099,8 +6201,8 @@ pub mod fluent_builders {
         }
         /// <p>The granularity to associate with the metrics to collect. The only valid value is
         /// <code>1Minute</code>.</p>
-        pub fn granularity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.granularity(inp);
+        pub fn granularity(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.granularity(signature.into());
             self
         }
         /// <p>The granularity to associate with the metrics to collect. The only valid value is
@@ -6183,8 +6285,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
@@ -6196,8 +6298,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -6210,8 +6315,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of
         /// instances moved to <code>Standby</code> mode.</p>
-        pub fn should_decrement_desired_capacity(mut self, inp: bool) -> Self {
-            self.inner = self.inner.should_decrement_desired_capacity(inp);
+        pub fn should_decrement_desired_capacity(mut self, signature: bool) -> Self {
+            self.inner = self.inner.should_decrement_desired_capacity(signature);
             self
         }
         /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of
@@ -6285,8 +6390,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -6298,8 +6406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name or ARN of the policy.</p>
@@ -6312,8 +6420,8 @@ pub mod fluent_builders {
         /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn honor_cooldown(mut self, inp: bool) -> Self {
-            self.inner = self.inner.honor_cooldown(inp);
+        pub fn honor_cooldown(mut self, signature: bool) -> Self {
+            self.inner = self.inner.honor_cooldown(signature);
             self
         }
         /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing
@@ -6334,8 +6442,8 @@ pub mod fluent_builders {
         /// policy, the call returns an error.</p>
         /// <p>Required if the policy type is <code>StepScaling</code> and not supported
         /// otherwise.</p>
-        pub fn metric_value(mut self, inp: f64) -> Self {
-            self.inner = self.inner.metric_value(inp);
+        pub fn metric_value(mut self, signature: f64) -> Self {
+            self.inner = self.inner.metric_value(signature);
             self
         }
         /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to
@@ -6354,8 +6462,8 @@ pub mod fluent_builders {
         /// <p>The breach threshold for the alarm.</p>
         /// <p>Required if the policy type is <code>StepScaling</code> and not supported
         /// otherwise.</p>
-        pub fn breach_threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.breach_threshold(inp);
+        pub fn breach_threshold(mut self, signature: f64) -> Self {
+            self.inner = self.inner.breach_threshold(signature);
             self
         }
         /// <p>The breach threshold for the alarm.</p>
@@ -6435,8 +6543,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
@@ -6448,8 +6556,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -6529,8 +6640,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -6542,8 +6656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the policy.</p>
@@ -6553,8 +6667,8 @@ pub mod fluent_builders {
         }
         /// <p>The inclusive start time of the time range for the forecast data to get. At most, the
         /// date and time can be one year before the current date and time.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The inclusive start time of the time range for the forecast data to get. At most, the
@@ -6571,8 +6685,8 @@ pub mod fluent_builders {
         /// <p>Although this parameter can accept a date and time that is more than two days in the
         /// future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for
         /// periods of two days in advance.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The exclusive end time of the time range for the forecast data to get. The maximum
@@ -6685,8 +6799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the lifecycle hook.</p>
-        pub fn lifecycle_hook_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_hook_name(inp);
+        pub fn lifecycle_hook_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_hook_name(signature.into());
             self
         }
         /// <p>The name of the lifecycle hook.</p>
@@ -6698,8 +6812,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -6721,8 +6838,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
-        pub fn lifecycle_transition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_transition(inp);
+        pub fn lifecycle_transition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_transition(signature.into());
             self
         }
         /// <p>The instance state to which you want to attach the lifecycle hook. The valid values
@@ -6746,8 +6863,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
         /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
         /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
@@ -6766,8 +6883,11 @@ pub mod fluent_builders {
         /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
         /// messages contain the following additional key-value pair: <code>"Event":
         /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
-        pub fn notification_target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target_arn(inp);
+        pub fn notification_target_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.notification_target_arn(signature.into());
             self
         }
         /// <p>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance
@@ -6788,8 +6908,8 @@ pub mod fluent_builders {
         }
         /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to
         /// the notification target.</p>
-        pub fn notification_metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_metadata(inp);
+        pub fn notification_metadata(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_metadata(signature.into());
             self
         }
         /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to
@@ -6807,8 +6927,8 @@ pub mod fluent_builders {
         /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in
         /// the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing
         /// out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
-        pub fn heartbeat_timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.heartbeat_timeout(inp);
+        pub fn heartbeat_timeout(mut self, signature: i32) -> Self {
+            self.inner = self.inner.heartbeat_timeout(signature);
             self
         }
         /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The
@@ -6824,8 +6944,8 @@ pub mod fluent_builders {
         /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses
         /// or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code>
         /// or <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
-        pub fn default_result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_result(inp);
+        pub fn default_result(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_result(signature.into());
             self
         }
         /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses
@@ -6907,8 +7027,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -6920,8 +7043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
@@ -6935,8 +7058,8 @@ pub mod fluent_builders {
         ///
         /// <p>The type of event that causes the notification to be sent. To query the notification
         /// types supported by Amazon EC2 Auto Scaling, call the <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-        pub fn notification_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_types(inp);
+        pub fn notification_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_types(input.into());
             self
         }
         /// <p>The type of event that causes the notification to be sent. To query the notification
@@ -7018,8 +7141,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -7031,8 +7157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the policy.</p>
@@ -7062,8 +7188,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn policy_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_type(inp);
+        pub fn policy_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_type(signature.into());
             self
         }
         /// <p>One of the following policy types: </p>
@@ -7097,8 +7223,8 @@ pub mod fluent_builders {
         /// <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
         /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn adjustment_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.adjustment_type(inp);
+        pub fn adjustment_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.adjustment_type(signature.into());
             self
         }
         /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number
@@ -7115,8 +7241,8 @@ pub mod fluent_builders {
         }
         /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
         /// instead.</p>
-        pub fn min_adjustment_step(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_adjustment_step(inp);
+        pub fn min_adjustment_step(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_adjustment_step(signature);
             self
         }
         /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
@@ -7140,8 +7266,8 @@ pub mod fluent_builders {
         /// <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
         /// largest instance weight.</p>
         /// </note>
-        pub fn min_adjustment_magnitude(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_adjustment_magnitude(inp);
+        pub fn min_adjustment_magnitude(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_adjustment_magnitude(signature);
             self
         }
         /// <p>The minimum value to scale by when the adjustment type is
@@ -7168,8 +7294,8 @@ pub mod fluent_builders {
         /// For exact capacity, you must specify a positive value.</p>
         /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other
         /// policy type.) </p>
-        pub fn scaling_adjustment(mut self, inp: i32) -> Self {
-            self.inner = self.inner.scaling_adjustment(inp);
+        pub fn scaling_adjustment(mut self, signature: i32) -> Self {
+            self.inner = self.inner.scaling_adjustment(signature);
             self
         }
         /// <p>The amount by which to scale, based on the specified adjustment type. A positive value
@@ -7187,8 +7313,8 @@ pub mod fluent_builders {
         /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn cooldown(mut self, inp: i32) -> Self {
-            self.inner = self.inner.cooldown(inp);
+        pub fn cooldown(mut self, signature: i32) -> Self {
+            self.inner = self.inner.cooldown(signature);
             self
         }
         /// <p>The duration of the policy's cooldown period, in seconds. When a cooldown period is
@@ -7205,8 +7331,11 @@ pub mod fluent_builders {
         /// <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the
         /// value is treated as <code>Average</code>.</p>
         /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
-        pub fn metric_aggregation_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_aggregation_type(inp);
+        pub fn metric_aggregation_type(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.metric_aggregation_type(signature.into());
             self
         }
         /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
@@ -7228,8 +7357,8 @@ pub mod fluent_builders {
         /// breach.</p>
         /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other
         /// policy type.) </p>
-        pub fn step_adjustments(mut self, inp: impl Into<crate::model::StepAdjustment>) -> Self {
-            self.inner = self.inner.step_adjustments(inp);
+        pub fn step_adjustments(mut self, input: crate::model::StepAdjustment) -> Self {
+            self.inner = self.inner.step_adjustments(input);
             self
         }
         /// <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -7248,8 +7377,8 @@ pub mod fluent_builders {
         /// period for the Auto Scaling group.</p>
         /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
         /// <code>StepScaling</code>.</p>
-        pub fn estimated_instance_warmup(mut self, inp: i32) -> Self {
-            self.inner = self.inner.estimated_instance_warmup(inp);
+        pub fn estimated_instance_warmup(mut self, signature: i32) -> Self {
+            self.inner = self.inner.estimated_instance_warmup(signature);
             self
         }
         /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the
@@ -7294,9 +7423,9 @@ pub mod fluent_builders {
         /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
         pub fn target_tracking_configuration(
             mut self,
-            inp: crate::model::TargetTrackingConfiguration,
+            signature: crate::model::TargetTrackingConfiguration,
         ) -> Self {
-            self.inner = self.inner.target_tracking_configuration(inp);
+            self.inner = self.inner.target_tracking_configuration(signature);
             self
         }
         /// <p>A target tracking scaling policy. Provides support for predefined or custom
@@ -7341,8 +7470,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
         /// scaling policy for an Auto Scaling group</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled.
@@ -7362,9 +7491,9 @@ pub mod fluent_builders {
         /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
         pub fn predictive_scaling_configuration(
             mut self,
-            inp: crate::model::PredictiveScalingConfiguration,
+            signature: crate::model::PredictiveScalingConfiguration,
         ) -> Self {
-            self.inner = self.inner.predictive_scaling_configuration(inp);
+            self.inner = self.inner.predictive_scaling_configuration(signature);
             self
         }
         /// <p>A predictive scaling policy. Provides support for predefined and custom
@@ -7446,8 +7575,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -7459,8 +7591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this scaling action.</p>
-        pub fn scheduled_action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_name(inp);
+        pub fn scheduled_action_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_name(signature.into());
             self
         }
         /// <p>The name of this scaling action.</p>
@@ -7472,8 +7604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is no longer used.</p>
-        pub fn time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.time(inp);
+        pub fn time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.time(signature);
             self
         }
         /// <p>This parameter is no longer used.</p>
@@ -7488,8 +7620,8 @@ pub mod fluent_builders {
         /// recurrence.</p>
         /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error
         /// message.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
@@ -7507,8 +7639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The date and time for the recurring schedule to end, in UTC.</p>
@@ -7527,8 +7659,8 @@ pub mod fluent_builders {
         /// <code>Recurrence</code>, they form the boundaries of when the recurring action
         /// starts and stops.</p>
         /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
-        pub fn recurrence(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recurrence(inp);
+        pub fn recurrence(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recurrence(signature.into());
             self
         }
         /// <p>The recurring schedule for this action. This format consists of five fields separated
@@ -7544,8 +7676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum size of the Auto Scaling group.</p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        pub fn min_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_size(signature);
             self
         }
         /// <p>The minimum size of the Auto Scaling group.</p>
@@ -7554,8 +7686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the Auto Scaling group.</p>
-        pub fn max_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_size(inp);
+        pub fn max_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_size(signature);
             self
         }
         /// <p>The maximum size of the Auto Scaling group.</p>
@@ -7566,8 +7698,8 @@ pub mod fluent_builders {
         /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
         /// action runs and the capacity it attempts to maintain. It can scale beyond this capacity
         /// if you add more scaling conditions. </p>
-        pub fn desired_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_capacity(inp);
+        pub fn desired_capacity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.desired_capacity(signature);
             self
         }
         /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
@@ -7582,8 +7714,8 @@ pub mod fluent_builders {
         /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA
         /// Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For
         /// more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
-        pub fn time_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone(inp);
+        pub fn time_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(signature.into());
             self
         }
         /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is
@@ -7665,8 +7797,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -7695,8 +7830,8 @@ pub mod fluent_builders {
         /// <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0, unless
         /// you specify a value for <code>MinSize</code>. To remove a value that you previously set,
         /// include the property but specify -1 for the value. </p>
-        pub fn max_group_prepared_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_group_prepared_capacity(inp);
+        pub fn max_group_prepared_capacity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_group_prepared_capacity(signature);
             self
         }
         /// <p>Specifies the maximum number of instances that are allowed to be in the warm pool or
@@ -7724,8 +7859,8 @@ pub mod fluent_builders {
         /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you
         /// to ensure that there is always a certain number of warmed instances available to handle
         /// traffic spikes. Defaults to 0 if not specified.</p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        pub fn min_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_size(signature);
             self
         }
         /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you
@@ -7737,8 +7872,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the instance state to transition to after the lifecycle actions are complete.
         /// Default is <code>Stopped</code>.</p>
-        pub fn pool_state(mut self, inp: crate::model::WarmPoolState) -> Self {
-            self.inner = self.inner.pool_state(inp);
+        pub fn pool_state(mut self, signature: crate::model::WarmPoolState) -> Self {
+            self.inner = self.inner.pool_state(signature);
             self
         }
         /// <p>Sets the instance state to transition to after the lifecycle actions are complete.
@@ -7842,8 +7977,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the lifecycle hook.</p>
-        pub fn lifecycle_hook_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_hook_name(inp);
+        pub fn lifecycle_hook_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_hook_name(signature.into());
             self
         }
         /// <p>The name of the lifecycle hook.</p>
@@ -7855,8 +7990,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -7870,8 +8008,8 @@ pub mod fluent_builders {
         /// <p>A token that uniquely identifies a specific lifecycle action associated with an
         /// instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when
         /// you created the lifecycle hook.</p>
-        pub fn lifecycle_action_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_action_token(inp);
+        pub fn lifecycle_action_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_action_token(signature.into());
             self
         }
         /// <p>A token that uniquely identifies a specific lifecycle action associated with an
@@ -7885,8 +8023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>The ID of the instance.</p>
@@ -7958,8 +8096,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -8023,8 +8164,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>If you omit this parameter, all processes are specified.</p>
-        pub fn scaling_processes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_processes(inp);
+        pub fn scaling_processes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scaling_processes(input.into());
             self
         }
         /// <p>One or more of the following processes:</p>
@@ -8149,8 +8290,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -8163,8 +8307,8 @@ pub mod fluent_builders {
         }
         /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
         /// completes and the capacity it attempts to maintain.</p>
-        pub fn desired_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_capacity(inp);
+        pub fn desired_capacity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.desired_capacity(signature);
             self
         }
         /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
@@ -8176,8 +8320,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating
         /// a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does
         /// not honor the cooldown period during manual scaling activities.</p>
-        pub fn honor_cooldown(mut self, inp: bool) -> Self {
-            self.inner = self.inner.honor_cooldown(inp);
+        pub fn honor_cooldown(mut self, signature: bool) -> Self {
+            self.inner = self.inner.honor_cooldown(signature);
             self
         }
         /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating
@@ -8250,8 +8394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>The ID of the instance.</p>
@@ -8262,8 +8406,8 @@ pub mod fluent_builders {
         /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance
         /// remain in service. Set to <code>Unhealthy</code> to have the instance be out of service.
         /// Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
-        pub fn health_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_status(inp);
+        pub fn health_status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_status(signature.into());
             self
         }
         /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance
@@ -8284,8 +8428,8 @@ pub mod fluent_builders {
         /// <p>For more information about the health check grace
         /// period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API
         /// Reference</i>.</p>
-        pub fn should_respect_grace_period(mut self, inp: bool) -> Self {
-            self.inner = self.inner.should_respect_grace_period(inp);
+        pub fn should_respect_grace_period(mut self, signature: bool) -> Self {
+            self.inner = self.inner.should_respect_grace_period(signature);
             self
         }
         /// <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code>
@@ -8372,8 +8516,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
@@ -8385,8 +8529,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -8399,8 +8546,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
         /// in.</p>
-        pub fn protected_from_scale_in(mut self, inp: bool) -> Self {
-            self.inner = self.inner.protected_from_scale_in(inp);
+        pub fn protected_from_scale_in(mut self, signature: bool) -> Self {
+            self.inner = self.inner.protected_from_scale_in(signature);
             self
         }
         /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
@@ -8484,8 +8631,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -8502,8 +8652,8 @@ pub mod fluent_builders {
         /// due to failed health checks or if instances are on standby or are protected from scale
         /// in. If the rolling update process fails, any instances that are replaced are not rolled
         /// back to their previous configuration. </p>
-        pub fn strategy(mut self, inp: crate::model::RefreshStrategy) -> Self {
-            self.inner = self.inner.strategy(inp);
+        pub fn strategy(mut self, signature: crate::model::RefreshStrategy) -> Self {
+            self.inner = self.inner.strategy(signature);
             self
         }
         /// <p>The strategy to use for the instance refresh. The only valid value is
@@ -8531,8 +8681,11 @@ pub mod fluent_builders {
         /// version. This can help you reduce the number of replacements that are required to
         /// apply updates. </p>
         /// </note>
-        pub fn desired_configuration(mut self, inp: crate::model::DesiredConfiguration) -> Self {
-            self.inner = self.inner.desired_configuration(inp);
+        pub fn desired_configuration(
+            mut self,
+            signature: crate::model::DesiredConfiguration,
+        ) -> Self {
+            self.inner = self.inner.desired_configuration(signature);
             self
         }
         /// <p>The desired configuration. For example, the desired configuration can specify a new
@@ -8556,8 +8709,8 @@ pub mod fluent_builders {
         }
         /// <p>Set of preferences associated with the instance refresh request. If not provided, the
         /// default values are used.</p>
-        pub fn preferences(mut self, inp: crate::model::RefreshPreferences) -> Self {
-            self.inner = self.inner.preferences(inp);
+        pub fn preferences(mut self, signature: crate::model::RefreshPreferences) -> Self {
+            self.inner = self.inner.preferences(signature);
             self
         }
         /// <p>Set of preferences associated with the instance refresh request. If not provided, the
@@ -8636,8 +8789,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -8701,8 +8857,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>If you omit this parameter, all processes are specified.</p>
-        pub fn scaling_processes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_processes(inp);
+        pub fn scaling_processes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scaling_processes(input.into());
             self
         }
         /// <p>One or more of the following processes:</p>
@@ -8835,8 +8991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>The ID of the instance.</p>
@@ -8846,8 +9002,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling
         /// group.</p>
-        pub fn should_decrement_desired_capacity(mut self, inp: bool) -> Self {
-            self.inner = self.inner.should_decrement_desired_capacity(inp);
+        pub fn should_decrement_desired_capacity(mut self, signature: bool) -> Self {
+            self.inner = self.inner.should_decrement_desired_capacity(signature);
             self
         }
         /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling
@@ -8964,8 +9120,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Auto Scaling group.</p>
-        pub fn auto_scaling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_group_name(inp);
+        pub fn auto_scaling_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.auto_scaling_group_name(signature.into());
             self
         }
         /// <p>The name of the Auto Scaling group.</p>
@@ -8979,8 +9138,11 @@ pub mod fluent_builders {
         /// <p>The name of the launch configuration. If you specify
         /// <code>LaunchConfigurationName</code> in your update request, you can't specify
         /// <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-        pub fn launch_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_configuration_name(inp);
+        pub fn launch_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.launch_configuration_name(signature.into());
             self
         }
         /// <p>The name of the launch configuration. If you specify
@@ -8996,8 +9158,11 @@ pub mod fluent_builders {
         /// <p>The launch template and version to use to specify the updates. If you specify
         /// <code>LaunchTemplate</code> in your update request, you can't specify
         /// <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplateSpecification) -> Self {
-            self.inner = self.inner.launch_template(inp);
+        pub fn launch_template(
+            mut self,
+            signature: crate::model::LaunchTemplateSpecification,
+        ) -> Self {
+            self.inner = self.inner.launch_template(signature);
             self
         }
         /// <p>The launch template and version to use to specify the updates. If you specify
@@ -9014,8 +9179,11 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
-        pub fn mixed_instances_policy(mut self, inp: crate::model::MixedInstancesPolicy) -> Self {
-            self.inner = self.inner.mixed_instances_policy(inp);
+        pub fn mixed_instances_policy(
+            mut self,
+            signature: crate::model::MixedInstancesPolicy,
+        ) -> Self {
+            self.inner = self.inner.mixed_instances_policy(signature);
             self
         }
         /// <p>An embedded object that specifies a mixed instances policy. For more information, see
@@ -9030,8 +9198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum size of the Auto Scaling group.</p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        pub fn min_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_size(signature);
             self
         }
         /// <p>The minimum size of the Auto Scaling group.</p>
@@ -9047,8 +9215,8 @@ pub mod fluent_builders {
         /// weight (weights that define how many units each instance contributes to the desired
         /// capacity of the group).</p>
         /// </note>
-        pub fn max_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_size(inp);
+        pub fn max_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_size(signature);
             self
         }
         /// <p>The maximum size of the Auto Scaling group.</p>
@@ -9067,8 +9235,8 @@ pub mod fluent_builders {
         /// completes and the capacity it attempts to maintain. This number must be greater than or
         /// equal to the minimum size of the group and less than or equal to the maximum size of the
         /// group.</p>
-        pub fn desired_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_capacity(inp);
+        pub fn desired_capacity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.desired_capacity(signature);
             self
         }
         /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
@@ -9084,8 +9252,8 @@ pub mod fluent_builders {
         /// when using simple scaling policies, but not when using other scaling policies or
         /// scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a>
         /// in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn default_cooldown(mut self, inp: i32) -> Self {
-            self.inner = self.inner.default_cooldown(inp);
+        pub fn default_cooldown(mut self, signature: i32) -> Self {
+            self.inner = self.inner.default_cooldown(signature);
             self
         }
         /// <p>The amount of time, in seconds, after a scaling activity completes before another
@@ -9102,8 +9270,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>One or more Availability Zones for the group.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>One or more Availability Zones for the group.</p>
@@ -9118,8 +9286,8 @@ pub mod fluent_builders {
         /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
         /// checks, it considers the instance unhealthy if it fails either the EC2 status checks or
         /// the load balancer health checks.</p>
-        pub fn health_check_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_type(inp);
+        pub fn health_check_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_type(signature.into());
             self
         }
         /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and
@@ -9138,8 +9306,8 @@ pub mod fluent_builders {
         /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
-        pub fn health_check_grace_period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_grace_period(inp);
+        pub fn health_check_grace_period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.health_check_grace_period(signature);
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
@@ -9156,8 +9324,8 @@ pub mod fluent_builders {
         /// You cannot specify multiple Availability Zones and a placement group. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
         /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        pub fn placement_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_group(inp);
+        pub fn placement_group(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_group(signature.into());
             self
         }
         /// <p>The name of an existing placement group into which to launch your instances, if any. A
@@ -9175,8 +9343,8 @@ pub mod fluent_builders {
         /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
         /// <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that
         /// you specify for this parameter must reside in those Availability Zones.</p>
-        pub fn vpc_zone_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_zone_identifier(inp);
+        pub fn vpc_zone_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_zone_identifier(signature.into());
             self
         }
         /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
@@ -9196,8 +9364,8 @@ pub mod fluent_builders {
         /// <p>A policy or a list of policies that are used to select the instances to terminate. The
         /// policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn termination_policies(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.termination_policies(inp);
+        pub fn termination_policies(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.termination_policies(input.into());
             self
         }
         /// <p>A policy or a list of policies that are used to select the instances to terminate. The
@@ -9215,8 +9383,8 @@ pub mod fluent_builders {
         /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
         /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn new_instances_protected_from_scale_in(mut self, inp: bool) -> Self {
-            self.inner = self.inner.new_instances_protected_from_scale_in(inp);
+        pub fn new_instances_protected_from_scale_in(mut self, signature: bool) -> Self {
+            self.inner = self.inner.new_instances_protected_from_scale_in(signature);
             self
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
@@ -9234,8 +9402,11 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
         /// call other Amazon Web Services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
         /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn service_linked_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_linked_role_arn(inp);
+        pub fn service_linked_role_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.service_linked_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
@@ -9254,8 +9425,8 @@ pub mod fluent_builders {
         /// value of 0. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling
         /// instances based on maximum instance lifetime</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn max_instance_lifetime(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_instance_lifetime(inp);
+        pub fn max_instance_lifetime(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_instance_lifetime(signature);
             self
         }
         /// <p>The maximum amount of time, in seconds, that an instance can be in service. The
@@ -9270,8 +9441,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
         /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn capacity_rebalance(mut self, inp: bool) -> Self {
-            self.inner = self.inner.capacity_rebalance(inp);
+        pub fn capacity_rebalance(mut self, signature: bool) -> Self {
+            self.inner = self.inner.capacity_rebalance(signature);
             self
         }
         /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
@@ -9281,8 +9452,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context(inp);
+        pub fn context(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context(signature.into());
             self
         }
         /// <p>Reserved.</p>
@@ -9299,8 +9470,8 @@ pub mod fluent_builders {
         /// instances.</p>
         /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code>
         /// </p>
-        pub fn desired_capacity_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.desired_capacity_type(inp);
+        pub fn desired_capacity_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.desired_capacity_type(signature.into());
             self
         }
         /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling

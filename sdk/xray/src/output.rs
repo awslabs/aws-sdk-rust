@@ -219,10 +219,10 @@ pub mod put_trace_segments_output {
         /// <p>Segments that failed processing.</p>
         pub fn unprocessed_trace_segments(
             mut self,
-            input: impl Into<crate::model::UnprocessedTraceSegment>,
+            input: crate::model::UnprocessedTraceSegment,
         ) -> Self {
             let mut v = self.unprocessed_trace_segments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_trace_segments = Some(v);
             self
         }
@@ -380,9 +380,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -487,9 +487,9 @@ pub mod get_trace_summaries_output {
         ///
         /// <p>Trace IDs and annotations for traces that were found in the specified time
         /// frame.</p>
-        pub fn trace_summaries(mut self, input: impl Into<crate::model::TraceSummary>) -> Self {
+        pub fn trace_summaries(mut self, input: crate::model::TraceSummary) -> Self {
             let mut v = self.trace_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trace_summaries = Some(v);
             self
         }
@@ -599,9 +599,9 @@ pub mod get_trace_graph_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>The services that have processed one of the specified requests.</p>
-        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
+        pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -703,10 +703,10 @@ pub mod get_time_series_service_statistics_output {
         /// <p>The collection of statistics.</p>
         pub fn time_series_service_statistics(
             mut self,
-            input: impl Into<crate::model::TimeSeriesServiceStatistics>,
+            input: crate::model::TimeSeriesServiceStatistics,
         ) -> Self {
             let mut v = self.time_series_service_statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.time_series_service_statistics = Some(v);
             self
         }
@@ -859,9 +859,9 @@ pub mod get_service_graph_output {
         ///
         /// <p>The services that have processed a traced request during the specified time
         /// frame.</p>
-        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
+        pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -983,10 +983,10 @@ pub mod get_sampling_targets_output {
         /// <p>Updated rules that the service should use to sample requests.</p>
         pub fn sampling_target_documents(
             mut self,
-            input: impl Into<crate::model::SamplingTargetDocument>,
+            input: crate::model::SamplingTargetDocument,
         ) -> Self {
             let mut v = self.sampling_target_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampling_target_documents = Some(v);
             self
         }
@@ -1023,10 +1023,10 @@ pub mod get_sampling_targets_output {
         /// process.</p>
         pub fn unprocessed_statistics(
             mut self,
-            input: impl Into<crate::model::UnprocessedStatistics>,
+            input: crate::model::UnprocessedStatistics,
         ) -> Self {
             let mut v = self.unprocessed_statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_statistics = Some(v);
             self
         }
@@ -1110,10 +1110,10 @@ pub mod get_sampling_statistic_summaries_output {
         /// rule.</p>
         pub fn sampling_statistic_summaries(
             mut self,
-            input: impl Into<crate::model::SamplingStatisticSummary>,
+            input: crate::model::SamplingStatisticSummary,
         ) -> Self {
             let mut v = self.sampling_statistic_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampling_statistic_summaries = Some(v);
             self
         }
@@ -1197,12 +1197,9 @@ pub mod get_sampling_rules_output {
         /// To override the contents of this collection use [`set_sampling_rule_records`](Self::set_sampling_rule_records).
         ///
         /// <p>Rule definitions and metadata.</p>
-        pub fn sampling_rule_records(
-            mut self,
-            input: impl Into<crate::model::SamplingRuleRecord>,
-        ) -> Self {
+        pub fn sampling_rule_records(mut self, input: crate::model::SamplingRuleRecord) -> Self {
             let mut v = self.sampling_rule_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampling_rule_records = Some(v);
             self
         }
@@ -1289,9 +1286,9 @@ pub mod get_insight_summaries_output {
         /// <p>The summary of each insight within the group matching the provided filters. The summary
         /// contains the InsightID, start and end time, the root cause service, the root cause and
         /// client impact statistics, the top anomalous services, and the status of the insight.</p>
-        pub fn insight_summaries(mut self, input: impl Into<crate::model::InsightSummary>) -> Self {
+        pub fn insight_summaries(mut self, input: crate::model::InsightSummary) -> Self {
             let mut v = self.insight_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_summaries = Some(v);
             self
         }
@@ -1476,12 +1473,9 @@ pub mod get_insight_impact_graph_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-        pub fn services(
-            mut self,
-            input: impl Into<crate::model::InsightImpactGraphService>,
-        ) -> Self {
+        pub fn services(mut self, input: crate::model::InsightImpactGraphService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -1572,9 +1566,9 @@ pub mod get_insight_events_output {
         /// <p>A detailed description of the event. This includes the time of the event, client and
         /// root cause impact statistics, and the top anomalous service at the time of the
         /// event.</p>
-        pub fn insight_events(mut self, input: impl Into<crate::model::InsightEvent>) -> Self {
+        pub fn insight_events(mut self, input: crate::model::InsightEvent) -> Self {
             let mut v = self.insight_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_events = Some(v);
             self
         }
@@ -1710,9 +1704,9 @@ pub mod get_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The collection of all active groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupSummary>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupSummary) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -2117,9 +2111,9 @@ pub mod batch_get_traces_output {
         /// To override the contents of this collection use [`set_traces`](Self::set_traces).
         ///
         /// <p>Full traces for the specified requests.</p>
-        pub fn traces(mut self, input: impl Into<crate::model::Trace>) -> Self {
+        pub fn traces(mut self, input: crate::model::Trace) -> Self {
             let mut v = self.traces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traces = Some(v);
             self
         }

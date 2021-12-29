@@ -1333,10 +1333,10 @@ pub mod studio_component {
         /// <p>Initialization scripts for studio components.</p>
         pub fn initialization_scripts(
             mut self,
-            input: impl Into<crate::model::StudioComponentInitializationScript>,
+            input: crate::model::StudioComponentInitializationScript,
         ) -> Self {
             let mut v = self.initialization_scripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.initialization_scripts = Some(v);
             self
         }
@@ -1365,12 +1365,9 @@ pub mod studio_component {
         /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).
         ///
         /// <p>Parameters for the studio component scripts.</p>
-        pub fn script_parameters(
-            mut self,
-            input: impl Into<crate::model::ScriptParameterKeyValue>,
-        ) -> Self {
+        pub fn script_parameters(mut self, input: crate::model::ScriptParameterKeyValue) -> Self {
             let mut v = self.script_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.script_parameters = Some(v);
             self
         }
@@ -2679,10 +2676,10 @@ pub mod active_directory_configuration {
         /// <p>A collection of custom attributes for an Active Directory computer.</p>
         pub fn computer_attributes(
             mut self,
-            input: impl Into<crate::model::ActiveDirectoryComputerAttribute>,
+            input: crate::model::ActiveDirectoryComputerAttribute,
         ) -> Self {
             let mut v = self.computer_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.computer_attributes = Some(v);
             self
         }
@@ -5133,10 +5130,10 @@ pub mod launch_profile_initialization {
         /// <p>The system initializtion scripts.</p>
         pub fn system_initialization_scripts(
             mut self,
-            input: impl Into<crate::model::LaunchProfileInitializationScript>,
+            input: crate::model::LaunchProfileInitializationScript,
         ) -> Self {
             let mut v = self.system_initialization_scripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.system_initialization_scripts = Some(v);
             self
         }
@@ -5157,10 +5154,10 @@ pub mod launch_profile_initialization {
         /// <p>The user initializtion scripts.</p>
         pub fn user_initialization_scripts(
             mut self,
-            input: impl Into<crate::model::LaunchProfileInitializationScript>,
+            input: crate::model::LaunchProfileInitializationScript,
         ) -> Self {
             let mut v = self.user_initialization_scripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_initialization_scripts = Some(v);
             self
         }
@@ -5388,10 +5385,10 @@ pub mod launch_profile_initialization_active_directory {
         /// <p>A collection of custom attributes for an Active Directory computer.</p>
         pub fn computer_attributes(
             mut self,
-            input: impl Into<crate::model::ActiveDirectoryComputerAttribute>,
+            input: crate::model::ActiveDirectoryComputerAttribute,
         ) -> Self {
             let mut v = self.computer_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.computer_attributes = Some(v);
             self
         }
@@ -6288,12 +6285,9 @@ pub mod stream_configuration {
         ///
         /// <p>The EC2 instance types that users can select from when launching a streaming session
         /// with this launch profile.</p>
-        pub fn ec2_instance_types(
-            mut self,
-            input: impl Into<crate::model::StreamingInstanceType>,
-        ) -> Self {
+        pub fn ec2_instance_types(mut self, input: crate::model::StreamingInstanceType) -> Self {
             let mut v = self.ec2_instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_instance_types = Some(v);
             self
         }
@@ -6781,12 +6775,9 @@ pub mod stream_configuration_create {
         ///
         /// <p>The EC2 instance types that users can select from when launching a streaming session
         /// with this launch profile.</p>
-        pub fn ec2_instance_types(
-            mut self,
-            input: impl Into<crate::model::StreamingInstanceType>,
-        ) -> Self {
+        pub fn ec2_instance_types(mut self, input: crate::model::StreamingInstanceType) -> Self {
             let mut v = self.ec2_instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_instance_types = Some(v);
             self
         }

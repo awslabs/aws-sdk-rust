@@ -257,8 +257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the job run to cancel.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the job run to cancel.</p>
@@ -267,8 +267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(signature.into());
             self
         }
         /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
@@ -340,8 +340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the managed endpoint.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the managed endpoint.</p>
@@ -350,8 +350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(signature.into());
             self
         }
         /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
@@ -363,8 +363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the managed endpoint.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(signature.into());
             self
         }
         /// <p>The type of the managed endpoint.</p>
@@ -373,8 +373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon EMR release version.</p>
-        pub fn release_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_label(inp);
+        pub fn release_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(signature.into());
             self
         }
         /// <p>The Amazon EMR release version.</p>
@@ -386,8 +386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the execution role.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(signature.into());
             self
         }
         /// <p>The ARN of the execution role.</p>
@@ -399,8 +399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
@@ -414,9 +414,9 @@ pub mod fluent_builders {
         /// <p>The configuration settings that will be used to override existing configurations.</p>
         pub fn configuration_overrides(
             mut self,
-            inp: crate::model::ConfigurationOverrides,
+            signature: crate::model::ConfigurationOverrides,
         ) -> Self {
-            self.inner = self.inner.configuration_overrides(inp);
+            self.inner = self.inner.configuration_overrides(signature);
             self
         }
         /// <p>The configuration settings that will be used to override existing configurations.</p>
@@ -428,8 +428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client idempotency token for this create call.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The client idempotency token for this create call.</p>
@@ -448,7 +448,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags of the managed endpoint.
@@ -523,8 +523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The specified name of the virtual cluster.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The specified name of the virtual cluster.</p>
@@ -533,8 +533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The container provider of the virtual cluster.</p>
-        pub fn container_provider(mut self, inp: crate::model::ContainerProvider) -> Self {
-            self.inner = self.inner.container_provider(inp);
+        pub fn container_provider(mut self, signature: crate::model::ContainerProvider) -> Self {
+            self.inner = self.inner.container_provider(signature);
             self
         }
         /// <p>The container provider of the virtual cluster.</p>
@@ -546,8 +546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token of the virtual cluster.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The client token of the virtual cluster.</p>
@@ -565,7 +565,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to the virtual cluster.</p>
@@ -639,8 +639,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the managed endpoint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the managed endpoint.</p>
@@ -649,8 +649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(signature.into());
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
@@ -722,8 +722,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual cluster that will be deleted.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the virtual cluster that will be deleted.</p>
@@ -792,8 +792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the job run request. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the job run request. </p>
@@ -802,8 +802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(signature.into());
             self
         }
         /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
@@ -875,8 +875,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This output displays ID of the managed endpoint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>This output displays ID of the managed endpoint.</p>
@@ -885,8 +885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(signature.into());
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual cluster that will be described.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the virtual cluster that will be described.</p>
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual cluster for which to list the job run. </p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(signature.into());
             self
         }
         /// <p>The ID of the virtual cluster for which to list the job run. </p>
@@ -1041,8 +1041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time before which the job runs were submitted.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(signature);
             self
         }
         /// <p>The date and time before which the job runs were submitted.</p>
@@ -1054,8 +1054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time after which the job runs were submitted.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(signature);
             self
         }
         /// <p>The date and time after which the job runs were submitted.</p>
@@ -1067,8 +1067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the job run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the job run.</p>
@@ -1081,8 +1081,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the job run.</p>
-        pub fn states(mut self, inp: impl Into<crate::model::JobRunState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::JobRunState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The states of the job run.</p>
@@ -1094,8 +1094,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of job runs that can be listed.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of job runs that can be listed.</p>
@@ -1104,8 +1104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of job runs to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of job runs to return.</p>
@@ -1174,8 +1174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual cluster.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(signature.into());
             self
         }
         /// <p>The ID of the virtual cluster.</p>
@@ -1187,8 +1187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time before which the endpoints are created.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(signature);
             self
         }
         /// <p>The date and time before which the endpoints are created.</p>
@@ -1200,8 +1200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The date and time after which the endpoints are created.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(signature);
             self
         }
         /// <p> The date and time after which the endpoints are created.</p>
@@ -1217,8 +1217,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>The types of the managed endpoints.</p>
-        pub fn types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.types(inp);
+        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.types(input.into());
             self
         }
         /// <p>The types of the managed endpoints.</p>
@@ -1234,8 +1234,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the managed endpoints.</p>
-        pub fn states(mut self, inp: impl Into<crate::model::EndpointState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::EndpointState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The states of the managed endpoints.</p>
@@ -1247,8 +1247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of managed endpoints that can be listed.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of managed endpoints that can be listed.</p>
@@ -1257,8 +1257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The token for the next set of managed endpoints to return. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p> The token for the next set of managed endpoints to return. </p>
@@ -1327,8 +1327,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of tagged resources.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of tagged resources.</p>
@@ -1397,8 +1397,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The container provider ID of the virtual cluster.</p>
-        pub fn container_provider_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_provider_id(inp);
+        pub fn container_provider_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_provider_id(signature.into());
             self
         }
         /// <p>The container provider ID of the virtual cluster.</p>
@@ -1410,8 +1410,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
-        pub fn container_provider_type(mut self, inp: crate::model::ContainerProviderType) -> Self {
-            self.inner = self.inner.container_provider_type(inp);
+        pub fn container_provider_type(
+            mut self,
+            signature: crate::model::ContainerProviderType,
+        ) -> Self {
+            self.inner = self.inner.container_provider_type(signature);
             self
         }
         /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
@@ -1423,8 +1426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time after which the virtual clusters are created.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(signature);
             self
         }
         /// <p>The date and time after which the virtual clusters are created.</p>
@@ -1436,8 +1439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time before which the virtual clusters are created.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(signature);
             self
         }
         /// <p>The date and time before which the virtual clusters are created.</p>
@@ -1453,8 +1456,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the requested virtual clusters.</p>
-        pub fn states(mut self, inp: impl Into<crate::model::VirtualClusterState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::VirtualClusterState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The states of the requested virtual clusters.</p>
@@ -1466,8 +1469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of virtual clusters that can be listed.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of virtual clusters that can be listed.</p>
@@ -1476,8 +1479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of virtual clusters to return. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of virtual clusters to return. </p>
@@ -1546,8 +1549,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the job run.</p>
@@ -1556,8 +1559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The virtual cluster ID for which the job run request is submitted.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(signature.into());
             self
         }
         /// <p>The virtual cluster ID for which the job run request is submitted.</p>
@@ -1569,8 +1572,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client idempotency token of the job run request. </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The client idempotency token of the job run request. </p>
@@ -1579,8 +1582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The execution role ARN for the job run.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(signature.into());
             self
         }
         /// <p>The execution role ARN for the job run.</p>
@@ -1592,8 +1595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon EMR release version to use for the job run.</p>
-        pub fn release_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_label(inp);
+        pub fn release_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(signature.into());
             self
         }
         /// <p>The Amazon EMR release version to use for the job run.</p>
@@ -1605,8 +1608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job driver for the job run.</p>
-        pub fn job_driver(mut self, inp: crate::model::JobDriver) -> Self {
-            self.inner = self.inner.job_driver(inp);
+        pub fn job_driver(mut self, signature: crate::model::JobDriver) -> Self {
+            self.inner = self.inner.job_driver(signature);
             self
         }
         /// <p>The job driver for the job run.</p>
@@ -1620,9 +1623,9 @@ pub mod fluent_builders {
         /// <p>The configuration overrides for the job run.</p>
         pub fn configuration_overrides(
             mut self,
-            inp: crate::model::ConfigurationOverrides,
+            signature: crate::model::ConfigurationOverrides,
         ) -> Self {
-            self.inner = self.inner.configuration_overrides(inp);
+            self.inner = self.inner.configuration_overrides(signature);
             self
         }
         /// <p>The configuration overrides for the job run.</p>
@@ -1643,7 +1646,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to job runs.</p>
@@ -1717,8 +1720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of resources.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of resources.</p>
@@ -1736,7 +1739,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to resources.</p>
@@ -1810,8 +1813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of resources.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of resources.</p>
@@ -1824,8 +1827,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys of the resources.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys of the resources.</p>

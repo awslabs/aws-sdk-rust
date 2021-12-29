@@ -497,8 +497,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -513,8 +513,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
         ///
         /// <p>The EULA ID.</p>
-        pub fn eula_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eula_ids(inp);
+        pub fn eula_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eula_ids(input.into());
             self
         }
         /// <p>The EULA ID.</p>
@@ -526,8 +526,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A collection of EULA IDs.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>A collection of EULA IDs.</p>
@@ -598,8 +598,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -610,8 +610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -625,8 +625,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
         /// These subnets must support the specified instance types. </p>
-        pub fn ec2_subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_subnet_ids(inp);
+        pub fn ec2_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_subnet_ids(input.into());
             self
         }
         /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
@@ -646,9 +646,9 @@ pub mod fluent_builders {
         /// version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.launch_profile_protocol_versions(inp);
+            self.inner = self.inner.launch_profile_protocol_versions(input.into());
             self
         }
         /// <p>The version number of the protocol that is used by the launch profile. The only valid
@@ -661,8 +661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the launch profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the launch profile.</p>
@@ -673,9 +673,9 @@ pub mod fluent_builders {
         /// <p>A configuration for a streaming session.</p>
         pub fn stream_configuration(
             mut self,
-            inp: crate::model::StreamConfigurationCreate,
+            signature: crate::model::StreamConfigurationCreate,
         ) -> Self {
-            self.inner = self.inner.stream_configuration(inp);
+            self.inner = self.inner.stream_configuration(signature);
             self
         }
         /// <p>A configuration for a streaming session.</p>
@@ -692,8 +692,8 @@ pub mod fluent_builders {
         ///
         /// <p>Unique identifiers for a collection of studio components that can be used with this
         /// launch profile.</p>
-        pub fn studio_component_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_component_ids(inp);
+        pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_component_ids(input.into());
             self
         }
         /// <p>Unique identifiers for a collection of studio components that can be used with this
@@ -706,8 +706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -726,7 +726,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A collection of labels, in the form of key:value pairs, that apply to this
@@ -803,8 +803,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -815,8 +815,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of the streaming image.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A human-readable description of the streaming image.</p>
@@ -825,8 +825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
-        pub fn ec2_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_image_id(inp);
+        pub fn ec2_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_image_id(signature.into());
             self
         }
         /// <p>The ID of an EC2 machine image with which to create this streaming image.</p>
@@ -835,8 +835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name for a streaming image resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A friendly name for a streaming image resource.</p>
@@ -845,8 +845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -865,7 +865,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A collection of labels, in the form of key:value pairs, that apply to this
@@ -944,8 +944,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -956,8 +956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The EC2 Instance type used for the streaming session.</p>
-        pub fn ec2_instance_type(mut self, inp: crate::model::StreamingInstanceType) -> Self {
-            self.inner = self.inner.ec2_instance_type(inp);
+        pub fn ec2_instance_type(mut self, signature: crate::model::StreamingInstanceType) -> Self {
+            self.inner = self.inner.ec2_instance_type(signature);
             self
         }
         /// <p>The EC2 Instance type used for the streaming session.</p>
@@ -969,8 +969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The launch profile ID.</p>
@@ -982,8 +982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID of the user that owns the streaming session.</p>
-        pub fn owned_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owned_by(inp);
+        pub fn owned_by(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owned_by(signature.into());
             self
         }
         /// <p>The user ID of the user that owns the streaming session.</p>
@@ -992,8 +992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the streaming image.</p>
-        pub fn streaming_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.streaming_image_id(inp);
+        pub fn streaming_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.streaming_image_id(signature.into());
             self
         }
         /// <p>The ID of the streaming image.</p>
@@ -1005,8 +1005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -1025,7 +1025,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A collection of labels, in the form of key:value pairs, that apply to this
@@ -1104,8 +1104,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The expiration time in seconds.</p>
-        pub fn expiration_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.expiration_in_seconds(inp);
+        pub fn expiration_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.expiration_in_seconds(signature);
             self
         }
         /// <p>The expiration time in seconds.</p>
@@ -1126,8 +1126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The streaming session ID.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The streaming session ID.</p>
@@ -1136,8 +1136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -1226,8 +1226,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
         /// portal.</p>
-        pub fn admin_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_role_arn(inp);
+        pub fn admin_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_role_arn(signature.into());
             self
         }
         /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
@@ -1242,8 +1242,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1254,8 +1254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name for the studio.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>A friendly name for the studio.</p>
@@ -1266,9 +1266,9 @@ pub mod fluent_builders {
         /// <p>The studio encryption configuration.</p>
         pub fn studio_encryption_configuration(
             mut self,
-            inp: crate::model::StudioEncryptionConfiguration,
+            signature: crate::model::StudioEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.studio_encryption_configuration(inp);
+            self.inner = self.inner.studio_encryption_configuration(signature);
             self
         }
         /// <p>The studio encryption configuration.</p>
@@ -1281,8 +1281,8 @@ pub mod fluent_builders {
         }
         /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
         /// by Nimble Studio users.</p>
-        pub fn studio_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_name(inp);
+        pub fn studio_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_name(signature.into());
             self
         }
         /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
@@ -1302,7 +1302,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A collection of labels, in the form of key:value pairs, that apply to this
@@ -1318,8 +1318,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
         /// portal.</p>
-        pub fn user_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_role_arn(inp);
+        pub fn user_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_role_arn(signature.into());
             self
         }
         /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
@@ -1394,8 +1394,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1406,8 +1406,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration of the studio component, based on component type.</p>
-        pub fn configuration(mut self, inp: crate::model::StudioComponentConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(
+            mut self,
+            signature: crate::model::StudioComponentConfiguration,
+        ) -> Self {
+            self.inner = self.inner.configuration(signature);
             self
         }
         /// <p>The configuration of the studio component, based on component type.</p>
@@ -1419,8 +1422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -1433,8 +1436,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
         ///
         /// <p>The EC2 security groups that control access to the studio component.</p>
-        pub fn ec2_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_ids(inp);
+        pub fn ec2_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_ids(input.into());
             self
         }
         /// <p>The EC2 security groups that control access to the studio component.</p>
@@ -1452,9 +1455,9 @@ pub mod fluent_builders {
         /// <p>Initialization scripts for studio components.</p>
         pub fn initialization_scripts(
             mut self,
-            inp: impl Into<crate::model::StudioComponentInitializationScript>,
+            input: crate::model::StudioComponentInitializationScript,
         ) -> Self {
-            self.inner = self.inner.initialization_scripts(inp);
+            self.inner = self.inner.initialization_scripts(input);
             self
         }
         /// <p>Initialization scripts for studio components.</p>
@@ -1468,8 +1471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the studio component.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the studio component.</p>
@@ -1482,11 +1485,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).
         ///
         /// <p>Parameters for the studio component scripts.</p>
-        pub fn script_parameters(
-            mut self,
-            inp: impl Into<crate::model::ScriptParameterKeyValue>,
-        ) -> Self {
-            self.inner = self.inner.script_parameters(inp);
+        pub fn script_parameters(mut self, input: crate::model::ScriptParameterKeyValue) -> Self {
+            self.inner = self.inner.script_parameters(input);
             self
         }
         /// <p>Parameters for the studio component scripts.</p>
@@ -1498,8 +1498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -1508,8 +1508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The specific subtype of a studio component.</p>
-        pub fn subtype(mut self, inp: crate::model::StudioComponentSubtype) -> Self {
-            self.inner = self.inner.subtype(inp);
+        pub fn subtype(mut self, signature: crate::model::StudioComponentSubtype) -> Self {
+            self.inner = self.inner.subtype(signature);
             self
         }
         /// <p>The specific subtype of a studio component.</p>
@@ -1531,7 +1531,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A collection of labels, in the form of key:value pairs, that apply to this
@@ -1546,8 +1546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the studio component.</p>
-        pub fn r#type(mut self, inp: crate::model::StudioComponentType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::StudioComponentType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of the studio component.</p>
@@ -1621,8 +1621,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1633,8 +1633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -1646,8 +1646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -1718,8 +1718,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1730,8 +1730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -1743,8 +1743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
@@ -1753,8 +1753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -1825,8 +1825,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1837,8 +1837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The streaming image ID.</p>
-        pub fn streaming_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.streaming_image_id(inp);
+        pub fn streaming_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.streaming_image_id(signature.into());
             self
         }
         /// <p>The streaming image ID.</p>
@@ -1850,8 +1850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -1926,8 +1926,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1938,8 +1938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The streaming session ID.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The streaming session ID.</p>
@@ -1948,8 +1948,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2020,8 +2020,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2032,8 +2032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2104,8 +2104,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2116,8 +2116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio component ID.</p>
-        pub fn studio_component_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_component_id(inp);
+        pub fn studio_component_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_component_id(signature.into());
             self
         }
         /// <p>The studio component ID.</p>
@@ -2129,8 +2129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2201,8 +2201,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2213,8 +2213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
@@ -2223,8 +2223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2293,8 +2293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The EULA ID.</p>
-        pub fn eula_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eula_id(inp);
+        pub fn eula_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eula_id(signature.into());
             self
         }
         /// <p>The EULA ID.</p>
@@ -2363,8 +2363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -2376,8 +2376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2449,8 +2449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -2462,8 +2462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2532,8 +2532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -2551,9 +2551,9 @@ pub mod fluent_builders {
         /// <p>The launch profile protocol versions supported by the client.</p>
         pub fn launch_profile_protocol_versions(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.launch_profile_protocol_versions(inp);
+            self.inner = self.inner.launch_profile_protocol_versions(input.into());
             self
         }
         /// <p>The launch profile protocol versions supported by the client.</p>
@@ -2565,8 +2565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch purpose.</p>
-        pub fn launch_purpose(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_purpose(inp);
+        pub fn launch_purpose(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_purpose(signature.into());
             self
         }
         /// <p>The launch purpose.</p>
@@ -2578,8 +2578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
-        pub fn platform(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform(signature.into());
             self
         }
         /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
@@ -2588,8 +2588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2658,8 +2658,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -2671,8 +2671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
@@ -2681,8 +2681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2751,8 +2751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The streaming image ID.</p>
-        pub fn streaming_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.streaming_image_id(inp);
+        pub fn streaming_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.streaming_image_id(signature.into());
             self
         }
         /// <p>The streaming image ID.</p>
@@ -2764,8 +2764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2836,8 +2836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The streaming session ID.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The streaming session ID.</p>
@@ -2846,8 +2846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -2920,8 +2920,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The streaming session ID.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The streaming session ID.</p>
@@ -2930,8 +2930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The streaming session stream ID.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(signature.into());
             self
         }
         /// <p>The streaming session stream ID.</p>
@@ -2940,8 +2940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3010,8 +3010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3080,8 +3080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The studio component ID.</p>
-        pub fn studio_component_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_component_id(inp);
+        pub fn studio_component_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_component_id(signature.into());
             self
         }
         /// <p>The studio component ID.</p>
@@ -3093,8 +3093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3163,8 +3163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
@@ -3173,8 +3173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3247,8 +3247,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
         ///
         /// <p>The list of EULA IDs that have been previously accepted.</p>
-        pub fn eula_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eula_ids(inp);
+        pub fn eula_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eula_ids(input.into());
             self
         }
         /// <p>The list of EULA IDs that have been previously accepted.</p>
@@ -3260,8 +3260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -3270,8 +3270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3344,8 +3344,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
         ///
         /// <p>The list of EULA IDs that should be returned</p>
-        pub fn eula_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eula_ids(inp);
+        pub fn eula_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eula_ids(input.into());
             self
         }
         /// <p>The list of EULA IDs that should be returned</p>
@@ -3357,8 +3357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -3427,8 +3427,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -3440,8 +3440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The max number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The max number of results to return in the response.</p>
@@ -3450,8 +3450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -3460,8 +3460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3530,8 +3530,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The max number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The max number of results to return in the response.</p>
@@ -3540,8 +3540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -3550,8 +3550,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
@@ -3564,8 +3564,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>Filter this request to launch profiles in any of the given states.</p>
-        pub fn states(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.states(input.into());
             self
         }
         /// <p>Filter this request to launch profiles in any of the given states.</p>
@@ -3577,8 +3577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3649,8 +3649,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -3659,8 +3659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter this request to streaming images with the given owner</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(inp);
+        pub fn owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(signature.into());
             self
         }
         /// <p>Filter this request to streaming images with the given owner</p>
@@ -3669,8 +3669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3739,8 +3739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filters the request to streaming sessions created by the given user.</p>
-        pub fn created_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.created_by(inp);
+        pub fn created_by(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.created_by(signature.into());
             self
         }
         /// <p>Filters the request to streaming sessions created by the given user.</p>
@@ -3749,8 +3749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -3759,8 +3759,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the request to streaming session owned by the given user</p>
-        pub fn owned_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owned_by(inp);
+        pub fn owned_by(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owned_by(signature.into());
             self
         }
         /// <p>Filters the request to streaming session owned by the given user</p>
@@ -3769,8 +3769,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the request to only the provided session IDs.</p>
-        pub fn session_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_ids(inp);
+        pub fn session_ids(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_ids(signature.into());
             self
         }
         /// <p>Filters the request to only the provided session IDs.</p>
@@ -3779,8 +3779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3849,8 +3849,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The max number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The max number of results to return in the response.</p>
@@ -3859,8 +3859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -3873,8 +3873,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>Filters the request to studio components that are in one of the given states. </p>
-        pub fn states(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.states(input.into());
             self
         }
         /// <p>Filters the request to studio components that are in one of the given states. </p>
@@ -3886,8 +3886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -3900,8 +3900,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>Filters the request to studio components that are of one of the given types.</p>
-        pub fn types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.types(inp);
+        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.types(input.into());
             self
         }
         /// <p>Filters the request to studio components that are of one of the given types.</p>
@@ -3973,8 +3973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The max number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The max number of results to return in the response.</p>
@@ -3983,8 +3983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -3993,8 +3993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -4064,8 +4064,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to request the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results. </p>
@@ -4138,8 +4138,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
@@ -4210,8 +4210,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4222,8 +4222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the identity store.</p>
-        pub fn identity_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_store_id(inp);
+        pub fn identity_store_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(signature.into());
             self
         }
         /// <p>The ID of the identity store.</p>
@@ -4235,8 +4235,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -4252,8 +4252,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, inp: impl Into<crate::model::NewLaunchProfileMember>) -> Self {
-            self.inner = self.inner.members(inp);
+        pub fn members(mut self, input: crate::model::NewLaunchProfileMember) -> Self {
+            self.inner = self.inner.members(input);
             self
         }
         /// <p>A list of members.</p>
@@ -4265,8 +4265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -4337,8 +4337,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4349,8 +4349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the identity store.</p>
-        pub fn identity_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_store_id(inp);
+        pub fn identity_store_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(signature.into());
             self
         }
         /// <p>The ID of the identity store.</p>
@@ -4366,8 +4366,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, inp: impl Into<crate::model::NewStudioMember>) -> Self {
-            self.inner = self.inner.members(inp);
+        pub fn members(mut self, input: crate::model::NewStudioMember) -> Self {
+            self.inner = self.inner.members(input);
             self
         }
         /// <p>A list of members.</p>
@@ -4379,8 +4379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -4453,8 +4453,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4465,8 +4465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
@@ -4475,8 +4475,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID for the StartStreamingSessionRequest.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID for the StartStreamingSessionRequest.</p>
@@ -4553,8 +4553,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4565,8 +4565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -4638,8 +4638,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4650,8 +4650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
@@ -4660,8 +4660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studioId for the StopStreamingSessionRequest.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studioId for the StopStreamingSessionRequest.</p>
@@ -4730,8 +4730,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
@@ -4750,7 +4750,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A collection of labels, in the form of key:value pairs, that apply to this
@@ -4825,8 +4825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
@@ -4839,8 +4839,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
@@ -4914,8 +4914,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4926,8 +4926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -4936,8 +4936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -4956,9 +4956,9 @@ pub mod fluent_builders {
         /// version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.launch_profile_protocol_versions(inp);
+            self.inner = self.inner.launch_profile_protocol_versions(input.into());
             self
         }
         /// <p>The version number of the protocol that is used by the launch profile. The only valid
@@ -4971,8 +4971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the launch profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the launch profile.</p>
@@ -4983,9 +4983,9 @@ pub mod fluent_builders {
         /// <p>A configuration for a streaming session.</p>
         pub fn stream_configuration(
             mut self,
-            inp: crate::model::StreamConfigurationCreate,
+            signature: crate::model::StreamConfigurationCreate,
         ) -> Self {
-            self.inner = self.inner.stream_configuration(inp);
+            self.inner = self.inner.stream_configuration(signature);
             self
         }
         /// <p>A configuration for a streaming session.</p>
@@ -5002,8 +5002,8 @@ pub mod fluent_builders {
         ///
         /// <p>Unique identifiers for a collection of studio components that can be used with this
         /// launch profile.</p>
-        pub fn studio_component_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_component_ids(inp);
+        pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_component_ids(input.into());
             self
         }
         /// <p>Unique identifiers for a collection of studio components that can be used with this
@@ -5016,8 +5016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -5088,8 +5088,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -5100,8 +5100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Launch Profile ID.</p>
-        pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_profile_id(inp);
+        pub fn launch_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_profile_id(signature.into());
             self
         }
         /// <p>The Launch Profile ID.</p>
@@ -5113,8 +5113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The persona.</p>
-        pub fn persona(mut self, inp: crate::model::LaunchProfilePersona) -> Self {
-            self.inner = self.inner.persona(inp);
+        pub fn persona(mut self, signature: crate::model::LaunchProfilePersona) -> Self {
+            self.inner = self.inner.persona(signature);
             self
         }
         /// <p>The persona.</p>
@@ -5126,8 +5126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(signature.into());
             self
         }
         /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
@@ -5136,8 +5136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -5208,8 +5208,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -5220,8 +5220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -5230,8 +5230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the streaming image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the streaming image.</p>
@@ -5240,8 +5240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The streaming image ID.</p>
-        pub fn streaming_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.streaming_image_id(inp);
+        pub fn streaming_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.streaming_image_id(signature.into());
             self
         }
         /// <p>The streaming image ID.</p>
@@ -5253,8 +5253,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -5326,8 +5326,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
         /// portal.</p>
-        pub fn admin_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_role_arn(inp);
+        pub fn admin_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_role_arn(signature.into());
             self
         }
         /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
@@ -5342,8 +5342,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -5354,8 +5354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name for the studio.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>A friendly name for the studio.</p>
@@ -5364,8 +5364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -5375,8 +5375,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
         /// portal.</p>
-        pub fn user_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_role_arn(inp);
+        pub fn user_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_role_arn(signature.into());
             self
         }
         /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
@@ -5451,8 +5451,8 @@ pub mod fluent_builders {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. If you don’t specify a client token, the AWS SDK automatically generates a
         /// client token and uses it for the request to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -5463,8 +5463,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration of the studio component, based on component type.</p>
-        pub fn configuration(mut self, inp: crate::model::StudioComponentConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(
+            mut self,
+            signature: crate::model::StudioComponentConfiguration,
+        ) -> Self {
+            self.inner = self.inner.configuration(signature);
             self
         }
         /// <p>The configuration of the studio component, based on component type.</p>
@@ -5476,8 +5479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -5490,8 +5493,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
         ///
         /// <p>The EC2 security groups that control access to the studio component.</p>
-        pub fn ec2_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_ids(inp);
+        pub fn ec2_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_ids(input.into());
             self
         }
         /// <p>The EC2 security groups that control access to the studio component.</p>
@@ -5509,9 +5512,9 @@ pub mod fluent_builders {
         /// <p>Initialization scripts for studio components.</p>
         pub fn initialization_scripts(
             mut self,
-            inp: impl Into<crate::model::StudioComponentInitializationScript>,
+            input: crate::model::StudioComponentInitializationScript,
         ) -> Self {
-            self.inner = self.inner.initialization_scripts(inp);
+            self.inner = self.inner.initialization_scripts(input);
             self
         }
         /// <p>Initialization scripts for studio components.</p>
@@ -5525,8 +5528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the studio component.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the studio component.</p>
@@ -5539,11 +5542,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).
         ///
         /// <p>Parameters for the studio component scripts.</p>
-        pub fn script_parameters(
-            mut self,
-            inp: impl Into<crate::model::ScriptParameterKeyValue>,
-        ) -> Self {
-            self.inner = self.inner.script_parameters(inp);
+        pub fn script_parameters(mut self, input: crate::model::ScriptParameterKeyValue) -> Self {
+            self.inner = self.inner.script_parameters(input);
             self
         }
         /// <p>Parameters for the studio component scripts.</p>
@@ -5555,8 +5555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio component ID.</p>
-        pub fn studio_component_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_component_id(inp);
+        pub fn studio_component_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_component_id(signature.into());
             self
         }
         /// <p>The studio component ID.</p>
@@ -5568,8 +5568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The studio ID. </p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(signature.into());
             self
         }
         /// <p>The studio ID. </p>
@@ -5578,8 +5578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The specific subtype of a studio component.</p>
-        pub fn subtype(mut self, inp: crate::model::StudioComponentSubtype) -> Self {
-            self.inner = self.inner.subtype(inp);
+        pub fn subtype(mut self, signature: crate::model::StudioComponentSubtype) -> Self {
+            self.inner = self.inner.subtype(signature);
             self
         }
         /// <p>The specific subtype of a studio component.</p>
@@ -5591,8 +5591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the studio component.</p>
-        pub fn r#type(mut self, inp: crate::model::StudioComponentType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::StudioComponentType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of the studio component.</p>

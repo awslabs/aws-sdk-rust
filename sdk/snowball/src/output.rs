@@ -172,10 +172,10 @@ pub mod list_long_term_pricing_output {
         /// about the <code>LongTermPricing</code> type. </p>
         pub fn long_term_pricing_entries(
             mut self,
-            input: impl Into<crate::model::LongTermPricingListEntry>,
+            input: crate::model::LongTermPricingListEntry,
         ) -> Self {
             let mut v = self.long_term_pricing_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.long_term_pricing_entries = Some(v);
             self
         }
@@ -265,9 +265,9 @@ pub mod list_jobs_output {
         ///
         /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
         /// that indicates whether the job is a job part, in the case of export jobs. </p>
-        pub fn job_list_entries(mut self, input: impl Into<crate::model::JobListEntry>) -> Self {
+        pub fn job_list_entries(mut self, input: crate::model::JobListEntry) -> Self {
             let mut v = self.job_list_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_list_entries = Some(v);
             self
         }
@@ -358,12 +358,9 @@ pub mod list_compatible_images_output {
         ///
         /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for
         /// a Snow device AMI.</p>
-        pub fn compatible_images(
-            mut self,
-            input: impl Into<crate::model::CompatibleImage>,
-        ) -> Self {
+        pub fn compatible_images(mut self, input: crate::model::CompatibleImage) -> Self {
             let mut v = self.compatible_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_images = Some(v);
             self
         }
@@ -454,12 +451,9 @@ pub mod list_clusters_output {
         ///
         /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID,
         /// and other important status information.</p>
-        pub fn cluster_list_entries(
-            mut self,
-            input: impl Into<crate::model::ClusterListEntry>,
-        ) -> Self {
+        pub fn cluster_list_entries(mut self, input: crate::model::ClusterListEntry) -> Self {
             let mut v = self.cluster_list_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_list_entries = Some(v);
             self
         }
@@ -551,9 +545,9 @@ pub mod list_cluster_jobs_output {
         ///
         /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
         /// that indicates whether the job is a job part, in the case of export jobs. </p>
-        pub fn job_list_entries(mut self, input: impl Into<crate::model::JobListEntry>) -> Self {
+        pub fn job_list_entries(mut self, input: crate::model::JobListEntry) -> Self {
             let mut v = self.job_list_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_list_entries = Some(v);
             self
         }
@@ -1018,9 +1012,9 @@ pub mod describe_job_output {
         ///
         /// <p>Information about a specific job part (in the case of an export job), including
         /// shipping information, job status, and other important metadata.</p>
-        pub fn sub_job_metadata(mut self, input: impl Into<crate::model::JobMetadata>) -> Self {
+        pub fn sub_job_metadata(mut self, input: crate::model::JobMetadata) -> Self {
             let mut v = self.sub_job_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_job_metadata = Some(v);
             self
         }
@@ -1156,9 +1150,9 @@ pub mod describe_addresses_output {
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
         /// <p>The Snow device shipping addresses that were created for this account.</p>
-        pub fn addresses(mut self, input: impl Into<crate::model::Address>) -> Self {
+        pub fn addresses(mut self, input: crate::model::Address) -> Self {
             let mut v = self.addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.addresses = Some(v);
             self
         }

@@ -56,10 +56,10 @@ pub mod create_experiment_template_input {
         /// <p>The stop conditions.</p>
         pub fn stop_conditions(
             mut self,
-            input: impl Into<crate::model::CreateExperimentTemplateStopConditionInput>,
+            input: crate::model::CreateExperimentTemplateStopConditionInput,
         ) -> Self {
             let mut v = self.stop_conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stop_conditions = Some(v);
             self
         }
@@ -81,10 +81,10 @@ pub mod create_experiment_template_input {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CreateExperimentTemplateTargetInput>,
+            v: crate::model::CreateExperimentTemplateTargetInput,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -109,10 +109,10 @@ pub mod create_experiment_template_input {
         pub fn actions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CreateExperimentTemplateActionInput>,
+            v: crate::model::CreateExperimentTemplateActionInput,
         ) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.actions = Some(hash_map);
             self
         }
@@ -2316,10 +2316,10 @@ pub mod update_experiment_template_input {
         /// <p>The stop conditions for the experiment.</p>
         pub fn stop_conditions(
             mut self,
-            input: impl Into<crate::model::UpdateExperimentTemplateStopConditionInput>,
+            input: crate::model::UpdateExperimentTemplateStopConditionInput,
         ) -> Self {
             let mut v = self.stop_conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stop_conditions = Some(v);
             self
         }
@@ -2341,10 +2341,10 @@ pub mod update_experiment_template_input {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::UpdateExperimentTemplateTargetInput>,
+            v: crate::model::UpdateExperimentTemplateTargetInput,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -2369,10 +2369,10 @@ pub mod update_experiment_template_input {
         pub fn actions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::UpdateExperimentTemplateActionInputItem>,
+            v: crate::model::UpdateExperimentTemplateActionInputItem,
         ) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.actions = Some(hash_map);
             self
         }

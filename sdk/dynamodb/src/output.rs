@@ -321,10 +321,10 @@ pub mod update_item_output {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -503,12 +503,9 @@ pub mod update_global_table_settings_output {
         /// To override the contents of this collection use [`set_replica_settings`](Self::set_replica_settings).
         ///
         /// <p>The Region-specific settings for the global table.</p>
-        pub fn replica_settings(
-            mut self,
-            input: impl Into<crate::model::ReplicaSettingsDescription>,
-        ) -> Self {
+        pub fn replica_settings(mut self, input: crate::model::ReplicaSettingsDescription) -> Self {
             let mut v = self.replica_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_settings = Some(v);
             self
         }
@@ -876,12 +873,9 @@ pub mod transact_write_items_output {
         /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation.
         /// The values of the list are ordered according to the ordering of the
         /// <code>TransactItems</code> request parameter. </p>
-        pub fn consumed_capacity(
-            mut self,
-            input: impl Into<crate::model::ConsumedCapacity>,
-        ) -> Self {
+        pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_capacity = Some(v);
             self
         }
@@ -906,10 +900,10 @@ pub mod transact_write_items_output {
         pub fn item_collection_metrics(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ItemCollectionMetrics>>,
+            v: std::vec::Vec<crate::model::ItemCollectionMetrics>,
         ) -> Self {
             let mut hash_map = self.item_collection_metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item_collection_metrics = Some(hash_map);
             self
         }
@@ -1014,12 +1008,9 @@ pub mod transact_get_items_output {
         /// <code>TransactGetItem</code> objects in the <i>TransactItems</i>
         /// parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units
         /// consumed by the <code>TransactGetItems</code> call in that table.</p>
-        pub fn consumed_capacity(
-            mut self,
-            input: impl Into<crate::model::ConsumedCapacity>,
-        ) -> Self {
+        pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_capacity = Some(v);
             self
         }
@@ -1047,9 +1038,9 @@ pub mod transact_get_items_output {
         /// <p>If a requested item could not be retrieved, the corresponding
         /// <code>ItemResponse</code> object is Null, or if the requested item has no projected
         /// attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
-        pub fn responses(mut self, input: impl Into<crate::model::ItemResponse>) -> Self {
+        pub fn responses(mut self, input: crate::model::ItemResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.responses = Some(v);
             self
         }
@@ -1249,12 +1240,10 @@ pub mod scan_output {
         /// consists of an attribute name and the value for that attribute.</p>
         pub fn items(
             mut self,
-            input: impl Into<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
+            input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         ) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1328,10 +1317,10 @@ pub mod scan_output {
         pub fn last_evaluated_key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.last_evaluated_key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.last_evaluated_key = Some(hash_map);
             self
         }
@@ -1643,12 +1632,10 @@ pub mod query_output {
         /// consists of an attribute name and the value for that attribute.</p>
         pub fn items(
             mut self,
-            input: impl Into<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
+            input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         ) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1722,10 +1709,10 @@ pub mod query_output {
         pub fn last_evaluated_key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.last_evaluated_key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.last_evaluated_key = Some(hash_map);
             self
         }
@@ -1914,10 +1901,10 @@ pub mod put_item_output {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -2079,9 +2066,9 @@ pub mod list_tags_of_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2283,9 +2270,9 @@ pub mod list_global_tables_output {
         /// To override the contents of this collection use [`set_global_tables`](Self::set_global_tables).
         ///
         /// <p>List of global table names.</p>
-        pub fn global_tables(mut self, input: impl Into<crate::model::GlobalTable>) -> Self {
+        pub fn global_tables(mut self, input: crate::model::GlobalTable) -> Self {
             let mut v = self.global_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_tables = Some(v);
             self
         }
@@ -2376,9 +2363,9 @@ pub mod list_exports_output {
         /// To override the contents of this collection use [`set_export_summaries`](Self::set_export_summaries).
         ///
         /// <p>A list of <code>ExportSummary</code> objects.</p>
-        pub fn export_summaries(mut self, input: impl Into<crate::model::ExportSummary>) -> Self {
+        pub fn export_summaries(mut self, input: crate::model::ExportSummary) -> Self {
             let mut v = self.export_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_summaries = Some(v);
             self
         }
@@ -2471,10 +2458,10 @@ pub mod list_contributor_insights_output {
         /// <p>A list of ContributorInsightsSummary.</p>
         pub fn contributor_insights_summaries(
             mut self,
-            input: impl Into<crate::model::ContributorInsightsSummary>,
+            input: crate::model::ContributorInsightsSummary,
         ) -> Self {
             let mut v = self.contributor_insights_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contributor_insights_summaries = Some(v);
             self
         }
@@ -2571,9 +2558,9 @@ pub mod list_backups_output {
         /// To override the contents of this collection use [`set_backup_summaries`](Self::set_backup_summaries).
         ///
         /// <p>List of <code>BackupSummary</code> objects.</p>
-        pub fn backup_summaries(mut self, input: impl Into<crate::model::BackupSummary>) -> Self {
+        pub fn backup_summaries(mut self, input: crate::model::BackupSummary) -> Self {
             let mut v = self.backup_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_summaries = Some(v);
             self
         }
@@ -2696,10 +2683,10 @@ pub mod get_item_output {
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item = Some(hash_map);
             self
         }
@@ -2855,9 +2842,9 @@ pub mod execute_transaction_output {
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
         /// <p>The response to a PartiQL transaction.</p>
-        pub fn responses(mut self, input: impl Into<crate::model::ItemResponse>) -> Self {
+        pub fn responses(mut self, input: crate::model::ItemResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.responses = Some(v);
             self
         }
@@ -2875,12 +2862,9 @@ pub mod execute_transaction_output {
         ///
         /// <p>The capacity units consumed by the entire operation. The values of the list are
         /// ordered according to the ordering of the statements.</p>
-        pub fn consumed_capacity(
-            mut self,
-            input: impl Into<crate::model::ConsumedCapacity>,
-        ) -> Self {
+        pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_capacity = Some(v);
             self
         }
@@ -2989,12 +2973,10 @@ pub mod execute_statement_output {
         /// value will be empty.</p>
         pub fn items(
             mut self,
-            input: impl Into<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-            >,
+            input: std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
         ) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -3659,10 +3641,10 @@ pub mod describe_kinesis_streaming_destination_output {
         /// <p>The list of replica structures for the table being described.</p>
         pub fn kinesis_data_stream_destinations(
             mut self,
-            input: impl Into<crate::model::KinesisDataStreamDestination>,
+            input: crate::model::KinesisDataStreamDestination,
         ) -> Self {
             let mut v = self.kinesis_data_stream_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.kinesis_data_stream_destinations = Some(v);
             self
         }
@@ -3749,12 +3731,9 @@ pub mod describe_global_table_settings_output {
         /// To override the contents of this collection use [`set_replica_settings`](Self::set_replica_settings).
         ///
         /// <p>The Region-specific settings for the global table.</p>
-        pub fn replica_settings(
-            mut self,
-            input: impl Into<crate::model::ReplicaSettingsDescription>,
-        ) -> Self {
+        pub fn replica_settings(mut self, input: crate::model::ReplicaSettingsDescription) -> Self {
             let mut v = self.replica_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_settings = Some(v);
             self
         }
@@ -3936,9 +3915,9 @@ pub mod describe_endpoints_output {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>List of endpoints.</p>
-        pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -4542,10 +4521,10 @@ pub mod delete_item_output {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -5183,10 +5162,10 @@ pub mod batch_write_item_output {
         pub fn unprocessed_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::WriteRequest>>,
+            v: std::vec::Vec<crate::model::WriteRequest>,
         ) -> Self {
             let mut hash_map = self.unprocessed_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.unprocessed_items = Some(hash_map);
             self
         }
@@ -5277,10 +5256,10 @@ pub mod batch_write_item_output {
         pub fn item_collection_metrics(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ItemCollectionMetrics>>,
+            v: std::vec::Vec<crate::model::ItemCollectionMetrics>,
         ) -> Self {
             let mut hash_map = self.item_collection_metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item_collection_metrics = Some(hash_map);
             self
         }
@@ -5336,12 +5315,9 @@ pub mod batch_write_item_output {
         /// <code>CapacityUnits</code> - The total number of capacity units consumed.</p>
         /// </li>
         /// </ul>
-        pub fn consumed_capacity(
-            mut self,
-            input: impl Into<crate::model::ConsumedCapacity>,
-        ) -> Self {
+        pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_capacity = Some(v);
             self
         }
@@ -5552,14 +5528,12 @@ pub mod batch_get_item_output {
         pub fn responses(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<
-                std::vec::Vec<
-                    std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
-                >,
+            v: std::vec::Vec<
+                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
             let mut hash_map = self.responses.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.responses = Some(hash_map);
             self
         }
@@ -5617,10 +5591,10 @@ pub mod batch_get_item_output {
         pub fn unprocessed_keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::KeysAndAttributes>,
+            v: crate::model::KeysAndAttributes,
         ) -> Self {
             let mut hash_map = self.unprocessed_keys.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.unprocessed_keys = Some(hash_map);
             self
         }
@@ -5678,12 +5652,9 @@ pub mod batch_get_item_output {
         /// <code>CapacityUnits</code> - The total number of capacity units consumed.</p>
         /// </li>
         /// </ul>
-        pub fn consumed_capacity(
-            mut self,
-            input: impl Into<crate::model::ConsumedCapacity>,
-        ) -> Self {
+        pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_capacity = Some(v);
             self
         }
@@ -5771,9 +5742,9 @@ pub mod batch_execute_statement_output {
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
         /// <p>The response to each PartiQL statement in the batch.</p>
-        pub fn responses(mut self, input: impl Into<crate::model::BatchStatementResponse>) -> Self {
+        pub fn responses(mut self, input: crate::model::BatchStatementResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.responses = Some(v);
             self
         }
@@ -5791,12 +5762,9 @@ pub mod batch_execute_statement_output {
         ///
         /// <p>The capacity units consumed by the entire operation. The values of the list are
         /// ordered according to the ordering of the statements.</p>
-        pub fn consumed_capacity(
-            mut self,
-            input: impl Into<crate::model::ConsumedCapacity>,
-        ) -> Self {
+        pub fn consumed_capacity(mut self, input: crate::model::ConsumedCapacity) -> Self {
             let mut v = self.consumed_capacity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_capacity = Some(v);
             self
         }

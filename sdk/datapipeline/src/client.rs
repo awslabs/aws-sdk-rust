@@ -319,8 +319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -333,8 +333,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-        pub fn parameter_values(mut self, inp: impl Into<crate::model::ParameterValue>) -> Self {
-            self.inner = self.inner.parameter_values(inp);
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
+            self.inner = self.inner.parameter_values(input);
             self
         }
         /// <p>A list of parameter values to pass to the pipeline at activation.</p>
@@ -346,8 +346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-        pub fn start_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_timestamp(inp);
+        pub fn start_timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_timestamp(signature);
             self
         }
         /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
@@ -419,8 +419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -433,8 +433,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add, as key/value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add, as key/value pairs.</p>
@@ -537,8 +537,8 @@ pub mod fluent_builders {
         }
         /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
         /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
@@ -555,8 +555,8 @@ pub mod fluent_builders {
         /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
         /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
         /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
-        pub fn unique_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_id(inp);
+        pub fn unique_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_id(signature.into());
             self
         }
         /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
@@ -572,8 +572,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the pipeline.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description for the pipeline.</p>
@@ -588,8 +588,8 @@ pub mod fluent_builders {
         /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
         /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
         /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
@@ -666,8 +666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -679,8 +679,8 @@ pub mod fluent_builders {
         /// which sets the state of any running objects to <code>CANCELED</code>.
         /// If this value is false, the pipeline is deactivated after all
         /// running objects finish.</p>
-        pub fn cancel_active(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cancel_active(inp);
+        pub fn cancel_active(mut self, signature: bool) -> Self {
+            self.inner = self.inner.cancel_active(signature);
             self
         }
         /// <p>Indicates whether to cancel any running objects. The default is true,
@@ -783,8 +783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -911,8 +911,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline that contains the object definitions.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline that contains the object definitions.</p>
@@ -925,8 +925,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
         ///
         /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-        pub fn object_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_ids(inp);
+        pub fn object_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_ids(input.into());
             self
         }
         /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
@@ -938,8 +938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
-        pub fn evaluate_expressions(mut self, inp: bool) -> Self {
-            self.inner = self.inner.evaluate_expressions(inp);
+        pub fn evaluate_expressions(mut self, signature: bool) -> Self {
+            self.inner = self.inner.evaluate_expressions(signature);
             self
         }
         /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
@@ -950,8 +950,8 @@ pub mod fluent_builders {
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
         /// As long as there are more results, continue to call <code>DescribeObjects</code> with
         /// the marker value from the previous call to retrieve the next set of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
@@ -1088,8 +1088,8 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
         /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
-        pub fn pipeline_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_ids(inp);
+        pub fn pipeline_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_ids(input.into());
             self
         }
         /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
@@ -1192,8 +1192,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -1202,8 +1202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the object.</p>
-        pub fn object_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_id(inp);
+        pub fn object_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_id(signature.into());
             self
         }
         /// <p>The ID of the object.</p>
@@ -1212,8 +1212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The expression to evaluate.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(signature.into());
             self
         }
         /// <p>The expression to evaluate.</p>
@@ -1346,8 +1346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -1358,8 +1358,8 @@ pub mod fluent_builders {
         /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
         /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
         /// that was activated.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
@@ -1463,8 +1463,8 @@ pub mod fluent_builders {
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
         /// As long as there are more results, continue to call <code>ListPipelines</code> with
         /// the marker value from the previous call to retrieve the next set of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
@@ -1615,8 +1615,8 @@ pub mod fluent_builders {
         /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
         /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
         /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-        pub fn worker_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_group(inp);
+        pub fn worker_group(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_group(signature.into());
             self
         }
         /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
@@ -1627,8 +1627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The public DNS name of the calling task runner.</p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(signature.into());
             self
         }
         /// <p>The public DNS name of the calling task runner.</p>
@@ -1637,8 +1637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
-        pub fn instance_identity(mut self, inp: crate::model::InstanceIdentity) -> Self {
-            self.inner = self.inner.instance_identity(inp);
+        pub fn instance_identity(mut self, signature: crate::model::InstanceIdentity) -> Self {
+            self.inner = self.inner.instance_identity(signature);
             self
         }
         /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
@@ -1869,8 +1869,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -1883,8 +1883,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
         ///
         /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-        pub fn pipeline_objects(mut self, inp: impl Into<crate::model::PipelineObject>) -> Self {
-            self.inner = self.inner.pipeline_objects(inp);
+        pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
+            self.inner = self.inner.pipeline_objects(input);
             self
         }
         /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
@@ -1900,8 +1900,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
         ///
         /// <p>The parameter objects used with the pipeline.</p>
-        pub fn parameter_objects(mut self, inp: impl Into<crate::model::ParameterObject>) -> Self {
-            self.inner = self.inner.parameter_objects(inp);
+        pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
+            self.inner = self.inner.parameter_objects(input);
             self
         }
         /// <p>The parameter objects used with the pipeline.</p>
@@ -1917,8 +1917,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>The parameter values used with the pipeline.</p>
-        pub fn parameter_values(mut self, inp: impl Into<crate::model::ParameterValue>) -> Self {
-            self.inner = self.inner.parameter_values(inp);
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
+            self.inner = self.inner.parameter_values(input);
             self
         }
         /// <p>The parameter values used with the pipeline.</p>
@@ -2028,8 +2028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -2040,8 +2040,8 @@ pub mod fluent_builders {
         /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
         /// The conditions in the query are limited to top-level String fields in the object.
         /// These filters can be applied to components, instances, and attempts.</p>
-        pub fn query(mut self, inp: crate::model::Query) -> Self {
-            self.inner = self.inner.query(inp);
+        pub fn query(mut self, signature: crate::model::Query) -> Self {
+            self.inner = self.inner.query(signature);
             self
         }
         /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
@@ -2053,8 +2053,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the query applies to components or instances. The possible values are:  
         /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
-        pub fn sphere(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sphere(inp);
+        pub fn sphere(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sphere(signature.into());
             self
         }
         /// <p>Indicates whether the query applies to components or instances. The possible values are:  
@@ -2066,8 +2066,8 @@ pub mod fluent_builders {
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
         /// As long as there are more results, continue to call <code>QueryObjects</code> with
         /// the marker value from the previous call to retrieve the next set of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
@@ -2078,8 +2078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
@@ -2148,8 +2148,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -2162,8 +2162,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to remove.</p>
@@ -2272,8 +2272,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
@@ -2286,8 +2286,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-        pub fn fields(mut self, inp: impl Into<crate::model::Field>) -> Self {
-            self.inner = self.inner.fields(inp);
+        pub fn fields(mut self, input: crate::model::Field) -> Self {
+            self.inner = self.inner.fields(input);
             self
         }
         /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
@@ -2393,8 +2393,8 @@ pub mod fluent_builders {
         /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
         /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
         /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-        pub fn taskrunner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.taskrunner_id(inp);
+        pub fn taskrunner_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.taskrunner_id(signature.into());
             self
         }
         /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
@@ -2410,8 +2410,8 @@ pub mod fluent_builders {
         /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
         /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
         /// must be an exact, case-sensitive, match.</p>
-        pub fn worker_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_group(inp);
+        pub fn worker_group(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_group(signature.into());
             self
         }
         /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
@@ -2422,8 +2422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The public DNS name of the task runner.</p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(signature.into());
             self
         }
         /// <p>The public DNS name of the task runner.</p>
@@ -2524,8 +2524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline that contains the objects.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline that contains the objects.</p>
@@ -2538,8 +2538,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
         ///
         /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-        pub fn object_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_ids(inp);
+        pub fn object_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_ids(input.into());
             self
         }
         /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
@@ -2552,8 +2552,8 @@ pub mod fluent_builders {
         }
         /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
         /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(signature.into());
             self
         }
         /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
@@ -2653,8 +2653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
@@ -2663,8 +2663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-        pub fn task_status(mut self, inp: crate::model::TaskStatus) -> Self {
-            self.inner = self.inner.task_status(inp);
+        pub fn task_status(mut self, signature: crate::model::TaskStatus) -> Self {
+            self.inner = self.inner.task_status(signature);
             self
         }
         /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
@@ -2677,8 +2677,8 @@ pub mod fluent_builders {
         }
         /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
         /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
-        pub fn error_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error_id(inp);
+        pub fn error_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error_id(signature.into());
             self
         }
         /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
@@ -2689,8 +2689,8 @@ pub mod fluent_builders {
         }
         /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
         /// It is used to display error information to the user. The web service does not parse this value.</p>
-        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error_message(inp);
+        pub fn error_message(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error_message(signature.into());
             self
         }
         /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
@@ -2704,8 +2704,8 @@ pub mod fluent_builders {
         }
         /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
         /// It is used to display error information to the user. The web service does not parse this value.</p>
-        pub fn error_stack_trace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error_stack_trace(inp);
+        pub fn error_stack_trace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error_stack_trace(signature.into());
             self
         }
         /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
@@ -2929,8 +2929,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -2943,8 +2943,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
         ///
         /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-        pub fn pipeline_objects(mut self, inp: impl Into<crate::model::PipelineObject>) -> Self {
-            self.inner = self.inner.pipeline_objects(inp);
+        pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
+            self.inner = self.inner.pipeline_objects(input);
             self
         }
         /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
@@ -2960,8 +2960,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
         ///
         /// <p>The parameter objects used with the pipeline.</p>
-        pub fn parameter_objects(mut self, inp: impl Into<crate::model::ParameterObject>) -> Self {
-            self.inner = self.inner.parameter_objects(inp);
+        pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
+            self.inner = self.inner.parameter_objects(input);
             self
         }
         /// <p>The parameter objects used with the pipeline.</p>
@@ -2977,8 +2977,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>The parameter values used with the pipeline.</p>
-        pub fn parameter_values(mut self, inp: impl Into<crate::model::ParameterValue>) -> Self {
-            self.inner = self.inner.parameter_values(inp);
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
+            self.inner = self.inner.parameter_values(input);
             self
         }
         /// <p>The parameter values used with the pipeline.</p>

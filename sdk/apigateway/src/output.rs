@@ -338,9 +338,9 @@ pub mod update_usage_plan_output {
         /// To override the contents of this collection use [`set_api_stages`](Self::set_api_stages).
         ///
         /// <p>The associated API stages of a usage plan.</p>
-        pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
+        pub fn api_stages(mut self, input: crate::model::ApiStage) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.api_stages = Some(v);
             self
         }
@@ -550,10 +550,10 @@ pub mod update_usage_output {
         pub fn items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::vec::Vec<i64>>>,
+            v: std::vec::Vec<std::vec::Vec<i64>>,
         ) -> Self {
             let mut hash_map = self.items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.items = Some(hash_map);
             self
         }
@@ -868,10 +868,10 @@ pub mod update_stage_output {
         pub fn method_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MethodSetting>,
+            v: crate::model::MethodSetting,
         ) -> Self {
             let mut hash_map = self.method_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.method_settings = Some(hash_map);
             self
         }
@@ -1971,10 +1971,10 @@ pub mod update_resource_output {
         pub fn resource_methods(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Method>,
+            v: crate::model::Method,
         ) -> Self {
             let mut hash_map = self.resource_methods.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.resource_methods = Some(hash_map);
             self
         }
@@ -2528,13 +2528,9 @@ pub mod update_method_response_output {
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
         /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-        pub fn response_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<bool>,
-        ) -> Self {
+        pub fn response_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -3225,13 +3221,9 @@ pub mod update_method_output {
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
         /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
-        pub fn request_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<bool>,
-        ) -> Self {
+        pub fn request_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -3322,10 +3314,10 @@ pub mod update_method_output {
         pub fn method_responses(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MethodResponse>,
+            v: crate::model::MethodResponse,
         ) -> Self {
             let mut hash_map = self.method_responses.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.method_responses = Some(hash_map);
             self
         }
@@ -4481,10 +4473,10 @@ pub mod update_integration_output {
         pub fn integration_responses(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::IntegrationResponse>,
+            v: crate::model::IntegrationResponse,
         ) -> Self {
             let mut hash_map = self.integration_responses.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.integration_responses = Some(hash_map);
             self
         }
@@ -5590,10 +5582,10 @@ pub mod update_deployment_output {
         pub fn api_summary(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>>,
+            v: std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
         ) -> Self {
             let mut hash_map = self.api_summary.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.api_summary = Some(hash_map);
             self
         }
@@ -6785,10 +6777,10 @@ pub mod test_invoke_method_output {
         pub fn multi_value_headers(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.multi_value_headers.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.multi_value_headers = Some(hash_map);
             self
         }
@@ -6990,10 +6982,10 @@ pub mod test_invoke_authorizer_output {
         pub fn authorization(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.authorization.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.authorization = Some(hash_map);
             self
         }
@@ -7541,13 +7533,9 @@ pub mod put_method_response_output {
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
         /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-        pub fn response_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<bool>,
-        ) -> Self {
+        pub fn response_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -8238,13 +8226,9 @@ pub mod put_method_output {
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
         /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
-        pub fn request_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<bool>,
-        ) -> Self {
+        pub fn request_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -8335,10 +8319,10 @@ pub mod put_method_output {
         pub fn method_responses(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MethodResponse>,
+            v: crate::model::MethodResponse,
         ) -> Self {
             let mut hash_map = self.method_responses.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.method_responses = Some(hash_map);
             self
         }
@@ -9494,10 +9478,10 @@ pub mod put_integration_output {
         pub fn integration_responses(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::IntegrationResponse>,
+            v: crate::model::IntegrationResponse,
         ) -> Self {
             let mut hash_map = self.integration_responses.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.integration_responses = Some(hash_map);
             self
         }
@@ -10405,9 +10389,9 @@ pub mod get_vpc_links_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::VpcLink>) -> Self {
+        pub fn items(mut self, input: crate::model::VpcLink) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -10697,9 +10681,9 @@ pub mod get_usage_plans_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::UsagePlan>) -> Self {
+        pub fn items(mut self, input: crate::model::UsagePlan) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -10782,9 +10766,9 @@ pub mod get_usage_plan_keys_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::UsagePlanKey>) -> Self {
+        pub fn items(mut self, input: crate::model::UsagePlanKey) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -11071,9 +11055,9 @@ pub mod get_usage_plan_output {
         /// To override the contents of this collection use [`set_api_stages`](Self::set_api_stages).
         ///
         /// <p>The associated API stages of a usage plan.</p>
-        pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
+        pub fn api_stages(mut self, input: crate::model::ApiStage) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.api_stages = Some(v);
             self
         }
@@ -11283,10 +11267,10 @@ pub mod get_usage_output {
         pub fn items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::vec::Vec<i64>>>,
+            v: std::vec::Vec<std::vec::Vec<i64>>,
         ) -> Self {
             let mut hash_map = self.items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.items = Some(hash_map);
             self
         }
@@ -11437,9 +11421,9 @@ pub mod get_stages_output {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn item(mut self, input: impl Into<crate::model::Stage>) -> Self {
+        pub fn item(mut self, input: crate::model::Stage) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -11736,10 +11720,10 @@ pub mod get_stage_output {
         pub fn method_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MethodSetting>,
+            v: crate::model::MethodSetting,
         ) -> Self {
             let mut hash_map = self.method_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.method_settings = Some(hash_map);
             self
         }
@@ -11955,9 +11939,9 @@ pub mod get_sdk_types_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::SdkType>) -> Self {
+        pub fn items(mut self, input: crate::model::SdkType) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -12079,10 +12063,10 @@ pub mod get_sdk_type_output {
         /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
         pub fn configuration_properties(
             mut self,
-            input: impl Into<crate::model::SdkConfigurationProperty>,
+            input: crate::model::SdkConfigurationProperty,
         ) -> Self {
             let mut v = self.configuration_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_properties = Some(v);
             self
         }
@@ -12252,9 +12236,9 @@ pub mod get_rest_apis_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RestApi>) -> Self {
+        pub fn items(mut self, input: crate::model::RestApi) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -12681,9 +12665,9 @@ pub mod get_resources_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn items(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -13295,10 +13279,10 @@ pub mod get_resource_output {
         pub fn resource_methods(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Method>,
+            v: crate::model::Method,
         ) -> Self {
             let mut hash_map = self.resource_methods.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.resource_methods = Some(hash_map);
             self
         }
@@ -13529,9 +13513,9 @@ pub mod get_request_validators_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RequestValidator>) -> Self {
+        pub fn items(mut self, input: crate::model::RequestValidator) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -13787,9 +13771,9 @@ pub mod get_models_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Model>) -> Self {
+        pub fn items(mut self, input: crate::model::Model) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -14078,13 +14062,9 @@ pub mod get_method_response_output {
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
         /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-        pub fn response_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<bool>,
-        ) -> Self {
+        pub fn response_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -14775,13 +14755,9 @@ pub mod get_method_output {
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
         /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
-        pub fn request_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<bool>,
-        ) -> Self {
+        pub fn request_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -14872,10 +14848,10 @@ pub mod get_method_output {
         pub fn method_responses(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MethodResponse>,
+            v: crate::model::MethodResponse,
         ) -> Self {
             let mut hash_map = self.method_responses.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.method_responses = Some(hash_map);
             self
         }
@@ -16031,10 +16007,10 @@ pub mod get_integration_output {
         pub fn integration_responses(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::IntegrationResponse>,
+            v: crate::model::IntegrationResponse,
         ) -> Self {
             let mut hash_map = self.integration_responses.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.integration_responses = Some(hash_map);
             self
         }
@@ -16702,9 +16678,9 @@ pub mod get_gateway_responses_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Returns the entire collection, because of no pagination support.</p>
-        pub fn items(mut self, input: impl Into<crate::model::GatewayResponse>) -> Self {
+        pub fn items(mut self, input: crate::model::GatewayResponse) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -17114,9 +17090,9 @@ pub mod get_domain_names_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DomainName>) -> Self {
+        pub fn items(mut self, input: crate::model::DomainName) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -17657,9 +17633,9 @@ pub mod get_documentation_versions_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DocumentationVersion>) -> Self {
+        pub fn items(mut self, input: crate::model::DocumentationVersion) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -17842,9 +17818,9 @@ pub mod get_documentation_parts_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DocumentationPart>) -> Self {
+        pub fn items(mut self, input: crate::model::DocumentationPart) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -18032,9 +18008,9 @@ pub mod get_deployments_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Deployment>) -> Self {
+        pub fn items(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -18189,10 +18165,10 @@ pub mod get_deployment_output {
         pub fn api_summary(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>>,
+            v: std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
         ) -> Self {
             let mut hash_map = self.api_summary.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.api_summary = Some(hash_map);
             self
         }
@@ -18272,9 +18248,9 @@ pub mod get_client_certificates_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ClientCertificate>) -> Self {
+        pub fn items(mut self, input: crate::model::ClientCertificate) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -18543,9 +18519,9 @@ pub mod get_base_path_mappings_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::BasePathMapping>) -> Self {
+        pub fn items(mut self, input: crate::model::BasePathMapping) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -18725,9 +18701,9 @@ pub mod get_authorizers_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Authorizer>) -> Self {
+        pub fn items(mut self, input: crate::model::Authorizer) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -19102,9 +19078,9 @@ pub mod get_api_keys_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The current page of elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ApiKey>) -> Self {
+        pub fn items(mut self, input: crate::model::ApiKey) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -20916,9 +20892,9 @@ pub mod create_usage_plan_output {
         /// To override the contents of this collection use [`set_api_stages`](Self::set_api_stages).
         ///
         /// <p>The associated API stages of a usage plan.</p>
-        pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
+        pub fn api_stages(mut self, input: crate::model::ApiStage) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.api_stages = Some(v);
             self
         }
@@ -21285,10 +21261,10 @@ pub mod create_stage_output {
         pub fn method_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MethodSetting>,
+            v: crate::model::MethodSetting,
         ) -> Self {
             let mut hash_map = self.method_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.method_settings = Some(hash_map);
             self
         }
@@ -22388,10 +22364,10 @@ pub mod create_resource_output {
         pub fn resource_methods(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Method>,
+            v: crate::model::Method,
         ) -> Self {
             let mut hash_map = self.resource_methods.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.resource_methods = Some(hash_map);
             self
         }
@@ -23605,10 +23581,10 @@ pub mod create_deployment_output {
         pub fn api_summary(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>>,
+            v: std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
         ) -> Self {
             let mut hash_map = self.api_summary.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.api_summary = Some(hash_map);
             self
         }

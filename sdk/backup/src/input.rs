@@ -713,12 +713,9 @@ pub mod create_framework_input {
         ///
         /// <p>A list of the controls that make up the framework. Each control in the list has a name,
         /// input parameters, and scope.</p>
-        pub fn framework_controls(
-            mut self,
-            input: impl Into<crate::model::FrameworkControl>,
-        ) -> Self {
+        pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
             let mut v = self.framework_controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.framework_controls = Some(v);
             self
         }
@@ -10126,12 +10123,9 @@ pub mod put_backup_vault_notifications_input {
         /// <p>Ignore the list below because it includes deprecated events. Refer to the list
         /// above.</p>
         /// </note>
-        pub fn backup_vault_events(
-            mut self,
-            input: impl Into<crate::model::BackupVaultEvent>,
-        ) -> Self {
+        pub fn backup_vault_events(mut self, input: crate::model::BackupVaultEvent) -> Self {
             let mut v = self.backup_vault_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_vault_events = Some(v);
             self
         }
@@ -12279,12 +12273,9 @@ pub mod update_framework_input {
         ///
         /// <p>A list of the controls that make up the framework. Each control in the list has a name,
         /// input parameters, and scope.</p>
-        pub fn framework_controls(
-            mut self,
-            input: impl Into<crate::model::FrameworkControl>,
-        ) -> Self {
+        pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
             let mut v = self.framework_controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.framework_controls = Some(v);
             self
         }
@@ -12903,10 +12894,10 @@ pub mod update_region_settings_input {
         pub fn resource_type_opt_in_preference(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<bool>,
+            v: bool,
         ) -> Self {
             let mut hash_map = self.resource_type_opt_in_preference.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.resource_type_opt_in_preference = Some(hash_map);
             self
         }
@@ -12929,10 +12920,10 @@ pub mod update_region_settings_input {
         pub fn resource_type_management_preference(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<bool>,
+            v: bool,
         ) -> Self {
             let mut hash_map = self.resource_type_management_preference.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.resource_type_management_preference = Some(hash_map);
             self
         }

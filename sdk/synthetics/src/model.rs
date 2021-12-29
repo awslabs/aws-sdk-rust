@@ -298,9 +298,9 @@ pub mod visual_reference_input {
         ///
         /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for
         /// visual monitoring, remove it from this array.</p>
-        pub fn base_screenshots(mut self, input: impl Into<crate::model::BaseScreenshot>) -> Self {
+        pub fn base_screenshots(mut self, input: crate::model::BaseScreenshot) -> Self {
             let mut v = self.base_screenshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.base_screenshots = Some(v);
             self
         }
@@ -2042,9 +2042,9 @@ pub mod visual_reference_output {
         /// To override the contents of this collection use [`set_base_screenshots`](Self::set_base_screenshots).
         ///
         /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
-        pub fn base_screenshots(mut self, input: impl Into<crate::model::BaseScreenshot>) -> Self {
+        pub fn base_screenshots(mut self, input: crate::model::BaseScreenshot) -> Self {
             let mut v = self.base_screenshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.base_screenshots = Some(v);
             self
         }

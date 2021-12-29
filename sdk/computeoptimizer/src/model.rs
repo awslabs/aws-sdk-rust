@@ -565,9 +565,9 @@ pub mod recommendation_summary {
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
         /// <p>An array of objects that describe a recommendation summary.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::Summary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::Summary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -1158,12 +1158,9 @@ pub mod summary {
         /// To override the contents of this collection use [`set_reason_code_summaries`](Self::set_reason_code_summaries).
         ///
         /// <p>An array of objects that summarize a finding reason code.</p>
-        pub fn reason_code_summaries(
-            mut self,
-            input: impl Into<crate::model::ReasonCodeSummary>,
-        ) -> Self {
+        pub fn reason_code_summaries(mut self, input: crate::model::ReasonCodeSummary) -> Self {
             let mut v = self.reason_code_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reason_code_summaries = Some(v);
             self
         }
@@ -1931,10 +1928,10 @@ pub mod lambda_function_recommendation {
         /// <p>An array of objects that describe the utilization metrics of the function.</p>
         pub fn utilization_metrics(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionUtilizationMetric>,
+            input: crate::model::LambdaFunctionUtilizationMetric,
         ) -> Self {
             let mut v = self.utilization_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.utilization_metrics = Some(v);
             self
         }
@@ -2125,10 +2122,10 @@ pub mod lambda_function_recommendation {
         /// </ul>
         pub fn finding_reason_codes(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionRecommendationFindingReasonCode>,
+            input: crate::model::LambdaFunctionRecommendationFindingReasonCode,
         ) -> Self {
             let mut v = self.finding_reason_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_reason_codes = Some(v);
             self
         }
@@ -2198,10 +2195,10 @@ pub mod lambda_function_recommendation {
         /// the function.</p>
         pub fn memory_size_recommendation_options(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionMemoryRecommendationOption>,
+            input: crate::model::LambdaFunctionMemoryRecommendationOption,
         ) -> Self {
             let mut v = self.memory_size_recommendation_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.memory_size_recommendation_options = Some(v);
             self
         }
@@ -2423,10 +2420,10 @@ pub mod lambda_function_memory_recommendation_option {
         /// recommendation option.</p>
         pub fn projected_utilization_metrics(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionMemoryProjectedMetric>,
+            input: crate::model::LambdaFunctionMemoryProjectedMetric,
         ) -> Self {
             let mut v = self.projected_utilization_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projected_utilization_metrics = Some(v);
             self
         }
@@ -3727,12 +3724,9 @@ pub mod recommended_option_projected_metric {
         /// To override the contents of this collection use [`set_projected_metrics`](Self::set_projected_metrics).
         ///
         /// <p>An array of objects that describe a projected utilization metric.</p>
-        pub fn projected_metrics(
-            mut self,
-            input: impl Into<crate::model::ProjectedMetric>,
-        ) -> Self {
+        pub fn projected_metrics(mut self, input: crate::model::ProjectedMetric) -> Self {
             let mut v = self.projected_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projected_metrics = Some(v);
             self
         }
@@ -3944,9 +3938,9 @@ pub mod projected_metric {
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
         /// <p>The timestamps of the projected utilization metric.</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timestamps = Some(v);
             self
         }
@@ -3963,9 +3957,9 @@ pub mod projected_metric {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values of the projected utilization metrics.</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -4194,10 +4188,10 @@ pub mod recommendation_preferences {
         /// </ul>
         pub fn cpu_vendor_architectures(
             mut self,
-            input: impl Into<crate::model::CpuVendorArchitecture>,
+            input: crate::model::CpuVendorArchitecture,
         ) -> Self {
             let mut v = self.cpu_vendor_architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cpu_vendor_architectures = Some(v);
             self
         }
@@ -5382,10 +5376,10 @@ pub mod instance_recommendation {
         /// </note>
         pub fn finding_reason_codes(
             mut self,
-            input: impl Into<crate::model::InstanceRecommendationFindingReasonCode>,
+            input: crate::model::InstanceRecommendationFindingReasonCode,
         ) -> Self {
             let mut v = self.finding_reason_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_reason_codes = Some(v);
             self
         }
@@ -5598,12 +5592,9 @@ pub mod instance_recommendation {
         /// To override the contents of this collection use [`set_utilization_metrics`](Self::set_utilization_metrics).
         ///
         /// <p>An array of objects that describe the utilization metrics of the instance.</p>
-        pub fn utilization_metrics(
-            mut self,
-            input: impl Into<crate::model::UtilizationMetric>,
-        ) -> Self {
+        pub fn utilization_metrics(mut self, input: crate::model::UtilizationMetric) -> Self {
             let mut v = self.utilization_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.utilization_metrics = Some(v);
             self
         }
@@ -5634,10 +5625,10 @@ pub mod instance_recommendation {
         /// <p>An array of objects that describe the recommendation options for the instance.</p>
         pub fn recommendation_options(
             mut self,
-            input: impl Into<crate::model::InstanceRecommendationOption>,
+            input: crate::model::InstanceRecommendationOption,
         ) -> Self {
             let mut v = self.recommendation_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_options = Some(v);
             self
         }
@@ -5654,12 +5645,9 @@ pub mod instance_recommendation {
         /// To override the contents of this collection use [`set_recommendation_sources`](Self::set_recommendation_sources).
         ///
         /// <p>An array of objects that describe the source resource of the recommendation.</p>
-        pub fn recommendation_sources(
-            mut self,
-            input: impl Into<crate::model::RecommendationSource>,
-        ) -> Self {
+        pub fn recommendation_sources(mut self, input: crate::model::RecommendationSource) -> Self {
             let mut v = self.recommendation_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_sources = Some(v);
             self
         }
@@ -5860,10 +5848,10 @@ pub mod effective_recommendation_preferences {
         /// </ul>
         pub fn cpu_vendor_architectures(
             mut self,
-            input: impl Into<crate::model::CpuVendorArchitecture>,
+            input: crate::model::CpuVendorArchitecture,
         ) -> Self {
             let mut v = self.cpu_vendor_architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cpu_vendor_architectures = Some(v);
             self
         }
@@ -6363,10 +6351,10 @@ pub mod instance_recommendation_option {
         /// </note>
         pub fn projected_utilization_metrics(
             mut self,
-            input: impl Into<crate::model::UtilizationMetric>,
+            input: crate::model::UtilizationMetric,
         ) -> Self {
             let mut v = self.projected_utilization_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projected_utilization_metrics = Some(v);
             self
         }
@@ -6486,12 +6474,9 @@ pub mod instance_recommendation_option {
         /// about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
         /// </li>
         /// </ul>
-        pub fn platform_differences(
-            mut self,
-            input: impl Into<crate::model::PlatformDifference>,
-        ) -> Self {
+        pub fn platform_differences(mut self, input: crate::model::PlatformDifference) -> Self {
             let mut v = self.platform_differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_differences = Some(v);
             self
         }
@@ -8599,12 +8584,9 @@ pub mod volume_recommendation {
         /// To override the contents of this collection use [`set_utilization_metrics`](Self::set_utilization_metrics).
         ///
         /// <p>An array of objects that describe the utilization metrics of the volume.</p>
-        pub fn utilization_metrics(
-            mut self,
-            input: impl Into<crate::model::EbsUtilizationMetric>,
-        ) -> Self {
+        pub fn utilization_metrics(mut self, input: crate::model::EbsUtilizationMetric) -> Self {
             let mut v = self.utilization_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.utilization_metrics = Some(v);
             self
         }
@@ -8633,10 +8615,10 @@ pub mod volume_recommendation {
         /// <p>An array of objects that describe the recommendation options for the volume.</p>
         pub fn volume_recommendation_options(
             mut self,
-            input: impl Into<crate::model::VolumeRecommendationOption>,
+            input: crate::model::VolumeRecommendationOption,
         ) -> Self {
             let mut v = self.volume_recommendation_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_recommendation_options = Some(v);
             self
         }
@@ -9825,12 +9807,9 @@ pub mod auto_scaling_group_recommendation {
         ///
         /// <p>An array of objects that describe the utilization metrics of the Auto Scaling
         /// group.</p>
-        pub fn utilization_metrics(
-            mut self,
-            input: impl Into<crate::model::UtilizationMetric>,
-        ) -> Self {
+        pub fn utilization_metrics(mut self, input: crate::model::UtilizationMetric) -> Self {
             let mut v = self.utilization_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.utilization_metrics = Some(v);
             self
         }
@@ -9879,10 +9858,10 @@ pub mod auto_scaling_group_recommendation {
         /// group.</p>
         pub fn recommendation_options(
             mut self,
-            input: impl Into<crate::model::AutoScalingGroupRecommendationOption>,
+            input: crate::model::AutoScalingGroupRecommendationOption,
         ) -> Self {
             let mut v = self.recommendation_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_options = Some(v);
             self
         }
@@ -10118,10 +10097,10 @@ pub mod auto_scaling_group_recommendation_option {
         /// </note>
         pub fn projected_utilization_metrics(
             mut self,
-            input: impl Into<crate::model::UtilizationMetric>,
+            input: crate::model::UtilizationMetric,
         ) -> Self {
             let mut v = self.projected_utilization_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projected_utilization_metrics = Some(v);
             self
         }

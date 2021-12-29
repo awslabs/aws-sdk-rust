@@ -2191,12 +2191,9 @@ pub mod time_series {
         /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
         ///
         /// <p>The dimensions of the metric.</p>
-        pub fn dimension_list(
-            mut self,
-            input: impl Into<crate::model::DimensionNameValue>,
-        ) -> Self {
+        pub fn dimension_list(mut self, input: crate::model::DimensionNameValue) -> Self {
             let mut v = self.dimension_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_list = Some(v);
             self
         }
@@ -2213,9 +2210,9 @@ pub mod time_series {
         /// To override the contents of this collection use [`set_metric_value_list`](Self::set_metric_value_list).
         ///
         /// <p>The values for the metric.</p>
-        pub fn metric_value_list(mut self, input: impl Into<f64>) -> Self {
+        pub fn metric_value_list(mut self, input: f64) -> Self {
             let mut v = self.metric_value_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_value_list = Some(v);
             self
         }
@@ -2405,10 +2402,10 @@ pub mod anomaly_group_statistics {
         /// <p>Statistics for individual metrics within the group.</p>
         pub fn itemized_metric_stats_list(
             mut self,
-            input: impl Into<crate::model::ItemizedMetricStats>,
+            input: crate::model::ItemizedMetricStats,
         ) -> Self {
             let mut v = self.itemized_metric_stats_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.itemized_metric_stats_list = Some(v);
             self
         }
@@ -3731,12 +3728,9 @@ pub mod anomaly_group {
         /// To override the contents of this collection use [`set_metric_level_impact_list`](Self::set_metric_level_impact_list).
         ///
         /// <p>A list of measures affected by the anomaly.</p>
-        pub fn metric_level_impact_list(
-            mut self,
-            input: impl Into<crate::model::MetricLevelImpact>,
-        ) -> Self {
+        pub fn metric_level_impact_list(mut self, input: crate::model::MetricLevelImpact) -> Self {
             let mut v = self.metric_level_impact_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_level_impact_list = Some(v);
             self
         }
@@ -3906,10 +3900,10 @@ pub mod contribution_matrix {
         /// <p>A list of contributing dimensions.</p>
         pub fn dimension_contribution_list(
             mut self,
-            input: impl Into<crate::model::DimensionContribution>,
+            input: crate::model::DimensionContribution,
         ) -> Self {
             let mut v = self.dimension_contribution_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_contribution_list = Some(v);
             self
         }
@@ -4000,10 +3994,10 @@ pub mod dimension_contribution {
         /// <p>A list of dimension values that contributed to the anomaly.</p>
         pub fn dimension_value_contribution_list(
             mut self,
-            input: impl Into<crate::model::DimensionValueContribution>,
+            input: crate::model::DimensionValueContribution,
         ) -> Self {
             let mut v = self.dimension_value_contribution_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_value_contribution_list = Some(v);
             self
         }

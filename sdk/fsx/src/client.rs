@@ -457,8 +457,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -472,8 +472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
@@ -509,8 +509,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
         /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-        pub fn aliases(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aliases(inp);
+        pub fn aliases(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aliases(input.into());
             self
         }
         /// <p>An array of one or more DNS alias names to associate with the file system.
@@ -614,8 +614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the data repository task to cancel.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>Specifies the data repository task to cancel.</p>
@@ -706,8 +706,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -721,8 +721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
-        pub fn source_backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_backup_id(inp);
+        pub fn source_backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_backup_id(signature.into());
             self
         }
         /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
@@ -737,8 +737,8 @@ pub mod fluent_builders {
         /// Regions must be in the same Amazon Web Services partition. If you don't specify a
         /// Region, <code>SourceRegion</code> defaults to the Region where the request is sent from
         /// (in-Region copy).</p>
-        pub fn source_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_region(inp);
+        pub fn source_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_region(signature.into());
             self
         }
         /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination
@@ -759,8 +759,8 @@ pub mod fluent_builders {
         /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
         /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
         /// in the <i>Key Management Service API Reference</i>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
@@ -781,8 +781,8 @@ pub mod fluent_builders {
         /// of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are
         /// merged. If there are tag conflicts (for example, two tags with the same key but different
         /// values), the tags created with the <code>Tags</code> parameter take precedence.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags(inp);
+        pub fn copy_tags(mut self, signature: bool) -> Self {
+            self.inner = self.inner.copy_tags(signature);
             self
         }
         /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the
@@ -801,8 +801,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -931,8 +931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system to back up.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system to back up.</p>
@@ -946,8 +946,8 @@ pub mod fluent_builders {
         /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
         /// ensure idempotent creation. This string is automatically filled on your behalf when you
         /// use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
@@ -969,8 +969,8 @@ pub mod fluent_builders {
         /// <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more
         /// tags using the <code>CreateBackup</code> operation, no existing file system tags are
         /// copied from the file system to the backup.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the
@@ -986,8 +986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(signature.into());
             self
         }
         /// <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
@@ -1066,8 +1066,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -1089,8 +1089,8 @@ pub mod fluent_builders {
         /// <p>This path specifies where in your file system files will be exported
         /// from or imported to. This file system directory can be linked to only one
         /// Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
-        pub fn file_system_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_path(inp);
+        pub fn file_system_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_path(signature.into());
             self
         }
         /// <p>A path on the file system that points to a high-level directory (such
@@ -1115,8 +1115,8 @@ pub mod fluent_builders {
         /// system. The path can be an S3 bucket or prefix in the format
         /// <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3
         /// data repository files will be imported from or exported to.</p>
-        pub fn data_repository_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_repository_path(inp);
+        pub fn data_repository_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_repository_path(signature.into());
             self
         }
         /// <p>The path to the Amazon S3 data repository that will be linked to the file
@@ -1133,8 +1133,8 @@ pub mod fluent_builders {
         /// <p>Set to <code>true</code> to run an import data repository task to import
         /// metadata from the data repository to the file system after the data repository
         /// association is created. Default is <code>false</code>.</p>
-        pub fn batch_import_meta_data_on_create(mut self, inp: bool) -> Self {
-            self.inner = self.inner.batch_import_meta_data_on_create(inp);
+        pub fn batch_import_meta_data_on_create(mut self, signature: bool) -> Self {
+            self.inner = self.inner.batch_import_meta_data_on_create(signature);
             self
         }
         /// <p>Set to <code>true</code> to run an import data repository task to import
@@ -1154,8 +1154,8 @@ pub mod fluent_builders {
         ///
         /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
         /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
-        pub fn imported_file_chunk_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.imported_file_chunk_size(inp);
+        pub fn imported_file_chunk_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.imported_file_chunk_size(signature);
             self
         }
         /// <p>For files imported from a data repository, this value determines the stripe count and
@@ -1175,8 +1175,8 @@ pub mod fluent_builders {
         /// deleted files or directories) are automatically imported from
         /// the linked data repository to the file system or automatically
         /// exported from the file system to the data repository.</p>
-        pub fn s3(mut self, inp: crate::model::S3DataRepositoryConfiguration) -> Self {
-            self.inner = self.inner.s3(inp);
+        pub fn s3(mut self, signature: crate::model::S3DataRepositoryConfiguration) -> Self {
+            self.inner = self.inner.s3(signature);
             self
         }
         /// <p>The configuration for an Amazon S3 data repository linked to an
@@ -1195,8 +1195,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -1214,8 +1214,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -1296,8 +1296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the type of data repository task to create.</p>
-        pub fn r#type(mut self, inp: crate::model::DataRepositoryTaskType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::DataRepositoryTaskType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>Specifies the type of data repository task to create.</p>
@@ -1317,8 +1317,8 @@ pub mod fluent_builders {
         /// If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
         /// file on the file system you want to export, then the path to provide is <code>path1</code>.
         /// If a path that you provide isn't valid, the task fails.</p>
-        pub fn paths(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.paths(inp);
+        pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.paths(input.into());
             self
         }
         /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed.
@@ -1334,8 +1334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -1350,8 +1350,8 @@ pub mod fluent_builders {
         /// A CompletionReport provides a detailed  report on the files that Amazon FSx processed that meet the criteria specified by the
         /// <code>Scope</code> parameter. For more information, see
         /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
-        pub fn report(mut self, inp: crate::model::CompletionReport) -> Self {
-            self.inner = self.inner.report(inp);
+        pub fn report(mut self, signature: crate::model::CompletionReport) -> Self {
+            self.inner = self.inner.report(signature);
             self
         }
         /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed.
@@ -1368,8 +1368,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -1387,8 +1387,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -1514,8 +1514,8 @@ pub mod fluent_builders {
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent creation. This string is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
@@ -1531,8 +1531,8 @@ pub mod fluent_builders {
         /// <p>The type of Amazon FSx file system to create. Valid values are
         /// <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and
         /// <code>OPENZFS</code>.</p>
-        pub fn file_system_type(mut self, inp: crate::model::FileSystemType) -> Self {
-            self.inner = self.inner.file_system_type(inp);
+        pub fn file_system_type(mut self, signature: crate::model::FileSystemType) -> Self {
+            self.inner = self.inner.file_system_type(signature);
             self
         }
         /// <p>The type of Amazon FSx file system to create. Valid values are
@@ -1583,8 +1583,8 @@ pub mod fluent_builders {
         /// <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p>
         /// </li>
         /// </ul>
-        pub fn storage_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.storage_capacity(inp);
+        pub fn storage_capacity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.storage_capacity(signature);
             self
         }
         /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>      
@@ -1648,8 +1648,8 @@ pub mod fluent_builders {
         /// Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage
         /// options</a> in the <i>FSx for Lustre User
         /// Guide</i>. </p>
-        pub fn storage_type(mut self, inp: crate::model::StorageType) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, signature: crate::model::StorageType) -> Self {
+            self.inner = self.inner.storage_type(signature);
             self
         }
         /// <p>Sets the storage type for the file system that you're creating. Valid values are
@@ -1695,8 +1695,8 @@ pub mod fluent_builders {
         /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre
         /// deployment types, provide exactly one subnet ID.
         /// The file server is launched in that subnet's Availability Zone.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For
@@ -1726,8 +1726,8 @@ pub mod fluent_builders {
         /// <p>A list of IDs specifying the security groups to apply to all network interfaces
         /// created for file system access. This list isn't returned in later requests to
         /// describe the file system.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>A list of IDs specifying the security groups to apply to all network interfaces
@@ -1746,8 +1746,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tags to apply to the file system that's being created. The key value of the
         /// <code>Name</code> tag appears in the console as the file system name.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the file system that's being created. The key value of the
@@ -1766,8 +1766,8 @@ pub mod fluent_builders {
         /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
         /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
         /// in the <i>Key Management Service API Reference</i>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
@@ -1784,9 +1784,9 @@ pub mod fluent_builders {
         /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
         pub fn windows_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemWindowsConfiguration,
+            signature: crate::model::CreateFileSystemWindowsConfiguration,
         ) -> Self {
-            self.inner = self.inner.windows_configuration(inp);
+            self.inner = self.inner.windows_configuration(signature);
             self
         }
         /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
@@ -1827,9 +1827,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn lustre_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemLustreConfiguration,
+            signature: crate::model::CreateFileSystemLustreConfiguration,
         ) -> Self {
-            self.inner = self.inner.lustre_configuration(inp);
+            self.inner = self.inner.lustre_configuration(signature);
             self
         }
         /// <p>The Lustre configuration for the file system being created.</p>
@@ -1870,9 +1870,9 @@ pub mod fluent_builders {
         /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemOntapConfiguration,
+            signature: crate::model::CreateFileSystemOntapConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(signature);
             self
         }
         /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
@@ -1904,8 +1904,11 @@ pub mod fluent_builders {
         /// <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code>
         /// operation fails.</p>
         /// </note>
-        pub fn file_system_type_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_type_version(inp);
+        pub fn file_system_type_version(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.file_system_type_version(signature.into());
             self
         }
         /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
@@ -1939,9 +1942,9 @@ pub mod fluent_builders {
         /// <p>The OpenZFS configuration for the file system that's being created.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemOpenZfsConfiguration,
+            signature: crate::model::CreateFileSystemOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(signature);
             self
         }
         /// <p>The OpenZFS configuration for the file system that's being created.</p>
@@ -2049,8 +2052,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(signature.into());
             self
         }
         /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
@@ -2061,8 +2064,8 @@ pub mod fluent_builders {
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent creation. This string is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
@@ -2086,8 +2089,8 @@ pub mod fluent_builders {
         /// <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment
         /// types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The
         /// file server is launched in that subnet's Availability Zone.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code>
@@ -2111,8 +2114,8 @@ pub mod fluent_builders {
         /// <p>A list of IDs for the security groups that apply to the specified network interfaces
         /// created for file system access. These security groups apply to all network interfaces.
         /// This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>A list of IDs for the security groups that apply to the specified network interfaces
@@ -2132,8 +2135,8 @@ pub mod fluent_builders {
         /// <p>The tags to be applied to the file system at file system creation. The key value of
         /// the <code>Name</code> tag appears in the console as the file system
         /// name.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to be applied to the file system at file system creation. The key value of
@@ -2149,9 +2152,9 @@ pub mod fluent_builders {
         /// <p>The configuration for this Microsoft Windows file system.</p>
         pub fn windows_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemWindowsConfiguration,
+            signature: crate::model::CreateFileSystemWindowsConfiguration,
         ) -> Self {
-            self.inner = self.inner.windows_configuration(inp);
+            self.inner = self.inner.windows_configuration(signature);
             self
         }
         /// <p>The configuration for this Microsoft Windows file system.</p>
@@ -2192,9 +2195,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn lustre_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemLustreConfiguration,
+            signature: crate::model::CreateFileSystemLustreConfiguration,
         ) -> Self {
-            self.inner = self.inner.lustre_configuration(inp);
+            self.inner = self.inner.lustre_configuration(signature);
             self
         }
         /// <p>The Lustre configuration for the file system being created.</p>
@@ -2251,8 +2254,8 @@ pub mod fluent_builders {
         /// You can create a file system that uses HDD storage from a backup of a file system that
         /// used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
         /// </note>
-        pub fn storage_type(mut self, inp: crate::model::StorageType) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, signature: crate::model::StorageType) -> Self {
+            self.inner = self.inner.storage_type(signature);
             self
         }
         /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from
@@ -2288,8 +2291,8 @@ pub mod fluent_builders {
         /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
         /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
         /// in the <i>Key Management Service API Reference</i>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
@@ -2309,8 +2312,11 @@ pub mod fluent_builders {
         /// be applied using the backup's <code>FileSystemTypeVersion</code> setting.
         /// If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the
         /// value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
-        pub fn file_system_type_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_type_version(inp);
+        pub fn file_system_type_version(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.file_system_type_version(signature.into());
             self
         }
         /// <p>Sets the version for the Amazon FSx for Lustre file system that you're
@@ -2329,9 +2335,9 @@ pub mod fluent_builders {
         /// <p>The OpenZFS configuration for the file system that's being created. </p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemOpenZfsConfiguration,
+            signature: crate::model::CreateFileSystemOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(signature);
             self
         }
         /// <p>The OpenZFS configuration for the file system that's being created. </p>
@@ -2432,8 +2438,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -2447,8 +2453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the snapshot. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the snapshot. </p>
@@ -2457,8 +2463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the volume that you are taking a snapshot of.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(signature.into());
             self
         }
         /// <p>The ID of the volume that you are taking a snapshot of.</p>
@@ -2471,8 +2477,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -2548,9 +2554,9 @@ pub mod fluent_builders {
         /// including Microsoft Windows and macOS client accessing the file system.</p>
         pub fn active_directory_configuration(
             mut self,
-            inp: crate::model::CreateSvmActiveDirectoryConfiguration,
+            signature: crate::model::CreateSvmActiveDirectoryConfiguration,
         ) -> Self {
-            self.inner = self.inner.active_directory_configuration(inp);
+            self.inner = self.inner.active_directory_configuration(signature);
             self
         }
         /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM.
@@ -2566,8 +2572,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -2581,8 +2587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -2594,8 +2600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SVM.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the SVM.</p>
@@ -2606,8 +2612,8 @@ pub mod fluent_builders {
         /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
         /// If you do not specify a password, you can still use the file system's
         /// <code>fsxadmin</code> user to manage the SVM.</p>
-        pub fn svm_admin_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.svm_admin_password(inp);
+        pub fn svm_admin_password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.svm_admin_password(signature.into());
             self
         }
         /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
@@ -2625,8 +2631,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -2659,9 +2665,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn root_volume_security_style(
             mut self,
-            inp: crate::model::StorageVirtualMachineRootVolumeSecurityStyle,
+            signature: crate::model::StorageVirtualMachineRootVolumeSecurityStyle,
         ) -> Self {
-            self.inner = self.inner.root_volume_security_style(inp);
+            self.inner = self.inner.root_volume_security_style(signature);
             self
         }
         /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
@@ -2755,8 +2761,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -2771,8 +2777,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are
         /// the only valid volume types.</p>
-        pub fn volume_type(mut self, inp: crate::model::VolumeType) -> Self {
-            self.inner = self.inner.volume_type(inp);
+        pub fn volume_type(mut self, signature: crate::model::VolumeType) -> Self {
+            self.inner = self.inner.volume_type(signature);
             self
         }
         /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are
@@ -2785,8 +2791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the volume that you're creating.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Specifies the name of the volume that you're creating.</p>
@@ -2797,9 +2803,9 @@ pub mod fluent_builders {
         /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::CreateOntapVolumeConfiguration,
+            signature: crate::model::CreateOntapVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(signature);
             self
         }
         /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
@@ -2815,8 +2821,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -2830,9 +2836,9 @@ pub mod fluent_builders {
         /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::CreateOpenZfsVolumeConfiguration,
+            signature: crate::model::CreateOpenZfsVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(signature);
             self
         }
         /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
@@ -2905,8 +2911,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(signature.into());
             self
         }
         /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
@@ -2917,8 +2923,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -2932,8 +2938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new volume you're creating.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new volume you're creating.</p>
@@ -2944,9 +2950,9 @@ pub mod fluent_builders {
         /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::CreateOntapVolumeConfiguration,
+            signature: crate::model::CreateOntapVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(signature);
             self
         }
         /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
@@ -2962,8 +2968,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -3044,8 +3050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the backup that you want to delete.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(signature.into());
             self
         }
         /// <p>The ID of the backup that you want to delete.</p>
@@ -3056,8 +3062,8 @@ pub mod fluent_builders {
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent deletion. This parameter is automatically filled on your behalf when using
         /// the CLI or SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
@@ -3137,8 +3143,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the data repository association that you want to delete.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(inp);
+        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(signature.into());
             self
         }
         /// <p>The ID of the data repository association that you want to delete.</p>
@@ -3152,8 +3158,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -3168,8 +3174,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to <code>true</code> to delete the data in the file system that corresponds
         /// to the data repository association.</p>
-        pub fn delete_data_in_file_system(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_data_in_file_system(inp);
+        pub fn delete_data_in_file_system(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_data_in_file_system(signature);
             self
         }
         /// <p>Set to <code>true</code> to delete the data in the file system that corresponds
@@ -3263,8 +3269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system that you want to delete.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system that you want to delete.</p>
@@ -3278,8 +3284,8 @@ pub mod fluent_builders {
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent deletion. This token is automatically filled on your behalf when using the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
@@ -3296,9 +3302,9 @@ pub mod fluent_builders {
         /// <code>DeleteFileSystem</code> operation.</p>
         pub fn windows_configuration(
             mut self,
-            inp: crate::model::DeleteFileSystemWindowsConfiguration,
+            signature: crate::model::DeleteFileSystemWindowsConfiguration,
         ) -> Self {
-            self.inner = self.inner.windows_configuration(inp);
+            self.inner = self.inner.windows_configuration(signature);
             self
         }
         /// <p>The configuration object for the Microsoft Windows file system used in the
@@ -3314,9 +3320,9 @@ pub mod fluent_builders {
         /// <code>DeleteFileSystem</code> operation.</p>
         pub fn lustre_configuration(
             mut self,
-            inp: crate::model::DeleteFileSystemLustreConfiguration,
+            signature: crate::model::DeleteFileSystemLustreConfiguration,
         ) -> Self {
-            self.inner = self.inner.lustre_configuration(inp);
+            self.inner = self.inner.lustre_configuration(signature);
             self
         }
         /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the
@@ -3332,9 +3338,9 @@ pub mod fluent_builders {
         /// <code>DeleteFileSystem</code> operation.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::DeleteFileSystemOpenZfsConfiguration,
+            signature: crate::model::DeleteFileSystemOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(signature);
             self
         }
         /// <p>The configuration object for the OpenZFS file system used in the
@@ -3413,8 +3419,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -3428,8 +3434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the snapshot that you want to delete.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the snapshot that you want to delete.</p>
@@ -3501,8 +3507,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -3516,8 +3522,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the SVM that you want to delete.</p>
-        pub fn storage_virtual_machine_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_virtual_machine_id(inp);
+        pub fn storage_virtual_machine_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.storage_virtual_machine_id(signature.into());
             self
         }
         /// <p>The ID of the SVM that you want to delete.</p>
@@ -3592,8 +3601,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -3607,8 +3616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the volume that you are deleting.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(signature.into());
             self
         }
         /// <p>The ID of the volume that you are deleting.</p>
@@ -3621,9 +3630,9 @@ pub mod fluent_builders {
         /// <code>fsx:TagResource</code> permission.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::DeleteVolumeOntapConfiguration,
+            signature: crate::model::DeleteVolumeOntapConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(signature);
             self
         }
         /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of
@@ -3640,9 +3649,9 @@ pub mod fluent_builders {
         /// volumes and snapshots.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::DeleteVolumeOpenZfsConfiguration,
+            signature: crate::model::DeleteVolumeOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(signature);
             self
         }
         /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child
@@ -3748,8 +3757,8 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any
         /// filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
-        pub fn backup_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_ids(inp);
+        pub fn backup_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_ids(input.into());
             self
         }
         /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any
@@ -3768,8 +3777,8 @@ pub mod fluent_builders {
         /// <p>The filters structure. The supported names are <code>file-system-id</code>,
         /// <code>backup-type</code>, <code>file-system-type</code>, and
         /// <code>volume-id</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filters structure. The supported names are <code>file-system-id</code>,
@@ -3786,8 +3795,8 @@ pub mod fluent_builders {
         /// greater than 0. The number of items that Amazon FSx returns is the minimum of
         /// the <code>MaxResults</code> parameter specified in the request and the service's
         /// internal maximum number of items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of backups to return in the response. This parameter value must be
@@ -3801,8 +3810,8 @@ pub mod fluent_builders {
         /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code>
         /// operation. If a token is present, the operation continues the list from where the
         /// returning call left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code>
@@ -3898,8 +3907,8 @@ pub mod fluent_builders {
         ///
         /// <p>IDs of the data repository associations whose descriptions you want to retrieve
         /// (String).</p>
-        pub fn association_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_ids(inp);
+        pub fn association_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_ids(input.into());
             self
         }
         /// <p>IDs of the data repository associations whose descriptions you want to retrieve
@@ -3916,8 +3925,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of <code>Filter</code> elements.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of <code>Filter</code> elements.</p>
@@ -3930,8 +3939,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of resources to return in the response. This value must be
         /// an integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of resources to return in the response. This value must be
@@ -3943,8 +3952,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
         /// present, this token indicates from what point you can continue processing the request, where
         /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
@@ -4030,8 +4039,8 @@ pub mod fluent_builders {
         ///
         /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve
         /// (String).</p>
-        pub fn task_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_ids(inp);
+        pub fn task_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_ids(input.into());
             self
         }
         /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve
@@ -4049,8 +4058,8 @@ pub mod fluent_builders {
         ///
         /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to
         /// include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::DataRepositoryTaskFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::DataRepositoryTaskFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to
@@ -4064,8 +4073,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of resources to return in the response. This value must be an
         /// integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of resources to return in the response. This value must be an
@@ -4077,8 +4086,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
         /// present, this token indicates from what point you can continue processing the request, where
         /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
@@ -4153,8 +4162,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -4169,8 +4178,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the file system to return the associated DNS aliases for
         /// (String).</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system to return the associated DNS aliases for
@@ -4186,8 +4195,8 @@ pub mod fluent_builders {
         /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
         /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
         /// service's internal maximum number of items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of DNS aliases to return in the response (integer). This
@@ -4201,8 +4210,8 @@ pub mod fluent_builders {
         /// <p>Opaque pagination token returned from a previous
         /// <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action
         /// continues the list from where the previous returning call left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Opaque pagination token returned from a previous
@@ -4309,8 +4318,8 @@ pub mod fluent_builders {
         ///
         /// <p>IDs of the file systems whose descriptions you want to retrieve
         /// (String).</p>
-        pub fn file_system_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_ids(inp);
+        pub fn file_system_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_ids(input.into());
             self
         }
         /// <p>IDs of the file systems whose descriptions you want to retrieve
@@ -4326,8 +4335,8 @@ pub mod fluent_builders {
         /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
         /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
         /// service's internal maximum number of items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of file systems to return in the response (integer). This
@@ -4341,8 +4350,8 @@ pub mod fluent_builders {
         /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code>
         /// operation (String). If a token present, the operation continues the list from where the
         /// returning call left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code>
@@ -4444,8 +4453,8 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any
         /// filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-        pub fn snapshot_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_ids(inp);
+        pub fn snapshot_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_ids(input.into());
             self
         }
         /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any
@@ -4463,8 +4472,8 @@ pub mod fluent_builders {
         ///
         /// <p>The filters structure. The supported names are <code>file-system-id</code> or
         /// <code>volume-id</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SnapshotFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SnapshotFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filters structure. The supported names are <code>file-system-id</code> or
@@ -4478,8 +4487,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of resources to return in the response. This value must be an
         /// integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of resources to return in the response. This value must be an
@@ -4491,8 +4500,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
         /// present, this token indicates from what point you can continue processing the request, where
         /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
@@ -4567,8 +4576,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_storage_virtual_machine_ids`](Self::set_storage_virtual_machine_ids).
         ///
         /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-        pub fn storage_virtual_machine_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_virtual_machine_ids(inp);
+        pub fn storage_virtual_machine_ids(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.storage_virtual_machine_ids(input.into());
             self
         }
         /// <p>Enter the ID of one or more SVMs that you want to view.</p>
@@ -4584,11 +4596,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
-        pub fn filters(
-            mut self,
-            inp: impl Into<crate::model::StorageVirtualMachineFilter>,
-        ) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::StorageVirtualMachineFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
@@ -4601,8 +4610,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of resources to return in the response. This value must be an
         /// integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of resources to return in the response. This value must be an
@@ -4614,8 +4623,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
         /// present, this token indicates from what point you can continue processing the request, where
         /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
@@ -4691,8 +4700,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
         ///
         /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-        pub fn volume_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_ids(inp);
+        pub fn volume_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_ids(input.into());
             self
         }
         /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
@@ -4709,8 +4718,8 @@ pub mod fluent_builders {
         ///
         /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of
         /// volumes.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::VolumeFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::VolumeFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of
@@ -4724,8 +4733,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of resources to return in the response. This value must be an
         /// integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of resources to return in the response. This value must be an
@@ -4737,8 +4746,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
         /// present, this token indicates from what point you can continue processing the request, where
         /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
@@ -4819,8 +4828,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -4834,8 +4843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
@@ -4851,8 +4860,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-        pub fn aliases(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aliases(inp);
+        pub fn aliases(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aliases(input.into());
             self
         }
         /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
@@ -4952,8 +4961,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Amazon FSx resource that will have its tags listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the Amazon FSx resource that will have its tags listed.</p>
@@ -4965,8 +4974,8 @@ pub mod fluent_builders {
         /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
         /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
         /// service's internal maximum number of items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of tags to return in the response (integer). This
@@ -4980,8 +4989,8 @@ pub mod fluent_builders {
         /// <p>Opaque pagination token returned from a previous
         /// <code>ListTagsForResource</code> operation (String). If a token present, the action
         /// continues the list from where the returning call left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Opaque pagination token returned from a previous
@@ -5053,8 +5062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -5068,8 +5077,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -5146,8 +5155,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -5161,8 +5170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the volume that you are restoring.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(signature.into());
             self
         }
         /// <p>The ID of the volume that you are restoring.</p>
@@ -5172,8 +5181,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring
         /// from.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring
@@ -5201,8 +5210,8 @@ pub mod fluent_builders {
         /// <code>RestoreVolumeFromSnapshot</code> fails.</p>
         /// </li>
         /// </ul>
-        pub fn options(mut self, inp: impl Into<crate::model::RestoreOpenZfsVolumeOption>) -> Self {
-            self.inner = self.inner.options(inp);
+        pub fn options(mut self, input: crate::model::RestoreOpenZfsVolumeOption) -> Self {
+            self.inner = self.inner.options(input);
             self
         }
         /// <p>The settings used when restoring the specified volume from snapshot. </p>
@@ -5289,8 +5298,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to
         /// tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to
@@ -5305,8 +5314,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of tags for the resource. If a tag with a given key already exists, the
         /// value is replaced by the one specified in this parameter.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags for the resource. If a tag with a given key already exists, the
@@ -5379,8 +5388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Amazon FSx resource to untag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the Amazon FSx resource to untag.</p>
@@ -5394,8 +5403,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist,
         /// the call will still succeed to be idempotent.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist,
@@ -5470,8 +5479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the data repository association that you are updating.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(inp);
+        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(signature.into());
             self
         }
         /// <p>The ID of the data repository association that you are updating.</p>
@@ -5485,8 +5494,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -5506,8 +5515,8 @@ pub mod fluent_builders {
         ///
         /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
         /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
-        pub fn imported_file_chunk_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.imported_file_chunk_size(inp);
+        pub fn imported_file_chunk_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.imported_file_chunk_size(signature);
             self
         }
         /// <p>For files imported from a data repository, this value determines the stripe count and
@@ -5527,8 +5536,8 @@ pub mod fluent_builders {
         /// deleted files or directories) are automatically imported from
         /// the linked data repository to the file system or automatically
         /// exported from the file system to the data repository.</p>
-        pub fn s3(mut self, inp: crate::model::S3DataRepositoryConfiguration) -> Self {
-            self.inner = self.inner.s3(inp);
+        pub fn s3(mut self, signature: crate::model::S3DataRepositoryConfiguration) -> Self {
+            self.inner = self.inner.s3(signature);
             self
         }
         /// <p>The configuration for an Amazon S3 data repository linked to an
@@ -5742,8 +5751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system that you are updating.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system that you are updating.</p>
@@ -5757,8 +5766,8 @@ pub mod fluent_builders {
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent updates. This string is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
@@ -5807,8 +5816,8 @@ pub mod fluent_builders {
         /// capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and
         /// <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User
         /// Guide</i>.</p>
-        pub fn storage_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.storage_capacity(inp);
+        pub fn storage_capacity(mut self, signature: i32) -> Self {
+            self.inner = self.inner.storage_capacity(signature);
             self
         }
         /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows
@@ -5855,9 +5864,9 @@ pub mod fluent_builders {
         /// system.</p>
         pub fn windows_configuration(
             mut self,
-            inp: crate::model::UpdateFileSystemWindowsConfiguration,
+            signature: crate::model::UpdateFileSystemWindowsConfiguration,
         ) -> Self {
-            self.inner = self.inner.windows_configuration(inp);
+            self.inner = self.inner.windows_configuration(signature);
             self
         }
         /// <p>The configuration updates for an Amazon FSx for Windows File Server file
@@ -5873,9 +5882,9 @@ pub mod fluent_builders {
         /// <code>UpdateFileSystem</code> operation.</p>
         pub fn lustre_configuration(
             mut self,
-            inp: crate::model::UpdateFileSystemLustreConfiguration,
+            signature: crate::model::UpdateFileSystemLustreConfiguration,
         ) -> Self {
-            self.inner = self.inner.lustre_configuration(inp);
+            self.inner = self.inner.lustre_configuration(signature);
             self
         }
         /// <p>The configuration object for Amazon FSx for Lustre file systems used in the
@@ -5890,9 +5899,9 @@ pub mod fluent_builders {
         /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::UpdateFileSystemOntapConfiguration,
+            signature: crate::model::UpdateFileSystemOntapConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(signature);
             self
         }
         /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
@@ -5906,9 +5915,9 @@ pub mod fluent_builders {
         /// <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::UpdateFileSystemOpenZfsConfiguration,
+            signature: crate::model::UpdateFileSystemOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(signature);
             self
         }
         /// <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
@@ -5982,8 +5991,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -5997,8 +6006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the snapshot to update. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the snapshot to update. </p>
@@ -6008,8 +6017,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the snapshot that you want to update, in the format
         /// <code>fsvolsnap-0123456789abcdef0</code>.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(signature.into());
             self
         }
         /// <p>The ID of the snapshot that you want to update, in the format
@@ -6081,9 +6090,9 @@ pub mod fluent_builders {
         /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
         pub fn active_directory_configuration(
             mut self,
-            inp: crate::model::UpdateSvmActiveDirectoryConfiguration,
+            signature: crate::model::UpdateSvmActiveDirectoryConfiguration,
         ) -> Self {
-            self.inner = self.inner.active_directory_configuration(inp);
+            self.inner = self.inner.active_directory_configuration(signature);
             self
         }
         /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
@@ -6097,8 +6106,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -6112,8 +6121,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
-        pub fn storage_virtual_machine_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_virtual_machine_id(inp);
+        pub fn storage_virtual_machine_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.storage_virtual_machine_id(signature.into());
             self
         }
         /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
@@ -6125,8 +6137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
-        pub fn svm_admin_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.svm_admin_password(inp);
+        pub fn svm_admin_password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.svm_admin_password(signature.into());
             self
         }
         /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
@@ -6200,8 +6212,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
         /// ASCII characters. This token is automatically filled on your behalf when you use the
         /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
@@ -6216,8 +6228,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the volume that you want to update, in the format
         /// <code>fsvol-0123456789abcdef0</code>.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(signature.into());
             self
         }
         /// <p>The ID of the volume that you want to update, in the format
@@ -6229,9 +6241,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the ONTAP volume that you are updating.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::UpdateOntapVolumeConfiguration,
+            signature: crate::model::UpdateOntapVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(signature);
             self
         }
         /// <p>The configuration of the ONTAP volume that you are updating.</p>
@@ -6245,8 +6257,8 @@ pub mod fluent_builders {
         /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named
         /// <code>FSX</code>. Child volume names must be unique among their parent volume's
         /// children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named
@@ -6259,9 +6271,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the OpenZFS volume that you are updating.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::UpdateOpenZfsVolumeConfiguration,
+            signature: crate::model::UpdateOpenZfsVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(signature);
             self
         }
         /// <p>The configuration of the OpenZFS volume that you are updating.</p>

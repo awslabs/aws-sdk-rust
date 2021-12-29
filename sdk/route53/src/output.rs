@@ -488,9 +488,9 @@ pub mod list_vpc_association_authorizations_output {
         /// To override the contents of this collection use [`set_vp_cs`](Self::set_vp_cs).
         ///
         /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
-        pub fn vp_cs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
+        pub fn vp_cs(mut self, input: crate::model::Vpc) -> Self {
             let mut v = self.vp_cs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vp_cs = Some(v);
             self
         }
@@ -596,9 +596,9 @@ pub mod list_traffic_policy_versions_output {
         ///
         /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy
         /// version that is associated with the specified traffic policy.</p>
-        pub fn traffic_policies(mut self, input: impl Into<crate::model::TrafficPolicy>) -> Self {
+        pub fn traffic_policies(mut self, input: crate::model::TrafficPolicy) -> Self {
             let mut v = self.traffic_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_policies = Some(v);
             self
         }
@@ -777,10 +777,10 @@ pub mod list_traffic_policy_instances_by_policy_output {
         /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
         pub fn traffic_policy_instances(
             mut self,
-            input: impl Into<crate::model::TrafficPolicyInstance>,
+            input: crate::model::TrafficPolicyInstance,
         ) -> Self {
             let mut v = self.traffic_policy_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_policy_instances = Some(v);
             self
         }
@@ -978,10 +978,10 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
         /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
         pub fn traffic_policy_instances(
             mut self,
-            input: impl Into<crate::model::TrafficPolicyInstance>,
+            input: crate::model::TrafficPolicyInstance,
         ) -> Self {
             let mut v = self.traffic_policy_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_policy_instances = Some(v);
             self
         }
@@ -1179,10 +1179,10 @@ pub mod list_traffic_policy_instances_output {
         /// in the request.</p>
         pub fn traffic_policy_instances(
             mut self,
-            input: impl Into<crate::model::TrafficPolicyInstance>,
+            input: crate::model::TrafficPolicyInstance,
         ) -> Self {
             let mut v = self.traffic_policy_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_policy_instances = Some(v);
             self
         }
@@ -1363,10 +1363,10 @@ pub mod list_traffic_policies_output {
         /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
         pub fn traffic_policy_summaries(
             mut self,
-            input: impl Into<crate::model::TrafficPolicySummary>,
+            input: crate::model::TrafficPolicySummary,
         ) -> Self {
             let mut v = self.traffic_policy_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_policy_summaries = Some(v);
             self
         }
@@ -1472,9 +1472,9 @@ pub mod list_tags_for_resources_output {
         /// To override the contents of this collection use [`set_resource_tag_sets`](Self::set_resource_tag_sets).
         ///
         /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-        pub fn resource_tag_sets(mut self, input: impl Into<crate::model::ResourceTagSet>) -> Self {
+        pub fn resource_tag_sets(mut self, input: crate::model::ResourceTagSet) -> Self {
             let mut v = self.resource_tag_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tag_sets = Some(v);
             self
         }
@@ -1635,9 +1635,9 @@ pub mod list_reusable_delegation_sets_output {
         ///
         /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created
         /// by the current Amazon Web Services account.</p>
-        pub fn delegation_sets(mut self, input: impl Into<crate::model::DelegationSet>) -> Self {
+        pub fn delegation_sets(mut self, input: crate::model::DelegationSet) -> Self {
             let mut v = self.delegation_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegation_sets = Some(v);
             self
         }
@@ -1808,12 +1808,9 @@ pub mod list_resource_record_sets_output {
         /// To override the contents of this collection use [`set_resource_record_sets`](Self::set_resource_record_sets).
         ///
         /// <p>Information about multiple resource record sets.</p>
-        pub fn resource_record_sets(
-            mut self,
-            input: impl Into<crate::model::ResourceRecordSet>,
-        ) -> Self {
+        pub fn resource_record_sets(mut self, input: crate::model::ResourceRecordSet) -> Self {
             let mut v = self.resource_record_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_record_sets = Some(v);
             self
         }
@@ -1981,12 +1978,9 @@ pub mod list_query_logging_configs_output {
         /// <p>An array that contains one
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element
         /// for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
-        pub fn query_logging_configs(
-            mut self,
-            input: impl Into<crate::model::QueryLoggingConfig>,
-        ) -> Self {
+        pub fn query_logging_configs(mut self, input: crate::model::QueryLoggingConfig) -> Self {
             let mut v = self.query_logging_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_logging_configs = Some(v);
             self
         }
@@ -2090,12 +2084,9 @@ pub mod list_hosted_zones_by_vpc_output {
         ///
         /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with.
         /// Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
-        pub fn hosted_zone_summaries(
-            mut self,
-            input: impl Into<crate::model::HostedZoneSummary>,
-        ) -> Self {
+        pub fn hosted_zone_summaries(mut self, input: crate::model::HostedZoneSummary) -> Self {
             let mut v = self.hosted_zone_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hosted_zone_summaries = Some(v);
             self
         }
@@ -2247,9 +2238,9 @@ pub mod list_hosted_zones_by_name_output {
         /// To override the contents of this collection use [`set_hosted_zones`](Self::set_hosted_zones).
         ///
         /// <p>A complex type that contains general information about the hosted zone.</p>
-        pub fn hosted_zones(mut self, input: impl Into<crate::model::HostedZone>) -> Self {
+        pub fn hosted_zones(mut self, input: crate::model::HostedZone) -> Self {
             let mut v = self.hosted_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hosted_zones = Some(v);
             self
         }
@@ -2451,9 +2442,9 @@ pub mod list_hosted_zones_output {
         /// To override the contents of this collection use [`set_hosted_zones`](Self::set_hosted_zones).
         ///
         /// <p>A complex type that contains general information about the hosted zone.</p>
-        pub fn hosted_zones(mut self, input: impl Into<crate::model::HostedZone>) -> Self {
+        pub fn hosted_zones(mut self, input: crate::model::HostedZone) -> Self {
             let mut v = self.hosted_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hosted_zones = Some(v);
             self
         }
@@ -2619,9 +2610,9 @@ pub mod list_health_checks_output {
         ///
         /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current
         /// Amazon Web Services account.</p>
-        pub fn health_checks(mut self, input: impl Into<crate::model::HealthCheck>) -> Self {
+        pub fn health_checks(mut self, input: crate::model::HealthCheck) -> Self {
             let mut v = self.health_checks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.health_checks = Some(v);
             self
         }
@@ -2797,10 +2788,10 @@ pub mod list_geo_locations_output {
         /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
         pub fn geo_location_details_list(
             mut self,
-            input: impl Into<crate::model::GeoLocationDetails>,
+            input: crate::model::GeoLocationDetails,
         ) -> Self {
             let mut v = self.geo_location_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.geo_location_details_list = Some(v);
             self
         }
@@ -3499,9 +3490,9 @@ pub mod get_hosted_zone_output {
         /// To override the contents of this collection use [`set_vp_cs`](Self::set_vp_cs).
         ///
         /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-        pub fn vp_cs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
+        pub fn vp_cs(mut self, input: crate::model::Vpc) -> Self {
             let mut v = self.vp_cs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vp_cs = Some(v);
             self
         }
@@ -3574,10 +3565,10 @@ pub mod get_health_check_status_output {
         /// about the health check endpoint.</p>
         pub fn health_check_observations(
             mut self,
-            input: impl Into<crate::model::HealthCheckObservation>,
+            input: crate::model::HealthCheckObservation,
         ) -> Self {
             let mut v = self.health_check_observations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.health_check_observations = Some(v);
             self
         }
@@ -3645,10 +3636,10 @@ pub mod get_health_check_last_failure_reason_output {
         /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
         pub fn health_check_observations(
             mut self,
-            input: impl Into<crate::model::HealthCheckObservation>,
+            input: crate::model::HealthCheckObservation,
         ) -> Self {
             let mut v = self.health_check_observations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.health_check_observations = Some(v);
             self
         }
@@ -3903,9 +3894,9 @@ pub mod get_dnssec_output {
         /// To override the contents of this collection use [`set_key_signing_keys`](Self::set_key_signing_keys).
         ///
         /// <p>The key-signing keys (KSKs) in your account.</p>
-        pub fn key_signing_keys(mut self, input: impl Into<crate::model::KeySigningKey>) -> Self {
+        pub fn key_signing_keys(mut self, input: crate::model::KeySigningKey) -> Self {
             let mut v = self.key_signing_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_signing_keys = Some(v);
             self
         }

@@ -313,12 +313,9 @@ pub mod get_expense_analysis_output {
         /// To override the contents of this collection use [`set_expense_documents`](Self::set_expense_documents).
         ///
         /// <p>The expenses detected by Amazon Textract.</p>
-        pub fn expense_documents(
-            mut self,
-            input: impl Into<crate::model::ExpenseDocument>,
-        ) -> Self {
+        pub fn expense_documents(mut self, input: crate::model::ExpenseDocument) -> Self {
             let mut v = self.expense_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expense_documents = Some(v);
             self
         }
@@ -336,9 +333,9 @@ pub mod get_expense_analysis_output {
         ///
         /// <p>A list of warnings that occurred during the text-detection operation for the
         /// document.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
@@ -532,9 +529,9 @@ pub mod get_document_text_detection_output {
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
         /// <p>The results of the text-detection operation.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }
@@ -552,9 +549,9 @@ pub mod get_document_text_detection_output {
         ///
         /// <p>A list of warnings that occurred during the text-detection operation for the
         /// document.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
@@ -746,9 +743,9 @@ pub mod get_document_analysis_output {
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
         /// <p>The results of the text-analysis operation.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }
@@ -765,9 +762,9 @@ pub mod get_document_analysis_output {
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
         /// <p>A list of warnings that occurred during the document-analysis operation.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
@@ -902,9 +899,9 @@ pub mod detect_document_text_output {
         ///
         /// <p>An array of <code>Block</code> objects that contain the text that's detected in the
         /// document.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }
@@ -1004,12 +1001,9 @@ pub mod analyze_id_output {
         ///
         /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
         /// place in the list and the response structure for the document.</p>
-        pub fn identity_documents(
-            mut self,
-            input: impl Into<crate::model::IdentityDocument>,
-        ) -> Self {
+        pub fn identity_documents(mut self, input: crate::model::IdentityDocument) -> Self {
             let mut v = self.identity_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identity_documents = Some(v);
             self
         }
@@ -1121,12 +1115,9 @@ pub mod analyze_expense_output {
         /// To override the contents of this collection use [`set_expense_documents`](Self::set_expense_documents).
         ///
         /// <p>The expenses detected by Amazon Textract.</p>
-        pub fn expense_documents(
-            mut self,
-            input: impl Into<crate::model::ExpenseDocument>,
-        ) -> Self {
+        pub fn expense_documents(mut self, input: crate::model::ExpenseDocument) -> Self {
             let mut v = self.expense_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expense_documents = Some(v);
             self
         }
@@ -1234,9 +1225,9 @@ pub mod analyze_document_output {
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
         /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }

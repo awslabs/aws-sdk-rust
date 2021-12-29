@@ -1032,9 +1032,9 @@ pub mod rule {
         /// </ul>
         /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
         /// </p>
-        pub fn rule_labels(mut self, input: impl Into<crate::model::Label>) -> Self {
+        pub fn rule_labels(mut self, input: crate::model::Label) -> Self {
             let mut v = self.rule_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_labels = Some(v);
             self
         }
@@ -1418,9 +1418,9 @@ pub mod custom_request_handling {
         /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
         /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
         /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        pub fn insert_headers(mut self, input: impl Into<crate::model::CustomHttpHeader>) -> Self {
+        pub fn insert_headers(mut self, input: crate::model::CustomHttpHeader) -> Self {
             let mut v = self.insert_headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insert_headers = Some(v);
             self
         }
@@ -2003,12 +2003,9 @@ pub mod custom_response {
         /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
         /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
         /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        pub fn response_headers(
-            mut self,
-            input: impl Into<crate::model::CustomHttpHeader>,
-        ) -> Self {
+        pub fn response_headers(mut self, input: crate::model::CustomHttpHeader) -> Self {
             let mut v = self.response_headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.response_headers = Some(v);
             self
         }
@@ -2628,12 +2625,9 @@ pub mod regex_match_statement {
         /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
         /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
         /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
@@ -5009,9 +5003,9 @@ pub mod managed_rule_group_statement {
         /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
         /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
         /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
-        pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
+        pub fn excluded_rules(mut self, input: crate::model::ExcludedRule) -> Self {
             let mut v = self.excluded_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excluded_rules = Some(v);
             self
         }
@@ -5219,9 +5213,9 @@ pub mod or_statement {
         ///
         /// <p>The statements to combine with OR logic. You can use any statements that can be
         /// nested.</p>
-        pub fn statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
+        pub fn statements(mut self, input: crate::model::Statement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
@@ -5286,9 +5280,9 @@ pub mod and_statement {
         ///
         /// <p>The statements to combine with AND logic. You can use any statements that can be nested.
         /// </p>
-        pub fn statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
+        pub fn statements(mut self, input: crate::model::Statement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
@@ -5919,12 +5913,9 @@ pub mod regex_pattern_set_reference_statement {
         /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
         /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
         /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
@@ -6437,9 +6428,9 @@ pub mod rule_group_reference_statement {
         /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
         /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
         /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
-        pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
+        pub fn excluded_rules(mut self, input: crate::model::ExcludedRule) -> Self {
             let mut v = self.excluded_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excluded_rules = Some(v);
             self
         }
@@ -6522,9 +6513,9 @@ pub mod geo_match_statement {
         ///
         /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from
         /// the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
-        pub fn country_codes(mut self, input: impl Into<crate::model::CountryCode>) -> Self {
+        pub fn country_codes(mut self, input: crate::model::CountryCode) -> Self {
             let mut v = self.country_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.country_codes = Some(v);
             self
         }
@@ -7739,12 +7730,9 @@ pub mod size_constraint_statement {
         /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
         /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
         /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
@@ -7913,12 +7901,9 @@ pub mod xss_match_statement {
         /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
         /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
         /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
@@ -8010,12 +7995,9 @@ pub mod sqli_match_statement {
         /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
         /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
         /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
@@ -8356,12 +8338,9 @@ pub mod byte_match_statement {
         /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
         /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
         /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
@@ -9064,9 +9043,9 @@ pub mod logging_configuration {
         /// <note>
         /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
         /// </note>
-        pub fn redacted_fields(mut self, input: impl Into<crate::model::FieldToMatch>) -> Self {
+        pub fn redacted_fields(mut self, input: crate::model::FieldToMatch) -> Self {
             let mut v = self.redacted_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.redacted_fields = Some(v);
             self
         }
@@ -9179,9 +9158,9 @@ pub mod logging_filter {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters that you want to apply to the logs. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9359,9 +9338,9 @@ pub mod filter {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>Match conditions for the filter.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::Condition>) -> Self {
+        pub fn conditions(mut self, input: crate::model::Condition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
@@ -9899,9 +9878,9 @@ pub mod tag_info_for_resource {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The array of <a>Tag</a> objects defined for the resource. </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -11083,9 +11062,9 @@ pub mod web_acl {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -11152,12 +11131,12 @@ pub mod web_acl {
         /// order.</p>
         pub fn pre_process_firewall_manager_rule_groups(
             mut self,
-            input: impl Into<crate::model::FirewallManagerRuleGroup>,
+            input: crate::model::FirewallManagerRuleGroup,
         ) -> Self {
             let mut v = self
                 .pre_process_firewall_manager_rule_groups
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pre_process_firewall_manager_rule_groups = Some(v);
             self
         }
@@ -11188,12 +11167,12 @@ pub mod web_acl {
         /// order.</p>
         pub fn post_process_firewall_manager_rule_groups(
             mut self,
-            input: impl Into<crate::model::FirewallManagerRuleGroup>,
+            input: crate::model::FirewallManagerRuleGroup,
         ) -> Self {
             let mut v = self
                 .post_process_firewall_manager_rule_groups
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.post_process_firewall_manager_rule_groups = Some(v);
             self
         }
@@ -11278,10 +11257,10 @@ pub mod web_acl {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
             let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.custom_response_bodies = Some(hash_map);
             self
         }
@@ -11972,12 +11951,9 @@ pub mod sampled_http_request {
         ///
         /// <p>Custom request headers inserted by WAF into the request, according to the custom
         /// request configuration for the matching rule action.</p>
-        pub fn request_headers_inserted(
-            mut self,
-            input: impl Into<crate::model::HttpHeader>,
-        ) -> Self {
+        pub fn request_headers_inserted(mut self, input: crate::model::HttpHeader) -> Self {
             let mut v = self.request_headers_inserted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.request_headers_inserted = Some(v);
             self
         }
@@ -12010,9 +11986,9 @@ pub mod sampled_http_request {
         /// <p>For example,
         /// <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
         /// <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
-        pub fn labels(mut self, input: impl Into<crate::model::Label>) -> Self {
+        pub fn labels(mut self, input: crate::model::Label) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
@@ -12492,9 +12468,9 @@ pub mod http_request {
         ///
         /// <p>A complex type that contains the name and value for each header in the sampled web
         /// request.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpHeader>) -> Self {
+        pub fn headers(mut self, input: crate::model::HttpHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
@@ -12790,9 +12766,9 @@ pub mod rule_group {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -12875,10 +12851,10 @@ pub mod rule_group {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
             let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.custom_response_bodies = Some(hash_map);
             self
         }
@@ -12901,9 +12877,9 @@ pub mod rule_group {
         /// To override the contents of this collection use [`set_available_labels`](Self::set_available_labels).
         ///
         /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
-        pub fn available_labels(mut self, input: impl Into<crate::model::LabelSummary>) -> Self {
+        pub fn available_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.available_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.available_labels = Some(v);
             self
         }
@@ -12920,9 +12896,9 @@ pub mod rule_group {
         /// To override the contents of this collection use [`set_consumed_labels`](Self::set_consumed_labels).
         ///
         /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
-        pub fn consumed_labels(mut self, input: impl Into<crate::model::LabelSummary>) -> Self {
+        pub fn consumed_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.consumed_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_labels = Some(v);
             self
         }
@@ -13132,9 +13108,9 @@ pub mod regex_pattern_set {
         /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
         ///
         /// <p>The regular expression patterns in the set.</p>
-        pub fn regular_expression_list(mut self, input: impl Into<crate::model::Regex>) -> Self {
+        pub fn regular_expression_list(mut self, input: crate::model::Regex) -> Self {
             let mut v = self.regular_expression_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regular_expression_list = Some(v);
             self
         }
@@ -13475,10 +13451,10 @@ pub mod managed_rule_set {
         pub fn published_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ManagedRuleSetVersion>,
+            v: crate::model::ManagedRuleSetVersion,
         ) -> Self {
             let mut hash_map = self.published_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.published_versions = Some(hash_map);
             self
         }

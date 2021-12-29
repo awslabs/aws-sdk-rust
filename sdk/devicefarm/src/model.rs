@@ -2285,9 +2285,9 @@ pub mod device_pool {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Information about the device pool's rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -4690,9 +4690,9 @@ pub mod device_selection_result {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters in a device selection result.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::DeviceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DeviceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7868,9 +7868,9 @@ pub mod device {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The instances that belong to this device.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::DeviceInstance>) -> Self {
+        pub fn instances(mut self, input: crate::model::DeviceInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -10767,9 +10767,9 @@ pub mod device_selection_configuration {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::DeviceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DeviceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -11427,12 +11427,9 @@ pub mod offering {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>Specifies whether there are recurring charges for the offering.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -11755,9 +11752,9 @@ pub mod unique_problem {
         /// To override the contents of this collection use [`set_problems`](Self::set_problems).
         ///
         /// <p>Information about the problems.</p>
-        pub fn problems(mut self, input: impl Into<crate::model::Problem>) -> Self {
+        pub fn problems(mut self, input: crate::model::Problem) -> Self {
             let mut v = self.problems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.problems = Some(v);
             self
         }
@@ -15487,10 +15484,10 @@ pub mod device_pool_compatibility_result {
         /// <p>Information about the compatibility.</p>
         pub fn incompatibility_messages(
             mut self,
-            input: impl Into<crate::model::IncompatibilityMessage>,
+            input: crate::model::IncompatibilityMessage,
         ) -> Self {
             let mut v = self.incompatibility_messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.incompatibility_messages = Some(v);
             self
         }
@@ -15819,13 +15816,9 @@ pub mod account_settings {
         /// To override the contents of this collection use [`set_unmetered_devices`](Self::set_unmetered_devices).
         ///
         /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
-        pub fn unmetered_devices(
-            mut self,
-            k: impl Into<crate::model::DevicePlatform>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn unmetered_devices(mut self, k: crate::model::DevicePlatform, v: i32) -> Self {
             let mut hash_map = self.unmetered_devices.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.unmetered_devices = Some(hash_map);
             self
         }
@@ -15847,11 +15840,11 @@ pub mod account_settings {
         /// purchase.</p>
         pub fn unmetered_remote_access_devices(
             mut self,
-            k: impl Into<crate::model::DevicePlatform>,
-            v: impl Into<i32>,
+            k: crate::model::DevicePlatform,
+            v: i32,
         ) -> Self {
             let mut hash_map = self.unmetered_remote_access_devices.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.unmetered_remote_access_devices = Some(hash_map);
             self
         }
@@ -15897,9 +15890,9 @@ pub mod account_settings {
         /// is expressed as an <code>offering-id:number</code> pair, where the
         /// <code>offering-id</code> represents one of the IDs returned by the
         /// <code>ListOfferings</code> command.</p>
-        pub fn max_slots(mut self, k: impl Into<std::string::String>, v: impl Into<i32>) -> Self {
+        pub fn max_slots(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.max_slots.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.max_slots = Some(hash_map);
             self
         }

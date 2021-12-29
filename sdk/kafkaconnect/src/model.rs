@@ -1729,9 +1729,9 @@ pub mod connector_summary {
         /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
         ///
         /// <p>Specifies which plugins were used for this connector.</p>
-        pub fn plugins(mut self, input: impl Into<crate::model::PluginDescription>) -> Self {
+        pub fn plugins(mut self, input: crate::model::PluginDescription) -> Self {
             let mut v = self.plugins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.plugins = Some(v);
             self
         }

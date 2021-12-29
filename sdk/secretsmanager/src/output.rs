@@ -52,12 +52,9 @@ pub mod validate_resource_policy_output {
         /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
         ///
         /// <p>Returns an error message if your policy doesn't pass validatation.</p>
-        pub fn validation_errors(
-            mut self,
-            input: impl Into<crate::model::ValidationErrorsEntry>,
-        ) -> Self {
+        pub fn validation_errors(mut self, input: crate::model::ValidationErrorsEntry) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_errors = Some(v);
             self
         }
@@ -622,12 +619,9 @@ pub mod replicate_secret_to_regions_output {
         /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
         ///
         /// <p>Describes the secret replication status as <code>PENDING</code>, <code>SUCCESS</code> or <code>FAIL</code>.</p>
-        pub fn replication_status(
-            mut self,
-            input: impl Into<crate::model::ReplicationStatusType>,
-        ) -> Self {
+        pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_status = Some(v);
             self
         }
@@ -710,12 +704,9 @@ pub mod remove_regions_from_replication_output {
         /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
         ///
         /// <p>Describes the remaining replication status after you remove regions from the replication list.</p>
-        pub fn replication_status(
-            mut self,
-            input: impl Into<crate::model::ReplicationStatusType>,
-        ) -> Self {
+        pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_status = Some(v);
             self
         }
@@ -1029,9 +1020,9 @@ pub mod list_secret_version_ids_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// <p>The list of the currently available versions of the specified secret.</p>
-        pub fn versions(mut self, input: impl Into<crate::model::SecretVersionsListEntry>) -> Self {
+        pub fn versions(mut self, input: crate::model::SecretVersionsListEntry) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -1171,9 +1162,9 @@ pub mod list_secrets_output {
         /// To override the contents of this collection use [`set_secret_list`](Self::set_secret_list).
         ///
         /// <p>A list of the secrets in the account.</p>
-        pub fn secret_list(mut self, input: impl Into<crate::model::SecretListEntry>) -> Self {
+        pub fn secret_list(mut self, input: crate::model::SecretListEntry) -> Self {
             let mut v = self.secret_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secret_list = Some(v);
             self
         }
@@ -2023,9 +2014,9 @@ pub mod describe_secret_output {
         ///
         /// <p>The list of user-defined tags that are associated with the secret. To add tags to a
         /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2052,10 +2043,10 @@ pub mod describe_secret_output {
         pub fn version_ids_to_stages(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.version_ids_to_stages.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.version_ids_to_stages = Some(hash_map);
             self
         }
@@ -2120,12 +2111,9 @@ pub mod describe_secret_output {
         ///
         /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code>
         /// </p>
-        pub fn replication_status(
-            mut self,
-            input: impl Into<crate::model::ReplicationStatusType>,
-        ) -> Self {
+        pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_status = Some(v);
             self
         }
@@ -2464,12 +2452,9 @@ pub mod create_secret_output {
         /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
         ///
         /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.</p>
-        pub fn replication_status(
-            mut self,
-            input: impl Into<crate::model::ReplicationStatusType>,
-        ) -> Self {
+        pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_status = Some(v);
             self
         }

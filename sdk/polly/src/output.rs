@@ -350,9 +350,9 @@ pub mod list_speech_synthesis_tasks_output {
         /// <p>List of SynthesisTask objects that provides information from the
         /// specified task in the list request, including output format, creation
         /// time, task status, and so on.</p>
-        pub fn synthesis_tasks(mut self, input: impl Into<crate::model::SynthesisTask>) -> Self {
+        pub fn synthesis_tasks(mut self, input: crate::model::SynthesisTask) -> Self {
             let mut v = self.synthesis_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.synthesis_tasks = Some(v);
             self
         }
@@ -428,9 +428,9 @@ pub mod list_lexicons_output {
         /// To override the contents of this collection use [`set_lexicons`](Self::set_lexicons).
         ///
         /// <p>A list of lexicon names and attributes.</p>
-        pub fn lexicons(mut self, input: impl Into<crate::model::LexiconDescription>) -> Self {
+        pub fn lexicons(mut self, input: crate::model::LexiconDescription) -> Self {
             let mut v = self.lexicons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lexicons = Some(v);
             self
         }
@@ -671,9 +671,9 @@ pub mod describe_voices_output {
         /// To override the contents of this collection use [`set_voices`](Self::set_voices).
         ///
         /// <p>A list of voices with their properties.</p>
-        pub fn voices(mut self, input: impl Into<crate::model::Voice>) -> Self {
+        pub fn voices(mut self, input: crate::model::Voice) -> Self {
             let mut v = self.voices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.voices = Some(v);
             self
         }

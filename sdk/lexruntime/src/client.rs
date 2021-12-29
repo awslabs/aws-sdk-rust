@@ -188,8 +188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot that contains the session data.</p>
-        pub fn bot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(inp);
+        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(signature.into());
             self
         }
         /// <p>The name of the bot that contains the session data.</p>
@@ -198,8 +198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias in use for the bot that contains the session data.</p>
-        pub fn bot_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias(inp);
+        pub fn bot_alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias(signature.into());
             self
         }
         /// <p>The alias in use for the bot that contains the session data.</p>
@@ -208,8 +208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user associated with the session data.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The identifier of the user associated with the session data.</p>
@@ -279,8 +279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot that contains the session data.</p>
-        pub fn bot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(inp);
+        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(signature.into());
             self
         }
         /// <p>The name of the bot that contains the session data.</p>
@@ -289,8 +289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias in use for the bot that contains the session data.</p>
-        pub fn bot_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias(inp);
+        pub fn bot_alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias(signature.into());
             self
         }
         /// <p>The alias in use for the bot that contains the session data.</p>
@@ -300,8 +300,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the client application user. Amazon Lex uses this to identify a
         /// user's conversation with your bot. </p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the client application user. Amazon Lex uses this to identify a
@@ -315,8 +315,11 @@ pub mod fluent_builders {
         /// <p>When you specify a filter, only intents with their
         /// <code>checkpointLabel</code> field set to that string are
         /// returned.</p>
-        pub fn checkpoint_label_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checkpoint_label_filter(inp);
+        pub fn checkpoint_label_filter(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.checkpoint_label_filter(signature.into());
             self
         }
         /// <p>A string used to filter the intents returned in the
@@ -468,8 +471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the Amazon Lex bot.</p>
-        pub fn bot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(inp);
+        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(signature.into());
             self
         }
         /// <p>Name of the Amazon Lex bot.</p>
@@ -478,8 +481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Alias of the Amazon Lex bot.</p>
-        pub fn bot_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias(inp);
+        pub fn bot_alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias(signature.into());
             self
         }
         /// <p>Alias of the Amazon Lex bot.</p>
@@ -516,8 +519,8 @@ pub mod fluent_builders {
         /// in the user ID to separate the two conversations.</p>
         /// </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the client application user. Amazon Lex uses this to identify a
@@ -561,8 +564,8 @@ pub mod fluent_builders {
         /// <code>sessionAttributes</code> and <code>requestAttributes</code>
         /// headers is limited to 12 KB.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-        pub fn session_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_attributes(inp);
+        pub fn session_attributes(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_attributes(signature.into());
             self
         }
         /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code>
@@ -591,8 +594,8 @@ pub mod fluent_builders {
         /// attributes. Don't create any request attributes with the prefix
         /// <code>x-amz-lex:</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-        pub fn request_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_attributes(inp);
+        pub fn request_attributes(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_attributes(signature.into());
             self
         }
         /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code>
@@ -650,8 +653,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
@@ -736,8 +739,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn accept(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept(inp);
+        pub fn accept(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept(signature.into());
             self
         }
         /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
@@ -791,8 +794,8 @@ pub mod fluent_builders {
         /// that captures all of the audio data before sending. In general, you get
         /// better performance if you stream audio data rather than buffering the data
         /// locally.</p>
-        pub fn input_stream(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.input_stream(inp);
+        pub fn input_stream(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.input_stream(signature);
             self
         }
         /// <p> User input in PCM or Opus audio format or text format as described in
@@ -814,8 +817,8 @@ pub mod fluent_builders {
         /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
         /// list of contexts for the session. If you specify an empty list, all
         /// contexts for the session are cleared.</p>
-        pub fn active_contexts(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.active_contexts(inp);
+        pub fn active_contexts(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.active_contexts(signature.into());
             self
         }
         /// <p>A list of contexts active for the request. A context can be activated
@@ -967,8 +970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Lex bot.</p>
-        pub fn bot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(inp);
+        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(signature.into());
             self
         }
         /// <p>The name of the Amazon Lex bot.</p>
@@ -977,8 +980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the Amazon Lex bot.</p>
-        pub fn bot_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias(inp);
+        pub fn bot_alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias(signature.into());
             self
         }
         /// <p>The alias of the Amazon Lex bot.</p>
@@ -1015,8 +1018,8 @@ pub mod fluent_builders {
         /// in the user ID to separate the two conversations.</p>
         /// </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the client application user. Amazon Lex uses this to identify a
@@ -1064,7 +1067,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.session_attributes(k, v);
+            self.inner = self.inner.session_attributes(k.into(), v.into());
             self
         }
         /// <p>Application-specific information passed between Amazon Lex and a client
@@ -1094,7 +1097,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_attributes(k, v);
+            self.inner = self.inner.request_attributes(k.into(), v.into());
             self
         }
         /// <p>Request-specific information passed between Amazon Lex and a client
@@ -1113,8 +1116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
-        pub fn input_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_text(inp);
+        pub fn input_text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_text(signature.into());
             self
         }
         /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
@@ -1132,8 +1135,8 @@ pub mod fluent_builders {
         /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
         /// list of contexts for the session. If you specify an empty list, all
         /// contexts for the session are cleared.</p>
-        pub fn active_contexts(mut self, inp: impl Into<crate::model::ActiveContext>) -> Self {
-            self.inner = self.inner.active_contexts(inp);
+        pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
+            self.inner = self.inner.active_contexts(input);
             self
         }
         /// <p>A list of contexts active for the request. A context can be activated
@@ -1214,8 +1217,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot that contains the session data.</p>
-        pub fn bot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(inp);
+        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(signature.into());
             self
         }
         /// <p>The name of the bot that contains the session data.</p>
@@ -1224,8 +1227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias in use for the bot that contains the session data.</p>
-        pub fn bot_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias(inp);
+        pub fn bot_alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias(signature.into());
             self
         }
         /// <p>The alias in use for the bot that contains the session data.</p>
@@ -1235,8 +1238,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the client application user. Amazon Lex uses this to identify a
         /// user's conversation with your bot. </p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the client application user. Amazon Lex uses this to identify a
@@ -1257,7 +1260,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.session_attributes(k, v);
+            self.inner = self.inner.session_attributes(k.into(), v.into());
             self
         }
         /// <p>Map of key/value pairs representing the session-specific context
@@ -1274,8 +1277,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the next action that the bot should take to fulfill the
         /// conversation.</p>
-        pub fn dialog_action(mut self, inp: crate::model::DialogAction) -> Self {
-            self.inner = self.inner.dialog_action(inp);
+        pub fn dialog_action(mut self, signature: crate::model::DialogAction) -> Self {
+            self.inner = self.inner.dialog_action(signature);
             self
         }
         /// <p>Sets the next action that the bot should take to fulfill the
@@ -1319,11 +1322,8 @@ pub mod fluent_builders {
         /// request returns three intents in the summary view and you call
         /// <code>PutSession</code> with one intent in the summary view, the next
         /// call to <code>GetSession</code> will only return one intent.</p>
-        pub fn recent_intent_summary_view(
-            mut self,
-            inp: impl Into<crate::model::IntentSummary>,
-        ) -> Self {
-            self.inner = self.inner.recent_intent_summary_view(inp);
+        pub fn recent_intent_summary_view(mut self, input: crate::model::IntentSummary) -> Self {
+            self.inner = self.inner.recent_intent_summary_view(input);
             self
         }
         /// <p>A summary of the recent intents for the bot. You can use the intent
@@ -1409,8 +1409,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn accept(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept(inp);
+        pub fn accept(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept(signature.into());
             self
         }
         /// <p>The message that Amazon Lex returns in the response can be either text or
@@ -1475,8 +1475,8 @@ pub mod fluent_builders {
         /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
         /// list of contexts for the session. If you specify an empty list, all
         /// contexts for the session are cleared.</p>
-        pub fn active_contexts(mut self, inp: impl Into<crate::model::ActiveContext>) -> Self {
-            self.inner = self.inner.active_contexts(inp);
+        pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
+            self.inner = self.inner.active_contexts(input);
             self
         }
         /// <p>A list of contexts active for the request. A context can be activated

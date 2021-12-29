@@ -95,9 +95,9 @@ pub mod list_tasks_output {
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
         /// <p>A list of task structures containing details about each task.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::TaskSummary>) -> Self {
+        pub fn tasks(mut self, input: crate::model::TaskSummary) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -502,9 +502,9 @@ pub mod list_executions_output {
         ///
         /// <p>A list of executions. Each execution contains the task ID, the device that the task is
         /// executing on, the execution ID, and the status of the execution.</p>
-        pub fn executions(mut self, input: impl Into<crate::model::ExecutionSummary>) -> Self {
+        pub fn executions(mut self, input: crate::model::ExecutionSummary) -> Self {
             let mut v = self.executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.executions = Some(v);
             self
         }
@@ -746,9 +746,9 @@ pub mod list_device_resources_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::ResourceSummary>) -> Self {
+        pub fn resources(mut self, input: crate::model::ResourceSummary) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -820,9 +820,9 @@ pub mod describe_device_ec2_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>A list of structures containing information about each instance. </p>
-        pub fn instances(mut self, input: impl Into<crate::model::InstanceSummary>) -> Self {
+        pub fn instances(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -891,9 +891,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>A list of device structures that contain information about the device.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceSummary>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceSummary) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -1185,10 +1185,10 @@ pub mod describe_device_output {
         /// <p>The network interfaces available on the device.</p>
         pub fn physical_network_interfaces(
             mut self,
-            input: impl Into<crate::model::PhysicalNetworkInterface>,
+            input: crate::model::PhysicalNetworkInterface,
         ) -> Self {
             let mut v = self.physical_network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.physical_network_interfaces = Some(v);
             self
         }
@@ -1205,9 +1205,9 @@ pub mod describe_device_output {
         /// To override the contents of this collection use [`set_device_capacities`](Self::set_device_capacities).
         ///
         /// <p>The hardware specifications of the device. </p>
-        pub fn device_capacities(mut self, input: impl Into<crate::model::Capacity>) -> Self {
+        pub fn device_capacities(mut self, input: crate::model::Capacity) -> Self {
             let mut v = self.device_capacities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_capacities = Some(v);
             self
         }

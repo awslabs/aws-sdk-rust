@@ -178,12 +178,9 @@ pub mod version {
         /// To override the contents of this collection use [`set_parameter_definitions`](Self::set_parameter_definitions).
         ///
         /// <p>An array of parameter types supported by the application.</p>
-        pub fn parameter_definitions(
-            mut self,
-            input: impl Into<crate::model::ParameterDefinition>,
-        ) -> Self {
+        pub fn parameter_definitions(mut self, input: crate::model::ParameterDefinition) -> Self {
             let mut v = self.parameter_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_definitions = Some(v);
             self
         }
@@ -222,9 +219,9 @@ pub mod version {
         /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
         /// all permissions associated with the application before deploying. If you don't specify
         /// this parameter for an application that requires capabilities, the call will fail.</p>
-        pub fn required_capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn required_capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.required_capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.required_capabilities = Some(v);
             self
         }
@@ -1564,12 +1561,9 @@ pub mod rollback_configuration {
         ///
         /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
         /// </i> Data Type.</p>
-        pub fn rollback_triggers(
-            mut self,
-            input: impl Into<crate::model::RollbackTrigger>,
-        ) -> Self {
+        pub fn rollback_triggers(mut self, input: crate::model::RollbackTrigger) -> Self {
             let mut v = self.rollback_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rollback_triggers = Some(v);
             self
         }

@@ -46,12 +46,9 @@ pub mod update_deployment_group_output {
         /// Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS
         /// CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
         /// account.</p>
-        pub fn hooks_not_cleaned_up(
-            mut self,
-            input: impl Into<crate::model::AutoScalingGroup>,
-        ) -> Self {
+        pub fn hooks_not_cleaned_up(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hooks_not_cleaned_up = Some(v);
             self
         }
@@ -516,9 +513,9 @@ pub mod list_tags_for_resource_output {
         ///
         /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
         /// with the resource identified by the input <code>ResourceArn</code> parameter. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1353,9 +1350,9 @@ pub mod list_application_revisions_output {
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
         /// <p>A list of locations that contain the matching revisions.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::RevisionLocation>) -> Self {
+        pub fn revisions(mut self, input: crate::model::RevisionLocation) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }
@@ -2076,12 +2073,9 @@ pub mod delete_deployment_group_output {
         /// Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.
         /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
         /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-        pub fn hooks_not_cleaned_up(
-            mut self,
-            input: impl Into<crate::model::AutoScalingGroup>,
-        ) -> Self {
+        pub fn hooks_not_cleaned_up(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hooks_not_cleaned_up = Some(v);
             self
         }
@@ -2464,9 +2458,9 @@ pub mod batch_get_on_premises_instances_output {
         /// To override the contents of this collection use [`set_instance_infos`](Self::set_instance_infos).
         ///
         /// <p>Information about the on-premises instances.</p>
-        pub fn instance_infos(mut self, input: impl Into<crate::model::InstanceInfo>) -> Self {
+        pub fn instance_infos(mut self, input: crate::model::InstanceInfo) -> Self {
             let mut v = self.instance_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_infos = Some(v);
             self
         }
@@ -2600,12 +2594,9 @@ pub mod batch_get_deployment_targets_output {
         /// CloudFormation blue/green deployment. </p>
         /// </li>
         /// </ul>
-        pub fn deployment_targets(
-            mut self,
-            input: impl Into<crate::model::DeploymentTarget>,
-        ) -> Self {
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTarget) -> Self {
             let mut v = self.deployment_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_targets = Some(v);
             self
         }
@@ -2691,9 +2682,9 @@ pub mod batch_get_deployments_output {
         /// To override the contents of this collection use [`set_deployments_info`](Self::set_deployments_info).
         ///
         /// <p> Information about the deployments. </p>
-        pub fn deployments_info(mut self, input: impl Into<crate::model::DeploymentInfo>) -> Self {
+        pub fn deployments_info(mut self, input: crate::model::DeploymentInfo) -> Self {
             let mut v = self.deployments_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments_info = Some(v);
             self
         }
@@ -2763,12 +2754,9 @@ pub mod batch_get_deployment_instances_output {
         /// To override the contents of this collection use [`set_instances_summary`](Self::set_instances_summary).
         ///
         /// <p>Information about the instance.</p>
-        pub fn instances_summary(
-            mut self,
-            input: impl Into<crate::model::InstanceSummary>,
-        ) -> Self {
+        pub fn instances_summary(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instances_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances_summary = Some(v);
             self
         }
@@ -2855,12 +2843,9 @@ pub mod batch_get_deployment_groups_output {
         /// To override the contents of this collection use [`set_deployment_groups_info`](Self::set_deployment_groups_info).
         ///
         /// <p>Information about the deployment groups.</p>
-        pub fn deployment_groups_info(
-            mut self,
-            input: impl Into<crate::model::DeploymentGroupInfo>,
-        ) -> Self {
+        pub fn deployment_groups_info(mut self, input: crate::model::DeploymentGroupInfo) -> Self {
             let mut v = self.deployment_groups_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_groups_info = Some(v);
             self
         }
@@ -2936,12 +2921,9 @@ pub mod batch_get_applications_output {
         /// To override the contents of this collection use [`set_applications_info`](Self::set_applications_info).
         ///
         /// <p>Information about the applications.</p>
-        pub fn applications_info(
-            mut self,
-            input: impl Into<crate::model::ApplicationInfo>,
-        ) -> Self {
+        pub fn applications_info(mut self, input: crate::model::ApplicationInfo) -> Self {
             let mut v = self.applications_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications_info = Some(v);
             self
         }
@@ -3044,9 +3026,9 @@ pub mod batch_get_application_revisions_output {
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
         /// <p>Additional information about the revisions, including the type and location.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::RevisionInfo>) -> Self {
+        pub fn revisions(mut self, input: crate::model::RevisionInfo) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }

@@ -632,8 +632,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_variable_entries`](Self::set_variable_entries).
         ///
         /// <p>The list of variables for the batch create variable request.</p>
-        pub fn variable_entries(mut self, inp: impl Into<crate::model::VariableEntry>) -> Self {
-            self.inner = self.inner.variable_entries(inp);
+        pub fn variable_entries(mut self, input: crate::model::VariableEntry) -> Self {
+            self.inner = self.inner.variable_entries(input);
             self
         }
         /// <p>The list of variables for the batch create variable request.</p>
@@ -649,8 +649,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -726,8 +726,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The list of variable names to get.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The list of variable names to get.</p>
@@ -800,8 +800,8 @@ pub mod fluent_builders {
         }
         /// <p> The ID of an in-progress batch import job to cancel. </p>
         /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p> The ID of an in-progress batch import job to cancel. </p>
@@ -871,8 +871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the batch prediction job to cancel.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID of the batch prediction job to cancel.</p>
@@ -941,8 +941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
@@ -951,8 +951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI that points to the Amazon S3 location of your data file.</p>
-        pub fn input_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_path(inp);
+        pub fn input_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_path(signature.into());
             self
         }
         /// <p>The URI that points to the Amazon S3 location of your data file.</p>
@@ -961,8 +961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
-        pub fn output_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_path(inp);
+        pub fn output_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_path(signature.into());
             self
         }
         /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
@@ -971,8 +971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the event type.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The name of the event type.</p>
@@ -985,8 +985,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
         /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
@@ -1000,8 +1000,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key-value pairs associated with this request.  </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key-value pairs associated with this request.  </p>
@@ -1073,8 +1073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the batch prediction job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID of the batch prediction job.</p>
@@ -1083,8 +1083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 location of your training file.</p>
-        pub fn input_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_path(inp);
+        pub fn input_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_path(signature.into());
             self
         }
         /// <p>The Amazon S3 location of your training file.</p>
@@ -1093,8 +1093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 location of your output file.</p>
-        pub fn output_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_path(inp);
+        pub fn output_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_path(signature.into());
             self
         }
         /// <p>The Amazon S3 location of your output file.</p>
@@ -1103,8 +1103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the event type.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The name of the event type.</p>
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the detector.</p>
-        pub fn detector_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_name(inp);
+        pub fn detector_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_name(signature.into());
             self
         }
         /// <p>The name of the detector.</p>
@@ -1129,8 +1129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector version.</p>
-        pub fn detector_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_version(inp);
+        pub fn detector_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_version(signature.into());
             self
         }
         /// <p>The detector version.</p>
@@ -1142,8 +1142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM role to use for this job request.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role to use for this job request.</p>
@@ -1156,8 +1156,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -1229,8 +1229,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector under which you want to create a new version.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector under which you want to create a new version.</p>
@@ -1239,8 +1239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the detector version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the detector version.</p>
@@ -1253,8 +1253,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_external_model_endpoints`](Self::set_external_model_endpoints).
         ///
         /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-        pub fn external_model_endpoints(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_model_endpoints(inp);
+        pub fn external_model_endpoints(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_model_endpoints(input.into());
             self
         }
         /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
@@ -1270,8 +1270,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules to include in the detector version.</p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>The rules to include in the detector version.</p>
@@ -1287,8 +1287,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).
         ///
         /// <p>The model versions to include in the detector version.</p>
-        pub fn model_versions(mut self, inp: impl Into<crate::model::ModelVersion>) -> Self {
-            self.inner = self.inner.model_versions(inp);
+        pub fn model_versions(mut self, input: crate::model::ModelVersion) -> Self {
+            self.inner = self.inner.model_versions(input);
             self
         }
         /// <p>The model versions to include in the detector version.</p>
@@ -1304,8 +1304,8 @@ pub mod fluent_builders {
         /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
         /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
         /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
-        pub fn rule_execution_mode(mut self, inp: crate::model::RuleExecutionMode) -> Self {
-            self.inner = self.inner.rule_execution_mode(inp);
+        pub fn rule_execution_mode(mut self, signature: crate::model::RuleExecutionMode) -> Self {
+            self.inner = self.inner.rule_execution_mode(signature);
             self
         }
         /// <p>The rule execution mode for the rules included in the detector version.</p>
@@ -1325,8 +1325,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -1398,8 +1398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID.</p>
@@ -1408,8 +1408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type. </p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type. </p>
@@ -1421,8 +1421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model description. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The model description. </p>
@@ -1431,8 +1431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the event type.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The name of the event type.</p>
@@ -1448,8 +1448,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -1522,8 +1522,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID. </p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID. </p>
@@ -1532,8 +1532,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type.</p>
@@ -1545,8 +1545,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The training data source location in Amazon S3. </p>
-        pub fn training_data_source(mut self, inp: crate::model::TrainingDataSourceEnum) -> Self {
-            self.inner = self.inner.training_data_source(inp);
+        pub fn training_data_source(
+            mut self,
+            signature: crate::model::TrainingDataSourceEnum,
+        ) -> Self {
+            self.inner = self.inner.training_data_source(signature);
             self
         }
         /// <p>The training data source location in Amazon S3. </p>
@@ -1558,8 +1561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The training data schema.</p>
-        pub fn training_data_schema(mut self, inp: crate::model::TrainingDataSchema) -> Self {
-            self.inner = self.inner.training_data_schema(inp);
+        pub fn training_data_schema(mut self, signature: crate::model::TrainingDataSchema) -> Self {
+            self.inner = self.inner.training_data_schema(signature);
             self
         }
         /// <p>The training data schema.</p>
@@ -1571,8 +1574,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
-        pub fn external_events_detail(mut self, inp: crate::model::ExternalEventsDetail) -> Self {
-            self.inner = self.inner.external_events_detail(inp);
+        pub fn external_events_detail(
+            mut self,
+            signature: crate::model::ExternalEventsDetail,
+        ) -> Self {
+            self.inner = self.inner.external_events_detail(signature);
             self
         }
         /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
@@ -1584,8 +1590,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-        pub fn ingested_events_detail(mut self, inp: crate::model::IngestedEventsDetail) -> Self {
-            self.inner = self.inner.ingested_events_detail(inp);
+        pub fn ingested_events_detail(
+            mut self,
+            signature: crate::model::IngestedEventsDetail,
+        ) -> Self {
+            self.inner = self.inner.ingested_events_detail(signature);
             self
         }
         /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
@@ -1601,8 +1610,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -1674,8 +1683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule ID.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The rule ID.</p>
@@ -1684,8 +1693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector ID for the rule's parent detector.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID for the rule's parent detector.</p>
@@ -1694,8 +1703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The rule description.</p>
@@ -1704,8 +1713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule expression.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(signature.into());
             self
         }
         /// <p>The rule expression.</p>
@@ -1714,8 +1723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language of the rule.</p>
-        pub fn language(mut self, inp: crate::model::Language) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, signature: crate::model::Language) -> Self {
+            self.inner = self.inner.language(signature);
             self
         }
         /// <p>The language of the rule.</p>
@@ -1728,8 +1737,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
         ///
         /// <p>The outcome or outcomes returned when the rule expression matches.</p>
-        pub fn outcomes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outcomes(inp);
+        pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outcomes(input.into());
             self
         }
         /// <p>The outcome or outcomes returned when the rule expression matches.</p>
@@ -1745,8 +1754,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -1818,8 +1827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the variable.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the variable.</p>
@@ -1828,8 +1837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data type.</p>
-        pub fn data_type(mut self, inp: crate::model::DataType) -> Self {
-            self.inner = self.inner.data_type(inp);
+        pub fn data_type(mut self, signature: crate::model::DataType) -> Self {
+            self.inner = self.inner.data_type(signature);
             self
         }
         /// <p>The data type.</p>
@@ -1838,8 +1847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source of the data.</p>
-        pub fn data_source(mut self, inp: crate::model::DataSource) -> Self {
-            self.inner = self.inner.data_source(inp);
+        pub fn data_source(mut self, signature: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(signature);
             self
         }
         /// <p>The source of the data.</p>
@@ -1851,8 +1860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default value for the variable when no value is received.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_value(inp);
+        pub fn default_value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_value(signature.into());
             self
         }
         /// <p>The default value for the variable when no value is received.</p>
@@ -1864,8 +1873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -1877,8 +1886,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
         /// </p>
-        pub fn variable_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.variable_type(inp);
+        pub fn variable_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.variable_type(signature.into());
             self
         }
         /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
@@ -1897,8 +1906,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -1970,8 +1979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the batch import job to delete. </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID of the batch import job to delete. </p>
@@ -2040,8 +2049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the batch prediction job to delete.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID of the batch prediction job to delete.</p>
@@ -2111,8 +2120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector to delete.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector to delete.</p>
@@ -2182,8 +2191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the parent detector for the detector version to delete.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the parent detector for the detector version to delete.</p>
@@ -2192,8 +2201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the detector version to delete.</p>
-        pub fn detector_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_version_id(inp);
+        pub fn detector_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_version_id(signature.into());
             self
         }
         /// <p>The ID of the detector version to delete.</p>
@@ -2267,8 +2276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the entity type to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the entity type to delete.</p>
@@ -2338,8 +2347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the event to delete.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(inp);
+        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(signature.into());
             self
         }
         /// <p>The ID of the event to delete.</p>
@@ -2348,8 +2357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the event type.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The name of the event type.</p>
@@ -2361,8 +2370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
-        pub fn delete_audit_history(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_audit_history(inp);
+        pub fn delete_audit_history(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_audit_history(signature);
             self
         }
         /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
@@ -2431,8 +2440,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event type.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The name of the event type.</p>
@@ -2506,8 +2515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event type to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the event type to delete.</p>
@@ -2577,8 +2586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
-        pub fn model_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_endpoint(inp);
+        pub fn model_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_endpoint(signature.into());
             self
         }
         /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
@@ -2654,8 +2663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the label to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the label to delete.</p>
@@ -2726,8 +2735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID of the model to delete.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID of the model to delete.</p>
@@ -2736,8 +2745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type of the model to delete.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type of the model to delete.</p>
@@ -2811,8 +2820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID of the model version to delete.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID of the model version to delete.</p>
@@ -2821,8 +2830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type of the model version to delete.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type of the model version to delete.</p>
@@ -2834,8 +2843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model version number of the model version to delete.</p>
-        pub fn model_version_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version_number(inp);
+        pub fn model_version_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version_number(signature.into());
             self
         }
         /// <p>The model version number of the model version to delete.</p>
@@ -2909,8 +2918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the outcome to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the outcome to delete.</p>
@@ -2980,8 +2989,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A rule.</p>
-        pub fn rule(mut self, inp: crate::model::Rule) -> Self {
-            self.inner = self.inner.rule(inp);
+        pub fn rule(mut self, signature: crate::model::Rule) -> Self {
+            self.inner = self.inner.rule(signature);
             self
         }
         /// <p>A rule.</p>
@@ -3053,8 +3062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the variable to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the variable to delete.</p>
@@ -3123,8 +3132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID.</p>
@@ -3133,8 +3142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token from the previous response.</p>
@@ -3143,8 +3152,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return for the request.</p>
@@ -3213,8 +3222,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID.</p>
@@ -3223,8 +3232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model version number.</p>
-        pub fn model_version_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version_number(inp);
+        pub fn model_version_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version_number(signature.into());
             self
         }
         /// <p>The model version number.</p>
@@ -3236,8 +3245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type.</p>
@@ -3249,8 +3258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token from the previous results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token from the previous results.</p>
@@ -3259,8 +3268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3332,8 +3341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the batch import job to get.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The ID of the batch import job to get.</p>
@@ -3342,8 +3351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for request.</p>
@@ -3352,8 +3361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token from the previous request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token from the previous request.</p>
@@ -3422,8 +3431,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The batch prediction job for which to get the details.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The batch prediction job for which to get the details.</p>
@@ -3432,8 +3441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
@@ -3442,8 +3451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token from the previous request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token from the previous request.</p>
@@ -3512,8 +3521,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of event type for which to get the deletion status.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>Name of event type for which to get the deletion status.</p>
@@ -3590,8 +3599,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID.</p>
@@ -3600,8 +3609,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token for the subsequent request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token for the subsequent request.</p>
@@ -3610,8 +3619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
@@ -3680,8 +3689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID.</p>
@@ -3690,8 +3699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector version ID.</p>
-        pub fn detector_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_version_id(inp);
+        pub fn detector_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_version_id(signature.into());
             self
         }
         /// <p>The detector version ID.</p>
@@ -3768,8 +3777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name.</p>
@@ -3778,8 +3787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token for the subsequent request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token for the subsequent request.</p>
@@ -3788,8 +3797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
@@ -3858,8 +3867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the event to retrieve.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(inp);
+        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(signature.into());
             self
         }
         /// <p>The ID of the event to retrieve.</p>
@@ -3868,8 +3877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event type of the event to retrieve.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The event type of the event to retrieve.</p>
@@ -3941,8 +3950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID.</p>
@@ -3951,8 +3960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector version ID.</p>
-        pub fn detector_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_version_id(inp);
+        pub fn detector_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_version_id(signature.into());
             self
         }
         /// <p>The detector version ID.</p>
@@ -3964,8 +3973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID used to identify the event.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(inp);
+        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(signature.into());
             self
         }
         /// <p>The unique ID used to identify the event.</p>
@@ -3974,8 +3983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event type associated with the detector specified for the prediction.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The event type associated with the detector specified for the prediction.</p>
@@ -3991,8 +4000,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
-        pub fn entities(mut self, inp: impl Into<crate::model::Entity>) -> Self {
-            self.inner = self.inner.entities(inp);
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
+            self.inner = self.inner.entities(input);
             self
         }
         /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
@@ -4004,8 +4013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-        pub fn event_timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_timestamp(inp);
+        pub fn event_timestamp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_timestamp(signature.into());
             self
         }
         /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
@@ -4044,7 +4053,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.event_variables(k, v);
+            self.inner = self.inner.event_variables(k.into(), v.into());
             self
         }
         /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
@@ -4083,9 +4092,9 @@ pub mod fluent_builders {
         pub fn external_model_endpoint_data_blobs(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ModelEndpointDataBlob>,
+            v: crate::model::ModelEndpointDataBlob,
         ) -> Self {
-            self.inner = self.inner.external_model_endpoint_data_blobs(k, v);
+            self.inner = self.inner.external_model_endpoint_data_blobs(k.into(), v);
             self
         }
         /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
@@ -4164,8 +4173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name.</p>
@@ -4174,8 +4183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token for the subsequent request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token for the subsequent request.</p>
@@ -4184,8 +4193,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
@@ -4259,8 +4268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon SageMaker model endpoint.</p>
-        pub fn model_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_endpoint(inp);
+        pub fn model_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_endpoint(signature.into());
             self
         }
         /// <p>The Amazon SageMaker model endpoint.</p>
@@ -4272,8 +4281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page token for the request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next page token for the request.</p>
@@ -4282,8 +4291,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
@@ -4417,8 +4426,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the label or labels to get.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the label or labels to get.</p>
@@ -4427,8 +4436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token for the subsequent request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token for the subsequent request.</p>
@@ -4437,8 +4446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request.</p>
@@ -4513,8 +4522,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID.</p>
@@ -4523,8 +4532,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type.</p>
@@ -4536,8 +4545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token for the subsequent request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token for the subsequent request.</p>
@@ -4546,8 +4555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request. </p>
@@ -4616,8 +4625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID.</p>
@@ -4626,8 +4635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type.</p>
@@ -4639,8 +4648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model version number.</p>
-        pub fn model_version_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version_number(inp);
+        pub fn model_version_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version_number(signature.into());
             self
         }
         /// <p>The model version number.</p>
@@ -4717,8 +4726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the outcome or outcomes to get.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the outcome or outcomes to get.</p>
@@ -4727,8 +4736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page token for the request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next page token for the request. </p>
@@ -4737,8 +4746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request. </p>
@@ -4808,8 +4817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule ID.</p>
-        pub fn rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_id(inp);
+        pub fn rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_id(signature.into());
             self
         }
         /// <p>The rule ID.</p>
@@ -4818,8 +4827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector ID.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID.</p>
@@ -4828,8 +4837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule version.</p>
-        pub fn rule_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_version(inp);
+        pub fn rule_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_version(signature.into());
             self
         }
         /// <p>The rule version.</p>
@@ -4838,8 +4847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next page token.</p>
@@ -4848,8 +4857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of rules to return for the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of rules to return for the request.</p>
@@ -4923,8 +4932,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the variable. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the variable. </p>
@@ -4933,8 +4942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page token of the get variable request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next page token of the get variable request. </p>
@@ -4943,8 +4952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The max size per page determined for the get variable request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The max size per page determined for the get variable request. </p>
@@ -5015,8 +5024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the resource whose tags you want to list.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN that specifies the resource whose tags you want to list.</p>
@@ -5025,8 +5034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next token from the previous results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next token from the previous results.</p>
@@ -5035,8 +5044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return for the request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects to return for the request. </p>
@@ -5105,8 +5114,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID. </p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID. </p>
@@ -5115,8 +5124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the detector.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the detector.</p>
@@ -5125,8 +5134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the event type.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The name of the event type.</p>
@@ -5142,8 +5151,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -5215,8 +5224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the entity type.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the entity type.</p>
@@ -5225,8 +5234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -5239,8 +5248,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -5312,8 +5321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name.</p>
@@ -5322,8 +5331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the event type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the event type.</p>
@@ -5336,8 +5345,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
         ///
         /// <p>The event type variables.</p>
-        pub fn event_variables(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_variables(inp);
+        pub fn event_variables(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_variables(input.into());
             self
         }
         /// <p>The event type variables.</p>
@@ -5353,8 +5362,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
         /// <p>The event type labels.</p>
-        pub fn labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labels(inp);
+        pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labels(input.into());
             self
         }
         /// <p>The event type labels.</p>
@@ -5370,8 +5379,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
         ///
         /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-        pub fn entity_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_types(inp);
+        pub fn entity_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_types(input.into());
             self
         }
         /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
@@ -5383,8 +5392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies if ingenstion is enabled or disabled.</p>
-        pub fn event_ingestion(mut self, inp: crate::model::EventIngestion) -> Self {
-            self.inner = self.inner.event_ingestion(inp);
+        pub fn event_ingestion(mut self, signature: crate::model::EventIngestion) -> Self {
+            self.inner = self.inner.event_ingestion(signature);
             self
         }
         /// <p>Specifies if ingenstion is enabled or disabled.</p>
@@ -5400,8 +5409,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -5473,8 +5482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model endpoints name.</p>
-        pub fn model_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_endpoint(inp);
+        pub fn model_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_endpoint(signature.into());
             self
         }
         /// <p>The model endpoints name.</p>
@@ -5486,8 +5495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source of the model.</p>
-        pub fn model_source(mut self, inp: crate::model::ModelSource) -> Self {
-            self.inner = self.inner.model_source(inp);
+        pub fn model_source(mut self, signature: crate::model::ModelSource) -> Self {
+            self.inner = self.inner.model_source(signature);
             self
         }
         /// <p>The source of the model.</p>
@@ -5501,9 +5510,9 @@ pub mod fluent_builders {
         /// <p>The IAM role used to invoke the model endpoint.</p>
         pub fn invoke_model_endpoint_role_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.invoke_model_endpoint_role_arn(inp);
+            self.inner = self.inner.invoke_model_endpoint_role_arn(signature.into());
             self
         }
         /// <p>The IAM role used to invoke the model endpoint.</p>
@@ -5515,8 +5524,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model endpoint input configuration.</p>
-        pub fn input_configuration(mut self, inp: crate::model::ModelInputConfiguration) -> Self {
-            self.inner = self.inner.input_configuration(inp);
+        pub fn input_configuration(
+            mut self,
+            signature: crate::model::ModelInputConfiguration,
+        ) -> Self {
+            self.inner = self.inner.input_configuration(signature);
             self
         }
         /// <p>The model endpoint input configuration.</p>
@@ -5528,8 +5540,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model endpoint output configuration.</p>
-        pub fn output_configuration(mut self, inp: crate::model::ModelOutputConfiguration) -> Self {
-            self.inner = self.inner.output_configuration(inp);
+        pub fn output_configuration(
+            mut self,
+            signature: crate::model::ModelOutputConfiguration,
+        ) -> Self {
+            self.inner = self.inner.output_configuration(signature);
             self
         }
         /// <p>The model endpoint output configuration.</p>
@@ -5541,8 +5556,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
-        pub fn model_endpoint_status(mut self, inp: crate::model::ModelEndpointStatus) -> Self {
-            self.inner = self.inner.model_endpoint_status(inp);
+        pub fn model_endpoint_status(
+            mut self,
+            signature: crate::model::ModelEndpointStatus,
+        ) -> Self {
+            self.inner = self.inner.model_endpoint_status(signature);
             self
         }
         /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
@@ -5558,8 +5576,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -5631,8 +5649,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The KMS encryption key ARN.</p>
-        pub fn kms_encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_encryption_key_arn(inp);
+        pub fn kms_encryption_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_encryption_key_arn(signature.into());
             self
         }
         /// <p>The KMS encryption key ARN.</p>
@@ -5704,8 +5722,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The label name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The label name.</p>
@@ -5714,8 +5732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The label description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The label description.</p>
@@ -5728,8 +5746,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p></p>
@@ -5801,8 +5819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the outcome.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the outcome.</p>
@@ -5811,8 +5829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The outcome description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The outcome description.</p>
@@ -5825,8 +5843,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -5898,8 +5916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The event ID to upload.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(inp);
+        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(signature.into());
             self
         }
         /// <p>The event ID to upload.</p>
@@ -5908,8 +5926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event type name of the event.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The event type name of the event.</p>
@@ -5921,8 +5939,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-        pub fn event_timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_timestamp(inp);
+        pub fn event_timestamp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_timestamp(signature.into());
             self
         }
         /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
@@ -5943,7 +5961,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.event_variables(k, v);
+            self.inner = self.inner.event_variables(k.into(), v.into());
             self
         }
         /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
@@ -5957,8 +5975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
-        pub fn assigned_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assigned_label(inp);
+        pub fn assigned_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assigned_label(signature.into());
             self
         }
         /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
@@ -5970,8 +5988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
-        pub fn label_timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label_timestamp(inp);
+        pub fn label_timestamp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_timestamp(signature.into());
             self
         }
         /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
@@ -5987,8 +6005,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>An array of entities.</p>
-        pub fn entities(mut self, inp: impl Into<crate::model::Entity>) -> Self {
-            self.inner = self.inner.entities(inp);
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
+            self.inner = self.inner.entities(input);
             self
         }
         /// <p>An array of entities.</p>
@@ -6060,8 +6078,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -6074,8 +6092,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the resource.</p>
@@ -6147,8 +6165,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource from which to remove the tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource from which to remove the tag.</p>
@@ -6161,8 +6179,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The resource ARN.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -6234,8 +6252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The parent detector ID for the detector version you want to update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The parent detector ID for the detector version you want to update.</p>
@@ -6244,8 +6262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector version ID. </p>
-        pub fn detector_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_version_id(inp);
+        pub fn detector_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_version_id(signature.into());
             self
         }
         /// <p>The detector version ID. </p>
@@ -6261,8 +6279,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_external_model_endpoints`](Self::set_external_model_endpoints).
         ///
         /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
-        pub fn external_model_endpoints(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_model_endpoints(inp);
+        pub fn external_model_endpoints(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_model_endpoints(input.into());
             self
         }
         /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
@@ -6278,8 +6296,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules to include in the detector version.</p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>The rules to include in the detector version.</p>
@@ -6291,8 +6309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector version description. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The detector version description. </p>
@@ -6305,8 +6323,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).
         ///
         /// <p>The model versions to include in the detector version.</p>
-        pub fn model_versions(mut self, inp: impl Into<crate::model::ModelVersion>) -> Self {
-            self.inner = self.inner.model_versions(inp);
+        pub fn model_versions(mut self, input: crate::model::ModelVersion) -> Self {
+            self.inner = self.inner.model_versions(input);
             self
         }
         /// <p>The model versions to include in the detector version.</p>
@@ -6321,8 +6339,8 @@ pub mod fluent_builders {
         /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
         /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
         /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
-        pub fn rule_execution_mode(mut self, inp: crate::model::RuleExecutionMode) -> Self {
-            self.inner = self.inner.rule_execution_mode(inp);
+        pub fn rule_execution_mode(mut self, signature: crate::model::RuleExecutionMode) -> Self {
+            self.inner = self.inner.rule_execution_mode(signature);
             self
         }
         /// <p>The rule execution mode to add to the detector.</p>
@@ -6398,8 +6416,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID.</p>
@@ -6408,8 +6426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector version ID. </p>
-        pub fn detector_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_version_id(inp);
+        pub fn detector_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_version_id(signature.into());
             self
         }
         /// <p>The detector version ID. </p>
@@ -6421,8 +6439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -6492,8 +6510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID. </p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID. </p>
@@ -6502,8 +6520,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The detector version ID. </p>
-        pub fn detector_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_version_id(inp);
+        pub fn detector_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_version_id(signature.into());
             self
         }
         /// <p>The detector version ID. </p>
@@ -6515,8 +6533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new status.</p>
-        pub fn status(mut self, inp: crate::model::DetectorVersionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::DetectorVersionStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The new status.</p>
@@ -6588,8 +6606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the event associated with the label to update.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(inp);
+        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(signature.into());
             self
         }
         /// <p>The ID of the event associated with the label to update.</p>
@@ -6598,8 +6616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event type of the event associated with the label to update.</p>
-        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type_name(inp);
+        pub fn event_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(signature.into());
             self
         }
         /// <p>The event type of the event associated with the label to update.</p>
@@ -6611,8 +6629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new label to assign to the event.</p>
-        pub fn assigned_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assigned_label(inp);
+        pub fn assigned_label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assigned_label(signature.into());
             self
         }
         /// <p>The new label to assign to the event.</p>
@@ -6624,8 +6642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
-        pub fn label_timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label_timestamp(inp);
+        pub fn label_timestamp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_timestamp(signature.into());
             self
         }
         /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
@@ -6697,8 +6715,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID.</p>
@@ -6707,8 +6725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type.</p>
@@ -6720,8 +6738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new model description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The new model description.</p>
@@ -6790,8 +6808,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID.</p>
@@ -6800,8 +6818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type.</p>
@@ -6813,8 +6831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version number.</p>
-        pub fn major_version_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version_number(inp);
+        pub fn major_version_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version_number(signature.into());
             self
         }
         /// <p>The major version number.</p>
@@ -6826,8 +6844,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
-        pub fn external_events_detail(mut self, inp: crate::model::ExternalEventsDetail) -> Self {
-            self.inner = self.inner.external_events_detail(inp);
+        pub fn external_events_detail(
+            mut self,
+            signature: crate::model::ExternalEventsDetail,
+        ) -> Self {
+            self.inner = self.inner.external_events_detail(signature);
             self
         }
         /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
@@ -6839,8 +6860,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-        pub fn ingested_events_detail(mut self, inp: crate::model::IngestedEventsDetail) -> Self {
-            self.inner = self.inner.ingested_events_detail(inp);
+        pub fn ingested_events_detail(
+            mut self,
+            signature: crate::model::IngestedEventsDetail,
+        ) -> Self {
+            self.inner = self.inner.ingested_events_detail(signature);
             self
         }
         /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
@@ -6856,8 +6880,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of key and value pairs.</p>
@@ -6938,8 +6962,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The model ID of the model version to update.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(signature.into());
             self
         }
         /// <p>The model ID of the model version to update.</p>
@@ -6948,8 +6972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model type.</p>
-        pub fn model_type(mut self, inp: crate::model::ModelTypeEnum) -> Self {
-            self.inner = self.inner.model_type(inp);
+        pub fn model_type(mut self, signature: crate::model::ModelTypeEnum) -> Self {
+            self.inner = self.inner.model_type(signature);
             self
         }
         /// <p>The model type.</p>
@@ -6961,8 +6985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model version number.</p>
-        pub fn model_version_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version_number(inp);
+        pub fn model_version_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version_number(signature.into());
             self
         }
         /// <p>The model version number.</p>
@@ -6974,8 +6998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model version status.</p>
-        pub fn status(mut self, inp: crate::model::ModelVersionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::ModelVersionStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The model version status.</p>
@@ -7047,8 +7071,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule to update.</p>
-        pub fn rule(mut self, inp: crate::model::Rule) -> Self {
-            self.inner = self.inner.rule(inp);
+        pub fn rule(mut self, signature: crate::model::Rule) -> Self {
+            self.inner = self.inner.rule(signature);
             self
         }
         /// <p>The rule to update.</p>
@@ -7057,8 +7081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The rule description.</p>
@@ -7127,8 +7151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule to update.</p>
-        pub fn rule(mut self, inp: crate::model::Rule) -> Self {
-            self.inner = self.inner.rule(inp);
+        pub fn rule(mut self, signature: crate::model::Rule) -> Self {
+            self.inner = self.inner.rule(signature);
             self
         }
         /// <p>The rule to update.</p>
@@ -7137,8 +7161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -7147,8 +7171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule expression.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(signature.into());
             self
         }
         /// <p>The rule expression.</p>
@@ -7157,8 +7181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language.</p>
-        pub fn language(mut self, inp: crate::model::Language) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, signature: crate::model::Language) -> Self {
+            self.inner = self.inner.language(signature);
             self
         }
         /// <p>The language.</p>
@@ -7171,8 +7195,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
         ///
         /// <p>The outcomes.</p>
-        pub fn outcomes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outcomes(inp);
+        pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outcomes(input.into());
             self
         }
         /// <p>The outcomes.</p>
@@ -7188,8 +7212,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the rule version.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the rule version.</p>
@@ -7261,8 +7285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the variable.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the variable.</p>
@@ -7271,8 +7295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new default value of the variable.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_value(inp);
+        pub fn default_value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_value(signature.into());
             self
         }
         /// <p>The new default value of the variable.</p>
@@ -7284,8 +7308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The new description.</p>
@@ -7294,8 +7318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
-        pub fn variable_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.variable_type(inp);
+        pub fn variable_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.variable_type(signature.into());
             self
         }
         /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>

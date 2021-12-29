@@ -1340,9 +1340,9 @@ pub mod create_topic_input {
         /// <code>sns:CreateTopic</code> and <code>sns:TagResource</code>
         /// permissions.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4832,10 +4832,10 @@ pub mod publish_input {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -5069,10 +5069,10 @@ pub mod publish_batch_input {
         /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
         pub fn publish_batch_request_entries(
             mut self,
-            input: impl Into<crate::model::PublishBatchRequestEntry>,
+            input: crate::model::PublishBatchRequestEntry,
         ) -> Self {
             let mut v = self.publish_batch_request_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.publish_batch_request_entries = Some(v);
             self
         }
@@ -7394,9 +7394,9 @@ pub mod tag_resource_input {
         ///
         /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
         /// optional value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

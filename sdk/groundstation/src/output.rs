@@ -51,9 +51,9 @@ pub mod list_satellites_output {
         /// To override the contents of this collection use [`set_satellites`](Self::set_satellites).
         ///
         /// <p>List of satellites.</p>
-        pub fn satellites(mut self, input: impl Into<crate::model::SatelliteListItem>) -> Self {
+        pub fn satellites(mut self, input: crate::model::SatelliteListItem) -> Self {
             let mut v = self.satellites.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.satellites = Some(v);
             self
         }
@@ -260,12 +260,9 @@ pub mod list_mission_profiles_output {
         /// To override the contents of this collection use [`set_mission_profile_list`](Self::set_mission_profile_list).
         ///
         /// <p>List of mission profiles.</p>
-        pub fn mission_profile_list(
-            mut self,
-            input: impl Into<crate::model::MissionProfileListItem>,
-        ) -> Self {
+        pub fn mission_profile_list(mut self, input: crate::model::MissionProfileListItem) -> Self {
             let mut v = self.mission_profile_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mission_profile_list = Some(v);
             self
         }
@@ -677,12 +674,9 @@ pub mod get_mission_profile_output {
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
         /// <code>Config</code> and a <i>to</i>
         /// <code>Config</code>.</p>
-        pub fn dataflow_edges(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.dataflow_edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataflow_edges = Some(v);
             self
         }
@@ -812,12 +806,9 @@ pub mod list_ground_stations_output {
         /// To override the contents of this collection use [`set_ground_station_list`](Self::set_ground_station_list).
         ///
         /// <p>List of ground stations.</p>
-        pub fn ground_station_list(
-            mut self,
-            input: impl Into<crate::model::GroundStationData>,
-        ) -> Self {
+        pub fn ground_station_list(mut self, input: crate::model::GroundStationData) -> Self {
             let mut v = self.ground_station_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ground_station_list = Some(v);
             self
         }
@@ -906,10 +897,10 @@ pub mod list_dataflow_endpoint_groups_output {
         /// <p>A list of dataflow endpoint groups.</p>
         pub fn dataflow_endpoint_group_list(
             mut self,
-            input: impl Into<crate::model::DataflowEndpointListItem>,
+            input: crate::model::DataflowEndpointListItem,
         ) -> Self {
             let mut v = self.dataflow_endpoint_group_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataflow_endpoint_group_list = Some(v);
             self
         }
@@ -1157,12 +1148,9 @@ pub mod get_dataflow_endpoint_group_output {
         /// To override the contents of this collection use [`set_endpoints_details`](Self::set_endpoints_details).
         ///
         /// <p>Details of a dataflow endpoint.</p>
-        pub fn endpoints_details(
-            mut self,
-            input: impl Into<crate::model::EndpointDetails>,
-        ) -> Self {
+        pub fn endpoints_details(mut self, input: crate::model::EndpointDetails) -> Self {
             let mut v = self.endpoints_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints_details = Some(v);
             self
         }
@@ -1269,9 +1257,9 @@ pub mod list_contacts_output {
         /// To override the contents of this collection use [`set_contact_list`](Self::set_contact_list).
         ///
         /// <p>List of contacts.</p>
-        pub fn contact_list(mut self, input: impl Into<crate::model::ContactData>) -> Self {
+        pub fn contact_list(mut self, input: crate::model::ContactData) -> Self {
             let mut v = self.contact_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_list = Some(v);
             self
         }
@@ -1726,9 +1714,9 @@ pub mod describe_contact_output {
         /// To override the contents of this collection use [`set_dataflow_list`](Self::set_dataflow_list).
         ///
         /// <p>List describing source and destination details for each dataflow edge.</p>
-        pub fn dataflow_list(mut self, input: impl Into<crate::model::DataflowDetail>) -> Self {
+        pub fn dataflow_list(mut self, input: crate::model::DataflowDetail) -> Self {
             let mut v = self.dataflow_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataflow_list = Some(v);
             self
         }
@@ -1820,9 +1808,9 @@ pub mod list_configs_output {
         /// To override the contents of this collection use [`set_config_list`](Self::set_config_list).
         ///
         /// <p>List of <code>Config</code> items.</p>
-        pub fn config_list(mut self, input: impl Into<crate::model::ConfigListItem>) -> Self {
+        pub fn config_list(mut self, input: crate::model::ConfigListItem) -> Self {
             let mut v = self.config_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config_list = Some(v);
             self
         }

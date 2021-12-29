@@ -351,8 +351,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon resource name (ARN) of the analyzer.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The Amazon resource name (ARN) of the analyzer.</p>
@@ -361,8 +361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to apply.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the rule to apply.</p>
@@ -371,8 +371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token.</p>
@@ -444,8 +444,8 @@ pub mod fluent_builders {
         /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
         /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
         /// the policy generation request.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
@@ -521,8 +521,8 @@ pub mod fluent_builders {
         /// the account analyzer</a> used to generate the access preview. You can only create an
         /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
         /// status.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -544,9 +544,9 @@ pub mod fluent_builders {
         pub fn configurations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Configuration>,
+            v: crate::model::Configuration,
         ) -> Self {
-            self.inner = self.inner.configurations(k, v);
+            self.inner = self.inner.configurations(k.into(), v);
             self
         }
         /// <p>Access control configuration for your resource that is used to generate the access
@@ -563,8 +563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token.</p>
@@ -633,8 +633,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to create.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(signature.into());
             self
         }
         /// <p>The name of the analyzer to create.</p>
@@ -648,8 +648,8 @@ pub mod fluent_builders {
         /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
         /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
         /// per organization per Region.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
@@ -665,8 +665,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
         /// findings that meet the criteria you define for the rule.</p>
-        pub fn archive_rules(mut self, inp: impl Into<crate::model::InlineArchiveRule>) -> Self {
-            self.inner = self.inner.archive_rules(inp);
+        pub fn archive_rules(mut self, input: crate::model::InlineArchiveRule) -> Self {
+            self.inner = self.inner.archive_rules(input);
             self
         }
         /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
@@ -688,7 +688,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to apply to the analyzer.</p>
@@ -702,8 +702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token.</p>
@@ -774,8 +774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the created analyzer.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(signature.into());
             self
         }
         /// <p>The name of the created analyzer.</p>
@@ -787,8 +787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to create.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the rule to create.</p>
@@ -804,9 +804,9 @@ pub mod fluent_builders {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
-            self.inner = self.inner.filter(k, v);
+            self.inner = self.inner.filter(k.into(), v);
             self
         }
         /// <p>The criteria for the rule.</p>
@@ -820,8 +820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token.</p>
@@ -892,8 +892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to delete.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(signature.into());
             self
         }
         /// <p>The name of the analyzer to delete.</p>
@@ -905,8 +905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token.</p>
@@ -975,8 +975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(signature.into());
             self
         }
         /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
@@ -988,8 +988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to delete.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the rule to delete.</p>
@@ -998,8 +998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token.</p>
@@ -1068,8 +1068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID for the access preview.</p>
-        pub fn access_preview_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_preview_id(inp);
+        pub fn access_preview_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_preview_id(signature.into());
             self
         }
         /// <p>The unique ID for the access preview.</p>
@@ -1082,8 +1082,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> used to generate the access preview.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -1154,8 +1154,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> to retrieve information from.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -1165,8 +1165,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource to retrieve information about.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to retrieve information about.</p>
@@ -1235,8 +1235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer retrieved.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(signature.into());
             self
         }
         /// <p>The name of the analyzer retrieved.</p>
@@ -1309,8 +1309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to retrieve rules from.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(signature.into());
             self
         }
         /// <p>The name of the analyzer to retrieve rules from.</p>
@@ -1322,8 +1322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to retrieve.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the rule to retrieve.</p>
@@ -1393,8 +1393,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> that generated the finding.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -1404,8 +1404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the finding to retrieve.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the finding to retrieve.</p>
@@ -1478,8 +1478,8 @@ pub mod fluent_builders {
         /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
         /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
         /// the policy generation request.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
@@ -1495,8 +1495,8 @@ pub mod fluent_builders {
         /// granularity in policies.</p>
         /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
         /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
-        pub fn include_resource_placeholders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_resource_placeholders(inp);
+        pub fn include_resource_placeholders(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_resource_placeholders(signature);
             self
         }
         /// <p>The level of detail that you want to generate. You can specify whether to generate
@@ -1515,8 +1515,8 @@ pub mod fluent_builders {
         /// service-level policies. </p>
         /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
         /// been used recently to create this service-level template.</p>
-        pub fn include_service_level_template(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_service_level_template(inp);
+        pub fn include_service_level_template(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_service_level_template(signature);
             self
         }
         /// <p>The level of detail that you want to generate. You can specify whether to generate
@@ -1592,8 +1592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID for the access preview.</p>
-        pub fn access_preview_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_preview_id(inp);
+        pub fn access_preview_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_preview_id(signature.into());
             self
         }
         /// <p>The unique ID for the access preview.</p>
@@ -1606,8 +1606,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> used to generate the access.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -1624,9 +1624,9 @@ pub mod fluent_builders {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
-            self.inner = self.inner.filter(k, v);
+            self.inner = self.inner.filter(k.into(), v);
             self
         }
         /// <p>Criteria to filter the returned findings.</p>
@@ -1640,8 +1640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -1650,8 +1650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1721,8 +1721,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> used to generate the access preview.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -1732,8 +1732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -1742,8 +1742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1814,8 +1814,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -1825,8 +1825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of resource.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(signature);
             self
         }
         /// <p>The type of resource.</p>
@@ -1838,8 +1838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -1848,8 +1848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1918,8 +1918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -1928,8 +1928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1938,8 +1938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of analyzer.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of analyzer.</p>
@@ -2008,8 +2008,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to retrieve rules from.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(signature.into());
             self
         }
         /// <p>The name of the analyzer to retrieve rules from.</p>
@@ -2021,8 +2021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -2031,8 +2031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the request.</p>
@@ -2103,8 +2103,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> to retrieve findings from.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -2121,9 +2121,9 @@ pub mod fluent_builders {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
-            self.inner = self.inner.filter(k, v);
+            self.inner = self.inner.filter(k.into(), v);
             self
         }
         /// <p>A filter to match for the findings to return.</p>
@@ -2137,8 +2137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the findings returned.</p>
-        pub fn sort(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, signature: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort(signature);
             self
         }
         /// <p>The sort order for the findings returned.</p>
@@ -2147,8 +2147,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -2157,8 +2157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2229,8 +2229,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
         /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
         /// for a specific principal.</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
@@ -2244,8 +2244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2254,8 +2254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -2324,8 +2324,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to retrieve tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to retrieve tags from.</p>
@@ -2397,9 +2397,9 @@ pub mod fluent_builders {
         /// policy.</p>
         pub fn policy_generation_details(
             mut self,
-            inp: crate::model::PolicyGenerationDetails,
+            signature: crate::model::PolicyGenerationDetails,
         ) -> Self {
-            self.inner = self.inner.policy_generation_details(inp);
+            self.inner = self.inner.policy_generation_details(signature);
             self
         }
         /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
@@ -2413,8 +2413,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
         /// that you want to analyze to generate policies.</p>
-        pub fn cloud_trail_details(mut self, inp: crate::model::CloudTrailDetails) -> Self {
-            self.inner = self.inner.cloud_trail_details(inp);
+        pub fn cloud_trail_details(mut self, signature: crate::model::CloudTrailDetails) -> Self {
+            self.inner = self.inner.cloud_trail_details(signature);
             self
         }
         /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
@@ -2433,8 +2433,8 @@ pub mod fluent_builders {
         /// additional effect.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
         /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2511,8 +2511,8 @@ pub mod fluent_builders {
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> to use to scan the policies applied to the specified
         /// resource.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -2523,8 +2523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource to scan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to scan.</p>
@@ -2593,8 +2593,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to add the tag to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to add the tag to.</p>
@@ -2612,7 +2612,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the resource.</p>
@@ -2686,8 +2686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to remove the tag from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to remove the tag from.</p>
@@ -2700,8 +2700,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The key for the tag to add.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The key for the tag to add.</p>
@@ -2773,8 +2773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to update the archive rules for.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(signature.into());
             self
         }
         /// <p>The name of the analyzer to update the archive rules for.</p>
@@ -2786,8 +2786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to update.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the rule to update.</p>
@@ -2804,9 +2804,9 @@ pub mod fluent_builders {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
-            self.inner = self.inner.filter(k, v);
+            self.inner = self.inner.filter(k.into(), v);
             self
         }
         /// <p>A filter to match for the rules to update. Only rules that match the filter are
@@ -2821,8 +2821,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token.</p>
@@ -2892,8 +2892,8 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
         /// the analyzer</a> that generated the findings to update.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
@@ -2905,8 +2905,8 @@ pub mod fluent_builders {
         /// <p>The state represents the action to take to update the finding Status. Use
         /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
         /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
-        pub fn status(mut self, inp: crate::model::FindingStatusUpdate) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::FindingStatusUpdate) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The state represents the action to take to update the finding Status. Use
@@ -2924,8 +2924,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
         /// <p>The IDs of the findings to update.</p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>The IDs of the findings to update.</p>
@@ -2937,8 +2937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource identified in the finding.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource identified in the finding.</p>
@@ -2947,8 +2947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A client token.</p>
@@ -3019,8 +3019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The locale to use for localizing the findings.</p>
-        pub fn locale(mut self, inp: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(signature);
             self
         }
         /// <p>The locale to use for localizing the findings.</p>
@@ -3029,8 +3029,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -3039,8 +3039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -3049,8 +3049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON policy document to use as the content for the policy.</p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(signature.into());
             self
         }
         /// <p>The JSON policy document to use as the content for the policy.</p>
@@ -3069,8 +3069,8 @@ pub mod fluent_builders {
         /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
         /// input such as identity policy or resource policy or a specific input such as managed policy
         /// or Amazon S3 bucket policy. </p>
-        pub fn policy_type(mut self, inp: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.policy_type(inp);
+        pub fn policy_type(mut self, signature: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.policy_type(signature);
             self
         }
         /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
@@ -3098,9 +3098,9 @@ pub mod fluent_builders {
         /// will run policy checks that apply to all resource policies.</p>
         pub fn validate_policy_resource_type(
             mut self,
-            inp: crate::model::ValidatePolicyResourceType,
+            signature: crate::model::ValidatePolicyResourceType,
         ) -> Self {
-            self.inner = self.inner.validate_policy_resource_type(inp);
+            self.inner = self.inner.validate_policy_resource_type(signature);
             self
         }
         /// <p>The type of resource to attach to your resource policy. Specify a value for the policy

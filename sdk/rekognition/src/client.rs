@@ -629,8 +629,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
         /// passed using the <code>Bytes</code> field.
         /// For more information, see Images in the Amazon Rekognition developer guide.</p>
-        pub fn source_image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.source_image(inp);
+        pub fn source_image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.source_image(signature);
             self
         }
         /// <p>The input image as base64-encoded bytes or an S3 object.
@@ -649,8 +649,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
         /// passed using the <code>Bytes</code> field.
         /// For more information, see Images in the Amazon Rekognition developer guide.</p>
-        pub fn target_image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.target_image(inp);
+        pub fn target_image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.target_image(signature);
             self
         }
         /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
@@ -665,8 +665,8 @@ pub mod fluent_builders {
         }
         /// <p>The minimum level of confidence in the face matches that a match must meet to be
         /// included in the <code>FaceMatches</code> array.</p>
-        pub fn similarity_threshold(mut self, inp: f32) -> Self {
-            self.inner = self.inner.similarity_threshold(inp);
+        pub fn similarity_threshold(mut self, signature: f32) -> Self {
+            self.inner = self.inner.similarity_threshold(signature);
             self
         }
         /// <p>The minimum level of confidence in the face matches that a match must meet to be
@@ -688,8 +688,8 @@ pub mod fluent_builders {
         /// filtering is performed. The default value is <code>NONE</code>.
         /// </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-        pub fn quality_filter(mut self, inp: crate::model::QualityFilter) -> Self {
-            self.inner = self.inner.quality_filter(inp);
+        pub fn quality_filter(mut self, signature: crate::model::QualityFilter) -> Self {
+            self.inner = self.inner.quality_filter(signature);
             self
         }
         /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
@@ -785,8 +785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID for the collection that you are creating.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>ID for the collection that you are creating.</p>
@@ -809,7 +809,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>
@@ -914,8 +914,8 @@ pub mod fluent_builders {
         /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
         ///
         /// </p>
-        pub fn dataset_source(mut self, inp: crate::model::DatasetSource) -> Self {
-            self.inner = self.inner.dataset_source(inp);
+        pub fn dataset_source(mut self, signature: crate::model::DatasetSource) -> Self {
+            self.inner = self.inner.dataset_source(signature);
             self
         }
         /// <p>
@@ -935,8 +935,8 @@ pub mod fluent_builders {
         /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
         /// to create a test dataset.
         /// </p>
-        pub fn dataset_type(mut self, inp: crate::model::DatasetType) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        pub fn dataset_type(mut self, signature: crate::model::DatasetType) -> Self {
+            self.inner = self.inner.dataset_type(signature);
             self
         }
         /// <p>
@@ -953,8 +953,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
         /// </p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(signature.into());
             self
         }
         /// <p>
@@ -1027,8 +1027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to create.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project to create.</p>
@@ -1137,8 +1137,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Amazon Rekognition Custom Labels project that
         /// manages the model that you want to train.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(signature.into());
             self
         }
         /// <p>The ARN of the Amazon Rekognition Custom Labels project that
@@ -1148,8 +1148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the version of the model. This value must be unique.</p>
-        pub fn version_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_name(inp);
+        pub fn version_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(signature.into());
             self
         }
         /// <p>A name for the version of the model. This value must be unique.</p>
@@ -1160,8 +1160,8 @@ pub mod fluent_builders {
         /// <p>The Amazon S3 bucket location to store the results of training.
         /// The S3 bucket can be in any AWS account as long as the caller has
         /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
-        pub fn output_config(mut self, inp: crate::model::OutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, signature: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(signature);
             self
         }
         /// <p>The Amazon S3 bucket location to store the results of training.
@@ -1178,8 +1178,8 @@ pub mod fluent_builders {
         /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
         /// The project must not have any associated datasets.
         /// </p>
-        pub fn training_data(mut self, inp: crate::model::TrainingData) -> Self {
-            self.inner = self.inner.training_data(inp);
+        pub fn training_data(mut self, signature: crate::model::TrainingData) -> Self {
+            self.inner = self.inner.training_data(signature);
             self
         }
         /// <p>Specifies an external manifest that the services uses to train the model.
@@ -1196,8 +1196,8 @@ pub mod fluent_builders {
         /// <p>Specifies an external manifest that the service uses to test the model.
         /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
         /// The project must not have any associated datasets.</p>
-        pub fn testing_data(mut self, inp: crate::model::TestingData) -> Self {
-            self.inner = self.inner.testing_data(inp);
+        pub fn testing_data(mut self, signature: crate::model::TestingData) -> Self {
+            self.inner = self.inner.testing_data(signature);
             self
         }
         /// <p>Specifies an external manifest that the service uses to test the model.
@@ -1222,7 +1222,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>
@@ -1260,8 +1260,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted
         /// using a key that AWS owns and manages.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
@@ -1362,8 +1362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
-        pub fn input(mut self, inp: crate::model::StreamProcessorInput) -> Self {
-            self.inner = self.inner.input(inp);
+        pub fn input(mut self, signature: crate::model::StreamProcessorInput) -> Self {
+            self.inner = self.inner.input(signature);
             self
         }
         /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
@@ -1375,8 +1375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
-        pub fn output(mut self, inp: crate::model::StreamProcessorOutput) -> Self {
-            self.inner = self.inner.output(inp);
+        pub fn output(mut self, signature: crate::model::StreamProcessorOutput) -> Self {
+            self.inner = self.inner.output(signature);
             self
         }
         /// <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
@@ -1391,8 +1391,8 @@ pub mod fluent_builders {
         /// manage the stream processor. For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
         /// <code>Name</code> is idempotent.
         /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to
@@ -1405,8 +1405,8 @@ pub mod fluent_builders {
         }
         /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face
         /// attributes to detect.</p>
-        pub fn settings(mut self, inp: crate::model::StreamProcessorSettings) -> Self {
-            self.inner = self.inner.settings(inp);
+        pub fn settings(mut self, signature: crate::model::StreamProcessorSettings) -> Self {
+            self.inner = self.inner.settings(signature);
             self
         }
         /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face
@@ -1419,8 +1419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of the IAM role that allows access to the stream processor.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>ARN of the IAM role that allows access to the stream processor.</p>
@@ -1440,7 +1440,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>
@@ -1520,8 +1520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the collection to delete.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>ID of the collection to delete.</p>
@@ -1604,8 +1604,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
         /// </p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>
@@ -1679,8 +1679,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Collection from which to remove the specific faces.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>Collection from which to remove the specific faces.</p>
@@ -1696,8 +1696,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
         ///
         /// <p>An array of face IDs to delete.</p>
-        pub fn face_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.face_ids(inp);
+        pub fn face_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.face_ids(input.into());
             self
         }
         /// <p>An array of face IDs to delete.</p>
@@ -1776,8 +1776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
@@ -1853,8 +1853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
-        pub fn project_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_version_arn(inp);
+        pub fn project_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
@@ -1927,8 +1927,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream processor you want to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the stream processor you want to delete.</p>
@@ -2002,8 +2002,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the collection to describe.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>The ID of the collection to describe.</p>
@@ -2081,8 +2081,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
         /// </p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>
@@ -2156,8 +2156,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more
         /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
         /// token to retrieve the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more
@@ -2170,8 +2170,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
         /// If you specify a value greater than 100, a ValidationException
         /// error occurs. The default value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
@@ -2187,8 +2187,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
         /// the response includes descriptions for all the projects in your AWS account.</p>
-        pub fn project_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_names(inp);
+        pub fn project_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_names(input.into());
             self
         }
         /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
@@ -2265,8 +2265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
@@ -2282,8 +2282,8 @@ pub mod fluent_builders {
         /// to the list. If you don't specify a value, all model descriptions are returned.  A version name is part of a
         /// model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN.
         /// <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-        pub fn version_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_names(inp);
+        pub fn version_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_names(input.into());
             self
         }
         /// <p>A list of model version names that you want to describe. You can add up to 10 model version names
@@ -2300,8 +2300,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more
         /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
         /// You can use this pagination token to retrieve the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more
@@ -2314,8 +2314,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call.
         /// The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException
         /// error occurs. The default value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per paginated call.
@@ -2387,8 +2387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the stream processor for which you want information.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Name of the stream processor for which you want information.</p>
@@ -2507,8 +2507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the model version that you want to use.</p>
-        pub fn project_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_version_arn(inp);
+        pub fn project_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_version_arn(signature.into());
             self
         }
         /// <p>The ARN of the model version that you want to use.</p>
@@ -2542,8 +2542,8 @@ pub mod fluent_builders {
         /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
         /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
         /// </p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>Provides the input image either as bytes or an S3 object.</p>
@@ -2576,8 +2576,8 @@ pub mod fluent_builders {
         /// <p>Maximum number of results you want the service to return in the response.
         /// The service returns the specified number of highest confidence labels ranked from highest confidence
         /// to lowest.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results you want the service to return in the response.
@@ -2594,8 +2594,8 @@ pub mod fluent_builders {
         /// threshold applied to each label.
         /// If you don't specify a value for <code>MinConfidence</code>,  <code>DetectCustomLabels</code>
         /// returns labels based on the assumed threshold of each label.</p>
-        pub fn min_confidence(mut self, inp: f32) -> Self {
-            self.inner = self.inner.min_confidence(inp);
+        pub fn min_confidence(mut self, signature: f32) -> Self {
+            self.inner = self.inner.min_confidence(signature);
             self
         }
         /// <p>Specifies the minimum confidence level for the labels to return.
@@ -2696,8 +2696,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
         /// passed using the <code>Bytes</code> field.
         /// For more information, see Images in the Amazon Rekognition developer guide.</p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
@@ -2721,8 +2721,8 @@ pub mod fluent_builders {
         /// facial attributes are returned, but the operation takes longer to complete.</p>
         /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
         /// operator to determine which attributes to return (in this case, all attributes). </p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>An array of facial attributes you want to be returned. This can be the default list of
@@ -2878,8 +2878,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
         /// passed using the <code>Bytes</code> field.
         /// For more information, see Images in the Amazon Rekognition developer guide.</p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
@@ -2894,8 +2894,8 @@ pub mod fluent_builders {
         }
         /// <p>Maximum number of labels you want the service to return in the response. The service
         /// returns the specified number of highest confidence labels. </p>
-        pub fn max_labels(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_labels(inp);
+        pub fn max_labels(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_labels(signature);
             self
         }
         /// <p>Maximum number of labels you want the service to return in the response. The service
@@ -2908,8 +2908,8 @@ pub mod fluent_builders {
         /// return any labels with confidence lower than this specified value.</p>
         /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a
         /// confidence values greater than or equal to 55 percent.</p>
-        pub fn min_confidence(mut self, inp: f32) -> Self {
-            self.inner = self.inner.min_confidence(inp);
+        pub fn min_confidence(mut self, signature: f32) -> Self {
+            self.inner = self.inner.min_confidence(signature);
             self
         }
         /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
@@ -2999,8 +2999,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
         /// passed using the <code>Bytes</code> field.
         /// For more information, see Images in the Amazon Rekognition developer guide.</p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>The input image as base64-encoded bytes or an S3 object.
@@ -3017,8 +3017,8 @@ pub mod fluent_builders {
         /// return any labels with a confidence level lower than this specified value.</p>
         /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with
         /// confidence values greater than or equal to 50 percent.</p>
-        pub fn min_confidence(mut self, inp: f32) -> Self {
-            self.inner = self.inner.min_confidence(inp);
+        pub fn min_confidence(mut self, signature: f32) -> Self {
+            self.inner = self.inner.min_confidence(signature);
             self
         }
         /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
@@ -3031,8 +3031,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
         /// the image will be sent to.</p>
-        pub fn human_loop_config(mut self, inp: crate::model::HumanLoopConfig) -> Self {
-            self.inner = self.inner.human_loop_config(inp);
+        pub fn human_loop_config(mut self, signature: crate::model::HumanLoopConfig) -> Self {
+            self.inner = self.inner.human_loop_config(signature);
             self
         }
         /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
@@ -3145,8 +3145,8 @@ pub mod fluent_builders {
         }
         /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
         /// reference an image stored in an Amazon S3 bucket. </p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
@@ -3158,9 +3158,9 @@ pub mod fluent_builders {
         /// <p>An array of PPE types that you want to summarize.</p>
         pub fn summarization_attributes(
             mut self,
-            inp: crate::model::ProtectiveEquipmentSummarizationAttributes,
+            signature: crate::model::ProtectiveEquipmentSummarizationAttributes,
         ) -> Self {
-            self.inner = self.inner.summarization_attributes(inp);
+            self.inner = self.inner.summarization_attributes(signature);
             self
         }
         /// <p>An array of PPE types that you want to summarize.</p>
@@ -3257,8 +3257,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
         /// passed using the <code>Bytes</code> field.
         /// For more information, see Images in the Amazon Rekognition developer guide.</p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
@@ -3271,8 +3271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
-        pub fn filters(mut self, inp: crate::model::DetectTextFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, signature: crate::model::DetectTextFilters) -> Self {
+            self.inner = self.inner.filters(signature);
             self
         }
         /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
@@ -3361,8 +3361,8 @@ pub mod fluent_builders {
         /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
         /// the same project. The test dataset must be empty.
         /// </p>
-        pub fn datasets(mut self, inp: impl Into<crate::model::DistributeDataset>) -> Self {
-            self.inner = self.inner.datasets(inp);
+        pub fn datasets(mut self, input: crate::model::DistributeDataset) -> Self {
+            self.inner = self.inner.datasets(input);
             self
         }
         /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
@@ -3444,8 +3444,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
         /// which recognizes celebrities in an image. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
@@ -3555,8 +3555,8 @@ pub mod fluent_builders {
         }
         /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
         /// a call to <code>StartCelebrityRecognition</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
@@ -3568,8 +3568,8 @@ pub mod fluent_builders {
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
         /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
         /// The default value is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
@@ -3581,8 +3581,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination
         /// token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination
@@ -3593,8 +3593,8 @@ pub mod fluent_builders {
         }
         /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier,
         /// specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
-        pub fn sort_by(mut self, inp: crate::model::CelebrityRecognitionSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::CelebrityRecognitionSortBy) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier,
@@ -3697,8 +3697,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
         /// a subsequent call to <code>GetContentModeration</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
@@ -3710,8 +3710,8 @@ pub mod fluent_builders {
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
         /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
         /// The default value is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
@@ -3724,8 +3724,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
         /// returns a pagination token in the response. You can use this pagination token
         /// to retrieve the next set of content moderation labels.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
@@ -3740,8 +3740,8 @@ pub mod fluent_builders {
         /// Use <code>NAME</code> to alphabetically group elements for a label together.
         /// Within each label group, the array element are sorted by detection confidence.
         /// The default sort is by <code>TIMESTAMP</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::ContentModerationSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::ContentModerationSortBy) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.
@@ -3829,8 +3829,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
@@ -3841,8 +3841,8 @@ pub mod fluent_builders {
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
         /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
         /// The default value is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
@@ -3854,8 +3854,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
         /// token in the response. You can use this pagination token to retrieve the next set of faces.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
@@ -3955,8 +3955,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
@@ -3967,8 +3967,8 @@ pub mod fluent_builders {
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
         /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
         /// The default value is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
@@ -3980,8 +3980,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination
         /// token in the response. You can use this pagination token to retrieve the next set of search results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination
@@ -3992,8 +3992,8 @@ pub mod fluent_builders {
         }
         /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time
         /// that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
-        pub fn sort_by(mut self, inp: crate::model::FaceSearchSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::FaceSearchSortBy) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time
@@ -4087,8 +4087,8 @@ pub mod fluent_builders {
         }
         /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
         /// an initial call to <code>StartlabelDetection</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
@@ -4100,8 +4100,8 @@ pub mod fluent_builders {
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
         /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
         /// The default value is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
@@ -4113,8 +4113,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination
         /// token in the response. You can use this pagination token to retrieve the next set of labels. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination
@@ -4128,8 +4128,8 @@ pub mod fluent_builders {
         /// Use <code>NAME</code> to alphabetically group elements for a label together.
         /// Within each label group, the array element are sorted by detection confidence.
         /// The default sort is by <code>TIMESTAMP</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::LabelDetectionSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::LabelDetectionSortBy) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>Sort to use for elements in the <code>Labels</code> array.
@@ -4235,8 +4235,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
         /// </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
@@ -4248,8 +4248,8 @@ pub mod fluent_builders {
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
         /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
         /// The default value is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
@@ -4261,8 +4261,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination
         /// token in the response. You can use this pagination token to retrieve the next set of persons. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination
@@ -4275,8 +4275,8 @@ pub mod fluent_builders {
         /// by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons.
         /// If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence.
         /// The default sort is by <code>TIMESTAMP</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::PersonTrackingSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::PersonTrackingSortBy) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements
@@ -4374,8 +4374,8 @@ pub mod fluent_builders {
         }
         /// <p>Job identifier for the text detection operation for which you want results returned.
         /// You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>Job identifier for the text detection operation for which you want results returned.
@@ -4385,8 +4385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
@@ -4396,8 +4396,8 @@ pub mod fluent_builders {
         }
         /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
         /// request to retrieve the next set of text.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
@@ -4486,8 +4486,8 @@ pub mod fluent_builders {
         }
         /// <p>Job identifier for the text detection operation for which you want results returned.
         /// You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>Job identifier for the text detection operation for which you want results returned.
@@ -4497,8 +4497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
@@ -4508,8 +4508,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
         /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
@@ -4679,8 +4679,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of an existing collection to which you want to add the faces that are detected
         /// in the input images.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>The ID of an existing collection to which you want to add the faces that are detected
@@ -4697,8 +4697,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
         /// passed using the <code>Bytes</code> field.
         /// For more information, see Images in the Amazon Rekognition developer guide.</p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
@@ -4711,8 +4711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID you want to assign to all the faces detected in the image.</p>
-        pub fn external_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_image_id(inp);
+        pub fn external_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_image_id(signature.into());
             self
         }
         /// <p>The ID you want to assign to all the faces detected in the image.</p>
@@ -4735,8 +4735,8 @@ pub mod fluent_builders {
         /// facial attributes are returned, but the operation takes longer to complete.</p>
         /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
         /// operator to determine which attributes to return (in this case, all attributes). </p>
-        pub fn detection_attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.detection_attributes(inp);
+        pub fn detection_attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.detection_attributes(input);
             self
         }
         /// <p>An array of facial attributes that you want to be returned. This can be the default
@@ -4767,8 +4767,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>MaxFaces</code> can be used with a collection associated with any version of
         /// the face model.</p>
-        pub fn max_faces(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_faces(inp);
+        pub fn max_faces(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_faces(signature);
             self
         }
         /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater
@@ -4801,8 +4801,8 @@ pub mod fluent_builders {
         /// filtering is performed.
         /// </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-        pub fn quality_filter(mut self, inp: crate::model::QualityFilter) -> Self {
-            self.inner = self.inner.quality_filter(inp);
+        pub fn quality_filter(mut self, signature: crate::model::QualityFilter) -> Self {
+            self.inner = self.inner.quality_filter(signature);
             self
         }
         /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
@@ -4891,8 +4891,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Pagination token from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token from the previous response.</p>
@@ -4901,8 +4901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of collection IDs to return. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of collection IDs to return. </p>
@@ -4987,8 +4987,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name (ARN) for the dataset that you want to use.
         /// </p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>
@@ -5004,8 +5004,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
         /// </p>
-        pub fn contains_labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contains_labels(inp);
+        pub fn contains_labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contains_labels(input.into());
             self
         }
         /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
@@ -5023,8 +5023,8 @@ pub mod fluent_builders {
         /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
         /// images.
         /// </p>
-        pub fn labeled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.labeled(inp);
+        pub fn labeled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.labeled(signature);
             self
         }
         /// <p>
@@ -5040,8 +5040,8 @@ pub mod fluent_builders {
         /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
         /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
         /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
-        pub fn source_ref_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_ref_contains(inp);
+        pub fn source_ref_contains(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ref_contains(signature.into());
             self
         }
         /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
@@ -5056,8 +5056,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
         /// </p>
-        pub fn has_errors(mut self, inp: bool) -> Self {
-            self.inner = self.inner.has_errors(inp);
+        pub fn has_errors(mut self, signature: bool) -> Self {
+            self.inner = self.inner.has_errors(signature);
             self
         }
         /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
@@ -5069,8 +5069,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more
         /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
         /// token to retrieve the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more
@@ -5083,8 +5083,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
         /// If you specify a value greater than 100, a ValidationException
         /// error occurs. The default value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
@@ -5162,8 +5162,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name (ARN) of the dataset that you want to use.
         /// </p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>
@@ -5176,8 +5176,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more
         /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
         /// token to retrieve the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more
@@ -5190,8 +5190,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
         /// If you specify a value greater than 100, a ValidationException
         /// error occurs. The default value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
@@ -5269,8 +5269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the collection from which to list the faces.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>ID of the collection from which to list the faces.</p>
@@ -5284,8 +5284,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Rekognition returns a pagination token in the response. You can use this pagination token to
         /// retrieve the next set of faces.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -5296,8 +5296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of faces to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of faces to return.</p>
@@ -5367,8 +5367,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
         /// returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
@@ -5378,8 +5378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000. </p>
@@ -5454,8 +5454,8 @@ pub mod fluent_builders {
         /// <p>
         /// Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -5560,8 +5560,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to
         /// base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see
         /// Images in the Amazon Rekognition developer guide.</p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
@@ -5654,8 +5654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the collection the face belongs to.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>ID of the collection the face belongs to.</p>
@@ -5667,8 +5667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ID of a face to find matches for in the collection.</p>
-        pub fn face_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.face_id(inp);
+        pub fn face_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.face_id(signature.into());
             self
         }
         /// <p>ID of a face to find matches for in the collection.</p>
@@ -5678,8 +5678,8 @@ pub mod fluent_builders {
         }
         /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
         /// with the highest confidence in the match.</p>
-        pub fn max_faces(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_faces(inp);
+        pub fn max_faces(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_faces(signature);
             self
         }
         /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
@@ -5692,8 +5692,8 @@ pub mod fluent_builders {
         /// example, don't return any matches where confidence in matches is less than 70%.
         /// The default value is 80%.
         /// </p>
-        pub fn face_match_threshold(mut self, inp: f32) -> Self {
-            self.inner = self.inner.face_match_threshold(inp);
+        pub fn face_match_threshold(mut self, signature: f32) -> Self {
+            self.inner = self.inner.face_match_threshold(signature);
             self
         }
         /// <p>Optional value specifying the minimum confidence in the face match to return. For
@@ -5811,8 +5811,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the collection to search.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>ID of the collection to search.</p>
@@ -5829,8 +5829,8 @@ pub mod fluent_builders {
         /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
         /// passed using the <code>Bytes</code> field.
         /// For more information, see Images in the Amazon Rekognition developer guide.</p>
-        pub fn image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: crate::model::Image) -> Self {
+            self.inner = self.inner.image(signature);
             self
         }
         /// <p>The input image as base64-encoded bytes or an S3 object.
@@ -5845,8 +5845,8 @@ pub mod fluent_builders {
         }
         /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
         /// with the highest confidence in the match.</p>
-        pub fn max_faces(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_faces(inp);
+        pub fn max_faces(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_faces(signature);
             self
         }
         /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
@@ -5858,8 +5858,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example,
         /// don't return any matches where confidence in matches is less than 70%.
         /// The default value is 80%.</p>
-        pub fn face_match_threshold(mut self, inp: f32) -> Self {
-            self.inner = self.inner.face_match_threshold(inp);
+        pub fn face_match_threshold(mut self, signature: f32) -> Self {
+            self.inner = self.inner.face_match_threshold(signature);
             self
         }
         /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example,
@@ -5882,8 +5882,8 @@ pub mod fluent_builders {
         /// filtering is performed.  The default value is <code>NONE</code>.
         /// </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-        pub fn quality_filter(mut self, inp: crate::model::QualityFilter) -> Self {
-            self.inner = self.inner.quality_filter(inp);
+        pub fn quality_filter(mut self, signature: crate::model::QualityFilter) -> Self {
+            self.inner = self.inner.quality_filter(signature);
             self
         }
         /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
@@ -5979,8 +5979,8 @@ pub mod fluent_builders {
         }
         /// <p>The video in which you want to recognize celebrities. The video must be stored
         /// in an Amazon S3 bucket.</p>
-        pub fn video(mut self, inp: crate::model::Video) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::Video) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>The video in which you want to recognize celebrities. The video must be stored
@@ -5992,8 +5992,8 @@ pub mod fluent_builders {
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
         /// <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use
         /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
@@ -6008,8 +6008,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
         /// celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
-            self.inner = self.inner.notification_channel(inp);
+        pub fn notification_channel(
+            mut self,
+            signature: crate::model::NotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(signature);
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
@@ -6023,8 +6026,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
         /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(inp);
+        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(signature.into());
             self
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
@@ -6106,8 +6109,8 @@ pub mod fluent_builders {
         }
         /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
         /// in an Amazon S3 bucket.</p>
-        pub fn video(mut self, inp: crate::model::Video) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::Video) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
@@ -6121,8 +6124,8 @@ pub mod fluent_builders {
         /// 100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level
         /// lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>
         /// returns labels with confidence values greater than or equal to 50 percent.</p>
-        pub fn min_confidence(mut self, inp: f32) -> Self {
-            self.inner = self.inner.min_confidence(inp);
+        pub fn min_confidence(mut self, signature: f32) -> Self {
+            self.inner = self.inner.min_confidence(signature);
             self
         }
         /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence
@@ -6137,8 +6140,8 @@ pub mod fluent_builders {
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
         /// <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use
         /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
@@ -6153,8 +6156,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
         /// content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
-            self.inner = self.inner.notification_channel(inp);
+        pub fn notification_channel(
+            mut self,
+            signature: crate::model::NotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(signature);
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
@@ -6168,8 +6174,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
         /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(inp);
+        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(signature.into());
             self
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
@@ -6252,8 +6258,8 @@ pub mod fluent_builders {
         }
         /// <p>The video in which you want to detect faces. The video must be stored
         /// in an Amazon S3 bucket.</p>
-        pub fn video(mut self, inp: crate::model::Video) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::Video) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>The video in which you want to detect faces. The video must be stored
@@ -6265,8 +6271,8 @@ pub mod fluent_builders {
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
         /// <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use
         /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
@@ -6281,8 +6287,11 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
         /// face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
-            self.inner = self.inner.notification_channel(inp);
+        pub fn notification_channel(
+            mut self,
+            signature: crate::model::NotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(signature);
             self
         }
         /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
@@ -6299,8 +6308,8 @@ pub mod fluent_builders {
         /// <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
         /// <p>
         /// <code>ALL</code> - All facial attributes are returned.</p>
-        pub fn face_attributes(mut self, inp: crate::model::FaceAttributes) -> Self {
-            self.inner = self.inner.face_attributes(inp);
+        pub fn face_attributes(mut self, signature: crate::model::FaceAttributes) -> Self {
+            self.inner = self.inner.face_attributes(signature);
             self
         }
         /// <p>The face attributes you want returned.</p>
@@ -6317,8 +6326,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
         /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(inp);
+        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(signature.into());
             self
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
@@ -6397,8 +6406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
-        pub fn video(mut self, inp: crate::model::Video) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::Video) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
@@ -6409,8 +6418,8 @@ pub mod fluent_builders {
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
         /// <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use
         /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
@@ -6425,8 +6434,8 @@ pub mod fluent_builders {
         }
         /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%.
         /// The default value is 80%.</p>
-        pub fn face_match_threshold(mut self, inp: f32) -> Self {
-            self.inner = self.inner.face_match_threshold(inp);
+        pub fn face_match_threshold(mut self, signature: f32) -> Self {
+            self.inner = self.inner.face_match_threshold(signature);
             self
         }
         /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%.
@@ -6436,8 +6445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ID of the collection that contains the faces you want to search for.</p>
-        pub fn collection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_id(inp);
+        pub fn collection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_id(signature.into());
             self
         }
         /// <p>ID of the collection that contains the faces you want to search for.</p>
@@ -6449,8 +6458,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
-            self.inner = self.inner.notification_channel(inp);
+        pub fn notification_channel(
+            mut self,
+            signature: crate::model::NotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(signature);
             self
         }
         /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
@@ -6463,8 +6475,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
         /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(inp);
+        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(signature.into());
             self
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
@@ -6549,8 +6561,8 @@ pub mod fluent_builders {
         }
         /// <p>The video in which you want to detect labels. The video must be stored
         /// in an Amazon S3 bucket.</p>
-        pub fn video(mut self, inp: crate::model::Video) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::Video) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>The video in which you want to detect labels. The video must be stored
@@ -6562,8 +6574,8 @@ pub mod fluent_builders {
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
         /// <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use
         /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
@@ -6582,8 +6594,8 @@ pub mod fluent_builders {
         /// lower than this specified value.</p>
         /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence
         /// values greater than or equal to 50 percent.</p>
-        pub fn min_confidence(mut self, inp: f32) -> Self {
-            self.inner = self.inner.min_confidence(inp);
+        pub fn min_confidence(mut self, signature: f32) -> Self {
+            self.inner = self.inner.min_confidence(signature);
             self
         }
         /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence
@@ -6598,8 +6610,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
         /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
-            self.inner = self.inner.notification_channel(inp);
+        pub fn notification_channel(
+            mut self,
+            signature: crate::model::NotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(signature);
             self
         }
         /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
@@ -6613,8 +6628,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
         /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(inp);
+        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(signature.into());
             self
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
@@ -6693,8 +6708,8 @@ pub mod fluent_builders {
         }
         /// <p>The video in which you want to detect people. The video must be stored
         /// in an Amazon S3 bucket.</p>
-        pub fn video(mut self, inp: crate::model::Video) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::Video) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>The video in which you want to detect people. The video must be stored
@@ -6706,8 +6721,8 @@ pub mod fluent_builders {
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
         /// <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
         /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
@@ -6722,8 +6737,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
         /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
-            self.inner = self.inner.notification_channel(inp);
+        pub fn notification_channel(
+            mut self,
+            signature: crate::model::NotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(signature);
             self
         }
         /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
@@ -6737,8 +6755,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
         /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(inp);
+        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(signature.into());
             self
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
@@ -6817,8 +6835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
-        pub fn project_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_version_arn(inp);
+        pub fn project_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
@@ -6834,8 +6852,8 @@ pub mod fluent_builders {
         /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
         /// of inference units that you use.
         /// </p>
-        pub fn min_inference_units(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_inference_units(inp);
+        pub fn min_inference_units(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_inference_units(signature);
             self
         }
         /// <p>The minimum number of inference units to use. A single
@@ -6924,8 +6942,8 @@ pub mod fluent_builders {
         }
         /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
         /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-        pub fn video(mut self, inp: crate::model::Video) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::Video) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
@@ -6937,8 +6955,8 @@ pub mod fluent_builders {
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
         /// <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use
         /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
@@ -6953,8 +6971,11 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
         /// segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
-            self.inner = self.inner.notification_channel(inp);
+        pub fn notification_channel(
+            mut self,
+            signature: crate::model::NotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(signature);
             self
         }
         /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
@@ -6968,8 +6989,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
         /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(inp);
+        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(signature.into());
             self
         }
         /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
@@ -6979,8 +7000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters for technical cue or shot detection.</p>
-        pub fn filters(mut self, inp: crate::model::StartSegmentDetectionFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, signature: crate::model::StartSegmentDetectionFilters) -> Self {
+            self.inner = self.inner.filters(signature);
             self
         }
         /// <p>Filters for technical cue or shot detection.</p>
@@ -6996,8 +7017,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_segment_types`](Self::set_segment_types).
         ///
         /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
-        pub fn segment_types(mut self, inp: impl Into<crate::model::SegmentType>) -> Self {
-            self.inner = self.inner.segment_types(inp);
+        pub fn segment_types(mut self, input: crate::model::SegmentType) -> Self {
+            self.inner = self.inner.segment_types(input);
             self
         }
         /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
@@ -7071,8 +7092,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream processor to start processing.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the stream processor to start processing.</p>
@@ -7149,8 +7170,8 @@ pub mod fluent_builders {
         }
         /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
         /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-        pub fn video(mut self, inp: crate::model::Video) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::Video) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
@@ -7162,8 +7183,8 @@ pub mod fluent_builders {
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code>
         /// requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job
         /// from being accidentaly started more than once.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code>
@@ -7179,8 +7200,11 @@ pub mod fluent_builders {
         /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
         /// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
         /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
-        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
-            self.inner = self.inner.notification_channel(inp);
+        pub fn notification_channel(
+            mut self,
+            signature: crate::model::NotificationChannel,
+        ) -> Self {
+            self.inner = self.inner.notification_channel(signature);
             self
         }
         /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
@@ -7195,8 +7219,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic.  For example, you can use <code>JobTag</code> to group related jobs
         /// and identify them in the completion notification.</p>
-        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(inp);
+        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(signature.into());
             self
         }
         /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic.  For example, you can use <code>JobTag</code> to group related jobs
@@ -7206,8 +7230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
-        pub fn filters(mut self, inp: crate::model::StartTextDetectionFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, signature: crate::model::StartTextDetectionFilters) -> Self {
+            self.inner = self.inner.filters(signature);
             self
         }
         /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
@@ -7281,8 +7305,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
         /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
-        pub fn project_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_version_arn(inp);
+        pub fn project_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
@@ -7355,8 +7379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
@@ -7431,8 +7455,8 @@ pub mod fluent_builders {
         /// <p>
         /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -7454,7 +7478,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>
@@ -7536,8 +7560,8 @@ pub mod fluent_builders {
         /// <p>
         /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -7554,8 +7578,8 @@ pub mod fluent_builders {
         /// <p>
         /// A list of the tags that you want to remove.
         /// </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>
@@ -7658,8 +7682,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name (ARN) of the dataset that you want to update.
         /// </p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>
@@ -7672,8 +7696,8 @@ pub mod fluent_builders {
         /// <p>
         /// The changes that you want to make to the dataset.
         /// </p>
-        pub fn changes(mut self, inp: crate::model::DatasetChanges) -> Self {
-            self.inner = self.inner.changes(inp);
+        pub fn changes(mut self, signature: crate::model::DatasetChanges) -> Self {
+            self.inner = self.inner.changes(signature);
             self
         }
         /// <p>

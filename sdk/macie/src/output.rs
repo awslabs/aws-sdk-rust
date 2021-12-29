@@ -37,12 +37,9 @@ pub mod update_s3_resources_output {
         ///
         /// <p>The S3 resources whose classification types can't be updated. An error code and an
         /// error message are provided for each failed item. </p>
-        pub fn failed_s3_resources(
-            mut self,
-            input: impl Into<crate::model::FailedS3Resource>,
-        ) -> Self {
+        pub fn failed_s3_resources(mut self, input: crate::model::FailedS3Resource) -> Self {
             let mut v = self.failed_s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_s3_resources = Some(v);
             self
         }
@@ -119,12 +116,9 @@ pub mod list_s3_resources_output {
         /// To override the contents of this collection use [`set_s3_resources`](Self::set_s3_resources).
         ///
         /// <p>A list of the associated S3 resources returned by the action.</p>
-        pub fn s3_resources(
-            mut self,
-            input: impl Into<crate::model::S3ResourceClassification>,
-        ) -> Self {
+        pub fn s3_resources(mut self, input: crate::model::S3ResourceClassification) -> Self {
             let mut v = self.s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.s3_resources = Some(v);
             self
         }
@@ -219,9 +213,9 @@ pub mod list_member_accounts_output {
         ///
         /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current
         /// Macie Classic administrator account is also included in this list. </p>
-        pub fn member_accounts(mut self, input: impl Into<crate::model::MemberAccount>) -> Self {
+        pub fn member_accounts(mut self, input: crate::model::MemberAccount) -> Self {
             let mut v = self.member_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_accounts = Some(v);
             self
         }
@@ -307,12 +301,9 @@ pub mod disassociate_s3_resources_output {
         /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon
         /// Macie Classic. An error code and an error message are provided for each failed item.
         /// </p>
-        pub fn failed_s3_resources(
-            mut self,
-            input: impl Into<crate::model::FailedS3Resource>,
-        ) -> Self {
+        pub fn failed_s3_resources(mut self, input: crate::model::FailedS3Resource) -> Self {
             let mut v = self.failed_s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_s3_resources = Some(v);
             self
         }
@@ -409,12 +400,9 @@ pub mod associate_s3_resources_output {
         ///
         /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and
         /// an error message are provided for each failed item. </p>
-        pub fn failed_s3_resources(
-            mut self,
-            input: impl Into<crate::model::FailedS3Resource>,
-        ) -> Self {
+        pub fn failed_s3_resources(mut self, input: crate::model::FailedS3Resource) -> Self {
             let mut v = self.failed_s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_s3_resources = Some(v);
             self
         }

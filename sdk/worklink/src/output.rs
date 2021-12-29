@@ -382,10 +382,10 @@ pub mod list_website_certificate_authorities_output {
         /// <p>Information about the certificates.</p>
         pub fn website_certificate_authorities(
             mut self,
-            input: impl Into<crate::model::WebsiteCaSummary>,
+            input: crate::model::WebsiteCaSummary,
         ) -> Self {
             let mut v = self.website_certificate_authorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.website_certificate_authorities = Some(v);
             self
         }
@@ -476,10 +476,10 @@ pub mod list_website_authorization_providers_output {
         /// <p>The website authorization providers.</p>
         pub fn website_authorization_providers(
             mut self,
-            input: impl Into<crate::model::WebsiteAuthorizationProviderSummary>,
+            input: crate::model::WebsiteAuthorizationProviderSummary,
         ) -> Self {
             let mut v = self.website_authorization_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.website_authorization_providers = Some(v);
             self
         }
@@ -637,9 +637,9 @@ pub mod list_fleets_output {
         /// To override the contents of this collection use [`set_fleet_summary_list`](Self::set_fleet_summary_list).
         ///
         /// <p>The summary list of the fleets.</p>
-        pub fn fleet_summary_list(mut self, input: impl Into<crate::model::FleetSummary>) -> Self {
+        pub fn fleet_summary_list(mut self, input: crate::model::FleetSummary) -> Self {
             let mut v = self.fleet_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_summary_list = Some(v);
             self
         }
@@ -723,9 +723,9 @@ pub mod list_domains_output {
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
         /// <p>Information about the domains.</p>
-        pub fn domains(mut self, input: impl Into<crate::model::DomainSummary>) -> Self {
+        pub fn domains(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domains = Some(v);
             self
         }
@@ -809,9 +809,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>Information about the devices.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceSummary>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceSummary) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }

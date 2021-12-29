@@ -758,9 +758,9 @@ pub mod create_browser_settings_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1587,9 +1587,9 @@ pub mod create_network_settings_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1790,9 +1790,9 @@ pub mod create_portal_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the web portal. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2014,9 +2014,9 @@ pub mod create_trust_store_input {
         /// To override the contents of this collection use [`set_certificate_list`](Self::set_certificate_list).
         ///
         /// <p>A list of CA certificates to be added to the trust store.</p>
-        pub fn certificate_list(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        pub fn certificate_list(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.certificate_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_list = Some(v);
             self
         }
@@ -2033,9 +2033,9 @@ pub mod create_trust_store_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2295,9 +2295,9 @@ pub mod create_user_settings_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6697,9 +6697,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7999,9 +7999,9 @@ pub mod update_trust_store_input {
         /// To override the contents of this collection use [`set_certificates_to_add`](Self::set_certificates_to_add).
         ///
         /// <p>A list of CA certificates to add to the trust store.</p>
-        pub fn certificates_to_add(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        pub fn certificates_to_add(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.certificates_to_add.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates_to_add = Some(v);
             self
         }

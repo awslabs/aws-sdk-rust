@@ -221,9 +221,9 @@ pub mod resource_share {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource share.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -746,10 +746,10 @@ pub mod resource_share_invitation {
         /// ListPendingInvitationResources</a>.</p>
         pub fn resource_share_associations(
             mut self,
-            input: impl Into<crate::model::ResourceShareAssociation>,
+            input: crate::model::ResourceShareAssociation,
         ) -> Self {
             let mut v = self.resource_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_associations = Some(v);
             self
         }

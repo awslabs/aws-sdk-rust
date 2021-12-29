@@ -4975,9 +4975,9 @@ pub mod register_domain_input {
         ///
         /// <p>Tags to be added when registering a domain.</p>
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6326,9 +6326,9 @@ pub mod respond_decision_task_completed_input {
         /// <p>The list of decisions (possibly empty) made by the decider while processing this
         /// decision task. See the docs for the <a>Decision</a> structure for
         /// details.</p>
-        pub fn decisions(mut self, input: impl Into<crate::model::Decision>) -> Self {
+        pub fn decisions(mut self, input: crate::model::Decision) -> Self {
             let mut v = self.decisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.decisions = Some(v);
             self
         }
@@ -7208,9 +7208,9 @@ pub mod tag_resource_input {
         ///
         /// <p>The list of tags to add to a domain. </p>
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

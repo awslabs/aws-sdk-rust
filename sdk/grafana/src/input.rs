@@ -311,12 +311,9 @@ pub mod create_workspace_input {
         /// <p>If you don't specify a data source here, you can still add it as a data source in the
         /// workspace console later. However, you will then have to manually configure permissions for
         /// it.</p>
-        pub fn workspace_data_sources(
-            mut self,
-            input: impl Into<crate::model::DataSourceType>,
-        ) -> Self {
+        pub fn workspace_data_sources(mut self, input: crate::model::DataSourceType) -> Self {
             let mut v = self.workspace_data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspace_data_sources = Some(v);
             self
         }
@@ -369,10 +366,10 @@ pub mod create_workspace_input {
         /// Amazon Managed Grafana to use these channels.</p>
         pub fn workspace_notification_destinations(
             mut self,
-            input: impl Into<crate::model::NotificationDestinationType>,
+            input: crate::model::NotificationDestinationType,
         ) -> Self {
             let mut v = self.workspace_notification_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspace_notification_destinations = Some(v);
             self
         }
@@ -441,10 +438,10 @@ pub mod create_workspace_input {
         /// Amazon Managed Grafana</a>.</p>
         pub fn authentication_providers(
             mut self,
-            input: impl Into<crate::model::AuthenticationProviderTypes>,
+            input: crate::model::AuthenticationProviderTypes,
         ) -> Self {
             let mut v = self.authentication_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.authentication_providers = Some(v);
             self
         }
@@ -1685,12 +1682,9 @@ pub mod update_permissions_input {
         /// To override the contents of this collection use [`set_update_instruction_batch`](Self::set_update_instruction_batch).
         ///
         /// <p>An array of structures that contain the permission updates to make.</p>
-        pub fn update_instruction_batch(
-            mut self,
-            input: impl Into<crate::model::UpdateInstruction>,
-        ) -> Self {
+        pub fn update_instruction_batch(mut self, input: crate::model::UpdateInstruction) -> Self {
             let mut v = self.update_instruction_batch.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_instruction_batch = Some(v);
             self
         }
@@ -1974,12 +1968,9 @@ pub mod update_workspace_input {
         /// <p>If you don't specify a data source here, you can still add it as a data source later in
         /// the workspace console. However, you will then have to manually configure permissions for
         /// it.</p>
-        pub fn workspace_data_sources(
-            mut self,
-            input: impl Into<crate::model::DataSourceType>,
-        ) -> Self {
+        pub fn workspace_data_sources(mut self, input: crate::model::DataSourceType) -> Self {
             let mut v = self.workspace_data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspace_data_sources = Some(v);
             self
         }
@@ -2042,10 +2033,10 @@ pub mod update_workspace_input {
         /// Amazon Managed Grafana to use these channels.</p>
         pub fn workspace_notification_destinations(
             mut self,
-            input: impl Into<crate::model::NotificationDestinationType>,
+            input: crate::model::NotificationDestinationType,
         ) -> Self {
             let mut v = self.workspace_notification_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspace_notification_destinations = Some(v);
             self
         }
@@ -2296,10 +2287,10 @@ pub mod update_workspace_authentication_input {
         /// Amazon Managed Grafana</a>.</p>
         pub fn authentication_providers(
             mut self,
-            input: impl Into<crate::model::AuthenticationProviderTypes>,
+            input: crate::model::AuthenticationProviderTypes,
         ) -> Self {
             let mut v = self.authentication_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.authentication_providers = Some(v);
             self
         }

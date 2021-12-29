@@ -738,9 +738,9 @@ pub mod update_function_configuration_output {
         ///
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
         /// layers</a>.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -839,12 +839,9 @@ pub mod update_function_configuration_output {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }
@@ -917,9 +914,9 @@ pub mod update_function_configuration_output {
         ///
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
         /// valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -1494,9 +1491,9 @@ pub mod update_function_code_output {
         ///
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
         /// layers</a>.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -1595,12 +1592,9 @@ pub mod update_function_code_output {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }
@@ -1673,9 +1667,9 @@ pub mod update_function_code_output {
         ///
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
         /// valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -2220,10 +2214,10 @@ pub mod update_event_source_mapping_output {
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            input: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_access_configurations = Some(v);
             self
         }
@@ -2308,10 +2302,10 @@ pub mod update_event_source_mapping_output {
         /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            input: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_response_types = Some(v);
             self
         }
@@ -3829,9 +3823,9 @@ pub mod publish_version_output {
         ///
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
         /// layers</a>.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -3930,12 +3924,9 @@ pub mod publish_version_output {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }
@@ -4008,9 +3999,9 @@ pub mod publish_version_output {
         ///
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
         /// valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -4236,9 +4227,9 @@ pub mod publish_layer_version_output {
         /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
         ///
         /// <p>The layer's compatible runtimes.</p>
-        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_runtimes = Some(v);
             self
         }
@@ -4266,12 +4257,9 @@ pub mod publish_layer_version_output {
         ///
         /// <p>A list of compatible  
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn compatible_architectures(
-            mut self,
-            input: impl Into<crate::model::Architecture>,
-        ) -> Self {
+        pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
@@ -4360,9 +4348,9 @@ pub mod list_versions_by_function_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// <p>A list of Lambda function versions.</p>
-        pub fn versions(mut self, input: impl Into<crate::model::FunctionConfiguration>) -> Self {
+        pub fn versions(mut self, input: crate::model::FunctionConfiguration) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -4514,10 +4502,10 @@ pub mod list_provisioned_concurrency_configs_output {
         /// <p>A list of provisioned concurrency configurations.</p>
         pub fn provisioned_concurrency_configs(
             mut self,
-            input: impl Into<crate::model::ProvisionedConcurrencyConfigListItem>,
+            input: crate::model::ProvisionedConcurrencyConfigListItem,
         ) -> Self {
             let mut v = self.provisioned_concurrency_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_concurrency_configs = Some(v);
             self
         }
@@ -4610,12 +4598,9 @@ pub mod list_layer_versions_output {
         /// To override the contents of this collection use [`set_layer_versions`](Self::set_layer_versions).
         ///
         /// <p>A list of versions.</p>
-        pub fn layer_versions(
-            mut self,
-            input: impl Into<crate::model::LayerVersionsListItem>,
-        ) -> Self {
+        pub fn layer_versions(mut self, input: crate::model::LayerVersionsListItem) -> Self {
             let mut v = self.layer_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layer_versions = Some(v);
             self
         }
@@ -4695,9 +4680,9 @@ pub mod list_layers_output {
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
         /// <p>A list of function layers.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::LayersListItem>) -> Self {
+        pub fn layers(mut self, input: crate::model::LayersListItem) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -4860,9 +4845,9 @@ pub mod list_functions_output {
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
         /// <p>A list of Lambda functions.</p>
-        pub fn functions(mut self, input: impl Into<crate::model::FunctionConfiguration>) -> Self {
+        pub fn functions(mut self, input: crate::model::FunctionConfiguration) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.functions = Some(v);
             self
         }
@@ -4941,10 +4926,10 @@ pub mod list_function_event_invoke_configs_output {
         /// <p>A list of configurations.</p>
         pub fn function_event_invoke_configs(
             mut self,
-            input: impl Into<crate::model::FunctionEventInvokeConfig>,
+            input: crate::model::FunctionEventInvokeConfig,
         ) -> Self {
             let mut v = self.function_event_invoke_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_event_invoke_configs = Some(v);
             self
         }
@@ -5040,10 +5025,10 @@ pub mod list_event_source_mappings_output {
         /// <p>A list of event source mappings.</p>
         pub fn event_source_mappings(
             mut self,
-            input: impl Into<crate::model::EventSourceMappingConfiguration>,
+            input: crate::model::EventSourceMappingConfiguration,
         ) -> Self {
             let mut v = self.event_source_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_source_mappings = Some(v);
             self
         }
@@ -5126,12 +5111,9 @@ pub mod list_code_signing_configs_output {
         /// To override the contents of this collection use [`set_code_signing_configs`](Self::set_code_signing_configs).
         ///
         /// <p>The code signing configurations</p>
-        pub fn code_signing_configs(
-            mut self,
-            input: impl Into<crate::model::CodeSigningConfig>,
-        ) -> Self {
+        pub fn code_signing_configs(mut self, input: crate::model::CodeSigningConfig) -> Self {
             let mut v = self.code_signing_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.code_signing_configs = Some(v);
             self
         }
@@ -5211,9 +5193,9 @@ pub mod list_aliases_output {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>A list of aliases.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::AliasConfiguration>) -> Self {
+        pub fn aliases(mut self, input: crate::model::AliasConfiguration) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }
@@ -5939,9 +5921,9 @@ pub mod get_layer_version_by_arn_output {
         /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
         ///
         /// <p>The layer's compatible runtimes.</p>
-        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_runtimes = Some(v);
             self
         }
@@ -5969,12 +5951,9 @@ pub mod get_layer_version_by_arn_output {
         ///
         /// <p>A list of compatible  
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn compatible_architectures(
-            mut self,
-            input: impl Into<crate::model::Architecture>,
-        ) -> Self {
+        pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
@@ -6177,9 +6156,9 @@ pub mod get_layer_version_output {
         /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
         ///
         /// <p>The layer's compatible runtimes.</p>
-        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_runtimes = Some(v);
             self
         }
@@ -6207,12 +6186,9 @@ pub mod get_layer_version_output {
         ///
         /// <p>A list of compatible  
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn compatible_architectures(
-            mut self,
-            input: impl Into<crate::model::Architecture>,
-        ) -> Self {
+        pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
@@ -6987,9 +6963,9 @@ pub mod get_function_configuration_output {
         ///
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
         /// layers</a>.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -7088,12 +7064,9 @@ pub mod get_function_configuration_output {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }
@@ -7166,9 +7139,9 @@ pub mod get_function_configuration_output {
         ///
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
         /// valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -8073,10 +8046,10 @@ pub mod get_event_source_mapping_output {
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            input: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_access_configurations = Some(v);
             self
         }
@@ -8161,10 +8134,10 @@ pub mod get_event_source_mapping_output {
         /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            input: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_response_types = Some(v);
             self
         }
@@ -9174,10 +9147,10 @@ pub mod delete_event_source_mapping_output {
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            input: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_access_configurations = Some(v);
             self
         }
@@ -9262,10 +9235,10 @@ pub mod delete_event_source_mapping_output {
         /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            input: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_response_types = Some(v);
             self
         }
@@ -9890,9 +9863,9 @@ pub mod create_function_output {
         ///
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
         /// layers</a>.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -9991,12 +9964,9 @@ pub mod create_function_output {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }
@@ -10069,9 +10039,9 @@ pub mod create_function_output {
         ///
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
         /// valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -10616,10 +10586,10 @@ pub mod create_event_source_mapping_output {
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            input: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_access_configurations = Some(v);
             self
         }
@@ -10704,10 +10674,10 @@ pub mod create_event_source_mapping_output {
         /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            input: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_response_types = Some(v);
             self
         }

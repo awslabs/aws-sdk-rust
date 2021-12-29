@@ -191,12 +191,9 @@ pub mod report_definition {
         /// To override the contents of this collection use [`set_additional_schema_elements`](Self::set_additional_schema_elements).
         ///
         /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
-        pub fn additional_schema_elements(
-            mut self,
-            input: impl Into<crate::model::SchemaElement>,
-        ) -> Self {
+        pub fn additional_schema_elements(mut self, input: crate::model::SchemaElement) -> Self {
             let mut v = self.additional_schema_elements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_schema_elements = Some(v);
             self
         }
@@ -248,12 +245,9 @@ pub mod report_definition {
         /// To override the contents of this collection use [`set_additional_artifacts`](Self::set_additional_artifacts).
         ///
         /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-        pub fn additional_artifacts(
-            mut self,
-            input: impl Into<crate::model::AdditionalArtifact>,
-        ) -> Self {
+        pub fn additional_artifacts(mut self, input: crate::model::AdditionalArtifact) -> Self {
             let mut v = self.additional_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_artifacts = Some(v);
             self
         }

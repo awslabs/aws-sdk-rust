@@ -388,8 +388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the Cell to create
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(signature.into());
             self
         }
         /// The name of the Cell to create
@@ -402,8 +402,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
-        pub fn cells(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cells(inp);
+        pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cells(input.into());
             self
         }
         /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
@@ -424,7 +424,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -498,8 +498,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The cross account authorization
-        pub fn cross_account_authorization(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cross_account_authorization(inp);
+        pub fn cross_account_authorization(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cross_account_authorization(signature.into());
             self
         }
         /// The cross account authorization
@@ -571,8 +574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the ReadinessCheck to create
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(signature.into());
             self
         }
         /// The name of the ReadinessCheck to create
@@ -584,8 +587,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the ResourceSet to check
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(signature.into());
             self
         }
         /// The name of the ResourceSet to check
@@ -606,7 +609,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -684,8 +687,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cell arns
-        pub fn cells(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cells(inp);
+        pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cells(input.into());
             self
         }
         /// A list of Cell arns
@@ -697,8 +700,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the RecoveryGroup to create
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(signature.into());
             self
         }
         /// The name of the RecoveryGroup to create
@@ -719,7 +722,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -793,8 +796,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the ResourceSet to create
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(signature.into());
             self
         }
         /// The name of the ResourceSet to create
@@ -806,8 +809,8 @@ pub mod fluent_builders {
             self
         }
         /// AWS Resource type of the resources in the ResourceSet
-        pub fn resource_set_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_type(inp);
+        pub fn resource_set_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_type(signature.into());
             self
         }
         /// AWS Resource type of the resources in the ResourceSet
@@ -823,8 +826,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
-            self.inner = self.inner.resources(inp);
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// A list of Resource objects
@@ -845,7 +848,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -919,8 +922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Cell to delete
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(signature.into());
             self
         }
         /// The Cell to delete
@@ -989,8 +992,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The cross account authorization
-        pub fn cross_account_authorization(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cross_account_authorization(inp);
+        pub fn cross_account_authorization(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cross_account_authorization(signature.into());
             self
         }
         /// The cross account authorization
@@ -1062,8 +1068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ReadinessCheck to delete
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(signature.into());
             self
         }
         /// The ReadinessCheck to delete
@@ -1135,8 +1141,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The RecoveryGroup to delete
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(signature.into());
             self
         }
         /// The RecoveryGroup to delete
@@ -1208,8 +1214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ResourceSet to delete
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(signature.into());
             self
         }
         /// The ResourceSet to delete
@@ -1281,8 +1287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -1291,8 +1297,8 @@ pub mod fluent_builders {
             self
         }
         /// A token that can be used to resume pagination from the end of the collection.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token that can be used to resume pagination from the end of the collection.
@@ -1301,8 +1307,8 @@ pub mod fluent_builders {
             self
         }
         /// Name of RecoveryGroup (top level resource) to be analyzed.
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(signature.into());
             self
         }
         /// Name of RecoveryGroup (top level resource) to be analyzed.
@@ -1374,8 +1380,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Cell to get
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(signature.into());
             self
         }
         /// The Cell to get
@@ -1444,8 +1450,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the Cell
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(signature.into());
             self
         }
         /// The name of the Cell
@@ -1454,8 +1460,8 @@ pub mod fluent_builders {
             self
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -1464,8 +1470,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1534,8 +1540,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ReadinessCheck to get
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(signature.into());
             self
         }
         /// The ReadinessCheck to get
@@ -1607,8 +1613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -1617,8 +1623,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1627,8 +1633,8 @@ pub mod fluent_builders {
             self
         }
         /// The ReadinessCheck to get
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(signature.into());
             self
         }
         /// The ReadinessCheck to get
@@ -1640,8 +1646,8 @@ pub mod fluent_builders {
             self
         }
         /// The resource ARN or component Id to get
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// The resource ARN or component Id to get
@@ -1713,8 +1719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -1723,8 +1729,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1733,8 +1739,8 @@ pub mod fluent_builders {
             self
         }
         /// The ReadinessCheck to get
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(signature.into());
             self
         }
         /// The ReadinessCheck to get
@@ -1806,8 +1812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The RecoveryGroup to get
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(signature.into());
             self
         }
         /// The RecoveryGroup to get
@@ -1879,8 +1885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -1889,8 +1895,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1899,8 +1905,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the RecoveryGroup
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(signature.into());
             self
         }
         /// The name of the RecoveryGroup
@@ -1972,8 +1978,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ResourceSet to get
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(signature.into());
             self
         }
         /// The ResourceSet to get
@@ -2045,8 +2051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -2055,8 +2061,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2125,8 +2131,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -2135,8 +2141,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2205,8 +2211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -2215,8 +2221,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2285,8 +2291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -2295,8 +2301,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2365,8 +2371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -2375,8 +2381,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2445,8 +2451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -2455,8 +2461,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2465,8 +2471,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter parameter which specifies the rules to return given a resource type.
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// Filter parameter which specifies the rules to return given a resource type.
@@ -2538,8 +2544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -2608,8 +2614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -2627,7 +2633,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -2701,8 +2707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -2715,8 +2721,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// A comma-separated list of the tag keys to remove from the resource.
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// A comma-separated list of the tag keys to remove from the resource.
@@ -2788,8 +2794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Cell to update
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(signature.into());
             self
         }
         /// The Cell to update
@@ -2802,8 +2808,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cell arns, completely replaces previous list
-        pub fn cells(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cells(inp);
+        pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cells(input.into());
             self
         }
         /// A list of Cell arns, completely replaces previous list
@@ -2875,8 +2881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ReadinessCheck to update
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(signature.into());
             self
         }
         /// The ReadinessCheck to update
@@ -2888,8 +2894,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the ResourceSet to check
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(signature.into());
             self
         }
         /// The name of the ResourceSet to check
@@ -2965,8 +2971,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cell arns, completely replaces previous list
-        pub fn cells(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cells(inp);
+        pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cells(input.into());
             self
         }
         /// A list of Cell arns, completely replaces previous list
@@ -2978,8 +2984,8 @@ pub mod fluent_builders {
             self
         }
         /// The RecoveryGroup to update
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(signature.into());
             self
         }
         /// The RecoveryGroup to update
@@ -3051,8 +3057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ResourceSet to update
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(signature.into());
             self
         }
         /// The ResourceSet to update
@@ -3064,8 +3070,8 @@ pub mod fluent_builders {
             self
         }
         /// AWS Resource Type of the resources in the ResourceSet
-        pub fn resource_set_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_type(inp);
+        pub fn resource_set_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_type(signature.into());
             self
         }
         /// AWS Resource Type of the resources in the ResourceSet
@@ -3081,8 +3087,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
-            self.inner = self.inner.resources(inp);
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// A list of Resource objects

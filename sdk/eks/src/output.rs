@@ -706,10 +706,10 @@ pub mod list_identity_provider_configs_output {
         /// <p>The identity provider configurations for the cluster.</p>
         pub fn identity_provider_configs(
             mut self,
-            input: impl Into<crate::model::IdentityProviderConfig>,
+            input: crate::model::IdentityProviderConfig,
         ) -> Self {
             let mut v = self.identity_provider_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identity_provider_configs = Some(v);
             self
         }
@@ -1458,9 +1458,9 @@ pub mod describe_addon_versions_output {
         /// To override the contents of this collection use [`set_addons`](Self::set_addons).
         ///
         /// <p>The list of available versions with Kubernetes version compatibility.</p>
-        pub fn addons(mut self, input: impl Into<crate::model::AddonInfo>) -> Self {
+        pub fn addons(mut self, input: crate::model::AddonInfo) -> Self {
             let mut v = self.addons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.addons = Some(v);
             self
         }

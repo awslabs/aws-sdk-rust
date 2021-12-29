@@ -142,9 +142,9 @@ pub mod get_resource_metrics_output {
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
         /// <p>An array of metric results,, where each array element contains all of the data points for a particular dimension.</p>
-        pub fn metric_list(mut self, input: impl Into<crate::model::MetricKeyDataPoints>) -> Self {
+        pub fn metric_list(mut self, input: crate::model::MetricKeyDataPoints) -> Self {
             let mut v = self.metric_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_list = Some(v);
             self
         }
@@ -223,9 +223,9 @@ pub mod get_dimension_key_details_output {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The details for the requested dimensions.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::DimensionKeyDetail>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::DimensionKeyDetail) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -365,12 +365,9 @@ pub mod describe_dimension_keys_output {
         /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
         ///
         /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions.</p>
-        pub fn partition_keys(
-            mut self,
-            input: impl Into<crate::model::ResponsePartitionKey>,
-        ) -> Self {
+        pub fn partition_keys(mut self, input: crate::model::ResponsePartitionKey) -> Self {
             let mut v = self.partition_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partition_keys = Some(v);
             self
         }
@@ -387,9 +384,9 @@ pub mod describe_dimension_keys_output {
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
         /// <p>The dimension keys that were requested.</p>
-        pub fn keys(mut self, input: impl Into<crate::model::DimensionKeyDescription>) -> Self {
+        pub fn keys(mut self, input: crate::model::DimensionKeyDescription) -> Self {
             let mut v = self.keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.keys = Some(v);
             self
         }

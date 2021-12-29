@@ -132,9 +132,9 @@ pub mod logging_configuration {
         ///
         /// <p>An array of objects that describes where your execution history events will be logged.
         /// Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
-        pub fn destinations(mut self, input: impl Into<crate::model::LogDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::LogDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }

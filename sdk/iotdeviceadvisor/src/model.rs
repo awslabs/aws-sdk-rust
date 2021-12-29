@@ -84,9 +84,9 @@ pub mod suite_definition_configuration {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>Gets the devices configured.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceUnderTest>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceUnderTest) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -766,9 +766,9 @@ pub mod suite_definition_information {
         /// To override the contents of this collection use [`set_default_devices`](Self::set_default_devices).
         ///
         /// <p>Specifies the devices that are under test for the test suite.</p>
-        pub fn default_devices(mut self, input: impl Into<crate::model::DeviceUnderTest>) -> Self {
+        pub fn default_devices(mut self, input: crate::model::DeviceUnderTest) -> Self {
             let mut v = self.default_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_devices = Some(v);
             self
         }
@@ -856,9 +856,9 @@ pub mod test_result {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>Show each group of test results.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupResult>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupResult) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -955,9 +955,9 @@ pub mod group_result {
         /// To override the contents of this collection use [`set_tests`](Self::set_tests).
         ///
         /// <p>Tests under Group Result.</p>
-        pub fn tests(mut self, input: impl Into<crate::model::TestCaseRun>) -> Self {
+        pub fn tests(mut self, input: crate::model::TestCaseRun) -> Self {
             let mut v = self.tests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tests = Some(v);
             self
         }

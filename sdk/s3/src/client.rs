@@ -890,8 +890,8 @@ pub mod fluent_builders {
         /// <p>The bucket name to which the upload was taking place. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name to which the upload was taking place. </p>
@@ -902,8 +902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Key of the object for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Key of the object for which the multipart upload was initiated.</p>
@@ -912,8 +912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Upload ID that identifies the multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>Upload ID that identifies the multipart upload.</p>
@@ -925,8 +925,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -941,8 +941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -1129,8 +1129,8 @@ pub mod fluent_builders {
         /// <p>Name of the bucket to which the multipart upload was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>Name of the bucket to which the multipart upload was initiated.</p>
@@ -1141,8 +1141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
@@ -1151,8 +1151,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The container for the multipart upload request information.</p>
-        pub fn multipart_upload(mut self, inp: crate::model::CompletedMultipartUpload) -> Self {
-            self.inner = self.inner.multipart_upload(inp);
+        pub fn multipart_upload(
+            mut self,
+            signature: crate::model::CompletedMultipartUpload,
+        ) -> Self {
+            self.inner = self.inner.multipart_upload(signature);
             self
         }
         /// <p>The container for the multipart upload request information.</p>
@@ -1164,8 +1167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ID for the initiated multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>ID for the initiated multipart upload.</p>
@@ -1177,8 +1180,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -1193,8 +1196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -1446,8 +1449,8 @@ pub mod fluent_builders {
         }
         /// <p>The canned ACL to apply to the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.inner = self.inner.acl(inp);
+        pub fn acl(mut self, signature: crate::model::ObjectCannedAcl) -> Self {
+            self.inner = self.inner.acl(signature);
             self
         }
         /// <p>The canned ACL to apply to the object.</p>
@@ -1462,8 +1465,8 @@ pub mod fluent_builders {
         /// <p>The name of the destination bucket.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the destination bucket.</p>
@@ -1474,8 +1477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_control(inp);
+        pub fn cache_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_control(signature.into());
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
@@ -1487,8 +1490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies presentational information for the object.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_disposition(inp);
+        pub fn content_disposition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_disposition(signature.into());
             self
         }
         /// <p>Specifies presentational information for the object.</p>
@@ -1502,8 +1505,8 @@ pub mod fluent_builders {
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_encoding(inp);
+        pub fn content_encoding(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_encoding(signature.into());
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
@@ -1517,8 +1520,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_language(inp);
+        pub fn content_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_language(signature.into());
             self
         }
         /// <p>The language the content is in.</p>
@@ -1530,8 +1533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
@@ -1563,8 +1566,8 @@ pub mod fluent_builders {
         /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
         /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
         /// object.</p>
-        pub fn copy_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source(inp);
+        pub fn copy_source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.copy_source(signature.into());
             self
         }
         /// <p>Specifies the source object for the copy operation. You specify the value in one of two
@@ -1596,8 +1599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
-        pub fn copy_source_if_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source_if_match(inp);
+        pub fn copy_source_if_match(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.copy_source_if_match(signature.into());
             self
         }
         /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
@@ -1609,8 +1612,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
-        pub fn copy_source_if_modified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.copy_source_if_modified_since(inp);
+        pub fn copy_source_if_modified_since(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.copy_source_if_modified_since(signature);
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
@@ -1622,8 +1628,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
-        pub fn copy_source_if_none_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source_if_none_match(inp);
+        pub fn copy_source_if_none_match(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.copy_source_if_none_match(signature.into());
             self
         }
         /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
@@ -1635,8 +1644,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
-        pub fn copy_source_if_unmodified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.copy_source_if_unmodified_since(inp);
+        pub fn copy_source_if_unmodified_since(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.copy_source_if_unmodified_since(signature);
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
@@ -1648,8 +1660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expires(inp);
+        pub fn expires(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expires(signature);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
@@ -1663,8 +1675,8 @@ pub mod fluent_builders {
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_full_control(inp);
+        pub fn grant_full_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_full_control(signature.into());
             self
         }
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
@@ -1680,8 +1692,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee to read the object data and its
         /// metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read(inp);
+        pub fn grant_read(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read(signature.into());
             self
         }
         /// <p>Allows grantee to read the object data and its
@@ -1693,8 +1705,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee to read the object ACL.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read_acp(inp);
+        pub fn grant_read_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read_acp(signature.into());
             self
         }
         /// <p>Allows grantee to read the object ACL.</p>
@@ -1709,8 +1721,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee to write the ACL for the applicable
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write_acp(inp);
+        pub fn grant_write_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write_acp(signature.into());
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable
@@ -1724,8 +1736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key of the destination object.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The key of the destination object.</p>
@@ -1743,7 +1755,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
         /// <p>A map of metadata to store with the object in S3.</p>
@@ -1758,8 +1770,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the metadata is copied from the source object or replaced with
         /// metadata provided in the request.</p>
-        pub fn metadata_directive(mut self, inp: crate::model::MetadataDirective) -> Self {
-            self.inner = self.inner.metadata_directive(inp);
+        pub fn metadata_directive(mut self, signature: crate::model::MetadataDirective) -> Self {
+            self.inner = self.inner.metadata_directive(signature);
             self
         }
         /// <p>Specifies whether the metadata is copied from the source object or replaced with
@@ -1773,8 +1785,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the object tag-set are copied from the source object or replaced with
         /// tag-set provided in the request.</p>
-        pub fn tagging_directive(mut self, inp: crate::model::TaggingDirective) -> Self {
-            self.inner = self.inner.tagging_directive(inp);
+        pub fn tagging_directive(mut self, signature: crate::model::TaggingDirective) -> Self {
+            self.inner = self.inner.tagging_directive(signature);
             self
         }
         /// <p>Specifies whether the object tag-set are copied from the source object or replaced with
@@ -1788,8 +1800,11 @@ pub mod fluent_builders {
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.inner = self.inner.server_side_encryption(inp);
+        pub fn server_side_encryption(
+            mut self,
+            signature: crate::model::ServerSideEncryption,
+        ) -> Self {
+            self.inner = self.inner.server_side_encryption(signature);
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
@@ -1806,8 +1821,8 @@ pub mod fluent_builders {
         /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
         /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.inner = self.inner.storage_class(inp);
+        pub fn storage_class(mut self, signature: crate::model::StorageClass) -> Self {
+            self.inner = self.inner.storage_class(signature);
             self
         }
         /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
@@ -1825,8 +1840,11 @@ pub mod fluent_builders {
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
         /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
         /// the object metadata.</p>
-        pub fn website_redirect_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_redirect_location(inp);
+        pub fn website_redirect_location(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.website_redirect_location(signature.into());
             self
         }
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
@@ -1841,8 +1859,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
@@ -1858,8 +1876,8 @@ pub mod fluent_builders {
         /// value is used to store the object and then it is discarded; Amazon S3 does not store the
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key(inp);
+        pub fn sse_customer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
@@ -1876,8 +1894,8 @@ pub mod fluent_builders {
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -1895,8 +1913,8 @@ pub mod fluent_builders {
         /// information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the
         /// Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssekms_key_id(inp);
+        pub fn ssekms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssekms_key_id(signature.into());
             self
         }
         /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for
@@ -1914,8 +1932,11 @@ pub mod fluent_builders {
         /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
         /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
         /// pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssekms_encryption_context(inp);
+        pub fn ssekms_encryption_context(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ssekms_encryption_context(signature.into());
             self
         }
         /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
@@ -1930,8 +1951,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p>
         /// <p>Specifying this header with a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bucket_key_enabled(inp);
+        pub fn bucket_key_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bucket_key_enabled(signature);
             self
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p>
@@ -1944,9 +1965,11 @@ pub mod fluent_builders {
         /// AES256).</p>
         pub fn copy_source_sse_customer_algorithm(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.copy_source_sse_customer_algorithm(inp);
+            self.inner = self
+                .inner
+                .copy_source_sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use when decrypting the source object (for example,
@@ -1961,8 +1984,11 @@ pub mod fluent_builders {
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
         /// object. The encryption key provided in this header must be one that was used when the
         /// source object was created.</p>
-        pub fn copy_source_sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source_sse_customer_key(inp);
+        pub fn copy_source_sse_customer_key(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.copy_source_sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
@@ -1980,9 +2006,11 @@ pub mod fluent_builders {
         /// without error.</p>
         pub fn copy_source_sse_customer_key_md5(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.copy_source_sse_customer_key_md5(inp);
+            self.inner = self
+                .inner
+                .copy_source_sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -1999,8 +2027,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -2017,8 +2045,8 @@ pub mod fluent_builders {
         /// <p>The tag-set for the object destination object this value must be used in conjunction
         /// with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query
         /// parameters.</p>
-        pub fn tagging(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tagging(inp);
+        pub fn tagging(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tagging(signature.into());
             self
         }
         /// <p>The tag-set for the object destination object this value must be used in conjunction
@@ -2029,8 +2057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Object Lock mode that you want to apply to the copied object.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.inner = self.inner.object_lock_mode(inp);
+        pub fn object_lock_mode(mut self, signature: crate::model::ObjectLockMode) -> Self {
+            self.inner = self.inner.object_lock_mode(signature);
             self
         }
         /// <p>The Object Lock mode that you want to apply to the copied object.</p>
@@ -2042,8 +2070,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time when you want the copied object's Object Lock to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.object_lock_retain_until_date(inp);
+        pub fn object_lock_retain_until_date(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.object_lock_retain_until_date(signature);
             self
         }
         /// <p>The date and time when you want the copied object's Object Lock to expire.</p>
@@ -2057,9 +2088,9 @@ pub mod fluent_builders {
         /// <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            signature: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.inner = self.inner.object_lock_legal_hold_status(inp);
+            self.inner = self.inner.object_lock_legal_hold_status(signature);
             self
         }
         /// <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
@@ -2071,8 +2102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -2084,8 +2115,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_source_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_source_bucket_owner(inp);
+        pub fn expected_source_bucket_owner(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.expected_source_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -2303,8 +2337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The canned ACL to apply to the bucket.</p>
-        pub fn acl(mut self, inp: crate::model::BucketCannedAcl) -> Self {
-            self.inner = self.inner.acl(inp);
+        pub fn acl(mut self, signature: crate::model::BucketCannedAcl) -> Self {
+            self.inner = self.inner.acl(signature);
             self
         }
         /// <p>The canned ACL to apply to the bucket.</p>
@@ -2316,8 +2350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the bucket to create.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket to create.</p>
@@ -2328,9 +2362,9 @@ pub mod fluent_builders {
         /// <p>The configuration information for the bucket.</p>
         pub fn create_bucket_configuration(
             mut self,
-            inp: crate::model::CreateBucketConfiguration,
+            signature: crate::model::CreateBucketConfiguration,
         ) -> Self {
-            self.inner = self.inner.create_bucket_configuration(inp);
+            self.inner = self.inner.create_bucket_configuration(signature);
             self
         }
         /// <p>The configuration information for the bucket.</p>
@@ -2343,8 +2377,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
         /// bucket.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_full_control(inp);
+        pub fn grant_full_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_full_control(signature.into());
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
@@ -2357,8 +2391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows grantee to list the objects in the bucket.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read(inp);
+        pub fn grant_read(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read(signature.into());
             self
         }
         /// <p>Allows grantee to list the objects in the bucket.</p>
@@ -2367,8 +2401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read_acp(inp);
+        pub fn grant_read_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read_acp(signature.into());
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
@@ -2381,8 +2415,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
         /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-        pub fn grant_write(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write(inp);
+        pub fn grant_write(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write(signature.into());
             self
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
@@ -2392,8 +2426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write_acp(inp);
+        pub fn grant_write_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write_acp(signature.into());
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
@@ -2405,8 +2439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-        pub fn object_lock_enabled_for_bucket(mut self, inp: bool) -> Self {
-            self.inner = self.inner.object_lock_enabled_for_bucket(inp);
+        pub fn object_lock_enabled_for_bucket(mut self, signature: bool) -> Self {
+            self.inner = self.inner.object_lock_enabled_for_bucket(signature);
             self
         }
         /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
@@ -2428,8 +2462,8 @@ pub mod fluent_builders {
         /// accepts PUT requests that don't specify an ACL or bucket owner full control
         /// ACLs, such as the <code>bucket-owner-full-control</code> canned
         /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
-        pub fn object_ownership(mut self, inp: crate::model::ObjectOwnership) -> Self {
-            self.inner = self.inner.object_ownership(inp);
+        pub fn object_ownership(mut self, signature: crate::model::ObjectOwnership) -> Self {
+            self.inner = self.inner.object_ownership(signature);
             self
         }
         /// <p>The container element for object ownership for a bucket's ownership controls.</p>
@@ -2769,8 +2803,8 @@ pub mod fluent_builders {
         }
         /// <p>The canned ACL to apply to the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.inner = self.inner.acl(inp);
+        pub fn acl(mut self, signature: crate::model::ObjectCannedAcl) -> Self {
+            self.inner = self.inner.acl(signature);
             self
         }
         /// <p>The canned ACL to apply to the object.</p>
@@ -2785,8 +2819,8 @@ pub mod fluent_builders {
         /// <p>The name of the bucket to which to initiate the upload</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket to which to initiate the upload</p>
@@ -2797,8 +2831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_control(inp);
+        pub fn cache_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_control(signature.into());
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
@@ -2810,8 +2844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies presentational information for the object.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_disposition(inp);
+        pub fn content_disposition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_disposition(signature.into());
             self
         }
         /// <p>Specifies presentational information for the object.</p>
@@ -2825,8 +2859,8 @@ pub mod fluent_builders {
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_encoding(inp);
+        pub fn content_encoding(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_encoding(signature.into());
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
@@ -2840,8 +2874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_language(inp);
+        pub fn content_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_language(signature.into());
             self
         }
         /// <p>The language the content is in.</p>
@@ -2853,8 +2887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
@@ -2863,8 +2897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expires(inp);
+        pub fn expires(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expires(signature);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
@@ -2878,8 +2912,8 @@ pub mod fluent_builders {
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_full_control(inp);
+        pub fn grant_full_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_full_control(signature.into());
             self
         }
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
@@ -2895,8 +2929,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee to read the object data and its
         /// metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read(inp);
+        pub fn grant_read(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read(signature.into());
             self
         }
         /// <p>Allows grantee to read the object data and its
@@ -2908,8 +2942,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee to read the object ACL.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read_acp(inp);
+        pub fn grant_read_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read_acp(signature.into());
             self
         }
         /// <p>Allows grantee to read the object ACL.</p>
@@ -2924,8 +2958,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee to write the ACL for the applicable
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write_acp(inp);
+        pub fn grant_write_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write_acp(signature.into());
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable
@@ -2939,8 +2973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object key for which the multipart upload is to be initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Object key for which the multipart upload is to be initiated.</p>
@@ -2958,7 +2992,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
         /// <p>A map of metadata to store with the object in S3.</p>
@@ -2973,8 +3007,11 @@ pub mod fluent_builders {
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.inner = self.inner.server_side_encryption(inp);
+        pub fn server_side_encryption(
+            mut self,
+            signature: crate::model::ServerSideEncryption,
+        ) -> Self {
+            self.inner = self.inner.server_side_encryption(signature);
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
@@ -2991,8 +3028,8 @@ pub mod fluent_builders {
         /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
         /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.inner = self.inner.storage_class(inp);
+        pub fn storage_class(mut self, signature: crate::model::StorageClass) -> Self {
+            self.inner = self.inner.storage_class(signature);
             self
         }
         /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
@@ -3010,8 +3047,11 @@ pub mod fluent_builders {
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
         /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
         /// the object metadata.</p>
-        pub fn website_redirect_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_redirect_location(inp);
+        pub fn website_redirect_location(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.website_redirect_location(signature.into());
             self
         }
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
@@ -3026,8 +3066,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
@@ -3043,8 +3083,8 @@ pub mod fluent_builders {
         /// value is used to store the object and then it is discarded; Amazon S3 does not store the
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key(inp);
+        pub fn sse_customer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
@@ -3061,8 +3101,8 @@ pub mod fluent_builders {
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -3080,8 +3120,8 @@ pub mod fluent_builders {
         /// made via SSL or using SigV4. For information about configuring using any of the officially
         /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a>
         /// in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssekms_key_id(inp);
+        pub fn ssekms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssekms_key_id(signature.into());
             self
         }
         /// <p>Specifies the ID of the symmetric customer managed key to use for object
@@ -3099,8 +3139,11 @@ pub mod fluent_builders {
         /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
         /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
         /// pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssekms_encryption_context(inp);
+        pub fn ssekms_encryption_context(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ssekms_encryption_context(signature.into());
             self
         }
         /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
@@ -3115,8 +3158,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
         /// <p>Specifying this header with an object action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bucket_key_enabled(inp);
+        pub fn bucket_key_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bucket_key_enabled(signature);
             self
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
@@ -3129,8 +3172,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -3145,8 +3188,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters.</p>
-        pub fn tagging(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tagging(inp);
+        pub fn tagging(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tagging(signature.into());
             self
         }
         /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters.</p>
@@ -3155,8 +3198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the Object Lock mode that you want to apply to the uploaded object.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.inner = self.inner.object_lock_mode(inp);
+        pub fn object_lock_mode(mut self, signature: crate::model::ObjectLockMode) -> Self {
+            self.inner = self.inner.object_lock_mode(signature);
             self
         }
         /// <p>Specifies the Object Lock mode that you want to apply to the uploaded object.</p>
@@ -3168,8 +3211,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.object_lock_retain_until_date(inp);
+        pub fn object_lock_retain_until_date(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.object_lock_retain_until_date(signature);
             self
         }
         /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
@@ -3183,9 +3229,9 @@ pub mod fluent_builders {
         /// <p>Specifies whether you want to apply a Legal Hold to the uploaded object.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            signature: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.inner = self.inner.object_lock_legal_hold_status(inp);
+            self.inner = self.inner.object_lock_legal_hold_status(signature);
             self
         }
         /// <p>Specifies whether you want to apply a Legal Hold to the uploaded object.</p>
@@ -3197,8 +3243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -3287,8 +3333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the bucket being deleted.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>Specifies the bucket being deleted.</p>
@@ -3297,8 +3343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -3401,8 +3447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket from which an analytics configuration is deleted.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket from which an analytics configuration is deleted.</p>
@@ -3411,8 +3457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
@@ -3421,8 +3467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -3515,8 +3561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the bucket whose <code>cors</code> configuration is being deleted.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>Specifies the bucket whose <code>cors</code> configuration is being deleted.</p>
@@ -3525,8 +3571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -3622,8 +3668,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bucket containing the server-side encryption configuration to
         /// delete.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the server-side encryption configuration to
@@ -3633,8 +3679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -3730,8 +3776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
@@ -3740,8 +3786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
@@ -3837,8 +3883,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket containing the inventory configuration to delete.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the inventory configuration to delete.</p>
@@ -3847,8 +3893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
@@ -3857,8 +3903,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -3955,8 +4001,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name of the lifecycle to delete.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name of the lifecycle to delete.</p>
@@ -3965,8 +4011,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -4073,8 +4119,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket containing the metrics configuration to delete.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the metrics configuration to delete.</p>
@@ -4083,8 +4129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
@@ -4093,8 +4139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -4184,8 +4230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
@@ -4194,8 +4240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -4299,8 +4345,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name.</p>
@@ -4309,8 +4355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -4407,8 +4453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The bucket name. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p> The bucket name. </p>
@@ -4417,8 +4463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -4507,8 +4553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket that has the tag set to be removed.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket that has the tag set to be removed.</p>
@@ -4517,8 +4563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -4616,8 +4662,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name for which you want to remove the website configuration. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name for which you want to remove the website configuration. </p>
@@ -4626,8 +4672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -4731,8 +4777,8 @@ pub mod fluent_builders {
         /// <p>The bucket name of the bucket containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name of the bucket containing the object. </p>
@@ -4743,8 +4789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Key name of the object to delete.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Key name of the object to delete.</p>
@@ -4755,8 +4801,8 @@ pub mod fluent_builders {
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
         /// that is displayed on your authentication device. Required to permanently delete a versioned
         /// object if versioning is configured with MFA delete enabled.</p>
-        pub fn mfa(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mfa(inp);
+        pub fn mfa(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mfa(signature.into());
             self
         }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
@@ -4767,8 +4813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
@@ -4780,8 +4826,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -4798,8 +4844,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
         /// this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
         /// permission.</p>
-        pub fn bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bypass_governance_retention(inp);
+        pub fn bypass_governance_retention(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bypass_governance_retention(signature);
             self
         }
         /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
@@ -4810,8 +4856,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -4941,8 +4987,8 @@ pub mod fluent_builders {
         /// <p>The bucket name containing the objects to delete. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the objects to delete. </p>
@@ -4953,8 +4999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Container for the request.</p>
-        pub fn delete(mut self, inp: crate::model::Delete) -> Self {
-            self.inner = self.inner.delete(inp);
+        pub fn delete(mut self, signature: crate::model::Delete) -> Self {
+            self.inner = self.inner.delete(signature);
             self
         }
         /// <p>Container for the request.</p>
@@ -4965,8 +5011,8 @@ pub mod fluent_builders {
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
         /// that is displayed on your authentication device. Required to permanently delete a versioned
         /// object if versioning is configured with MFA delete enabled.</p>
-        pub fn mfa(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mfa(inp);
+        pub fn mfa(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mfa(signature.into());
             self
         }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
@@ -4980,8 +5026,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -4998,8 +5044,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
         /// Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
         /// permission.</p>
-        pub fn bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bypass_governance_retention(inp);
+        pub fn bypass_governance_retention(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bypass_governance_retention(signature);
             self
         }
         /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
@@ -5010,8 +5056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -5109,8 +5155,8 @@ pub mod fluent_builders {
         /// <p>The bucket name containing the objects from which to remove the tags. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the objects from which to remove the tags. </p>
@@ -5121,8 +5167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key that identifies the object in the bucket from which to remove all tags.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The key that identifies the object in the bucket from which to remove all tags.</p>
@@ -5131,8 +5177,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The versionId of the object that the tag-set will be removed from.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The versionId of the object that the tag-set will be removed from.</p>
@@ -5141,8 +5187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -5243,8 +5289,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete.
         /// </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete.
@@ -5254,8 +5300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -5353,8 +5399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
@@ -5363,8 +5409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -5458,8 +5504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
@@ -5468,8 +5514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -5570,8 +5616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
@@ -5580,8 +5626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
@@ -5590,8 +5636,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -5683,8 +5729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name for which to get the cors configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name for which to get the cors configuration.</p>
@@ -5693,8 +5739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -5788,8 +5834,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bucket from which the server-side encryption configuration is
         /// retrieved.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket from which the server-side encryption configuration is
@@ -5799,8 +5845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -5896,8 +5942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
@@ -5906,8 +5952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
@@ -6005,8 +6051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
@@ -6015,8 +6061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
@@ -6025,8 +6071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -6153,8 +6199,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to get the lifecycle information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which to get the lifecycle information.</p>
@@ -6163,8 +6209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -6256,8 +6302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to get the location.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which to get the location.</p>
@@ -6266,8 +6312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -6354,8 +6400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name for which to get the logging information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name for which to get the logging information.</p>
@@ -6364,8 +6410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -6473,8 +6519,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
@@ -6483,8 +6529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
@@ -6493,8 +6539,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -6588,8 +6634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to get the notification configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which to get the notification configuration.</p>
@@ -6598,8 +6644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -6689,8 +6735,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve.
         /// </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve.
@@ -6700,8 +6746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -6799,8 +6845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name for which to get the bucket policy.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name for which to get the bucket policy.</p>
@@ -6809,8 +6855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -6912,8 +6958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
@@ -6922,8 +6968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -7029,8 +7075,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name for which to get the replication information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name for which to get the replication information.</p>
@@ -7039,8 +7085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -7122,8 +7168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to get the payment request configuration</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which to get the payment request configuration</p>
@@ -7132,8 +7178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -7236,8 +7282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to get the tagging information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which to get the tagging information.</p>
@@ -7246,8 +7292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -7343,8 +7389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to get the versioning information.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which to get the versioning information.</p>
@@ -7353,8 +7399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -7446,8 +7492,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name for which to get the website configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name for which to get the website configuration.</p>
@@ -7456,8 +7502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -7736,8 +7782,8 @@ pub mod fluent_builders {
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the object. </p>
@@ -7750,8 +7796,8 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
         /// otherwise return a 412 (precondition failed).</p>
-        pub fn if_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(inp);
+        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(signature.into());
             self
         }
         /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
@@ -7762,8 +7808,8 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if it has been modified since the specified time, otherwise
         /// return a 304 (not modified).</p>
-        pub fn if_modified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.if_modified_since(inp);
+        pub fn if_modified_since(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.if_modified_since(signature);
             self
         }
         /// <p>Return the object only if it has been modified since the specified time, otherwise
@@ -7777,8 +7823,8 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
         /// otherwise return a 304 (not modified).</p>
-        pub fn if_none_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_none_match(inp);
+        pub fn if_none_match(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_none_match(signature.into());
             self
         }
         /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
@@ -7792,8 +7838,8 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if it has not been modified since the specified time, otherwise
         /// return a 412 (precondition failed).</p>
-        pub fn if_unmodified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.if_unmodified_since(inp);
+        pub fn if_unmodified_since(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.if_unmodified_since(signature);
             self
         }
         /// <p>Return the object only if it has not been modified since the specified time, otherwise
@@ -7806,8 +7852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Key of the object to get.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Key of the object to get.</p>
@@ -7821,8 +7867,8 @@ pub mod fluent_builders {
         /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
         /// request.</p>
         /// </note>
-        pub fn range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.range(inp);
+        pub fn range(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.range(signature.into());
             self
         }
         /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
@@ -7836,8 +7882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
-        pub fn response_cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_cache_control(inp);
+        pub fn response_cache_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_cache_control(signature.into());
             self
         }
         /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
@@ -7849,8 +7895,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the <code>Content-Disposition</code> header of the response</p>
-        pub fn response_content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_disposition(inp);
+        pub fn response_content_disposition(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.response_content_disposition(signature.into());
             self
         }
         /// <p>Sets the <code>Content-Disposition</code> header of the response</p>
@@ -7862,8 +7911,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
-        pub fn response_content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_encoding(inp);
+        pub fn response_content_encoding(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.response_content_encoding(signature.into());
             self
         }
         /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
@@ -7875,8 +7927,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the <code>Content-Language</code> header of the response.</p>
-        pub fn response_content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_language(inp);
+        pub fn response_content_language(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.response_content_language(signature.into());
             self
         }
         /// <p>Sets the <code>Content-Language</code> header of the response.</p>
@@ -7888,8 +7943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the <code>Content-Type</code> header of the response.</p>
-        pub fn response_content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_type(inp);
+        pub fn response_content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_content_type(signature.into());
             self
         }
         /// <p>Sets the <code>Content-Type</code> header of the response.</p>
@@ -7901,8 +7956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the <code>Expires</code> header of the response.</p>
-        pub fn response_expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.response_expires(inp);
+        pub fn response_expires(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.response_expires(signature);
             self
         }
         /// <p>Sets the <code>Expires</code> header of the response.</p>
@@ -7914,8 +7969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
@@ -7925,8 +7980,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the algorithm to use to when decrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use to when decrypting the object (for example,
@@ -7942,8 +7997,8 @@ pub mod fluent_builders {
         /// value is used to decrypt the object when recovering it and must match the one used when
         /// storing the data. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key(inp);
+        pub fn sse_customer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This
@@ -7960,8 +8015,8 @@ pub mod fluent_builders {
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -7978,8 +8033,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -7996,8 +8051,8 @@ pub mod fluent_builders {
         /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
         /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading
         /// just a part of an object.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.part_number(inp);
+        pub fn part_number(mut self, signature: i32) -> Self {
+            self.inner = self.inner.part_number(signature);
             self
         }
         /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
@@ -8008,8 +8063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -8114,8 +8169,8 @@ pub mod fluent_builders {
         }
         /// <p>The bucket name that contains the object for which to get the ACL information. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name that contains the object for which to get the ACL information. </p>
@@ -8125,8 +8180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key of the object for which to get the ACL information.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The key of the object for which to get the ACL information.</p>
@@ -8135,8 +8190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
@@ -8148,8 +8203,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -8164,8 +8219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -8239,8 +8294,8 @@ pub mod fluent_builders {
         }
         /// <p>The bucket name containing the object whose Legal Hold status you want to retrieve. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the object whose Legal Hold status you want to retrieve. </p>
@@ -8250,8 +8305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
@@ -8260,8 +8315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
@@ -8273,8 +8328,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -8289,8 +8344,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -8366,8 +8421,8 @@ pub mod fluent_builders {
         }
         /// <p>The bucket whose Object Lock configuration you want to retrieve.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket whose Object Lock configuration you want to retrieve.</p>
@@ -8377,8 +8432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -8452,8 +8507,8 @@ pub mod fluent_builders {
         }
         /// <p>The bucket name containing the object whose retention settings you want to retrieve. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the object whose retention settings you want to retrieve. </p>
@@ -8463,8 +8518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key name for the object whose retention settings you want to retrieve.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The key name for the object whose retention settings you want to retrieve.</p>
@@ -8473,8 +8528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID for the object whose retention settings you want to retrieve.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version ID for the object whose retention settings you want to retrieve.</p>
@@ -8486,8 +8541,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -8502,8 +8557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -8604,8 +8659,8 @@ pub mod fluent_builders {
         /// <p>The bucket name containing the object for which to get the tagging information. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the object for which to get the tagging information. </p>
@@ -8616,8 +8671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object key for which to get the tagging information.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Object key for which to get the tagging information.</p>
@@ -8626,8 +8681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The versionId of the object for which to get the tagging information.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The versionId of the object for which to get the tagging information.</p>
@@ -8636,8 +8691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -8652,8 +8707,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -8744,8 +8799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
@@ -8754,8 +8809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object key for which to get the information.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The object key for which to get the information.</p>
@@ -8767,8 +8822,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -8783,8 +8838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -8896,8 +8951,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
         /// to retrieve. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
@@ -8907,8 +8962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -8997,8 +9052,8 @@ pub mod fluent_builders {
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name.</p>
@@ -9009,8 +9064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -9195,8 +9250,8 @@ pub mod fluent_builders {
         /// <p>The name of the bucket containing the object.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the object.</p>
@@ -9208,8 +9263,8 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
         /// otherwise return a 412 (precondition failed).</p>
-        pub fn if_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(inp);
+        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(signature.into());
             self
         }
         /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
@@ -9220,8 +9275,8 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if it has been modified since the specified time, otherwise
         /// return a 304 (not modified).</p>
-        pub fn if_modified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.if_modified_since(inp);
+        pub fn if_modified_since(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.if_modified_since(signature);
             self
         }
         /// <p>Return the object only if it has been modified since the specified time, otherwise
@@ -9235,8 +9290,8 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
         /// otherwise return a 304 (not modified).</p>
-        pub fn if_none_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_none_match(inp);
+        pub fn if_none_match(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_none_match(signature.into());
             self
         }
         /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
@@ -9250,8 +9305,8 @@ pub mod fluent_builders {
         }
         /// <p>Return the object only if it has not been modified since the specified time, otherwise
         /// return a 412 (precondition failed).</p>
-        pub fn if_unmodified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.if_unmodified_since(inp);
+        pub fn if_unmodified_since(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.if_unmodified_since(signature);
             self
         }
         /// <p>Return the object only if it has not been modified since the specified time, otherwise
@@ -9264,8 +9319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The object key.</p>
@@ -9279,8 +9334,8 @@ pub mod fluent_builders {
         /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
         /// request.</p>
         /// </note>
-        pub fn range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.range(inp);
+        pub fn range(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.range(signature.into());
             self
         }
         /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
@@ -9294,8 +9349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
@@ -9305,8 +9360,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
@@ -9322,8 +9377,8 @@ pub mod fluent_builders {
         /// value is used to store the object and then it is discarded; Amazon S3 does not store the
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key(inp);
+        pub fn sse_customer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
@@ -9340,8 +9395,8 @@ pub mod fluent_builders {
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -9358,8 +9413,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -9376,8 +9431,8 @@ pub mod fluent_builders {
         /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
         /// Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about
         /// the size of the part and the number of parts in this object.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.part_number(inp);
+        pub fn part_number(mut self, signature: i32) -> Self {
+            self.inner = self.inner.part_number(signature);
             self
         }
         /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
@@ -9388,8 +9443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -9500,8 +9555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
@@ -9511,8 +9566,8 @@ pub mod fluent_builders {
         }
         /// <p>The ContinuationToken that represents a placeholder from where this request should
         /// begin.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(inp);
+        pub fn continuation_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(signature.into());
             self
         }
         /// <p>The ContinuationToken that represents a placeholder from where this request should
@@ -9525,8 +9580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -9622,8 +9677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
@@ -9633,8 +9688,8 @@ pub mod fluent_builders {
         }
         /// <p>The ContinuationToken that represents a placeholder from where this request should
         /// begin.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(inp);
+        pub fn continuation_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(signature.into());
             self
         }
         /// <p>The ContinuationToken that represents a placeholder from where this request should
@@ -9745,8 +9800,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
@@ -9757,8 +9812,8 @@ pub mod fluent_builders {
         /// <p>The marker used to continue an inventory configuration listing that has been truncated.
         /// Use the NextContinuationToken from a previously truncated list response to continue the
         /// listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(inp);
+        pub fn continuation_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(signature.into());
             self
         }
         /// <p>The marker used to continue an inventory configuration listing that has been truncated.
@@ -9772,8 +9827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -9885,8 +9940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
@@ -9898,8 +9953,8 @@ pub mod fluent_builders {
         /// truncated. Use the NextContinuationToken from a previously truncated list response to
         /// continue the listing. The continuation token is an opaque value that Amazon S3
         /// understands.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(inp);
+        pub fn continuation_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(signature.into());
             self
         }
         /// <p>The marker that is used to continue a metrics configuration listing that has been
@@ -9914,8 +9969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -10099,8 +10154,8 @@ pub mod fluent_builders {
         /// <p>The name of the bucket to which the multipart upload was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket to which the multipart upload was initiated. </p>
@@ -10117,8 +10172,8 @@ pub mod fluent_builders {
         /// substring starts at the beginning of the key. The keys that are grouped under
         /// <code>CommonPrefixes</code> result element are not returned elsewhere in the
         /// response.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delimiter(inp);
+        pub fn delimiter(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delimiter(signature.into());
             self
         }
         /// <p>Character you use to group keys.</p>
@@ -10137,8 +10192,8 @@ pub mod fluent_builders {
         /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
         /// characters that are not supported in XML 1.0, you can add this parameter to request that
         /// Amazon S3 encode the keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.inner = self.inner.encoding_type(inp);
+        pub fn encoding_type(mut self, signature: crate::model::EncodingType) -> Self {
+            self.inner = self.inner.encoding_type(signature);
             self
         }
         /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
@@ -10162,8 +10217,8 @@ pub mod fluent_builders {
         /// the <code>key-marker</code> might also be included, provided those multipart uploads have
         /// upload IDs lexicographically greater than the specified
         /// <code>upload-id-marker</code>.</p>
-        pub fn key_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_marker(inp);
+        pub fn key_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_marker(signature.into());
             self
         }
         /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after
@@ -10181,8 +10236,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response
         /// body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
-        pub fn max_uploads(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_uploads(inp);
+        pub fn max_uploads(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_uploads(signature);
             self
         }
         /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response
@@ -10194,8 +10249,8 @@ pub mod fluent_builders {
         /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You
         /// can use prefixes to separate a bucket into different grouping of keys. (You can think of
         /// using prefix to make groups in the same way you'd use a folder in a file system.)</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(signature.into());
             self
         }
         /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You
@@ -10210,8 +10265,8 @@ pub mod fluent_builders {
         /// Otherwise, any multipart uploads for a key equal to the key-marker might be included in the
         /// list only if they have an upload ID lexicographically greater than the specified
         /// <code>upload-id-marker</code>.</p>
-        pub fn upload_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id_marker(inp);
+        pub fn upload_id_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id_marker(signature.into());
             self
         }
         /// <p>Together with key-marker, specifies the multipart upload after which listing should
@@ -10227,8 +10282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -10339,8 +10394,8 @@ pub mod fluent_builders {
         /// <p>The name of the bucket containing the objects.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket containing the objects.</p>
@@ -10351,8 +10406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A delimiter is a character you use to group keys.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delimiter(inp);
+        pub fn delimiter(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delimiter(signature.into());
             self
         }
         /// <p>A delimiter is a character you use to group keys.</p>
@@ -10365,8 +10420,8 @@ pub mod fluent_builders {
         /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
         /// characters that are not supported in XML 1.0, you can add this parameter to request that
         /// Amazon S3 encode the keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.inner = self.inner.encoding_type(inp);
+        pub fn encoding_type(mut self, signature: crate::model::EncodingType) -> Self {
+            self.inner = self.inner.encoding_type(signature);
             self
         }
         /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
@@ -10383,8 +10438,8 @@ pub mod fluent_builders {
         }
         /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after
         /// this specified key. Marker can be any key in the bucket.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after
@@ -10396,8 +10451,8 @@ pub mod fluent_builders {
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
         /// to 1,000 key names. The response might contain fewer keys but will never contain more.
         /// </p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_keys(inp);
+        pub fn max_keys(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_keys(signature);
             self
         }
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
@@ -10408,8 +10463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the response to keys that begin with the specified prefix.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(signature.into());
             self
         }
         /// <p>Limits the response to keys that begin with the specified prefix.</p>
@@ -10419,8 +10474,8 @@ pub mod fluent_builders {
         }
         /// <p>Confirms that the requester knows that she or he will be charged for the list objects
         /// request. Bucket owners need not specify this parameter in their requests.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that she or he will be charged for the list objects
@@ -10433,8 +10488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -10549,8 +10604,8 @@ pub mod fluent_builders {
         /// <p>Bucket name to list. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>Bucket name to list. </p>
@@ -10561,8 +10616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A delimiter is a character you use to group keys.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delimiter(inp);
+        pub fn delimiter(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delimiter(signature.into());
             self
         }
         /// <p>A delimiter is a character you use to group keys.</p>
@@ -10571,8 +10626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.inner = self.inner.encoding_type(inp);
+        pub fn encoding_type(mut self, signature: crate::model::EncodingType) -> Self {
+            self.inner = self.inner.encoding_type(signature);
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
@@ -10586,8 +10641,8 @@ pub mod fluent_builders {
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
         /// to 1,000 key names. The response might contain fewer keys but will never contain
         /// more.</p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_keys(inp);
+        pub fn max_keys(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_keys(signature);
             self
         }
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
@@ -10598,8 +10653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the response to keys that begin with the specified prefix.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(signature.into());
             self
         }
         /// <p>Limits the response to keys that begin with the specified prefix.</p>
@@ -10609,8 +10664,8 @@ pub mod fluent_builders {
         }
         /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a
         /// token. ContinuationToken is obfuscated and is not a real key.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(inp);
+        pub fn continuation_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(signature.into());
             self
         }
         /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a
@@ -10624,8 +10679,8 @@ pub mod fluent_builders {
         }
         /// <p>The owner field is not present in listV2 by default, if you want to return owner field
         /// with each key in the result then set the fetch owner field to true.</p>
-        pub fn fetch_owner(mut self, inp: bool) -> Self {
-            self.inner = self.inner.fetch_owner(inp);
+        pub fn fetch_owner(mut self, signature: bool) -> Self {
+            self.inner = self.inner.fetch_owner(signature);
             self
         }
         /// <p>The owner field is not present in listV2 by default, if you want to return owner field
@@ -10636,8 +10691,8 @@ pub mod fluent_builders {
         }
         /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this
         /// specified key. StartAfter can be any key in the bucket.</p>
-        pub fn start_after(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_after(inp);
+        pub fn start_after(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_after(signature.into());
             self
         }
         /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this
@@ -10649,8 +10704,8 @@ pub mod fluent_builders {
         /// <p>Confirms that the requester knows that she or he will be charged for the list objects
         /// request in V2 style. Bucket owners need not specify this parameter in their
         /// requests.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that she or he will be charged for the list objects
@@ -10664,8 +10719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -10775,8 +10830,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name that contains the objects. </p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name that contains the objects. </p>
@@ -10789,8 +10844,8 @@ pub mod fluent_builders {
         /// grouped under a single result element in CommonPrefixes. These groups are counted as one
         /// result against the max-keys limitation. These keys are not returned elsewhere in the
         /// response.</p>
-        pub fn delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delimiter(inp);
+        pub fn delimiter(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delimiter(signature.into());
             self
         }
         /// <p>A delimiter is a character that you specify to group keys. All keys that contain the
@@ -10807,8 +10862,8 @@ pub mod fluent_builders {
         /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
         /// characters that are not supported in XML 1.0, you can add this parameter to request that
         /// Amazon S3 encode the keys in the response.</p>
-        pub fn encoding_type(mut self, inp: crate::model::EncodingType) -> Self {
-            self.inner = self.inner.encoding_type(inp);
+        pub fn encoding_type(mut self, signature: crate::model::EncodingType) -> Self {
+            self.inner = self.inner.encoding_type(signature);
             self
         }
         /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
@@ -10824,8 +10879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the key to start with when listing objects in a bucket.</p>
-        pub fn key_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_marker(inp);
+        pub fn key_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_marker(signature.into());
             self
         }
         /// <p>Specifies the key to start with when listing objects in a bucket.</p>
@@ -10838,8 +10893,8 @@ pub mod fluent_builders {
         /// additional keys satisfy the search criteria, but were not returned because max-keys was
         /// exceeded, the response contains <isTruncated>true</isTruncated>. To return the
         /// additional keys, see key-marker and version-id-marker.</p>
-        pub fn max_keys(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_keys(inp);
+        pub fn max_keys(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_keys(signature);
             self
         }
         /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
@@ -10856,8 +10911,8 @@ pub mod fluent_builders {
         /// using prefix to make groups in the same way you'd use a folder in a file system.) You can
         /// use prefix with delimiter to roll up numerous objects into a single result under
         /// CommonPrefixes. </p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(signature.into());
             self
         }
         /// <p>Use this parameter to select only those keys that begin with the specified prefix. You
@@ -10870,8 +10925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the object version you want to start listing from.</p>
-        pub fn version_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id_marker(inp);
+        pub fn version_id_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id_marker(signature.into());
             self
         }
         /// <p>Specifies the object version you want to start listing from.</p>
@@ -10883,8 +10938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -11002,8 +11057,8 @@ pub mod fluent_builders {
         /// <p>The name of the bucket to which the parts are being uploaded. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket to which the parts are being uploaded. </p>
@@ -11014,8 +11069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
@@ -11024,8 +11079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the maximum number of parts to return.</p>
-        pub fn max_parts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_parts(inp);
+        pub fn max_parts(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_parts(signature);
             self
         }
         /// <p>Sets the maximum number of parts to return.</p>
@@ -11035,8 +11090,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers
         /// will be listed.</p>
-        pub fn part_number_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.part_number_marker(inp);
+        pub fn part_number_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.part_number_marker(signature.into());
             self
         }
         /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers
@@ -11049,8 +11104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
@@ -11062,8 +11117,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -11078,8 +11133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -11196,8 +11251,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which the accelerate configuration is set.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which the accelerate configuration is set.</p>
@@ -11208,9 +11263,9 @@ pub mod fluent_builders {
         /// <p>Container for setting the transfer acceleration state.</p>
         pub fn accelerate_configuration(
             mut self,
-            inp: crate::model::AccelerateConfiguration,
+            signature: crate::model::AccelerateConfiguration,
         ) -> Self {
-            self.inner = self.inner.accelerate_configuration(inp);
+            self.inner = self.inner.accelerate_configuration(signature);
             self
         }
         /// <p>Container for setting the transfer acceleration state.</p>
@@ -11222,8 +11277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -11490,8 +11545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The canned ACL to apply to the bucket.</p>
-        pub fn acl(mut self, inp: crate::model::BucketCannedAcl) -> Self {
-            self.inner = self.inner.acl(inp);
+        pub fn acl(mut self, signature: crate::model::BucketCannedAcl) -> Self {
+            self.inner = self.inner.acl(signature);
             self
         }
         /// <p>The canned ACL to apply to the bucket.</p>
@@ -11503,8 +11558,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-        pub fn access_control_policy(mut self, inp: crate::model::AccessControlPolicy) -> Self {
-            self.inner = self.inner.access_control_policy(inp);
+        pub fn access_control_policy(
+            mut self,
+            signature: crate::model::AccessControlPolicy,
+        ) -> Self {
+            self.inner = self.inner.access_control_policy(signature);
             self
         }
         /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
@@ -11516,8 +11574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bucket to which to apply the ACL.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket to which to apply the ACL.</p>
@@ -11531,8 +11589,8 @@ pub mod fluent_builders {
         /// 1864.</a>
         /// </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
@@ -11547,8 +11605,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
         /// bucket.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_full_control(inp);
+        pub fn grant_full_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_full_control(signature.into());
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
@@ -11561,8 +11619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows grantee to list the objects in the bucket.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read(inp);
+        pub fn grant_read(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read(signature.into());
             self
         }
         /// <p>Allows grantee to list the objects in the bucket.</p>
@@ -11571,8 +11629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read_acp(inp);
+        pub fn grant_read_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read_acp(signature.into());
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
@@ -11585,8 +11643,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
         /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-        pub fn grant_write(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write(inp);
+        pub fn grant_write(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write(signature.into());
             self
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
@@ -11596,8 +11654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write_acp(inp);
+        pub fn grant_write_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write_acp(signature.into());
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
@@ -11609,8 +11667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -11797,8 +11855,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket to which an analytics configuration is stored.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket to which an analytics configuration is stored.</p>
@@ -11807,8 +11865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID that identifies the analytics configuration.</p>
@@ -11819,9 +11877,9 @@ pub mod fluent_builders {
         /// <p>The configuration and any analyses for the analytics filter.</p>
         pub fn analytics_configuration(
             mut self,
-            inp: crate::model::AnalyticsConfiguration,
+            signature: crate::model::AnalyticsConfiguration,
         ) -> Self {
-            self.inner = self.inner.analytics_configuration(inp);
+            self.inner = self.inner.analytics_configuration(signature);
             self
         }
         /// <p>The configuration and any analyses for the analytics filter.</p>
@@ -11833,8 +11891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -11962,8 +12020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
@@ -11974,8 +12032,8 @@ pub mod fluent_builders {
         /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
         /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn cors_configuration(mut self, inp: crate::model::CorsConfiguration) -> Self {
-            self.inner = self.inner.cors_configuration(inp);
+        pub fn cors_configuration(mut self, signature: crate::model::CorsConfiguration) -> Self {
+            self.inner = self.inner.cors_configuration(signature);
             self
         }
         /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
@@ -11994,8 +12052,8 @@ pub mod fluent_builders {
         /// 1864.</a>
         /// </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
@@ -12009,8 +12067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -12117,8 +12175,8 @@ pub mod fluent_builders {
         /// keys (SSE-S3) or customer managed keys (SSE-KMS). For information about
         /// the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a>
         /// in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed
@@ -12131,8 +12189,8 @@ pub mod fluent_builders {
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
@@ -12144,9 +12202,9 @@ pub mod fluent_builders {
         /// <p>Specifies the default server-side-encryption configuration.</p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            signature: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(signature);
             self
         }
         /// <p>Specifies the default server-side-encryption configuration.</p>
@@ -12158,8 +12216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -12315,8 +12373,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
@@ -12325,8 +12383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
@@ -12337,9 +12395,9 @@ pub mod fluent_builders {
         /// <p>Container for S3 Intelligent-Tiering configuration.</p>
         pub fn intelligent_tiering_configuration(
             mut self,
-            inp: crate::model::IntelligentTieringConfiguration,
+            signature: crate::model::IntelligentTieringConfiguration,
         ) -> Self {
-            self.inner = self.inner.intelligent_tiering_configuration(inp);
+            self.inner = self.inner.intelligent_tiering_configuration(signature);
             self
         }
         /// <p>Container for S3 Intelligent-Tiering configuration.</p>
@@ -12511,8 +12569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket where the inventory configuration will be stored.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket where the inventory configuration will be stored.</p>
@@ -12521,8 +12579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
@@ -12533,9 +12591,9 @@ pub mod fluent_builders {
         /// <p>Specifies the inventory configuration.</p>
         pub fn inventory_configuration(
             mut self,
-            inp: crate::model::InventoryConfiguration,
+            signature: crate::model::InventoryConfiguration,
         ) -> Self {
-            self.inner = self.inner.inventory_configuration(inp);
+            self.inner = self.inner.inventory_configuration(signature);
             self
         }
         /// <p>Specifies the inventory configuration.</p>
@@ -12547,8 +12605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -12713,8 +12771,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to set the configuration.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which to set the configuration.</p>
@@ -12725,9 +12783,9 @@ pub mod fluent_builders {
         /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
         pub fn lifecycle_configuration(
             mut self,
-            inp: crate::model::BucketLifecycleConfiguration,
+            signature: crate::model::BucketLifecycleConfiguration,
         ) -> Self {
-            self.inner = self.inner.lifecycle_configuration(inp);
+            self.inner = self.inner.lifecycle_configuration(signature);
             self
         }
         /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
@@ -12739,8 +12797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -12896,8 +12954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to set the logging parameters.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which to set the logging parameters.</p>
@@ -12906,8 +12964,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Container for logging status information.</p>
-        pub fn bucket_logging_status(mut self, inp: crate::model::BucketLoggingStatus) -> Self {
-            self.inner = self.inner.bucket_logging_status(inp);
+        pub fn bucket_logging_status(
+            mut self,
+            signature: crate::model::BucketLoggingStatus,
+        ) -> Self {
+            self.inner = self.inner.bucket_logging_status(signature);
             self
         }
         /// <p>Container for logging status information.</p>
@@ -12920,8 +12981,8 @@ pub mod fluent_builders {
         }
         /// <p>The MD5 hash of the <code>PutBucketLogging</code> request body.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The MD5 hash of the <code>PutBucketLogging</code> request body.</p>
@@ -12931,8 +12992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -13054,8 +13115,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which the metrics configuration is set.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket for which the metrics configuration is set.</p>
@@ -13064,8 +13125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID used to identify the metrics configuration.</p>
@@ -13074,8 +13135,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the metrics configuration.</p>
-        pub fn metrics_configuration(mut self, inp: crate::model::MetricsConfiguration) -> Self {
-            self.inner = self.inner.metrics_configuration(inp);
+        pub fn metrics_configuration(
+            mut self,
+            signature: crate::model::MetricsConfiguration,
+        ) -> Self {
+            self.inner = self.inner.metrics_configuration(signature);
             self
         }
         /// <p>Specifies the metrics configuration.</p>
@@ -13087,8 +13151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -13223,8 +13287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket.</p>
@@ -13236,9 +13300,9 @@ pub mod fluent_builders {
         /// is empty, notifications are turned off for the bucket.</p>
         pub fn notification_configuration(
             mut self,
-            inp: crate::model::NotificationConfiguration,
+            signature: crate::model::NotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.notification_configuration(inp);
+            self.inner = self.inner.notification_configuration(signature);
             self
         }
         /// <p>A container for specifying the notification configuration of the bucket. If this element
@@ -13251,8 +13315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -13264,8 +13328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
-        pub fn skip_destination_validation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_destination_validation(inp);
+        pub fn skip_destination_validation(mut self, signature: bool) -> Self {
+            self.inner = self.inner.skip_destination_validation(signature);
             self
         }
         /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
@@ -13350,8 +13414,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
@@ -13361,8 +13425,8 @@ pub mod fluent_builders {
         }
         /// <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
@@ -13372,8 +13436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -13386,8 +13450,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want
         /// to apply to this Amazon S3 bucket.</p>
-        pub fn ownership_controls(mut self, inp: crate::model::OwnershipControls) -> Self {
-            self.inner = self.inner.ownership_controls(inp);
+        pub fn ownership_controls(mut self, signature: crate::model::OwnershipControls) -> Self {
+            self.inner = self.inner.ownership_controls(signature);
             self
         }
         /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want
@@ -13489,8 +13553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket.</p>
@@ -13500,8 +13564,8 @@ pub mod fluent_builders {
         }
         /// <p>The MD5 hash of the request body.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The MD5 hash of the request body.</p>
@@ -13512,8 +13576,8 @@ pub mod fluent_builders {
         }
         /// <p>Set this parameter to true to confirm that you want to remove your permissions to change
         /// this bucket policy in the future.</p>
-        pub fn confirm_remove_self_bucket_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.confirm_remove_self_bucket_access(inp);
+        pub fn confirm_remove_self_bucket_access(mut self, signature: bool) -> Self {
+            self.inner = self.inner.confirm_remove_self_bucket_access(signature);
             self
         }
         /// <p>Set this parameter to true to confirm that you want to remove your permissions to change
@@ -13526,8 +13590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bucket policy as a JSON document.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The bucket policy as a JSON document.</p>
@@ -13536,8 +13600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -13678,8 +13742,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket</p>
@@ -13691,8 +13755,8 @@ pub mod fluent_builders {
         /// integrity check to verify that the request body was not corrupted in transit. For more
         /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
@@ -13707,9 +13771,9 @@ pub mod fluent_builders {
         /// replication configuration is 2 MB.</p>
         pub fn replication_configuration(
             mut self,
-            inp: crate::model::ReplicationConfiguration,
+            signature: crate::model::ReplicationConfiguration,
         ) -> Self {
-            self.inner = self.inner.replication_configuration(inp);
+            self.inner = self.inner.replication_configuration(signature);
             self
         }
         /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
@@ -13722,8 +13786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(signature.into());
             self
         }
         /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
@@ -13732,8 +13796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -13823,8 +13887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name.</p>
@@ -13837,8 +13901,8 @@ pub mod fluent_builders {
         /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
         /// 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
@@ -13853,9 +13917,9 @@ pub mod fluent_builders {
         /// <p>Container for Payer.</p>
         pub fn request_payment_configuration(
             mut self,
-            inp: crate::model::RequestPaymentConfiguration,
+            signature: crate::model::RequestPaymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.request_payment_configuration(inp);
+            self.inner = self.inner.request_payment_configuration(signature);
             self
         }
         /// <p>Container for Payer.</p>
@@ -13867,8 +13931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -14018,8 +14082,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name.</p>
@@ -14031,8 +14095,8 @@ pub mod fluent_builders {
         /// integrity check to verify that the request body was not corrupted in transit. For more
         /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
@@ -14044,8 +14108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
-        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
-            self.inner = self.inner.tagging(inp);
+        pub fn tagging(mut self, signature: crate::model::Tagging) -> Self {
+            self.inner = self.inner.tagging(signature);
             self
         }
         /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
@@ -14054,8 +14118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -14175,8 +14239,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name.</p>
@@ -14189,8 +14253,8 @@ pub mod fluent_builders {
         /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
         /// 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
@@ -14204,8 +14268,8 @@ pub mod fluent_builders {
         }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
         /// that is displayed on your authentication device.</p>
-        pub fn mfa(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mfa(inp);
+        pub fn mfa(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mfa(signature.into());
             self
         }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
@@ -14217,9 +14281,9 @@ pub mod fluent_builders {
         /// <p>Container for setting the versioning state.</p>
         pub fn versioning_configuration(
             mut self,
-            inp: crate::model::VersioningConfiguration,
+            signature: crate::model::VersioningConfiguration,
         ) -> Self {
-            self.inner = self.inner.versioning_configuration(inp);
+            self.inner = self.inner.versioning_configuration(signature);
             self
         }
         /// <p>Container for setting the versioning state.</p>
@@ -14231,8 +14295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -14429,8 +14493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket name.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name.</p>
@@ -14442,8 +14506,8 @@ pub mod fluent_builders {
         /// integrity check to verify that the request body was not corrupted in transit. For more
         /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
@@ -14455,8 +14519,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Container for the request.</p>
-        pub fn website_configuration(mut self, inp: crate::model::WebsiteConfiguration) -> Self {
-            self.inner = self.inner.website_configuration(inp);
+        pub fn website_configuration(
+            mut self,
+            signature: crate::model::WebsiteConfiguration,
+        ) -> Self {
+            self.inner = self.inner.website_configuration(signature);
             self
         }
         /// <p>Container for the request.</p>
@@ -14468,8 +14535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -14670,8 +14737,8 @@ pub mod fluent_builders {
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.inner = self.inner.acl(inp);
+        pub fn acl(mut self, signature: crate::model::ObjectCannedAcl) -> Self {
+            self.inner = self.inner.acl(signature);
             self
         }
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
@@ -14685,8 +14752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object data.</p>
-        pub fn body(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.body(signature);
             self
         }
         /// <p>Object data.</p>
@@ -14700,8 +14767,8 @@ pub mod fluent_builders {
         /// <p>The bucket name to which the PUT action was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name to which the PUT action was initiated. </p>
@@ -14713,8 +14780,8 @@ pub mod fluent_builders {
         }
         /// <p> Can be used to specify caching behavior along the request/reply chain. For more
         /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_control(inp);
+        pub fn cache_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_control(signature.into());
             self
         }
         /// <p> Can be used to specify caching behavior along the request/reply chain. For more
@@ -14727,8 +14794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies presentational information for the object. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_disposition(inp);
+        pub fn content_disposition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_disposition(signature.into());
             self
         }
         /// <p>Specifies presentational information for the object. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
@@ -14742,8 +14809,8 @@ pub mod fluent_builders {
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_encoding(inp);
+        pub fn content_encoding(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_encoding(signature.into());
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
@@ -14757,8 +14824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_language(inp);
+        pub fn content_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_language(signature.into());
             self
         }
         /// <p>The language the content is in.</p>
@@ -14771,8 +14838,8 @@ pub mod fluent_builders {
         }
         /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
         /// determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
-        pub fn content_length(mut self, inp: i64) -> Self {
-            self.inner = self.inner.content_length(inp);
+        pub fn content_length(mut self, signature: i64) -> Self {
+            self.inner = self.inner.content_length(signature);
             self
         }
         /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
@@ -14787,8 +14854,8 @@ pub mod fluent_builders {
         /// Content-MD5 mechanism as an end-to-end integrity check. For more information about REST
         /// request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
         /// Authentication</a>.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to
@@ -14803,8 +14870,8 @@ pub mod fluent_builders {
         }
         /// <p>A standard MIME type describing the format of the contents. For more information, see
         /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>A standard MIME type describing the format of the contents. For more information, see
@@ -14815,8 +14882,8 @@ pub mod fluent_builders {
         }
         /// <p>The date and time at which the object is no longer cacheable. For more information, see
         /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
-        pub fn expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expires(inp);
+        pub fn expires(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expires(signature);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable. For more information, see
@@ -14831,8 +14898,8 @@ pub mod fluent_builders {
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_full_control(inp);
+        pub fn grant_full_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_full_control(signature.into());
             self
         }
         /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
@@ -14848,8 +14915,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee to read the object data and its
         /// metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read(inp);
+        pub fn grant_read(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read(signature.into());
             self
         }
         /// <p>Allows grantee to read the object data and its
@@ -14861,8 +14928,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee to read the object ACL.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read_acp(inp);
+        pub fn grant_read_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read_acp(signature.into());
             self
         }
         /// <p>Allows grantee to read the object ACL.</p>
@@ -14877,8 +14944,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee to write the ACL for the applicable
         /// object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write_acp(inp);
+        pub fn grant_write_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write_acp(signature.into());
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable
@@ -14892,8 +14959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object key for which the PUT action was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Object key for which the PUT action was initiated.</p>
@@ -14911,7 +14978,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
         /// <p>A map of metadata to store with the object in S3.</p>
@@ -14926,8 +14993,11 @@ pub mod fluent_builders {
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.inner = self.inner.server_side_encryption(inp);
+        pub fn server_side_encryption(
+            mut self,
+            signature: crate::model::ServerSideEncryption,
+        ) -> Self {
+            self.inner = self.inner.server_side_encryption(signature);
             self
         }
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
@@ -14944,8 +15014,8 @@ pub mod fluent_builders {
         /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
         /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.inner = self.inner.storage_class(inp);
+        pub fn storage_class(mut self, signature: crate::model::StorageClass) -> Self {
+            self.inner = self.inner.storage_class(signature);
             self
         }
         /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
@@ -14980,8 +15050,11 @@ pub mod fluent_builders {
         ///
         /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page
         /// Redirects</a>. </p>
-        pub fn website_redirect_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_redirect_location(inp);
+        pub fn website_redirect_location(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.website_redirect_location(signature.into());
             self
         }
         /// <p>If the bucket is configured as a website, redirects requests for this object to another
@@ -15013,8 +15086,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
@@ -15030,8 +15103,8 @@ pub mod fluent_builders {
         /// value is used to store the object and then it is discarded; Amazon S3 does not store the
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key(inp);
+        pub fn sse_customer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
@@ -15048,8 +15121,8 @@ pub mod fluent_builders {
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -15070,8 +15143,8 @@ pub mod fluent_builders {
         /// managed key to protect the data. If the KMS key does not exist in the same account
         /// issuing the command, you must use the full ARN and not just the ID.
         /// </p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssekms_key_id(inp);
+        pub fn ssekms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssekms_key_id(signature.into());
             self
         }
         /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
@@ -15092,8 +15165,11 @@ pub mod fluent_builders {
         /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
         /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
         /// pairs.</p>
-        pub fn ssekms_encryption_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssekms_encryption_context(inp);
+        pub fn ssekms_encryption_context(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ssekms_encryption_context(signature.into());
             self
         }
         /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
@@ -15108,8 +15184,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
         /// <p>Specifying this header with a PUT action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bucket_key_enabled(inp);
+        pub fn bucket_key_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bucket_key_enabled(signature);
             self
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
@@ -15122,8 +15198,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -15139,8 +15215,8 @@ pub mod fluent_builders {
         }
         /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For
         /// example, "Key1=Value1")</p>
-        pub fn tagging(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tagging(inp);
+        pub fn tagging(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tagging(signature.into());
             self
         }
         /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For
@@ -15150,8 +15226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Object Lock mode that you want to apply to this object.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.inner = self.inner.object_lock_mode(inp);
+        pub fn object_lock_mode(mut self, signature: crate::model::ObjectLockMode) -> Self {
+            self.inner = self.inner.object_lock_mode(signature);
             self
         }
         /// <p>The Object Lock mode that you want to apply to this object.</p>
@@ -15164,8 +15240,11 @@ pub mod fluent_builders {
         }
         /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted
         /// as a timestamp parameter.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.object_lock_retain_until_date(inp);
+        pub fn object_lock_retain_until_date(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.object_lock_retain_until_date(signature);
             self
         }
         /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted
@@ -15182,9 +15261,9 @@ pub mod fluent_builders {
         /// Lock</a>.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            signature: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.inner = self.inner.object_lock_legal_hold_status(inp);
+            self.inner = self.inner.object_lock_legal_hold_status(signature);
             self
         }
         /// <p>Specifies whether a legal hold will be applied to this object. For more information
@@ -15198,8 +15277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -15452,8 +15531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
-        pub fn acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.inner = self.inner.acl(inp);
+        pub fn acl(mut self, signature: crate::model::ObjectCannedAcl) -> Self {
+            self.inner = self.inner.acl(signature);
             self
         }
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
@@ -15465,8 +15544,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-        pub fn access_control_policy(mut self, inp: crate::model::AccessControlPolicy) -> Self {
-            self.inner = self.inner.access_control_policy(inp);
+        pub fn access_control_policy(
+            mut self,
+            signature: crate::model::AccessControlPolicy,
+        ) -> Self {
+            self.inner = self.inner.access_control_policy(signature);
             self
         }
         /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
@@ -15479,8 +15561,8 @@ pub mod fluent_builders {
         }
         /// <p>The bucket name that contains the object to which you want to attach the ACL. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name that contains the object to which you want to attach the ACL. </p>
@@ -15495,8 +15577,8 @@ pub mod fluent_builders {
         /// 1864.></a>
         /// </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
@@ -15512,8 +15594,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
         /// bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_full_control(inp);
+        pub fn grant_full_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_full_control(signature.into());
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
@@ -15529,8 +15611,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee to list the objects in the
         /// bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read(inp);
+        pub fn grant_read(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read(signature.into());
             self
         }
         /// <p>Allows grantee to list the objects in the
@@ -15542,8 +15624,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_read_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read_acp(inp);
+        pub fn grant_read_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read_acp(signature.into());
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
@@ -15557,8 +15639,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
         /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-        pub fn grant_write(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write(inp);
+        pub fn grant_write(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write(signature.into());
             self
         }
         /// <p>Allows grantee to create new objects in the bucket.</p>
@@ -15570,8 +15652,8 @@ pub mod fluent_builders {
         /// <p>Allows grantee to write the ACL for the applicable
         /// bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-        pub fn grant_write_acp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write_acp(inp);
+        pub fn grant_write_acp(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write_acp(signature.into());
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable
@@ -15587,8 +15669,8 @@ pub mod fluent_builders {
         /// <p>Key for which the PUT action was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Key for which the PUT action was initiated.</p>
@@ -15602,8 +15684,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -15618,8 +15700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
@@ -15628,8 +15710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -15705,8 +15787,8 @@ pub mod fluent_builders {
         }
         /// <p>The bucket name containing the object that you want to place a Legal Hold on. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the object that you want to place a Legal Hold on. </p>
@@ -15716,8 +15798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key name for the object that you want to place a Legal Hold on.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The key name for the object that you want to place a Legal Hold on.</p>
@@ -15727,8 +15809,8 @@ pub mod fluent_builders {
         }
         /// <p>Container element for the Legal Hold configuration you want to apply to the specified
         /// object.</p>
-        pub fn legal_hold(mut self, inp: crate::model::ObjectLockLegalHold) -> Self {
-            self.inner = self.inner.legal_hold(inp);
+        pub fn legal_hold(mut self, signature: crate::model::ObjectLockLegalHold) -> Self {
+            self.inner = self.inner.legal_hold(signature);
             self
         }
         /// <p>Container element for the Legal Hold configuration you want to apply to the specified
@@ -15744,8 +15826,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -15760,8 +15842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the object that you want to place a Legal Hold on.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version ID of the object that you want to place a Legal Hold on.</p>
@@ -15771,8 +15853,8 @@ pub mod fluent_builders {
         }
         /// <p>The MD5 hash for the request body.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The MD5 hash for the request body.</p>
@@ -15782,8 +15864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -15875,8 +15957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The bucket whose Object Lock configuration you want to create or replace.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket whose Object Lock configuration you want to create or replace.</p>
@@ -15887,9 +15969,9 @@ pub mod fluent_builders {
         /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
         pub fn object_lock_configuration(
             mut self,
-            inp: crate::model::ObjectLockConfiguration,
+            signature: crate::model::ObjectLockConfiguration,
         ) -> Self {
-            self.inner = self.inner.object_lock_configuration(inp);
+            self.inner = self.inner.object_lock_configuration(signature);
             self
         }
         /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
@@ -15904,8 +15986,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -15920,8 +16002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(signature.into());
             self
         }
         /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
@@ -15931,8 +16013,8 @@ pub mod fluent_builders {
         }
         /// <p>The MD5 hash for the request body.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The MD5 hash for the request body.</p>
@@ -15942,8 +16024,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -16029,8 +16111,8 @@ pub mod fluent_builders {
         /// <p>The bucket name that contains the object you want to apply this Object Retention
         /// configuration to. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name that contains the object you want to apply this Object Retention
@@ -16042,8 +16124,8 @@ pub mod fluent_builders {
         }
         /// <p>The key name for the object that you want to apply this Object Retention configuration
         /// to.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The key name for the object that you want to apply this Object Retention configuration
@@ -16053,8 +16135,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The container element for the Object Retention configuration.</p>
-        pub fn retention(mut self, inp: crate::model::ObjectLockRetention) -> Self {
-            self.inner = self.inner.retention(inp);
+        pub fn retention(mut self, signature: crate::model::ObjectLockRetention) -> Self {
+            self.inner = self.inner.retention(signature);
             self
         }
         /// <p>The container element for the Object Retention configuration.</p>
@@ -16069,8 +16151,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -16086,8 +16168,8 @@ pub mod fluent_builders {
         }
         /// <p>The version ID for the object that you want to apply this Object Retention configuration
         /// to.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version ID for the object that you want to apply this Object Retention configuration
@@ -16097,8 +16179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
-        pub fn bypass_governance_retention(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bypass_governance_retention(inp);
+        pub fn bypass_governance_retention(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bypass_governance_retention(signature);
             self
         }
         /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
@@ -16108,8 +16190,8 @@ pub mod fluent_builders {
         }
         /// <p>The MD5 hash for the request body.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The MD5 hash for the request body.</p>
@@ -16119,8 +16201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -16297,8 +16379,8 @@ pub mod fluent_builders {
         /// <p>The bucket name containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the object. </p>
@@ -16309,8 +16391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the object key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Name of the object key.</p>
@@ -16319,8 +16401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The versionId of the object that the tag-set will be added to.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The versionId of the object that the tag-set will be added to.</p>
@@ -16330,8 +16412,8 @@ pub mod fluent_builders {
         }
         /// <p>The MD5 hash for the request body.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The MD5 hash for the request body.</p>
@@ -16341,8 +16423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
-        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
-            self.inner = self.inner.tagging(inp);
+        pub fn tagging(mut self, signature: crate::model::Tagging) -> Self {
+            self.inner = self.inner.tagging(signature);
             self
         }
         /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
@@ -16351,8 +16433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -16367,8 +16449,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -16488,8 +16570,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
         /// to set.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
@@ -16500,8 +16582,8 @@ pub mod fluent_builders {
         }
         /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
@@ -16515,9 +16597,9 @@ pub mod fluent_builders {
         /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn public_access_block_configuration(
             mut self,
-            inp: crate::model::PublicAccessBlockConfiguration,
+            signature: crate::model::PublicAccessBlockConfiguration,
         ) -> Self {
-            self.inner = self.inner.public_access_block_configuration(inp);
+            self.inner = self.inner.public_access_block_configuration(signature);
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3
@@ -16531,8 +16613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -16897,8 +16979,8 @@ pub mod fluent_builders {
         /// <p>The bucket name containing the object to restore. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name containing the object to restore. </p>
@@ -16909,8 +16991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object key for which the action was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Object key for which the action was initiated.</p>
@@ -16919,8 +17001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>VersionId used to reference a specific version of the object.</p>
@@ -16929,8 +17011,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Container for restore job parameters.</p>
-        pub fn restore_request(mut self, inp: crate::model::RestoreRequest) -> Self {
-            self.inner = self.inner.restore_request(inp);
+        pub fn restore_request(mut self, signature: crate::model::RestoreRequest) -> Self {
+            self.inner = self.inner.restore_request(signature);
             self
         }
         /// <p>Container for restore job parameters.</p>
@@ -16945,8 +17027,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -16961,8 +17043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -17150,8 +17232,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The S3 bucket.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The S3 bucket.</p>
@@ -17160,8 +17242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The object key.</p>
@@ -17170,8 +17252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
@@ -17184,8 +17266,8 @@ pub mod fluent_builders {
         }
         /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
         /// (Using Customer-Provided Encryption Keys</a>. </p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key(inp);
+        pub fn sse_customer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key(signature.into());
             self
         }
         /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
@@ -17199,8 +17281,8 @@ pub mod fluent_builders {
         }
         /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
         /// (Using Customer-Provided Encryption Keys</a>. </p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
@@ -17213,8 +17295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The expression that is used to query the object.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(signature.into());
             self
         }
         /// <p>The expression that is used to query the object.</p>
@@ -17223,8 +17305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the provided expression (for example, SQL).</p>
-        pub fn expression_type(mut self, inp: crate::model::ExpressionType) -> Self {
-            self.inner = self.inner.expression_type(inp);
+        pub fn expression_type(mut self, signature: crate::model::ExpressionType) -> Self {
+            self.inner = self.inner.expression_type(signature);
             self
         }
         /// <p>The type of the provided expression (for example, SQL).</p>
@@ -17236,8 +17318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies if periodic request progress information should be enabled.</p>
-        pub fn request_progress(mut self, inp: crate::model::RequestProgress) -> Self {
-            self.inner = self.inner.request_progress(inp);
+        pub fn request_progress(mut self, signature: crate::model::RequestProgress) -> Self {
+            self.inner = self.inner.request_progress(signature);
             self
         }
         /// <p>Specifies if periodic request progress information should be enabled.</p>
@@ -17249,8 +17331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the format of the data in the object that is being queried.</p>
-        pub fn input_serialization(mut self, inp: crate::model::InputSerialization) -> Self {
-            self.inner = self.inner.input_serialization(inp);
+        pub fn input_serialization(mut self, signature: crate::model::InputSerialization) -> Self {
+            self.inner = self.inner.input_serialization(signature);
             self
         }
         /// <p>Describes the format of the data in the object that is being queried.</p>
@@ -17262,8 +17344,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
-        pub fn output_serialization(mut self, inp: crate::model::OutputSerialization) -> Self {
-            self.inner = self.inner.output_serialization(inp);
+        pub fn output_serialization(
+            mut self,
+            signature: crate::model::OutputSerialization,
+        ) -> Self {
+            self.inner = self.inner.output_serialization(signature);
             self
         }
         /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
@@ -17298,8 +17383,8 @@ pub mod fluent_builders {
         /// process only the records within the last 50 bytes of the file.</p>
         /// </li>
         /// </ul>
-        pub fn scan_range(mut self, inp: crate::model::ScanRange) -> Self {
-            self.inner = self.inner.scan_range(inp);
+        pub fn scan_range(mut self, signature: crate::model::ScanRange) -> Self {
+            self.inner = self.inner.scan_range(signature);
             self
         }
         /// <p>Specifies the byte range of the object to get the records from. A record is processed
@@ -17334,8 +17419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -17544,8 +17629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Object data.</p>
-        pub fn body(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.body(signature);
             self
         }
         /// <p>Object data.</p>
@@ -17559,8 +17644,8 @@ pub mod fluent_builders {
         /// <p>The name of the bucket to which the multipart upload was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The name of the bucket to which the multipart upload was initiated.</p>
@@ -17572,8 +17657,8 @@ pub mod fluent_builders {
         }
         /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
         /// determined automatically.</p>
-        pub fn content_length(mut self, inp: i64) -> Self {
-            self.inner = self.inner.content_length(inp);
+        pub fn content_length(mut self, signature: i64) -> Self {
+            self.inner = self.inner.content_length(signature);
             self
         }
         /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
@@ -17585,8 +17670,8 @@ pub mod fluent_builders {
         /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated
         /// when using the command from the CLI. This parameter is required if object lock parameters
         /// are specified.</p>
-        pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_md5(inp);
+        pub fn content_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_md5(signature.into());
             self
         }
         /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated
@@ -17597,8 +17682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
@@ -17608,8 +17693,8 @@ pub mod fluent_builders {
         }
         /// <p>Part number of part being uploaded. This is a positive integer between 1 and
         /// 10,000.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.part_number(inp);
+        pub fn part_number(mut self, signature: i32) -> Self {
+            self.inner = self.inner.part_number(signature);
             self
         }
         /// <p>Part number of part being uploaded. This is a positive integer between 1 and
@@ -17619,8 +17704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Upload ID identifying the multipart upload whose part is being uploaded.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>Upload ID identifying the multipart upload whose part is being uploaded.</p>
@@ -17630,8 +17715,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
@@ -17648,8 +17733,8 @@ pub mod fluent_builders {
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the
         /// same encryption key specified in the initiate multipart upload request.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key(inp);
+        pub fn sse_customer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
@@ -17667,8 +17752,8 @@ pub mod fluent_builders {
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -17685,8 +17770,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -17701,8 +17786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -17954,8 +18039,8 @@ pub mod fluent_builders {
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(inp);
+        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(signature.into());
             self
         }
         /// <p>The bucket name.</p>
@@ -17989,8 +18074,8 @@ pub mod fluent_builders {
         /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
         /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
         /// object.</p>
-        pub fn copy_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source(inp);
+        pub fn copy_source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.copy_source(signature.into());
             self
         }
         /// <p>Specifies the source object for the copy operation. You specify the value in one of two
@@ -18022,8 +18107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
-        pub fn copy_source_if_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source_if_match(inp);
+        pub fn copy_source_if_match(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.copy_source_if_match(signature.into());
             self
         }
         /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
@@ -18035,8 +18120,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
-        pub fn copy_source_if_modified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.copy_source_if_modified_since(inp);
+        pub fn copy_source_if_modified_since(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.copy_source_if_modified_since(signature);
             self
         }
         /// <p>Copies the object if it has been modified since the specified time.</p>
@@ -18048,8 +18136,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
-        pub fn copy_source_if_none_match(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source_if_none_match(inp);
+        pub fn copy_source_if_none_match(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.copy_source_if_none_match(signature.into());
             self
         }
         /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
@@ -18061,8 +18152,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
-        pub fn copy_source_if_unmodified_since(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.copy_source_if_unmodified_since(inp);
+        pub fn copy_source_if_unmodified_since(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.copy_source_if_unmodified_since(signature);
             self
         }
         /// <p>Copies the object if it hasn't been modified since the specified time.</p>
@@ -18077,8 +18171,8 @@ pub mod fluent_builders {
         /// bytes=first-last, where the first and last are the zero-based byte offsets to copy. For
         /// example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You
         /// can copy a range only if the source object is greater than 5 MB.</p>
-        pub fn copy_source_range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source_range(inp);
+        pub fn copy_source_range(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.copy_source_range(signature.into());
             self
         }
         /// <p>The range of bytes to copy from the source object. The range value must use the form
@@ -18093,8 +18187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
@@ -18104,8 +18198,8 @@ pub mod fluent_builders {
         }
         /// <p>Part number of part being copied. This is a positive integer between 1 and
         /// 10,000.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.part_number(inp);
+        pub fn part_number(mut self, signature: i32) -> Self {
+            self.inner = self.inner.part_number(signature);
             self
         }
         /// <p>Part number of part being copied. This is a positive integer between 1 and
@@ -18115,8 +18209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
@@ -18126,8 +18220,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
         /// AES256).</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use to when encrypting the object (for example,
@@ -18144,8 +18238,8 @@ pub mod fluent_builders {
         /// encryption key. The key must be appropriate for use with the algorithm specified in the
         /// <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the
         /// same encryption key specified in the initiate multipart upload request.</p>
-        pub fn sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key(inp);
+        pub fn sse_customer_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
@@ -18163,8 +18257,8 @@ pub mod fluent_builders {
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
         /// this header for a message integrity check to ensure that the encryption key was transmitted
         /// without error.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -18181,9 +18275,11 @@ pub mod fluent_builders {
         /// AES256).</p>
         pub fn copy_source_sse_customer_algorithm(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.copy_source_sse_customer_algorithm(inp);
+            self.inner = self
+                .inner
+                .copy_source_sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Specifies the algorithm to use when decrypting the source object (for example,
@@ -18198,8 +18294,11 @@ pub mod fluent_builders {
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
         /// object. The encryption key provided in this header must be one that was used when the
         /// source object was created.</p>
-        pub fn copy_source_sse_customer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_source_sse_customer_key(inp);
+        pub fn copy_source_sse_customer_key(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.copy_source_sse_customer_key(signature.into());
             self
         }
         /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
@@ -18217,9 +18316,11 @@ pub mod fluent_builders {
         /// without error.</p>
         pub fn copy_source_sse_customer_key_md5(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.copy_source_sse_customer_key_md5(inp);
+            self.inner = self
+                .inner
+                .copy_source_sse_customer_key_md5(signature.into());
             self
         }
         /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
@@ -18236,8 +18337,8 @@ pub mod fluent_builders {
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
         /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn request_payer(mut self, inp: crate::model::RequestPayer) -> Self {
-            self.inner = self.inner.request_payer(inp);
+        pub fn request_payer(mut self, signature: crate::model::RequestPayer) -> Self {
+            self.inner = self.inner.request_payer(signature);
             self
         }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -18252,8 +18353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
+        pub fn expected_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -18265,8 +18366,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_source_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_source_bucket_owner(inp);
+        pub fn expected_source_bucket_owner(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.expected_source_bucket_owner(signature.into());
             self
         }
         /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -18360,8 +18464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Route prefix to the HTTP URL generated.</p>
-        pub fn request_route(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_route(inp);
+        pub fn request_route(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_route(signature.into());
             self
         }
         /// <p>Route prefix to the HTTP URL generated.</p>
@@ -18374,8 +18478,8 @@ pub mod fluent_builders {
         }
         /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end
         /// user <code>GetObject</code> request.</p>
-        pub fn request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_token(inp);
+        pub fn request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_token(signature.into());
             self
         }
         /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end
@@ -18388,8 +18492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object data.</p>
-        pub fn body(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.body(signature);
             self
         }
         /// <p>The object data.</p>
@@ -18477,8 +18581,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn status_code(mut self, inp: i32) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, signature: i32) -> Self {
+            self.inner = self.inner.status_code(signature);
             self
         }
         /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code>
@@ -18566,8 +18670,8 @@ pub mod fluent_builders {
         /// of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used
         /// with a successful <code>StatusCode</code> header or when the transformed object is provided
         /// in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</p>
-        pub fn error_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error_code(inp);
+        pub fn error_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error_code(signature.into());
             self
         }
         /// <p>A string that uniquely identifies an error condition. Returned in the <Code> tag
@@ -18582,8 +18686,8 @@ pub mod fluent_builders {
         /// tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be
         /// used with a successful <code>StatusCode</code> header or when the transformed object is
         /// provided in body.</p>
-        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error_message(inp);
+        pub fn error_message(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error_message(signature.into());
             self
         }
         /// <p>Contains a generic description of the error condition. Returned in the <Message>
@@ -18598,8 +18702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates that a range of bytes was specified.</p>
-        pub fn accept_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_ranges(inp);
+        pub fn accept_ranges(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_ranges(signature.into());
             self
         }
         /// <p>Indicates that a range of bytes was specified.</p>
@@ -18611,8 +18715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
-        pub fn cache_control(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_control(inp);
+        pub fn cache_control(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_control(signature.into());
             self
         }
         /// <p>Specifies caching behavior along the request/reply chain.</p>
@@ -18624,8 +18728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies presentational information for the object.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_disposition(inp);
+        pub fn content_disposition(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_disposition(signature.into());
             self
         }
         /// <p>Specifies presentational information for the object.</p>
@@ -18639,8 +18743,8 @@ pub mod fluent_builders {
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
         /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
         /// field.</p>
-        pub fn content_encoding(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_encoding(inp);
+        pub fn content_encoding(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_encoding(signature.into());
             self
         }
         /// <p>Specifies what content encodings have been applied to the object and thus what decoding
@@ -18654,8 +18758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language the content is in.</p>
-        pub fn content_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_language(inp);
+        pub fn content_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_language(signature.into());
             self
         }
         /// <p>The language the content is in.</p>
@@ -18667,8 +18771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the content body in bytes.</p>
-        pub fn content_length(mut self, inp: i64) -> Self {
-            self.inner = self.inner.content_length(inp);
+        pub fn content_length(mut self, signature: i64) -> Self {
+            self.inner = self.inner.content_length(signature);
             self
         }
         /// <p>The size of the content body in bytes.</p>
@@ -18677,8 +18781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portion of the object returned in the response.</p>
-        pub fn content_range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_range(inp);
+        pub fn content_range(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_range(signature.into());
             self
         }
         /// <p>The portion of the object returned in the response.</p>
@@ -18690,8 +18794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>A standard MIME type describing the format of the object data.</p>
@@ -18701,8 +18805,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not
         /// (<code>false</code>) a delete marker. </p>
-        pub fn delete_marker(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_marker(inp);
+        pub fn delete_marker(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_marker(signature);
             self
         }
         /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not
@@ -18713,8 +18817,8 @@ pub mod fluent_builders {
         }
         /// <p>An opaque identifier assigned by a web server to a specific version of a resource found
         /// at a URL. </p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.e_tag(inp);
+        pub fn e_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.e_tag(signature.into());
             self
         }
         /// <p>An opaque identifier assigned by a web server to a specific version of a resource found
@@ -18724,8 +18828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
-        pub fn expires(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expires(inp);
+        pub fn expires(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expires(signature);
             self
         }
         /// <p>The date and time at which the object is no longer cacheable.</p>
@@ -18737,8 +18841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket lifecycle) it includes expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded. </p>
-        pub fn expiration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expiration(inp);
+        pub fn expiration(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expiration(signature.into());
             self
         }
         /// <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket lifecycle) it includes expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded. </p>
@@ -18747,8 +18851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time that the object was last modified.</p>
-        pub fn last_modified(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified(inp);
+        pub fn last_modified(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified(signature);
             self
         }
         /// <p>The date and time that the object was last modified.</p>
@@ -18763,8 +18867,8 @@ pub mod fluent_builders {
         /// This can happen if you create metadata using an API like SOAP that supports more flexible
         /// metadata than the REST API. For example, using SOAP, you can create metadata whose values
         /// are not legal HTTP headers.</p>
-        pub fn missing_meta(mut self, inp: i32) -> Self {
-            self.inner = self.inner.missing_meta(inp);
+        pub fn missing_meta(mut self, signature: i32) -> Self {
+            self.inner = self.inner.missing_meta(signature);
             self
         }
         /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers.
@@ -18785,7 +18889,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
         /// <p>A map of metadata to store with the object in S3.</p>
@@ -18800,8 +18904,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more
         /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
-        pub fn object_lock_mode(mut self, inp: crate::model::ObjectLockMode) -> Self {
-            self.inner = self.inner.object_lock_mode(inp);
+        pub fn object_lock_mode(mut self, signature: crate::model::ObjectLockMode) -> Self {
+            self.inner = self.inner.object_lock_mode(signature);
             self
         }
         /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more
@@ -18816,9 +18920,9 @@ pub mod fluent_builders {
         /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
-            inp: crate::model::ObjectLockLegalHoldStatus,
+            signature: crate::model::ObjectLockLegalHoldStatus,
         ) -> Self {
-            self.inner = self.inner.object_lock_legal_hold_status(inp);
+            self.inner = self.inner.object_lock_legal_hold_status(signature);
             self
         }
         /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
@@ -18830,8 +18934,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time when Object Lock is configured to expire.</p>
-        pub fn object_lock_retain_until_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.object_lock_retain_until_date(inp);
+        pub fn object_lock_retain_until_date(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.object_lock_retain_until_date(signature);
             self
         }
         /// <p>The date and time when Object Lock is configured to expire.</p>
@@ -18843,8 +18950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The count of parts this object has.</p>
-        pub fn parts_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.parts_count(inp);
+        pub fn parts_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.parts_count(signature);
             self
         }
         /// <p>The count of parts this object has.</p>
@@ -18854,8 +18961,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more
         /// information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
-        pub fn replication_status(mut self, inp: crate::model::ReplicationStatus) -> Self {
-            self.inner = self.inner.replication_status(inp);
+        pub fn replication_status(mut self, signature: crate::model::ReplicationStatus) -> Self {
+            self.inner = self.inner.replication_status(signature);
             self
         }
         /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more
@@ -18869,8 +18976,8 @@ pub mod fluent_builders {
         }
         /// <p>If present, indicates that the requester was successfully charged for the
         /// request.</p>
-        pub fn request_charged(mut self, inp: crate::model::RequestCharged) -> Self {
-            self.inner = self.inner.request_charged(inp);
+        pub fn request_charged(mut self, signature: crate::model::RequestCharged) -> Self {
+            self.inner = self.inner.request_charged(signature);
             self
         }
         /// <p>If present, indicates that the requester was successfully charged for the
@@ -18884,8 +18991,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides information about object restoration operation and expiration time of the
         /// restored object copy.</p>
-        pub fn restore(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.restore(inp);
+        pub fn restore(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore(signature.into());
             self
         }
         /// <p>Provides information about object restoration operation and expiration time of the
@@ -18895,8 +19002,11 @@ pub mod fluent_builders {
             self
         }
         /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
-        pub fn server_side_encryption(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.inner = self.inner.server_side_encryption(inp);
+        pub fn server_side_encryption(
+            mut self,
+            signature: crate::model::ServerSideEncryption,
+        ) -> Self {
+            self.inner = self.inner.server_side_encryption(signature);
             self
         }
         /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
@@ -18908,8 +19018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
-        pub fn sse_customer_algorithm(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_algorithm(inp);
+        pub fn sse_customer_algorithm(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_algorithm(signature.into());
             self
         }
         /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
@@ -18921,8 +19031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
-        pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssekms_key_id(inp);
+        pub fn ssekms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssekms_key_id(signature.into());
             self
         }
         /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
@@ -18937,8 +19047,8 @@ pub mod fluent_builders {
         /// stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data
         /// using server-side encryption with customer-provided encryption keys
         /// (SSE-C)</a>.</p>
-        pub fn sse_customer_key_md5(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sse_customer_key_md5(inp);
+        pub fn sse_customer_key_md5(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sse_customer_key_md5(signature.into());
             self
         }
         /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data
@@ -18953,8 +19063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The class of storage used to store object in Amazon S3.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.inner = self.inner.storage_class(inp);
+        pub fn storage_class(mut self, signature: crate::model::StorageClass) -> Self {
+            self.inner = self.inner.storage_class(signature);
             self
         }
         /// <p> The class of storage used to store object in Amazon S3.</p>
@@ -18966,8 +19076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of tags, if any, on the object.</p>
-        pub fn tag_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.tag_count(inp);
+        pub fn tag_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.tag_count(signature);
             self
         }
         /// <p>The number of tags, if any, on the object.</p>
@@ -18976,8 +19086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID used to reference a specific version of the object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>An ID used to reference a specific version of the object.</p>
@@ -18987,8 +19097,8 @@ pub mod fluent_builders {
         }
         /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side
         /// encryption with Amazon Web Services KMS (SSE-KMS).</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bucket_key_enabled(inp);
+        pub fn bucket_key_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bucket_key_enabled(signature);
             self
         }
         /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side

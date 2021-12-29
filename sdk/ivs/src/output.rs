@@ -291,12 +291,9 @@ pub mod list_stream_sessions_output {
         /// To override the contents of this collection use [`set_stream_sessions`](Self::set_stream_sessions).
         ///
         /// <p/>
-        pub fn stream_sessions(
-            mut self,
-            input: impl Into<crate::model::StreamSessionSummary>,
-        ) -> Self {
+        pub fn stream_sessions(mut self, input: crate::model::StreamSessionSummary) -> Self {
             let mut v = self.stream_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stream_sessions = Some(v);
             self
         }
@@ -380,9 +377,9 @@ pub mod list_streams_output {
         /// To override the contents of this collection use [`set_streams`](Self::set_streams).
         ///
         /// <p>List of streams.</p>
-        pub fn streams(mut self, input: impl Into<crate::model::StreamSummary>) -> Self {
+        pub fn streams(mut self, input: crate::model::StreamSummary) -> Self {
             let mut v = self.streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streams = Some(v);
             self
         }
@@ -466,9 +463,9 @@ pub mod list_stream_keys_output {
         /// To override the contents of this collection use [`set_stream_keys`](Self::set_stream_keys).
         ///
         /// <p>List of stream keys.</p>
-        pub fn stream_keys(mut self, input: impl Into<crate::model::StreamKeySummary>) -> Self {
+        pub fn stream_keys(mut self, input: crate::model::StreamKeySummary) -> Self {
             let mut v = self.stream_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stream_keys = Some(v);
             self
         }
@@ -558,10 +555,10 @@ pub mod list_recording_configurations_output {
         /// <p>List of the matching recording configurations.</p>
         pub fn recording_configurations(
             mut self,
-            input: impl Into<crate::model::RecordingConfigurationSummary>,
+            input: crate::model::RecordingConfigurationSummary,
         ) -> Self {
             let mut v = self.recording_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recording_configurations = Some(v);
             self
         }
@@ -646,9 +643,9 @@ pub mod list_playback_key_pairs_output {
         /// To override the contents of this collection use [`set_key_pairs`](Self::set_key_pairs).
         ///
         /// <p>List of key pairs.</p>
-        pub fn key_pairs(mut self, input: impl Into<crate::model::PlaybackKeyPairSummary>) -> Self {
+        pub fn key_pairs(mut self, input: crate::model::PlaybackKeyPairSummary) -> Self {
             let mut v = self.key_pairs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_pairs = Some(v);
             self
         }
@@ -732,9 +729,9 @@ pub mod list_channels_output {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p>List of the matching channels.</p>
-        pub fn channels(mut self, input: impl Into<crate::model::ChannelSummary>) -> Self {
+        pub fn channels(mut self, input: crate::model::ChannelSummary) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -1531,9 +1528,9 @@ pub mod batch_get_stream_key_output {
         /// To override the contents of this collection use [`set_stream_keys`](Self::set_stream_keys).
         ///
         /// <p/>
-        pub fn stream_keys(mut self, input: impl Into<crate::model::StreamKey>) -> Self {
+        pub fn stream_keys(mut self, input: crate::model::StreamKey) -> Self {
             let mut v = self.stream_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stream_keys = Some(v);
             self
         }
@@ -1550,9 +1547,9 @@ pub mod batch_get_stream_key_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p/>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -1622,9 +1619,9 @@ pub mod batch_get_channel_output {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p/>
-        pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -1641,9 +1638,9 @@ pub mod batch_get_channel_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Each error object is related to a specific ARN in the request.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

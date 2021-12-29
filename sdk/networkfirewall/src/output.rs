@@ -927,9 +927,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are associated with the resource. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1020,9 +1020,9 @@ pub mod list_rule_groups_output {
         ///
         /// <p>The rule group metadata objects that you've defined. Depending on your setting for max
         /// results and the number of rule groups, this might not be the full list. </p>
-        pub fn rule_groups(mut self, input: impl Into<crate::model::RuleGroupMetadata>) -> Self {
+        pub fn rule_groups(mut self, input: crate::model::RuleGroupMetadata) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_groups = Some(v);
             self
         }
@@ -1117,9 +1117,9 @@ pub mod list_firewalls_output {
         /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting
         /// for max results and the number of firewalls you have, a single call might not be the full
         /// list. </p>
-        pub fn firewalls(mut self, input: impl Into<crate::model::FirewallMetadata>) -> Self {
+        pub fn firewalls(mut self, input: crate::model::FirewallMetadata) -> Self {
             let mut v = self.firewalls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewalls = Some(v);
             self
         }
@@ -1215,12 +1215,9 @@ pub mod list_firewall_policies_output {
         ///
         /// <p>The metadata for the firewall policies. Depending on your setting for max results and
         /// the number of firewall policies that you have, this might not be the full list. </p>
-        pub fn firewall_policies(
-            mut self,
-            input: impl Into<crate::model::FirewallPolicyMetadata>,
-        ) -> Self {
+        pub fn firewall_policies(mut self, input: crate::model::FirewallPolicyMetadata) -> Self {
             let mut v = self.firewall_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_policies = Some(v);
             self
         }
@@ -1334,9 +1331,9 @@ pub mod disassociate_subnets_output {
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
         /// <p>The IDs of the subnets that are associated with the firewall. </p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
@@ -2414,9 +2411,9 @@ pub mod associate_subnets_output {
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
         /// <p>The IDs of the subnets that are associated with the firewall. </p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }

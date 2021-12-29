@@ -348,10 +348,10 @@ pub mod notify_workers_output {
         /// </p>
         pub fn notify_workers_failure_statuses(
             mut self,
-            input: impl Into<crate::model::NotifyWorkersFailureStatus>,
+            input: crate::model::NotifyWorkersFailureStatus,
         ) -> Self {
             let mut v = self.notify_workers_failure_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notify_workers_failure_statuses = Some(v);
             self
         }
@@ -474,9 +474,9 @@ pub mod list_workers_with_qualification_type_output {
         ///
         /// <p> The list of Qualification elements returned by this call.
         /// </p>
-        pub fn qualifications(mut self, input: impl Into<crate::model::Qualification>) -> Self {
+        pub fn qualifications(mut self, input: crate::model::Qualification) -> Self {
             let mut v = self.qualifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualifications = Some(v);
             self
         }
@@ -599,9 +599,9 @@ pub mod list_worker_blocks_output {
         ///
         /// <p> The list of WorkerBlocks, containing the collection of
         /// Worker IDs and reasons for blocking.</p>
-        pub fn worker_blocks(mut self, input: impl Into<crate::model::WorkerBlock>) -> Self {
+        pub fn worker_blocks(mut self, input: crate::model::WorkerBlock) -> Self {
             let mut v = self.worker_blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.worker_blocks = Some(v);
             self
         }
@@ -918,9 +918,9 @@ pub mod list_reviewable_hi_ts_output {
         /// To override the contents of this collection use [`set_hi_ts`](Self::set_hi_ts).
         ///
         /// <p> The list of HIT elements returned by the query.</p>
-        pub fn hi_ts(mut self, input: impl Into<crate::model::Hit>) -> Self {
+        pub fn hi_ts(mut self, input: crate::model::Hit) -> Self {
             let mut v = self.hi_ts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hi_ts = Some(v);
             self
         }
@@ -1050,12 +1050,9 @@ pub mod list_qualification_types_output {
         /// <p> The list of QualificationType elements returned by the
         /// query.
         /// </p>
-        pub fn qualification_types(
-            mut self,
-            input: impl Into<crate::model::QualificationType>,
-        ) -> Self {
+        pub fn qualification_types(mut self, input: crate::model::QualificationType) -> Self {
             let mut v = self.qualification_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualification_types = Some(v);
             self
         }
@@ -1185,12 +1182,9 @@ pub mod list_qualification_requests_output {
         /// QualificationRequest element
         /// for each Qualification request returned
         /// by the query.</p>
-        pub fn qualification_requests(
-            mut self,
-            input: impl Into<crate::model::QualificationRequest>,
-        ) -> Self {
+        pub fn qualification_requests(mut self, input: crate::model::QualificationRequest) -> Self {
             let mut v = self.qualification_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualification_requests = Some(v);
             self
         }
@@ -1308,9 +1302,9 @@ pub mod list_hi_ts_for_qualification_type_output {
         /// To override the contents of this collection use [`set_hi_ts`](Self::set_hi_ts).
         ///
         /// <p> The list of HIT elements returned by the query.</p>
-        pub fn hi_ts(mut self, input: impl Into<crate::model::Hit>) -> Self {
+        pub fn hi_ts(mut self, input: crate::model::Hit) -> Self {
             let mut v = self.hi_ts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hi_ts = Some(v);
             self
         }
@@ -1425,9 +1419,9 @@ pub mod list_hi_ts_output {
         /// To override the contents of this collection use [`set_hi_ts`](Self::set_hi_ts).
         ///
         /// <p> The list of HIT elements returned by the query.</p>
-        pub fn hi_ts(mut self, input: impl Into<crate::model::Hit>) -> Self {
+        pub fn hi_ts(mut self, input: crate::model::Hit) -> Self {
             let mut v = self.hi_ts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hi_ts = Some(v);
             self
         }
@@ -1556,9 +1550,9 @@ pub mod list_bonus_payments_output {
         /// <p>A successful request to the ListBonusPayments operation
         /// returns a list of BonusPayment objects.
         /// </p>
-        pub fn bonus_payments(mut self, input: impl Into<crate::model::BonusPayment>) -> Self {
+        pub fn bonus_payments(mut self, input: crate::model::BonusPayment) -> Self {
             let mut v = self.bonus_payments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bonus_payments = Some(v);
             self
         }
@@ -1682,9 +1676,9 @@ pub mod list_assignments_for_hit_output {
         ///
         /// <p> The collection of Assignment data structures returned by
         /// this call.</p>
-        pub fn assignments(mut self, input: impl Into<crate::model::Assignment>) -> Self {
+        pub fn assignments(mut self, input: crate::model::Assignment) -> Self {
             let mut v = self.assignments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assignments = Some(v);
             self
         }

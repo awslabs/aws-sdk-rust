@@ -1269,9 +1269,9 @@ pub mod change_summary {
         /// To override the contents of this collection use [`set_error_detail_list`](Self::set_error_detail_list).
         ///
         /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
-        pub fn error_detail_list(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
+        pub fn error_detail_list(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_detail_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_detail_list = Some(v);
             self
         }

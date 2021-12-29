@@ -451,9 +451,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -545,12 +545,9 @@ pub mod list_app_instance_users_output {
         /// To override the contents of this collection use [`set_app_instance_users`](Self::set_app_instance_users).
         ///
         /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_users(
-            mut self,
-            input: impl Into<crate::model::AppInstanceUserSummary>,
-        ) -> Self {
+        pub fn app_instance_users(mut self, input: crate::model::AppInstanceUserSummary) -> Self {
             let mut v = self.app_instance_users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instance_users = Some(v);
             self
         }
@@ -640,10 +637,10 @@ pub mod list_app_instance_user_endpoints_output {
         /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
         pub fn app_instance_user_endpoints(
             mut self,
-            input: impl Into<crate::model::AppInstanceUserEndpointSummary>,
+            input: crate::model::AppInstanceUserEndpointSummary,
         ) -> Self {
             let mut v = self.app_instance_user_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instance_user_endpoints = Some(v);
             self
         }
@@ -726,9 +723,9 @@ pub mod list_app_instances_output {
         /// To override the contents of this collection use [`set_app_instances`](Self::set_app_instances).
         ///
         /// <p>The information for each <code>AppInstance</code>.</p>
-        pub fn app_instances(mut self, input: impl Into<crate::model::AppInstanceSummary>) -> Self {
+        pub fn app_instances(mut self, input: crate::model::AppInstanceSummary) -> Self {
             let mut v = self.app_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instances = Some(v);
             self
         }
@@ -837,12 +834,9 @@ pub mod list_app_instance_admins_output {
         /// To override the contents of this collection use [`set_app_instance_admins`](Self::set_app_instance_admins).
         ///
         /// <p>The information for each administrator.</p>
-        pub fn app_instance_admins(
-            mut self,
-            input: impl Into<crate::model::AppInstanceAdminSummary>,
-        ) -> Self {
+        pub fn app_instance_admins(mut self, input: crate::model::AppInstanceAdminSummary) -> Self {
             let mut v = self.app_instance_admins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instance_admins = Some(v);
             self
         }

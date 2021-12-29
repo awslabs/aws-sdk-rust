@@ -283,9 +283,9 @@ pub mod plan {
         ///
         /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and
         /// contact methods.</p>
-        pub fn stages(mut self, input: impl Into<crate::model::Stage>) -> Self {
+        pub fn stages(mut self, input: crate::model::Stage) -> Self {
             let mut v = self.stages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stages = Some(v);
             self
         }
@@ -373,9 +373,9 @@ pub mod stage {
         ///
         /// <p>The contacts or contact methods that the escalation plan or engagement plan is
         /// engaging.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }

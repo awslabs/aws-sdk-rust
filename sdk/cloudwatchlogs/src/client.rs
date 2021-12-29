@@ -460,8 +460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -474,8 +474,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
         /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
@@ -546,8 +546,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the export task.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>The ID of the export task.</p>
@@ -629,8 +629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the export task.</p>
-        pub fn task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_name(inp);
+        pub fn task_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_name(signature.into());
             self
         }
         /// <p>The name of the export task.</p>
@@ -639,8 +639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -653,8 +653,8 @@ pub mod fluent_builders {
         }
         /// <p>Export only log streams that match the provided prefix. If you don't
         /// specify a value, no prefix filter is applied.</p>
-        pub fn log_stream_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_name_prefix(inp);
+        pub fn log_stream_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_name_prefix(signature.into());
             self
         }
         /// <p>Export only log streams that match the provided prefix. If you don't
@@ -669,8 +669,8 @@ pub mod fluent_builders {
         /// <p>The start time of the range for the request, expressed as the number of milliseconds
         /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
         /// exported.</p>
-        pub fn from(mut self, inp: i64) -> Self {
-            self.inner = self.inner.from(inp);
+        pub fn from(mut self, signature: i64) -> Self {
+            self.inner = self.inner.from(signature);
             self
         }
         /// <p>The start time of the range for the request, expressed as the number of milliseconds
@@ -683,8 +683,8 @@ pub mod fluent_builders {
         /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds
         /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
         /// exported.</p>
-        pub fn to(mut self, inp: i64) -> Self {
-            self.inner = self.inner.to(inp);
+        pub fn to(mut self, signature: i64) -> Self {
+            self.inner = self.inner.to(signature);
             self
         }
         /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds
@@ -695,8 +695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
-        pub fn destination(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination(inp);
+        pub fn destination(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination(signature.into());
             self
         }
         /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
@@ -706,8 +706,8 @@ pub mod fluent_builders {
         }
         /// <p>The prefix used as the start of the key for every object exported. If you don't
         /// specify a value, the default is <code>exportedlogs</code>.</p>
-        pub fn destination_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_prefix(inp);
+        pub fn destination_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_prefix(signature.into());
             self
         }
         /// <p>The prefix used as the start of the key for every object exported. If you don't
@@ -806,8 +806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -820,8 +820,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
         /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
@@ -845,7 +845,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The key-value pairs to use for the tags.</p>
@@ -940,8 +940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -953,8 +953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log stream.</p>
-        pub fn log_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_name(inp);
+        pub fn log_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_name(signature.into());
             self
         }
         /// <p>The name of the log stream.</p>
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the destination.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(signature.into());
             self
         }
         /// <p>The name of the destination.</p>
@@ -1102,8 +1102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -1176,8 +1176,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -1189,8 +1189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log stream.</p>
-        pub fn log_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_name(inp);
+        pub fn log_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_name(signature.into());
             self
         }
         /// <p>The name of the log stream.</p>
@@ -1262,8 +1262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -1275,8 +1275,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric filter.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(signature.into());
             self
         }
         /// <p>The name of the metric filter.</p>
@@ -1350,8 +1350,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the
         /// IDs of your saved query definitions.</p>
-        pub fn query_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_definition_id(inp);
+        pub fn query_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_definition_id(signature.into());
             self
         }
         /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the
@@ -1425,8 +1425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the policy to be revoked. This parameter is required.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the policy to be revoked. This parameter is required.</p>
@@ -1496,8 +1496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -1569,8 +1569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -1582,8 +1582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the subscription filter.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(signature.into());
             self
         }
         /// <p>The name of the subscription filter.</p>
@@ -1652,8 +1652,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-        pub fn destination_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name_prefix(inp);
+        pub fn destination_name_prefix(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_name_prefix(signature.into());
             self
         }
         /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
@@ -1665,8 +1668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -1675,8 +1678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -1746,8 +1749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(signature.into());
             self
         }
         /// <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
@@ -1756,8 +1759,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
-        pub fn status_code(mut self, inp: crate::model::ExportTaskStatusCode) -> Self {
-            self.inner = self.inner.status_code(inp);
+        pub fn status_code(mut self, signature: crate::model::ExportTaskStatusCode) -> Self {
+            self.inner = self.inner.status_code(signature);
             self
         }
         /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
@@ -1769,8 +1772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -1779,8 +1782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -1857,8 +1860,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The prefix to match.</p>
-        pub fn log_group_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name_prefix(inp);
+        pub fn log_group_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name_prefix(signature.into());
             self
         }
         /// <p>The prefix to match.</p>
@@ -1870,8 +1873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -1880,8 +1883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -1953,8 +1956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -1968,8 +1971,8 @@ pub mod fluent_builders {
         /// <p>The prefix to match.</p>
         /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this
         /// parameter.</p>
-        pub fn log_stream_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_name_prefix(inp);
+        pub fn log_stream_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_name_prefix(signature.into());
             self
         }
         /// <p>The prefix to match.</p>
@@ -1992,8 +1995,8 @@ pub mod fluent_builders {
         /// Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency
         /// basis. It typically updates in less than an hour from ingestion, but in rare situations might
         /// take longer.</p>
-        pub fn order_by(mut self, inp: crate::model::OrderBy) -> Self {
-            self.inner = self.inner.order_by(inp);
+        pub fn order_by(mut self, signature: crate::model::OrderBy) -> Self {
+            self.inner = self.inner.order_by(signature);
             self
         }
         /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name.
@@ -2013,8 +2016,8 @@ pub mod fluent_builders {
         /// <p>If the value is true, results are returned in descending order.
         /// If the value is to false, results are returned in ascending order.
         /// The default value is false.</p>
-        pub fn descending(mut self, inp: bool) -> Self {
-            self.inner = self.inner.descending(inp);
+        pub fn descending(mut self, signature: bool) -> Self {
+            self.inner = self.inner.descending(signature);
             self
         }
         /// <p>If the value is true, results are returned in descending order.
@@ -2025,8 +2028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -2035,8 +2038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -2107,8 +2110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -2121,8 +2124,8 @@ pub mod fluent_builders {
         }
         /// <p>The prefix to match. CloudWatch Logs uses the value you set here
         /// only if you also include the <code>logGroupName</code> parameter in your request.</p>
-        pub fn filter_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name_prefix(inp);
+        pub fn filter_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name_prefix(signature.into());
             self
         }
         /// <p>The prefix to match. CloudWatch Logs uses the value you set here
@@ -2135,8 +2138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -2145,8 +2148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -2156,8 +2159,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you
         /// must also include the <code>metricNamespace</code> parameter.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(signature.into());
             self
         }
         /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you
@@ -2168,8 +2171,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you
         /// must also include the <code>metricName</code> parameter.</p>
-        pub fn metric_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_namespace(inp);
+        pub fn metric_namespace(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_namespace(signature.into());
             self
         }
         /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you
@@ -2244,8 +2247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Limits the returned queries to only those for the specified log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>Limits the returned queries to only those for the specified log group.</p>
@@ -2258,8 +2261,8 @@ pub mod fluent_builders {
         }
         /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>,
         /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
-        pub fn status(mut self, inp: crate::model::QueryStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::QueryStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>,
@@ -2269,8 +2272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the number of returned queries to the specified number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Limits the number of returned queries to the specified number.</p>
@@ -2279,8 +2282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -2351,8 +2354,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
-        pub fn query_definition_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_definition_name_prefix(inp);
+        pub fn query_definition_name_prefix(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.query_definition_name_prefix(signature.into());
             self
         }
         /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
@@ -2364,8 +2370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the number of returned query definitions to the specified number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Limits the number of returned query definitions to the specified number.</p>
@@ -2374,8 +2380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -2444,8 +2450,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -2454,8 +2460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resource policies to be displayed with one call of this API.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of resource policies to be displayed with one call of this API.</p>
@@ -2525,8 +2531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -2538,8 +2544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-        pub fn filter_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name_prefix(inp);
+        pub fn filter_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name_prefix(signature.into());
             self
         }
         /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
@@ -2551,8 +2557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -2561,8 +2567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -2634,8 +2640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -2715,8 +2721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group to search.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group to search.</p>
@@ -2734,8 +2740,8 @@ pub mod fluent_builders {
         /// <p>Filters the results to only logs from the log streams in this list.</p>
         /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
         /// returns an <code>InvalidParameterException</code> error.</p>
-        pub fn log_stream_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_names(inp);
+        pub fn log_stream_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_names(input.into());
             self
         }
         /// <p>Filters the results to only logs from the log streams in this list.</p>
@@ -2752,8 +2758,8 @@ pub mod fluent_builders {
         /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for
         /// <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action
         /// returns an <code>InvalidParameterException</code> error.</p>
-        pub fn log_stream_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_name_prefix(inp);
+        pub fn log_stream_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_name_prefix(signature.into());
             self
         }
         /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
@@ -2769,8 +2775,8 @@ pub mod fluent_builders {
         }
         /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
         /// 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
-        pub fn start_time(mut self, inp: i64) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: i64) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
@@ -2781,8 +2787,8 @@ pub mod fluent_builders {
         }
         /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
         /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
-        pub fn end_time(mut self, inp: i64) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: i64) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
@@ -2793,8 +2799,8 @@ pub mod fluent_builders {
         }
         /// <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
         /// <p>If not provided, all the events are matched.</p>
-        pub fn filter_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_pattern(inp);
+        pub fn filter_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_pattern(signature.into());
             self
         }
         /// <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
@@ -2807,8 +2813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
@@ -2817,8 +2823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of events to return. The default is 10,000 events.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of events to return. The default is 10,000 events.</p>
@@ -2834,8 +2840,8 @@ pub mod fluent_builders {
         /// <b>Important:</b> Starting on June 17, 2019, this parameter
         /// is ignored and the value is assumed to be true. The response from this operation always
         /// interleaves events from multiple log streams within a log group.</p>
-        pub fn interleaved(mut self, inp: bool) -> Self {
-            self.inner = self.inner.interleaved(inp);
+        pub fn interleaved(mut self, signature: bool) -> Self {
+            self.inner = self.inner.interleaved(signature);
             self
         }
         /// <p>If the value is true, the operation makes a best effort to provide responses that
@@ -2916,8 +2922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -2929,8 +2935,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log stream.</p>
-        pub fn log_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_name(inp);
+        pub fn log_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_name(signature.into());
             self
         }
         /// <p>The name of the log stream.</p>
@@ -2944,8 +2950,8 @@ pub mod fluent_builders {
         /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
         /// 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included.
         /// Events with a timestamp earlier than this time are not included.</p>
-        pub fn start_time(mut self, inp: i64) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: i64) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
@@ -2958,8 +2964,8 @@ pub mod fluent_builders {
         /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
         /// 00:00:00 UTC. Events with a timestamp equal to or later than this time are not
         /// included.</p>
-        pub fn end_time(mut self, inp: i64) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: i64) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
@@ -2970,8 +2976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -2981,8 +2987,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is
         /// as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is
@@ -2996,8 +3002,8 @@ pub mod fluent_builders {
         /// The default value is false.</p>
         /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation,
         /// you must specify <code>true</code> for <code>startFromHead</code>.</p>
-        pub fn start_from_head(mut self, inp: bool) -> Self {
-            self.inner = self.inner.start_from_head(inp);
+        pub fn start_from_head(mut self, signature: bool) -> Self {
+            self.inner = self.inner.start_from_head(signature);
             self
         }
         /// <p>If the value is true, the earliest log events are returned first.
@@ -3077,8 +3083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group to search.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group to search.</p>
@@ -3094,8 +3100,8 @@ pub mod fluent_builders {
         /// minutes before and 8 minutes after this time are searched.</p>
         /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since
         /// January 1, 1970, 00:00:00 UTC.</p>
-        pub fn time(mut self, inp: i64) -> Self {
-            self.inner = self.inner.time(inp);
+        pub fn time(mut self, signature: i64) -> Self {
+            self.inner = self.inner.time(signature);
             self
         }
         /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes
@@ -3174,8 +3180,8 @@ pub mod fluent_builders {
         /// the response of a <code>GetQueryResults</code> operation. In that response, the value of the
         /// <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code>
         /// to retrieve that complete log event record.</p>
-        pub fn log_record_pointer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_record_pointer(inp);
+        pub fn log_record_pointer(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_record_pointer(signature.into());
             self
         }
         /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from
@@ -3260,8 +3266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID number of the query.</p>
-        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_id(inp);
+        pub fn query_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(signature.into());
             self
         }
         /// <p>The ID number of the query.</p>
@@ -3330,8 +3336,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -3412,8 +3418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the destination.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(signature.into());
             self
         }
         /// <p>A name for the destination.</p>
@@ -3425,8 +3431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_arn(inp);
+        pub fn target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(signature.into());
             self
         }
         /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
@@ -3436,8 +3442,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
         /// Kinesis <code>PutRecord</code> operation on the destination stream.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
@@ -3512,8 +3518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for an existing destination.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(signature.into());
             self
         }
         /// <p>A name for an existing destination.</p>
@@ -3526,8 +3532,8 @@ pub mod fluent_builders {
         }
         /// <p>An IAM policy document that authorizes cross-account users to deliver their log events
         /// to the associated destination. This can be up to 5120 bytes.</p>
-        pub fn access_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policy(inp);
+        pub fn access_policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policy(signature.into());
             self
         }
         /// <p>An IAM policy document that authorizes cross-account users to deliver their log events
@@ -3637,8 +3643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -3650,8 +3656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log stream.</p>
-        pub fn log_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_name(inp);
+        pub fn log_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_name(signature.into());
             self
         }
         /// <p>The name of the log stream.</p>
@@ -3667,8 +3673,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_log_events`](Self::set_log_events).
         ///
         /// <p>The log events.</p>
-        pub fn log_events(mut self, inp: impl Into<crate::model::InputLogEvent>) -> Self {
-            self.inner = self.inner.log_events(inp);
+        pub fn log_events(mut self, input: crate::model::InputLogEvent) -> Self {
+            self.inner = self.inner.log_events(input);
             self
         }
         /// <p>The log events.</p>
@@ -3684,8 +3690,8 @@ pub mod fluent_builders {
         /// get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow
         /// time period using the same value for <code>sequenceToken</code>, both calls might be
         /// successful or one might be rejected.</p>
-        pub fn sequence_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sequence_token(inp);
+        pub fn sequence_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sequence_token(signature.into());
             self
         }
         /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code>
@@ -3783,8 +3789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -3796,8 +3802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the metric filter.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(signature.into());
             self
         }
         /// <p>A name for the metric filter.</p>
@@ -3806,8 +3812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
-        pub fn filter_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_pattern(inp);
+        pub fn filter_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_pattern(signature.into());
             self
         }
         /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
@@ -3823,11 +3829,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_metric_transformations`](Self::set_metric_transformations).
         ///
         /// <p>A collection of information that defines how metric data gets emitted.</p>
-        pub fn metric_transformations(
-            mut self,
-            inp: impl Into<crate::model::MetricTransformation>,
-        ) -> Self {
-            self.inner = self.inner.metric_transformations(inp);
+        pub fn metric_transformations(mut self, input: crate::model::MetricTransformation) -> Self {
+            self.inner = self.inner.metric_transformations(input);
             self
         }
         /// <p>A collection of information that defines how metric data gets emitted.</p>
@@ -3912,8 +3915,8 @@ pub mod fluent_builders {
         /// <p>A name for the query definition. If you are saving a lot of query definitions, we
         /// recommend that you name them so that you can easily find the ones you want by using the first
         /// part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A name for the query definition. If you are saving a lot of query definitions, we
@@ -3929,8 +3932,8 @@ pub mod fluent_builders {
         /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch
         /// generates a unique ID for the new query definition and include it in the response to this
         /// operation.</p>
-        pub fn query_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_definition_id(inp);
+        pub fn query_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_definition_id(signature.into());
             self
         }
         /// <p>If you are updating a query definition, use this parameter to specify the ID of the query
@@ -3953,8 +3956,8 @@ pub mod fluent_builders {
         /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
         /// <p>If you are updating a query definition and you omit this parameter, then the updated
         /// definition will contain no log groups.</p>
-        pub fn log_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_names(inp);
+        pub fn log_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_names(input.into());
             self
         }
         /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
@@ -3969,8 +3972,8 @@ pub mod fluent_builders {
         }
         /// <p>The query string to use for this definition.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(signature.into());
             self
         }
         /// <p>The query string to use for this definition.
@@ -4042,8 +4045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the new policy. This parameter is required.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>Name of the new policy. This parameter is required.</p>
@@ -4090,8 +4093,8 @@ pub mod fluent_builders {
         /// }</code>
         ///
         /// </p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(signature.into());
             self
         }
         /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string.
@@ -4203,8 +4206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -4220,8 +4223,8 @@ pub mod fluent_builders {
         /// <p>To set a log group to never have log events expire, use
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
         /// </p>
-        pub fn retention_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.retention_in_days(inp);
+        pub fn retention_in_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.retention_in_days(signature);
             self
         }
         /// <p>The number of days to retain the log events in the specified log group.
@@ -4322,8 +4325,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -4337,8 +4340,8 @@ pub mod fluent_builders {
         /// <p>A name for the subscription filter. If you are updating an existing filter, you must
         /// specify the correct name in <code>filterName</code>. To find the name of the filter currently
         /// associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(signature.into());
             self
         }
         /// <p>A name for the subscription filter. If you are updating an existing filter, you must
@@ -4349,8 +4352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-        pub fn filter_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_pattern(inp);
+        pub fn filter_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_pattern(signature.into());
             self
         }
         /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
@@ -4384,8 +4387,8 @@ pub mod fluent_builders {
         /// for same-account delivery.</p>
         /// </li>
         /// </ul>
-        pub fn destination_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_arn(inp);
+        pub fn destination_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(signature.into());
             self
         }
         /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported
@@ -4421,8 +4424,8 @@ pub mod fluent_builders {
         /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log
         /// events to the destination stream. You don't need to provide the ARN when you are working with
         /// a logical destination for cross-account delivery.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log
@@ -4435,8 +4438,8 @@ pub mod fluent_builders {
         /// <p>The method used to distribute log data to the destination. By default, log data is
         /// grouped by log stream, but the grouping can be set to random for a more even distribution.
         /// This property is only applicable when the destination is an Amazon Kinesis stream. </p>
-        pub fn distribution(mut self, inp: crate::model::Distribution) -> Self {
-            self.inner = self.inner.distribution(inp);
+        pub fn distribution(mut self, signature: crate::model::Distribution) -> Self {
+            self.inner = self.inner.distribution(signature);
             self
         }
         /// <p>The method used to distribute log data to the destination. By default, log data is
@@ -4517,8 +4520,8 @@ pub mod fluent_builders {
         /// <p>The log group on which to perform the query.</p>
         /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
         /// not both.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The log group on which to perform the query.</p>
@@ -4538,8 +4541,8 @@ pub mod fluent_builders {
         /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
         /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
         /// not both.</p>
-        pub fn log_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_names(inp);
+        pub fn log_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_names(input.into());
             self
         }
         /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
@@ -4555,8 +4558,8 @@ pub mod fluent_builders {
         /// <p>The beginning of the time range to query. The range is inclusive, so the specified
         /// start time is included in the query. Specified as epoch time, the
         /// number of seconds since January 1, 1970, 00:00:00 UTC.</p>
-        pub fn start_time(mut self, inp: i64) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: i64) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The beginning of the time range to query. The range is inclusive, so the specified
@@ -4569,8 +4572,8 @@ pub mod fluent_builders {
         /// <p>The end of the time range to query. The range is inclusive, so the specified
         /// end time is included in the query. Specified as epoch
         /// time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
-        pub fn end_time(mut self, inp: i64) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: i64) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time range to query. The range is inclusive, so the specified
@@ -4582,8 +4585,8 @@ pub mod fluent_builders {
         }
         /// <p>The query string to use.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(signature.into());
             self
         }
         /// <p>The query string to use.
@@ -4594,8 +4597,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command,
         /// only the specified fields and their values are returned. The default is 1000.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command,
@@ -4667,8 +4670,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID number of the query to stop. To find this ID number, use
         /// <code>DescribeQueries</code>.</p>
-        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_id(inp);
+        pub fn query_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(signature.into());
             self
         }
         /// <p>The ID number of the query to stop. To find this ID number, use
@@ -4747,8 +4750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -4769,7 +4772,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The key-value pairs to use for the tags.</p>
@@ -4846,8 +4849,8 @@ pub mod fluent_builders {
         /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
         /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
         /// use the filter pattern to specify what to look for in the log event message.</p>
-        pub fn filter_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_pattern(inp);
+        pub fn filter_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_pattern(signature.into());
             self
         }
         /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
@@ -4865,8 +4868,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_log_event_messages`](Self::set_log_event_messages).
         ///
         /// <p>The log event messages to test.</p>
-        pub fn log_event_messages(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_event_messages(inp);
+        pub fn log_event_messages(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_event_messages(input.into());
             self
         }
         /// <p>The log event messages to test.</p>
@@ -4944,8 +4947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the log group.</p>
-        pub fn log_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(inp);
+        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(signature.into());
             self
         }
         /// <p>The name of the log group.</p>
@@ -4961,8 +4964,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
-        pub fn tags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tags(input.into());
             self
         }
         /// <p>The tag keys. The corresponding tags are removed from the log group.</p>

@@ -496,10 +496,10 @@ pub mod framework_control {
         /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
         pub fn control_input_parameters(
             mut self,
-            input: impl Into<crate::model::ControlInputParameter>,
+            input: crate::model::ControlInputParameter,
         ) -> Self {
             let mut v = self.control_input_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_input_parameters = Some(v);
             self
         }
@@ -1019,9 +1019,9 @@ pub mod backup_plan_input {
         ///
         /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
         /// that is used to back up a selection of resources.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::BackupRuleInput>) -> Self {
+        pub fn rules(mut self, input: crate::model::BackupRuleInput) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1042,10 +1042,10 @@ pub mod backup_plan_input {
         /// are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
         pub fn advanced_backup_settings(
             mut self,
-            input: impl Into<crate::model::AdvancedBackupSetting>,
+            input: crate::model::AdvancedBackupSetting,
         ) -> Self {
             let mut v = self.advanced_backup_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_backup_settings = Some(v);
             self
         }
@@ -1338,9 +1338,9 @@ pub mod backup_rule_input {
         ///
         /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy
         /// operation.</p>
-        pub fn copy_actions(mut self, input: impl Into<crate::model::CopyAction>) -> Self {
+        pub fn copy_actions(mut self, input: crate::model::CopyAction) -> Self {
             let mut v = self.copy_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.copy_actions = Some(v);
             self
         }
@@ -5373,10 +5373,10 @@ pub mod backup_plans_list_member {
         /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
         pub fn advanced_backup_settings(
             mut self,
-            input: impl Into<crate::model::AdvancedBackupSetting>,
+            input: crate::model::AdvancedBackupSetting,
         ) -> Self {
             let mut v = self.advanced_backup_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_backup_settings = Some(v);
             self
         }
@@ -6415,9 +6415,9 @@ pub mod backup_selection {
         /// <code>StringNotLike</code>. </p>
         /// </li>
         /// </ul>
-        pub fn list_of_tags(mut self, input: impl Into<crate::model::Condition>) -> Self {
+        pub fn list_of_tags(mut self, input: crate::model::Condition) -> Self {
             let mut v = self.list_of_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_of_tags = Some(v);
             self
         }
@@ -6614,9 +6614,9 @@ pub mod conditions {
         ///
         /// <p>Filters the values of your tagged resources for only those resources that you tagged
         /// with the same value. Also called "exact matching."</p>
-        pub fn string_equals(mut self, input: impl Into<crate::model::ConditionParameter>) -> Self {
+        pub fn string_equals(mut self, input: crate::model::ConditionParameter) -> Self {
             let mut v = self.string_equals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.string_equals = Some(v);
             self
         }
@@ -6635,12 +6635,9 @@ pub mod conditions {
         ///
         /// <p>Filters the values of your tagged resources for only those resources that you tagged
         /// that do not have the same value. Also called "negated matching."</p>
-        pub fn string_not_equals(
-            mut self,
-            input: impl Into<crate::model::ConditionParameter>,
-        ) -> Self {
+        pub fn string_not_equals(mut self, input: crate::model::ConditionParameter) -> Self {
             let mut v = self.string_not_equals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.string_not_equals = Some(v);
             self
         }
@@ -6660,9 +6657,9 @@ pub mod conditions {
         /// <p>Filters the values of your tagged resources for matching tag values with the use of a
         /// wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the
         /// tag value "production".</p>
-        pub fn string_like(mut self, input: impl Into<crate::model::ConditionParameter>) -> Self {
+        pub fn string_like(mut self, input: crate::model::ConditionParameter) -> Self {
             let mut v = self.string_like.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.string_like = Some(v);
             self
         }
@@ -6682,12 +6679,9 @@ pub mod conditions {
         ///
         /// <p>Filters the values of your tagged resources for non-matching tag values with the use of
         /// a wildcard character (*) anywhere in the string.</p>
-        pub fn string_not_like(
-            mut self,
-            input: impl Into<crate::model::ConditionParameter>,
-        ) -> Self {
+        pub fn string_not_like(mut self, input: crate::model::ConditionParameter) -> Self {
             let mut v = self.string_not_like.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.string_not_like = Some(v);
             self
         }
@@ -7065,9 +7059,9 @@ pub mod backup_plan {
         ///
         /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
         /// that is used to back up a selection of resources. </p>
-        pub fn rules(mut self, input: impl Into<crate::model::BackupRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::BackupRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -7087,10 +7081,10 @@ pub mod backup_plan {
         /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
         pub fn advanced_backup_settings(
             mut self,
-            input: impl Into<crate::model::AdvancedBackupSetting>,
+            input: crate::model::AdvancedBackupSetting,
         ) -> Self {
             let mut v = self.advanced_backup_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_backup_settings = Some(v);
             self
         }
@@ -7420,9 +7414,9 @@ pub mod backup_rule {
         ///
         /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy
         /// operation.</p>
-        pub fn copy_actions(mut self, input: impl Into<crate::model::CopyAction>) -> Self {
+        pub fn copy_actions(mut self, input: crate::model::CopyAction) -> Self {
             let mut v = self.copy_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.copy_actions = Some(v);
             self
         }

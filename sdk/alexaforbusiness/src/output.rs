@@ -586,9 +586,9 @@ pub mod search_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>The users that meet the specified set of filter criteria, in sort order.</p>
-        pub fn users(mut self, input: impl Into<crate::model::UserData>) -> Self {
+        pub fn users(mut self, input: crate::model::UserData) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -687,9 +687,9 @@ pub mod search_skill_groups_output {
         /// To override the contents of this collection use [`set_skill_groups`](Self::set_skill_groups).
         ///
         /// <p>The skill groups that meet the filter criteria, in sort order.</p>
-        pub fn skill_groups(mut self, input: impl Into<crate::model::SkillGroupData>) -> Self {
+        pub fn skill_groups(mut self, input: crate::model::SkillGroupData) -> Self {
             let mut v = self.skill_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.skill_groups = Some(v);
             self
         }
@@ -788,9 +788,9 @@ pub mod search_rooms_output {
         /// To override the contents of this collection use [`set_rooms`](Self::set_rooms).
         ///
         /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
-        pub fn rooms(mut self, input: impl Into<crate::model::RoomData>) -> Self {
+        pub fn rooms(mut self, input: crate::model::RoomData) -> Self {
             let mut v = self.rooms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rooms = Some(v);
             self
         }
@@ -889,9 +889,9 @@ pub mod search_profiles_output {
         /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
         ///
         /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
-        pub fn profiles(mut self, input: impl Into<crate::model::ProfileData>) -> Self {
+        pub fn profiles(mut self, input: crate::model::ProfileData) -> Self {
             let mut v = self.profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profiles = Some(v);
             self
         }
@@ -998,12 +998,9 @@ pub mod search_network_profiles_output {
         ///
         /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It
         /// is a list of NetworkProfileData objects. </p>
-        pub fn network_profiles(
-            mut self,
-            input: impl Into<crate::model::NetworkProfileData>,
-        ) -> Self {
+        pub fn network_profiles(mut self, input: crate::model::NetworkProfileData) -> Self {
             let mut v = self.network_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_profiles = Some(v);
             self
         }
@@ -1107,9 +1104,9 @@ pub mod search_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceData>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceData) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -1208,9 +1205,9 @@ pub mod search_contacts_output {
         /// To override the contents of this collection use [`set_contacts`](Self::set_contacts).
         ///
         /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
-        pub fn contacts(mut self, input: impl Into<crate::model::ContactData>) -> Self {
+        pub fn contacts(mut self, input: crate::model::ContactData) -> Self {
             let mut v = self.contacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contacts = Some(v);
             self
         }
@@ -1312,9 +1309,9 @@ pub mod search_address_books_output {
         ///
         /// <p>The address books that meet the specified set of filter criteria, in sort
         /// order.</p>
-        pub fn address_books(mut self, input: impl Into<crate::model::AddressBookData>) -> Self {
+        pub fn address_books(mut self, input: crate::model::AddressBookData) -> Self {
             let mut v = self.address_books.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.address_books = Some(v);
             self
         }
@@ -1467,12 +1464,9 @@ pub mod resolve_room_output {
         /// To override the contents of this collection use [`set_room_skill_parameters`](Self::set_room_skill_parameters).
         ///
         /// <p>Response to get the room profile request. Required.</p>
-        pub fn room_skill_parameters(
-            mut self,
-            input: impl Into<crate::model::RoomSkillParameter>,
-        ) -> Self {
+        pub fn room_skill_parameters(mut self, input: crate::model::RoomSkillParameter) -> Self {
             let mut v = self.room_skill_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.room_skill_parameters = Some(v);
             self
         }
@@ -1747,9 +1741,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags requested for the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1832,12 +1826,9 @@ pub mod list_smart_home_appliances_output {
         /// To override the contents of this collection use [`set_smart_home_appliances`](Self::set_smart_home_appliances).
         ///
         /// <p>The smart home appliances.</p>
-        pub fn smart_home_appliances(
-            mut self,
-            input: impl Into<crate::model::SmartHomeAppliance>,
-        ) -> Self {
+        pub fn smart_home_appliances(mut self, input: crate::model::SmartHomeAppliance) -> Self {
             let mut v = self.smart_home_appliances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.smart_home_appliances = Some(v);
             self
         }
@@ -1918,12 +1909,9 @@ pub mod list_skills_store_skills_by_category_output {
         /// To override the contents of this collection use [`set_skills_store_skills`](Self::set_skills_store_skills).
         ///
         /// <p>The skill store skills.</p>
-        pub fn skills_store_skills(
-            mut self,
-            input: impl Into<crate::model::SkillsStoreSkill>,
-        ) -> Self {
+        pub fn skills_store_skills(mut self, input: crate::model::SkillsStoreSkill) -> Self {
             let mut v = self.skills_store_skills.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.skills_store_skills = Some(v);
             self
         }
@@ -2003,9 +1991,9 @@ pub mod list_skills_store_categories_output {
         /// To override the contents of this collection use [`set_category_list`](Self::set_category_list).
         ///
         /// <p>The list of categories.</p>
-        pub fn category_list(mut self, input: impl Into<crate::model::Category>) -> Self {
+        pub fn category_list(mut self, input: crate::model::Category) -> Self {
             let mut v = self.category_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.category_list = Some(v);
             self
         }
@@ -2085,9 +2073,9 @@ pub mod list_skills_output {
         /// To override the contents of this collection use [`set_skill_summaries`](Self::set_skill_summaries).
         ///
         /// <p>The list of enabled skills requested. Required.</p>
-        pub fn skill_summaries(mut self, input: impl Into<crate::model::SkillSummary>) -> Self {
+        pub fn skill_summaries(mut self, input: crate::model::SkillSummary) -> Self {
             let mut v = self.skill_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.skill_summaries = Some(v);
             self
         }
@@ -2167,9 +2155,9 @@ pub mod list_gateways_output {
         /// To override the contents of this collection use [`set_gateways`](Self::set_gateways).
         ///
         /// <p>The gateways in the list.</p>
-        pub fn gateways(mut self, input: impl Into<crate::model::GatewaySummary>) -> Self {
+        pub fn gateways(mut self, input: crate::model::GatewaySummary) -> Self {
             let mut v = self.gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateways = Some(v);
             self
         }
@@ -2250,12 +2238,9 @@ pub mod list_gateway_groups_output {
         /// To override the contents of this collection use [`set_gateway_groups`](Self::set_gateway_groups).
         ///
         /// <p>The gateway groups in the list.</p>
-        pub fn gateway_groups(
-            mut self,
-            input: impl Into<crate::model::GatewayGroupSummary>,
-        ) -> Self {
+        pub fn gateway_groups(mut self, input: crate::model::GatewayGroupSummary) -> Self {
             let mut v = self.gateway_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateway_groups = Some(v);
             self
         }
@@ -2335,9 +2320,9 @@ pub mod list_device_events_output {
         /// To override the contents of this collection use [`set_device_events`](Self::set_device_events).
         ///
         /// <p>The device events requested for the device ARN.</p>
-        pub fn device_events(mut self, input: impl Into<crate::model::DeviceEvent>) -> Self {
+        pub fn device_events(mut self, input: crate::model::DeviceEvent) -> Self {
             let mut v = self.device_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_events = Some(v);
             self
         }
@@ -2418,12 +2403,9 @@ pub mod list_conference_providers_output {
         /// To override the contents of this collection use [`set_conference_providers`](Self::set_conference_providers).
         ///
         /// <p>The conference providers.</p>
-        pub fn conference_providers(
-            mut self,
-            input: impl Into<crate::model::ConferenceProvider>,
-        ) -> Self {
+        pub fn conference_providers(mut self, input: crate::model::ConferenceProvider) -> Self {
             let mut v = self.conference_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conference_providers = Some(v);
             self
         }
@@ -2509,10 +2491,10 @@ pub mod list_business_report_schedules_output {
         /// <p>The schedule of the reports.</p>
         pub fn business_report_schedules(
             mut self,
-            input: impl Into<crate::model::BusinessReportSchedule>,
+            input: crate::model::BusinessReportSchedule,
         ) -> Self {
             let mut v = self.business_report_schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.business_report_schedules = Some(v);
             self
         }

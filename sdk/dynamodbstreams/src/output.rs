@@ -51,9 +51,9 @@ pub mod list_streams_output {
         /// To override the contents of this collection use [`set_streams`](Self::set_streams).
         ///
         /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
-        pub fn streams(mut self, input: impl Into<crate::model::Stream>) -> Self {
+        pub fn streams(mut self, input: crate::model::Stream) -> Self {
             let mut v = self.streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streams = Some(v);
             self
         }
@@ -207,9 +207,9 @@ pub mod get_records_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
-        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }

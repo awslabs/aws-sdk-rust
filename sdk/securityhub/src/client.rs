@@ -575,8 +575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-        pub fn administrator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.administrator_id(inp);
+        pub fn administrator_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.administrator_id(signature.into());
             self
         }
         /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
@@ -588,8 +588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(signature.into());
             self
         }
         /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
@@ -668,8 +668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-        pub fn master_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_id(inp);
+        pub fn master_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_id(signature.into());
             self
         }
         /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
@@ -678,8 +678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(signature.into());
             self
         }
         /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
@@ -758,8 +758,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_standards_subscription_arns`](Self::set_standards_subscription_arns).
         ///
         /// <p>The ARNs of the standards subscriptions to disable.</p>
-        pub fn standards_subscription_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.standards_subscription_arns(inp);
+        pub fn standards_subscription_arns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.standards_subscription_arns(input.into());
             self
         }
         /// <p>The ARNs of the standards subscriptions to disable.</p>
@@ -841,9 +844,9 @@ pub mod fluent_builders {
         /// <p>The list of standards checks to enable.</p>
         pub fn standards_subscription_requests(
             mut self,
-            inp: impl Into<crate::model::StandardsSubscriptionRequest>,
+            input: crate::model::StandardsSubscriptionRequest,
         ) -> Self {
-            self.inner = self.inner.standards_subscription_requests(inp);
+            self.inner = self.inner.standards_subscription_requests(input);
             self
         }
         /// <p>The list of standards checks to enable.</p>
@@ -978,8 +981,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of findings to import. To successfully import a finding, it must follow the
         /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-        pub fn findings(mut self, inp: impl Into<crate::model::AwsSecurityFinding>) -> Self {
-            self.inner = self.inner.findings(inp);
+        pub fn findings(mut self, input: crate::model::AwsSecurityFinding) -> Self {
+            self.inner = self.inner.findings(input);
             self
         }
         /// <p>A list of findings to import. To successfully import a finding, it must follow the
@@ -1119,9 +1122,9 @@ pub mod fluent_builders {
         /// provider.</p>
         pub fn finding_identifiers(
             mut self,
-            inp: impl Into<crate::model::AwsSecurityFindingIdentifier>,
+            input: crate::model::AwsSecurityFindingIdentifier,
         ) -> Self {
-            self.inner = self.inner.finding_identifiers(inp);
+            self.inner = self.inner.finding_identifiers(input);
             self
         }
         /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
@@ -1136,8 +1139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated note.</p>
-        pub fn note(mut self, inp: crate::model::NoteUpdate) -> Self {
-            self.inner = self.inner.note(inp);
+        pub fn note(mut self, signature: crate::model::NoteUpdate) -> Self {
+            self.inner = self.inner.note(signature);
             self
         }
         /// <p>The updated note.</p>
@@ -1146,8 +1149,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to update the finding severity.</p>
-        pub fn severity(mut self, inp: crate::model::SeverityUpdate) -> Self {
-            self.inner = self.inner.severity(inp);
+        pub fn severity(mut self, signature: crate::model::SeverityUpdate) -> Self {
+            self.inner = self.inner.severity(signature);
             self
         }
         /// <p>Used to update the finding severity.</p>
@@ -1180,8 +1183,8 @@ pub mod fluent_builders {
         /// the finding doesn't pose any threat, is expected, or both</p>
         /// </li>
         /// </ul>
-        pub fn verification_state(mut self, inp: crate::model::VerificationState) -> Self {
-            self.inner = self.inner.verification_state(inp);
+        pub fn verification_state(mut self, signature: crate::model::VerificationState) -> Self {
+            self.inner = self.inner.verification_state(signature);
             self
         }
         /// <p>Indicates the veracity of a finding.</p>
@@ -1218,8 +1221,8 @@ pub mod fluent_builders {
         /// identify.</p>
         /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
         /// confidence and 100 means 100 percent confidence.</p>
-        pub fn confidence(mut self, inp: i32) -> Self {
-            self.inner = self.inner.confidence(inp);
+        pub fn confidence(mut self, signature: i32) -> Self {
+            self.inner = self.inner.confidence(signature);
             self
         }
         /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
@@ -1235,8 +1238,8 @@ pub mod fluent_builders {
         /// the findings.</p>
         /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
         /// is reserved for the most critical resources. </p>
-        pub fn criticality(mut self, inp: i32) -> Self {
-            self.inner = self.inner.criticality(inp);
+        pub fn criticality(mut self, signature: i32) -> Self {
+            self.inner = self.inner.criticality(signature);
             self
         }
         /// <p>The updated value for the level of importance assigned to the resources associated with
@@ -1271,8 +1274,8 @@ pub mod fluent_builders {
         /// <p>Sensitive Data Identifications </p>
         /// </li>
         /// </ul>
-        pub fn types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.types(inp);
+        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.types(input.into());
             self
         }
         /// <p>One or more finding types in the format of namespace/category/classifier that classify a
@@ -1313,7 +1316,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.user_defined_fields(k, v);
+            self.inner = self.inner.user_defined_fields(k.into(), v.into());
             self
         }
         /// <p>A list of name/value string pairs associated with the finding. These are custom,
@@ -1329,8 +1332,8 @@ pub mod fluent_builders {
         }
         /// <p>Used to update the workflow status of a finding.</p>
         /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
-        pub fn workflow(mut self, inp: crate::model::WorkflowUpdate) -> Self {
-            self.inner = self.inner.workflow(inp);
+        pub fn workflow(mut self, signature: crate::model::WorkflowUpdate) -> Self {
+            self.inner = self.inner.workflow(signature);
             self
         }
         /// <p>Used to update the workflow status of a finding.</p>
@@ -1347,8 +1350,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_related_findings`](Self::set_related_findings).
         ///
         /// <p>A list of findings that are related to the updated findings.</p>
-        pub fn related_findings(mut self, inp: impl Into<crate::model::RelatedFinding>) -> Self {
-            self.inner = self.inner.related_findings(inp);
+        pub fn related_findings(mut self, input: crate::model::RelatedFinding) -> Self {
+            self.inner = self.inner.related_findings(input);
             self
         }
         /// <p>A list of findings that are related to the updated findings.</p>
@@ -1422,8 +1425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
@@ -1432,8 +1435,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the custom action target.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description for the custom action target.</p>
@@ -1442,8 +1445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
@@ -1533,8 +1536,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn region_linking_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_linking_mode(inp);
+        pub fn region_linking_mode(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_linking_mode(signature.into());
             self
         }
         /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
@@ -1571,8 +1574,8 @@ pub mod fluent_builders {
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
         /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
         /// </p>
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regions(inp);
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regions(input.into());
             self
         }
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
@@ -1649,8 +1652,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom insight to create.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the custom insight to create.</p>
@@ -1660,8 +1663,8 @@ pub mod fluent_builders {
         }
         /// <p>One or more attributes used to filter the findings included in the insight. The insight
         /// only includes findings that match the criteria defined in the filters.</p>
-        pub fn filters(mut self, inp: crate::model::AwsSecurityFindingFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, signature: crate::model::AwsSecurityFindingFilters) -> Self {
+            self.inner = self.inner.filters(signature);
             self
         }
         /// <p>One or more attributes used to filter the findings included in the insight. The insight
@@ -1677,8 +1680,8 @@ pub mod fluent_builders {
         /// identifies the type of item that the insight applies to. For example, if an insight is
         /// grouped by resource identifier, then the insight produces a list of resource
         /// identifiers.</p>
-        pub fn group_by_attribute(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_by_attribute(inp);
+        pub fn group_by_attribute(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_by_attribute(signature.into());
             self
         }
         /// <p>The attribute used to group the findings for the insight. The grouping attribute
@@ -1793,8 +1796,8 @@ pub mod fluent_builders {
         ///
         /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
         /// list includes the account ID and optionally the email address.</p>
-        pub fn account_details(mut self, inp: impl Into<crate::model::AccountDetails>) -> Self {
-            self.inner = self.inner.account_details(inp);
+        pub fn account_details(mut self, input: crate::model::AccountDetails) -> Self {
+            self.inner = self.inner.account_details(input);
             self
         }
         /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
@@ -1874,8 +1877,8 @@ pub mod fluent_builders {
         ///
         /// <p>The list of account IDs for the accounts from which to decline the invitations to
         /// Security Hub.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of account IDs for the accounts from which to decline the invitations to
@@ -1950,8 +1953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the custom action target to delete.</p>
-        pub fn action_target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_target_arn(inp);
+        pub fn action_target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_target_arn(signature.into());
             self
         }
         /// <p>The ARN of the custom action target to delete.</p>
@@ -2025,8 +2028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-        pub fn finding_aggregator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_aggregator_arn(inp);
+        pub fn finding_aggregator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_aggregator_arn(signature.into());
             self
         }
         /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
@@ -2098,8 +2101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the insight to delete.</p>
-        pub fn insight_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_arn(inp);
+        pub fn insight_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_arn(signature.into());
             self
         }
         /// <p>The ARN of the insight to delete.</p>
@@ -2174,8 +2177,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of the account IDs that sent the invitations to delete.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of the account IDs that sent the invitations to delete.</p>
@@ -2253,8 +2256,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of account IDs for the member accounts to delete.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of account IDs for the member accounts to delete.</p>
@@ -2330,8 +2333,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_action_target_arns`](Self::set_action_target_arns).
         ///
         /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-        pub fn action_target_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_target_arns(inp);
+        pub fn action_target_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_target_arns(input.into());
             self
         }
         /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
@@ -2347,8 +2350,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -2361,8 +2364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2432,8 +2435,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Hub resource to retrieve.</p>
-        pub fn hub_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hub_arn(inp);
+        pub fn hub_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_arn(signature.into());
             self
         }
         /// <p>The ARN of the Hub resource to retrieve.</p>
@@ -2571,8 +2574,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -2585,8 +2588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2595,8 +2598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the integration to return.</p>
-        pub fn product_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_arn(inp);
+        pub fn product_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_arn(signature.into());
             self
         }
         /// <p>The ARN of the integration to return.</p>
@@ -2670,8 +2673,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -2684,8 +2687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of standards to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of standards to return.</p>
@@ -2757,8 +2760,11 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
         /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
-        pub fn standards_subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.standards_subscription_arn(inp);
+        pub fn standards_subscription_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.standards_subscription_arn(signature.into());
             self
         }
         /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
@@ -2775,8 +2781,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -2789,8 +2795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of security standard controls to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of security standard controls to return.</p>
@@ -2860,8 +2866,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the integrated product to disable the integration for.</p>
-        pub fn product_subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_subscription_arn(inp);
+        pub fn product_subscription_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.product_subscription_arn(signature.into());
             self
         }
         /// <p>The ARN of the integrated product to disable the integration for.</p>
@@ -2934,8 +2943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
@@ -3213,8 +3222,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
@@ -3289,8 +3298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the product to enable the integration for.</p>
-        pub fn product_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_arn(inp);
+        pub fn product_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_arn(signature.into());
             self
         }
         /// <p>The ARN of the product to enable the integration for.</p>
@@ -3361,8 +3370,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
         /// account.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
@@ -3463,7 +3472,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
@@ -3480,8 +3489,8 @@ pub mod fluent_builders {
         /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
         /// to <code>true</code>. To not enable the automatically enabled standards, set
         /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
-        pub fn enable_default_standards(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_default_standards(inp);
+        pub fn enable_default_standards(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_default_standards(signature);
             self
         }
         /// <p>Whether to enable the security standards that Security Hub has designated as automatically
@@ -3619,8 +3628,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_standards_subscription_arns`](Self::set_standards_subscription_arns).
         ///
         /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-        pub fn standards_subscription_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.standards_subscription_arns(inp);
+        pub fn standards_subscription_arns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.standards_subscription_arns(input.into());
             self
         }
         /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
@@ -3636,8 +3648,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -3650,8 +3662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -3720,8 +3732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-        pub fn finding_aggregator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_aggregator_arn(inp);
+        pub fn finding_aggregator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_aggregator_arn(signature.into());
             self
         }
         /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
@@ -3799,8 +3811,8 @@ pub mod fluent_builders {
         /// 20 filter values.</p>
         /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
         /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-        pub fn filters(mut self, inp: crate::model::AwsSecurityFindingFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, signature: crate::model::AwsSecurityFindingFilters) -> Self {
+            self.inner = self.inner.filters(signature);
             self
         }
         /// <p>The finding attributes used to define a condition to filter the returned
@@ -3821,8 +3833,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
         /// <p>The finding attributes used to sort the list of returned findings.</p>
-        pub fn sort_criteria(mut self, inp: impl Into<crate::model::SortCriterion>) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriterion) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>The finding attributes used to sort the list of returned findings.</p>
@@ -3838,8 +3850,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -3852,8 +3864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of findings to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of findings to return.</p>
@@ -3922,8 +3934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the insight for which to return results.</p>
-        pub fn insight_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_arn(inp);
+        pub fn insight_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_arn(signature.into());
             self
         }
         /// <p>The ARN of the insight for which to return results.</p>
@@ -3998,8 +4010,8 @@ pub mod fluent_builders {
         /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
         /// <code>GetInsights</code> returns all of your custom insights. It does not return any
         /// managed insights.</p>
-        pub fn insight_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_arns(inp);
+        pub fn insight_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_arns(input.into());
             self
         }
         /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
@@ -4017,8 +4029,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -4031,8 +4043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
@@ -4234,8 +4246,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
@@ -4317,8 +4329,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
@@ -4395,8 +4407,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -4409,8 +4421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
@@ -4479,8 +4491,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
@@ -4489,8 +4501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. This operation currently only returns a single result.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return. This operation currently only returns a single result.</p>
@@ -4561,8 +4573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to return in the response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in the response. </p>
@@ -4575,8 +4587,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -4657,8 +4669,8 @@ pub mod fluent_builders {
         /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
         /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
         /// existing member accounts. </p>
-        pub fn only_associated(mut self, inp: bool) -> Self {
-            self.inner = self.inner.only_associated(inp);
+        pub fn only_associated(mut self, signature: bool) -> Self {
+            self.inner = self.inner.only_associated(signature);
             self
         }
         /// <p>Specifies which member accounts to include in the response based on their relationship
@@ -4672,8 +4684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in the response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in the response. </p>
@@ -4686,8 +4698,8 @@ pub mod fluent_builders {
         /// <code>NULL</code>.</p>
         /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
         /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -4761,8 +4773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
@@ -4774,8 +4786,8 @@ pub mod fluent_builders {
         /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
         /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
         /// the value of this parameter to the value returned from the previous response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token that is required for pagination. On your first call to the
@@ -4847,8 +4859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to retrieve tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to retrieve tags for.</p>
@@ -4917,8 +4929,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to apply the tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to apply the tags to.</p>
@@ -4936,7 +4948,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128 characters. The tag values can be no longer than 256 characters.</p>
@@ -5010,8 +5022,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to remove the tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to remove the tags from.</p>
@@ -5024,8 +5036,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.</p>
@@ -5097,8 +5109,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the custom action target to update.</p>
-        pub fn action_target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_target_arn(inp);
+        pub fn action_target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_target_arn(signature.into());
             self
         }
         /// <p>The ARN of the custom action target to update.</p>
@@ -5110,8 +5122,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the custom action target.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The updated name of the custom action target.</p>
@@ -5120,8 +5132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description for the custom action target.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The updated description for the custom action target.</p>
@@ -5192,8 +5204,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-        pub fn finding_aggregator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_aggregator_arn(inp);
+        pub fn finding_aggregator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_aggregator_arn(signature.into());
             self
         }
         /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
@@ -5224,8 +5236,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn region_linking_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_linking_mode(inp);
+        pub fn region_linking_mode(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_linking_mode(signature.into());
             self
         }
         /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
@@ -5261,8 +5273,8 @@ pub mod fluent_builders {
         ///
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
         /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regions(inp);
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regions(input.into());
             self
         }
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
@@ -5340,8 +5352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A collection of attributes that specify which findings you want to update.</p>
-        pub fn filters(mut self, inp: crate::model::AwsSecurityFindingFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, signature: crate::model::AwsSecurityFindingFilters) -> Self {
+            self.inner = self.inner.filters(signature);
             self
         }
         /// <p>A collection of attributes that specify which findings you want to update.</p>
@@ -5353,8 +5365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated note for the finding.</p>
-        pub fn note(mut self, inp: crate::model::NoteUpdate) -> Self {
-            self.inner = self.inner.note(inp);
+        pub fn note(mut self, signature: crate::model::NoteUpdate) -> Self {
+            self.inner = self.inner.note(signature);
             self
         }
         /// <p>The updated note for the finding.</p>
@@ -5363,8 +5375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated record state for the finding.</p>
-        pub fn record_state(mut self, inp: crate::model::RecordState) -> Self {
-            self.inner = self.inner.record_state(inp);
+        pub fn record_state(mut self, signature: crate::model::RecordState) -> Self {
+            self.inner = self.inner.record_state(signature);
             self
         }
         /// <p>The updated record state for the finding.</p>
@@ -5436,8 +5448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the insight that you want to update.</p>
-        pub fn insight_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_arn(inp);
+        pub fn insight_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_arn(signature.into());
             self
         }
         /// <p>The ARN of the insight that you want to update.</p>
@@ -5446,8 +5458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name for the insight.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The updated name for the insight.</p>
@@ -5456,8 +5468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated filters that define this insight.</p>
-        pub fn filters(mut self, inp: crate::model::AwsSecurityFindingFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, signature: crate::model::AwsSecurityFindingFilters) -> Self {
+            self.inner = self.inner.filters(signature);
             self
         }
         /// <p>The updated filters that define this insight.</p>
@@ -5469,8 +5481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-        pub fn group_by_attribute(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_by_attribute(inp);
+        pub fn group_by_attribute(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_by_attribute(signature.into());
             self
         }
         /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
@@ -5546,8 +5558,8 @@ pub mod fluent_builders {
         /// <p>By default, this is <code>false</code>, and new accounts are not added
         /// automatically.</p>
         /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
-        pub fn auto_enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_enable(inp);
+        pub fn auto_enable(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_enable(signature);
             self
         }
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
@@ -5623,8 +5635,8 @@ pub mod fluent_builders {
         /// <p>By default, this is set to <code>true</code>, and new controls are enabled
         /// automatically. To not automatically enable new controls, set this to <code>false</code>.
         /// </p>
-        pub fn auto_enable_controls(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_enable_controls(inp);
+        pub fn auto_enable_controls(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_enable_controls(signature);
             self
         }
         /// <p>Whether to automatically enable new controls when they are added to standards that are
@@ -5698,8 +5710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the security standard control to enable or disable.</p>
-        pub fn standards_control_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.standards_control_arn(inp);
+        pub fn standards_control_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.standards_control_arn(signature.into());
             self
         }
         /// <p>The ARN of the security standard control to enable or disable.</p>
@@ -5711,8 +5723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated status of the security standard control.</p>
-        pub fn control_status(mut self, inp: crate::model::ControlStatus) -> Self {
-            self.inner = self.inner.control_status(inp);
+        pub fn control_status(mut self, signature: crate::model::ControlStatus) -> Self {
+            self.inner = self.inner.control_status(signature);
             self
         }
         /// <p>The updated status of the security standard control.</p>
@@ -5725,8 +5737,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the reason why you are disabling a security standard control. If you
         /// are disabling a control, then this is required.</p>
-        pub fn disabled_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disabled_reason(inp);
+        pub fn disabled_reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disabled_reason(signature.into());
             self
         }
         /// <p>A description of the reason why you are disabling a security standard control. If you

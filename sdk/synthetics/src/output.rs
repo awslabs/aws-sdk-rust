@@ -273,9 +273,9 @@ pub mod get_canary_runs_output {
         ///
         /// <p>An array of structures. Each structure contains the details of one of the
         /// retrieved canary runs.</p>
-        pub fn canary_runs(mut self, input: impl Into<crate::model::CanaryRun>) -> Self {
+        pub fn canary_runs(mut self, input: crate::model::CanaryRun) -> Self {
             let mut v = self.canary_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.canary_runs = Some(v);
             self
         }
@@ -424,9 +424,9 @@ pub mod describe_runtime_versions_output {
         ///
         /// <p>An array of objects that display the details about each Synthetics canary runtime
         /// version.</p>
-        pub fn runtime_versions(mut self, input: impl Into<crate::model::RuntimeVersion>) -> Self {
+        pub fn runtime_versions(mut self, input: crate::model::RuntimeVersion) -> Self {
             let mut v = self.runtime_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.runtime_versions = Some(v);
             self
         }
@@ -519,9 +519,9 @@ pub mod describe_canaries_last_run_output {
         ///
         /// <p>An array that contains the information from the most recent run of each
         /// canary.</p>
-        pub fn canaries_last_run(mut self, input: impl Into<crate::model::CanaryLastRun>) -> Self {
+        pub fn canaries_last_run(mut self, input: crate::model::CanaryLastRun) -> Self {
             let mut v = self.canaries_last_run.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.canaries_last_run = Some(v);
             self
         }
@@ -613,9 +613,9 @@ pub mod describe_canaries_output {
         ///
         /// <p>Returns an array. Each item in the array contains the full information about
         /// one canary.</p>
-        pub fn canaries(mut self, input: impl Into<crate::model::Canary>) -> Self {
+        pub fn canaries(mut self, input: crate::model::Canary) -> Self {
             let mut v = self.canaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.canaries = Some(v);
             self
         }

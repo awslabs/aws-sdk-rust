@@ -234,9 +234,9 @@ pub mod create_participant_connection_input {
         /// To override the contents of this collection use [`set_type`](Self::set_type).
         ///
         /// <p>Type of connection information required.</p>
-        pub fn r#type(mut self, input: impl Into<crate::model::ConnectionType>) -> Self {
+        pub fn r#type(mut self, input: crate::model::ConnectionType) -> Self {
             let mut v = self.r#type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.r#type = Some(v);
             self
         }

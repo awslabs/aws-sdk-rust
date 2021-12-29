@@ -582,9 +582,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The list of tags.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -662,10 +662,10 @@ pub mod get_transit_gateway_registrations_output {
         /// <p>The transit gateway registrations.</p>
         pub fn transit_gateway_registrations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayRegistration>,
+            input: crate::model::TransitGatewayRegistration,
         ) -> Self {
             let mut v = self.transit_gateway_registrations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_registrations = Some(v);
             self
         }
@@ -754,12 +754,12 @@ pub mod get_transit_gateway_connect_peer_associations_output {
         /// <p>Information about the transit gateway Connect peer associations.</p>
         pub fn transit_gateway_connect_peer_associations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayConnectPeerAssociation>,
+            input: crate::model::TransitGatewayConnectPeerAssociation,
         ) -> Self {
             let mut v = self
                 .transit_gateway_connect_peer_associations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_connect_peer_associations = Some(v);
             self
         }
@@ -843,9 +843,9 @@ pub mod get_sites_output {
         /// To override the contents of this collection use [`set_sites`](Self::set_sites).
         ///
         /// <p>The sites.</p>
-        pub fn sites(mut self, input: impl Into<crate::model::Site>) -> Self {
+        pub fn sites(mut self, input: crate::model::Site) -> Self {
             let mut v = self.sites.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sites = Some(v);
             self
         }
@@ -983,12 +983,9 @@ pub mod get_network_telemetry_output {
         /// To override the contents of this collection use [`set_network_telemetry`](Self::set_network_telemetry).
         ///
         /// <p>The network telemetry.</p>
-        pub fn network_telemetry(
-            mut self,
-            input: impl Into<crate::model::NetworkTelemetry>,
-        ) -> Self {
+        pub fn network_telemetry(mut self, input: crate::model::NetworkTelemetry) -> Self {
             let mut v = self.network_telemetry.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_telemetry = Some(v);
             self
         }
@@ -1123,9 +1120,9 @@ pub mod get_network_routes_output {
         /// To override the contents of this collection use [`set_network_routes`](Self::set_network_routes).
         ///
         /// <p>The network routes.</p>
-        pub fn network_routes(mut self, input: impl Into<crate::model::NetworkRoute>) -> Self {
+        pub fn network_routes(mut self, input: crate::model::NetworkRoute) -> Self {
             let mut v = self.network_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_routes = Some(v);
             self
         }
@@ -1198,12 +1195,9 @@ pub mod get_network_resources_output {
         /// To override the contents of this collection use [`set_network_resources`](Self::set_network_resources).
         ///
         /// <p>The network resources.</p>
-        pub fn network_resources(
-            mut self,
-            input: impl Into<crate::model::NetworkResource>,
-        ) -> Self {
+        pub fn network_resources(mut self, input: crate::model::NetworkResource) -> Self {
             let mut v = self.network_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_resources = Some(v);
             self
         }
@@ -1283,9 +1277,9 @@ pub mod get_network_resource_relationships_output {
         /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
         ///
         /// <p>The resource relationships.</p>
-        pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
+        pub fn relationships(mut self, input: crate::model::Relationship) -> Self {
             let mut v = self.relationships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relationships = Some(v);
             self
         }
@@ -1371,10 +1365,10 @@ pub mod get_network_resource_counts_output {
         /// <p>The count of resources.</p>
         pub fn network_resource_counts(
             mut self,
-            input: impl Into<crate::model::NetworkResourceCount>,
+            input: crate::model::NetworkResourceCount,
         ) -> Self {
             let mut v = self.network_resource_counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_resource_counts = Some(v);
             self
         }
@@ -1454,9 +1448,9 @@ pub mod get_links_output {
         /// To override the contents of this collection use [`set_links`](Self::set_links).
         ///
         /// <p>The links.</p>
-        pub fn links(mut self, input: impl Into<crate::model::Link>) -> Self {
+        pub fn links(mut self, input: crate::model::Link) -> Self {
             let mut v = self.links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.links = Some(v);
             self
         }
@@ -1537,12 +1531,9 @@ pub mod get_link_associations_output {
         /// To override the contents of this collection use [`set_link_associations`](Self::set_link_associations).
         ///
         /// <p>The link associations.</p>
-        pub fn link_associations(
-            mut self,
-            input: impl Into<crate::model::LinkAssociation>,
-        ) -> Self {
+        pub fn link_associations(mut self, input: crate::model::LinkAssociation) -> Self {
             let mut v = self.link_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.link_associations = Some(v);
             self
         }
@@ -1622,9 +1613,9 @@ pub mod get_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>The devices.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -1713,10 +1704,10 @@ pub mod get_customer_gateway_associations_output {
         /// <p>The customer gateway associations.</p>
         pub fn customer_gateway_associations(
             mut self,
-            input: impl Into<crate::model::CustomerGatewayAssociation>,
+            input: crate::model::CustomerGatewayAssociation,
         ) -> Self {
             let mut v = self.customer_gateway_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.customer_gateway_associations = Some(v);
             self
         }
@@ -1796,9 +1787,9 @@ pub mod get_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>Information about the connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -2069,9 +2060,9 @@ pub mod describe_global_networks_output {
         /// To override the contents of this collection use [`set_global_networks`](Self::set_global_networks).
         ///
         /// <p>Information about the global networks.</p>
-        pub fn global_networks(mut self, input: impl Into<crate::model::GlobalNetwork>) -> Self {
+        pub fn global_networks(mut self, input: crate::model::GlobalNetwork) -> Self {
             let mut v = self.global_networks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_networks = Some(v);
             self
         }

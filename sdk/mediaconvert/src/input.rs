@@ -362,9 +362,9 @@ pub mod create_job_input {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -707,9 +707,9 @@ pub mod create_job_template_input {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -4521,9 +4521,9 @@ pub mod update_job_template_input {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional list of hop destinations.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }

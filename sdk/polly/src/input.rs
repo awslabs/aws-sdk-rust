@@ -1364,9 +1364,9 @@ pub mod start_speech_synthesis_task_input {
         /// To override the contents of this collection use [`set_speech_mark_types`](Self::set_speech_mark_types).
         ///
         /// <p>The type of speech marks returned for the input text.</p>
-        pub fn speech_mark_types(mut self, input: impl Into<crate::model::SpeechMarkType>) -> Self {
+        pub fn speech_mark_types(mut self, input: crate::model::SpeechMarkType) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.speech_mark_types = Some(v);
             self
         }
@@ -1726,9 +1726,9 @@ pub mod synthesize_speech_input {
         /// To override the contents of this collection use [`set_speech_mark_types`](Self::set_speech_mark_types).
         ///
         /// <p>The type of speech marks returned for the input text.</p>
-        pub fn speech_mark_types(mut self, input: impl Into<crate::model::SpeechMarkType>) -> Self {
+        pub fn speech_mark_types(mut self, input: crate::model::SpeechMarkType) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.speech_mark_types = Some(v);
             self
         }

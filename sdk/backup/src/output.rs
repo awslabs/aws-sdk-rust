@@ -601,10 +601,10 @@ pub mod update_backup_plan_output {
         /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
         pub fn advanced_backup_settings(
             mut self,
-            input: impl Into<crate::model::AdvancedBackupSetting>,
+            input: crate::model::AdvancedBackupSetting,
         ) -> Self {
             let mut v = self.advanced_backup_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_backup_settings = Some(v);
             self
         }
@@ -1300,12 +1300,9 @@ pub mod list_restore_jobs_output {
         ///
         /// <p>An array of objects that contain detailed information about jobs to restore saved
         /// resources.</p>
-        pub fn restore_jobs(
-            mut self,
-            input: impl Into<crate::model::RestoreJobsListMember>,
-        ) -> Self {
+        pub fn restore_jobs(mut self, input: crate::model::RestoreJobsListMember) -> Self {
             let mut v = self.restore_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.restore_jobs = Some(v);
             self
         }
@@ -1403,9 +1400,9 @@ pub mod list_report_plans_output {
         /// includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery
         /// channel, deployment status, creation time, and last times the report plan attempted to and
         /// successfully ran.</p>
-        pub fn report_plans(mut self, input: impl Into<crate::model::ReportPlan>) -> Self {
+        pub fn report_plans(mut self, input: crate::model::ReportPlan) -> Self {
             let mut v = self.report_plans.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_plans = Some(v);
             self
         }
@@ -1492,9 +1489,9 @@ pub mod list_report_jobs_output {
         /// To override the contents of this collection use [`set_report_jobs`](Self::set_report_jobs).
         ///
         /// <p>Details about your report jobs in JSON format.</p>
-        pub fn report_jobs(mut self, input: impl Into<crate::model::ReportJob>) -> Self {
+        pub fn report_jobs(mut self, input: crate::model::ReportJob) -> Self {
             let mut v = self.report_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_jobs = Some(v);
             self
         }
@@ -1614,12 +1611,9 @@ pub mod list_recovery_points_by_resource_output {
         /// <p>Only Amazon EFS and Amazon EC2 recovery points return
         /// BackupVaultName.</p>
         /// </note>
-        pub fn recovery_points(
-            mut self,
-            input: impl Into<crate::model::RecoveryPointByResource>,
-        ) -> Self {
+        pub fn recovery_points(mut self, input: crate::model::RecoveryPointByResource) -> Self {
             let mut v = self.recovery_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recovery_points = Some(v);
             self
         }
@@ -1723,12 +1717,9 @@ pub mod list_recovery_points_by_backup_vault_output {
         ///
         /// <p>An array of objects that contain detailed information about recovery points saved in a
         /// backup vault.</p>
-        pub fn recovery_points(
-            mut self,
-            input: impl Into<crate::model::RecoveryPointByBackupVault>,
-        ) -> Self {
+        pub fn recovery_points(mut self, input: crate::model::RecoveryPointByBackupVault) -> Self {
             let mut v = self.recovery_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recovery_points = Some(v);
             self
         }
@@ -1811,9 +1802,9 @@ pub mod list_protected_resources_output {
         /// <p>An array of resources successfully backed up by Backup including the time
         /// the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource
         /// type.</p>
-        pub fn results(mut self, input: impl Into<crate::model::ProtectedResource>) -> Self {
+        pub fn results(mut self, input: crate::model::ProtectedResource) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -1909,9 +1900,9 @@ pub mod list_frameworks_output {
         /// <p>A list of frameworks with details for each framework, including the framework name,
         /// Amazon Resource Name (ARN), description, number of controls, creation time, and deployment
         /// status.</p>
-        pub fn frameworks(mut self, input: impl Into<crate::model::Framework>) -> Self {
+        pub fn frameworks(mut self, input: crate::model::Framework) -> Self {
             let mut v = self.frameworks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.frameworks = Some(v);
             self
         }
@@ -2002,9 +1993,9 @@ pub mod list_copy_jobs_output {
         ///
         /// <p>An array of structures containing metadata about your copy jobs returned in JSON format.
         /// </p>
-        pub fn copy_jobs(mut self, input: impl Into<crate::model::CopyJob>) -> Self {
+        pub fn copy_jobs(mut self, input: crate::model::CopyJob) -> Self {
             let mut v = self.copy_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.copy_jobs = Some(v);
             self
         }
@@ -2102,12 +2093,9 @@ pub mod list_backup_vaults_output {
         /// <p>An array of backup vault list members containing vault metadata, including Amazon
         /// Resource Name (ARN), display name, creation date, number of saved recovery points, and
         /// encryption information if the resources saved in the backup vault are encrypted.</p>
-        pub fn backup_vault_list(
-            mut self,
-            input: impl Into<crate::model::BackupVaultListMember>,
-        ) -> Self {
+        pub fn backup_vault_list(mut self, input: crate::model::BackupVaultListMember) -> Self {
             let mut v = self.backup_vault_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_vault_list = Some(v);
             self
         }
@@ -2226,10 +2214,10 @@ pub mod list_backup_selections_output {
         /// list.</p>
         pub fn backup_selections_list(
             mut self,
-            input: impl Into<crate::model::BackupSelectionsListMember>,
+            input: crate::model::BackupSelectionsListMember,
         ) -> Self {
             let mut v = self.backup_selections_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_selections_list = Some(v);
             self
         }
@@ -2328,10 +2316,10 @@ pub mod list_backup_plan_versions_output {
         /// <p>An array of version list items containing metadata about your backup plans.</p>
         pub fn backup_plan_versions_list(
             mut self,
-            input: impl Into<crate::model::BackupPlansListMember>,
+            input: crate::model::BackupPlansListMember,
         ) -> Self {
             let mut v = self.backup_plan_versions_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_plan_versions_list = Some(v);
             self
         }
@@ -2432,10 +2420,10 @@ pub mod list_backup_plan_templates_output {
         /// <p>An array of template list items containing metadata about your saved templates.</p>
         pub fn backup_plan_templates_list(
             mut self,
-            input: impl Into<crate::model::BackupPlanTemplatesListMember>,
+            input: crate::model::BackupPlanTemplatesListMember,
         ) -> Self {
             let mut v = self.backup_plan_templates_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_plan_templates_list = Some(v);
             self
         }
@@ -2531,12 +2519,9 @@ pub mod list_backup_plans_output {
         ///
         /// <p>An array of backup plan list items containing metadata about your saved backup
         /// plans.</p>
-        pub fn backup_plans_list(
-            mut self,
-            input: impl Into<crate::model::BackupPlansListMember>,
-        ) -> Self {
+        pub fn backup_plans_list(mut self, input: crate::model::BackupPlansListMember) -> Self {
             let mut v = self.backup_plans_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_plans_list = Some(v);
             self
         }
@@ -2616,9 +2601,9 @@ pub mod list_backup_jobs_output {
         ///
         /// <p>An array of structures containing metadata about your backup jobs returned in JSON
         /// format.</p>
-        pub fn backup_jobs(mut self, input: impl Into<crate::model::BackupJob>) -> Self {
+        pub fn backup_jobs(mut self, input: crate::model::BackupJob) -> Self {
             let mut v = self.backup_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_jobs = Some(v);
             self
         }
@@ -3114,12 +3099,9 @@ pub mod get_backup_vault_notifications_output {
         ///
         /// <p>An array of events that indicate the status of jobs to back up resources to the backup
         /// vault.</p>
-        pub fn backup_vault_events(
-            mut self,
-            input: impl Into<crate::model::BackupVaultEvent>,
-        ) -> Self {
+        pub fn backup_vault_events(mut self, input: crate::model::BackupVaultEvent) -> Self {
             let mut v = self.backup_vault_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backup_vault_events = Some(v);
             self
         }
@@ -3804,10 +3786,10 @@ pub mod get_backup_plan_output {
         /// populated only if the advanced option is set for the backup plan.</p>
         pub fn advanced_backup_settings(
             mut self,
-            input: impl Into<crate::model::AdvancedBackupSetting>,
+            input: crate::model::AdvancedBackupSetting,
         ) -> Self {
             let mut v = self.advanced_backup_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_backup_settings = Some(v);
             self
         }
@@ -4513,10 +4495,10 @@ pub mod describe_region_settings_output {
         pub fn resource_type_opt_in_preference(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<bool>,
+            v: bool,
         ) -> Self {
             let mut hash_map = self.resource_type_opt_in_preference.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.resource_type_opt_in_preference = Some(hash_map);
             self
         }
@@ -4539,10 +4521,10 @@ pub mod describe_region_settings_output {
         pub fn resource_type_management_preference(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<bool>,
+            v: bool,
         ) -> Self {
             let mut hash_map = self.resource_type_management_preference.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.resource_type_management_preference = Some(hash_map);
             self
         }
@@ -5620,12 +5602,9 @@ pub mod describe_framework_output {
         ///
         /// <p>A list of the controls that make up the framework. Each control in the list has a name,
         /// input parameters, and scope.</p>
-        pub fn framework_controls(
-            mut self,
-            input: impl Into<crate::model::FrameworkControl>,
-        ) -> Self {
+        pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
             let mut v = self.framework_controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.framework_controls = Some(v);
             self
         }
@@ -7766,10 +7745,10 @@ pub mod create_backup_plan_output {
         /// available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
         pub fn advanced_backup_settings(
             mut self,
-            input: impl Into<crate::model::AdvancedBackupSetting>,
+            input: crate::model::AdvancedBackupSetting,
         ) -> Self {
             let mut v = self.advanced_backup_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_backup_settings = Some(v);
             self
         }

@@ -295,9 +295,9 @@ pub mod list_tags_for_resource_output {
         /// <p>An array that lists all the tags that are associated with the application. Each tag
         /// consists of a required tag key (<code>Key</code>) and an associated tag value
         /// (<code>Value</code>).</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -376,9 +376,9 @@ pub mod list_problems_output {
         /// To override the contents of this collection use [`set_problem_list`](Self::set_problem_list).
         ///
         /// <p>The list of problems. </p>
-        pub fn problem_list(mut self, input: impl Into<crate::model::Problem>) -> Self {
+        pub fn problem_list(mut self, input: crate::model::Problem) -> Self {
             let mut v = self.problem_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.problem_list = Some(v);
             self
         }
@@ -605,9 +605,9 @@ pub mod list_log_patterns_output {
         /// To override the contents of this collection use [`set_log_patterns`](Self::set_log_patterns).
         ///
         /// <p>The list of log patterns.</p>
-        pub fn log_patterns(mut self, input: impl Into<crate::model::LogPattern>) -> Self {
+        pub fn log_patterns(mut self, input: crate::model::LogPattern) -> Self {
             let mut v = self.log_patterns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_patterns = Some(v);
             self
         }
@@ -698,9 +698,9 @@ pub mod list_configuration_history_output {
         /// To override the contents of this collection use [`set_event_list`](Self::set_event_list).
         ///
         /// <p> The list of configuration events and their corresponding details. </p>
-        pub fn event_list(mut self, input: impl Into<crate::model::ConfigurationEvent>) -> Self {
+        pub fn event_list(mut self, input: crate::model::ConfigurationEvent) -> Self {
             let mut v = self.event_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_list = Some(v);
             self
         }
@@ -797,10 +797,10 @@ pub mod list_components_output {
         /// <p>The list of application components.</p>
         pub fn application_component_list(
             mut self,
-            input: impl Into<crate::model::ApplicationComponent>,
+            input: crate::model::ApplicationComponent,
         ) -> Self {
             let mut v = self.application_component_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_component_list = Some(v);
             self
         }
@@ -883,12 +883,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_application_info_list`](Self::set_application_info_list).
         ///
         /// <p>The list of applications.</p>
-        pub fn application_info_list(
-            mut self,
-            input: impl Into<crate::model::ApplicationInfo>,
-        ) -> Self {
+        pub fn application_info_list(mut self, input: crate::model::ApplicationInfo) -> Self {
             let mut v = self.application_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_info_list = Some(v);
             self
         }

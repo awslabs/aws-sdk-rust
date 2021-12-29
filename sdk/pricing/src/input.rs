@@ -427,9 +427,9 @@ pub mod get_products_input {
         ///
         /// <p>The list of filters that limit the returned products. only products that match all filters
         /// are returned.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }

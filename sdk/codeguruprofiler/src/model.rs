@@ -143,9 +143,9 @@ pub mod notification_configuration {
         ///
         /// <p>List of up to two channels to be used for sending notifications for events detected from
         /// the application profile.</p>
-        pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -770,9 +770,9 @@ pub mod anomaly {
         /// <p>
         /// A list of the instances of the detected anomalies during the requested period.
         /// </p>
-        pub fn instances(mut self, input: impl Into<crate::model::AnomalyInstance>) -> Self {
+        pub fn instances(mut self, input: crate::model::AnomalyInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -1339,9 +1339,9 @@ pub mod recommendation {
         /// To override the contents of this collection use [`set_top_matches`](Self::set_top_matches).
         ///
         /// <p>List of the matches with most impact. </p>
-        pub fn top_matches(mut self, input: impl Into<crate::model::Match>) -> Self {
+        pub fn top_matches(mut self, input: crate::model::Match) -> Self {
             let mut v = self.top_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.top_matches = Some(v);
             self
         }
@@ -1661,12 +1661,9 @@ pub mod pattern {
         ///
         /// <p>A list of frame names that were searched during the analysis that generated
         /// a recommendation.</p>
-        pub fn target_frames(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn target_frames(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.target_frames.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_frames = Some(v);
             self
         }
@@ -1982,11 +1979,11 @@ pub mod agent_configuration {
         /// </ul>
         pub fn agent_parameters(
             mut self,
-            k: impl Into<crate::model::AgentParameterField>,
+            k: crate::model::AgentParameterField,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.agent_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.agent_parameters = Some(hash_map);
             self
         }
@@ -2306,9 +2303,9 @@ pub mod frame_metric_datum {
         /// <p>
         /// A list of values that are associated with a frame metric.
         /// </p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }

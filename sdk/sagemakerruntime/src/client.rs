@@ -186,8 +186,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the endpoint that you specified when you created the endpoint using the
         /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API. </p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(signature.into());
             self
         }
         /// <p>The name of the endpoint that you specified when you created the endpoint using the
@@ -203,8 +203,8 @@ pub mod fluent_builders {
         /// request header. Amazon SageMaker passes all of the data in the body to the model. </p>
         /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
         /// Formats-Inference</a>.</p>
-        pub fn body(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(signature);
             self
         }
         /// <p>Provides input data, in the format specified in the <code>ContentType</code>
@@ -216,8 +216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The MIME type of the input data in the request body.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>The MIME type of the input data in the request body.</p>
@@ -226,8 +226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired MIME type of the inference in the response.</p>
-        pub fn accept(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept(inp);
+        pub fn accept(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept(signature.into());
             self
         }
         /// <p>The desired MIME type of the inference in the response.</p>
@@ -250,8 +250,8 @@ pub mod fluent_builders {
         ///
         /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
-        pub fn custom_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_attributes(inp);
+        pub fn custom_attributes(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_attributes(signature.into());
             self
         }
         /// <p>Provides additional information about a request for an inference submitted to a model
@@ -277,8 +277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model to request for inference when invoking a multi-model endpoint.</p>
-        pub fn target_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_model(inp);
+        pub fn target_model(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_model(signature.into());
             self
         }
         /// <p>The model to request for inference when invoking a multi-model endpoint.</p>
@@ -293,8 +293,8 @@ pub mod fluent_builders {
         /// <p>For information about how to use variant targeting to perform a/b testing, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in
         /// production</a>
         /// </p>
-        pub fn target_variant(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_variant(inp);
+        pub fn target_variant(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_variant(signature.into());
             self
         }
         /// <p>Specify the production variant to send the inference request to when invoking an
@@ -313,8 +313,11 @@ pub mod fluent_builders {
         }
         /// <p>If the endpoint hosts multiple containers and is configured to use direct invocation,
         /// this parameter specifies the host name of the container to invoke.</p>
-        pub fn target_container_hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_container_hostname(inp);
+        pub fn target_container_hostname(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.target_container_hostname(signature.into());
             self
         }
         /// <p>If the endpoint hosts multiple containers and is configured to use direct invocation,
@@ -329,8 +332,8 @@ pub mod fluent_builders {
         /// <p>If you provide a value, it is added to the captured data when you enable data capture
         /// on the endpoint. For information about data capture, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
         /// Data</a>.</p>
-        pub fn inference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.inference_id(inp);
+        pub fn inference_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_id(signature.into());
             self
         }
         /// <p>If you provide a value, it is added to the captured data when you enable data capture
@@ -420,8 +423,8 @@ pub mod fluent_builders {
         /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
         /// <code>CreateEndpoint</code>
         /// </a> API.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(signature.into());
             self
         }
         /// <p>The name of the endpoint that you specified when you created the endpoint using
@@ -436,8 +439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The MIME type of the input data in the request body.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>The MIME type of the input data in the request body.</p>
@@ -446,8 +449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired MIME type of the inference in the response.</p>
-        pub fn accept(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept(inp);
+        pub fn accept(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept(signature.into());
             self
         }
         /// <p>The desired MIME type of the inference in the response.</p>
@@ -470,8 +473,8 @@ pub mod fluent_builders {
         /// your model can prepend the custom attribute with <code>Trace ID</code>: in your post-processing function. </p>
         ///
         /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK. </p>
-        pub fn custom_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_attributes(inp);
+        pub fn custom_attributes(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_attributes(signature.into());
             self
         }
         /// <p>Provides additional information about a request for an inference submitted to
@@ -498,8 +501,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the inference request. Amazon SageMaker will generate an identifier for you
         /// if none is specified. </p>
-        pub fn inference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.inference_id(inp);
+        pub fn inference_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_id(signature.into());
             self
         }
         /// <p>The identifier for the inference request. Amazon SageMaker will generate an identifier for you
@@ -509,8 +512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
-        pub fn input_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_location(inp);
+        pub fn input_location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_location(signature.into());
             self
         }
         /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
@@ -522,8 +525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
-        pub fn request_ttl_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.request_ttl_seconds(inp);
+        pub fn request_ttl_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.request_ttl_seconds(signature);
             self
         }
         /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>

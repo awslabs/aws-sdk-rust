@@ -361,8 +361,8 @@ pub mod fluent_builders {
         }
         /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent
         /// creation.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent
@@ -378,8 +378,8 @@ pub mod fluent_builders {
         /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
         /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more
@@ -393,8 +393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the EFS file system that the access point provides access to.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the EFS file system that the access point provides access to.</p>
@@ -407,8 +407,8 @@ pub mod fluent_builders {
         }
         /// <p>The operating system user and
         /// group applied to all file system requests made using the access point.</p>
-        pub fn posix_user(mut self, inp: crate::model::PosixUser) -> Self {
-            self.inner = self.inner.posix_user(inp);
+        pub fn posix_user(mut self, signature: crate::model::PosixUser) -> Self {
+            self.inner = self.inner.posix_user(signature);
             self
         }
         /// <p>The operating system user and
@@ -429,8 +429,8 @@ pub mod fluent_builders {
         /// <p>Amazon EFS creates a root directory only if you have provided the  CreationInfo: OwnUid, OwnGID, and permissions for the directory.
         /// If  you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount
         /// using the access point will fail.</p>
-        pub fn root_directory(mut self, inp: crate::model::RootDirectory) -> Self {
-            self.inner = self.inner.root_directory(inp);
+        pub fn root_directory(mut self, signature: crate::model::RootDirectory) -> Self {
+            self.inner = self.inner.root_directory(signature);
             self
         }
         /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as
@@ -564,8 +564,8 @@ pub mod fluent_builders {
         }
         /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent
         /// creation.</p>
-        pub fn creation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creation_token(inp);
+        pub fn creation_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creation_token(signature.into());
             self
         }
         /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent
@@ -585,8 +585,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
         /// </note>
-        pub fn performance_mode(mut self, inp: crate::model::PerformanceMode) -> Self {
-            self.inner = self.inner.performance_mode(inp);
+        pub fn performance_mode(mut self, signature: crate::model::PerformanceMode) -> Self {
+            self.inner = self.inner.performance_mode(signature);
             self
         }
         /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code>
@@ -609,8 +609,8 @@ pub mod fluent_builders {
         /// customer master key (CMK). If you don't specify a CMK, then the default CMK for
         /// Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system.
         /// </p>
-        pub fn encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.encrypted(inp);
+        pub fn encrypted(mut self, signature: bool) -> Self {
+            self.inner = self.inner.encrypted(signature);
             self
         }
         /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an
@@ -648,8 +648,8 @@ pub mod fluent_builders {
         /// <important>
         /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
         /// </important>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This
@@ -691,8 +691,8 @@ pub mod fluent_builders {
         /// throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with
         /// provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
         /// <p>Default is <code>bursting</code>.</p>
-        pub fn throughput_mode(mut self, inp: crate::model::ThroughputMode) -> Self {
-            self.inner = self.inner.throughput_mode(inp);
+        pub fn throughput_mode(mut self, signature: crate::model::ThroughputMode) -> Self {
+            self.inner = self.inner.throughput_mode(signature);
             self
         }
         /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or
@@ -716,8 +716,8 @@ pub mod fluent_builders {
         /// to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this
         /// limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a>
         /// in the <i>Amazon EFS User Guide</i>.</p>
-        pub fn provisioned_throughput_in_mibps(mut self, inp: f64) -> Self {
-            self.inner = self.inner.provisioned_throughput_in_mibps(inp);
+        pub fn provisioned_throughput_in_mibps(mut self, signature: f64) -> Self {
+            self.inner = self.inner.provisioned_throughput_in_mibps(signature);
             self
         }
         /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that
@@ -740,8 +740,8 @@ pub mod fluent_builders {
         /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where
         /// Amazon EFS is available.</p>
         /// </note>
-        pub fn availability_zone_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone_name(inp);
+        pub fn availability_zone_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone_name(signature.into());
             self
         }
         /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services
@@ -769,8 +769,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
         /// </note>
-        pub fn backup(mut self, inp: bool) -> Self {
-            self.inner = self.inner.backup(inp);
+        pub fn backup(mut self, signature: bool) -> Self {
+            self.inner = self.inner.backup(signature);
             self
         }
         /// <p>Specifies whether automatic backups are enabled on the file system that you are creating.
@@ -796,8 +796,8 @@ pub mod fluent_builders {
         /// <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
         /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Use to create one or more tags associated with the file system. Each
@@ -1014,8 +1014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system for which to create the mount target.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system for which to create the mount target.</p>
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet
         /// that is associated with the file system's Availability Zone.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        pub fn subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(signature.into());
             self
         }
         /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet
@@ -1039,8 +1039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_address(inp);
+        pub fn ip_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_address(signature.into());
             self
         }
         /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
@@ -1054,8 +1054,8 @@ pub mod fluent_builders {
         ///
         /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be
         /// for the same VPC as subnet specified.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be
@@ -1138,8 +1138,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies
         /// the tags only, not the file system.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies
@@ -1157,8 +1157,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
         /// pair. </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
@@ -1234,8 +1234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the access point that you want to delete.</p>
-        pub fn access_point_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_point_id(inp);
+        pub fn access_point_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_point_id(signature.into());
             self
         }
         /// <p>The ID of the access point that you want to delete.</p>
@@ -1321,8 +1321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system you want to delete.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system you want to delete.</p>
@@ -1397,8 +1397,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
@@ -1503,8 +1503,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the mount target to delete (String).</p>
-        pub fn mount_target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mount_target_id(inp);
+        pub fn mount_target_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mount_target_id(signature.into());
             self
         }
         /// <p>The ID of the mount target to delete (String).</p>
@@ -1586,8 +1586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system whose tags you want to delete (String).</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system whose tags you want to delete (String).</p>
@@ -1603,8 +1603,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of tag keys to delete.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag keys to delete.</p>
@@ -1681,8 +1681,8 @@ pub mod fluent_builders {
         /// <p>(Optional) When retrieving all access points for a file system,
         /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
         /// The default value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>(Optional) When retrieving all access points for a file system,
@@ -1694,8 +1694,8 @@ pub mod fluent_builders {
         }
         /// <p>
         /// <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -1705,8 +1705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
-        pub fn access_point_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_point_id(inp);
+        pub fn access_point_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_point_id(signature.into());
             self
         }
         /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
@@ -1718,8 +1718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
@@ -1793,8 +1793,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of
         /// Amazon Web Services account preferences if the response payload was paginated.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of
@@ -1806,8 +1806,8 @@ pub mod fluent_builders {
         /// <p>(Optional) When retrieving account preferences,
         /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
         /// The default value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>(Optional) When retrieving account preferences,
@@ -1878,8 +1878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
@@ -1952,8 +1952,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
@@ -2049,8 +2049,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Specifies the maximum number of file systems to return in the response
         /// (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.
         /// </p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>(Optional) Specifies the maximum number of file systems to return in the response
@@ -2063,8 +2063,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Opaque pagination token returned from a previous
         /// <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the
         /// list from where the returning call had left off. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous
@@ -2076,8 +2076,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) Restricts the list to the file system with this creation token (String). You
         /// specify a creation token when you create an Amazon EFS file system.</p>
-        pub fn creation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creation_token(inp);
+        pub fn creation_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creation_token(signature.into());
             self
         }
         /// <p>(Optional) Restricts the list to the file system with this creation token (String). You
@@ -2091,8 +2091,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) ID of the file system whose description you want to retrieve
         /// (String).</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>(Optional) ID of the file system whose description you want to retrieve
@@ -2173,8 +2173,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to
         /// retrieve (String).</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to
@@ -2256,8 +2256,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this
         /// number is automatically set to
         /// 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this
@@ -2270,8 +2270,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Opaque pagination token returned from a previous
         /// <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue
         /// the list from where the previous returning call left off.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>(Optional) Opaque pagination token returned from a previous
@@ -2283,8 +2283,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must
         /// be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must
@@ -2298,8 +2298,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) ID of the mount target that you want to have described (String). It must be
         /// included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
-        pub fn mount_target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mount_target_id(inp);
+        pub fn mount_target_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mount_target_id(signature.into());
             self
         }
         /// <p>(Optional) ID of the mount target that you want to have described (String). It must be
@@ -2313,8 +2313,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a
         /// <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
-        pub fn access_point_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_point_id(inp);
+        pub fn access_point_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_point_id(signature.into());
             self
         }
         /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a
@@ -2402,8 +2402,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-        pub fn mount_target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mount_target_id(inp);
+        pub fn mount_target_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mount_target_id(signature.into());
             self
         }
         /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
@@ -2485,8 +2485,8 @@ pub mod fluent_builders {
         /// <p>(Optional) The maximum number of file system tags to return in the response. Currently,
         /// this number is automatically set to
         /// 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>(Optional) The maximum number of file system tags to return in the response. Currently,
@@ -2499,8 +2499,8 @@ pub mod fluent_builders {
         /// <p>(Optional) An opaque pagination token returned from a previous
         /// <code>DescribeTags</code> operation (String). If present, it specifies to continue the list
         /// from where the previous call left off.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>(Optional) An opaque pagination token returned from a previous
@@ -2511,8 +2511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the file system whose tag set you want to retrieve.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system whose tag set you want to retrieve.</p>
@@ -2585,8 +2585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.</p>
@@ -2595,8 +2595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) Specifies the maximum number of tag objects to return in the response. The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>(Optional) Specifies the maximum number of tag objects to return in the response. The default value is 100.</p>
@@ -2605,8 +2605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.</p>
@@ -2694,8 +2694,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the mount target whose security groups you want to modify.</p>
-        pub fn mount_target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mount_target_id(inp);
+        pub fn mount_target_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mount_target_id(signature.into());
             self
         }
         /// <p>The ID of the mount target whose security groups you want to modify.</p>
@@ -2711,8 +2711,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>An array of up to five VPC security group IDs.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>An array of up to five VPC security group IDs.</p>
@@ -2796,8 +2796,8 @@ pub mod fluent_builders {
         /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>.
         /// Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
         /// </note>
-        pub fn resource_id_type(mut self, inp: crate::model::ResourceIdType) -> Self {
-            self.inner = self.inner.resource_id_type(inp);
+        pub fn resource_id_type(mut self, signature: crate::model::ResourceIdType) -> Self {
+            self.inner = self.inner.resource_id_type(signature);
             self
         }
         /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region,
@@ -2874,8 +2874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies which EFS file system to update the backup policy for.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>Specifies which EFS file system to update the backup policy for.</p>
@@ -2887,8 +2887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-        pub fn backup_policy(mut self, inp: crate::model::BackupPolicy) -> Self {
-            self.inner = self.inner.backup_policy(inp);
+        pub fn backup_policy(mut self, signature: crate::model::BackupPolicy) -> Self {
+            self.inner = self.inner.backup_policy(signature);
             self
         }
         /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
@@ -2971,8 +2971,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
@@ -2988,8 +2988,8 @@ pub mod fluent_builders {
         /// To find out more about the elements that make up a file system policy, see
         /// <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
         /// </p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition.
@@ -3007,8 +3007,8 @@ pub mod fluent_builders {
         /// the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system.
         /// The default value is False.
         /// </p>
-        pub fn bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bypass_policy_lockout_safety_check(inp);
+        pub fn bypass_policy_lockout_safety_check(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bypass_policy_lockout_safety_check(signature);
             self
         }
         /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check
@@ -3117,8 +3117,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the file system for which you are creating the
         /// <code>LifecycleConfiguration</code> object (String).</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system for which you are creating the
@@ -3152,8 +3152,8 @@ pub mod fluent_builders {
         /// an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>.
         /// See the example requests in the following section for more information.</p>
         /// </note>
-        pub fn lifecycle_policies(mut self, inp: impl Into<crate::model::LifecyclePolicy>) -> Self {
-            self.inner = self.inner.lifecycle_policies(inp);
+        pub fn lifecycle_policies(mut self, input: crate::model::LifecyclePolicy) -> Self {
+            self.inner = self.inner.lifecycle_policies(input);
             self
         }
         /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's
@@ -3243,8 +3243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID specifying the EFS resource that you want to create a tag for.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID specifying the EFS resource that you want to create a tag for.</p>
@@ -3258,8 +3258,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
         /// pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
@@ -3333,8 +3333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the EFS resource that you want to remove tags from.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>Specifies the EFS resource that you want to remove tags from.</p>
@@ -3348,8 +3348,8 @@ pub mod fluent_builders {
         ///
         /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS
         /// resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS
@@ -3423,8 +3423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system that you want to update.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(signature.into());
             self
         }
         /// <p>The ID of the file system that you want to update.</p>
@@ -3439,8 +3439,8 @@ pub mod fluent_builders {
         /// updating your throughput mode, you don't need to provide this value in your
         /// request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
         /// you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
-        pub fn throughput_mode(mut self, inp: crate::model::ThroughputMode) -> Self {
-            self.inner = self.inner.throughput_mode(inp);
+        pub fn throughput_mode(mut self, signature: crate::model::ThroughputMode) -> Self {
+            self.inner = self.inner.throughput_mode(signature);
             self
         }
         /// <p>(Optional) Updates the file system's throughput mode. If you're not
@@ -3458,8 +3458,8 @@ pub mod fluent_builders {
         /// system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also
         /// provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed
         /// to <code>provisioned</code> on update.</p>
-        pub fn provisioned_throughput_in_mibps(mut self, inp: f64) -> Self {
-            self.inner = self.inner.provisioned_throughput_in_mibps(inp);
+        pub fn provisioned_throughput_in_mibps(mut self, signature: f64) -> Self {
+            self.inner = self.inner.provisioned_throughput_in_mibps(signature);
             self
         }
         /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file

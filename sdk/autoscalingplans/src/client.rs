@@ -199,8 +199,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
         /// slashes.</p>
-        pub fn scaling_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(inp);
+        pub fn scaling_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scaling_plan_name(signature.into());
             self
         }
         /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
@@ -215,8 +215,8 @@ pub mod fluent_builders {
         /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application
         /// source.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn application_source(mut self, inp: crate::model::ApplicationSource) -> Self {
-            self.inner = self.inner.application_source(inp);
+        pub fn application_source(mut self, signature: crate::model::ApplicationSource) -> Self {
+            self.inner = self.inner.application_source(signature);
             self
         }
         /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application
@@ -235,11 +235,8 @@ pub mod fluent_builders {
         ///
         /// <p>The scaling instructions.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn scaling_instructions(
-            mut self,
-            inp: impl Into<crate::model::ScalingInstruction>,
-        ) -> Self {
-            self.inner = self.inner.scaling_instructions(inp);
+        pub fn scaling_instructions(mut self, input: crate::model::ScalingInstruction) -> Self {
+            self.inner = self.inner.scaling_instructions(input);
             self
         }
         /// <p>The scaling instructions.</p>
@@ -316,8 +313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scaling plan.</p>
-        pub fn scaling_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(inp);
+        pub fn scaling_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scaling_plan_name(signature.into());
             self
         }
         /// <p>The name of the scaling plan.</p>
@@ -330,8 +327,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number of the scaling plan. Currently, the only valid value is
         /// <code>1</code>.</p>
-        pub fn scaling_plan_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(inp);
+        pub fn scaling_plan_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.scaling_plan_version(signature);
             self
         }
         /// <p>The version number of the scaling plan. Currently, the only valid value is
@@ -401,8 +398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scaling plan.</p>
-        pub fn scaling_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(inp);
+        pub fn scaling_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scaling_plan_name(signature.into());
             self
         }
         /// <p>The name of the scaling plan.</p>
@@ -415,8 +412,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number of the scaling plan. Currently, the only valid value is
         /// <code>1</code>.</p>
-        pub fn scaling_plan_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(inp);
+        pub fn scaling_plan_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.scaling_plan_version(signature);
             self
         }
         /// <p>The version number of the scaling plan. Currently, the only valid value is
@@ -427,8 +424,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of scalable resources to return. The value must be between
         /// 1 and 50. The default value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of scalable resources to return. The value must be between
@@ -438,8 +435,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -513,8 +510,8 @@ pub mod fluent_builders {
         ///
         /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
         /// cannot specify scaling plan names.</p>
-        pub fn scaling_plan_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_names(inp);
+        pub fn scaling_plan_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scaling_plan_names(input.into());
             self
         }
         /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
@@ -532,8 +529,8 @@ pub mod fluent_builders {
         /// <p>If you specify a scaling plan version, you must also specify a scaling plan
         /// name.</p>
         /// </note>
-        pub fn scaling_plan_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(inp);
+        pub fn scaling_plan_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.scaling_plan_version(signature);
             self
         }
         /// <p>The version number of the scaling plan. Currently, the only valid value is
@@ -552,11 +549,8 @@ pub mod fluent_builders {
         ///
         /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
         /// cannot specify application sources.</p>
-        pub fn application_sources(
-            mut self,
-            inp: impl Into<crate::model::ApplicationSource>,
-        ) -> Self {
-            self.inner = self.inner.application_sources(inp);
+        pub fn application_sources(mut self, input: crate::model::ApplicationSource) -> Self {
+            self.inner = self.inner.application_sources(input);
             self
         }
         /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
@@ -570,8 +564,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of scalable resources to return. This value can be between
         /// 1 and 50. The default value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of scalable resources to return. This value can be between
@@ -581,8 +575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -656,8 +650,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scaling plan.</p>
-        pub fn scaling_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(inp);
+        pub fn scaling_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scaling_plan_name(signature.into());
             self
         }
         /// <p>The name of the scaling plan.</p>
@@ -670,8 +664,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number of the scaling plan. Currently, the only valid value is
         /// <code>1</code>.</p>
-        pub fn scaling_plan_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(inp);
+        pub fn scaling_plan_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.scaling_plan_version(signature);
             self
         }
         /// <p>The version number of the scaling plan. Currently, the only valid value is
@@ -682,8 +676,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
         /// </p>
-        pub fn service_namespace(mut self, inp: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(inp);
+        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(signature);
             self
         }
         /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
@@ -698,8 +692,8 @@ pub mod fluent_builders {
         /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
         /// followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example:
         /// <code>autoScalingGroup/my-asg</code>. </p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
@@ -711,8 +705,8 @@ pub mod fluent_builders {
         }
         /// <p>The scalable dimension for the resource. The only valid value is
         /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
-        pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(inp);
+        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(signature);
             self
         }
         /// <p>The scalable dimension for the resource. The only valid value is
@@ -747,8 +741,8 @@ pub mod fluent_builders {
         /// capacity behavior setting in the scaling instruction.</p>
         /// </li>
         /// </ul>
-        pub fn forecast_data_type(mut self, inp: crate::model::ForecastDataType) -> Self {
-            self.inner = self.inner.forecast_data_type(inp);
+        pub fn forecast_data_type(mut self, signature: crate::model::ForecastDataType) -> Self {
+            self.inner = self.inner.forecast_data_type(signature);
             self
         }
         /// <p>The type of forecast data to get.</p>
@@ -783,8 +777,8 @@ pub mod fluent_builders {
         }
         /// <p>The inclusive start time of the time range for the forecast data to get. The date and
         /// time can be at most 56 days before the current date and time. </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The inclusive start time of the time range for the forecast data to get. The date and
@@ -801,8 +795,8 @@ pub mod fluent_builders {
         /// <p>Although this parameter can accept a date and time that is more than two days in the
         /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
         /// periods of two days in advance.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
@@ -880,8 +874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scaling plan.</p>
-        pub fn scaling_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scaling_plan_name(inp);
+        pub fn scaling_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scaling_plan_name(signature.into());
             self
         }
         /// <p>The name of the scaling plan.</p>
@@ -894,8 +888,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number of the scaling plan. The only valid value is <code>1</code>.
         /// Currently, you cannot have multiple scaling plan versions.</p>
-        pub fn scaling_plan_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.scaling_plan_version(inp);
+        pub fn scaling_plan_version(mut self, signature: i64) -> Self {
+            self.inner = self.inner.scaling_plan_version(signature);
             self
         }
         /// <p>The version number of the scaling plan. The only valid value is <code>1</code>.
@@ -906,8 +900,8 @@ pub mod fluent_builders {
         }
         /// <p>A CloudFormation stack or set of tags.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn application_source(mut self, inp: crate::model::ApplicationSource) -> Self {
-            self.inner = self.inner.application_source(inp);
+        pub fn application_source(mut self, signature: crate::model::ApplicationSource) -> Self {
+            self.inner = self.inner.application_source(signature);
             self
         }
         /// <p>A CloudFormation stack or set of tags.</p>
@@ -925,11 +919,8 @@ pub mod fluent_builders {
         ///
         /// <p>The scaling instructions.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-        pub fn scaling_instructions(
-            mut self,
-            inp: impl Into<crate::model::ScalingInstruction>,
-        ) -> Self {
-            self.inner = self.inner.scaling_instructions(inp);
+        pub fn scaling_instructions(mut self, input: crate::model::ScalingInstruction) -> Self {
+            self.inner = self.inner.scaling_instructions(input);
             self
         }
         /// <p>The scaling instructions.</p>

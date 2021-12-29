@@ -1478,9 +1478,9 @@ pub mod workload {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -2234,12 +2234,9 @@ pub mod lens_review {
         /// To override the contents of this collection use [`set_pillar_review_summaries`](Self::set_pillar_review_summaries).
         ///
         /// <p>List of pillar review summaries of lens review in a workload.</p>
-        pub fn pillar_review_summaries(
-            mut self,
-            input: impl Into<crate::model::PillarReviewSummary>,
-        ) -> Self {
+        pub fn pillar_review_summaries(mut self, input: crate::model::PillarReviewSummary) -> Self {
             let mut v = self.pillar_review_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pillar_review_summaries = Some(v);
             self
         }
@@ -2279,9 +2276,9 @@ pub mod lens_review {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -2422,9 +2419,9 @@ pub mod pillar_review_summary {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -2766,9 +2763,9 @@ pub mod answer {
         /// To override the contents of this collection use [`set_choices`](Self::set_choices).
         ///
         /// <p>List of choices available for a question.</p>
-        pub fn choices(mut self, input: impl Into<crate::model::Choice>) -> Self {
+        pub fn choices(mut self, input: crate::model::Choice) -> Self {
             let mut v = self.choices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.choices = Some(v);
             self
         }
@@ -2806,9 +2803,9 @@ pub mod answer {
         /// To override the contents of this collection use [`set_choice_answers`](Self::set_choice_answers).
         ///
         /// <p>A list of selected choices to a question in your workload.</p>
-        pub fn choice_answers(mut self, input: impl Into<crate::model::ChoiceAnswer>) -> Self {
+        pub fn choice_answers(mut self, input: crate::model::ChoiceAnswer) -> Self {
             let mut v = self.choice_answers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.choice_answers = Some(v);
             self
         }
@@ -3812,9 +3809,9 @@ pub mod workload_summary {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -4769,9 +4766,9 @@ pub mod lens_review_summary {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -4943,12 +4940,9 @@ pub mod improvement_summary {
         /// To override the contents of this collection use [`set_improvement_plans`](Self::set_improvement_plans).
         ///
         /// <p>The improvement plan details.</p>
-        pub fn improvement_plans(
-            mut self,
-            input: impl Into<crate::model::ChoiceImprovementPlan>,
-        ) -> Self {
+        pub fn improvement_plans(mut self, input: crate::model::ChoiceImprovementPlan) -> Self {
             let mut v = self.improvement_plans.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.improvement_plans = Some(v);
             self
         }
@@ -5576,9 +5570,9 @@ pub mod answer_summary {
         /// To override the contents of this collection use [`set_choices`](Self::set_choices).
         ///
         /// <p>List of choices available for a question.</p>
-        pub fn choices(mut self, input: impl Into<crate::model::Choice>) -> Self {
+        pub fn choices(mut self, input: crate::model::Choice) -> Self {
             let mut v = self.choices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.choices = Some(v);
             self
         }
@@ -5616,12 +5610,9 @@ pub mod answer_summary {
         /// To override the contents of this collection use [`set_choice_answer_summaries`](Self::set_choice_answer_summaries).
         ///
         /// <p>A list of selected choices to a question in your workload.</p>
-        pub fn choice_answer_summaries(
-            mut self,
-            input: impl Into<crate::model::ChoiceAnswerSummary>,
-        ) -> Self {
+        pub fn choice_answer_summaries(mut self, input: crate::model::ChoiceAnswerSummary) -> Self {
             let mut v = self.choice_answer_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.choice_answer_summaries = Some(v);
             self
         }
@@ -6006,12 +5997,9 @@ pub mod version_differences {
         /// To override the contents of this collection use [`set_pillar_differences`](Self::set_pillar_differences).
         ///
         /// <p>The differences between the base and latest versions of the lens.</p>
-        pub fn pillar_differences(
-            mut self,
-            input: impl Into<crate::model::PillarDifference>,
-        ) -> Self {
+        pub fn pillar_differences(mut self, input: crate::model::PillarDifference) -> Self {
             let mut v = self.pillar_differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pillar_differences = Some(v);
             self
         }
@@ -6134,12 +6122,9 @@ pub mod pillar_difference {
         /// To override the contents of this collection use [`set_question_differences`](Self::set_question_differences).
         ///
         /// <p>List of question differences.</p>
-        pub fn question_differences(
-            mut self,
-            input: impl Into<crate::model::QuestionDifference>,
-        ) -> Self {
+        pub fn question_differences(mut self, input: crate::model::QuestionDifference) -> Self {
             let mut v = self.question_differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.question_differences = Some(v);
             self
         }

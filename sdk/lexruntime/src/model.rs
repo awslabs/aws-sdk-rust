@@ -1607,12 +1607,9 @@ pub mod response_card {
         /// To override the contents of this collection use [`set_generic_attachments`](Self::set_generic_attachments).
         ///
         /// <p>An array of attachment objects representing options.</p>
-        pub fn generic_attachments(
-            mut self,
-            input: impl Into<crate::model::GenericAttachment>,
-        ) -> Self {
+        pub fn generic_attachments(mut self, input: crate::model::GenericAttachment) -> Self {
             let mut v = self.generic_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.generic_attachments = Some(v);
             self
         }
@@ -1751,9 +1748,9 @@ pub mod generic_attachment {
         /// To override the contents of this collection use [`set_buttons`](Self::set_buttons).
         ///
         /// <p>The list of options to show to the user.</p>
-        pub fn buttons(mut self, input: impl Into<crate::model::Button>) -> Self {
+        pub fn buttons(mut self, input: crate::model::Button) -> Self {
             let mut v = self.buttons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buttons = Some(v);
             self
         }

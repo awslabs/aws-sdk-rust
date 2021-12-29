@@ -105,10 +105,10 @@ pub mod resolve_component_candidates_output {
         /// includes each component's recipe that you can use to install the component.</p>
         pub fn resolved_component_versions(
             mut self,
-            input: impl Into<crate::model::ResolvedComponentVersion>,
+            input: crate::model::ResolvedComponentVersion,
         ) -> Self {
             let mut v = self.resolved_component_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolved_component_versions = Some(v);
             self
         }
@@ -260,12 +260,9 @@ pub mod list_installed_components_output {
         /// To override the contents of this collection use [`set_installed_components`](Self::set_installed_components).
         ///
         /// <p>A list that summarizes each component on the core device.</p>
-        pub fn installed_components(
-            mut self,
-            input: impl Into<crate::model::InstalledComponent>,
-        ) -> Self {
+        pub fn installed_components(mut self, input: crate::model::InstalledComponent) -> Self {
             let mut v = self.installed_components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.installed_components = Some(v);
             self
         }
@@ -349,12 +346,9 @@ pub mod list_effective_deployments_output {
         /// To override the contents of this collection use [`set_effective_deployments`](Self::set_effective_deployments).
         ///
         /// <p>A list that summarizes each deployment on the core device.</p>
-        pub fn effective_deployments(
-            mut self,
-            input: impl Into<crate::model::EffectiveDeployment>,
-        ) -> Self {
+        pub fn effective_deployments(mut self, input: crate::model::EffectiveDeployment) -> Self {
             let mut v = self.effective_deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.effective_deployments = Some(v);
             self
         }
@@ -434,9 +428,9 @@ pub mod list_deployments_output {
         /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
         ///
         /// <p>A list that summarizes each deployment.</p>
-        pub fn deployments(mut self, input: impl Into<crate::model::Deployment>) -> Self {
+        pub fn deployments(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments = Some(v);
             self
         }
@@ -516,9 +510,9 @@ pub mod list_core_devices_output {
         /// To override the contents of this collection use [`set_core_devices`](Self::set_core_devices).
         ///
         /// <p>A list that summarizes each core device.</p>
-        pub fn core_devices(mut self, input: impl Into<crate::model::CoreDevice>) -> Self {
+        pub fn core_devices(mut self, input: crate::model::CoreDevice) -> Self {
             let mut v = self.core_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.core_devices = Some(v);
             self
         }
@@ -602,12 +596,9 @@ pub mod list_component_versions_output {
         /// To override the contents of this collection use [`set_component_versions`](Self::set_component_versions).
         ///
         /// <p>A list of versions that exist for the component.</p>
-        pub fn component_versions(
-            mut self,
-            input: impl Into<crate::model::ComponentVersionListItem>,
-        ) -> Self {
+        pub fn component_versions(mut self, input: crate::model::ComponentVersionListItem) -> Self {
             let mut v = self.component_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_versions = Some(v);
             self
         }
@@ -687,9 +678,9 @@ pub mod list_components_output {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>A list that summarizes each component.</p>
-        pub fn components(mut self, input: impl Into<crate::model::Component>) -> Self {
+        pub fn components(mut self, input: crate::model::Component) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -775,10 +766,10 @@ pub mod list_client_devices_associated_with_core_device_output {
         /// <p>A list that describes the client devices that are associated with the core device.</p>
         pub fn associated_client_devices(
             mut self,
-            input: impl Into<crate::model::AssociatedClientDevice>,
+            input: crate::model::AssociatedClientDevice,
         ) -> Self {
             let mut v = self.associated_client_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_client_devices = Some(v);
             self
         }
@@ -1066,10 +1057,10 @@ pub mod get_deployment_output {
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentDeploymentSpecification>,
+            v: crate::model::ComponentDeploymentSpecification,
         ) -> Self {
             let mut hash_map = self.components.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.components = Some(hash_map);
             self
         }
@@ -1843,9 +1834,9 @@ pub mod describe_component_output {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms that the component version supports.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::ComponentPlatform>) -> Self {
+        pub fn platforms(mut self, input: crate::model::ComponentPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -2310,10 +2301,10 @@ pub mod batch_disassociate_client_device_from_core_device_output {
         /// name of the IoT thing that failed to disassociate.</p>
         pub fn error_entries(
             mut self,
-            input: impl Into<crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry>,
+            input: crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry,
         ) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
@@ -2389,10 +2380,10 @@ pub mod batch_associate_client_device_with_core_device_output {
         /// of the IoT thing that failed to associate.</p>
         pub fn error_entries(
             mut self,
-            input: impl Into<crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry>,
+            input: crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry,
         ) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }

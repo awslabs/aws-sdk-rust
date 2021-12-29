@@ -294,8 +294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project in which you want to create a dataset.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project in which you want to create a dataset.</p>
@@ -305,8 +305,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the dataset. Specify <code>train</code> for a training dataset.
         /// Specify <code>test</code> for a test dataset.</p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        pub fn dataset_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(signature.into());
             self
         }
         /// <p>The type of the dataset. Specify <code>train</code> for a training dataset.
@@ -323,8 +323,8 @@ pub mod fluent_builders {
         /// is validated and used to create the dataset. The call to <code>CreateDataset</code> is asynchronous
         /// and might take a while to complete. To find out the current status, Check the value of <code>Status</code>
         /// returned in a call to <a>DescribeDataset</a>.</p>
-        pub fn dataset_source(mut self, inp: crate::model::DatasetSource) -> Self {
-            self.inner = self.inner.dataset_source(inp);
+        pub fn dataset_source(mut self, signature: crate::model::DatasetSource) -> Self {
+            self.inner = self.inner.dataset_source(signature);
             self
         }
         /// <p>The location of the manifest file that Amazon Lookout for Vision uses to create the dataset.</p>
@@ -351,8 +351,8 @@ pub mod fluent_builders {
         /// value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency
         /// token is active for 8 hours.
         /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateDataset</code>
@@ -442,8 +442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project in which you want to create a model version.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project in which you want to create a model version.</p>
@@ -452,8 +452,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the version of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description for the version of the model.</p>
@@ -469,8 +469,8 @@ pub mod fluent_builders {
         /// if the other input parameters are not the same as in the first request. Using a different  
         /// value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>. An idempotency
         /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code>
@@ -486,8 +486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location where Amazon Lookout for Vision saves the training results.</p>
-        pub fn output_config(mut self, inp: crate::model::OutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, signature: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(signature);
             self
         }
         /// <p>The location where Amazon Lookout for Vision saves the training results.</p>
@@ -502,8 +502,8 @@ pub mod fluent_builders {
         /// The key is used to encrypt training and test images copied into the service for model training. Your
         /// source images are unaffected.
         /// If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
@@ -519,8 +519,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
@@ -595,8 +595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name for the project.</p>
@@ -612,8 +612,8 @@ pub mod fluent_builders {
         /// if the other input parameters are not the same as in the first request. Using a different  
         /// value for <code>ClientToken</code> is considered a new call to <code>CreateProject</code>. An idempotency
         /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateProject</code>
@@ -703,8 +703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the dataset that you want to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the dataset that you want to delete.</p>
@@ -715,8 +715,8 @@ pub mod fluent_builders {
         /// <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset.
         /// Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project,
         /// specify <code>train</code>.</p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        pub fn dataset_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(signature.into());
             self
         }
         /// <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset.
@@ -734,8 +734,8 @@ pub mod fluent_builders {
         /// if the other input parameters are not the same as in the first request. Using a different  
         /// value for <code>ClientToken</code> is considered a new call to <code>DeleteDataset</code>. An idempotency
         /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteDataset</code>
@@ -817,8 +817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model that you want to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the model that you want to delete.</p>
@@ -827,8 +827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to delete.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(signature.into());
             self
         }
         /// <p>The version of the model that you want to delete.</p>
@@ -847,8 +847,8 @@ pub mod fluent_builders {
         /// if the other input parameters are not the same as in the first request. Using a different  
         /// value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency
         /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code>
@@ -931,8 +931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project to delete.</p>
@@ -948,8 +948,8 @@ pub mod fluent_builders {
         /// if the other input parameters are not the same as in the first request. Using a different  
         /// value for <code>ClientToken</code> is considered a new call to <code>DeleteProject</code>. An idempotency
         /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteProject</code>
@@ -1027,8 +1027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the dataset that you want to describe.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the dataset that you want to describe.</p>
@@ -1040,8 +1040,8 @@ pub mod fluent_builders {
         /// training dataset. Specify <code>test</code> to describe the test dataset.
         /// If you have a single dataset project, specify <code>train</code>
         /// </p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        pub fn dataset_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(signature.into());
             self
         }
         /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the
@@ -1115,8 +1115,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The project that contains the version of a model that you want to describe.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The project that contains the version of a model that you want to describe.</p>
@@ -1125,8 +1125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to describe.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(signature.into());
             self
         }
         /// <p>The version of the model that you want to describe.</p>
@@ -1200,8 +1200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that you want to describe.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that you want to describe.</p>
@@ -1279,8 +1279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model version that you want to use.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the model version that you want to use.</p>
@@ -1289,8 +1289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to use.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(signature.into());
             self
         }
         /// <p>The version of the model that you want to use.</p>
@@ -1302,8 +1302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unencrypted image bytes that you want to analyze. </p>
-        pub fn body(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.body(signature);
             self
         }
         /// <p>The unencrypted image bytes that you want to analyze. </p>
@@ -1316,8 +1316,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the image passed in <code>Body</code>.
         /// Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>The type of the image passed in <code>Body</code>.
@@ -1390,8 +1390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the dataset that you want to list.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the dataset that you want to list.</p>
@@ -1402,8 +1402,8 @@ pub mod fluent_builders {
         /// <p>The type of the dataset that you want to list.  Specify <code>train</code> to list
         /// the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset
         /// project, specify <code>train</code>.</p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        pub fn dataset_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(signature.into());
             self
         }
         /// <p>The type of the dataset that you want to list.  Specify <code>train</code> to list
@@ -1415,8 +1415,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you
         /// don't specify a value, Lookout for Vision returns all entries.</p>
-        pub fn labeled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.labeled(inp);
+        pub fn labeled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.labeled(signature);
             self
         }
         /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you
@@ -1427,8 +1427,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include
         /// anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
-        pub fn anomaly_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_class(inp);
+        pub fn anomaly_class(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_class(signature.into());
             self
         }
         /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include
@@ -1441,8 +1441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-        pub fn before_creation_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.before_creation_date(inp);
+        pub fn before_creation_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.before_creation_date(signature);
             self
         }
         /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
@@ -1454,8 +1454,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-        pub fn after_creation_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.after_creation_date(inp);
+        pub fn after_creation_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.after_creation_date(signature);
             self
         }
         /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
@@ -1469,8 +1469,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
         /// retrieve the next set of dataset entries.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -1483,8 +1483,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
         /// If you specify a value greater than 100, a ValidationException
         /// error occurs. The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
@@ -1496,8 +1496,8 @@ pub mod fluent_builders {
         }
         /// <p>Perform a "contains" search on the  values of the <code>source-ref</code> key within the dataset.
         /// For example a value of "IMG_17"  returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-        pub fn source_ref_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_ref_contains(inp);
+        pub fn source_ref_contains(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ref_contains(signature.into());
             self
         }
         /// <p>Perform a "contains" search on the  values of the <code>source-ref</code> key within the dataset.
@@ -1572,8 +1572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model versions that you want to list.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the model versions that you want to list.</p>
@@ -1584,8 +1584,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
         /// retrieve the next set of models.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -1598,8 +1598,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
         /// If you specify a value greater than 100, a ValidationException
         /// error occurs. The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
@@ -1674,8 +1674,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
         /// retrieve the next set of projects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -1688,8 +1688,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
         /// If you specify a value greater than 100, a ValidationException
         /// error occurs. The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
@@ -1762,8 +1762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model for which you want to list tags. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model for which you want to list tags. </p>
@@ -1842,8 +1842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model that you want to start.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the model that you want to start.</p>
@@ -1852,8 +1852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to start.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(signature.into());
             self
         }
         /// <p>The version of the model that you want to start.</p>
@@ -1869,8 +1869,8 @@ pub mod fluent_builders {
         /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
         /// of inference units that you use.
         /// </p>
-        pub fn min_inference_units(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_inference_units(inp);
+        pub fn min_inference_units(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_inference_units(signature);
             self
         }
         /// <p>The minimum number of inference units to use. A single
@@ -1891,8 +1891,8 @@ pub mod fluent_builders {
         /// value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency
         /// token is active for 8 hours.
         /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code>
@@ -1973,8 +1973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model that you want to stop.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the model that you want to stop.</p>
@@ -1983,8 +1983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to stop.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(signature.into());
             self
         }
         /// <p>The version of the model that you want to stop.</p>
@@ -2006,8 +2006,8 @@ pub mod fluent_builders {
         ///
         ///
         /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>StopModel</code>
@@ -2089,8 +2089,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model to assign the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model to assign the tags.</p>
@@ -2103,8 +2103,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags to assign to the model.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value tags to assign to the model.</p>
@@ -2179,8 +2179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model from which you want to remove tags. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model from which you want to remove tags. </p>
@@ -2193,8 +2193,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of the tags that you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of the tags that you want to remove.</p>
@@ -2273,8 +2273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the dataset that you want to update.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the dataset that you want to update.</p>
@@ -2285,8 +2285,8 @@ pub mod fluent_builders {
         /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update
         /// the training dataset. Specify <code>test</code> to update the test dataset. If you
         /// have a single dataset project, specify <code>train</code>.</p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        pub fn dataset_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(signature.into());
             self
         }
         /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update
@@ -2297,8 +2297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entries to add to the dataset.</p>
-        pub fn changes(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.changes(inp);
+        pub fn changes(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.changes(signature);
             self
         }
         /// <p>The entries to add to the dataset.</p>
@@ -2315,8 +2315,8 @@ pub mod fluent_builders {
         /// value for <code>ClientToken</code> is considered a new call to <code>UpdateDatasetEntries</code>. An idempotency
         /// token is active for 8 hours.
         /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code>

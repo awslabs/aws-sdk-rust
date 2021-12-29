@@ -1204,12 +1204,9 @@ pub mod cloud_watch_logs_configuration {
         /// To override the contents of this collection use [`set_log_streams`](Self::set_log_streams).
         ///
         /// <p>A list of configuration options for CloudWatch Logs.</p>
-        pub fn log_streams(
-            mut self,
-            input: impl Into<crate::model::CloudWatchLogsLogStream>,
-        ) -> Self {
+        pub fn log_streams(mut self, input: crate::model::CloudWatchLogsLogStream) -> Self {
             let mut v = self.log_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_streams = Some(v);
             self
         }
@@ -5152,11 +5149,11 @@ pub mod stack {
         /// <p>The stack's attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -6464,10 +6461,10 @@ pub mod operating_system {
         /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
         pub fn configuration_managers(
             mut self,
-            input: impl Into<crate::model::OperatingSystemConfigurationManager>,
+            input: crate::model::OperatingSystemConfigurationManager,
         ) -> Self {
             let mut v = self.configuration_managers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_managers = Some(v);
             self
         }
@@ -7217,11 +7214,11 @@ pub mod layer {
         /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::LayerAttributesKeys>,
+            k: crate::model::LayerAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -7350,12 +7347,9 @@ pub mod layer {
         /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
         ///
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn volume_configurations(
-            mut self,
-            input: impl Into<crate::model::VolumeConfiguration>,
-        ) -> Self {
+        pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
             let mut v = self.volume_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_configurations = Some(v);
             self
         }
@@ -8291,12 +8285,9 @@ pub mod instance {
         ///
         /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device
         /// mappings.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -10627,10 +10618,10 @@ pub mod deployment_command {
         pub fn args(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.args.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.args = Some(hash_map);
             self
         }
@@ -11538,9 +11529,9 @@ pub mod app {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The app's data sources.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -11625,11 +11616,11 @@ pub mod app {
         /// <p>The stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::AppAttributesKeys>,
+            k: crate::model::AppAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -11663,9 +11654,9 @@ pub mod app {
         /// <note>
         /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::EnvironmentVariable>) -> Self {
+        pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }

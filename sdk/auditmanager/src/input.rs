@@ -419,10 +419,10 @@ pub mod batch_create_delegation_by_assessment_input {
         /// <p> The API request to batch create delegations in Audit Manager. </p>
         pub fn create_delegation_requests(
             mut self,
-            input: impl Into<crate::model::CreateDelegationRequest>,
+            input: crate::model::CreateDelegationRequest,
         ) -> Self {
             let mut v = self.create_delegation_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_delegation_requests = Some(v);
             self
         }
@@ -1064,9 +1064,9 @@ pub mod batch_import_evidence_to_assessment_control_input {
         /// To override the contents of this collection use [`set_manual_evidence`](Self::set_manual_evidence).
         ///
         /// <p> The list of manual evidence objects. </p>
-        pub fn manual_evidence(mut self, input: impl Into<crate::model::ManualEvidence>) -> Self {
+        pub fn manual_evidence(mut self, input: crate::model::ManualEvidence) -> Self {
             let mut v = self.manual_evidence.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.manual_evidence = Some(v);
             self
         }
@@ -1330,9 +1330,9 @@ pub mod create_assessment_input {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The list of roles for the assessment. </p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -1573,10 +1573,10 @@ pub mod create_assessment_framework_input {
         /// <p> The control sets that are associated with the framework. </p>
         pub fn control_sets(
             mut self,
-            input: impl Into<crate::model::CreateAssessmentFrameworkControlSet>,
+            input: crate::model::CreateAssessmentFrameworkControlSet,
         ) -> Self {
             let mut v = self.control_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_sets = Some(v);
             self
         }
@@ -2034,10 +2034,10 @@ pub mod create_control_input {
         /// <p> The data mapping sources for the control. </p>
         pub fn control_mapping_sources(
             mut self,
-            input: impl Into<crate::model::CreateControlMappingSource>,
+            input: crate::model::CreateControlMappingSource,
         ) -> Self {
             let mut v = self.control_mapping_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_mapping_sources = Some(v);
             self
         }
@@ -9680,9 +9680,9 @@ pub mod update_assessment_input {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The list of roles for the assessment. </p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -10409,10 +10409,10 @@ pub mod update_assessment_framework_input {
         /// <p> The control sets that are associated with the framework. </p>
         pub fn control_sets(
             mut self,
-            input: impl Into<crate::model::UpdateAssessmentFrameworkControlSet>,
+            input: crate::model::UpdateAssessmentFrameworkControlSet,
         ) -> Self {
             let mut v = self.control_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_sets = Some(v);
             self
         }
@@ -11066,10 +11066,10 @@ pub mod update_control_input {
         /// <p> The data mapping sources for the control. </p>
         pub fn control_mapping_sources(
             mut self,
-            input: impl Into<crate::model::ControlMappingSource>,
+            input: crate::model::ControlMappingSource,
         ) -> Self {
             let mut v = self.control_mapping_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_mapping_sources = Some(v);
             self
         }
@@ -11278,9 +11278,9 @@ pub mod update_settings_input {
         /// To override the contents of this collection use [`set_default_process_owners`](Self::set_default_process_owners).
         ///
         /// <p> A list of the default audit owners. </p>
-        pub fn default_process_owners(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn default_process_owners(mut self, input: crate::model::Role) -> Self {
             let mut v = self.default_process_owners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_process_owners = Some(v);
             self
         }

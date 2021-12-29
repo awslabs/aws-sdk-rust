@@ -28,9 +28,9 @@ pub mod add_notification_channels_input {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p>One or 2 channels to report to when anomalies are detected.</p>
-        pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -356,9 +356,9 @@ pub mod batch_get_frame_metric_data_input {
         /// The details of the metrics that are used to request a time series of values. The metric includes
         /// the name of the frame, the aggregation type to calculate the metric value for the
         /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
-        pub fn frame_metrics(mut self, input: impl Into<crate::model::FrameMetric>) -> Self {
+        pub fn frame_metrics(mut self, input: crate::model::FrameMetric) -> Self {
             let mut v = self.frame_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.frame_metrics = Some(v);
             self
         }
@@ -668,11 +668,11 @@ pub mod configure_agent_input {
         /// </ul>
         pub fn metadata(
             mut self,
-            k: impl Into<crate::model::MetadataField>,
+            k: crate::model::MetadataField,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.metadata = Some(hash_map);
             self
         }

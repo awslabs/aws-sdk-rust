@@ -502,9 +502,9 @@ pub mod dns_config_change {
         ///
         /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
         /// create when you register an instance.</p>
-        pub fn dns_records(mut self, input: impl Into<crate::model::DnsRecord>) -> Self {
+        pub fn dns_records(mut self, input: crate::model::DnsRecord) -> Self {
             let mut v = self.dns_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dns_records = Some(v);
             self
         }
@@ -2621,9 +2621,9 @@ pub mod dns_config {
         ///
         /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to
         /// create when you register an instance.</p>
-        pub fn dns_records(mut self, input: impl Into<crate::model::DnsRecord>) -> Self {
+        pub fn dns_records(mut self, input: crate::model::DnsRecord) -> Self {
             let mut v = self.dns_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dns_records = Some(v);
             self
         }
@@ -5665,11 +5665,11 @@ pub mod operation {
         /// </dl>
         pub fn targets(
             mut self,
-            k: impl Into<crate::model::OperationTargetType>,
+            k: crate::model::OperationTargetType,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.targets = Some(hash_map);
             self
         }

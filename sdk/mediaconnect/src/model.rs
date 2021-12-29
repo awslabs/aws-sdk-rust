@@ -202,10 +202,10 @@ pub mod source {
         /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamSourceConfiguration>,
+            input: crate::model::MediaStreamSourceConfiguration,
         ) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_source_configurations = Some(v);
             self
         }
@@ -671,12 +671,9 @@ pub mod media_stream_source_configuration {
         /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
         ///
         /// The transport parameters that are associated with an incoming media stream.
-        pub fn input_configurations(
-            mut self,
-            input: impl Into<crate::model::InputConfiguration>,
-        ) -> Self {
+        pub fn input_configurations(mut self, input: crate::model::InputConfiguration) -> Self {
             let mut v = self.input_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_configurations = Some(v);
             self
         }
@@ -1333,10 +1330,10 @@ pub mod media_stream_source_configuration_request {
         /// The transport parameters that you want to associate with the media stream.
         pub fn input_configurations(
             mut self,
-            input: impl Into<crate::model::InputConfigurationRequest>,
+            input: crate::model::InputConfigurationRequest,
         ) -> Self {
             let mut v = self.input_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_configurations = Some(v);
             self
         }
@@ -1954,10 +1951,10 @@ pub mod output {
         /// The configuration for each media stream that is associated with the output.
         pub fn media_stream_output_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamOutputConfiguration>,
+            input: crate::model::MediaStreamOutputConfiguration,
         ) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_output_configurations = Some(v);
             self
         }
@@ -2181,10 +2178,10 @@ pub mod media_stream_output_configuration {
         /// The transport parameters that are associated with each outbound media stream.
         pub fn destination_configurations(
             mut self,
-            input: impl Into<crate::model::DestinationConfiguration>,
+            input: crate::model::DestinationConfiguration,
         ) -> Self {
             let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_configurations = Some(v);
             self
         }
@@ -2571,10 +2568,10 @@ pub mod media_stream_output_configuration_request {
         /// The transport parameters that you want to associate with the media stream.
         pub fn destination_configurations(
             mut self,
-            input: impl Into<crate::model::DestinationConfigurationRequest>,
+            input: crate::model::DestinationConfigurationRequest,
         ) -> Self {
             let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_configurations = Some(v);
             self
         }
@@ -4277,9 +4274,9 @@ pub mod flow {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The entitlements in this flow.
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -4306,9 +4303,9 @@ pub mod flow {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-        pub fn media_streams(mut self, input: impl Into<crate::model::MediaStream>) -> Self {
+        pub fn media_streams(mut self, input: crate::model::MediaStream) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_streams = Some(v);
             self
         }
@@ -4335,9 +4332,9 @@ pub mod flow {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// The outputs in this flow.
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -4376,9 +4373,9 @@ pub mod flow {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -4405,9 +4402,9 @@ pub mod flow {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// The VPC Interfaces for this flow.
-        pub fn vpc_interfaces(mut self, input: impl Into<crate::model::VpcInterface>) -> Self {
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterface) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_interfaces = Some(v);
             self
         }
@@ -6885,10 +6882,10 @@ pub mod set_source_request {
         /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamSourceConfigurationRequest>,
+            input: crate::model::MediaStreamSourceConfigurationRequest,
         ) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_source_configurations = Some(v);
             self
         }
@@ -7208,10 +7205,10 @@ pub mod add_output_request {
         /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn media_stream_output_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
+            input: crate::model::MediaStreamOutputConfigurationRequest,
         ) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_output_configurations = Some(v);
             self
         }

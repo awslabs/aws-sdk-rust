@@ -1320,9 +1320,9 @@ pub mod disable_input {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource scan types you want to disable.</p>
-        pub fn resource_types(mut self, input: impl Into<crate::model::ResourceScanType>) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ResourceScanType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
@@ -1794,9 +1794,9 @@ pub mod enable_input {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource scan types you want to enable.</p>
-        pub fn resource_types(mut self, input: impl Into<crate::model::ResourceScanType>) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ResourceScanType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
@@ -3513,9 +3513,9 @@ pub mod list_finding_aggregations_input {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-        pub fn account_ids(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn account_ids(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_ids = Some(v);
             self
         }

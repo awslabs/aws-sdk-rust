@@ -37,12 +37,9 @@ pub mod human_loop_data_attributes {
         ///
         /// <p>Declares that your content is free of personally identifiable information or adult content.</p>
         /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
-        pub fn content_classifiers(
-            mut self,
-            input: impl Into<crate::model::ContentClassifier>,
-        ) -> Self {
+        pub fn content_classifiers(mut self, input: crate::model::ContentClassifier) -> Self {
             let mut v = self.content_classifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_classifiers = Some(v);
             self
         }

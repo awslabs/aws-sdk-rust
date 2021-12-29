@@ -55,9 +55,9 @@ pub mod metric_key_data_points {
         /// To override the contents of this collection use [`set_data_points`](Self::set_data_points).
         ///
         /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
-        pub fn data_points(mut self, input: impl Into<crate::model::DataPoint>) -> Self {
+        pub fn data_points(mut self, input: crate::model::DataPoint) -> Self {
             let mut v = self.data_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_points = Some(v);
             self
         }
@@ -1515,9 +1515,9 @@ pub mod dimension_key_description {
         /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
         ///
         /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
-        pub fn partitions(mut self, input: impl Into<f64>) -> Self {
+        pub fn partitions(mut self, input: f64) -> Self {
             let mut v = self.partitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions = Some(v);
             self
         }

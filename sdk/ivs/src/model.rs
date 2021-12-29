@@ -1971,9 +1971,9 @@ pub mod stream_session {
         /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
         /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
         /// IVS</a>.</p>
-        pub fn truncated_events(mut self, input: impl Into<crate::model::StreamEvent>) -> Self {
+        pub fn truncated_events(mut self, input: crate::model::StreamEvent) -> Self {
             let mut v = self.truncated_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.truncated_events = Some(v);
             self
         }

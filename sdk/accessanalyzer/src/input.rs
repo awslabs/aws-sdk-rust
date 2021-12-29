@@ -373,10 +373,10 @@ pub mod create_access_preview_input {
         pub fn configurations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Configuration>,
+            v: crate::model::Configuration,
         ) -> Self {
             let mut hash_map = self.configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configurations = Some(hash_map);
             self
         }
@@ -587,9 +587,9 @@ pub mod create_analyzer_input {
         ///
         /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
         /// findings that meet the criteria you define for the rule.</p>
-        pub fn archive_rules(mut self, input: impl Into<crate::model::InlineArchiveRule>) -> Self {
+        pub fn archive_rules(mut self, input: crate::model::InlineArchiveRule) -> Self {
             let mut v = self.archive_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.archive_rules = Some(v);
             self
         }
@@ -819,10 +819,10 @@ pub mod create_archive_rule_input {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
@@ -2541,10 +2541,10 @@ pub mod list_access_preview_findings_input {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
@@ -3524,10 +3524,10 @@ pub mod list_findings_input {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
@@ -4837,10 +4837,10 @@ pub mod update_archive_rule_input {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }

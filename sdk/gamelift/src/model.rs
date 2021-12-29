@@ -430,9 +430,9 @@ pub mod runtime_configuration {
         ///
         /// <p>A collection of server process configurations that identify what server processes to
         /// run on each instance in a fleet.</p>
-        pub fn server_processes(mut self, input: impl Into<crate::model::ServerProcess>) -> Self {
+        pub fn server_processes(mut self, input: crate::model::ServerProcess) -> Self {
             let mut v = self.server_processes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_processes = Some(v);
             self
         }
@@ -1087,9 +1087,9 @@ pub mod matchmaking_configuration {
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
         /// object that is created for a successful match. This parameter is not used when
         /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_properties = Some(v);
             self
         }
@@ -1587,12 +1587,9 @@ pub mod game_session_queue {
         /// individual player can be placed into a game with unreasonably high latency. Use multiple
         /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
         /// maximum allowed latency, starting with the lowest value. </p>
-        pub fn player_latency_policies(
-            mut self,
-            input: impl Into<crate::model::PlayerLatencyPolicy>,
-        ) -> Self {
+        pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
             let mut v = self.player_latency_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.player_latency_policies = Some(v);
             self
         }
@@ -1614,12 +1611,9 @@ pub mod game_session_queue {
         ///
         /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
         /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::GameSessionQueueDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1866,9 +1860,9 @@ pub mod priority_configuration {
         /// locations, as defined in <code>LocationOrder</code>. </p>
         /// </li>
         /// </ul>
-        pub fn priority_order(mut self, input: impl Into<crate::model::PriorityType>) -> Self {
+        pub fn priority_order(mut self, input: crate::model::PriorityType) -> Self {
             let mut v = self.priority_order.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.priority_order = Some(v);
             self
         }
@@ -2639,9 +2633,9 @@ pub mod game_session {
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
         /// <a>GameSession</a> object with a request to start a new game session. You can search for active game sessions based on this custom data
         /// with <a>SearchGameSessions</a>.</p>
-        pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_properties = Some(v);
             self
         }
@@ -3389,12 +3383,9 @@ pub mod game_server_group {
         ///
         /// <p>The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically
         /// scaling instances in the corresponding Auto Scaling group. </p>
-        pub fn instance_definitions(
-            mut self,
-            input: impl Into<crate::model::InstanceDefinition>,
-        ) -> Self {
+        pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
             let mut v = self.instance_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_definitions = Some(v);
             self
         }
@@ -3619,12 +3610,9 @@ pub mod game_server_group {
         ///
         /// <p>A list of activities that are currently suspended for this game server group.
         /// If this property is empty, all activities are occurring.</p>
-        pub fn suspended_actions(
-            mut self,
-            input: impl Into<crate::model::GameServerGroupAction>,
-        ) -> Self {
+        pub fn suspended_actions(mut self, input: crate::model::GameServerGroupAction) -> Self {
             let mut v = self.suspended_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suspended_actions = Some(v);
             self
         }
@@ -6741,9 +6729,9 @@ pub mod game_session_placement {
         ///
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-        pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.game_properties = Some(v);
             self
         }
@@ -6835,9 +6823,9 @@ pub mod game_session_placement {
         /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
         ///
         /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions.</p>
-        pub fn player_latencies(mut self, input: impl Into<crate::model::PlayerLatency>) -> Self {
+        pub fn player_latencies(mut self, input: crate::model::PlayerLatency) -> Self {
             let mut v = self.player_latencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.player_latencies = Some(v);
             self
         }
@@ -6942,12 +6930,9 @@ pub mod game_session_placement {
         /// session is successfully placed (placement status is <code>FULFILLED</code>). This
         /// information includes the player ID (as provided in the placement request) and the
         /// corresponding player session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a> with the player session ID.</p>
-        pub fn placed_player_sessions(
-            mut self,
-            input: impl Into<crate::model::PlacedPlayerSession>,
-        ) -> Self {
+        pub fn placed_player_sessions(mut self, input: crate::model::PlacedPlayerSession) -> Self {
             let mut v = self.placed_player_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placed_player_sessions = Some(v);
             self
         }
@@ -7814,9 +7799,9 @@ pub mod matchmaking_ticket {
         /// during matchmaking. If the ticket is in status <code>COMPLETED</code>, the
         /// <code>Player</code> objects include the team the players were assigned to in the
         /// resulting match.</p>
-        pub fn players(mut self, input: impl Into<crate::model::Player>) -> Self {
+        pub fn players(mut self, input: crate::model::Player) -> Self {
             let mut v = self.players.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.players = Some(v);
             self
         }
@@ -8056,10 +8041,10 @@ pub mod game_session_connection_info {
         /// original matchmaking request. </p>
         pub fn matched_player_sessions(
             mut self,
-            input: impl Into<crate::model::MatchedPlayerSession>,
+            input: crate::model::MatchedPlayerSession,
         ) -> Self {
             let mut v = self.matched_player_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matched_player_sessions = Some(v);
             self
         }
@@ -8276,10 +8261,10 @@ pub mod player {
         pub fn player_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.player_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.player_attributes = Some(hash_map);
             self
         }
@@ -8318,13 +8303,9 @@ pub mod player {
         /// latency in order to be matched. If no latency is reported in this scenario, FlexMatch
         /// assumes that no Regions are available to the player and the ticket is not matchable.
         /// </p>
-        pub fn latency_in_ms(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn latency_in_ms(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.latency_in_ms.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.latency_in_ms = Some(hash_map);
             self
         }
@@ -8470,9 +8451,9 @@ pub mod attribute_value {
         ///
         /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value
         /// is 100 characters. </p>
-        pub fn sdm(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
+        pub fn sdm(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.sdm.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.sdm = Some(hash_map);
             self
         }
@@ -13583,9 +13564,9 @@ pub mod location_attributes {
         /// To override the contents of this collection use [`set_stopped_actions`](Self::set_stopped_actions).
         ///
         /// <p>A list of fleet actions that have been suspended in the fleet location.</p>
-        pub fn stopped_actions(mut self, input: impl Into<crate::model::FleetAction>) -> Self {
+        pub fn stopped_actions(mut self, input: crate::model::FleetAction) -> Self {
             let mut v = self.stopped_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stopped_actions = Some(v);
             self
         }
@@ -15519,9 +15500,9 @@ pub mod fleet_attributes {
         /// To override the contents of this collection use [`set_stopped_actions`](Self::set_stopped_actions).
         ///
         /// <p>A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.</p>
-        pub fn stopped_actions(mut self, input: impl Into<crate::model::FleetAction>) -> Self {
+        pub fn stopped_actions(mut self, input: crate::model::FleetAction) -> Self {
             let mut v = self.stopped_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stopped_actions = Some(v);
             self
         }

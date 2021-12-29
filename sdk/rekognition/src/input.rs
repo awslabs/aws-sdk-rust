@@ -3489,9 +3489,9 @@ pub mod detect_faces_input {
         /// facial attributes are returned, but the operation takes longer to complete.</p>
         /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
         /// operator to determine which attributes to return (in this case, all attributes). </p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -4411,9 +4411,9 @@ pub mod distribute_dataset_entries_input {
         /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
         /// the same project. The test dataset must be empty.
         /// </p>
-        pub fn datasets(mut self, input: impl Into<crate::model::DistributeDataset>) -> Self {
+        pub fn datasets(mut self, input: crate::model::DistributeDataset) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }
@@ -6376,9 +6376,9 @@ pub mod index_faces_input {
         /// facial attributes are returned, but the operation takes longer to complete.</p>
         /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
         /// operator to determine which attributes to return (in this case, all attributes). </p>
-        pub fn detection_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn detection_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.detection_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detection_attributes = Some(v);
             self
         }
@@ -9945,9 +9945,9 @@ pub mod start_segment_detection_input {
         /// To override the contents of this collection use [`set_segment_types`](Self::set_segment_types).
         ///
         /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
-        pub fn segment_types(mut self, input: impl Into<crate::model::SegmentType>) -> Self {
+        pub fn segment_types(mut self, input: crate::model::SegmentType) -> Self {
             let mut v = self.segment_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.segment_types = Some(v);
             self
         }

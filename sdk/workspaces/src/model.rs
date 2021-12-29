@@ -2634,12 +2634,9 @@ pub mod workspace {
         /// To override the contents of this collection use [`set_modification_states`](Self::set_modification_states).
         ///
         /// <p>The modification states of the WorkSpace.</p>
-        pub fn modification_states(
-            mut self,
-            input: impl Into<crate::model::ModificationState>,
-        ) -> Self {
+        pub fn modification_states(mut self, input: crate::model::ModificationState) -> Self {
             let mut v = self.modification_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.modification_states = Some(v);
             self
         }
@@ -5006,9 +5003,9 @@ pub mod workspaces_ip_group {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules.</p>
-        pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_rules = Some(v);
             self
         }
@@ -5160,12 +5157,9 @@ pub mod connection_alias {
         /// To override the contents of this collection use [`set_associations`](Self::set_associations).
         ///
         /// <p>The association status of the connection alias.</p>
-        pub fn associations(
-            mut self,
-            input: impl Into<crate::model::ConnectionAliasAssociation>,
-        ) -> Self {
+        pub fn associations(mut self, input: crate::model::ConnectionAliasAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associations = Some(v);
             self
         }
@@ -6131,9 +6125,9 @@ pub mod workspace_request {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the WorkSpace.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

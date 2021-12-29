@@ -64,9 +64,9 @@ pub mod test_metric_filter_output {
         /// To override the contents of this collection use [`set_matches`](Self::set_matches).
         ///
         /// <p>The matched events.</p>
-        pub fn matches(mut self, input: impl Into<crate::model::MetricFilterMatchRecord>) -> Self {
+        pub fn matches(mut self, input: crate::model::MetricFilterMatchRecord) -> Self {
             let mut v = self.matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matches = Some(v);
             self
         }
@@ -752,12 +752,9 @@ pub mod get_query_results_output {
         /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the
         /// top-level array. Each of these log event objects is an array of
         /// <code>field</code>/<code>value</code> pairs.</p>
-        pub fn results(
-            mut self,
-            input: impl Into<std::vec::Vec<crate::model::ResultField>>,
-        ) -> Self {
+        pub fn results(mut self, input: std::vec::Vec<crate::model::ResultField>) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -937,9 +934,9 @@ pub mod get_log_group_fields_output {
         ///
         /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the
         /// percentage of time it appeared in the log events that were queried.</p>
-        pub fn log_group_fields(mut self, input: impl Into<crate::model::LogGroupField>) -> Self {
+        pub fn log_group_fields(mut self, input: crate::model::LogGroupField) -> Self {
             let mut v = self.log_group_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_group_fields = Some(v);
             self
         }
@@ -1025,9 +1022,9 @@ pub mod get_log_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The events.</p>
-        pub fn events(mut self, input: impl Into<crate::model::OutputLogEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::OutputLogEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1149,9 +1146,9 @@ pub mod filter_log_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The matched events.</p>
-        pub fn events(mut self, input: impl Into<crate::model::FilteredLogEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::FilteredLogEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1172,12 +1169,9 @@ pub mod filter_log_events_output {
         /// this parameter will be deprecated. This parameter will be an empty list
         /// after the deprecation occurs.</p>
         /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
-        pub fn searched_log_streams(
-            mut self,
-            input: impl Into<crate::model::SearchedLogStream>,
-        ) -> Self {
+        pub fn searched_log_streams(mut self, input: crate::model::SearchedLogStream) -> Self {
             let mut v = self.searched_log_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.searched_log_streams = Some(v);
             self
         }
@@ -1293,12 +1287,9 @@ pub mod describe_subscription_filters_output {
         /// To override the contents of this collection use [`set_subscription_filters`](Self::set_subscription_filters).
         ///
         /// <p>The subscription filters.</p>
-        pub fn subscription_filters(
-            mut self,
-            input: impl Into<crate::model::SubscriptionFilter>,
-        ) -> Self {
+        pub fn subscription_filters(mut self, input: crate::model::SubscriptionFilter) -> Self {
             let mut v = self.subscription_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscription_filters = Some(v);
             self
         }
@@ -1379,9 +1370,9 @@ pub mod describe_resource_policies_output {
         /// To override the contents of this collection use [`set_resource_policies`](Self::set_resource_policies).
         ///
         /// <p>The resource policies that exist in this account.</p>
-        pub fn resource_policies(mut self, input: impl Into<crate::model::ResourcePolicy>) -> Self {
+        pub fn resource_policies(mut self, input: crate::model::ResourcePolicy) -> Self {
             let mut v = self.resource_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_policies = Some(v);
             self
         }
@@ -1462,12 +1453,9 @@ pub mod describe_query_definitions_output {
         /// To override the contents of this collection use [`set_query_definitions`](Self::set_query_definitions).
         ///
         /// <p>The list of query definitions that match your request.</p>
-        pub fn query_definitions(
-            mut self,
-            input: impl Into<crate::model::QueryDefinition>,
-        ) -> Self {
+        pub fn query_definitions(mut self, input: crate::model::QueryDefinition) -> Self {
             let mut v = self.query_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_definitions = Some(v);
             self
         }
@@ -1547,9 +1535,9 @@ pub mod describe_queries_output {
         /// To override the contents of this collection use [`set_queries`](Self::set_queries).
         ///
         /// <p>The list of queries that match the request.</p>
-        pub fn queries(mut self, input: impl Into<crate::model::QueryInfo>) -> Self {
+        pub fn queries(mut self, input: crate::model::QueryInfo) -> Self {
             let mut v = self.queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queries = Some(v);
             self
         }
@@ -1629,9 +1617,9 @@ pub mod describe_metric_filters_output {
         /// To override the contents of this collection use [`set_metric_filters`](Self::set_metric_filters).
         ///
         /// <p>The metric filters.</p>
-        pub fn metric_filters(mut self, input: impl Into<crate::model::MetricFilter>) -> Self {
+        pub fn metric_filters(mut self, input: crate::model::MetricFilter) -> Self {
             let mut v = self.metric_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_filters = Some(v);
             self
         }
@@ -1711,9 +1699,9 @@ pub mod describe_log_streams_output {
         /// To override the contents of this collection use [`set_log_streams`](Self::set_log_streams).
         ///
         /// <p>The log streams.</p>
-        pub fn log_streams(mut self, input: impl Into<crate::model::LogStream>) -> Self {
+        pub fn log_streams(mut self, input: crate::model::LogStream) -> Self {
             let mut v = self.log_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_streams = Some(v);
             self
         }
@@ -1799,9 +1787,9 @@ pub mod describe_log_groups_output {
         /// <p>The log groups.</p>
         /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group
         /// is set to have its events never expire.</p>
-        pub fn log_groups(mut self, input: impl Into<crate::model::LogGroup>) -> Self {
+        pub fn log_groups(mut self, input: crate::model::LogGroup) -> Self {
             let mut v = self.log_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_groups = Some(v);
             self
         }
@@ -1883,9 +1871,9 @@ pub mod describe_export_tasks_output {
         /// To override the contents of this collection use [`set_export_tasks`](Self::set_export_tasks).
         ///
         /// <p>The export tasks.</p>
-        pub fn export_tasks(mut self, input: impl Into<crate::model::ExportTask>) -> Self {
+        pub fn export_tasks(mut self, input: crate::model::ExportTask) -> Self {
             let mut v = self.export_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_tasks = Some(v);
             self
         }
@@ -1965,9 +1953,9 @@ pub mod describe_destinations_output {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// <p>The destinations.</p>
-        pub fn destinations(mut self, input: impl Into<crate::model::Destination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }

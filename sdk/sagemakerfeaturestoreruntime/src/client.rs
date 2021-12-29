@@ -185,11 +185,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
         /// that have been requested to be retrieved in batch.</p>
-        pub fn identifiers(
-            mut self,
-            inp: impl Into<crate::model::BatchGetRecordIdentifier>,
-        ) -> Self {
-            self.inner = self.inner.identifiers(inp);
+        pub fn identifiers(mut self, input: crate::model::BatchGetRecordIdentifier) -> Self {
+            self.inner = self.inner.identifiers(input);
             self
         }
         /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
@@ -264,8 +261,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the feature group to delete the record from. </p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(signature.into());
             self
         }
         /// <p>The name of the feature group to delete the record from. </p>
@@ -280,9 +277,11 @@ pub mod fluent_builders {
         /// string format. </p>
         pub fn record_identifier_value_as_string(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.record_identifier_value_as_string(inp);
+            self.inner = self
+                .inner
+                .record_identifier_value_as_string(signature.into());
             self
         }
         /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
@@ -296,8 +295,8 @@ pub mod fluent_builders {
         }
         /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
         /// used to query data at a certain point in time.</p>
-        pub fn event_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_time(inp);
+        pub fn event_time(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_time(signature.into());
             self
         }
         /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
@@ -369,8 +368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the feature group in which you want to put the records.</p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(signature.into());
             self
         }
         /// <p>The name of the feature group in which you want to put the records.</p>
@@ -385,9 +384,11 @@ pub mod fluent_builders {
         /// the record in the <code>FeatureGroup</code>. </p>
         pub fn record_identifier_value_as_string(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.record_identifier_value_as_string(inp);
+            self.inner = self
+                .inner
+                .record_identifier_value_as_string(signature.into());
             self
         }
         /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
@@ -405,8 +406,8 @@ pub mod fluent_builders {
         ///
         /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
         /// the Features are returned.</p>
-        pub fn feature_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_names(inp);
+        pub fn feature_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_names(input.into());
             self
         }
         /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
@@ -483,8 +484,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the feature group that you want to insert the record into.</p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(signature.into());
             self
         }
         /// <p>The name of the feature group that you want to insert the record into.</p>
@@ -512,8 +513,8 @@ pub mod fluent_builders {
         /// <p>Use <code>PutRecord</code> to update feature values.</p>
         /// </li>
         /// </ul>
-        pub fn record(mut self, inp: impl Into<crate::model::FeatureValue>) -> Self {
-            self.inner = self.inner.record(inp);
+        pub fn record(mut self, input: crate::model::FeatureValue) -> Self {
+            self.inner = self.inner.record(input);
             self
         }
         /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want

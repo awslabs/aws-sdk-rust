@@ -190,9 +190,9 @@ pub mod upload_server_certificate_output {
         /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key.
         /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1238,12 +1238,9 @@ pub mod simulate_principal_policy_output {
         /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
         ///
         /// <p>The results of the simulation.</p>
-        pub fn evaluation_results(
-            mut self,
-            input: impl Into<crate::model::EvaluationResult>,
-        ) -> Self {
+        pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_results = Some(v);
             self
         }
@@ -1372,12 +1369,9 @@ pub mod simulate_custom_policy_output {
         /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
         ///
         /// <p>The results of the simulation.</p>
-        pub fn evaluation_results(
-            mut self,
-            input: impl Into<crate::model::EvaluationResult>,
-        ) -> Self {
+        pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_results = Some(v);
             self
         }
@@ -1926,12 +1920,9 @@ pub mod list_virtual_mfa_devices_output {
         ///
         /// <p> The list of virtual MFA devices in the current account that match the
         /// <code>AssignmentStatus</code> value that was passed in the request.</p>
-        pub fn virtual_mfa_devices(
-            mut self,
-            input: impl Into<crate::model::VirtualMfaDevice>,
-        ) -> Self {
+        pub fn virtual_mfa_devices(mut self, input: crate::model::VirtualMfaDevice) -> Self {
             let mut v = self.virtual_mfa_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_mfa_devices = Some(v);
             self
         }
@@ -2059,9 +2050,9 @@ pub mod list_user_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2188,9 +2179,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>A list of users.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -2449,12 +2440,9 @@ pub mod list_ssh_public_keys_output {
         /// To override the contents of this collection use [`set_ssh_public_keys`](Self::set_ssh_public_keys).
         ///
         /// <p>A list of the SSH public keys assigned to IAM user.</p>
-        pub fn ssh_public_keys(
-            mut self,
-            input: impl Into<crate::model::SshPublicKeyMetadata>,
-        ) -> Self {
+        pub fn ssh_public_keys(mut self, input: crate::model::SshPublicKeyMetadata) -> Self {
             let mut v = self.ssh_public_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ssh_public_keys = Some(v);
             self
         }
@@ -2583,9 +2571,9 @@ pub mod list_signing_certificates_output {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>A list of the user's signing certificate information.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::SigningCertificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::SigningCertificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -2694,10 +2682,10 @@ pub mod list_service_specific_credentials_output {
         /// credential.</p>
         pub fn service_specific_credentials(
             mut self,
-            input: impl Into<crate::model::ServiceSpecificCredentialMetadata>,
+            input: crate::model::ServiceSpecificCredentialMetadata,
         ) -> Self {
             let mut v = self.service_specific_credentials.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_specific_credentials = Some(v);
             self
         }
@@ -2794,9 +2782,9 @@ pub mod list_server_certificate_tags_output {
         ///
         /// <p>The list of tags that are currently attached to the IAM server certificate.
         /// Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2934,10 +2922,10 @@ pub mod list_server_certificates_output {
         /// <p>A list of server certificates.</p>
         pub fn server_certificate_metadata_list(
             mut self,
-            input: impl Into<crate::model::ServerCertificateMetadata>,
+            input: crate::model::ServerCertificateMetadata,
         ) -> Self {
             let mut v = self.server_certificate_metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_certificate_metadata_list = Some(v);
             self
         }
@@ -3067,9 +3055,9 @@ pub mod list_saml_provider_tags_output {
         ///
         /// <p>The list of tags that are currently attached to the Security Assertion Markup Language
         /// (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3174,12 +3162,9 @@ pub mod list_saml_providers_output {
         ///
         /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services
         /// account.</p>
-        pub fn saml_provider_list(
-            mut self,
-            input: impl Into<crate::model::SamlProviderListEntry>,
-        ) -> Self {
+        pub fn saml_provider_list(mut self, input: crate::model::SamlProviderListEntry) -> Self {
             let mut v = self.saml_provider_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.saml_provider_list = Some(v);
             self
         }
@@ -3271,9 +3256,9 @@ pub mod list_role_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3400,9 +3385,9 @@ pub mod list_roles_output {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p>A list of roles.</p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -3666,9 +3651,9 @@ pub mod list_policy_versions_output {
         /// <p>A list of policy versions.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn versions(mut self, input: impl Into<crate::model::PolicyVersion>) -> Self {
+        pub fn versions(mut self, input: crate::model::PolicyVersion) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -3800,9 +3785,9 @@ pub mod list_policy_tags_output {
         ///
         /// <p>The list of tags that are currently attached to the IAM customer managed policy.
         /// Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3944,10 +3929,10 @@ pub mod list_policies_granting_service_access_output {
         /// role).</p>
         pub fn policies_granting_service_access(
             mut self,
-            input: impl Into<crate::model::ListPoliciesGrantingServiceAccessEntry>,
+            input: crate::model::ListPoliciesGrantingServiceAccessEntry,
         ) -> Self {
             let mut v = self.policies_granting_service_access.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies_granting_service_access = Some(v);
             self
         }
@@ -4077,9 +4062,9 @@ pub mod list_policies_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>A list of policies.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -4209,9 +4194,9 @@ pub mod list_open_id_connect_provider_tags_output {
         ///
         /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity
         /// provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4319,10 +4304,10 @@ pub mod list_open_id_connect_providers_output {
         /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
         pub fn open_id_connect_provider_list(
             mut self,
-            input: impl Into<crate::model::OpenIdConnectProviderListEntry>,
+            input: crate::model::OpenIdConnectProviderListEntry,
         ) -> Self {
             let mut v = self.open_id_connect_provider_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.open_id_connect_provider_list = Some(v);
             self
         }
@@ -4413,9 +4398,9 @@ pub mod list_mfa_device_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4543,9 +4528,9 @@ pub mod list_mfa_devices_output {
         /// To override the contents of this collection use [`set_mfa_devices`](Self::set_mfa_devices).
         ///
         /// <p>A list of MFA devices.</p>
-        pub fn mfa_devices(mut self, input: impl Into<crate::model::MfaDevice>) -> Self {
+        pub fn mfa_devices(mut self, input: crate::model::MfaDevice) -> Self {
             let mut v = self.mfa_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_devices = Some(v);
             self
         }
@@ -4672,9 +4657,9 @@ pub mod list_instance_profile_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4803,12 +4788,9 @@ pub mod list_instance_profiles_for_role_output {
         /// To override the contents of this collection use [`set_instance_profiles`](Self::set_instance_profiles).
         ///
         /// <p>A list of instance profiles.</p>
-        pub fn instance_profiles(
-            mut self,
-            input: impl Into<crate::model::InstanceProfile>,
-        ) -> Self {
+        pub fn instance_profiles(mut self, input: crate::model::InstanceProfile) -> Self {
             let mut v = self.instance_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_profiles = Some(v);
             self
         }
@@ -4937,12 +4919,9 @@ pub mod list_instance_profiles_output {
         /// To override the contents of this collection use [`set_instance_profiles`](Self::set_instance_profiles).
         ///
         /// <p>A list of instance profiles.</p>
-        pub fn instance_profiles(
-            mut self,
-            input: impl Into<crate::model::InstanceProfile>,
-        ) -> Self {
+        pub fn instance_profiles(mut self, input: crate::model::InstanceProfile) -> Self {
             let mut v = self.instance_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_profiles = Some(v);
             self
         }
@@ -5070,9 +5049,9 @@ pub mod list_groups_for_user_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>A list of groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -5199,9 +5178,9 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>A list of groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -5483,9 +5462,9 @@ pub mod list_entities_for_policy_output {
         /// To override the contents of this collection use [`set_policy_groups`](Self::set_policy_groups).
         ///
         /// <p>A list of IAM groups that the policy is attached to.</p>
-        pub fn policy_groups(mut self, input: impl Into<crate::model::PolicyGroup>) -> Self {
+        pub fn policy_groups(mut self, input: crate::model::PolicyGroup) -> Self {
             let mut v = self.policy_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_groups = Some(v);
             self
         }
@@ -5502,9 +5481,9 @@ pub mod list_entities_for_policy_output {
         /// To override the contents of this collection use [`set_policy_users`](Self::set_policy_users).
         ///
         /// <p>A list of IAM users that the policy is attached to.</p>
-        pub fn policy_users(mut self, input: impl Into<crate::model::PolicyUser>) -> Self {
+        pub fn policy_users(mut self, input: crate::model::PolicyUser) -> Self {
             let mut v = self.policy_users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_users = Some(v);
             self
         }
@@ -5521,9 +5500,9 @@ pub mod list_entities_for_policy_output {
         /// To override the contents of this collection use [`set_policy_roles`](Self::set_policy_roles).
         ///
         /// <p>A list of IAM roles that the policy is attached to.</p>
-        pub fn policy_roles(mut self, input: impl Into<crate::model::PolicyRole>) -> Self {
+        pub fn policy_roles(mut self, input: crate::model::PolicyRole) -> Self {
             let mut v = self.policy_roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_roles = Some(v);
             self
         }
@@ -5654,9 +5633,9 @@ pub mod list_attached_user_policies_output {
         /// To override the contents of this collection use [`set_attached_policies`](Self::set_attached_policies).
         ///
         /// <p>A list of the attached policies.</p>
-        pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
+        pub fn attached_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attached_policies = Some(v);
             self
         }
@@ -5785,9 +5764,9 @@ pub mod list_attached_role_policies_output {
         /// To override the contents of this collection use [`set_attached_policies`](Self::set_attached_policies).
         ///
         /// <p>A list of the attached policies.</p>
-        pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
+        pub fn attached_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attached_policies = Some(v);
             self
         }
@@ -5916,9 +5895,9 @@ pub mod list_attached_group_policies_output {
         /// To override the contents of this collection use [`set_attached_policies`](Self::set_attached_policies).
         ///
         /// <p>A list of the attached policies.</p>
-        pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
+        pub fn attached_policies(mut self, input: crate::model::AttachedPolicy) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attached_policies = Some(v);
             self
         }
@@ -6181,12 +6160,9 @@ pub mod list_access_keys_output {
         /// To override the contents of this collection use [`set_access_key_metadata`](Self::set_access_key_metadata).
         ///
         /// <p>A list of objects containing metadata about the access keys.</p>
-        pub fn access_key_metadata(
-            mut self,
-            input: impl Into<crate::model::AccessKeyMetadata>,
-        ) -> Self {
+        pub fn access_key_metadata(mut self, input: crate::model::AccessKeyMetadata) -> Self {
             let mut v = self.access_key_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_key_metadata = Some(v);
             self
         }
@@ -6764,12 +6740,9 @@ pub mod get_service_last_accessed_details_with_entities_output {
         /// <p>An <code>EntityDetailsList</code> object that contains details about when an IAM
         /// entity (user or role) used group or policy permissions in an attempt to access the
         /// specified Amazon Web Services service.</p>
-        pub fn entity_details_list(
-            mut self,
-            input: impl Into<crate::model::EntityDetails>,
-        ) -> Self {
+        pub fn entity_details_list(mut self, input: crate::model::EntityDetails) -> Self {
             let mut v = self.entity_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_details_list = Some(v);
             self
         }
@@ -7019,12 +6992,9 @@ pub mod get_service_last_accessed_details_output {
         ///
         /// <p> A <code>ServiceLastAccessed</code> object that contains details about the most recent
         /// attempt to access the service.</p>
-        pub fn services_last_accessed(
-            mut self,
-            input: impl Into<crate::model::ServiceLastAccessed>,
-        ) -> Self {
+        pub fn services_last_accessed(mut self, input: crate::model::ServiceLastAccessed) -> Self {
             let mut v = self.services_last_accessed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services_last_accessed = Some(v);
             self
         }
@@ -7284,9 +7254,9 @@ pub mod get_saml_provider_output {
         /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key.
         /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7798,9 +7768,9 @@ pub mod get_organizations_access_report_output {
         ///
         /// <p>An object that contains details about the most recent attempt to access the
         /// service.</p>
-        pub fn access_details(mut self, input: impl Into<crate::model::AccessDetail>) -> Self {
+        pub fn access_details(mut self, input: crate::model::AccessDetail) -> Self {
             let mut v = self.access_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_details = Some(v);
             self
         }
@@ -8035,9 +8005,9 @@ pub mod get_open_id_connect_provider_output {
         /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key.
         /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8380,9 +8350,9 @@ pub mod get_group_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>A list of users in the group.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -8713,13 +8683,9 @@ pub mod get_account_summary_output {
         ///
         /// <p>A set of key–value pairs containing information about IAM entity usage and
         /// IAM quotas.</p>
-        pub fn summary_map(
-            mut self,
-            k: impl Into<crate::model::SummaryKeyType>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn summary_map(mut self, k: crate::model::SummaryKeyType, v: i32) -> Self {
             let mut hash_map = self.summary_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.summary_map = Some(hash_map);
             self
         }
@@ -8896,9 +8862,9 @@ pub mod get_account_authorization_details_output {
         /// To override the contents of this collection use [`set_user_detail_list`](Self::set_user_detail_list).
         ///
         /// <p>A list containing information about IAM users.</p>
-        pub fn user_detail_list(mut self, input: impl Into<crate::model::UserDetail>) -> Self {
+        pub fn user_detail_list(mut self, input: crate::model::UserDetail) -> Self {
             let mut v = self.user_detail_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_detail_list = Some(v);
             self
         }
@@ -8915,9 +8881,9 @@ pub mod get_account_authorization_details_output {
         /// To override the contents of this collection use [`set_group_detail_list`](Self::set_group_detail_list).
         ///
         /// <p>A list containing information about IAM groups.</p>
-        pub fn group_detail_list(mut self, input: impl Into<crate::model::GroupDetail>) -> Self {
+        pub fn group_detail_list(mut self, input: crate::model::GroupDetail) -> Self {
             let mut v = self.group_detail_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_detail_list = Some(v);
             self
         }
@@ -8934,9 +8900,9 @@ pub mod get_account_authorization_details_output {
         /// To override the contents of this collection use [`set_role_detail_list`](Self::set_role_detail_list).
         ///
         /// <p>A list containing information about IAM roles.</p>
-        pub fn role_detail_list(mut self, input: impl Into<crate::model::RoleDetail>) -> Self {
+        pub fn role_detail_list(mut self, input: crate::model::RoleDetail) -> Self {
             let mut v = self.role_detail_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.role_detail_list = Some(v);
             self
         }
@@ -8953,9 +8919,9 @@ pub mod get_account_authorization_details_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>A list containing information about managed policies.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::ManagedPolicyDetail>) -> Self {
+        pub fn policies(mut self, input: crate::model::ManagedPolicyDetail) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -10489,9 +10455,9 @@ pub mod create_saml_provider_output {
         /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key.
         /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10762,9 +10728,9 @@ pub mod create_open_id_connect_provider_output {
         /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of
         /// tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -505,12 +505,9 @@ pub mod associate_proactive_engagement_details_input {
         /// <note>
         /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.  </p>
         /// </note>
-        pub fn emergency_contact_list(
-            mut self,
-            input: impl Into<crate::model::EmergencyContact>,
-        ) -> Self {
+        pub fn emergency_contact_list(mut self, input: crate::model::EmergencyContact) -> Self {
             let mut v = self.emergency_contact_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.emergency_contact_list = Some(v);
             self
         }
@@ -766,9 +763,9 @@ pub mod create_protection_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tag key-value pairs for the <a>Protection</a> object that is created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1031,9 +1028,9 @@ pub mod create_protection_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tag key-value pairs for the protection group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4983,9 +4980,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that you want to modify or add to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5498,12 +5495,9 @@ pub mod update_emergency_contact_settings_input {
         ///
         /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
         /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
-        pub fn emergency_contact_list(
-            mut self,
-            input: impl Into<crate::model::EmergencyContact>,
-        ) -> Self {
+        pub fn emergency_contact_list(mut self, input: crate::model::EmergencyContact) -> Self {
             let mut v = self.emergency_contact_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.emergency_contact_list = Some(v);
             self
         }

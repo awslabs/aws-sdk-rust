@@ -98,9 +98,9 @@ pub mod schema_definition {
         /// To override the contents of this collection use [`set_columns`](Self::set_columns).
         ///
         /// <p>List of column definitions.</p>
-        pub fn columns(mut self, input: impl Into<crate::model::ColumnDefinition>) -> Self {
+        pub fn columns(mut self, input: crate::model::ColumnDefinition) -> Self {
             let mut v = self.columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.columns = Some(v);
             self
         }
@@ -2925,12 +2925,9 @@ pub mod permission_group_params {
         /// To override the contents of this collection use [`set_dataset_permissions`](Self::set_dataset_permissions).
         ///
         /// <p>List of resource permissions.</p>
-        pub fn dataset_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn dataset_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.dataset_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_permissions = Some(v);
             self
         }

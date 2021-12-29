@@ -289,9 +289,9 @@ pub mod list_tags_for_resource_output {
         /// <p>
         /// Returns a list of tags associated with a Data Store.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -379,10 +379,10 @@ pub mod list_fhir_import_jobs_output {
         /// </p>
         pub fn import_job_properties_list(
             mut self,
-            input: impl Into<crate::model::ImportJobProperties>,
+            input: crate::model::ImportJobProperties,
         ) -> Self {
             let mut v = self.import_job_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_job_properties_list = Some(v);
             self
         }
@@ -487,10 +487,10 @@ pub mod list_fhir_export_jobs_output {
         /// </p>
         pub fn export_job_properties_list(
             mut self,
-            input: impl Into<crate::model::ExportJobProperties>,
+            input: crate::model::ExportJobProperties,
         ) -> Self {
             let mut v = self.export_job_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_job_properties_list = Some(v);
             self
         }
@@ -582,10 +582,10 @@ pub mod list_fhir_datastores_output {
         /// <p>All properties associated with the listed Data Stores.</p>
         pub fn datastore_properties_list(
             mut self,
-            input: impl Into<crate::model::DatastoreProperties>,
+            input: crate::model::DatastoreProperties,
         ) -> Self {
             let mut v = self.datastore_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datastore_properties_list = Some(v);
             self
         }

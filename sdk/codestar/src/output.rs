@@ -450,9 +450,9 @@ pub mod list_user_profiles_output {
         /// To override the contents of this collection use [`set_user_profiles`](Self::set_user_profiles).
         ///
         /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-        pub fn user_profiles(mut self, input: impl Into<crate::model::UserProfileSummary>) -> Self {
+        pub fn user_profiles(mut self, input: crate::model::UserProfileSummary) -> Self {
             let mut v = self.user_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_profiles = Some(v);
             self
         }
@@ -536,9 +536,9 @@ pub mod list_team_members_output {
         /// To override the contents of this collection use [`set_team_members`](Self::set_team_members).
         ///
         /// <p>A list of team member objects for the project.</p>
-        pub fn team_members(mut self, input: impl Into<crate::model::TeamMember>) -> Self {
+        pub fn team_members(mut self, input: crate::model::TeamMember) -> Self {
             let mut v = self.team_members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.team_members = Some(v);
             self
         }
@@ -716,9 +716,9 @@ pub mod list_resources_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>An array of resources associated with the project. </p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -802,9 +802,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>A list of projects.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::ProjectSummary>) -> Self {
+        pub fn projects(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }

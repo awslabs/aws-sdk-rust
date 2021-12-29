@@ -262,9 +262,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of key-value pairs that are used to manage the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -518,10 +518,10 @@ pub mod list_permission_set_provisioning_status_output {
         /// <p>The status object for the permission set provisioning operation.</p>
         pub fn permission_sets_provisioning_status(
             mut self,
-            input: impl Into<crate::model::PermissionSetProvisioningStatusMetadata>,
+            input: crate::model::PermissionSetProvisioningStatusMetadata,
         ) -> Self {
             let mut v = self.permission_sets_provisioning_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permission_sets_provisioning_status = Some(v);
             self
         }
@@ -609,10 +609,10 @@ pub mod list_managed_policies_in_permission_set_output {
         /// <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
         pub fn attached_managed_policies(
             mut self,
-            input: impl Into<crate::model::AttachedManagedPolicy>,
+            input: crate::model::AttachedManagedPolicy,
         ) -> Self {
             let mut v = self.attached_managed_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attached_managed_policies = Some(v);
             self
         }
@@ -692,9 +692,9 @@ pub mod list_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>Lists the SSO instances that the caller has access to.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::InstanceMetadata>) -> Self {
+        pub fn instances(mut self, input: crate::model::InstanceMetadata) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -858,12 +858,9 @@ pub mod list_account_assignments_output {
         /// To override the contents of this collection use [`set_account_assignments`](Self::set_account_assignments).
         ///
         /// <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
-        pub fn account_assignments(
-            mut self,
-            input: impl Into<crate::model::AccountAssignment>,
-        ) -> Self {
+        pub fn account_assignments(mut self, input: crate::model::AccountAssignment) -> Self {
             let mut v = self.account_assignments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_assignments = Some(v);
             self
         }
@@ -953,10 +950,10 @@ pub mod list_account_assignment_deletion_status_output {
         /// <p>The status object for the account assignment deletion operation.</p>
         pub fn account_assignments_deletion_status(
             mut self,
-            input: impl Into<crate::model::AccountAssignmentOperationStatusMetadata>,
+            input: crate::model::AccountAssignmentOperationStatusMetadata,
         ) -> Self {
             let mut v = self.account_assignments_deletion_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_assignments_deletion_status = Some(v);
             self
         }
@@ -1048,10 +1045,10 @@ pub mod list_account_assignment_creation_status_output {
         /// <p>The status object for the account assignment creation operation.</p>
         pub fn account_assignments_creation_status(
             mut self,
-            input: impl Into<crate::model::AccountAssignmentOperationStatusMetadata>,
+            input: crate::model::AccountAssignmentOperationStatusMetadata,
         ) -> Self {
             let mut v = self.account_assignments_creation_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_assignments_creation_status = Some(v);
             self
         }

@@ -264,9 +264,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of tag keys and values attached to the specified model.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -335,9 +335,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>A list of projects in your AWS account.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::ProjectMetadata>) -> Self {
+        pub fn projects(mut self, input: crate::model::ProjectMetadata) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -421,9 +421,9 @@ pub mod list_models_output {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>A list of model versions in the specified project. </p>
-        pub fn models(mut self, input: impl Into<crate::model::ModelMetadata>) -> Self {
+        pub fn models(mut self, input: crate::model::ModelMetadata) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }

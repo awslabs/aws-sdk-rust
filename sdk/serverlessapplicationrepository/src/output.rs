@@ -370,12 +370,9 @@ pub mod put_application_policy_output {
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
         /// <p>An array of policy statements applied to the application.</p>
-        pub fn statements(
-            mut self,
-            input: impl Into<crate::model::ApplicationPolicyStatement>,
-        ) -> Self {
+        pub fn statements(mut self, input: crate::model::ApplicationPolicyStatement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
@@ -454,9 +451,9 @@ pub mod list_application_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// <p>An array of version summaries for the application.</p>
-        pub fn versions(mut self, input: impl Into<crate::model::VersionSummary>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionSummary) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -527,9 +524,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>An array of application summaries.</p>
-        pub fn applications(mut self, input: impl Into<crate::model::ApplicationSummary>) -> Self {
+        pub fn applications(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -613,12 +610,9 @@ pub mod list_application_dependencies_output {
         /// To override the contents of this collection use [`set_dependencies`](Self::set_dependencies).
         ///
         /// <p>An array of application summaries nested in the application.</p>
-        pub fn dependencies(
-            mut self,
-            input: impl Into<crate::model::ApplicationDependencySummary>,
-        ) -> Self {
+        pub fn dependencies(mut self, input: crate::model::ApplicationDependencySummary) -> Self {
             let mut v = self.dependencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dependencies = Some(v);
             self
         }
@@ -891,12 +885,9 @@ pub mod get_application_policy_output {
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
         /// <p>An array of policy statements applied to the application.</p>
-        pub fn statements(
-            mut self,
-            input: impl Into<crate::model::ApplicationPolicyStatement>,
-        ) -> Self {
+        pub fn statements(mut self, input: crate::model::ApplicationPolicyStatement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
@@ -1766,12 +1757,9 @@ pub mod create_application_version_output {
         /// To override the contents of this collection use [`set_parameter_definitions`](Self::set_parameter_definitions).
         ///
         /// <p>An array of parameter types supported by the application.</p>
-        pub fn parameter_definitions(
-            mut self,
-            input: impl Into<crate::model::ParameterDefinition>,
-        ) -> Self {
+        pub fn parameter_definitions(mut self, input: crate::model::ParameterDefinition) -> Self {
             let mut v = self.parameter_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_definitions = Some(v);
             self
         }
@@ -1810,9 +1798,9 @@ pub mod create_application_version_output {
         /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
         /// all permissions associated with the application before deploying. If you don't specify
         /// this parameter for an application that requires capabilities, the call will fail.</p>
-        pub fn required_capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn required_capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.required_capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.required_capabilities = Some(v);
             self
         }

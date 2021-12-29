@@ -79,9 +79,9 @@ pub mod application_update {
         /// To override the contents of this collection use [`set_input_updates`](Self::set_input_updates).
         ///
         /// <p>Describes application input configuration updates.</p>
-        pub fn input_updates(mut self, input: impl Into<crate::model::InputUpdate>) -> Self {
+        pub fn input_updates(mut self, input: crate::model::InputUpdate) -> Self {
             let mut v = self.input_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_updates = Some(v);
             self
         }
@@ -111,9 +111,9 @@ pub mod application_update {
         /// To override the contents of this collection use [`set_output_updates`](Self::set_output_updates).
         ///
         /// <p>Describes application output configuration updates.</p>
-        pub fn output_updates(mut self, input: impl Into<crate::model::OutputUpdate>) -> Self {
+        pub fn output_updates(mut self, input: crate::model::OutputUpdate) -> Self {
             let mut v = self.output_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_updates = Some(v);
             self
         }
@@ -132,10 +132,10 @@ pub mod application_update {
         /// <p>Describes application reference data source updates.</p>
         pub fn reference_data_source_updates(
             mut self,
-            input: impl Into<crate::model::ReferenceDataSourceUpdate>,
+            input: crate::model::ReferenceDataSourceUpdate,
         ) -> Self {
             let mut v = self.reference_data_source_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_data_source_updates = Some(v);
             self
         }
@@ -154,10 +154,10 @@ pub mod application_update {
         /// <p>Describes application CloudWatch logging option updates.</p>
         pub fn cloud_watch_logging_option_updates(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOptionUpdate>,
+            input: crate::model::CloudWatchLoggingOptionUpdate,
         ) -> Self {
             let mut v = self.cloud_watch_logging_option_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_option_updates = Some(v);
             self
         }
@@ -505,9 +505,9 @@ pub mod source_schema {
         /// To override the contents of this collection use [`set_record_columns`](Self::set_record_columns).
         ///
         /// <p>A list of <code>RecordColumn</code> objects.</p>
-        pub fn record_columns(mut self, input: impl Into<crate::model::RecordColumn>) -> Self {
+        pub fn record_columns(mut self, input: crate::model::RecordColumn) -> Self {
             let mut v = self.record_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_columns = Some(v);
             self
         }
@@ -2022,12 +2022,9 @@ pub mod input_schema_update {
         ///
         /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping
         /// of the streaming source element to the corresponding column in the in-application stream. </p>
-        pub fn record_column_updates(
-            mut self,
-            input: impl Into<crate::model::RecordColumn>,
-        ) -> Self {
+        pub fn record_column_updates(mut self, input: crate::model::RecordColumn) -> Self {
             let mut v = self.record_column_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_column_updates = Some(v);
             self
         }
@@ -3452,12 +3449,9 @@ pub mod application_detail {
         /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
         ///
         /// </p>
-        pub fn input_descriptions(
-            mut self,
-            input: impl Into<crate::model::InputDescription>,
-        ) -> Self {
+        pub fn input_descriptions(mut self, input: crate::model::InputDescription) -> Self {
             let mut v = self.input_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_descriptions = Some(v);
             self
         }
@@ -3482,12 +3476,9 @@ pub mod application_detail {
         /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
         ///
         /// </p>
-        pub fn output_descriptions(
-            mut self,
-            input: impl Into<crate::model::OutputDescription>,
-        ) -> Self {
+        pub fn output_descriptions(mut self, input: crate::model::OutputDescription) -> Self {
             let mut v = self.output_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_descriptions = Some(v);
             self
         }
@@ -3515,10 +3506,10 @@ pub mod application_detail {
         /// </p>
         pub fn reference_data_source_descriptions(
             mut self,
-            input: impl Into<crate::model::ReferenceDataSourceDescription>,
+            input: crate::model::ReferenceDataSourceDescription,
         ) -> Self {
             let mut v = self.reference_data_source_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_data_source_descriptions = Some(v);
             self
         }
@@ -3545,12 +3536,12 @@ pub mod application_detail {
         /// CloudWatch Logs</a>. </p>
         pub fn cloud_watch_logging_option_descriptions(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOptionDescription>,
+            input: crate::model::CloudWatchLoggingOptionDescription,
         ) -> Self {
             let mut v = self
                 .cloud_watch_logging_option_descriptions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_option_descriptions = Some(v);
             self
         }

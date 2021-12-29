@@ -2066,9 +2066,9 @@ pub mod virtual_router_spec {
         ///
         /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You
         /// can specify one listener.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::VirtualRouterListener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::VirtualRouterListener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -3463,12 +3463,9 @@ pub mod grpc_retry_policy {
         /// To override the contents of this collection use [`set_tcp_retry_events`](Self::set_tcp_retry_events).
         ///
         /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-        pub fn tcp_retry_events(
-            mut self,
-            input: impl Into<crate::model::TcpRetryPolicyEvent>,
-        ) -> Self {
+        pub fn tcp_retry_events(mut self, input: crate::model::TcpRetryPolicyEvent) -> Self {
             let mut v = self.tcp_retry_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tcp_retry_events = Some(v);
             self
         }
@@ -3485,12 +3482,9 @@ pub mod grpc_retry_policy {
         /// To override the contents of this collection use [`set_grpc_retry_events`](Self::set_grpc_retry_events).
         ///
         /// <p>Specify at least one of the valid values.</p>
-        pub fn grpc_retry_events(
-            mut self,
-            input: impl Into<crate::model::GrpcRetryPolicyEvent>,
-        ) -> Self {
+        pub fn grpc_retry_events(mut self, input: crate::model::GrpcRetryPolicyEvent) -> Self {
             let mut v = self.grpc_retry_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grpc_retry_events = Some(v);
             self
         }
@@ -3719,9 +3713,9 @@ pub mod grpc_route_match {
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>An object that represents the data to match from the request.</p>
-        pub fn metadata(mut self, input: impl Into<crate::model::GrpcRouteMetadata>) -> Self {
+        pub fn metadata(mut self, input: crate::model::GrpcRouteMetadata) -> Self {
             let mut v = self.metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metadata = Some(v);
             self
         }
@@ -4049,9 +4043,9 @@ pub mod grpc_route_action {
         /// To override the contents of this collection use [`set_weighted_targets`](Self::set_weighted_targets).
         ///
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn weighted_targets(mut self, input: impl Into<crate::model::WeightedTarget>) -> Self {
+        pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.weighted_targets = Some(v);
             self
         }
@@ -4548,12 +4542,9 @@ pub mod http_retry_policy {
         /// To override the contents of this collection use [`set_tcp_retry_events`](Self::set_tcp_retry_events).
         ///
         /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-        pub fn tcp_retry_events(
-            mut self,
-            input: impl Into<crate::model::TcpRetryPolicyEvent>,
-        ) -> Self {
+        pub fn tcp_retry_events(mut self, input: crate::model::TcpRetryPolicyEvent) -> Self {
             let mut v = self.tcp_retry_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tcp_retry_events = Some(v);
             self
         }
@@ -4618,9 +4609,9 @@ pub mod http_route_action {
         /// To override the contents of this collection use [`set_weighted_targets`](Self::set_weighted_targets).
         ///
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn weighted_targets(mut self, input: impl Into<crate::model::WeightedTarget>) -> Self {
+        pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.weighted_targets = Some(v);
             self
         }
@@ -4765,12 +4756,9 @@ pub mod http_route_match {
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
         /// <p>The client request query parameters to match on.</p>
-        pub fn query_parameters(
-            mut self,
-            input: impl Into<crate::model::HttpQueryParameter>,
-        ) -> Self {
+        pub fn query_parameters(mut self, input: crate::model::HttpQueryParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_parameters = Some(v);
             self
         }
@@ -4809,9 +4797,9 @@ pub mod http_route_match {
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
         /// <p>The client request headers to match on.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpRouteHeader>) -> Self {
+        pub fn headers(mut self, input: crate::model::HttpRouteHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
@@ -5539,9 +5527,9 @@ pub mod tcp_route_action {
         /// To override the contents of this collection use [`set_weighted_targets`](Self::set_weighted_targets).
         ///
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn weighted_targets(mut self, input: impl Into<crate::model::WeightedTarget>) -> Self {
+        pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.weighted_targets = Some(v);
             self
         }
@@ -6123,9 +6111,9 @@ pub mod virtual_node_spec {
         ///
         /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can
         /// specify one listener.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -6143,9 +6131,9 @@ pub mod virtual_node_spec {
         /// To override the contents of this collection use [`set_backends`](Self::set_backends).
         ///
         /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
-        pub fn backends(mut self, input: impl Into<crate::model::Backend>) -> Self {
+        pub fn backends(mut self, input: crate::model::Backend) -> Self {
             let mut v = self.backends.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backends = Some(v);
             self
         }
@@ -6557,9 +6545,9 @@ pub mod client_policy_tls {
         /// To override the contents of this collection use [`set_ports`](Self::set_ports).
         ///
         /// <p>One or more ports that the policy is enforced for.</p>
-        pub fn ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn ports(mut self, input: i32) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ports = Some(v);
             self
         }
@@ -8953,12 +8941,9 @@ pub mod aws_cloud_map_service_discovery {
         /// <p>A string map that contains attributes with values that you can use to filter instances
         /// by any custom attribute that you specified when you registered the instance. Only instances
         /// that match all of the specified key/value pairs will be returned.</p>
-        pub fn attributes(
-            mut self,
-            input: impl Into<crate::model::AwsCloudMapInstanceAttribute>,
-        ) -> Self {
+        pub fn attributes(mut self, input: crate::model::AwsCloudMapInstanceAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -9744,9 +9729,9 @@ pub mod virtual_gateway_spec {
         ///
         /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You
         /// can specify one listener.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::VirtualGatewayListener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::VirtualGatewayListener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -11687,9 +11672,9 @@ pub mod virtual_gateway_client_policy_tls {
         /// To override the contents of this collection use [`set_ports`](Self::set_ports).
         ///
         /// <p>One or more ports that the policy is enforced for.</p>
-        pub fn ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn ports(mut self, input: i32) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ports = Some(v);
             self
         }
@@ -13204,12 +13189,9 @@ pub mod grpc_gateway_route_match {
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>The gateway route metadata to be matched on.</p>
-        pub fn metadata(
-            mut self,
-            input: impl Into<crate::model::GrpcGatewayRouteMetadata>,
-        ) -> Self {
+        pub fn metadata(mut self, input: crate::model::GrpcGatewayRouteMetadata) -> Self {
             let mut v = self.metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metadata = Some(v);
             self
         }
@@ -14005,12 +13987,9 @@ pub mod http_gateway_route_match {
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
         /// <p>The query parameter to match on.</p>
-        pub fn query_parameters(
-            mut self,
-            input: impl Into<crate::model::HttpQueryParameter>,
-        ) -> Self {
+        pub fn query_parameters(mut self, input: crate::model::HttpQueryParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_parameters = Some(v);
             self
         }
@@ -14050,9 +14029,9 @@ pub mod http_gateway_route_match {
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
         /// <p>The client request headers to match on.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpGatewayRouteHeader>) -> Self {
+        pub fn headers(mut self, input: crate::model::HttpGatewayRouteHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }

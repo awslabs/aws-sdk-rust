@@ -397,9 +397,9 @@ pub mod put_records_output {
         /// successfully added to a stream includes <code>SequenceNumber</code> and
         /// <code>ShardId</code> in the result. A record that fails to be added to a stream
         /// includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-        pub fn records(mut self, input: impl Into<crate::model::PutRecordsResultEntry>) -> Self {
+        pub fn records(mut self, input: crate::model::PutRecordsResultEntry) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -702,9 +702,9 @@ pub mod list_tags_for_stream_output {
         /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag
         /// after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -902,9 +902,9 @@ pub mod list_stream_consumers_output {
         /// To override the contents of this collection use [`set_consumers`](Self::set_consumers).
         ///
         /// <p>An array of JSON objects. Each object represents one registered consumer.</p>
-        pub fn consumers(mut self, input: impl Into<crate::model::Consumer>) -> Self {
+        pub fn consumers(mut self, input: crate::model::Consumer) -> Self {
             let mut v = self.consumers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumers = Some(v);
             self
         }
@@ -1045,9 +1045,9 @@ pub mod list_shards_output {
         /// the shard, the shard's parent, and the shard that's adjacent to the shard's parent. Each
         /// object also contains the starting and ending hash keys and the starting and ending
         /// sequence numbers for the shard.</p>
-        pub fn shards(mut self, input: impl Into<crate::model::Shard>) -> Self {
+        pub fn shards(mut self, input: crate::model::Shard) -> Self {
             let mut v = self.shards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shards = Some(v);
             self
         }
@@ -1277,9 +1277,9 @@ pub mod get_records_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>The data records retrieved from the shard.</p>
-        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -1330,9 +1330,9 @@ pub mod get_records_output {
         ///
         /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code>
         /// API's response only when the end of the current shard is reached.</p>
-        pub fn child_shards(mut self, input: impl Into<crate::model::ChildShard>) -> Self {
+        pub fn child_shards(mut self, input: crate::model::ChildShard) -> Self {
             let mut v = self.child_shards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.child_shards = Some(v);
             self
         }
@@ -1436,12 +1436,9 @@ pub mod enable_enhanced_monitoring_output {
         ///
         /// <p>Represents the current state of the metrics that are in the enhanced state before the
         /// operation.</p>
-        pub fn current_shard_level_metrics(
-            mut self,
-            input: impl Into<crate::model::MetricsName>,
-        ) -> Self {
+        pub fn current_shard_level_metrics(mut self, input: crate::model::MetricsName) -> Self {
             let mut v = self.current_shard_level_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.current_shard_level_metrics = Some(v);
             self
         }
@@ -1460,12 +1457,9 @@ pub mod enable_enhanced_monitoring_output {
         ///
         /// <p>Represents the list of all the metrics that would be in the enhanced state after the
         /// operation.</p>
-        pub fn desired_shard_level_metrics(
-            mut self,
-            input: impl Into<crate::model::MetricsName>,
-        ) -> Self {
+        pub fn desired_shard_level_metrics(mut self, input: crate::model::MetricsName) -> Self {
             let mut v = self.desired_shard_level_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.desired_shard_level_metrics = Some(v);
             self
         }
@@ -1568,12 +1562,9 @@ pub mod disable_enhanced_monitoring_output {
         ///
         /// <p>Represents the current state of the metrics that are in the enhanced state before the
         /// operation.</p>
-        pub fn current_shard_level_metrics(
-            mut self,
-            input: impl Into<crate::model::MetricsName>,
-        ) -> Self {
+        pub fn current_shard_level_metrics(mut self, input: crate::model::MetricsName) -> Self {
             let mut v = self.current_shard_level_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.current_shard_level_metrics = Some(v);
             self
         }
@@ -1592,12 +1583,9 @@ pub mod disable_enhanced_monitoring_output {
         ///
         /// <p>Represents the list of all the metrics that would be in the enhanced state after the
         /// operation.</p>
-        pub fn desired_shard_level_metrics(
-            mut self,
-            input: impl Into<crate::model::MetricsName>,
-        ) -> Self {
+        pub fn desired_shard_level_metrics(mut self, input: crate::model::MetricsName) -> Self {
             let mut v = self.desired_shard_level_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.desired_shard_level_metrics = Some(v);
             self
         }

@@ -281,9 +281,9 @@ pub mod resolver_rule {
         ///
         /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
         /// these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
-        pub fn target_ips(mut self, input: impl Into<crate::model::TargetAddress>) -> Self {
+        pub fn target_ips(mut self, input: crate::model::TargetAddress) -> Self {
             let mut v = self.target_ips.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_ips = Some(v);
             self
         }
@@ -708,9 +708,9 @@ pub mod resolver_rule_config {
         /// To override the contents of this collection use [`set_target_ips`](Self::set_target_ips).
         ///
         /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
-        pub fn target_ips(mut self, input: impl Into<crate::model::TargetAddress>) -> Self {
+        pub fn target_ips(mut self, input: crate::model::TargetAddress) -> Self {
             let mut v = self.target_ips.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_ips = Some(v);
             self
         }

@@ -42,9 +42,9 @@ pub mod associate_aws_account_with_partner_account_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1512,9 +1512,9 @@ pub mod create_destination_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1718,9 +1718,9 @@ pub mod create_device_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1973,9 +1973,9 @@ pub mod create_fuota_task_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2194,9 +2194,9 @@ pub mod create_multicast_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2387,9 +2387,9 @@ pub mod create_service_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2644,9 +2644,9 @@ pub mod create_wireless_device_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2850,9 +2850,9 @@ pub mod create_wireless_gateway_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3266,9 +3266,9 @@ pub mod create_wireless_gateway_task_definition_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12109,9 +12109,9 @@ pub mod start_bulk_associate_wireless_device_with_multicast_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12314,9 +12314,9 @@ pub mod start_bulk_disassociate_wireless_device_from_multicast_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12869,9 +12869,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13832,10 +13832,10 @@ pub mod update_log_levels_by_resource_types_input {
         /// <p>The list of wireless device log options.</p>
         pub fn wireless_device_log_options(
             mut self,
-            input: impl Into<crate::model::WirelessDeviceLogOption>,
+            input: crate::model::WirelessDeviceLogOption,
         ) -> Self {
             let mut v = self.wireless_device_log_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.wireless_device_log_options = Some(v);
             self
         }
@@ -13854,10 +13854,10 @@ pub mod update_log_levels_by_resource_types_input {
         /// <p>The list of wireless gateway log options.</p>
         pub fn wireless_gateway_log_options(
             mut self,
-            input: impl Into<crate::model::WirelessGatewayLogOption>,
+            input: crate::model::WirelessGatewayLogOption,
         ) -> Self {
             let mut v = self.wireless_gateway_log_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.wireless_gateway_log_options = Some(v);
             self
         }
@@ -15232,12 +15232,9 @@ pub mod update_wireless_gateway_input {
         /// To override the contents of this collection use [`set_join_eui_filters`](Self::set_join_eui_filters).
         ///
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-        pub fn join_eui_filters(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn join_eui_filters(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.join_eui_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.join_eui_filters = Some(v);
             self
         }

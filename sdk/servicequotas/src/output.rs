@@ -221,9 +221,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A complex data type that contains zero or more tag elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -304,9 +304,9 @@ pub mod list_services_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>Information about the services.</p>
-        pub fn services(mut self, input: impl Into<crate::model::ServiceInfo>) -> Self {
+        pub fn services(mut self, input: crate::model::ServiceInfo) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -390,9 +390,9 @@ pub mod list_service_quotas_output {
         /// To override the contents of this collection use [`set_quotas`](Self::set_quotas).
         ///
         /// <p>Information about the quotas.</p>
-        pub fn quotas(mut self, input: impl Into<crate::model::ServiceQuota>) -> Self {
+        pub fn quotas(mut self, input: crate::model::ServiceQuota) -> Self {
             let mut v = self.quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quotas = Some(v);
             self
         }
@@ -474,12 +474,12 @@ pub mod list_service_quota_increase_requests_in_template_output {
         /// <p>Information about the quota increase requests.</p>
         pub fn service_quota_increase_request_in_template_list(
             mut self,
-            input: impl Into<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+            input: crate::model::ServiceQuotaIncreaseRequestInTemplate,
         ) -> Self {
             let mut v = self
                 .service_quota_increase_request_in_template_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_quota_increase_request_in_template_list = Some(v);
             self
         }
@@ -585,10 +585,10 @@ pub mod list_requested_service_quota_change_history_by_quota_output {
         /// <p>Information about the quota increase requests.</p>
         pub fn requested_quotas(
             mut self,
-            input: impl Into<crate::model::RequestedServiceQuotaChange>,
+            input: crate::model::RequestedServiceQuotaChange,
         ) -> Self {
             let mut v = self.requested_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requested_quotas = Some(v);
             self
         }
@@ -680,10 +680,10 @@ pub mod list_requested_service_quota_change_history_output {
         /// <p>Information about the quota increase requests.</p>
         pub fn requested_quotas(
             mut self,
-            input: impl Into<crate::model::RequestedServiceQuotaChange>,
+            input: crate::model::RequestedServiceQuotaChange,
         ) -> Self {
             let mut v = self.requested_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requested_quotas = Some(v);
             self
         }
@@ -767,9 +767,9 @@ pub mod list_aws_default_service_quotas_output {
         /// To override the contents of this collection use [`set_quotas`](Self::set_quotas).
         ///
         /// <p>Information about the quotas.</p>
-        pub fn quotas(mut self, input: impl Into<crate::model::ServiceQuota>) -> Self {
+        pub fn quotas(mut self, input: crate::model::ServiceQuota) -> Self {
             let mut v = self.quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quotas = Some(v);
             self
         }

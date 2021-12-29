@@ -2427,12 +2427,9 @@ pub mod metric_filter {
         /// To override the contents of this collection use [`set_metric_transformations`](Self::set_metric_transformations).
         ///
         /// <p>The metric transformations.</p>
-        pub fn metric_transformations(
-            mut self,
-            input: impl Into<crate::model::MetricTransformation>,
-        ) -> Self {
+        pub fn metric_transformations(mut self, input: crate::model::MetricTransformation) -> Self {
             let mut v = self.metric_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_transformations = Some(v);
             self
         }

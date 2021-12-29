@@ -187,9 +187,9 @@ pub mod add_tags_input {
         ///
         /// <p>List of <code>Tag</code> to add to the domain.
         /// </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -901,11 +901,11 @@ pub mod create_domain_input {
         /// </p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             let mut hash_map = self.log_publishing_options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.log_publishing_options = Some(hash_map);
             self
         }
@@ -959,9 +959,9 @@ pub mod create_domain_input {
         ///
         /// <p>A list of <code>Tag</code> added during domain creation.
         /// </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -2864,9 +2864,9 @@ pub mod describe_inbound_connections_input {
         /// <li>remote-domain-info.domain-name</li>
         /// </ul>
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3335,9 +3335,9 @@ pub mod describe_outbound_connections_input {
         /// <li>local-domain-info.domain-name</li>
         /// </ul>
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3539,9 +3539,9 @@ pub mod describe_packages_input {
         ///
         /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::DescribePackagesFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DescribePackagesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6953,11 +6953,11 @@ pub mod update_domain_config_input {
         /// </p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             let mut hash_map = self.log_publishing_options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.log_publishing_options = Some(hash_map);
             self
         }

@@ -238,9 +238,9 @@ pub mod list_tunnels_output {
         /// To override the contents of this collection use [`set_tunnel_summaries`](Self::set_tunnel_summaries).
         ///
         /// <p>A short description of the tunnels in an AWS account.</p>
-        pub fn tunnel_summaries(mut self, input: impl Into<crate::model::TunnelSummary>) -> Self {
+        pub fn tunnel_summaries(mut self, input: crate::model::TunnelSummary) -> Self {
             let mut v = self.tunnel_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tunnel_summaries = Some(v);
             self
         }
@@ -312,9 +312,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

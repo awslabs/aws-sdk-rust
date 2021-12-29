@@ -50,9 +50,9 @@ pub mod list_hypervisors_output {
         ///
         /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names
         /// (ARNs).</p>
-        pub fn hypervisors(mut self, input: impl Into<crate::model::Hypervisor>) -> Self {
+        pub fn hypervisors(mut self, input: crate::model::Hypervisor) -> Self {
             let mut v = self.hypervisors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hypervisors = Some(v);
             self
         }
@@ -512,9 +512,9 @@ pub mod list_gateways_output {
         /// To override the contents of this collection use [`set_gateways`](Self::set_gateways).
         ///
         /// <p>A list of your gateways.</p>
-        pub fn gateways(mut self, input: impl Into<crate::model::Gateway>) -> Self {
+        pub fn gateways(mut self, input: crate::model::Gateway) -> Self {
             let mut v = self.gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateways = Some(v);
             self
         }
@@ -880,9 +880,9 @@ pub mod list_virtual_machines_output {
         ///
         /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names
         /// (ARNs).</p>
-        pub fn virtual_machines(mut self, input: impl Into<crate::model::VirtualMachine>) -> Self {
+        pub fn virtual_machines(mut self, input: crate::model::VirtualMachine) -> Self {
             let mut v = self.virtual_machines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_machines = Some(v);
             self
         }
@@ -979,9 +979,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the resource's tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

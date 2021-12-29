@@ -494,9 +494,9 @@ pub mod app_monitor_configuration {
         /// <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p>
         /// </li>
         /// </ul>
-        pub fn telemetries(mut self, input: impl Into<crate::model::Telemetry>) -> Self {
+        pub fn telemetries(mut self, input: crate::model::Telemetry) -> Self {
             let mut v = self.telemetries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.telemetries = Some(v);
             self
         }

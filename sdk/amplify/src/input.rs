@@ -191,9 +191,9 @@ pub mod create_app_input {
         /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
         ///
         /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
-        pub fn custom_rules(mut self, input: impl Into<crate::model::CustomRule>) -> Self {
+        pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
             let mut v = self.custom_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_rules = Some(v);
             self
         }
@@ -1355,12 +1355,9 @@ pub mod create_domain_association_input {
         /// To override the contents of this collection use [`set_sub_domain_settings`](Self::set_sub_domain_settings).
         ///
         /// <p> The setting for the subdomain. </p>
-        pub fn sub_domain_settings(
-            mut self,
-            input: impl Into<crate::model::SubDomainSetting>,
-        ) -> Self {
+        pub fn sub_domain_settings(mut self, input: crate::model::SubDomainSetting) -> Self {
             let mut v = self.sub_domain_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_domain_settings = Some(v);
             self
         }
@@ -7065,9 +7062,9 @@ pub mod update_app_input {
         /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
         ///
         /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-        pub fn custom_rules(mut self, input: impl Into<crate::model::CustomRule>) -> Self {
+        pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
             let mut v = self.custom_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_rules = Some(v);
             self
         }
@@ -7806,12 +7803,9 @@ pub mod update_domain_association_input {
         /// To override the contents of this collection use [`set_sub_domain_settings`](Self::set_sub_domain_settings).
         ///
         /// <p> Describes the settings for the subdomain. </p>
-        pub fn sub_domain_settings(
-            mut self,
-            input: impl Into<crate::model::SubDomainSetting>,
-        ) -> Self {
+        pub fn sub_domain_settings(mut self, input: crate::model::SubDomainSetting) -> Self {
             let mut v = self.sub_domain_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_domain_settings = Some(v);
             self
         }

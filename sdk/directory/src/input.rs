@@ -188,9 +188,9 @@ pub mod add_ip_routes_input {
         ///
         /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP
         /// address block of the DNS server used for your self-managed domain.</p>
-        pub fn ip_routes(mut self, input: impl Into<crate::model::IpRoute>) -> Self {
+        pub fn ip_routes(mut self, input: crate::model::IpRoute) -> Self {
             let mut v = self.ip_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_routes = Some(v);
             self
         }
@@ -693,9 +693,9 @@ pub mod add_tags_to_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the directory.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1101,9 +1101,9 @@ pub mod connect_directory_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to AD Connector.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1493,9 +1493,9 @@ pub mod create_computer_input {
         ///
         /// <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to apply to the
         /// computer account.</p>
-        pub fn computer_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn computer_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.computer_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.computer_attributes = Some(v);
             self
         }
@@ -1985,9 +1985,9 @@ pub mod create_directory_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the Simple AD directory.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2415,9 +2415,9 @@ pub mod create_microsoft_ad_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

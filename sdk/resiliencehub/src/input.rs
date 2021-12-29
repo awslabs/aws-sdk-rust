@@ -38,12 +38,9 @@ pub mod add_draft_app_version_resource_mappings_input {
         /// a logical stack name. Or you can map individual resources by using the mapping type
         /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
         /// application is backed by a CloudFormation stack.</p>
-        pub fn resource_mappings(
-            mut self,
-            input: impl Into<crate::model::ResourceMapping>,
-        ) -> Self {
+        pub fn resource_mappings(mut self, input: crate::model::ResourceMapping) -> Self {
             let mut v = self.resource_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_mappings = Some(v);
             self
         }
@@ -510,10 +507,10 @@ pub mod create_recommendation_template_input {
         /// </dl>
         pub fn recommendation_types(
             mut self,
-            input: impl Into<crate::model::RenderRecommendationType>,
+            input: crate::model::RenderRecommendationType,
         ) -> Self {
             let mut v = self.recommendation_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_types = Some(v);
             self
         }
@@ -846,11 +843,11 @@ pub mod create_resiliency_policy_input {
         /// and recovery point objective (RPO) in seconds.</p>
         pub fn policy(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::FailurePolicy>,
+            k: crate::model::DisruptionType,
+            v: crate::model::FailurePolicy,
         ) -> Self {
             let mut hash_map = self.policy.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.policy = Some(hash_map);
             self
         }
@@ -3188,12 +3185,9 @@ pub mod list_app_assessments_input {
         /// To override the contents of this collection use [`set_assessment_status`](Self::set_assessment_status).
         ///
         /// <p>The current status of the assessment for the resiliency policy.</p>
-        pub fn assessment_status(
-            mut self,
-            input: impl Into<crate::model::AssessmentStatus>,
-        ) -> Self {
+        pub fn assessment_status(mut self, input: crate::model::AssessmentStatus) -> Self {
             let mut v = self.assessment_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_status = Some(v);
             self
         }
@@ -4666,12 +4660,9 @@ pub mod list_recommendation_templates_input {
         /// To override the contents of this collection use [`set_status`](Self::set_status).
         ///
         /// <p>The status of the action.</p>
-        pub fn status(
-            mut self,
-            input: impl Into<crate::model::RecommendationTemplateStatus>,
-        ) -> Self {
+        pub fn status(mut self, input: crate::model::RecommendationTemplateStatus) -> Self {
             let mut v = self.status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.status = Some(v);
             self
         }
@@ -7643,11 +7634,11 @@ pub mod update_resiliency_policy_input {
         /// and recovery point objective (RPO) in seconds.</p>
         pub fn policy(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::FailurePolicy>,
+            k: crate::model::DisruptionType,
+            v: crate::model::FailurePolicy,
         ) -> Self {
             let mut hash_map = self.policy.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.policy = Some(hash_map);
             self
         }

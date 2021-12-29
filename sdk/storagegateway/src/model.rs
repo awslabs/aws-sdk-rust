@@ -1257,9 +1257,9 @@ pub mod bandwidth_rate_limit_interval {
         ///
         /// <p> The days of the week component of the bandwidth rate limit interval, represented as
         /// ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday. </p>
-        pub fn days_of_week(mut self, input: impl Into<i32>) -> Self {
+        pub fn days_of_week(mut self, input: i32) -> Self {
             let mut v = self.days_of_week.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.days_of_week = Some(v);
             self
         }
@@ -3483,10 +3483,10 @@ pub mod automatic_tape_creation_policy_info {
         /// tapes.</p>
         pub fn automatic_tape_creation_rules(
             mut self,
-            input: impl Into<crate::model::AutomaticTapeCreationRule>,
+            input: crate::model::AutomaticTapeCreationRule,
         ) -> Self {
             let mut v = self.automatic_tape_creation_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.automatic_tape_creation_rules = Some(v);
             self
         }
@@ -6331,9 +6331,9 @@ pub mod smb_file_share_info {
         /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key
         /// name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can
         /// view all tags using the <code>ListTagsForResource</code> API operation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7405,9 +7405,9 @@ pub mod nfs_file_share_info {
         /// <p>A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key
         /// name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can
         /// view all tags using the <code>ListTagsForResource</code> API operation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7950,9 +7950,9 @@ pub mod file_system_association_info {
         ///
         /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key
         /// name. Each tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8010,12 +8010,12 @@ pub mod file_system_association_info {
         /// detailed information on file system association status.</p>
         pub fn file_system_association_status_details(
             mut self,
-            input: impl Into<crate::model::FileSystemAssociationStatusDetail>,
+            input: crate::model::FileSystemAssociationStatusDetail,
         ) -> Self {
             let mut v = self
                 .file_system_association_status_details
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_association_status_details = Some(v);
             self
         }

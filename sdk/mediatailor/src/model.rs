@@ -1994,10 +1994,10 @@ pub mod vod_source {
         /// <p>The HTTP package configurations for the VOD source.</p>
         pub fn http_package_configurations(
             mut self,
-            input: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
             let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.http_package_configurations = Some(v);
             self
         }
@@ -2669,10 +2669,10 @@ pub mod prefetch_consumption {
         /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as scte.event_id, set the avail matching criteria.</p>
         pub fn avail_matching_criteria(
             mut self,
-            input: impl Into<crate::model::AvailMatchingCriteria>,
+            input: crate::model::AvailMatchingCriteria,
         ) -> Self {
             let mut v = self.avail_matching_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.avail_matching_criteria = Some(v);
             self
         }
@@ -3125,10 +3125,10 @@ pub mod playback_configuration {
         pub fn configuration_aliases(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.configuration_aliases.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configuration_aliases = Some(hash_map);
             self
         }
@@ -3553,9 +3553,9 @@ pub mod channel {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::ResponseOutputItem>) -> Self {
+        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -3928,12 +3928,9 @@ pub mod schedule_entry {
         /// To override the contents of this collection use [`set_schedule_ad_breaks`](Self::set_schedule_ad_breaks).
         ///
         /// <p>The schedule's ad break properties.</p>
-        pub fn schedule_ad_breaks(
-            mut self,
-            input: impl Into<crate::model::ScheduleAdBreak>,
-        ) -> Self {
+        pub fn schedule_ad_breaks(mut self, input: crate::model::ScheduleAdBreak) -> Self {
             let mut v = self.schedule_ad_breaks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schedule_ad_breaks = Some(v);
             self
         }

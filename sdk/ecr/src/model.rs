@@ -417,9 +417,9 @@ pub mod replication_configuration {
         ///
         /// <p>An array of objects representing the replication destinations and repository filters
         /// for a replication configuration.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::ReplicationRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::ReplicationRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -494,12 +494,9 @@ pub mod replication_rule {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// <p>An array of objects representing the destination for a replication rule.</p>
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::ReplicationDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::ReplicationDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -518,12 +515,9 @@ pub mod replication_rule {
         /// <p>An array of objects representing the filters for a replication rule. Specifying a
         /// repository filter for a replication rule provides a method for controlling which
         /// repositories in a private registry are replicated.</p>
-        pub fn repository_filters(
-            mut self,
-            input: impl Into<crate::model::RepositoryFilter>,
-        ) -> Self {
+        pub fn repository_filters(mut self, input: crate::model::RepositoryFilter) -> Self {
             let mut v = self.repository_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repository_filters = Some(v);
             self
         }
@@ -828,9 +822,9 @@ pub mod registry_scanning_configuration {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The scanning rules associated with the registry.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::RegistryScanningRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::RegistryScanningRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -920,12 +914,9 @@ pub mod registry_scanning_rule {
         ///
         /// <p>The repository filters associated with the scanning configuration for a private
         /// registry.</p>
-        pub fn repository_filters(
-            mut self,
-            input: impl Into<crate::model::ScanningRepositoryFilter>,
-        ) -> Self {
+        pub fn repository_filters(mut self, input: crate::model::ScanningRepositoryFilter) -> Self {
             let mut v = self.repository_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repository_filters = Some(v);
             self
         }
@@ -2753,13 +2744,9 @@ pub mod image_scan_findings {
         /// To override the contents of this collection use [`set_finding_severity_counts`](Self::set_finding_severity_counts).
         ///
         /// <p>The image vulnerability counts, sorted by severity.</p>
-        pub fn finding_severity_counts(
-            mut self,
-            k: impl Into<crate::model::FindingSeverity>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn finding_severity_counts(mut self, k: crate::model::FindingSeverity, v: i32) -> Self {
             let mut hash_map = self.finding_severity_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.finding_severity_counts = Some(hash_map);
             self
         }
@@ -2778,9 +2765,9 @@ pub mod image_scan_findings {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>The findings from the image scan.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::ImageScanFinding>) -> Self {
+        pub fn findings(mut self, input: crate::model::ImageScanFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -2797,12 +2784,9 @@ pub mod image_scan_findings {
         /// To override the contents of this collection use [`set_enhanced_findings`](Self::set_enhanced_findings).
         ///
         /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
-        pub fn enhanced_findings(
-            mut self,
-            input: impl Into<crate::model::EnhancedImageScanFinding>,
-        ) -> Self {
+        pub fn enhanced_findings(mut self, input: crate::model::EnhancedImageScanFinding) -> Self {
             let mut v = self.enhanced_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enhanced_findings = Some(v);
             self
         }
@@ -3075,9 +3059,9 @@ pub mod enhanced_image_scan_finding {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>Contains information on the resources involved in a finding.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -3316,9 +3300,9 @@ pub mod cvss_score_details {
         /// To override the contents of this collection use [`set_adjustments`](Self::set_adjustments).
         ///
         /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-        pub fn adjustments(mut self, input: impl Into<crate::model::CvssScoreAdjustment>) -> Self {
+        pub fn adjustments(mut self, input: crate::model::CvssScoreAdjustment) -> Self {
             let mut v = self.adjustments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.adjustments = Some(v);
             self
         }
@@ -4112,9 +4096,9 @@ pub mod package_vulnerability_details {
         /// To override the contents of this collection use [`set_cvss`](Self::set_cvss).
         ///
         /// <p>An object that contains details about the CVSS score of a finding.</p>
-        pub fn cvss(mut self, input: impl Into<crate::model::CvssScore>) -> Self {
+        pub fn cvss(mut self, input: crate::model::CvssScore) -> Self {
             let mut v = self.cvss.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cvss = Some(v);
             self
         }
@@ -4243,12 +4227,9 @@ pub mod package_vulnerability_details {
         /// To override the contents of this collection use [`set_vulnerable_packages`](Self::set_vulnerable_packages).
         ///
         /// <p>The packages impacted by this vulnerability.</p>
-        pub fn vulnerable_packages(
-            mut self,
-            input: impl Into<crate::model::VulnerablePackage>,
-        ) -> Self {
+        pub fn vulnerable_packages(mut self, input: crate::model::VulnerablePackage) -> Self {
             let mut v = self.vulnerable_packages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vulnerable_packages = Some(v);
             self
         }
@@ -4700,9 +4681,9 @@ pub mod image_scan_finding {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A collection of attributes of the host from which the finding is generated.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -5270,13 +5251,9 @@ pub mod image_scan_findings_summary {
         /// To override the contents of this collection use [`set_finding_severity_counts`](Self::set_finding_severity_counts).
         ///
         /// <p>The image vulnerability counts, sorted by severity.</p>
-        pub fn finding_severity_counts(
-            mut self,
-            k: impl Into<crate::model::FindingSeverity>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn finding_severity_counts(mut self, k: crate::model::FindingSeverity, v: i32) -> Self {
             let mut hash_map = self.finding_severity_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.finding_severity_counts = Some(hash_map);
             self
         }
@@ -5826,10 +5803,10 @@ pub mod repository_scanning_configuration {
         /// <p>The scan filters applied to the repository.</p>
         pub fn applied_scan_filters(
             mut self,
-            input: impl Into<crate::model::ScanningRepositoryFilter>,
+            input: crate::model::ScanningRepositoryFilter,
         ) -> Self {
             let mut v = self.applied_scan_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applied_scan_filters = Some(v);
             self
         }

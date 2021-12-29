@@ -540,12 +540,9 @@ pub mod server {
         /// <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p>
         /// </li>
         /// </ul>
-        pub fn engine_attributes(
-            mut self,
-            input: impl Into<crate::model::EngineAttribute>,
-        ) -> Self {
+        pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_attributes = Some(v);
             self
         }

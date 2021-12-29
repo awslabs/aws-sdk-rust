@@ -460,9 +460,9 @@ pub mod update_file_system_output {
         ///
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
         /// objects.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -604,12 +604,9 @@ pub mod put_lifecycle_configuration_output {
         ///
         /// <p>An array of lifecycle management policies. EFS supports a maximum of one
         /// policy per file system.</p>
-        pub fn lifecycle_policies(
-            mut self,
-            input: impl Into<crate::model::LifecyclePolicy>,
-        ) -> Self {
+        pub fn lifecycle_policies(mut self, input: crate::model::LifecyclePolicy) -> Self {
             let mut v = self.lifecycle_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_policies = Some(v);
             self
         }
@@ -903,9 +900,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of the tags for the specified EFS resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1016,9 +1013,9 @@ pub mod describe_tags_output {
         ///
         /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1197,12 +1194,9 @@ pub mod describe_mount_targets_output {
         ///
         /// <p>Returns the file system's mount targets as an array of
         /// <code>MountTargetDescription</code> objects.</p>
-        pub fn mount_targets(
-            mut self,
-            input: impl Into<crate::model::MountTargetDescription>,
-        ) -> Self {
+        pub fn mount_targets(mut self, input: crate::model::MountTargetDescription) -> Self {
             let mut v = self.mount_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mount_targets = Some(v);
             self
         }
@@ -1284,12 +1278,9 @@ pub mod describe_lifecycle_configuration_output {
         ///
         /// <p>An array of lifecycle management policies. EFS supports a maximum of one
         /// policy per file system.</p>
-        pub fn lifecycle_policies(
-            mut self,
-            input: impl Into<crate::model::LifecyclePolicy>,
-        ) -> Self {
+        pub fn lifecycle_policies(mut self, input: crate::model::LifecyclePolicy) -> Self {
             let mut v = self.lifecycle_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_policies = Some(v);
             self
         }
@@ -1380,12 +1371,9 @@ pub mod describe_file_systems_output {
         /// To override the contents of this collection use [`set_file_systems`](Self::set_file_systems).
         ///
         /// <p>An array of file system descriptions.</p>
-        pub fn file_systems(
-            mut self,
-            input: impl Into<crate::model::FileSystemDescription>,
-        ) -> Self {
+        pub fn file_systems(mut self, input: crate::model::FileSystemDescription) -> Self {
             let mut v = self.file_systems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_systems = Some(v);
             self
         }
@@ -1686,12 +1674,9 @@ pub mod describe_access_points_output {
         /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
         ///
         /// <p>An array of access point descriptions.</p>
-        pub fn access_points(
-            mut self,
-            input: impl Into<crate::model::AccessPointDescription>,
-        ) -> Self {
+        pub fn access_points(mut self, input: crate::model::AccessPointDescription) -> Self {
             let mut v = self.access_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_points = Some(v);
             self
         }
@@ -2631,9 +2616,9 @@ pub mod create_file_system_output {
         ///
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
         /// objects.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2805,9 +2790,9 @@ pub mod create_access_point_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

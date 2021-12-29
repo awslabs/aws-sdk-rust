@@ -386,9 +386,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the tag key-value pairs that are associated with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -456,12 +456,9 @@ pub mod list_services_output {
         /// To override the contents of this collection use [`set_service_summary_list`](Self::set_service_summary_list).
         ///
         /// <p>A list of service summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-        pub fn service_summary_list(
-            mut self,
-            input: impl Into<crate::model::ServiceSummary>,
-        ) -> Self {
+        pub fn service_summary_list(mut self, input: crate::model::ServiceSummary) -> Self {
             let mut v = self.service_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_summary_list = Some(v);
             self
         }
@@ -545,12 +542,9 @@ pub mod list_operations_output {
         ///
         /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each
         /// call.</p>
-        pub fn operation_summary_list(
-            mut self,
-            input: impl Into<crate::model::OperationSummary>,
-        ) -> Self {
+        pub fn operation_summary_list(mut self, input: crate::model::OperationSummary) -> Self {
             let mut v = self.operation_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operation_summary_list = Some(v);
             self
         }
@@ -638,12 +632,9 @@ pub mod list_connections_output {
         ///
         /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each
         /// call.</p>
-        pub fn connection_summary_list(
-            mut self,
-            input: impl Into<crate::model::ConnectionSummary>,
-        ) -> Self {
+        pub fn connection_summary_list(mut self, input: crate::model::ConnectionSummary) -> Self {
             let mut v = self.connection_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_summary_list = Some(v);
             self
         }
@@ -736,12 +727,12 @@ pub mod list_auto_scaling_configurations_output {
         /// records for each call.</p>
         pub fn auto_scaling_configuration_summary_list(
             mut self,
-            input: impl Into<crate::model::AutoScalingConfigurationSummary>,
+            input: crate::model::AutoScalingConfigurationSummary,
         ) -> Self {
             let mut v = self
                 .auto_scaling_configuration_summary_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_scaling_configuration_summary_list = Some(v);
             self
         }
@@ -1013,9 +1004,9 @@ pub mod describe_custom_domains_output {
         ///
         /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to
         /// <code>MaxResults</code> records per call.</p>
-        pub fn custom_domains(mut self, input: impl Into<crate::model::CustomDomain>) -> Self {
+        pub fn custom_domains(mut self, input: crate::model::CustomDomain) -> Self {
             let mut v = self.custom_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_domains = Some(v);
             self
         }

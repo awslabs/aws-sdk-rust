@@ -1490,10 +1490,10 @@ pub mod multiplex_program {
         /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn pipeline_details(
             mut self,
-            input: impl Into<crate::model::MultiplexProgramPipelineDetail>,
+            input: crate::model::MultiplexProgramPipelineDetail,
         ) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_details = Some(v);
             self
         }
@@ -1740,9 +1740,9 @@ pub mod multiplex_program_packet_identifiers_map {
         /// To override the contents of this collection use [`set_audio_pids`](Self::set_audio_pids).
         ///
         /// Placeholder documentation for __listOf__integer
-        pub fn audio_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn audio_pids(mut self, input: i32) -> Self {
             let mut v = self.audio_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_pids = Some(v);
             self
         }
@@ -1756,9 +1756,9 @@ pub mod multiplex_program_packet_identifiers_map {
         /// To override the contents of this collection use [`set_dvb_sub_pids`](Self::set_dvb_sub_pids).
         ///
         /// Placeholder documentation for __listOf__integer
-        pub fn dvb_sub_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn dvb_sub_pids(mut self, input: i32) -> Self {
             let mut v = self.dvb_sub_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dvb_sub_pids = Some(v);
             self
         }
@@ -1802,9 +1802,9 @@ pub mod multiplex_program_packet_identifiers_map {
         /// To override the contents of this collection use [`set_klv_data_pids`](Self::set_klv_data_pids).
         ///
         /// Placeholder documentation for __listOf__integer
-        pub fn klv_data_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn klv_data_pids(mut self, input: i32) -> Self {
             let mut v = self.klv_data_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.klv_data_pids = Some(v);
             self
         }
@@ -1848,9 +1848,9 @@ pub mod multiplex_program_packet_identifiers_map {
         /// To override the contents of this collection use [`set_scte27_pids`](Self::set_scte27_pids).
         ///
         /// Placeholder documentation for __listOf__integer
-        pub fn scte27_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn scte27_pids(mut self, input: i32) -> Self {
             let mut v = self.scte27_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scte27_pids = Some(v);
             self
         }
@@ -2514,12 +2514,9 @@ pub mod multiplex {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of the multiplex output destinations.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::MultiplexOutputDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -3147,12 +3144,9 @@ pub mod input_security_group {
         /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
         ///
         /// Whitelist rules and their sync status
-        pub fn whitelist_rules(
-            mut self,
-            input: impl Into<crate::model::InputWhitelistRule>,
-        ) -> Self {
+        pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRule) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.whitelist_rules = Some(v);
             self
         }
@@ -4663,9 +4657,9 @@ pub mod input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of the destinations of the input (PUSH-type).
-        pub fn destinations(mut self, input: impl Into<crate::model::InputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::InputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -4707,12 +4701,9 @@ pub mod input {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// Settings for the input devices.
-        pub fn input_devices(
-            mut self,
-            input: impl Into<crate::model::InputDeviceSettings>,
-        ) -> Self {
+        pub fn input_devices(mut self, input: crate::model::InputDeviceSettings) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_devices = Some(v);
             self
         }
@@ -4763,12 +4754,9 @@ pub mod input {
         /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
         ///
         /// A list of MediaConnect Flows for this input.
-        pub fn media_connect_flows(
-            mut self,
-            input: impl Into<crate::model::MediaConnectFlow>,
-        ) -> Self {
+        pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlow) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_connect_flows = Some(v);
             self
         }
@@ -4824,9 +4812,9 @@ pub mod input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// A list of the sources of the input (PULL-type).
-        pub fn sources(mut self, input: impl Into<crate::model::InputSource>) -> Self {
+        pub fn sources(mut self, input: crate::model::InputSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -6079,9 +6067,9 @@ pub mod channel {
         /// A list of destinations of the channel. For UDP outputs, there is one
         /// destination per output. For other types (HLS, for example), there is
         /// one destination per packager.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -6100,12 +6088,9 @@ pub mod channel {
         /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
         ///
         /// The endpoints where outgoing connections initiate from
-        pub fn egress_endpoints(
-            mut self,
-            input: impl Into<crate::model::ChannelEgressEndpoint>,
-        ) -> Self {
+        pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_endpoints = Some(v);
             self
         }
@@ -6145,12 +6130,9 @@ pub mod channel {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -6200,9 +6182,9 @@ pub mod channel {
         /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
         ///
         /// Runtime details for the pipelines of a running channel.
-        pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
+        pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_details = Some(v);
             self
         }
@@ -7342,9 +7324,9 @@ pub mod input_settings {
         /// To override the contents of this collection use [`set_audio_selectors`](Self::set_audio_selectors).
         ///
         /// Used to select the audio stream to decode for inputs that have multiple available.
-        pub fn audio_selectors(mut self, input: impl Into<crate::model::AudioSelector>) -> Self {
+        pub fn audio_selectors(mut self, input: crate::model::AudioSelector) -> Self {
             let mut v = self.audio_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_selectors = Some(v);
             self
         }
@@ -7361,12 +7343,9 @@ pub mod input_settings {
         /// To override the contents of this collection use [`set_caption_selectors`](Self::set_caption_selectors).
         ///
         /// Used to select the caption input to use for inputs that have multiple available.
-        pub fn caption_selectors(
-            mut self,
-            input: impl Into<crate::model::CaptionSelector>,
-        ) -> Self {
+        pub fn caption_selectors(mut self, input: crate::model::CaptionSelector) -> Self {
             let mut v = self.caption_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_selectors = Some(v);
             self
         }
@@ -10291,9 +10270,9 @@ pub mod audio_track_selection {
         /// To override the contents of this collection use [`set_tracks`](Self::set_tracks).
         ///
         /// Selects one or more unique audio tracks from within a source.
-        pub fn tracks(mut self, input: impl Into<crate::model::AudioTrack>) -> Self {
+        pub fn tracks(mut self, input: crate::model::AudioTrack) -> Self {
             let mut v = self.tracks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tracks = Some(v);
             self
         }
@@ -10710,12 +10689,9 @@ pub mod automatic_input_failover_settings {
         /// To override the contents of this collection use [`set_failover_conditions`](Self::set_failover_conditions).
         ///
         /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
-        pub fn failover_conditions(
-            mut self,
-            input: impl Into<crate::model::FailoverCondition>,
-        ) -> Self {
+        pub fn failover_conditions(mut self, input: crate::model::FailoverCondition) -> Self {
             let mut v = self.failover_conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failover_conditions = Some(v);
             self
         }
@@ -11356,12 +11332,9 @@ pub mod encoder_settings {
         /// To override the contents of this collection use [`set_audio_descriptions`](Self::set_audio_descriptions).
         ///
         /// Placeholder documentation for __listOfAudioDescription
-        pub fn audio_descriptions(
-            mut self,
-            input: impl Into<crate::model::AudioDescription>,
-        ) -> Self {
+        pub fn audio_descriptions(mut self, input: crate::model::AudioDescription) -> Self {
             let mut v = self.audio_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_descriptions = Some(v);
             self
         }
@@ -11417,12 +11390,9 @@ pub mod encoder_settings {
         /// To override the contents of this collection use [`set_caption_descriptions`](Self::set_caption_descriptions).
         ///
         /// Settings for caption decriptions
-        pub fn caption_descriptions(
-            mut self,
-            input: impl Into<crate::model::CaptionDescription>,
-        ) -> Self {
+        pub fn caption_descriptions(mut self, input: crate::model::CaptionDescription) -> Self {
             let mut v = self.caption_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_descriptions = Some(v);
             self
         }
@@ -11494,9 +11464,9 @@ pub mod encoder_settings {
         /// To override the contents of this collection use [`set_output_groups`](Self::set_output_groups).
         ///
         /// Placeholder documentation for __listOfOutputGroup
-        pub fn output_groups(mut self, input: impl Into<crate::model::OutputGroup>) -> Self {
+        pub fn output_groups(mut self, input: crate::model::OutputGroup) -> Self {
             let mut v = self.output_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_groups = Some(v);
             self
         }
@@ -11526,12 +11496,9 @@ pub mod encoder_settings {
         /// To override the contents of this collection use [`set_video_descriptions`](Self::set_video_descriptions).
         ///
         /// Placeholder documentation for __listOfVideoDescription
-        pub fn video_descriptions(
-            mut self,
-            input: impl Into<crate::model::VideoDescription>,
-        ) -> Self {
+        pub fn video_descriptions(mut self, input: crate::model::VideoDescription) -> Self {
             let mut v = self.video_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.video_descriptions = Some(v);
             self
         }
@@ -18059,9 +18026,9 @@ pub mod output_group {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// Placeholder documentation for __listOfOutput
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -24207,9 +24174,9 @@ pub mod rtmp_group_settings {
         /// To override the contents of this collection use [`set_ad_markers`](Self::set_ad_markers).
         ///
         /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
-        pub fn ad_markers(mut self, input: impl Into<crate::model::RtmpAdMarkers>) -> Self {
+        pub fn ad_markers(mut self, input: crate::model::RtmpAdMarkers) -> Self {
             let mut v = self.ad_markers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_markers = Some(v);
             self
         }
@@ -26172,9 +26139,9 @@ pub mod hls_group_settings {
         /// To override the contents of this collection use [`set_ad_markers`](Self::set_ad_markers).
         ///
         /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
-        pub fn ad_markers(mut self, input: impl Into<crate::model::HlsAdMarkers>) -> Self {
+        pub fn ad_markers(mut self, input: crate::model::HlsAdMarkers) -> Self {
             let mut v = self.ad_markers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_markers = Some(v);
             self
         }
@@ -26253,10 +26220,10 @@ pub mod hls_group_settings {
         /// Mapping of up to 4 caption channels to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
         pub fn caption_language_mappings(
             mut self,
-            input: impl Into<crate::model::CaptionLanguageMapping>,
+            input: crate::model::CaptionLanguageMapping,
         ) -> Self {
             let mut v = self.caption_language_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_language_mappings = Some(v);
             self
         }
@@ -35106,12 +35073,9 @@ pub mod remix_settings {
         /// To override the contents of this collection use [`set_channel_mappings`](Self::set_channel_mappings).
         ///
         /// Mapping of input channels to output channels, with appropriate gain adjustments.
-        pub fn channel_mappings(
-            mut self,
-            input: impl Into<crate::model::AudioChannelMapping>,
-        ) -> Self {
+        pub fn channel_mappings(mut self, input: crate::model::AudioChannelMapping) -> Self {
             let mut v = self.channel_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_mappings = Some(v);
             self
         }
@@ -35205,12 +35169,9 @@ pub mod audio_channel_mapping {
         /// To override the contents of this collection use [`set_input_channel_levels`](Self::set_input_channel_levels).
         ///
         /// Indices and gain values for each input channel that should be remixed into this output channel.
-        pub fn input_channel_levels(
-            mut self,
-            input: impl Into<crate::model::InputChannelLevel>,
-        ) -> Self {
+        pub fn input_channel_levels(mut self, input: crate::model::InputChannelLevel) -> Self {
             let mut v = self.input_channel_levels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_channel_levels = Some(v);
             self
         }
@@ -39289,10 +39250,10 @@ pub mod output_destination {
         /// Destination settings for a MediaPackage output; one destination for both encoders.
         pub fn media_package_settings(
             mut self,
-            input: impl Into<crate::model::MediaPackageOutputDestinationSettings>,
+            input: crate::model::MediaPackageOutputDestinationSettings,
         ) -> Self {
             let mut v = self.media_package_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_package_settings = Some(v);
             self
         }
@@ -39327,12 +39288,9 @@ pub mod output_destination {
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
         /// Destination settings for a standard output; one destination for each redundant encoder.
-        pub fn settings(
-            mut self,
-            input: impl Into<crate::model::OutputDestinationSettings>,
-        ) -> Self {
+        pub fn settings(mut self, input: crate::model::OutputDestinationSettings) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.settings = Some(v);
             self
         }
@@ -41040,9 +40998,9 @@ pub mod channel_summary {
         /// A list of destinations of the channel. For UDP outputs, there is one
         /// destination per output. For other types (HLS, for example), there is
         /// one destination per packager.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -41061,12 +41019,9 @@ pub mod channel_summary {
         /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
         ///
         /// The endpoints where outgoing connections initiate from
-        pub fn egress_endpoints(
-            mut self,
-            input: impl Into<crate::model::ChannelEgressEndpoint>,
-        ) -> Self {
+        pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_endpoints = Some(v);
             self
         }
@@ -41093,12 +41048,9 @@ pub mod channel_summary {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -42452,12 +42404,9 @@ pub mod scte35_time_signal_schedule_action_settings {
         /// To override the contents of this collection use [`set_scte35_descriptors`](Self::set_scte35_descriptors).
         ///
         /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
-        pub fn scte35_descriptors(
-            mut self,
-            input: impl Into<crate::model::Scte35Descriptor>,
-        ) -> Self {
+        pub fn scte35_descriptors(mut self, input: crate::model::Scte35Descriptor) -> Self {
             let mut v = self.scte35_descriptors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scte35_descriptors = Some(v);
             self
         }
@@ -43495,12 +43444,9 @@ pub mod pause_state_schedule_action_settings {
         /// To override the contents of this collection use [`set_pipelines`](Self::set_pipelines).
         ///
         /// Placeholder documentation for __listOfPipelinePauseStateSettings
-        pub fn pipelines(
-            mut self,
-            input: impl Into<crate::model::PipelinePauseStateSettings>,
-        ) -> Self {
+        pub fn pipelines(mut self, input: crate::model::PipelinePauseStateSettings) -> Self {
             let mut v = self.pipelines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipelines = Some(v);
             self
         }
@@ -44853,9 +44799,9 @@ pub mod batch_schedule_action_delete_result {
         /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
         ///
         /// List of actions that have been deleted from the schedule.
-        pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
+        pub fn schedule_actions(mut self, input: crate::model::ScheduleAction) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schedule_actions = Some(v);
             self
         }
@@ -44917,9 +44863,9 @@ pub mod batch_schedule_action_create_result {
         /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
         ///
         /// List of actions that have been created in the schedule.
-        pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
+        pub fn schedule_actions(mut self, input: crate::model::ScheduleAction) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schedule_actions = Some(v);
             self
         }
@@ -45044,9 +44990,9 @@ pub mod batch_schedule_action_create_request {
         /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
         ///
         /// A list of schedule actions to create.
-        pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
+        pub fn schedule_actions(mut self, input: crate::model::ScheduleAction) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schedule_actions = Some(v);
             self
         }

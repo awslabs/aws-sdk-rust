@@ -335,9 +335,9 @@ pub mod receipt_rule {
         ///
         /// <p>An ordered list of actions to perform on messages that match at least one of the
         /// recipient email addresses or domains specified in the receipt rule.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::ReceiptAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::ReceiptAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -2009,9 +2009,9 @@ pub mod event_destination {
         /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
         ///
         /// <p>The type of email sending events to publish to the event destination.</p>
-        pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_event_types = Some(v);
             self
         }
@@ -2208,10 +2208,10 @@ pub mod cloud_watch_destination {
         /// sending events to Amazon CloudWatch.</p>
         pub fn dimension_configurations(
             mut self,
-            input: impl Into<crate::model::CloudWatchDimensionConfiguration>,
+            input: crate::model::CloudWatchDimensionConfiguration,
         ) -> Self {
             let mut v = self.dimension_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_configurations = Some(v);
             self
         }
@@ -4056,9 +4056,9 @@ pub mod bulk_email_destination {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the
         /// email that you define, so that you can publish email sending events.</p>
-        pub fn replacement_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn replacement_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.replacement_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replacement_tags = Some(v);
             self
         }
@@ -4472,9 +4472,9 @@ pub mod recipient_dsn_fields {
         /// To override the contents of this collection use [`set_extension_fields`](Self::set_extension_fields).
         ///
         /// <p>Additional X-headers to include in the DSN.</p>
-        pub fn extension_fields(mut self, input: impl Into<crate::model::ExtensionField>) -> Self {
+        pub fn extension_fields(mut self, input: crate::model::ExtensionField) -> Self {
             let mut v = self.extension_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extension_fields = Some(v);
             self
         }
@@ -4828,9 +4828,9 @@ pub mod message_dsn {
         /// To override the contents of this collection use [`set_extension_fields`](Self::set_extension_fields).
         ///
         /// <p>Additional X-headers to include in the DSN.</p>
-        pub fn extension_fields(mut self, input: impl Into<crate::model::ExtensionField>) -> Self {
+        pub fn extension_fields(mut self, input: crate::model::ExtensionField) -> Self {
             let mut v = self.extension_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extension_fields = Some(v);
             self
         }

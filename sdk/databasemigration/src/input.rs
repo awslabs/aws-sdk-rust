@@ -27,9 +27,9 @@ pub mod add_tags_to_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -765,9 +765,9 @@ pub mod create_endpoint_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the endpoint.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1550,9 +1550,9 @@ pub mod create_event_subscription_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the event subscription.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1952,9 +1952,9 @@ pub mod create_replication_instance_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the replication instance.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2284,9 +2284,9 @@ pub mod create_replication_subnet_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the subnet group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2674,9 +2674,9 @@ pub mod create_replication_task_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the replication task.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4575,9 +4575,9 @@ pub mod describe_certificates_input {
         ///
         /// <p>Filters applied to the certificates described in the form of key-value pairs.
         /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4774,9 +4774,9 @@ pub mod describe_connections_input {
         ///
         /// <p>The filters applied to the connection.</p>
         /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4975,9 +4975,9 @@ pub mod describe_endpoints_input {
         ///
         /// <p>Filters applied to the endpoints.</p>
         /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5363,9 +5363,9 @@ pub mod describe_endpoint_types_input {
         ///
         /// <p>Filters applied to the endpoint types.</p>
         /// <p>Valid filter names: engine-name | endpoint-type</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5576,9 +5576,9 @@ pub mod describe_event_categories_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to the event categories.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5834,9 +5834,9 @@ pub mod describe_events_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6054,9 +6054,9 @@ pub mod describe_event_subscriptions_input {
         ///
         /// <p>Filters applied to event subscriptions.</p>
         /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6453,9 +6453,9 @@ pub mod describe_pending_maintenance_actions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p></p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6815,9 +6815,9 @@ pub mod describe_replication_instances_input {
         /// <p>Filters applied to replication instances.</p>
         /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
         /// replication-instance-class | engine-version</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7216,9 +7216,9 @@ pub mod describe_replication_subnet_groups_input {
         ///
         /// <p>Filters applied to replication subnet groups.</p>
         /// <p>Valid filter names: replication-subnet-group-id</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7624,9 +7624,9 @@ pub mod describe_replication_task_assessment_runs_input {
         /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
         /// <code>replication-instance-arn</code>, <code>status</code>
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7829,9 +7829,9 @@ pub mod describe_replication_task_individual_assessments_input {
         /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
         /// <code>replication-task-arn</code>, <code>status</code>
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8037,9 +8037,9 @@ pub mod describe_replication_tasks_input {
         /// <p>Filters applied to replication tasks.</p>
         /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
         /// endpoint-arn | replication-instance-arn</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8495,9 +8495,9 @@ pub mod describe_table_statistics_input {
         /// <p>Valid filter names: schema-name | table-name | table-state</p>
         /// <p>A combination of filters creates an AND condition where each record matches all
         /// specified filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8719,9 +8719,9 @@ pub mod import_certificate_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the certificate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11634,9 +11634,9 @@ pub mod reload_tables_input {
         /// To override the contents of this collection use [`set_tables_to_reload`](Self::set_tables_to_reload).
         ///
         /// <p>The name and schema of the table to be reloaded. </p>
-        pub fn tables_to_reload(mut self, input: impl Into<crate::model::TableToReload>) -> Self {
+        pub fn tables_to_reload(mut self, input: crate::model::TableToReload) -> Self {
             let mut v = self.tables_to_reload.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tables_to_reload = Some(v);
             self
         }

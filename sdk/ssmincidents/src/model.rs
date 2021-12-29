@@ -289,10 +289,10 @@ pub mod ssm_automation {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -2470,12 +2470,9 @@ pub mod incident_template {
         ///
         /// <p>The Amazon SNS targets that are notified when updates are made to an
         /// incident.</p>
-        pub fn notification_targets(
-            mut self,
-            input: impl Into<crate::model::NotificationTargetItem>,
-        ) -> Self {
+        pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             let mut v = self.notification_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_targets = Some(v);
             self
         }
@@ -2723,10 +2720,10 @@ pub mod replication_set {
         pub fn region_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RegionInfo>,
+            v: crate::model::RegionInfo,
         ) -> Self {
             let mut hash_map = self.region_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.region_map = Some(hash_map);
             self
         }
@@ -3352,12 +3349,9 @@ pub mod incident_record {
         /// To override the contents of this collection use [`set_automation_executions`](Self::set_automation_executions).
         ///
         /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
-        pub fn automation_executions(
-            mut self,
-            input: impl Into<crate::model::AutomationExecution>,
-        ) -> Self {
+        pub fn automation_executions(mut self, input: crate::model::AutomationExecution) -> Self {
             let mut v = self.automation_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.automation_executions = Some(v);
             self
         }
@@ -3414,12 +3408,9 @@ pub mod incident_record {
         ///
         /// <p>The Amazon SNS targets that are notified when updates are made to an
         /// incident.</p>
-        pub fn notification_targets(
-            mut self,
-            input: impl Into<crate::model::NotificationTargetItem>,
-        ) -> Self {
+        pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             let mut v = self.notification_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_targets = Some(v);
             self
         }

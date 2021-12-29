@@ -252,10 +252,10 @@ pub mod update_identity_pool_output {
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
-            input: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
             let mut v = self.cognito_identity_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cognito_identity_providers = Some(v);
             self
         }
@@ -942,12 +942,9 @@ pub mod list_identity_pools_output {
         /// To override the contents of this collection use [`set_identity_pools`](Self::set_identity_pools).
         ///
         /// <p>The identity pools returned by the ListIdentityPools action.</p>
-        pub fn identity_pools(
-            mut self,
-            input: impl Into<crate::model::IdentityPoolShortDescription>,
-        ) -> Self {
+        pub fn identity_pools(mut self, input: crate::model::IdentityPoolShortDescription) -> Self {
             let mut v = self.identity_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identity_pools = Some(v);
             self
         }
@@ -1049,9 +1046,9 @@ pub mod list_identities_output {
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
         /// <p>An object containing a set of identities and associated mappings.</p>
-        pub fn identities(mut self, input: impl Into<crate::model::IdentityDescription>) -> Self {
+        pub fn identities(mut self, input: crate::model::IdentityDescription) -> Self {
             let mut v = self.identities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identities = Some(v);
             self
         }
@@ -1498,10 +1495,10 @@ pub mod get_identity_pool_roles_output {
         pub fn role_mappings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RoleMapping>,
+            v: crate::model::RoleMapping,
         ) -> Self {
             let mut hash_map = self.role_mappings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.role_mappings = Some(hash_map);
             self
         }
@@ -1919,10 +1916,10 @@ pub mod describe_identity_pool_output {
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
-            input: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
             let mut v = self.cognito_identity_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cognito_identity_providers = Some(v);
             self
         }
@@ -2210,10 +2207,10 @@ pub mod delete_identities_output {
         /// IdentityId.</p>
         pub fn unprocessed_identity_ids(
             mut self,
-            input: impl Into<crate::model::UnprocessedIdentityId>,
+            input: crate::model::UnprocessedIdentityId,
         ) -> Self {
             let mut v = self.unprocessed_identity_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_identity_ids = Some(v);
             self
         }
@@ -2494,10 +2491,10 @@ pub mod create_identity_pool_output {
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
-            input: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
             let mut v = self.cognito_identity_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cognito_identity_providers = Some(v);
             self
         }

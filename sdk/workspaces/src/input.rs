@@ -369,9 +369,9 @@ pub mod authorize_ip_rules_input {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules to add to the group.</p>
-        pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_rules = Some(v);
             self
         }
@@ -583,9 +583,9 @@ pub mod copy_workspace_image_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the image.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -776,9 +776,9 @@ pub mod create_connection_alias_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the connection alias.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -965,9 +965,9 @@ pub mod create_ip_group_input {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules to add to the group.</p>
-        pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_rules = Some(v);
             self
         }
@@ -984,9 +984,9 @@ pub mod create_ip_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1163,9 +1163,9 @@ pub mod create_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1367,9 +1367,9 @@ pub mod create_updated_workspace_image_input {
         /// <p>To add tags at the same time when you're creating the updated image, you must create
         /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1623,9 +1623,9 @@ pub mod create_workspace_bundle_input {
         /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
         /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1799,9 +1799,9 @@ pub mod create_workspaces_input {
         /// To override the contents of this collection use [`set_workspaces`](Self::set_workspaces).
         ///
         /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-        pub fn workspaces(mut self, input: impl Into<crate::model::WorkspaceRequest>) -> Self {
+        pub fn workspaces(mut self, input: crate::model::WorkspaceRequest) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspaces = Some(v);
             self
         }
@@ -5863,9 +5863,9 @@ pub mod import_workspace_image_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5889,9 +5889,9 @@ pub mod import_workspace_image_input {
         /// <note>
         /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
-        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -7657,12 +7657,9 @@ pub mod reboot_workspaces_input {
         /// To override the contents of this collection use [`set_reboot_workspace_requests`](Self::set_reboot_workspace_requests).
         ///
         /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-        pub fn reboot_workspace_requests(
-            mut self,
-            input: impl Into<crate::model::RebootRequest>,
-        ) -> Self {
+        pub fn reboot_workspace_requests(mut self, input: crate::model::RebootRequest) -> Self {
             let mut v = self.reboot_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reboot_workspace_requests = Some(v);
             self
         }
@@ -7824,12 +7821,9 @@ pub mod rebuild_workspaces_input {
         /// To override the contents of this collection use [`set_rebuild_workspace_requests`](Self::set_rebuild_workspace_requests).
         ///
         /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-        pub fn rebuild_workspace_requests(
-            mut self,
-            input: impl Into<crate::model::RebuildRequest>,
-        ) -> Self {
+        pub fn rebuild_workspace_requests(mut self, input: crate::model::RebuildRequest) -> Self {
             let mut v = self.rebuild_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rebuild_workspace_requests = Some(v);
             self
         }
@@ -8078,9 +8072,9 @@ pub mod register_workspace_directory_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the directory.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8579,12 +8573,9 @@ pub mod start_workspaces_input {
         /// To override the contents of this collection use [`set_start_workspace_requests`](Self::set_start_workspace_requests).
         ///
         /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-        pub fn start_workspace_requests(
-            mut self,
-            input: impl Into<crate::model::StartRequest>,
-        ) -> Self {
+        pub fn start_workspace_requests(mut self, input: crate::model::StartRequest) -> Self {
             let mut v = self.start_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.start_workspace_requests = Some(v);
             self
         }
@@ -8746,12 +8737,9 @@ pub mod stop_workspaces_input {
         /// To override the contents of this collection use [`set_stop_workspace_requests`](Self::set_stop_workspace_requests).
         ///
         /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-        pub fn stop_workspace_requests(
-            mut self,
-            input: impl Into<crate::model::StopRequest>,
-        ) -> Self {
+        pub fn stop_workspace_requests(mut self, input: crate::model::StopRequest) -> Self {
             let mut v = self.stop_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stop_workspace_requests = Some(v);
             self
         }
@@ -8915,10 +8903,10 @@ pub mod terminate_workspaces_input {
         /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
         pub fn terminate_workspace_requests(
             mut self,
-            input: impl Into<crate::model::TerminateRequest>,
+            input: crate::model::TerminateRequest,
         ) -> Self {
             let mut v = self.terminate_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.terminate_workspace_requests = Some(v);
             self
         }
@@ -9266,9 +9254,9 @@ pub mod update_rules_of_ip_group_input {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>One or more rules.</p>
-        pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_rules = Some(v);
             self
         }

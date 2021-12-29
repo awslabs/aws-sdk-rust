@@ -4049,12 +4049,9 @@ pub mod validation_exception {
         /// To override the contents of this collection use [`set_field_list`](Self::set_field_list).
         ///
         /// <p>A list of fields that didn't validate.</p>
-        pub fn field_list(
-            mut self,
-            input: impl Into<crate::model::ValidationExceptionField>,
-        ) -> Self {
+        pub fn field_list(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.field_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_list = Some(v);
             self
         }

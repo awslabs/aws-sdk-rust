@@ -308,10 +308,10 @@ pub mod component_update_request {
         pub fn property_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyRequest>,
+            v: crate::model::PropertyRequest,
         ) -> Self {
             let mut hash_map = self.property_updates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.property_updates = Some(hash_map);
             self
         }
@@ -652,9 +652,9 @@ pub mod data_value {
         /// To override the contents of this collection use [`set_list_value`](Self::set_list_value).
         ///
         /// <p>A list of multiple values.</p>
-        pub fn list_value(mut self, input: impl Into<crate::model::DataValue>) -> Self {
+        pub fn list_value(mut self, input: crate::model::DataValue) -> Self {
             let mut v = self.list_value.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_value = Some(v);
             self
         }
@@ -674,10 +674,10 @@ pub mod data_value {
         pub fn map_value(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::DataValue>,
+            v: crate::model::DataValue,
         ) -> Self {
             let mut hash_map = self.map_value.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.map_value = Some(hash_map);
             self
         }
@@ -1104,9 +1104,9 @@ pub mod data_type {
         /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
         ///
         /// <p>The allowed values for this data type.</p>
-        pub fn allowed_values(mut self, input: impl Into<crate::model::DataValue>) -> Self {
+        pub fn allowed_values(mut self, input: crate::model::DataValue) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_values = Some(v);
             self
         }
@@ -2716,9 +2716,9 @@ pub mod property_value_history {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
-        pub fn values(mut self, input: impl Into<crate::model::PropertyValue>) -> Self {
+        pub fn values(mut self, input: crate::model::PropertyValue) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -3462,10 +3462,10 @@ pub mod component_response {
         pub fn properties(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyResponse>,
+            v: crate::model::PropertyResponse,
         ) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.properties = Some(hash_map);
             self
         }
@@ -4029,10 +4029,10 @@ pub mod component_request {
         pub fn properties(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyRequest>,
+            v: crate::model::PropertyRequest,
         ) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.properties = Some(hash_map);
             self
         }
@@ -4101,9 +4101,9 @@ pub mod batch_put_property_error_entry {
         ///
         /// <p>A list of objects that contain information about errors returned by the
         /// <code>BatchPutProperty</code> action.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchPutPropertyError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchPutPropertyError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -4290,9 +4290,9 @@ pub mod property_value_entry {
         /// To override the contents of this collection use [`set_property_values`](Self::set_property_values).
         ///
         /// <p>A list of objects that specify time series property values.</p>
-        pub fn property_values(mut self, input: impl Into<crate::model::PropertyValue>) -> Self {
+        pub fn property_values(mut self, input: crate::model::PropertyValue) -> Self {
             let mut v = self.property_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_values = Some(v);
             self
         }

@@ -87,9 +87,9 @@ pub mod get_ice_server_config_output {
         /// To override the contents of this collection use [`set_ice_server_list`](Self::set_ice_server_list).
         ///
         /// <p>The list of ICE server information objects.</p>
-        pub fn ice_server_list(mut self, input: impl Into<crate::model::IceServer>) -> Self {
+        pub fn ice_server_list(mut self, input: crate::model::IceServer) -> Self {
             let mut v = self.ice_server_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ice_server_list = Some(v);
             self
         }

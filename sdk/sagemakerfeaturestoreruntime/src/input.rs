@@ -16,12 +16,9 @@ pub mod batch_get_record_input {
         ///
         /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name
         /// that have been requested to be retrieved in batch.</p>
-        pub fn identifiers(
-            mut self,
-            input: impl Into<crate::model::BatchGetRecordIdentifier>,
-        ) -> Self {
+        pub fn identifiers(mut self, input: crate::model::BatchGetRecordIdentifier) -> Self {
             let mut v = self.identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identifiers = Some(v);
             self
         }
@@ -629,9 +626,9 @@ pub mod put_record_input {
         /// <p>Use <code>PutRecord</code> to update feature values.</p>
         /// </li>
         /// </ul>
-        pub fn record(mut self, input: impl Into<crate::model::FeatureValue>) -> Self {
+        pub fn record(mut self, input: crate::model::FeatureValue) -> Self {
             let mut v = self.record.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record = Some(v);
             self
         }

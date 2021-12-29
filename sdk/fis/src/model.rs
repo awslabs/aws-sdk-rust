@@ -146,10 +146,10 @@ pub mod experiment_template {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExperimentTemplateTarget>,
+            v: crate::model::ExperimentTemplateTarget,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -174,10 +174,10 @@ pub mod experiment_template {
         pub fn actions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExperimentTemplateAction>,
+            v: crate::model::ExperimentTemplateAction,
         ) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.actions = Some(hash_map);
             self
         }
@@ -201,10 +201,10 @@ pub mod experiment_template {
         /// <p>The stop conditions for the experiment.</p>
         pub fn stop_conditions(
             mut self,
-            input: impl Into<crate::model::ExperimentTemplateStopCondition>,
+            input: crate::model::ExperimentTemplateStopCondition,
         ) -> Self {
             let mut v = self.stop_conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stop_conditions = Some(v);
             self
         }
@@ -686,12 +686,9 @@ pub mod experiment_template_target {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::ExperimentTemplateTargetFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1131,12 +1128,9 @@ pub mod update_experiment_template_target_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::ExperimentTemplateTargetInputFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetInputFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1531,10 +1525,10 @@ pub mod experiment {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExperimentTarget>,
+            v: crate::model::ExperimentTarget,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -1556,10 +1550,10 @@ pub mod experiment {
         pub fn actions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExperimentAction>,
+            v: crate::model::ExperimentAction,
         ) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.actions = Some(hash_map);
             self
         }
@@ -1578,12 +1572,9 @@ pub mod experiment {
         /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
         ///
         /// <p>The stop conditions for the experiment.</p>
-        pub fn stop_conditions(
-            mut self,
-            input: impl Into<crate::model::ExperimentStopCondition>,
-        ) -> Self {
+        pub fn stop_conditions(mut self, input: crate::model::ExperimentStopCondition) -> Self {
             let mut v = self.stop_conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stop_conditions = Some(v);
             self
         }
@@ -2254,9 +2245,9 @@ pub mod experiment_target {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ExperimentTargetFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ExperimentTargetFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2953,10 +2944,10 @@ pub mod action_summary {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ActionTarget>,
+            v: crate::model::ActionTarget,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -3182,10 +3173,10 @@ pub mod action {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ActionParameter>,
+            v: crate::model::ActionParameter,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -3207,10 +3198,10 @@ pub mod action {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ActionTarget>,
+            v: crate::model::ActionTarget,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -3682,12 +3673,9 @@ pub mod create_experiment_template_target_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::ExperimentTemplateTargetInputFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetInputFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }

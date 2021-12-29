@@ -365,9 +365,9 @@ pub mod list_profile_times_output {
         /// <p>The list of start times of the available profiles for the aggregation
         /// period in the specified time range.
         /// </p>
-        pub fn profile_times(mut self, input: impl Into<crate::model::ProfileTime>) -> Self {
+        pub fn profile_times(mut self, input: crate::model::ProfileTime) -> Self {
             let mut v = self.profile_times.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profile_times = Some(v);
             self
         }
@@ -467,10 +467,10 @@ pub mod list_findings_reports_output {
         /// <p>The list of analysis results summaries.</p>
         pub fn findings_report_summaries(
             mut self,
-            input: impl Into<crate::model::FindingsReportSummary>,
+            input: crate::model::FindingsReportSummary,
         ) -> Self {
             let mut v = self.findings_report_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings_report_summaries = Some(v);
             self
         }
@@ -656,9 +656,9 @@ pub mod get_recommendations_output {
         /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
         ///
         /// <p>The list of recommendations that the analysis found for this profile.</p>
-        pub fn recommendations(mut self, input: impl Into<crate::model::Recommendation>) -> Self {
+        pub fn recommendations(mut self, input: crate::model::Recommendation) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendations = Some(v);
             self
         }
@@ -677,9 +677,9 @@ pub mod get_recommendations_output {
         /// <p>
         /// The list of anomalies that the analysis has found for this profile.
         /// </p>
-        pub fn anomalies(mut self, input: impl Into<crate::model::Anomaly>) -> Self {
+        pub fn anomalies(mut self, input: crate::model::Anomaly) -> Self {
             let mut v = self.anomalies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomalies = Some(v);
             self
         }
@@ -1297,9 +1297,9 @@ pub mod batch_get_frame_metric_data_output {
         /// is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the
         /// list that are each five minutes appart.
         /// </p>
-        pub fn end_times(mut self, input: impl Into<crate::model::TimestampStructure>) -> Self {
+        pub fn end_times(mut self, input: crate::model::TimestampStructure) -> Self {
             let mut v = self.end_times.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_times = Some(v);
             self
         }
@@ -1324,10 +1324,10 @@ pub mod batch_get_frame_metric_data_output {
         pub fn unprocessed_end_times(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::TimestampStructure>>,
+            v: std::vec::Vec<crate::model::TimestampStructure>,
         ) -> Self {
             let mut hash_map = self.unprocessed_end_times.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.unprocessed_end_times = Some(hash_map);
             self
         }
@@ -1351,12 +1351,9 @@ pub mod batch_get_frame_metric_data_output {
         /// <p>Details of the metrics to request a time series of values. The metric includes
         /// the name of the frame, the aggregation type to calculate the metric value for the frame,
         /// and the thread states to use to get the count for the metric value of the frame.</p>
-        pub fn frame_metric_data(
-            mut self,
-            input: impl Into<crate::model::FrameMetricDatum>,
-        ) -> Self {
+        pub fn frame_metric_data(mut self, input: crate::model::FrameMetricDatum) -> Self {
             let mut v = self.frame_metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.frame_metric_data = Some(v);
             self
         }
@@ -1593,12 +1590,9 @@ pub mod list_profiling_groups_output {
         /// </a>
         /// objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned.
         /// </p>
-        pub fn profiling_groups(
-            mut self,
-            input: impl Into<crate::model::ProfilingGroupDescription>,
-        ) -> Self {
+        pub fn profiling_groups(mut self, input: crate::model::ProfilingGroupDescription) -> Self {
             let mut v = self.profiling_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profiling_groups = Some(v);
             self
         }
@@ -2112,12 +2106,9 @@ pub mod get_findings_report_account_summary_output {
         /// <code>FindingsReportSummary</code>
         /// </a>
         /// objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
-        pub fn report_summaries(
-            mut self,
-            input: impl Into<crate::model::FindingsReportSummary>,
-        ) -> Self {
+        pub fn report_summaries(mut self, input: crate::model::FindingsReportSummary) -> Self {
             let mut v = self.report_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_summaries = Some(v);
             self
         }

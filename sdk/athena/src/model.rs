@@ -1484,9 +1484,9 @@ pub mod table_metadata {
         /// To override the contents of this collection use [`set_columns`](Self::set_columns).
         ///
         /// <p>A list of the columns in the table.</p>
-        pub fn columns(mut self, input: impl Into<crate::model::Column>) -> Self {
+        pub fn columns(mut self, input: crate::model::Column) -> Self {
             let mut v = self.columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.columns = Some(v);
             self
         }
@@ -1503,9 +1503,9 @@ pub mod table_metadata {
         /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
         ///
         /// <p>A list of the partition keys in the table.</p>
-        pub fn partition_keys(mut self, input: impl Into<crate::model::Column>) -> Self {
+        pub fn partition_keys(mut self, input: crate::model::Column) -> Self {
             let mut v = self.partition_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partition_keys = Some(v);
             self
         }
@@ -2381,9 +2381,9 @@ pub mod result_set {
         /// To override the contents of this collection use [`set_rows`](Self::set_rows).
         ///
         /// <p>The rows in the table.</p>
-        pub fn rows(mut self, input: impl Into<crate::model::Row>) -> Self {
+        pub fn rows(mut self, input: crate::model::Row) -> Self {
             let mut v = self.rows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rows = Some(v);
             self
         }
@@ -2461,9 +2461,9 @@ pub mod result_set_metadata {
         /// To override the contents of this collection use [`set_column_info`](Self::set_column_info).
         ///
         /// <p>Information about the columns returned in a query result metadata.</p>
-        pub fn column_info(mut self, input: impl Into<crate::model::ColumnInfo>) -> Self {
+        pub fn column_info(mut self, input: crate::model::ColumnInfo) -> Self {
             let mut v = self.column_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_info = Some(v);
             self
         }
@@ -2819,9 +2819,9 @@ pub mod row {
         /// To override the contents of this collection use [`set_data`](Self::set_data).
         ///
         /// <p>The data that populates a row in a query result table.</p>
-        pub fn data(mut self, input: impl Into<crate::model::Datum>) -> Self {
+        pub fn data(mut self, input: crate::model::Datum) -> Self {
             let mut v = self.data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data = Some(v);
             self
         }

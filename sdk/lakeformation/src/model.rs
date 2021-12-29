@@ -649,9 +649,9 @@ pub mod tagged_table {
         /// To override the contents of this collection use [`set_lf_tag_on_database`](Self::set_lf_tag_on_database).
         ///
         /// <p>A list of LF-tags attached to the database where the table resides.</p>
-        pub fn lf_tag_on_database(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tag_on_database(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tag_on_database.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tag_on_database = Some(v);
             self
         }
@@ -668,9 +668,9 @@ pub mod tagged_table {
         /// To override the contents of this collection use [`set_lf_tags_on_table`](Self::set_lf_tags_on_table).
         ///
         /// <p>A list of LF-tags attached to the table.</p>
-        pub fn lf_tags_on_table(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags_on_table(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags_on_table.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags_on_table = Some(v);
             self
         }
@@ -687,9 +687,9 @@ pub mod tagged_table {
         /// To override the contents of this collection use [`set_lf_tags_on_columns`](Self::set_lf_tags_on_columns).
         ///
         /// <p>A list of LF-tags attached to columns in the table.</p>
-        pub fn lf_tags_on_columns(mut self, input: impl Into<crate::model::ColumnLfTag>) -> Self {
+        pub fn lf_tags_on_columns(mut self, input: crate::model::ColumnLfTag) -> Self {
             let mut v = self.lf_tags_on_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags_on_columns = Some(v);
             self
         }
@@ -771,9 +771,9 @@ pub mod column_lf_tag {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>The LF-tags attached to a column resource.</p>
-        pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags = Some(v);
             self
         }
@@ -1194,9 +1194,9 @@ pub mod tagged_database {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>A list of LF-tags attached to the database.</p>
-        pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags = Some(v);
             self
         }
@@ -1706,9 +1706,9 @@ pub mod lf_tag_policy_resource {
         /// To override the contents of this collection use [`set_expression`](Self::set_expression).
         ///
         /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-        pub fn expression(mut self, input: impl Into<crate::model::LfTag>) -> Self {
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
             let mut v = self.expression.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expression = Some(v);
             self
         }
@@ -2635,12 +2635,9 @@ pub mod data_lake_settings {
         /// To override the contents of this collection use [`set_data_lake_admins`](Self::set_data_lake_admins).
         ///
         /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
-        pub fn data_lake_admins(
-            mut self,
-            input: impl Into<crate::model::DataLakePrincipal>,
-        ) -> Self {
+        pub fn data_lake_admins(mut self, input: crate::model::DataLakePrincipal) -> Self {
             let mut v = self.data_lake_admins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_lake_admins = Some(v);
             self
         }
@@ -2665,10 +2662,10 @@ pub mod data_lake_settings {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn create_database_default_permissions(
             mut self,
-            input: impl Into<crate::model::PrincipalPermissions>,
+            input: crate::model::PrincipalPermissions,
         ) -> Self {
             let mut v = self.create_database_default_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_database_default_permissions = Some(v);
             self
         }
@@ -2699,10 +2696,10 @@ pub mod data_lake_settings {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn create_table_default_permissions(
             mut self,
-            input: impl Into<crate::model::PrincipalPermissions>,
+            input: crate::model::PrincipalPermissions,
         ) -> Self {
             let mut v = self.create_table_default_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_table_default_permissions = Some(v);
             self
         }
@@ -2816,9 +2813,9 @@ pub mod principal_permissions {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions that are granted to the principal.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -3730,9 +3727,9 @@ pub mod principal_resource_permissions {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions to be granted or revoked on the resource.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -3749,12 +3746,9 @@ pub mod principal_resource_permissions {
         /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
         ///
         /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-        pub fn permissions_with_grant_option(
-            mut self,
-            input: impl Into<crate::model::Permission>,
-        ) -> Self {
+        pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions_with_grant_option.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions_with_grant_option = Some(v);
             self
         }
@@ -4460,9 +4454,9 @@ pub mod partition_objects {
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>A list of table objects</p>
-        pub fn objects(mut self, input: impl Into<crate::model::TableObject>) -> Self {
+        pub fn objects(mut self, input: crate::model::TableObject) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.objects = Some(v);
             self
         }
@@ -5129,9 +5123,9 @@ pub mod batch_permissions_request_entry {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions to be granted.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -5148,12 +5142,9 @@ pub mod batch_permissions_request_entry {
         /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
         ///
         /// <p>Indicates if the option to pass permissions is granted.</p>
-        pub fn permissions_with_grant_option(
-            mut self,
-            input: impl Into<crate::model::Permission>,
-        ) -> Self {
+        pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions_with_grant_option.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions_with_grant_option = Some(v);
             self
         }

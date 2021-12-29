@@ -194,8 +194,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the AWS Outposts. </p>
-        pub fn outpost_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(inp);
+        pub fn outpost_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(signature.into());
             self
         }
         /// <p>The ID of the AWS Outposts. </p>
@@ -205,8 +205,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
         /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        pub fn subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(signature.into());
             self
         }
         /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
@@ -216,8 +216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the security group to use with the endpoint.</p>
-        pub fn security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_id(inp);
+        pub fn security_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_id(signature.into());
             self
         }
         /// <p>The ID of the security group to use with the endpoint.</p>
@@ -231,8 +231,8 @@ pub mod fluent_builders {
         /// <p>The type of access for the on-premise network connectivity for the
         /// Outpost endpoint. To access the endpoint from an on-premises network, you must
         /// specify the access type and provide the customer owned IPv4 pool.</p>
-        pub fn access_type(mut self, inp: crate::model::EndpointAccessType) -> Self {
-            self.inner = self.inner.access_type(inp);
+        pub fn access_type(mut self, signature: crate::model::EndpointAccessType) -> Self {
+            self.inner = self.inner.access_type(signature);
             self
         }
         /// <p>The type of access for the on-premise network connectivity for the
@@ -247,8 +247,11 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
         /// IP addresses will be allocated from this pool for the endpoint.</p>
-        pub fn customer_owned_ipv4_pool(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_owned_ipv4_pool(inp);
+        pub fn customer_owned_ipv4_pool(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.customer_owned_ipv4_pool(signature.into());
             self
         }
         /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
@@ -342,8 +345,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the endpoint.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(signature.into());
             self
         }
         /// <p>The ID of the endpoint.</p>
@@ -352,8 +355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the AWS Outposts. </p>
-        pub fn outpost_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(inp);
+        pub fn outpost_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(signature.into());
             self
         }
         /// <p>The ID of the AWS Outposts. </p>
@@ -441,8 +444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The next endpoint requested in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next endpoint requested in the list.</p>
@@ -451,8 +454,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The max number of endpoints that can be returned on the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The max number of endpoints that can be returned on the request.</p>

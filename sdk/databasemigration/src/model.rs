@@ -3467,10 +3467,10 @@ pub mod replication_instance {
         /// <p>The VPC security group for the instance.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -4092,9 +4092,9 @@ pub mod replication_subnet_group {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>The subnets that are in the subnet group.</p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -8907,9 +8907,9 @@ pub mod oracle_settings {
         /// database, never use <code>RESETLOGS</code> unless it's necessary. For more information
         /// about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
         /// User's Guide</i>.</p>
-        pub fn extra_archived_log_dest_ids(mut self, input: impl Into<i32>) -> Self {
+        pub fn extra_archived_log_dest_ids(mut self, input: i32) -> Self {
             let mut v = self.extra_archived_log_dest_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extra_archived_log_dest_ids = Some(v);
             self
         }
@@ -18769,10 +18769,10 @@ pub mod resource_pending_maintenance_actions {
         /// <p>Detailed information about the pending maintenance action.</p>
         pub fn pending_maintenance_action_details(
             mut self,
-            input: impl Into<crate::model::PendingMaintenanceAction>,
+            input: crate::model::PendingMaintenanceAction,
         ) -> Self {
             let mut v = self.pending_maintenance_action_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_maintenance_action_details = Some(v);
             self
         }

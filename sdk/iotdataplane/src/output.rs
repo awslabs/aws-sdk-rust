@@ -129,12 +129,9 @@ pub mod list_retained_messages_output {
         ///
         /// <p>A summary list the account's retained messages. The information returned doesn't include
         /// the message payloads of the retained messages.</p>
-        pub fn retained_topics(
-            mut self,
-            input: impl Into<crate::model::RetainedMessageSummary>,
-        ) -> Self {
+        pub fn retained_topics(mut self, input: crate::model::RetainedMessageSummary) -> Self {
             let mut v = self.retained_topics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.retained_topics = Some(v);
             self
         }

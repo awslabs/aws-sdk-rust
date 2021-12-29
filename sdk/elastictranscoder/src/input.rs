@@ -200,9 +200,9 @@ pub mod create_job_input {
         ///
         /// <p>A section of the request body that provides information about the files that are being
         /// transcoded.</p>
-        pub fn inputs(mut self, input: impl Into<crate::model::JobInput>) -> Self {
+        pub fn inputs(mut self, input: crate::model::JobInput) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -239,9 +239,9 @@ pub mod create_job_input {
         /// <p> A section of the request body that provides information about the transcoded (target)
         /// files. We recommend that you use the <code>Outputs</code> syntax instead of the
         /// <code>Output</code> syntax. </p>
-        pub fn outputs(mut self, input: impl Into<crate::model::CreateJobOutput>) -> Self {
+        pub fn outputs(mut self, input: crate::model::CreateJobOutput) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -278,9 +278,9 @@ pub mod create_job_input {
         /// <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains
         /// information about the master playlists that you want Elastic Transcoder to create.</p>
         /// <p>The maximum number of master playlists in a job is 30.</p>
-        pub fn playlists(mut self, input: impl Into<crate::model::CreateJobPlaylist>) -> Self {
+        pub fn playlists(mut self, input: crate::model::CreateJobPlaylist) -> Self {
             let mut v = self.playlists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.playlists = Some(v);
             self
         }

@@ -487,9 +487,9 @@ pub mod event_destination_definition {
         ///
         /// <p>An array that specifies which events the Amazon SES API v2 should send to the destinations in
         /// this <code>EventDestinationDefinition</code>.</p>
-        pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_event_types = Some(v);
             self
         }
@@ -755,10 +755,10 @@ pub mod cloud_watch_destination {
         /// Amazon CloudWatch.</p>
         pub fn dimension_configurations(
             mut self,
-            input: impl Into<crate::model::CloudWatchDimensionConfiguration>,
+            input: crate::model::CloudWatchDimensionConfiguration,
         ) -> Self {
             let mut v = self.dimension_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_configurations = Some(v);
             self
         }
@@ -3056,9 +3056,9 @@ pub mod bulk_email_entry {
         /// using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to
         /// characteristics of the email that you define, so that you can publish email sending
         /// events.</p>
-        pub fn replacement_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn replacement_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.replacement_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replacement_tags = Some(v);
             self
         }
@@ -6039,12 +6039,9 @@ pub mod contact {
         /// To override the contents of this collection use [`set_topic_preferences`](Self::set_topic_preferences).
         ///
         /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-        pub fn topic_preferences(
-            mut self,
-            input: impl Into<crate::model::TopicPreference>,
-        ) -> Self {
+        pub fn topic_preferences(mut self, input: crate::model::TopicPreference) -> Self {
             let mut v = self.topic_preferences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_preferences = Some(v);
             self
         }
@@ -6061,12 +6058,9 @@ pub mod contact {
         /// To override the contents of this collection use [`set_topic_default_preferences`](Self::set_topic_default_preferences).
         ///
         /// <p>The default topic preferences applied to the contact.</p>
-        pub fn topic_default_preferences(
-            mut self,
-            input: impl Into<crate::model::TopicPreference>,
-        ) -> Self {
+        pub fn topic_default_preferences(mut self, input: crate::model::TopicPreference) -> Self {
             let mut v = self.topic_default_preferences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_default_preferences = Some(v);
             self
         }
@@ -7638,12 +7632,9 @@ pub mod daily_volume {
         ///
         /// <p>An object that contains inbox placement metrics for a specified day in the analysis
         /// period, broken out by the recipient's email provider.</p>
-        pub fn domain_isp_placements(
-            mut self,
-            input: impl Into<crate::model::DomainIspPlacement>,
-        ) -> Self {
+        pub fn domain_isp_placements(mut self, input: crate::model::DomainIspPlacement) -> Self {
             let mut v = self.domain_isp_placements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_isp_placements = Some(v);
             self
         }
@@ -8032,12 +8023,9 @@ pub mod overall_volume {
         ///
         /// <p>An object that contains inbox and junk mail placement metrics for individual email
         /// providers.</p>
-        pub fn domain_isp_placements(
-            mut self,
-            input: impl Into<crate::model::DomainIspPlacement>,
-        ) -> Self {
+        pub fn domain_isp_placements(mut self, input: crate::model::DomainIspPlacement) -> Self {
             let mut v = self.domain_isp_placements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_isp_placements = Some(v);
             self
         }
@@ -8724,9 +8712,9 @@ pub mod event_destination {
         /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
         ///
         /// <p>The types of events that Amazon SES sends to the specified event destinations.</p>
-        pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_event_types = Some(v);
             self
         }
@@ -8915,12 +8903,9 @@ pub mod suppression_options {
         /// bounce.</p>
         /// </li>
         /// </ul>
-        pub fn suppressed_reasons(
-            mut self,
-            input: impl Into<crate::model::SuppressionListReason>,
-        ) -> Self {
+        pub fn suppressed_reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suppressed_reasons = Some(v);
             self
         }
@@ -9929,12 +9914,9 @@ pub mod suppression_attributes {
         /// bounce.</p>
         /// </li>
         /// </ul>
-        pub fn suppressed_reasons(
-            mut self,
-            input: impl Into<crate::model::SuppressionListReason>,
-        ) -> Self {
+        pub fn suppressed_reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suppressed_reasons = Some(v);
             self
         }

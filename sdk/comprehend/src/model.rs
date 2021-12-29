@@ -832,12 +832,9 @@ pub mod document_reader_config {
         /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
         ///
         /// <p>Specifies how the text in an input file should be processed:</p>
-        pub fn feature_types(
-            mut self,
-            input: impl Into<crate::model::DocumentReadFeatureTypes>,
-        ) -> Self {
+        pub fn feature_types(mut self, input: crate::model::DocumentReadFeatureTypes) -> Self {
             let mut v = self.feature_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.feature_types = Some(v);
             self
         }
@@ -1252,9 +1249,9 @@ pub mod redaction_config {
         ///
         /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for
         /// your request.</p>
-        pub fn pii_entity_types(mut self, input: impl Into<crate::model::PiiEntityType>) -> Self {
+        pub fn pii_entity_types(mut self, input: crate::model::PiiEntityType) -> Self {
             let mut v = self.pii_entity_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pii_entity_types = Some(v);
             self
         }
@@ -5175,10 +5172,10 @@ pub mod entity_recognizer_metadata {
         /// <p>Entity types from the metadata of an entity recognizer.</p>
         pub fn entity_types(
             mut self,
-            input: impl Into<crate::model::EntityRecognizerMetadataEntityTypesListItem>,
+            input: crate::model::EntityRecognizerMetadataEntityTypesListItem,
         ) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_types = Some(v);
             self
         }
@@ -5764,9 +5761,9 @@ pub mod entity_recognizer_input_data_config {
         /// types must not contain the following invalid characters: \n (line break), \\n (escaped line
         /// break), \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
         /// space, and , (comma). </p>
-        pub fn entity_types(mut self, input: impl Into<crate::model::EntityTypesListItem>) -> Self {
+        pub fn entity_types(mut self, input: crate::model::EntityTypesListItem) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_types = Some(v);
             self
         }
@@ -5841,10 +5838,10 @@ pub mod entity_recognizer_input_data_config {
         /// <code>AUGMENTED_MANIFEST</code>.</p>
         pub fn augmented_manifests(
             mut self,
-            input: impl Into<crate::model::AugmentedManifestsListItem>,
+            input: crate::model::AugmentedManifestsListItem,
         ) -> Self {
             let mut v = self.augmented_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.augmented_manifests = Some(v);
             self
         }
@@ -9998,10 +9995,10 @@ pub mod document_classifier_input_data_config {
         /// <code>AUGMENTED_MANIFEST</code>.</p>
         pub fn augmented_manifests(
             mut self,
-            input: impl Into<crate::model::AugmentedManifestsListItem>,
+            input: crate::model::AugmentedManifestsListItem,
         ) -> Self {
             let mut v = self.augmented_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.augmented_manifests = Some(v);
             self
         }
@@ -12404,9 +12401,9 @@ pub mod batch_detect_syntax_item_result {
         /// To override the contents of this collection use [`set_syntax_tokens`](Self::set_syntax_tokens).
         ///
         /// <p>The syntax tokens for the words in the document, one token for each word.</p>
-        pub fn syntax_tokens(mut self, input: impl Into<crate::model::SyntaxToken>) -> Self {
+        pub fn syntax_tokens(mut self, input: crate::model::SyntaxToken) -> Self {
             let mut v = self.syntax_tokens.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.syntax_tokens = Some(v);
             self
         }
@@ -12595,9 +12592,9 @@ pub mod batch_detect_key_phrases_item_result {
         ///
         /// <p>One or more <a>KeyPhrase</a> objects, one for each key phrase detected in
         /// the document.</p>
-        pub fn key_phrases(mut self, input: impl Into<crate::model::KeyPhrase>) -> Self {
+        pub fn key_phrases(mut self, input: crate::model::KeyPhrase) -> Self {
             let mut v = self.key_phrases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_phrases = Some(v);
             self
         }
@@ -12683,9 +12680,9 @@ pub mod batch_detect_entities_item_result {
         ///
         /// <p>One or more <a>Entity</a> objects, one for each entity detected in the
         /// document.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -12771,9 +12768,9 @@ pub mod batch_detect_dominant_language_item_result {
         ///
         /// <p>One or more <a>DominantLanguage</a> objects describing the dominant
         /// languages in the document.</p>
-        pub fn languages(mut self, input: impl Into<crate::model::DominantLanguage>) -> Self {
+        pub fn languages(mut self, input: crate::model::DominantLanguage) -> Self {
             let mut v = self.languages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.languages = Some(v);
             self
         }

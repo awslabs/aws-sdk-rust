@@ -522,8 +522,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
-        pub fn grant_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_arn(inp);
+        pub fn grant_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -592,8 +592,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>License consumption token.</p>
-        pub fn license_consumption_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_consumption_token(inp);
+        pub fn license_consumption_token(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_consumption_token(signature.into());
             self
         }
         /// <p>License consumption token.</p>
@@ -605,8 +608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>License beneficiary.</p>
-        pub fn beneficiary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.beneficiary(inp);
+        pub fn beneficiary(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.beneficiary(signature.into());
             self
         }
         /// <p>License beneficiary.</p>
@@ -675,8 +678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
-        pub fn license_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arn(inp);
+        pub fn license_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
@@ -689,8 +692,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements. Partial checkouts are not supported.</p>
-        pub fn entitlements(mut self, inp: impl Into<crate::model::EntitlementData>) -> Self {
-            self.inner = self.inner.entitlements(inp);
+        pub fn entitlements(mut self, input: crate::model::EntitlementData) -> Self {
+            self.inner = self.inner.entitlements(input);
             self
         }
         /// <p>License entitlements. Partial checkouts are not supported.</p>
@@ -705,9 +708,9 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
         pub fn digital_signature_method(
             mut self,
-            inp: crate::model::DigitalSignatureMethod,
+            signature: crate::model::DigitalSignatureMethod,
         ) -> Self {
-            self.inner = self.inner.digital_signature_method(inp);
+            self.inner = self.inner.digital_signature_method(signature);
             self
         }
         /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
@@ -720,8 +723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Node ID.</p>
-        pub fn node_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(inp);
+        pub fn node_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(signature.into());
             self
         }
         /// <p>Node ID.</p>
@@ -734,8 +737,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_checkout_metadata`](Self::set_checkout_metadata).
         ///
         /// <p>Information about constraints.</p>
-        pub fn checkout_metadata(mut self, inp: impl Into<crate::model::Metadata>) -> Self {
-            self.inner = self.inner.checkout_metadata(inp);
+        pub fn checkout_metadata(mut self, input: crate::model::Metadata) -> Self {
+            self.inner = self.inner.checkout_metadata(input);
             self
         }
         /// <p>Information about constraints.</p>
@@ -747,8 +750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -817,8 +820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Product SKU.</p>
-        pub fn product_sku(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_sku(inp);
+        pub fn product_sku(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_sku(signature.into());
             self
         }
         /// <p>Product SKU.</p>
@@ -827,8 +830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Checkout type.</p>
-        pub fn checkout_type(mut self, inp: crate::model::CheckoutType) -> Self {
-            self.inner = self.inner.checkout_type(inp);
+        pub fn checkout_type(mut self, signature: crate::model::CheckoutType) -> Self {
+            self.inner = self.inner.checkout_type(signature);
             self
         }
         /// <p>Checkout type.</p>
@@ -840,8 +843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Key fingerprint identifying the license.</p>
-        pub fn key_fingerprint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_fingerprint(inp);
+        pub fn key_fingerprint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_fingerprint(signature.into());
             self
         }
         /// <p>Key fingerprint identifying the license.</p>
@@ -857,8 +860,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, inp: impl Into<crate::model::EntitlementData>) -> Self {
-            self.inner = self.inner.entitlements(inp);
+        pub fn entitlements(mut self, input: crate::model::EntitlementData) -> Self {
+            self.inner = self.inner.entitlements(input);
             self
         }
         /// <p>License entitlements.</p>
@@ -870,8 +873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -880,8 +883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>License beneficiary.</p>
-        pub fn beneficiary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.beneficiary(inp);
+        pub fn beneficiary(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.beneficiary(signature.into());
             self
         }
         /// <p>License beneficiary.</p>
@@ -890,8 +893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Node ID.</p>
-        pub fn node_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(inp);
+        pub fn node_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(signature.into());
             self
         }
         /// <p>Node ID.</p>
@@ -960,8 +963,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -970,8 +973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Grant name.</p>
-        pub fn grant_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_name(inp);
+        pub fn grant_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_name(signature.into());
             self
         }
         /// <p>Grant name.</p>
@@ -980,8 +983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
-        pub fn license_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arn(inp);
+        pub fn license_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -994,8 +997,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The grant principals.</p>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
         /// <p>The grant principals.</p>
@@ -1007,8 +1010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Home Region of the grant.</p>
-        pub fn home_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(inp);
+        pub fn home_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(signature.into());
             self
         }
         /// <p>Home Region of the grant.</p>
@@ -1021,11 +1024,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
         ///
         /// <p>Allowed operations for the grant.</p>
-        pub fn allowed_operations(
-            mut self,
-            inp: impl Into<crate::model::AllowedOperation>,
-        ) -> Self {
-            self.inner = self.inner.allowed_operations(inp);
+        pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
+            self.inner = self.inner.allowed_operations(input);
             self
         }
         /// <p>Allowed operations for the grant.</p>
@@ -1097,8 +1097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -1107,8 +1107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
-        pub fn grant_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_arn(inp);
+        pub fn grant_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -1117,8 +1117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Grant name.</p>
-        pub fn grant_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_name(inp);
+        pub fn grant_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_name(signature.into());
             self
         }
         /// <p>Grant name.</p>
@@ -1131,11 +1131,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
         ///
         /// <p>Allowed operations for the grant.</p>
-        pub fn allowed_operations(
-            mut self,
-            inp: impl Into<crate::model::AllowedOperation>,
-        ) -> Self {
-            self.inner = self.inner.allowed_operations(inp);
+        pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
+            self.inner = self.inner.allowed_operations(input);
             self
         }
         /// <p>Allowed operations for the grant.</p>
@@ -1147,8 +1144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Grant status.</p>
-        pub fn status(mut self, inp: crate::model::GrantStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::GrantStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Grant status.</p>
@@ -1157,8 +1154,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Grant status reason.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_reason(inp);
+        pub fn status_reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_reason(signature.into());
             self
         }
         /// <p>Grant status reason.</p>
@@ -1170,8 +1167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Current version of the grant.</p>
-        pub fn source_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_version(inp);
+        pub fn source_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_version(signature.into());
             self
         }
         /// <p>Current version of the grant.</p>
@@ -1243,8 +1240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>License name.</p>
-        pub fn license_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_name(inp);
+        pub fn license_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_name(signature.into());
             self
         }
         /// <p>License name.</p>
@@ -1253,8 +1250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Product name.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(signature.into());
             self
         }
         /// <p>Product name.</p>
@@ -1263,8 +1260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Product SKU.</p>
-        pub fn product_sku(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_sku(inp);
+        pub fn product_sku(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_sku(signature.into());
             self
         }
         /// <p>Product SKU.</p>
@@ -1273,8 +1270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>License issuer.</p>
-        pub fn issuer(mut self, inp: crate::model::Issuer) -> Self {
-            self.inner = self.inner.issuer(inp);
+        pub fn issuer(mut self, signature: crate::model::Issuer) -> Self {
+            self.inner = self.inner.issuer(signature);
             self
         }
         /// <p>License issuer.</p>
@@ -1283,8 +1280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Home Region for the license.</p>
-        pub fn home_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(inp);
+        pub fn home_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(signature.into());
             self
         }
         /// <p>Home Region for the license.</p>
@@ -1293,8 +1290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-        pub fn validity(mut self, inp: crate::model::DatetimeRange) -> Self {
-            self.inner = self.inner.validity(inp);
+        pub fn validity(mut self, signature: crate::model::DatetimeRange) -> Self {
+            self.inner = self.inner.validity(signature);
             self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
@@ -1310,8 +1307,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, inp: impl Into<crate::model::Entitlement>) -> Self {
-            self.inner = self.inner.entitlements(inp);
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
+            self.inner = self.inner.entitlements(input);
             self
         }
         /// <p>License entitlements.</p>
@@ -1323,8 +1320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>License beneficiary.</p>
-        pub fn beneficiary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.beneficiary(inp);
+        pub fn beneficiary(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.beneficiary(signature.into());
             self
         }
         /// <p>License beneficiary.</p>
@@ -1337,9 +1334,9 @@ pub mod fluent_builders {
         /// usage.</p>
         pub fn consumption_configuration(
             mut self,
-            inp: crate::model::ConsumptionConfiguration,
+            signature: crate::model::ConsumptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.consumption_configuration(inp);
+            self.inner = self.inner.consumption_configuration(signature);
             self
         }
         /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
@@ -1357,8 +1354,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
         ///
         /// <p>Information about the license.</p>
-        pub fn license_metadata(mut self, inp: impl Into<crate::model::Metadata>) -> Self {
-            self.inner = self.inner.license_metadata(inp);
+        pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
+            self.inner = self.inner.license_metadata(input);
             self
         }
         /// <p>Information about the license.</p>
@@ -1370,8 +1367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -1445,8 +1442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the license configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Name of the license configuration.</p>
@@ -1455,8 +1452,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the license configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Description of the license configuration.</p>
@@ -1465,8 +1462,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Dimension used to track the license inventory.</p>
-        pub fn license_counting_type(mut self, inp: crate::model::LicenseCountingType) -> Self {
-            self.inner = self.inner.license_counting_type(inp);
+        pub fn license_counting_type(
+            mut self,
+            signature: crate::model::LicenseCountingType,
+        ) -> Self {
+            self.inner = self.inner.license_counting_type(signature);
             self
         }
         /// <p>Dimension used to track the license inventory.</p>
@@ -1478,8 +1478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Number of licenses managed by the license configuration.</p>
-        pub fn license_count(mut self, inp: i64) -> Self {
-            self.inner = self.inner.license_count(inp);
+        pub fn license_count(mut self, signature: i64) -> Self {
+            self.inner = self.inner.license_count(signature);
             self
         }
         /// <p>Number of licenses managed by the license configuration.</p>
@@ -1489,8 +1489,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
         /// blocks the launch of new instances.</p>
-        pub fn license_count_hard_limit(mut self, inp: bool) -> Self {
-            self.inner = self.inner.license_count_hard_limit(inp);
+        pub fn license_count_hard_limit(mut self, signature: bool) -> Self {
+            self.inner = self.inner.license_count_hard_limit(signature);
             self
         }
         /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
@@ -1540,8 +1540,8 @@ pub mod fluent_builders {
         /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
         /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
         /// <code>True</code> and <code>False</code>.</p>
-        pub fn license_rules(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_rules(inp);
+        pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_rules(input.into());
             self
         }
         /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
@@ -1593,8 +1593,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to add to the license configuration.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags to add to the license configuration.</p>
@@ -1606,8 +1606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
-        pub fn disassociate_when_not_found(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disassociate_when_not_found(inp);
+        pub fn disassociate_when_not_found(mut self, signature: bool) -> Self {
+            self.inner = self.inner.disassociate_when_not_found(signature);
             self
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -1620,11 +1620,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
         ///
         /// <p>Product information.</p>
-        pub fn product_information_list(
-            mut self,
-            inp: impl Into<crate::model::ProductInformation>,
-        ) -> Self {
-            self.inner = self.inner.product_information_list(inp);
+        pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
+            self.inner = self.inner.product_information_list(input);
             self
         }
         /// <p>Product information.</p>
@@ -1698,8 +1695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
@@ -1711,9 +1708,9 @@ pub mod fluent_builders {
         /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn source_license_context(
             mut self,
-            inp: crate::model::LicenseConversionContext,
+            signature: crate::model::LicenseConversionContext,
         ) -> Self {
-            self.inner = self.inner.source_license_context(inp);
+            self.inner = self.inner.source_license_context(signature);
             self
         }
         /// <p>Information that identifies the license type you are converting from.
@@ -1728,9 +1725,9 @@ pub mod fluent_builders {
         /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn destination_license_context(
             mut self,
-            inp: crate::model::LicenseConversionContext,
+            signature: crate::model::LicenseConversionContext,
         ) -> Self {
-            self.inner = self.inner.destination_license_context(inp);
+            self.inner = self.inner.destination_license_context(signature);
             self
         }
         /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
@@ -1804,8 +1801,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the report generator.</p>
-        pub fn report_generator_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_generator_name(inp);
+        pub fn report_generator_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_generator_name(signature.into());
             self
         }
         /// <p>Name of the report generator.</p>
@@ -1829,8 +1826,8 @@ pub mod fluent_builders {
         /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: impl Into<crate::model::ReportType>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Type of reports to generate. The following report types an be generated:</p>
@@ -1850,8 +1847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the type of license configuration the report generator tracks.</p>
-        pub fn report_context(mut self, inp: crate::model::ReportContext) -> Self {
-            self.inner = self.inner.report_context(inp);
+        pub fn report_context(mut self, signature: crate::model::ReportContext) -> Self {
+            self.inner = self.inner.report_context(signature);
             self
         }
         /// <p>Defines the type of license configuration the report generator tracks.</p>
@@ -1863,8 +1860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
-        pub fn report_frequency(mut self, inp: crate::model::ReportFrequency) -> Self {
-            self.inner = self.inner.report_frequency(inp);
+        pub fn report_frequency(mut self, signature: crate::model::ReportFrequency) -> Self {
+            self.inner = self.inner.report_frequency(signature);
             self
         }
         /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
@@ -1876,8 +1873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -1886,8 +1883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the report generator.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Description of the report generator.</p>
@@ -1900,8 +1897,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to add to the report generator.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags to add to the report generator.</p>
@@ -1973,8 +1970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
-        pub fn license_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arn(inp);
+        pub fn license_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -1983,8 +1980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>License name.</p>
-        pub fn license_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_name(inp);
+        pub fn license_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_name(signature.into());
             self
         }
         /// <p>License name.</p>
@@ -1993,8 +1990,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Product name.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(signature.into());
             self
         }
         /// <p>Product name.</p>
@@ -2003,8 +2000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>License issuer.</p>
-        pub fn issuer(mut self, inp: crate::model::Issuer) -> Self {
-            self.inner = self.inner.issuer(inp);
+        pub fn issuer(mut self, signature: crate::model::Issuer) -> Self {
+            self.inner = self.inner.issuer(signature);
             self
         }
         /// <p>License issuer.</p>
@@ -2013,8 +2010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Home Region of the license.</p>
-        pub fn home_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(inp);
+        pub fn home_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(signature.into());
             self
         }
         /// <p>Home Region of the license.</p>
@@ -2023,8 +2020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-        pub fn validity(mut self, inp: crate::model::DatetimeRange) -> Self {
-            self.inner = self.inner.validity(inp);
+        pub fn validity(mut self, signature: crate::model::DatetimeRange) -> Self {
+            self.inner = self.inner.validity(signature);
             self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
@@ -2040,8 +2037,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
         ///
         /// <p>Information about the license.</p>
-        pub fn license_metadata(mut self, inp: impl Into<crate::model::Metadata>) -> Self {
-            self.inner = self.inner.license_metadata(inp);
+        pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
+            self.inner = self.inner.license_metadata(input);
             self
         }
         /// <p>Information about the license.</p>
@@ -2057,8 +2054,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, inp: impl Into<crate::model::Entitlement>) -> Self {
-            self.inner = self.inner.entitlements(inp);
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
+            self.inner = self.inner.entitlements(input);
             self
         }
         /// <p>License entitlements.</p>
@@ -2074,9 +2071,9 @@ pub mod fluent_builders {
         /// usage.</p>
         pub fn consumption_configuration(
             mut self,
-            inp: crate::model::ConsumptionConfiguration,
+            signature: crate::model::ConsumptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.consumption_configuration(inp);
+            self.inner = self.inner.consumption_configuration(signature);
             self
         }
         /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
@@ -2090,8 +2087,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>License status.</p>
-        pub fn status(mut self, inp: crate::model::LicenseStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::LicenseStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>License status.</p>
@@ -2103,8 +2100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -2113,8 +2110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Current version of the license.</p>
-        pub fn source_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_version(inp);
+        pub fn source_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_version(signature.into());
             self
         }
         /// <p>Current version of the license.</p>
@@ -2190,8 +2187,8 @@ pub mod fluent_builders {
         }
         /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
         /// JWT token.</p>
-        pub fn license_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arn(inp);
+        pub fn license_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
@@ -2206,8 +2203,8 @@ pub mod fluent_builders {
         ///
         /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
         /// License Manager does not check whether the roles are in use.</p>
-        pub fn role_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arns(inp);
+        pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arns(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
@@ -2220,8 +2217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
-        pub fn expiration_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.expiration_in_days(inp);
+        pub fn expiration_in_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.expiration_in_days(signature);
             self
         }
         /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
@@ -2235,8 +2232,8 @@ pub mod fluent_builders {
         ///
         /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
         /// to the amr claim of the JWT token.</p>
-        pub fn token_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token_properties(inp);
+        pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_properties(input.into());
             self
         }
         /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
@@ -2249,8 +2246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Idempotency token, valid for 10 minutes.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Idempotency token, valid for 10 minutes.</p>
@@ -2319,8 +2316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
-        pub fn grant_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_arn(inp);
+        pub fn grant_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -2329,8 +2326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Status reason for the delete request.</p>
-        pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_reason(inp);
+        pub fn status_reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_reason(signature.into());
             self
         }
         /// <p>The Status reason for the delete request.</p>
@@ -2342,8 +2339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Current version of the grant.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>Current version of the grant.</p>
@@ -2412,8 +2409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
-        pub fn license_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arn(inp);
+        pub fn license_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -2422,8 +2419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Current version of the license.</p>
-        pub fn source_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_version(inp);
+        pub fn source_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_version(signature.into());
             self
         }
         /// <p>Current version of the license.</p>
@@ -2496,8 +2493,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the license configuration.</p>
-        pub fn license_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_configuration_arn(inp);
+        pub fn license_configuration_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_configuration_arn(signature.into());
             self
         }
         /// <p>ID of the license configuration.</p>
@@ -2575,9 +2575,11 @@ pub mod fluent_builders {
         /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
         pub fn license_manager_report_generator_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.license_manager_report_generator_arn(inp);
+            self.inner = self
+                .inner
+                .license_manager_report_generator_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
@@ -2649,8 +2651,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Token ID.</p>
-        pub fn token_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token_id(inp);
+        pub fn token_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_id(signature.into());
             self
         }
         /// <p>Token ID.</p>
@@ -2719,8 +2721,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>License consumption token.</p>
-        pub fn license_consumption_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_consumption_token(inp);
+        pub fn license_consumption_token(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_consumption_token(signature.into());
             self
         }
         /// <p>License consumption token.</p>
@@ -2732,8 +2737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
@@ -2803,8 +2808,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Refresh token, encoded as a JWT token.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(signature.into());
             self
         }
         /// <p>Refresh token, encoded as a JWT token.</p>
@@ -2817,8 +2822,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
         ///
         /// <p>Token properties to validate against those present in the JWT token.</p>
-        pub fn token_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token_properties(inp);
+        pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_properties(input.into());
             self
         }
         /// <p>Token properties to validate against those present in the JWT token.</p>
@@ -2890,8 +2895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
-        pub fn grant_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_arn(inp);
+        pub fn grant_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -2900,8 +2905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Grant version.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>Grant version.</p>
@@ -2970,8 +2975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
-        pub fn license_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arn(inp);
+        pub fn license_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -2980,8 +2985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>License version.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>License version.</p>
@@ -3050,8 +3055,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn license_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_configuration_arn(inp);
+        pub fn license_configuration_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_configuration_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -3123,8 +3131,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the license type conversion task to retrieve information on.</p>
-        pub fn license_conversion_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_conversion_task_id(inp);
+        pub fn license_conversion_task_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_conversion_task_id(signature.into());
             self
         }
         /// <p>ID of the license type conversion task to retrieve information on.</p>
@@ -3198,9 +3209,11 @@ pub mod fluent_builders {
         /// <p>Amazon Resource Name (ARN) of the report generator.</p>
         pub fn license_manager_report_generator_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.license_manager_report_generator_arn(inp);
+            self.inner = self
+                .inner
+                .license_manager_report_generator_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the report generator.</p>
@@ -3272,8 +3285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
-        pub fn license_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arn(inp);
+        pub fn license_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -3407,8 +3420,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
-        pub fn license_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_configuration_arn(inp);
+        pub fn license_configuration_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_configuration_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
@@ -3420,8 +3436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -3430,8 +3446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -3504,8 +3520,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_grant_arns`](Self::set_grant_arns).
         ///
         /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-        pub fn grant_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_arns(inp);
+        pub fn grant_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_arns(input.into());
             self
         }
         /// <p>Amazon Resource Names (ARNs) of the grants.</p>
@@ -3548,8 +3564,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
@@ -3588,8 +3604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -3598,8 +3614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -3661,8 +3677,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name of the license configuration.</p>
-        pub fn license_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_configuration_arn(inp);
+        pub fn license_configuration_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_configuration_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name of the license configuration.</p>
@@ -3674,8 +3693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -3684,8 +3703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -3758,8 +3777,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_license_configuration_arns`](Self::set_license_configuration_arns).
         ///
         /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-        pub fn license_configuration_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_configuration_arns(inp);
+        pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_configuration_arns(input.into());
             self
         }
         /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
@@ -3771,8 +3790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -3781,8 +3800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -3814,8 +3833,8 @@ pub mod fluent_builders {
         /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filters and logical operators
@@ -3906,8 +3925,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -3916,8 +3935,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -3932,8 +3951,8 @@ pub mod fluent_builders {
         /// <p>
         /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>
@@ -4020,8 +4039,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported: </p>
@@ -4040,8 +4059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -4050,8 +4069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -4124,8 +4143,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_license_arns`](Self::set_license_arns).
         ///
         /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-        pub fn license_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arns(inp);
+        pub fn license_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arns(input.into());
             self
         }
         /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
@@ -4163,8 +4182,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
@@ -4198,8 +4217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -4208,8 +4227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -4280,8 +4299,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
@@ -4290,8 +4309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -4300,8 +4319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -4370,8 +4389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
-        pub fn license_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arn(inp);
+        pub fn license_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -4380,8 +4399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -4390,8 +4409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -4464,8 +4483,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_grant_arns`](Self::set_grant_arns).
         ///
         /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-        pub fn grant_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_arns(inp);
+        pub fn grant_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_arns(input.into());
             self
         }
         /// <p>Amazon Resource Names (ARNs) of the grants.</p>
@@ -4508,8 +4527,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
@@ -4548,8 +4567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -4558,8 +4577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -4632,8 +4651,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_license_arns`](Self::set_license_arns).
         ///
         /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-        pub fn license_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_arns(inp);
+        pub fn license_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_arns(input.into());
             self
         }
         /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
@@ -4676,8 +4695,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
@@ -4716,8 +4735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -4726,8 +4745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -4796,8 +4815,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -4806,8 +4825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -4858,8 +4877,8 @@ pub mod fluent_builders {
         /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::InventoryFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::InventoryFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filters and logical operators
@@ -4969,8 +4988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -5043,8 +5062,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_token_ids`](Self::set_token_ids).
         ///
         /// <p>Token IDs.</p>
-        pub fn token_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token_ids(inp);
+        pub fn token_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_ids(input.into());
             self
         }
         /// <p>Token IDs.</p>
@@ -5067,8 +5086,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filter is supported:</p>
@@ -5087,8 +5106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -5097,8 +5116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -5169,8 +5188,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn license_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_configuration_arn(inp);
+        pub fn license_configuration_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_configuration_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -5182,8 +5204,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single call.</p>
@@ -5192,8 +5214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token for the next set of results.</p>
@@ -5224,8 +5246,8 @@ pub mod fluent_builders {
         /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters to scope the results. The following filters and logical operators
@@ -5315,8 +5337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
-        pub fn grant_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_arn(inp);
+        pub fn grant_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -5385,8 +5407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -5399,8 +5421,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -5472,8 +5494,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -5486,8 +5508,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys identifying the tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys identifying the tags to remove.</p>
@@ -5559,8 +5581,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn license_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_configuration_arn(inp);
+        pub fn license_configuration_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.license_configuration_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -5574,9 +5599,9 @@ pub mod fluent_builders {
         /// <p>New status of the license configuration.</p>
         pub fn license_configuration_status(
             mut self,
-            inp: crate::model::LicenseConfigurationStatus,
+            signature: crate::model::LicenseConfigurationStatus,
         ) -> Self {
-            self.inner = self.inner.license_configuration_status(inp);
+            self.inner = self.inner.license_configuration_status(signature);
             self
         }
         /// <p>New status of the license configuration.</p>
@@ -5593,8 +5618,8 @@ pub mod fluent_builders {
         ///
         /// <p>New license rule. The only rule that you can add after you create a license
         /// configuration is licenseAffinityToHost.</p>
-        pub fn license_rules(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_rules(inp);
+        pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_rules(input.into());
             self
         }
         /// <p>New license rule. The only rule that you can add after you create a license
@@ -5607,8 +5632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New number of licenses managed by the license configuration.</p>
-        pub fn license_count(mut self, inp: i64) -> Self {
-            self.inner = self.inner.license_count(inp);
+        pub fn license_count(mut self, signature: i64) -> Self {
+            self.inner = self.inner.license_count(signature);
             self
         }
         /// <p>New number of licenses managed by the license configuration.</p>
@@ -5617,8 +5642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New hard limit of the number of available licenses.</p>
-        pub fn license_count_hard_limit(mut self, inp: bool) -> Self {
-            self.inner = self.inner.license_count_hard_limit(inp);
+        pub fn license_count_hard_limit(mut self, signature: bool) -> Self {
+            self.inner = self.inner.license_count_hard_limit(signature);
             self
         }
         /// <p>New hard limit of the number of available licenses.</p>
@@ -5627,8 +5652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New name of the license configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>New name of the license configuration.</p>
@@ -5637,8 +5662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New description of the license configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>New description of the license configuration.</p>
@@ -5651,11 +5676,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
         ///
         /// <p>New product information.</p>
-        pub fn product_information_list(
-            mut self,
-            inp: impl Into<crate::model::ProductInformation>,
-        ) -> Self {
-            self.inner = self.inner.product_information_list(inp);
+        pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
+            self.inner = self.inner.product_information_list(input);
             self
         }
         /// <p>New product information.</p>
@@ -5667,8 +5689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
-        pub fn disassociate_when_not_found(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disassociate_when_not_found(inp);
+        pub fn disassociate_when_not_found(mut self, signature: bool) -> Self {
+            self.inner = self.inner.disassociate_when_not_found(signature);
             self
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -5742,9 +5764,11 @@ pub mod fluent_builders {
         /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
         pub fn license_manager_report_generator_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.license_manager_report_generator_arn(inp);
+            self.inner = self
+                .inner
+                .license_manager_report_generator_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
@@ -5756,8 +5780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the report generator.</p>
-        pub fn report_generator_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_generator_name(inp);
+        pub fn report_generator_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_generator_name(signature.into());
             self
         }
         /// <p>Name of the report generator.</p>
@@ -5781,8 +5805,8 @@ pub mod fluent_builders {
         /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: impl Into<crate::model::ReportType>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Type of reports to generate. The following report types are supported:</p>
@@ -5802,8 +5826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The report context.</p>
-        pub fn report_context(mut self, inp: crate::model::ReportContext) -> Self {
-            self.inner = self.inner.report_context(inp);
+        pub fn report_context(mut self, signature: crate::model::ReportContext) -> Self {
+            self.inner = self.inner.report_context(signature);
             self
         }
         /// <p>The report context.</p>
@@ -5815,8 +5839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Frequency by which reports are generated.</p>
-        pub fn report_frequency(mut self, inp: crate::model::ReportFrequency) -> Self {
-            self.inner = self.inner.report_frequency(inp);
+        pub fn report_frequency(mut self, signature: crate::model::ReportFrequency) -> Self {
+            self.inner = self.inner.report_frequency(signature);
             self
         }
         /// <p>Frequency by which reports are generated.</p>
@@ -5828,8 +5852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -5838,8 +5862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the report generator.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Description of the report generator.</p>
@@ -5913,8 +5937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
@@ -5929,9 +5953,9 @@ pub mod fluent_builders {
         /// <p>ARNs of the license configurations to add.</p>
         pub fn add_license_specifications(
             mut self,
-            inp: impl Into<crate::model::LicenseSpecification>,
+            input: crate::model::LicenseSpecification,
         ) -> Self {
-            self.inner = self.inner.add_license_specifications(inp);
+            self.inner = self.inner.add_license_specifications(input);
             self
         }
         /// <p>ARNs of the license configurations to add.</p>
@@ -5949,9 +5973,9 @@ pub mod fluent_builders {
         /// <p>ARNs of the license configurations to remove.</p>
         pub fn remove_license_specifications(
             mut self,
-            inp: impl Into<crate::model::LicenseSpecification>,
+            input: crate::model::LicenseSpecification,
         ) -> Self {
-            self.inner = self.inner.remove_license_specifications(inp);
+            self.inner = self.inner.remove_license_specifications(input);
             self
         }
         /// <p>ARNs of the license configurations to remove.</p>
@@ -6023,8 +6047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
-        pub fn s3_bucket_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_arn(inp);
+        pub fn s3_bucket_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
@@ -6036,8 +6060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
@@ -6051,9 +6075,9 @@ pub mod fluent_builders {
         /// <p>Enables integration with Organizations for cross-account discovery.</p>
         pub fn organization_configuration(
             mut self,
-            inp: crate::model::OrganizationConfiguration,
+            signature: crate::model::OrganizationConfiguration,
         ) -> Self {
-            self.inner = self.inner.organization_configuration(inp);
+            self.inner = self.inner.organization_configuration(signature);
             self
         }
         /// <p>Enables integration with Organizations for cross-account discovery.</p>
@@ -6065,8 +6089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Activates cross-account discovery.</p>
-        pub fn enable_cross_accounts_discovery(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_cross_accounts_discovery(inp);
+        pub fn enable_cross_accounts_discovery(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_cross_accounts_discovery(signature);
             self
         }
         /// <p>Activates cross-account discovery.</p>

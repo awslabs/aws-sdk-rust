@@ -251,12 +251,9 @@ pub mod translate_text_output {
         ///
         /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the
         /// translated text response.</p>
-        pub fn applied_terminologies(
-            mut self,
-            input: impl Into<crate::model::AppliedTerminology>,
-        ) -> Self {
+        pub fn applied_terminologies(mut self, input: crate::model::AppliedTerminology) -> Self {
             let mut v = self.applied_terminologies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applied_terminologies = Some(v);
             self
         }
@@ -650,12 +647,12 @@ pub mod list_text_translation_jobs_output {
         /// <p>A list containing the properties of each job that is returned.</p>
         pub fn text_translation_job_properties_list(
             mut self,
-            input: impl Into<crate::model::TextTranslationJobProperties>,
+            input: crate::model::TextTranslationJobProperties,
         ) -> Self {
             let mut v = self
                 .text_translation_job_properties_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_translation_job_properties_list = Some(v);
             self
         }
@@ -748,10 +745,10 @@ pub mod list_terminologies_output {
         /// <p>The properties list of the custom terminologies returned on the list request.</p>
         pub fn terminology_properties_list(
             mut self,
-            input: impl Into<crate::model::TerminologyProperties>,
+            input: crate::model::TerminologyProperties,
         ) -> Self {
             let mut v = self.terminology_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.terminology_properties_list = Some(v);
             self
         }
@@ -844,10 +841,10 @@ pub mod list_parallel_data_output {
         /// <p>The properties of the parallel data resources returned by this request.</p>
         pub fn parallel_data_properties_list(
             mut self,
-            input: impl Into<crate::model::ParallelDataProperties>,
+            input: crate::model::ParallelDataProperties,
         ) -> Self {
             let mut v = self.parallel_data_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parallel_data_properties_list = Some(v);
             self
         }

@@ -257,8 +257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
-        pub fn destination_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_region(inp);
+        pub fn destination_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_region(signature.into());
             self
         }
         /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
@@ -270,8 +270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the backup that will be copied to the destination region. </p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(signature.into());
             self
         }
         /// <p>The ID of the backup that will be copied to the destination region. </p>
@@ -284,8 +284,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
@@ -357,8 +357,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A policy that defines how the service retains backups.</p>
-        pub fn backup_retention_policy(mut self, inp: crate::model::BackupRetentionPolicy) -> Self {
-            self.inner = self.inner.backup_retention_policy(inp);
+        pub fn backup_retention_policy(
+            mut self,
+            signature: crate::model::BackupRetentionPolicy,
+        ) -> Self {
+            self.inner = self.inner.backup_retention_policy(signature);
             self
         }
         /// <p>A policy that defines how the service retains backups.</p>
@@ -371,8 +374,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
         /// <code>hsm1.medium</code>.</p>
-        pub fn hsm_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_type(inp);
+        pub fn hsm_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_type(signature.into());
             self
         }
         /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
@@ -383,8 +386,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
         /// cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>
-        pub fn source_backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_backup_id(inp);
+        pub fn source_backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_backup_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
@@ -411,8 +414,8 @@ pub mod fluent_builders {
         /// <p>You can specify only one subnet per Availability Zone.</p>
         /// </li>
         /// </ul>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must
@@ -438,8 +441,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
@@ -512,8 +515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
@@ -523,8 +526,8 @@ pub mod fluent_builders {
         }
         /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
         /// Availability Zones, use <a>DescribeClusters</a>.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
@@ -539,8 +542,8 @@ pub mod fluent_builders {
         /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
         /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
         /// an IP address, one is chosen for you from that subnet.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_address(inp);
+        pub fn ip_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_address(signature.into());
             self
         }
         /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
@@ -613,8 +616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(signature.into());
             self
         }
         /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
@@ -685,8 +688,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
         /// <a>DescribeClusters</a>.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
@@ -759,8 +762,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier (ID) of the cluster that contains the HSM that you are
         /// deleting.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the cluster that contains the HSM that you are
@@ -770,8 +773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier (ID) of the HSM that you are deleting.</p>
-        pub fn hsm_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_id(inp);
+        pub fn hsm_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the HSM that you are deleting.</p>
@@ -781,8 +784,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
         /// deleting.</p>
-        pub fn eni_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eni_id(inp);
+        pub fn eni_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eni_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
@@ -793,8 +796,8 @@ pub mod fluent_builders {
         }
         /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
         /// deleting.</p>
-        pub fn eni_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eni_ip(inp);
+        pub fn eni_ip(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eni_ip(signature.into());
             self
         }
         /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
@@ -870,8 +873,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
         /// value to get more backups.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
@@ -882,8 +885,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of backups to return in the response. When there are more backups
         /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of backups to return in the response. When there are more backups
@@ -912,9 +915,9 @@ pub mod fluent_builders {
         pub fn filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.filters(k, v);
+            self.inner = self.inner.filters(k.into(), v);
             self
         }
         /// <p>One or more filters to limit the items returned in the response.</p>
@@ -941,8 +944,8 @@ pub mod fluent_builders {
         }
         /// <p>Designates whether or not to sort the return backups by ascending chronological order
         /// of generation.</p>
-        pub fn sort_ascending(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sort_ascending(inp);
+        pub fn sort_ascending(mut self, signature: bool) -> Self {
+            self.inner = self.inner.sort_ascending(signature);
             self
         }
         /// <p>Designates whether or not to sort the return backups by ascending chronological order
@@ -1030,9 +1033,9 @@ pub mod fluent_builders {
         pub fn filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.filters(k, v);
+            self.inner = self.inner.filters(k.into(), v);
             self
         }
         /// <p>One or more filters to limit the items returned in the response.</p>
@@ -1053,8 +1056,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
         /// value to get more clusters.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
@@ -1065,8 +1068,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of clusters to return in the response. When there are more clusters
         /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of clusters to return in the response. When there are more clusters
@@ -1140,8 +1143,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
         /// <a>DescribeClusters</a>.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
@@ -1152,8 +1155,8 @@ pub mod fluent_builders {
         }
         /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
         /// certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
-        pub fn signed_cert(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.signed_cert(inp);
+        pub fn signed_cert(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.signed_cert(signature.into());
             self
         }
         /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
@@ -1166,8 +1169,8 @@ pub mod fluent_builders {
         /// the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the
         /// root certificate. The certificate must be in PEM format and can contain a
         /// maximum of 5000 characters.</p>
-        pub fn trust_anchor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_anchor(inp);
+        pub fn trust_anchor(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_anchor(signature.into());
             self
         }
         /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed)
@@ -1245,8 +1248,8 @@ pub mod fluent_builders {
         }
         /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
         /// cluster ID, use <a>DescribeClusters</a>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
@@ -1257,8 +1260,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
         /// value to get more tags.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
@@ -1269,8 +1272,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of tags to return in the response. When there are more tags than the
         /// number you specify, the response contains a <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of tags to return in the response. When there are more tags than the
@@ -1340,8 +1343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
@@ -1351,8 +1354,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
         /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
-        pub fn never_expires(mut self, inp: bool) -> Self {
-            self.inner = self.inner.never_expires(inp);
+        pub fn never_expires(mut self, signature: bool) -> Self {
+            self.inner = self.inner.never_expires(signature);
             self
         }
         /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
@@ -1422,8 +1425,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A policy that defines how the service retains backups.</p>
-        pub fn backup_retention_policy(mut self, inp: crate::model::BackupRetentionPolicy) -> Self {
-            self.inner = self.inner.backup_retention_policy(inp);
+        pub fn backup_retention_policy(
+            mut self,
+            signature: crate::model::BackupRetentionPolicy,
+        ) -> Self {
+            self.inner = self.inner.backup_retention_policy(signature);
             self
         }
         /// <p>A policy that defines how the service retains backups.</p>
@@ -1436,8 +1442,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
         /// <a>DescribeClusters</a>.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(signature.into());
             self
         }
         /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
@@ -1509,8 +1515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(signature.into());
             self
         }
         /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
@@ -1580,8 +1586,8 @@ pub mod fluent_builders {
         }
         /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
         /// ID, use <a>DescribeClusters</a>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
@@ -1595,8 +1601,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of one or more tags.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>A list of one or more tags.</p>
@@ -1669,8 +1675,8 @@ pub mod fluent_builders {
         }
         /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
         /// cluster ID, use <a>DescribeClusters</a>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
@@ -1685,8 +1691,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag
         /// keys, not the tag values.</p>
-        pub fn tag_key_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key_list(inp);
+        pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key_list(input.into());
             self
         }
         /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag

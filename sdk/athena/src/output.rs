@@ -285,9 +285,9 @@ pub mod list_work_groups_output {
         ///
         /// <p>A list of <a>WorkGroupSummary</a> objects that include the names,
         /// descriptions, creation times, and states for each workgroup.</p>
-        pub fn work_groups(mut self, input: impl Into<crate::model::WorkGroupSummary>) -> Self {
+        pub fn work_groups(mut self, input: crate::model::WorkGroupSummary) -> Self {
             let mut v = self.work_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.work_groups = Some(v);
             self
         }
@@ -372,9 +372,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -459,12 +459,9 @@ pub mod list_table_metadata_output {
         /// To override the contents of this collection use [`set_table_metadata_list`](Self::set_table_metadata_list).
         ///
         /// <p>A list of table metadata.</p>
-        pub fn table_metadata_list(
-            mut self,
-            input: impl Into<crate::model::TableMetadata>,
-        ) -> Self {
+        pub fn table_metadata_list(mut self, input: crate::model::TableMetadata) -> Self {
             let mut v = self.table_metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_metadata_list = Some(v);
             self
         }
@@ -640,10 +637,10 @@ pub mod list_prepared_statements_output {
         /// <p>The list of prepared statements for the workgroup.</p>
         pub fn prepared_statements(
             mut self,
-            input: impl Into<crate::model::PreparedStatementSummary>,
+            input: crate::model::PreparedStatementSummary,
         ) -> Self {
             let mut v = self.prepared_statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prepared_statements = Some(v);
             self
         }
@@ -821,9 +818,9 @@ pub mod list_engine_versions_output {
         /// To override the contents of this collection use [`set_engine_versions`](Self::set_engine_versions).
         ///
         /// <p>A list of engine versions that are available to choose from.</p>
-        pub fn engine_versions(mut self, input: impl Into<crate::model::EngineVersion>) -> Self {
+        pub fn engine_versions(mut self, input: crate::model::EngineVersion) -> Self {
             let mut v = self.engine_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_versions = Some(v);
             self
         }
@@ -914,12 +911,9 @@ pub mod list_data_catalogs_output {
         /// To override the contents of this collection use [`set_data_catalogs_summary`](Self::set_data_catalogs_summary).
         ///
         /// <p>A summary list of data catalogs.</p>
-        pub fn data_catalogs_summary(
-            mut self,
-            input: impl Into<crate::model::DataCatalogSummary>,
-        ) -> Self {
+        pub fn data_catalogs_summary(mut self, input: crate::model::DataCatalogSummary) -> Self {
             let mut v = self.data_catalogs_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalogs_summary = Some(v);
             self
         }
@@ -1007,9 +1001,9 @@ pub mod list_databases_output {
         /// To override the contents of this collection use [`set_database_list`](Self::set_database_list).
         ///
         /// <p>A list of databases from a data catalog.</p>
-        pub fn database_list(mut self, input: impl Into<crate::model::Database>) -> Self {
+        pub fn database_list(mut self, input: crate::model::Database) -> Self {
             let mut v = self.database_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_list = Some(v);
             self
         }
@@ -1871,9 +1865,9 @@ pub mod batch_get_query_execution_output {
         /// To override the contents of this collection use [`set_query_executions`](Self::set_query_executions).
         ///
         /// <p>Information about a query execution.</p>
-        pub fn query_executions(mut self, input: impl Into<crate::model::QueryExecution>) -> Self {
+        pub fn query_executions(mut self, input: crate::model::QueryExecution) -> Self {
             let mut v = self.query_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_executions = Some(v);
             self
         }
@@ -1892,10 +1886,10 @@ pub mod batch_get_query_execution_output {
         /// <p>Information about the query executions that failed to run.</p>
         pub fn unprocessed_query_execution_ids(
             mut self,
-            input: impl Into<crate::model::UnprocessedQueryExecutionId>,
+            input: crate::model::UnprocessedQueryExecutionId,
         ) -> Self {
             let mut v = self.unprocessed_query_execution_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_query_execution_ids = Some(v);
             self
         }
@@ -1972,9 +1966,9 @@ pub mod batch_get_named_query_output {
         /// To override the contents of this collection use [`set_named_queries`](Self::set_named_queries).
         ///
         /// <p>Information about the named query IDs submitted.</p>
-        pub fn named_queries(mut self, input: impl Into<crate::model::NamedQuery>) -> Self {
+        pub fn named_queries(mut self, input: crate::model::NamedQuery) -> Self {
             let mut v = self.named_queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.named_queries = Some(v);
             self
         }
@@ -1993,10 +1987,10 @@ pub mod batch_get_named_query_output {
         /// <p>Information about provided query IDs.</p>
         pub fn unprocessed_named_query_ids(
             mut self,
-            input: impl Into<crate::model::UnprocessedNamedQueryId>,
+            input: crate::model::UnprocessedNamedQueryId,
         ) -> Self {
             let mut v = self.unprocessed_named_query_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_named_query_ids = Some(v);
             self
         }

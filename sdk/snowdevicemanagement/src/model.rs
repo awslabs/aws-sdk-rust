@@ -927,10 +927,10 @@ pub mod instance {
         /// <p>Any block device mapping entries for the instance.</p>
         pub fn block_device_mappings(
             mut self,
-            input: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: crate::model::InstanceBlockDeviceMapping,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -947,12 +947,9 @@ pub mod instance {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The security groups for the instance.</p>
-        pub fn security_groups(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupIdentifier>,
-        ) -> Self {
+        pub fn security_groups(mut self, input: crate::model::SecurityGroupIdentifier) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_groups = Some(v);
             self
         }

@@ -63,9 +63,9 @@ pub mod get_record_output {
         /// To override the contents of this collection use [`set_record`](Self::set_record).
         ///
         /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-        pub fn record(mut self, input: impl Into<crate::model::FeatureValue>) -> Self {
+        pub fn record(mut self, input: crate::model::FeatureValue) -> Self {
             let mut v = self.record.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record = Some(v);
             self
         }
@@ -179,12 +179,9 @@ pub mod batch_get_record_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>A list of Records you requested to be retrieved in batch.</p>
-        pub fn records(
-            mut self,
-            input: impl Into<crate::model::BatchGetRecordResultDetail>,
-        ) -> Self {
+        pub fn records(mut self, input: crate::model::BatchGetRecordResultDetail) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -201,9 +198,9 @@ pub mod batch_get_record_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of errors that have occured when retrieving a batch of Records.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchGetRecordError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchGetRecordError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -223,10 +220,10 @@ pub mod batch_get_record_output {
         /// and Feature name.</p>
         pub fn unprocessed_identifiers(
             mut self,
-            input: impl Into<crate::model::BatchGetRecordIdentifier>,
+            input: crate::model::BatchGetRecordIdentifier,
         ) -> Self {
             let mut v = self.unprocessed_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_identifiers = Some(v);
             self
         }

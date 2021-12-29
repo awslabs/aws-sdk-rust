@@ -5794,9 +5794,9 @@ pub mod put_log_events_input {
         /// To override the contents of this collection use [`set_log_events`](Self::set_log_events).
         ///
         /// <p>The log events.</p>
-        pub fn log_events(mut self, input: impl Into<crate::model::InputLogEvent>) -> Self {
+        pub fn log_events(mut self, input: crate::model::InputLogEvent) -> Self {
             let mut v = self.log_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_events = Some(v);
             self
         }
@@ -6020,12 +6020,9 @@ pub mod put_metric_filter_input {
         /// To override the contents of this collection use [`set_metric_transformations`](Self::set_metric_transformations).
         ///
         /// <p>A collection of information that defines how metric data gets emitted.</p>
-        pub fn metric_transformations(
-            mut self,
-            input: impl Into<crate::model::MetricTransformation>,
-        ) -> Self {
+        pub fn metric_transformations(mut self, input: crate::model::MetricTransformation) -> Self {
             let mut v = self.metric_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_transformations = Some(v);
             self
         }

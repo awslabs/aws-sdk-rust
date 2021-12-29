@@ -2253,11 +2253,11 @@ pub mod order_summary {
         /// </p>
         pub fn line_item_counts_by_status(
             mut self,
-            k: impl Into<crate::model::LineItemStatus>,
-            v: impl Into<i32>,
+            k: crate::model::LineItemStatus,
+            v: i32,
         ) -> Self {
             let mut hash_map = self.line_item_counts_by_status.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.line_item_counts_by_status = Some(hash_map);
             self
         }
@@ -2714,9 +2714,9 @@ pub mod catalog_item {
         /// <p>
         /// Information about the EC2 capacity of an item.
         /// </p>
-        pub fn ec2_capacities(mut self, input: impl Into<crate::model::Ec2Capacity>) -> Self {
+        pub fn ec2_capacities(mut self, input: crate::model::Ec2Capacity) -> Self {
             let mut v = self.ec2_capacities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_capacities = Some(v);
             self
         }
@@ -2762,9 +2762,9 @@ pub mod catalog_item {
         /// The uplink speed this catalog item requires for the
         /// connection to the Region.
         /// </p>
-        pub fn supported_uplink_gbps(mut self, input: impl Into<i32>) -> Self {
+        pub fn supported_uplink_gbps(mut self, input: i32) -> Self {
             let mut v = self.supported_uplink_gbps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_uplink_gbps = Some(v);
             self
         }
@@ -2786,12 +2786,9 @@ pub mod catalog_item {
         /// <p>
         /// The supported storage options for the catalog item.
         /// </p>
-        pub fn supported_storage(
-            mut self,
-            input: impl Into<crate::model::SupportedStorageEnum>,
-        ) -> Self {
+        pub fn supported_storage(mut self, input: crate::model::SupportedStorageEnum) -> Self {
             let mut v = self.supported_storage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_storage = Some(v);
             self
         }
@@ -3388,9 +3385,9 @@ pub mod order {
         /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
         ///
         /// <p>The line items for the order</p>
-        pub fn line_items(mut self, input: impl Into<crate::model::LineItem>) -> Self {
+        pub fn line_items(mut self, input: crate::model::LineItem) -> Self {
             let mut v = self.line_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_items = Some(v);
             self
         }

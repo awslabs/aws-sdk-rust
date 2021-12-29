@@ -349,12 +349,9 @@ pub mod search_resources_output {
         /// To override the contents of this collection use [`set_matching_resources`](Self::set_matching_resources).
         ///
         /// <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
-        pub fn matching_resources(
-            mut self,
-            input: impl Into<crate::model::MatchingResource>,
-        ) -> Self {
+        pub fn matching_resources(mut self, input: crate::model::MatchingResource) -> Self {
             let mut v = self.matching_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_resources = Some(v);
             self
         }
@@ -600,9 +597,9 @@ pub mod list_organization_admin_accounts_output {
         /// To override the contents of this collection use [`set_admin_accounts`](Self::set_admin_accounts).
         ///
         /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
-        pub fn admin_accounts(mut self, input: impl Into<crate::model::AdminAccount>) -> Self {
+        pub fn admin_accounts(mut self, input: crate::model::AdminAccount) -> Self {
             let mut v = self.admin_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.admin_accounts = Some(v);
             self
         }
@@ -682,9 +679,9 @@ pub mod list_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -765,12 +762,9 @@ pub mod list_managed_data_identifiers_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of objects, one for each managed data identifier.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ManagedDataIdentifierSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ManagedDataIdentifierSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -850,9 +844,9 @@ pub mod list_invitations_output {
         /// To override the contents of this collection use [`set_invitations`](Self::set_invitations).
         ///
         /// <p>An array of objects, one for each invitation that was received by the account.</p>
-        pub fn invitations(mut self, input: impl Into<crate::model::Invitation>) -> Self {
+        pub fn invitations(mut self, input: crate::model::Invitation) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.invitations = Some(v);
             self
         }
@@ -941,10 +935,10 @@ pub mod list_findings_filters_output {
         /// <p>An array of objects, one for each filter that's associated with the account.</p>
         pub fn findings_filter_list_items(
             mut self,
-            input: impl Into<crate::model::FindingsFilterListItem>,
+            input: crate::model::FindingsFilterListItem,
         ) -> Self {
             let mut v = self.findings_filter_list_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings_filter_list_items = Some(v);
             self
         }
@@ -1107,12 +1101,9 @@ pub mod list_custom_data_identifiers_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of objects, one for each custom data identifier.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::CustomDataIdentifierSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::CustomDataIdentifierSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1192,9 +1183,9 @@ pub mod list_classification_jobs_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
-        pub fn items(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
+        pub fn items(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1287,9 +1278,9 @@ pub mod get_usage_totals_output {
         /// To override the contents of this collection use [`set_usage_totals`](Self::set_usage_totals).
         ///
         /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-        pub fn usage_totals(mut self, input: impl Into<crate::model::UsageTotal>) -> Self {
+        pub fn usage_totals(mut self, input: crate::model::UsageTotal) -> Self {
             let mut v = self.usage_totals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_totals = Some(v);
             self
         }
@@ -1377,9 +1368,9 @@ pub mod get_usage_statistics_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
-        pub fn records(mut self, input: impl Into<crate::model::UsageRecord>) -> Self {
+        pub fn records(mut self, input: crate::model::UsageRecord) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -1953,9 +1944,9 @@ pub mod get_finding_statistics_output {
         /// To override the contents of this collection use [`set_counts_by_group`](Self::set_counts_by_group).
         ///
         /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
-        pub fn counts_by_group(mut self, input: impl Into<crate::model::GroupCount>) -> Self {
+        pub fn counts_by_group(mut self, input: crate::model::GroupCount) -> Self {
             let mut v = self.counts_by_group.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.counts_by_group = Some(v);
             self
         }
@@ -2296,9 +2287,9 @@ pub mod get_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::Finding>) -> Self {
+        pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -2574,9 +2565,9 @@ pub mod get_custom_data_identifier_output {
         /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
         ///
         /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-        pub fn severity_levels(mut self, input: impl Into<crate::model::SeverityLevel>) -> Self {
+        pub fn severity_levels(mut self, input: crate::model::SeverityLevel) -> Self {
             let mut v = self.severity_levels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.severity_levels = Some(v);
             self
         }
@@ -3954,9 +3945,9 @@ pub mod describe_buckets_output {
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
         /// <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
-        pub fn buckets(mut self, input: impl Into<crate::model::BucketMetadata>) -> Self {
+        pub fn buckets(mut self, input: crate::model::BucketMetadata) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buckets = Some(v);
             self
         }
@@ -4059,12 +4050,9 @@ pub mod delete_invitations_output {
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
         /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -4186,12 +4174,9 @@ pub mod decline_invitations_output {
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
         /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -4335,12 +4320,9 @@ pub mod create_invitations_output {
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
         /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -4619,10 +4601,10 @@ pub mod batch_get_custom_data_identifiers_output {
         /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
         pub fn custom_data_identifiers(
             mut self,
-            input: impl Into<crate::model::BatchGetCustomDataIdentifierSummary>,
+            input: crate::model::BatchGetCustomDataIdentifierSummary,
         ) -> Self {
             let mut v = self.custom_data_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_data_identifiers = Some(v);
             self
         }

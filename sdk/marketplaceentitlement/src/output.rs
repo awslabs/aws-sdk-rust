@@ -51,9 +51,9 @@ pub mod get_entitlements_output {
         /// <p>The set of entitlements found through the GetEntitlements operation. If the result
         /// contains an empty set of entitlements, NextToken might still be present and should be
         /// used.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }

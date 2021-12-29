@@ -1216,9 +1216,9 @@ pub mod describe_volumes_output {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>An array of volume IDs.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -1279,9 +1279,9 @@ pub mod describe_user_profiles_output {
         /// To override the contents of this collection use [`set_user_profiles`](Self::set_user_profiles).
         ///
         /// <p>A <code>Users</code> object that describes the specified users.</p>
-        pub fn user_profiles(mut self, input: impl Into<crate::model::UserProfile>) -> Self {
+        pub fn user_profiles(mut self, input: crate::model::UserProfile) -> Self {
             let mut v = self.user_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_profiles = Some(v);
             self
         }
@@ -1354,12 +1354,12 @@ pub mod describe_time_based_auto_scaling_output {
         /// configuration for the specified instances.</p>
         pub fn time_based_auto_scaling_configurations(
             mut self,
-            input: impl Into<crate::model::TimeBasedAutoScalingConfiguration>,
+            input: crate::model::TimeBasedAutoScalingConfiguration,
         ) -> Self {
             let mut v = self
                 .time_based_auto_scaling_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.time_based_auto_scaling_configurations = Some(v);
             self
         }
@@ -1480,9 +1480,9 @@ pub mod describe_stacks_output {
         /// To override the contents of this collection use [`set_stacks`](Self::set_stacks).
         ///
         /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-        pub fn stacks(mut self, input: impl Into<crate::model::Stack>) -> Self {
+        pub fn stacks(mut self, input: crate::model::Stack) -> Self {
             let mut v = self.stacks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stacks = Some(v);
             self
         }
@@ -1640,9 +1640,9 @@ pub mod describe_service_errors_output {
         /// To override the contents of this collection use [`set_service_errors`](Self::set_service_errors).
         ///
         /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-        pub fn service_errors(mut self, input: impl Into<crate::model::ServiceError>) -> Self {
+        pub fn service_errors(mut self, input: crate::model::ServiceError) -> Self {
             let mut v = self.service_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_errors = Some(v);
             self
         }
@@ -1704,9 +1704,9 @@ pub mod describe_rds_db_instances_output {
         /// To override the contents of this collection use [`set_rds_db_instances`](Self::set_rds_db_instances).
         ///
         /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-        pub fn rds_db_instances(mut self, input: impl Into<crate::model::RdsDbInstance>) -> Self {
+        pub fn rds_db_instances(mut self, input: crate::model::RdsDbInstance) -> Self {
             let mut v = self.rds_db_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rds_db_instances = Some(v);
             self
         }
@@ -1767,9 +1767,9 @@ pub mod describe_raid_arrays_output {
         /// To override the contents of this collection use [`set_raid_arrays`](Self::set_raid_arrays).
         ///
         /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-        pub fn raid_arrays(mut self, input: impl Into<crate::model::RaidArray>) -> Self {
+        pub fn raid_arrays(mut self, input: crate::model::RaidArray) -> Self {
             let mut v = self.raid_arrays.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.raid_arrays = Some(v);
             self
         }
@@ -1872,9 +1872,9 @@ pub mod describe_permissions_output {
         /// <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p>
         /// </li>
         /// </ul>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1950,12 +1950,9 @@ pub mod describe_operating_systems_output {
         /// To override the contents of this collection use [`set_operating_systems`](Self::set_operating_systems).
         ///
         /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-        pub fn operating_systems(
-            mut self,
-            input: impl Into<crate::model::OperatingSystem>,
-        ) -> Self {
+        pub fn operating_systems(mut self, input: crate::model::OperatingSystem) -> Self {
             let mut v = self.operating_systems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operating_systems = Some(v);
             self
         }
@@ -2085,12 +2082,12 @@ pub mod describe_load_based_auto_scaling_output {
         /// configuration.</p>
         pub fn load_based_auto_scaling_configurations(
             mut self,
-            input: impl Into<crate::model::LoadBasedAutoScalingConfiguration>,
+            input: crate::model::LoadBasedAutoScalingConfiguration,
         ) -> Self {
             let mut v = self
                 .load_based_auto_scaling_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_based_auto_scaling_configurations = Some(v);
             self
         }
@@ -2154,9 +2151,9 @@ pub mod describe_layers_output {
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
         /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -2217,9 +2214,9 @@ pub mod describe_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -2287,12 +2284,9 @@ pub mod describe_elastic_load_balancers_output {
         ///
         /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
         /// instances.</p>
-        pub fn elastic_load_balancers(
-            mut self,
-            input: impl Into<crate::model::ElasticLoadBalancer>,
-        ) -> Self {
+        pub fn elastic_load_balancers(mut self, input: crate::model::ElasticLoadBalancer) -> Self {
             let mut v = self.elastic_load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.elastic_load_balancers = Some(v);
             self
         }
@@ -2354,9 +2348,9 @@ pub mod describe_elastic_ips_output {
         /// To override the contents of this collection use [`set_elastic_ips`](Self::set_elastic_ips).
         ///
         /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-        pub fn elastic_ips(mut self, input: impl Into<crate::model::ElasticIp>) -> Self {
+        pub fn elastic_ips(mut self, input: crate::model::ElasticIp) -> Self {
             let mut v = self.elastic_ips.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.elastic_ips = Some(v);
             self
         }
@@ -2431,9 +2425,9 @@ pub mod describe_ecs_clusters_output {
         /// To override the contents of this collection use [`set_ecs_clusters`](Self::set_ecs_clusters).
         ///
         /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
-        pub fn ecs_clusters(mut self, input: impl Into<crate::model::EcsCluster>) -> Self {
+        pub fn ecs_clusters(mut self, input: crate::model::EcsCluster) -> Self {
             let mut v = self.ecs_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecs_clusters = Some(v);
             self
         }
@@ -2511,9 +2505,9 @@ pub mod describe_deployments_output {
         /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
         ///
         /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-        pub fn deployments(mut self, input: impl Into<crate::model::Deployment>) -> Self {
+        pub fn deployments(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments = Some(v);
             self
         }
@@ -2574,9 +2568,9 @@ pub mod describe_commands_output {
         /// To override the contents of this collection use [`set_commands`](Self::set_commands).
         ///
         /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-        pub fn commands(mut self, input: impl Into<crate::model::Command>) -> Self {
+        pub fn commands(mut self, input: crate::model::Command) -> Self {
             let mut v = self.commands.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.commands = Some(v);
             self
         }
@@ -2637,9 +2631,9 @@ pub mod describe_apps_output {
         /// To override the contents of this collection use [`set_apps`](Self::set_apps).
         ///
         /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
-        pub fn apps(mut self, input: impl Into<crate::model::App>) -> Self {
+        pub fn apps(mut self, input: crate::model::App) -> Self {
             let mut v = self.apps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.apps = Some(v);
             self
         }
@@ -2698,9 +2692,9 @@ pub mod describe_agent_versions_output {
         /// To override the contents of this collection use [`set_agent_versions`](Self::set_agent_versions).
         ///
         /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-        pub fn agent_versions(mut self, input: impl Into<crate::model::AgentVersion>) -> Self {
+        pub fn agent_versions(mut self, input: crate::model::AgentVersion) -> Self {
             let mut v = self.agent_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_versions = Some(v);
             self
         }

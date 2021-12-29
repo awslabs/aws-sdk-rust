@@ -1913,9 +1913,9 @@ pub mod component_latest_version {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms that the component version supports.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::ComponentPlatform>) -> Self {
+        pub fn platforms(mut self, input: crate::model::ComponentPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -2314,12 +2314,9 @@ pub mod io_t_job_abort_config {
         /// To override the contents of this collection use [`set_criteria_list`](Self::set_criteria_list).
         ///
         /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
-        pub fn criteria_list(
-            mut self,
-            input: impl Into<crate::model::IoTJobAbortCriteria>,
-        ) -> Self {
+        pub fn criteria_list(mut self, input: crate::model::IoTJobAbortCriteria) -> Self {
             let mut v = self.criteria_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.criteria_list = Some(v);
             self
         }
@@ -4312,12 +4309,9 @@ pub mod lambda_function_recipe_source {
         /// To override the contents of this collection use [`set_component_platforms`](Self::set_component_platforms).
         ///
         /// <p>The platforms that the component version supports.</p>
-        pub fn component_platforms(
-            mut self,
-            input: impl Into<crate::model::ComponentPlatform>,
-        ) -> Self {
+        pub fn component_platforms(mut self, input: crate::model::ComponentPlatform) -> Self {
             let mut v = self.component_platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_platforms = Some(v);
             self
         }
@@ -4337,10 +4331,10 @@ pub mod lambda_function_recipe_source {
         pub fn component_dependencies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentDependencyRequirement>,
+            v: crate::model::ComponentDependencyRequirement,
         ) -> Self {
             let mut hash_map = self.component_dependencies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.component_dependencies = Some(hash_map);
             self
         }
@@ -4574,9 +4568,9 @@ pub mod lambda_execution_parameters {
         /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
         /// function runs when it receives a message from an event source. You can subscribe this function
         /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
-        pub fn event_sources(mut self, input: impl Into<crate::model::LambdaEventSource>) -> Self {
+        pub fn event_sources(mut self, input: crate::model::LambdaEventSource) -> Self {
             let mut v = self.event_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_sources = Some(v);
             self
         }
@@ -4983,9 +4977,9 @@ pub mod lambda_container_params {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>The list of volumes that the container can access.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::LambdaVolumeMount>) -> Self {
+        pub fn volumes(mut self, input: crate::model::LambdaVolumeMount) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -5002,9 +4996,9 @@ pub mod lambda_container_params {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>The list of system devices that the container can access.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::LambdaDeviceMount>) -> Self {
+        pub fn devices(mut self, input: crate::model::LambdaDeviceMount) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }

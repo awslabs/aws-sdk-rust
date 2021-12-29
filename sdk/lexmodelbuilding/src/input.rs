@@ -6560,9 +6560,9 @@ pub mod put_bot_input {
         /// <p>An array of <code>Intent</code> objects. Each intent represents a
         /// command that a user can express. For example, a pizza ordering bot might
         /// support an OrderPizza intent. For more information, see <a>how-it-works</a>.</p>
-        pub fn intents(mut self, input: impl Into<crate::model::Intent>) -> Self {
+        pub fn intents(mut self, input: crate::model::Intent) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intents = Some(v);
             self
         }
@@ -7096,9 +7096,9 @@ pub mod put_bot_input {
         /// create a bot, you can't use the <code>PutBot</code> operation to update
         /// the tags on a bot. To update tags, use the <code>TagResource</code>
         /// operation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7377,9 +7377,9 @@ pub mod put_bot_alias_input {
         /// create an alias, you can't use the <code>PutBotAlias</code> operation to
         /// update the tags on a bot alias. To update tags, use the
         /// <code>TagResource</code> operation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7630,9 +7630,9 @@ pub mod put_intent_input {
         /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot
         /// values from the user using prompts defined in the slots. For more
         /// information, see <a>how-it-works</a>. </p>
-        pub fn slots(mut self, input: impl Into<crate::model::Slot>) -> Self {
+        pub fn slots(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slots = Some(v);
             self
         }
@@ -7974,9 +7974,9 @@ pub mod put_intent_input {
         /// <p>An array of <code>InputContext</code> objects that lists the contexts
         /// that must be active for Amazon Lex to choose the intent in a conversation with
         /// the user.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -7996,9 +7996,9 @@ pub mod put_intent_input {
         ///
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts
         /// that the intent activates when the intent is fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -8237,12 +8237,9 @@ pub mod put_slot_type_input {
         /// the user entered or the first value in the resolution list as the slot
         /// value. The <code>valueSelectionStrategy</code> field indicates the option
         /// to use. </p>
-        pub fn enumeration_values(
-            mut self,
-            input: impl Into<crate::model::EnumerationValue>,
-        ) -> Self {
+        pub fn enumeration_values(mut self, input: crate::model::EnumerationValue) -> Self {
             let mut v = self.enumeration_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enumeration_values = Some(v);
             self
         }
@@ -8392,10 +8389,10 @@ pub mod put_slot_type_input {
         /// type.</p>
         pub fn slot_type_configurations(
             mut self,
-            input: impl Into<crate::model::SlotTypeConfiguration>,
+            input: crate::model::SlotTypeConfiguration,
         ) -> Self {
             let mut v = self.slot_type_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_configurations = Some(v);
             self
         }
@@ -8667,9 +8664,9 @@ pub mod start_import_input {
         ///
         /// <p>A list of tags to add to the imported bot. You can only add tags when
         /// you import a bot, you can't add tags to an intent or slot type.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9097,9 +9094,9 @@ pub mod tag_resource_input {
         ///
         /// <p>A list of tag keys to add to the resource. If a tag key already
         /// exists, the existing value is replaced with the new value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

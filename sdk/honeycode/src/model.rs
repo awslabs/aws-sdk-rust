@@ -395,10 +395,10 @@ pub mod destination_options {
         pub fn column_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::SourceDataColumnProperties>,
+            v: crate::model::SourceDataColumnProperties,
         ) -> Self {
             let mut hash_map = self.column_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.column_map = Some(hash_map);
             self
         }
@@ -714,9 +714,9 @@ pub mod table_row {
         ///
         /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.
         /// </p>
-        pub fn cells(mut self, input: impl Into<crate::model::Cell>) -> Self {
+        pub fn cells(mut self, input: crate::model::Cell) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cells = Some(v);
             self
         }
@@ -1604,9 +1604,9 @@ pub mod result_set {
         /// person as the third item. If a particular task does not have a due date, that row will still have a blank
         /// value in the second element and the assigned person will still be in the third element.
         /// </p>
-        pub fn headers(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn headers(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
@@ -1638,9 +1638,9 @@ pub mod result_set {
         /// List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data
         /// cells will be present in the same order as they are defined in the header.
         /// </p>
-        pub fn rows(mut self, input: impl Into<crate::model::ResultRow>) -> Self {
+        pub fn rows(mut self, input: crate::model::ResultRow) -> Self {
             let mut v = self.rows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rows = Some(v);
             self
         }
@@ -1723,9 +1723,9 @@ pub mod result_row {
         /// To override the contents of this collection use [`set_data_items`](Self::set_data_items).
         ///
         /// <p>List of all the data cells in a row.</p>
-        pub fn data_items(mut self, input: impl Into<crate::model::DataItem>) -> Self {
+        pub fn data_items(mut self, input: crate::model::DataItem) -> Self {
             let mut v = self.data_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_items = Some(v);
             self
         }
@@ -2555,10 +2555,10 @@ pub mod upsert_row_data {
         pub fn cells_to_update(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CellInput>,
+            v: crate::model::CellInput,
         ) -> Self {
             let mut hash_map = self.cells_to_update.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.cells_to_update = Some(hash_map);
             self
         }
@@ -2739,10 +2739,10 @@ pub mod update_row_data {
         pub fn cells_to_update(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CellInput>,
+            v: crate::model::CellInput,
         ) -> Self {
             let mut hash_map = self.cells_to_update.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.cells_to_update = Some(hash_map);
             self
         }
@@ -2871,10 +2871,10 @@ pub mod create_row_data {
         pub fn cells_to_create(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CellInput>,
+            v: crate::model::CellInput,
         ) -> Self {
             let mut hash_map = self.cells_to_create.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.cells_to_create = Some(hash_map);
             self
         }

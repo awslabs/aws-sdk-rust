@@ -102,9 +102,9 @@ pub mod subnet_group {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>A list of subnets associated with the subnet group. </p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -711,9 +711,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
         ///
         /// <p>A list of nodes that are currently in the cluster.</p>
-        pub fn nodes(mut self, input: impl Into<crate::model::Node>) -> Self {
+        pub fn nodes(mut self, input: crate::model::Node) -> Self {
             let mut v = self.nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nodes = Some(v);
             self
         }
@@ -780,12 +780,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
-        pub fn security_groups(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupMembership>,
-        ) -> Self {
+        pub fn security_groups(mut self, input: crate::model::SecurityGroupMembership) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_groups = Some(v);
             self
         }
@@ -1930,10 +1927,10 @@ pub mod parameter {
         /// <p>A list of node types, and specific parameter values for each node.</p>
         pub fn node_type_specific_values(
             mut self,
-            input: impl Into<crate::model::NodeTypeSpecificValue>,
+            input: crate::model::NodeTypeSpecificValue,
         ) -> Self {
             let mut v = self.node_type_specific_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_type_specific_values = Some(v);
             self
         }

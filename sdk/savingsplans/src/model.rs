@@ -125,12 +125,9 @@ pub mod savings_plan_offering {
         /// To override the contents of this collection use [`set_product_types`](Self::set_product_types).
         ///
         /// <p>The product type.</p>
-        pub fn product_types(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanProductType>,
-        ) -> Self {
+        pub fn product_types(mut self, input: crate::model::SavingsPlanProductType) -> Self {
             let mut v = self.product_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_types = Some(v);
             self
         }
@@ -236,12 +233,9 @@ pub mod savings_plan_offering {
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>The properties.</p>
-        pub fn properties(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanOfferingProperty>,
-        ) -> Self {
+        pub fn properties(mut self, input: crate::model::SavingsPlanOfferingProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }
@@ -967,12 +961,9 @@ pub mod savings_plan_offering_rate {
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>The properties.</p>
-        pub fn properties(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanOfferingRateProperty>,
-        ) -> Self {
+        pub fn properties(mut self, input: crate::model::SavingsPlanOfferingRateProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }
@@ -1842,12 +1833,9 @@ pub mod savings_plan {
         /// To override the contents of this collection use [`set_product_types`](Self::set_product_types).
         ///
         /// <p>The product types.</p>
-        pub fn product_types(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanProductType>,
-        ) -> Self {
+        pub fn product_types(mut self, input: crate::model::SavingsPlanProductType) -> Self {
             let mut v = self.product_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_types = Some(v);
             self
         }
@@ -2404,12 +2392,9 @@ pub mod savings_plan_rate {
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>The properties.</p>
-        pub fn properties(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanRateProperty>,
-        ) -> Self {
+        pub fn properties(mut self, input: crate::model::SavingsPlanRateProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }

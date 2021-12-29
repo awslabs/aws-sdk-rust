@@ -835,9 +835,9 @@ pub mod detector_state {
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p>The current values of the detector's variables.</p>
-        pub fn variables(mut self, input: impl Into<crate::model::Variable>) -> Self {
+        pub fn variables(mut self, input: crate::model::Variable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variables = Some(v);
             self
         }
@@ -854,9 +854,9 @@ pub mod detector_state {
         /// To override the contents of this collection use [`set_timers`](Self::set_timers).
         ///
         /// <p>The current state of the detector's timers.</p>
-        pub fn timers(mut self, input: impl Into<crate::model::Timer>) -> Self {
+        pub fn timers(mut self, input: crate::model::Timer) -> Self {
             let mut v = self.timers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timers = Some(v);
             self
         }
@@ -2995,9 +2995,9 @@ pub mod detector_state_definition {
         ///
         /// <p>The new values of the detector's variables. Any variable whose value isn't specified is
         /// cleared.</p>
-        pub fn variables(mut self, input: impl Into<crate::model::VariableDefinition>) -> Self {
+        pub fn variables(mut self, input: crate::model::VariableDefinition) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variables = Some(v);
             self
         }
@@ -3016,9 +3016,9 @@ pub mod detector_state_definition {
         ///
         /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared,
         /// and its timeout event won't occur.</p>
-        pub fn timers(mut self, input: impl Into<crate::model::TimerDefinition>) -> Self {
+        pub fn timers(mut self, input: crate::model::TimerDefinition) -> Self {
             let mut v = self.timers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timers = Some(v);
             self
         }

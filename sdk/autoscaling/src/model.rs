@@ -505,12 +505,9 @@ pub mod launch_template {
         /// in the launch template when it launches an instance.</p>
         /// <p>The overrides can include either one or more instance types or a set of instance
         /// requirements, but not both.</p>
-        pub fn overrides(
-            mut self,
-            input: impl Into<crate::model::LaunchTemplateOverrides>,
-        ) -> Self {
+        pub fn overrides(mut self, input: crate::model::LaunchTemplateOverrides) -> Self {
             let mut v = self.overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.overrides = Some(v);
             self
         }
@@ -1338,12 +1335,9 @@ pub mod instance_requirements {
         /// Machine Image (AMI) that you specify in your launch template. </p>
         /// </note>
         /// <p>Default: Any manufacturer</p>
-        pub fn cpu_manufacturers(
-            mut self,
-            input: impl Into<crate::model::CpuManufacturer>,
-        ) -> Self {
+        pub fn cpu_manufacturers(mut self, input: crate::model::CpuManufacturer) -> Self {
             let mut v = self.cpu_manufacturers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cpu_manufacturers = Some(v);
             self
         }
@@ -1442,12 +1436,9 @@ pub mod instance_requirements {
         /// </li>
         /// </ul>
         /// <p>Default: Any current or previous generation</p>
-        pub fn instance_generations(
-            mut self,
-            input: impl Into<crate::model::InstanceGeneration>,
-        ) -> Self {
+        pub fn instance_generations(mut self, input: crate::model::InstanceGeneration) -> Self {
             let mut v = self.instance_generations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_generations = Some(v);
             self
         }
@@ -1639,12 +1630,9 @@ pub mod instance_requirements {
         /// </li>
         /// </ul>
         /// <p>Default: Any local storage type</p>
-        pub fn local_storage_types(
-            mut self,
-            input: impl Into<crate::model::LocalStorageType>,
-        ) -> Self {
+        pub fn local_storage_types(mut self, input: crate::model::LocalStorageType) -> Self {
             let mut v = self.local_storage_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_storage_types = Some(v);
             self
         }
@@ -1725,12 +1713,9 @@ pub mod instance_requirements {
         /// </li>
         /// </ul>
         /// <p>Default: Any accelerator type</p>
-        pub fn accelerator_types(
-            mut self,
-            input: impl Into<crate::model::AcceleratorType>,
-        ) -> Self {
+        pub fn accelerator_types(mut self, input: crate::model::AcceleratorType) -> Self {
             let mut v = self.accelerator_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_types = Some(v);
             self
         }
@@ -1800,10 +1785,10 @@ pub mod instance_requirements {
         /// <p>Default: Any manufacturer</p>
         pub fn accelerator_manufacturers(
             mut self,
-            input: impl Into<crate::model::AcceleratorManufacturer>,
+            input: crate::model::AcceleratorManufacturer,
         ) -> Self {
             let mut v = self.accelerator_manufacturers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_manufacturers = Some(v);
             self
         }
@@ -1862,12 +1847,9 @@ pub mod instance_requirements {
         /// </li>
         /// </ul>
         /// <p>Default: Any accelerator</p>
-        pub fn accelerator_names(
-            mut self,
-            input: impl Into<crate::model::AcceleratorName>,
-        ) -> Self {
+        pub fn accelerator_names(mut self, input: crate::model::AcceleratorName) -> Self {
             let mut v = self.accelerator_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_names = Some(v);
             self
         }
@@ -3806,9 +3788,9 @@ pub mod refresh_preferences {
         /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding
         /// checkpoints to an instance refresh</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        pub fn checkpoint_percentages(mut self, input: impl Into<i32>) -> Self {
+        pub fn checkpoint_percentages(mut self, input: i32) -> Self {
             let mut v = self.checkpoint_percentages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.checkpoint_percentages = Some(v);
             self
         }
@@ -4325,10 +4307,10 @@ pub mod predictive_scaling_configuration {
         /// scaling metric and one load metric.</p>
         pub fn metric_specifications(
             mut self,
-            input: impl Into<crate::model::PredictiveScalingMetricSpecification>,
+            input: crate::model::PredictiveScalingMetricSpecification,
         ) -> Self {
             let mut v = self.metric_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_specifications = Some(v);
             self
         }
@@ -4959,12 +4941,9 @@ pub mod predictive_scaling_customized_capacity_metric {
         /// <p>One or more metric data queries to provide the data points for a capacity metric. Use
         /// multiple metric data queries only if you are performing a math expression on returned
         /// data. </p>
-        pub fn metric_data_queries(
-            mut self,
-            input: impl Into<crate::model::MetricDataQuery>,
-        ) -> Self {
+        pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data_queries = Some(v);
             self
         }
@@ -5426,9 +5405,9 @@ pub mod metric {
         /// Guide</i>. </p>
         /// <p>Conditional: If you published your metric with dimensions, you must specify the same
         /// dimensions in your scaling policy.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::MetricDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -5576,12 +5555,9 @@ pub mod predictive_scaling_customized_load_metric {
         /// <p>One or more metric data queries to provide the data points for a load metric. Use
         /// multiple metric data queries only if you are performing a math expression on returned
         /// data. </p>
-        pub fn metric_data_queries(
-            mut self,
-            input: impl Into<crate::model::MetricDataQuery>,
-        ) -> Self {
+        pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data_queries = Some(v);
             self
         }
@@ -5651,12 +5627,9 @@ pub mod predictive_scaling_customized_scaling_metric {
         /// <p>One or more metric data queries to provide the data points for a scaling metric. Use
         /// multiple metric data queries only if you are performing a math expression on returned
         /// data. </p>
-        pub fn metric_data_queries(
-            mut self,
-            input: impl Into<crate::model::MetricDataQuery>,
-        ) -> Self {
+        pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data_queries = Some(v);
             self
         }
@@ -6687,9 +6660,9 @@ pub mod customized_metric_specification {
         /// <p>The dimensions of the metric.</p>
         /// <p>Conditional: If you published your metric with dimensions, you must specify the same
         /// dimensions in your scaling policy.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::MetricDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -7352,9 +7325,9 @@ pub mod capacity_forecast {
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
         /// <p>The timestamps for the data points, in UTC format.</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timestamps = Some(v);
             self
         }
@@ -7371,9 +7344,9 @@ pub mod capacity_forecast {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values of the data points.</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -7455,9 +7428,9 @@ pub mod load_forecast {
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
         /// <p>The timestamps for the data points, in UTC format.</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timestamps = Some(v);
             self
         }
@@ -7474,9 +7447,9 @@ pub mod load_forecast {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values of the data points.</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -9498,9 +9471,9 @@ pub mod scaling_policy {
         ///
         /// <p>A set of adjustments that enable you to scale based on the size of the alarm
         /// breach.</p>
-        pub fn step_adjustments(mut self, input: impl Into<crate::model::StepAdjustment>) -> Self {
+        pub fn step_adjustments(mut self, input: crate::model::StepAdjustment) -> Self {
             let mut v = self.step_adjustments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.step_adjustments = Some(v);
             self
         }
@@ -9545,9 +9518,9 @@ pub mod scaling_policy {
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
         /// <p>The CloudWatch alarms related to the policy.</p>
-        pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarms = Some(v);
             self
         }
@@ -11508,12 +11481,9 @@ pub mod launch_configuration {
         /// <p>A block device mapping, which specifies the block devices for the instance. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
         /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -14251,9 +14221,9 @@ pub mod auto_scaling_group {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The EC2 instances associated with the group.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -14283,12 +14253,9 @@ pub mod auto_scaling_group {
         /// To override the contents of this collection use [`set_suspended_processes`](Self::set_suspended_processes).
         ///
         /// <p>The suspended processes associated with the group.</p>
-        pub fn suspended_processes(
-            mut self,
-            input: impl Into<crate::model::SuspendedProcess>,
-        ) -> Self {
+        pub fn suspended_processes(mut self, input: crate::model::SuspendedProcess) -> Self {
             let mut v = self.suspended_processes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suspended_processes = Some(v);
             self
         }
@@ -14331,9 +14298,9 @@ pub mod auto_scaling_group {
         /// To override the contents of this collection use [`set_enabled_metrics`](Self::set_enabled_metrics).
         ///
         /// <p>The metrics enabled for the group.</p>
-        pub fn enabled_metrics(mut self, input: impl Into<crate::model::EnabledMetric>) -> Self {
+        pub fn enabled_metrics(mut self, input: crate::model::EnabledMetric) -> Self {
             let mut v = self.enabled_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enabled_metrics = Some(v);
             self
         }
@@ -14362,9 +14329,9 @@ pub mod auto_scaling_group {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagDescription) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

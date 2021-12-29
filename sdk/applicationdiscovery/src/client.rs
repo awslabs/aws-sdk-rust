@@ -341,8 +341,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The configuration ID of an application with which items are to be associated.</p>
-        pub fn application_configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_configuration_id(inp);
+        pub fn application_configuration_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_configuration_id(signature.into());
             self
         }
         /// <p>The configuration ID of an application with which items are to be associated.</p>
@@ -358,8 +361,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>The ID of each configuration item to be associated with an application.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>The ID of each configuration item to be associated with an application.</p>
@@ -442,8 +445,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_import_task_ids`](Self::set_import_task_ids).
         ///
         /// <p>The IDs for the import tasks that you want to delete.</p>
-        pub fn import_task_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.import_task_ids(inp);
+        pub fn import_task_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.import_task_ids(input.into());
             self
         }
         /// <p>The IDs for the import tasks that you want to delete.</p>
@@ -515,8 +518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application to be created.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>Name of the application to be created.</p>
@@ -525,8 +528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the application to be created.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Description of the application to be created.</p>
@@ -600,8 +603,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>A list of configuration items that you want to tag.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>A list of configuration items that you want to tag.</p>
@@ -622,8 +625,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>{"key": "serverType", "value": "webServer"}</code>
         /// </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags that you want to associate with one or more configuration items. Specify the tags
@@ -705,8 +708,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>Configuration ID of an application to be deleted.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>Configuration ID of an application to be deleted.</p>
@@ -783,8 +786,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>A list of configuration items with tags that you want to delete.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>A list of configuration items with tags that you want to delete.</p>
@@ -805,8 +808,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>{"key": "serverType", "value": "webServer"}</code>
         /// </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags that you want to delete from one or more configuration items. Specify the tags
@@ -891,8 +894,8 @@ pub mod fluent_builders {
         /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs,
         /// the system returns information about all agents/Connectors associated with your AWS user
         /// account.</p>
-        pub fn agent_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_ids(inp);
+        pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_ids(input.into());
             self
         }
         /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs,
@@ -914,8 +917,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>{"key": "collectionStatus", "value": "STARTED"}</code>
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>You can filter the request using various logical operators and a
@@ -932,8 +935,8 @@ pub mod fluent_builders {
         }
         /// <p>The total number of agents/Connectors to return in a single page of output. The maximum
         /// value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The total number of agents/Connectors to return in a single page of output. The maximum
@@ -946,8 +949,8 @@ pub mod fluent_builders {
         /// IDs for <code>DescribeAgentsRequest$agentIds</code> but set
         /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
         /// with a token. Use that token in this query to get the next set of 10.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
@@ -1048,8 +1051,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>One or more configuration IDs.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>One or more configuration IDs.</p>
@@ -1127,8 +1130,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_export_ids`](Self::set_export_ids).
         ///
         /// <p>The unique IDs assigned to the exports.</p>
-        pub fn export_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_ids(inp);
+        pub fn export_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_ids(input.into());
             self
         }
         /// <p>The unique IDs assigned to the exports.</p>
@@ -1141,8 +1144,8 @@ pub mod fluent_builders {
         }
         /// <p>A number between 1 and 100 specifying the maximum number of continuous export
         /// descriptions returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>A number between 1 and 100 specifying the maximum number of continuous export
@@ -1152,8 +1155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
@@ -1227,8 +1230,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_export_ids`](Self::set_export_ids).
         ///
         /// <p>A list of continuous export IDs to search for.</p>
-        pub fn export_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_ids(inp);
+        pub fn export_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_ids(input.into());
             self
         }
         /// <p>A list of continuous export IDs to search for.</p>
@@ -1241,8 +1244,8 @@ pub mod fluent_builders {
         }
         /// <p>A number between 1 and 100 specifying the maximum number of continuous export
         /// descriptions returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>A number between 1 and 100 specifying the maximum number of continuous export
@@ -1252,8 +1255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token from the previous call to describe-export-tasks.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token from the previous call to describe-export-tasks.</p>
@@ -1327,8 +1330,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_export_ids`](Self::set_export_ids).
         ///
         /// <p>One or more unique identifiers used to query the status of an export request.</p>
-        pub fn export_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_ids(inp);
+        pub fn export_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_ids(input.into());
             self
         }
         /// <p>One or more unique identifiers used to query the status of an export request.</p>
@@ -1351,8 +1354,8 @@ pub mod fluent_builders {
         /// exported</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::ExportFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>One or more filters.</p>
@@ -1374,8 +1377,8 @@ pub mod fluent_builders {
         /// paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in
@@ -1391,8 +1394,8 @@ pub mod fluent_builders {
         /// results exceeded the value of that parameter. Pagination continues from the end of the
         /// previous results that returned the <code>nextToken</code> value. This value is null when there
         /// are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -1472,8 +1475,8 @@ pub mod fluent_builders {
         /// <p>An array of name-value pairs that you provide to filter the results for the
         /// <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard
         /// values aren't supported for filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ImportTaskFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ImportTaskFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of name-value pairs that you provide to filter the results for the
@@ -1487,8 +1490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results that you want this request to return, up to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results that you want this request to return, up to 100.</p>
@@ -1497,8 +1500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request a specific page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request a specific page of results.</p>
@@ -1588,8 +1591,8 @@ pub mod fluent_builders {
         /// <p>You can filter the list using a <i>key</i>-<i>value</i>
         /// format. You can separate these items by using logical operators. Allowed filters include
         /// <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::TagFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>You can filter the list using a <i>key</i>-<i>value</i>
@@ -1604,8 +1607,8 @@ pub mod fluent_builders {
         }
         /// <p>The total number of items to return in a single page of output. The maximum value is
         /// 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The total number of items to return in a single page of output. The maximum value is
@@ -1615,8 +1618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -1678,8 +1681,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Configuration ID of an application from which each item is disassociated.</p>
-        pub fn application_configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_configuration_id(inp);
+        pub fn application_configuration_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_configuration_id(signature.into());
             self
         }
         /// <p>Configuration ID of an application from which each item is disassociated.</p>
@@ -1695,8 +1701,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>Configuration ID of each item to be disassociated from an application.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>Configuration ID of each item to be disassociated from an application.</p>
@@ -1897,8 +1903,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A valid configuration identified by Application Discovery Service. </p>
-        pub fn configuration_type(mut self, inp: crate::model::ConfigurationItemType) -> Self {
-            self.inner = self.inner.configuration_type(inp);
+        pub fn configuration_type(
+            mut self,
+            signature: crate::model::ConfigurationItemType,
+        ) -> Self {
+            self.inner = self.inner.configuration_type(signature);
             self
         }
         /// <p>A valid configuration identified by Application Discovery Service. </p>
@@ -1921,8 +1930,8 @@ pub mod fluent_builders {
         /// <p>For a complete list of filter options and guidance about using them with this action,
         /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
         /// Service User Guide</i>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>You can filter the request using various logical operators and a
@@ -1941,8 +1950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The total number of items to return. The maximum value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The total number of items to return. The maximum value is 100.</p>
@@ -1954,8 +1963,8 @@ pub mod fluent_builders {
         /// ListConfigurations returned 100 items, but you set
         /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
         /// along with a token. Use that token in this query to get the next set of 10.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token to retrieve the next set of results. For example, if a previous call to
@@ -1973,8 +1982,8 @@ pub mod fluent_builders {
         /// <p>Certain filter criteria return output that can be sorted in ascending or descending
         /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
         /// Service User Guide</i>.</p>
-        pub fn order_by(mut self, inp: impl Into<crate::model::OrderByElement>) -> Self {
-            self.inner = self.inner.order_by(inp);
+        pub fn order_by(mut self, input: crate::model::OrderByElement) -> Self {
+            self.inner = self.inner.order_by(input);
             self
         }
         /// <p>Certain filter criteria return output that can be sorted in ascending or descending
@@ -2049,8 +2058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Configuration ID of the server for which neighbors are being listed.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(signature.into());
             self
         }
         /// <p>Configuration ID of the server for which neighbors are being listed.</p>
@@ -2063,8 +2072,8 @@ pub mod fluent_builders {
         }
         /// <p>Flag to indicate if port and protocol information is needed as part of the
         /// response.</p>
-        pub fn port_information_needed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.port_information_needed(inp);
+        pub fn port_information_needed(mut self, signature: bool) -> Self {
+            self.inner = self.inner.port_information_needed(signature);
             self
         }
         /// <p>Flag to indicate if port and protocol information is needed as part of the
@@ -2078,8 +2087,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_neighbor_configuration_ids`](Self::set_neighbor_configuration_ids).
         ///
         /// <p>List of configuration IDs to test for one-hop-away.</p>
-        pub fn neighbor_configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.neighbor_configuration_ids(inp);
+        pub fn neighbor_configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.neighbor_configuration_ids(input.into());
             self
         }
         /// <p>List of configuration IDs to test for one-hop-away.</p>
@@ -2091,8 +2100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single page of output.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of results to return in a single page of output.</p>
@@ -2104,8 +2113,8 @@ pub mod fluent_builders {
         /// IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
         /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
         /// along with a token. Use that token in this query to get the next set of 10.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
@@ -2247,8 +2256,8 @@ pub mod fluent_builders {
         /// and you do not have permission to contact some of those agents/connectors, the system does not
         /// throw an exception. Instead, the system shows <code>Failed</code> in the
         /// <i>Description</i> field.</p>
-        pub fn agent_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_ids(inp);
+        pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_ids(input.into());
             self
         }
         /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a
@@ -2343,11 +2352,8 @@ pub mod fluent_builders {
         /// <code>GRAPHML</code>
         /// <i>option has been deprecated.</i>
         /// </p>
-        pub fn export_data_format(
-            mut self,
-            inp: impl Into<crate::model::ExportDataFormat>,
-        ) -> Self {
-            self.inner = self.inner.export_data_format(inp);
+        pub fn export_data_format(mut self, input: crate::model::ExportDataFormat) -> Self {
+            self.inner = self.inner.export_data_format(input);
             self
         }
         /// <p>The file format for the returned export data. Default value is <code>CSV</code>.
@@ -2373,8 +2379,8 @@ pub mod fluent_builders {
         /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both
         /// Agentless Discovery Connector data and summary data from Application Discovery agents.
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ExportFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application
@@ -2393,8 +2399,8 @@ pub mod fluent_builders {
         /// <p>The start timestamp for exported data from the single Application Discovery Agent
         /// selected in the filters. If no value is specified, data is exported starting from the first
         /// data collected by the agent.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start timestamp for exported data from the single Application Discovery Agent
@@ -2410,8 +2416,8 @@ pub mod fluent_builders {
         /// <p>The end timestamp for exported data from the single Application Discovery Agent
         /// selected in the filters. If no value is specified, exported data includes the most recent data
         /// collected by the agent.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end timestamp for exported data from the single Application Discovery Agent
@@ -2526,8 +2532,8 @@ pub mod fluent_builders {
         /// <p>Sending more than one <code>StartImportTask</code> request with the same client request
         /// token will return information about the original import task with that client request
         /// token.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Optional. A unique token that you can provide to prevent the same import request from
@@ -2547,8 +2553,8 @@ pub mod fluent_builders {
         /// <p>A descriptive name for this request. You can use this name to filter future requests
         /// related to this import task, such as identifying applications and servers that were included
         /// in this import task. We recommend that you use a meaningful name for each import task.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive name for this request. You can use this name to filter future requests
@@ -2565,8 +2571,8 @@ pub mod fluent_builders {
         /// <code>s3://BucketName/ImportFileName.CSV</code>
         /// </p>
         /// </note>
-        pub fn import_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.import_url(inp);
+        pub fn import_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.import_url(signature.into());
             self
         }
         /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
@@ -2641,8 +2647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID assigned to this export.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_id(inp);
+        pub fn export_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_id(signature.into());
             self
         }
         /// <p>The unique ID assigned to this export.</p>
@@ -2715,8 +2721,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
         /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
-        pub fn agent_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_ids(inp);
+        pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_ids(input.into());
             self
         }
         /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
@@ -2788,8 +2794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Configuration ID of the application to be updated.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(signature.into());
             self
         }
         /// <p>Configuration ID of the application to be updated.</p>
@@ -2801,8 +2807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New name of the application to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>New name of the application to be updated.</p>
@@ -2811,8 +2817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New description of the application to be updated.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>New description of the application to be updated.</p>

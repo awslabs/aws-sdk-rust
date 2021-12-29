@@ -275,9 +275,9 @@ pub mod page {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A structure that contains values in multiple encoding formats.</p>
-        pub fn values(mut self, input: impl Into<crate::model::ValueHolder>) -> Self {
+        pub fn values(mut self, input: crate::model::ValueHolder) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -1043,9 +1043,9 @@ pub mod execute_statement_request {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::ValueHolder>) -> Self {
+        pub fn parameters(mut self, input: crate::model::ValueHolder) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }

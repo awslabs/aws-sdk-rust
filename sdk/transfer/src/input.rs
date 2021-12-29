@@ -86,10 +86,10 @@ pub mod create_access_input {
         /// </note>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }
@@ -731,9 +731,9 @@ pub mod create_server_input {
         /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
         /// <code>SERVICE_MANAGED</code>.</p>
         /// </note>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -798,9 +798,9 @@ pub mod create_server_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs that can be used to group and search for servers.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1062,10 +1062,10 @@ pub mod create_user_input {
         /// </note>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }
@@ -1227,9 +1227,9 @@ pub mod create_user_input {
         ///
         /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached
         /// to users for any purpose.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1458,9 +1458,9 @@ pub mod create_workflow_input {
         /// <p>
         /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
         /// </p>
-        pub fn steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+        pub fn steps(mut self, input: crate::model::WorkflowStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -1511,9 +1511,9 @@ pub mod create_workflow_input {
         /// back API to kick off the exception steps. Additionally, if the lambda does not send
         /// <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
         /// </note>
-        pub fn on_exception_steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+        pub fn on_exception_steps(mut self, input: crate::model::WorkflowStep) -> Self {
             let mut v = self.on_exception_steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_exception_steps = Some(v);
             self
         }
@@ -1536,9 +1536,9 @@ pub mod create_workflow_input {
         ///
         /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
         /// to workflows for any purpose.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5527,9 +5527,9 @@ pub mod tag_resource_input {
         ///
         /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by
         /// type. You can attach this metadata to user accounts for any purpose.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6181,10 +6181,10 @@ pub mod update_access_input {
         /// </note>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }
@@ -6785,9 +6785,9 @@ pub mod update_server_input {
         /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
         /// <code>SERVICE_MANAGED</code>.</p>
         /// </note>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -7102,10 +7102,10 @@ pub mod update_user_input {
         /// </note>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }

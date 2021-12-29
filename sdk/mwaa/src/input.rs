@@ -1431,9 +1431,9 @@ pub mod publish_metrics_input {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metrica.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatum>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatum) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }

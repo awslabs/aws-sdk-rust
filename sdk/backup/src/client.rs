@@ -653,8 +653,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
         /// more sets of <code>Rules</code>.</p>
-        pub fn backup_plan(mut self, inp: crate::model::BackupPlanInput) -> Self {
-            self.inner = self.inner.backup_plan(inp);
+        pub fn backup_plan(mut self, signature: crate::model::BackupPlanInput) -> Self {
+            self.inner = self.inner.backup_plan(signature);
             self
         }
         /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
@@ -678,7 +678,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.backup_plan_tags(k, v);
+            self.inner = self.inner.backup_plan_tags(k.into(), v.into());
             self
         }
         /// <p>To help organize your resources, you can assign your own metadata to the resources that
@@ -697,8 +697,8 @@ pub mod fluent_builders {
         /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
         /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(signature.into());
             self
         }
         /// <p>Identifies the request and allows failed requests to be retried without the risk of
@@ -776,8 +776,8 @@ pub mod fluent_builders {
         }
         /// <p>Uniquely identifies the backup plan to be associated with the selection of
         /// resources.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies the backup plan to be associated with the selection of
@@ -790,8 +790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
-        pub fn backup_selection(mut self, inp: crate::model::BackupSelection) -> Self {
-            self.inner = self.inner.backup_selection(inp);
+        pub fn backup_selection(mut self, signature: crate::model::BackupSelection) -> Self {
+            self.inner = self.inner.backup_selection(signature);
             self
         }
         /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
@@ -805,8 +805,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and allows failed requests to be retried
         /// without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(signature.into());
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
@@ -888,8 +888,8 @@ pub mod fluent_builders {
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of letters, numbers, and hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -913,7 +913,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.backup_vault_tags(k, v);
+            self.inner = self.inner.backup_vault_tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
@@ -929,8 +929,8 @@ pub mod fluent_builders {
         }
         /// <p>The server-side encryption key that is used to protect your backups; for example,
         /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-        pub fn encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key_arn(inp);
+        pub fn encryption_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key_arn(signature.into());
             self
         }
         /// <p>The server-side encryption key that is used to protect your backups; for example,
@@ -945,8 +945,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and allows failed requests to be retried
         /// without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(signature.into());
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
@@ -1025,8 +1025,8 @@ pub mod fluent_builders {
         /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
         /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
         /// underscores (_).</p>
-        pub fn framework_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_name(inp);
+        pub fn framework_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_name(signature.into());
             self
         }
         /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
@@ -1040,8 +1040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
-        pub fn framework_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_description(inp);
+        pub fn framework_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_description(signature.into());
             self
         }
         /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
@@ -1058,11 +1058,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of the controls that make up the framework. Each control in the list has a name,
         /// input parameters, and scope.</p>
-        pub fn framework_controls(
-            mut self,
-            inp: impl Into<crate::model::FrameworkControl>,
-        ) -> Self {
-            self.inner = self.inner.framework_controls(inp);
+        pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
+            self.inner = self.inner.framework_controls(input);
             self
         }
         /// <p>A list of the controls that make up the framework. Each control in the list has a name,
@@ -1077,8 +1074,8 @@ pub mod fluent_builders {
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
         /// calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same
         /// idempotency token results in a success message with no action taken.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
@@ -1102,7 +1099,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.framework_tags(k, v);
+            self.inner = self.inner.framework_tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
@@ -1182,8 +1179,8 @@ pub mod fluent_builders {
         /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
         /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
         /// underscores (_).</p>
-        pub fn report_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_plan_name(inp);
+        pub fn report_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_plan_name(signature.into());
             self
         }
         /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
@@ -1197,8 +1194,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
-        pub fn report_plan_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_plan_description(inp);
+        pub fn report_plan_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.report_plan_description(signature.into());
             self
         }
         /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
@@ -1212,8 +1212,11 @@ pub mod fluent_builders {
         /// <p>A structure that contains information about where and how to deliver your reports,
         /// specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
         /// reports.</p>
-        pub fn report_delivery_channel(mut self, inp: crate::model::ReportDeliveryChannel) -> Self {
-            self.inner = self.inner.report_delivery_channel(inp);
+        pub fn report_delivery_channel(
+            mut self,
+            signature: crate::model::ReportDeliveryChannel,
+        ) -> Self {
+            self.inner = self.inner.report_delivery_channel(signature);
             self
         }
         /// <p>A structure that contains information about where and how to deliver your reports,
@@ -1235,8 +1238,8 @@ pub mod fluent_builders {
         /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
         /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
         /// coverage by Amazon Web Services Regions and frameworks.</p>
-        pub fn report_setting(mut self, inp: crate::model::ReportSetting) -> Self {
-            self.inner = self.inner.report_setting(inp);
+        pub fn report_setting(mut self, signature: crate::model::ReportSetting) -> Self {
+            self.inner = self.inner.report_setting(signature);
             self
         }
         /// <p>Identifies the report template for the report. Reports are built using a report
@@ -1266,7 +1269,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.report_plan_tags(k, v);
+            self.inner = self.inner.report_plan_tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
@@ -1283,8 +1286,8 @@ pub mod fluent_builders {
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
         /// calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same
         /// idempotency token results in a success message with no action taken.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
@@ -1360,8 +1363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a backup plan.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a backup plan.</p>
@@ -1434,8 +1437,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a backup plan.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a backup plan.</p>
@@ -1448,8 +1451,8 @@ pub mod fluent_builders {
         }
         /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
         /// plan.</p>
-        pub fn selection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selection_id(inp);
+        pub fn selection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selection_id(signature.into());
             self
         }
         /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
@@ -1523,8 +1526,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -1602,8 +1605,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -1685,8 +1688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
@@ -1760,8 +1763,8 @@ pub mod fluent_builders {
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Region where they are
         /// created. They consist of lowercase letters, numbers, and hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -1835,8 +1838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of a framework.</p>
-        pub fn framework_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_name(inp);
+        pub fn framework_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_name(signature.into());
             self
         }
         /// <p>The unique name of a framework.</p>
@@ -1913,8 +1916,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -1930,8 +1933,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
         /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-        pub fn recovery_point_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_point_arn(inp);
+        pub fn recovery_point_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_point_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
@@ -2004,8 +2007,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of a report plan.</p>
-        pub fn report_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_plan_name(inp);
+        pub fn report_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_plan_name(signature.into());
             self
         }
         /// <p>The unique name of a report plan.</p>
@@ -2077,8 +2080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-        pub fn backup_job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_job_id(inp);
+        pub fn backup_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_job_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
@@ -2153,8 +2156,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -2229,8 +2232,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a copy job.</p>
-        pub fn copy_job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_job_id(inp);
+        pub fn copy_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.copy_job_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a copy job.</p>
@@ -2299,8 +2302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of a framework.</p>
-        pub fn framework_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_name(inp);
+        pub fn framework_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_name(signature.into());
             self
         }
         /// <p>The unique name of a framework.</p>
@@ -2438,8 +2441,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
         /// depends on the resource type.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -2513,8 +2516,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -2530,8 +2533,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
         /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-        pub fn recovery_point_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_point_arn(inp);
+        pub fn recovery_point_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_point_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
@@ -2670,8 +2673,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
         /// string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
-        pub fn report_job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_job_id(inp);
+        pub fn report_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_job_id(signature.into());
             self
         }
         /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
@@ -2744,8 +2747,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of a report plan.</p>
-        pub fn report_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_plan_name(inp);
+        pub fn report_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_plan_name(signature.into());
             self
         }
         /// <p>The unique name of a report plan.</p>
@@ -2817,8 +2820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies the job that restores a recovery point.</p>
-        pub fn restore_job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.restore_job_id(inp);
+        pub fn restore_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore_job_id(signature.into());
             self
         }
         /// <p>Uniquely identifies the job that restores a recovery point.</p>
@@ -2893,8 +2896,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of an Backup vault.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The unique name of an Backup vault.</p>
@@ -2907,8 +2910,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
         /// point.</p>
-        pub fn recovery_point_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_point_arn(inp);
+        pub fn recovery_point_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_point_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
@@ -2981,8 +2984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a backup plan.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a backup plan.</p>
@@ -3055,8 +3058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a backup plan.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a backup plan.</p>
@@ -3069,8 +3072,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
         /// long. Version IDs cannot be edited.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
@@ -3140,8 +3143,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A customer-supplied backup plan document in JSON format.</p>
-        pub fn backup_plan_template_json(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_template_json(inp);
+        pub fn backup_plan_template_json(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backup_plan_template_json(signature.into());
             self
         }
         /// <p>A customer-supplied backup plan document in JSON format.</p>
@@ -3213,8 +3219,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a stored backup plan template.</p>
-        pub fn backup_plan_template_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_template_id(inp);
+        pub fn backup_plan_template_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.backup_plan_template_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a stored backup plan template.</p>
@@ -3287,8 +3296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a backup plan.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a backup plan.</p>
@@ -3301,8 +3310,8 @@ pub mod fluent_builders {
         }
         /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
         /// plan.</p>
-        pub fn selection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selection_id(inp);
+        pub fn selection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selection_id(signature.into());
             self
         }
         /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
@@ -3376,8 +3385,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -3455,8 +3464,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -3534,8 +3543,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -3551,8 +3560,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
         /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-        pub fn recovery_point_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_point_arn(inp);
+        pub fn recovery_point_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_point_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
@@ -3689,8 +3698,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -3702,8 +3711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -3713,8 +3722,8 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
         /// (ARN).</p>
-        pub fn by_resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_resource_arn(inp);
+        pub fn by_resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_resource_arn(signature.into());
             self
         }
         /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
@@ -3727,8 +3736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only backup jobs that are in the specified state.</p>
-        pub fn by_state(mut self, inp: crate::model::BackupJobState) -> Self {
-            self.inner = self.inner.by_state(inp);
+        pub fn by_state(mut self, signature: crate::model::BackupJobState) -> Self {
+            self.inner = self.inner.by_state(signature);
             self
         }
         /// <p>Returns only backup jobs that are in the specified state.</p>
@@ -3743,8 +3752,8 @@ pub mod fluent_builders {
         /// vaults are identified by names that are unique to the account used to create them and the
         /// Amazon Web Services Region where they are created. They consist of lowercase letters,
         /// numbers, and hyphens.</p>
-        pub fn by_backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_backup_vault_name(inp);
+        pub fn by_backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_backup_vault_name(signature.into());
             self
         }
         /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup
@@ -3759,8 +3768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only backup jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_created_before(inp);
+        pub fn by_created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_created_before(signature);
             self
         }
         /// <p>Returns only backup jobs that were created before the specified date.</p>
@@ -3772,8 +3781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only backup jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_created_after(inp);
+        pub fn by_created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_created_after(signature);
             self
         }
         /// <p>Returns only backup jobs that were created after the specified date.</p>
@@ -3815,8 +3824,8 @@ pub mod fluent_builders {
         /// <code>Storage Gateway</code> for Storage Gateway</p>
         /// </li>
         /// </ul>
-        pub fn by_resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_resource_type(inp);
+        pub fn by_resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_resource_type(signature.into());
             self
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
@@ -3861,8 +3870,8 @@ pub mod fluent_builders {
         /// specified account ID.</p>
         /// <p>If used from an Organizations management account, passing <code>*</code> returns
         /// all jobs across the organization.</p>
-        pub fn by_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_account_id(inp);
+        pub fn by_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_account_id(signature.into());
             self
         }
         /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the
@@ -3942,8 +3951,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -3955,8 +3964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -3966,8 +3975,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
         /// plans when set to <code>TRUE</code>.</p>
-        pub fn include_deleted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_deleted(inp);
+        pub fn include_deleted(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_deleted(signature);
             self
         }
         /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
@@ -4041,8 +4050,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -4054,8 +4063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -4125,8 +4134,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a backup plan.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a backup plan.</p>
@@ -4141,8 +4150,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -4154,8 +4163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -4225,8 +4234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a backup plan.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a backup plan.</p>
@@ -4241,8 +4250,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -4254,8 +4263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -4328,8 +4337,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -4341,8 +4350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -4413,8 +4422,8 @@ pub mod fluent_builders {
         /// <p>The next item following a partial list of returned items. For example, if a request is
         /// made to return maxResults number of items, NextToken allows you to return more items in
         /// your list starting at the location pointed to by the next token. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -4425,8 +4434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -4436,8 +4445,8 @@ pub mod fluent_builders {
         }
         /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
         /// </p>
-        pub fn by_resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_resource_arn(inp);
+        pub fn by_resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_resource_arn(signature.into());
             self
         }
         /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
@@ -4450,8 +4459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only copy jobs that are in the specified state.</p>
-        pub fn by_state(mut self, inp: crate::model::CopyJobState) -> Self {
-            self.inner = self.inner.by_state(inp);
+        pub fn by_state(mut self, signature: crate::model::CopyJobState) -> Self {
+            self.inner = self.inner.by_state(signature);
             self
         }
         /// <p>Returns only copy jobs that are in the specified state.</p>
@@ -4463,8 +4472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only copy jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_created_before(inp);
+        pub fn by_created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_created_before(signature);
             self
         }
         /// <p>Returns only copy jobs that were created before the specified date.</p>
@@ -4476,8 +4485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only copy jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_created_after(inp);
+        pub fn by_created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_created_after(signature);
             self
         }
         /// <p>Returns only copy jobs that were created after the specified date.</p>
@@ -4519,8 +4528,8 @@ pub mod fluent_builders {
         /// <code>Storage Gateway</code> for Storage Gateway</p>
         /// </li>
         /// </ul>
-        pub fn by_resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_resource_type(inp);
+        pub fn by_resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_resource_type(signature.into());
             self
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
@@ -4564,8 +4573,11 @@ pub mod fluent_builders {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
         /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
         /// </p>
-        pub fn by_destination_vault_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_destination_vault_arn(inp);
+        pub fn by_destination_vault_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.by_destination_vault_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
@@ -4580,8 +4592,8 @@ pub mod fluent_builders {
         }
         /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
         /// specified account ID.</p>
-        pub fn by_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_account_id(inp);
+        pub fn by_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_account_id(signature.into());
             self
         }
         /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
@@ -4655,8 +4667,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
         /// return 1 MB of data.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
@@ -4667,8 +4679,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -4743,8 +4755,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -4756,8 +4768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -4833,8 +4845,8 @@ pub mod fluent_builders {
         /// <p>Backup vault name might not be available when a supported service creates the
         /// backup.</p>
         /// </note>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -4856,8 +4868,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -4869,8 +4881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -4880,8 +4892,8 @@ pub mod fluent_builders {
         }
         /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
         /// (ARN).</p>
-        pub fn by_resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_resource_arn(inp);
+        pub fn by_resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_resource_arn(signature.into());
             self
         }
         /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
@@ -4894,8 +4906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only recovery points that match the specified resource type.</p>
-        pub fn by_resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_resource_type(inp);
+        pub fn by_resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_resource_type(signature.into());
             self
         }
         /// <p>Returns only recovery points that match the specified resource type.</p>
@@ -4907,8 +4919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only recovery points that match the specified backup plan ID.</p>
-        pub fn by_backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_backup_plan_id(inp);
+        pub fn by_backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_backup_plan_id(signature.into());
             self
         }
         /// <p>Returns only recovery points that match the specified backup plan ID.</p>
@@ -4920,8 +4932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only recovery points that were created before the specified timestamp.</p>
-        pub fn by_created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_created_before(inp);
+        pub fn by_created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_created_before(signature);
             self
         }
         /// <p>Returns only recovery points that were created before the specified timestamp.</p>
@@ -4933,8 +4945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only recovery points that were created after the specified timestamp.</p>
-        pub fn by_created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_created_after(inp);
+        pub fn by_created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_created_after(signature);
             self
         }
         /// <p>Returns only recovery points that were created after the specified timestamp.</p>
@@ -5012,8 +5024,8 @@ pub mod fluent_builders {
         }
         /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
         /// resource type.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
@@ -5026,8 +5038,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -5042,8 +5054,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Amazon RDS requires a value of at least 20.</p>
         /// </note>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -5115,8 +5127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Returns only report jobs with the specified report plan name.</p>
-        pub fn by_report_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_report_plan_name(inp);
+        pub fn by_report_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_report_plan_name(signature.into());
             self
         }
         /// <p>Returns only report jobs with the specified report plan name.</p>
@@ -5130,8 +5142,8 @@ pub mod fluent_builders {
         /// <p>Returns only report jobs that were created before the date and time specified in Unix
         /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
         /// Friday, January 26, 2018 12:11:30 AM.</p>
-        pub fn by_creation_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_creation_before(inp);
+        pub fn by_creation_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_creation_before(signature);
             self
         }
         /// <p>Returns only report jobs that were created before the date and time specified in Unix
@@ -5147,8 +5159,8 @@ pub mod fluent_builders {
         /// <p>Returns only report jobs that were created after the date and time specified in Unix
         /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
         /// Friday, January 26, 2018 12:11:30 AM.</p>
-        pub fn by_creation_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_creation_after(inp);
+        pub fn by_creation_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_creation_after(signature);
             self
         }
         /// <p>Returns only report jobs that were created after the date and time specified in Unix
@@ -5165,8 +5177,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
         /// </p>
-        pub fn by_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_status(inp);
+        pub fn by_status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_status(signature.into());
             self
         }
         /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
@@ -5179,8 +5191,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
         /// return 1 MB of data.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
@@ -5191,8 +5203,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -5264,8 +5276,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
         /// return 1 MB of data.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
@@ -5276,8 +5288,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -5351,8 +5363,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -5364,8 +5376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -5375,8 +5387,8 @@ pub mod fluent_builders {
         }
         /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
         /// specified account ID.</p>
-        pub fn by_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.by_account_id(inp);
+        pub fn by_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.by_account_id(signature.into());
             self
         }
         /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
@@ -5389,8 +5401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only restore jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_created_before(inp);
+        pub fn by_created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_created_before(signature);
             self
         }
         /// <p>Returns only restore jobs that were created before the specified date.</p>
@@ -5402,8 +5414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only restore jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.by_created_after(inp);
+        pub fn by_created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.by_created_after(signature);
             self
         }
         /// <p>Returns only restore jobs that were created after the specified date.</p>
@@ -5415,8 +5427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only restore jobs associated with the specified job status.</p>
-        pub fn by_status(mut self, inp: crate::model::RestoreJobStatus) -> Self {
-            self.inner = self.inner.by_status(inp);
+        pub fn by_status(mut self, signature: crate::model::RestoreJobStatus) -> Self {
+            self.inner = self.inner.by_status(signature);
             self
         }
         /// <p>Returns only restore jobs associated with the specified job status.</p>
@@ -5496,8 +5508,8 @@ pub mod fluent_builders {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
         /// depends on the type of resource. Valid targets for <code>ListTags</code> are recovery
         /// points, backup plans, and backup vaults.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -5511,8 +5523,8 @@ pub mod fluent_builders {
         /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
         /// to return more items in your list starting at the location pointed to by the next
         /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The next item following a partial list of returned items. For example, if a request is
@@ -5524,8 +5536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to be returned.</p>
@@ -5599,8 +5611,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -5615,8 +5627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The backup vault access policy document in JSON format.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The backup vault access policy document in JSON format.</p>
@@ -5694,8 +5706,8 @@ pub mod fluent_builders {
         }
         /// <p>The Backup Vault Lock configuration that specifies the name of the backup
         /// vault it protects.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the name of the backup
@@ -5719,8 +5731,8 @@ pub mod fluent_builders {
         /// the vault fails that backup or copy job, and you should either modify your lifecycle
         /// settings or use a different vault. Recovery points already saved in the vault prior to
         /// Vault Lock are not affected.</p>
-        pub fn min_retention_days(mut self, inp: i64) -> Self {
-            self.inner = self.inner.min_retention_days(inp);
+        pub fn min_retention_days(mut self, signature: i64) -> Self {
+            self.inner = self.inner.min_retention_days(signature);
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the minimum retention
@@ -5752,8 +5764,8 @@ pub mod fluent_builders {
         /// the vault fails the backup or copy job, and you should either modify your lifecycle
         /// settings or use a different vault. Recovery points already saved in the vault prior to
         /// Vault Lock are not affected.</p>
-        pub fn max_retention_days(mut self, inp: i64) -> Self {
-            self.inner = self.inner.max_retention_days(inp);
+        pub fn max_retention_days(mut self, signature: i64) -> Self {
+            self.inner = self.inner.max_retention_days(signature);
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the maximum retention
@@ -5786,8 +5798,8 @@ pub mod fluent_builders {
         /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
         /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
         /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
-        pub fn changeable_for_days(mut self, inp: i64) -> Self {
-            self.inner = self.inner.changeable_for_days(inp);
+        pub fn changeable_for_days(mut self, signature: i64) -> Self {
+            self.inner = self.inner.changeable_for_days(signature);
             self
         }
         /// <p>The Backup Vault Lock configuration that specifies the number of days before
@@ -5871,8 +5883,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -5888,8 +5900,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
         /// example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
@@ -5933,11 +5945,8 @@ pub mod fluent_builders {
         /// <p>Ignore the list below because it includes deprecated events. Refer to the list
         /// above.</p>
         /// </note>
-        pub fn backup_vault_events(
-            mut self,
-            inp: impl Into<crate::model::BackupVaultEvent>,
-        ) -> Self {
-            self.inner = self.inner.backup_vault_events(inp);
+        pub fn backup_vault_events(mut self, input: crate::model::BackupVaultEvent) -> Self {
+            self.inner = self.inner.backup_vault_events(input);
             self
         }
         /// <p>An array of events that indicate the status of jobs to back up resources to the backup
@@ -6039,8 +6048,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -6056,8 +6065,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
         /// depends on the resource type.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -6068,8 +6077,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
         /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(signature.into());
             self
         }
         /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
@@ -6081,8 +6090,8 @@ pub mod fluent_builders {
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
         /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
         /// idempotency token results in a success message with no action taken.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
@@ -6097,8 +6106,8 @@ pub mod fluent_builders {
         }
         /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
         /// doesn't start successfully. This value is optional, and the default is 8 hours.</p>
-        pub fn start_window_minutes(mut self, inp: i64) -> Self {
-            self.inner = self.inner.start_window_minutes(inp);
+        pub fn start_window_minutes(mut self, signature: i64) -> Self {
+            self.inner = self.inner.start_window_minutes(signature);
             self
         }
         /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
@@ -6111,8 +6120,8 @@ pub mod fluent_builders {
         /// Backup will cancel the job. This value is optional. This value begins counting down from
         /// when the backup was scheduled. It does not add additional time for
         /// <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
-        pub fn complete_window_minutes(mut self, inp: i64) -> Self {
-            self.inner = self.inner.complete_window_minutes(inp);
+        pub fn complete_window_minutes(mut self, signature: i64) -> Self {
+            self.inner = self.inner.complete_window_minutes(signature);
             self
         }
         /// <p>A value in minutes during which a successfully started backup must complete, or else AWS
@@ -6131,8 +6140,8 @@ pub mod fluent_builders {
         /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
         /// be changed after a backup has been transitioned to cold. </p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
-        pub fn lifecycle(mut self, inp: crate::model::Lifecycle) -> Self {
-            self.inner = self.inner.lifecycle(inp);
+        pub fn lifecycle(mut self, signature: crate::model::Lifecycle) -> Self {
+            self.inner = self.inner.lifecycle(signature);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
@@ -6161,7 +6170,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.recovery_point_tags(k, v);
+            self.inner = self.inner.recovery_point_tags(k.into(), v.into());
             self
         }
         /// <p>To help organize your resources, you can assign your own metadata to the resources that
@@ -6190,7 +6199,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.backup_options(k, v);
+            self.inner = self.inner.backup_options(k.into(), v.into());
             self
         }
         /// <p>Specifies the backup option for a selected resource. This option is only available for
@@ -6272,8 +6281,8 @@ pub mod fluent_builders {
         /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
         /// arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
         /// </p>
-        pub fn recovery_point_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_point_arn(inp);
+        pub fn recovery_point_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_point_arn(signature.into());
             self
         }
         /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
@@ -6289,8 +6298,11 @@ pub mod fluent_builders {
         /// <p>The name of a logical source container where backups are stored. Backup vaults are
         /// identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers,
         /// and hyphens.</p>
-        pub fn source_backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_backup_vault_name(inp);
+        pub fn source_backup_vault_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.source_backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical source container where backups are stored. Backup vaults are
@@ -6306,8 +6318,11 @@ pub mod fluent_builders {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
         /// copy to; for example,
         /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-        pub fn destination_backup_vault_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_backup_vault_arn(inp);
+        pub fn destination_backup_vault_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_backup_vault_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
@@ -6322,8 +6337,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
         /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(signature.into());
             self
         }
         /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
@@ -6335,8 +6350,8 @@ pub mod fluent_builders {
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
         /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
         /// token results in a success message with no action taken.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
@@ -6356,8 +6371,8 @@ pub mod fluent_builders {
         /// than the “transition to cold after days” setting. The “transition to cold after days”
         /// setting cannot be changed after a backup has been transitioned to cold.</p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
-        pub fn lifecycle(mut self, inp: crate::model::Lifecycle) -> Self {
-            self.inner = self.inner.lifecycle(inp);
+        pub fn lifecycle(mut self, signature: crate::model::Lifecycle) -> Self {
+            self.inner = self.inner.lifecycle(signature);
             self
         }
         /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
@@ -6435,8 +6450,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of a report plan.</p>
-        pub fn report_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_plan_name(inp);
+        pub fn report_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_plan_name(signature.into());
             self
         }
         /// <p>The unique name of a report plan.</p>
@@ -6450,8 +6465,8 @@ pub mod fluent_builders {
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
         /// calls to <code>StartReportJobInput</code>. Retrying a successful request with the same
         /// idempotency token results in a success message with no action taken.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
@@ -6526,8 +6541,8 @@ pub mod fluent_builders {
         }
         /// <p>An ARN that uniquely identifies a recovery point; for example,
         /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-        pub fn recovery_point_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_point_arn(inp);
+        pub fn recovery_point_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_point_arn(signature.into());
             self
         }
         /// <p>An ARN that uniquely identifies a recovery point; for example,
@@ -6597,7 +6612,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
         /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
@@ -6661,8 +6676,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
         /// the target recovery point; for example,
         /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
@@ -6675,8 +6690,8 @@ pub mod fluent_builders {
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
         /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
         /// idempotency token results in a success message with no action taken.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
@@ -6720,8 +6735,8 @@ pub mod fluent_builders {
         /// <code>Storage Gateway</code> for Storage Gateway</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
@@ -6823,8 +6838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-        pub fn backup_job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_job_id(inp);
+        pub fn backup_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_job_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
@@ -6898,8 +6913,8 @@ pub mod fluent_builders {
         }
         /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
         /// the tagged resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
@@ -6920,7 +6935,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
@@ -6998,8 +7013,8 @@ pub mod fluent_builders {
         }
         /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
         /// the tagged resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
@@ -7013,8 +7028,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
         /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
-        pub fn tag_key_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key_list(inp);
+        pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key_list(input.into());
             self
         }
         /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
@@ -7088,8 +7103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Uniquely identifies a backup plan.</p>
-        pub fn backup_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_plan_id(inp);
+        pub fn backup_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_plan_id(signature.into());
             self
         }
         /// <p>Uniquely identifies a backup plan.</p>
@@ -7102,8 +7117,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
         /// more sets of <code>Rules</code>.</p>
-        pub fn backup_plan(mut self, inp: crate::model::BackupPlanInput) -> Self {
-            self.inner = self.inner.backup_plan(inp);
+        pub fn backup_plan(mut self, signature: crate::model::BackupPlanInput) -> Self {
+            self.inner = self.inner.backup_plan(signature);
             self
         }
         /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
@@ -7178,8 +7193,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
         /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-        pub fn framework_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_name(inp);
+        pub fn framework_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_name(signature.into());
             self
         }
         /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
@@ -7192,8 +7207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-        pub fn framework_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_description(inp);
+        pub fn framework_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_description(signature.into());
             self
         }
         /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
@@ -7210,11 +7225,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of the controls that make up the framework. Each control in the list has a name,
         /// input parameters, and scope.</p>
-        pub fn framework_controls(
-            mut self,
-            inp: impl Into<crate::model::FrameworkControl>,
-        ) -> Self {
-            self.inner = self.inner.framework_controls(inp);
+        pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
+            self.inner = self.inner.framework_controls(input);
             self
         }
         /// <p>A list of the controls that make up the framework. Each control in the list has a name,
@@ -7229,8 +7241,8 @@ pub mod fluent_builders {
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
         /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same
         /// idempotency token results in a success message with no action taken.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
@@ -7317,7 +7329,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.global_settings(k, v);
+            self.inner = self.inner.global_settings(k.into(), v.into());
             self
         }
         /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
@@ -7405,8 +7417,8 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
-        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_vault_name(inp);
+        pub fn backup_vault_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(signature.into());
             self
         }
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -7422,8 +7434,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
         /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-        pub fn recovery_point_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_point_arn(inp);
+        pub fn recovery_point_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_point_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
@@ -7442,8 +7454,8 @@ pub mod fluent_builders {
         /// days. Therefore, the “expire after days” setting must be 90 days greater than the
         /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
         /// be changed after a backup has been transitioned to cold. </p>
-        pub fn lifecycle(mut self, inp: crate::model::Lifecycle) -> Self {
-            self.inner = self.inner.lifecycle(inp);
+        pub fn lifecycle(mut self, signature: crate::model::Lifecycle) -> Self {
+            self.inner = self.inner.lifecycle(signature);
             self
         }
         /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
@@ -7533,9 +7545,9 @@ pub mod fluent_builders {
         pub fn resource_type_opt_in_preference(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<bool>,
+            v: bool,
         ) -> Self {
-            self.inner = self.inner.resource_type_opt_in_preference(k, v);
+            self.inner = self.inner.resource_type_opt_in_preference(k.into(), v);
             self
         }
         /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
@@ -7557,9 +7569,9 @@ pub mod fluent_builders {
         pub fn resource_type_management_preference(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<bool>,
+            v: bool,
         ) -> Self {
-            self.inner = self.inner.resource_type_management_preference(k, v);
+            self.inner = self.inner.resource_type_management_preference(k.into(), v);
             self
         }
         /// <p>Enables or disables
@@ -7637,8 +7649,8 @@ pub mod fluent_builders {
         /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
         /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
         /// (_).</p>
-        pub fn report_plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_plan_name(inp);
+        pub fn report_plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_plan_name(signature.into());
             self
         }
         /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
@@ -7652,8 +7664,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
-        pub fn report_plan_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_plan_description(inp);
+        pub fn report_plan_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.report_plan_description(signature.into());
             self
         }
         /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
@@ -7666,8 +7681,11 @@ pub mod fluent_builders {
         }
         /// <p>A structure that contains information about where to deliver your reports, specifically
         /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-        pub fn report_delivery_channel(mut self, inp: crate::model::ReportDeliveryChannel) -> Self {
-            self.inner = self.inner.report_delivery_channel(inp);
+        pub fn report_delivery_channel(
+            mut self,
+            signature: crate::model::ReportDeliveryChannel,
+        ) -> Self {
+            self.inner = self.inner.report_delivery_channel(signature);
             self
         }
         /// <p>A structure that contains information about where to deliver your reports, specifically
@@ -7688,8 +7706,8 @@ pub mod fluent_builders {
         /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
         /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
         /// coverage by Amazon Web Services Regions and frameworks.</p>
-        pub fn report_setting(mut self, inp: crate::model::ReportSetting) -> Self {
-            self.inner = self.inner.report_setting(inp);
+        pub fn report_setting(mut self, signature: crate::model::ReportSetting) -> Self {
+            self.inner = self.inner.report_setting(signature);
             self
         }
         /// <p>Identifies the report template for the report. Reports are built using a report
@@ -7711,8 +7729,8 @@ pub mod fluent_builders {
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
         /// calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same
         /// idempotency token results in a success message with no action taken.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A customer-chosen string that you can use to distinguish between otherwise identical

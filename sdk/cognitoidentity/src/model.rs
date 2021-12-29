@@ -312,9 +312,9 @@ pub mod rules_configuration_type {
         ///
         /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
         /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::MappingRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::MappingRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }

@@ -473,8 +473,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
         /// check. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
@@ -484,8 +484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that is associated with the image layers to check.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository that is associated with the image layers to check.</p>
@@ -501,8 +501,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).
         ///
         /// <p>The digests of the image layers to check.</p>
-        pub fn layer_digests(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_digests(inp);
+        pub fn layer_digests(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_digests(input.into());
             self
         }
         /// <p>The digests of the image layers to check.</p>
@@ -580,8 +580,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
@@ -591,8 +591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository that contains the image to delete.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The repository that contains the image to delete.</p>
@@ -610,8 +610,8 @@ pub mod fluent_builders {
         /// <p>A list of image ID references that correspond to images to delete. The format of the
         /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
         /// <code>imageDigest=digest</code>.</p>
-        pub fn image_ids(mut self, inp: impl Into<crate::model::ImageIdentifier>) -> Self {
-            self.inner = self.inner.image_ids(inp);
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
+            self.inner = self.inner.image_ids(input);
             self
         }
         /// <p>A list of image ID references that correspond to images to delete. The format of the
@@ -689,8 +689,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
         /// describe. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
@@ -700,8 +700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository that contains the images to describe.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The repository that contains the images to describe.</p>
@@ -719,8 +719,8 @@ pub mod fluent_builders {
         /// <p>A list of image ID references that correspond to images to describe. The format of the
         /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
         /// <code>imageDigest=digest</code>.</p>
-        pub fn image_ids(mut self, inp: impl Into<crate::model::ImageIdentifier>) -> Self {
-            self.inner = self.inner.image_ids(inp);
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
+            self.inner = self.inner.image_ids(input);
             self
         }
         /// <p>A list of image ID references that correspond to images to describe. The format of the
@@ -742,8 +742,8 @@ pub mod fluent_builders {
         /// <code>application/vnd.docker.distribution.manifest.v2+json</code> |
         /// <code>application/vnd.oci.image.manifest.v1+json</code>
         /// </p>
-        pub fn accepted_media_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accepted_media_types(inp);
+        pub fn accepted_media_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accepted_media_types(input.into());
             self
         }
         /// <p>The accepted media types for the request.</p>
@@ -825,8 +825,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
         ///
         /// <p>One or more repository names to get the scanning configuration for.</p>
-        pub fn repository_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_names(inp);
+        pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_names(input.into());
             self
         }
         /// <p>One or more repository names to get the scanning configuration for.</p>
@@ -907,8 +907,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
@@ -918,8 +918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository to associate with the image layer.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository to associate with the image layer.</p>
@@ -932,8 +932,8 @@ pub mod fluent_builders {
         }
         /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
         /// associate with the image layer.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
@@ -947,8 +947,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).
         ///
         /// <p>The <code>sha256</code> digest of the image layer.</p>
-        pub fn layer_digests(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_digests(inp);
+        pub fn layer_digests(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_digests(input.into());
             self
         }
         /// <p>The <code>sha256</code> digest of the image layer.</p>
@@ -1021,8 +1021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository name prefix to use when caching images from the source registry.</p>
-        pub fn ecr_repository_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ecr_repository_prefix(inp);
+        pub fn ecr_repository_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecr_repository_prefix(signature.into());
             self
         }
         /// <p>The repository name prefix to use when caching images from the source registry.</p>
@@ -1035,8 +1035,8 @@ pub mod fluent_builders {
         }
         /// <p>The registry URL of the upstream public registry to use as the source for the pull
         /// through cache rule.</p>
-        pub fn upstream_registry_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upstream_registry_url(inp);
+        pub fn upstream_registry_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upstream_registry_url(signature.into());
             self
         }
         /// <p>The registry URL of the upstream public registry to use as the source for the pull
@@ -1050,8 +1050,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
         /// rule for. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
@@ -1123,8 +1123,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
@@ -1136,8 +1136,8 @@ pub mod fluent_builders {
         /// <p>The name to use for the repository. The repository name may be specified on its own
         /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
         /// the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name to use for the repository. The repository name may be specified on its own
@@ -1158,8 +1158,8 @@ pub mod fluent_builders {
         /// them. Each tag consists of a key and an optional value, both of which you define.
         /// Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The metadata that you apply to the repository to help you categorize and organize
@@ -1177,8 +1177,8 @@ pub mod fluent_builders {
         /// default setting of <code>MUTABLE</code> will be used which will allow image tags to be
         /// overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the
         /// repository will be immutable which will prevent them from being overwritten.</p>
-        pub fn image_tag_mutability(mut self, inp: crate::model::ImageTagMutability) -> Self {
-            self.inner = self.inner.image_tag_mutability(inp);
+        pub fn image_tag_mutability(mut self, signature: crate::model::ImageTagMutability) -> Self {
+            self.inner = self.inner.image_tag_mutability(signature);
             self
         }
         /// <p>The tag mutability setting for the repository. If this parameter is omitted, the
@@ -1196,9 +1196,9 @@ pub mod fluent_builders {
         /// are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn image_scanning_configuration(
             mut self,
-            inp: crate::model::ImageScanningConfiguration,
+            signature: crate::model::ImageScanningConfiguration,
         ) -> Self {
-            self.inner = self.inner.image_scanning_configuration(inp);
+            self.inner = self.inner.image_scanning_configuration(signature);
             self
         }
         /// <p>The image scanning configuration for the repository. This determines whether images
@@ -1214,9 +1214,9 @@ pub mod fluent_builders {
         /// your repository are encrypted at rest.</p>
         pub fn encryption_configuration(
             mut self,
-            inp: crate::model::EncryptionConfiguration,
+            signature: crate::model::EncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.encryption_configuration(inp);
+            self.inner = self.inner.encryption_configuration(signature);
             self
         }
         /// <p>The encryption configuration for the repository. This determines how the contents of
@@ -1290,8 +1290,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
@@ -1301,8 +1301,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository.</p>
@@ -1375,8 +1375,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
         /// delete.</p>
-        pub fn ecr_repository_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ecr_repository_prefix(inp);
+        pub fn ecr_repository_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecr_repository_prefix(signature.into());
             self
         }
         /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
@@ -1390,8 +1390,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
         /// rule. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
@@ -1524,8 +1524,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
         /// delete. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
@@ -1535,8 +1535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository to delete.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository to delete.</p>
@@ -1548,8 +1548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> If a repository contains images, forces the deletion.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p> If a repository contains images, forces the deletion.</p>
@@ -1619,8 +1619,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
         /// to delete. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
@@ -1631,8 +1631,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the repository that is associated with the repository policy to
         /// delete.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository that is associated with the repository policy to
@@ -1705,8 +1705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that the image is in.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository that the image is in.</p>
@@ -1718,8 +1718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-        pub fn image_id(mut self, inp: crate::model::ImageIdentifier) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, signature: crate::model::ImageIdentifier) -> Self {
+            self.inner = self.inner.image_id(signature);
             self
         }
         /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
@@ -1731,8 +1731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
@@ -1808,8 +1808,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
@@ -1819,8 +1819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository that contains the images to describe.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The repository that contains the images to describe.</p>
@@ -1836,8 +1836,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
         /// <p>The list of image IDs for the requested repository.</p>
-        pub fn image_ids(mut self, inp: impl Into<crate::model::ImageIdentifier>) -> Self {
-            self.inner = self.inner.image_ids(inp);
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
+            self.inner = self.inner.image_ids(input);
             self
         }
         /// <p>The list of image IDs for the requested repository.</p>
@@ -1854,8 +1854,8 @@ pub mod fluent_builders {
         /// previous results that returned the <code>nextToken</code> value. This value is
         /// <code>null</code> when there are no more results to return. This option cannot be
         /// used when you specify images with <code>imageIds</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -1877,8 +1877,8 @@ pub mod fluent_builders {
         /// parameter is not used, then <code>DescribeImages</code> returns up to
         /// 100 results and a <code>nextToken</code> value, if applicable. This
         /// option cannot be used when you specify images with <code>imageIds</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
@@ -1896,8 +1896,8 @@ pub mod fluent_builders {
         }
         /// <p>The filter key and value with which to filter your <code>DescribeImages</code>
         /// results.</p>
-        pub fn filter(mut self, inp: crate::model::DescribeImagesFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::DescribeImagesFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>The filter key and value with which to filter your <code>DescribeImages</code>
@@ -1971,8 +1971,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
@@ -1982,8 +1982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository for the image for which to describe the scan findings.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The repository for the image for which to describe the scan findings.</p>
@@ -1995,8 +1995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-        pub fn image_id(mut self, inp: crate::model::ImageIdentifier) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, signature: crate::model::ImageIdentifier) -> Self {
+            self.inner = self.inner.image_id(signature);
             self
         }
         /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
@@ -2012,8 +2012,8 @@ pub mod fluent_builders {
         /// used and the results exceeded the value of that parameter. Pagination continues from the
         /// end of the previous results that returned the <code>nextToken</code> value. This value
         /// is null when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2034,8 +2034,8 @@ pub mod fluent_builders {
         /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
         /// parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100
         /// results and a <code>nextToken</code> value, if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of image scan results returned by
@@ -2113,8 +2113,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
         /// rules for. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
@@ -2130,8 +2130,8 @@ pub mod fluent_builders {
         /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
         /// If no repository prefix value is specified, all pull through cache rules are
         /// returned.</p>
-        pub fn ecr_repository_prefixes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ecr_repository_prefixes(inp);
+        pub fn ecr_repository_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecr_repository_prefixes(input.into());
             self
         }
         /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
@@ -2150,8 +2150,8 @@ pub mod fluent_builders {
         /// parameter. Pagination continues from the end of the previous results that returned the
         /// <code>nextToken</code> value. This value is null when there are no more results to
         /// return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2173,8 +2173,8 @@ pub mod fluent_builders {
         /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
         /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
         /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of pull through cache rules returned by
@@ -2314,8 +2314,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
         /// described. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
@@ -2330,8 +2330,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of repositories to describe. If this parameter is omitted, then all
         /// repositories in a registry are described.</p>
-        pub fn repository_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_names(inp);
+        pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_names(input.into());
             self
         }
         /// <p>A list of repositories to describe. If this parameter is omitted, then all
@@ -2353,8 +2353,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2381,8 +2381,8 @@ pub mod fluent_builders {
         /// <code>DescribeRepositories</code> returns up to 100 results and a
         /// <code>nextToken</code> value, if applicable. This option cannot be used when you
         /// specify repositories with <code>repositoryNames</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
@@ -2472,8 +2472,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
         /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_ids(inp);
+        pub fn registry_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_ids(input.into());
             self
         }
         /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
@@ -2554,8 +2554,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
         /// download. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
@@ -2565,8 +2565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that is associated with the image layer to download.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository that is associated with the image layer to download.</p>
@@ -2578,8 +2578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The digest of the image layer to download.</p>
-        pub fn layer_digest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_digest(inp);
+        pub fn layer_digest(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_digest(signature.into());
             self
         }
         /// <p>The digest of the image layer to download.</p>
@@ -2649,8 +2649,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
@@ -2660,8 +2660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository.</p>
@@ -2735,8 +2735,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
@@ -2746,8 +2746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository.</p>
@@ -2763,8 +2763,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
         /// <p>The list of imageIDs to be included.</p>
-        pub fn image_ids(mut self, inp: impl Into<crate::model::ImageIdentifier>) -> Self {
-            self.inner = self.inner.image_ids(inp);
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
+            self.inner = self.inner.image_ids(input);
             self
         }
         /// <p>The list of imageIDs to be included.</p>
@@ -2781,8 +2781,8 @@ pub mod fluent_builders {
         /// from the end of the  previous results that returned the <code>nextToken</code> value.
         /// This value is  <code>null</code> when there are no more results to return. This option
         /// cannot be used when you specify images with <code>imageIds</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2806,8 +2806,8 @@ pub mod fluent_builders {
         /// <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100
         /// results and a <code>nextToken</code> value, if  applicable. This option cannot be used
         /// when you specify images with <code>imageIds</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of repository results returned by
@@ -2827,8 +2827,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that filters results based on image tag status and all tags, if
         /// tagged.</p>
-        pub fn filter(mut self, inp: crate::model::LifecyclePolicyPreviewFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::LifecyclePolicyPreviewFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>An optional parameter that filters results based on image tag status and all tags, if
@@ -3022,8 +3022,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
@@ -3033,8 +3033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository with the policy to retrieve.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository with the policy to retrieve.</p>
@@ -3114,8 +3114,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
         /// layers. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
@@ -3125,8 +3125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository to which you intend to upload layers.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository to which you intend to upload layers.</p>
@@ -3205,8 +3205,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
@@ -3216,8 +3216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository with image IDs to be listed.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The repository with image IDs to be listed.</p>
@@ -3237,8 +3237,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3262,8 +3262,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 1000. If this parameter is
         /// not used, then <code>ListImages</code> returns up to 100 results and a
         /// <code>nextToken</code> value, if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated
@@ -3280,8 +3280,8 @@ pub mod fluent_builders {
         }
         /// <p>The filter key and value with which to filter your <code>ListImages</code>
         /// results.</p>
-        pub fn filter(mut self, inp: crate::model::ListImagesFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, signature: crate::model::ListImagesFilter) -> Self {
+            self.inner = self.inner.filter(signature);
             self
         }
         /// <p>The filter key and value with which to filter your <code>ListImages</code>
@@ -3355,8 +3355,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
         /// only supported resource is an Amazon ECR repository.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
@@ -3435,8 +3435,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
@@ -3446,8 +3446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository in which to put the image.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository in which to put the image.</p>
@@ -3459,8 +3459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The image manifest corresponding to the image to be uploaded.</p>
-        pub fn image_manifest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_manifest(inp);
+        pub fn image_manifest(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_manifest(signature.into());
             self
         }
         /// <p>The image manifest corresponding to the image to be uploaded.</p>
@@ -3474,8 +3474,11 @@ pub mod fluent_builders {
         /// <p>The media type of the image manifest. If you push an image manifest that does not
         /// contain the <code>mediaType</code> field, you must specify the
         /// <code>imageManifestMediaType</code> in the request.</p>
-        pub fn image_manifest_media_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_manifest_media_type(inp);
+        pub fn image_manifest_media_type(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.image_manifest_media_type(signature.into());
             self
         }
         /// <p>The media type of the image manifest. If you push an image manifest that does not
@@ -3490,8 +3493,8 @@ pub mod fluent_builders {
         }
         /// <p>The tag to associate with the image. This parameter is required for images that use
         /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
-        pub fn image_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_tag(inp);
+        pub fn image_tag(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_tag(signature.into());
             self
         }
         /// <p>The tag to associate with the image. This parameter is required for images that use
@@ -3501,8 +3504,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The image digest of the image manifest corresponding to the image.</p>
-        pub fn image_digest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_digest(inp);
+        pub fn image_digest(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_digest(signature.into());
             self
         }
         /// <p>The image digest of the image manifest corresponding to the image.</p>
@@ -3573,8 +3576,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to update the image scanning configuration setting.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
@@ -3586,8 +3589,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the repository in which to update the image scanning configuration
         /// setting.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository in which to update the image scanning configuration
@@ -3604,9 +3607,9 @@ pub mod fluent_builders {
         /// repository.</p>
         pub fn image_scanning_configuration(
             mut self,
-            inp: crate::model::ImageScanningConfiguration,
+            signature: crate::model::ImageScanningConfiguration,
         ) -> Self {
-            self.inner = self.inner.image_scanning_configuration(inp);
+            self.inner = self.inner.image_scanning_configuration(signature);
             self
         }
         /// <p>The image scanning configuration for the repository. This setting determines whether
@@ -3683,8 +3686,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
@@ -3695,8 +3698,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the repository in which to update the image tag mutability
         /// settings.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository in which to update the image tag mutability
@@ -3712,8 +3715,8 @@ pub mod fluent_builders {
         /// image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags
         /// within the repository will be immutable which will prevent them from being
         /// overwritten.</p>
-        pub fn image_tag_mutability(mut self, inp: crate::model::ImageTagMutability) -> Self {
-            self.inner = self.inner.image_tag_mutability(inp);
+        pub fn image_tag_mutability(mut self, signature: crate::model::ImageTagMutability) -> Self {
+            self.inner = self.inner.image_tag_mutability(signature);
             self
         }
         /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified,
@@ -3791,8 +3794,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
         /// do  not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
@@ -3802,8 +3805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository to receive the policy.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository to receive the policy.</p>
@@ -3815,8 +3818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON repository policy text to apply to the repository.</p>
-        pub fn lifecycle_policy_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_policy_text(inp);
+        pub fn lifecycle_policy_text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_policy_text(signature.into());
             self
         }
         /// <p>The JSON repository policy text to apply to the repository.</p>
@@ -3892,8 +3895,8 @@ pub mod fluent_builders {
         /// <p>The JSON policy text to apply to your registry. The policy text follows the same
         /// format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
         /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-        pub fn policy_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_text(inp);
+        pub fn policy_text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_text(signature.into());
             self
         }
         /// <p>The JSON policy text to apply to your registry. The policy text follows the same
@@ -3970,8 +3973,8 @@ pub mod fluent_builders {
         /// with basic scanning.</p>
         /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
         /// scanning of all repositories in your registry.</p>
-        pub fn scan_type(mut self, inp: crate::model::ScanType) -> Self {
-            self.inner = self.inner.scan_type(inp);
+        pub fn scan_type(mut self, signature: crate::model::ScanType) -> Self {
+            self.inner = self.inner.scan_type(signature);
             self
         }
         /// <p>The scanning type to set for the registry.</p>
@@ -3991,8 +3994,8 @@ pub mod fluent_builders {
         ///
         /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
         /// repository filters are used and at what frequency scanning will occur.</p>
-        pub fn rules(mut self, inp: impl Into<crate::model::RegistryScanningRule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::RegistryScanningRule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
@@ -4077,9 +4080,9 @@ pub mod fluent_builders {
         /// <p>An object representing the replication configuration for a registry.</p>
         pub fn replication_configuration(
             mut self,
-            inp: crate::model::ReplicationConfiguration,
+            signature: crate::model::ReplicationConfiguration,
         ) -> Self {
-            self.inner = self.inner.replication_configuration(inp);
+            self.inner = self.inner.replication_configuration(signature);
             self
         }
         /// <p>An object representing the replication configuration for a registry.</p>
@@ -4154,8 +4157,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
@@ -4165,8 +4168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository to receive the policy.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository to receive the policy.</p>
@@ -4180,8 +4183,8 @@ pub mod fluent_builders {
         /// <p>The JSON repository policy text to apply to the repository. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
         /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-        pub fn policy_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_text(inp);
+        pub fn policy_text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_text(signature.into());
             self
         }
         /// <p>The JSON repository policy text to apply to the repository. For more information, see
@@ -4194,8 +4197,8 @@ pub mod fluent_builders {
         /// <p>If the policy you are attempting to set on a repository policy would prevent you from
         /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
         /// repository lock outs.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>If the policy you are attempting to set on a repository policy would prevent you from
@@ -4270,8 +4273,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
@@ -4281,8 +4284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that contains the images to scan.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository that contains the images to scan.</p>
@@ -4294,8 +4297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-        pub fn image_id(mut self, inp: crate::model::ImageIdentifier) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, signature: crate::model::ImageIdentifier) -> Self {
+            self.inner = self.inner.image_id(signature);
             self
         }
         /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
@@ -4369,8 +4372,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
@@ -4380,8 +4383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository to be evaluated.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository to be evaluated.</p>
@@ -4394,8 +4397,8 @@ pub mod fluent_builders {
         }
         /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy
         /// for the repository is used.</p>
-        pub fn lifecycle_policy_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_policy_text(inp);
+        pub fn lifecycle_policy_text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_policy_text(signature.into());
             self
         }
         /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy
@@ -4470,8 +4473,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported
         /// resource is an Amazon ECR repository.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported
@@ -4487,8 +4490,8 @@ pub mod fluent_builders {
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
         /// Tag keys can have a maximum character length of 128 characters, and tag values can have
         /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
@@ -4563,8 +4566,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported
         /// resource is an Amazon ECR repository.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported
@@ -4578,8 +4581,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to be removed.</p>
@@ -4659,8 +4662,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
         /// parts. If you do not specify a registry, the default registry is assumed.</p>
-        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
@@ -4670,8 +4673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository to which you are uploading layer parts.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(signature.into());
             self
         }
         /// <p>The name of the repository to which you are uploading layer parts.</p>
@@ -4684,8 +4687,8 @@ pub mod fluent_builders {
         }
         /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
         /// associate with the layer part upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
@@ -4695,8 +4698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
-        pub fn part_first_byte(mut self, inp: i64) -> Self {
-            self.inner = self.inner.part_first_byte(inp);
+        pub fn part_first_byte(mut self, signature: i64) -> Self {
+            self.inner = self.inner.part_first_byte(signature);
             self
         }
         /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
@@ -4705,8 +4708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The position of the last byte of the layer part within the overall image layer.</p>
-        pub fn part_last_byte(mut self, inp: i64) -> Self {
-            self.inner = self.inner.part_last_byte(inp);
+        pub fn part_last_byte(mut self, signature: i64) -> Self {
+            self.inner = self.inner.part_last_byte(signature);
             self
         }
         /// <p>The position of the last byte of the layer part within the overall image layer.</p>
@@ -4715,8 +4718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The base64-encoded layer part payload.</p>
-        pub fn layer_part_blob(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.layer_part_blob(inp);
+        pub fn layer_part_blob(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.layer_part_blob(signature);
             self
         }
         /// <p>The base64-encoded layer part payload.</p>

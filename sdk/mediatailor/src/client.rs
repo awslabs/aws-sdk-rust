@@ -419,8 +419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
-        pub fn percent_enabled(mut self, inp: i32) -> Self {
-            self.inner = self.inner.percent_enabled(inp);
+        pub fn percent_enabled(mut self, signature: i32) -> Self {
+            self.inner = self.inner.percent_enabled(signature);
             self
         }
         /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
@@ -429,8 +429,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(signature.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -502,8 +505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -512,8 +515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
-        pub fn filler_slate(mut self, inp: crate::model::SlateSource) -> Self {
-            self.inner = self.inner.filler_slate(inp);
+        pub fn filler_slate(mut self, signature: crate::model::SlateSource) -> Self {
+            self.inner = self.inner.filler_slate(signature);
             self
         }
         /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
@@ -529,8 +532,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::RequestOutputItem>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::RequestOutputItem) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p>The channel's output properties.</p>
@@ -542,8 +545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
-        pub fn playback_mode(mut self, inp: crate::model::PlaybackMode) -> Self {
-            self.inner = self.inner.playback_mode(inp);
+        pub fn playback_mode(mut self, signature: crate::model::PlaybackMode) -> Self {
+            self.inner = self.inner.playback_mode(signature);
             self
         }
         /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
@@ -564,7 +567,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the channel.</p>
@@ -638,8 +641,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-        pub fn consumption(mut self, inp: crate::model::PrefetchConsumption) -> Self {
-            self.inner = self.inner.consumption(inp);
+        pub fn consumption(mut self, signature: crate::model::PrefetchConsumption) -> Self {
+            self.inner = self.inner.consumption(signature);
             self
         }
         /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
@@ -651,8 +654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -661,8 +664,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(signature.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -674,8 +680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-        pub fn retrieval(mut self, inp: crate::model::PrefetchRetrieval) -> Self {
-            self.inner = self.inner.retrieval(inp);
+        pub fn retrieval(mut self, signature: crate::model::PrefetchRetrieval) -> Self {
+            self.inner = self.inner.retrieval(signature);
             self
         }
         /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
@@ -687,8 +693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(signature.into());
             self
         }
         /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
@@ -761,8 +767,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
         ///
         /// <p>The ad break configuration settings.</p>
-        pub fn ad_breaks(mut self, inp: impl Into<crate::model::AdBreak>) -> Self {
-            self.inner = self.inner.ad_breaks(inp);
+        pub fn ad_breaks(mut self, input: crate::model::AdBreak) -> Self {
+            self.inner = self.inner.ad_breaks(input);
             self
         }
         /// <p>The ad break configuration settings.</p>
@@ -774,8 +780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -784,8 +790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the program you are working on.</p>
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(signature.into());
             self
         }
         /// <p>The identifier for the program you are working on.</p>
@@ -794,8 +800,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schedule configuration settings.</p>
-        pub fn schedule_configuration(mut self, inp: crate::model::ScheduleConfiguration) -> Self {
-            self.inner = self.inner.schedule_configuration(inp);
+        pub fn schedule_configuration(
+            mut self,
+            signature: crate::model::ScheduleConfiguration,
+        ) -> Self {
+            self.inner = self.inner.schedule_configuration(signature);
             self
         }
         /// <p>The schedule configuration settings.</p>
@@ -807,8 +816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the source location.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The name of the source location.</p>
@@ -820,8 +829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that's used to refer to a VOD source.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(signature.into());
             self
         }
         /// <p>The name that's used to refer to a VOD source.</p>
@@ -893,8 +902,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-        pub fn access_configuration(mut self, inp: crate::model::AccessConfiguration) -> Self {
-            self.inner = self.inner.access_configuration(inp);
+        pub fn access_configuration(
+            mut self,
+            signature: crate::model::AccessConfiguration,
+        ) -> Self {
+            self.inner = self.inner.access_configuration(signature);
             self
         }
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -908,9 +920,9 @@ pub mod fluent_builders {
         /// <p>The optional configuration for the server that serves segments.</p>
         pub fn default_segment_delivery_configuration(
             mut self,
-            inp: crate::model::DefaultSegmentDeliveryConfiguration,
+            signature: crate::model::DefaultSegmentDeliveryConfiguration,
         ) -> Self {
-            self.inner = self.inner.default_segment_delivery_configuration(inp);
+            self.inner = self.inner.default_segment_delivery_configuration(signature);
             self
         }
         /// <p>The optional configuration for the server that serves segments.</p>
@@ -922,8 +934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source's HTTP package configurations.</p>
-        pub fn http_configuration(mut self, inp: crate::model::HttpConfiguration) -> Self {
-            self.inner = self.inner.http_configuration(inp);
+        pub fn http_configuration(mut self, signature: crate::model::HttpConfiguration) -> Self {
+            self.inner = self.inner.http_configuration(signature);
             self
         }
         /// <p>The source's HTTP package configurations.</p>
@@ -935,8 +947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -957,7 +969,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the source location.</p>
@@ -1037,9 +1049,9 @@ pub mod fluent_builders {
         /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
         pub fn http_package_configurations(
             mut self,
-            inp: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
-            self.inner = self.inner.http_package_configurations(inp);
+            self.inner = self.inner.http_package_configurations(input);
             self
         }
         /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
@@ -1051,8 +1063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1073,7 +1085,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the VOD source.</p>
@@ -1087,8 +1099,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(signature.into());
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
@@ -1160,8 +1172,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1230,8 +1242,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1300,8 +1312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -1370,8 +1382,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -1380,8 +1392,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(signature.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -1453,8 +1468,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1463,8 +1478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the program you are working on.</p>
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(signature.into());
             self
         }
         /// <p>The identifier for the program you are working on.</p>
@@ -1533,8 +1548,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1606,8 +1621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1619,8 +1634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(signature.into());
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
@@ -1692,8 +1707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1762,8 +1777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1772,8 +1787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the program you are working on.</p>
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(signature.into());
             self
         }
         /// <p>The identifier for the program you are working on.</p>
@@ -1842,8 +1857,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1915,8 +1930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1928,8 +1943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(signature.into());
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
@@ -2001,8 +2016,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -2071,8 +2086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -2081,8 +2096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
-        pub fn duration_minutes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration_minutes(inp);
+        pub fn duration_minutes(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration_minutes(signature.into());
             self
         }
         /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
@@ -2094,8 +2109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2104,8 +2119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2174,8 +2189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -2244,8 +2259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -2254,8 +2269,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(signature.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -2327,8 +2345,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2337,8 +2355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2347,8 +2365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2417,8 +2435,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2427,8 +2445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2497,8 +2515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of records to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Maximum number of records to return.</p>
@@ -2507,8 +2525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
@@ -2577,8 +2595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
@@ -2587,8 +2605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
@@ -2597,8 +2615,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(signature.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -2610,8 +2631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(signature.into());
             self
         }
         /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
@@ -2680,8 +2701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2690,8 +2711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2760,8 +2781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
@@ -2830,8 +2851,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2840,8 +2861,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2850,8 +2871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -2923,8 +2944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -2933,8 +2954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Adds an IAM role that determines the permissions of your channel.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>Adds an IAM role that determines the permissions of your channel.</p>
@@ -3003,8 +3024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-        pub fn ad_decision_server_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ad_decision_server_url(inp);
+        pub fn ad_decision_server_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ad_decision_server_url(signature.into());
             self
         }
         /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -3016,8 +3037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
-        pub fn avail_suppression(mut self, inp: crate::model::AvailSuppression) -> Self {
-            self.inner = self.inner.avail_suppression(inp);
+        pub fn avail_suppression(mut self, signature: crate::model::AvailSuppression) -> Self {
+            self.inner = self.inner.avail_suppression(signature);
             self
         }
         /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
@@ -3029,8 +3050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
-        pub fn bumper(mut self, inp: crate::model::Bumper) -> Self {
-            self.inner = self.inner.bumper(inp);
+        pub fn bumper(mut self, signature: crate::model::Bumper) -> Self {
+            self.inner = self.inner.bumper(signature);
             self
         }
         /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
@@ -3039,8 +3060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
-        pub fn cdn_configuration(mut self, inp: crate::model::CdnConfiguration) -> Self {
-            self.inner = self.inner.cdn_configuration(inp);
+        pub fn cdn_configuration(mut self, signature: crate::model::CdnConfiguration) -> Self {
+            self.inner = self.inner.cdn_configuration(signature);
             self
         }
         /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
@@ -3059,9 +3080,9 @@ pub mod fluent_builders {
         pub fn configuration_aliases(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aliases(k, v);
+            self.inner = self.inner.configuration_aliases(k.into(), v);
             self
         }
         /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
@@ -3078,8 +3099,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for DASH content.</p>
-        pub fn dash_configuration(mut self, inp: crate::model::DashConfigurationForPut) -> Self {
-            self.inner = self.inner.dash_configuration(inp);
+        pub fn dash_configuration(
+            mut self,
+            signature: crate::model::DashConfigurationForPut,
+        ) -> Self {
+            self.inner = self.inner.dash_configuration(signature);
             self
         }
         /// <p>The configuration for DASH content.</p>
@@ -3093,9 +3117,9 @@ pub mod fluent_builders {
         /// <p>The configuration for pre-roll ad insertion.</p>
         pub fn live_pre_roll_configuration(
             mut self,
-            inp: crate::model::LivePreRollConfiguration,
+            signature: crate::model::LivePreRollConfiguration,
         ) -> Self {
-            self.inner = self.inner.live_pre_roll_configuration(inp);
+            self.inner = self.inner.live_pre_roll_configuration(signature);
             self
         }
         /// <p>The configuration for pre-roll ad insertion.</p>
@@ -3109,9 +3133,9 @@ pub mod fluent_builders {
         /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
         pub fn manifest_processing_rules(
             mut self,
-            inp: crate::model::ManifestProcessingRules,
+            signature: crate::model::ManifestProcessingRules,
         ) -> Self {
-            self.inner = self.inner.manifest_processing_rules(inp);
+            self.inner = self.inner.manifest_processing_rules(signature);
             self
         }
         /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
@@ -3123,8 +3147,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -3133,8 +3157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-        pub fn personalization_threshold_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.personalization_threshold_seconds(inp);
+        pub fn personalization_threshold_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.personalization_threshold_seconds(signature);
             self
         }
         /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
@@ -3146,8 +3170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
-        pub fn slate_ad_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slate_ad_url(inp);
+        pub fn slate_ad_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slate_ad_url(signature.into());
             self
         }
         /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
@@ -3165,7 +3189,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the playback configuration.</p>
@@ -3179,8 +3203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
-        pub fn transcode_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transcode_profile_name(inp);
+        pub fn transcode_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transcode_profile_name(signature.into());
             self
         }
         /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
@@ -3192,8 +3216,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
-        pub fn video_content_source_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.video_content_source_url(inp);
+        pub fn video_content_source_url(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.video_content_source_url(signature.into());
             self
         }
         /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
@@ -3265,8 +3292,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -3335,8 +3362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -3405,8 +3432,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
@@ -3424,7 +3451,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A comma-separated list of tag key:value pairs.</p>
@@ -3498,8 +3525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
@@ -3512,8 +3539,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
@@ -3585,8 +3612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -3599,8 +3626,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::RequestOutputItem>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::RequestOutputItem) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p>The channel's output properties.</p>
@@ -3672,8 +3699,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-        pub fn access_configuration(mut self, inp: crate::model::AccessConfiguration) -> Self {
-            self.inner = self.inner.access_configuration(inp);
+        pub fn access_configuration(
+            mut self,
+            signature: crate::model::AccessConfiguration,
+        ) -> Self {
+            self.inner = self.inner.access_configuration(signature);
             self
         }
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -3687,9 +3717,9 @@ pub mod fluent_builders {
         /// <p>The optional configuration for the host server that serves segments.</p>
         pub fn default_segment_delivery_configuration(
             mut self,
-            inp: crate::model::DefaultSegmentDeliveryConfiguration,
+            signature: crate::model::DefaultSegmentDeliveryConfiguration,
         ) -> Self {
-            self.inner = self.inner.default_segment_delivery_configuration(inp);
+            self.inner = self.inner.default_segment_delivery_configuration(signature);
             self
         }
         /// <p>The optional configuration for the host server that serves segments.</p>
@@ -3701,8 +3731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The HTTP configuration for the source location.</p>
-        pub fn http_configuration(mut self, inp: crate::model::HttpConfiguration) -> Self {
-            self.inner = self.inner.http_configuration(inp);
+        pub fn http_configuration(mut self, signature: crate::model::HttpConfiguration) -> Self {
+            self.inner = self.inner.http_configuration(signature);
             self
         }
         /// <p>The HTTP configuration for the source location.</p>
@@ -3714,8 +3744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -3793,9 +3823,9 @@ pub mod fluent_builders {
         /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
         pub fn http_package_configurations(
             mut self,
-            inp: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
-            self.inner = self.inner.http_package_configurations(inp);
+            self.inner = self.inner.http_package_configurations(input);
             self
         }
         /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
@@ -3807,8 +3837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(signature.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -3820,8 +3850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(signature.into());
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>

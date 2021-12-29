@@ -125,9 +125,9 @@ pub mod list_studio_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::StudioMembership>) -> Self {
+        pub fn members(mut self, input: crate::model::StudioMembership) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -304,9 +304,9 @@ pub mod list_studios_output {
         /// To override the contents of this collection use [`set_studios`](Self::set_studios).
         ///
         /// <p>A collection of studios.</p>
-        pub fn studios(mut self, input: impl Into<crate::model::Studio>) -> Self {
+        pub fn studios(mut self, input: crate::model::Studio) -> Self {
             let mut v = self.studios.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.studios = Some(v);
             self
         }
@@ -603,12 +603,9 @@ pub mod list_studio_components_output {
         /// To override the contents of this collection use [`set_studio_components`](Self::set_studio_components).
         ///
         /// <p>A collection of studio components.</p>
-        pub fn studio_components(
-            mut self,
-            input: impl Into<crate::model::StudioComponent>,
-        ) -> Self {
+        pub fn studio_components(mut self, input: crate::model::StudioComponent) -> Self {
             let mut v = self.studio_components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.studio_components = Some(v);
             self
         }
@@ -1152,9 +1149,9 @@ pub mod list_streaming_sessions_output {
         /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
         ///
         /// <p>A collection of streaming sessions.</p>
-        pub fn sessions(mut self, input: impl Into<crate::model::StreamingSession>) -> Self {
+        pub fn sessions(mut self, input: crate::model::StreamingSession) -> Self {
             let mut v = self.sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sessions = Some(v);
             self
         }
@@ -1406,9 +1403,9 @@ pub mod list_streaming_images_output {
         /// To override the contents of this collection use [`set_streaming_images`](Self::set_streaming_images).
         ///
         /// <p>A collection of streaming images.</p>
-        pub fn streaming_images(mut self, input: impl Into<crate::model::StreamingImage>) -> Self {
+        pub fn streaming_images(mut self, input: crate::model::StreamingImage) -> Self {
             let mut v = self.streaming_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streaming_images = Some(v);
             self
         }
@@ -1794,9 +1791,9 @@ pub mod list_launch_profile_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::LaunchProfileMembership>) -> Self {
+        pub fn members(mut self, input: crate::model::LaunchProfileMembership) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -2029,9 +2026,9 @@ pub mod get_launch_profile_details_output {
         /// To override the contents of this collection use [`set_streaming_images`](Self::set_streaming_images).
         ///
         /// <p>A collection of streaming images.</p>
-        pub fn streaming_images(mut self, input: impl Into<crate::model::StreamingImage>) -> Self {
+        pub fn streaming_images(mut self, input: crate::model::StreamingImage) -> Self {
             let mut v = self.streaming_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streaming_images = Some(v);
             self
         }
@@ -2050,10 +2047,10 @@ pub mod get_launch_profile_details_output {
         /// <p>A collection of studio component summaries.</p>
         pub fn studio_component_summaries(
             mut self,
-            input: impl Into<crate::model::StudioComponentSummary>,
+            input: crate::model::StudioComponentSummary,
         ) -> Self {
             let mut v = self.studio_component_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.studio_component_summaries = Some(v);
             self
         }
@@ -2154,9 +2151,9 @@ pub mod list_launch_profiles_output {
         /// To override the contents of this collection use [`set_launch_profiles`](Self::set_launch_profiles).
         ///
         /// <p>A collection of launch profiles.</p>
-        pub fn launch_profiles(mut self, input: impl Into<crate::model::LaunchProfile>) -> Self {
+        pub fn launch_profiles(mut self, input: crate::model::LaunchProfile) -> Self {
             let mut v = self.launch_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_profiles = Some(v);
             self
         }
@@ -2464,9 +2461,9 @@ pub mod list_eulas_output {
         /// To override the contents of this collection use [`set_eulas`](Self::set_eulas).
         ///
         /// <p>A collection of EULA resources.</p>
-        pub fn eulas(mut self, input: impl Into<crate::model::Eula>) -> Self {
+        pub fn eulas(mut self, input: crate::model::Eula) -> Self {
             let mut v = self.eulas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.eulas = Some(v);
             self
         }
@@ -2599,9 +2596,9 @@ pub mod list_eula_acceptances_output {
         /// To override the contents of this collection use [`set_eula_acceptances`](Self::set_eula_acceptances).
         ///
         /// <p>A collection of EULA acceptances.</p>
-        pub fn eula_acceptances(mut self, input: impl Into<crate::model::EulaAcceptance>) -> Self {
+        pub fn eula_acceptances(mut self, input: crate::model::EulaAcceptance) -> Self {
             let mut v = self.eula_acceptances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.eula_acceptances = Some(v);
             self
         }
@@ -2674,9 +2671,9 @@ pub mod accept_eulas_output {
         /// To override the contents of this collection use [`set_eula_acceptances`](Self::set_eula_acceptances).
         ///
         /// <p>A collection of EULA acceptances.</p>
-        pub fn eula_acceptances(mut self, input: impl Into<crate::model::EulaAcceptance>) -> Self {
+        pub fn eula_acceptances(mut self, input: crate::model::EulaAcceptance) -> Self {
             let mut v = self.eula_acceptances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.eula_acceptances = Some(v);
             self
         }

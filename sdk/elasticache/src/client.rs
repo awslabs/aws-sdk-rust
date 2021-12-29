@@ -678,8 +678,8 @@ pub mod fluent_builders {
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
         /// ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added,
@@ -700,8 +700,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair.
         /// A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair.
@@ -782,8 +782,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cache security group that allows network ingress.</p>
-        pub fn cache_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_name(inp);
+        pub fn cache_security_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_security_group_name(signature.into());
             self
         }
         /// <p>The cache security group that allows network ingress.</p>
@@ -795,8 +798,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
-        pub fn ec2_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_name(inp);
+        pub fn ec2_security_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ec2_security_group_name(signature.into());
             self
         }
         /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
@@ -810,8 +816,11 @@ pub mod fluent_builders {
         /// <p>The Amazon account number of the Amazon EC2 security group owner.
         /// Note that this is not the same thing as an Amazon access key ID -
         /// you must provide a valid Amazon account number for this parameter.</p>
-        pub fn ec2_security_group_owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_owner_id(inp);
+        pub fn ec2_security_group_owner_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ec2_security_group_owner_id(signature.into());
             self
         }
         /// <p>The Amazon account number of the Amazon EC2 security group owner.
@@ -889,8 +898,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
         ///
         /// <p>The replication group IDs</p>
-        pub fn replication_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_ids(inp);
+        pub fn replication_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_ids(input.into());
             self
         }
         /// <p>The replication group IDs</p>
@@ -906,8 +915,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
         ///
         /// <p>The cache cluster IDs</p>
-        pub fn cache_cluster_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_ids(inp);
+        pub fn cache_cluster_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_ids(input.into());
             self
         }
         /// <p>The cache cluster IDs</p>
@@ -919,8 +928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the service update</p>
-        pub fn service_update_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_update_name(inp);
+        pub fn service_update_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_update_name(signature.into());
             self
         }
         /// <p>The unique ID of the service update</p>
@@ -996,8 +1005,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
         ///
         /// <p>The replication group IDs</p>
-        pub fn replication_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_ids(inp);
+        pub fn replication_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_ids(input.into());
             self
         }
         /// <p>The replication group IDs</p>
@@ -1013,8 +1022,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
         ///
         /// <p>The cache cluster IDs</p>
-        pub fn cache_cluster_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_ids(inp);
+        pub fn cache_cluster_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_ids(input.into());
             self
         }
         /// <p>The cache cluster IDs</p>
@@ -1026,8 +1035,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the service update</p>
-        pub fn service_update_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_update_name(inp);
+        pub fn service_update_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_update_name(signature.into());
             self
         }
         /// <p>The unique ID of the service update</p>
@@ -1099,8 +1108,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the replication group to which data is being migrated.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The ID of the replication group to which data is being migrated.</p>
@@ -1112,8 +1121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
@@ -1275,8 +1284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing snapshot from which to make a copy.</p>
-        pub fn source_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_snapshot_name(inp);
+        pub fn source_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_snapshot_name(signature.into());
             self
         }
         /// <p>The name of an existing snapshot from which to make a copy.</p>
@@ -1290,8 +1299,8 @@ pub mod fluent_builders {
         /// <p>A name for the snapshot copy.
         /// ElastiCache does not permit overwriting a snapshot, therefore
         /// this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
-        pub fn target_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_snapshot_name(inp);
+        pub fn target_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_snapshot_name(signature.into());
             self
         }
         /// <p>A name for the snapshot copy.
@@ -1311,8 +1320,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
         ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
-        pub fn target_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_bucket(inp);
+        pub fn target_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_bucket(signature.into());
             self
         }
         /// <p>The Amazon S3 bucket to which the snapshot is exported.
@@ -1330,8 +1339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
@@ -1344,8 +1353,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -1434,8 +1443,8 @@ pub mod fluent_builders {
         /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn cache_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_id(inp);
+        pub fn cache_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_id(signature.into());
             self
         }
         /// <p>The node group (shard) identifier. This parameter is stored as a lowercase string.</p>        
@@ -1465,8 +1474,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
         /// </note>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary that is not part of any replication group.</p>
@@ -1486,8 +1495,8 @@ pub mod fluent_builders {
         /// <p>This parameter is only supported for Memcached clusters.</p>
         /// <p>If the <code>AZMode</code> and <code>PreferredAvailabilityZones</code> are not specified,
         /// ElastiCache assumes <code>single-az</code> mode.</p>
-        pub fn az_mode(mut self, inp: crate::model::AzMode) -> Self {
-            self.inner = self.inner.az_mode(inp);
+        pub fn az_mode(mut self, signature: crate::model::AzMode) -> Self {
+            self.inner = self.inner.az_mode(signature);
             self
         }
         /// <p>Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or
@@ -1503,8 +1512,11 @@ pub mod fluent_builders {
         /// <p>All nodes belonging to this cluster are placed in the preferred Availability Zone.
         /// If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.</p>
         /// <p>Default: System chosen Availability Zone.</p>
-        pub fn preferred_availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_availability_zone(inp);
+        pub fn preferred_availability_zone(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_availability_zone(signature.into());
             self
         }
         /// <p>The EC2 Availability Zone in which the cluster is created.</p>
@@ -1531,8 +1543,11 @@ pub mod fluent_builders {
         /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or
         /// repeat the Availability Zone multiple times in the list.</p>
         /// <p>Default: System chosen Availability Zones.</p>
-        pub fn preferred_availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_availability_zones(inp);
+        pub fn preferred_availability_zones(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_availability_zones(input.into());
             self
         }
         /// <p>A list of the Availability Zones in which cache nodes are created. The order of the zones in the list is not important.</p>
@@ -1556,8 +1571,8 @@ pub mod fluent_builders {
         /// For clusters running Memcached, this value must be between 1 and 40.</p>
         /// <p>If you need more than 40 nodes for your Memcached cluster,
         /// please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
-        pub fn num_cache_nodes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_cache_nodes(inp);
+        pub fn num_cache_nodes(mut self, signature: i32) -> Self {
+            self.inner = self.inner.num_cache_nodes(signature);
             self
         }
         /// <p>The initial number of cache nodes that the cluster has.</p>
@@ -1828,8 +1843,8 @@ pub mod fluent_builders {
         /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
         /// </li>
         /// </ul>
-        pub fn cache_node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_type(inp);
+        pub fn cache_node_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_type(signature.into());
             self
         }
         /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -2101,8 +2116,8 @@ pub mod fluent_builders {
         /// <p>The name of the cache engine to be used for this cluster.</p>
         /// <p>Valid values for this parameter are: <code>memcached</code> | <code>redis</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The name of the cache engine to be used for this cluster.</p>
@@ -2119,8 +2134,8 @@ pub mod fluent_builders {
         /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
         /// If you want to use an earlier engine version,
         /// you must delete the existing cluster or replication group and create it anew with the earlier engine version. </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The version number of the cache engine to be used for this cluster.
@@ -2140,8 +2155,11 @@ pub mod fluent_builders {
         /// <p>The name of the parameter group to associate with this cluster.
         /// If this argument is omitted, the default parameter group for the specified engine is used.
         /// You cannot use any parameter group which has <code>cluster-enabled='yes'</code> when creating a cluster.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the parameter group to associate with this cluster.
@@ -2161,8 +2179,11 @@ pub mod fluent_builders {
         /// you need to create a subnet group before you start creating a cluster.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
         /// </important>
-        pub fn cache_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_subnet_group_name(inp);
+        pub fn cache_subnet_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_subnet_group_name(signature.into());
             self
         }
         /// <p>The name of the subnet group to be used for the cluster.</p>
@@ -2185,8 +2206,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of security group names to associate with this cluster.</p>
         /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
-        pub fn cache_security_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_names(inp);
+        pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_security_group_names(input.into());
             self
         }
         /// <p>A list of security group names to associate with this cluster.</p>
@@ -2204,8 +2225,8 @@ pub mod fluent_builders {
         ///
         /// <p>One or more VPC security groups associated with the cluster.</p>
         /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>One or more VPC security groups associated with the cluster.</p>
@@ -2222,8 +2243,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource.</p>
@@ -2247,8 +2268,8 @@ pub mod fluent_builders {
         /// </note>
         /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
         /// </p>
-        pub fn snapshot_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_arns(inp);
+        pub fn snapshot_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_arns(input.into());
             self
         }
         /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies
@@ -2272,8 +2293,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
         /// </note>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(signature.into());
             self
         }
         /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard).
@@ -2293,8 +2314,11 @@ pub mod fluent_builders {
         /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
         /// maintenance window is a 60 minute period.
         /// Valid values for <code>ddd</code> are:</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>Specifies the weekly time range during which maintenance
@@ -2310,8 +2334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port number on which each of the cache nodes  accepts connections.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port number on which each of the cache nodes  accepts connections.</p>
@@ -2324,8 +2348,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
         /// </note>
-        pub fn notification_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_topic_arn(inp);
+        pub fn notification_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
@@ -2342,8 +2366,8 @@ pub mod fluent_builders {
         }
         /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(signature);
             self
         }
         /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
@@ -2359,8 +2383,8 @@ pub mod fluent_builders {
         /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
         /// </note>
         /// <p>Default: 0 (i.e., automatic backups are disabled for this cache cluster).</p>
-        pub fn snapshot_retention_limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.snapshot_retention_limit(inp);
+        pub fn snapshot_retention_limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.snapshot_retention_limit(signature);
             self
         }
         /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them.
@@ -2381,8 +2405,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
         /// </note>
-        pub fn snapshot_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_window(inp);
+        pub fn snapshot_window(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_window(signature.into());
             self
         }
         /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
@@ -2416,8 +2440,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
-        pub fn auth_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auth_token(inp);
+        pub fn auth_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_token(signature.into());
             self
         }
         /// <p>
@@ -2442,8 +2466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.</p>
-        pub fn outpost_mode(mut self, inp: crate::model::OutpostMode) -> Self {
-            self.inner = self.inner.outpost_mode(inp);
+        pub fn outpost_mode(mut self, signature: crate::model::OutpostMode) -> Self {
+            self.inner = self.inner.outpost_mode(signature);
             self
         }
         /// <p>Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.</p>
@@ -2455,8 +2479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The outpost ARN in which the cache cluster is created.</p>
-        pub fn preferred_outpost_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_outpost_arn(inp);
+        pub fn preferred_outpost_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_outpost_arn(signature.into());
             self
         }
         /// <p>The outpost ARN in which the cache cluster is created.</p>
@@ -2472,8 +2496,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_preferred_outpost_arns`](Self::set_preferred_outpost_arns).
         ///
         /// <p>The outpost ARNs in which the cache cluster is created.</p>
-        pub fn preferred_outpost_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_outpost_arns(inp);
+        pub fn preferred_outpost_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_outpost_arns(input.into());
             self
         }
         /// <p>The outpost ARNs in which the cache cluster is created.</p>
@@ -2491,9 +2515,9 @@ pub mod fluent_builders {
         /// <p>Specifies the destination, format and type of the logs. </p>
         pub fn log_delivery_configurations(
             mut self,
-            inp: impl Into<crate::model::LogDeliveryConfigurationRequest>,
+            input: crate::model::LogDeliveryConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.log_delivery_configurations(inp);
+            self.inner = self.inner.log_delivery_configurations(input);
             self
         }
         /// <p>Specifies the destination, format and type of the logs. </p>
@@ -2582,8 +2606,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-specified name for the cache parameter group.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>A user-specified name for the cache parameter group.</p>
@@ -2607,8 +2634,11 @@ pub mod fluent_builders {
         /// <code>redis6.0</code> |
         /// <code>redis6.2</code>
         /// </p>
-        pub fn cache_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_family(inp);
+        pub fn cache_parameter_group_family(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_family(signature.into());
             self
         }
         /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
@@ -2632,8 +2662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-specified description for the cache parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A user-specified description for the cache parameter group.</p>
@@ -2646,8 +2676,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -2727,8 +2757,11 @@ pub mod fluent_builders {
         /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
         /// <p>Example: <code>mysecuritygroup</code>
         /// </p>
-        pub fn cache_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_name(inp);
+        pub fn cache_security_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_security_group_name(signature.into());
             self
         }
         /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
@@ -2743,8 +2776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the cache security group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description for the cache security group.</p>
@@ -2757,8 +2790,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -2834,8 +2867,11 @@ pub mod fluent_builders {
         /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
         /// <p>Example: <code>mysubnetgroup</code>
         /// </p>
-        pub fn cache_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_subnet_group_name(inp);
+        pub fn cache_subnet_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_subnet_group_name(signature.into());
             self
         }
         /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
@@ -2852,9 +2888,9 @@ pub mod fluent_builders {
         /// <p>A description for the cache subnet group.</p>
         pub fn cache_subnet_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cache_subnet_group_description(inp);
+            self.inner = self.inner.cache_subnet_group_description(signature.into());
             self
         }
         /// <p>A description for the cache subnet group.</p>
@@ -2870,8 +2906,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
@@ -2887,8 +2923,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -2979,9 +3015,11 @@ pub mod fluent_builders {
         /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
         pub fn global_replication_group_id_suffix(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.global_replication_group_id_suffix(inp);
+            self.inner = self
+                .inner
+                .global_replication_group_id_suffix(signature.into());
             self
         }
         /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix
@@ -2997,9 +3035,11 @@ pub mod fluent_builders {
         /// <p>Provides details of the Global datastore</p>
         pub fn global_replication_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.global_replication_group_description(inp);
+            self.inner = self
+                .inner
+                .global_replication_group_description(signature.into());
             self
         }
         /// <p>Provides details of the Global datastore</p>
@@ -3011,8 +3051,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
-        pub fn primary_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_replication_group_id(inp);
+        pub fn primary_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.primary_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
@@ -3123,8 +3166,8 @@ pub mod fluent_builders {
         /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The replication group identifier. This parameter is stored as a lowercase string.</p>
@@ -3151,9 +3194,9 @@ pub mod fluent_builders {
         /// <p>A user-created description for the replication group.</p>
         pub fn replication_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_group_description(inp);
+            self.inner = self.inner.replication_group_description(signature.into());
             self
         }
         /// <p>A user-created description for the replication group.</p>
@@ -3165,8 +3208,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -3182,8 +3228,8 @@ pub mod fluent_builders {
         /// <p>This parameter is not required if <code>NumCacheClusters</code>,
         /// <code>NumNodeGroups</code>, or
         /// <code>ReplicasPerNodeGroup</code> is specified.</p>
-        pub fn primary_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_cluster_id(inp);
+        pub fn primary_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_cluster_id(signature.into());
             self
         }
         /// <p>The identifier of the cluster that serves as the primary for this replication
@@ -3204,8 +3250,8 @@ pub mod fluent_builders {
         /// <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.</p>
         ///
         /// <p>Default: false</p>
-        pub fn automatic_failover_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.automatic_failover_enabled(inp);
+        pub fn automatic_failover_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.automatic_failover_enabled(signature);
             self
         }
         /// <p>Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails.</p>
@@ -3219,8 +3265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a>.</p>
-        pub fn multi_az_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az_enabled(inp);
+        pub fn multi_az_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.multi_az_enabled(signature);
             self
         }
         /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a>.</p>
@@ -3235,8 +3281,8 @@ pub mod fluent_builders {
         /// If <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1), or you
         /// can explicitly set it to a value between 2 and 6.</p>
         /// <p>The maximum permitted value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).</p>
-        pub fn num_cache_clusters(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_cache_clusters(inp);
+        pub fn num_cache_clusters(mut self, signature: i32) -> Self {
+            self.inner = self.inner.num_cache_clusters(signature);
             self
         }
         /// <p>The number of clusters this replication group initially has.</p>
@@ -3265,8 +3311,11 @@ pub mod fluent_builders {
         /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
         /// </note>
         /// <p>Default: system chosen Availability Zones.</p>
-        pub fn preferred_cache_cluster_a_zs(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_cache_cluster_a_zs(inp);
+        pub fn preferred_cache_cluster_a_zs(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_cache_cluster_a_zs(input.into());
             self
         }
         /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created.
@@ -3290,8 +3339,8 @@ pub mod fluent_builders {
         /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group.
         /// For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
         /// <p>Default: 1</p>
-        pub fn num_node_groups(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_node_groups(inp);
+        pub fn num_node_groups(mut self, signature: i32) -> Self {
+            self.inner = self.inner.num_node_groups(signature);
             self
         }
         /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group.
@@ -3303,8 +3352,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional parameter that specifies the number of replica nodes in each node group (shard).
         /// Valid values are 0 to 5.</p>
-        pub fn replicas_per_node_group(mut self, inp: i32) -> Self {
-            self.inner = self.inner.replicas_per_node_group(inp);
+        pub fn replicas_per_node_group(mut self, signature: i32) -> Self {
+            self.inner = self.inner.replicas_per_node_group(signature);
             self
         }
         /// <p>An optional parameter that specifies the number of replica nodes in each node group (shard).
@@ -3329,9 +3378,9 @@ pub mod fluent_builders {
         /// because you must specify the slots for each node group.</p>
         pub fn node_group_configuration(
             mut self,
-            inp: impl Into<crate::model::NodeGroupConfiguration>,
+            input: crate::model::NodeGroupConfiguration,
         ) -> Self {
-            self.inner = self.inner.node_group_configuration(inp);
+            self.inner = self.inner.node_group_configuration(input);
             self
         }
         /// <p>A list of node group (shard) configuration options.
@@ -3610,8 +3659,8 @@ pub mod fluent_builders {
         /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
         /// </li>
         /// </ul>
-        pub fn cache_node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_type(inp);
+        pub fn cache_node_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_type(signature.into());
             self
         }
         /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>        
@@ -3881,8 +3930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the cache engine to be used for the clusters in this replication group. Must be Redis.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The name of the cache engine to be used for the clusters in this replication group. Must be Redis.</p>
@@ -3899,8 +3948,8 @@ pub mod fluent_builders {
         /// If you want to use an earlier engine version,
         /// you must delete the existing cluster or replication group and
         /// create it anew with the earlier engine version. </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The version number of the cache engine to be used for the clusters in this replication group.
@@ -3933,8 +3982,11 @@ pub mod fluent_builders {
         /// <p>To create a Redis (cluster mode enabled) replication group, use <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p>
         /// </li>
         /// </ul>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the parameter group to associate with this replication group.
@@ -3964,8 +4016,11 @@ pub mod fluent_builders {
         /// you need to create a subnet group before you start creating a cluster.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
         /// </important>
-        pub fn cache_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_subnet_group_name(inp);
+        pub fn cache_subnet_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_subnet_group_name(signature.into());
             self
         }
         /// <p>The name of the cache subnet group to be used for the replication group.</p>
@@ -3986,8 +4041,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
         ///
         /// <p>A list of cache security group names to associate with this replication group.</p>
-        pub fn cache_security_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_names(inp);
+        pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_security_group_names(input.into());
             self
         }
         /// <p>A list of cache security group names to associate with this replication group.</p>
@@ -4004,8 +4059,8 @@ pub mod fluent_builders {
         ///
         /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
         /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
@@ -4024,8 +4079,8 @@ pub mod fluent_builders {
         /// <p>A list of tags to be added to this resource.
         /// Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
         /// Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource.
@@ -4052,8 +4107,8 @@ pub mod fluent_builders {
         /// of the number of ARNs specified here.</p>
         /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
         /// </p>
-        pub fn snapshot_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_arns(inp);
+        pub fn snapshot_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_arns(input.into());
             self
         }
         /// <p>A list of Amazon Resource Names (ARN) that uniquely identify
@@ -4075,8 +4130,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a snapshot from which to restore data into the new replication group.
         /// The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(signature.into());
             self
         }
         /// <p>The name of a snapshot from which to restore data into the new replication group.
@@ -4138,8 +4193,11 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>sun:23:00-mon:01:30</code>
         /// </p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>Specifies the weekly time range during which maintenance
@@ -4200,8 +4258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port number on which each member of the replication group accepts connections.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port number on which each member of the replication group accepts connections.</p>
@@ -4214,8 +4272,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
         /// </note>
-        pub fn notification_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_topic_arn(inp);
+        pub fn notification_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)
@@ -4232,8 +4290,8 @@ pub mod fluent_builders {
         }
         /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(signature);
             self
         }
         /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
@@ -4246,8 +4304,8 @@ pub mod fluent_builders {
         /// For example, if you set <code>SnapshotRetentionLimit</code> to 5,
         /// a snapshot that was taken today is retained for 5 days before being deleted.</p>
         /// <p>Default: 0 (i.e., automatic backups are disabled for this cluster).</p>
-        pub fn snapshot_retention_limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.snapshot_retention_limit(inp);
+        pub fn snapshot_retention_limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.snapshot_retention_limit(signature);
             self
         }
         /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them.
@@ -4262,8 +4320,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>05:00-09:00</code>
         /// </p>
         /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
-        pub fn snapshot_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_window(inp);
+        pub fn snapshot_window(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_window(signature.into());
             self
         }
         /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
@@ -4301,8 +4359,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
-        pub fn auth_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auth_token(inp);
+        pub fn auth_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_token(signature.into());
             self
         }
         /// <p>
@@ -4352,8 +4410,8 @@ pub mod fluent_builders {
         /// <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>,
         /// an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>
         /// </important>
-        pub fn transit_encryption_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.transit_encryption_enabled(inp);
+        pub fn transit_encryption_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.transit_encryption_enabled(signature);
             self
         }
         /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
@@ -4389,8 +4447,8 @@ pub mod fluent_builders {
         /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn at_rest_encryption_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.at_rest_encryption_enabled(inp);
+        pub fn at_rest_encryption_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.at_rest_encryption_enabled(signature);
             self
         }
         /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
@@ -4408,8 +4466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
@@ -4422,8 +4480,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_group_ids`](Self::set_user_group_ids).
         ///
         /// <p>The user group to associate with the replication group.</p>
-        pub fn user_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_group_ids(inp);
+        pub fn user_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_group_ids(input.into());
             self
         }
         /// <p>The user group to associate with the replication group.</p>
@@ -4441,9 +4499,9 @@ pub mod fluent_builders {
         /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
-            inp: impl Into<crate::model::LogDeliveryConfigurationRequest>,
+            input: crate::model::LogDeliveryConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.log_delivery_configurations(inp);
+            self.inner = self.inner.log_delivery_configurations(input);
             self
         }
         /// <p>Specifies the destination, format and type of the logs.</p>
@@ -4458,8 +4516,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
-        pub fn data_tiering_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.data_tiering_enabled(inp);
+        pub fn data_tiering_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.data_tiering_enabled(signature);
             self
         }
         /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
@@ -4534,8 +4592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
@@ -4547,8 +4605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
-        pub fn cache_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_id(inp);
+        pub fn cache_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_id(signature.into());
             self
         }
         /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
@@ -4560,8 +4618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the snapshot being created.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(signature.into());
             self
         }
         /// <p>A name for the snapshot being created.</p>
@@ -4573,8 +4631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
@@ -4587,8 +4645,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -4660,8 +4718,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user.</p>
@@ -4670,8 +4728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the user.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(signature.into());
             self
         }
         /// <p>The username of the user.</p>
@@ -4680,8 +4738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current supported value is Redis. </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The current supported value is Redis. </p>
@@ -4694,8 +4752,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_passwords`](Self::set_passwords).
         ///
         /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
-        pub fn passwords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.passwords(inp);
+        pub fn passwords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.passwords(input.into());
             self
         }
         /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
@@ -4707,8 +4765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn access_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_string(inp);
+        pub fn access_string(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_string(signature.into());
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -4720,8 +4778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates a password is not required for this user.</p>
-        pub fn no_password_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.no_password_required(inp);
+        pub fn no_password_required(mut self, signature: bool) -> Self {
+            self.inner = self.inner.no_password_required(signature);
             self
         }
         /// <p>Indicates a password is not required for this user.</p>
@@ -4734,8 +4792,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -4808,8 +4866,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user group.</p>
-        pub fn user_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_group_id(inp);
+        pub fn user_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_group_id(signature.into());
             self
         }
         /// <p>The ID of the user group.</p>
@@ -4821,8 +4879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current supported value is Redis. </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The current supported value is Redis. </p>
@@ -4835,8 +4893,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
         ///
         /// <p>The list of user IDs that belong to the user group.</p>
-        pub fn user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_ids(inp);
+        pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_ids(input.into());
             self
         }
         /// <p>The list of user IDs that belong to the user group.</p>
@@ -4852,8 +4910,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -4927,8 +4985,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -4940,8 +5001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
-        pub fn node_group_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.node_group_count(inp);
+        pub fn node_group_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.node_group_count(signature);
             self
         }
         /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
@@ -4956,8 +5017,11 @@ pub mod fluent_builders {
         /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
         ///
         /// ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
-        pub fn global_node_groups_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_node_groups_to_remove(inp);
+        pub fn global_node_groups_to_remove(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_node_groups_to_remove(input.into());
             self
         }
         /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
@@ -4978,8 +5042,11 @@ pub mod fluent_builders {
         ///
         ///
         /// </p>
-        pub fn global_node_groups_to_retain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_node_groups_to_retain(inp);
+        pub fn global_node_groups_to_retain(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_node_groups_to_retain(input.into());
             self
         }
         /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster.
@@ -4994,8 +5061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
@@ -5066,8 +5133,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The id of the replication group from which you want to remove replica nodes.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The id of the replication group from which you want to remove replica nodes.</p>
@@ -5099,8 +5166,8 @@ pub mod fluent_builders {
         /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p>
         /// </li>
         /// </ul>
-        pub fn new_replica_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.new_replica_count(inp);
+        pub fn new_replica_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.new_replica_count(signature);
             self
         }
         /// <p>The number of read replica nodes you want at the completion of this operation.
@@ -5135,11 +5202,8 @@ pub mod fluent_builders {
         /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
         /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
         /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-        pub fn replica_configuration(
-            mut self,
-            inp: impl Into<crate::model::ConfigureShard>,
-        ) -> Self {
-            self.inner = self.inner.replica_configuration(inp);
+        pub fn replica_configuration(mut self, input: crate::model::ConfigureShard) -> Self {
+            self.inner = self.inner.replica_configuration(input);
             self
         }
         /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
@@ -5157,8 +5221,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_replicas_to_remove`](Self::set_replicas_to_remove).
         ///
         /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
-        pub fn replicas_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replicas_to_remove(inp);
+        pub fn replicas_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replicas_to_remove(input.into());
             self
         }
         /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
@@ -5172,8 +5236,8 @@ pub mod fluent_builders {
         /// <p>If <code>True</code>, the number of replica nodes is decreased immediately.
         ///
         /// <code>ApplyImmediately=False</code> is not currently supported.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>If <code>True</code>, the number of replica nodes is decreased immediately.
@@ -5273,8 +5337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-        pub fn cache_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_id(inp);
+        pub fn cache_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_id(signature.into());
             self
         }
         /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
@@ -5287,8 +5351,11 @@ pub mod fluent_builders {
         }
         /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot.
         /// ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
-        pub fn final_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.final_snapshot_identifier(inp);
+        pub fn final_snapshot_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.final_snapshot_identifier(signature.into());
             self
         }
         /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot.
@@ -5366,8 +5433,11 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The specified cache security group must not be associated with any clusters.</p>
         /// </note>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the cache parameter group to delete.</p>
@@ -5448,8 +5518,11 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You cannot delete the default security group.</p>
         /// </note>
-        pub fn cache_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_name(inp);
+        pub fn cache_security_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_security_group_name(signature.into());
             self
         }
         /// <p>The name of the cache security group to delete.</p>
@@ -5528,8 +5601,11 @@ pub mod fluent_builders {
         }
         /// <p>The name of the cache subnet group to delete.</p>
         /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
-        pub fn cache_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_subnet_group_name(inp);
+        pub fn cache_subnet_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_subnet_group_name(signature.into());
             self
         }
         /// <p>The name of the cache subnet group to delete.</p>
@@ -5618,8 +5694,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -5631,8 +5710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The primary replication group is retained as a standalone replication group. </p>
-        pub fn retain_primary_replication_group(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retain_primary_replication_group(inp);
+        pub fn retain_primary_replication_group(mut self, signature: bool) -> Self {
+            self.inner = self.inner.retain_primary_replication_group(signature);
             self
         }
         /// <p>The primary replication group is retained as a standalone replication group. </p>
@@ -5712,8 +5791,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
@@ -5726,8 +5805,8 @@ pub mod fluent_builders {
         }
         /// <p>If set to <code>true</code>, all of the read replicas are deleted,
         /// but the primary node is retained.</p>
-        pub fn retain_primary_cluster(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retain_primary_cluster(inp);
+        pub fn retain_primary_cluster(mut self, signature: bool) -> Self {
+            self.inner = self.inner.retain_primary_cluster(signature);
             self
         }
         /// <p>If set to <code>true</code>, all of the read replicas are deleted,
@@ -5740,8 +5819,11 @@ pub mod fluent_builders {
         /// ElastiCache creates the snapshot from the primary node in the cluster,
         /// rather than one of the replicas; this is to ensure that it captures the freshest data.
         /// After the final snapshot is taken, the replication group is immediately deleted.</p>
-        pub fn final_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.final_snapshot_identifier(inp);
+        pub fn final_snapshot_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.final_snapshot_identifier(signature.into());
             self
         }
         /// <p>The name of a final node group (shard) snapshot.
@@ -5822,8 +5904,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the snapshot to be deleted.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(signature.into());
             self
         }
         /// <p>The name of the snapshot to be deleted.</p>
@@ -5895,8 +5977,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user.</p>
@@ -5965,8 +6047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user group.</p>
-        pub fn user_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_group_id(inp);
+        pub fn user_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_group_id(signature.into());
             self
         }
         /// <p>The ID of the user group.</p>
@@ -6054,8 +6136,8 @@ pub mod fluent_builders {
         }
         /// <p>The user-supplied cluster identifier. If this parameter is specified, only information
         /// about that specific cluster is returned. This parameter isn't case sensitive.</p>
-        pub fn cache_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_id(inp);
+        pub fn cache_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_id(signature.into());
             self
         }
         /// <p>The user-supplied cluster identifier. If this parameter is specified, only information
@@ -6073,8 +6155,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6091,8 +6173,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation. If this
         /// parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -6105,8 +6187,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request
         /// to retrieve information about the individual cache nodes.</p>
-        pub fn show_cache_node_info(mut self, inp: bool) -> Self {
-            self.inner = self.inner.show_cache_node_info(inp);
+        pub fn show_cache_node_info(mut self, signature: bool) -> Self {
+            self.inner = self.inner.show_cache_node_info(signature);
             self
         }
         /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request
@@ -6118,10 +6200,10 @@ pub mod fluent_builders {
         /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request
         /// to show only nodes (API/CLI: clusters) that are not members of a replication group.
         /// In practice, this mean Memcached and single node Redis clusters.</p>
-        pub fn show_cache_clusters_not_in_replication_groups(mut self, inp: bool) -> Self {
+        pub fn show_cache_clusters_not_in_replication_groups(mut self, signature: bool) -> Self {
             self.inner = self
                 .inner
-                .show_cache_clusters_not_in_replication_groups(inp);
+                .show_cache_clusters_not_in_replication_groups(signature);
             self
         }
         /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request
@@ -6199,8 +6281,8 @@ pub mod fluent_builders {
         }
         /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
@@ -6212,8 +6294,8 @@ pub mod fluent_builders {
         /// <p>The cache engine version to return.</p>
         /// <p>Example: <code>1.4.14</code>
         /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The cache engine version to return.</p>
@@ -6251,8 +6333,11 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn cache_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_family(inp);
+        pub fn cache_parameter_group_family(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_family(signature.into());
             self
         }
         /// <p>The name of a specific cache parameter group family to return details for.</p>
@@ -6293,8 +6378,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6310,8 +6395,8 @@ pub mod fluent_builders {
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
         /// If this parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
@@ -6323,8 +6408,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine
         /// and major version combination is to be returned.</p>
-        pub fn default_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.default_only(inp);
+        pub fn default_only(mut self, signature: bool) -> Self {
+            self.inner = self.inner.default_only(signature);
             self
         }
         /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine
@@ -6396,8 +6481,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a specific cache parameter group to return details for.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of a specific cache parameter group to return details for.</p>
@@ -6414,8 +6502,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6431,8 +6519,8 @@ pub mod fluent_builders {
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
         /// If this parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
@@ -6504,8 +6592,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a specific cache parameter group to return details for.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of a specific cache parameter group to return details for.</p>
@@ -6519,8 +6610,8 @@ pub mod fluent_builders {
         /// <p>The parameter types to return.</p>
         /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
         /// </p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(signature.into());
             self
         }
         /// <p>The parameter types to return.</p>
@@ -6536,8 +6627,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6554,8 +6645,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation.
         /// If this parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -6630,8 +6721,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cache security group to return details for.</p>
-        pub fn cache_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_name(inp);
+        pub fn cache_security_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_security_group_name(signature.into());
             self
         }
         /// <p>The name of the cache security group to return details for.</p>
@@ -6648,8 +6742,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6665,8 +6759,8 @@ pub mod fluent_builders {
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
         /// parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
@@ -6740,8 +6834,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cache subnet group to return details for.</p>
-        pub fn cache_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_subnet_group_name(inp);
+        pub fn cache_subnet_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_subnet_group_name(signature.into());
             self
         }
         /// <p>The name of the cache subnet group to return details for.</p>
@@ -6758,8 +6855,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6776,8 +6873,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation.
         /// If this parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -6862,8 +6959,11 @@ pub mod fluent_builders {
         /// <code>redis6.x</code> |
         /// <code>redis6.2</code>
         /// </p>
-        pub fn cache_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_family(inp);
+        pub fn cache_parameter_group_family(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_family(signature.into());
             self
         }
         /// <p>The name of the cache parameter group family.</p>
@@ -6892,8 +6992,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -6909,8 +7009,8 @@ pub mod fluent_builders {
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
         /// parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
@@ -6987,8 +7087,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the event source for which events are returned.
         /// If not specified, all sources are included in the response.</p>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(signature.into());
             self
         }
         /// <p>The identifier of the event source for which events are returned.
@@ -7002,8 +7102,8 @@ pub mod fluent_builders {
         }
         /// <p>The event source to retrieve events for.
         /// If no value is specified, all events are returned.</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(signature);
             self
         }
         /// <p>The event source to retrieve events for.
@@ -7018,8 +7118,8 @@ pub mod fluent_builders {
         /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
         /// <p>
         /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
@@ -7035,8 +7135,8 @@ pub mod fluent_builders {
         /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
         /// <p>
         /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
@@ -7050,8 +7150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes worth of events to retrieve.</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration(signature);
             self
         }
         /// <p>The number of minutes worth of events to retrieve.</p>
@@ -7065,8 +7165,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -7083,8 +7183,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation.
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -7156,8 +7256,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -7169,8 +7272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
@@ -7179,8 +7282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -7189,8 +7292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns the list of members that comprise the Global datastore.</p>
-        pub fn show_member_info(mut self, inp: bool) -> Self {
-            self.inner = self.inner.show_member_info(inp);
+        pub fn show_member_info(mut self, signature: bool) -> Self {
+            self.inner = self.inner.show_member_info(signature);
             self
         }
         /// <p>Returns the list of members that comprise the Global datastore.</p>
@@ -7265,8 +7368,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the replication group to be described. This parameter is not case sensitive.</p>
         /// <p>If you do not specify this parameter, information about all replication groups is returned.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The identifier for the replication group to be described. This parameter is not case sensitive.</p>
@@ -7284,8 +7387,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -7301,8 +7404,8 @@ pub mod fluent_builders {
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
         /// parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
@@ -7375,8 +7478,8 @@ pub mod fluent_builders {
         }
         /// <p>The reserved cache node identifier filter value.
         /// Use this parameter to show only the reservation that matches the specified reservation ID.</p>
-        pub fn reserved_cache_node_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_cache_node_id(inp);
+        pub fn reserved_cache_node_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_cache_node_id(signature.into());
             self
         }
         /// <p>The reserved cache node identifier filter value.
@@ -7392,9 +7495,11 @@ pub mod fluent_builders {
         /// Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
         pub fn reserved_cache_nodes_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_cache_nodes_offering_id(inp);
+            self.inner = self
+                .inner
+                .reserved_cache_nodes_offering_id(signature.into());
             self
         }
         /// <p>The offering identifier filter value.
@@ -7668,8 +7773,8 @@ pub mod fluent_builders {
         /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
         /// </li>
         /// </ul>
-        pub fn cache_node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_type(inp);
+        pub fn cache_node_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_type(signature.into());
             self
         }
         /// <p>The cache node type filter value.
@@ -7945,8 +8050,8 @@ pub mod fluent_builders {
         /// Use this parameter to show only reservations for this duration.</p>
         /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
         /// </p>
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(signature.into());
             self
         }
         /// <p>The duration filter value, specified in years or seconds.
@@ -7958,8 +8063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
-        pub fn product_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_description(inp);
+        pub fn product_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_description(signature.into());
             self
         }
         /// <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
@@ -7974,8 +8079,8 @@ pub mod fluent_builders {
         /// Use this parameter to show only the available offerings matching the specified offering type.</p>
         /// <p>Valid values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"|"All Upfront"|"Partial Upfront"| "No Upfront"</code>
         /// </p>
-        pub fn offering_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_type(inp);
+        pub fn offering_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_type(signature.into());
             self
         }
         /// <p>The offering type filter value.
@@ -7995,8 +8100,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -8013,8 +8118,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation.
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -8094,9 +8199,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn reserved_cache_nodes_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_cache_nodes_offering_id(inp);
+            self.inner = self
+                .inner
+                .reserved_cache_nodes_offering_id(signature.into());
             self
         }
         /// <p>The offering identifier filter value.
@@ -8373,8 +8480,8 @@ pub mod fluent_builders {
         /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
         /// </li>
         /// </ul>
-        pub fn cache_node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_type(inp);
+        pub fn cache_node_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_type(signature.into());
             self
         }
         /// <p>The cache node type filter value.
@@ -8651,8 +8758,8 @@ pub mod fluent_builders {
         /// Use this parameter to show only reservations for a given duration.</p>
         /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
         /// </p>
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(signature.into());
             self
         }
         /// <p>Duration filter value, specified in years or seconds.
@@ -8665,8 +8772,8 @@ pub mod fluent_builders {
         }
         /// <p>The product description filter value.
         /// Use this parameter to show only the available offerings matching the specified product description.</p>
-        pub fn product_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_description(inp);
+        pub fn product_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_description(signature.into());
             self
         }
         /// <p>The product description filter value.
@@ -8682,8 +8789,8 @@ pub mod fluent_builders {
         /// Use this parameter to show only the available offerings matching the specified offering type.</p>
         /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
         /// </p>
-        pub fn offering_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_type(inp);
+        pub fn offering_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_type(signature.into());
             self
         }
         /// <p>The offering type filter value.
@@ -8703,8 +8810,8 @@ pub mod fluent_builders {
         ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -8721,8 +8828,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation.
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -8794,8 +8901,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the service update</p>
-        pub fn service_update_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_update_name(inp);
+        pub fn service_update_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_update_name(signature.into());
             self
         }
         /// <p>The unique ID of the service update</p>
@@ -8811,11 +8918,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
         ///
         /// <p>The status of the service update</p>
-        pub fn service_update_status(
-            mut self,
-            inp: impl Into<crate::model::ServiceUpdateStatus>,
-        ) -> Self {
-            self.inner = self.inner.service_update_status(inp);
+        pub fn service_update_status(mut self, input: crate::model::ServiceUpdateStatus) -> Self {
+            self.inner = self.inner.service_update_status(input);
             self
         }
         /// <p>The status of the service update</p>
@@ -8827,8 +8931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response</p>
@@ -8840,8 +8944,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation. If this
         /// parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -8921,8 +9025,8 @@ pub mod fluent_builders {
         }
         /// <p>A user-supplied replication group identifier.
         /// If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>A user-supplied replication group identifier.
@@ -8936,8 +9040,8 @@ pub mod fluent_builders {
         }
         /// <p>A user-supplied cluster identifier.
         /// If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
-        pub fn cache_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_id(inp);
+        pub fn cache_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_id(signature.into());
             self
         }
         /// <p>A user-supplied cluster identifier.
@@ -8951,8 +9055,8 @@ pub mod fluent_builders {
         }
         /// <p>A user-supplied name of the snapshot.
         /// If this parameter is specified, only this snapshot are described.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(signature.into());
             self
         }
         /// <p>A user-supplied name of the snapshot.
@@ -8967,8 +9071,8 @@ pub mod fluent_builders {
         /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache.
         /// If set to <code>user</code> the output shows snapshots that were manually created.
         /// If omitted, the output shows both automatically and manually created snapshots.</p>
-        pub fn snapshot_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_source(inp);
+        pub fn snapshot_source(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_source(signature.into());
             self
         }
         /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache.
@@ -8985,8 +9089,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation.
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -9002,8 +9106,8 @@ pub mod fluent_builders {
         /// the remaining results can be retrieved.</p>
         /// <p>Default: 50</p>
         /// <p>Constraints: minimum 20; maximum 50.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -9016,8 +9120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
-        pub fn show_node_group_config(mut self, inp: bool) -> Self {
-            self.inner = self.inner.show_node_group_config(inp);
+        pub fn show_node_group_config(mut self, signature: bool) -> Self {
+            self.inner = self.inner.show_node_group_config(signature);
             self
         }
         /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
@@ -9086,8 +9190,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the service update</p>
-        pub fn service_update_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_update_name(inp);
+        pub fn service_update_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_update_name(signature.into());
             self
         }
         /// <p>The unique ID of the service update</p>
@@ -9103,8 +9207,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
         ///
         /// <p>The replication group IDs</p>
-        pub fn replication_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_ids(inp);
+        pub fn replication_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_ids(input.into());
             self
         }
         /// <p>The replication group IDs</p>
@@ -9120,8 +9224,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
         ///
         /// <p>The cache cluster IDs</p>
-        pub fn cache_cluster_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_ids(inp);
+        pub fn cache_cluster_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_ids(input.into());
             self
         }
         /// <p>The cache cluster IDs</p>
@@ -9133,8 +9237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
@@ -9147,11 +9251,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
         ///
         /// <p>The status of the service update</p>
-        pub fn service_update_status(
-            mut self,
-            inp: impl Into<crate::model::ServiceUpdateStatus>,
-        ) -> Self {
-            self.inner = self.inner.service_update_status(inp);
+        pub fn service_update_status(mut self, input: crate::model::ServiceUpdateStatus) -> Self {
+            self.inner = self.inner.service_update_status(input);
             self
         }
         /// <p>The status of the service update</p>
@@ -9163,8 +9264,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The range of time specified to search for service updates that are in available status</p>
-        pub fn service_update_time_range(mut self, inp: crate::model::TimeRangeFilter) -> Self {
-            self.inner = self.inner.service_update_time_range(inp);
+        pub fn service_update_time_range(
+            mut self,
+            signature: crate::model::TimeRangeFilter,
+        ) -> Self {
+            self.inner = self.inner.service_update_time_range(signature);
             self
         }
         /// <p>The range of time specified to search for service updates that are in available status</p>
@@ -9180,11 +9284,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_update_action_status`](Self::set_update_action_status).
         ///
         /// <p>The status of the update action.</p>
-        pub fn update_action_status(
-            mut self,
-            inp: impl Into<crate::model::UpdateActionStatus>,
-        ) -> Self {
-            self.inner = self.inner.update_action_status(inp);
+        pub fn update_action_status(mut self, input: crate::model::UpdateActionStatus) -> Self {
+            self.inner = self.inner.update_action_status(input);
             self
         }
         /// <p>The status of the update action.</p>
@@ -9196,8 +9297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Dictates whether to include node level update status in the response </p>
-        pub fn show_node_level_update_status(mut self, inp: bool) -> Self {
-            self.inner = self.inner.show_node_level_update_status(inp);
+        pub fn show_node_level_update_status(mut self, signature: bool) -> Self {
+            self.inner = self.inner.show_node_level_update_status(signature);
             self
         }
         /// <p>Dictates whether to include node level update status in the response </p>
@@ -9209,8 +9310,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response</p>
@@ -9222,8 +9323,8 @@ pub mod fluent_builders {
         /// Use this marker for pagination of results from this operation. If this
         /// parameter is specified, the response includes only records beyond the marker, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request.
@@ -9295,8 +9396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user group.</p>
-        pub fn user_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_group_id(inp);
+        pub fn user_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_group_id(signature.into());
             self
         }
         /// <p>The ID of the user group.</p>
@@ -9308,8 +9409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
@@ -9318,8 +9419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
@@ -9388,8 +9489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Redis engine. </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(signature.into());
             self
         }
         /// <p>The Redis engine. </p>
@@ -9398,8 +9499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user.</p>
@@ -9412,8 +9513,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filter to determine the list of User IDs to return.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filter to determine the list of User IDs to return.</p>
@@ -9425,8 +9526,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
@@ -9435,8 +9536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
@@ -9507,8 +9608,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -9520,8 +9624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
@@ -9533,8 +9637,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
-        pub fn replication_group_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_region(inp);
+        pub fn replication_group_region(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_group_region(signature.into());
             self
         }
         /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
@@ -9606,8 +9713,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -9619,8 +9729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon region of the primary cluster of the Global datastore</p>
-        pub fn primary_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_region(inp);
+        pub fn primary_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_region(signature.into());
             self
         }
         /// <p>The Amazon region of the primary cluster of the Global datastore</p>
@@ -9632,8 +9742,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the primary replication group</p>
-        pub fn primary_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_replication_group_id(inp);
+        pub fn primary_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.primary_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the primary replication group</p>
@@ -9707,8 +9820,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -9720,8 +9836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of node groups you wish to add</p>
-        pub fn node_group_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.node_group_count(inp);
+        pub fn node_group_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.node_group_count(signature);
             self
         }
         /// <p>The number of node groups you wish to add</p>
@@ -9736,9 +9852,9 @@ pub mod fluent_builders {
         /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
         pub fn regional_configurations(
             mut self,
-            inp: impl Into<crate::model::RegionalConfiguration>,
+            input: crate::model::RegionalConfiguration,
         ) -> Self {
-            self.inner = self.inner.regional_configurations(inp);
+            self.inner = self.inner.regional_configurations(input);
             self
         }
         /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
@@ -9750,8 +9866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
@@ -9822,8 +9938,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The id of the replication group to which you want to add replica nodes.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The id of the replication group to which you want to add replica nodes.</p>
@@ -9838,8 +9954,8 @@ pub mod fluent_builders {
         /// For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the
         /// replication group. For Redis (cluster mode enabled) replication groups, this is the number of
         /// replica nodes in each of the replication group's node groups.</p>
-        pub fn new_replica_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.new_replica_count(inp);
+        pub fn new_replica_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.new_replica_count(signature);
             self
         }
         /// <p>The number of read replica nodes you want at the completion of this operation.
@@ -9857,11 +9973,8 @@ pub mod fluent_builders {
         /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
         /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
         /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-        pub fn replica_configuration(
-            mut self,
-            inp: impl Into<crate::model::ConfigureShard>,
-        ) -> Self {
-            self.inner = self.inner.replica_configuration(inp);
+        pub fn replica_configuration(mut self, input: crate::model::ConfigureShard) -> Self {
+            self.inner = self.inner.replica_configuration(input);
             self
         }
         /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
@@ -9877,8 +9990,8 @@ pub mod fluent_builders {
         /// <p>If <code>True</code>, the number of replica nodes is increased immediately.
         ///
         /// <code>ApplyImmediately=False</code> is not currently supported.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>If <code>True</code>, the number of replica nodes is increased immediately.
@@ -9960,8 +10073,8 @@ pub mod fluent_builders {
         /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
         /// <code>ReplicationGroupId</code>.</p>
         /// </important>
-        pub fn cache_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_id(inp);
+        pub fn cache_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_id(signature.into());
             self
         }
         /// <p>The name of the cluster you want to scale up to a larger node instanced type.
@@ -9986,8 +10099,8 @@ pub mod fluent_builders {
         /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
         /// <code>ReplicationGroupId</code>.</p>
         /// </important>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The name of the replication group want to scale up to a larger node type.
@@ -10075,8 +10188,8 @@ pub mod fluent_builders {
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags,
@@ -10153,8 +10266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier. This value is stored as a lowercase string.</p>
-        pub fn cache_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_id(inp);
+        pub fn cache_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_id(signature.into());
             self
         }
         /// <p>The cluster identifier. This value is stored as a lowercase string.</p>
@@ -10192,8 +10305,8 @@ pub mod fluent_builders {
         /// use the <code>ModifyCacheCluster</code> request and
         /// set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
         /// </note>
-        pub fn num_cache_nodes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_cache_nodes(inp);
+        pub fn num_cache_nodes(mut self, signature: i32) -> Self {
+            self.inner = self.inner.num_cache_nodes(signature);
             self
         }
         /// <p>The number of cache nodes that the cluster should have.
@@ -10238,8 +10351,8 @@ pub mod fluent_builders {
         /// greater, and the value of <code>NumCacheNodes</code> in the request.</p>
         /// <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
         /// <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
-        pub fn cache_node_ids_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_ids_to_remove(inp);
+        pub fn cache_node_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_ids_to_remove(input.into());
             self
         }
         /// <p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002,
@@ -10266,8 +10379,8 @@ pub mod fluent_builders {
         /// <p>Only newly created nodes are located in different Availability Zones.
         /// </p>
         /// </note>
-        pub fn az_mode(mut self, inp: crate::model::AzMode) -> Self {
-            self.inner = self.inner.az_mode(inp);
+        pub fn az_mode(mut self, signature: crate::model::AzMode) -> Self {
+            self.inner = self.inner.az_mode(signature);
             self
         }
         /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a
@@ -10394,8 +10507,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn new_availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_availability_zones(inp);
+        pub fn new_availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_availability_zones(input.into());
             self
         }
         /// <note>
@@ -10519,8 +10632,8 @@ pub mod fluent_builders {
         /// This change is asynchronously applied as soon as possible.</p>
         /// <p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
         /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
-        pub fn cache_security_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_names(inp);
+        pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_security_group_names(input.into());
             self
         }
         /// <p>A list of cache security group names to authorize on this cluster.
@@ -10540,8 +10653,8 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies the VPC Security Groups associated with the cluster.</p>
         /// <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>Specifies the VPC Security Groups associated with the cluster.</p>
@@ -10597,8 +10710,11 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>sun:23:00-mon:01:30</code>
         /// </p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>Specifies the weekly time range during which maintenance
@@ -10656,8 +10772,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
         /// </note>
-        pub fn notification_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_topic_arn(inp);
+        pub fn notification_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p>
@@ -10674,8 +10790,11 @@ pub mod fluent_builders {
         /// <p>The name of the cache parameter group to apply to this cluster. This change is
         /// asynchronously applied as soon as possible for parameters when the
         /// <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the cache parameter group to apply to this cluster. This change is
@@ -10692,8 +10811,11 @@ pub mod fluent_builders {
         /// status is <code>active</code>.</p>
         /// <p>Valid values: <code>active</code> | <code>inactive</code>
         /// </p>
-        pub fn notification_topic_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_topic_status(inp);
+        pub fn notification_topic_status(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.notification_topic_status(signature.into());
             self
         }
         /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the
@@ -10720,8 +10842,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>If <code>true</code>, this parameter causes the modifications in this request and any
@@ -10748,8 +10870,8 @@ pub mod fluent_builders {
         /// (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
         /// If you want to use an earlier engine version,
         /// you must delete the existing cluster and create it anew with the earlier engine version. </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
@@ -10768,8 +10890,8 @@ pub mod fluent_builders {
         }
         /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(signature);
             self
         }
         /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
@@ -10784,8 +10906,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
         /// </note>
-        pub fn snapshot_retention_limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.snapshot_retention_limit(inp);
+        pub fn snapshot_retention_limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.snapshot_retention_limit(signature);
             self
         }
         /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before
@@ -10800,8 +10922,8 @@ pub mod fluent_builders {
         }
         /// <p>The daily time range (in UTC) during which ElastiCache  begins taking a daily snapshot of
         /// your cluster. </p>
-        pub fn snapshot_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_window(inp);
+        pub fn snapshot_window(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_window(signature.into());
             self
         }
         /// <p>The daily time range (in UTC) during which ElastiCache  begins taking a daily snapshot of
@@ -10814,8 +10936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid cache node type that you want to scale this cluster up to.</p>
-        pub fn cache_node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_type(inp);
+        pub fn cache_node_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_type(signature.into());
             self
         }
         /// <p>A valid cache node type that you want to scale this cluster up to.</p>
@@ -10842,8 +10964,8 @@ pub mod fluent_builders {
         /// <p>     
         ///
         /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
-        pub fn auth_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auth_token(inp);
+        pub fn auth_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_token(signature.into());
             self
         }
         /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter.
@@ -10881,9 +11003,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn auth_token_update_strategy(
             mut self,
-            inp: crate::model::AuthTokenUpdateStrategyType,
+            signature: crate::model::AuthTokenUpdateStrategyType,
         ) -> Self {
-            self.inner = self.inner.auth_token_update_strategy(inp);
+            self.inner = self.inner.auth_token_update_strategy(signature);
             self
         }
         /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter.
@@ -10913,9 +11035,9 @@ pub mod fluent_builders {
         /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
-            inp: impl Into<crate::model::LogDeliveryConfigurationRequest>,
+            input: crate::model::LogDeliveryConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.log_delivery_configurations(inp);
+            self.inner = self.inner.log_delivery_configurations(input);
             self
         }
         /// <p>Specifies the destination, format and type of the logs.</p>
@@ -10991,8 +11113,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cache parameter group to modify.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the cache parameter group to modify.</p>
@@ -11008,11 +11133,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
         ///
         /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-        pub fn parameter_name_values(
-            mut self,
-            inp: impl Into<crate::model::ParameterNameValue>,
-        ) -> Self {
-            self.inner = self.inner.parameter_name_values(inp);
+        pub fn parameter_name_values(mut self, input: crate::model::ParameterNameValue) -> Self {
+            self.inner = self.inner.parameter_name_values(input);
             self
         }
         /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
@@ -11087,8 +11209,11 @@ pub mod fluent_builders {
         /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
         /// <p>Example: <code>mysubnetgroup</code>
         /// </p>
-        pub fn cache_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_subnet_group_name(inp);
+        pub fn cache_subnet_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_subnet_group_name(signature.into());
             self
         }
         /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
@@ -11105,9 +11230,9 @@ pub mod fluent_builders {
         /// <p>A description of the cache subnet group.</p>
         pub fn cache_subnet_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cache_subnet_group_description(inp);
+            self.inner = self.inner.cache_subnet_group_description(signature.into());
             self
         }
         /// <p>A description of the cache subnet group.</p>
@@ -11123,8 +11248,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The EC2 subnet IDs for the cache subnet group.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The EC2 subnet IDs for the cache subnet group.</p>
@@ -11196,8 +11321,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -11211,8 +11339,8 @@ pub mod fluent_builders {
         /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global
         /// Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.
         /// </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global
@@ -11223,8 +11351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
-        pub fn cache_node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_type(inp);
+        pub fn cache_node_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_type(signature.into());
             self
         }
         /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
@@ -11236,8 +11364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
@@ -11249,8 +11377,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
@@ -11264,9 +11395,11 @@ pub mod fluent_builders {
         /// <p>A description of the Global datastore</p>
         pub fn global_replication_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.global_replication_group_description(inp);
+            self.inner = self
+                .inner
+                .global_replication_group_description(signature.into());
             self
         }
         /// <p>A description of the Global datastore</p>
@@ -11278,8 +11411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
-        pub fn automatic_failover_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.automatic_failover_enabled(inp);
+        pub fn automatic_failover_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.automatic_failover_enabled(signature);
             self
         }
         /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
@@ -11364,8 +11497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the replication group to modify.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The identifier of the replication group to modify.</p>
@@ -11379,9 +11512,9 @@ pub mod fluent_builders {
         /// <p>A description for the replication group. Maximum length is 255 characters.</p>
         pub fn replication_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_group_description(inp);
+            self.inner = self.inner.replication_group_description(signature.into());
             self
         }
         /// <p>A description for the replication group. Maximum length is 255 characters.</p>
@@ -11395,8 +11528,8 @@ pub mod fluent_builders {
         /// <p>For replication groups with a single primary,
         /// if this parameter is specified, ElastiCache promotes the specified cluster in the specified replication group to the primary role.
         /// The nodes of all other clusters in the replication group are read replicas.</p>
-        pub fn primary_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_cluster_id(inp);
+        pub fn primary_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_cluster_id(signature.into());
             self
         }
         /// <p>For replication groups with a single primary,
@@ -11411,8 +11544,11 @@ pub mod fluent_builders {
         }
         /// <p>The cluster ID that is used as the daily snapshot source for the replication group.
         /// This parameter cannot be set for Redis (cluster mode enabled) replication groups.</p>
-        pub fn snapshotting_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshotting_cluster_id(inp);
+        pub fn snapshotting_cluster_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.snapshotting_cluster_id(signature.into());
             self
         }
         /// <p>The cluster ID that is used as the daily snapshot source for the replication group.
@@ -11427,8 +11563,8 @@ pub mod fluent_builders {
         /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
         /// <p>Valid values: <code>true</code> | <code>false</code>
         /// </p>
-        pub fn automatic_failover_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.automatic_failover_enabled(inp);
+        pub fn automatic_failover_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.automatic_failover_enabled(signature);
             self
         }
         /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
@@ -11439,8 +11575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A flag to indicate MultiAZ is enabled.</p>
-        pub fn multi_az_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az_enabled(inp);
+        pub fn multi_az_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.multi_az_enabled(signature);
             self
         }
         /// <p>A flag to indicate MultiAZ is enabled.</p>
@@ -11449,8 +11585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Deprecated. This parameter is not used.</p>
-        pub fn node_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_group_id(inp);
+        pub fn node_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_group_id(signature.into());
             self
         }
         /// <p>Deprecated. This parameter is not used.</p>
@@ -11468,8 +11604,8 @@ pub mod fluent_builders {
         /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
         /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
         /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
-        pub fn cache_security_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_names(inp);
+        pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_security_group_names(input.into());
             self
         }
         /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
@@ -11489,8 +11625,8 @@ pub mod fluent_builders {
         /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
         /// <p>This parameter can be used only with replication group containing clusters running in
         /// an Amazon Virtual Private Cloud (Amazon VPC).</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
@@ -11547,8 +11683,11 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>sun:23:00-mon:01:30</code>
         /// </p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>Specifies the weekly time range during which maintenance
@@ -11606,8 +11745,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
         /// </note>
-        pub fn notification_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_topic_arn(inp);
+        pub fn notification_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_topic_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p>
@@ -11624,8 +11763,11 @@ pub mod fluent_builders {
         /// <p>The name of the cache parameter group to apply to all of the clusters in this replication group.
         /// This change is asynchronously applied as soon as possible for parameters when the
         /// <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the cache parameter group to apply to all of the clusters in this replication group.
@@ -11642,8 +11784,11 @@ pub mod fluent_builders {
         /// Notifications are sent only if the status is <code>active</code>.</p>
         /// <p>Valid values: <code>active</code> | <code>inactive</code>
         /// </p>
-        pub fn notification_topic_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_topic_status(inp);
+        pub fn notification_topic_status(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.notification_topic_status(signature.into());
             self
         }
         /// <p>The status of the Amazon SNS notification topic for the replication group.
@@ -11666,8 +11811,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>If <code>true</code>, this parameter causes the modifications in this request and any
@@ -11689,8 +11834,8 @@ pub mod fluent_builders {
         /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
         /// If you want to use an earlier engine version,
         /// you must delete the existing replication group and create it anew with the earlier engine version. </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
@@ -11708,8 +11853,8 @@ pub mod fluent_builders {
         }
         /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(signature);
             self
         }
         /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
@@ -11724,8 +11869,8 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0),
         /// backups are turned off.</p>
-        pub fn snapshot_retention_limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.snapshot_retention_limit(inp);
+        pub fn snapshot_retention_limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.snapshot_retention_limit(signature);
             self
         }
         /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before
@@ -11743,8 +11888,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>05:00-09:00</code>
         /// </p>
         /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
-        pub fn snapshot_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_window(inp);
+        pub fn snapshot_window(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_window(signature.into());
             self
         }
         /// <p>The daily time range (in UTC) during which ElastiCache  begins taking a daily snapshot of
@@ -11760,8 +11905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid cache node type that you want to scale this replication group to.</p>
-        pub fn cache_node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_type(inp);
+        pub fn cache_node_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_type(signature.into());
             self
         }
         /// <p>A valid cache node type that you want to scale this replication group to.</p>
@@ -11789,8 +11934,8 @@ pub mod fluent_builders {
         /// <p>     
         ///
         /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
-        pub fn auth_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auth_token(inp);
+        pub fn auth_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_token(signature.into());
             self
         }
         /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code>
@@ -11829,9 +11974,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn auth_token_update_strategy(
             mut self,
-            inp: crate::model::AuthTokenUpdateStrategyType,
+            signature: crate::model::AuthTokenUpdateStrategyType,
         ) -> Self {
-            self.inner = self.inner.auth_token_update_strategy(inp);
+            self.inner = self.inner.auth_token_update_strategy(signature);
             self
         }
         /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter.
@@ -11859,8 +12004,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_group_ids_to_add`](Self::set_user_group_ids_to_add).
         ///
         /// <p>The ID of the user group you are associating with the replication group.</p>
-        pub fn user_group_ids_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_group_ids_to_add(inp);
+        pub fn user_group_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_group_ids_to_add(input.into());
             self
         }
         /// <p>The ID of the user group you are associating with the replication group.</p>
@@ -11876,8 +12021,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_group_ids_to_remove`](Self::set_user_group_ids_to_remove).
         ///
         /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
-        pub fn user_group_ids_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_group_ids_to_remove(inp);
+        pub fn user_group_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_group_ids_to_remove(input.into());
             self
         }
         /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
@@ -11889,8 +12034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Removes the user group associated with this replication group.</p>
-        pub fn remove_user_groups(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remove_user_groups(inp);
+        pub fn remove_user_groups(mut self, signature: bool) -> Self {
+            self.inner = self.inner.remove_user_groups(signature);
             self
         }
         /// <p>Removes the user group associated with this replication group.</p>
@@ -11905,9 +12050,9 @@ pub mod fluent_builders {
         /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
-            inp: impl Into<crate::model::LogDeliveryConfigurationRequest>,
+            input: crate::model::LogDeliveryConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.log_delivery_configurations(inp);
+            self.inner = self.inner.log_delivery_configurations(input);
             self
         }
         /// <p>Specifies the destination, format and type of the logs.</p>
@@ -11985,8 +12130,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Redis (cluster mode enabled) cluster (replication group)
         /// on which the shards are to be configured.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Redis (cluster mode enabled) cluster (replication group)
@@ -12000,8 +12145,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of node groups (shards) that results from the modification of the
         /// shard configuration.</p>
-        pub fn node_group_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.node_group_count(inp);
+        pub fn node_group_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.node_group_count(signature);
             self
         }
         /// <p>The number of node groups (shards) that results from the modification of the
@@ -12013,8 +12158,8 @@ pub mod fluent_builders {
         /// <p>Indicates that the shard reconfiguration process begins immediately.
         /// At present, the only permitted value for this parameter is <code>true</code>.</p>
         /// <p>Value: true</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>Indicates that the shard reconfiguration process begins immediately.
@@ -12037,9 +12182,9 @@ pub mod fluent_builders {
         /// is greater than the current number of node groups (shards).</p>
         pub fn resharding_configuration(
             mut self,
-            inp: impl Into<crate::model::ReshardingConfiguration>,
+            input: crate::model::ReshardingConfiguration,
         ) -> Self {
-            self.inner = self.inner.resharding_configuration(inp);
+            self.inner = self.inner.resharding_configuration(input);
             self
         }
         /// <p>Specifies the preferred availability zones for each node group in the cluster.
@@ -12067,8 +12212,8 @@ pub mod fluent_builders {
         /// from the cluster.</p>
         /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
         /// from the cluster.</p>
-        pub fn node_groups_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_groups_to_remove(inp);
+        pub fn node_groups_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_groups_to_remove(input.into());
             self
         }
         /// <p>If the value of <code>NodeGroupCount</code> is less than the
@@ -12096,8 +12241,8 @@ pub mod fluent_builders {
         /// in the cluster.</p>
         /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code>
         /// from the cluster.</p>
-        pub fn node_groups_to_retain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_groups_to_retain(inp);
+        pub fn node_groups_to_retain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_groups_to_retain(input.into());
             self
         }
         /// <p>If the value of <code>NodeGroupCount</code> is less than the
@@ -12175,8 +12320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The ID of the user.</p>
@@ -12185,8 +12330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn access_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_string(inp);
+        pub fn access_string(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_string(signature.into());
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -12198,8 +12343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Adds additional user permissions to the access string.</p>
-        pub fn append_access_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.append_access_string(inp);
+        pub fn append_access_string(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.append_access_string(signature.into());
             self
         }
         /// <p>Adds additional user permissions to the access string.</p>
@@ -12215,8 +12360,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_passwords`](Self::set_passwords).
         ///
         /// <p>The passwords belonging to the user. You are allowed up to two.</p>
-        pub fn passwords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.passwords(inp);
+        pub fn passwords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.passwords(input.into());
             self
         }
         /// <p>The passwords belonging to the user. You are allowed up to two.</p>
@@ -12228,8 +12373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates no password is required for the user.</p>
-        pub fn no_password_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.no_password_required(inp);
+        pub fn no_password_required(mut self, signature: bool) -> Self {
+            self.inner = self.inner.no_password_required(signature);
             self
         }
         /// <p>Indicates no password is required for the user.</p>
@@ -12298,8 +12443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the user group.</p>
-        pub fn user_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_group_id(inp);
+        pub fn user_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_group_id(signature.into());
             self
         }
         /// <p>The ID of the user group.</p>
@@ -12315,8 +12460,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_ids_to_add`](Self::set_user_ids_to_add).
         ///
         /// <p>The list of user IDs to add to the user group.</p>
-        pub fn user_ids_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_ids_to_add(inp);
+        pub fn user_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_ids_to_add(input.into());
             self
         }
         /// <p>The list of user IDs to add to the user group.</p>
@@ -12332,8 +12477,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_ids_to_remove`](Self::set_user_ids_to_remove).
         ///
         /// <p>The list of user IDs to remove from the user group.</p>
-        pub fn user_ids_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_ids_to_remove(inp);
+        pub fn user_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_ids_to_remove(input.into());
             self
         }
         /// <p>The list of user IDs to remove from the user group.</p>
@@ -12414,9 +12559,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn reserved_cache_nodes_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_cache_nodes_offering_id(inp);
+            self.inner = self
+                .inner
+                .reserved_cache_nodes_offering_id(signature.into());
             self
         }
         /// <p>The ID of the reserved cache node offering to purchase.</p>
@@ -12436,8 +12583,8 @@ pub mod fluent_builders {
         /// ElastiCache automatically generates an identifier for the reservation.</p>
         /// </note>
         /// <p>Example: myreservationID</p>
-        pub fn reserved_cache_node_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_cache_node_id(inp);
+        pub fn reserved_cache_node_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_cache_node_id(signature.into());
             self
         }
         /// <p>A customer-specified identifier to track this reservation.</p>
@@ -12457,8 +12604,8 @@ pub mod fluent_builders {
         /// <p>The number of cache node instances to reserve.</p>
         /// <p>Default: <code>1</code>
         /// </p>
-        pub fn cache_node_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.cache_node_count(inp);
+        pub fn cache_node_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.cache_node_count(signature);
             self
         }
         /// <p>The number of cache node instances to reserve.</p>
@@ -12473,8 +12620,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -12548,8 +12695,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Global datastore</p>
-        pub fn global_replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_replication_group_id(inp);
+        pub fn global_replication_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.global_replication_group_id(signature.into());
             self
         }
         /// <p>The name of the Global datastore</p>
@@ -12561,8 +12711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If <code>True</code>, redistribution is applied immediately.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>If <code>True</code>, redistribution is applied immediately.</p>
@@ -12643,8 +12793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-        pub fn cache_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_cluster_id(inp);
+        pub fn cache_cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_cluster_id(signature.into());
             self
         }
         /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -12660,8 +12810,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cache_node_ids_to_reboot`](Self::set_cache_node_ids_to_reboot).
         ///
         /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-        pub fn cache_node_ids_to_reboot(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_node_ids_to_reboot(inp);
+        pub fn cache_node_ids_to_reboot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_node_ids_to_reboot(input.into());
             self
         }
         /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
@@ -12739,8 +12889,8 @@ pub mod fluent_builders {
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want the tags removed,
@@ -12759,8 +12909,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
@@ -12835,8 +12985,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cache parameter group to reset.</p>
-        pub fn cache_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_parameter_group_name(inp);
+        pub fn cache_parameter_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_parameter_group_name(signature.into());
             self
         }
         /// <p>The name of the cache parameter group to reset.</p>
@@ -12853,8 +13006,8 @@ pub mod fluent_builders {
         /// are reset to their default values.</p>
         /// <p>Valid values: <code>true</code> | <code>false</code>
         /// </p>
-        pub fn reset_all_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reset_all_parameters(inp);
+        pub fn reset_all_parameters(mut self, signature: bool) -> Self {
+            self.inner = self.inner.reset_all_parameters(signature);
             self
         }
         /// <p>If <code>true</code>,
@@ -12876,11 +13029,8 @@ pub mod fluent_builders {
         /// do not use <code>ParameterNameValues</code>.
         /// If <code>ResetAllParameters</code> is <code>false</code>,
         /// you must specify the name of at least one parameter to reset.</p>
-        pub fn parameter_name_values(
-            mut self,
-            inp: impl Into<crate::model::ParameterNameValue>,
-        ) -> Self {
-            self.inner = self.inner.parameter_name_values(inp);
+        pub fn parameter_name_values(mut self, input: crate::model::ParameterNameValue) -> Self {
+            self.inner = self.inner.parameter_name_values(input);
             self
         }
         /// <p>An array of parameter names to reset to their default values.
@@ -12958,8 +13108,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cache security group to revoke ingress from.</p>
-        pub fn cache_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_security_group_name(inp);
+        pub fn cache_security_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cache_security_group_name(signature.into());
             self
         }
         /// <p>The name of the cache security group to revoke ingress from.</p>
@@ -12971,8 +13124,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
-        pub fn ec2_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_name(inp);
+        pub fn ec2_security_group_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ec2_security_group_name(signature.into());
             self
         }
         /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
@@ -12986,8 +13142,11 @@ pub mod fluent_builders {
         /// <p>The Amazon account number of the Amazon EC2 security group owner.
         /// Note that this is not the same thing as an Amazon access key ID - you must provide
         /// a valid Amazon account number for this parameter.</p>
-        pub fn ec2_security_group_owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_owner_id(inp);
+        pub fn ec2_security_group_owner_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ec2_security_group_owner_id(signature.into());
             self
         }
         /// <p>The Amazon account number of the Amazon EC2 security group owner.
@@ -13061,8 +13220,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the replication group to which data should be migrated.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The ID of the replication group to which data should be migrated.</p>
@@ -13080,9 +13239,9 @@ pub mod fluent_builders {
         /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
         pub fn customer_node_endpoint_list(
             mut self,
-            inp: impl Into<crate::model::CustomerNodeEndpoint>,
+            input: crate::model::CustomerNodeEndpoint,
         ) -> Self {
-            self.inner = self.inner.customer_node_endpoint_list(inp);
+            self.inner = self.inner.customer_node_endpoint_list(input);
             self
         }
         /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
@@ -13218,8 +13377,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the replication group (console: cluster) whose automatic failover is being
         /// tested by this operation.</p>
-        pub fn replication_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_group_id(inp);
+        pub fn replication_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_group_id(signature.into());
             self
         }
         /// <p>The name of the replication group (console: cluster) whose automatic failover is being
@@ -13234,8 +13393,8 @@ pub mod fluent_builders {
         /// <p>The name of the node group (called shard in the console) in this replication group on
         /// which automatic failover is to be tested.
         /// You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
-        pub fn node_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_group_id(inp);
+        pub fn node_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_group_id(signature.into());
             self
         }
         /// <p>The name of the node group (called shard in the console) in this replication group on

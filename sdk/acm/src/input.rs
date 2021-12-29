@@ -42,9 +42,9 @@ pub mod add_tags_to_certificate_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1091,9 +1091,9 @@ pub mod import_certificate_input {
         ///
         /// <p>One or more resource tags to associate with the imported certificate. </p>
         /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1263,12 +1263,9 @@ pub mod list_certificates_input {
         /// To override the contents of this collection use [`set_certificate_statuses`](Self::set_certificate_statuses).
         ///
         /// <p>Filter the certificate list by status value.</p>
-        pub fn certificate_statuses(
-            mut self,
-            input: impl Into<crate::model::CertificateStatus>,
-        ) -> Self {
+        pub fn certificate_statuses(mut self, input: crate::model::CertificateStatus) -> Self {
             let mut v = self.certificate_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_statuses = Some(v);
             self
         }
@@ -1858,9 +1855,9 @@ pub mod remove_tags_from_certificate_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pair that defines the tag to remove.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2341,10 +2338,10 @@ pub mod request_certificate_input {
         /// domain ownership.</p>
         pub fn domain_validation_options(
             mut self,
-            input: impl Into<crate::model::DomainValidationOption>,
+            input: crate::model::DomainValidationOption,
         ) -> Self {
             let mut v = self.domain_validation_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_validation_options = Some(v);
             self
         }
@@ -2408,9 +2405,9 @@ pub mod request_certificate_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more resource tags to associate with the certificate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

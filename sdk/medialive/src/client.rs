@@ -569,8 +569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(signature.into());
             self
         }
         /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
@@ -646,8 +646,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_channel_ids`](Self::set_channel_ids).
         ///
         /// List of channel IDs
-        pub fn channel_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_ids(inp);
+        pub fn channel_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_ids(input.into());
             self
         }
         /// List of channel IDs
@@ -663,8 +663,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_ids`](Self::set_input_ids).
         ///
         /// List of input IDs
-        pub fn input_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_ids(inp);
+        pub fn input_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_ids(input.into());
             self
         }
         /// List of input IDs
@@ -680,8 +680,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_security_group_ids`](Self::set_input_security_group_ids).
         ///
         /// List of input security group IDs
-        pub fn input_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_group_ids(inp);
+        pub fn input_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_security_group_ids(input.into());
             self
         }
         /// List of input security group IDs
@@ -697,8 +697,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
         ///
         /// List of multiplex IDs
-        pub fn multiplex_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_ids(inp);
+        pub fn multiplex_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_ids(input.into());
             self
         }
         /// List of multiplex IDs
@@ -774,8 +774,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_channel_ids`](Self::set_channel_ids).
         ///
         /// List of channel IDs
-        pub fn channel_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_ids(inp);
+        pub fn channel_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_ids(input.into());
             self
         }
         /// List of channel IDs
@@ -791,8 +791,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
         ///
         /// List of multiplex IDs
-        pub fn multiplex_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_ids(inp);
+        pub fn multiplex_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_ids(input.into());
             self
         }
         /// List of multiplex IDs
@@ -868,8 +868,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_channel_ids`](Self::set_channel_ids).
         ///
         /// List of channel IDs
-        pub fn channel_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_ids(inp);
+        pub fn channel_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_ids(input.into());
             self
         }
         /// List of channel IDs
@@ -885,8 +885,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
         ///
         /// List of multiplex IDs
-        pub fn multiplex_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_ids(inp);
+        pub fn multiplex_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_ids(input.into());
             self
         }
         /// List of multiplex IDs
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Id of the channel whose schedule is being updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// Id of the channel whose schedule is being updated.
@@ -968,8 +968,11 @@ pub mod fluent_builders {
             self
         }
         /// Schedule actions to create in the schedule.
-        pub fn creates(mut self, inp: crate::model::BatchScheduleActionCreateRequest) -> Self {
-            self.inner = self.inner.creates(inp);
+        pub fn creates(
+            mut self,
+            signature: crate::model::BatchScheduleActionCreateRequest,
+        ) -> Self {
+            self.inner = self.inner.creates(signature);
             self
         }
         /// Schedule actions to create in the schedule.
@@ -981,8 +984,11 @@ pub mod fluent_builders {
             self
         }
         /// Schedule actions to delete from the schedule.
-        pub fn deletes(mut self, inp: crate::model::BatchScheduleActionDeleteRequest) -> Self {
-            self.inner = self.inner.deletes(inp);
+        pub fn deletes(
+            mut self,
+            signature: crate::model::BatchScheduleActionDeleteRequest,
+        ) -> Self {
+            self.inner = self.inner.deletes(signature);
             self
         }
         /// Schedule actions to delete from the schedule.
@@ -1054,8 +1060,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(signature.into());
             self
         }
         /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
@@ -1127,8 +1133,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The id of the device you want to claim.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The id of the device you want to claim.
@@ -1197,8 +1203,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(mut self, inp: crate::model::CdiInputSpecification) -> Self {
-            self.inner = self.inner.cdi_input_specification(inp);
+        pub fn cdi_input_specification(
+            mut self,
+            signature: crate::model::CdiInputSpecification,
+        ) -> Self {
+            self.inner = self.inner.cdi_input_specification(signature);
             self
         }
         /// Specification of CDI inputs for this channel
@@ -1210,8 +1219,8 @@ pub mod fluent_builders {
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.inner = self.inner.channel_class(inp);
+        pub fn channel_class(mut self, signature: crate::model::ChannelClass) -> Self {
+            self.inner = self.inner.channel_class(signature);
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
@@ -1227,8 +1236,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Placeholder documentation for __listOfOutputDestination
-        pub fn destinations(mut self, inp: impl Into<crate::model::OutputDestination>) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
         /// Placeholder documentation for __listOfOutputDestination
@@ -1240,8 +1249,8 @@ pub mod fluent_builders {
             self
         }
         /// Encoder Settings
-        pub fn encoder_settings(mut self, inp: crate::model::EncoderSettings) -> Self {
-            self.inner = self.inner.encoder_settings(inp);
+        pub fn encoder_settings(mut self, signature: crate::model::EncoderSettings) -> Self {
+            self.inner = self.inner.encoder_settings(signature);
             self
         }
         /// Encoder Settings
@@ -1257,8 +1266,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(mut self, inp: impl Into<crate::model::InputAttachment>) -> Self {
-            self.inner = self.inner.input_attachments(inp);
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
+            self.inner = self.inner.input_attachments(input);
             self
         }
         /// List of input attachments for channel.
@@ -1270,8 +1279,8 @@ pub mod fluent_builders {
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn input_specification(mut self, inp: crate::model::InputSpecification) -> Self {
-            self.inner = self.inner.input_specification(inp);
+        pub fn input_specification(mut self, signature: crate::model::InputSpecification) -> Self {
+            self.inner = self.inner.input_specification(signature);
             self
         }
         /// Specification of network and file inputs for this channel
@@ -1283,8 +1292,8 @@ pub mod fluent_builders {
             self
         }
         /// The log level to write to CloudWatch Logs.
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.inner = self.inner.log_level(inp);
+        pub fn log_level(mut self, signature: crate::model::LogLevel) -> Self {
+            self.inner = self.inner.log_level(signature);
             self
         }
         /// The log level to write to CloudWatch Logs.
@@ -1293,8 +1302,8 @@ pub mod fluent_builders {
             self
         }
         /// Name of channel.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// Name of channel.
@@ -1304,8 +1313,8 @@ pub mod fluent_builders {
         }
         /// Unique request ID to be specified. This is needed to prevent retries from
         /// creating multiple resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(signature.into());
             self
         }
         /// Unique request ID to be specified. This is needed to prevent retries from
@@ -1315,8 +1324,8 @@ pub mod fluent_builders {
             self
         }
         /// Deprecated field that's only usable by whitelisted customers.
-        pub fn reserved(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved(inp);
+        pub fn reserved(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved(signature.into());
             self
         }
         /// Deprecated field that's only usable by whitelisted customers.
@@ -1325,8 +1334,8 @@ pub mod fluent_builders {
             self
         }
         /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
@@ -1344,7 +1353,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of key-value pairs.
@@ -1358,8 +1367,8 @@ pub mod fluent_builders {
             self
         }
         /// Settings for the VPC outputs
-        pub fn vpc(mut self, inp: crate::model::VpcOutputSettings) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, signature: crate::model::VpcOutputSettings) -> Self {
+            self.inner = self.inner.vpc(signature);
             self
         }
         /// Settings for the VPC outputs
@@ -1435,11 +1444,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Destination settings for PUSH type inputs.
-        pub fn destinations(
-            mut self,
-            inp: impl Into<crate::model::InputDestinationRequest>,
-        ) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: crate::model::InputDestinationRequest) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
         /// Destination settings for PUSH type inputs.
@@ -1455,8 +1461,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// Settings for the devices.
-        pub fn input_devices(mut self, inp: impl Into<crate::model::InputDeviceSettings>) -> Self {
-            self.inner = self.inner.input_devices(inp);
+        pub fn input_devices(mut self, input: crate::model::InputDeviceSettings) -> Self {
+            self.inner = self.inner.input_devices(input);
             self
         }
         /// Settings for the devices.
@@ -1472,8 +1478,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_security_groups`](Self::set_input_security_groups).
         ///
         /// A list of security groups referenced by IDs to attach to the input.
-        pub fn input_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_groups(inp);
+        pub fn input_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_security_groups(input.into());
             self
         }
         /// A list of security groups referenced by IDs to attach to the input.
@@ -1491,11 +1497,8 @@ pub mod fluent_builders {
         /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
         /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
         /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-        pub fn media_connect_flows(
-            mut self,
-            inp: impl Into<crate::model::MediaConnectFlowRequest>,
-        ) -> Self {
-            self.inner = self.inner.media_connect_flows(inp);
+        pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlowRequest) -> Self {
+            self.inner = self.inner.media_connect_flows(input);
             self
         }
         /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
@@ -1509,8 +1512,8 @@ pub mod fluent_builders {
             self
         }
         /// Name of the input.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// Name of the input.
@@ -1520,8 +1523,8 @@ pub mod fluent_builders {
         }
         /// Unique identifier of the request to ensure the request is handled
         /// exactly once in case of retries.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(signature.into());
             self
         }
         /// Unique identifier of the request to ensure the request is handled
@@ -1531,8 +1534,8 @@ pub mod fluent_builders {
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
@@ -1547,8 +1550,8 @@ pub mod fluent_builders {
         /// The source URLs for a PULL-type input. Every PULL type input needs
         /// exactly two source URLs for redundancy.
         /// Only specify sources for PULL type Inputs. Leave Destinations empty.
-        pub fn sources(mut self, inp: impl Into<crate::model::InputSourceRequest>) -> Self {
-            self.inner = self.inner.sources(inp);
+        pub fn sources(mut self, input: crate::model::InputSourceRequest) -> Self {
+            self.inner = self.inner.sources(input);
             self
         }
         /// The source URLs for a PULL-type input. Every PULL type input needs
@@ -1571,7 +1574,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of key-value pairs.
@@ -1585,8 +1588,8 @@ pub mod fluent_builders {
             self
         }
         /// The different types of inputs that AWS Elemental MediaLive supports.
-        pub fn r#type(mut self, inp: crate::model::InputType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::InputType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// The different types of inputs that AWS Elemental MediaLive supports.
@@ -1598,8 +1601,8 @@ pub mod fluent_builders {
         /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
         /// This property requires setting the roleArn property on Input creation.
         /// Not compatible with the inputSecurityGroups property.
-        pub fn vpc(mut self, inp: crate::model::InputVpcRequest) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, signature: crate::model::InputVpcRequest) -> Self {
+            self.inner = self.inner.vpc(signature);
             self
         }
         /// Settings for a private VPC Input.
@@ -1683,7 +1686,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of key-value pairs.
@@ -1701,11 +1704,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
         ///
         /// List of IPv4 CIDR addresses to whitelist
-        pub fn whitelist_rules(
-            mut self,
-            inp: impl Into<crate::model::InputWhitelistRuleCidr>,
-        ) -> Self {
-            self.inner = self.inner.whitelist_rules(inp);
+        pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRuleCidr) -> Self {
+            self.inner = self.inner.whitelist_rules(input);
             self
         }
         /// List of IPv4 CIDR addresses to whitelist
@@ -1781,8 +1781,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// A list of availability zones for the multiplex. You must specify exactly two.
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// A list of availability zones for the multiplex. You must specify exactly two.
@@ -1794,8 +1794,8 @@ pub mod fluent_builders {
             self
         }
         /// Configuration for a multiplex event.
-        pub fn multiplex_settings(mut self, inp: crate::model::MultiplexSettings) -> Self {
-            self.inner = self.inner.multiplex_settings(inp);
+        pub fn multiplex_settings(mut self, signature: crate::model::MultiplexSettings) -> Self {
+            self.inner = self.inner.multiplex_settings(signature);
             self
         }
         /// Configuration for a multiplex event.
@@ -1807,8 +1807,8 @@ pub mod fluent_builders {
             self
         }
         /// Name of multiplex.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// Name of multiplex.
@@ -1818,8 +1818,8 @@ pub mod fluent_builders {
         }
         /// Unique request ID. This prevents retries from creating multiple
         /// resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(signature.into());
             self
         }
         /// Unique request ID. This prevents retries from creating multiple
@@ -1838,7 +1838,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of key-value pairs.
@@ -1912,8 +1912,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ID of the multiplex where the program is to be created.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// ID of the multiplex where the program is to be created.
@@ -1924,9 +1924,9 @@ pub mod fluent_builders {
         /// The settings for this multiplex program.
         pub fn multiplex_program_settings(
             mut self,
-            inp: crate::model::MultiplexProgramSettings,
+            signature: crate::model::MultiplexProgramSettings,
         ) -> Self {
-            self.inner = self.inner.multiplex_program_settings(inp);
+            self.inner = self.inner.multiplex_program_settings(signature);
             self
         }
         /// The settings for this multiplex program.
@@ -1938,8 +1938,8 @@ pub mod fluent_builders {
             self
         }
         /// Name of multiplex program.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(signature.into());
             self
         }
         /// Name of multiplex program.
@@ -1949,8 +1949,8 @@ pub mod fluent_builders {
         }
         /// Unique request ID. This prevents retries from creating multiple
         /// resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(signature.into());
             self
         }
         /// Unique request ID. This prevents retries from creating multiple
@@ -2020,8 +2020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique ID of the input.
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(signature.into());
             self
         }
         /// Unique ID of the input.
@@ -2031,8 +2031,8 @@ pub mod fluent_builders {
         }
         /// Unique identifier of the request to ensure the request is handled
         /// exactly once in case of retries.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(signature.into());
             self
         }
         /// Unique identifier of the request to ensure the request is handled
@@ -2051,7 +2051,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of key-value pairs.
@@ -2125,8 +2125,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -2144,7 +2144,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Placeholder documentation for Tags
@@ -2218,8 +2218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique ID of the channel.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// Unique ID of the channel.
@@ -2288,8 +2288,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique ID of the input
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(signature.into());
             self
         }
         /// Unique ID of the input
@@ -2358,8 +2358,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Input Security Group to delete
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_group_id(inp);
+        pub fn input_security_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.input_security_group_id(signature.into());
             self
         }
         /// The Input Security Group to delete
@@ -2431,8 +2434,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// The ID of the multiplex.
@@ -2501,8 +2504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex that the program belongs to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// The ID of the multiplex that the program belongs to.
@@ -2511,8 +2514,8 @@ pub mod fluent_builders {
             self
         }
         /// The multiplex program name.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(signature.into());
             self
         }
         /// The multiplex program name.
@@ -2581,8 +2584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_id(inp);
+        pub fn reservation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_id(signature.into());
             self
         }
         /// Unique reservation ID, e.g. '1234567'
@@ -2654,8 +2657,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Id of the channel whose schedule is being deleted.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// Id of the channel whose schedule is being deleted.
@@ -2724,8 +2727,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -2738,8 +2741,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// An array of tag keys to delete
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// An array of tag keys to delete
@@ -2811,8 +2814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// channel ID
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// channel ID
@@ -2881,8 +2884,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique ID of the input
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(signature.into());
             self
         }
         /// Unique ID of the input
@@ -2951,8 +2954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(signature.into());
             self
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
@@ -3024,8 +3027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(signature.into());
             self
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
@@ -3037,8 +3040,8 @@ pub mod fluent_builders {
             self
         }
         /// The HTTP Accept header. Indicates the requested type for the thumbnail.
-        pub fn accept(mut self, inp: crate::model::AcceptHeader) -> Self {
-            self.inner = self.inner.accept(inp);
+        pub fn accept(mut self, signature: crate::model::AcceptHeader) -> Self {
+            self.inner = self.inner.accept(signature);
             self
         }
         /// The HTTP Accept header. Indicates the requested type for the thumbnail.
@@ -3110,8 +3113,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The id of the Input Security Group to describe
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_group_id(inp);
+        pub fn input_security_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.input_security_group_id(signature.into());
             self
         }
         /// The id of the Input Security Group to describe
@@ -3183,8 +3189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// The ID of the multiplex.
@@ -3253,8 +3259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex that the program belongs to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// The ID of the multiplex that the program belongs to.
@@ -3263,8 +3269,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the program.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(signature.into());
             self
         }
         /// The name of the program.
@@ -3333,8 +3339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique offering ID, e.g. '87654321'
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_id(inp);
+        pub fn offering_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_id(signature.into());
             self
         }
         /// Unique offering ID, e.g. '87654321'
@@ -3403,8 +3409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_id(inp);
+        pub fn reservation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_id(signature.into());
             self
         }
         /// Unique reservation ID, e.g. '1234567'
@@ -3476,8 +3482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Id of the channel whose schedule is being updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// Id of the channel whose schedule is being updated.
@@ -3486,8 +3492,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Placeholder documentation for MaxResults
@@ -3496,8 +3502,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -3566,8 +3572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Placeholder documentation for MaxResults
@@ -3576,8 +3582,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -3646,8 +3652,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Placeholder documentation for MaxResults
@@ -3656,8 +3662,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -3726,8 +3732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Placeholder documentation for MaxResults
@@ -3736,8 +3742,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -3746,8 +3752,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn transfer_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transfer_type(inp);
+        pub fn transfer_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transfer_type(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -3819,8 +3825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Placeholder documentation for MaxResults
@@ -3829,8 +3835,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -3899,8 +3905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Placeholder documentation for MaxResults
@@ -3909,8 +3915,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -3979,8 +3985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of items to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of items to return.
@@ -3989,8 +3995,8 @@ pub mod fluent_builders {
             self
         }
         /// The token to retrieve the next page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// The token to retrieve the next page of results.
@@ -4059,8 +4065,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of items to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The maximum number of items to return.
@@ -4069,8 +4075,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the multiplex that the programs belong to.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// The ID of the multiplex that the programs belong to.
@@ -4079,8 +4085,8 @@ pub mod fluent_builders {
             self
         }
         /// The token to retrieve the next page of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// The token to retrieve the next page of results.
@@ -4149,8 +4155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-        pub fn channel_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_class(inp);
+        pub fn channel_class(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_class(signature.into());
             self
         }
         /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
@@ -4162,8 +4168,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-        pub fn channel_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_configuration(inp);
+        pub fn channel_configuration(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_configuration(signature.into());
             self
         }
         /// Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
@@ -4175,8 +4181,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
-        pub fn codec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.codec(inp);
+        pub fn codec(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.codec(signature.into());
             self
         }
         /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
@@ -4185,8 +4191,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by offering duration, e.g. '12'
-        pub fn duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(signature.into());
             self
         }
         /// Filter by offering duration, e.g. '12'
@@ -4195,8 +4201,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Placeholder documentation for MaxResults
@@ -4205,8 +4211,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-        pub fn maximum_bitrate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_bitrate(inp);
+        pub fn maximum_bitrate(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maximum_bitrate(signature.into());
             self
         }
         /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
@@ -4218,8 +4224,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-        pub fn maximum_framerate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_framerate(inp);
+        pub fn maximum_framerate(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maximum_framerate(signature.into());
             self
         }
         /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
@@ -4231,8 +4237,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -4241,8 +4247,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
-        pub fn resolution(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution(inp);
+        pub fn resolution(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution(signature.into());
             self
         }
         /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
@@ -4251,8 +4257,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
@@ -4264,8 +4270,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-        pub fn special_feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.special_feature(inp);
+        pub fn special_feature(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.special_feature(signature.into());
             self
         }
         /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
@@ -4277,8 +4283,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-        pub fn video_quality(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.video_quality(inp);
+        pub fn video_quality(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.video_quality(signature.into());
             self
         }
         /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
@@ -4350,8 +4356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-        pub fn channel_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_class(inp);
+        pub fn channel_class(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_class(signature.into());
             self
         }
         /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
@@ -4363,8 +4369,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
-        pub fn codec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.codec(inp);
+        pub fn codec(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.codec(signature.into());
             self
         }
         /// Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
@@ -4373,8 +4379,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for MaxResults
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Placeholder documentation for MaxResults
@@ -4383,8 +4389,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-        pub fn maximum_bitrate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_bitrate(inp);
+        pub fn maximum_bitrate(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maximum_bitrate(signature.into());
             self
         }
         /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
@@ -4396,8 +4402,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-        pub fn maximum_framerate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maximum_framerate(inp);
+        pub fn maximum_framerate(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maximum_framerate(signature.into());
             self
         }
         /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
@@ -4409,8 +4415,8 @@ pub mod fluent_builders {
             self
         }
         /// Placeholder documentation for __string
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -4419,8 +4425,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
-        pub fn resolution(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution(inp);
+        pub fn resolution(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution(signature.into());
             self
         }
         /// Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
@@ -4429,8 +4435,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
@@ -4442,8 +4448,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-        pub fn special_feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.special_feature(inp);
+        pub fn special_feature(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.special_feature(signature.into());
             self
         }
         /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
@@ -4455,8 +4461,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-        pub fn video_quality(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.video_quality(inp);
+        pub fn video_quality(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.video_quality(signature.into());
             self
         }
         /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
@@ -4528,8 +4534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Placeholder documentation for __string
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// Placeholder documentation for __string
@@ -4598,8 +4604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Number of resources
-        pub fn count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.count(inp);
+        pub fn count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.count(signature);
             self
         }
         /// Number of resources
@@ -4608,8 +4614,8 @@ pub mod fluent_builders {
             self
         }
         /// Name for the new reservation
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// Name for the new reservation
@@ -4618,8 +4624,8 @@ pub mod fluent_builders {
             self
         }
         /// Offering to purchase, e.g. '87654321'
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_id(inp);
+        pub fn offering_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_id(signature.into());
             self
         }
         /// Offering to purchase, e.g. '87654321'
@@ -4628,8 +4634,8 @@ pub mod fluent_builders {
             self
         }
         /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(signature.into());
             self
         }
         /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
@@ -4638,8 +4644,8 @@ pub mod fluent_builders {
             self
         }
         /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-        pub fn start(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start(inp);
+        pub fn start(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start(signature.into());
             self
         }
         /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
@@ -4657,7 +4663,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of key-value pairs
@@ -4731,8 +4737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(signature.into());
             self
         }
         /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
@@ -4804,8 +4810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A request to start a channel
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// A request to start a channel
@@ -4874,8 +4880,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// The ID of the multiplex.
@@ -4944,8 +4950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A request to stop a running channel
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// A request to stop a running channel
@@ -5014,8 +5020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// The ID of the multiplex.
@@ -5084,8 +5090,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(signature.into());
             self
         }
         /// The unique ID of this input device. For example, hd-123456789abcdef.
@@ -5097,8 +5103,8 @@ pub mod fluent_builders {
             self
         }
         /// The AWS account ID (12 digits) for the recipient of the device transfer.
-        pub fn target_customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_customer_id(inp);
+        pub fn target_customer_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_customer_id(signature.into());
             self
         }
         /// The AWS account ID (12 digits) for the recipient of the device transfer.
@@ -5110,8 +5116,8 @@ pub mod fluent_builders {
             self
         }
         /// The target AWS region to transfer the device.
-        pub fn target_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_region(inp);
+        pub fn target_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_region(signature.into());
             self
         }
         /// The target AWS region to transfer the device.
@@ -5123,8 +5129,8 @@ pub mod fluent_builders {
             self
         }
         /// An optional message for the recipient. Maximum 280 characters.
-        pub fn transfer_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transfer_message(inp);
+        pub fn transfer_message(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transfer_message(signature.into());
             self
         }
         /// An optional message for the recipient. Maximum 280 characters.
@@ -5196,8 +5202,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(mut self, inp: crate::model::CdiInputSpecification) -> Self {
-            self.inner = self.inner.cdi_input_specification(inp);
+        pub fn cdi_input_specification(
+            mut self,
+            signature: crate::model::CdiInputSpecification,
+        ) -> Self {
+            self.inner = self.inner.cdi_input_specification(signature);
             self
         }
         /// Specification of CDI inputs for this channel
@@ -5209,8 +5218,8 @@ pub mod fluent_builders {
             self
         }
         /// channel ID
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// channel ID
@@ -5223,8 +5232,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of output destinations for this channel.
-        pub fn destinations(mut self, inp: impl Into<crate::model::OutputDestination>) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
         /// A list of output destinations for this channel.
@@ -5236,8 +5245,8 @@ pub mod fluent_builders {
             self
         }
         /// The encoder settings for this channel.
-        pub fn encoder_settings(mut self, inp: crate::model::EncoderSettings) -> Self {
-            self.inner = self.inner.encoder_settings(inp);
+        pub fn encoder_settings(mut self, signature: crate::model::EncoderSettings) -> Self {
+            self.inner = self.inner.encoder_settings(signature);
             self
         }
         /// The encoder settings for this channel.
@@ -5253,8 +5262,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// Placeholder documentation for __listOfInputAttachment
-        pub fn input_attachments(mut self, inp: impl Into<crate::model::InputAttachment>) -> Self {
-            self.inner = self.inner.input_attachments(inp);
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
+            self.inner = self.inner.input_attachments(input);
             self
         }
         /// Placeholder documentation for __listOfInputAttachment
@@ -5266,8 +5275,8 @@ pub mod fluent_builders {
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn input_specification(mut self, inp: crate::model::InputSpecification) -> Self {
-            self.inner = self.inner.input_specification(inp);
+        pub fn input_specification(mut self, signature: crate::model::InputSpecification) -> Self {
+            self.inner = self.inner.input_specification(signature);
             self
         }
         /// Specification of network and file inputs for this channel
@@ -5279,8 +5288,8 @@ pub mod fluent_builders {
             self
         }
         /// The log level to write to CloudWatch Logs.
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.inner = self.inner.log_level(inp);
+        pub fn log_level(mut self, signature: crate::model::LogLevel) -> Self {
+            self.inner = self.inner.log_level(signature);
             self
         }
         /// The log level to write to CloudWatch Logs.
@@ -5289,8 +5298,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the channel.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// The name of the channel.
@@ -5299,8 +5308,8 @@ pub mod fluent_builders {
             self
         }
         /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
@@ -5369,8 +5378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The channel class that you wish to update this channel to use.
-        pub fn channel_class(mut self, inp: crate::model::ChannelClass) -> Self {
-            self.inner = self.inner.channel_class(inp);
+        pub fn channel_class(mut self, signature: crate::model::ChannelClass) -> Self {
+            self.inner = self.inner.channel_class(signature);
             self
         }
         /// The channel class that you wish to update this channel to use.
@@ -5382,8 +5391,8 @@ pub mod fluent_builders {
             self
         }
         /// Channel Id of the channel whose class should be updated.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// Channel Id of the channel whose class should be updated.
@@ -5396,8 +5405,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of output destinations for this channel.
-        pub fn destinations(mut self, inp: impl Into<crate::model::OutputDestination>) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
         /// A list of output destinations for this channel.
@@ -5473,11 +5482,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Destination settings for PUSH type inputs.
-        pub fn destinations(
-            mut self,
-            inp: impl Into<crate::model::InputDestinationRequest>,
-        ) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: crate::model::InputDestinationRequest) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
         /// Destination settings for PUSH type inputs.
@@ -5493,8 +5499,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// Settings for the devices.
-        pub fn input_devices(mut self, inp: impl Into<crate::model::InputDeviceRequest>) -> Self {
-            self.inner = self.inner.input_devices(inp);
+        pub fn input_devices(mut self, input: crate::model::InputDeviceRequest) -> Self {
+            self.inner = self.inner.input_devices(input);
             self
         }
         /// Settings for the devices.
@@ -5506,8 +5512,8 @@ pub mod fluent_builders {
             self
         }
         /// Unique ID of the input.
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(signature.into());
             self
         }
         /// Unique ID of the input.
@@ -5520,8 +5526,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_security_groups`](Self::set_input_security_groups).
         ///
         /// A list of security groups referenced by IDs to attach to the input.
-        pub fn input_security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_groups(inp);
+        pub fn input_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_security_groups(input.into());
             self
         }
         /// A list of security groups referenced by IDs to attach to the input.
@@ -5539,11 +5545,8 @@ pub mod fluent_builders {
         /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
         /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
         /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-        pub fn media_connect_flows(
-            mut self,
-            inp: impl Into<crate::model::MediaConnectFlowRequest>,
-        ) -> Self {
-            self.inner = self.inner.media_connect_flows(inp);
+        pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlowRequest) -> Self {
+            self.inner = self.inner.media_connect_flows(input);
             self
         }
         /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
@@ -5557,8 +5560,8 @@ pub mod fluent_builders {
             self
         }
         /// Name of the input.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// Name of the input.
@@ -5567,8 +5570,8 @@ pub mod fluent_builders {
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
@@ -5583,8 +5586,8 @@ pub mod fluent_builders {
         /// The source URLs for a PULL-type input. Every PULL type input needs
         /// exactly two source URLs for redundancy.
         /// Only specify sources for PULL type Inputs. Leave Destinations empty.
-        pub fn sources(mut self, inp: impl Into<crate::model::InputSourceRequest>) -> Self {
-            self.inner = self.inner.sources(inp);
+        pub fn sources(mut self, input: crate::model::InputSourceRequest) -> Self {
+            self.inner = self.inner.sources(input);
             self
         }
         /// The source URLs for a PULL-type input. Every PULL type input needs
@@ -5660,9 +5663,9 @@ pub mod fluent_builders {
         /// The settings that you want to apply to the HD input device.
         pub fn hd_device_settings(
             mut self,
-            inp: crate::model::InputDeviceConfigurableSettings,
+            signature: crate::model::InputDeviceConfigurableSettings,
         ) -> Self {
-            self.inner = self.inner.hd_device_settings(inp);
+            self.inner = self.inner.hd_device_settings(signature);
             self
         }
         /// The settings that you want to apply to the HD input device.
@@ -5674,8 +5677,8 @@ pub mod fluent_builders {
             self
         }
         /// The unique ID of the input device. For example, hd-123456789abcdef.
-        pub fn input_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_device_id(inp);
+        pub fn input_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(signature.into());
             self
         }
         /// The unique ID of the input device. For example, hd-123456789abcdef.
@@ -5687,8 +5690,8 @@ pub mod fluent_builders {
             self
         }
         /// The name that you assigned to this input device (not the unique ID).
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// The name that you assigned to this input device (not the unique ID).
@@ -5699,9 +5702,9 @@ pub mod fluent_builders {
         /// The settings that you want to apply to the UHD input device.
         pub fn uhd_device_settings(
             mut self,
-            inp: crate::model::InputDeviceConfigurableSettings,
+            signature: crate::model::InputDeviceConfigurableSettings,
         ) -> Self {
-            self.inner = self.inner.uhd_device_settings(inp);
+            self.inner = self.inner.uhd_device_settings(signature);
             self
         }
         /// The settings that you want to apply to the UHD input device.
@@ -5773,8 +5776,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The id of the Input Security Group to update.
-        pub fn input_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_security_group_id(inp);
+        pub fn input_security_group_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.input_security_group_id(signature.into());
             self
         }
         /// The id of the Input Security Group to update.
@@ -5795,7 +5801,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of key-value pairs.
@@ -5813,11 +5819,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
         ///
         /// List of IPv4 CIDR addresses to whitelist
-        pub fn whitelist_rules(
-            mut self,
-            inp: impl Into<crate::model::InputWhitelistRuleCidr>,
-        ) -> Self {
-            self.inner = self.inner.whitelist_rules(inp);
+        pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRuleCidr) -> Self {
+            self.inner = self.inner.whitelist_rules(input);
             self
         }
         /// List of IPv4 CIDR addresses to whitelist
@@ -5889,8 +5892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ID of the multiplex to update.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// ID of the multiplex to update.
@@ -5899,8 +5902,8 @@ pub mod fluent_builders {
             self
         }
         /// The new settings for a multiplex.
-        pub fn multiplex_settings(mut self, inp: crate::model::MultiplexSettings) -> Self {
-            self.inner = self.inner.multiplex_settings(inp);
+        pub fn multiplex_settings(mut self, signature: crate::model::MultiplexSettings) -> Self {
+            self.inner = self.inner.multiplex_settings(signature);
             self
         }
         /// The new settings for a multiplex.
@@ -5912,8 +5915,8 @@ pub mod fluent_builders {
             self
         }
         /// Name of the multiplex.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// Name of the multiplex.
@@ -5982,8 +5985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the multiplex of the program to update.
-        pub fn multiplex_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multiplex_id(inp);
+        pub fn multiplex_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multiplex_id(signature.into());
             self
         }
         /// The ID of the multiplex of the program to update.
@@ -5994,9 +5997,9 @@ pub mod fluent_builders {
         /// The new settings for a multiplex program.
         pub fn multiplex_program_settings(
             mut self,
-            inp: crate::model::MultiplexProgramSettings,
+            signature: crate::model::MultiplexProgramSettings,
         ) -> Self {
-            self.inner = self.inner.multiplex_program_settings(inp);
+            self.inner = self.inner.multiplex_program_settings(signature);
             self
         }
         /// The new settings for a multiplex program.
@@ -6008,8 +6011,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the program to update.
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(signature.into());
             self
         }
         /// The name of the program to update.
@@ -6078,8 +6081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Name of the reservation
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// Name of the reservation
@@ -6088,8 +6091,8 @@ pub mod fluent_builders {
             self
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_id(inp);
+        pub fn reservation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_id(signature.into());
             self
         }
         /// Unique reservation ID, e.g. '1234567'

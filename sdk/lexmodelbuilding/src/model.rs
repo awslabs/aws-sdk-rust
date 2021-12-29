@@ -1385,9 +1385,9 @@ pub mod statement {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// <p>A collection of message objects.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -1747,9 +1747,9 @@ pub mod prompt {
         /// <p>An array of objects, each of which provides a message string and
         /// its type. You can specify the message string in plain text or in Speech
         /// Synthesis Markup Language (SSML).</p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -2206,12 +2206,9 @@ pub mod slot_default_value_spec {
         /// specify them in the list. For example, if you specify a context variable
         /// and a fixed value in that order, Amazon Lex uses the context variable if it is
         /// available, else it uses the fixed value.</p>
-        pub fn default_value_list(
-            mut self,
-            input: impl Into<crate::model::SlotDefaultValue>,
-        ) -> Self {
+        pub fn default_value_list(mut self, input: crate::model::SlotDefaultValue) -> Self {
             let mut v = self.default_value_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_value_list = Some(v);
             self
         }
@@ -2527,9 +2524,9 @@ pub mod conversation_logs_response {
         ///
         /// <p>The settings for your conversation logs. You can log text, audio, or
         /// both.</p>
-        pub fn log_settings(mut self, input: impl Into<crate::model::LogSettingsResponse>) -> Self {
+        pub fn log_settings(mut self, input: crate::model::LogSettingsResponse) -> Self {
             let mut v = self.log_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_settings = Some(v);
             self
         }
@@ -2892,9 +2889,9 @@ pub mod conversation_logs_request {
         ///
         /// <p>The settings for your conversation logs. You can log the conversation
         /// text, conversation audio, or both.</p>
-        pub fn log_settings(mut self, input: impl Into<crate::model::LogSettingsRequest>) -> Self {
+        pub fn log_settings(mut self, input: crate::model::LogSettingsRequest) -> Self {
             let mut v = self.log_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_settings = Some(v);
             self
         }
@@ -3346,9 +3343,9 @@ pub mod utterance_list {
         /// <p>One or more <a>UtteranceData</a> objects that contain
         /// information about the utterances that have been made to a bot. The maximum
         /// number of object is 100.</p>
-        pub fn utterances(mut self, input: impl Into<crate::model::UtteranceData>) -> Self {
+        pub fn utterances(mut self, input: crate::model::UtteranceData) -> Self {
             let mut v = self.utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.utterances = Some(v);
             self
         }
@@ -4674,9 +4671,9 @@ pub mod builtin_slot_type_metadata {
         /// To override the contents of this collection use [`set_supported_locales`](Self::set_supported_locales).
         ///
         /// <p>A list of target locales for the slot. </p>
-        pub fn supported_locales(mut self, input: impl Into<crate::model::Locale>) -> Self {
+        pub fn supported_locales(mut self, input: crate::model::Locale) -> Self {
             let mut v = self.supported_locales.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_locales = Some(v);
             self
         }
@@ -4767,9 +4764,9 @@ pub mod builtin_intent_metadata {
         ///
         /// <p>A list of identifiers for the locales that the intent
         /// supports.</p>
-        pub fn supported_locales(mut self, input: impl Into<crate::model::Locale>) -> Self {
+        pub fn supported_locales(mut self, input: crate::model::Locale) -> Self {
             let mut v = self.supported_locales.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_locales = Some(v);
             self
         }

@@ -289,10 +289,10 @@ pub mod list_service_template_versions_output {
         /// <p>An array of major or minor versions of a service template with detail data.</p>
         pub fn template_versions(
             mut self,
-            input: impl Into<crate::model::ServiceTemplateVersionSummary>,
+            input: crate::model::ServiceTemplateVersionSummary,
         ) -> Self {
             let mut v = self.template_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_versions = Some(v);
             self
         }
@@ -629,9 +629,9 @@ pub mod list_service_templates_output {
         /// To override the contents of this collection use [`set_templates`](Self::set_templates).
         ///
         /// <p>An array of service templates with detail data.</p>
-        pub fn templates(mut self, input: impl Into<crate::model::ServiceTemplateSummary>) -> Self {
+        pub fn templates(mut self, input: crate::model::ServiceTemplateSummary) -> Self {
             let mut v = self.templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.templates = Some(v);
             self
         }
@@ -939,9 +939,9 @@ pub mod list_services_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>An array of services with summaries of detail data.</p>
-        pub fn services(mut self, input: impl Into<crate::model::ServiceSummary>) -> Self {
+        pub fn services(mut self, input: crate::model::ServiceSummary) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -1302,12 +1302,9 @@ pub mod list_service_pipeline_provisioned_resources_output {
         /// To override the contents of this collection use [`set_provisioned_resources`](Self::set_provisioned_resources).
         ///
         /// <p>An array of provisioned resources for a service and pipeline.</p>
-        pub fn provisioned_resources(
-            mut self,
-            input: impl Into<crate::model::ProvisionedResource>,
-        ) -> Self {
+        pub fn provisioned_resources(mut self, input: crate::model::ProvisionedResource) -> Self {
             let mut v = self.provisioned_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_resources = Some(v);
             self
         }
@@ -1387,9 +1384,9 @@ pub mod list_service_pipeline_outputs_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>An array of outputs.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -1476,12 +1473,9 @@ pub mod list_service_instances_output {
         /// To override the contents of this collection use [`set_service_instances`](Self::set_service_instances).
         ///
         /// <p>An array of service instances with summaries of detail data.</p>
-        pub fn service_instances(
-            mut self,
-            input: impl Into<crate::model::ServiceInstanceSummary>,
-        ) -> Self {
+        pub fn service_instances(mut self, input: crate::model::ServiceInstanceSummary) -> Self {
             let mut v = self.service_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_instances = Some(v);
             self
         }
@@ -1683,12 +1677,9 @@ pub mod list_service_instance_provisioned_resources_output {
         /// To override the contents of this collection use [`set_provisioned_resources`](Self::set_provisioned_resources).
         ///
         /// <p>An array of provisioned resources for a service instance.</p>
-        pub fn provisioned_resources(
-            mut self,
-            input: impl Into<crate::model::ProvisionedResource>,
-        ) -> Self {
+        pub fn provisioned_resources(mut self, input: crate::model::ProvisionedResource) -> Self {
             let mut v = self.provisioned_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_resources = Some(v);
             self
         }
@@ -1768,9 +1759,9 @@ pub mod list_service_instance_outputs_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>An array of service instance infrastructure as code outputs.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -1855,9 +1846,9 @@ pub mod list_repositories_output {
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>An array of repositories.</p>
-        pub fn repositories(mut self, input: impl Into<crate::model::RepositorySummary>) -> Self {
+        pub fn repositories(mut self, input: crate::model::RepositorySummary) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -2118,10 +2109,10 @@ pub mod list_environment_template_versions_output {
         /// <p>An array of major or minor versions of an environment template detail data.</p>
         pub fn template_versions(
             mut self,
-            input: impl Into<crate::model::EnvironmentTemplateVersionSummary>,
+            input: crate::model::EnvironmentTemplateVersionSummary,
         ) -> Self {
             let mut v = self.template_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_versions = Some(v);
             self
         }
@@ -2472,12 +2463,9 @@ pub mod list_environment_templates_output {
         /// To override the contents of this collection use [`set_templates`](Self::set_templates).
         ///
         /// <p>An array of environment templates with detail data.</p>
-        pub fn templates(
-            mut self,
-            input: impl Into<crate::model::EnvironmentTemplateSummary>,
-        ) -> Self {
+        pub fn templates(mut self, input: crate::model::EnvironmentTemplateSummary) -> Self {
             let mut v = self.templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.templates = Some(v);
             self
         }
@@ -2790,9 +2778,9 @@ pub mod list_environments_output {
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
         /// <p>An array of environment detail data summaries.</p>
-        pub fn environments(mut self, input: impl Into<crate::model::EnvironmentSummary>) -> Self {
+        pub fn environments(mut self, input: crate::model::EnvironmentSummary) -> Self {
             let mut v = self.environments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environments = Some(v);
             self
         }
@@ -3108,12 +3096,9 @@ pub mod list_environment_provisioned_resources_output {
         /// To override the contents of this collection use [`set_provisioned_resources`](Self::set_provisioned_resources).
         ///
         /// <p>An array of environment provisioned resources.</p>
-        pub fn provisioned_resources(
-            mut self,
-            input: impl Into<crate::model::ProvisionedResource>,
-        ) -> Self {
+        pub fn provisioned_resources(mut self, input: crate::model::ProvisionedResource) -> Self {
             let mut v = self.provisioned_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_resources = Some(v);
             self
         }
@@ -3197,9 +3182,9 @@ pub mod list_environment_outputs_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>An array of environment outputs with detail data.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -3414,10 +3399,10 @@ pub mod list_environment_account_connections_output {
         /// <p>An array of environment account connections with details that's returned by Proton. </p>
         pub fn environment_account_connections(
             mut self,
-            input: impl Into<crate::model::EnvironmentAccountConnectionSummary>,
+            input: crate::model::EnvironmentAccountConnectionSummary,
         ) -> Self {
             let mut v = self.environment_account_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_account_connections = Some(v);
             self
         }
@@ -3975,9 +3960,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of resource tags with detail data.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4077,12 +4062,9 @@ pub mod list_repository_sync_definitions_output {
         /// To override the contents of this collection use [`set_sync_definitions`](Self::set_sync_definitions).
         ///
         /// <p>An array of repository sync definitions.</p>
-        pub fn sync_definitions(
-            mut self,
-            input: impl Into<crate::model::RepositorySyncDefinition>,
-        ) -> Self {
+        pub fn sync_definitions(mut self, input: crate::model::RepositorySyncDefinition) -> Self {
             let mut v = self.sync_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sync_definitions = Some(v);
             self
         }

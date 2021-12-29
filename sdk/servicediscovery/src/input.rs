@@ -56,9 +56,9 @@ pub mod create_http_namespace_input {
         /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
         /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
         /// characters in length.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -283,9 +283,9 @@ pub mod create_private_dns_namespace_input {
         /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
         /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
         /// characters in length.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -517,9 +517,9 @@ pub mod create_public_dns_namespace_input {
         /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
         /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
         /// characters in length.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -879,9 +879,9 @@ pub mod create_service_input {
         /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define.
         /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
         /// characters in length.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2927,9 +2927,9 @@ pub mod list_namespaces_input {
         /// <p>A complex type that contains specifications for the namespaces that you want to list.</p>
         /// <p>If you specify more than one filter, a namespace must match all filters to be returned by
         /// <code>ListNamespaces</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::NamespaceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::NamespaceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3137,9 +3137,9 @@ pub mod list_operations_input {
         /// that you started between a specified start date and end date.</p>
         /// <p>If you specify more than one filter, an operation must match all filters to be returned by
         /// <code>ListOperations</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::OperationFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::OperationFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3347,9 +3347,9 @@ pub mod list_services_input {
         /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
         /// <p>If you specify more than one filter, an operation must match all filters to be returned by
         /// <code>ListServices</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ServiceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ServiceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4138,9 +4138,9 @@ pub mod tag_resource_input {
         ///
         /// <p>The tags to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to
         /// an empty string, but you can't set the value of a tag to null.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

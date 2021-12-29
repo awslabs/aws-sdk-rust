@@ -1312,9 +1312,9 @@ pub mod post_text_input {
         /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
         /// list of contexts for the session. If you specify an empty list, all
         /// contexts for the session are cleared.</p>
-        pub fn active_contexts(mut self, input: impl Into<crate::model::ActiveContext>) -> Self {
+        pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_contexts = Some(v);
             self
         }
@@ -1641,12 +1641,9 @@ pub mod put_session_input {
         /// request returns three intents in the summary view and you call
         /// <code>PutSession</code> with one intent in the summary view, the next
         /// call to <code>GetSession</code> will only return one intent.</p>
-        pub fn recent_intent_summary_view(
-            mut self,
-            input: impl Into<crate::model::IntentSummary>,
-        ) -> Self {
+        pub fn recent_intent_summary_view(mut self, input: crate::model::IntentSummary) -> Self {
             let mut v = self.recent_intent_summary_view.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recent_intent_summary_view = Some(v);
             self
         }
@@ -1799,9 +1796,9 @@ pub mod put_session_input {
         /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
         /// list of contexts for the session. If you specify an empty list, all
         /// contexts for the session are cleared.</p>
-        pub fn active_contexts(mut self, input: impl Into<crate::model::ActiveContext>) -> Self {
+        pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_contexts = Some(v);
             self
         }

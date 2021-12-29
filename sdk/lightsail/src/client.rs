@@ -1303,8 +1303,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the static IP address.</p>
-        pub fn static_ip_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.static_ip_name(inp);
+        pub fn static_ip_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.static_ip_name(signature.into());
             self
         }
         /// <p>The name of the static IP address.</p>
@@ -1389,8 +1389,8 @@ pub mod fluent_builders {
         /// <p>The name of the distribution that the certificate will be attached to.</p>
         /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
         /// can specify.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution that the certificate will be attached to.</p>
@@ -1415,8 +1415,8 @@ pub mod fluent_builders {
         /// <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be
         /// <code>example.com</code>.</p>
         /// </note>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(signature.into());
             self
         }
         /// <p>The name of the certificate to attach to a distribution.</p>
@@ -1503,8 +1503,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
-        pub fn disk_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_name(inp);
+        pub fn disk_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_name(signature.into());
             self
         }
         /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
@@ -1513,8 +1513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
@@ -1526,8 +1526,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
-        pub fn disk_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_path(inp);
+        pub fn disk_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_path(signature.into());
             self
         }
         /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
@@ -1601,8 +1601,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1624,8 +1624,8 @@ pub mod fluent_builders {
         /// <p>There are no additional limits on the number of instances you can attach to your load
         /// balancer, aside from the limit of Lightsail instances you can create in your account
         /// (20).</p>
-        pub fn instance_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_names(inp);
+        pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_names(input.into());
             self
         }
         /// <p>An array of strings representing the instance name(s) you want to attach to your load
@@ -1712,8 +1712,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the load balancer to which you want to associate the SSL/TLS
         /// certificate.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer to which you want to associate the SSL/TLS
@@ -1726,8 +1726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of your SSL/TLS certificate.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(signature.into());
             self
         }
         /// <p>The name of your SSL/TLS certificate.</p>
@@ -1799,8 +1799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the static IP.</p>
-        pub fn static_ip_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.static_ip_name(inp);
+        pub fn static_ip_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.static_ip_name(signature.into());
             self
         }
         /// <p>The name of the static IP.</p>
@@ -1812,8 +1812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance name to which you want to attach the static IP address.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The instance name to which you want to attach the static IP address.</p>
@@ -1888,8 +1888,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An object to describe the ports to close for the specified instance.</p>
-        pub fn port_info(mut self, inp: crate::model::PortInfo) -> Self {
-            self.inner = self.inner.port_info(inp);
+        pub fn port_info(mut self, signature: crate::model::PortInfo) -> Self {
+            self.inner = self.inner.port_info(signature);
             self
         }
         /// <p>An object to describe the ports to close for the specified instance.</p>
@@ -1898,8 +1898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the instance for which to close ports.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance for which to close ports.</p>
@@ -1988,8 +1988,8 @@ pub mod fluent_builders {
         /// snapshot.</p>
         /// </li>
         /// </ul>
-        pub fn source_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_snapshot_name(inp);
+        pub fn source_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the source manual snapshot to copy.</p>
@@ -2016,8 +2016,8 @@ pub mod fluent_builders {
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn source_resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_resource_name(inp);
+        pub fn source_resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_resource_name(signature.into());
             self
         }
         /// <p>The name of the source instance or disk from which the source automatic snapshot was
@@ -2053,8 +2053,8 @@ pub mod fluent_builders {
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn restore_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.restore_date(inp);
+        pub fn restore_date(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore_date(signature.into());
             self
         }
         /// <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code>
@@ -2092,8 +2092,8 @@ pub mod fluent_builders {
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn use_latest_restorable_auto_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_auto_snapshot(inp);
+        pub fn use_latest_restorable_auto_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_auto_snapshot(signature);
             self
         }
         /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the
@@ -2118,8 +2118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new manual snapshot to be created as a copy.</p>
-        pub fn target_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_snapshot_name(inp);
+        pub fn target_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the new manual snapshot to be created as a copy.</p>
@@ -2131,8 +2131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
-        pub fn source_region(mut self, inp: crate::model::RegionName) -> Self {
-            self.inner = self.inner.source_region(inp);
+        pub fn source_region(mut self, signature: crate::model::RegionName) -> Self {
+            self.inner = self.inner.source_region(signature);
             self
         }
         /// <p>The AWS Region where the source manual or automatic snapshot is located.</p>
@@ -2212,8 +2212,8 @@ pub mod fluent_builders {
         ///
         /// <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
         /// Guide</i>.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name for the bucket.</p>
@@ -2234,8 +2234,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle after the bucket
         /// is created.</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(signature.into());
             self
         }
         /// <p>The ID of the bundle to use for the bucket.</p>
@@ -2259,8 +2259,8 @@ pub mod fluent_builders {
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
         ///
         /// <p>Use the <a>TagResource</a> action to tag the bucket after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
@@ -2278,8 +2278,8 @@ pub mod fluent_builders {
         ///
         /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the
         /// <i>Amazon Lightsail Developer Guide</i>.</p>
-        pub fn enable_object_versioning(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_object_versioning(inp);
+        pub fn enable_object_versioning(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_object_versioning(signature);
             self
         }
         /// <p>A Boolean value that indicates whether to enable versioning of objects in the
@@ -2365,8 +2365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
@@ -2446,8 +2446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the certificate.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(signature.into());
             self
         }
         /// <p>The name for the certificate.</p>
@@ -2459,8 +2459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
@@ -2477,8 +2477,8 @@ pub mod fluent_builders {
         /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain
         /// name).</p>
         /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-        pub fn subject_alternative_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject_alternative_names(inp);
+        pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject_alternative_names(input.into());
             self
         }
         /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
@@ -2499,8 +2499,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the certificate during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the certificate during create.</p>
@@ -2586,8 +2586,8 @@ pub mod fluent_builders {
         /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only
         /// pass one instance entry at a time in this array. You will get an invalid parameter error if
         /// you pass more than one instance entry in this array.</p>
-        pub fn instances(mut self, inp: impl Into<crate::model::InstanceEntry>) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: crate::model::InstanceEntry) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only
@@ -2691,8 +2691,8 @@ pub mod fluent_builders {
         /// Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer
         /// Guide</i>.</p>
         /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
-        pub fn protocol(mut self, inp: crate::model::ContactProtocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, signature: crate::model::ContactProtocol) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text
@@ -2736,8 +2736,8 @@ pub mod fluent_builders {
         /// this format can have a maximum of 15 digits, and they are prefixed with the plus character (+)
         /// and the country code. For example, a U.S. phone number in E.164 format would be specified as
         /// +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
-        pub fn contact_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_endpoint(inp);
+        pub fn contact_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_endpoint(signature.into());
             self
         }
         /// <p>The destination of the contact method, such as an email address or a mobile phone
@@ -2845,8 +2845,8 @@ pub mod fluent_builders {
         /// <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p>
         /// </li>
         /// </ul>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name for the container service.</p>
@@ -2890,8 +2890,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that
         /// you can specify using this parameter, and their base monthly cost.</p>
-        pub fn power(mut self, inp: crate::model::ContainerServicePowerName) -> Self {
-            self.inner = self.inner.power(inp);
+        pub fn power(mut self, signature: crate::model::ContainerServicePowerName) -> Self {
+            self.inner = self.inner.power(signature);
             self
         }
         /// <p>The power specification for the container service.</p>
@@ -2918,8 +2918,8 @@ pub mod fluent_builders {
         /// capacity. To determine the monthly price of your container service, multiply the base price of
         /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the
         /// service.</p>
-        pub fn scale(mut self, inp: i32) -> Self {
-            self.inner = self.inner.scale(inp);
+        pub fn scale(mut self, signature: i32) -> Self {
+            self.inner = self.inner.scale(signature);
             self
         }
         /// <p>The scale specification for the container service.</p>
@@ -2940,8 +2940,8 @@ pub mod fluent_builders {
         /// <p>The tag keys and optional values to add to the container service during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
         /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the container service during create.</p>
@@ -2979,9 +2979,9 @@ pub mod fluent_builders {
         pub fn public_domain_names(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.public_domain_names(k, v);
+            self.inner = self.inner.public_domain_names(k.into(), v);
             self
         }
         /// <p>The public domain names to use with the container service, such as
@@ -3018,8 +3018,11 @@ pub mod fluent_builders {
         /// command to run. It also specifies the container that will serve as the public endpoint of the
         /// deployment and its settings, such as the HTTP or HTTPS port to use, and the health check
         /// configuration.</p>
-        pub fn deployment(mut self, inp: crate::model::ContainerServiceDeploymentRequest) -> Self {
-            self.inner = self.inner.deployment(inp);
+        pub fn deployment(
+            mut self,
+            signature: crate::model::ContainerServiceDeploymentRequest,
+        ) -> Self {
+            self.inner = self.inner.deployment(signature);
             self
         }
         /// <p>An object that describes a deployment for the container service.</p>
@@ -3107,8 +3110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to create the deployment.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service for which to create the deployment.</p>
@@ -3125,9 +3128,9 @@ pub mod fluent_builders {
         pub fn containers(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Container>,
+            v: crate::model::Container,
         ) -> Self {
-            self.inner = self.inner.containers(k, v);
+            self.inner = self.inner.containers(k.into(), v);
             self
         }
         /// <p>An object that describes the settings of the containers that will be launched on the
@@ -3143,8 +3146,8 @@ pub mod fluent_builders {
         }
         /// <p>An object that describes the settings of the public endpoint for the container
         /// service.</p>
-        pub fn public_endpoint(mut self, inp: crate::model::EndpointRequest) -> Self {
-            self.inner = self.inner.public_endpoint(inp);
+        pub fn public_endpoint(mut self, signature: crate::model::EndpointRequest) -> Self {
+            self.inner = self.inner.public_endpoint(signature);
             self
         }
         /// <p>An object that describes the settings of the public endpoint for the container
@@ -3304,8 +3307,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
-        pub fn disk_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_name(inp);
+        pub fn disk_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_name(signature.into());
             self
         }
         /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
@@ -3318,8 +3321,8 @@ pub mod fluent_builders {
         /// disk.</p>
         /// <p>Use the <code>get regions</code> operation to list the Availability Zones where
         /// Lightsail is currently available.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
@@ -3335,8 +3338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
-        pub fn size_in_gb(mut self, inp: i32) -> Self {
-            self.inner = self.inner.size_in_gb(inp);
+        pub fn size_in_gb(mut self, signature: i32) -> Self {
+            self.inner = self.inner.size_in_gb(signature);
             self
         }
         /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
@@ -3350,8 +3353,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -3368,8 +3371,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-        pub fn add_ons(mut self, inp: impl Into<crate::model::AddOnRequest>) -> Self {
-            self.inner = self.inner.add_ons(inp);
+        pub fn add_ons(mut self, input: crate::model::AddOnRequest) -> Self {
+            self.inner = self.inner.add_ons(input);
             self
         }
         /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
@@ -3446,8 +3449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
-        pub fn disk_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_name(inp);
+        pub fn disk_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_name(signature.into());
             self
         }
         /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
@@ -3465,8 +3468,8 @@ pub mod fluent_builders {
         /// parameters are mutually exclusive.</p>
         /// </li>
         /// </ul>
-        pub fn disk_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_snapshot_name(inp);
+        pub fn disk_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the
@@ -3491,8 +3494,8 @@ pub mod fluent_builders {
         /// disk.</p>
         /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently
         /// available.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>).
@@ -3508,8 +3511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
-        pub fn size_in_gb(mut self, inp: i32) -> Self {
-            self.inner = self.inner.size_in_gb(inp);
+        pub fn size_in_gb(mut self, signature: i32) -> Self {
+            self.inner = self.inner.size_in_gb(signature);
             self
         }
         /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
@@ -3523,8 +3526,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -3541,8 +3544,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-        pub fn add_ons(mut self, inp: impl Into<crate::model::AddOnRequest>) -> Self {
-            self.inner = self.inner.add_ons(inp);
+        pub fn add_ons(mut self, input: crate::model::AddOnRequest) -> Self {
+            self.inner = self.inner.add_ons(input);
             self
         }
         /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
@@ -3566,8 +3569,8 @@ pub mod fluent_builders {
         /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn source_disk_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_disk_name(inp);
+        pub fn source_disk_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_disk_name(signature.into());
             self
         }
         /// <p>The name of the source disk from which the source automatic snapshot was created.</p>
@@ -3608,8 +3611,8 @@ pub mod fluent_builders {
         /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn restore_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.restore_date(inp);
+        pub fn restore_date(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore_date(signature.into());
             self
         }
         /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto
@@ -3647,8 +3650,8 @@ pub mod fluent_builders {
         /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn use_latest_restorable_auto_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_auto_snapshot(inp);
+        pub fn use_latest_restorable_auto_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_auto_snapshot(signature);
             self
         }
         /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
@@ -3756,8 +3759,8 @@ pub mod fluent_builders {
         /// The <code>disk name</code> and <code>instance name</code> parameters are mutually
         /// exclusive.</p>
         /// </note>
-        pub fn disk_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_name(inp);
+        pub fn disk_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_name(signature.into());
             self
         }
         /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
@@ -3772,8 +3775,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on
         /// the source disk.</p>
-        pub fn disk_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_snapshot_name(inp);
+        pub fn disk_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on
@@ -3792,8 +3795,8 @@ pub mod fluent_builders {
         /// <code>instance name</code> and <code>disk name</code> parameters are mutually
         /// exclusive.</p>
         /// </note>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>).
@@ -3816,8 +3819,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -3893,8 +3896,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the distribution.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name for the distribution.</p>
@@ -3908,8 +3911,8 @@ pub mod fluent_builders {
         /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
         /// instance or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-        pub fn origin(mut self, inp: crate::model::InputOrigin) -> Self {
-            self.inner = self.inner.origin(inp);
+        pub fn origin(mut self, signature: crate::model::InputOrigin) -> Self {
+            self.inner = self.inner.origin(signature);
             self
         }
         /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
@@ -3920,8 +3923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that describes the default cache behavior for the distribution.</p>
-        pub fn default_cache_behavior(mut self, inp: crate::model::CacheBehavior) -> Self {
-            self.inner = self.inner.default_cache_behavior(inp);
+        pub fn default_cache_behavior(mut self, signature: crate::model::CacheBehavior) -> Self {
+            self.inner = self.inner.default_cache_behavior(signature);
             self
         }
         /// <p>An object that describes the default cache behavior for the distribution.</p>
@@ -3933,8 +3936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that describes the cache behavior settings for the distribution.</p>
-        pub fn cache_behavior_settings(mut self, inp: crate::model::CacheSettings) -> Self {
-            self.inner = self.inner.cache_behavior_settings(inp);
+        pub fn cache_behavior_settings(mut self, signature: crate::model::CacheSettings) -> Self {
+            self.inner = self.inner.cache_behavior_settings(signature);
             self
         }
         /// <p>An object that describes the cache behavior settings for the distribution.</p>
@@ -3950,11 +3953,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cache_behaviors`](Self::set_cache_behaviors).
         ///
         /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-        pub fn cache_behaviors(
-            mut self,
-            inp: impl Into<crate::model::CacheBehaviorPerPath>,
-        ) -> Self {
-            self.inner = self.inner.cache_behaviors(inp);
+        pub fn cache_behaviors(mut self, input: crate::model::CacheBehaviorPerPath) -> Self {
+            self.inner = self.inner.cache_behaviors(input);
             self
         }
         /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
@@ -3970,8 +3970,8 @@ pub mod fluent_builders {
         /// monthly cost and monthly network transfer quota.</p>
         /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
         /// IDs that you can specify.</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(signature.into());
             self
         }
         /// <p>The bundle ID to use for the distribution.</p>
@@ -3989,8 +3989,8 @@ pub mod fluent_builders {
         /// IPv4 and IPv6.</p>
         ///
         /// <p>The default value is <code>dualstack</code>.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The IP address type for the distribution.</p>
@@ -4012,8 +4012,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the distribution during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the distribution during create.</p>
@@ -4094,8 +4094,8 @@ pub mod fluent_builders {
         /// domain, you can enter its name in this parameter to manage the DNS records for that domain
         /// using Lightsail.</p>
         /// </note>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
@@ -4115,8 +4115,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -4198,8 +4198,8 @@ pub mod fluent_builders {
         }
         /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain
         /// entry.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain
@@ -4209,8 +4209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An array of key-value pairs containing information about the domain entry request.</p>
-        pub fn domain_entry(mut self, inp: crate::model::DomainEntry) -> Self {
-            self.inner = self.inner.domain_entry(inp);
+        pub fn domain_entry(mut self, signature: crate::model::DomainEntry) -> Self {
+            self.inner = self.inner.domain_entry(signature);
             self
         }
         /// <p>An array of key-value pairs containing information about the domain entry request.</p>
@@ -4291,8 +4291,8 @@ pub mod fluent_builders {
         /// quotation marks and commas, for example:
         /// <code>["MyFirstInstance","MySecondInstance"]</code>
         /// </p>
-        pub fn instance_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_names(inp);
+        pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_names(input.into());
             self
         }
         /// <p>The names to use for your new Lightsail instances. Separate multiple values using
@@ -4311,8 +4311,8 @@ pub mod fluent_builders {
         /// the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
         /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
         /// parameter to your request.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p>The Availability Zone in which to create your instance. Use the following format:
@@ -4332,8 +4332,8 @@ pub mod fluent_builders {
         /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now
         /// deprecated.</p>
         /// </note>
-        pub fn custom_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_image_name(inp);
+        pub fn custom_image_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_image_name(signature.into());
             self
         }
         /// <p>(Deprecated) The name for your custom image.</p>
@@ -4357,8 +4357,8 @@ pub mod fluent_builders {
         /// instances. Blueprints are marked inactive when they become outdated due to operating system
         /// updates or new application releases.</p>
         /// </note>
-        pub fn blueprint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_id(inp);
+        pub fn blueprint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_id(signature.into());
             self
         }
         /// <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
@@ -4377,8 +4377,8 @@ pub mod fluent_builders {
         /// <p>The bundle of specification information for your virtual private server (or
         /// <i>instance</i>), including the pricing plan (e.g.,
         /// <code>micro_1_0</code>).</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(signature.into());
             self
         }
         /// <p>The bundle of specification information for your virtual private server (or
@@ -4396,8 +4396,8 @@ pub mod fluent_builders {
         /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
         /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
         /// </note>
-        pub fn user_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_data(inp);
+        pub fn user_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_data(signature.into());
             self
         }
         /// <p>A launch script you can create that configures a server with additional user data. For
@@ -4413,8 +4413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of your key pair.</p>
-        pub fn key_pair_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair_name(inp);
+        pub fn key_pair_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair_name(signature.into());
             self
         }
         /// <p>The name of your key pair.</p>
@@ -4431,8 +4431,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -4449,8 +4449,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-        pub fn add_ons(mut self, inp: impl Into<crate::model::AddOnRequest>) -> Self {
-            self.inner = self.inner.add_ons(inp);
+        pub fn add_ons(mut self, input: crate::model::AddOnRequest) -> Self {
+            self.inner = self.inner.add_ons(input);
             self
         }
         /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
@@ -4467,8 +4467,8 @@ pub mod fluent_builders {
         /// IPv4 and IPv6.</p>
         ///
         /// <p>The default value is <code>dualstack</code>.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The IP address type for the instance.</p>
@@ -4553,8 +4553,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
         ///
         /// <p>The names for your new instances.</p>
-        pub fn instance_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_names(inp);
+        pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_names(input.into());
             self
         }
         /// <p>The names for your new instances.</p>
@@ -4573,9 +4573,9 @@ pub mod fluent_builders {
         pub fn attached_disk_mapping(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::DiskMap>>,
+            v: std::vec::Vec<crate::model::DiskMap>,
         ) -> Self {
-            self.inner = self.inner.attached_disk_mapping(k, v);
+            self.inner = self.inner.attached_disk_mapping(k.into(), v);
             self
         }
         /// <p>An object containing information about one or more disk mappings.</p>
@@ -4596,8 +4596,8 @@ pub mod fluent_builders {
         /// by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
         /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
         /// parameter to your request.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p>The Availability Zone where you want to create your instances. Use the following
@@ -4622,8 +4622,8 @@ pub mod fluent_builders {
         /// parameters are mutually exclusive.</p>
         /// </li>
         /// </ul>
-        pub fn instance_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_snapshot_name(inp);
+        pub fn instance_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the instance snapshot on which you are basing your new instances. Use the get
@@ -4646,8 +4646,8 @@ pub mod fluent_builders {
         /// <p>The bundle of specification information for your virtual private server (or
         /// <i>instance</i>), including the pricing plan (e.g.,
         /// <code>micro_1_0</code>).</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(signature.into());
             self
         }
         /// <p>The bundle of specification information for your virtual private server (or
@@ -4665,8 +4665,8 @@ pub mod fluent_builders {
         /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
         /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
         /// </note>
-        pub fn user_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_data(inp);
+        pub fn user_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_data(signature.into());
             self
         }
         /// <p>You can create a launch script that configures a server with additional user data. For
@@ -4682,8 +4682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for your key pair.</p>
-        pub fn key_pair_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair_name(inp);
+        pub fn key_pair_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair_name(signature.into());
             self
         }
         /// <p>The name for your key pair.</p>
@@ -4700,8 +4700,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -4718,8 +4718,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-        pub fn add_ons(mut self, inp: impl Into<crate::model::AddOnRequest>) -> Self {
-            self.inner = self.inner.add_ons(inp);
+        pub fn add_ons(mut self, input: crate::model::AddOnRequest) -> Self {
+            self.inner = self.inner.add_ons(input);
             self
         }
         /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
@@ -4736,8 +4736,8 @@ pub mod fluent_builders {
         /// IPv4 and IPv6.</p>
         ///
         /// <p>The default value is <code>dualstack</code>.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The IP address type for the instance.</p>
@@ -4767,8 +4767,8 @@ pub mod fluent_builders {
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn source_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_instance_name(inp);
+        pub fn source_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_instance_name(signature.into());
             self
         }
         /// <p>The name of the source instance from which the source automatic snapshot was
@@ -4810,8 +4810,8 @@ pub mod fluent_builders {
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn restore_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.restore_date(inp);
+        pub fn restore_date(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore_date(signature.into());
             self
         }
         /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto
@@ -4849,8 +4849,8 @@ pub mod fluent_builders {
         /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
-        pub fn use_latest_restorable_auto_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_auto_snapshot(inp);
+        pub fn use_latest_restorable_auto_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_auto_snapshot(signature);
             self
         }
         /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
@@ -4937,8 +4937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for your new snapshot.</p>
-        pub fn instance_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_snapshot_name(inp);
+        pub fn instance_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_snapshot_name(signature.into());
             self
         }
         /// <p>The name for your new snapshot.</p>
@@ -4950,8 +4950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Lightsail instance on which to base your snapshot.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The Lightsail instance on which to base your snapshot.</p>
@@ -4968,8 +4968,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -5044,8 +5044,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for your new key pair.</p>
-        pub fn key_pair_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair_name(inp);
+        pub fn key_pair_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair_name(signature.into());
             self
         }
         /// <p>The name for your new key pair.</p>
@@ -5062,8 +5062,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -5143,8 +5143,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of your load balancer.</p>
@@ -5156,8 +5156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance port where you're creating your load balancer.</p>
-        pub fn instance_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.instance_port(inp);
+        pub fn instance_port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.instance_port(signature);
             self
         }
         /// <p>The instance port where you're creating your load balancer.</p>
@@ -5170,8 +5170,8 @@ pub mod fluent_builders {
         /// <code>"/"</code>).</p>
         /// <p>You may want to specify a custom health check path other than the root of your application
         /// if your home page loads slowly or has a lot of media or scripting on it.</p>
-        pub fn health_check_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_path(inp);
+        pub fn health_check_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_path(signature.into());
             self
         }
         /// <p>The path you provided to perform the load balancer health check. If you didn't specify a
@@ -5189,8 +5189,8 @@ pub mod fluent_builders {
         /// <p>The name of the SSL/TLS certificate.</p>
         /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is
         /// required (and vice-versa).</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(signature.into());
             self
         }
         /// <p>The name of the SSL/TLS certificate.</p>
@@ -5207,8 +5207,11 @@ pub mod fluent_builders {
         /// <code>example.com</code>).</p>
         /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is
         /// required (and vice-versa).</p>
-        pub fn certificate_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_domain_name(inp);
+        pub fn certificate_domain_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_domain_name(signature.into());
             self
         }
         /// <p>The domain name with which your certificate is associated (e.g.,
@@ -5231,9 +5234,9 @@ pub mod fluent_builders {
         /// <code>blog.example.com</code>).</p>
         pub fn certificate_alternative_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.certificate_alternative_names(inp);
+            self.inner = self.inner.certificate_alternative_names(input.into());
             self
         }
         /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate
@@ -5252,8 +5255,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -5271,8 +5274,8 @@ pub mod fluent_builders {
         /// IPv4 and IPv6.</p>
         ///
         /// <p>The default value is <code>dualstack</code>.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The IP address type for the load balancer.</p>
@@ -5353,8 +5356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
@@ -5370,8 +5373,8 @@ pub mod fluent_builders {
         /// balancer can have up to 2 certificates associated with it at one time. There is also an
         /// overall limit to the number of certificates that can be issue in a 365-day period. For more
         /// information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(signature.into());
             self
         }
         /// <p>The SSL/TLS certificate name.</p>
@@ -5387,8 +5390,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
-        pub fn certificate_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_domain_name(inp);
+        pub fn certificate_domain_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_domain_name(signature.into());
             self
         }
         /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
@@ -5409,9 +5415,9 @@ pub mod fluent_builders {
         /// <code>*.example.com</code>).</p>
         pub fn certificate_alternative_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.certificate_alternative_names(inp);
+            self.inner = self.inner.certificate_alternative_names(input.into());
             self
         }
         /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS
@@ -5431,8 +5437,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -5516,8 +5522,11 @@ pub mod fluent_builders {
         /// <p>The first and last character must be a letter or number.</p>
         /// </li>
         /// </ul>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name to use for your new Lightsail database resource.</p>
@@ -5542,8 +5551,8 @@ pub mod fluent_builders {
         /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation.
         /// Be sure to add the <code>include relational database Availability Zones</code> parameter to
         /// your request.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p>The Availability Zone in which to create your new database. Use the
@@ -5564,9 +5573,11 @@ pub mod fluent_builders {
         /// blueprints</code> operation.</p>
         pub fn relational_database_blueprint_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.relational_database_blueprint_id(inp);
+            self.inner = self
+                .inner
+                .relational_database_blueprint_id(signature.into());
             self
         }
         /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of
@@ -5586,9 +5597,9 @@ pub mod fluent_builders {
         /// bundles</code> operation.</p>
         pub fn relational_database_bundle_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.relational_database_bundle_id(inp);
+            self.inner = self.inner.relational_database_bundle_id(signature.into());
             self
         }
         /// <p>The bundle ID for your new database. A bundle describes the performance specifications for
@@ -5646,8 +5657,8 @@ pub mod fluent_builders {
         /// 12</a>.</p>
         /// </li>
         /// </ul>
-        pub fn master_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_database_name(inp);
+        pub fn master_database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_database_name(signature.into());
             self
         }
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -5745,8 +5756,8 @@ pub mod fluent_builders {
         /// 12</a>.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(inp);
+        pub fn master_username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(signature.into());
             self
         }
         /// <p>The name for the master user.</p>
@@ -5810,8 +5821,8 @@ pub mod fluent_builders {
         /// <b>PostgreSQL</b>
         /// </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(signature.into());
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character
@@ -5853,8 +5864,11 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_backup_window(signature.into());
             self
         }
         /// <p>The daily time range during which automated backups are created for your new database if
@@ -5909,8 +5923,11 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>The weekly time range during which system maintenance can occur on your new
@@ -5947,8 +5964,8 @@ pub mod fluent_builders {
         /// specifies a database that is available to resources outside of your Lightsail account. A
         /// value of <code>false</code> specifies a database that is available only to your Lightsail
         /// resources in the same region as your database.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, signature: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(signature);
             self
         }
         /// <p>Specifies the accessibility options for your new database. A value of <code>true</code>
@@ -5965,8 +5982,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -6056,8 +6073,11 @@ pub mod fluent_builders {
         /// <p>The first and last character must be a letter or number.</p>
         /// </li>
         /// </ul>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name to use for your new Lightsail database resource.</p>
@@ -6082,8 +6102,8 @@ pub mod fluent_builders {
         /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation.
         /// Be sure to add the <code>include relational database Availability Zones</code> parameter to
         /// your request.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p>The Availability Zone in which to create your new database. Use the
@@ -6102,8 +6122,8 @@ pub mod fluent_builders {
         /// specifies a database that is available to resources outside of your Lightsail account. A
         /// value of <code>false</code> specifies a database that is available only to your Lightsail
         /// resources in the same region as your database.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, signature: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(signature);
             self
         }
         /// <p>Specifies the accessibility options for your new database. A value of <code>true</code>
@@ -6117,9 +6137,11 @@ pub mod fluent_builders {
         /// <p>The name of the database snapshot from which to create your new database.</p>
         pub fn relational_database_snapshot_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.relational_database_snapshot_name(inp);
+            self.inner = self
+                .inner
+                .relational_database_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the database snapshot from which to create your new database.</p>
@@ -6138,9 +6160,9 @@ pub mod fluent_builders {
         /// than the bundle of the source database.</p>
         pub fn relational_database_bundle_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.relational_database_bundle_id(inp);
+            self.inner = self.inner.relational_database_bundle_id(signature.into());
             self
         }
         /// <p>The bundle ID for your new database. A bundle describes the performance specifications for
@@ -6159,9 +6181,9 @@ pub mod fluent_builders {
         /// <p>The name of the source database.</p>
         pub fn source_relational_database_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_relational_database_name(inp);
+            self.inner = self.inner.source_relational_database_name(signature.into());
             self
         }
         /// <p>The name of the source database.</p>
@@ -6191,8 +6213,8 @@ pub mod fluent_builders {
         /// you input <code>1538424000</code> as the restore time.</p>
         /// </li>
         /// </ul>
-        pub fn restore_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.restore_time(inp);
+        pub fn restore_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.restore_time(signature);
             self
         }
         /// <p>The date and time to restore your database from.</p>
@@ -6227,8 +6249,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is
         /// provided.</p>
-        pub fn use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_time(inp);
+        pub fn use_latest_restorable_time(mut self, signature: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_time(signature);
             self
         }
         /// <p>Specifies whether your database is restored from the latest backup time. A value of
@@ -6247,8 +6269,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -6324,8 +6346,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the database on which to base your new snapshot.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of the database on which to base your new snapshot.</p>
@@ -6348,9 +6373,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn relational_database_snapshot_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.relational_database_snapshot_name(inp);
+            self.inner = self
+                .inner
+                .relational_database_snapshot_name(signature.into());
             self
         }
         /// <p>The name for your new database snapshot.</p>
@@ -6376,8 +6403,8 @@ pub mod fluent_builders {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -6454,8 +6481,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm to delete.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(signature.into());
             self
         }
         /// <p>The name of the alarm to delete.</p>
@@ -6525,8 +6552,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the source instance or disk from which to delete the automatic
         /// snapshot.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the source instance or disk from which to delete the automatic
@@ -6541,8 +6568,8 @@ pub mod fluent_builders {
         /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
         /// <code>get auto snapshots</code> operation to get the available automatic snapshots for a
         /// resource.</p>
-        pub fn date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.date(inp);
+        pub fn date(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.date(signature.into());
             self
         }
         /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
@@ -6621,8 +6648,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use the <a>GetBuckets</a> action to get a list of bucket names that you can
         /// specify.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket to delete.</p>
@@ -6655,8 +6682,8 @@ pub mod fluent_builders {
         /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as
         /// instances, distributions, or software that use the issued access keys.</p>
         /// </important>
-        pub fn force_delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete(inp);
+        pub fn force_delete(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_delete(signature);
             self
         }
         /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
@@ -6751,8 +6778,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket that the access key belongs to.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket that the access key belongs to.</p>
@@ -6764,8 +6791,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use the <a>GetBucketAccessKeys</a> action to get a list of access key IDs that
         /// you can specify.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key_id(inp);
+        pub fn access_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(signature.into());
             self
         }
         /// <p>The ID of the access key to delete.</p>
@@ -6846,8 +6873,8 @@ pub mod fluent_builders {
         /// <p>The name of the certificate to delete.</p>
         /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you
         /// can specify.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(signature.into());
             self
         }
         /// <p>The name of the certificate to delete.</p>
@@ -6931,8 +6958,8 @@ pub mod fluent_builders {
         /// both, you must run separate <code>DeleteContactMethod</code> actions to delete each
         /// protocol.</p>
         /// </note>
-        pub fn protocol(mut self, inp: crate::model::ContactProtocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, signature: crate::model::ContactProtocol) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text
@@ -7011,8 +7038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to delete a registered container image.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service for which to delete a registered container image.</p>
@@ -7032,8 +7059,8 @@ pub mod fluent_builders {
         /// public registry like Docker Hub don't start with a colon. For example,
         /// <code>nginx:latest</code> or <code>nginx</code>.</p>
         /// </note>
-        pub fn image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image(inp);
+        pub fn image(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image(signature.into());
             self
         }
         /// <p>The name of the container image to delete from the container service.</p>
@@ -7113,8 +7140,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service to delete.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service to delete.</p>
@@ -7190,8 +7217,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
-        pub fn disk_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_name(inp);
+        pub fn disk_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_name(signature.into());
             self
         }
         /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
@@ -7200,8 +7227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
-        pub fn force_delete_add_ons(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete_add_ons(inp);
+        pub fn force_delete_add_ons(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_delete_add_ons(signature);
             self
         }
         /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
@@ -7279,8 +7306,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the disk snapshot you want to delete (e.g.,
         /// <code>my-disk-snapshot</code>).</p>
-        pub fn disk_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_snapshot_name(inp);
+        pub fn disk_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the disk snapshot you want to delete (e.g.,
@@ -7355,8 +7382,8 @@ pub mod fluent_builders {
         /// <p>The name of the distribution to delete.</p>
         /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
         /// can specify.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution to delete.</p>
@@ -7433,8 +7460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The specific domain name to delete.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The specific domain name to delete.</p>
@@ -7506,8 +7533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain entry to delete.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain entry to delete.</p>
@@ -7516,8 +7543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An array of key-value pairs containing information about your domain entries.</p>
-        pub fn domain_entry(mut self, inp: crate::model::DomainEntry) -> Self {
-            self.inner = self.inner.domain_entry(inp);
+        pub fn domain_entry(mut self, signature: crate::model::DomainEntry) -> Self {
+            self.inner = self.inner.domain_entry(signature);
             self
         }
         /// <p>An array of key-value pairs containing information about your domain entries.</p>
@@ -7592,8 +7619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance to delete.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance to delete.</p>
@@ -7605,8 +7632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
-        pub fn force_delete_add_ons(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete_add_ons(inp);
+        pub fn force_delete_add_ons(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_delete_add_ons(signature);
             self
         }
         /// <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
@@ -7679,8 +7706,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the snapshot to delete.</p>
-        pub fn instance_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_snapshot_name(inp);
+        pub fn instance_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the snapshot to delete.</p>
@@ -7757,8 +7784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the key pair to delete.</p>
-        pub fn key_pair_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair_name(inp);
+        pub fn key_pair_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair_name(signature.into());
             self
         }
         /// <p>The name of the key pair to delete.</p>
@@ -7838,8 +7865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
@@ -7916,8 +7943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer you want to delete.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer you want to delete.</p>
@@ -7992,8 +8019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The load balancer name.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The load balancer name.</p>
@@ -8005,8 +8032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SSL/TLS certificate name.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(signature.into());
             self
         }
         /// <p>The SSL/TLS certificate name.</p>
@@ -8021,8 +8048,8 @@ pub mod fluent_builders {
         /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and
         /// the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate
         /// is in use by an instance attached to the load balancer.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
@@ -8097,8 +8124,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the database that you are deleting.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of the database that you are deleting.</p>
@@ -8116,8 +8146,8 @@ pub mod fluent_builders {
         /// <code>skip final snapshot</code> parameter is <code>false</code>.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn skip_final_snapshot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_final_snapshot(inp);
+        pub fn skip_final_snapshot(mut self, signature: bool) -> Self {
+            self.inner = self.inner.skip_final_snapshot(signature);
             self
         }
         /// <p>Determines whether a final database snapshot is created before your database is deleted.
@@ -8148,9 +8178,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn final_relational_database_snapshot_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.final_relational_database_snapshot_name(inp);
+            self.inner = self
+                .inner
+                .final_relational_database_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is
@@ -8243,9 +8275,11 @@ pub mod fluent_builders {
         /// <p>The name of the database snapshot that you are deleting.</p>
         pub fn relational_database_snapshot_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.relational_database_snapshot_name(inp);
+            self.inner = self
+                .inner
+                .relational_database_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the database snapshot that you are deleting.</p>
@@ -8322,8 +8356,8 @@ pub mod fluent_builders {
         /// <p>The name of the distribution from which to detach the certificate.</p>
         /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
         /// can specify.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution from which to detach the certificate.</p>
@@ -8403,8 +8437,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique name of the disk you want to detach from your instance (e.g.,
         /// <code>my-disk</code>).</p>
-        pub fn disk_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_name(inp);
+        pub fn disk_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_name(signature.into());
             self
         }
         /// <p>The unique name of the disk you want to detach from your instance (e.g.,
@@ -8479,8 +8513,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Lightsail load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the Lightsail load balancer.</p>
@@ -8497,8 +8531,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of strings containing the names of the instances you want to detach from the load
         /// balancer.</p>
-        pub fn instance_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_names(inp);
+        pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_names(input.into());
             self
         }
         /// <p>An array of strings containing the names of the instances you want to detach from the load
@@ -8571,8 +8605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the static IP to detach from the instance.</p>
-        pub fn static_ip_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.static_ip_name(inp);
+        pub fn static_ip_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.static_ip_name(signature.into());
             self
         }
         /// <p>The name of the static IP to detach from the instance.</p>
@@ -8644,8 +8678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The add-on type to disable.</p>
-        pub fn add_on_type(mut self, inp: crate::model::AddOnType) -> Self {
-            self.inner = self.inner.add_on_type(inp);
+        pub fn add_on_type(mut self, signature: crate::model::AddOnType) -> Self {
+            self.inner = self.inner.add_on_type(signature);
             self
         }
         /// <p>The add-on type to disable.</p>
@@ -8657,8 +8691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the source resource for which to disable the add-on.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the source resource for which to disable the add-on.</p>
@@ -8791,8 +8825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the source resource for which to enable or modify the add-on.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the source resource for which to enable or modify the add-on.</p>
@@ -8804,8 +8838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An array of strings representing the add-on to enable or modify.</p>
-        pub fn add_on_request(mut self, inp: crate::model::AddOnRequest) -> Self {
-            self.inner = self.inner.add_on_request(inp);
+        pub fn add_on_request(mut self, signature: crate::model::AddOnRequest) -> Self {
+            self.inner = self.inner.add_on_request(signature);
             self
         }
         /// <p>An array of strings representing the add-on to enable or modify.</p>
@@ -8891,8 +8925,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-        pub fn source_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_snapshot_name(inp);
+        pub fn source_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
@@ -8967,8 +9001,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your
         /// results are paginated, the response will return a next page token that you can specify as the
         /// page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -9047,8 +9081,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the alarm.</p>
         /// <p>Specify an alarm name to return information about a specific alarm.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(signature.into());
             self
         }
         /// <p>The name of the alarm.</p>
@@ -9061,8 +9095,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results
         /// are paginated, the response will return a next page token that you can specify as the page
         /// token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -9076,8 +9110,11 @@ pub mod fluent_builders {
         /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
         /// <p>Specify a monitored resource name to return information about all alarms for a specific
         /// resource.</p>
-        pub fn monitored_resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitored_resource_name(inp);
+        pub fn monitored_resource_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.monitored_resource_name(signature.into());
             self
         }
         /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
@@ -9153,8 +9190,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the source instance or disk from which to get automatic snapshot
         /// information.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the source instance or disk from which to get automatic snapshot
@@ -9236,8 +9273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
-        pub fn include_inactive(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_inactive(inp);
+        pub fn include_inactive(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_inactive(signature);
             self
         }
         /// <p>A Boolean value indicating whether to include inactive results in your request.</p>
@@ -9249,8 +9286,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your
         /// results are paginated, the response will return a next page token that you can specify as the
         /// page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -9328,8 +9365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to return access keys.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket for which to return access keys.</p>
@@ -9405,8 +9442,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the
         /// response.</p>
-        pub fn include_inactive(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_inactive(inp);
+        pub fn include_inactive(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_inactive(signature);
             self
         }
         /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the
@@ -9480,8 +9517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to get metric data.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket for which to get metric data.</p>
@@ -9522,8 +9559,8 @@ pub mod fluent_builders {
         /// <p>Unit: The published unit is <code>Count</code>.</p>
         /// </li>
         /// </ul>
-        pub fn metric_name(mut self, inp: crate::model::BucketMetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: crate::model::BucketMetricName) -> Self {
+            self.inner = self.inner.metric_name(signature);
             self
         }
         /// <p>The metric for which you want to return information.</p>
@@ -9567,8 +9604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp indicating the earliest data to be returned.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The timestamp indicating the earliest data to be returned.</p>
@@ -9580,8 +9617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp indicating the latest data to be returned.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The timestamp indicating the latest data to be returned.</p>
@@ -9597,8 +9634,8 @@ pub mod fluent_builders {
         /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period
         /// of 86400 seconds, which is the number of seconds in a day.</p>
         /// </note>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
@@ -9648,8 +9685,8 @@ pub mod fluent_builders {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, inp: impl Into<crate::model::MetricStatistic>) -> Self {
-            self.inner = self.inner.statistics(inp);
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The statistic for the metric.</p>
@@ -9696,8 +9733,8 @@ pub mod fluent_builders {
         /// <p>The unit for the metric data request.</p>
         /// <p>Valid units depend on the metric data being requested. For the valid units with each
         /// available metric, see the <code>metricName</code> parameter.</p>
-        pub fn unit(mut self, inp: crate::model::MetricUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: crate::model::MetricUnit) -> Self {
+            self.inner = self.inner.unit(signature);
             self
         }
         /// <p>The unit for the metric data request.</p>
@@ -9774,8 +9811,8 @@ pub mod fluent_builders {
         ///
         /// <p>When omitted, the response includes all of your buckets in the AWS Region where the
         /// request is made.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket for which to return information.</p>
@@ -9791,8 +9828,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results
         /// are paginated, the response will return a next page token that you can specify as the page
         /// token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -9806,8 +9843,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value that indicates whether to include Lightsail instances that were given
         /// access to the bucket using the <a>SetResourceAccessForBucket</a> action.</p>
-        pub fn include_connected_resources(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_connected_resources(inp);
+        pub fn include_connected_resources(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_connected_resources(signature);
             self
         }
         /// <p>A Boolean value that indicates whether to include Lightsail instances that were given
@@ -9879,8 +9916,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value that indicates whether to include inactive bundle results in your
         /// request.</p>
-        pub fn include_inactive(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_inactive(inp);
+        pub fn include_inactive(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_inactive(signature);
             self
         }
         /// <p>A Boolean value that indicates whether to include inactive bundle results in your
@@ -9893,8 +9930,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results
         /// are paginated, the response will return a next page token that you can specify as the page
         /// token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -9979,11 +10016,8 @@ pub mod fluent_builders {
         /// <code>ISSUED</code> status.</p>
         /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
         /// request is made, regardless of their current status.</p>
-        pub fn certificate_statuses(
-            mut self,
-            inp: impl Into<crate::model::CertificateStatus>,
-        ) -> Self {
-            self.inner = self.inner.certificate_statuses(inp);
+        pub fn certificate_statuses(mut self, input: crate::model::CertificateStatus) -> Self {
+            self.inner = self.inner.certificate_statuses(input);
             self
         }
         /// <p>The status of the certificates for which to return information.</p>
@@ -10002,8 +10036,8 @@ pub mod fluent_builders {
         /// response.</p>
         /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names
         /// (ARNs), domain names, and tags.</p>
-        pub fn include_certificate_details(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_certificate_details(inp);
+        pub fn include_certificate_details(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_certificate_details(signature);
             self
         }
         /// <p>Indicates whether to include detailed information about the certificates in the
@@ -10017,8 +10051,8 @@ pub mod fluent_builders {
         /// <p>The name for the certificate for which to return information.</p>
         /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
         /// request is made.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(inp);
+        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(signature.into());
             self
         }
         /// <p>The name for the certificate for which to return information.</p>
@@ -10098,8 +10132,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetClouFormationStackRecords</code> request.
         /// If your results are paginated, the response will return a next page token that you can specify
         /// as the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -10183,8 +10217,8 @@ pub mod fluent_builders {
         /// (text messaging).</p>
         /// <p>Specify a protocol in your request to return information about a specific contact method
         /// protocol.</p>
-        pub fn protocols(mut self, inp: impl Into<crate::model::ContactProtocol>) -> Self {
-            self.inner = self.inner.protocols(inp);
+        pub fn protocols(mut self, input: crate::model::ContactProtocol) -> Self {
+            self.inner = self.inner.protocols(input);
             self
         }
         /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code>
@@ -10327,8 +10361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to return registered container images.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service for which to return registered container images.</p>
@@ -10407,8 +10441,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to get a container log.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service for which to get a container log.</p>
@@ -10418,8 +10452,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the container that is either running or previously ran on the container
         /// service for which to return a log.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that is either running or previously ran on the container
@@ -10448,8 +10482,8 @@ pub mod fluent_builders {
         /// </ul>
         ///
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time interval for which to get log data.</p>
@@ -10493,8 +10527,8 @@ pub mod fluent_builders {
         /// </ul>
         ///
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time interval for which to get log data.</p>
@@ -10547,8 +10581,8 @@ pub mod fluent_builders {
         /// <code>"?ERROR ?Exception"</code>.</p>
         /// </li>
         /// </ul>
-        pub fn filter_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_pattern(inp);
+        pub fn filter_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_pattern(signature.into());
             self
         }
         /// <p>The pattern to use to filter the returned log events to a specific term.</p>
@@ -10589,8 +10623,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your
         /// results are paginated, the response will return a next page token that you can specify as the
         /// page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -10675,8 +10709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to return deployments.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service for which to return deployments.</p>
@@ -10749,8 +10783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to get metric data.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service for which to get metric data.</p>
@@ -10783,8 +10817,8 @@ pub mod fluent_builders {
         /// <p>Unit: The published unit is <code>Percent</code>.</p>
         /// </li>
         /// </ul>
-        pub fn metric_name(mut self, inp: crate::model::ContainerServiceMetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: crate::model::ContainerServiceMetricName) -> Self {
+            self.inner = self.inner.metric_name(signature);
             self
         }
         /// <p>The metric for which you want to return information.</p>
@@ -10820,8 +10854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time of the time period.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start time of the time period.</p>
@@ -10833,8 +10867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time of the time period.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end time of the time period.</p>
@@ -10849,8 +10883,8 @@ pub mod fluent_builders {
         ///
         /// <p>All container service metric data is available in 5-minute (300 seconds)
         /// granularity.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
@@ -10899,8 +10933,8 @@ pub mod fluent_builders {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, inp: impl Into<crate::model::MetricStatistic>) -> Self {
-            self.inner = self.inner.statistics(inp);
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The statistic for the metric.</p>
@@ -11072,8 +11106,8 @@ pub mod fluent_builders {
         ///
         /// <p>When omitted, the response includes all of your container services in the AWS Region
         /// where the request is made.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service for which to return information.</p>
@@ -11145,8 +11179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
-        pub fn disk_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_name(inp);
+        pub fn disk_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_name(signature.into());
             self
         }
         /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
@@ -11218,8 +11252,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetDisks</code> request. If your results are
         /// paginated, the response will return a next page token that you can specify as the page token
         /// in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -11291,8 +11325,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-        pub fn disk_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disk_snapshot_name(inp);
+        pub fn disk_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disk_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
@@ -11368,8 +11402,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetDiskSnapshots</code> request. If your
         /// results are paginated, the response will return a next page token that you can specify as the
         /// page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -11510,8 +11544,8 @@ pub mod fluent_builders {
         /// can specify.</p>
         /// <p>When omitted, the response includes the latest cache reset timestamp of all your
         /// distributions.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution for which to return the timestamp of the last cache
@@ -11594,8 +11628,8 @@ pub mod fluent_builders {
         /// <p>The name of the distribution for which to get metric data.</p>
         /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
         /// can specify.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution for which to get metric data.</p>
@@ -11686,8 +11720,8 @@ pub mod fluent_builders {
         /// <code>Unit</code>: The published unit is <code>Percent</code>.</p>
         /// </li>
         /// </ul>
-        pub fn metric_name(mut self, inp: crate::model::DistributionMetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: crate::model::DistributionMetricName) -> Self {
+            self.inner = self.inner.metric_name(signature);
             self
         }
         /// <p>The metric for which you want to return information.</p>
@@ -11788,8 +11822,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time interval for which to get metric data.</p>
@@ -11825,8 +11859,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time interval for which to get metric data.</p>
@@ -11850,8 +11884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The granularity, in seconds, for the metric data points that will be returned.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The granularity, in seconds, for the metric data points that will be returned.</p>
@@ -11862,8 +11896,8 @@ pub mod fluent_builders {
         /// <p>The unit for the metric data request.</p>
         /// <p>Valid units depend on the metric data being requested. For the valid units with each
         /// available metric, see the <code>metricName</code> parameter.</p>
-        pub fn unit(mut self, inp: crate::model::MetricUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: crate::model::MetricUnit) -> Self {
+            self.inner = self.inner.unit(signature);
             self
         }
         /// <p>The unit for the metric data request.</p>
@@ -11908,8 +11942,8 @@ pub mod fluent_builders {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, inp: impl Into<crate::model::MetricStatistic>) -> Self {
-            self.inner = self.inner.statistics(inp);
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The statistic for the metric.</p>
@@ -12015,8 +12049,8 @@ pub mod fluent_builders {
         ///
         /// <p>When omitted, the response includes all of your distributions in the AWS Region where
         /// the request is made.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution for which to return information.</p>
@@ -12034,8 +12068,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your
         /// results are paginated, the response will return a next page token that you can specify as the
         /// page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -12107,8 +12141,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain name for which your want to return information about.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The domain name for which your want to return information about.</p>
@@ -12180,8 +12214,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetDomains</code> request. If your results
         /// are paginated, the response will return a next page token that you can specify as the page
         /// token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -12259,8 +12293,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If
         /// your results are paginated, the response will return a next page token that you can specify as
         /// the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -12333,8 +12367,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance.</p>
@@ -12410,8 +12444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance to access.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance to access.</p>
@@ -12423,8 +12457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
-        pub fn protocol(mut self, inp: crate::model::InstanceAccessProtocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, signature: crate::model::InstanceAccessProtocol) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
@@ -12500,8 +12534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance for which you want to get metrics data.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance for which you want to get metrics data.</p>
@@ -12634,8 +12668,8 @@ pub mod fluent_builders {
         /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
         /// </li>
         /// </ul>
-        pub fn metric_name(mut self, inp: crate::model::InstanceMetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: crate::model::InstanceMetricName) -> Self {
+            self.inner = self.inner.metric_name(signature);
             self
         }
         /// <p>The metric for which you want to return information.</p>
@@ -12772,8 +12806,8 @@ pub mod fluent_builders {
         /// <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60
         /// seconds) granularity. All other instance metric data is available in 5-minute (300 seconds)
         /// granularity.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
@@ -12786,8 +12820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time of the time period.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start time of the time period.</p>
@@ -12799,8 +12833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time of the time period.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end time of the time period.</p>
@@ -12814,8 +12848,8 @@ pub mod fluent_builders {
         /// <p>The unit for the metric data request. Valid units depend on the metric data being
         /// requested. For the valid units to specify with each available metric, see the
         /// <code>metricName</code> parameter.</p>
-        pub fn unit(mut self, inp: crate::model::MetricUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: crate::model::MetricUnit) -> Self {
+            self.inner = self.inner.unit(signature);
             self
         }
         /// <p>The unit for the metric data request. Valid units depend on the metric data being
@@ -12860,8 +12894,8 @@ pub mod fluent_builders {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, inp: impl Into<crate::model::MetricStatistic>) -> Self {
-            self.inner = self.inner.statistics(inp);
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The statistic for the metric.</p>
@@ -12964,8 +12998,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance for which to return firewall port states.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance for which to return firewall port states.</p>
@@ -13041,8 +13075,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results
         /// are paginated, the response will return a next page token that you can specify as the page
         /// token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -13114,8 +13148,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the snapshot for which you are requesting information.</p>
-        pub fn instance_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_snapshot_name(inp);
+        pub fn instance_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the snapshot for which you are requesting information.</p>
@@ -13190,8 +13224,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetInstanceSnapshots</code> request. If your
         /// results are paginated, the response will return a next page token that you can specify as the
         /// page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -13263,8 +13297,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance to get state information about.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance to get state information about.</p>
@@ -13336,8 +13370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the key pair for which you are requesting information.</p>
-        pub fn key_pair_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair_name(inp);
+        pub fn key_pair_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair_name(signature.into());
             self
         }
         /// <p>The name of the key pair for which you are requesting information.</p>
@@ -13412,8 +13446,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results
         /// are paginated, the response will return a next page token that you can specify as the page
         /// token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -13485,8 +13519,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -13561,8 +13595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -13742,8 +13776,8 @@ pub mod fluent_builders {
         /// <code>Unit</code>: The published unit is <code>Count</code>.</p>
         /// </li>
         /// </ul>
-        pub fn metric_name(mut self, inp: crate::model::LoadBalancerMetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: crate::model::LoadBalancerMetricName) -> Self {
+            self.inner = self.inner.metric_name(signature);
             self
         }
         /// <p>The metric for which you want to return information.</p>
@@ -13923,8 +13957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
@@ -13933,8 +13967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time of the period.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start time of the period.</p>
@@ -13946,8 +13980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time of the period.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end time of the period.</p>
@@ -13961,8 +13995,8 @@ pub mod fluent_builders {
         /// <p>The unit for the metric data request. Valid units depend on the metric data being
         /// requested. For the valid units with each available metric, see the <code>metricName</code>
         /// parameter.</p>
-        pub fn unit(mut self, inp: crate::model::MetricUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: crate::model::MetricUnit) -> Self {
+            self.inner = self.inner.unit(signature);
             self
         }
         /// <p>The unit for the metric data request. Valid units depend on the metric data being
@@ -14007,8 +14041,8 @@ pub mod fluent_builders {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, inp: impl Into<crate::model::MetricStatistic>) -> Self {
-            self.inner = self.inner.statistics(inp);
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The statistic for the metric.</p>
@@ -14113,8 +14147,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetLoadBalancers</code> request. If your
         /// results are paginated, the response will return a next page token that you can specify as the
         /// page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -14190,8 +14224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
@@ -14264,8 +14298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A GUID used to identify the operation.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(signature.into());
             self
         }
         /// <p>A GUID used to identify the operation.</p>
@@ -14340,8 +14374,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetOperations</code> request. If your
         /// results are paginated, the response will return a next page token that you can specify as the
         /// page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -14413,8 +14447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource for which you are requesting information.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the resource for which you are requesting information.</p>
@@ -14429,8 +14463,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetOperationsForResource</code> request. If
         /// your results are paginated, the response will return a next page token that you can specify as
         /// the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -14505,8 +14539,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions
         /// request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
-        pub fn include_availability_zones(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_availability_zones(inp);
+        pub fn include_availability_zones(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_availability_zones(signature);
             self
         }
         /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions
@@ -14518,10 +14552,10 @@ pub mod fluent_builders {
         /// <p>A Boolean value indicating whether to also include Availability Zones for databases in
         /// your get regions request. Availability Zones are indicated with a letter (e.g.,
         /// <code>us-east-2a</code>).</p>
-        pub fn include_relational_database_availability_zones(mut self, inp: bool) -> Self {
+        pub fn include_relational_database_availability_zones(mut self, signature: bool) -> Self {
             self.inner = self
                 .inner
-                .include_relational_database_availability_zones(inp);
+                .include_relational_database_availability_zones(signature);
             self
         }
         /// <p>A Boolean value indicating whether to also include Availability Zones for databases in
@@ -14597,8 +14631,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the database that you are looking up.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of the database that you are looking up.</p>
@@ -14676,8 +14713,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBlueprints</code>
         /// request. If your results are paginated, the response will return a next page token that you
         /// can specify as the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -14755,8 +14792,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request.
         /// If your results are paginated, the response will return a next page token that you can specify
         /// as the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -14828,8 +14865,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the database from which to get events.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of the database from which to get events.</p>
@@ -14845,8 +14885,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>60</code>
         /// </p>
         /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
-        pub fn duration_in_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_in_minutes(inp);
+        pub fn duration_in_minutes(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration_in_minutes(signature);
             self
         }
         /// <p>The number of minutes in the past from which to retrieve events. For example, to get all
@@ -14862,8 +14902,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request.
         /// If your results are paginated, the response will return a next page token that you can specify
         /// as the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -14935,8 +14975,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database for which to get log events.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database for which to get log events.</p>
@@ -14950,8 +14993,8 @@ pub mod fluent_builders {
         /// <p>The name of the log stream.</p>
         /// <p>Use the <code>get relational database log streams</code> operation to get a list of
         /// available log streams.</p>
-        pub fn log_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_stream_name(inp);
+        pub fn log_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_stream_name(signature.into());
             self
         }
         /// <p>The name of the log stream.</p>
@@ -14976,8 +15019,8 @@ pub mod fluent_builders {
         /// input <code>1538424000</code> as the start time.</p>
         /// </li>
         /// </ul>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time interval from which to get log events.</p>
@@ -15012,8 +15055,8 @@ pub mod fluent_builders {
         ///
         /// </li>
         /// </ul>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time interval from which to get log events.</p>
@@ -15043,8 +15086,8 @@ pub mod fluent_builders {
         /// <p>For PostgreSQL, the default value of <code>false</code> is the only option
         /// available.</p>
         /// </note>
-        pub fn start_from_head(mut self, inp: bool) -> Self {
-            self.inner = self.inner.start_from_head(inp);
+        pub fn start_from_head(mut self, signature: bool) -> Self {
+            self.inner = self.inner.start_from_head(signature);
             self
         }
         /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is
@@ -15062,8 +15105,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code>
         /// request. If your results are paginated, the response will return a next forward token and/or
         /// next backward token that you can specify as the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next or previous page of results from your request.</p>
@@ -15135,8 +15178,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database for which to get log streams.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database for which to get log streams.</p>
@@ -15214,8 +15260,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database for which to get the master user password.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database for which to get the master user password.</p>
@@ -15236,9 +15285,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn password_version(
             mut self,
-            inp: crate::model::RelationalDatabasePasswordVersion,
+            signature: crate::model::RelationalDatabasePasswordVersion,
         ) -> Self {
-            self.inner = self.inner.password_version(inp);
+            self.inner = self.inner.password_version(signature);
             self
         }
         /// <p>The password version to return.</p>
@@ -15320,8 +15369,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database from which to get metric data.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database from which to get metric data.</p>
@@ -15409,8 +15461,11 @@ pub mod fluent_builders {
         /// <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
         /// </li>
         /// </ul>
-        pub fn metric_name(mut self, inp: crate::model::RelationalDatabaseMetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(
+            mut self,
+            signature: crate::model::RelationalDatabaseMetricName,
+        ) -> Self {
+            self.inner = self.inner.metric_name(signature);
             self
         }
         /// <p>The metric for which you want to return information.</p>
@@ -15500,8 +15555,8 @@ pub mod fluent_builders {
         /// <p>The granularity, in seconds, of the returned data points.</p>
         /// <p>All relational database metric data is available in 1-minute (60 seconds)
         /// granularity.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>The granularity, in seconds, of the returned data points.</p>
@@ -15524,8 +15579,8 @@ pub mod fluent_builders {
         ///
         /// </li>
         /// </ul>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time interval from which to get metric data.</p>
@@ -15561,8 +15616,8 @@ pub mod fluent_builders {
         ///
         /// </li>
         /// </ul>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time interval from which to get metric data.</p>
@@ -15588,8 +15643,8 @@ pub mod fluent_builders {
         /// <p>The unit for the metric data request. Valid units depend on the metric data being
         /// requested. For the valid units with each available metric, see the <code>metricName</code>
         /// parameter.</p>
-        pub fn unit(mut self, inp: crate::model::MetricUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: crate::model::MetricUnit) -> Self {
+            self.inner = self.inner.unit(signature);
             self
         }
         /// <p>The unit for the metric data request. Valid units depend on the metric data being
@@ -15634,8 +15689,8 @@ pub mod fluent_builders {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, inp: impl Into<crate::model::MetricStatistic>) -> Self {
-            self.inner = self.inner.statistics(inp);
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.statistics(input);
             self
         }
         /// <p>The statistic for the metric.</p>
@@ -15741,8 +15796,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database for which to get parameters.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database for which to get parameters.</p>
@@ -15757,8 +15815,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code>
         /// request. If your results are paginated, the response will return a next page token that you
         /// can specify as the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -15833,8 +15891,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetRelationalDatabases</code> request. If
         /// your results are paginated, the response will return a next page token that you can specify as
         /// the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -15908,9 +15966,11 @@ pub mod fluent_builders {
         /// <p>The name of the database snapshot for which to get information.</p>
         pub fn relational_database_snapshot_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.relational_database_snapshot_name(inp);
+            self.inner = self
+                .inner
+                .relational_database_snapshot_name(signature.into());
             self
         }
         /// <p>The name of the database snapshot for which to get information.</p>
@@ -15985,8 +16045,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseSnapshots</code>
         /// request. If your results are paginated, the response will return a next page token that you
         /// can specify as the page token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -16058,8 +16118,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the static IP in Lightsail.</p>
-        pub fn static_ip_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.static_ip_name(inp);
+        pub fn static_ip_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.static_ip_name(signature.into());
             self
         }
         /// <p>The name of the static IP in Lightsail.</p>
@@ -16134,8 +16194,8 @@ pub mod fluent_builders {
         /// <p>To get a page token, perform an initial <code>GetStaticIps</code> request. If your results
         /// are paginated, the response will return a next page token that you can specify as the page
         /// token in a subsequent request.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The token to advance to the next page of results from your request.</p>
@@ -16207,8 +16267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the key pair for which you want to import the public key.</p>
-        pub fn key_pair_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair_name(inp);
+        pub fn key_pair_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair_name(signature.into());
             self
         }
         /// <p>The name of the key pair for which you want to import the public key.</p>
@@ -16220,8 +16280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-        pub fn public_key_base64(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_key_base64(inp);
+        pub fn public_key_base64(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_key_base64(signature.into());
             self
         }
         /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -16357,8 +16417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An object to describe the ports to open for the specified instance.</p>
-        pub fn port_info(mut self, inp: crate::model::PortInfo) -> Self {
-            self.inner = self.inner.port_info(inp);
+        pub fn port_info(mut self, signature: crate::model::PortInfo) -> Self {
+            self.inner = self.inner.port_info(signature);
             self
         }
         /// <p>An object to describe the ports to open for the specified instance.</p>
@@ -16367,8 +16427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the instance for which to open ports.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance for which to open ports.</p>
@@ -16511,8 +16571,8 @@ pub mod fluent_builders {
         }
         /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the
         /// previous configuration of the alarm.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(signature.into());
             self
         }
         /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the
@@ -16552,8 +16612,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
-        pub fn metric_name(mut self, inp: crate::model::MetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: crate::model::MetricName) -> Self {
+            self.inner = self.inner.metric_name(signature);
             self
         }
         /// <p>The name of the metric to associate with the alarm.</p>
@@ -16597,8 +16657,11 @@ pub mod fluent_builders {
         /// <p>The name of the Lightsail resource that will be monitored.</p>
         /// <p>Instances, load balancers, and relational databases are the only Lightsail resources
         /// that can currently be monitored by alarms.</p>
-        pub fn monitored_resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitored_resource_name(inp);
+        pub fn monitored_resource_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.monitored_resource_name(signature.into());
             self
         }
         /// <p>The name of the Lightsail resource that will be monitored.</p>
@@ -16613,8 +16676,8 @@ pub mod fluent_builders {
         }
         /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold.
         /// The specified statistic value is used as the first operand.</p>
-        pub fn comparison_operator(mut self, inp: crate::model::ComparisonOperator) -> Self {
-            self.inner = self.inner.comparison_operator(inp);
+        pub fn comparison_operator(mut self, signature: crate::model::ComparisonOperator) -> Self {
+            self.inner = self.inner.comparison_operator(signature);
             self
         }
         /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold.
@@ -16627,8 +16690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value against which the specified statistic is compared.</p>
-        pub fn threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.threshold(inp);
+        pub fn threshold(mut self, signature: f64) -> Self {
+            self.inner = self.inner.threshold(signature);
             self
         }
         /// <p>The value against which the specified statistic is compared.</p>
@@ -16646,8 +16709,8 @@ pub mod fluent_builders {
         /// 24 to evaluate a metric over a rolling period of two hours.</p>
         /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation
         /// period of 288 (24 hours).</p>
-        pub fn evaluation_periods(mut self, inp: i32) -> Self {
-            self.inner = self.inner.evaluation_periods(inp);
+        pub fn evaluation_periods(mut self, signature: i32) -> Self {
+            self.inner = self.inner.evaluation_periods(signature);
             self
         }
         /// <p>The number of most recent periods over which data is compared to the specified threshold.
@@ -16667,8 +16730,8 @@ pub mod fluent_builders {
         /// <p>The number of data points that must be not within the specified threshold to trigger the
         /// alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>)
         /// is the M.</p>
-        pub fn datapoints_to_alarm(mut self, inp: i32) -> Self {
-            self.inner = self.inner.datapoints_to_alarm(inp);
+        pub fn datapoints_to_alarm(mut self, signature: i32) -> Self {
+            self.inner = self.inner.datapoints_to_alarm(signature);
             self
         }
         /// <p>The number of data points that must be not within the specified threshold to trigger the
@@ -16704,8 +16767,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If <code>treatMissingData</code> is not specified, the default behavior of
         /// <code>missing</code> is used.</p>
-        pub fn treat_missing_data(mut self, inp: crate::model::TreatMissingData) -> Self {
-            self.inner = self.inner.treat_missing_data(inp);
+        pub fn treat_missing_data(mut self, signature: crate::model::TreatMissingData) -> Self {
+            self.inner = self.inner.treat_missing_data(signature);
             self
         }
         /// <p>Sets how this alarm will handle missing data points.</p>
@@ -16754,8 +16817,8 @@ pub mod fluent_builders {
         /// for the alarm using the <code>notificationEnabled</code> paramater.</p>
         /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an
         /// AWS Region.</p>
-        pub fn contact_protocols(mut self, inp: impl Into<crate::model::ContactProtocol>) -> Self {
-            self.inner = self.inner.contact_protocols(inp);
+        pub fn contact_protocols(mut self, input: crate::model::ContactProtocol) -> Self {
+            self.inner = self.inner.contact_protocols(input);
             self
         }
         /// <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code>
@@ -16814,8 +16877,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this
         /// parameter.</p>
-        pub fn notification_triggers(mut self, inp: impl Into<crate::model::AlarmState>) -> Self {
-            self.inner = self.inner.notification_triggers(inp);
+        pub fn notification_triggers(mut self, input: crate::model::AlarmState) -> Self {
+            self.inner = self.inner.notification_triggers(input);
             self
         }
         /// <p>The alarm states that trigger a notification.</p>
@@ -16863,8 +16926,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the alarm is enabled.</p>
         /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
-        pub fn notification_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.notification_enabled(inp);
+        pub fn notification_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.notification_enabled(signature);
             self
         }
         /// <p>Indicates whether the alarm is enabled.</p>
@@ -16946,8 +17009,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_port_infos`](Self::set_port_infos).
         ///
         /// <p>An array of objects to describe the ports to open for the specified instance.</p>
-        pub fn port_infos(mut self, inp: impl Into<crate::model::PortInfo>) -> Self {
-            self.inner = self.inner.port_infos(inp);
+        pub fn port_infos(mut self, input: crate::model::PortInfo) -> Self {
+            self.inner = self.inner.port_infos(input);
             self
         }
         /// <p>An array of objects to describe the ports to open for the specified instance.</p>
@@ -16959,8 +17022,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the instance for which to open ports.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance for which to open ports.</p>
@@ -17035,8 +17098,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance to reboot.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance to reboot.</p>
@@ -17111,8 +17174,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database to reboot.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database to reboot.</p>
@@ -17191,8 +17257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service for which to register a container image.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service for which to register a container image.</p>
@@ -17225,8 +17291,8 @@ pub mod fluent_builders {
         /// Lightsail container service, with the same label, then the version number for the new
         /// registered container image will be <code>2</code>. If you push and register another container
         /// image, the version number will be <code>3</code>, and so on.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(inp);
+        pub fn label(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(signature.into());
             self
         }
         /// <p>The label for the container image when it's registered to the container service.</p>
@@ -17259,8 +17325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The digest of the container image to be registered.</p>
-        pub fn digest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.digest(inp);
+        pub fn digest(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.digest(signature.into());
             self
         }
         /// <p>The digest of the container image to be registered.</p>
@@ -17329,8 +17395,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the static IP to delete.</p>
-        pub fn static_ip_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.static_ip_name(inp);
+        pub fn static_ip_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.static_ip_name(signature.into());
             self
         }
         /// <p>The name of the static IP to delete.</p>
@@ -17407,8 +17473,8 @@ pub mod fluent_builders {
         /// <p>The name of the distribution for which to reset cache.</p>
         /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
         /// can specify.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution for which to reset cache.</p>
@@ -17495,8 +17561,11 @@ pub mod fluent_builders {
         }
         /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
         /// messaging).</p>
-        pub fn protocol(mut self, inp: crate::model::ContactMethodVerificationProtocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(
+            mut self,
+            signature: crate::model::ContactMethodVerificationProtocol,
+        ) -> Self {
+            self.inner = self.inner.protocol(signature);
             self
         }
         /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
@@ -17580,8 +17649,8 @@ pub mod fluent_builders {
         /// AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view,
         /// or edit distributions.</p>
         /// </note>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(signature);
             self
         }
         /// <p>The resource type.</p>
@@ -17600,8 +17669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resource for which to set the IP address type.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the resource for which to set the IP address type.</p>
@@ -17616,8 +17685,8 @@ pub mod fluent_builders {
         ///
         /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
         /// IPv4 and IPv6.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, signature: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(signature);
             self
         }
         /// <p>The IP address type to set for the specified resource.</p>
@@ -17697,8 +17766,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be
         /// in a running or stopped state.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be
@@ -17711,8 +17780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the bucket for which to set access to another Lightsail resource.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket for which to set access to another Lightsail resource.</p>
@@ -17735,8 +17804,8 @@ pub mod fluent_builders {
         /// remove access for a resource previously set to <code>allow</code>.</p>
         /// </li>
         /// </ul>
-        pub fn access(mut self, inp: crate::model::ResourceBucketAccess) -> Self {
-            self.inner = self.inner.access(inp);
+        pub fn access(mut self, signature: crate::model::ResourceBucketAccess) -> Self {
+            self.inner = self.inner.access(signature);
             self
         }
         /// <p>The access setting.</p>
@@ -17831,8 +17900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance (a virtual private server) to start.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance (a virtual private server) to start.</p>
@@ -17908,8 +17977,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database to start.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database to start.</p>
@@ -17989,8 +18061,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the instance (a virtual private server) to stop.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(signature.into());
             self
         }
         /// <p>The name of the instance (a virtual private server) to stop.</p>
@@ -18008,8 +18080,8 @@ pub mod fluent_builders {
         /// <code>stopping</code> state. In any other state, your instance should stop normally
         /// without adding this parameter to your API request.</p>
         /// </important>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
@@ -18087,8 +18159,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database to stop.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database to stop.</p>
@@ -18102,9 +18177,11 @@ pub mod fluent_builders {
         /// <p>The name of your new database snapshot to be created before stopping your database.</p>
         pub fn relational_database_snapshot_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.relational_database_snapshot_name(inp);
+            self.inner = self
+                .inner
+                .relational_database_snapshot_name(signature.into());
             self
         }
         /// <p>The name of your new database snapshot to be created before stopping your database.</p>
@@ -18181,8 +18258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource to which you are adding tags.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the resource to which you are adding tags.</p>
@@ -18194,8 +18271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add a tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add a tag.</p>
@@ -18208,8 +18285,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key and optional value.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag key and optional value.</p>
@@ -18288,8 +18365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm to test.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(signature.into());
             self
         }
         /// <p>The name of the alarm to test.</p>
@@ -18315,8 +18392,8 @@ pub mod fluent_builders {
         /// <code>OK</code> - The metric is within the defined threshold.</p>
         /// </li>
         /// </ul>
-        pub fn state(mut self, inp: crate::model::AlarmState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, signature: crate::model::AlarmState) -> Self {
+            self.inner = self.inner.state(signature);
             self
         }
         /// <p>The alarm state to test.</p>
@@ -18466,8 +18543,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource from which you are removing a tag.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(signature.into());
             self
         }
         /// <p>The name of the resource from which you are removing a tag.</p>
@@ -18479,8 +18556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.</p>
@@ -18493,8 +18570,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys to delete from the specified resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys to delete from the specified resource.</p>
@@ -18569,8 +18646,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket to update.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket to update.</p>
@@ -18579,8 +18656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
-        pub fn access_rules(mut self, inp: crate::model::AccessRules) -> Self {
-            self.inner = self.inner.access_rules(inp);
+        pub fn access_rules(mut self, signature: crate::model::AccessRules) -> Self {
+            self.inner = self.inner.access_rules(signature);
             self
         }
         /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
@@ -18605,8 +18682,8 @@ pub mod fluent_builders {
         /// Existing object versions are retained.</p>
         /// </li>
         /// </ul>
-        pub fn versioning(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versioning(inp);
+        pub fn versioning(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versioning(signature.into());
             self
         }
         /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
@@ -18634,8 +18711,8 @@ pub mod fluent_builders {
         /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
         ///
         /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
-        pub fn readonly_access_accounts(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readonly_access_accounts(inp);
+        pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readonly_access_accounts(input.into());
             self
         }
         /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
@@ -18649,8 +18726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that describes the access log configuration for the bucket.</p>
-        pub fn access_log_config(mut self, inp: crate::model::BucketAccessLogConfig) -> Self {
-            self.inner = self.inner.access_log_config(inp);
+        pub fn access_log_config(mut self, signature: crate::model::BucketAccessLogConfig) -> Self {
+            self.inner = self.inner.access_log_config(signature);
             self
         }
         /// <p>An object that describes the access log configuration for the bucket.</p>
@@ -18736,8 +18813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bucket for which to update the bundle.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(signature.into());
             self
         }
         /// <p>The name of the bucket for which to update the bundle.</p>
@@ -18749,8 +18826,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
         /// specify.</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(signature.into());
             self
         }
         /// <p>The ID of the new bundle to apply to the bucket.</p>
@@ -18823,8 +18900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container service to update.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(signature.into());
             self
         }
         /// <p>The name of the container service to update.</p>
@@ -18842,8 +18919,8 @@ pub mod fluent_builders {
         ///
         /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each
         /// power option.</p>
-        pub fn power(mut self, inp: crate::model::ContainerServicePowerName) -> Self {
-            self.inner = self.inner.power(inp);
+        pub fn power(mut self, signature: crate::model::ContainerServicePowerName) -> Self {
+            self.inner = self.inner.power(signature);
             self
         }
         /// <p>The power for the container service.</p>
@@ -18870,8 +18947,8 @@ pub mod fluent_builders {
         /// capacity. To determine the monthly price of your container service, multiply the base price of
         /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the
         /// service.</p>
-        pub fn scale(mut self, inp: i32) -> Self {
-            self.inner = self.inner.scale(inp);
+        pub fn scale(mut self, signature: i32) -> Self {
+            self.inner = self.inner.scale(signature);
             self
         }
         /// <p>The scale for the container service.</p>
@@ -18886,8 +18963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value to indicate whether the container service is disabled.</p>
-        pub fn is_disabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_disabled(inp);
+        pub fn is_disabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.is_disabled(signature);
             self
         }
         /// <p>A Boolean value to indicate whether the container service is disabled.</p>
@@ -18920,9 +18997,9 @@ pub mod fluent_builders {
         pub fn public_domain_names(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.public_domain_names(k, v);
+            self.inner = self.inner.public_domain_names(k.into(), v);
             self
         }
         /// <p>The public domain names to use with the container service, such as
@@ -19016,8 +19093,8 @@ pub mod fluent_builders {
         /// <p>The name of the distribution to update.</p>
         /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
         /// can specify.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution to update.</p>
@@ -19033,8 +19110,8 @@ pub mod fluent_builders {
         /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
         /// instance or load balancer.</p>
         /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-        pub fn origin(mut self, inp: crate::model::InputOrigin) -> Self {
-            self.inner = self.inner.origin(inp);
+        pub fn origin(mut self, signature: crate::model::InputOrigin) -> Self {
+            self.inner = self.inner.origin(signature);
             self
         }
         /// <p>An object that describes the origin resource for the distribution, such as a Lightsail
@@ -19045,8 +19122,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that describes the default cache behavior for the distribution.</p>
-        pub fn default_cache_behavior(mut self, inp: crate::model::CacheBehavior) -> Self {
-            self.inner = self.inner.default_cache_behavior(inp);
+        pub fn default_cache_behavior(mut self, signature: crate::model::CacheBehavior) -> Self {
+            self.inner = self.inner.default_cache_behavior(signature);
             self
         }
         /// <p>An object that describes the default cache behavior for the distribution.</p>
@@ -19063,8 +19140,8 @@ pub mod fluent_builders {
         /// <code>UpdateDistributionRequest</code> will replace your distribution's existing
         /// settings.</p>
         /// </note>
-        pub fn cache_behavior_settings(mut self, inp: crate::model::CacheSettings) -> Self {
-            self.inner = self.inner.cache_behavior_settings(inp);
+        pub fn cache_behavior_settings(mut self, signature: crate::model::CacheSettings) -> Self {
+            self.inner = self.inner.cache_behavior_settings(signature);
             self
         }
         /// <p>An object that describes the cache behavior settings for the distribution.</p>
@@ -19085,11 +19162,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cache_behaviors`](Self::set_cache_behaviors).
         ///
         /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-        pub fn cache_behaviors(
-            mut self,
-            inp: impl Into<crate::model::CacheBehaviorPerPath>,
-        ) -> Self {
-            self.inner = self.inner.cache_behaviors(inp);
+        pub fn cache_behaviors(mut self, input: crate::model::CacheBehaviorPerPath) -> Self {
+            self.inner = self.inner.cache_behaviors(input);
             self
         }
         /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
@@ -19101,8 +19175,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to enable the distribution.</p>
-        pub fn is_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_enabled(inp);
+        pub fn is_enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.is_enabled(signature);
             self
         }
         /// <p>Indicates whether to enable the distribution.</p>
@@ -19182,8 +19256,8 @@ pub mod fluent_builders {
         /// <p>The name of the distribution for which to update the bundle.</p>
         /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
         /// can specify.</p>
-        pub fn distribution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_name(inp);
+        pub fn distribution_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_name(signature.into());
             self
         }
         /// <p>The name of the distribution for which to update the bundle.</p>
@@ -19199,8 +19273,8 @@ pub mod fluent_builders {
         /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
         /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
         /// IDs that you can specify.</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(signature.into());
             self
         }
         /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
@@ -19274,8 +19348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain recordset to update.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The name of the domain recordset to update.</p>
@@ -19284,8 +19358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An array of key-value pairs containing information about the domain entry.</p>
-        pub fn domain_entry(mut self, inp: crate::model::DomainEntry) -> Self {
-            self.inner = self.inner.domain_entry(inp);
+        pub fn domain_entry(mut self, signature: crate::model::DomainEntry) -> Self {
+            self.inner = self.inner.domain_entry(signature);
             self
         }
         /// <p>An array of key-value pairs containing information about the domain entry.</p>
@@ -19362,8 +19436,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the load balancer that you want to modify (e.g.,
         /// <code>my-load-balancer</code>.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer that you want to modify (e.g.,
@@ -19376,8 +19450,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the attribute you want to update. Valid values are below.</p>
-        pub fn attribute_name(mut self, inp: crate::model::LoadBalancerAttributeName) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(
+            mut self,
+            signature: crate::model::LoadBalancerAttributeName,
+        ) -> Self {
+            self.inner = self.inner.attribute_name(signature);
             self
         }
         /// <p>The name of the attribute you want to update. Valid values are below.</p>
@@ -19389,8 +19466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value that you want to specify for the attribute name.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_value(inp);
+        pub fn attribute_value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_value(signature.into());
             self
         }
         /// <p>The value that you want to specify for the attribute name.</p>
@@ -19467,8 +19544,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your Lightsail database resource to update.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your Lightsail database resource to update.</p>
@@ -19488,8 +19568,8 @@ pub mod fluent_builders {
         /// <b>PostgreSQL</b>
         /// </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(inp);
+        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(signature.into());
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character
@@ -19512,8 +19592,8 @@ pub mod fluent_builders {
         /// generated by Lightsail.</p>
         /// <p>Use the <code>get relational database master user password</code> operation to get the new
         /// password.</p>
-        pub fn rotate_master_user_password(mut self, inp: bool) -> Self {
-            self.inner = self.inner.rotate_master_user_password(inp);
+        pub fn rotate_master_user_password(mut self, signature: bool) -> Self {
+            self.inner = self.inner.rotate_master_user_password(signature);
             self
         }
         /// <p>When <code>true</code>, the master user password is changed to a new strong password
@@ -19543,8 +19623,11 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_backup_window(inp);
+        pub fn preferred_backup_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_backup_window(signature.into());
             self
         }
         /// <p>The daily time range during which automated backups are created for your database if
@@ -19595,8 +19678,11 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>The weekly time range during which system maintenance can occur on your database.</p>
@@ -19631,8 +19717,8 @@ pub mod fluent_builders {
         /// <p>When <code>true</code>, enables automated backup retention for your database.</p>
         /// <p>Updates are applied during the next maintenance window because this can result in an
         /// outage.</p>
-        pub fn enable_backup_retention(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_backup_retention(inp);
+        pub fn enable_backup_retention(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_backup_retention(signature);
             self
         }
         /// <p>When <code>true</code>, enables automated backup retention for your database.</p>
@@ -19648,8 +19734,8 @@ pub mod fluent_builders {
         /// snapshot</code> operation.</p>
         /// <p>Updates are applied during the next maintenance window because this can result in an
         /// outage.</p>
-        pub fn disable_backup_retention(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_backup_retention(inp);
+        pub fn disable_backup_retention(mut self, signature: bool) -> Self {
+            self.inner = self.inner.disable_backup_retention(signature);
             self
         }
         /// <p>When <code>true</code>, disables automated backup retention for your database.</p>
@@ -19666,8 +19752,8 @@ pub mod fluent_builders {
         /// specifies a database that is available to resources outside of your Lightsail account. A
         /// value of <code>false</code> specifies a database that is available only to your Lightsail
         /// resources in the same region as your database.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, signature: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(signature);
             self
         }
         /// <p>Specifies the accessibility options for your database. A value of <code>true</code>
@@ -19682,8 +19768,8 @@ pub mod fluent_builders {
         /// changes during the preferred maintenance window. Some changes may cause an outage.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>When <code>true</code>, applies changes immediately. When <code>false</code>, applies
@@ -19695,8 +19781,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates the certificate that needs to be associated with the database.</p>
-        pub fn ca_certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ca_certificate_identifier(inp);
+        pub fn ca_certificate_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ca_certificate_identifier(signature.into());
             self
         }
         /// <p>Indicates the certificate that needs to be associated with the database.</p>
@@ -19779,8 +19868,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your database for which to update parameters.</p>
-        pub fn relational_database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relational_database_name(inp);
+        pub fn relational_database_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.relational_database_name(signature.into());
             self
         }
         /// <p>The name of your database for which to update parameters.</p>
@@ -19796,11 +19888,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The database parameters to update.</p>
-        pub fn parameters(
-            mut self,
-            inp: impl Into<crate::model::RelationalDatabaseParameter>,
-        ) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: crate::model::RelationalDatabaseParameter) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>The database parameters to update.</p>

@@ -206,9 +206,9 @@ pub mod describe_event_types_output {
         /// <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
         /// </code>; for
         /// example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
-        pub fn event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_types = Some(v);
             self
         }
@@ -306,9 +306,9 @@ pub mod describe_events_for_organization_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The events that match the specified filter criteria.</p>
-        pub fn events(mut self, input: impl Into<crate::model::OrganizationEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::OrganizationEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -400,9 +400,9 @@ pub mod describe_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The events that match the specified filter criteria.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -493,12 +493,9 @@ pub mod describe_event_details_for_organization_output {
         /// To override the contents of this collection use [`set_successful_set`](Self::set_successful_set).
         ///
         /// <p>Information about the events that could be retrieved.</p>
-        pub fn successful_set(
-            mut self,
-            input: impl Into<crate::model::OrganizationEventDetails>,
-        ) -> Self {
+        pub fn successful_set(mut self, input: crate::model::OrganizationEventDetails) -> Self {
             let mut v = self.successful_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_set = Some(v);
             self
         }
@@ -517,10 +514,10 @@ pub mod describe_event_details_for_organization_output {
         /// <p>Error messages for any events that could not be retrieved.</p>
         pub fn failed_set(
             mut self,
-            input: impl Into<crate::model::OrganizationEventDetailsErrorItem>,
+            input: crate::model::OrganizationEventDetailsErrorItem,
         ) -> Self {
             let mut v = self.failed_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_set = Some(v);
             self
         }
@@ -593,9 +590,9 @@ pub mod describe_event_details_output {
         /// To override the contents of this collection use [`set_successful_set`](Self::set_successful_set).
         ///
         /// <p>Information about the events that could be retrieved.</p>
-        pub fn successful_set(mut self, input: impl Into<crate::model::EventDetails>) -> Self {
+        pub fn successful_set(mut self, input: crate::model::EventDetails) -> Self {
             let mut v = self.successful_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_set = Some(v);
             self
         }
@@ -612,9 +609,9 @@ pub mod describe_event_details_output {
         /// To override the contents of this collection use [`set_failed_set`](Self::set_failed_set).
         ///
         /// <p>Error messages for any events that could not be retrieved.</p>
-        pub fn failed_set(mut self, input: impl Into<crate::model::EventDetailsErrorItem>) -> Self {
+        pub fn failed_set(mut self, input: crate::model::EventDetailsErrorItem) -> Self {
             let mut v = self.failed_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_set = Some(v);
             self
         }
@@ -691,9 +688,9 @@ pub mod describe_event_aggregates_output {
         /// To override the contents of this collection use [`set_event_aggregates`](Self::set_event_aggregates).
         ///
         /// <p>The number of events in each category that meet the optional filter criteria.</p>
-        pub fn event_aggregates(mut self, input: impl Into<crate::model::EventAggregate>) -> Self {
+        pub fn event_aggregates(mut self, input: crate::model::EventAggregate) -> Self {
             let mut v = self.event_aggregates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_aggregates = Some(v);
             self
         }
@@ -772,12 +769,9 @@ pub mod describe_entity_aggregates_output {
         /// To override the contents of this collection use [`set_entity_aggregates`](Self::set_entity_aggregates).
         ///
         /// <p>The number of entities that are affected by each of the specified events.</p>
-        pub fn entity_aggregates(
-            mut self,
-            input: impl Into<crate::model::EntityAggregate>,
-        ) -> Self {
+        pub fn entity_aggregates(mut self, input: crate::model::EntityAggregate) -> Self {
             let mut v = self.entity_aggregates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_aggregates = Some(v);
             self
         }
@@ -872,9 +866,9 @@ pub mod describe_affected_entities_for_organization_output {
         /// <p>A JSON set of elements including the <code>awsAccountId</code> and its
         /// <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
         /// <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::AffectedEntity>) -> Self {
+        pub fn entities(mut self, input: crate::model::AffectedEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -896,10 +890,10 @@ pub mod describe_affected_entities_for_organization_output {
         /// <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
         pub fn failed_set(
             mut self,
-            input: impl Into<crate::model::OrganizationAffectedEntitiesErrorItem>,
+            input: crate::model::OrganizationAffectedEntitiesErrorItem,
         ) -> Self {
             let mut v = self.failed_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_set = Some(v);
             self
         }
@@ -995,9 +989,9 @@ pub mod describe_affected_entities_output {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>The entities that match the filter criteria.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::AffectedEntity>) -> Self {
+        pub fn entities(mut self, input: crate::model::AffectedEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }

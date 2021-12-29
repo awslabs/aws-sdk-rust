@@ -1038,10 +1038,10 @@ pub mod create_hit_input {
         /// </p>
         pub fn qualification_requirements(
             mut self,
-            input: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
             let mut v = self.qualification_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualification_requirements = Some(v);
             self
         }
@@ -1174,12 +1174,9 @@ pub mod create_hit_input {
         /// If the HITLayoutId is provided, any placeholder values must be filled in with values
         /// using the HITLayoutParameter structure. For more information, see HITLayout.
         /// </p>
-        pub fn hit_layout_parameters(
-            mut self,
-            input: impl Into<crate::model::HitLayoutParameter>,
-        ) -> Self {
+        pub fn hit_layout_parameters(mut self, input: crate::model::HitLayoutParameter) -> Self {
             let mut v = self.hit_layout_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hit_layout_parameters = Some(v);
             self
         }
@@ -1483,10 +1480,10 @@ pub mod create_hit_type_input {
         /// </p>
         pub fn qualification_requirements(
             mut self,
-            input: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
             let mut v = self.qualification_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualification_requirements = Some(v);
             self
         }
@@ -1888,12 +1885,9 @@ pub mod create_hit_with_hit_type_input {
         /// If the HITLayoutId is provided, any placeholder values must be filled in with values
         /// using the HITLayoutParameter structure. For more information, see HITLayout.
         /// </p>
-        pub fn hit_layout_parameters(
-            mut self,
-            input: impl Into<crate::model::HitLayoutParameter>,
-        ) -> Self {
+        pub fn hit_layout_parameters(mut self, input: crate::model::HitLayoutParameter) -> Self {
             let mut v = self.hit_layout_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hit_layout_parameters = Some(v);
             self
         }
@@ -4220,12 +4214,9 @@ pub mod list_assignments_for_hit_input {
         ///
         /// <p>The status of the assignments to return: Submitted | Approved
         /// | Rejected</p>
-        pub fn assignment_statuses(
-            mut self,
-            input: impl Into<crate::model::AssignmentStatus>,
-        ) -> Self {
+        pub fn assignment_statuses(mut self, input: crate::model::AssignmentStatus) -> Self {
             let mut v = self.assignment_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assignment_statuses = Some(v);
             self
         }
@@ -5606,9 +5597,9 @@ pub mod list_review_policy_results_for_hit_input {
         /// If omitted, the default behavior is to retrieve all data for both policy levels.
         /// For a list of all the described policies, see Review Policies.
         /// </p>
-        pub fn policy_levels(mut self, input: impl Into<crate::model::ReviewPolicyLevel>) -> Self {
+        pub fn policy_levels(mut self, input: crate::model::ReviewPolicyLevel) -> Self {
             let mut v = self.policy_levels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_levels = Some(v);
             self
         }

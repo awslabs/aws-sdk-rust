@@ -180,10 +180,10 @@ pub mod pipeline_declaration {
         pub fn artifact_stores(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ArtifactStore>,
+            v: crate::model::ArtifactStore,
         ) -> Self {
             let mut hash_map = self.artifact_stores.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.artifact_stores = Some(hash_map);
             self
         }
@@ -210,9 +210,9 @@ pub mod pipeline_declaration {
         /// To override the contents of this collection use [`set_stages`](Self::set_stages).
         ///
         /// <p>The stage in which to perform the action.</p>
-        pub fn stages(mut self, input: impl Into<crate::model::StageDeclaration>) -> Self {
+        pub fn stages(mut self, input: crate::model::StageDeclaration) -> Self {
             let mut v = self.stages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stages = Some(v);
             self
         }
@@ -316,9 +316,9 @@ pub mod stage_declaration {
         /// To override the contents of this collection use [`set_blockers`](Self::set_blockers).
         ///
         /// <p>Reserved for future use.</p>
-        pub fn blockers(mut self, input: impl Into<crate::model::BlockerDeclaration>) -> Self {
+        pub fn blockers(mut self, input: crate::model::BlockerDeclaration) -> Self {
             let mut v = self.blockers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blockers = Some(v);
             self
         }
@@ -335,9 +335,9 @@ pub mod stage_declaration {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions included in a stage.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::ActionDeclaration>) -> Self {
+        pub fn actions(mut self, input: crate::model::ActionDeclaration) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -590,9 +590,9 @@ pub mod action_declaration {
         ///
         /// <p>The name or ID of the result of the action declaration, such as a test or build
         /// artifact.</p>
-        pub fn output_artifacts(mut self, input: impl Into<crate::model::OutputArtifact>) -> Self {
+        pub fn output_artifacts(mut self, input: crate::model::OutputArtifact) -> Self {
             let mut v = self.output_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_artifacts = Some(v);
             self
         }
@@ -611,9 +611,9 @@ pub mod action_declaration {
         ///
         /// <p>The name or ID of the artifact consumed by the action, such as a test or build
         /// artifact.</p>
-        pub fn input_artifacts(mut self, input: impl Into<crate::model::InputArtifact>) -> Self {
+        pub fn input_artifacts(mut self, input: crate::model::InputArtifact) -> Self {
             let mut v = self.input_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_artifacts = Some(v);
             self
         }
@@ -1845,9 +1845,9 @@ pub mod action_type_declaration {
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>The properties of the action type to be updated.</p>
-        pub fn properties(mut self, input: impl Into<crate::model::ActionTypeProperty>) -> Self {
+        pub fn properties(mut self, input: crate::model::ActionTypeProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }
@@ -3393,9 +3393,9 @@ pub mod list_webhook_item {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to the webhook.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3594,9 +3594,9 @@ pub mod webhook_definition {
         /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook
         /// URL. All defined rules must pass for the request to be accepted and the pipeline
         /// started.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::WebhookFilterRule>) -> Self {
+        pub fn filters(mut self, input: crate::model::WebhookFilterRule) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4965,9 +4965,9 @@ pub mod job_data {
         /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
         ///
         /// <p>The artifact supplied to the job.</p>
-        pub fn input_artifacts(mut self, input: impl Into<crate::model::Artifact>) -> Self {
+        pub fn input_artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.input_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_artifacts = Some(v);
             self
         }
@@ -4984,9 +4984,9 @@ pub mod job_data {
         /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
         ///
         /// <p>The output of the job.</p>
-        pub fn output_artifacts(mut self, input: impl Into<crate::model::Artifact>) -> Self {
+        pub fn output_artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.output_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_artifacts = Some(v);
             self
         }
@@ -6198,9 +6198,9 @@ pub mod pipeline_execution_summary {
         ///
         /// <p>A list of the source artifact revisions that initiated a pipeline
         /// execution.</p>
-        pub fn source_revisions(mut self, input: impl Into<crate::model::SourceRevision>) -> Self {
+        pub fn source_revisions(mut self, input: crate::model::SourceRevision) -> Self {
             let mut v = self.source_revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_revisions = Some(v);
             self
         }
@@ -6805,10 +6805,10 @@ pub mod action_type {
         /// <p>The configuration properties for the action type.</p>
         pub fn action_configuration_properties(
             mut self,
-            input: impl Into<crate::model::ActionConfigurationProperty>,
+            input: crate::model::ActionConfigurationProperty,
         ) -> Self {
             let mut v = self.action_configuration_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.action_configuration_properties = Some(v);
             self
         }
@@ -7693,9 +7693,9 @@ pub mod action_execution_output {
         ///
         /// <p>Details of output artifacts of the action that correspond to the action
         /// execution.</p>
-        pub fn output_artifacts(mut self, input: impl Into<crate::model::ArtifactDetail>) -> Self {
+        pub fn output_artifacts(mut self, input: crate::model::ArtifactDetail) -> Self {
             let mut v = self.output_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_artifacts = Some(v);
             self
         }
@@ -8215,9 +8215,9 @@ pub mod action_execution_input {
         ///
         /// <p>Details of input artifacts of the action that correspond to the action
         /// execution.</p>
-        pub fn input_artifacts(mut self, input: impl Into<crate::model::ArtifactDetail>) -> Self {
+        pub fn input_artifacts(mut self, input: crate::model::ArtifactDetail) -> Self {
             let mut v = self.input_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_artifacts = Some(v);
             self
         }
@@ -8655,9 +8655,9 @@ pub mod third_party_job_data {
         /// be system-generated, such as "MyApp", or it might be defined by the user when the action
         /// is created. The input artifact name must match the name of an output artifact generated
         /// by an action in an earlier action or stage of the pipeline.</p>
-        pub fn input_artifacts(mut self, input: impl Into<crate::model::Artifact>) -> Self {
+        pub fn input_artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.input_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_artifacts = Some(v);
             self
         }
@@ -8679,9 +8679,9 @@ pub mod third_party_job_data {
         /// <p>The name of the artifact that is the result of the action, if any. This name might
         /// be system-generated, such as "MyBuiltApp", or it might be defined by the user when the
         /// action is created.</p>
-        pub fn output_artifacts(mut self, input: impl Into<crate::model::Artifact>) -> Self {
+        pub fn output_artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.output_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_artifacts = Some(v);
             self
         }
@@ -8872,9 +8872,9 @@ pub mod stage_state {
         /// To override the contents of this collection use [`set_action_states`](Self::set_action_states).
         ///
         /// <p>The state of the stage.</p>
-        pub fn action_states(mut self, input: impl Into<crate::model::ActionState>) -> Self {
+        pub fn action_states(mut self, input: crate::model::ActionState) -> Self {
             let mut v = self.action_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.action_states = Some(v);
             self
         }
@@ -9985,12 +9985,9 @@ pub mod pipeline_execution {
         ///
         /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
         /// execution.</p>
-        pub fn artifact_revisions(
-            mut self,
-            input: impl Into<crate::model::ArtifactRevision>,
-        ) -> Self {
+        pub fn artifact_revisions(mut self, input: crate::model::ArtifactRevision) -> Self {
             let mut v = self.artifact_revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.artifact_revisions = Some(v);
             self
         }

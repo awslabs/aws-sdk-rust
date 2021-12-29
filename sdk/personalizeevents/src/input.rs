@@ -55,9 +55,9 @@ pub mod put_events_input {
         /// To override the contents of this collection use [`set_event_list`](Self::set_event_list).
         ///
         /// <p>A list of event data from the session.</p>
-        pub fn event_list(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn event_list(mut self, input: crate::model::Event) -> Self {
             let mut v = self.event_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_list = Some(v);
             self
         }
@@ -222,9 +222,9 @@ pub mod put_items_input {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A list of item data.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Item>) -> Self {
+        pub fn items(mut self, input: crate::model::Item) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -387,9 +387,9 @@ pub mod put_users_input {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>A list of user data.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }

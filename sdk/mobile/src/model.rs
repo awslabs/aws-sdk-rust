@@ -229,9 +229,9 @@ pub mod project_details {
         /// <p>
         /// List of AWS resources associated with a project.
         /// </p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -784,9 +784,9 @@ pub mod bundle_details {
         /// <p>
         /// Developer desktop or mobile app or website platforms.
         /// </p>
-        pub fn available_platforms(mut self, input: impl Into<crate::model::Platform>) -> Self {
+        pub fn available_platforms(mut self, input: crate::model::Platform) -> Self {
             let mut v = self.available_platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.available_platforms = Some(v);
             self
         }

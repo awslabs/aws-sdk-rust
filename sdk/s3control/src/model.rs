@@ -2184,9 +2184,9 @@ pub mod tagging {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>A collection for a set of tags.</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -2247,9 +2247,9 @@ pub mod lifecycle_configuration {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
-        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -2473,9 +2473,9 @@ pub mod lifecycle_rule {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn transitions(mut self, input: impl Into<crate::model::Transition>) -> Self {
+        pub fn transitions(mut self, input: crate::model::Transition) -> Self {
             let mut v = self.transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transitions = Some(v);
             self
         }
@@ -2504,10 +2504,10 @@ pub mod lifecycle_rule {
         /// </note>
         pub fn noncurrent_version_transitions(
             mut self,
-            input: impl Into<crate::model::NoncurrentVersionTransition>,
+            input: crate::model::NoncurrentVersionTransition,
         ) -> Self {
             let mut v = self.noncurrent_version_transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.noncurrent_version_transitions = Some(v);
             self
         }
@@ -3201,9 +3201,9 @@ pub mod lifecycle_rule_and_operator {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3440,12 +3440,9 @@ pub mod object_lambda_configuration {
         ///
         /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>
         /// and <code>GetObject-PartNumber</code>.</p>
-        pub fn allowed_features(
-            mut self,
-            input: impl Into<crate::model::ObjectLambdaAllowedFeature>,
-        ) -> Self {
+        pub fn allowed_features(mut self, input: crate::model::ObjectLambdaAllowedFeature) -> Self {
             let mut v = self.allowed_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_features = Some(v);
             self
         }
@@ -3465,10 +3462,10 @@ pub mod object_lambda_configuration {
         /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
         pub fn transformation_configurations(
             mut self,
-            input: impl Into<crate::model::ObjectLambdaTransformationConfiguration>,
+            input: crate::model::ObjectLambdaTransformationConfiguration,
         ) -> Self {
             let mut v = self.transformation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transformation_configurations = Some(v);
             self
         }
@@ -3554,10 +3551,10 @@ pub mod object_lambda_transformation_configuration {
         /// <p>A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.</p>
         pub fn actions(
             mut self,
-            input: impl Into<crate::model::ObjectLambdaTransformationConfigurationAction>,
+            input: crate::model::ObjectLambdaTransformationConfigurationAction,
         ) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -4263,9 +4260,9 @@ pub mod multi_region_access_point_report {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-        pub fn regions(mut self, input: impl Into<crate::model::RegionReport>) -> Self {
+        pub fn regions(mut self, input: crate::model::RegionReport) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions = Some(v);
             self
         }
@@ -5896,10 +5893,10 @@ pub mod multi_region_access_points_async_response {
         /// supports.</p>
         pub fn regions(
             mut self,
-            input: impl Into<crate::model::MultiRegionAccessPointRegionalResponse>,
+            input: crate::model::MultiRegionAccessPointRegionalResponse,
         ) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions = Some(v);
             self
         }
@@ -6311,9 +6308,9 @@ pub mod create_multi_region_access_point_input {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
-        pub fn regions(mut self, input: impl Into<crate::model::Region>) -> Self {
+        pub fn regions(mut self, input: crate::model::Region) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions = Some(v);
             self
         }
@@ -6745,9 +6742,9 @@ pub mod job_descriptor {
         /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
         ///
         /// <p>If the specified job failed, this field contains information describing the failure.</p>
-        pub fn failure_reasons(mut self, input: impl Into<crate::model::JobFailure>) -> Self {
+        pub fn failure_reasons(mut self, input: crate::model::JobFailure) -> Self {
             let mut v = self.failure_reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failure_reasons = Some(v);
             self
         }
@@ -8128,9 +8125,9 @@ pub mod s3_set_object_tagging_operation {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p></p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -8443,9 +8440,9 @@ pub mod s3_access_control_list {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p></p>
-        pub fn grants(mut self, input: impl Into<crate::model::S3Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::S3Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -9082,9 +9079,9 @@ pub mod s3_copy_object_operation {
         /// To override the contents of this collection use [`set_access_control_grants`](Self::set_access_control_grants).
         ///
         /// <p></p>
-        pub fn access_control_grants(mut self, input: impl Into<crate::model::S3Grant>) -> Self {
+        pub fn access_control_grants(mut self, input: crate::model::S3Grant) -> Self {
             let mut v = self.access_control_grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_control_grants = Some(v);
             self
         }
@@ -9140,9 +9137,9 @@ pub mod s3_copy_object_operation {
         /// To override the contents of this collection use [`set_new_object_tagging`](Self::set_new_object_tagging).
         ///
         /// <p></p>
-        pub fn new_object_tagging(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn new_object_tagging(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.new_object_tagging.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.new_object_tagging = Some(v);
             self
         }
@@ -10159,9 +10156,9 @@ pub mod job_manifest_spec {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-        pub fn fields(mut self, input: impl Into<crate::model::JobManifestFieldName>) -> Self {
+        pub fn fields(mut self, input: crate::model::JobManifestFieldName) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }

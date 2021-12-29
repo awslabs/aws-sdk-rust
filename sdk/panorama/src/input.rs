@@ -574,9 +574,9 @@ pub mod create_node_from_template_job_input {
         /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
         ///
         /// <p>Tags for the job.</p>
-        pub fn job_tags(mut self, input: impl Into<crate::model::JobResourceTags>) -> Self {
+        pub fn job_tags(mut self, input: crate::model::JobResourceTags) -> Self {
             let mut v = self.job_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_tags = Some(v);
             self
         }
@@ -970,9 +970,9 @@ pub mod create_package_import_job_input {
         /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
         ///
         /// <p>Tags for the package import job.</p>
-        pub fn job_tags(mut self, input: impl Into<crate::model::JobResourceTags>) -> Self {
+        pub fn job_tags(mut self, input: crate::model::JobResourceTags) -> Self {
             let mut v = self.job_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_tags = Some(v);
             self
         }

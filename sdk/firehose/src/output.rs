@@ -240,10 +240,10 @@ pub mod put_record_batch_output {
         /// the index used in the request array.</p>
         pub fn request_responses(
             mut self,
-            input: impl Into<crate::model::PutRecordBatchResponseEntry>,
+            input: crate::model::PutRecordBatchResponseEntry,
         ) -> Self {
             let mut v = self.request_responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.request_responses = Some(v);
             self
         }
@@ -398,9 +398,9 @@ pub mod list_tags_for_delivery_stream_output {
         /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the
         /// first tag after <code>ExclusiveStartTagKey</code> and up to the specified
         /// <code>Limit</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -535,9 +535,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -621,10 +621,10 @@ pub mod list_packages_for_domain_output {
         /// <p>List of <code>DomainPackageDetails</code> objects.</p>
         pub fn domain_package_details_list(
             mut self,
-            input: impl Into<crate::model::DomainPackageDetails>,
+            input: crate::model::DomainPackageDetails,
         ) -> Self {
             let mut v = self.domain_package_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_package_details_list = Some(v);
             self
         }
@@ -847,10 +847,10 @@ pub mod list_elasticsearch_instance_types_output {
         /// </p>
         pub fn elasticsearch_instance_types(
             mut self,
-            input: impl Into<crate::model::EsPartitionInstanceType>,
+            input: crate::model::EsPartitionInstanceType,
         ) -> Self {
             let mut v = self.elasticsearch_instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.elasticsearch_instance_types = Some(v);
             self
         }
@@ -957,10 +957,10 @@ pub mod list_domains_for_package_output {
         /// <p>List of <code>DomainPackageDetails</code> objects.</p>
         pub fn domain_package_details_list(
             mut self,
-            input: impl Into<crate::model::DomainPackageDetails>,
+            input: crate::model::DomainPackageDetails,
         ) -> Self {
             let mut v = self.domain_package_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_package_details_list = Some(v);
             self
         }
@@ -1032,9 +1032,9 @@ pub mod list_domain_names_output {
         /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
         ///
         /// <p>List of domain names and respective engine types.</p>
-        pub fn domain_names(mut self, input: impl Into<crate::model::DomainInfo>) -> Self {
+        pub fn domain_names(mut self, input: crate::model::DomainInfo) -> Self {
             let mut v = self.domain_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_names = Some(v);
             self
         }
@@ -1320,9 +1320,9 @@ pub mod get_upgrade_history_output {
         /// </code>
         /// object.
         /// </p>
-        pub fn upgrade_histories(mut self, input: impl Into<crate::model::UpgradeHistory>) -> Self {
+        pub fn upgrade_histories(mut self, input: crate::model::UpgradeHistory) -> Self {
             let mut v = self.upgrade_histories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upgrade_histories = Some(v);
             self
         }
@@ -1445,10 +1445,10 @@ pub mod get_package_version_history_output {
         /// <p>List of <code>PackageVersionHistory</code> objects.</p>
         pub fn package_version_history_list(
             mut self,
-            input: impl Into<crate::model::PackageVersionHistory>,
+            input: crate::model::PackageVersionHistory,
         ) -> Self {
             let mut v = self.package_version_history_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.package_version_history_list = Some(v);
             self
         }
@@ -1554,10 +1554,10 @@ pub mod get_compatible_elasticsearch_versions_output {
         /// </p>
         pub fn compatible_elasticsearch_versions(
             mut self,
-            input: impl Into<crate::model::CompatibleVersionsMap>,
+            input: crate::model::CompatibleVersionsMap,
         ) -> Self {
             let mut v = self.compatible_elasticsearch_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_elasticsearch_versions = Some(v);
             self
         }
@@ -1716,10 +1716,10 @@ pub mod describe_reserved_elasticsearch_instances_output {
         /// <p>List of reserved Elasticsearch instances.</p>
         pub fn reserved_elasticsearch_instances(
             mut self,
-            input: impl Into<crate::model::ReservedElasticsearchInstance>,
+            input: crate::model::ReservedElasticsearchInstance,
         ) -> Self {
             let mut v = self.reserved_elasticsearch_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_elasticsearch_instances = Some(v);
             self
         }
@@ -1808,12 +1808,12 @@ pub mod describe_reserved_elasticsearch_instance_offerings_output {
         /// <p>List of reserved Elasticsearch instance offerings</p>
         pub fn reserved_elasticsearch_instance_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedElasticsearchInstanceOffering>,
+            input: crate::model::ReservedElasticsearchInstanceOffering,
         ) -> Self {
             let mut v = self
                 .reserved_elasticsearch_instance_offerings
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_elasticsearch_instance_offerings = Some(v);
             self
         }
@@ -1894,12 +1894,9 @@ pub mod describe_packages_output {
         /// To override the contents of this collection use [`set_package_details_list`](Self::set_package_details_list).
         ///
         /// <p>List of <code>PackageDetails</code> objects.</p>
-        pub fn package_details_list(
-            mut self,
-            input: impl Into<crate::model::PackageDetails>,
-        ) -> Self {
+        pub fn package_details_list(mut self, input: crate::model::PackageDetails) -> Self {
             let mut v = self.package_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.package_details_list = Some(v);
             self
         }
@@ -1990,10 +1987,10 @@ pub mod describe_outbound_cross_cluster_search_connections_output {
         /// <p>Consists of list of <code><a>OutboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>
         pub fn cross_cluster_search_connections(
             mut self,
-            input: impl Into<crate::model::OutboundCrossClusterSearchConnection>,
+            input: crate::model::OutboundCrossClusterSearchConnection,
         ) -> Self {
             let mut v = self.cross_cluster_search_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cross_cluster_search_connections = Some(v);
             self
         }
@@ -2089,10 +2086,10 @@ pub mod describe_inbound_cross_cluster_search_connections_output {
         /// <p>Consists of list of <code><a>InboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>
         pub fn cross_cluster_search_connections(
             mut self,
-            input: impl Into<crate::model::InboundCrossClusterSearchConnection>,
+            input: crate::model::InboundCrossClusterSearchConnection,
         ) -> Self {
             let mut v = self.cross_cluster_search_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cross_cluster_search_connections = Some(v);
             self
         }
@@ -2211,10 +2208,10 @@ pub mod describe_elasticsearch_instance_type_limits_output {
         pub fn limits_by_role(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Limits>,
+            v: crate::model::Limits,
         ) -> Self {
             let mut hash_map = self.limits_by_role.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.limits_by_role = Some(hash_map);
             self
         }
@@ -2292,10 +2289,10 @@ pub mod describe_elasticsearch_domains_output {
         /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
         pub fn domain_status_list(
             mut self,
-            input: impl Into<crate::model::ElasticsearchDomainStatus>,
+            input: crate::model::ElasticsearchDomainStatus,
         ) -> Self {
             let mut v = self.domain_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_status_list = Some(v);
             self
         }
@@ -2478,9 +2475,9 @@ pub mod describe_domain_auto_tunes_output {
         /// To override the contents of this collection use [`set_auto_tunes`](Self::set_auto_tunes).
         ///
         /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-        pub fn auto_tunes(mut self, input: impl Into<crate::model::AutoTune>) -> Self {
+        pub fn auto_tunes(mut self, input: crate::model::AutoTune) -> Self {
             let mut v = self.auto_tunes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_tunes = Some(v);
             self
         }

@@ -591,8 +591,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
         /// <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
@@ -606,8 +606,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the resource.</p>
@@ -680,8 +680,11 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
         /// action applies to.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
@@ -696,8 +699,8 @@ pub mod fluent_builders {
         /// <p>The pending maintenance action to apply to this resource.</p>
         /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
         /// </p>
-        pub fn apply_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.apply_action(inp);
+        pub fn apply_action(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.apply_action(signature.into());
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
@@ -726,8 +729,8 @@ pub mod fluent_builders {
         /// requests.</p>
         /// </li>
         /// </ul>
-        pub fn opt_in_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.opt_in_type(inp);
+        pub fn opt_in_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.opt_in_type(signature.into());
             self
         }
         /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an
@@ -821,9 +824,11 @@ pub mod fluent_builders {
         /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
         pub fn replication_task_assessment_run_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_task_assessment_run_arn(inp);
+            self.inner = self
+                .inner
+                .replication_task_assessment_run_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
@@ -904,8 +909,8 @@ pub mod fluent_builders {
         /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
         /// only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two
         /// consecutive hyphens.</p>
-        pub fn endpoint_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_identifier(inp);
+        pub fn endpoint_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_identifier(signature.into());
             self
         }
         /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
@@ -919,8 +924,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
-        pub fn endpoint_type(mut self, inp: crate::model::ReplicationEndpointTypeValue) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        pub fn endpoint_type(
+            mut self,
+            signature: crate::model::ReplicationEndpointTypeValue,
+        ) -> Self {
+            self.inner = self.inner.endpoint_type(signature);
             self
         }
         /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
@@ -938,8 +946,8 @@ pub mod fluent_builders {
         /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
         /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        pub fn engine_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(signature.into());
             self
         }
         /// <p>The type of engine for the endpoint. Valid values, depending on the
@@ -954,8 +962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name to be used to log in to the endpoint database.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(signature.into());
             self
         }
         /// <p>The user name to be used to log in to the endpoint database.</p>
@@ -964,8 +972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password to be used to log in to the endpoint database.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The password to be used to log in to the endpoint database.</p>
@@ -974,8 +982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the server where the endpoint database resides.</p>
-        pub fn server_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(inp);
+        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(signature.into());
             self
         }
         /// <p>The name of the server where the endpoint database resides.</p>
@@ -984,8 +992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port used by the endpoint database.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port used by the endpoint database.</p>
@@ -994,8 +1002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
@@ -1013,8 +1021,11 @@ pub mod fluent_builders {
         /// DMS Endpoints</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
-        pub fn extra_connection_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extra_connection_attributes(inp);
+        pub fn extra_connection_attributes(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.extra_connection_attributes(signature.into());
             self
         }
         /// <p>Additional attributes associated with the connection. Each attribute is specified as a
@@ -1036,8 +1047,8 @@ pub mod fluent_builders {
         /// DMS uses your default encryption key.</p>
         /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
         /// different default encryption key for each Amazon Web Services Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
@@ -1054,8 +1065,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the endpoint.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the endpoint.</p>
@@ -1067,8 +1078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
@@ -1081,8 +1092,8 @@ pub mod fluent_builders {
         }
         /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
         /// </p>
-        pub fn ssl_mode(mut self, inp: crate::model::DmsSslModeValue) -> Self {
-            self.inner = self.inner.ssl_mode(inp);
+        pub fn ssl_mode(mut self, signature: crate::model::DmsSslModeValue) -> Self {
+            self.inner = self.inner.ssl_mode(signature);
             self
         }
         /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
@@ -1096,8 +1107,11 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
         /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
-        pub fn service_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_access_role_arn(inp);
+        pub fn service_access_role_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.service_access_role_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
@@ -1110,8 +1124,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external table definition. </p>
-        pub fn external_table_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_table_definition(inp);
+        pub fn external_table_definition(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.external_table_definition(signature.into());
             self
         }
         /// <p>The external table definition. </p>
@@ -1127,8 +1144,8 @@ pub mod fluent_builders {
         /// Data to DynamoDB</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
-        pub fn dynamo_db_settings(mut self, inp: crate::model::DynamoDbSettings) -> Self {
-            self.inner = self.inner.dynamo_db_settings(inp);
+        pub fn dynamo_db_settings(mut self, signature: crate::model::DynamoDbSettings) -> Self {
+            self.inner = self.inner.dynamo_db_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
@@ -1148,8 +1165,8 @@ pub mod fluent_builders {
         /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn s3_settings(mut self, inp: crate::model::S3Settings) -> Self {
-            self.inner = self.inner.s3_settings(inp);
+        pub fn s3_settings(mut self, signature: crate::model::S3Settings) -> Self {
+            self.inner = self.inner.s3_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
@@ -1183,8 +1200,11 @@ pub mod fluent_builders {
         /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
         /// "string", "BucketName": "string", } </code>
         /// </p>
-        pub fn dms_transfer_settings(mut self, inp: crate::model::DmsTransferSettings) -> Self {
-            self.inner = self.inner.dms_transfer_settings(inp);
+        pub fn dms_transfer_settings(
+            mut self,
+            signature: crate::model::DmsTransferSettings,
+        ) -> Self {
+            self.inner = self.inner.dms_transfer_settings(signature);
             self
         }
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
@@ -1218,8 +1238,8 @@ pub mod fluent_builders {
         /// when using MongoDB as a source for Database Migration Service</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn mongo_db_settings(mut self, inp: crate::model::MongoDbSettings) -> Self {
-            self.inner = self.inner.mongo_db_settings(inp);
+        pub fn mongo_db_settings(mut self, signature: crate::model::MongoDbSettings) -> Self {
+            self.inner = self.inner.mongo_db_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
@@ -1238,8 +1258,8 @@ pub mod fluent_builders {
         /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
         /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn kinesis_settings(mut self, inp: crate::model::KinesisSettings) -> Self {
-            self.inner = self.inner.kinesis_settings(inp);
+        pub fn kinesis_settings(mut self, signature: crate::model::KinesisSettings) -> Self {
+            self.inner = self.inner.kinesis_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
@@ -1258,8 +1278,8 @@ pub mod fluent_builders {
         /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
-        pub fn kafka_settings(mut self, inp: crate::model::KafkaSettings) -> Self {
-            self.inner = self.inner.kafka_settings(inp);
+        pub fn kafka_settings(mut self, signature: crate::model::KafkaSettings) -> Self {
+            self.inner = self.inner.kafka_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
@@ -1277,8 +1297,11 @@ pub mod fluent_builders {
         /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
         /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide</i>.</p>
-        pub fn elasticsearch_settings(mut self, inp: crate::model::ElasticsearchSettings) -> Self {
-            self.inner = self.inner.elasticsearch_settings(inp);
+        pub fn elasticsearch_settings(
+            mut self,
+            signature: crate::model::ElasticsearchSettings,
+        ) -> Self {
+            self.inner = self.inner.elasticsearch_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
@@ -1296,8 +1319,8 @@ pub mod fluent_builders {
         /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
         /// in the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn neptune_settings(mut self, inp: crate::model::NeptuneSettings) -> Self {
-            self.inner = self.inner.neptune_settings(inp);
+        pub fn neptune_settings(mut self, signature: crate::model::NeptuneSettings) -> Self {
+            self.inner = self.inner.neptune_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
@@ -1313,8 +1336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
-        pub fn redshift_settings(mut self, inp: crate::model::RedshiftSettings) -> Self {
-            self.inner = self.inner.redshift_settings(inp);
+        pub fn redshift_settings(mut self, signature: crate::model::RedshiftSettings) -> Self {
+            self.inner = self.inner.redshift_settings(signature);
             self
         }
         /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
@@ -1331,8 +1354,8 @@ pub mod fluent_builders {
         /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn postgre_sql_settings(mut self, inp: crate::model::PostgreSqlSettings) -> Self {
-            self.inner = self.inner.postgre_sql_settings(inp);
+        pub fn postgre_sql_settings(mut self, signature: crate::model::PostgreSqlSettings) -> Self {
+            self.inner = self.inner.postgre_sql_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
@@ -1353,8 +1376,8 @@ pub mod fluent_builders {
         /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
         /// the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn my_sql_settings(mut self, inp: crate::model::MySqlSettings) -> Self {
-            self.inner = self.inner.my_sql_settings(inp);
+        pub fn my_sql_settings(mut self, signature: crate::model::MySqlSettings) -> Self {
+            self.inner = self.inner.my_sql_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
@@ -1376,8 +1399,8 @@ pub mod fluent_builders {
         /// Extra connection attributes when using Oracle as a target for DMS</a>
         /// in the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn oracle_settings(mut self, inp: crate::model::OracleSettings) -> Self {
-            self.inner = self.inner.oracle_settings(inp);
+        pub fn oracle_settings(mut self, signature: crate::model::OracleSettings) -> Self {
+            self.inner = self.inner.oracle_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
@@ -1400,8 +1423,8 @@ pub mod fluent_builders {
         /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
         /// User Guide.</i>
         /// </p>
-        pub fn sybase_settings(mut self, inp: crate::model::SybaseSettings) -> Self {
-            self.inner = self.inner.sybase_settings(inp);
+        pub fn sybase_settings(mut self, signature: crate::model::SybaseSettings) -> Self {
+            self.inner = self.inner.sybase_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
@@ -1425,9 +1448,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn microsoft_sql_server_settings(
             mut self,
-            inp: crate::model::MicrosoftSqlServerSettings,
+            signature: crate::model::MicrosoftSqlServerSettings,
         ) -> Self {
-            self.inner = self.inner.microsoft_sql_server_settings(inp);
+            self.inner = self.inner.microsoft_sql_server_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
@@ -1448,8 +1471,8 @@ pub mod fluent_builders {
         /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
         /// User Guide.</i>
         /// </p>
-        pub fn ibm_db2_settings(mut self, inp: crate::model::IbmDb2Settings) -> Self {
-            self.inner = self.inner.ibm_db2_settings(inp);
+        pub fn ibm_db2_settings(mut self, signature: crate::model::IbmDb2Settings) -> Self {
+            self.inner = self.inner.ibm_db2_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
@@ -1473,8 +1496,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
         /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
         /// value for the end of <code>EndpointArn</code>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
@@ -1494,8 +1517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides information that defines a DocumentDB endpoint.</p>
-        pub fn doc_db_settings(mut self, inp: crate::model::DocDbSettings) -> Self {
-            self.inner = self.inner.doc_db_settings(inp);
+        pub fn doc_db_settings(mut self, signature: crate::model::DocDbSettings) -> Self {
+            self.inner = self.inner.doc_db_settings(signature);
             self
         }
         /// <p>Provides information that defines a DocumentDB endpoint.</p>
@@ -1507,8 +1530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Redis endpoint.</p>
-        pub fn redis_settings(mut self, inp: crate::model::RedisSettings) -> Self {
-            self.inner = self.inner.redis_settings(inp);
+        pub fn redis_settings(mut self, signature: crate::model::RedisSettings) -> Self {
+            self.inner = self.inner.redis_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Redis endpoint.</p>
@@ -1520,8 +1543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-        pub fn gcp_my_sql_settings(mut self, inp: crate::model::GcpMySqlSettings) -> Self {
-            self.inner = self.inner.gcp_my_sql_settings(inp);
+        pub fn gcp_my_sql_settings(mut self, signature: crate::model::GcpMySqlSettings) -> Self {
+            self.inner = self.inner.gcp_my_sql_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
@@ -1608,8 +1631,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
@@ -1622,8 +1645,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
         /// The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
@@ -1641,8 +1664,8 @@ pub mod fluent_builders {
         /// returned. </p>
         /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code>
         /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(signature.into());
             self
         }
         /// <p> The type of DMS resource that generates the events. For example, if you want to be
@@ -1664,8 +1687,8 @@ pub mod fluent_builders {
         /// Notifications</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
         /// <p>A list of event categories for a source type that you want to subscribe to. For more
@@ -1689,8 +1712,8 @@ pub mod fluent_builders {
         /// <p>If you specify multiple values, they must be of the same type. For example, if you
         /// specify a database instance ID, then all of the other values must be database instance
         /// IDs.</p>
-        pub fn source_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_ids(inp);
+        pub fn source_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ids(input.into());
             self
         }
         /// <p>A list of identifiers for which DMS provides notification events.</p>
@@ -1707,8 +1730,8 @@ pub mod fluent_builders {
         }
         /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
         /// <code>false</code> to create the subscription but not activate it. </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
@@ -1722,8 +1745,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the event subscription.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the event subscription.</p>
@@ -1817,9 +1840,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn replication_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_instance_identifier(inp);
+            self.inner = self.inner.replication_instance_identifier(signature.into());
             self
         }
         /// <p>The replication instance identifier. This parameter is stored as a lowercase
@@ -1847,8 +1870,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
         /// instance.</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        pub fn allocated_storage(mut self, signature: i32) -> Self {
+            self.inner = self.inner.allocated_storage(signature);
             self
         }
         /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
@@ -1863,8 +1886,11 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
         /// Selecting the right DMS replication instance for your migration</a>.
         /// </p>
-        pub fn replication_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_class(inp);
+        pub fn replication_instance_class(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_class(signature.into());
             self
         }
         /// <p>The compute and memory capacity of the replication instance as defined for the specified
@@ -1886,8 +1912,8 @@ pub mod fluent_builders {
         ///
         /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
         /// security group must work with the VPC containing the replication instance. </p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
         /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
@@ -1903,8 +1929,8 @@ pub mod fluent_builders {
         /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for
         /// example: <code>us-east-1d</code>
         /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(signature.into());
             self
         }
         /// <p>The Availability Zone where the replication instance will be created. The default
@@ -1921,9 +1947,11 @@ pub mod fluent_builders {
         /// <p>A subnet group to associate with the replication instance.</p>
         pub fn replication_subnet_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_identifier(inp);
+            self.inner = self
+                .inner
+                .replication_subnet_group_identifier(signature.into());
             self
         }
         /// <p>A subnet group to associate with the replication instance.</p>
@@ -1942,8 +1970,11 @@ pub mod fluent_builders {
         /// occurring on a random day of the week.</p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal
@@ -1964,8 +1995,8 @@ pub mod fluent_builders {
         /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
         /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
         /// <code>true</code>. </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, signature: bool) -> Self {
+            self.inner = self.inner.multi_az(signature);
             self
         }
         /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
@@ -1978,8 +2009,8 @@ pub mod fluent_builders {
         /// <p>The engine version number of the replication instance.</p>
         /// <p>If an engine version number is not specified when a replication
         /// instance is created, the default is the latest engine version available.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The engine version number of the replication instance.</p>
@@ -1997,8 +2028,8 @@ pub mod fluent_builders {
         /// <code>true</code>.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(signature);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
@@ -2015,8 +2046,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the replication instance.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the replication instance.</p>
@@ -2033,8 +2064,8 @@ pub mod fluent_builders {
         /// DMS uses your default encryption key.</p>
         /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
         /// different default encryption key for each Amazon Web Services Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>An KMS key identifier that is used to encrypt the data on the replication
@@ -2051,8 +2082,8 @@ pub mod fluent_builders {
         /// <code>true</code> represents an instance with a public IP address. A value of
         /// <code>false</code> represents an instance with a private IP address. The default value
         /// is <code>true</code>. </p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, signature: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(signature);
             self
         }
         /// <p> Specifies the accessibility options for the replication instance. A value of
@@ -2069,8 +2100,8 @@ pub mod fluent_builders {
         /// addresses for up to four on-premise DNS name servers. For example:
         /// <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
         /// </p>
-        pub fn dns_name_servers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dns_name_servers(inp);
+        pub fn dns_name_servers(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dns_name_servers(signature.into());
             self
         }
         /// <p>A list of custom DNS name servers supported for the replication instance to access your
@@ -2095,8 +2126,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
         /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
         /// value for the end of <code>EndpointArn</code>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
@@ -2185,9 +2216,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn replication_subnet_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_identifier(inp);
+            self.inner = self
+                .inner
+                .replication_subnet_group_identifier(signature.into());
             self
         }
         /// <p>The name for the replication subnet group. This value is stored as a lowercase
@@ -2206,9 +2239,11 @@ pub mod fluent_builders {
         /// <p>The description for the subnet group.</p>
         pub fn replication_subnet_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_description(inp);
+            self.inner = self
+                .inner
+                .replication_subnet_group_description(signature.into());
             self
         }
         /// <p>The description for the subnet group.</p>
@@ -2224,8 +2259,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
@@ -2241,8 +2276,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the subnet group.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the subnet group.</p>
@@ -2326,8 +2361,11 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn replication_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_identifier(inp);
+        pub fn replication_task_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_task_identifier(signature.into());
             self
         }
         /// <p>An identifier for the replication task.</p>
@@ -2351,8 +2389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
-        pub fn source_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_endpoint_arn(inp);
+        pub fn source_endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_endpoint_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
@@ -2364,8 +2402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
-        pub fn target_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_endpoint_arn(inp);
+        pub fn target_endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_endpoint_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
@@ -2377,8 +2415,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
@@ -2391,8 +2432,8 @@ pub mod fluent_builders {
         }
         /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
         /// </p>
-        pub fn migration_type(mut self, inp: crate::model::MigrationTypeValue) -> Self {
-            self.inner = self.inner.migration_type(inp);
+        pub fn migration_type(mut self, signature: crate::model::MigrationTypeValue) -> Self {
+            self.inner = self.inner.migration_type(signature);
             self
         }
         /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
@@ -2408,8 +2449,8 @@ pub mod fluent_builders {
         /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
-        pub fn table_mappings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_mappings(inp);
+        pub fn table_mappings(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_mappings(signature.into());
             self
         }
         /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
@@ -2426,8 +2467,11 @@ pub mod fluent_builders {
         /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
         /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn replication_task_settings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_settings(inp);
+        pub fn replication_task_settings(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_task_settings(signature.into());
             self
         }
         /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
@@ -2444,8 +2488,8 @@ pub mod fluent_builders {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.cdc_start_time(inp);
+        pub fn cdc_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.cdc_start_time(signature);
             self
         }
         /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
@@ -2474,8 +2518,8 @@ pub mod fluent_builders {
         /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
         /// for DMS</a>.</p>
         /// </note>
-        pub fn cdc_start_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_start_position(inp);
+        pub fn cdc_start_position(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_start_position(signature.into());
             self
         }
         /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
@@ -2504,8 +2548,8 @@ pub mod fluent_builders {
         /// either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-        pub fn cdc_stop_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_stop_position(inp);
+        pub fn cdc_stop_position(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_stop_position(signature.into());
             self
         }
         /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
@@ -2524,8 +2568,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the replication task.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the replication task.</p>
@@ -2540,8 +2584,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn task_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_data(inp);
+        pub fn task_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_data(signature.into());
             self
         }
         /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
@@ -2561,8 +2605,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
         /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
         /// value for the end of <code>EndpointArn</code>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
@@ -2642,8 +2686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
@@ -2715,8 +2759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -2725,8 +2769,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -2803,8 +2850,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -2873,8 +2920,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DMS event notification subscription to be deleted.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the DMS event notification subscription to be deleted.</p>
@@ -2951,8 +2998,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
@@ -3026,9 +3076,11 @@ pub mod fluent_builders {
         /// <p>The subnet group name of the replication instance.</p>
         pub fn replication_subnet_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_identifier(inp);
+            self.inner = self
+                .inner
+                .replication_subnet_group_identifier(signature.into());
             self
         }
         /// <p>The subnet group name of the replication instance.</p>
@@ -3100,8 +3152,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
@@ -3180,9 +3232,11 @@ pub mod fluent_builders {
         /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
         pub fn replication_task_assessment_run_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_task_assessment_run_arn(inp);
+            self.inner = self
+                .inner
+                .replication_task_assessment_run_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
@@ -3337,8 +3391,8 @@ pub mod fluent_builders {
         }
         /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
         /// the default list of individual assessments.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
@@ -3352,8 +3406,11 @@ pub mod fluent_builders {
         }
         /// <p>ARN of a replication instance on which you want to base the default list of individual
         /// assessments.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>ARN of a replication instance on which you want to base the default list of individual
@@ -3366,8 +3423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
-        pub fn source_engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine_name(inp);
+        pub fn source_engine_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine_name(signature.into());
             self
         }
         /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
@@ -3379,8 +3436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
-        pub fn target_engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_engine_name(inp);
+        pub fn target_engine_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_engine_name(signature.into());
             self
         }
         /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
@@ -3392,8 +3449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the migration type that each provided individual assessment must support.</p>
-        pub fn migration_type(mut self, inp: crate::model::MigrationTypeValue) -> Self {
-            self.inner = self.inner.migration_type(inp);
+        pub fn migration_type(mut self, signature: crate::model::MigrationTypeValue) -> Self {
+            self.inner = self.inner.migration_type(signature);
             self
         }
         /// <p>Name of the migration type that each provided individual assessment must support.</p>
@@ -3407,8 +3464,8 @@ pub mod fluent_builders {
         /// <p>Maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
         /// the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>Maximum number of records to include in the response. If more records exist than the
@@ -3421,8 +3478,8 @@ pub mod fluent_builders {
         /// <p>Optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Optional pagination token provided by a previous request. If this parameter is
@@ -3498,8 +3555,8 @@ pub mod fluent_builders {
         ///
         /// <p>Filters applied to the certificates described in the form of key-value pairs.
         /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the certificates described in the form of key-value pairs.
@@ -3515,8 +3572,8 @@ pub mod fluent_builders {
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 10</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -3530,8 +3587,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -3608,8 +3665,8 @@ pub mod fluent_builders {
         ///
         /// <p>The filters applied to the connection.</p>
         /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filters applied to the connection.</p>
@@ -3626,8 +3683,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -3642,8 +3699,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -3719,8 +3776,8 @@ pub mod fluent_builders {
         ///
         /// <p>Filters applied to the endpoints.</p>
         /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the endpoints.</p>
@@ -3737,8 +3794,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -3753,8 +3810,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -3826,8 +3883,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The databse engine used for your source or target endpoint.</p>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        pub fn engine_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(signature.into());
             self
         }
         /// <p>The databse engine used for your source or target endpoint.</p>
@@ -3838,8 +3895,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response
         /// so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than
@@ -3851,8 +3908,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
         /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
@@ -3927,8 +3984,8 @@ pub mod fluent_builders {
         ///
         /// <p>Filters applied to the endpoint types.</p>
         /// <p>Valid filter names: engine-name | endpoint-type</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the endpoint types.</p>
@@ -3945,8 +4002,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -3961,8 +4018,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -4038,8 +4095,8 @@ pub mod fluent_builders {
         }
         /// <p> The type of DMS resource that generates events. </p>
         /// <p>Valid values: replication-instance | replication-task</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(signature.into());
             self
         }
         /// <p> The type of DMS resource that generates events. </p>
@@ -4053,8 +4110,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to the event categories.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the event categories.</p>
@@ -4130,8 +4187,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier of an event source.</p>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(signature.into());
             self
         }
         /// <p> The identifier of an event source.</p>
@@ -4144,8 +4201,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of DMS resource that generates events.</p>
         /// <p>Valid values: replication-instance | replication-task</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(signature);
             self
         }
         /// <p>The type of DMS resource that generates events.</p>
@@ -4158,8 +4215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time for the events to be listed.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start time for the events to be listed.</p>
@@ -4171,8 +4228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time for the events to be listed.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end time for the events to be listed.</p>
@@ -4184,8 +4241,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration of the events to be listed.</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, signature: i32) -> Self {
+            self.inner = self.inner.duration(signature);
             self
         }
         /// <p>The duration of the events to be listed.</p>
@@ -4198,8 +4255,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
         ///
         /// <p>A list of event categories for the source type that you've chosen.</p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
         /// <p>A list of event categories for the source type that you've chosen.</p>
@@ -4215,8 +4272,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
@@ -4232,8 +4289,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -4248,8 +4305,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -4325,8 +4382,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DMS event subscription to be described.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the DMS event subscription to be described.</p>
@@ -4343,8 +4400,8 @@ pub mod fluent_builders {
         ///
         /// <p>Filters applied to event subscriptions.</p>
         /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to event subscriptions.</p>
@@ -4361,8 +4418,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -4377,8 +4434,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -4456,8 +4513,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -4472,8 +4529,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -4544,8 +4601,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -4561,8 +4621,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p></p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p></p>
@@ -4576,8 +4636,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -4592,8 +4652,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -4666,8 +4726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -4743,8 +4803,8 @@ pub mod fluent_builders {
         /// <p>Filters applied to replication instances.</p>
         /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
         /// replication-instance-class | engine-version</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to replication instances.</p>
@@ -4762,8 +4822,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -4778,8 +4838,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -4852,8 +4912,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -4869,8 +4932,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -4885,8 +4948,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -4962,8 +5025,8 @@ pub mod fluent_builders {
         ///
         /// <p>Filters applied to replication subnet groups.</p>
         /// <p>Valid filter names: replication-subnet-group-id</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to replication subnet groups.</p>
@@ -4980,8 +5043,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -4996,8 +5059,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -5077,8 +5140,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
         /// parameter is specified, the API returns only one result and ignore the values of the
         /// <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
@@ -5096,8 +5159,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -5112,8 +5175,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -5201,8 +5264,8 @@ pub mod fluent_builders {
         /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
         /// <code>replication-instance-arn</code>, <code>status</code>
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
@@ -5219,8 +5282,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
         /// the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -5233,8 +5296,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is
@@ -5317,8 +5380,8 @@ pub mod fluent_builders {
         /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
         /// <code>replication-task-arn</code>, <code>status</code>
         /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the individual assessments described in the form of key-value
@@ -5336,8 +5399,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
         /// the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the
@@ -5350,8 +5413,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is
@@ -5429,8 +5492,8 @@ pub mod fluent_builders {
         /// <p>Filters applied to replication tasks.</p>
         /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
         /// endpoint-arn | replication-instance-arn</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to replication tasks.</p>
@@ -5448,8 +5511,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -5464,8 +5527,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -5478,8 +5541,8 @@ pub mod fluent_builders {
         /// <p>An option to set to avoid returning information about settings. Use this to reduce
         /// overhead when setting information is too large. To use this option, choose
         /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
-        pub fn without_settings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.without_settings(inp);
+        pub fn without_settings(mut self, signature: bool) -> Self {
+            self.inner = self.inner.without_settings(signature);
             self
         }
         /// <p>An option to set to avoid returning information about settings. Use this to reduce
@@ -5552,8 +5615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -5566,8 +5629,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -5582,8 +5645,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -5658,8 +5721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -5675,8 +5738,8 @@ pub mod fluent_builders {
         /// in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 500.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_records(signature);
             self
         }
         /// <p> The maximum number of records to include in the response. If more records exist than
@@ -5691,8 +5754,8 @@ pub mod fluent_builders {
         /// <p> An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
         /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p> An optional pagination token provided by a previous request. If this parameter is
@@ -5710,8 +5773,8 @@ pub mod fluent_builders {
         /// <p>Valid filter names: schema-name | table-name | table-state</p>
         /// <p>A combination of filters creates an AND condition where each record matches all
         /// specified filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to table statistics.</p>
@@ -5788,8 +5851,8 @@ pub mod fluent_builders {
         /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
         /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
         /// contain two consecutive hyphens.</p>
-        pub fn certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_identifier(inp);
+        pub fn certificate_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_identifier(signature.into());
             self
         }
         /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
@@ -5803,8 +5866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-        pub fn certificate_pem(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_pem(inp);
+        pub fn certificate_pem(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_pem(signature.into());
             self
         }
         /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
@@ -5819,8 +5882,8 @@ pub mod fluent_builders {
         /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
         /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
         /// </p>
-        pub fn certificate_wallet(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.certificate_wallet(inp);
+        pub fn certificate_wallet(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificate_wallet(signature);
             self
         }
         /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
@@ -5839,8 +5902,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the certificate.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags associated with the certificate.</p>
@@ -5918,8 +5981,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
         /// list tags for. This returns a list of keys (names of tags) created for the resource and
         /// their associated tag values.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
@@ -5937,8 +6000,8 @@ pub mod fluent_builders {
         /// returns a list of keys (tag names) and their associated tag values. It also returns each
         /// tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which
         /// each listed tag is created. </p>
-        pub fn resource_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn_list(inp);
+        pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn_list(input.into());
             self
         }
         /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This
@@ -6020,8 +6083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -6032,8 +6095,8 @@ pub mod fluent_builders {
         /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
         /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
         /// consecutive hyphens.</p>
-        pub fn endpoint_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_identifier(inp);
+        pub fn endpoint_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_identifier(signature.into());
             self
         }
         /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
@@ -6047,8 +6110,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
-        pub fn endpoint_type(mut self, inp: crate::model::ReplicationEndpointTypeValue) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        pub fn endpoint_type(
+            mut self,
+            signature: crate::model::ReplicationEndpointTypeValue,
+        ) -> Self {
+            self.inner = self.inner.endpoint_type(signature);
             self
         }
         /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
@@ -6067,8 +6133,8 @@ pub mod fluent_builders {
         /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
         /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
         /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        pub fn engine_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(signature.into());
             self
         }
         /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
@@ -6084,8 +6150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name to be used to login to the endpoint database.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(signature.into());
             self
         }
         /// <p>The user name to be used to login to the endpoint database.</p>
@@ -6094,8 +6160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password to be used to login to the endpoint database.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(signature.into());
             self
         }
         /// <p>The password to be used to login to the endpoint database.</p>
@@ -6104,8 +6170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the server where the endpoint database resides.</p>
-        pub fn server_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(inp);
+        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(signature.into());
             self
         }
         /// <p>The name of the server where the endpoint database resides.</p>
@@ -6114,8 +6180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port used by the endpoint database.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.port(signature);
             self
         }
         /// <p>The port used by the endpoint database.</p>
@@ -6124,8 +6190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(signature.into());
             self
         }
         /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
@@ -6138,8 +6204,11 @@ pub mod fluent_builders {
         }
         /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
         /// empty string ("") as an argument.</p>
-        pub fn extra_connection_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extra_connection_attributes(inp);
+        pub fn extra_connection_attributes(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.extra_connection_attributes(signature.into());
             self
         }
         /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
@@ -6152,8 +6221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
@@ -6165,8 +6234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
-        pub fn ssl_mode(mut self, inp: crate::model::DmsSslModeValue) -> Self {
-            self.inner = self.inner.ssl_mode(inp);
+        pub fn ssl_mode(mut self, signature: crate::model::DmsSslModeValue) -> Self {
+            self.inner = self.inner.ssl_mode(signature);
             self
         }
         /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
@@ -6179,8 +6248,11 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
         /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
-        pub fn service_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_access_role_arn(inp);
+        pub fn service_access_role_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.service_access_role_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
@@ -6193,8 +6265,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external table definition.</p>
-        pub fn external_table_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_table_definition(inp);
+        pub fn external_table_definition(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.external_table_definition(signature.into());
             self
         }
         /// <p>The external table definition.</p>
@@ -6210,8 +6285,8 @@ pub mod fluent_builders {
         /// Data to DynamoDB</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
-        pub fn dynamo_db_settings(mut self, inp: crate::model::DynamoDbSettings) -> Self {
-            self.inner = self.inner.dynamo_db_settings(inp);
+        pub fn dynamo_db_settings(mut self, signature: crate::model::DynamoDbSettings) -> Self {
+            self.inner = self.inner.dynamo_db_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
@@ -6231,8 +6306,8 @@ pub mod fluent_builders {
         /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn s3_settings(mut self, inp: crate::model::S3Settings) -> Self {
-            self.inner = self.inner.s3_settings(inp);
+        pub fn s3_settings(mut self, signature: crate::model::S3Settings) -> Self {
+            self.inner = self.inner.s3_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
@@ -6263,8 +6338,11 @@ pub mod fluent_builders {
         /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
         /// "BucketName": "string"} </code>
         /// </p>
-        pub fn dms_transfer_settings(mut self, inp: crate::model::DmsTransferSettings) -> Self {
-            self.inner = self.inner.dms_transfer_settings(inp);
+        pub fn dms_transfer_settings(
+            mut self,
+            signature: crate::model::DmsTransferSettings,
+        ) -> Self {
+            self.inner = self.inner.dms_transfer_settings(signature);
             self
         }
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
@@ -6295,8 +6373,8 @@ pub mod fluent_builders {
         /// when using MongoDB as a source for Database Migration Service</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn mongo_db_settings(mut self, inp: crate::model::MongoDbSettings) -> Self {
-            self.inner = self.inner.mongo_db_settings(inp);
+        pub fn mongo_db_settings(mut self, signature: crate::model::MongoDbSettings) -> Self {
+            self.inner = self.inner.mongo_db_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
@@ -6315,8 +6393,8 @@ pub mod fluent_builders {
         /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
         /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn kinesis_settings(mut self, inp: crate::model::KinesisSettings) -> Self {
-            self.inner = self.inner.kinesis_settings(inp);
+        pub fn kinesis_settings(mut self, signature: crate::model::KinesisSettings) -> Self {
+            self.inner = self.inner.kinesis_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
@@ -6334,8 +6412,8 @@ pub mod fluent_builders {
         /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
         /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn kafka_settings(mut self, inp: crate::model::KafkaSettings) -> Self {
-            self.inner = self.inner.kafka_settings(inp);
+        pub fn kafka_settings(mut self, signature: crate::model::KafkaSettings) -> Self {
+            self.inner = self.inner.kafka_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
@@ -6353,8 +6431,11 @@ pub mod fluent_builders {
         /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
         /// the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn elasticsearch_settings(mut self, inp: crate::model::ElasticsearchSettings) -> Self {
-            self.inner = self.inner.elasticsearch_settings(inp);
+        pub fn elasticsearch_settings(
+            mut self,
+            signature: crate::model::ElasticsearchSettings,
+        ) -> Self {
+            self.inner = self.inner.elasticsearch_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
@@ -6372,8 +6453,8 @@ pub mod fluent_builders {
         /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
         /// in the <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn neptune_settings(mut self, inp: crate::model::NeptuneSettings) -> Self {
-            self.inner = self.inner.neptune_settings(inp);
+        pub fn neptune_settings(mut self, signature: crate::model::NeptuneSettings) -> Self {
+            self.inner = self.inner.neptune_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
@@ -6388,8 +6469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
-        pub fn redshift_settings(mut self, inp: crate::model::RedshiftSettings) -> Self {
-            self.inner = self.inner.redshift_settings(inp);
+        pub fn redshift_settings(mut self, signature: crate::model::RedshiftSettings) -> Self {
+            self.inner = self.inner.redshift_settings(signature);
             self
         }
         /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
@@ -6406,8 +6487,8 @@ pub mod fluent_builders {
         /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn postgre_sql_settings(mut self, inp: crate::model::PostgreSqlSettings) -> Self {
-            self.inner = self.inner.postgre_sql_settings(inp);
+        pub fn postgre_sql_settings(mut self, signature: crate::model::PostgreSqlSettings) -> Self {
+            self.inner = self.inner.postgre_sql_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
@@ -6429,8 +6510,8 @@ pub mod fluent_builders {
         /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
-        pub fn my_sql_settings(mut self, inp: crate::model::MySqlSettings) -> Self {
-            self.inner = self.inner.my_sql_settings(inp);
+        pub fn my_sql_settings(mut self, signature: crate::model::MySqlSettings) -> Self {
+            self.inner = self.inner.my_sql_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
@@ -6452,8 +6533,8 @@ pub mod fluent_builders {
         /// Extra connection attributes when using Oracle as a target for DMS</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn oracle_settings(mut self, inp: crate::model::OracleSettings) -> Self {
-            self.inner = self.inner.oracle_settings(inp);
+        pub fn oracle_settings(mut self, signature: crate::model::OracleSettings) -> Self {
+            self.inner = self.inner.oracle_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
@@ -6475,8 +6556,8 @@ pub mod fluent_builders {
         /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
         /// User Guide.</i>
         /// </p>
-        pub fn sybase_settings(mut self, inp: crate::model::SybaseSettings) -> Self {
-            self.inner = self.inner.sybase_settings(inp);
+        pub fn sybase_settings(mut self, signature: crate::model::SybaseSettings) -> Self {
+            self.inner = self.inner.sybase_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
@@ -6500,9 +6581,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn microsoft_sql_server_settings(
             mut self,
-            inp: crate::model::MicrosoftSqlServerSettings,
+            signature: crate::model::MicrosoftSqlServerSettings,
         ) -> Self {
-            self.inner = self.inner.microsoft_sql_server_settings(inp);
+            self.inner = self.inner.microsoft_sql_server_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
@@ -6523,8 +6604,8 @@ pub mod fluent_builders {
         /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
         /// User Guide.</i>
         /// </p>
-        pub fn ibm_db2_settings(mut self, inp: crate::model::IbmDb2Settings) -> Self {
-            self.inner = self.inner.ibm_db2_settings(inp);
+        pub fn ibm_db2_settings(mut self, signature: crate::model::IbmDb2Settings) -> Self {
+            self.inner = self.inner.ibm_db2_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
@@ -6544,8 +6625,8 @@ pub mod fluent_builders {
         /// </a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
-        pub fn doc_db_settings(mut self, inp: crate::model::DocDbSettings) -> Self {
-            self.inner = self.inner.doc_db_settings(inp);
+        pub fn doc_db_settings(mut self, signature: crate::model::DocDbSettings) -> Self {
+            self.inner = self.inner.doc_db_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
@@ -6561,8 +6642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the Redis target endpoint.</p>
-        pub fn redis_settings(mut self, inp: crate::model::RedisSettings) -> Self {
-            self.inner = self.inner.redis_settings(inp);
+        pub fn redis_settings(mut self, signature: crate::model::RedisSettings) -> Self {
+            self.inner = self.inner.redis_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the Redis target endpoint.</p>
@@ -6594,8 +6675,8 @@ pub mod fluent_builders {
         /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
         /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
         /// are replaced with the exact settings that you specify. </p>
-        pub fn exact_settings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.exact_settings(inp);
+        pub fn exact_settings(mut self, signature: bool) -> Self {
+            self.inner = self.inner.exact_settings(signature);
             self
         }
         /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
@@ -6624,8 +6705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-        pub fn gcp_my_sql_settings(mut self, inp: crate::model::GcpMySqlSettings) -> Self {
-            self.inner = self.inner.gcp_my_sql_settings(inp);
+        pub fn gcp_my_sql_settings(mut self, signature: crate::model::GcpMySqlSettings) -> Self {
+            self.inner = self.inner.gcp_my_sql_settings(signature);
             self
         }
         /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
@@ -6697,8 +6778,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DMS event notification subscription to be modified.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(signature.into());
             self
         }
         /// <p>The name of the DMS event notification subscription to be modified.</p>
@@ -6711,8 +6792,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
         /// The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
@@ -6726,8 +6807,8 @@ pub mod fluent_builders {
         }
         /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
         /// <p>Valid values: replication-instance | replication-task</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(signature.into());
             self
         }
         /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
@@ -6742,8 +6823,8 @@ pub mod fluent_builders {
         ///
         /// <p> A list of event categories for a source type that you want to subscribe to. Use the
         /// <code>DescribeEventCategories</code> action to see a list of event categories. </p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
         /// <p> A list of event categories for a source type that you want to subscribe to. Use the
@@ -6757,8 +6838,8 @@ pub mod fluent_builders {
         }
         /// <p> A Boolean value; set to <b>true</b> to activate the
         /// subscription. </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p> A Boolean value; set to <b>true</b> to activate the
@@ -6832,8 +6913,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -6846,8 +6930,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of storage (in gigabytes) to be allocated for the replication
         /// instance.</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        pub fn allocated_storage(mut self, signature: i32) -> Self {
+            self.inner = self.inner.allocated_storage(signature);
             self
         }
         /// <p>The amount of storage (in gigabytes) to be allocated for the replication
@@ -6858,8 +6942,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the changes should be applied immediately or during the next
         /// maintenance window.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        pub fn apply_immediately(mut self, signature: bool) -> Self {
+            self.inner = self.inner.apply_immediately(signature);
             self
         }
         /// <p>Indicates whether the changes should be applied immediately or during the next
@@ -6874,8 +6958,11 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
         /// Selecting the right DMS replication instance for your migration</a>.
         /// </p>
-        pub fn replication_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_class(inp);
+        pub fn replication_instance_class(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_class(signature.into());
             self
         }
         /// <p>The compute and memory capacity of the replication instance as defined for the specified
@@ -6897,8 +6984,8 @@ pub mod fluent_builders {
         ///
         /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
         /// security group must work with the VPC containing the replication instance. </p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
         /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
@@ -6919,8 +7006,11 @@ pub mod fluent_builders {
         /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
         /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
         /// <p>Constraints: Must be at least 30 minutes</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(signature.into());
             self
         }
         /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
@@ -6942,8 +7032,8 @@ pub mod fluent_builders {
         /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
         /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
         /// <code>true</code>. </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, signature: bool) -> Self {
+            self.inner = self.inner.multi_az(signature);
             self
         }
         /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
@@ -6956,8 +7046,8 @@ pub mod fluent_builders {
         /// <p>The engine version number of the replication instance.</p>
         /// <p>When modifying a major engine version of an instance, also set
         /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(signature.into());
             self
         }
         /// <p>The engine version number of the replication instance.</p>
@@ -6975,8 +7065,8 @@ pub mod fluent_builders {
         /// <p>This parameter must be set to <code>true</code> when specifying a value for the
         /// <code>EngineVersion</code> parameter that is a different major version than the
         /// replication instance's current version.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(inp);
+        pub fn allow_major_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(signature);
             self
         }
         /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not
@@ -7004,8 +7094,8 @@ pub mod fluent_builders {
         /// <p>DMS has enabled automatic patching for the given engine version. </p>
         /// </li>
         /// </ul>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(signature);
             self
         }
         /// <p>A value that indicates that minor version upgrades are applied automatically to the
@@ -7032,9 +7122,9 @@ pub mod fluent_builders {
         /// string.</p>
         pub fn replication_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_instance_identifier(inp);
+            self.inner = self.inner.replication_instance_identifier(signature.into());
             self
         }
         /// <p>The replication instance identifier. This parameter is stored as a lowercase
@@ -7109,9 +7199,11 @@ pub mod fluent_builders {
         /// <p>The name of the replication instance subnet group.</p>
         pub fn replication_subnet_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_identifier(inp);
+            self.inner = self
+                .inner
+                .replication_subnet_group_identifier(signature.into());
             self
         }
         /// <p>The name of the replication instance subnet group.</p>
@@ -7125,9 +7217,11 @@ pub mod fluent_builders {
         /// <p>A description for the replication instance subnet group.</p>
         pub fn replication_subnet_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_description(inp);
+            self.inner = self
+                .inner
+                .replication_subnet_group_description(signature.into());
             self
         }
         /// <p>A description for the replication instance subnet group.</p>
@@ -7143,8 +7237,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>A list of subnet IDs.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>A list of subnet IDs.</p>
@@ -7219,8 +7313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -7244,8 +7338,11 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn replication_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_identifier(inp);
+        pub fn replication_task_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_task_identifier(signature.into());
             self
         }
         /// <p>The replication task identifier.</p>
@@ -7270,8 +7367,8 @@ pub mod fluent_builders {
         }
         /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
         /// </p>
-        pub fn migration_type(mut self, inp: crate::model::MigrationTypeValue) -> Self {
-            self.inner = self.inner.migration_type(inp);
+        pub fn migration_type(mut self, signature: crate::model::MigrationTypeValue) -> Self {
+            self.inner = self.inner.migration_type(signature);
             self
         }
         /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
@@ -7288,8 +7385,8 @@ pub mod fluent_builders {
         /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
         /// provide the JSON as the parameter value.
         /// </p>
-        pub fn table_mappings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_mappings(inp);
+        pub fn table_mappings(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_mappings(signature.into());
             self
         }
         /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
@@ -7305,8 +7402,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
-        pub fn replication_task_settings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_settings(inp);
+        pub fn replication_task_settings(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_task_settings(signature.into());
             self
         }
         /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
@@ -7321,8 +7421,8 @@ pub mod fluent_builders {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.cdc_start_time(inp);
+        pub fn cdc_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.cdc_start_time(signature);
             self
         }
         /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
@@ -7351,8 +7451,8 @@ pub mod fluent_builders {
         /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
         /// for DMS</a>.</p>
         /// </note>
-        pub fn cdc_start_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_start_position(inp);
+        pub fn cdc_start_position(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_start_position(signature.into());
             self
         }
         /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
@@ -7381,8 +7481,8 @@ pub mod fluent_builders {
         /// either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-        pub fn cdc_stop_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_stop_position(inp);
+        pub fn cdc_stop_position(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_stop_position(signature.into());
             self
         }
         /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
@@ -7400,8 +7500,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
         /// <i>Database Migration Service User Guide.</i>
         /// </p>
-        pub fn task_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_data(inp);
+        pub fn task_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_data(signature.into());
             self
         }
         /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
@@ -7476,8 +7576,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
@@ -7491,9 +7591,9 @@ pub mod fluent_builders {
         /// <p>The ARN of the replication instance where you want to move the task to.</p>
         pub fn target_replication_instance_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_replication_instance_arn(inp);
+            self.inner = self.inner.target_replication_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the replication instance where you want to move the task to.</p>
@@ -7566,8 +7666,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -7581,8 +7684,8 @@ pub mod fluent_builders {
         /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
         /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
         /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
-        pub fn force_failover(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_failover(inp);
+        pub fn force_failover(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_failover(signature);
             self
         }
         /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
@@ -7596,8 +7699,8 @@ pub mod fluent_builders {
         /// where resources are released and cleaned up prior to conducting the failover.
         /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
         /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
-        pub fn force_planned_failover(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_planned_failover(inp);
+        pub fn force_planned_failover(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force_planned_failover(signature);
             self
         }
         /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
@@ -7671,8 +7774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -7681,8 +7784,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -7756,8 +7862,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
@@ -7773,8 +7879,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tables_to_reload`](Self::set_tables_to_reload).
         ///
         /// <p>The name and schema of the table to be reloaded. </p>
-        pub fn tables_to_reload(mut self, inp: impl Into<crate::model::TableToReload>) -> Self {
-            self.inner = self.inner.tables_to_reload(inp);
+        pub fn tables_to_reload(mut self, input: crate::model::TableToReload) -> Self {
+            self.inner = self.inner.tables_to_reload(input);
             self
         }
         /// <p>The name and schema of the table to be reloaded. </p>
@@ -7790,8 +7896,8 @@ pub mod fluent_builders {
         /// This option applies only when validation is enabled for the task. </p>
         /// <p>Valid values: data-reload, validate-only</p>
         /// <p>Default value is data-reload.</p>
-        pub fn reload_option(mut self, inp: crate::model::ReloadOptionValue) -> Self {
-            self.inner = self.inner.reload_option(inp);
+        pub fn reload_option(mut self, signature: crate::model::ReloadOptionValue) -> Self {
+            self.inner = self.inner.reload_option(signature);
             self
         }
         /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
@@ -7872,8 +7978,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
@@ -7886,8 +7992,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag key (name) of the tag to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag key (name) of the tag to be removed.</p>
@@ -7962,8 +8068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
@@ -7983,9 +8089,9 @@ pub mod fluent_builders {
         /// a task with migration type of <code>cdc</code>.</p>
         pub fn start_replication_task_type(
             mut self,
-            inp: crate::model::StartReplicationTaskTypeValue,
+            signature: crate::model::StartReplicationTaskTypeValue,
         ) -> Self {
-            self.inner = self.inner.start_replication_task_type(inp);
+            self.inner = self.inner.start_replication_task_type(signature);
             self
         }
         /// <p>The type of replication task to start.</p>
@@ -8006,8 +8112,8 @@ pub mod fluent_builders {
         /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
         /// Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.cdc_start_time(inp);
+        pub fn cdc_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.cdc_start_time(signature);
             self
         }
         /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
@@ -8036,8 +8142,8 @@ pub mod fluent_builders {
         /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
         /// for DMS</a>.</p>
         /// </note>
-        pub fn cdc_start_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_start_position(inp);
+        pub fn cdc_start_position(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_start_position(signature.into());
             self
         }
         /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
@@ -8066,8 +8172,8 @@ pub mod fluent_builders {
         /// either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-        pub fn cdc_stop_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_stop_position(inp);
+        pub fn cdc_stop_position(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_stop_position(signature.into());
             self
         }
         /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
@@ -8156,8 +8262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
@@ -8236,8 +8342,8 @@ pub mod fluent_builders {
         }
         /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
         /// assessment run that you want to start.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
@@ -8250,8 +8356,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
-        pub fn service_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_access_role_arn(inp);
+        pub fn service_access_role_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.service_access_role_arn(signature.into());
             self
         }
         /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
@@ -8264,8 +8373,8 @@ pub mod fluent_builders {
         }
         /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
         /// run.</p>
-        pub fn result_location_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_location_bucket(inp);
+        pub fn result_location_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_location_bucket(signature.into());
             self
         }
         /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
@@ -8279,8 +8388,8 @@ pub mod fluent_builders {
         }
         /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
         /// run.</p>
-        pub fn result_location_folder(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_location_folder(inp);
+        pub fn result_location_folder(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_location_folder(signature.into());
             self
         }
         /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
@@ -8308,8 +8417,8 @@ pub mod fluent_builders {
         /// default KMS encryption key that DMS provides.</p>
         /// </li>
         /// </ul>
-        pub fn result_encryption_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_encryption_mode(inp);
+        pub fn result_encryption_mode(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_encryption_mode(signature.into());
             self
         }
         /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
@@ -8337,8 +8446,8 @@ pub mod fluent_builders {
         }
         /// <p>ARN of a custom KMS encryption key that you specify when you set
         /// <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
-        pub fn result_kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_kms_key_arn(inp);
+        pub fn result_kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_kms_key_arn(signature.into());
             self
         }
         /// <p>ARN of a custom KMS encryption key that you specify when you set
@@ -8351,8 +8460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique name to identify the assessment run.</p>
-        pub fn assessment_run_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_name(inp);
+        pub fn assessment_run_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_name(signature.into());
             self
         }
         /// <p>Unique name to identify the assessment run.</p>
@@ -8379,8 +8488,8 @@ pub mod fluent_builders {
         /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
         /// <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
-        pub fn include_only(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include_only(inp);
+        pub fn include_only(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include_only(input.into());
             self
         }
         /// <p>Space-separated list of names for specific individual assessments that you want to
@@ -8418,8 +8527,8 @@ pub mod fluent_builders {
         /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
         /// <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
-        pub fn exclude(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclude(inp);
+        pub fn exclude(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclude(input.into());
             self
         }
         /// <p>Space-separated list of names for specific individual assessments that you want to
@@ -8502,8 +8611,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
@@ -8575,8 +8684,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_instance_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -8588,8 +8700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>

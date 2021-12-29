@@ -123,9 +123,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key and value pairs associated with the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -199,9 +199,9 @@ pub mod list_hosts_output {
         ///
         /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider
         /// type.</p>
-        pub fn hosts(mut self, input: impl Into<crate::model::Host>) -> Self {
+        pub fn hosts(mut self, input: crate::model::Host) -> Self {
             let mut v = self.hosts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hosts = Some(v);
             self
         }
@@ -293,9 +293,9 @@ pub mod list_connections_output {
         ///
         /// <p>A list of connections and the details for each connection, such as status, owner, and
         /// provider type.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -645,9 +645,9 @@ pub mod create_host_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -746,9 +746,9 @@ pub mod create_connection_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -111,9 +111,9 @@ pub mod put_scaling_policy_output {
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
         /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-        pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarms = Some(v);
             self
         }
@@ -186,12 +186,9 @@ pub mod describe_scheduled_actions_output {
         /// To override the contents of this collection use [`set_scheduled_actions`](Self::set_scheduled_actions).
         ///
         /// <p>Information about the scheduled actions.</p>
-        pub fn scheduled_actions(
-            mut self,
-            input: impl Into<crate::model::ScheduledAction>,
-        ) -> Self {
+        pub fn scheduled_actions(mut self, input: crate::model::ScheduledAction) -> Self {
             let mut v = self.scheduled_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_actions = Some(v);
             self
         }
@@ -276,9 +273,9 @@ pub mod describe_scaling_policies_output {
         /// To override the contents of this collection use [`set_scaling_policies`](Self::set_scaling_policies).
         ///
         /// <p>Information about the scaling policies.</p>
-        pub fn scaling_policies(mut self, input: impl Into<crate::model::ScalingPolicy>) -> Self {
+        pub fn scaling_policies(mut self, input: crate::model::ScalingPolicy) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_policies = Some(v);
             self
         }
@@ -363,12 +360,9 @@ pub mod describe_scaling_activities_output {
         /// To override the contents of this collection use [`set_scaling_activities`](Self::set_scaling_activities).
         ///
         /// <p>A list of scaling activity objects.</p>
-        pub fn scaling_activities(
-            mut self,
-            input: impl Into<crate::model::ScalingActivity>,
-        ) -> Self {
+        pub fn scaling_activities(mut self, input: crate::model::ScalingActivity) -> Self {
             let mut v = self.scaling_activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_activities = Some(v);
             self
         }
@@ -453,9 +447,9 @@ pub mod describe_scalable_targets_output {
         /// To override the contents of this collection use [`set_scalable_targets`](Self::set_scalable_targets).
         ///
         /// <p>The scalable targets that match the request parameters.</p>
-        pub fn scalable_targets(mut self, input: impl Into<crate::model::ScalableTarget>) -> Self {
+        pub fn scalable_targets(mut self, input: crate::model::ScalableTarget) -> Self {
             let mut v = self.scalable_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scalable_targets = Some(v);
             self
         }

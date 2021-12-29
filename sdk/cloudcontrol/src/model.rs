@@ -836,9 +836,9 @@ pub mod resource_request_status_filter {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>The operation types to include in the filter.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+        pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -882,12 +882,9 @@ pub mod resource_request_status_filter {
         /// <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p>
         /// </li>
         /// </ul>
-        pub fn operation_statuses(
-            mut self,
-            input: impl Into<crate::model::OperationStatus>,
-        ) -> Self {
+        pub fn operation_statuses(mut self, input: crate::model::OperationStatus) -> Self {
             let mut v = self.operation_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operation_statuses = Some(v);
             self
         }

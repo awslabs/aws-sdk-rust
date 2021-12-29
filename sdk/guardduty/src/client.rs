@@ -580,8 +580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
@@ -590,8 +590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
-        pub fn master_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_id(inp);
+        pub fn master_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_id(signature.into());
             self
         }
         /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
@@ -600,8 +600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value that is used to validate the administrator account to the member account.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(signature.into());
             self
         }
         /// <p>The value that is used to validate the administrator account to the member account.</p>
@@ -678,8 +678,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
         /// archive.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
@@ -693,8 +693,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>The IDs of the findings that you want to archive.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>The IDs of the findings that you want to archive.</p>
@@ -769,8 +769,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
-        pub fn enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable(inp);
+        pub fn enable(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable(signature);
             self
         }
         /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
@@ -779,8 +779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the create request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for the create request.</p>
@@ -791,9 +791,9 @@ pub mod fluent_builders {
         /// <p>A value that specifies how frequently updated findings are exported.</p>
         pub fn finding_publishing_frequency(
             mut self,
-            inp: crate::model::FindingPublishingFrequency,
+            signature: crate::model::FindingPublishingFrequency,
         ) -> Self {
-            self.inner = self.inner.finding_publishing_frequency(inp);
+            self.inner = self.inner.finding_publishing_frequency(signature);
             self
         }
         /// <p>A value that specifies how frequently updated findings are exported.</p>
@@ -805,8 +805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes which data sources will be enabled for the detector.</p>
-        pub fn data_sources(mut self, inp: crate::model::DataSourceConfigurations) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, signature: crate::model::DataSourceConfigurations) -> Self {
+            self.inner = self.inner.data_sources(signature);
             self
         }
         /// <p>Describes which data sources will be enabled for the detector.</p>
@@ -827,7 +827,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a new detector resource.</p>
@@ -902,8 +902,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
         /// for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
@@ -913,8 +913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
@@ -923,8 +923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the filter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the filter.</p>
@@ -933,8 +933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-        pub fn action(mut self, inp: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, signature: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(signature);
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -947,8 +947,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
         /// order in which this filter is applied to the findings.</p>
-        pub fn rank(mut self, inp: i32) -> Self {
-            self.inner = self.inner.rank(inp);
+        pub fn rank(mut self, signature: i32) -> Self {
+            self.inner = self.inner.rank(signature);
             self
         }
         /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
@@ -1119,8 +1119,8 @@ pub mod fluent_builders {
         /// depending on whether the value contains milliseconds.</p>
         /// </li>
         /// </ul>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, signature: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(signature);
             self
         }
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
@@ -1293,8 +1293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the create request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for the create request.</p>
@@ -1312,7 +1312,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a new filter resource.</p>
@@ -1390,8 +1390,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
         /// for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
@@ -1402,8 +1402,8 @@ pub mod fluent_builders {
         }
         /// <p>The user-friendly name to identify the IPSet.</p>
         /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The user-friendly name to identify the IPSet.</p>
@@ -1413,8 +1413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the file that contains the IPSet.</p>
-        pub fn format(mut self, inp: crate::model::IpSetFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::IpSetFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>The format of the file that contains the IPSet.</p>
@@ -1424,8 +1424,8 @@ pub mod fluent_builders {
         }
         /// <p>The URI of the file that contains the IPSet. For example:
         /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The URI of the file that contains the IPSet. For example:
@@ -1436,8 +1436,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
         /// IPSet.</p>
-        pub fn activate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.activate(inp);
+        pub fn activate(mut self, signature: bool) -> Self {
+            self.inner = self.inner.activate(signature);
             self
         }
         /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
@@ -1447,8 +1447,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the create request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for the create request.</p>
@@ -1466,7 +1466,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a new IP set resource.</p>
@@ -1552,8 +1552,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
         /// accounts with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
@@ -1568,8 +1568,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of account ID and email address pairs of the accounts that you want to associate
         /// with the GuardDuty administrator account.</p>
-        pub fn account_details(mut self, inp: impl Into<crate::model::AccountDetail>) -> Self {
-            self.inner = self.inner.account_details(inp);
+        pub fn account_details(mut self, input: crate::model::AccountDetail) -> Self {
+            self.inner = self.inner.account_details(input);
             self
         }
         /// <p>A list of account ID and email address pairs of the accounts that you want to associate
@@ -1643,8 +1643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
@@ -1654,8 +1654,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
         /// supported.</p>
-        pub fn destination_type(mut self, inp: crate::model::DestinationType) -> Self {
-            self.inner = self.inner.destination_type(inp);
+        pub fn destination_type(mut self, signature: crate::model::DestinationType) -> Self {
+            self.inner = self.inner.destination_type(signature);
             self
         }
         /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
@@ -1669,8 +1669,11 @@ pub mod fluent_builders {
         }
         /// <p>The properties of the publishing destination, including the ARNs for the destination and
         /// the KMS key used for encryption.</p>
-        pub fn destination_properties(mut self, inp: crate::model::DestinationProperties) -> Self {
-            self.inner = self.inner.destination_properties(inp);
+        pub fn destination_properties(
+            mut self,
+            signature: crate::model::DestinationProperties,
+        ) -> Self {
+            self.inner = self.inner.destination_properties(signature);
             self
         }
         /// <p>The properties of the publishing destination, including the ARNs for the destination and
@@ -1683,8 +1686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for the request.</p>
@@ -1755,8 +1758,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector to create sample findings for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector to create sample findings for.</p>
@@ -1769,8 +1772,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
         ///
         /// <p>The types of sample findings to generate.</p>
-        pub fn finding_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_types(inp);
+        pub fn finding_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_types(input.into());
             self
         }
         /// <p>The types of sample findings to generate.</p>
@@ -1845,8 +1848,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
         /// threatIntelSet for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
@@ -1857,8 +1860,8 @@ pub mod fluent_builders {
         }
         /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
         /// activity that involves IP addresses included in this ThreatIntelSet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
@@ -1868,8 +1871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the file that contains the ThreatIntelSet.</p>
-        pub fn format(mut self, inp: crate::model::ThreatIntelSetFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::ThreatIntelSetFormat) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>The format of the file that contains the ThreatIntelSet.</p>
@@ -1882,8 +1885,8 @@ pub mod fluent_builders {
         }
         /// <p>The URI of the file that contains the ThreatIntelSet. For example:
         /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The URI of the file that contains the ThreatIntelSet. For example:
@@ -1894,8 +1897,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
         /// ThreatIntelSet.</p>
-        pub fn activate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.activate(inp);
+        pub fn activate(mut self, signature: bool) -> Self {
+            self.inner = self.inner.activate(signature);
             self
         }
         /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
@@ -1905,8 +1908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the create request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>The idempotency token for the create request.</p>
@@ -1924,7 +1927,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a new threat list resource.</p>
@@ -2004,8 +2007,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
         /// account that you want to decline invitations from.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
@@ -2078,8 +2081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that you want to delete.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that you want to delete.</p>
@@ -2148,8 +2151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
@@ -2158,8 +2161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the filter that you want to delete.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(signature.into());
             self
         }
         /// <p>The name of the filter that you want to delete.</p>
@@ -2234,8 +2237,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
         /// account that you want to delete invitations from.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
@@ -2309,8 +2312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector associated with the IPSet.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector associated with the IPSet.</p>
@@ -2319,8 +2322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the IPSet to delete.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(signature.into());
             self
         }
         /// <p>The unique ID of the IPSet to delete.</p>
@@ -2391,8 +2394,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
         /// delete.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
@@ -2406,8 +2409,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
@@ -2479,8 +2482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
@@ -2489,8 +2492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the publishing destination to delete.</p>
-        pub fn destination_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_id(inp);
+        pub fn destination_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_id(signature.into());
             self
         }
         /// <p>The ID of the publishing destination to delete.</p>
@@ -2562,8 +2565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
@@ -2572,8 +2575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
-        pub fn threat_intel_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.threat_intel_set_id(inp);
+        pub fn threat_intel_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.threat_intel_set_id(signature.into());
             self
         }
         /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
@@ -2647,8 +2650,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the detector to retrieve information about the delegated administrator
         /// from.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector to retrieve information about the delegated administrator
@@ -2720,8 +2723,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector associated with the publishing destination to
         /// retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector associated with the publishing destination to
@@ -2731,8 +2734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the publishing destination to retrieve.</p>
-        pub fn destination_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_id(inp);
+        pub fn destination_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_id(signature.into());
             self
         }
         /// <p>The ID of the publishing destination to retrieve.</p>
@@ -2806,8 +2809,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
         /// administrator.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(signature.into());
             self
         }
         /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
@@ -2880,8 +2883,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
@@ -2952,8 +2955,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
         /// disassociate from the administrator account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
@@ -2968,8 +2971,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
         /// the administrator account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
@@ -3044,8 +3047,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
         /// administrator.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(signature.into());
             self
         }
         /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
@@ -3118,8 +3121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that you want to get.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that you want to get.</p>
@@ -3188,8 +3191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
@@ -3198,8 +3201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the filter you want to get.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(signature.into());
             self
         }
         /// <p>The name of the filter you want to get.</p>
@@ -3269,8 +3272,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
         /// retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
@@ -3284,8 +3287,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>The IDs of the findings that you want to retrieve.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>The IDs of the findings that you want to retrieve.</p>
@@ -3297,8 +3300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria used for sorting findings.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, signature: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(signature);
             self
         }
         /// <p>Represents the criteria used for sorting findings.</p>
@@ -3371,8 +3374,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
         /// want to retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
@@ -3388,9 +3391,9 @@ pub mod fluent_builders {
         /// <p>The types of finding statistics to retrieve.</p>
         pub fn finding_statistic_types(
             mut self,
-            inp: impl Into<crate::model::FindingStatisticType>,
+            input: crate::model::FindingStatisticType,
         ) -> Self {
-            self.inner = self.inner.finding_statistic_types(inp);
+            self.inner = self.inner.finding_statistic_types(input);
             self
         }
         /// <p>The types of finding statistics to retrieve.</p>
@@ -3402,8 +3405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria that is used for querying findings.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, signature: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(signature);
             self
         }
         /// <p>Represents the criteria that is used for querying findings.</p>
@@ -3536,8 +3539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the IPSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that the IPSet is associated with.</p>
@@ -3546,8 +3549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the IPSet to retrieve.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(signature.into());
             self
         }
         /// <p>The unique ID of the IPSet to retrieve.</p>
@@ -3617,8 +3620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
@@ -3687,8 +3690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID for the administrator account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID for the administrator account.</p>
@@ -3701,8 +3704,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The account ID of the member account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The account ID of the member account.</p>
@@ -3776,8 +3779,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
         /// retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
@@ -3791,8 +3794,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
@@ -3864,8 +3867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
@@ -3874,8 +3877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the threatIntelSet that you want to get.</p>
-        pub fn threat_intel_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.threat_intel_set_id(inp);
+        pub fn threat_intel_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.threat_intel_set_id(signature.into());
             self
         }
         /// <p>The unique ID of the threatIntelSet that you want to get.</p>
@@ -3951,8 +3954,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
         /// want to retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
@@ -3962,8 +3965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of usage statistics to retrieve.</p>
-        pub fn usage_statistic_type(mut self, inp: crate::model::UsageStatisticType) -> Self {
-            self.inner = self.inner.usage_statistic_type(inp);
+        pub fn usage_statistic_type(mut self, signature: crate::model::UsageStatisticType) -> Self {
+            self.inner = self.inner.usage_statistic_type(signature);
             self
         }
         /// <p>The type of usage statistics to retrieve.</p>
@@ -3975,8 +3978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria used for querying usage.</p>
-        pub fn usage_criteria(mut self, inp: crate::model::UsageCriteria) -> Self {
-            self.inner = self.inner.usage_criteria(inp);
+        pub fn usage_criteria(mut self, signature: crate::model::UsageCriteria) -> Self {
+            self.inner = self.inner.usage_criteria(signature);
             self
         }
         /// <p>Represents the criteria used for querying usage.</p>
@@ -3989,8 +3992,8 @@ pub mod fluent_builders {
         }
         /// <p>The currency unit you would like to view your usage statistics in. Current valid values
         /// are USD.</p>
-        pub fn unit(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unit(signature.into());
             self
         }
         /// <p>The currency unit you would like to view your usage statistics in. Current valid values
@@ -4000,8 +4003,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -4013,8 +4016,8 @@ pub mod fluent_builders {
         /// this parameter to null for the first request to a list action. For subsequent calls, use the
         /// NextToken value returned from the previous request to continue listing results after the first
         /// page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of
@@ -4089,8 +4092,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
         /// with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
@@ -4105,8 +4108,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
         /// members.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
@@ -4119,8 +4122,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
-        pub fn disable_email_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_email_notification(inp);
+        pub fn disable_email_notification(mut self, signature: bool) -> Self {
+            self.inner = self.inner.disable_email_notification(signature);
             self
         }
         /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
@@ -4130,8 +4133,8 @@ pub mod fluent_builders {
         }
         /// <p>The invitation message that you want to send to the accounts that you're inviting to
         /// GuardDuty as members.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(signature.into());
             self
         }
         /// <p>The invitation message that you want to send to the accounts that you're inviting to
@@ -4202,8 +4205,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the
         /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the
@@ -4216,8 +4219,8 @@ pub mod fluent_builders {
         /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
         /// in the request with the value of NextToken from the previous response to continue listing
         /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to
@@ -4289,8 +4292,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
@@ -4300,8 +4303,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the
         /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the
@@ -4314,8 +4317,8 @@ pub mod fluent_builders {
         /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
         /// in the request with the value of NextToken from the previous response to continue listing
         /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to
@@ -4388,8 +4391,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
         /// list.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
@@ -4552,8 +4555,8 @@ pub mod fluent_builders {
         /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
         /// </li>
         /// </ul>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, signature: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(signature);
             self
         }
         /// <p>Represents the criteria used for querying findings. Valid values include:</p>
@@ -4718,8 +4721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria used for sorting findings.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, signature: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(signature);
             self
         }
         /// <p>Represents the criteria used for sorting findings.</p>
@@ -4732,8 +4735,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -4746,8 +4749,8 @@ pub mod fluent_builders {
         /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
         /// in the request with the value of NextToken from the previous response to continue listing
         /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to
@@ -4821,8 +4824,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the
         /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the
@@ -4835,8 +4838,8 @@ pub mod fluent_builders {
         /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
         /// in the request with the value of NextToken from the previous response to continue listing
         /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to
@@ -4910,8 +4913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the IPSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that the IPSet is associated with.</p>
@@ -4921,8 +4924,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -4935,8 +4938,8 @@ pub mod fluent_builders {
         /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
         /// in the request with the value of NextToken from the previous response to continue listing
         /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to
@@ -5008,8 +5011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector the member is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector the member is associated with.</p>
@@ -5019,8 +5022,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -5033,8 +5036,8 @@ pub mod fluent_builders {
         /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
         /// in the request with the value of NextToken from the previous response to continue listing
         /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to
@@ -5047,8 +5050,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether to only return associated members or to return all members (including
         /// members who haven't been invited yet or have been disassociated).</p>
-        pub fn only_associated(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.only_associated(inp);
+        pub fn only_associated(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.only_associated(signature.into());
             self
         }
         /// <p>Specifies whether to only return associated members or to return all members (including
@@ -5121,8 +5124,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -5134,8 +5137,8 @@ pub mod fluent_builders {
         /// this parameter to null for the first request to a list action. For subsequent calls, use the
         /// <code>NextToken</code> value returned from the previous request to continue listing results
         /// after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of
@@ -5208,8 +5211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector to retrieve publishing destinations for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector to retrieve publishing destinations for.</p>
@@ -5218,8 +5221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -5231,8 +5234,8 @@ pub mod fluent_builders {
         /// this parameter to null for the first request to a list action. For subsequent calls, use the
         /// <code>NextToken</code> value returned from the previous request to continue listing results
         /// after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value of
@@ -5306,8 +5309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
@@ -5378,8 +5381,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
@@ -5389,8 +5392,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the
         /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the
@@ -5403,8 +5406,8 @@ pub mod fluent_builders {
         /// parameter to null on your first call to the list action. For subsequent calls to the action,
         /// fill nextToken in the request with the value of NextToken from the previous response to
         /// continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>You can use this parameter to paginate results in the response. Set the value of this
@@ -5479,8 +5482,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
         /// accounts to monitor.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
@@ -5494,8 +5497,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
@@ -5570,8 +5573,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
         /// monitoring member accounts.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
@@ -5585,8 +5588,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
@@ -5658,8 +5661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
@@ -5677,7 +5680,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a resource.</p>
@@ -5751,8 +5754,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector associated with the findings to unarchive.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector associated with the findings to unarchive.</p>
@@ -5765,8 +5768,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>The IDs of the findings to unarchive.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>The IDs of the findings to unarchive.</p>
@@ -5838,8 +5841,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
@@ -5852,8 +5855,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys to remove from the resource.</p>
@@ -5925,8 +5928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector to update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector to update.</p>
@@ -5935,8 +5938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the detector is enabled or not enabled.</p>
-        pub fn enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable(inp);
+        pub fn enable(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable(signature);
             self
         }
         /// <p>Specifies whether the detector is enabled or not enabled.</p>
@@ -5948,9 +5951,9 @@ pub mod fluent_builders {
         /// Events.</p>
         pub fn finding_publishing_frequency(
             mut self,
-            inp: crate::model::FindingPublishingFrequency,
+            signature: crate::model::FindingPublishingFrequency,
         ) -> Self {
-            self.inner = self.inner.finding_publishing_frequency(inp);
+            self.inner = self.inner.finding_publishing_frequency(signature);
             self
         }
         /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
@@ -5963,8 +5966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes which data sources will be updated.</p>
-        pub fn data_sources(mut self, inp: crate::model::DataSourceConfigurations) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, signature: crate::model::DataSourceConfigurations) -> Self {
+            self.inner = self.inner.data_sources(signature);
             self
         }
         /// <p>Describes which data sources will be updated.</p>
@@ -6037,8 +6040,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
         /// update a filter.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
@@ -6048,8 +6051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the filter.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(signature.into());
             self
         }
         /// <p>The name of the filter.</p>
@@ -6058,8 +6061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the filter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the filter.</p>
@@ -6068,8 +6071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-        pub fn action(mut self, inp: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, signature: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(signature);
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -6082,8 +6085,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
         /// order in which this filter is applied to the findings.</p>
-        pub fn rank(mut self, inp: i32) -> Self {
-            self.inner = self.inner.rank(inp);
+        pub fn rank(mut self, signature: i32) -> Self {
+            self.inner = self.inner.rank(signature);
             self
         }
         /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
@@ -6093,8 +6096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, signature: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(signature);
             self
         }
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
@@ -6166,8 +6169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector associated with the findings to update feedback for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector associated with the findings to update feedback for.</p>
@@ -6180,8 +6183,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
@@ -6193,8 +6196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The feedback for the finding.</p>
-        pub fn feedback(mut self, inp: crate::model::Feedback) -> Self {
-            self.inner = self.inner.feedback(inp);
+        pub fn feedback(mut self, signature: crate::model::Feedback) -> Self {
+            self.inner = self.inner.feedback(signature);
             self
         }
         /// <p>The feedback for the finding.</p>
@@ -6203,8 +6206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Additional feedback about the GuardDuty findings.</p>
-        pub fn comments(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comments(inp);
+        pub fn comments(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comments(signature.into());
             self
         }
         /// <p>Additional feedback about the GuardDuty findings.</p>
@@ -6273,8 +6276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
@@ -6283,8 +6286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that specifies the IPSet that you want to update.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(signature.into());
             self
         }
         /// <p>The unique ID that specifies the IPSet that you want to update.</p>
@@ -6293,8 +6296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that specifies the IPSet that you want to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The unique ID that specifies the IPSet that you want to update.</p>
@@ -6304,8 +6307,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated URI of the file that contains the IPSet. For example:
         /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The updated URI of the file that contains the IPSet. For example:
@@ -6315,8 +6318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
-        pub fn activate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.activate(inp);
+        pub fn activate(mut self, signature: bool) -> Self {
+            self.inner = self.inner.activate(signature);
             self
         }
         /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
@@ -6385,8 +6388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID of the administrator account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detector ID of the administrator account.</p>
@@ -6399,8 +6402,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of member account IDs to be updated.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of member account IDs to be updated.</p>
@@ -6412,8 +6415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes which data sources will be updated.</p>
-        pub fn data_sources(mut self, inp: crate::model::DataSourceConfigurations) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, signature: crate::model::DataSourceConfigurations) -> Self {
+            self.inner = self.inner.data_sources(signature);
             self
         }
         /// <p>Describes which data sources will be updated.</p>
@@ -6485,8 +6488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector to update the delegated administrator for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector to update the delegated administrator for.</p>
@@ -6495,8 +6498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-        pub fn auto_enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_enable(inp);
+        pub fn auto_enable(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_enable(signature);
             self
         }
         /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
@@ -6507,9 +6510,9 @@ pub mod fluent_builders {
         /// <p>Describes which data sources will be updated.</p>
         pub fn data_sources(
             mut self,
-            inp: crate::model::OrganizationDataSourceConfigurations,
+            signature: crate::model::OrganizationDataSourceConfigurations,
         ) -> Self {
-            self.inner = self.inner.data_sources(inp);
+            self.inner = self.inner.data_sources(signature);
             self
         }
         /// <p>Describes which data sources will be updated.</p>
@@ -6582,8 +6585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector associated with the publishing destinations to update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The ID of the detector associated with the publishing destinations to update.</p>
@@ -6592,8 +6595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the publishing destination to update.</p>
-        pub fn destination_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_id(inp);
+        pub fn destination_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_id(signature.into());
             self
         }
         /// <p>The ID of the publishing destination to update.</p>
@@ -6606,8 +6609,11 @@ pub mod fluent_builders {
         }
         /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
         /// and <code>KmsKeyArn</code> of the publishing destination.</p>
-        pub fn destination_properties(mut self, inp: crate::model::DestinationProperties) -> Self {
-            self.inner = self.inner.destination_properties(inp);
+        pub fn destination_properties(
+            mut self,
+            signature: crate::model::DestinationProperties,
+        ) -> Self {
+            self.inner = self.inner.destination_properties(signature);
             self
         }
         /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
@@ -6681,8 +6687,8 @@ pub mod fluent_builders {
         }
         /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
         /// update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(signature.into());
             self
         }
         /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
@@ -6692,8 +6698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-        pub fn threat_intel_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.threat_intel_set_id(inp);
+        pub fn threat_intel_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.threat_intel_set_id(signature.into());
             self
         }
         /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
@@ -6705,8 +6711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
@@ -6715,8 +6721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
@@ -6726,8 +6732,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
         /// not.</p>
-        pub fn activate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.activate(inp);
+        pub fn activate(mut self, signature: bool) -> Self {
+            self.inner = self.inner.activate(signature);
             self
         }
         /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or

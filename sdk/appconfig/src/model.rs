@@ -1243,9 +1243,9 @@ pub mod environment {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }
@@ -1891,9 +1891,9 @@ pub mod configuration_profile_summary {
         /// To override the contents of this collection use [`set_validator_types`](Self::set_validator_types).
         ///
         /// <p>The types of validators in the configuration profile.</p>
-        pub fn validator_types(mut self, input: impl Into<crate::model::ValidatorType>) -> Self {
+        pub fn validator_types(mut self, input: crate::model::ValidatorType) -> Self {
             let mut v = self.validator_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validator_types = Some(v);
             self
         }

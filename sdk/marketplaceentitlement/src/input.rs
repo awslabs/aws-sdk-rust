@@ -39,11 +39,11 @@ pub mod get_entitlements_input {
         /// <i>intersected</i> for each filter key.</p>
         pub fn filter(
             mut self,
-            k: impl Into<crate::model::GetEntitlementFilterName>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::GetEntitlementFilterName,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.filter = Some(hash_map);
             self
         }

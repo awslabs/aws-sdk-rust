@@ -177,12 +177,9 @@ pub mod describe_savings_plans_offerings_output {
         /// To override the contents of this collection use [`set_search_results`](Self::set_search_results).
         ///
         /// <p>Information about the Savings Plans offerings.</p>
-        pub fn search_results(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanOffering>,
-        ) -> Self {
+        pub fn search_results(mut self, input: crate::model::SavingsPlanOffering) -> Self {
             let mut v = self.search_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.search_results = Some(v);
             self
         }
@@ -267,12 +264,9 @@ pub mod describe_savings_plans_offering_rates_output {
         /// To override the contents of this collection use [`set_search_results`](Self::set_search_results).
         ///
         /// <p>Information about the Savings Plans offering rates.</p>
-        pub fn search_results(
-            mut self,
-            input: impl Into<crate::model::SavingsPlanOfferingRate>,
-        ) -> Self {
+        pub fn search_results(mut self, input: crate::model::SavingsPlanOfferingRate) -> Self {
             let mut v = self.search_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.search_results = Some(v);
             self
         }
@@ -356,9 +350,9 @@ pub mod describe_savings_plans_output {
         /// To override the contents of this collection use [`set_savings_plans`](Self::set_savings_plans).
         ///
         /// <p>Information about the Savings Plans.</p>
-        pub fn savings_plans(mut self, input: impl Into<crate::model::SavingsPlan>) -> Self {
+        pub fn savings_plans(mut self, input: crate::model::SavingsPlan) -> Self {
             let mut v = self.savings_plans.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.savings_plans = Some(v);
             self
         }
@@ -464,9 +458,9 @@ pub mod describe_savings_plan_rates_output {
         /// To override the contents of this collection use [`set_search_results`](Self::set_search_results).
         ///
         /// <p>Information about the Savings Plans rates.</p>
-        pub fn search_results(mut self, input: impl Into<crate::model::SavingsPlanRate>) -> Self {
+        pub fn search_results(mut self, input: crate::model::SavingsPlanRate) -> Self {
             let mut v = self.search_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.search_results = Some(v);
             self
         }

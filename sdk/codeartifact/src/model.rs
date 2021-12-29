@@ -354,9 +354,9 @@ pub mod repository_description {
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
         /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
         /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn upstreams(mut self, input: impl Into<crate::model::UpstreamRepositoryInfo>) -> Self {
+        pub fn upstreams(mut self, input: crate::model::UpstreamRepositoryInfo) -> Self {
             let mut v = self.upstreams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upstreams = Some(v);
             self
         }
@@ -379,10 +379,10 @@ pub mod repository_description {
         /// </p>
         pub fn external_connections(
             mut self,
-            input: impl Into<crate::model::RepositoryExternalConnectionInfo>,
+            input: crate::model::RepositoryExternalConnectionInfo,
         ) -> Self {
             let mut v = self.external_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.external_connections = Some(v);
             self
         }
@@ -2426,11 +2426,11 @@ pub mod asset_summary {
         /// </p>
         pub fn hashes(
             mut self,
-            k: impl Into<crate::model::HashAlgorithm>,
+            k: crate::model::HashAlgorithm,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.hashes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.hashes = Some(hash_map);
             self
         }
@@ -3631,9 +3631,9 @@ pub mod package_version_description {
         /// <p>
         /// Information about licenses associated with the package version.
         /// </p>
-        pub fn licenses(mut self, input: impl Into<crate::model::LicenseInfo>) -> Self {
+        pub fn licenses(mut self, input: crate::model::LicenseInfo) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.licenses = Some(v);
             self
         }

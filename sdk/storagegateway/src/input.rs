@@ -196,9 +196,9 @@ pub mod activate_gateway_input {
         /// maximum length of a tag's key is 128 characters, and the maximum length for a
         /// tag's value is 256 characters.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -569,9 +569,9 @@ pub mod add_tags_to_resource_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1381,9 +1381,9 @@ pub mod associate_file_system_input {
         ///
         /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is
         /// a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2340,9 +2340,9 @@ pub mod create_cachedi_scsi_volume_input {
         /// maximum length of a tag's key is 128 characters, and the maximum length for a
         /// tag's value is 256 characters.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2870,9 +2870,9 @@ pub mod create_nfs_file_share_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3674,9 +3674,9 @@ pub mod create_smb_file_share_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4078,9 +4078,9 @@ pub mod create_snapshot_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4292,9 +4292,9 @@ pub mod create_snapshot_from_volume_recovery_point_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4621,9 +4621,9 @@ pub mod create_storedi_scsi_volume_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4873,9 +4873,9 @@ pub mod create_tape_pool_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5220,9 +5220,9 @@ pub mod create_tapes_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5532,9 +5532,9 @@ pub mod create_tape_with_barcode_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15346,10 +15346,10 @@ pub mod update_automatic_tape_creation_policy_input {
         /// The rules determine when and how to automatically create new tapes.</p>
         pub fn automatic_tape_creation_rules(
             mut self,
-            input: impl Into<crate::model::AutomaticTapeCreationRule>,
+            input: crate::model::AutomaticTapeCreationRule,
         ) -> Self {
             let mut v = self.automatic_tape_creation_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.automatic_tape_creation_rules = Some(v);
             self
         }
@@ -15735,10 +15735,10 @@ pub mod update_bandwidth_rate_limit_schedule_input {
         /// bandwidth rate limit intervals have been scheduled, the array is empty. </p>
         pub fn bandwidth_rate_limit_intervals(
             mut self,
-            input: impl Into<crate::model::BandwidthRateLimitInterval>,
+            input: crate::model::BandwidthRateLimitInterval,
         ) -> Self {
             let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bandwidth_rate_limit_intervals = Some(v);
             self
         }
@@ -18703,9 +18703,9 @@ pub mod update_snapshot_schedule_input {
         /// of a tag's key is 128 characters, and the maximum length for a tag's value is
         /// 256.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

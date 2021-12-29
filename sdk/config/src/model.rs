@@ -782,9 +782,9 @@ pub mod query_info {
         /// To override the contents of this collection use [`set_select_fields`](Self::set_select_fields).
         ///
         /// <p>Returns a <code>FieldInfo</code> object.</p>
-        pub fn select_fields(mut self, input: impl Into<crate::model::FieldInfo>) -> Self {
+        pub fn select_fields(mut self, input: crate::model::FieldInfo) -> Self {
             let mut v = self.select_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.select_fields = Some(v);
             self
         }
@@ -1162,12 +1162,9 @@ pub mod failed_remediation_exception_batch {
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
         /// <p>Returns remediation exception resource key object of the failed items.</p>
-        pub fn failed_items(
-            mut self,
-            input: impl Into<crate::model::RemediationException>,
-        ) -> Self {
+        pub fn failed_items(mut self, input: crate::model::RemediationException) -> Self {
             let mut v = self.failed_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_items = Some(v);
             self
         }
@@ -1466,12 +1463,9 @@ pub mod failed_remediation_batch {
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
         /// <p>Returns remediation configurations of the failed items.</p>
-        pub fn failed_items(
-            mut self,
-            input: impl Into<crate::model::RemediationConfiguration>,
-        ) -> Self {
+        pub fn failed_items(mut self, input: crate::model::RemediationConfiguration) -> Self {
             let mut v = self.failed_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_items = Some(v);
             self
         }
@@ -1710,10 +1704,10 @@ pub mod remediation_configuration {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RemediationParameterValue>,
+            v: crate::model::RemediationParameterValue,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -2568,12 +2562,12 @@ pub mod organization_custom_rule_metadata {
         /// </ul>
         pub fn organization_config_rule_trigger_types(
             mut self,
-            input: impl Into<crate::model::OrganizationConfigRuleTriggerType>,
+            input: crate::model::OrganizationConfigRuleTriggerType,
         ) -> Self {
             let mut v = self
                 .organization_config_rule_trigger_types
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_config_rule_trigger_types = Some(v);
             self
         }
@@ -4242,9 +4236,9 @@ pub mod recording_group {
         /// <p>For a list of valid <code>resourceTypes</code> values, see the
         /// <b>resourceType Value</b> column in
         /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
-        pub fn resource_types(mut self, input: impl Into<crate::model::ResourceType>) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ResourceType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
@@ -4433,10 +4427,10 @@ pub mod configuration_aggregator {
         /// aggregated.</p>
         pub fn account_aggregation_sources(
             mut self,
-            input: impl Into<crate::model::AccountAggregationSource>,
+            input: crate::model::AccountAggregationSource,
         ) -> Self {
             let mut v = self.account_aggregation_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_aggregation_sources = Some(v);
             self
         }
@@ -5419,9 +5413,9 @@ pub mod source {
         /// To override the contents of this collection use [`set_source_details`](Self::set_source_details).
         ///
         /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
-        pub fn source_details(mut self, input: impl Into<crate::model::SourceDetail>) -> Self {
+        pub fn source_details(mut self, input: crate::model::SourceDetail) -> Self {
             let mut v = self.source_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_details = Some(v);
             self
         }
@@ -7342,9 +7336,9 @@ pub mod configuration_item {
         /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
         ///
         /// <p>A list of related Amazon Web Services resources.</p>
-        pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
+        pub fn relationships(mut self, input: crate::model::Relationship) -> Self {
             let mut v = self.relationships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relationships = Some(v);
             self
         }
@@ -11389,12 +11383,9 @@ pub mod remediation_execution_status {
         /// To override the contents of this collection use [`set_step_details`](Self::set_step_details).
         ///
         /// <p>Details of every step.</p>
-        pub fn step_details(
-            mut self,
-            input: impl Into<crate::model::RemediationExecutionStep>,
-        ) -> Self {
+        pub fn step_details(mut self, input: crate::model::RemediationExecutionStep) -> Self {
             let mut v = self.step_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.step_details = Some(v);
             self
         }
@@ -12412,10 +12403,10 @@ pub mod organization_conformance_pack {
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
-            input: impl Into<crate::model::ConformancePackInputParameter>,
+            input: crate::model::ConformancePackInputParameter,
         ) -> Self {
             let mut v = self.conformance_pack_input_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_input_parameters = Some(v);
             self
         }
@@ -14192,10 +14183,10 @@ pub mod conformance_pack_detail {
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
-            input: impl Into<crate::model::ConformancePackInputParameter>,
+            input: crate::model::ConformancePackInputParameter,
         ) -> Self {
             let mut v = self.conformance_pack_input_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_input_parameters = Some(v);
             self
         }
@@ -16550,10 +16541,10 @@ pub mod failed_delete_remediation_exceptions_batch {
         /// <p>Returns remediation exception resource key object of the failed items.</p>
         pub fn failed_items(
             mut self,
-            input: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
             let mut v = self.failed_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_items = Some(v);
             self
         }

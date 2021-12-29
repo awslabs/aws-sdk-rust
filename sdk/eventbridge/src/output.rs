@@ -662,12 +662,9 @@ pub mod remove_targets_output {
         /// To override the contents of this collection use [`set_failed_entries`](Self::set_failed_entries).
         ///
         /// <p>The failed target entries.</p>
-        pub fn failed_entries(
-            mut self,
-            input: impl Into<crate::model::RemoveTargetsResultEntry>,
-        ) -> Self {
+        pub fn failed_entries(mut self, input: crate::model::RemoveTargetsResultEntry) -> Self {
             let mut v = self.failed_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_entries = Some(v);
             self
         }
@@ -778,12 +775,9 @@ pub mod put_targets_output {
         /// To override the contents of this collection use [`set_failed_entries`](Self::set_failed_entries).
         ///
         /// <p>The failed target entries.</p>
-        pub fn failed_entries(
-            mut self,
-            input: impl Into<crate::model::PutTargetsResultEntry>,
-        ) -> Self {
+        pub fn failed_entries(mut self, input: crate::model::PutTargetsResultEntry) -> Self {
             let mut v = self.failed_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_entries = Some(v);
             self
         }
@@ -955,12 +949,9 @@ pub mod put_partner_events_output {
         ///
         /// <p>The list of events from this operation that were successfully written to the partner event
         /// bus.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::PutPartnerEventsResultEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::PutPartnerEventsResultEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1047,9 +1038,9 @@ pub mod put_events_output {
         /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was
         /// successful, the entry has the event ID in it. Otherwise, you can use the error code and error
         /// message to identify the problem with the entry.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::PutEventsResultEntry>) -> Self {
+        pub fn entries(mut self, input: crate::model::PutEventsResultEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1123,9 +1114,9 @@ pub mod list_targets_by_rule_output {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets assigned to the rule.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -1199,9 +1190,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tag keys and values associated with the resource you specified</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1270,9 +1261,9 @@ pub mod list_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules that match the specified criteria.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1440,9 +1431,9 @@ pub mod list_replays_output {
         /// To override the contents of this collection use [`set_replays`](Self::set_replays).
         ///
         /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
-        pub fn replays(mut self, input: impl Into<crate::model::Replay>) -> Self {
+        pub fn replays(mut self, input: crate::model::Replay) -> Self {
             let mut v = self.replays.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replays = Some(v);
             self
         }
@@ -1525,12 +1516,9 @@ pub mod list_partner_event_sources_output {
         /// To override the contents of this collection use [`set_partner_event_sources`](Self::set_partner_event_sources).
         ///
         /// <p>The list of partner event sources returned by the operation.</p>
-        pub fn partner_event_sources(
-            mut self,
-            input: impl Into<crate::model::PartnerEventSource>,
-        ) -> Self {
+        pub fn partner_event_sources(mut self, input: crate::model::PartnerEventSource) -> Self {
             let mut v = self.partner_event_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partner_event_sources = Some(v);
             self
         }
@@ -1619,10 +1607,10 @@ pub mod list_partner_event_source_accounts_output {
         /// <p>The list of partner event sources returned by the operation.</p>
         pub fn partner_event_source_accounts(
             mut self,
-            input: impl Into<crate::model::PartnerEventSourceAccount>,
+            input: crate::model::PartnerEventSourceAccount,
         ) -> Self {
             let mut v = self.partner_event_source_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partner_event_source_accounts = Some(v);
             self
         }
@@ -1702,9 +1690,9 @@ pub mod list_event_sources_output {
         /// To override the contents of this collection use [`set_event_sources`](Self::set_event_sources).
         ///
         /// <p>The list of event sources.</p>
-        pub fn event_sources(mut self, input: impl Into<crate::model::EventSource>) -> Self {
+        pub fn event_sources(mut self, input: crate::model::EventSource) -> Self {
             let mut v = self.event_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_sources = Some(v);
             self
         }
@@ -1784,9 +1772,9 @@ pub mod list_event_buses_output {
         /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
         ///
         /// <p>This list of event buses.</p>
-        pub fn event_buses(mut self, input: impl Into<crate::model::EventBus>) -> Self {
+        pub fn event_buses(mut self, input: crate::model::EventBus) -> Self {
             let mut v = self.event_buses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_buses = Some(v);
             self
         }
@@ -1866,9 +1854,9 @@ pub mod list_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>An array of connections objects that include details about the connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -1948,9 +1936,9 @@ pub mod list_archives_output {
         /// To override the contents of this collection use [`set_archives`](Self::set_archives).
         ///
         /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-        pub fn archives(mut self, input: impl Into<crate::model::Archive>) -> Self {
+        pub fn archives(mut self, input: crate::model::Archive) -> Self {
             let mut v = self.archives.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.archives = Some(v);
             self
         }
@@ -2034,9 +2022,9 @@ pub mod list_api_destinations_output {
         ///
         /// <p>An array of <code>ApiDestination</code> objects that include information about an API
         /// destination.</p>
-        pub fn api_destinations(mut self, input: impl Into<crate::model::ApiDestination>) -> Self {
+        pub fn api_destinations(mut self, input: crate::model::ApiDestination) -> Self {
             let mut v = self.api_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.api_destinations = Some(v);
             self
         }

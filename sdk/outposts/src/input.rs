@@ -189,9 +189,9 @@ pub mod create_order_input {
         /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
         ///
         /// <p>The line items that make up the order.</p>
-        pub fn line_items(mut self, input: impl Into<crate::model::LineItemRequest>) -> Self {
+        pub fn line_items(mut self, input: crate::model::LineItemRequest) -> Self {
             let mut v = self.line_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_items = Some(v);
             self
         }
@@ -2228,12 +2228,9 @@ pub mod list_catalog_items_input {
         /// <p>Filter values are case sensitive. If you specify multiple
         /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
         /// all results that match any of the specified values.</p>
-        pub fn item_class_filter(
-            mut self,
-            input: impl Into<crate::model::CatalogItemClass>,
-        ) -> Self {
+        pub fn item_class_filter(mut self, input: crate::model::CatalogItemClass) -> Self {
             let mut v = self.item_class_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item_class_filter = Some(v);
             self
         }
@@ -2262,10 +2259,10 @@ pub mod list_catalog_items_input {
         /// all results that match any of the specified values.</p>
         pub fn supported_storage_filter(
             mut self,
-            input: impl Into<crate::model::SupportedStorageEnum>,
+            input: crate::model::SupportedStorageEnum,
         ) -> Self {
             let mut v = self.supported_storage_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_storage_filter = Some(v);
             self
         }

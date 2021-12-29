@@ -328,9 +328,9 @@ pub mod backup {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The list of tags for the backup.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -641,9 +641,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_hsms`](Self::set_hsms).
         ///
         /// <p>Contains information about the HSMs in the cluster.</p>
-        pub fn hsms(mut self, input: impl Into<crate::model::Hsm>) -> Self {
+        pub fn hsms(mut self, input: crate::model::Hsm) -> Self {
             let mut v = self.hsms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hsms = Some(v);
             self
         }
@@ -784,9 +784,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The list of tags for the cluster.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }

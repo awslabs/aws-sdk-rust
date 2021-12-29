@@ -173,8 +173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(signature.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -246,8 +246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(signature.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -319,8 +319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The data to be sent to the client specified by its connection id.</p>
-        pub fn data(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(inp);
+        pub fn data(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(signature);
             self
         }
         /// <p>The data to be sent to the client specified by its connection id.</p>
@@ -329,8 +329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the connection that a specific client is using.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(signature.into());
             self
         }
         /// <p>The identifier of the connection that a specific client is using.</p>

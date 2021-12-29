@@ -406,9 +406,9 @@ pub mod applied_terminology {
         /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the
         /// translated text response. A maximum of 250 terms will be returned, and the specific terms
         /// applied will be the first 250 terms in the source text. </p>
-        pub fn terms(mut self, input: impl Into<crate::model::Term>) -> Self {
+        pub fn terms(mut self, input: crate::model::Term) -> Self {
             let mut v = self.terms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.terms = Some(v);
             self
         }

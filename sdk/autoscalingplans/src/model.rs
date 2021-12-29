@@ -617,10 +617,10 @@ pub mod scaling_instruction {
         /// unique scaling metric and a target value for the metric. </p>
         pub fn target_tracking_configurations(
             mut self,
-            input: impl Into<crate::model::TargetTrackingConfiguration>,
+            input: crate::model::TargetTrackingConfiguration,
         ) -> Self {
             let mut v = self.target_tracking_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_tracking_configurations = Some(v);
             self
         }
@@ -1185,9 +1185,9 @@ pub mod customized_load_metric_specification {
         /// <p>The dimensions of the metric.</p>
         /// <p>Conditional: If you published your metric with dimensions, you must specify the same
         /// dimensions in your customized load metric specification.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::MetricDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -2021,9 +2021,9 @@ pub mod customized_scaling_metric_specification {
         /// <p>The dimensions of the metric.</p>
         /// <p>Conditional: If you published your metric with dimensions, you must specify the same
         /// dimensions in your customized scaling metric specification.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::MetricDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -2623,9 +2623,9 @@ pub mod application_source {
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
         /// <p>A set of tags (up to 50).</p>
-        pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_filters = Some(v);
             self
         }
@@ -3080,12 +3080,9 @@ pub mod scaling_plan {
         /// To override the contents of this collection use [`set_scaling_instructions`](Self::set_scaling_instructions).
         ///
         /// <p>The scaling instructions.</p>
-        pub fn scaling_instructions(
-            mut self,
-            input: impl Into<crate::model::ScalingInstruction>,
-        ) -> Self {
+        pub fn scaling_instructions(mut self, input: crate::model::ScalingInstruction) -> Self {
             let mut v = self.scaling_instructions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_instructions = Some(v);
             self
         }
@@ -3759,9 +3756,9 @@ pub mod scaling_plan_resource {
         /// To override the contents of this collection use [`set_scaling_policies`](Self::set_scaling_policies).
         ///
         /// <p>The scaling policies.</p>
-        pub fn scaling_policies(mut self, input: impl Into<crate::model::ScalingPolicy>) -> Self {
+        pub fn scaling_policies(mut self, input: crate::model::ScalingPolicy) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_policies = Some(v);
             self
         }

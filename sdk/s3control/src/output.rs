@@ -598,10 +598,10 @@ pub mod list_storage_lens_configurations_output {
         /// <p>A list of S3 Storage Lens configurations.</p>
         pub fn storage_lens_configuration_list(
             mut self,
-            input: impl Into<crate::model::ListStorageLensConfigurationEntry>,
+            input: crate::model::ListStorageLensConfigurationEntry,
         ) -> Self {
             let mut v = self.storage_lens_configuration_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_lens_configuration_list = Some(v);
             self
         }
@@ -682,12 +682,9 @@ pub mod list_regional_buckets_output {
         /// To override the contents of this collection use [`set_regional_bucket_list`](Self::set_regional_bucket_list).
         ///
         /// <p></p>
-        pub fn regional_bucket_list(
-            mut self,
-            input: impl Into<crate::model::RegionalBucket>,
-        ) -> Self {
+        pub fn regional_bucket_list(mut self, input: crate::model::RegionalBucket) -> Self {
             let mut v = self.regional_bucket_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regional_bucket_list = Some(v);
             self
         }
@@ -783,12 +780,9 @@ pub mod list_multi_region_access_points_output {
         /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
         ///
         /// <p>The list of Multi-Region Access Points associated with the user.</p>
-        pub fn access_points(
-            mut self,
-            input: impl Into<crate::model::MultiRegionAccessPointReport>,
-        ) -> Self {
+        pub fn access_points(mut self, input: crate::model::MultiRegionAccessPointReport) -> Self {
             let mut v = self.access_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_points = Some(v);
             self
         }
@@ -886,9 +880,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::JobListDescriptor>) -> Self {
+        pub fn jobs(mut self, input: crate::model::JobListDescriptor) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -971,10 +965,10 @@ pub mod list_access_points_for_object_lambda_output {
         /// <p>Returns list of Object Lambda Access Points.</p>
         pub fn object_lambda_access_point_list(
             mut self,
-            input: impl Into<crate::model::ObjectLambdaAccessPoint>,
+            input: crate::model::ObjectLambdaAccessPoint,
         ) -> Self {
             let mut v = self.object_lambda_access_point_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.object_lambda_access_point_list = Some(v);
             self
         }
@@ -1065,9 +1059,9 @@ pub mod list_access_points_output {
         ///
         /// <p>Contains identification and configuration information for one or more access points
         /// associated with the specified bucket.</p>
-        pub fn access_point_list(mut self, input: impl Into<crate::model::AccessPoint>) -> Self {
+        pub fn access_point_list(mut self, input: crate::model::AccessPoint) -> Self {
             let mut v = self.access_point_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_point_list = Some(v);
             self
         }
@@ -1144,9 +1138,9 @@ pub mod get_storage_lens_configuration_tagging_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of S3 Storage Lens configuration requested.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::StorageLensTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::StorageLensTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1523,9 +1517,9 @@ pub mod get_job_tagging_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The set of tags associated with the S3 Batch Operations job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1584,9 +1578,9 @@ pub mod get_bucket_tagging_output {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>The tags set of the Outposts bucket.</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -1701,9 +1695,9 @@ pub mod get_bucket_lifecycle_configuration_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }

@@ -1912,9 +1912,9 @@ pub mod activated_rule {
         ///
         /// </li>
         /// </ol>
-        pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
+        pub fn excluded_rules(mut self, input: crate::model::ExcludedRule) -> Self {
             let mut v = self.excluded_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excluded_rules = Some(v);
             self
         }
@@ -7543,9 +7543,9 @@ pub mod logging_configuration {
         /// example,
         /// if you redact the cookie field, the cookie field in the firehose will be
         /// <code>xxx</code>. </p>
-        pub fn redacted_fields(mut self, input: impl Into<crate::model::FieldToMatch>) -> Self {
+        pub fn redacted_fields(mut self, input: crate::model::FieldToMatch) -> Self {
             let mut v = self.redacted_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.redacted_fields = Some(v);
             self
         }
@@ -7843,9 +7843,9 @@ pub mod tag_info_for_resource {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p></p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -8965,9 +8965,9 @@ pub mod xss_match_set {
         /// To override the contents of this collection use [`set_xss_match_tuples`](Self::set_xss_match_tuples).
         ///
         /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-        pub fn xss_match_tuples(mut self, input: impl Into<crate::model::XssMatchTuple>) -> Self {
+        pub fn xss_match_tuples(mut self, input: crate::model::XssMatchTuple) -> Self {
             let mut v = self.xss_match_tuples.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.xss_match_tuples = Some(v);
             self
         }
@@ -9153,9 +9153,9 @@ pub mod web_acl {
         ///
         /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>,
         /// and the ID of the <code>Rule</code>.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::ActivatedRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::ActivatedRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -9318,10 +9318,10 @@ pub mod sql_injection_match_set {
         /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
         pub fn sql_injection_match_tuples(
             mut self,
-            input: impl Into<crate::model::SqlInjectionMatchTuple>,
+            input: crate::model::SqlInjectionMatchTuple,
         ) -> Self {
             let mut v = self.sql_injection_match_tuples.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sql_injection_match_tuples = Some(v);
             self
         }
@@ -9458,9 +9458,9 @@ pub mod size_constraint_set {
         /// To override the contents of this collection use [`set_size_constraints`](Self::set_size_constraints).
         ///
         /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
-        pub fn size_constraints(mut self, input: impl Into<crate::model::SizeConstraint>) -> Self {
+        pub fn size_constraints(mut self, input: crate::model::SizeConstraint) -> Self {
             let mut v = self.size_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.size_constraints = Some(v);
             self
         }
@@ -9951,9 +9951,9 @@ pub mod http_request {
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
         /// <p>A complex type that contains two values for each header in the sampled web request: the name of the header and the value of the header.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpHeader>) -> Self {
+        pub fn headers(mut self, input: crate::model::HttpHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
@@ -10335,9 +10335,9 @@ pub mod rule {
         ///
         /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
         /// <a>SqlInjectionMatchSet</a> object that you want to include in a <code>Rule</code>.</p>
-        pub fn predicates(mut self, input: impl Into<crate::model::Predicate>) -> Self {
+        pub fn predicates(mut self, input: crate::model::Predicate) -> Self {
             let mut v = self.predicates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.predicates = Some(v);
             self
         }
@@ -10638,12 +10638,9 @@ pub mod regex_match_set {
         /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p>
         /// </li>
         /// </ul>
-        pub fn regex_match_tuples(
-            mut self,
-            input: impl Into<crate::model::RegexMatchTuple>,
-        ) -> Self {
+        pub fn regex_match_tuples(mut self, input: crate::model::RegexMatchTuple) -> Self {
             let mut v = self.regex_match_tuples.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regex_match_tuples = Some(v);
             self
         }
@@ -10853,9 +10850,9 @@ pub mod rate_based_rule {
         /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for
         /// each <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a
         /// <code>RateBasedRule</code>.</p>
-        pub fn match_predicates(mut self, input: impl Into<crate::model::Predicate>) -> Self {
+        pub fn match_predicates(mut self, input: crate::model::Predicate) -> Self {
             let mut v = self.match_predicates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.match_predicates = Some(v);
             self
         }
@@ -11081,12 +11078,9 @@ pub mod ip_set {
         ///
         /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.
         /// If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.</p>
-        pub fn ip_set_descriptors(
-            mut self,
-            input: impl Into<crate::model::IpSetDescriptor>,
-        ) -> Self {
+        pub fn ip_set_descriptors(mut self, input: crate::model::IpSetDescriptor) -> Self {
             let mut v = self.ip_set_descriptors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_set_descriptors = Some(v);
             self
         }
@@ -11212,12 +11206,9 @@ pub mod geo_match_set {
         /// To override the contents of this collection use [`set_geo_match_constraints`](Self::set_geo_match_constraints).
         ///
         /// <p>An array of <a>GeoMatchConstraint</a> objects, which contain the country that you want AWS WAF to search for.</p>
-        pub fn geo_match_constraints(
-            mut self,
-            input: impl Into<crate::model::GeoMatchConstraint>,
-        ) -> Self {
+        pub fn geo_match_constraints(mut self, input: crate::model::GeoMatchConstraint) -> Self {
             let mut v = self.geo_match_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.geo_match_constraints = Some(v);
             self
         }
@@ -11412,9 +11403,9 @@ pub mod byte_match_set {
         /// To override the contents of this collection use [`set_byte_match_tuples`](Self::set_byte_match_tuples).
         ///
         /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
-        pub fn byte_match_tuples(mut self, input: impl Into<crate::model::ByteMatchTuple>) -> Self {
+        pub fn byte_match_tuples(mut self, input: crate::model::ByteMatchTuple) -> Self {
             let mut v = self.byte_match_tuples.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.byte_match_tuples = Some(v);
             self
         }

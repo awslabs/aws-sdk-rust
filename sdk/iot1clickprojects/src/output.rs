@@ -236,9 +236,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>An object containing the list of projects.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::ProjectSummary>) -> Self {
+        pub fn projects(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -322,9 +322,9 @@ pub mod list_placements_output {
         /// To override the contents of this collection use [`set_placements`](Self::set_placements).
         ///
         /// <p>An object listing the requested placements.</p>
-        pub fn placements(mut self, input: impl Into<crate::model::PlacementSummary>) -> Self {
+        pub fn placements(mut self, input: crate::model::PlacementSummary) -> Self {
             let mut v = self.placements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placements = Some(v);
             self
         }

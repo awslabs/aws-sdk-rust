@@ -200,9 +200,9 @@ pub mod server_group {
         /// To override the contents of this collection use [`set_server_list`](Self::set_server_list).
         ///
         /// <p>The servers that belong to a server group.</p>
-        pub fn server_list(mut self, input: impl Into<crate::model::Server>) -> Self {
+        pub fn server_list(mut self, input: crate::model::Server) -> Self {
             let mut v = self.server_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_list = Some(v);
             self
         }
@@ -1748,10 +1748,10 @@ pub mod server_group_validation_configuration {
         /// <p>The validation configuration.</p>
         pub fn server_validation_configurations(
             mut self,
-            input: impl Into<crate::model::ServerValidationConfiguration>,
+            input: crate::model::ServerValidationConfiguration,
         ) -> Self {
             let mut v = self.server_validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_validation_configurations = Some(v);
             self
         }
@@ -2655,10 +2655,10 @@ pub mod server_group_replication_configuration {
         /// <p>The replication configuration for servers in the server group.</p>
         pub fn server_replication_configurations(
             mut self,
-            input: impl Into<crate::model::ServerReplicationConfiguration>,
+            input: crate::model::ServerReplicationConfiguration,
         ) -> Self {
             let mut v = self.server_replication_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_replication_configurations = Some(v);
             self
         }
@@ -3110,10 +3110,10 @@ pub mod server_group_launch_configuration {
         /// <p>The launch configuration for servers in the server group.</p>
         pub fn server_launch_configurations(
             mut self,
-            input: impl Into<crate::model::ServerLaunchConfiguration>,
+            input: crate::model::ServerLaunchConfiguration,
         ) -> Self {
             let mut v = self.server_launch_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_launch_configurations = Some(v);
             self
         }
@@ -4734,12 +4734,9 @@ pub mod replication_job {
         /// To override the contents of this collection use [`set_replication_run_list`](Self::set_replication_run_list).
         ///
         /// <p>Information about the replication runs.</p>
-        pub fn replication_run_list(
-            mut self,
-            input: impl Into<crate::model::ReplicationRun>,
-        ) -> Self {
+        pub fn replication_run_list(mut self, input: crate::model::ReplicationRun) -> Self {
             let mut v = self.replication_run_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_run_list = Some(v);
             self
         }
@@ -5011,12 +5008,9 @@ pub mod connector {
         /// To override the contents of this collection use [`set_capability_list`](Self::set_capability_list).
         ///
         /// <p>The capabilities of the connector.</p>
-        pub fn capability_list(
-            mut self,
-            input: impl Into<crate::model::ConnectorCapability>,
-        ) -> Self {
+        pub fn capability_list(mut self, input: crate::model::ConnectorCapability) -> Self {
             let mut v = self.capability_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capability_list = Some(v);
             self
         }

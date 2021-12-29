@@ -494,12 +494,12 @@ pub mod application_detail {
         /// <p>Describes the application Amazon CloudWatch logging options.</p>
         pub fn cloud_watch_logging_option_descriptions(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOptionDescription>,
+            input: crate::model::CloudWatchLoggingOptionDescription,
         ) -> Self {
             let mut v = self
                 .cloud_watch_logging_option_descriptions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_option_descriptions = Some(v);
             self
         }
@@ -1056,10 +1056,10 @@ pub mod application_configuration_description {
         /// <p>The array of descriptions of VPC configurations available to the application.</p>
         pub fn vpc_configuration_descriptions(
             mut self,
-            input: impl Into<crate::model::VpcConfigurationDescription>,
+            input: crate::model::VpcConfigurationDescription,
         ) -> Self {
             let mut v = self.vpc_configuration_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_configuration_descriptions = Some(v);
             self
         }
@@ -1252,12 +1252,12 @@ pub mod zeppelin_application_configuration_description {
         /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
         pub fn custom_artifacts_configuration_description(
             mut self,
-            input: impl Into<crate::model::CustomArtifactConfigurationDescription>,
+            input: crate::model::CustomArtifactConfigurationDescription,
         ) -> Self {
             let mut v = self
                 .custom_artifacts_configuration_description
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_artifacts_configuration_description = Some(v);
             self
         }
@@ -2281,12 +2281,9 @@ pub mod environment_property_descriptions {
         /// To override the contents of this collection use [`set_property_group_descriptions`](Self::set_property_group_descriptions).
         ///
         /// <p>Describes the execution property groups.</p>
-        pub fn property_group_descriptions(
-            mut self,
-            input: impl Into<crate::model::PropertyGroup>,
-        ) -> Self {
+        pub fn property_group_descriptions(mut self, input: crate::model::PropertyGroup) -> Self {
             let mut v = self.property_group_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_group_descriptions = Some(v);
             self
         }
@@ -4009,12 +4006,9 @@ pub mod sql_application_configuration_description {
         ///
         /// <p>The array of <a>InputDescription</a> objects describing the input streams used
         /// by the application.</p>
-        pub fn input_descriptions(
-            mut self,
-            input: impl Into<crate::model::InputDescription>,
-        ) -> Self {
+        pub fn input_descriptions(mut self, input: crate::model::InputDescription) -> Self {
             let mut v = self.input_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_descriptions = Some(v);
             self
         }
@@ -4033,12 +4027,9 @@ pub mod sql_application_configuration_description {
         ///
         /// <p>The array of <a>OutputDescription</a> objects describing the destination
         /// streams used by the application.</p>
-        pub fn output_descriptions(
-            mut self,
-            input: impl Into<crate::model::OutputDescription>,
-        ) -> Self {
+        pub fn output_descriptions(mut self, input: crate::model::OutputDescription) -> Self {
             let mut v = self.output_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_descriptions = Some(v);
             self
         }
@@ -4059,10 +4050,10 @@ pub mod sql_application_configuration_description {
         /// reference data sources used by the application.</p>
         pub fn reference_data_source_descriptions(
             mut self,
-            input: impl Into<crate::model::ReferenceDataSourceDescription>,
+            input: crate::model::ReferenceDataSourceDescription,
         ) -> Self {
             let mut v = self.reference_data_source_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_data_source_descriptions = Some(v);
             self
         }
@@ -4302,9 +4293,9 @@ pub mod source_schema {
         /// To override the contents of this collection use [`set_record_columns`](Self::set_record_columns).
         ///
         /// <p>A list of <code>RecordColumn</code> objects. </p>
-        pub fn record_columns(mut self, input: impl Into<crate::model::RecordColumn>) -> Self {
+        pub fn record_columns(mut self, input: crate::model::RecordColumn) -> Self {
             let mut v = self.record_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_columns = Some(v);
             self
         }
@@ -7006,10 +6997,10 @@ pub mod application_configuration_update {
         /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
         pub fn vpc_configuration_updates(
             mut self,
-            input: impl Into<crate::model::VpcConfigurationUpdate>,
+            input: crate::model::VpcConfigurationUpdate,
         ) -> Self {
             let mut v = self.vpc_configuration_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_configuration_updates = Some(v);
             self
         }
@@ -7195,12 +7186,12 @@ pub mod zeppelin_application_configuration_update {
         /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
         pub fn custom_artifacts_configuration_update(
             mut self,
-            input: impl Into<crate::model::CustomArtifactConfiguration>,
+            input: crate::model::CustomArtifactConfiguration,
         ) -> Self {
             let mut v = self
                 .custom_artifacts_configuration_update
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_artifacts_configuration_update = Some(v);
             self
         }
@@ -7888,9 +7879,9 @@ pub mod environment_property_updates {
         /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
         ///
         /// <p>Describes updates to the execution property groups.</p>
-        pub fn property_groups(mut self, input: impl Into<crate::model::PropertyGroup>) -> Self {
+        pub fn property_groups(mut self, input: crate::model::PropertyGroup) -> Self {
             let mut v = self.property_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_groups = Some(v);
             self
         }
@@ -8955,9 +8946,9 @@ pub mod sql_application_configuration_update {
         ///
         /// <p>The array of <a>InputUpdate</a> objects describing the new input streams used
         /// by the application.</p>
-        pub fn input_updates(mut self, input: impl Into<crate::model::InputUpdate>) -> Self {
+        pub fn input_updates(mut self, input: crate::model::InputUpdate) -> Self {
             let mut v = self.input_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_updates = Some(v);
             self
         }
@@ -8976,9 +8967,9 @@ pub mod sql_application_configuration_update {
         ///
         /// <p>The array of <a>OutputUpdate</a> objects describing the new destination streams
         /// used by the application.</p>
-        pub fn output_updates(mut self, input: impl Into<crate::model::OutputUpdate>) -> Self {
+        pub fn output_updates(mut self, input: crate::model::OutputUpdate) -> Self {
             let mut v = self.output_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_updates = Some(v);
             self
         }
@@ -8999,10 +8990,10 @@ pub mod sql_application_configuration_update {
         /// reference data sources used by the application.</p>
         pub fn reference_data_source_updates(
             mut self,
-            input: impl Into<crate::model::ReferenceDataSourceUpdate>,
+            input: crate::model::ReferenceDataSourceUpdate,
         ) -> Self {
             let mut v = self.reference_data_source_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_data_source_updates = Some(v);
             self
         }
@@ -10025,12 +10016,9 @@ pub mod input_schema_update {
         ///
         /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping
         /// of the streaming source element to the corresponding column in the in-application stream.</p>
-        pub fn record_column_updates(
-            mut self,
-            input: impl Into<crate::model::RecordColumn>,
-        ) -> Self {
+        pub fn record_column_updates(mut self, input: crate::model::RecordColumn) -> Self {
             let mut v = self.record_column_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_column_updates = Some(v);
             self
         }
@@ -10486,12 +10474,9 @@ pub mod run_configuration {
         ///
         /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application
         /// application.</p>
-        pub fn sql_run_configurations(
-            mut self,
-            input: impl Into<crate::model::SqlRunConfiguration>,
-        ) -> Self {
+        pub fn sql_run_configurations(mut self, input: crate::model::SqlRunConfiguration) -> Self {
             let mut v = self.sql_run_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sql_run_configurations = Some(v);
             self
         }
@@ -11577,12 +11562,9 @@ pub mod application_configuration {
         /// To override the contents of this collection use [`set_vpc_configurations`](Self::set_vpc_configurations).
         ///
         /// <p>The array of descriptions of VPC configurations available to the application.</p>
-        pub fn vpc_configurations(
-            mut self,
-            input: impl Into<crate::model::VpcConfiguration>,
-        ) -> Self {
+        pub fn vpc_configurations(mut self, input: crate::model::VpcConfiguration) -> Self {
             let mut v = self.vpc_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_configurations = Some(v);
             self
         }
@@ -11756,10 +11738,10 @@ pub mod zeppelin_application_configuration {
         /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
         pub fn custom_artifacts_configuration(
             mut self,
-            input: impl Into<crate::model::CustomArtifactConfiguration>,
+            input: crate::model::CustomArtifactConfiguration,
         ) -> Self {
             let mut v = self.custom_artifacts_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_artifacts_configuration = Some(v);
             self
         }
@@ -12463,9 +12445,9 @@ pub mod environment_properties {
         /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
         ///
         /// <p>Describes the execution property groups.</p>
-        pub fn property_groups(mut self, input: impl Into<crate::model::PropertyGroup>) -> Self {
+        pub fn property_groups(mut self, input: crate::model::PropertyGroup) -> Self {
             let mut v = self.property_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_groups = Some(v);
             self
         }
@@ -13240,9 +13222,9 @@ pub mod sql_application_configuration {
         ///
         /// <p>The array of <a>Input</a> objects describing the input streams used by the
         /// application.</p>
-        pub fn inputs(mut self, input: impl Into<crate::model::Input>) -> Self {
+        pub fn inputs(mut self, input: crate::model::Input) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -13261,9 +13243,9 @@ pub mod sql_application_configuration {
         ///
         /// <p>The array of <a>Output</a> objects describing the destination streams used by
         /// the application.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -13282,12 +13264,9 @@ pub mod sql_application_configuration {
         ///
         /// <p>The array of <a>ReferenceDataSource</a> objects describing the reference data
         /// sources used by the application.</p>
-        pub fn reference_data_sources(
-            mut self,
-            input: impl Into<crate::model::ReferenceDataSource>,
-        ) -> Self {
+        pub fn reference_data_sources(mut self, input: crate::model::ReferenceDataSource) -> Self {
             let mut v = self.reference_data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_data_sources = Some(v);
             self
         }

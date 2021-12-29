@@ -220,9 +220,9 @@ pub mod list_usage_totals_output {
         /// To override the contents of this collection use [`set_totals`](Self::set_totals).
         ///
         /// <p>An object with details on the total usage for the requested account.</p>
-        pub fn totals(mut self, input: impl Into<crate::model::UsageTotal>) -> Self {
+        pub fn totals(mut self, input: crate::model::UsageTotal) -> Self {
             let mut v = self.totals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.totals = Some(v);
             self
         }
@@ -367,9 +367,9 @@ pub mod list_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>An object that contains details for each member account.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -473,9 +473,9 @@ pub mod list_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>Contains details on the findings in your environment.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::Finding>) -> Self {
+        pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -572,9 +572,9 @@ pub mod list_finding_aggregations_output {
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
         /// <p>Objects that contain the results of an aggregation operation.</p>
-        pub fn responses(mut self, input: impl Into<crate::model::AggregationResponse>) -> Self {
+        pub fn responses(mut self, input: crate::model::AggregationResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.responses = Some(v);
             self
         }
@@ -667,9 +667,9 @@ pub mod list_filters_output {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Contains details on the filters associated with your account.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -767,10 +767,10 @@ pub mod list_delegated_admin_accounts_output {
         /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
         pub fn delegated_admin_accounts(
             mut self,
-            input: impl Into<crate::model::DelegatedAdminAccount>,
+            input: crate::model::DelegatedAdminAccount,
         ) -> Self {
             let mut v = self.delegated_admin_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegated_admin_accounts = Some(v);
             self
         }
@@ -870,9 +870,9 @@ pub mod list_coverage_statistics_output {
         /// To override the contents of this collection use [`set_counts_by_group`](Self::set_counts_by_group).
         ///
         /// <p>An array with the number for each group.</p>
-        pub fn counts_by_group(mut self, input: impl Into<crate::model::Counts>) -> Self {
+        pub fn counts_by_group(mut self, input: crate::model::Counts) -> Self {
             let mut v = self.counts_by_group.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.counts_by_group = Some(v);
             self
         }
@@ -992,12 +992,9 @@ pub mod list_coverage_output {
         /// To override the contents of this collection use [`set_covered_resources`](Self::set_covered_resources).
         ///
         /// <p>An object that contains details on the covered resources in your environment.</p>
-        pub fn covered_resources(
-            mut self,
-            input: impl Into<crate::model::CoveredResource>,
-        ) -> Self {
+        pub fn covered_resources(mut self, input: crate::model::CoveredResource) -> Self {
             let mut v = self.covered_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.covered_resources = Some(v);
             self
         }
@@ -1073,9 +1070,9 @@ pub mod list_account_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1501,9 +1498,9 @@ pub mod enable_output {
         ///
         /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are
         /// provided for each account.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::Account>) -> Self {
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }
@@ -1522,9 +1519,9 @@ pub mod enable_output {
         ///
         /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are
         /// provided for each account.</p>
-        pub fn failed_accounts(mut self, input: impl Into<crate::model::FailedAccount>) -> Self {
+        pub fn failed_accounts(mut self, input: crate::model::FailedAccount) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_accounts = Some(v);
             self
         }
@@ -1714,9 +1711,9 @@ pub mod disable_output {
         ///
         /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are
         /// provided for each account.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::Account>) -> Self {
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }
@@ -1735,9 +1732,9 @@ pub mod disable_output {
         ///
         /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are
         /// provided for each account.</p>
-        pub fn failed_accounts(mut self, input: impl Into<crate::model::FailedAccount>) -> Self {
+        pub fn failed_accounts(mut self, input: crate::model::FailedAccount) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_accounts = Some(v);
             self
         }
@@ -2100,9 +2097,9 @@ pub mod batch_get_free_trial_info_output {
         ///
         /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts.
         /// </p>
-        pub fn accounts(mut self, input: impl Into<crate::model::FreeTrialAccountInfo>) -> Self {
+        pub fn accounts(mut self, input: crate::model::FreeTrialAccountInfo) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }
@@ -2120,12 +2117,9 @@ pub mod batch_get_free_trial_info_output {
         /// To override the contents of this collection use [`set_failed_accounts`](Self::set_failed_accounts).
         ///
         /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
-        pub fn failed_accounts(
-            mut self,
-            input: impl Into<crate::model::FreeTrialInfoError>,
-        ) -> Self {
+        pub fn failed_accounts(mut self, input: crate::model::FreeTrialInfoError) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_accounts = Some(v);
             self
         }
@@ -2195,9 +2189,9 @@ pub mod batch_get_account_status_output {
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
         /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::AccountState>) -> Self {
+        pub fn accounts(mut self, input: crate::model::AccountState) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }
@@ -2214,9 +2208,9 @@ pub mod batch_get_account_status_output {
         /// To override the contents of this collection use [`set_failed_accounts`](Self::set_failed_accounts).
         ///
         /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
-        pub fn failed_accounts(mut self, input: impl Into<crate::model::FailedAccount>) -> Self {
+        pub fn failed_accounts(mut self, input: crate::model::FailedAccount) -> Self {
             let mut v = self.failed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_accounts = Some(v);
             self
         }

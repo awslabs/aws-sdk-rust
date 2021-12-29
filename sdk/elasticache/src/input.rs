@@ -37,9 +37,9 @@ pub mod add_tags_to_resource_input {
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair.
         /// A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1014,9 +1014,9 @@ pub mod copy_snapshot_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2014,9 +2014,9 @@ pub mod create_cache_cluster_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2292,10 +2292,10 @@ pub mod create_cache_cluster_input {
         /// <p>Specifies the destination, format and type of the logs. </p>
         pub fn log_delivery_configurations(
             mut self,
-            input: impl Into<crate::model::LogDeliveryConfigurationRequest>,
+            input: crate::model::LogDeliveryConfigurationRequest,
         ) -> Self {
             let mut v = self.log_delivery_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_delivery_configurations = Some(v);
             self
         }
@@ -2545,9 +2545,9 @@ pub mod create_cache_parameter_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2740,9 +2740,9 @@ pub mod create_cache_security_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2960,9 +2960,9 @@ pub mod create_cache_subnet_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3581,10 +3581,10 @@ pub mod create_replication_group_input {
         /// because you must specify the slots for each node group.</p>
         pub fn node_group_configuration(
             mut self,
-            input: impl Into<crate::model::NodeGroupConfiguration>,
+            input: crate::model::NodeGroupConfiguration,
         ) -> Self {
             let mut v = self.node_group_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_group_configuration = Some(v);
             self
         }
@@ -4282,9 +4282,9 @@ pub mod create_replication_group_input {
         /// <p>A list of tags to be added to this resource.
         /// Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
         /// Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4708,10 +4708,10 @@ pub mod create_replication_group_input {
         /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
-            input: impl Into<crate::model::LogDeliveryConfigurationRequest>,
+            input: crate::model::LogDeliveryConfigurationRequest,
         ) -> Self {
             let mut v = self.log_delivery_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_delivery_configurations = Some(v);
             self
         }
@@ -4969,9 +4969,9 @@ pub mod create_snapshot_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5209,9 +5209,9 @@ pub mod create_user_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5417,9 +5417,9 @@ pub mod create_user_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5893,12 +5893,9 @@ pub mod decrease_replica_count_input {
         /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
         /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
         /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-        pub fn replica_configuration(
-            mut self,
-            input: impl Into<crate::model::ConfigureShard>,
-        ) -> Self {
+        pub fn replica_configuration(mut self, input: crate::model::ConfigureShard) -> Self {
             let mut v = self.replica_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_configuration = Some(v);
             self
         }
@@ -11362,12 +11359,9 @@ pub mod describe_service_updates_input {
         /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
         ///
         /// <p>The status of the service update</p>
-        pub fn service_update_status(
-            mut self,
-            input: impl Into<crate::model::ServiceUpdateStatus>,
-        ) -> Self {
+        pub fn service_update_status(mut self, input: crate::model::ServiceUpdateStatus) -> Self {
             let mut v = self.service_update_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_update_status = Some(v);
             self
         }
@@ -11883,12 +11877,9 @@ pub mod describe_update_actions_input {
         /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
         ///
         /// <p>The status of the service update</p>
-        pub fn service_update_status(
-            mut self,
-            input: impl Into<crate::model::ServiceUpdateStatus>,
-        ) -> Self {
+        pub fn service_update_status(mut self, input: crate::model::ServiceUpdateStatus) -> Self {
             let mut v = self.service_update_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_update_status = Some(v);
             self
         }
@@ -11918,12 +11909,9 @@ pub mod describe_update_actions_input {
         /// To override the contents of this collection use [`set_update_action_status`](Self::set_update_action_status).
         ///
         /// <p>The status of the update action.</p>
-        pub fn update_action_status(
-            mut self,
-            input: impl Into<crate::model::UpdateActionStatus>,
-        ) -> Self {
+        pub fn update_action_status(mut self, input: crate::model::UpdateActionStatus) -> Self {
             let mut v = self.update_action_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_action_status = Some(v);
             self
         }
@@ -12329,9 +12317,9 @@ pub mod describe_users_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filter to determine the list of User IDs to return.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12921,10 +12909,10 @@ pub mod increase_node_groups_in_global_replication_group_input {
         /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
         pub fn regional_configurations(
             mut self,
-            input: impl Into<crate::model::RegionalConfiguration>,
+            input: crate::model::RegionalConfiguration,
         ) -> Self {
             let mut v = self.regional_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regional_configurations = Some(v);
             self
         }
@@ -13134,12 +13122,9 @@ pub mod increase_replica_count_input {
         /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
         /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
         /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-        pub fn replica_configuration(
-            mut self,
-            input: impl Into<crate::model::ConfigureShard>,
-        ) -> Self {
+        pub fn replica_configuration(mut self, input: crate::model::ConfigureShard) -> Self {
             let mut v = self.replica_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_configuration = Some(v);
             self
         }
@@ -14462,10 +14447,10 @@ pub mod modify_cache_cluster_input {
         /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
-            input: impl Into<crate::model::LogDeliveryConfigurationRequest>,
+            input: crate::model::LogDeliveryConfigurationRequest,
         ) -> Self {
             let mut v = self.log_delivery_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_delivery_configurations = Some(v);
             self
         }
@@ -14657,12 +14642,9 @@ pub mod modify_cache_parameter_group_input {
         /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
         ///
         /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-        pub fn parameter_name_values(
-            mut self,
-            input: impl Into<crate::model::ParameterNameValue>,
-        ) -> Self {
+        pub fn parameter_name_values(mut self, input: crate::model::ParameterNameValue) -> Self {
             let mut v = self.parameter_name_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_name_values = Some(v);
             self
         }
@@ -15846,10 +15828,10 @@ pub mod modify_replication_group_input {
         /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
-            input: impl Into<crate::model::LogDeliveryConfigurationRequest>,
+            input: crate::model::LogDeliveryConfigurationRequest,
         ) -> Self {
             let mut v = self.log_delivery_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_delivery_configurations = Some(v);
             self
         }
@@ -16088,10 +16070,10 @@ pub mod modify_replication_group_shard_configuration_input {
         /// is greater than the current number of node groups (shards).</p>
         pub fn resharding_configuration(
             mut self,
-            input: impl Into<crate::model::ReshardingConfiguration>,
+            input: crate::model::ReshardingConfiguration,
         ) -> Self {
             let mut v = self.resharding_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resharding_configuration = Some(v);
             self
         }
@@ -16792,9 +16774,9 @@ pub mod purchase_reserved_cache_nodes_offering_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -17521,12 +17503,9 @@ pub mod reset_cache_parameter_group_input {
         /// do not use <code>ParameterNameValues</code>.
         /// If <code>ResetAllParameters</code> is <code>false</code>,
         /// you must specify the name of at least one parameter to reset.</p>
-        pub fn parameter_name_values(
-            mut self,
-            input: impl Into<crate::model::ParameterNameValue>,
-        ) -> Self {
+        pub fn parameter_name_values(mut self, input: crate::model::ParameterNameValue) -> Self {
             let mut v = self.parameter_name_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_name_values = Some(v);
             self
         }
@@ -17900,10 +17879,10 @@ pub mod start_migration_input {
         /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
         pub fn customer_node_endpoint_list(
             mut self,
-            input: impl Into<crate::model::CustomerNodeEndpoint>,
+            input: crate::model::CustomerNodeEndpoint,
         ) -> Self {
             let mut v = self.customer_node_endpoint_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.customer_node_endpoint_list = Some(v);
             self
         }

@@ -166,8 +166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the device you want to get the registration status from.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(signature.into());
             self
         }
         /// <p>The unique name of the device you want to get the registration status from.</p>
@@ -176,8 +176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
@@ -253,8 +253,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_agent_metrics`](Self::set_agent_metrics).
         ///
         /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-        pub fn agent_metrics(mut self, inp: impl Into<crate::model::EdgeMetric>) -> Self {
-            self.inner = self.inner.agent_metrics(inp);
+        pub fn agent_metrics(mut self, input: crate::model::EdgeMetric) -> Self {
+            self.inner = self.inner.agent_metrics(input);
             self
         }
         /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
@@ -270,8 +270,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>Returns a list of models deployed on the the device.</p>
-        pub fn models(mut self, inp: impl Into<crate::model::Model>) -> Self {
-            self.inner = self.inner.models(inp);
+        pub fn models(mut self, input: crate::model::Model) -> Self {
+            self.inner = self.inner.models(input);
             self
         }
         /// <p>Returns a list of models deployed on the the device.</p>
@@ -283,8 +283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns the version of the agent.</p>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(inp);
+        pub fn agent_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(signature.into());
             self
         }
         /// <p>Returns the version of the agent.</p>
@@ -296,8 +296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the device.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(signature.into());
             self
         }
         /// <p>The unique name of the device.</p>
@@ -306,8 +306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>

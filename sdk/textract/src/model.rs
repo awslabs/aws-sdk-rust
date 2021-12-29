@@ -439,9 +439,9 @@ pub mod warning {
         /// To override the contents of this collection use [`set_pages`](Self::set_pages).
         ///
         /// <p>A list of the pages that the warning applies to.</p>
-        pub fn pages(mut self, input: impl Into<i32>) -> Self {
+        pub fn pages(mut self, input: i32) -> Self {
             let mut v = self.pages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pages = Some(v);
             self
         }
@@ -531,9 +531,9 @@ pub mod expense_document {
         /// To override the contents of this collection use [`set_summary_fields`](Self::set_summary_fields).
         ///
         /// <p>Any information found outside of a table by Amazon Textract.</p>
-        pub fn summary_fields(mut self, input: impl Into<crate::model::ExpenseField>) -> Self {
+        pub fn summary_fields(mut self, input: crate::model::ExpenseField) -> Self {
             let mut v = self.summary_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_fields = Some(v);
             self
         }
@@ -550,9 +550,9 @@ pub mod expense_document {
         /// To override the contents of this collection use [`set_line_item_groups`](Self::set_line_item_groups).
         ///
         /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
-        pub fn line_item_groups(mut self, input: impl Into<crate::model::LineItemGroup>) -> Self {
+        pub fn line_item_groups(mut self, input: crate::model::LineItemGroup) -> Self {
             let mut v = self.line_item_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_item_groups = Some(v);
             self
         }
@@ -633,9 +633,9 @@ pub mod line_item_group {
         /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
         ///
         /// <p>The breakdown of information on a particular line of a table. </p>
-        pub fn line_items(mut self, input: impl Into<crate::model::LineItemFields>) -> Self {
+        pub fn line_items(mut self, input: crate::model::LineItemFields) -> Self {
             let mut v = self.line_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_items = Some(v);
             self
         }
@@ -698,12 +698,9 @@ pub mod line_item_fields {
         /// To override the contents of this collection use [`set_line_item_expense_fields`](Self::set_line_item_expense_fields).
         ///
         /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-        pub fn line_item_expense_fields(
-            mut self,
-            input: impl Into<crate::model::ExpenseField>,
-        ) -> Self {
+        pub fn line_item_expense_fields(mut self, input: crate::model::ExpenseField) -> Self {
             let mut v = self.line_item_expense_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_item_expense_fields = Some(v);
             self
         }
@@ -1004,9 +1001,9 @@ pub mod geometry {
         /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
         ///
         /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
-        pub fn polygon(mut self, input: impl Into<crate::model::Point>) -> Self {
+        pub fn polygon(mut self, input: crate::model::Point) -> Self {
             let mut v = self.polygon.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.polygon = Some(v);
             self
         }
@@ -2060,9 +2057,9 @@ pub mod block {
         /// <p>1 - The block has child blocks.</p>
         /// </li>
         /// </ul>
-        pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
+        pub fn relationships(mut self, input: crate::model::Relationship) -> Self {
             let mut v = self.relationships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relationships = Some(v);
             self
         }
@@ -2103,9 +2100,9 @@ pub mod block {
         /// <p>
         /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
         /// <code>GetDocumentTextDetection</code>.</p>
-        pub fn entity_types(mut self, input: impl Into<crate::model::EntityType>) -> Self {
+        pub fn entity_types(mut self, input: crate::model::EntityType) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_types = Some(v);
             self
         }
@@ -2787,10 +2784,10 @@ pub mod identity_document {
         /// Contains both normalized field and value of the extracted text.</p>
         pub fn identity_document_fields(
             mut self,
-            input: impl Into<crate::model::IdentityDocumentField>,
+            input: crate::model::IdentityDocumentField,
         ) -> Self {
             let mut v = self.identity_document_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identity_document_fields = Some(v);
             self
         }
@@ -3400,12 +3397,9 @@ pub mod human_loop_data_attributes {
         ///
         /// <p>Sets whether the input image is free of personally identifiable information or adult
         /// content.</p>
-        pub fn content_classifiers(
-            mut self,
-            input: impl Into<crate::model::ContentClassifier>,
-        ) -> Self {
+        pub fn content_classifiers(mut self, input: crate::model::ContentClassifier) -> Self {
             let mut v = self.content_classifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_classifiers = Some(v);
             self
         }

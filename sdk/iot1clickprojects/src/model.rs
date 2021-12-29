@@ -90,10 +90,10 @@ pub mod placement_template {
         pub fn device_templates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::DeviceTemplate>,
+            v: crate::model::DeviceTemplate,
         ) -> Self {
             let mut hash_map = self.device_templates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.device_templates = Some(hash_map);
             self
         }

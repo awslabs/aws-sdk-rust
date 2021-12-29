@@ -266,8 +266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DataIntegration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the DataIntegration.</p>
@@ -276,8 +276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the DataIntegration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the DataIntegration.</p>
@@ -286,8 +286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The KMS key for the DataIntegration.</p>
-        pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(inp);
+        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(signature.into());
             self
         }
         /// <p>The KMS key for the DataIntegration.</p>
@@ -296,8 +296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the data source.</p>
-        pub fn source_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(inp);
+        pub fn source_uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(signature.into());
             self
         }
         /// <p>The URI of the data source.</p>
@@ -306,8 +306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data and how often it should be pulled from the source.</p>
-        pub fn schedule_config(mut self, inp: crate::model::ScheduleConfiguration) -> Self {
-            self.inner = self.inner.schedule_config(inp);
+        pub fn schedule_config(mut self, signature: crate::model::ScheduleConfiguration) -> Self {
+            self.inner = self.inner.schedule_config(signature);
             self
         }
         /// <p>The name of the data and how often it should be pulled from the source.</p>
@@ -328,7 +328,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -343,8 +343,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -417,8 +417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the event integration.</p>
@@ -427,8 +427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the event integration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the event integration.</p>
@@ -437,8 +437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event filter.</p>
-        pub fn event_filter(mut self, inp: crate::model::EventFilter) -> Self {
-            self.inner = self.inner.event_filter(inp);
+        pub fn event_filter(mut self, signature: crate::model::EventFilter) -> Self {
+            self.inner = self.inner.event_filter(signature);
             self
         }
         /// <p>The event filter.</p>
@@ -450,8 +450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The EventBridge bus.</p>
-        pub fn event_bridge_bus(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bridge_bus(inp);
+        pub fn event_bridge_bus(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bridge_bus(signature.into());
             self
         }
         /// <p>The EventBridge bus.</p>
@@ -464,8 +464,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -484,7 +484,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -565,8 +565,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn data_integration_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_integration_identifier(inp);
+        pub fn data_integration_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.data_integration_identifier(signature.into());
             self
         }
         /// <p>A unique identifier for the DataIntegration.</p>
@@ -639,8 +642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the event integration.</p>
@@ -714,8 +717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>A unique identifier.</p>
@@ -784,8 +787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the event integration. </p>
@@ -859,8 +862,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn data_integration_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_integration_identifier(inp);
+        pub fn data_integration_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.data_integration_identifier(signature.into());
             self
         }
         /// <p>A unique identifier for the DataIntegration.</p>
@@ -873,8 +879,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -884,8 +890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -960,8 +966,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -971,8 +977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1041,8 +1047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration. </p>
-        pub fn event_integration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_integration_name(inp);
+        pub fn event_integration_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_integration_name(signature.into());
             self
         }
         /// <p>The name of the event integration. </p>
@@ -1055,8 +1061,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -1066,8 +1072,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1137,8 +1143,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -1148,8 +1154,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1218,8 +1224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
@@ -1288,8 +1294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1307,7 +1313,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags. </p>
@@ -1381,8 +1387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1395,8 +1401,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -1473,8 +1479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>A unique identifier for the DataIntegration.</p>
@@ -1483,8 +1489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the DataIntegration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the DataIntegration.</p>
@@ -1493,8 +1499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the DataIntegration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the DataIntegration.</p>
@@ -1563,8 +1569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the event integration.</p>
@@ -1573,8 +1579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the event inegration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the event inegration.</p>

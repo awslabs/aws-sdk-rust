@@ -361,9 +361,9 @@ pub mod create_dataflow_endpoint_group_input {
         /// To override the contents of this collection use [`set_endpoint_details`](Self::set_endpoint_details).
         ///
         /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-        pub fn endpoint_details(mut self, input: impl Into<crate::model::EndpointDetails>) -> Self {
+        pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
             let mut v = self.endpoint_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_details = Some(v);
             self
         }
@@ -607,12 +607,9 @@ pub mod create_mission_profile_input {
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
         /// <code>Config</code> and a <i>to</i>
         /// <code>Config</code>.</p>
-        pub fn dataflow_edges(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.dataflow_edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataflow_edges = Some(v);
             self
         }
@@ -2477,9 +2474,9 @@ pub mod list_contacts_input {
         /// To override the contents of this collection use [`set_status_list`](Self::set_status_list).
         ///
         /// <p>Status of a contact reservation.</p>
-        pub fn status_list(mut self, input: impl Into<crate::model::ContactStatus>) -> Self {
+        pub fn status_list(mut self, input: crate::model::ContactStatus) -> Self {
             let mut v = self.status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.status_list = Some(v);
             self
         }
@@ -4448,12 +4445,9 @@ pub mod update_mission_profile_input {
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
         /// <code>Config</code> and a <i>to</i>
         /// <code>Config</code>.</p>
-        pub fn dataflow_edges(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.dataflow_edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataflow_edges = Some(v);
             self
         }

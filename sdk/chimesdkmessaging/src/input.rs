@@ -797,9 +797,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the creation request.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1232,9 +1232,9 @@ pub mod create_channel_flow_input {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions.</p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }
@@ -1261,9 +1261,9 @@ pub mod create_channel_flow_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the creation request.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8438,10 +8438,10 @@ pub mod send_channel_message_input {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -8665,9 +8665,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9261,9 +9261,9 @@ pub mod update_channel_flow_input {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions </p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }

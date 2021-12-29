@@ -285,9 +285,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of tags.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -449,9 +449,9 @@ pub mod describe_clusters_output {
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
         /// <p>A list of clusters.</p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }
@@ -539,9 +539,9 @@ pub mod describe_backups_output {
         /// To override the contents of this collection use [`set_backups`](Self::set_backups).
         ///
         /// <p>A list of backups.</p>
-        pub fn backups(mut self, input: impl Into<crate::model::Backup>) -> Self {
+        pub fn backups(mut self, input: crate::model::Backup) -> Self {
             let mut v = self.backups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backups = Some(v);
             self
         }

@@ -3125,9 +3125,9 @@ pub mod serverless {
         /// To override the contents of this collection use [`set_vpc_configs`](Self::set_vpc_configs).
         ///
         /// <p>The configuration of the Amazon VPCs for the cluster.</p>
-        pub fn vpc_configs(mut self, input: impl Into<crate::model::VpcConfig>) -> Self {
+        pub fn vpc_configs(mut self, input: crate::model::VpcConfig) -> Self {
             let mut v = self.vpc_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_configs = Some(v);
             self
         }
@@ -5111,12 +5111,9 @@ pub mod cluster_operation_info {
         /// To override the contents of this collection use [`set_operation_steps`](Self::set_operation_steps).
         ///
         /// <p>Steps completed during the operation.</p>
-        pub fn operation_steps(
-            mut self,
-            input: impl Into<crate::model::ClusterOperationStep>,
-        ) -> Self {
+        pub fn operation_steps(mut self, input: crate::model::ClusterOperationStep) -> Self {
             let mut v = self.operation_steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operation_steps = Some(v);
             self
         }
@@ -5312,12 +5309,9 @@ pub mod mutable_cluster_info {
         /// To override the contents of this collection use [`set_broker_ebs_volume_info`](Self::set_broker_ebs_volume_info).
         ///
         /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
-        pub fn broker_ebs_volume_info(
-            mut self,
-            input: impl Into<crate::model::BrokerEbsVolumeInfo>,
-        ) -> Self {
+        pub fn broker_ebs_volume_info(mut self, input: crate::model::BrokerEbsVolumeInfo) -> Self {
             let mut v = self.broker_ebs_volume_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.broker_ebs_volume_info = Some(v);
             self
         }
@@ -5814,9 +5808,9 @@ pub mod serverless_request {
         /// To override the contents of this collection use [`set_vpc_configs`](Self::set_vpc_configs).
         ///
         /// <p>The configuration of the Amazon VPCs for the cluster.</p>
-        pub fn vpc_configs(mut self, input: impl Into<crate::model::VpcConfig>) -> Self {
+        pub fn vpc_configs(mut self, input: crate::model::VpcConfig) -> Self {
             let mut v = self.vpc_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_configs = Some(v);
             self
         }

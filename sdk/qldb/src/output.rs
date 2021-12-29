@@ -445,10 +445,10 @@ pub mod list_tags_for_resource_output {
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::option::Option<std::string::String>>,
+            v: std::option::Option<std::string::String>,
         ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.tags = Some(hash_map);
             self
         }
@@ -545,9 +545,9 @@ pub mod list_ledgers_output {
         ///
         /// <p>The array of ledger summaries that are associated with the current account and
         /// Region.</p>
-        pub fn ledgers(mut self, input: impl Into<crate::model::LedgerSummary>) -> Self {
+        pub fn ledgers(mut self, input: crate::model::LedgerSummary) -> Self {
             let mut v = self.ledgers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ledgers = Some(v);
             self
         }
@@ -681,10 +681,10 @@ pub mod list_journal_s3_exports_for_ledger_output {
         /// ledger.</p>
         pub fn journal_s3_exports(
             mut self,
-            input: impl Into<crate::model::JournalS3ExportDescription>,
+            input: crate::model::JournalS3ExportDescription,
         ) -> Self {
             let mut v = self.journal_s3_exports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.journal_s3_exports = Some(v);
             self
         }
@@ -818,10 +818,10 @@ pub mod list_journal_s3_exports_output {
         /// the current account and Region.</p>
         pub fn journal_s3_exports(
             mut self,
-            input: impl Into<crate::model::JournalS3ExportDescription>,
+            input: crate::model::JournalS3ExportDescription,
         ) -> Self {
             let mut v = self.journal_s3_exports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.journal_s3_exports = Some(v);
             self
         }
@@ -950,12 +950,9 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
         ///
         /// <p>The array of QLDB journal stream descriptors that are associated with the given
         /// ledger.</p>
-        pub fn streams(
-            mut self,
-            input: impl Into<crate::model::JournalKinesisStreamDescription>,
-        ) -> Self {
+        pub fn streams(mut self, input: crate::model::JournalKinesisStreamDescription) -> Self {
             let mut v = self.streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streams = Some(v);
             self
         }

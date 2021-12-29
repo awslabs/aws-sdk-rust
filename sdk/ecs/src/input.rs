@@ -82,9 +82,9 @@ pub mod create_capacity_provider_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -332,9 +332,9 @@ pub mod create_cluster_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -386,9 +386,9 @@ pub mod create_cluster_input {
         /// Container Insights for a cluster. If this value is specified, it overrides the
         /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
         /// <a>PutAccountSettingDefault</a>.</p>
-        pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.settings = Some(v);
             self
         }
@@ -478,10 +478,10 @@ pub mod create_cluster_input {
         /// API operation.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.default_capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_capacity_provider_strategy = Some(v);
             self
         }
@@ -762,9 +762,9 @@ pub mod create_service_input {
         /// choose <code>ip</code> as the target type, not <code>instance</code>. This is because
         /// tasks that use the <code>awsvpc</code> network mode are associated with an elastic
         /// network interface, not an Amazon EC2 instance.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -824,12 +824,9 @@ pub mod create_service_input {
         /// <p>Each service may be associated with one service registry. Multiple service
         /// registries for each service isn't supported.</p>
         /// </note>
-        pub fn service_registries(
-            mut self,
-            input: impl Into<crate::model::ServiceRegistry>,
-        ) -> Self {
+        pub fn service_registries(mut self, input: crate::model::ServiceRegistry) -> Self {
             let mut v = self.service_registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_registries = Some(v);
             self
         }
@@ -932,10 +929,10 @@ pub mod create_service_input {
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_provider_strategy = Some(v);
             self
         }
@@ -1046,12 +1043,9 @@ pub mod create_service_input {
         /// <p>An array of placement constraint objects to use for tasks in your service. You can
         /// specify a maximum of 10 constraints for each task. This limit includes constraints in
         /// the task definition and those specified at runtime.</p>
-        pub fn placement_constraints(
-            mut self,
-            input: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_constraints = Some(v);
             self
         }
@@ -1071,12 +1065,9 @@ pub mod create_service_input {
         ///
         /// <p>The placement strategy objects to use for tasks in your service. You can specify a
         /// maximum of 5 strategy rules for each service.</p>
-        pub fn placement_strategy(
-            mut self,
-            input: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_strategy = Some(v);
             self
         }
@@ -1265,9 +1256,9 @@ pub mod create_service_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1609,9 +1600,9 @@ pub mod create_task_set_input {
         ///
         /// <p>A load balancer object representing the load balancer to use with the task set. The
         /// supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -1631,12 +1622,9 @@ pub mod create_task_set_input {
         /// <p>The details of the service discovery registries to assign to this task set. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.</p>
-        pub fn service_registries(
-            mut self,
-            input: impl Into<crate::model::ServiceRegistry>,
-        ) -> Self {
+        pub fn service_registries(mut self, input: crate::model::ServiceRegistry) -> Self {
             let mut v = self.service_registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_registries = Some(v);
             self
         }
@@ -1694,10 +1682,10 @@ pub mod create_task_set_input {
         /// list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_provider_strategy = Some(v);
             self
         }
@@ -1806,9 +1794,9 @@ pub mod create_task_set_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2221,9 +2209,9 @@ pub mod delete_attributes_input {
         /// each request. For custom attributes, specify the attribute name and target ID, but don't
         /// specify the value. If you specify the target ID using the short form, you must also
         /// specify the target type.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -3474,9 +3462,9 @@ pub mod describe_capacity_providers_input {
         /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
         /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
         /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, input: impl Into<crate::model::CapacityProviderField>) -> Self {
+        pub fn include(mut self, input: crate::model::CapacityProviderField) -> Self {
             let mut v = self.include.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include = Some(v);
             self
         }
@@ -3732,9 +3720,9 @@ pub mod describe_clusters_input {
         /// separated by launch type.</p>
         /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
         /// included.</p>
-        pub fn include(mut self, input: impl Into<crate::model::ClusterField>) -> Self {
+        pub fn include(mut self, input: crate::model::ClusterField) -> Self {
             let mut v = self.include.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include = Some(v);
             self
         }
@@ -3949,9 +3937,9 @@ pub mod describe_container_instances_input {
         /// <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health
         /// is included in the response. If this field is omitted, tags and container instance
         /// health status aren't included in the response.</p>
-        pub fn include(mut self, input: impl Into<crate::model::ContainerInstanceField>) -> Self {
+        pub fn include(mut self, input: crate::model::ContainerInstanceField) -> Self {
             let mut v = self.include.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include = Some(v);
             self
         }
@@ -4160,9 +4148,9 @@ pub mod describe_services_input {
         /// <p>Determines whether you want to see the resource tags for the service. If
         /// <code>TAGS</code> is specified, the tags are included in the response. If this field
         /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, input: impl Into<crate::model::ServiceField>) -> Self {
+        pub fn include(mut self, input: crate::model::ServiceField) -> Self {
             let mut v = self.include.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include = Some(v);
             self
         }
@@ -4349,9 +4337,9 @@ pub mod describe_task_definition_input {
         /// <p>Determines whether to see the resource tags for the task definition. If
         /// <code>TAGS</code> is specified, the tags are included in the response. If this field
         /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, input: impl Into<crate::model::TaskDefinitionField>) -> Self {
+        pub fn include(mut self, input: crate::model::TaskDefinitionField) -> Self {
             let mut v = self.include.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include = Some(v);
             self
         }
@@ -4554,9 +4542,9 @@ pub mod describe_tasks_input {
         /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
         /// is specified, the tags are included in the response. If this field is omitted, tags
         /// aren't included in the response.</p>
-        pub fn include(mut self, input: impl Into<crate::model::TaskField>) -> Self {
+        pub fn include(mut self, input: crate::model::TaskField) -> Self {
             let mut v = self.include.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include = Some(v);
             self
         }
@@ -4768,9 +4756,9 @@ pub mod describe_task_sets_input {
         /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
         /// specified, the tags are included in the response. If this field is omitted, tags aren't
         /// included in the response.</p>
-        pub fn include(mut self, input: impl Into<crate::model::TaskSetField>) -> Self {
+        pub fn include(mut self, input: crate::model::TaskSetField) -> Self {
             let mut v = self.include.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include = Some(v);
             self
         }
@@ -7942,9 +7930,9 @@ pub mod put_attributes_input {
         ///
         /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
         /// for each resource. You can specify up to 10 attributes in a single call.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -8169,10 +8157,10 @@ pub mod put_cluster_capacity_providers_input {
         /// used.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.default_capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_capacity_provider_strategy = Some(v);
             self
         }
@@ -8414,9 +8402,9 @@ pub mod register_container_instance_input {
         /// To override the contents of this collection use [`set_total_resources`](Self::set_total_resources).
         ///
         /// <p>The resources available on the instance.</p>
-        pub fn total_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn total_resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.total_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.total_resources = Some(v);
             self
         }
@@ -8461,9 +8449,9 @@ pub mod register_container_instance_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The container instance attributes that this container instance supports.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -8481,9 +8469,9 @@ pub mod register_container_instance_input {
         ///
         /// <p>The devices that are available on the container instance. The only supported device
         /// type is a GPU.</p>
-        pub fn platform_devices(mut self, input: impl Into<crate::model::PlatformDevice>) -> Self {
+        pub fn platform_devices(mut self, input: crate::model::PlatformDevice) -> Self {
             let mut v = self.platform_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_devices = Some(v);
             self
         }
@@ -8533,9 +8521,9 @@ pub mod register_container_instance_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8879,12 +8867,9 @@ pub mod register_task_definition_input {
         ///
         /// <p>A list of container definitions in JSON format that describe the different containers
         /// that make up your task.</p>
-        pub fn container_definitions(
-            mut self,
-            input: impl Into<crate::model::ContainerDefinition>,
-        ) -> Self {
+        pub fn container_definitions(mut self, input: crate::model::ContainerDefinition) -> Self {
             let mut v = self.container_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.container_definitions = Some(v);
             self
         }
@@ -8903,9 +8888,9 @@ pub mod register_task_definition_input {
         ///
         /// <p>A list of volume definitions in JSON format that containers in your task might
         /// use.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -8927,10 +8912,10 @@ pub mod register_task_definition_input {
         /// definition and those specified at runtime.</p>
         pub fn placement_constraints(
             mut self,
-            input: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
+            input: crate::model::TaskDefinitionPlacementConstraint,
         ) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_constraints = Some(v);
             self
         }
@@ -8954,12 +8939,9 @@ pub mod register_task_definition_input {
         /// exception is returned if the task definition doesn't validate against the
         /// compatibilities specified. If no value is specified, the parameter is omitted from the
         /// response.</p>
-        pub fn requires_compatibilities(
-            mut self,
-            input: impl Into<crate::model::Compatibility>,
-        ) -> Self {
+        pub fn requires_compatibilities(mut self, input: crate::model::Compatibility) -> Self {
             let mut v = self.requires_compatibilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requires_compatibilities = Some(v);
             self
         }
@@ -9159,9 +9141,9 @@ pub mod register_task_definition_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9349,12 +9331,9 @@ pub mod register_task_definition_input {
         /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
         ///
         /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-        pub fn inference_accelerators(
-            mut self,
-            input: impl Into<crate::model::InferenceAccelerator>,
-        ) -> Self {
+        pub fn inference_accelerators(mut self, input: crate::model::InferenceAccelerator) -> Self {
             let mut v = self.inference_accelerators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_accelerators = Some(v);
             self
         }
@@ -9623,10 +9602,10 @@ pub mod run_task_input {
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_provider_strategy = Some(v);
             self
         }
@@ -9811,12 +9790,9 @@ pub mod run_task_input {
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
         /// constraints for each task (including constraints in the task definition and those
         /// specified at runtime).</p>
-        pub fn placement_constraints(
-            mut self,
-            input: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_constraints = Some(v);
             self
         }
@@ -9836,12 +9812,9 @@ pub mod run_task_input {
         ///
         /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
         /// strategy rules for each task.</p>
-        pub fn placement_strategy(
-            mut self,
-            input: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_strategy = Some(v);
             self
         }
@@ -9971,9 +9944,9 @@ pub mod run_task_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10414,9 +10387,9 @@ pub mod start_task_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10824,12 +10797,9 @@ pub mod submit_attachment_state_changes_input {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Any attachments associated with the state change request.</p>
-        pub fn attachments(
-            mut self,
-            input: impl Into<crate::model::AttachmentStateChange>,
-        ) -> Self {
+        pub fn attachments(mut self, input: crate::model::AttachmentStateChange) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -11075,9 +11045,9 @@ pub mod submit_container_state_change_input {
         /// To override the contents of this collection use [`set_network_bindings`](Self::set_network_bindings).
         ///
         /// <p>The network bindings of the container.</p>
-        pub fn network_bindings(mut self, input: impl Into<crate::model::NetworkBinding>) -> Self {
+        pub fn network_bindings(mut self, input: crate::model::NetworkBinding) -> Self {
             let mut v = self.network_bindings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_bindings = Some(v);
             self
         }
@@ -11299,9 +11269,9 @@ pub mod submit_task_state_change_input {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>Any containers that's associated with the state change request.</p>
-        pub fn containers(mut self, input: impl Into<crate::model::ContainerStateChange>) -> Self {
+        pub fn containers(mut self, input: crate::model::ContainerStateChange) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.containers = Some(v);
             self
         }
@@ -11318,12 +11288,9 @@ pub mod submit_task_state_change_input {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Any attachments associated with the state change request.</p>
-        pub fn attachments(
-            mut self,
-            input: impl Into<crate::model::AttachmentStateChange>,
-        ) -> Self {
+        pub fn attachments(mut self, input: crate::model::AttachmentStateChange) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -11340,12 +11307,9 @@ pub mod submit_task_state_change_input {
         /// To override the contents of this collection use [`set_managed_agents`](Self::set_managed_agents).
         ///
         /// <p>The details for the managed agent that's associated with the task.</p>
-        pub fn managed_agents(
-            mut self,
-            input: impl Into<crate::model::ManagedAgentStateChange>,
-        ) -> Self {
+        pub fn managed_agents(mut self, input: crate::model::ManagedAgentStateChange) -> Self {
             let mut v = self.managed_agents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_agents = Some(v);
             self
         }
@@ -11602,9 +11566,9 @@ pub mod tag_resource_input {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12163,9 +12127,9 @@ pub mod update_cluster_input {
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
         /// <p>The cluster settings for your cluster.</p>
-        pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.settings = Some(v);
             self
         }
@@ -12354,9 +12318,9 @@ pub mod update_cluster_settings_input {
         /// Container Insights for a cluster. If this value is specified, it overrides the
         /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
         /// <a>PutAccountSettingDefault</a>.</p>
-        pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.settings = Some(v);
             self
         }
@@ -12996,10 +12960,10 @@ pub mod update_service_input {
         /// <p></p>
         pub fn capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_provider_strategy = Some(v);
             self
         }
@@ -13073,12 +13037,9 @@ pub mod update_service_input {
         /// specify an empty array.</p>
         /// <p>You can specify a maximum of 10 constraints for each task. This limit includes
         /// constraints in the task definition and those specified at runtime.</p>
-        pub fn placement_constraints(
-            mut self,
-            input: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_constraints = Some(v);
             self
         }
@@ -13105,12 +13066,9 @@ pub mod update_service_input {
         /// this value is specified, it will override the existing placement strategy defined for
         /// the service. To remove an existing placement strategy, specify an empty object.</p>
         /// <p>You can specify a maximum of five strategy rules for each service.</p>
-        pub fn placement_strategy(
-            mut self,
-            input: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_strategy = Some(v);
             self
         }

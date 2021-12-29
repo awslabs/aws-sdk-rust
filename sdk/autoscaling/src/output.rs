@@ -432,9 +432,9 @@ pub mod put_scaling_policy_output {
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
         /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-        pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarms = Some(v);
             self
         }
@@ -572,9 +572,9 @@ pub mod get_predictive_scaling_forecast_output {
         /// To override the contents of this collection use [`set_load_forecast`](Self::set_load_forecast).
         ///
         /// <p>The load forecast.</p>
-        pub fn load_forecast(mut self, input: impl Into<crate::model::LoadForecast>) -> Self {
+        pub fn load_forecast(mut self, input: crate::model::LoadForecast) -> Self {
             let mut v = self.load_forecast.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_forecast = Some(v);
             self
         }
@@ -663,9 +663,9 @@ pub mod exit_standby_output {
         /// To override the contents of this collection use [`set_activities`](Self::set_activities).
         ///
         /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
-        pub fn activities(mut self, input: impl Into<crate::model::Activity>) -> Self {
+        pub fn activities(mut self, input: crate::model::Activity) -> Self {
             let mut v = self.activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.activities = Some(v);
             self
         }
@@ -756,9 +756,9 @@ pub mod enter_standby_output {
         /// To override the contents of this collection use [`set_activities`](Self::set_activities).
         ///
         /// <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-        pub fn activities(mut self, input: impl Into<crate::model::Activity>) -> Self {
+        pub fn activities(mut self, input: crate::model::Activity) -> Self {
             let mut v = self.activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.activities = Some(v);
             self
         }
@@ -939,9 +939,9 @@ pub mod detach_instances_output {
         /// To override the contents of this collection use [`set_activities`](Self::set_activities).
         ///
         /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
-        pub fn activities(mut self, input: impl Into<crate::model::Activity>) -> Self {
+        pub fn activities(mut self, input: crate::model::Activity) -> Self {
             let mut v = self.activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.activities = Some(v);
             self
         }
@@ -1039,9 +1039,9 @@ pub mod describe_warm_pool_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The instances that are currently in the warm pool.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -1206,9 +1206,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagDescription) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1309,10 +1309,10 @@ pub mod describe_scheduled_actions_output {
         /// <p>The scheduled actions.</p>
         pub fn scheduled_update_group_actions(
             mut self,
-            input: impl Into<crate::model::ScheduledUpdateGroupAction>,
+            input: crate::model::ScheduledUpdateGroupAction,
         ) -> Self {
             let mut v = self.scheduled_update_group_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_update_group_actions = Some(v);
             self
         }
@@ -1390,9 +1390,9 @@ pub mod describe_scaling_process_types_output {
         /// To override the contents of this collection use [`set_processes`](Self::set_processes).
         ///
         /// <p>The names of the process types.</p>
-        pub fn processes(mut self, input: impl Into<crate::model::ProcessType>) -> Self {
+        pub fn processes(mut self, input: crate::model::ProcessType) -> Self {
             let mut v = self.processes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processes = Some(v);
             self
         }
@@ -1470,9 +1470,9 @@ pub mod describe_scaling_activities_output {
         ///
         /// <p>The scaling activities. Activities are sorted by start time. Activities still in
         /// progress are described first.</p>
-        pub fn activities(mut self, input: impl Into<crate::model::Activity>) -> Self {
+        pub fn activities(mut self, input: crate::model::Activity) -> Self {
             let mut v = self.activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.activities = Some(v);
             self
         }
@@ -1566,9 +1566,9 @@ pub mod describe_policies_output {
         /// To override the contents of this collection use [`set_scaling_policies`](Self::set_scaling_policies).
         ///
         /// <p>The scaling policies.</p>
-        pub fn scaling_policies(mut self, input: impl Into<crate::model::ScalingPolicy>) -> Self {
+        pub fn scaling_policies(mut self, input: crate::model::ScalingPolicy) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_policies = Some(v);
             self
         }
@@ -1669,10 +1669,10 @@ pub mod describe_notification_configurations_output {
         /// <p>The notification configurations.</p>
         pub fn notification_configurations(
             mut self,
-            input: impl Into<crate::model::NotificationConfiguration>,
+            input: crate::model::NotificationConfiguration,
         ) -> Self {
             let mut v = self.notification_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_configurations = Some(v);
             self
         }
@@ -1759,9 +1759,9 @@ pub mod describe_metric_collection_types_output {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>One or more metrics.</p>
-        pub fn metrics(mut self, input: impl Into<crate::model::MetricCollectionType>) -> Self {
+        pub fn metrics(mut self, input: crate::model::MetricCollectionType) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics = Some(v);
             self
         }
@@ -1778,12 +1778,9 @@ pub mod describe_metric_collection_types_output {
         /// To override the contents of this collection use [`set_granularities`](Self::set_granularities).
         ///
         /// <p>The granularities for the metrics.</p>
-        pub fn granularities(
-            mut self,
-            input: impl Into<crate::model::MetricGranularityType>,
-        ) -> Self {
+        pub fn granularities(mut self, input: crate::model::MetricGranularityType) -> Self {
             let mut v = self.granularities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.granularities = Some(v);
             self
         }
@@ -1868,10 +1865,10 @@ pub mod describe_load_balancer_target_groups_output {
         /// <p>Information about the target groups.</p>
         pub fn load_balancer_target_groups(
             mut self,
-            input: impl Into<crate::model::LoadBalancerTargetGroupState>,
+            input: crate::model::LoadBalancerTargetGroupState,
         ) -> Self {
             let mut v = self.load_balancer_target_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancer_target_groups = Some(v);
             self
         }
@@ -1964,9 +1961,9 @@ pub mod describe_load_balancers_output {
         /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
         ///
         /// <p>The load balancers.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancerState>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancerState) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -2107,9 +2104,9 @@ pub mod describe_lifecycle_hooks_output {
         /// To override the contents of this collection use [`set_lifecycle_hooks`](Self::set_lifecycle_hooks).
         ///
         /// <p>The lifecycle hooks for the specified group.</p>
-        pub fn lifecycle_hooks(mut self, input: impl Into<crate::model::LifecycleHook>) -> Self {
+        pub fn lifecycle_hooks(mut self, input: crate::model::LifecycleHook) -> Self {
             let mut v = self.lifecycle_hooks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_hooks = Some(v);
             self
         }
@@ -2188,12 +2185,9 @@ pub mod describe_launch_configurations_output {
         /// To override the contents of this collection use [`set_launch_configurations`](Self::set_launch_configurations).
         ///
         /// <p>The launch configurations.</p>
-        pub fn launch_configurations(
-            mut self,
-            input: impl Into<crate::model::LaunchConfiguration>,
-        ) -> Self {
+        pub fn launch_configurations(mut self, input: crate::model::LaunchConfiguration) -> Self {
             let mut v = self.launch_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_configurations = Some(v);
             self
         }
@@ -2286,12 +2280,9 @@ pub mod describe_instance_refreshes_output {
         /// To override the contents of this collection use [`set_instance_refreshes`](Self::set_instance_refreshes).
         ///
         /// <p>The instance refreshes for the specified group.</p>
-        pub fn instance_refreshes(
-            mut self,
-            input: impl Into<crate::model::InstanceRefresh>,
-        ) -> Self {
+        pub fn instance_refreshes(mut self, input: crate::model::InstanceRefresh) -> Self {
             let mut v = self.instance_refreshes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_refreshes = Some(v);
             self
         }
@@ -2459,10 +2450,10 @@ pub mod describe_auto_scaling_instances_output {
         /// <p>The instances.</p>
         pub fn auto_scaling_instances(
             mut self,
-            input: impl Into<crate::model::AutoScalingInstanceDetails>,
+            input: crate::model::AutoScalingInstanceDetails,
         ) -> Self {
             let mut v = self.auto_scaling_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_scaling_instances = Some(v);
             self
         }
@@ -2555,12 +2546,9 @@ pub mod describe_auto_scaling_groups_output {
         /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
         ///
         /// <p>The groups.</p>
-        pub fn auto_scaling_groups(
-            mut self,
-            input: impl Into<crate::model::AutoScalingGroup>,
-        ) -> Self {
+        pub fn auto_scaling_groups(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.auto_scaling_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_scaling_groups = Some(v);
             self
         }
@@ -2639,9 +2627,9 @@ pub mod describe_adjustment_types_output {
         /// To override the contents of this collection use [`set_adjustment_types`](Self::set_adjustment_types).
         ///
         /// <p>The policy adjustment types.</p>
-        pub fn adjustment_types(mut self, input: impl Into<crate::model::AdjustmentType>) -> Self {
+        pub fn adjustment_types(mut self, input: crate::model::AdjustmentType) -> Self {
             let mut v = self.adjustment_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.adjustment_types = Some(v);
             self
         }
@@ -3275,12 +3263,12 @@ pub mod batch_put_scheduled_update_group_action_output {
         /// error message.</p>
         pub fn failed_scheduled_update_group_actions(
             mut self,
-            input: impl Into<crate::model::FailedScheduledUpdateGroupActionRequest>,
+            input: crate::model::FailedScheduledUpdateGroupActionRequest,
         ) -> Self {
             let mut v = self
                 .failed_scheduled_update_group_actions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_scheduled_update_group_actions = Some(v);
             self
         }
@@ -3354,10 +3342,10 @@ pub mod batch_delete_scheduled_action_output {
         /// message.</p>
         pub fn failed_scheduled_actions(
             mut self,
-            input: impl Into<crate::model::FailedScheduledUpdateGroupActionRequest>,
+            input: crate::model::FailedScheduledUpdateGroupActionRequest,
         ) -> Self {
             let mut v = self.failed_scheduled_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_scheduled_actions = Some(v);
             self
         }

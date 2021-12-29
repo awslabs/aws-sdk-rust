@@ -199,11 +199,11 @@ pub mod service_action_detail {
         /// <p>A map that defines the self-service action.</p>
         pub fn definition(
             mut self,
-            k: impl Into<crate::model::ServiceActionDefinitionKey>,
+            k: crate::model::ServiceActionDefinitionKey,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.definition.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.definition = Some(hash_map);
             self
         }
@@ -1437,9 +1437,9 @@ pub mod record_detail {
         /// To override the contents of this collection use [`set_record_errors`](Self::set_record_errors).
         ///
         /// <p>The errors that occurred.</p>
-        pub fn record_errors(mut self, input: impl Into<crate::model::RecordError>) -> Self {
+        pub fn record_errors(mut self, input: crate::model::RecordError) -> Self {
             let mut v = self.record_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_errors = Some(v);
             self
         }
@@ -1456,9 +1456,9 @@ pub mod record_detail {
         /// To override the contents of this collection use [`set_record_tags`](Self::set_record_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn record_tags(mut self, input: impl Into<crate::model::RecordTag>) -> Self {
+        pub fn record_tags(mut self, input: crate::model::RecordTag) -> Self {
             let mut v = self.record_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_tags = Some(v);
             self
         }
@@ -3961,9 +3961,9 @@ pub mod provisioned_product_attribute {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6928,12 +6928,9 @@ pub mod launch_path_summary {
         /// To override the contents of this collection use [`set_constraint_summaries`](Self::set_constraint_summaries).
         ///
         /// <p>The constraints on the portfolio-product relationship.</p>
-        pub fn constraint_summaries(
-            mut self,
-            input: impl Into<crate::model::ConstraintSummary>,
-        ) -> Self {
+        pub fn constraint_summaries(mut self, input: crate::model::ConstraintSummary) -> Self {
             let mut v = self.constraint_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.constraint_summaries = Some(v);
             self
         }
@@ -6950,9 +6947,9 @@ pub mod launch_path_summary {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with this product path.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8321,9 +8318,9 @@ pub mod resource_change {
         /// To override the contents of this collection use [`set_scope`](Self::set_scope).
         ///
         /// <p>The change scope.</p>
-        pub fn scope(mut self, input: impl Into<crate::model::ResourceAttribute>) -> Self {
+        pub fn scope(mut self, input: crate::model::ResourceAttribute) -> Self {
             let mut v = self.scope.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scope = Some(v);
             self
         }
@@ -8340,9 +8337,9 @@ pub mod resource_change {
         /// To override the contents of this collection use [`set_details`](Self::set_details).
         ///
         /// <p>Information about the resource changes.</p>
-        pub fn details(mut self, input: impl Into<crate::model::ResourceChangeDetail>) -> Self {
+        pub fn details(mut self, input: crate::model::ResourceChangeDetail) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.details = Some(v);
             self
         }
@@ -9213,10 +9210,10 @@ pub mod provisioned_product_plan_details {
         /// product.</p>
         pub fn provisioning_parameters(
             mut self,
-            input: impl Into<crate::model::UpdateProvisioningParameter>,
+            input: crate::model::UpdateProvisioningParameter,
         ) -> Self {
             let mut v = self.provisioning_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_parameters = Some(v);
             self
         }
@@ -9234,9 +9231,9 @@ pub mod provisioned_product_plan_details {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9711,9 +9708,9 @@ pub mod share_details {
         /// To override the contents of this collection use [`set_share_errors`](Self::set_share_errors).
         ///
         /// <p>List of errors.</p>
-        pub fn share_errors(mut self, input: impl Into<crate::model::ShareError>) -> Self {
+        pub fn share_errors(mut self, input: crate::model::ShareError) -> Self {
             let mut v = self.share_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.share_errors = Some(v);
             self
         }

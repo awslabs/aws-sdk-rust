@@ -205,12 +205,9 @@ pub mod list_services_output {
         /// To override the contents of this collection use [`set_service_summary_list`](Self::set_service_summary_list).
         ///
         /// <p> The list of <code>ServiceSummary</code> objects. </p>
-        pub fn service_summary_list(
-            mut self,
-            input: impl Into<crate::model::ServiceSummary>,
-        ) -> Self {
+        pub fn service_summary_list(mut self, input: crate::model::ServiceSummary) -> Self {
             let mut v = self.service_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_summary_list = Some(v);
             self
         }
@@ -291,9 +288,9 @@ pub mod list_routes_output {
         /// To override the contents of this collection use [`set_route_summary_list`](Self::set_route_summary_list).
         ///
         /// <p>The list of <code>RouteSummary</code> objects. </p>
-        pub fn route_summary_list(mut self, input: impl Into<crate::model::RouteSummary>) -> Self {
+        pub fn route_summary_list(mut self, input: crate::model::RouteSummary) -> Self {
             let mut v = self.route_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_summary_list = Some(v);
             self
         }
@@ -374,12 +371,9 @@ pub mod list_environment_vpcs_output {
         /// To override the contents of this collection use [`set_environment_vpc_list`](Self::set_environment_vpc_list).
         ///
         /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
-        pub fn environment_vpc_list(
-            mut self,
-            input: impl Into<crate::model::EnvironmentVpc>,
-        ) -> Self {
+        pub fn environment_vpc_list(mut self, input: crate::model::EnvironmentVpc) -> Self {
             let mut v = self.environment_vpc_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_vpc_list = Some(v);
             self
         }
@@ -463,12 +457,9 @@ pub mod list_environments_output {
         /// To override the contents of this collection use [`set_environment_summary_list`](Self::set_environment_summary_list).
         ///
         /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
-        pub fn environment_summary_list(
-            mut self,
-            input: impl Into<crate::model::EnvironmentSummary>,
-        ) -> Self {
+        pub fn environment_summary_list(mut self, input: crate::model::EnvironmentSummary) -> Self {
             let mut v = self.environment_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_summary_list = Some(v);
             self
         }
@@ -552,12 +543,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_application_summary_list`](Self::set_application_summary_list).
         ///
         /// <p>The list of <code>ApplicationSummary</code> objects. </p>
-        pub fn application_summary_list(
-            mut self,
-            input: impl Into<crate::model::ApplicationSummary>,
-        ) -> Self {
+        pub fn application_summary_list(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_summary_list = Some(v);
             self
         }
@@ -1334,9 +1322,9 @@ pub mod get_route_output {
         ///
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
         /// only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn methods(mut self, input: impl Into<crate::model::HttpMethod>) -> Self {
+        pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.methods = Some(v);
             self
         }

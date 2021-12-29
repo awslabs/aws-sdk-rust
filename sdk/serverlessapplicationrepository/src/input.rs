@@ -780,12 +780,9 @@ pub mod create_cloud_formation_change_set_input {
         /// To override the contents of this collection use [`set_parameter_overrides`](Self::set_parameter_overrides).
         ///
         /// <p>A list of parameter values for the parameters of the application.</p>
-        pub fn parameter_overrides(
-            mut self,
-            input: impl Into<crate::model::ParameterValue>,
-        ) -> Self {
+        pub fn parameter_overrides(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_overrides = Some(v);
             self
         }
@@ -871,9 +868,9 @@ pub mod create_cloud_formation_change_set_input {
         ///
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
         /// </i> API.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2559,12 +2556,9 @@ pub mod put_application_policy_input {
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
         /// <p>An array of policy statements applied to the application.</p>
-        pub fn statements(
-            mut self,
-            input: impl Into<crate::model::ApplicationPolicyStatement>,
-        ) -> Self {
+        pub fn statements(mut self, input: crate::model::ApplicationPolicyStatement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }

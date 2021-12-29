@@ -41,9 +41,9 @@ pub mod list_workspaces_output {
         /// To override the contents of this collection use [`set_workspaces`](Self::set_workspaces).
         ///
         /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-        pub fn workspaces(mut self, input: impl Into<crate::model::WorkspaceSummary>) -> Self {
+        pub fn workspaces(mut self, input: crate::model::WorkspaceSummary) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspaces = Some(v);
             self
         }
@@ -343,9 +343,9 @@ pub mod update_permissions_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>An array of structures that contain the errors from the operation, if any.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::UpdateError>) -> Self {
+        pub fn errors(mut self, input: crate::model::UpdateError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -428,9 +428,9 @@ pub mod list_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions returned by the operation.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::PermissionEntry>) -> Self {
+        pub fn permissions(mut self, input: crate::model::PermissionEntry) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }

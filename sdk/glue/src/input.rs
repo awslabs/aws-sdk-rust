@@ -56,12 +56,9 @@ pub mod batch_create_partition_input {
         ///
         /// <p>A list of <code>PartitionInput</code> structures that define
         /// the partitions to be created.</p>
-        pub fn partition_input_list(
-            mut self,
-            input: impl Into<crate::model::PartitionInput>,
-        ) -> Self {
+        pub fn partition_input_list(mut self, input: crate::model::PartitionInput) -> Self {
             let mut v = self.partition_input_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partition_input_list = Some(v);
             self
         }
@@ -449,12 +446,9 @@ pub mod batch_delete_partition_input {
         ///
         /// <p>A list of <code>PartitionInput</code> structures that define
         /// the partitions to be deleted.</p>
-        pub fn partitions_to_delete(
-            mut self,
-            input: impl Into<crate::model::PartitionValueList>,
-        ) -> Self {
+        pub fn partitions_to_delete(mut self, input: crate::model::PartitionValueList) -> Self {
             let mut v = self.partitions_to_delete.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions_to_delete = Some(v);
             self
         }
@@ -1763,12 +1757,9 @@ pub mod batch_get_partition_input {
         /// To override the contents of this collection use [`set_partitions_to_get`](Self::set_partitions_to_get).
         ///
         /// <p>A list of partition values identifying the partitions to retrieve.</p>
-        pub fn partitions_to_get(
-            mut self,
-            input: impl Into<crate::model::PartitionValueList>,
-        ) -> Self {
+        pub fn partitions_to_get(mut self, input: crate::model::PartitionValueList) -> Self {
             let mut v = self.partitions_to_get.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions_to_get = Some(v);
             self
         }
@@ -2488,12 +2479,9 @@ pub mod batch_update_partition_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::BatchUpdatePartitionRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::BatchUpdatePartitionRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -5219,9 +5207,9 @@ pub mod create_ml_transform_input {
         /// To override the contents of this collection use [`set_input_record_tables`](Self::set_input_record_tables).
         ///
         /// <p>A list of Glue table definitions used by the transform.</p>
-        pub fn input_record_tables(mut self, input: impl Into<crate::model::GlueTable>) -> Self {
+        pub fn input_record_tables(mut self, input: crate::model::GlueTable) -> Self {
             let mut v = self.input_record_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_record_tables = Some(v);
             self
         }
@@ -6574,9 +6562,9 @@ pub mod create_script_input {
         /// To override the contents of this collection use [`set_dag_nodes`](Self::set_dag_nodes).
         ///
         /// <p>A list of the nodes in the DAG.</p>
-        pub fn dag_nodes(mut self, input: impl Into<crate::model::CodeGenNode>) -> Self {
+        pub fn dag_nodes(mut self, input: crate::model::CodeGenNode) -> Self {
             let mut v = self.dag_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dag_nodes = Some(v);
             self
         }
@@ -6593,9 +6581,9 @@ pub mod create_script_input {
         /// To override the contents of this collection use [`set_dag_edges`](Self::set_dag_edges).
         ///
         /// <p>A list of the edges in the DAG.</p>
-        pub fn dag_edges(mut self, input: impl Into<crate::model::CodeGenEdge>) -> Self {
+        pub fn dag_edges(mut self, input: crate::model::CodeGenEdge) -> Self {
             let mut v = self.dag_edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dag_edges = Some(v);
             self
         }
@@ -6989,9 +6977,9 @@ pub mod create_table_input {
         /// To override the contents of this collection use [`set_partition_indexes`](Self::set_partition_indexes).
         ///
         /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-        pub fn partition_indexes(mut self, input: impl Into<crate::model::PartitionIndex>) -> Self {
+        pub fn partition_indexes(mut self, input: crate::model::PartitionIndex) -> Self {
             let mut v = self.partition_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partition_indexes = Some(v);
             self
         }
@@ -7244,9 +7232,9 @@ pub mod create_trigger_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions initiated by this trigger when it fires.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -15890,9 +15878,9 @@ pub mod get_mapping_input {
         /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
         ///
         /// <p>A list of target tables.</p>
-        pub fn sinks(mut self, input: impl Into<crate::model::CatalogEntry>) -> Self {
+        pub fn sinks(mut self, input: crate::model::CatalogEntry) -> Self {
             let mut v = self.sinks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sinks = Some(v);
             self
         }
@@ -17677,9 +17665,9 @@ pub mod get_plan_input {
         /// To override the contents of this collection use [`set_mapping`](Self::set_mapping).
         ///
         /// <p>The list of mappings from a source table to target tables.</p>
-        pub fn mapping(mut self, input: impl Into<crate::model::MappingEntry>) -> Self {
+        pub fn mapping(mut self, input: crate::model::MappingEntry) -> Self {
             let mut v = self.mapping.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mapping = Some(v);
             self
         }
@@ -17709,9 +17697,9 @@ pub mod get_plan_input {
         /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
         ///
         /// <p>The target tables.</p>
-        pub fn sinks(mut self, input: impl Into<crate::model::CatalogEntry>) -> Self {
+        pub fn sinks(mut self, input: crate::model::CatalogEntry) -> Self {
             let mut v = self.sinks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sinks = Some(v);
             self
         }
@@ -24897,12 +24885,9 @@ pub mod query_schema_version_metadata_input {
         /// To override the contents of this collection use [`set_metadata_list`](Self::set_metadata_list).
         ///
         /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-        pub fn metadata_list(
-            mut self,
-            input: impl Into<crate::model::MetadataKeyValuePair>,
-        ) -> Self {
+        pub fn metadata_list(mut self, input: crate::model::MetadataKeyValuePair) -> Self {
             let mut v = self.metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metadata_list = Some(v);
             self
         }
@@ -25863,9 +25848,9 @@ pub mod search_tables_input {
         /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
         ///
         /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::PropertyPredicate>) -> Self {
+        pub fn filters(mut self, input: crate::model::PropertyPredicate) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -25896,9 +25881,9 @@ pub mod search_tables_input {
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
         /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::SortCriterion>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::SortCriterion) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -29380,12 +29365,9 @@ pub mod update_column_statistics_for_partition_input {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>A list of the column statistics.</p>
-        pub fn column_statistics_list(
-            mut self,
-            input: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
             let mut v = self.column_statistics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_list = Some(v);
             self
         }
@@ -29592,12 +29574,9 @@ pub mod update_column_statistics_for_table_input {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>A list of the column statistics.</p>
-        pub fn column_statistics_list(
-            mut self,
-            input: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
             let mut v = self.column_statistics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_list = Some(v);
             self
         }

@@ -611,12 +611,9 @@ pub mod create_container_recipe_input {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>Components for build and test that are included in the container recipe.</p>
-        pub fn components(
-            mut self,
-            input: impl Into<crate::model::ComponentConfiguration>,
-        ) -> Self {
+        pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -967,9 +964,9 @@ pub mod create_distribution_configuration_input {
         /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
         ///
         /// <p> The distributions of the distribution configuration.</p>
-        pub fn distributions(mut self, input: impl Into<crate::model::Distribution>) -> Self {
+        pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.distributions = Some(v);
             self
         }
@@ -1873,12 +1870,9 @@ pub mod create_image_recipe_input {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>The components of the image recipe.</p>
-        pub fn components(
-            mut self,
-            input: impl Into<crate::model::ComponentConfiguration>,
-        ) -> Self {
+        pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -1917,10 +1911,10 @@ pub mod create_image_recipe_input {
         /// <p>The block device mappings of the image recipe.</p>
         pub fn block_device_mappings(
             mut self,
-            input: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: crate::model::InstanceBlockDeviceMapping,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -5876,9 +5870,9 @@ pub mod list_components_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6137,9 +6131,9 @@ pub mod list_container_recipes_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6344,9 +6338,9 @@ pub mod list_distribution_configurations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>You can filter on <code>name</code> to streamline results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6572,9 +6566,9 @@ pub mod list_image_build_versions_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6988,9 +6982,9 @@ pub mod list_image_pipeline_images_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7220,9 +7214,9 @@ pub mod list_image_pipelines_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7470,9 +7464,9 @@ pub mod list_image_recipes_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7718,9 +7712,9 @@ pub mod list_images_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7951,9 +7945,9 @@ pub mod list_infrastructure_configurations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>You can filter on <code>name</code> to streamline results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9521,9 +9515,9 @@ pub mod update_distribution_configuration_input {
         /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
         ///
         /// <p>The distributions of the distribution configuration.</p>
-        pub fn distributions(mut self, input: impl Into<crate::model::Distribution>) -> Self {
+        pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.distributions = Some(v);
             self
         }

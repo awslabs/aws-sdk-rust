@@ -431,12 +431,9 @@ pub mod get_lifecycle_policies_input {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource type.</p>
-        pub fn resource_types(
-            mut self,
-            input: impl Into<crate::model::ResourceTypeValues>,
-        ) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ResourceTypeValues) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }

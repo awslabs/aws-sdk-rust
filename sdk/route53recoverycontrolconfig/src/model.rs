@@ -1213,12 +1213,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_cluster_endpoints`](Self::set_cluster_endpoints).
         ///
         /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p> <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data Plane) Actions.</p>
-        pub fn cluster_endpoints(
-            mut self,
-            input: impl Into<crate::model::ClusterEndpoint>,
-        ) -> Self {
+        pub fn cluster_endpoints(mut self, input: crate::model::ClusterEndpoint) -> Self {
             let mut v = self.cluster_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_endpoints = Some(v);
             self
         }

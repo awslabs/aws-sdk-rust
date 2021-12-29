@@ -806,12 +806,9 @@ pub mod list_studio_session_mappings_output {
         ///
         /// <p>A list of session mapping summary objects. Each object includes session mapping details
         /// such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-        pub fn session_mappings(
-            mut self,
-            input: impl Into<crate::model::SessionMappingSummary>,
-        ) -> Self {
+        pub fn session_mappings(mut self, input: crate::model::SessionMappingSummary) -> Self {
             let mut v = self.session_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.session_mappings = Some(v);
             self
         }
@@ -892,9 +889,9 @@ pub mod list_studios_output {
         /// To override the contents of this collection use [`set_studios`](Self::set_studios).
         ///
         /// <p>The list of Studio summary objects.</p>
-        pub fn studios(mut self, input: impl Into<crate::model::StudioSummary>) -> Self {
+        pub fn studios(mut self, input: crate::model::StudioSummary) -> Self {
             let mut v = self.studios.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.studios = Some(v);
             self
         }
@@ -975,9 +972,9 @@ pub mod list_steps_output {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>The filtered list of steps for the cluster.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::StepSummary>) -> Self {
+        pub fn steps(mut self, input: crate::model::StepSummary) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -1067,10 +1064,10 @@ pub mod list_security_configurations_output {
         /// <p>The creation date and time, and name, of each security configuration.</p>
         pub fn security_configurations(
             mut self,
-            input: impl Into<crate::model::SecurityConfigurationSummary>,
+            input: crate::model::SecurityConfigurationSummary,
         ) -> Self {
             let mut v = self.security_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_configurations = Some(v);
             self
         }
@@ -1244,10 +1241,10 @@ pub mod list_notebook_executions_output {
         /// <p>A list of notebook executions.</p>
         pub fn notebook_executions(
             mut self,
-            input: impl Into<crate::model::NotebookExecutionSummary>,
+            input: crate::model::NotebookExecutionSummary,
         ) -> Self {
             let mut v = self.notebook_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notebook_executions = Some(v);
             self
         }
@@ -1329,9 +1326,9 @@ pub mod list_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The list of instances for the cluster and given filters.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -1411,9 +1408,9 @@ pub mod list_instance_groups_output {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>The list of instance groups for the cluster and given filters.</p>
-        pub fn instance_groups(mut self, input: impl Into<crate::model::InstanceGroup>) -> Self {
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroup) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_groups = Some(v);
             self
         }
@@ -1493,9 +1490,9 @@ pub mod list_instance_fleets_output {
         /// To override the contents of this collection use [`set_instance_fleets`](Self::set_instance_fleets).
         ///
         /// <p>The list of instance fleets for the cluster and given filters.</p>
-        pub fn instance_fleets(mut self, input: impl Into<crate::model::InstanceFleet>) -> Self {
+        pub fn instance_fleets(mut self, input: crate::model::InstanceFleet) -> Self {
             let mut v = self.instance_fleets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_fleets = Some(v);
             self
         }
@@ -1576,9 +1573,9 @@ pub mod list_clusters_output {
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
         /// <p>The list of clusters for the account based on the given filters.</p>
-        pub fn clusters(mut self, input: impl Into<crate::model::ClusterSummary>) -> Self {
+        pub fn clusters(mut self, input: crate::model::ClusterSummary) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }
@@ -1658,9 +1655,9 @@ pub mod list_bootstrap_actions_output {
         /// To override the contents of this collection use [`set_bootstrap_actions`](Self::set_bootstrap_actions).
         ///
         /// <p>The bootstrap actions associated with the cluster.</p>
-        pub fn bootstrap_actions(mut self, input: impl Into<crate::model::Command>) -> Self {
+        pub fn bootstrap_actions(mut self, input: crate::model::Command) -> Self {
             let mut v = self.bootstrap_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bootstrap_actions = Some(v);
             self
         }
@@ -2321,12 +2318,9 @@ pub mod describe_release_label_output {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
-        pub fn applications(
-            mut self,
-            input: impl Into<crate::model::SimplifiedApplication>,
-        ) -> Self {
+        pub fn applications(mut self, input: crate::model::SimplifiedApplication) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -2456,9 +2450,9 @@ pub mod describe_job_flows_output {
         /// To override the contents of this collection use [`set_job_flows`](Self::set_job_flows).
         ///
         /// <p>A list of job flows matching the parameters supplied.</p>
-        pub fn job_flows(mut self, input: impl Into<crate::model::JobFlowDetail>) -> Self {
+        pub fn job_flows(mut self, input: crate::model::JobFlowDetail) -> Self {
             let mut v = self.job_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_flows = Some(v);
             self
         }
@@ -2846,12 +2840,9 @@ pub mod cancel_steps_output {
         ///
         /// <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
         /// requests for each <code>StepID</code> specified.</p>
-        pub fn cancel_steps_info_list(
-            mut self,
-            input: impl Into<crate::model::CancelStepsInfo>,
-        ) -> Self {
+        pub fn cancel_steps_info_list(mut self, input: crate::model::CancelStepsInfo) -> Self {
             let mut v = self.cancel_steps_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cancel_steps_info_list = Some(v);
             self
         }

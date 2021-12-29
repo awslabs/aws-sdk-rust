@@ -616,9 +616,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -694,10 +694,10 @@ pub mod list_channels_moderated_by_app_instance_user_output {
         /// <p>The moderated channels in the request.</p>
         pub fn channels(
             mut self,
-            input: impl Into<crate::model::ChannelModeratedByAppInstanceUserSummary>,
+            input: crate::model::ChannelModeratedByAppInstanceUserSummary,
         ) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -786,12 +786,9 @@ pub mod list_channels_associated_with_channel_flow_output {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p>The information about each channel.</p>
-        pub fn channels(
-            mut self,
-            input: impl Into<crate::model::ChannelAssociatedWithFlowSummary>,
-        ) -> Self {
+        pub fn channels(mut self, input: crate::model::ChannelAssociatedWithFlowSummary) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -875,9 +872,9 @@ pub mod list_channels_output {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p>The information about each channel.</p>
-        pub fn channels(mut self, input: impl Into<crate::model::ChannelSummary>) -> Self {
+        pub fn channels(mut self, input: crate::model::ChannelSummary) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -995,12 +992,9 @@ pub mod list_channel_moderators_output {
         /// To override the contents of this collection use [`set_channel_moderators`](Self::set_channel_moderators).
         ///
         /// <p>The information about and names of each moderator.</p>
-        pub fn channel_moderators(
-            mut self,
-            input: impl Into<crate::model::ChannelModeratorSummary>,
-        ) -> Self {
+        pub fn channel_moderators(mut self, input: crate::model::ChannelModeratorSummary) -> Self {
             let mut v = self.channel_moderators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_moderators = Some(v);
             self
         }
@@ -1100,12 +1094,9 @@ pub mod list_channel_messages_output {
         /// To override the contents of this collection use [`set_channel_messages`](Self::set_channel_messages).
         ///
         /// <p>The information about, and content of, each requested message.</p>
-        pub fn channel_messages(
-            mut self,
-            input: impl Into<crate::model::ChannelMessageSummary>,
-        ) -> Self {
+        pub fn channel_messages(mut self, input: crate::model::ChannelMessageSummary) -> Self {
             let mut v = self.channel_messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_messages = Some(v);
             self
         }
@@ -1184,10 +1175,10 @@ pub mod list_channel_memberships_for_app_instance_user_output {
         /// <p>The token passed by previous API calls until all requested users are returned.</p>
         pub fn channel_memberships(
             mut self,
-            input: impl Into<crate::model::ChannelMembershipForAppInstanceUserSummary>,
+            input: crate::model::ChannelMembershipForAppInstanceUserSummary,
         ) -> Self {
             let mut v = self.channel_memberships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_memberships = Some(v);
             self
         }
@@ -1296,10 +1287,10 @@ pub mod list_channel_memberships_output {
         /// <p>The information for the requested channel memberships.</p>
         pub fn channel_memberships(
             mut self,
-            input: impl Into<crate::model::ChannelMembershipSummary>,
+            input: crate::model::ChannelMembershipSummary,
         ) -> Self {
             let mut v = self.channel_memberships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_memberships = Some(v);
             self
         }
@@ -1383,9 +1374,9 @@ pub mod list_channel_flows_output {
         /// To override the contents of this collection use [`set_channel_flows`](Self::set_channel_flows).
         ///
         /// <p>The information about each channel flow.</p>
-        pub fn channel_flows(mut self, input: impl Into<crate::model::ChannelFlowSummary>) -> Self {
+        pub fn channel_flows(mut self, input: crate::model::ChannelFlowSummary) -> Self {
             let mut v = self.channel_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_flows = Some(v);
             self
         }
@@ -1494,9 +1485,9 @@ pub mod list_channel_bans_output {
         /// To override the contents of this collection use [`set_channel_bans`](Self::set_channel_bans).
         ///
         /// <p>The information for each requested ban.</p>
-        pub fn channel_bans(mut self, input: impl Into<crate::model::ChannelBanSummary>) -> Self {
+        pub fn channel_bans(mut self, input: crate::model::ChannelBanSummary) -> Self {
             let mut v = self.channel_bans.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_bans = Some(v);
             self
         }
@@ -2889,12 +2880,9 @@ pub mod batch_create_channel_membership_output {
         ///
         /// <p>If the action fails for one or more of the memberships in the request, a list of the
         /// memberships is returned, along with error codes and error messages.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchCreateChannelMembershipError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchCreateChannelMembershipError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

@@ -352,9 +352,9 @@ pub mod checkout_borrow_license_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements. Partial checkouts are not supported.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::EntitlementData>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -399,9 +399,9 @@ pub mod checkout_borrow_license_input {
         /// To override the contents of this collection use [`set_checkout_metadata`](Self::set_checkout_metadata).
         ///
         /// <p>Information about constraints.</p>
-        pub fn checkout_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn checkout_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.checkout_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.checkout_metadata = Some(v);
             self
         }
@@ -621,9 +621,9 @@ pub mod checkout_license_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::EntitlementData>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -885,12 +885,9 @@ pub mod create_grant_input {
         /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
         ///
         /// <p>Allowed operations for the grant.</p>
-        pub fn allowed_operations(
-            mut self,
-            input: impl Into<crate::model::AllowedOperation>,
-        ) -> Self {
+        pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.allowed_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_operations = Some(v);
             self
         }
@@ -1092,12 +1089,9 @@ pub mod create_grant_version_input {
         /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
         ///
         /// <p>Allowed operations for the grant.</p>
-        pub fn allowed_operations(
-            mut self,
-            input: impl Into<crate::model::AllowedOperation>,
-        ) -> Self {
+        pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.allowed_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_operations = Some(v);
             self
         }
@@ -1374,9 +1368,9 @@ pub mod create_license_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -1423,9 +1417,9 @@ pub mod create_license_input {
         /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
         ///
         /// <p>Information about the license.</p>
-        pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_metadata = Some(v);
             self
         }
@@ -1760,9 +1754,9 @@ pub mod create_license_configuration_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to add to the license configuration.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1789,12 +1783,9 @@ pub mod create_license_configuration_input {
         /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
         ///
         /// <p>Product information.</p>
-        pub fn product_information_list(
-            mut self,
-            input: impl Into<crate::model::ProductInformation>,
-        ) -> Self {
+        pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_information_list = Some(v);
             self
         }
@@ -2190,9 +2181,9 @@ pub mod create_license_manager_report_generator_input {
         /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, input: impl Into<crate::model::ReportType>) -> Self {
+        pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
             let mut v = self.r#type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.r#type = Some(v);
             self
         }
@@ -2263,9 +2254,9 @@ pub mod create_license_manager_report_generator_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to add to the report generator.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2510,9 +2501,9 @@ pub mod create_license_version_input {
         /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
         ///
         /// <p>Information about the license.</p>
-        pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_metadata = Some(v);
             self
         }
@@ -2529,9 +2520,9 @@ pub mod create_license_version_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -5485,9 +5476,9 @@ pub mod list_distributed_grants_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5949,9 +5940,9 @@ pub mod list_license_configurations_input {
         /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6161,9 +6152,9 @@ pub mod list_license_conversion_tasks_input {
         /// <p>
         /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6339,9 +6330,9 @@ pub mod list_license_manager_report_generators_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6578,9 +6569,9 @@ pub mod list_licenses_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7193,9 +7184,9 @@ pub mod list_received_grants_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7455,9 +7446,9 @@ pub mod list_received_licenses_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7730,9 +7721,9 @@ pub mod list_resource_inventory_input {
         /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::InventoryFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::InventoryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8120,9 +8111,9 @@ pub mod list_tokens_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8366,9 +8357,9 @@ pub mod list_usage_for_license_configuration_input {
         /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8717,9 +8708,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9154,12 +9145,9 @@ pub mod update_license_configuration_input {
         /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
         ///
         /// <p>New product information.</p>
-        pub fn product_information_list(
-            mut self,
-            input: impl Into<crate::model::ProductInformation>,
-        ) -> Self {
+        pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_information_list = Some(v);
             self
         }
@@ -9384,9 +9372,9 @@ pub mod update_license_manager_report_generator_input {
         /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, input: impl Into<crate::model::ReportType>) -> Self {
+        pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
             let mut v = self.r#type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.r#type = Some(v);
             self
         }
@@ -9626,10 +9614,10 @@ pub mod update_license_specifications_for_resource_input {
         /// <p>ARNs of the license configurations to add.</p>
         pub fn add_license_specifications(
             mut self,
-            input: impl Into<crate::model::LicenseSpecification>,
+            input: crate::model::LicenseSpecification,
         ) -> Self {
             let mut v = self.add_license_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_license_specifications = Some(v);
             self
         }
@@ -9648,10 +9636,10 @@ pub mod update_license_specifications_for_resource_input {
         /// <p>ARNs of the license configurations to remove.</p>
         pub fn remove_license_specifications(
             mut self,
-            input: impl Into<crate::model::LicenseSpecification>,
+            input: crate::model::LicenseSpecification,
         ) -> Self {
             let mut v = self.remove_license_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remove_license_specifications = Some(v);
             self
         }

@@ -361,10 +361,10 @@ pub mod batch_describe_type_configurations_input {
         /// <p>The list of identifiers for the desired extension configurations.</p>
         pub fn type_configuration_identifiers(
             mut self,
-            input: impl Into<crate::model::TypeConfigurationIdentifier>,
+            input: crate::model::TypeConfigurationIdentifier,
         ) -> Self {
             let mut v = self.type_configuration_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.type_configuration_identifiers = Some(v);
             self
         }
@@ -1069,9 +1069,9 @@ pub mod create_change_set_input {
         ///
         /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change
         /// set. For more information, see the <a>Parameter</a> data type.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -1186,9 +1186,9 @@ pub mod create_change_set_input {
         /// Perform Custom Processing on Templates</a>.</p>
         /// </li>
         /// </ul>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -1403,9 +1403,9 @@ pub mod create_change_set_input {
         ///
         /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
         /// these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1505,12 +1505,9 @@ pub mod create_change_set_input {
         /// To override the contents of this collection use [`set_resources_to_import`](Self::set_resources_to_import).
         ///
         /// <p>The resources to import into your stack.</p>
-        pub fn resources_to_import(
-            mut self,
-            input: impl Into<crate::model::ResourceToImport>,
-        ) -> Self {
+        pub fn resources_to_import(mut self, input: crate::model::ResourceToImport) -> Self {
             let mut v = self.resources_to_import.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources_to_import = Some(v);
             self
         }
@@ -1777,9 +1774,9 @@ pub mod create_stack_input {
         /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
         /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
         /// type.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -1971,9 +1968,9 @@ pub mod create_stack_input {
         /// Templates</a>.</p>
         /// </li>
         /// </ul>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -2224,9 +2221,9 @@ pub mod create_stack_input {
         /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
         /// these tags to the resources created in the stack. A maximum number of 50 tags can be
         /// specified.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2581,9 +2578,9 @@ pub mod create_stack_instances_input {
         /// updated, but retain their overridden value.</p>
         /// <p>You can only override the parameter <i>values</i> that are specified in
         /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
-        pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameter_overrides(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_overrides = Some(v);
             self
         }
@@ -2961,9 +2958,9 @@ pub mod create_stack_set_input {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The input parameters for the stack set template.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -3072,9 +3069,9 @@ pub mod create_stack_set_input {
         /// </important>
         /// </li>
         /// </ul>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -3188,9 +3185,9 @@ pub mod create_stack_set_input {
         /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
         /// If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
         /// denied</code> error, and the stack set is not created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6170,10 +6167,10 @@ pub mod describe_stack_resource_drifts_input {
         /// </ul>
         pub fn stack_resource_drift_status_filters(
             mut self,
-            input: impl Into<crate::model::StackResourceDriftStatus>,
+            input: crate::model::StackResourceDriftStatus,
         ) -> Self {
             let mut v = self.stack_resource_drift_status_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_resource_drift_status_filters = Some(v);
             self
         }
@@ -8209,9 +8206,9 @@ pub mod estimate_template_cost_input {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -10033,9 +10030,9 @@ pub mod list_stack_instances_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The status that stack instances are filtered by.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::StackInstanceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::StackInstanceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10464,9 +10461,9 @@ pub mod list_stacks_input {
         /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only
         /// stacks with the specified status codes. For a complete list of stack status codes, see the
         /// <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
-        pub fn stack_status_filter(mut self, input: impl Into<crate::model::StackStatus>) -> Self {
+        pub fn stack_status_filter(mut self, input: crate::model::StackStatus) -> Self {
             let mut v = self.stack_status_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_status_filter = Some(v);
             self
         }
@@ -14875,9 +14872,9 @@ pub mod update_stack_input {
         /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
         /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
         /// type.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -14996,9 +14993,9 @@ pub mod update_stack_input {
         /// Templates</a>.</p>
         /// </li>
         /// </ul>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -15264,9 +15261,9 @@ pub mod update_stack_input {
         /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's
         /// tags. If you specify an empty value, CloudFormation removes all associated
         /// tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15624,9 +15621,9 @@ pub mod update_stack_instances_input {
         /// parameter value specified in the stack set. Once a stack instance has been updated with the
         /// new parameter, you can then override the parameter value using
         /// <code>UpdateStackInstances</code>.</p>
-        pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameter_overrides(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_overrides = Some(v);
             self
         }
@@ -16004,9 +16001,9 @@ pub mod update_stack_set_input {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of input parameters for the stack set template. </p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -16115,9 +16112,9 @@ pub mod update_stack_set_input {
         /// </important>
         /// </li>
         /// </ul>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -16254,9 +16251,9 @@ pub mod update_stack_set_input {
         /// set, and checks to see if you have permission to untag resources. If you don't have the
         /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
         /// <code>access denied</code> error, and the stack set is not updated.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -229,10 +229,10 @@ pub mod create_ledger_input {
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::option::Option<std::string::String>>,
+            v: std::option::Option<std::string::String>,
         ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.tags = Some(hash_map);
             self
         }
@@ -3041,10 +3041,10 @@ pub mod stream_journal_to_kinesis_input {
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::option::Option<std::string::String>>,
+            v: std::option::Option<std::string::String>,
         ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.tags = Some(hash_map);
             self
         }
@@ -3342,10 +3342,10 @@ pub mod tag_resource_input {
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::option::Option<std::string::String>>,
+            v: std::option::Option<std::string::String>,
         ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.tags = Some(hash_map);
             self
         }

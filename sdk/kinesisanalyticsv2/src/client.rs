@@ -399,8 +399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kinesis Data Analytics application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The Kinesis Data Analytics application name.</p>
@@ -416,8 +416,8 @@ pub mod fluent_builders {
         /// retrieve the application version ID using <a>DescribeApplication</a>. For better
         /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The version ID of the Kinesis Data Analytics application. You must provide the
@@ -435,9 +435,9 @@ pub mod fluent_builders {
         /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
         pub fn cloud_watch_logging_option(
             mut self,
-            inp: crate::model::CloudWatchLoggingOption,
+            signature: crate::model::CloudWatchLoggingOption,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option(inp);
+            self.inner = self.inner.cloud_watch_logging_option(signature);
             self
         }
         /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
@@ -453,8 +453,8 @@ pub mod fluent_builders {
         /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
         /// <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        pub fn conditional_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(signature.into());
             self
         }
         /// <p>A value you use to implement strong concurrency for application updates. You must
@@ -540,8 +540,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of your existing application to which you want to add the streaming
         /// source.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of your existing application to which you want to add the streaming
@@ -555,8 +555,8 @@ pub mod fluent_builders {
         }
         /// <p>The current version of your application.
         /// You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current application version.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The current version of your application.
@@ -569,8 +569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <a>Input</a> to add.</p>
-        pub fn input(mut self, inp: crate::model::Input) -> Self {
-            self.inner = self.inner.input(inp);
+        pub fn input(mut self, signature: crate::model::Input) -> Self {
+            self.inner = self.inner.input(signature);
             self
         }
         /// <p>The <a>Input</a> to add.</p>
@@ -644,8 +644,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the application to which you want to add the input processing
         /// configuration.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to which you want to add the input processing
@@ -661,8 +661,8 @@ pub mod fluent_builders {
         /// configuration. You can use the <a>DescribeApplication</a> operation to get the
         /// current application version. If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The version of the application to which you want to add the input processing
@@ -678,8 +678,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the input configuration to add the input processing configuration to. You
         /// can get a list of the input IDs for an application using the <a>DescribeApplication</a> operation.</p>
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(signature.into());
             self
         }
         /// <p>The ID of the input configuration to add the input processing configuration to. You
@@ -691,9 +691,9 @@ pub mod fluent_builders {
         /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
         pub fn input_processing_configuration(
             mut self,
-            inp: crate::model::InputProcessingConfiguration,
+            signature: crate::model::InputProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_processing_configuration(inp);
+            self.inner = self.inner.input_processing_configuration(signature);
             self
         }
         /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
@@ -777,8 +777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to which you want to add the output configuration.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to which you want to add the output configuration.</p>
@@ -793,8 +793,8 @@ pub mod fluent_builders {
         /// use the <a>DescribeApplication</a> operation to get the current application
         /// version. If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned. </p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The version of the application to which you want to add the output configuration. You can
@@ -812,8 +812,8 @@ pub mod fluent_builders {
         /// configuration, you specify the name of an in-application stream, a destination (that is, a
         /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
         /// record the formation to use when writing to the destination.</p>
-        pub fn output(mut self, inp: crate::model::Output) -> Self {
-            self.inner = self.inner.output(inp);
+        pub fn output(mut self, signature: crate::model::Output) -> Self {
+            self.inner = self.inner.output(signature);
             self
         }
         /// <p>An array of objects, each describing one output configuration. In the output
@@ -890,8 +890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -907,8 +907,8 @@ pub mod fluent_builders {
         /// use the <a>DescribeApplication</a> operation to get the current application
         /// version. If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The version of the application for which you are adding the reference data source.
@@ -927,8 +927,11 @@ pub mod fluent_builders {
         /// into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting
         /// in-application table that is
         /// created. </p>
-        pub fn reference_data_source(mut self, inp: crate::model::ReferenceDataSource) -> Self {
-            self.inner = self.inner.reference_data_source(inp);
+        pub fn reference_data_source(
+            mut self,
+            signature: crate::model::ReferenceDataSource,
+        ) -> Self {
+            self.inner = self.inner.reference_data_source(signature);
             self
         }
         /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data
@@ -1014,8 +1017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -1033,8 +1036,8 @@ pub mod fluent_builders {
         /// <code>ConcurrentModificationException</code> is returned. For better concurrency support,
         /// use the <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The version of the application to which you want to add the VPC configuration. You must
@@ -1052,8 +1055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the VPC to add to the application.</p>
-        pub fn vpc_configuration(mut self, inp: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(inp);
+        pub fn vpc_configuration(mut self, signature: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(signature);
             self
         }
         /// <p>Description of the VPC to add to the application.</p>
@@ -1069,8 +1072,8 @@ pub mod fluent_builders {
         /// the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
         /// <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        pub fn conditional_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(signature.into());
             self
         }
         /// <p>A value you use to implement strong concurrency for application updates. You must
@@ -1148,8 +1151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your application (for example, <code>sample-app</code>).</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of your application (for example, <code>sample-app</code>).</p>
@@ -1161,8 +1164,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A summary description of the application.</p>
-        pub fn application_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_description(inp);
+        pub fn application_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_description(signature.into());
             self
         }
         /// <p>A summary description of the application.</p>
@@ -1174,8 +1180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
-        pub fn runtime_environment(mut self, inp: crate::model::RuntimeEnvironment) -> Self {
-            self.inner = self.inner.runtime_environment(inp);
+        pub fn runtime_environment(mut self, signature: crate::model::RuntimeEnvironment) -> Self {
+            self.inner = self.inner.runtime_environment(signature);
             self
         }
         /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
@@ -1188,8 +1194,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
         /// delivery streams, Amazon S3 objects, and other external resources.</p>
-        pub fn service_execution_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_execution_role(inp);
+        pub fn service_execution_role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_execution_role(signature.into());
             self
         }
         /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
@@ -1204,9 +1210,9 @@ pub mod fluent_builders {
         /// <p>Use this parameter to configure the application.</p>
         pub fn application_configuration(
             mut self,
-            inp: crate::model::ApplicationConfiguration,
+            signature: crate::model::ApplicationConfiguration,
         ) -> Self {
-            self.inner = self.inner.application_configuration(inp);
+            self.inner = self.inner.application_configuration(signature);
             self
         }
         /// <p>Use this parameter to configure the application.</p>
@@ -1226,9 +1232,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn cloud_watch_logging_options(
             mut self,
-            inp: impl Into<crate::model::CloudWatchLoggingOption>,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_options(inp);
+            self.inner = self.inner.cloud_watch_logging_options(input);
             self
         }
         /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application
@@ -1250,8 +1256,8 @@ pub mod fluent_builders {
         /// user-defined application tags is 50.
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
@@ -1268,8 +1274,8 @@ pub mod fluent_builders {
         }
         /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
         /// <code>INTERACTIVE</code> mode.</p>
-        pub fn application_mode(mut self, inp: crate::model::ApplicationMode) -> Self {
-            self.inner = self.inner.application_mode(inp);
+        pub fn application_mode(mut self, signature: crate::model::ApplicationMode) -> Self {
+            self.inner = self.inner.application_mode(signature);
             self
         }
         /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
@@ -1355,8 +1361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -1369,8 +1375,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
         /// extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
-        pub fn url_type(mut self, inp: crate::model::UrlType) -> Self {
-            self.inner = self.inner.url_type(inp);
+        pub fn url_type(mut self, signature: crate::model::UrlType) -> Self {
+            self.inner = self.inner.url_type(signature);
             self
         }
         /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
@@ -1380,8 +1386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration in seconds for which the returned URL will be valid.</p>
-        pub fn session_expiration_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.session_expiration_duration_in_seconds(inp);
+        pub fn session_expiration_duration_in_seconds(mut self, signature: i64) -> Self {
+            self.inner = self.inner.session_expiration_duration_in_seconds(signature);
             self
         }
         /// <p>The duration in seconds for which the returned URL will be valid.</p>
@@ -1453,8 +1459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of an existing application</p>
@@ -1466,8 +1472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for the application snapshot.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(signature.into());
             self
         }
         /// <p>An identifier for the application snapshot.</p>
@@ -1539,8 +1545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to delete.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to delete.</p>
@@ -1552,8 +1558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-        pub fn create_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.create_timestamp(inp);
+        pub fn create_timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.create_timestamp(signature);
             self
         }
         /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
@@ -1627,8 +1633,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The application name.</p>
@@ -1644,8 +1650,8 @@ pub mod fluent_builders {
         /// retrieve the application version ID using <a>DescribeApplication</a>. For better
         /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The version ID of the application. You must provide the
@@ -1664,9 +1670,9 @@ pub mod fluent_builders {
         /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation. </p>
         pub fn cloud_watch_logging_option_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option_id(inp);
+            self.inner = self.inner.cloud_watch_logging_option_id(signature.into());
             self
         }
         /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to
@@ -1682,8 +1688,8 @@ pub mod fluent_builders {
         /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
         /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        pub fn conditional_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(signature.into());
             self
         }
         /// <p>A value you use to implement strong concurrency for application updates. You must provide
@@ -1751,8 +1757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -1768,8 +1774,8 @@ pub mod fluent_builders {
         /// If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned.
         /// </p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The application version.
@@ -1786,8 +1792,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the input configuration from which to delete the input processing
         /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        pub fn input_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(signature.into());
             self
         }
         /// <p>The ID of the input configuration from which to delete the input processing
@@ -1859,8 +1865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The application name.</p>
@@ -1876,8 +1882,8 @@ pub mod fluent_builders {
         /// If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned.
         /// </p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The application version.
@@ -1897,8 +1903,8 @@ pub mod fluent_builders {
         /// uniquely identify the output configuration that you want to delete from the application
         /// configuration. You can use the <a>DescribeApplication</a> operation to get the
         /// specific <code>OutputId</code>. </p>
-        pub fn output_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_id(inp);
+        pub fn output_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_id(signature.into());
             self
         }
         /// <p>The ID of the configuration to delete. Each output configuration that is added to the
@@ -1975,8 +1981,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -1991,8 +1997,8 @@ pub mod fluent_builders {
         /// You can use the <a>DescribeApplication</a> operation to get the current application version.
         /// If the version specified
         /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The current application version.  
@@ -2010,8 +2016,8 @@ pub mod fluent_builders {
         /// application using the <a>AddApplicationReferenceDataSource</a>, Kinesis Data Analytics assigns an ID.
         /// You can use the <a>DescribeApplication</a> operation to
         /// get the reference ID. </p>
-        pub fn reference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_id(inp);
+        pub fn reference_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_id(signature.into());
             self
         }
         /// <p>The ID of the reference data source. When you add a reference data source to your
@@ -2083,8 +2089,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -2096,8 +2102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the snapshot delete.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(signature.into());
             self
         }
         /// <p>The identifier for the snapshot delete.</p>
@@ -2111,8 +2117,11 @@ pub mod fluent_builders {
         /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
         /// using
         /// or .</p>
-        pub fn snapshot_creation_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.snapshot_creation_timestamp(inp);
+        pub fn snapshot_creation_timestamp(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.snapshot_creation_timestamp(signature);
             self
         }
         /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
@@ -2186,8 +2195,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -2203,8 +2212,8 @@ pub mod fluent_builders {
         /// retrieve the application version ID using <a>DescribeApplication</a>. For better
         /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The current application version ID. You must provide the
@@ -2220,8 +2229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the VPC configuration to delete.</p>
-        pub fn vpc_configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_configuration_id(inp);
+        pub fn vpc_configuration_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_configuration_id(signature.into());
             self
         }
         /// <p>The ID of the VPC configuration to delete.</p>
@@ -2236,8 +2245,8 @@ pub mod fluent_builders {
         /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
         /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        pub fn conditional_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(signature.into());
             self
         }
         /// <p>A value you use to implement strong concurrency for application updates. You must provide
@@ -2314,8 +2323,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -2327,8 +2336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
-        pub fn include_additional_details(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_additional_details(inp);
+        pub fn include_additional_details(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_additional_details(signature);
             self
         }
         /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
@@ -2397,8 +2406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -2411,8 +2420,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of an application snapshot. You can retrieve this value using
         /// .</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(signature.into());
             self
         }
         /// <p>The identifier of an application snapshot. You can retrieve this value using
@@ -2488,8 +2497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application for which you want to get the version description.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application for which you want to get the version description.</p>
@@ -2501,8 +2510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application version for which you want to get the description.</p>
-        pub fn application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.application_version_id(inp);
+        pub fn application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.application_version_id(signature);
             self
         }
         /// <p>The ID of the application version for which you want to get the description.</p>
@@ -2577,8 +2586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
@@ -2587,8 +2596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the role that is used to access the streaming source.</p>
-        pub fn service_execution_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_execution_role(inp);
+        pub fn service_execution_role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_execution_role(signature.into());
             self
         }
         /// <p>The ARN of the role that is used to access the streaming source.</p>
@@ -2603,9 +2612,9 @@ pub mod fluent_builders {
         /// specified streaming source discovery purposes.</p>
         pub fn input_starting_position_configuration(
             mut self,
-            inp: crate::model::InputStartingPositionConfiguration,
+            signature: crate::model::InputStartingPositionConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_starting_position_configuration(inp);
+            self.inner = self.inner.input_starting_position_configuration(signature);
             self
         }
         /// <p>The point at which you want Kinesis Data Analytics to start reading records from the
@@ -2619,8 +2628,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify this parameter to discover a schema from data in an Amazon S3
         /// object.</p>
-        pub fn s3_configuration(mut self, inp: crate::model::S3Configuration) -> Self {
-            self.inner = self.inner.s3_configuration(inp);
+        pub fn s3_configuration(mut self, signature: crate::model::S3Configuration) -> Self {
+            self.inner = self.inner.s3_configuration(signature);
             self
         }
         /// <p>Specify this parameter to discover a schema from data in an Amazon S3
@@ -2636,9 +2645,9 @@ pub mod fluent_builders {
         /// before discovering the schema of the records.</p>
         pub fn input_processing_configuration(
             mut self,
-            inp: crate::model::InputProcessingConfiguration,
+            signature: crate::model::InputProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_processing_configuration(inp);
+            self.inner = self.inner.input_processing_configuration(signature);
             self
         }
         /// <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
@@ -2715,8 +2724,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of applications to list.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of applications to list.</p>
@@ -2728,8 +2737,8 @@ pub mod fluent_builders {
         /// pass it into this value to retrieve the next set of results.
         /// For more information about pagination, see
         /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If a previous command returned a pagination token,
@@ -2801,8 +2810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -2814,8 +2823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of application snapshots to list.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of application snapshots to list.</p>
@@ -2826,8 +2835,8 @@ pub mod fluent_builders {
         /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
         /// output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should
         /// continue from. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
@@ -2904,8 +2913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application for which you want to list all versions.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application for which you want to list all versions.</p>
@@ -2917,8 +2926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of versions to list in this invocation of the operation.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of versions to list in this invocation of the operation.</p>
@@ -2928,8 +2937,8 @@ pub mod fluent_builders {
         }
         /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
         /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
@@ -3000,8 +3009,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the application for which to retrieve tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the application for which to retrieve tags.</p>
@@ -3076,8 +3085,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -3090,8 +3099,8 @@ pub mod fluent_builders {
         }
         /// <p>The current application version ID. You can retrieve the application version ID using
         /// <a>DescribeApplication</a>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The current application version ID. You can retrieve the application version ID using
@@ -3165,8 +3174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -3178,8 +3187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
-        pub fn run_configuration(mut self, inp: crate::model::RunConfiguration) -> Self {
-            self.inner = self.inner.run_configuration(inp);
+        pub fn run_configuration(mut self, signature: crate::model::RunConfiguration) -> Self {
+            self.inner = self.inner.run_configuration(signature);
             self
         }
         /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
@@ -3257,8 +3266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the running application to stop.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the running application to stop.</p>
@@ -3281,8 +3290,8 @@ pub mod fluent_builders {
         /// <p>The application must be in the
         /// <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or
         /// <code>RUNNING</code> status. </p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, signature: bool) -> Self {
+            self.inner = self.inner.force(signature);
             self
         }
         /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
@@ -3364,8 +3373,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the application to assign the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the application to assign the tags.</p>
@@ -3378,8 +3387,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags to assign to the application.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value tags to assign to the application.</p>
@@ -3452,8 +3461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
@@ -3466,8 +3475,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of keys of tags to remove from the specified application.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of keys of tags to remove from the specified application.</p>
@@ -3547,8 +3556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to update.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application to update.</p>
@@ -3564,8 +3573,8 @@ pub mod fluent_builders {
         /// retrieve the application version ID using <a>DescribeApplication</a>. For better
         /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, signature: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(signature);
             self
         }
         /// <p>The current application version ID. You must provide the
@@ -3583,9 +3592,9 @@ pub mod fluent_builders {
         /// <p>Describes application configuration updates.</p>
         pub fn application_configuration_update(
             mut self,
-            inp: crate::model::ApplicationConfigurationUpdate,
+            signature: crate::model::ApplicationConfigurationUpdate,
         ) -> Self {
-            self.inner = self.inner.application_configuration_update(inp);
+            self.inner = self.inner.application_configuration_update(signature);
             self
         }
         /// <p>Describes application configuration updates.</p>
@@ -3599,9 +3608,9 @@ pub mod fluent_builders {
         /// <p>Describes updates to the service execution role.</p>
         pub fn service_execution_role_update(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.service_execution_role_update(inp);
+            self.inner = self.inner.service_execution_role_update(signature.into());
             self
         }
         /// <p>Describes updates to the service execution role.</p>
@@ -3615,9 +3624,9 @@ pub mod fluent_builders {
         /// <p>Describes updates to the application's starting parameters.</p>
         pub fn run_configuration_update(
             mut self,
-            inp: crate::model::RunConfigurationUpdate,
+            signature: crate::model::RunConfigurationUpdate,
         ) -> Self {
-            self.inner = self.inner.run_configuration_update(inp);
+            self.inner = self.inner.run_configuration_update(signature);
             self
         }
         /// <p>Describes updates to the application's starting parameters.</p>
@@ -3637,9 +3646,9 @@ pub mod fluent_builders {
         /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
         pub fn cloud_watch_logging_option_updates(
             mut self,
-            inp: impl Into<crate::model::CloudWatchLoggingOptionUpdate>,
+            input: crate::model::CloudWatchLoggingOptionUpdate,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option_updates(inp);
+            self.inner = self.inner.cloud_watch_logging_option_updates(input);
             self
         }
         /// <p>Describes application Amazon CloudWatch logging option updates. You can only update
@@ -3657,8 +3666,8 @@ pub mod fluent_builders {
         /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
         /// <code>ConditionalToken</code> parameter instead of
         /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        pub fn conditional_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(signature.into());
             self
         }
         /// <p>A value you use to implement strong concurrency for application updates. You must
@@ -3751,8 +3760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application for which you want to update the maintenance configuration.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the application for which you want to update the maintenance configuration.</p>
@@ -3766,9 +3775,11 @@ pub mod fluent_builders {
         /// <p>Describes the application maintenance configuration update.</p>
         pub fn application_maintenance_configuration_update(
             mut self,
-            inp: crate::model::ApplicationMaintenanceConfigurationUpdate,
+            signature: crate::model::ApplicationMaintenanceConfigurationUpdate,
         ) -> Self {
-            self.inner = self.inner.application_maintenance_configuration_update(inp);
+            self.inner = self
+                .inner
+                .application_maintenance_configuration_update(signature);
             self
         }
         /// <p>Describes the application maintenance configuration update.</p>

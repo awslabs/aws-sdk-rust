@@ -801,9 +801,9 @@ pub mod create_resource_set_input {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -5546,9 +5546,9 @@ pub mod update_resource_set_input {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }

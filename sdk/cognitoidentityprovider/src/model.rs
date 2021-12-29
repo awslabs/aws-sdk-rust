@@ -778,12 +778,9 @@ pub mod user_pool_client_type {
         /// tokens.</p>
         /// </li>
         /// </ul>
-        pub fn explicit_auth_flows(
-            mut self,
-            input: impl Into<crate::model::ExplicitAuthFlowsType>,
-        ) -> Self {
+        pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             let mut v = self.explicit_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.explicit_auth_flows = Some(v);
             self
         }
@@ -985,12 +982,9 @@ pub mod user_pool_client_type {
         /// <p>Set to <code>client_credentials</code> to specify that the client should get the
         /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
         /// a combination of client and client_secret.</p>
-        pub fn allowed_o_auth_flows(
-            mut self,
-            input: impl Into<crate::model::OAuthFlowType>,
-        ) -> Self {
+        pub fn allowed_o_auth_flows(mut self, input: crate::model::OAuthFlowType) -> Self {
             let mut v = self.allowed_o_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_o_auth_flows = Some(v);
             self
         }
@@ -1768,12 +1762,9 @@ pub mod account_recovery_setting_type {
         /// To override the contents of this collection use [`set_recovery_mechanisms`](Self::set_recovery_mechanisms).
         ///
         /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
-        pub fn recovery_mechanisms(
-            mut self,
-            input: impl Into<crate::model::RecoveryOptionType>,
-        ) -> Self {
+        pub fn recovery_mechanisms(mut self, input: crate::model::RecoveryOptionType) -> Self {
             let mut v = self.recovery_mechanisms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recovery_mechanisms = Some(v);
             self
         }
@@ -4692,9 +4683,9 @@ pub mod resource_server_type {
         /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
         ///
         /// <p>A list of scopes that are defined for the resource server.</p>
-        pub fn scopes(mut self, input: impl Into<crate::model::ResourceServerScopeType>) -> Self {
+        pub fn scopes(mut self, input: crate::model::ResourceServerScopeType) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scopes = Some(v);
             self
         }
@@ -8184,9 +8175,9 @@ pub mod compromised_credentials_risk_configuration_type {
         ///
         /// <p>Perform the action for these events. The default is to perform all events if no event
         /// filter is specified.</p>
-        pub fn event_filter(mut self, input: impl Into<crate::model::EventFilterType>) -> Self {
+        pub fn event_filter(mut self, input: crate::model::EventFilterType) -> Self {
             let mut v = self.event_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_filter = Some(v);
             self
         }
@@ -8878,9 +8869,9 @@ pub mod user_type {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A container with information about the user type attributes.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -8998,9 +8989,9 @@ pub mod user_type {
         /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
         ///
         /// <p>The MFA options for the user.</p>
-        pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
+        pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_options = Some(v);
             self
         }
@@ -9630,9 +9621,9 @@ pub mod device_type {
         /// To override the contents of this collection use [`set_device_attributes`](Self::set_device_attributes).
         ///
         /// <p>The device attributes.</p>
-        pub fn device_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn device_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.device_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_attributes = Some(v);
             self
         }
@@ -10553,12 +10544,9 @@ pub mod user_pool_type {
         /// To override the contents of this collection use [`set_schema_attributes`](Self::set_schema_attributes).
         ///
         /// <p>A container with the schema attributes of a user pool.</p>
-        pub fn schema_attributes(
-            mut self,
-            input: impl Into<crate::model::SchemaAttributeType>,
-        ) -> Self {
+        pub fn schema_attributes(mut self, input: crate::model::SchemaAttributeType) -> Self {
             let mut v = self.schema_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_attributes = Some(v);
             self
         }
@@ -10577,10 +10565,10 @@ pub mod user_pool_type {
         /// <p>Specifies the attributes that are auto-verified in a user pool.</p>
         pub fn auto_verified_attributes(
             mut self,
-            input: impl Into<crate::model::VerifiedAttributeType>,
+            input: crate::model::VerifiedAttributeType,
         ) -> Self {
             let mut v = self.auto_verified_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_verified_attributes = Some(v);
             self
         }
@@ -10597,12 +10585,9 @@ pub mod user_pool_type {
         /// To override the contents of this collection use [`set_alias_attributes`](Self::set_alias_attributes).
         ///
         /// <p>Specifies the attributes that are aliased in a user pool.</p>
-        pub fn alias_attributes(
-            mut self,
-            input: impl Into<crate::model::AliasAttributeType>,
-        ) -> Self {
+        pub fn alias_attributes(mut self, input: crate::model::AliasAttributeType) -> Self {
             let mut v = self.alias_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alias_attributes = Some(v);
             self
         }
@@ -10620,12 +10605,9 @@ pub mod user_pool_type {
         ///
         /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
         /// a user signs up.</p>
-        pub fn username_attributes(
-            mut self,
-            input: impl Into<crate::model::UsernameAttributeType>,
-        ) -> Self {
+        pub fn username_attributes(mut self, input: crate::model::UsernameAttributeType) -> Self {
             let mut v = self.username_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.username_attributes = Some(v);
             self
         }
@@ -11959,9 +11941,9 @@ pub mod context_data_type {
         /// To override the contents of this collection use [`set_http_headers`](Self::set_http_headers).
         ///
         /// <p>HttpHeaders received on your server in same order.</p>
-        pub fn http_headers(mut self, input: impl Into<crate::model::HttpHeader>) -> Self {
+        pub fn http_headers(mut self, input: crate::model::HttpHeader) -> Self {
             let mut v = self.http_headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.http_headers = Some(v);
             self
         }
@@ -12237,12 +12219,9 @@ pub mod auth_event_type {
         /// To override the contents of this collection use [`set_challenge_responses`](Self::set_challenge_responses).
         ///
         /// <p>The challenge responses.</p>
-        pub fn challenge_responses(
-            mut self,
-            input: impl Into<crate::model::ChallengeResponseType>,
-        ) -> Self {
+        pub fn challenge_responses(mut self, input: crate::model::ChallengeResponseType) -> Self {
             let mut v = self.challenge_responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.challenge_responses = Some(v);
             self
         }

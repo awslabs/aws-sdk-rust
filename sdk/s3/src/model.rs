@@ -2703,9 +2703,9 @@ pub mod s3_location {
         /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
         ///
         /// <p>A list of grants that control access to the staged results.</p>
-        pub fn access_control_list(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn access_control_list(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.access_control_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_control_list = Some(v);
             self
         }
@@ -2732,9 +2732,9 @@ pub mod s3_location {
         /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
         ///
         /// <p>A list of metadata to store with the restore results in S3.</p>
-        pub fn user_metadata(mut self, input: impl Into<crate::model::MetadataEntry>) -> Self {
+        pub fn user_metadata(mut self, input: crate::model::MetadataEntry) -> Self {
             let mut v = self.user_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_metadata = Some(v);
             self
         }
@@ -2888,9 +2888,9 @@ pub mod tagging {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>A collection for a set of tags</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -4723,9 +4723,9 @@ pub mod access_control_policy {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -4951,9 +4951,9 @@ pub mod website_configuration {
         /// To override the contents of this collection use [`set_routing_rules`](Self::set_routing_rules).
         ///
         /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-        pub fn routing_rules(mut self, input: impl Into<crate::model::RoutingRule>) -> Self {
+        pub fn routing_rules(mut self, input: crate::model::RoutingRule) -> Self {
             let mut v = self.routing_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routing_rules = Some(v);
             self
         }
@@ -6109,9 +6109,9 @@ pub mod replication_configuration {
         ///
         /// <p>A container for one or more replication rules. A replication configuration must have at
         /// least one rule and can contain a maximum of 1,000 rules. </p>
-        pub fn rules(mut self, input: impl Into<crate::model::ReplicationRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::ReplicationRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -8114,9 +8114,9 @@ pub mod replication_rule_and_operator {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tags containing key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8178,9 +8178,9 @@ pub mod ownership_controls {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The container element for an ownership control rule.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::OwnershipControlsRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::OwnershipControlsRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -8456,12 +8456,9 @@ pub mod notification_configuration {
         ///
         /// <p>The topic to which notifications are sent and the events for which notifications are
         /// generated.</p>
-        pub fn topic_configurations(
-            mut self,
-            input: impl Into<crate::model::TopicConfiguration>,
-        ) -> Self {
+        pub fn topic_configurations(mut self, input: crate::model::TopicConfiguration) -> Self {
             let mut v = self.topic_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_configurations = Some(v);
             self
         }
@@ -8480,12 +8477,9 @@ pub mod notification_configuration {
         ///
         /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
         /// to publish messages.</p>
-        pub fn queue_configurations(
-            mut self,
-            input: impl Into<crate::model::QueueConfiguration>,
-        ) -> Self {
+        pub fn queue_configurations(mut self, input: crate::model::QueueConfiguration) -> Self {
             let mut v = self.queue_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_configurations = Some(v);
             self
         }
@@ -8506,10 +8500,10 @@ pub mod notification_configuration {
         /// them.</p>
         pub fn lambda_function_configurations(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionConfiguration>,
+            input: crate::model::LambdaFunctionConfiguration,
         ) -> Self {
             let mut v = self.lambda_function_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lambda_function_configurations = Some(v);
             self
         }
@@ -8685,9 +8679,9 @@ pub mod lambda_function_configuration {
         /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
         /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -8827,9 +8821,9 @@ pub mod s3_key_filter {
         ///
         /// <p>A list of containers for the key-value pair that defines the criteria for the filter
         /// rule.</p>
-        pub fn filter_rules(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn filter_rules(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.filter_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_rules = Some(v);
             self
         }
@@ -9151,9 +9145,9 @@ pub mod queue_configuration {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A collection of bucket events for which to send notifications</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -9297,9 +9291,9 @@ pub mod topic_configuration {
         /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
         /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -9583,9 +9577,9 @@ pub mod metrics_and_operator {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags used when evaluating an AND predicate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9786,9 +9780,9 @@ pub mod logging_enabled {
         /// <p>Buckets that use the bucket owner enforced setting for Object
         /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn target_grants(mut self, input: impl Into<crate::model::TargetGrant>) -> Self {
+        pub fn target_grants(mut self, input: crate::model::TargetGrant) -> Self {
             let mut v = self.target_grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_grants = Some(v);
             self
         }
@@ -10011,9 +10005,9 @@ pub mod bucket_lifecycle_configuration {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -10280,9 +10274,9 @@ pub mod lifecycle_rule {
         /// To override the contents of this collection use [`set_transitions`](Self::set_transitions).
         ///
         /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
-        pub fn transitions(mut self, input: impl Into<crate::model::Transition>) -> Self {
+        pub fn transitions(mut self, input: crate::model::Transition) -> Self {
             let mut v = self.transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transitions = Some(v);
             self
         }
@@ -10305,10 +10299,10 @@ pub mod lifecycle_rule {
         /// lifetime. </p>
         pub fn noncurrent_version_transitions(
             mut self,
-            input: impl Into<crate::model::NoncurrentVersionTransition>,
+            input: crate::model::NoncurrentVersionTransition,
         ) -> Self {
             let mut v = self.noncurrent_version_transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.noncurrent_version_transitions = Some(v);
             self
         }
@@ -11090,9 +11084,9 @@ pub mod lifecycle_rule_and_operator {
         ///
         /// <p>All of these tags must exist in the object's tag set in order for the rule to
         /// apply.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11436,12 +11430,9 @@ pub mod inventory_configuration {
         /// To override the contents of this collection use [`set_optional_fields`](Self::set_optional_fields).
         ///
         /// <p>Contains the optional fields that are included in the inventory results.</p>
-        pub fn optional_fields(
-            mut self,
-            input: impl Into<crate::model::InventoryOptionalField>,
-        ) -> Self {
+        pub fn optional_fields(mut self, input: crate::model::InventoryOptionalField) -> Self {
             let mut v = self.optional_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.optional_fields = Some(v);
             self
         }
@@ -12370,9 +12361,9 @@ pub mod intelligent_tiering_configuration {
         /// To override the contents of this collection use [`set_tierings`](Self::set_tierings).
         ///
         /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
-        pub fn tierings(mut self, input: impl Into<crate::model::Tiering>) -> Self {
+        pub fn tierings(mut self, input: crate::model::Tiering) -> Self {
             let mut v = self.tierings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tierings = Some(v);
             self
         }
@@ -12798,9 +12789,9 @@ pub mod intelligent_tiering_and_operator {
         ///
         /// <p>All of these tags must exist in the object's tag set in order for the configuration to
         /// apply.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12867,9 +12858,9 @@ pub mod server_side_encryption_configuration {
         ///
         /// <p>Container for information about a particular server-side encryption configuration
         /// rule.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::ServerSideEncryptionRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::ServerSideEncryptionRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -13211,9 +13202,9 @@ pub mod cors_configuration {
         ///
         /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
         /// up to 100 rules to the configuration.</p>
-        pub fn cors_rules(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
+        pub fn cors_rules(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cors_rules = Some(v);
             self
         }
@@ -14145,9 +14136,9 @@ pub mod analytics_and_operator {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to use when evaluating an AND predicate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -23706,9 +23697,9 @@ pub mod delete {
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>The objects to delete.</p>
-        pub fn objects(mut self, input: impl Into<crate::model::ObjectIdentifier>) -> Self {
+        pub fn objects(mut self, input: crate::model::ObjectIdentifier) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.objects = Some(v);
             self
         }
@@ -24133,9 +24124,9 @@ pub mod completed_multipart_upload {
         /// <p>Array of CompletedPart data types.</p>
         /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
         /// 400 response.</p>
-        pub fn parts(mut self, input: impl Into<crate::model::CompletedPart>) -> Self {
+        pub fn parts(mut self, input: crate::model::CompletedPart) -> Self {
             let mut v = self.parts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parts = Some(v);
             self
         }

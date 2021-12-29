@@ -3344,9 +3344,9 @@ pub mod update_records_input {
         ///
         /// A list of patch
         /// operations.
-        pub fn record_patches(mut self, input: impl Into<crate::model::RecordPatch>) -> Self {
+        pub fn record_patches(mut self, input: crate::model::RecordPatch) -> Self {
             let mut v = self.record_patches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_patches = Some(v);
             self
         }

@@ -1102,12 +1102,9 @@ pub mod preset_settings {
         /// To override the contents of this collection use [`set_audio_descriptions`](Self::set_audio_descriptions).
         ///
         /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
-        pub fn audio_descriptions(
-            mut self,
-            input: impl Into<crate::model::AudioDescription>,
-        ) -> Self {
+        pub fn audio_descriptions(mut self, input: crate::model::AudioDescription) -> Self {
             let mut v = self.audio_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_descriptions = Some(v);
             self
         }
@@ -1126,10 +1123,10 @@ pub mod preset_settings {
         /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
         pub fn caption_descriptions(
             mut self,
-            input: impl Into<crate::model::CaptionDescriptionPreset>,
+            input: crate::model::CaptionDescriptionPreset,
         ) -> Self {
             let mut v = self.caption_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_descriptions = Some(v);
             self
         }
@@ -2770,12 +2767,9 @@ pub mod image_inserter {
         /// To override the contents of this collection use [`set_insertable_images`](Self::set_insertable_images).
         ///
         /// Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
-        pub fn insertable_images(
-            mut self,
-            input: impl Into<crate::model::InsertableImage>,
-        ) -> Self {
+        pub fn insertable_images(mut self, input: crate::model::InsertableImage) -> Self {
             let mut v = self.insertable_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insertable_images = Some(v);
             self
         }
@@ -20740,9 +20734,9 @@ pub mod m3u8_settings {
         /// To override the contents of this collection use [`set_audio_pids`](Self::set_audio_pids).
         ///
         /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
-        pub fn audio_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn audio_pids(mut self, input: i32) -> Self {
             let mut v = self.audio_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_pids = Some(v);
             self
         }
@@ -21660,9 +21654,9 @@ pub mod m2ts_settings {
         /// To override the contents of this collection use [`set_audio_pids`](Self::set_audio_pids).
         ///
         /// Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify multiple PIDs as a JSON array. Default is the range 482-492.
-        pub fn audio_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn audio_pids(mut self, input: i32) -> Self {
             let mut v = self.audio_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_pids = Some(v);
             self
         }
@@ -21738,9 +21732,9 @@ pub mod m2ts_settings {
         /// To override the contents of this collection use [`set_dvb_sub_pids`](Self::set_dvb_sub_pids).
         ///
         /// Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
-        pub fn dvb_sub_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn dvb_sub_pids(mut self, input: i32) -> Self {
             let mut v = self.dvb_sub_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dvb_sub_pids = Some(v);
             self
         }
@@ -25578,9 +25572,9 @@ pub mod teletext_destination_settings {
         /// To override the contents of this collection use [`set_page_types`](Self::set_page_types).
         ///
         /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
-        pub fn page_types(mut self, input: impl Into<crate::model::TeletextPageType>) -> Self {
+        pub fn page_types(mut self, input: crate::model::TeletextPageType) -> Self {
             let mut v = self.page_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.page_types = Some(v);
             self
         }
@@ -29099,12 +29093,9 @@ pub mod channel_mapping {
         /// To override the contents of this collection use [`set_output_channels`](Self::set_output_channels).
         ///
         /// In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
-        pub fn output_channels(
-            mut self,
-            input: impl Into<crate::model::OutputChannelMapping>,
-        ) -> Self {
+        pub fn output_channels(mut self, input: crate::model::OutputChannelMapping) -> Self {
             let mut v = self.output_channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_channels = Some(v);
             self
         }
@@ -29173,9 +29164,9 @@ pub mod output_channel_mapping {
         /// To override the contents of this collection use [`set_input_channels`](Self::set_input_channels).
         ///
         /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
-        pub fn input_channels(mut self, input: impl Into<i32>) -> Self {
+        pub fn input_channels(mut self, input: i32) -> Self {
             let mut v = self.input_channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_channels = Some(v);
             self
         }
@@ -29192,9 +29183,9 @@ pub mod output_channel_mapping {
         /// To override the contents of this collection use [`set_input_channels_fine_tune`](Self::set_input_channels_fine_tune).
         ///
         /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
-        pub fn input_channels_fine_tune(mut self, input: impl Into<f64>) -> Self {
+        pub fn input_channels_fine_tune(mut self, input: f64) -> Self {
             let mut v = self.input_channels_fine_tune.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_channels_fine_tune = Some(v);
             self
         }
@@ -35015,9 +35006,9 @@ pub mod job_template {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional list of hop destinations.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -35440,9 +35431,9 @@ pub mod job_template_settings {
         /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
         ///
         /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template.  Using the API, you can include multiple inputs when referencing a job template.
-        pub fn inputs(mut self, input: impl Into<crate::model::InputTemplate>) -> Self {
+        pub fn inputs(mut self, input: crate::model::InputTemplate) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -35514,9 +35505,9 @@ pub mod job_template_settings {
         /// To override the contents of this collection use [`set_output_groups`](Self::set_output_groups).
         ///
         /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
-        pub fn output_groups(mut self, input: impl Into<crate::model::OutputGroup>) -> Self {
+        pub fn output_groups(mut self, input: crate::model::OutputGroup) -> Self {
             let mut v = self.output_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_groups = Some(v);
             self
         }
@@ -35617,9 +35608,9 @@ pub mod timed_metadata_insertion {
         /// To override the contents of this collection use [`set_id3_insertions`](Self::set_id3_insertions).
         ///
         /// Id3Insertions contains the array of Id3Insertion instances.
-        pub fn id3_insertions(mut self, input: impl Into<crate::model::Id3Insertion>) -> Self {
+        pub fn id3_insertions(mut self, input: crate::model::Id3Insertion) -> Self {
             let mut v = self.id3_insertions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.id3_insertions = Some(v);
             self
         }
@@ -36016,9 +36007,9 @@ pub mod output_group {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// This object holds groups of encoding settings, one group of settings per output.
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -36141,12 +36132,9 @@ pub mod output {
         /// To override the contents of this collection use [`set_audio_descriptions`](Self::set_audio_descriptions).
         ///
         /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
-        pub fn audio_descriptions(
-            mut self,
-            input: impl Into<crate::model::AudioDescription>,
-        ) -> Self {
+        pub fn audio_descriptions(mut self, input: crate::model::AudioDescription) -> Self {
             let mut v = self.audio_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_descriptions = Some(v);
             self
         }
@@ -36163,12 +36151,9 @@ pub mod output {
         /// To override the contents of this collection use [`set_caption_descriptions`](Self::set_caption_descriptions).
         ///
         /// (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
-        pub fn caption_descriptions(
-            mut self,
-            input: impl Into<crate::model::CaptionDescription>,
-        ) -> Self {
+        pub fn caption_descriptions(mut self, input: crate::model::CaptionDescription) -> Self {
             let mut v = self.caption_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_descriptions = Some(v);
             self
         }
@@ -37277,10 +37262,10 @@ pub mod ms_smooth_group_settings {
         /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
         pub fn additional_manifests(
             mut self,
-            input: impl Into<crate::model::MsSmoothAdditionalManifest>,
+            input: crate::model::MsSmoothAdditionalManifest,
         ) -> Self {
             let mut v = self.additional_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_manifests = Some(v);
             self
         }
@@ -38565,9 +38550,9 @@ pub mod hls_group_settings {
         /// To override the contents of this collection use [`set_ad_markers`](Self::set_ad_markers).
         ///
         /// Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear in the outputs themselves.
-        pub fn ad_markers(mut self, input: impl Into<crate::model::HlsAdMarkers>) -> Self {
+        pub fn ad_markers(mut self, input: crate::model::HlsAdMarkers) -> Self {
             let mut v = self.ad_markers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_markers = Some(v);
             self
         }
@@ -38584,12 +38569,9 @@ pub mod hls_group_settings {
         /// To override the contents of this collection use [`set_additional_manifests`](Self::set_additional_manifests).
         ///
         /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
-        pub fn additional_manifests(
-            mut self,
-            input: impl Into<crate::model::HlsAdditionalManifest>,
-        ) -> Self {
+        pub fn additional_manifests(mut self, input: crate::model::HlsAdditionalManifest) -> Self {
             let mut v = self.additional_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_manifests = Some(v);
             self
         }
@@ -38631,10 +38613,10 @@ pub mod hls_group_settings {
         /// Language to be used on Caption outputs
         pub fn caption_language_mappings(
             mut self,
-            input: impl Into<crate::model::HlsCaptionLanguageMapping>,
+            input: crate::model::HlsCaptionLanguageMapping,
         ) -> Self {
             let mut v = self.caption_language_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_language_mappings = Some(v);
             self
         }
@@ -41149,12 +41131,9 @@ pub mod dash_iso_group_settings {
         /// To override the contents of this collection use [`set_additional_manifests`](Self::set_additional_manifests).
         ///
         /// By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default manifest references every output in the output group. To create additional DASH manifests that reference a subset of the outputs in the output group, specify a list of them here.
-        pub fn additional_manifests(
-            mut self,
-            input: impl Into<crate::model::DashAdditionalManifest>,
-        ) -> Self {
+        pub fn additional_manifests(mut self, input: crate::model::DashAdditionalManifest) -> Self {
             let mut v = self.additional_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_manifests = Some(v);
             self
         }
@@ -42578,12 +42557,9 @@ pub mod cmaf_group_settings {
         /// To override the contents of this collection use [`set_additional_manifests`](Self::set_additional_manifests).
         ///
         /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
-        pub fn additional_manifests(
-            mut self,
-            input: impl Into<crate::model::CmafAdditionalManifest>,
-        ) -> Self {
+        pub fn additional_manifests(mut self, input: crate::model::CmafAdditionalManifest) -> Self {
             let mut v = self.additional_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_manifests = Some(v);
             self
         }
@@ -46096,10 +46072,10 @@ pub mod input_template {
         pub fn audio_selector_groups(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AudioSelectorGroup>,
+            v: crate::model::AudioSelectorGroup,
         ) -> Self {
             let mut hash_map = self.audio_selector_groups.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audio_selector_groups = Some(hash_map);
             self
         }
@@ -46121,10 +46097,10 @@ pub mod input_template {
         pub fn audio_selectors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AudioSelector>,
+            v: crate::model::AudioSelector,
         ) -> Self {
             let mut hash_map = self.audio_selectors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audio_selectors = Some(hash_map);
             self
         }
@@ -46146,10 +46122,10 @@ pub mod input_template {
         pub fn caption_selectors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CaptionSelector>,
+            v: crate::model::CaptionSelector,
         ) -> Self {
             let mut hash_map = self.caption_selectors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.caption_selectors = Some(hash_map);
             self
         }
@@ -46240,9 +46216,9 @@ pub mod input_template {
         /// To override the contents of this collection use [`set_input_clippings`](Self::set_input_clippings).
         ///
         /// (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
-        pub fn input_clippings(mut self, input: impl Into<crate::model::InputClipping>) -> Self {
+        pub fn input_clippings(mut self, input: crate::model::InputClipping) -> Self {
             let mut v = self.input_clippings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_clippings = Some(v);
             self
         }
@@ -48996,9 +48972,9 @@ pub mod audio_selector {
         /// To override the contents of this collection use [`set_pids`](Self::set_pids).
         ///
         /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
-        pub fn pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn pids(mut self, input: i32) -> Self {
             let mut v = self.pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pids = Some(v);
             self
         }
@@ -49048,9 +49024,9 @@ pub mod audio_selector {
         /// To override the contents of this collection use [`set_tracks`](Self::set_tracks).
         ///
         /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying directly in your JSON job file, provide the track numbers in an array. For example, "tracks": [1,2,3].
-        pub fn tracks(mut self, input: impl Into<i32>) -> Self {
+        pub fn tracks(mut self, input: i32) -> Self {
             let mut v = self.tracks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tracks = Some(v);
             self
         }
@@ -50865,9 +50841,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional list of hop destinations.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -50927,12 +50903,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_output_group_details`](Self::set_output_group_details).
         ///
         /// List of output group details
-        pub fn output_group_details(
-            mut self,
-            input: impl Into<crate::model::OutputGroupDetail>,
-        ) -> Self {
+        pub fn output_group_details(mut self, input: crate::model::OutputGroupDetail) -> Self {
             let mut v = self.output_group_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_group_details = Some(v);
             self
         }
@@ -50969,12 +50942,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_queue_transitions`](Self::set_queue_transitions).
         ///
         /// The job's queue hopping history.
-        pub fn queue_transitions(
-            mut self,
-            input: impl Into<crate::model::QueueTransition>,
-        ) -> Self {
+        pub fn queue_transitions(mut self, input: crate::model::QueueTransition) -> Self {
             let mut v = self.queue_transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_transitions = Some(v);
             self
         }
@@ -51537,9 +51507,9 @@ pub mod job_settings {
         /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
         ///
         /// Use Inputs (inputs) to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
-        pub fn inputs(mut self, input: impl Into<crate::model::Input>) -> Self {
+        pub fn inputs(mut self, input: crate::model::Input) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -51611,9 +51581,9 @@ pub mod job_settings {
         /// To override the contents of this collection use [`set_output_groups`](Self::set_output_groups).
         ///
         /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
-        pub fn output_groups(mut self, input: impl Into<crate::model::OutputGroup>) -> Self {
+        pub fn output_groups(mut self, input: crate::model::OutputGroup) -> Self {
             let mut v = self.output_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_groups = Some(v);
             self
         }
@@ -51895,10 +51865,10 @@ pub mod input {
         pub fn audio_selector_groups(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AudioSelectorGroup>,
+            v: crate::model::AudioSelectorGroup,
         ) -> Self {
             let mut hash_map = self.audio_selector_groups.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audio_selector_groups = Some(hash_map);
             self
         }
@@ -51920,10 +51890,10 @@ pub mod input {
         pub fn audio_selectors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AudioSelector>,
+            v: crate::model::AudioSelector,
         ) -> Self {
             let mut hash_map = self.audio_selectors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audio_selectors = Some(hash_map);
             self
         }
@@ -51945,10 +51915,10 @@ pub mod input {
         pub fn caption_selectors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CaptionSelector>,
+            v: crate::model::CaptionSelector,
         ) -> Self {
             let mut hash_map = self.caption_selectors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.caption_selectors = Some(hash_map);
             self
         }
@@ -52062,9 +52032,9 @@ pub mod input {
         /// To override the contents of this collection use [`set_input_clippings`](Self::set_input_clippings).
         ///
         /// (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
-        pub fn input_clippings(mut self, input: impl Into<crate::model::InputClipping>) -> Self {
+        pub fn input_clippings(mut self, input: crate::model::InputClipping) -> Self {
             let mut v = self.input_clippings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_clippings = Some(v);
             self
         }
@@ -52528,9 +52498,9 @@ pub mod output_group_detail {
         /// To override the contents of this collection use [`set_output_details`](Self::set_output_details).
         ///
         /// Details about the output
-        pub fn output_details(mut self, input: impl Into<crate::model::OutputDetail>) -> Self {
+        pub fn output_details(mut self, input: crate::model::OutputDetail) -> Self {
             let mut v = self.output_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_details = Some(v);
             self
         }

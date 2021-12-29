@@ -913,9 +913,9 @@ pub mod execute_statement_input {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the SQL statement.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::SqlParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }

@@ -4736,10 +4736,10 @@ pub mod update_replication_configuration_input {
         /// <p>Update replication configuration replicated disks request.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::ReplicationConfigurationReplicatedDisk>,
+            input: crate::model::ReplicationConfigurationReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }

@@ -37,9 +37,9 @@ pub mod associate_entities_to_experience_input {
         /// To override the contents of this collection use [`set_entity_list`](Self::set_entity_list).
         ///
         /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
-        pub fn entity_list(mut self, input: impl Into<crate::model::EntityConfiguration>) -> Self {
+        pub fn entity_list(mut self, input: crate::model::EntityConfiguration) -> Self {
             let mut v = self.entity_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_list = Some(v);
             self
         }
@@ -232,12 +232,9 @@ pub mod associate_personas_to_entities_input {
         /// roles are <code>Owner</code> and <code>Viewer</code>. For more information
         /// on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
         /// access to your search page</a>.</p>
-        pub fn personas(
-            mut self,
-            input: impl Into<crate::model::EntityPersonaConfiguration>,
-        ) -> Self {
+        pub fn personas(mut self, input: crate::model::EntityPersonaConfiguration) -> Self {
             let mut v = self.personas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.personas = Some(v);
             self
         }
@@ -622,9 +619,9 @@ pub mod batch_get_document_status_input {
         /// <p>A list of <code>DocumentInfo</code> objects that identify the
         /// documents for which to get the status. You identify the documents by
         /// their document ID and optional attributes.</p>
-        pub fn document_info_list(mut self, input: impl Into<crate::model::DocumentInfo>) -> Self {
+        pub fn document_info_list(mut self, input: crate::model::DocumentInfo) -> Self {
             let mut v = self.document_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_info_list = Some(v);
             self
         }
@@ -844,9 +841,9 @@ pub mod batch_put_document_input {
         /// </ul>
         /// <p>For more information about file size and transaction per second
         /// quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-        pub fn documents(mut self, input: impl Into<crate::model::Document>) -> Self {
+        pub fn documents(mut self, input: crate::model::Document) -> Self {
             let mut v = self.documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.documents = Some(v);
             self
         }
@@ -1348,9 +1345,9 @@ pub mod create_data_source_input {
         /// <p>A list of key-value pairs that identify the data source. You can use
         /// the tags to identify and organize your resources and to control access to
         /// resources.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1885,9 +1882,9 @@ pub mod create_faq_input {
         ///
         /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and
         /// organize your resources and to control access to resources.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2230,9 +2227,9 @@ pub mod create_index_input {
         /// <p>A list of key-value pairs that identify the index. You can use the
         /// tags to identify and organize your resources and to control access to
         /// resources.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2253,10 +2250,10 @@ pub mod create_index_input {
         /// <p>The user token configuration.</p>
         pub fn user_token_configurations(
             mut self,
-            input: impl Into<crate::model::UserTokenConfiguration>,
+            input: crate::model::UserTokenConfiguration,
         ) -> Self {
             let mut v = self.user_token_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_token_configurations = Some(v);
             self
         }
@@ -2599,9 +2596,9 @@ pub mod create_query_suggestions_block_list_input {
         ///
         /// <p>A tag that you can assign to a block list that categorizes
         /// the block list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2830,9 +2827,9 @@ pub mod create_thesaurus_input {
         /// the tags to identify and organize your resources and to control
         /// access to resources.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5617,9 +5614,9 @@ pub mod disassociate_entities_from_experience_input {
         /// To override the contents of this collection use [`set_entity_list`](Self::set_entity_list).
         ///
         /// <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
-        pub fn entity_list(mut self, input: impl Into<crate::model::EntityConfiguration>) -> Self {
+        pub fn entity_list(mut self, input: crate::model::EntityConfiguration) -> Self {
             let mut v = self.entity_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_list = Some(v);
             self
         }
@@ -8886,9 +8883,9 @@ pub mod query_input {
         /// <p>An array of documents attributes. Amazon Kendra returns a count for
         /// each attribute key specified. You can use this information to help
         /// narrow the search for your user.</p>
-        pub fn facets(mut self, input: impl Into<crate::model::Facet>) -> Self {
+        pub fn facets(mut self, input: crate::model::Facet) -> Self {
             let mut v = self.facets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.facets = Some(v);
             self
         }
@@ -8957,12 +8954,12 @@ pub mod query_input {
         /// the importance is set to 1.</p>
         pub fn document_relevance_override_configurations(
             mut self,
-            input: impl Into<crate::model::DocumentRelevanceConfiguration>,
+            input: crate::model::DocumentRelevanceConfiguration,
         ) -> Self {
             let mut v = self
                 .document_relevance_override_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_relevance_override_configurations = Some(v);
             self
         }
@@ -9588,12 +9585,9 @@ pub mod submit_feedback_input {
         ///
         /// <p>Tells Amazon Kendra that a particular search result link was chosen
         /// by the user. </p>
-        pub fn click_feedback_items(
-            mut self,
-            input: impl Into<crate::model::ClickFeedback>,
-        ) -> Self {
+        pub fn click_feedback_items(mut self, input: crate::model::ClickFeedback) -> Self {
             let mut v = self.click_feedback_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.click_feedback_items = Some(v);
             self
         }
@@ -9612,12 +9606,9 @@ pub mod submit_feedback_input {
         ///
         /// <p>Provides Amazon Kendra with relevant or not relevant feedback for
         /// whether a particular item was relevant to the search.</p>
-        pub fn relevance_feedback_items(
-            mut self,
-            input: impl Into<crate::model::RelevanceFeedback>,
-        ) -> Self {
+        pub fn relevance_feedback_items(mut self, input: crate::model::RelevanceFeedback) -> Self {
             let mut v = self.relevance_feedback_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relevance_feedback_items = Some(v);
             self
         }
@@ -9796,9 +9787,9 @@ pub mod tag_resource_input {
         ///
         /// <p>A list of tag keys to add to the index, FAQ, or data source. If a tag
         /// already exists, the existing value is replaced with the new value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10708,12 +10699,12 @@ pub mod update_index_input {
         /// <p>The document metadata to update. </p>
         pub fn document_metadata_configuration_updates(
             mut self,
-            input: impl Into<crate::model::DocumentMetadataConfiguration>,
+            input: crate::model::DocumentMetadataConfiguration,
         ) -> Self {
             let mut v = self
                 .document_metadata_configuration_updates
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_metadata_configuration_updates = Some(v);
             self
         }
@@ -10755,10 +10746,10 @@ pub mod update_index_input {
         /// <p>The user token configuration.</p>
         pub fn user_token_configurations(
             mut self,
-            input: impl Into<crate::model::UserTokenConfiguration>,
+            input: crate::model::UserTokenConfiguration,
         ) -> Self {
             let mut v = self.user_token_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_token_configurations = Some(v);
             self
         }

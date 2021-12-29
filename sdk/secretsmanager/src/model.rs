@@ -1011,9 +1011,9 @@ pub mod secret_list_entry {
         ///
         /// <p>The list of user-defined tags associated with the secret. To add tags to a
         /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1040,10 +1040,10 @@ pub mod secret_list_entry {
         pub fn secret_versions_to_stages(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.secret_versions_to_stages.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.secret_versions_to_stages = Some(hash_map);
             self
         }

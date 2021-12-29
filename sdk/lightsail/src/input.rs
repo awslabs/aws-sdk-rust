@@ -1631,9 +1631,9 @@ pub mod create_bucket_input {
         /// <p>The tag keys and optional values to add to the bucket during creation.</p>
         ///
         /// <p>Use the <a>TagResource</a> action to tag the bucket after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2027,9 +2027,9 @@ pub mod create_certificate_input {
         ///
         /// <p>The tag keys and optional values to add to the certificate during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2196,9 +2196,9 @@ pub mod create_cloud_formation_stack_input {
         /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only
         /// pass one instance entry at a time in this array. You will get an invalid parameter error if
         /// you pass more than one instance entry in this array.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::InstanceEntry>) -> Self {
+        pub fn instances(mut self, input: crate::model::InstanceEntry) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -2724,9 +2724,9 @@ pub mod create_container_service_input {
         /// <p>The tag keys and optional values to add to the container service during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
         /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2765,10 +2765,10 @@ pub mod create_container_service_input {
         pub fn public_domain_names(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.public_domain_names.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.public_domain_names = Some(hash_map);
             self
         }
@@ -3001,10 +3001,10 @@ pub mod create_container_service_deployment_input {
         pub fn containers(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Container>,
+            v: crate::model::Container,
         ) -> Self {
             let mut hash_map = self.containers.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.containers = Some(hash_map);
             self
         }
@@ -3369,9 +3369,9 @@ pub mod create_disk_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3389,9 +3389,9 @@ pub mod create_disk_input {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-        pub fn add_ons(mut self, input: impl Into<crate::model::AddOnRequest>) -> Self {
+        pub fn add_ons(mut self, input: crate::model::AddOnRequest) -> Self {
             let mut v = self.add_ons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_ons = Some(v);
             self
         }
@@ -3636,9 +3636,9 @@ pub mod create_disk_from_snapshot_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3656,9 +3656,9 @@ pub mod create_disk_from_snapshot_input {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-        pub fn add_ons(mut self, input: impl Into<crate::model::AddOnRequest>) -> Self {
+        pub fn add_ons(mut self, input: crate::model::AddOnRequest) -> Self {
             let mut v = self.add_ons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_ons = Some(v);
             self
         }
@@ -4011,9 +4011,9 @@ pub mod create_disk_snapshot_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4239,12 +4239,9 @@ pub mod create_distribution_input {
         /// To override the contents of this collection use [`set_cache_behaviors`](Self::set_cache_behaviors).
         ///
         /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-        pub fn cache_behaviors(
-            mut self,
-            input: impl Into<crate::model::CacheBehaviorPerPath>,
-        ) -> Self {
+        pub fn cache_behaviors(mut self, input: crate::model::CacheBehaviorPerPath) -> Self {
             let mut v = self.cache_behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_behaviors = Some(v);
             self
         }
@@ -4303,9 +4300,9 @@ pub mod create_distribution_input {
         ///
         /// <p>The tag keys and optional values to add to the distribution during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4498,9 +4495,9 @@ pub mod create_domain_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4987,9 +4984,9 @@ pub mod create_instances_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5007,9 +5004,9 @@ pub mod create_instances_input {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-        pub fn add_ons(mut self, input: impl Into<crate::model::AddOnRequest>) -> Self {
+        pub fn add_ons(mut self, input: crate::model::AddOnRequest) -> Self {
             let mut v = self.add_ons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_ons = Some(v);
             self
         }
@@ -5238,10 +5235,10 @@ pub mod create_instances_from_snapshot_input {
         pub fn attached_disk_mapping(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::DiskMap>>,
+            v: std::vec::Vec<crate::model::DiskMap>,
         ) -> Self {
             let mut hash_map = self.attached_disk_mapping.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attached_disk_mapping = Some(hash_map);
             self
         }
@@ -5367,9 +5364,9 @@ pub mod create_instances_from_snapshot_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5387,9 +5384,9 @@ pub mod create_instances_from_snapshot_input {
         /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
         ///
         /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-        pub fn add_ons(mut self, input: impl Into<crate::model::AddOnRequest>) -> Self {
+        pub fn add_ons(mut self, input: crate::model::AddOnRequest) -> Self {
             let mut v = self.add_ons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_ons = Some(v);
             self
         }
@@ -5736,9 +5733,9 @@ pub mod create_instance_snapshot_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5919,9 +5916,9 @@ pub mod create_key_pair_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6199,9 +6196,9 @@ pub mod create_load_balancer_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6474,9 +6471,9 @@ pub mod create_load_balancer_tls_certificate_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7112,9 +7109,9 @@ pub mod create_relational_database_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7493,9 +7490,9 @@ pub mod create_relational_database_from_snapshot_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7718,9 +7715,9 @@ pub mod create_relational_database_snapshot_input {
         ///
         /// <p>The tag keys and optional values to add to the resource during create.</p>
         /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13929,9 +13926,9 @@ pub mod get_bucket_metric_data_input {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, input: impl Into<crate::model::MetricStatistic>) -> Self {
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statistics = Some(v);
             self
         }
@@ -14520,12 +14517,9 @@ pub mod get_certificates_input {
         /// <code>ISSUED</code> status.</p>
         /// <p>When omitted, the response includes all of your certificates in the AWS Region where the
         /// request is made, regardless of their current status.</p>
-        pub fn certificate_statuses(
-            mut self,
-            input: impl Into<crate::model::CertificateStatus>,
-        ) -> Self {
+        pub fn certificate_statuses(mut self, input: crate::model::CertificateStatus) -> Self {
             let mut v = self.certificate_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_statuses = Some(v);
             self
         }
@@ -14891,9 +14885,9 @@ pub mod get_contact_methods_input {
         /// (text messaging).</p>
         /// <p>Specify a protocol in your request to return information about a specific contact method
         /// protocol.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::ContactProtocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::ContactProtocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -16039,9 +16033,9 @@ pub mod get_container_service_metric_data_input {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, input: impl Into<crate::model::MetricStatistic>) -> Self {
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statistics = Some(v);
             self
         }
@@ -17837,9 +17831,9 @@ pub mod get_distribution_metric_data_input {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, input: impl Into<crate::model::MetricStatistic>) -> Self {
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statistics = Some(v);
             self
         }
@@ -19384,9 +19378,9 @@ pub mod get_instance_metric_data_input {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, input: impl Into<crate::model::MetricStatistic>) -> Self {
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statistics = Some(v);
             self
         }
@@ -21299,9 +21293,9 @@ pub mod get_load_balancer_metric_data_input {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, input: impl Into<crate::model::MetricStatistic>) -> Self {
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statistics = Some(v);
             self
         }
@@ -24133,9 +24127,9 @@ pub mod get_relational_database_metric_data_input {
         /// statistical calculation.</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, input: impl Into<crate::model::MetricStatistic>) -> Self {
+        pub fn statistics(mut self, input: crate::model::MetricStatistic) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statistics = Some(v);
             self
         }
@@ -26170,12 +26164,9 @@ pub mod put_alarm_input {
         /// for the alarm using the <code>notificationEnabled</code> paramater.</p>
         /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an
         /// AWS Region.</p>
-        pub fn contact_protocols(
-            mut self,
-            input: impl Into<crate::model::ContactProtocol>,
-        ) -> Self {
+        pub fn contact_protocols(mut self, input: crate::model::ContactProtocol) -> Self {
             let mut v = self.contact_protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_protocols = Some(v);
             self
         }
@@ -26235,9 +26226,9 @@ pub mod put_alarm_input {
         /// </ul>
         /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this
         /// parameter.</p>
-        pub fn notification_triggers(mut self, input: impl Into<crate::model::AlarmState>) -> Self {
+        pub fn notification_triggers(mut self, input: crate::model::AlarmState) -> Self {
             let mut v = self.notification_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_triggers = Some(v);
             self
         }
@@ -26451,9 +26442,9 @@ pub mod put_instance_public_ports_input {
         /// To override the contents of this collection use [`set_port_infos`](Self::set_port_infos).
         ///
         /// <p>An array of objects to describe the ports to open for the specified instance.</p>
-        pub fn port_infos(mut self, input: impl Into<crate::model::PortInfo>) -> Self {
+        pub fn port_infos(mut self, input: crate::model::PortInfo) -> Self {
             let mut v = self.port_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_infos = Some(v);
             self
         }
@@ -28778,9 +28769,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key and optional value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -29971,10 +29962,10 @@ pub mod update_container_service_input {
         pub fn public_domain_names(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.public_domain_names.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.public_domain_names = Some(hash_map);
             self
         }
@@ -30233,12 +30224,9 @@ pub mod update_distribution_input {
         /// To override the contents of this collection use [`set_cache_behaviors`](Self::set_cache_behaviors).
         ///
         /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-        pub fn cache_behaviors(
-            mut self,
-            input: impl Into<crate::model::CacheBehaviorPerPath>,
-        ) -> Self {
+        pub fn cache_behaviors(mut self, input: crate::model::CacheBehaviorPerPath) -> Self {
             let mut v = self.cache_behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_behaviors = Some(v);
             self
         }
@@ -31378,12 +31366,9 @@ pub mod update_relational_database_parameters_input {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The database parameters to update.</p>
-        pub fn parameters(
-            mut self,
-            input: impl Into<crate::model::RelationalDatabaseParameter>,
-        ) -> Self {
+        pub fn parameters(mut self, input: crate::model::RelationalDatabaseParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }

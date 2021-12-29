@@ -195,8 +195,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Required. ID of the report to delete.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(signature.into());
             self
         }
         /// <p>Required. ID of the report to delete.</p>
@@ -265,8 +265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the report to retrieve.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(signature.into());
             self
         }
         /// <p>ID of the report to retrieve.</p>
@@ -338,8 +338,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon S3 location to import application usage data from.</p>
-        pub fn source_s3_location(mut self, inp: crate::model::SourceS3Location) -> Self {
-            self.inner = self.inner.source_s3_location(inp);
+        pub fn source_s3_location(mut self, signature: crate::model::SourceS3Location) -> Self {
+            self.inner = self.inner.source_s3_location(signature);
             self
         }
         /// <p>Amazon S3 location to import application usage data from.</p>
@@ -412,8 +412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token value from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token value from a previous call to access the next page of results.</p>
@@ -422,8 +422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -493,8 +493,8 @@ pub mod fluent_builders {
         }
         /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
         /// ID.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(signature.into());
             self
         }
         /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
@@ -504,8 +504,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. Description of the report.</p>
-        pub fn report_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_description(inp);
+        pub fn report_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_description(signature.into());
             self
         }
         /// <p>Required. Description of the report.</p>
@@ -517,8 +517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
-        pub fn report_frequency(mut self, inp: crate::model::ReportFrequency) -> Self {
-            self.inner = self.inner.report_frequency(inp);
+        pub fn report_frequency(mut self, signature: crate::model::ReportFrequency) -> Self {
+            self.inner = self.inner.report_frequency(signature);
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
@@ -530,8 +530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The format to use for the generated report.</p>
-        pub fn format(mut self, inp: crate::model::Format) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::Format) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>Required. The format to use for the generated report.</p>
@@ -541,8 +541,8 @@ pub mod fluent_builders {
         }
         /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
         /// report.</p>
-        pub fn destination_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.destination_s3_location(inp);
+        pub fn destination_s3_location(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.destination_s3_location(signature);
             self
         }
         /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
@@ -615,8 +615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Required. ID of the report to update.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(signature.into());
             self
         }
         /// <p>Required. ID of the report to update.</p>
@@ -625,8 +625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. Description of the report.</p>
-        pub fn report_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_description(inp);
+        pub fn report_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_description(signature.into());
             self
         }
         /// <p>Required. Description of the report.</p>
@@ -638,8 +638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
-        pub fn report_frequency(mut self, inp: crate::model::ReportFrequency) -> Self {
-            self.inner = self.inner.report_frequency(inp);
+        pub fn report_frequency(mut self, signature: crate::model::ReportFrequency) -> Self {
+            self.inner = self.inner.report_frequency(signature);
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
@@ -651,8 +651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The format to use for the generated report.</p>
-        pub fn format(mut self, inp: crate::model::Format) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, signature: crate::model::Format) -> Self {
+            self.inner = self.inner.format(signature);
             self
         }
         /// <p>Required. The format to use for the generated report.</p>
@@ -662,8 +662,8 @@ pub mod fluent_builders {
         }
         /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
         /// report.</p>
-        pub fn destination_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.destination_s3_location(inp);
+        pub fn destination_s3_location(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.destination_s3_location(signature);
             self
         }
         /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the

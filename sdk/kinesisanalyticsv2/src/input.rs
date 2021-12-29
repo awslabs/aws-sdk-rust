@@ -1356,10 +1356,10 @@ pub mod create_application_input {
         /// </p>
         pub fn cloud_watch_logging_options(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOption>,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
             let mut v = self.cloud_watch_logging_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_options = Some(v);
             self
         }
@@ -1382,9 +1382,9 @@ pub mod create_application_input {
         /// user-defined application tags is 50.
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5343,9 +5343,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags to assign to the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5775,10 +5775,10 @@ pub mod update_application_input {
         /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
         pub fn cloud_watch_logging_option_updates(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOptionUpdate>,
+            input: crate::model::CloudWatchLoggingOptionUpdate,
         ) -> Self {
             let mut v = self.cloud_watch_logging_option_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_option_updates = Some(v);
             self
         }

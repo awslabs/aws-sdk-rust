@@ -742,9 +742,9 @@ pub mod replicate_key_output {
         ///
         /// <p>The tags on the new replica key. The value is a list of tag key and tag value
         /// pairs.</p>
-        pub fn replica_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn replica_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.replica_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_tags = Some(v);
             self
         }
@@ -1027,9 +1027,9 @@ pub mod list_retirable_grants_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::GrantListEntry>) -> Self {
+        pub fn grants(mut self, input: crate::model::GrantListEntry) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -1155,9 +1155,9 @@ pub mod list_resource_tags_output {
         /// <note>
         /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1277,9 +1277,9 @@ pub mod list_keys_output {
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
         /// <p>A list of KMS keys.</p>
-        pub fn keys(mut self, input: impl Into<crate::model::KeyListEntry>) -> Self {
+        pub fn keys(mut self, input: crate::model::KeyListEntry) -> Self {
             let mut v = self.keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.keys = Some(v);
             self
         }
@@ -1511,9 +1511,9 @@ pub mod list_grants_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::GrantListEntry>) -> Self {
+        pub fn grants(mut self, input: crate::model::GrantListEntry) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -1628,9 +1628,9 @@ pub mod list_aliases_output {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>A list of aliases.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::AliasListEntry>) -> Self {
+        pub fn aliases(mut self, input: crate::model::AliasListEntry) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }
@@ -1931,10 +1931,10 @@ pub mod get_public_key_output {
         /// is <code>ENCRYPT_DECRYPT</code>.</p>
         pub fn encryption_algorithms(
             mut self,
-            input: impl Into<crate::model::EncryptionAlgorithmSpec>,
+            input: crate::model::EncryptionAlgorithmSpec,
         ) -> Self {
             let mut v = self.encryption_algorithms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.encryption_algorithms = Some(v);
             self
         }
@@ -1957,12 +1957,9 @@ pub mod get_public_key_output {
         /// <p>The signing algorithms that KMS supports for this key.</p>
         /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
         /// is <code>SIGN_VERIFY</code>.</p>
-        pub fn signing_algorithms(
-            mut self,
-            input: impl Into<crate::model::SigningAlgorithmSpec>,
-        ) -> Self {
+        pub fn signing_algorithms(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
             let mut v = self.signing_algorithms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.signing_algorithms = Some(v);
             self
         }
@@ -3110,12 +3107,9 @@ pub mod describe_custom_key_stores_output {
         /// To override the contents of this collection use [`set_custom_key_stores`](Self::set_custom_key_stores).
         ///
         /// <p>Contains metadata about each custom key store.</p>
-        pub fn custom_key_stores(
-            mut self,
-            input: impl Into<crate::model::CustomKeyStoresListEntry>,
-        ) -> Self {
+        pub fn custom_key_stores(mut self, input: crate::model::CustomKeyStoresListEntry) -> Self {
             let mut v = self.custom_key_stores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_key_stores = Some(v);
             self
         }

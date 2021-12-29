@@ -368,8 +368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -378,8 +378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(signature.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -388,8 +388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(signature.into());
             self
         }
         /// <p>The AWS Region.</p>
@@ -583,8 +583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -593,8 +593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(signature.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -663,8 +663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the quota increase request.</p>
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(signature.into());
             self
         }
         /// <p>The ID of the quota increase request.</p>
@@ -735,8 +735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -745,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(signature.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -818,8 +818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -828,8 +828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(signature.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -838,8 +838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(signature.into());
             self
         }
         /// <p>The AWS Region.</p>
@@ -909,8 +909,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -919,8 +919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -930,8 +930,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
         /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
@@ -1003,8 +1003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1013,8 +1013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the quota increase request.</p>
-        pub fn status(mut self, inp: crate::model::RequestStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::RequestStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The status of the quota increase request.</p>
@@ -1026,8 +1026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1037,8 +1037,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
         /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
@@ -1101,8 +1101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1111,8 +1111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(signature.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -1121,8 +1121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status value of the quota increase request.</p>
-        pub fn status(mut self, inp: crate::model::RequestStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::RequestStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The status value of the quota increase request.</p>
@@ -1134,8 +1134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
         /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1228,8 +1228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(signature.into());
             self
         }
         /// <p>The AWS Region.</p>
@@ -1238,8 +1238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1249,8 +1249,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
         /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
@@ -1322,8 +1322,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1332,8 +1332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1343,8 +1343,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
         /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
@@ -1414,8 +1414,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1425,8 +1425,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
         /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve the remaining
@@ -1498,8 +1498,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You
         /// can get this information by using the Service Quotas console, or by listing the quotas using the
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You
@@ -1572,8 +1572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(signature.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -1582,8 +1582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1592,8 +1592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(signature.into());
             self
         }
         /// <p>The AWS Region.</p>
@@ -1602,8 +1602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new, increased value for the quota.</p>
-        pub fn desired_value(mut self, inp: f64) -> Self {
-            self.inner = self.inner.desired_value(inp);
+        pub fn desired_value(mut self, signature: f64) -> Self {
+            self.inner = self.inner.desired_value(signature);
             self
         }
         /// <p>The new, increased value for the quota.</p>
@@ -1672,8 +1672,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1682,8 +1682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(signature.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -1692,8 +1692,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new, increased value for the quota.</p>
-        pub fn desired_value(mut self, inp: f64) -> Self {
-            self.inner = self.inner.desired_value(inp);
+        pub fn desired_value(mut self, signature: f64) -> Self {
+            self.inner = self.inner.desired_value(signature);
             self
         }
         /// <p>The new, increased value for the quota.</p>
@@ -1764,8 +1764,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by
         /// using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by
@@ -1779,8 +1779,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that you want to add to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags that you want to add to the resource.</p>
@@ -1854,8 +1854,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get
         /// this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get
@@ -1869,8 +1869,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags that you want to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags that you want to remove from the resource.</p>

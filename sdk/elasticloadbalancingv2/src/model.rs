@@ -155,12 +155,9 @@ pub mod availability_zone {
         /// specify one Elastic IP address per Availability Zone when you create an internal-facing load
         /// balancer. For internal load balancers, you can specify a private IP address from the IPv4
         /// range of the subnet.</p>
-        pub fn load_balancer_addresses(
-            mut self,
-            input: impl Into<crate::model::LoadBalancerAddress>,
-        ) -> Self {
+        pub fn load_balancer_addresses(mut self, input: crate::model::LoadBalancerAddress) -> Self {
             let mut v = self.load_balancer_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancer_addresses = Some(v);
             self
         }
@@ -540,9 +537,9 @@ pub mod rule {
         /// <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
         /// <code>source-ip</code>, and zero or more of the following conditions:
         /// <code>http-header</code> and <code>query-string</code>.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::RuleCondition>) -> Self {
+        pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
@@ -564,9 +561,9 @@ pub mod rule {
         /// <p>The actions. Each rule must include exactly one of the following types of actions:
         /// <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be
         /// the last action to be performed.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -943,9 +940,9 @@ pub mod forward_action_config {
         ///
         /// <p>One or more target groups. For Network Load Balancers, you can specify a single target
         /// group.</p>
-        pub fn target_groups(mut self, input: impl Into<crate::model::TargetGroupTuple>) -> Self {
+        pub fn target_groups(mut self, input: crate::model::TargetGroupTuple) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_groups = Some(v);
             self
         }
@@ -3214,9 +3211,9 @@ pub mod query_string_condition_config {
         /// these characters in <code>Values</code> using a '\' character.</p>
         /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of
         /// them is found in the query string.</p>
-        pub fn values(mut self, input: impl Into<crate::model::QueryStringKeyValuePair>) -> Self {
+        pub fn values(mut self, input: crate::model::QueryStringKeyValuePair) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -5855,9 +5852,9 @@ pub mod listener {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -5886,9 +5883,9 @@ pub mod listener {
         /// To override the contents of this collection use [`set_default_actions`](Self::set_default_actions).
         ///
         /// <p>The default actions for the listener.</p>
-        pub fn default_actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn default_actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.default_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_actions = Some(v);
             self
         }
@@ -6756,9 +6753,9 @@ pub mod tag_description {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6940,9 +6937,9 @@ pub mod ssl_policy {
         /// To override the contents of this collection use [`set_ciphers`](Self::set_ciphers).
         ///
         /// <p>The ciphers.</p>
-        pub fn ciphers(mut self, input: impl Into<crate::model::Cipher>) -> Self {
+        pub fn ciphers(mut self, input: crate::model::Cipher) -> Self {
             let mut v = self.ciphers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ciphers = Some(v);
             self
         }
@@ -7410,12 +7407,9 @@ pub mod load_balancer {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>The subnets for the load balancer.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }

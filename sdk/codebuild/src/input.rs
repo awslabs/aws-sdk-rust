@@ -1057,9 +1057,9 @@ pub mod create_project_input {
         /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
         ///
         /// <p>An array of <code>ProjectSource</code> objects. </p>
-        pub fn secondary_sources(mut self, input: impl Into<crate::model::ProjectSource>) -> Self {
+        pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources = Some(v);
             self
         }
@@ -1152,10 +1152,10 @@ pub mod create_project_input {
         /// </p>
         pub fn secondary_source_versions(
             mut self,
-            input: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
             let mut v = self.secondary_source_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_source_versions = Some(v);
             self
         }
@@ -1188,12 +1188,9 @@ pub mod create_project_input {
         /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
         ///
         /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
-        pub fn secondary_artifacts(
-            mut self,
-            input: impl Into<crate::model::ProjectArtifacts>,
-        ) -> Self {
+        pub fn secondary_artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
             let mut v = self.secondary_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_artifacts = Some(v);
             self
         }
@@ -1300,9 +1297,9 @@ pub mod create_project_input {
         /// <p>A list of tag key and value pairs associated with this build project.</p>
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
         /// tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1367,10 +1364,10 @@ pub mod create_project_input {
         /// </p>
         pub fn file_system_locations(
             mut self,
-            input: impl Into<crate::model::ProjectFileSystemLocation>,
+            input: crate::model::ProjectFileSystemLocation,
         ) -> Self {
             let mut v = self.file_system_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_locations = Some(v);
             self
         }
@@ -1637,9 +1634,9 @@ pub mod create_report_group_input {
         /// </p>
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
         /// tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1851,12 +1848,9 @@ pub mod create_webhook_input {
         /// <p>For a build to be triggered, at least one filter group in the
         /// <code>filterGroups</code> array must pass. For a filter group to pass, each of its
         /// filters must pass. </p>
-        pub fn filter_groups(
-            mut self,
-            input: impl Into<std::vec::Vec<crate::model::WebhookFilter>>,
-        ) -> Self {
+        pub fn filter_groups(mut self, input: std::vec::Vec<crate::model::WebhookFilter>) -> Self {
             let mut v = self.filter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_groups = Some(v);
             self
         }
@@ -7695,12 +7689,9 @@ pub mod start_build_input {
         /// To override the contents of this collection use [`set_secondary_sources_override`](Self::set_secondary_sources_override).
         ///
         /// <p> An array of <code>ProjectSource</code> objects. </p>
-        pub fn secondary_sources_override(
-            mut self,
-            input: impl Into<crate::model::ProjectSource>,
-        ) -> Self {
+        pub fn secondary_sources_override(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources_override = Some(v);
             self
         }
@@ -7720,10 +7711,10 @@ pub mod start_build_input {
         /// versions of the project's secondary sources to be used for this build only. </p>
         pub fn secondary_sources_version_override(
             mut self,
-            input: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
             let mut v = self.secondary_sources_version_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources_version_override = Some(v);
             self
         }
@@ -7837,10 +7828,10 @@ pub mod start_build_input {
         /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
         pub fn secondary_artifacts_override(
             mut self,
-            input: impl Into<crate::model::ProjectArtifacts>,
+            input: crate::model::ProjectArtifacts,
         ) -> Self {
             let mut v = self.secondary_artifacts_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_artifacts_override = Some(v);
             self
         }
@@ -7860,10 +7851,10 @@ pub mod start_build_input {
         /// already defined in the build project.</p>
         pub fn environment_variables_override(
             mut self,
-            input: impl Into<crate::model::EnvironmentVariable>,
+            input: crate::model::EnvironmentVariable,
         ) -> Self {
             let mut v = self.environment_variables_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_variables_override = Some(v);
             self
         }
@@ -8538,12 +8529,9 @@ pub mod start_build_batch_input {
         ///
         /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources
         /// defined in the batch build project.</p>
-        pub fn secondary_sources_override(
-            mut self,
-            input: impl Into<crate::model::ProjectSource>,
-        ) -> Self {
+        pub fn secondary_sources_override(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources_override = Some(v);
             self
         }
@@ -8564,10 +8552,10 @@ pub mod start_build_batch_input {
         /// versions in the batch build project.</p>
         pub fn secondary_sources_version_override(
             mut self,
-            input: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
             let mut v = self.secondary_sources_version_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources_version_override = Some(v);
             self
         }
@@ -8682,10 +8670,10 @@ pub mod start_build_batch_input {
         /// defined in the batch build project.</p>
         pub fn secondary_artifacts_override(
             mut self,
-            input: impl Into<crate::model::ProjectArtifacts>,
+            input: crate::model::ProjectArtifacts,
         ) -> Self {
             let mut v = self.secondary_artifacts_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_artifacts_override = Some(v);
             self
         }
@@ -8706,10 +8694,10 @@ pub mod start_build_batch_input {
         /// environment variables defined in the batch build project.</p>
         pub fn environment_variables_override(
             mut self,
-            input: impl Into<crate::model::EnvironmentVariable>,
+            input: crate::model::EnvironmentVariable,
         ) -> Self {
             let mut v = self.environment_variables_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_variables_override = Some(v);
             self
         }
@@ -9695,9 +9683,9 @@ pub mod update_project_input {
         /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
         ///
         /// <p> An array of <code>ProjectSource</code> objects. </p>
-        pub fn secondary_sources(mut self, input: impl Into<crate::model::ProjectSource>) -> Self {
+        pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_sources = Some(v);
             self
         }
@@ -9789,10 +9777,10 @@ pub mod update_project_input {
         /// over these <code>secondarySourceVersions</code> (at the project level). </p>
         pub fn secondary_source_versions(
             mut self,
-            input: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
             let mut v = self.secondary_source_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_source_versions = Some(v);
             self
         }
@@ -9826,12 +9814,9 @@ pub mod update_project_input {
         /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
         ///
         /// <p> An array of <code>ProjectArtifact</code> objects. </p>
-        pub fn secondary_artifacts(
-            mut self,
-            input: impl Into<crate::model::ProjectArtifacts>,
-        ) -> Self {
+        pub fn secondary_artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
             let mut v = self.secondary_artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_artifacts = Some(v);
             self
         }
@@ -9938,9 +9923,9 @@ pub mod update_project_input {
         /// <p>An updated list of tag key and value pairs associated with this build project.</p>
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
         /// tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10005,10 +9990,10 @@ pub mod update_project_input {
         /// </p>
         pub fn file_system_locations(
             mut self,
-            input: impl Into<crate::model::ProjectFileSystemLocation>,
+            input: crate::model::ProjectFileSystemLocation,
         ) -> Self {
             let mut v = self.file_system_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_locations = Some(v);
             self
         }
@@ -10493,9 +10478,9 @@ pub mod update_report_group_input {
         /// </p>
         /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
         /// tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10719,12 +10704,9 @@ pub mod update_webhook_input {
         /// webhook event can trigger a build. A filter group must contain at least one
         /// <code>EVENT</code>
         /// <code>WebhookFilter</code>. </p>
-        pub fn filter_groups(
-            mut self,
-            input: impl Into<std::vec::Vec<crate::model::WebhookFilter>>,
-        ) -> Self {
+        pub fn filter_groups(mut self, input: std::vec::Vec<crate::model::WebhookFilter>) -> Self {
             let mut v = self.filter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_groups = Some(v);
             self
         }

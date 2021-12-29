@@ -1208,12 +1208,9 @@ pub mod associate_routing_profile_queues_input {
         /// To override the contents of this collection use [`set_queue_configs`](Self::set_queue_configs).
         ///
         /// <p>The queues to associate with this routing profile.</p>
-        pub fn queue_configs(
-            mut self,
-            input: impl Into<crate::model::RoutingProfileQueueConfig>,
-        ) -> Self {
+        pub fn queue_configs(mut self, input: crate::model::RoutingProfileQueueConfig) -> Self {
             let mut v = self.queue_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_configs = Some(v);
             self
         }
@@ -2394,9 +2391,9 @@ pub mod create_hours_of_operation_input {
         /// To override the contents of this collection use [`set_config`](Self::set_config).
         ///
         /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
-        pub fn config(mut self, input: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
+        pub fn config(mut self, input: crate::model::HoursOfOperationConfig) -> Self {
             let mut v = self.config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config = Some(v);
             self
         }
@@ -3666,12 +3663,9 @@ pub mod create_routing_profile_input {
         ///
         /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can
         /// make only outbound calls.</p>
-        pub fn queue_configs(
-            mut self,
-            input: impl Into<crate::model::RoutingProfileQueueConfig>,
-        ) -> Self {
+        pub fn queue_configs(mut self, input: crate::model::RoutingProfileQueueConfig) -> Self {
             let mut v = self.queue_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_configs = Some(v);
             self
         }
@@ -3690,12 +3684,9 @@ pub mod create_routing_profile_input {
         ///
         /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing
         /// profile.</p>
-        pub fn media_concurrencies(
-            mut self,
-            input: impl Into<crate::model::MediaConcurrency>,
-        ) -> Self {
+        pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
             let mut v = self.media_concurrencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_concurrencies = Some(v);
             self
         }
@@ -10741,10 +10732,10 @@ pub mod disassociate_routing_profile_queues_input {
         /// <p>The queues to disassociate from this routing profile.</p>
         pub fn queue_references(
             mut self,
-            input: impl Into<crate::model::RoutingProfileQueueReference>,
+            input: crate::model::RoutingProfileQueueReference,
         ) -> Self {
             let mut v = self.queue_references.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_references = Some(v);
             self
         }
@@ -11348,9 +11339,9 @@ pub mod get_current_metric_data_input {
         /// VOICE, CHAT, and TASK channels are supported.</p>
         /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is
         /// returned.</p>
-        pub fn groupings(mut self, input: impl Into<crate::model::Grouping>) -> Self {
+        pub fn groupings(mut self, input: crate::model::Grouping) -> Self {
             let mut v = self.groupings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groupings = Some(v);
             self
         }
@@ -11466,9 +11457,9 @@ pub mod get_current_metric_data_input {
         /// </p>
         /// </dd>
         /// </dl>
-        pub fn current_metrics(mut self, input: impl Into<crate::model::CurrentMetric>) -> Self {
+        pub fn current_metrics(mut self, input: crate::model::CurrentMetric) -> Self {
             let mut v = self.current_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.current_metrics = Some(v);
             self
         }
@@ -12010,9 +12001,9 @@ pub mod get_metric_data_input {
         /// each queue rather than aggregated for all queues.</p>
         ///
         /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
-        pub fn groupings(mut self, input: impl Into<crate::model::Grouping>) -> Self {
+        pub fn groupings(mut self, input: crate::model::Grouping) -> Self {
             let mut v = self.groupings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groupings = Some(v);
             self
         }
@@ -12171,12 +12162,9 @@ pub mod get_metric_data_input {
         /// "Less than"). </p>
         /// </dd>
         /// </dl>
-        pub fn historical_metrics(
-            mut self,
-            input: impl Into<crate::model::HistoricalMetric>,
-        ) -> Self {
+        pub fn historical_metrics(mut self, input: crate::model::HistoricalMetric) -> Self {
             let mut v = self.historical_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.historical_metrics = Some(v);
             self
         }
@@ -12555,12 +12543,9 @@ pub mod list_agent_statuses_input {
         /// To override the contents of this collection use [`set_agent_status_types`](Self::set_agent_status_types).
         ///
         /// <p>Available agent status types.</p>
-        pub fn agent_status_types(
-            mut self,
-            input: impl Into<crate::model::AgentStatusType>,
-        ) -> Self {
+        pub fn agent_status_types(mut self, input: crate::model::AgentStatusType) -> Self {
             let mut v = self.agent_status_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_status_types = Some(v);
             self
         }
@@ -13396,12 +13381,9 @@ pub mod list_contact_flows_input {
         /// To override the contents of this collection use [`set_contact_flow_types`](Self::set_contact_flow_types).
         ///
         /// <p>The type of contact flow.</p>
-        pub fn contact_flow_types(
-            mut self,
-            input: impl Into<crate::model::ContactFlowType>,
-        ) -> Self {
+        pub fn contact_flow_types(mut self, input: crate::model::ContactFlowType) -> Self {
             let mut v = self.contact_flow_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_flow_types = Some(v);
             self
         }
@@ -13636,9 +13618,9 @@ pub mod list_contact_references_input {
         /// To override the contents of this collection use [`set_reference_types`](Self::set_reference_types).
         ///
         /// <p>The type of reference.</p>
-        pub fn reference_types(mut self, input: impl Into<crate::model::ReferenceType>) -> Self {
+        pub fn reference_types(mut self, input: crate::model::ReferenceType) -> Self {
             let mut v = self.reference_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_types = Some(v);
             self
         }
@@ -15272,12 +15254,9 @@ pub mod list_phone_numbers_input {
         /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).
         ///
         /// <p>The type of phone number.</p>
-        pub fn phone_number_types(
-            mut self,
-            input: impl Into<crate::model::PhoneNumberType>,
-        ) -> Self {
+        pub fn phone_number_types(mut self, input: crate::model::PhoneNumberType) -> Self {
             let mut v = self.phone_number_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_number_types = Some(v);
             self
         }
@@ -15296,10 +15275,10 @@ pub mod list_phone_numbers_input {
         /// <p>The ISO country code.</p>
         pub fn phone_number_country_codes(
             mut self,
-            input: impl Into<crate::model::PhoneNumberCountryCode>,
+            input: crate::model::PhoneNumberCountryCode,
         ) -> Self {
             let mut v = self.phone_number_country_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_number_country_codes = Some(v);
             self
         }
@@ -15957,9 +15936,9 @@ pub mod list_queues_input {
         /// To override the contents of this collection use [`set_queue_types`](Self::set_queue_types).
         ///
         /// <p>The type of queue.</p>
-        pub fn queue_types(mut self, input: impl Into<crate::model::QueueType>) -> Self {
+        pub fn queue_types(mut self, input: crate::model::QueueType) -> Self {
             let mut v = self.queue_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_types = Some(v);
             self
         }
@@ -16208,12 +16187,9 @@ pub mod list_quick_connects_input {
         ///
         /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
         /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-        pub fn quick_connect_types(
-            mut self,
-            input: impl Into<crate::model::QuickConnectType>,
-        ) -> Self {
+        pub fn quick_connect_types(mut self, input: crate::model::QuickConnectType) -> Self {
             let mut v = self.quick_connect_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quick_connect_types = Some(v);
             self
         }
@@ -19507,10 +19483,10 @@ pub mod start_task_contact_input {
         pub fn references(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Reference>,
+            v: crate::model::Reference,
         ) -> Self {
             let mut hash_map = self.references.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.references = Some(hash_map);
             self
         }
@@ -21106,10 +21082,10 @@ pub mod update_contact_input {
         pub fn references(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Reference>,
+            v: crate::model::Reference,
         ) -> Self {
             let mut hash_map = self.references.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.references = Some(hash_map);
             self
         }
@@ -22890,9 +22866,9 @@ pub mod update_hours_of_operation_input {
         /// To override the contents of this collection use [`set_config`](Self::set_config).
         ///
         /// <p>Configuration information of the hours of operation.</p>
-        pub fn config(mut self, input: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
+        pub fn config(mut self, input: crate::model::HoursOfOperationConfig) -> Self {
             let mut v = self.config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config = Some(v);
             self
         }
@@ -25098,12 +25074,9 @@ pub mod update_routing_profile_concurrency_input {
         /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
         ///
         /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-        pub fn media_concurrencies(
-            mut self,
-            input: impl Into<crate::model::MediaConcurrency>,
-        ) -> Self {
+        pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
             let mut v = self.media_concurrencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_concurrencies = Some(v);
             self
         }
@@ -25775,12 +25748,9 @@ pub mod update_routing_profile_queues_input {
         /// <p>The queues to be updated for this routing profile.
         /// Queues must first be associated to the routing
         /// profile. You can do this using AssociateRoutingProfileQueues.</p>
-        pub fn queue_configs(
-            mut self,
-            input: impl Into<crate::model::RoutingProfileQueueConfig>,
-        ) -> Self {
+        pub fn queue_configs(mut self, input: crate::model::RoutingProfileQueueConfig) -> Self {
             let mut v = self.queue_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_configs = Some(v);
             self
         }

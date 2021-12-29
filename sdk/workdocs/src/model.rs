@@ -1601,11 +1601,11 @@ pub mod document_version_metadata {
         /// <p>The thumbnail of the document.</p>
         pub fn thumbnail(
             mut self,
-            k: impl Into<crate::model::DocumentThumbnailType>,
+            k: crate::model::DocumentThumbnailType,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.thumbnail.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.thumbnail = Some(hash_map);
             self
         }
@@ -1626,11 +1626,11 @@ pub mod document_version_metadata {
         /// <p>The source of the document.</p>
         pub fn source(
             mut self,
-            k: impl Into<crate::model::DocumentSourceType>,
+            k: crate::model::DocumentSourceType,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.source.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.source = Some(hash_map);
             self
         }
@@ -2195,9 +2195,9 @@ pub mod resource_path {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>The components of the resource path.</p>
-        pub fn components(mut self, input: impl Into<crate::model::ResourcePathComponent>) -> Self {
+        pub fn components(mut self, input: crate::model::ResourcePathComponent) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -2550,9 +2550,9 @@ pub mod principal {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p>The permission information for the resource.</p>
-        pub fn roles(mut self, input: impl Into<crate::model::PermissionInfo>) -> Self {
+        pub fn roles(mut self, input: crate::model::PermissionInfo) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -4248,9 +4248,9 @@ pub mod participants {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>The list of users.</p>
-        pub fn users(mut self, input: impl Into<crate::model::UserMetadata>) -> Self {
+        pub fn users(mut self, input: crate::model::UserMetadata) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -4267,9 +4267,9 @@ pub mod participants {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The list of user groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupMetadata>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupMetadata) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }

@@ -211,8 +211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the web application.</p>
@@ -224,8 +224,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the web application.</p>
-        pub fn application_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_description(inp);
+        pub fn application_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_description(signature.into());
             self
         }
         /// <p>An optional description of the web application.</p>
@@ -238,8 +241,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
         /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
@@ -253,8 +256,8 @@ pub mod fluent_builders {
         /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
         /// </code>.</p>
         /// </note>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
@@ -276,7 +279,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
@@ -353,8 +356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(signature.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -367,8 +370,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
         /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
@@ -441,8 +444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(signature.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -517,8 +520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token used to get the next set of results.</p>
@@ -590,8 +593,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -663,8 +666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -682,7 +685,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The new or modified tags for the resource.</p>
@@ -759,8 +762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -773,8 +776,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of the tags to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of the tags to be removed from the resource.</p>
@@ -849,8 +852,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(signature.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -862,8 +865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the web application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(signature.into());
             self
         }
         /// <p>The name of the web application.</p>
@@ -875,8 +878,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the web application.</p>
-        pub fn application_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_description(inp);
+        pub fn application_description(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_description(signature.into());
             self
         }
         /// <p>An optional description of the web application.</p>
@@ -889,8 +895,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
         /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.

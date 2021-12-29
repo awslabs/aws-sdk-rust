@@ -4316,10 +4316,10 @@ pub mod hyper_parameter_ranges {
         /// <p>The integer-valued hyperparameters and their ranges.</p>
         pub fn integer_hyper_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::IntegerHyperParameterRange>,
+            input: crate::model::IntegerHyperParameterRange,
         ) -> Self {
             let mut v = self.integer_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.integer_hyper_parameter_ranges = Some(v);
             self
         }
@@ -4338,10 +4338,10 @@ pub mod hyper_parameter_ranges {
         /// <p>The continuous hyperparameters and their ranges.</p>
         pub fn continuous_hyper_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::ContinuousHyperParameterRange>,
+            input: crate::model::ContinuousHyperParameterRange,
         ) -> Self {
             let mut v = self.continuous_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.continuous_hyper_parameter_ranges = Some(v);
             self
         }
@@ -4360,10 +4360,10 @@ pub mod hyper_parameter_ranges {
         /// <p>The categorical hyperparameters and their ranges.</p>
         pub fn categorical_hyper_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::CategoricalHyperParameterRange>,
+            input: crate::model::CategoricalHyperParameterRange,
         ) -> Self {
             let mut v = self.categorical_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categorical_hyper_parameter_ranges = Some(v);
             self
         }
@@ -10150,10 +10150,10 @@ pub mod default_hyper_parameter_ranges {
         /// <p>The integer-valued hyperparameters and their default ranges.</p>
         pub fn integer_hyper_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::DefaultIntegerHyperParameterRange>,
+            input: crate::model::DefaultIntegerHyperParameterRange,
         ) -> Self {
             let mut v = self.integer_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.integer_hyper_parameter_ranges = Some(v);
             self
         }
@@ -10174,10 +10174,10 @@ pub mod default_hyper_parameter_ranges {
         /// <p>The continuous hyperparameters and their default ranges.</p>
         pub fn continuous_hyper_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::DefaultContinuousHyperParameterRange>,
+            input: crate::model::DefaultContinuousHyperParameterRange,
         ) -> Self {
             let mut v = self.continuous_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.continuous_hyper_parameter_ranges = Some(v);
             self
         }
@@ -10198,10 +10198,10 @@ pub mod default_hyper_parameter_ranges {
         /// <p>The categorical hyperparameters and their default ranges.</p>
         pub fn categorical_hyper_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::DefaultCategoricalHyperParameterRange>,
+            input: crate::model::DefaultCategoricalHyperParameterRange,
         ) -> Self {
             let mut v = self.categorical_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categorical_hyper_parameter_ranges = Some(v);
             self
         }

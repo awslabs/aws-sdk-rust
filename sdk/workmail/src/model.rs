@@ -2126,9 +2126,9 @@ pub mod permission {
         /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
         /// access to the mailbox, irrespective of other folder-level permissions set on the
         /// mailbox.</p>
-        pub fn permission_values(mut self, input: impl Into<crate::model::PermissionType>) -> Self {
+        pub fn permission_values(mut self, input: crate::model::PermissionType) -> Self {
             let mut v = self.permission_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permission_values = Some(v);
             self
         }

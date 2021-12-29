@@ -84,12 +84,9 @@ pub mod batch_execute_statement_input {
         /// <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
-        pub fn parameter_sets(
-            mut self,
-            input: impl Into<std::vec::Vec<crate::model::SqlParameter>>,
-        ) -> Self {
+        pub fn parameter_sets(mut self, input: std::vec::Vec<crate::model::SqlParameter>) -> Self {
             let mut v = self.parameter_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_sets = Some(v);
             self
         }
@@ -927,9 +924,9 @@ pub mod execute_statement_input {
         /// <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
-        pub fn parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::SqlParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }

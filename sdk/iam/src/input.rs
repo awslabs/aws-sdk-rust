@@ -1746,9 +1746,9 @@ pub mod create_instance_profile_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
         /// fails and the resource is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2228,9 +2228,9 @@ pub mod create_open_id_connect_provider_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
         /// fails and the resource is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2534,9 +2534,9 @@ pub mod create_policy_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
         /// fails and the resource is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3104,9 +3104,9 @@ pub mod create_role_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
         /// fails and the resource is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3322,9 +3322,9 @@ pub mod create_saml_provider_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
         /// fails and the resource is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3938,9 +3938,9 @@ pub mod create_user_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
         /// fails and the resource is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4153,9 +4153,9 @@ pub mod create_virtual_mfa_device_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
         /// fails and the resource is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9589,9 +9589,9 @@ pub mod get_account_authorization_details_input {
         /// <code>LocalManagedPolicy</code> to include customer managed policies.</p>
         /// <p>The format for this parameter is a comma-separated (if more than one) list of strings.
         /// Each string value in the list must be one of the valid values listed below.</p>
-        pub fn filter(mut self, input: impl Into<crate::model::EntityType>) -> Self {
+        pub fn filter(mut self, input: crate::model::EntityType) -> Self {
             let mut v = self.filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter = Some(v);
             self
         }
@@ -23121,9 +23121,9 @@ pub mod simulate_custom_policy_input {
         /// <p>A list of context keys and corresponding values for the simulation to use. Whenever a
         /// context key is evaluated in one of the simulated IAM permissions policies, the
         /// corresponding value is supplied.</p>
-        pub fn context_entries(mut self, input: impl Into<crate::model::ContextEntry>) -> Self {
+        pub fn context_entries(mut self, input: crate::model::ContextEntry) -> Self {
             let mut v = self.context_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.context_entries = Some(v);
             self
         }
@@ -23800,9 +23800,9 @@ pub mod simulate_principal_policy_input {
         /// <p>A list of context keys and corresponding values for the simulation to use. Whenever a
         /// context key is evaluated in one of the simulated IAM permissions policies, the
         /// corresponding value is supplied.</p>
-        pub fn context_entries(mut self, input: impl Into<crate::model::ContextEntry>) -> Self {
+        pub fn context_entries(mut self, input: crate::model::ContextEntry) -> Self {
             let mut v = self.context_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.context_entries = Some(v);
             self
         }
@@ -24146,9 +24146,9 @@ pub mod tag_instance_profile_input {
         ///
         /// <p>The list of tags that you want to attach to the IAM instance profile.
         /// Each tag consists of a key name and an associated value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -24327,9 +24327,9 @@ pub mod tag_mfa_device_input {
         ///
         /// <p>The list of tags that you want to attach to the IAM virtual MFA device.
         /// Each tag consists of a key name and an associated value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -24508,9 +24508,9 @@ pub mod tag_open_id_connect_provider_input {
         ///
         /// <p>The list of tags that you want to attach to the OIDC identity provider in IAM.
         /// Each tag consists of a key name and an associated value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -24687,9 +24687,9 @@ pub mod tag_policy_input {
         ///
         /// <p>The list of tags that you want to attach to the IAM customer managed policy.
         /// Each tag consists of a key name and an associated value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -24857,9 +24857,9 @@ pub mod tag_role_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that you want to attach to the IAM role. Each tag consists of a key name and an associated value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -25027,9 +25027,9 @@ pub mod tag_saml_provider_input {
         ///
         /// <p>The list of tags that you want to attach to the SAML identity provider in IAM.
         /// Each tag consists of a key name and an associated value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -25206,9 +25206,9 @@ pub mod tag_server_certificate_input {
         ///
         /// <p>The list of tags that you want to attach to the IAM server certificate.
         /// Each tag consists of a key name and an associated value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -25383,9 +25383,9 @@ pub mod tag_user_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated value.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -29991,9 +29991,9 @@ pub mod upload_server_certificate_input {
         /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
         /// fails and the resource is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

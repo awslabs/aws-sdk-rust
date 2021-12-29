@@ -163,9 +163,9 @@ pub mod update_slot_type_output {
         /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).
         ///
         /// <p>The updated values that the slot type provides.</p>
-        pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_values = Some(v);
             self
         }
@@ -966,12 +966,9 @@ pub mod update_intent_output {
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
         /// <p>The updated list of sample utterances for the intent.</p>
-        pub fn sample_utterances(
-            mut self,
-            input: impl Into<crate::model::SampleUtterance>,
-        ) -> Self {
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_utterances = Some(v);
             self
         }
@@ -1022,9 +1019,9 @@ pub mod update_intent_output {
         ///
         /// <p>The updated list of slots and their priorities that are elicited
         /// from the user for the intent.</p>
-        pub fn slot_priorities(mut self, input: impl Into<crate::model::SlotPriority>) -> Self {
+        pub fn slot_priorities(mut self, input: crate::model::SlotPriority) -> Self {
             let mut v = self.slot_priorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_priorities = Some(v);
             self
         }
@@ -1076,9 +1073,9 @@ pub mod update_intent_output {
         ///
         /// <p>The updated list of contexts that must be active for the intent to
         /// be considered by Amazon Lex.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -1097,9 +1094,9 @@ pub mod update_intent_output {
         ///
         /// <p>The updated list of contexts that Amazon Lex activates when the intent is
         /// fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -2174,10 +2171,10 @@ pub mod update_bot_alias_output {
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }
@@ -3218,12 +3215,9 @@ pub mod search_associated_transcripts_output {
         ///
         /// <p>The object that contains the associated transcript that meet the
         /// criteria you specified.</p>
-        pub fn associated_transcripts(
-            mut self,
-            input: impl Into<crate::model::AssociatedTranscript>,
-        ) -> Self {
+        pub fn associated_transcripts(mut self, input: crate::model::AssociatedTranscript) -> Self {
             let mut v = self.associated_transcripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_transcripts = Some(v);
             self
         }
@@ -3457,12 +3451,9 @@ pub mod list_slot_types_output {
         /// <code>maxResults</code> parameter of the request. If there are more
         /// slot types available, the <code>nextToken</code> field contains a token
         /// to get the next page of results.</p>
-        pub fn slot_type_summaries(
-            mut self,
-            input: impl Into<crate::model::SlotTypeSummary>,
-        ) -> Self {
+        pub fn slot_type_summaries(mut self, input: crate::model::SlotTypeSummary) -> Self {
             let mut v = self.slot_type_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_summaries = Some(v);
             self
         }
@@ -3649,9 +3640,9 @@ pub mod list_slots_output {
         /// <code>maxResults</code> parameter of the request. If there are more
         /// slots available, the <code>nextToken</code> field contains a token to
         /// get the next page of results.</p>
-        pub fn slot_summaries(mut self, input: impl Into<crate::model::SlotSummary>) -> Self {
+        pub fn slot_summaries(mut self, input: crate::model::SlotSummary) -> Self {
             let mut v = self.slot_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_summaries = Some(v);
             self
         }
@@ -3859,12 +3850,9 @@ pub mod list_recommended_intents_output {
         /// maxResults parameter of the request. If there are more intents
         /// available, the nextToken field contains a token to get the next page of
         /// results.</p>
-        pub fn summary_list(
-            mut self,
-            input: impl Into<crate::model::RecommendedIntentSummary>,
-        ) -> Self {
+        pub fn summary_list(mut self, input: crate::model::RecommendedIntentSummary) -> Self {
             let mut v = self.summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_list = Some(v);
             self
         }
@@ -4035,9 +4023,9 @@ pub mod list_intents_output {
         /// <code>maxResults</code> parameter of the request. If there are more
         /// intents available, the <code>nextToken</code> field contains a token to
         /// get the next page of results.</p>
-        pub fn intent_summaries(mut self, input: impl Into<crate::model::IntentSummary>) -> Self {
+        pub fn intent_summaries(mut self, input: crate::model::IntentSummary) -> Self {
             let mut v = self.intent_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intent_summaries = Some(v);
             self
         }
@@ -4193,9 +4181,9 @@ pub mod list_imports_output {
         /// <code>maxResults</code> parameter. If there are more imports
         /// available, the <code>nextToken</code> field contains a token to get the
         /// next page of results.</p>
-        pub fn import_summaries(mut self, input: impl Into<crate::model::ImportSummary>) -> Self {
+        pub fn import_summaries(mut self, input: crate::model::ImportSummary) -> Self {
             let mut v = self.import_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_summaries = Some(v);
             self
         }
@@ -4346,9 +4334,9 @@ pub mod list_exports_output {
         /// <code>maxResults</code> parameter. If there are more exports
         /// available, the <code>nextToken</code> field contains a token to get the
         /// next page of results.</p>
-        pub fn export_summaries(mut self, input: impl Into<crate::model::ExportSummary>) -> Self {
+        pub fn export_summaries(mut self, input: crate::model::ExportSummary) -> Self {
             let mut v = self.export_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_summaries = Some(v);
             self
         }
@@ -4481,10 +4469,10 @@ pub mod list_built_in_slot_types_output {
         /// token to get the next page of results.</p>
         pub fn built_in_slot_type_summaries(
             mut self,
-            input: impl Into<crate::model::BuiltInSlotTypeSummary>,
+            input: crate::model::BuiltInSlotTypeSummary,
         ) -> Self {
             let mut v = self.built_in_slot_type_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.built_in_slot_type_summaries = Some(v);
             self
         }
@@ -4623,10 +4611,10 @@ pub mod list_built_in_intents_output {
         /// token to get the next page of results.</p>
         pub fn built_in_intent_summaries(
             mut self,
-            input: impl Into<crate::model::BuiltInIntentSummary>,
+            input: crate::model::BuiltInIntentSummary,
         ) -> Self {
             let mut v = self.built_in_intent_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.built_in_intent_summaries = Some(v);
             self
         }
@@ -4768,12 +4756,9 @@ pub mod list_bot_versions_output {
         /// in the <code>maxResults</code> parameter of the request. If there are
         /// more versions available, the <code>nextToken</code> field contains a
         /// token to get the next page of results.</p>
-        pub fn bot_version_summaries(
-            mut self,
-            input: impl Into<crate::model::BotVersionSummary>,
-        ) -> Self {
+        pub fn bot_version_summaries(mut self, input: crate::model::BotVersionSummary) -> Self {
             let mut v = self.bot_version_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_version_summaries = Some(v);
             self
         }
@@ -4886,9 +4871,9 @@ pub mod list_bots_output {
         /// <code>maxResults</code> parameter of the request. If there are more
         /// bots available, the <code>nextToken</code> field contains a token to
         /// the next page of results.</p>
-        pub fn bot_summaries(mut self, input: impl Into<crate::model::BotSummary>) -> Self {
+        pub fn bot_summaries(mut self, input: crate::model::BotSummary) -> Self {
             let mut v = self.bot_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_summaries = Some(v);
             self
         }
@@ -5075,10 +5060,10 @@ pub mod list_bot_recommendations_output {
         /// the next page of results.</p>
         pub fn bot_recommendation_summaries(
             mut self,
-            input: impl Into<crate::model::BotRecommendationSummary>,
+            input: crate::model::BotRecommendationSummary,
         ) -> Self {
             let mut v = self.bot_recommendation_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_recommendation_summaries = Some(v);
             self
         }
@@ -5248,12 +5233,9 @@ pub mod list_bot_locales_output {
         /// <code>maxResults</code> parameter of the request. If there are more
         /// locales available, the <code>nextToken</code> field contains a token to
         /// get the next page of results.</p>
-        pub fn bot_locale_summaries(
-            mut self,
-            input: impl Into<crate::model::BotLocaleSummary>,
-        ) -> Self {
+        pub fn bot_locale_summaries(mut self, input: crate::model::BotLocaleSummary) -> Self {
             let mut v = self.bot_locale_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_locale_summaries = Some(v);
             self
         }
@@ -5358,12 +5340,9 @@ pub mod list_bot_aliases_output {
         /// in the <code>maxResults</code> parameter of the request. If there are
         /// more aliases available, the <code>nextToken</code> field contains a
         /// token to get the next page of results.</p>
-        pub fn bot_alias_summaries(
-            mut self,
-            input: impl Into<crate::model::BotAliasSummary>,
-        ) -> Self {
+        pub fn bot_alias_summaries(mut self, input: crate::model::BotAliasSummary) -> Self {
             let mut v = self.bot_alias_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_alias_summaries = Some(v);
             self
         }
@@ -5765,10 +5744,10 @@ pub mod list_aggregated_utterances_output {
         /// was seen during the time period.</p>
         pub fn aggregated_utterances_summaries(
             mut self,
-            input: impl Into<crate::model::AggregatedUtterancesSummary>,
+            input: crate::model::AggregatedUtterancesSummary,
         ) -> Self {
             let mut v = self.aggregated_utterances_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregated_utterances_summaries = Some(v);
             self
         }
@@ -5990,9 +5969,9 @@ pub mod describe_slot_type_output {
         ///
         /// <p>The values that the slot type can take. Includes any synonyms for
         /// the slot type values.</p>
-        pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_values = Some(v);
             self
         }
@@ -6823,12 +6802,9 @@ pub mod describe_intent_output {
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
         /// <p>User utterances that trigger this intent.</p>
-        pub fn sample_utterances(
-            mut self,
-            input: impl Into<crate::model::SampleUtterance>,
-        ) -> Self {
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_utterances = Some(v);
             self
         }
@@ -6879,9 +6855,9 @@ pub mod describe_intent_output {
         ///
         /// <p>The list that determines the priority that slots should be elicited
         /// from the user.</p>
-        pub fn slot_priorities(mut self, input: impl Into<crate::model::SlotPriority>) -> Self {
+        pub fn slot_priorities(mut self, input: crate::model::SlotPriority) -> Self {
             let mut v = self.slot_priorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_priorities = Some(v);
             self
         }
@@ -6931,9 +6907,9 @@ pub mod describe_intent_output {
         ///
         /// <p>A list of contexts that must be active for the intent to be
         /// considered for sending to the user.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -6952,9 +6928,9 @@ pub mod describe_intent_output {
         ///
         /// <p>A list of contexts that are activated when the intent is
         /// fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -8554,10 +8530,10 @@ pub mod describe_bot_locale_output {
         /// have taken place for the locale.</p>
         pub fn bot_locale_history_events(
             mut self,
-            input: impl Into<crate::model::BotLocaleHistoryEvent>,
+            input: crate::model::BotLocaleHistoryEvent,
         ) -> Self {
             let mut v = self.bot_locale_history_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_locale_history_events = Some(v);
             self
         }
@@ -8800,10 +8776,10 @@ pub mod describe_bot_alias_output {
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }
@@ -8864,10 +8840,10 @@ pub mod describe_bot_alias_output {
         /// recorded when the version that the alias points to changes.</p>
         pub fn bot_alias_history_events(
             mut self,
-            input: impl Into<crate::model::BotAliasHistoryEvent>,
+            input: crate::model::BotAliasHistoryEvent,
         ) -> Self {
             let mut v = self.bot_alias_history_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bot_alias_history_events = Some(v);
             self
         }
@@ -10325,9 +10301,9 @@ pub mod create_slot_type_output {
         /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).
         ///
         /// <p>The list of values that the slot type can assume.</p>
-        pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_values = Some(v);
             self
         }
@@ -11135,12 +11111,9 @@ pub mod create_intent_output {
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
         /// <p>The sample utterances specified for the intent.</p>
-        pub fn sample_utterances(
-            mut self,
-            input: impl Into<crate::model::SampleUtterance>,
-        ) -> Self {
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_utterances = Some(v);
             self
         }
@@ -11215,9 +11188,9 @@ pub mod create_intent_output {
         /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
         ///
         /// <p>The list of input contexts specified for the intent.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -11234,9 +11207,9 @@ pub mod create_intent_output {
         /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
         ///
         /// <p>The list of output contexts specified for the intent.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
@@ -11632,10 +11605,10 @@ pub mod create_bot_version_output {
         pub fn bot_version_locale_specification(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotVersionLocaleDetails>,
+            v: crate::model::BotVersionLocaleDetails,
         ) -> Self {
             let mut hash_map = self.bot_version_locale_specification.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_version_locale_specification = Some(hash_map);
             self
         }
@@ -12178,10 +12151,10 @@ pub mod create_bot_alias_output {
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }

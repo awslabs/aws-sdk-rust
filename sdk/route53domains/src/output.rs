@@ -58,9 +58,9 @@ pub mod view_billing_output {
         /// To override the contents of this collection use [`set_billing_records`](Self::set_billing_records).
         ///
         /// <p>A summary of billing records.</p>
-        pub fn billing_records(mut self, input: impl Into<crate::model::BillingRecord>) -> Self {
+        pub fn billing_records(mut self, input: crate::model::BillingRecord) -> Self {
             let mut v = self.billing_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.billing_records = Some(v);
             self
         }
@@ -805,9 +805,9 @@ pub mod list_tags_for_domain_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of the tags that are associated with the specified domain.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -878,9 +878,9 @@ pub mod list_operations_output {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>Lists summaries of the operations.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::OperationSummary>) -> Self {
+        pub fn operations(mut self, input: crate::model::OperationSummary) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -967,9 +967,9 @@ pub mod list_domains_output {
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
         /// <p>A summary of domains.</p>
-        pub fn domains(mut self, input: impl Into<crate::model::DomainSummary>) -> Self {
+        pub fn domains(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domains = Some(v);
             self
         }
@@ -1205,12 +1205,9 @@ pub mod get_domain_suggestions_output {
         ///
         /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request,
         /// the list contains only domains that are available for registration.</p>
-        pub fn suggestions_list(
-            mut self,
-            input: impl Into<crate::model::DomainSuggestion>,
-        ) -> Self {
+        pub fn suggestions_list(mut self, input: crate::model::DomainSuggestion) -> Self {
             let mut v = self.suggestions_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suggestions_list = Some(v);
             self
         }
@@ -1488,9 +1485,9 @@ pub mod get_domain_detail_output {
         /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
         ///
         /// <p>The name of the domain.</p>
-        pub fn nameservers(mut self, input: impl Into<crate::model::Nameserver>) -> Self {
+        pub fn nameservers(mut self, input: crate::model::Nameserver) -> Self {
             let mut v = self.nameservers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nameservers = Some(v);
             self
         }

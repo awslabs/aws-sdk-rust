@@ -78,10 +78,10 @@ pub mod stop_data_collection_by_agent_ids_output {
         /// whether the agent/connector configuration was updated.</p>
         pub fn agents_configuration_status(
             mut self,
-            input: impl Into<crate::model::AgentConfigurationStatus>,
+            input: crate::model::AgentConfigurationStatus,
         ) -> Self {
             let mut v = self.agents_configuration_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agents_configuration_status = Some(v);
             self
         }
@@ -352,10 +352,10 @@ pub mod start_data_collection_by_agent_ids_output {
         /// and whether the agent/connector configuration was updated.</p>
         pub fn agents_configuration_status(
             mut self,
-            input: impl Into<crate::model::AgentConfigurationStatus>,
+            input: crate::model::AgentConfigurationStatus,
         ) -> Self {
             let mut v = self.agents_configuration_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agents_configuration_status = Some(v);
             self
         }
@@ -632,12 +632,9 @@ pub mod list_server_neighbors_output {
         /// To override the contents of this collection use [`set_neighbors`](Self::set_neighbors).
         ///
         /// <p>List of distinct servers that are one hop away from the given server.</p>
-        pub fn neighbors(
-            mut self,
-            input: impl Into<crate::model::NeighborConnectionDetail>,
-        ) -> Self {
+        pub fn neighbors(mut self, input: crate::model::NeighborConnectionDetail) -> Self {
             let mut v = self.neighbors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.neighbors = Some(v);
             self
         }
@@ -756,10 +753,10 @@ pub mod list_configurations_output {
         /// attribute values.</p>
         pub fn configurations(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -1101,9 +1098,9 @@ pub mod describe_tags_output {
         ///
         /// <p>Depending on the input, this is a list of configuration items tagged with a specific
         /// tag, or a list of tags for a specific configuration item.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::ConfigurationTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::ConfigurationTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1197,9 +1194,9 @@ pub mod describe_import_tasks_output {
         ///
         /// <p>A returned array of import tasks that match any applied filters, up to the specified
         /// number of maximum results.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::ImportTask>) -> Self {
+        pub fn tasks(mut self, input: crate::model::ImportTask) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -1284,9 +1281,9 @@ pub mod describe_export_tasks_output {
         /// <p>Contains one or more sets of export request details. When the status of a request is
         /// <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can
         /// view the data in a CSV file.</p>
-        pub fn exports_info(mut self, input: impl Into<crate::model::ExportInfo>) -> Self {
+        pub fn exports_info(mut self, input: crate::model::ExportInfo) -> Self {
             let mut v = self.exports_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exports_info = Some(v);
             self
         }
@@ -1376,9 +1373,9 @@ pub mod describe_export_configurations_output {
         /// To override the contents of this collection use [`set_exports_info`](Self::set_exports_info).
         ///
         /// <p></p>
-        pub fn exports_info(mut self, input: impl Into<crate::model::ExportInfo>) -> Self {
+        pub fn exports_info(mut self, input: crate::model::ExportInfo) -> Self {
             let mut v = self.exports_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exports_info = Some(v);
             self
         }
@@ -1461,12 +1458,9 @@ pub mod describe_continuous_exports_output {
         /// To override the contents of this collection use [`set_descriptions`](Self::set_descriptions).
         ///
         /// <p>A list of continuous export descriptions.</p>
-        pub fn descriptions(
-            mut self,
-            input: impl Into<crate::model::ContinuousExportDescription>,
-        ) -> Self {
+        pub fn descriptions(mut self, input: crate::model::ContinuousExportDescription) -> Self {
             let mut v = self.descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.descriptions = Some(v);
             self
         }
@@ -1547,10 +1541,10 @@ pub mod describe_configurations_output {
         /// <p>A key in the response map. The value is an array of data.</p>
         pub fn configurations(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -1636,9 +1630,9 @@ pub mod describe_agents_output {
         /// user account if you did not specify an agent/Connector ID. The output includes agent/Connector
         /// IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name
         /// where the agent/Connector resides, and the version number of each agent/Connector.</p>
-        pub fn agents_info(mut self, input: impl Into<crate::model::AgentInfo>) -> Self {
+        pub fn agents_info(mut self, input: crate::model::AgentInfo) -> Self {
             let mut v = self.agents_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agents_info = Some(v);
             self
         }
@@ -1870,12 +1864,9 @@ pub mod batch_delete_import_data_output {
         ///
         /// <p>Error messages returned for each import task that you deleted as a response for this
         /// command.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchDeleteImportDataError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchDeleteImportDataError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

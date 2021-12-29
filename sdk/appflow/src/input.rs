@@ -320,10 +320,10 @@ pub mod create_flow_input {
         /// connector. </p>
         pub fn destination_flow_config_list(
             mut self,
-            input: impl Into<crate::model::DestinationFlowConfig>,
+            input: crate::model::DestinationFlowConfig,
         ) -> Self {
             let mut v = self.destination_flow_config_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_flow_config_list = Some(v);
             self
         }
@@ -342,9 +342,9 @@ pub mod create_flow_input {
         ///
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
         /// </p>
-        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -1258,9 +1258,9 @@ pub mod describe_connectors_input {
         /// To override the contents of this collection use [`set_connector_types`](Self::set_connector_types).
         ///
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn connector_types(mut self, input: impl Into<crate::model::ConnectorType>) -> Self {
+        pub fn connector_types(mut self, input: crate::model::ConnectorType) -> Self {
             let mut v = self.connector_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connector_types = Some(v);
             self
         }
@@ -3178,10 +3178,10 @@ pub mod update_flow_input {
         /// connector. </p>
         pub fn destination_flow_config_list(
             mut self,
-            input: impl Into<crate::model::DestinationFlowConfig>,
+            input: crate::model::DestinationFlowConfig,
         ) -> Self {
             let mut v = self.destination_flow_config_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_flow_config_list = Some(v);
             self
         }
@@ -3200,9 +3200,9 @@ pub mod update_flow_input {
         ///
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
         /// </p>
-        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }

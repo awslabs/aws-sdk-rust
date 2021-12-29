@@ -2890,9 +2890,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the ML object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2963,9 +2963,9 @@ pub mod describe_ml_models_output {
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
         /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
-        pub fn results(mut self, input: impl Into<crate::model::MlModel>) -> Self {
+        pub fn results(mut self, input: crate::model::MlModel) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -3048,9 +3048,9 @@ pub mod describe_evaluations_output {
         ///
         /// <p>A list of <code>Evaluation</code> that meet the search criteria.
         /// </p>
-        pub fn results(mut self, input: impl Into<crate::model::Evaluation>) -> Self {
+        pub fn results(mut self, input: crate::model::Evaluation) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -3134,9 +3134,9 @@ pub mod describe_data_sources_output {
         ///
         /// <p>A list of <code>DataSource</code> that meet the search criteria.
         /// </p>
-        pub fn results(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn results(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -3220,9 +3220,9 @@ pub mod describe_batch_predictions_output {
         ///
         /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
         /// </p>
-        pub fn results(mut self, input: impl Into<crate::model::BatchPrediction>) -> Self {
+        pub fn results(mut self, input: crate::model::BatchPrediction) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }

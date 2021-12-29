@@ -443,9 +443,9 @@ pub mod create_secret_input {
         /// following special characters: + - = . _ : / @.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -514,12 +514,9 @@ pub mod create_secret_input {
         ///
         /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in
         /// the parameter.</p>
-        pub fn add_replica_regions(
-            mut self,
-            input: impl Into<crate::model::ReplicaRegionType>,
-        ) -> Self {
+        pub fn add_replica_regions(mut self, input: crate::model::ReplicaRegionType) -> Self {
             let mut v = self.add_replica_regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_replica_regions = Some(v);
             self
         }
@@ -1947,9 +1944,9 @@ pub mod list_secrets_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Lists the secret request filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3072,12 +3069,9 @@ pub mod replicate_secret_to_regions_input {
         /// To override the contents of this collection use [`set_add_replica_regions`](Self::set_add_replica_regions).
         ///
         /// <p>Add Regions to replicate the secret.</p>
-        pub fn add_replica_regions(
-            mut self,
-            input: impl Into<crate::model::ReplicaRegionType>,
-        ) -> Self {
+        pub fn add_replica_regions(mut self, input: crate::model::ReplicaRegionType) -> Self {
             let mut v = self.add_replica_regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_replica_regions = Some(v);
             self
         }
@@ -3831,9 +3825,9 @@ pub mod tag_resource_input {
         /// <p>For storing multiple values, we recommend that you use a JSON text
         /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
         /// in the Amazon Web Services CLI User Guide.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

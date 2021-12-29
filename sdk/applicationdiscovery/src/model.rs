@@ -3094,12 +3094,9 @@ pub mod agent_info {
         /// To override the contents of this collection use [`set_agent_network_info_list`](Self::set_agent_network_info_list).
         ///
         /// <p>Network details about the host where the agent or connector resides.</p>
-        pub fn agent_network_info_list(
-            mut self,
-            input: impl Into<crate::model::AgentNetworkInfo>,
-        ) -> Self {
+        pub fn agent_network_info_list(mut self, input: crate::model::AgentNetworkInfo) -> Self {
             let mut v = self.agent_network_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_network_info_list = Some(v);
             self
         }

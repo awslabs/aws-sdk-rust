@@ -472,9 +472,9 @@ pub mod replication_group {
         /// For Redis (cluster mode disabled) replication groups, this is a single-element list.
         /// For Redis (cluster mode enabled) replication groups, the list contains an entry for each
         /// node group (shard).</p>
-        pub fn node_groups(mut self, input: impl Into<crate::model::NodeGroup>) -> Self {
+        pub fn node_groups(mut self, input: crate::model::NodeGroup) -> Self {
             let mut v = self.node_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_groups = Some(v);
             self
         }
@@ -774,10 +774,10 @@ pub mod replication_group {
         /// <p>Returns the destination, format and type of the logs. </p>
         pub fn log_delivery_configurations(
             mut self,
-            input: impl Into<crate::model::LogDeliveryConfiguration>,
+            input: crate::model::LogDeliveryConfiguration,
         ) -> Self {
             let mut v = self.log_delivery_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_delivery_configurations = Some(v);
             self
         }
@@ -1848,12 +1848,9 @@ pub mod node_group {
         /// To override the contents of this collection use [`set_node_group_members`](Self::set_node_group_members).
         ///
         /// <p>A list containing information about individual nodes within the node group (shard).</p>
-        pub fn node_group_members(
-            mut self,
-            input: impl Into<crate::model::NodeGroupMember>,
-        ) -> Self {
+        pub fn node_group_members(mut self, input: crate::model::NodeGroupMember) -> Self {
             let mut v = self.node_group_members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_group_members = Some(v);
             self
         }
@@ -2227,10 +2224,10 @@ pub mod replication_group_pending_modified_values {
         /// <p>The log delivery configurations being modified </p>
         pub fn log_delivery_configurations(
             mut self,
-            input: impl Into<crate::model::PendingLogDeliveryConfiguration>,
+            input: crate::model::PendingLogDeliveryConfiguration,
         ) -> Self {
             let mut v = self.log_delivery_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_delivery_configurations = Some(v);
             self
         }
@@ -2978,12 +2975,9 @@ pub mod cache_security_group {
         /// To override the contents of this collection use [`set_ec2_security_groups`](Self::set_ec2_security_groups).
         ///
         /// <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
-        pub fn ec2_security_groups(
-            mut self,
-            input: impl Into<crate::model::Ec2SecurityGroup>,
-        ) -> Self {
+        pub fn ec2_security_groups(mut self, input: crate::model::Ec2SecurityGroup) -> Self {
             let mut v = self.ec2_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_security_groups = Some(v);
             self
         }
@@ -5138,10 +5132,10 @@ pub mod cache_cluster {
         /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
         pub fn cache_security_groups(
             mut self,
-            input: impl Into<crate::model::CacheSecurityGroupMembership>,
+            input: crate::model::CacheSecurityGroupMembership,
         ) -> Self {
             let mut v = self.cache_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_security_groups = Some(v);
             self
         }
@@ -5187,9 +5181,9 @@ pub mod cache_cluster {
         /// To override the contents of this collection use [`set_cache_nodes`](Self::set_cache_nodes).
         ///
         /// <p>A list of cache nodes that are members of the cluster.</p>
-        pub fn cache_nodes(mut self, input: impl Into<crate::model::CacheNode>) -> Self {
+        pub fn cache_nodes(mut self, input: crate::model::CacheNode) -> Self {
             let mut v = self.cache_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_nodes = Some(v);
             self
         }
@@ -5218,12 +5212,9 @@ pub mod cache_cluster {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>A list of VPC Security Groups associated with the cluster.</p>
-        pub fn security_groups(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupMembership>,
-        ) -> Self {
+        pub fn security_groups(mut self, input: crate::model::SecurityGroupMembership) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_groups = Some(v);
             self
         }
@@ -5406,10 +5397,10 @@ pub mod cache_cluster {
         /// <p>Returns the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
-            input: impl Into<crate::model::LogDeliveryConfiguration>,
+            input: crate::model::LogDeliveryConfiguration,
         ) -> Self {
             let mut v = self.log_delivery_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_delivery_configurations = Some(v);
             self
         }
@@ -6456,10 +6447,10 @@ pub mod pending_modified_values {
         /// <p>The log delivery configurations being modified </p>
         pub fn log_delivery_configurations(
             mut self,
-            input: impl Into<crate::model::PendingLogDeliveryConfiguration>,
+            input: crate::model::PendingLogDeliveryConfiguration,
         ) -> Self {
             let mut v = self.log_delivery_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_delivery_configurations = Some(v);
             self
         }
@@ -6754,12 +6745,9 @@ pub mod global_replication_group {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>The replication groups that comprise the Global datastore.</p>
-        pub fn members(
-            mut self,
-            input: impl Into<crate::model::GlobalReplicationGroupMember>,
-        ) -> Self {
+        pub fn members(mut self, input: crate::model::GlobalReplicationGroupMember) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -6786,12 +6774,9 @@ pub mod global_replication_group {
         /// To override the contents of this collection use [`set_global_node_groups`](Self::set_global_node_groups).
         ///
         /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-        pub fn global_node_groups(
-            mut self,
-            input: impl Into<crate::model::GlobalNodeGroup>,
-        ) -> Self {
+        pub fn global_node_groups(mut self, input: crate::model::GlobalNodeGroup) -> Self {
             let mut v = self.global_node_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_node_groups = Some(v);
             self
         }
@@ -8410,12 +8395,9 @@ pub mod reserved_cache_node {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>The recurring price charged to run this reserved cache node.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -9188,9 +9170,9 @@ pub mod cache_subnet_group {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>A list of subnets associated with the cache subnet group.</p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -9819,10 +9801,10 @@ pub mod regional_configuration {
         /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
         pub fn resharding_configuration(
             mut self,
-            input: impl Into<crate::model::ReshardingConfiguration>,
+            input: crate::model::ReshardingConfiguration,
         ) -> Self {
             let mut v = self.resharding_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resharding_configuration = Some(v);
             self
         }
@@ -10743,10 +10725,10 @@ pub mod update_action {
         /// <p>The status of the service update on the node group</p>
         pub fn node_group_update_status(
             mut self,
-            input: impl Into<crate::model::NodeGroupUpdateStatus>,
+            input: crate::model::NodeGroupUpdateStatus,
         ) -> Self {
             let mut v = self.node_group_update_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_group_update_status = Some(v);
             self
         }
@@ -10765,10 +10747,10 @@ pub mod update_action {
         /// <p>The status of the service update on the cache node</p>
         pub fn cache_node_update_status(
             mut self,
-            input: impl Into<crate::model::CacheNodeUpdateStatus>,
+            input: crate::model::CacheNodeUpdateStatus,
         ) -> Self {
             let mut v = self.cache_node_update_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_node_update_status = Some(v);
             self
         }
@@ -11261,10 +11243,10 @@ pub mod node_group_update_status {
         /// <p>The status of the service update on the node group member</p>
         pub fn node_group_member_update_status(
             mut self,
-            input: impl Into<crate::model::NodeGroupMemberUpdateStatus>,
+            input: crate::model::NodeGroupMemberUpdateStatus,
         ) -> Self {
             let mut v = self.node_group_member_update_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_group_member_update_status = Some(v);
             self
         }
@@ -13849,9 +13831,9 @@ pub mod snapshot {
         /// To override the contents of this collection use [`set_node_snapshots`](Self::set_node_snapshots).
         ///
         /// <p>A list of the cache nodes in the source cluster.</p>
-        pub fn node_snapshots(mut self, input: impl Into<crate::model::NodeSnapshot>) -> Self {
+        pub fn node_snapshots(mut self, input: crate::model::NodeSnapshot) -> Self {
             let mut v = self.node_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_snapshots = Some(v);
             self
         }
@@ -15897,12 +15879,9 @@ pub mod reserved_cache_nodes_offering {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>The recurring price charged to run this reserved cache node.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -16287,9 +16266,9 @@ pub mod engine_defaults {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Contains a list of engine default parameters.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -16308,10 +16287,10 @@ pub mod engine_defaults {
         /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
         pub fn cache_node_type_specific_parameters(
             mut self,
-            input: impl Into<crate::model::CacheNodeTypeSpecificParameter>,
+            input: crate::model::CacheNodeTypeSpecificParameter,
         ) -> Self {
             let mut v = self.cache_node_type_specific_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_node_type_specific_parameters = Some(v);
             self
         }
@@ -16543,10 +16522,10 @@ pub mod cache_node_type_specific_parameter {
         /// <p>A list of cache node types and their corresponding values for this parameter.</p>
         pub fn cache_node_type_specific_values(
             mut self,
-            input: impl Into<crate::model::CacheNodeTypeSpecificValue>,
+            input: crate::model::CacheNodeTypeSpecificValue,
         ) -> Self {
             let mut v = self.cache_node_type_specific_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_node_type_specific_values = Some(v);
             self
         }

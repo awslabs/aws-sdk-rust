@@ -348,9 +348,9 @@ pub mod update_end_of_meeting_reminder {
         /// <p>Updates settings for the end of meeting reminder feature that are applied to a room
         /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
         /// ending. </p>
-        pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
+        pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reminder_at_minutes = Some(v);
             self
         }
@@ -1708,9 +1708,9 @@ pub mod content {
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
         /// <p>The list of text messages.</p>
-        pub fn text_list(mut self, input: impl Into<crate::model::Text>) -> Self {
+        pub fn text_list(mut self, input: crate::model::Text) -> Self {
             let mut v = self.text_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_list = Some(v);
             self
         }
@@ -1727,9 +1727,9 @@ pub mod content {
         /// To override the contents of this collection use [`set_ssml_list`](Self::set_ssml_list).
         ///
         /// <p>The list of SSML messages.</p>
-        pub fn ssml_list(mut self, input: impl Into<crate::model::Ssml>) -> Self {
+        pub fn ssml_list(mut self, input: crate::model::Ssml) -> Self {
             let mut v = self.ssml_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ssml_list = Some(v);
             self
         }
@@ -1746,9 +1746,9 @@ pub mod content {
         /// To override the contents of this collection use [`set_audio_list`](Self::set_audio_list).
         ///
         /// <p>The list of audio messages.</p>
-        pub fn audio_list(mut self, input: impl Into<crate::model::Audio>) -> Self {
+        pub fn audio_list(mut self, input: crate::model::Audio) -> Self {
             let mut v = self.audio_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_list = Some(v);
             self
         }
@@ -3639,12 +3639,9 @@ pub mod device_status_info {
         /// To override the contents of this collection use [`set_device_status_details`](Self::set_device_status_details).
         ///
         /// <p>One or more device status detail descriptions.</p>
-        pub fn device_status_details(
-            mut self,
-            input: impl Into<crate::model::DeviceStatusDetail>,
-        ) -> Self {
+        pub fn device_status_details(mut self, input: crate::model::DeviceStatusDetail) -> Self {
             let mut v = self.device_status_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_status_details = Some(v);
             self
         }
@@ -4178,9 +4175,9 @@ pub mod contact_data {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -4197,9 +4194,9 @@ pub mod contact_data {
         /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
         ///
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
+        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sip_addresses = Some(v);
             self
         }
@@ -7779,9 +7776,9 @@ pub mod end_of_meeting_reminder {
         /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
         ///
         /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-        pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
+        pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reminder_at_minutes = Some(v);
             self
         }
@@ -8838,9 +8835,9 @@ pub mod contact {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -8857,9 +8854,9 @@ pub mod contact {
         /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
         ///
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
+        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sip_addresses = Some(v);
             self
         }
@@ -9382,9 +9379,9 @@ pub mod create_end_of_meeting_reminder {
         /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
         ///
         /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
-        pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
+        pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reminder_at_minutes = Some(v);
             self
         }

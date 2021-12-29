@@ -7428,10 +7428,10 @@ pub mod update_answer_input {
         pub fn choice_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ChoiceUpdate>,
+            v: crate::model::ChoiceUpdate,
         ) -> Self {
             let mut hash_map = self.choice_updates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.choice_updates = Some(hash_map);
             self
         }

@@ -121,12 +121,9 @@ pub mod list_entities_output {
         /// To override the contents of this collection use [`set_entity_summary_list`](Self::set_entity_summary_list).
         ///
         /// <p> Array of <code>EntitySummary</code> object.</p>
-        pub fn entity_summary_list(
-            mut self,
-            input: impl Into<crate::model::EntitySummary>,
-        ) -> Self {
+        pub fn entity_summary_list(mut self, input: crate::model::EntitySummary) -> Self {
             let mut v = self.entity_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_summary_list = Some(v);
             self
         }
@@ -212,10 +209,10 @@ pub mod list_change_sets_output {
         /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
         pub fn change_set_summary_list(
             mut self,
-            input: impl Into<crate::model::ChangeSetSummaryListItem>,
+            input: crate::model::ChangeSetSummaryListItem,
         ) -> Self {
             let mut v = self.change_set_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.change_set_summary_list = Some(v);
             self
         }
@@ -633,9 +630,9 @@ pub mod describe_change_set_output {
         /// To override the contents of this collection use [`set_change_set`](Self::set_change_set).
         ///
         /// <p>An array of <code>ChangeSummary</code> objects.</p>
-        pub fn change_set(mut self, input: impl Into<crate::model::ChangeSummary>) -> Self {
+        pub fn change_set(mut self, input: crate::model::ChangeSummary) -> Self {
             let mut v = self.change_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.change_set = Some(v);
             self
         }

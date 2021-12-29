@@ -99,9 +99,9 @@ pub mod accelerator_type {
         /// <p>
         /// The throughput information of the Elastic Inference Accelerator type.
         /// </p>
-        pub fn throughput_info(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn throughput_info(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.throughput_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.throughput_info = Some(v);
             self
         }

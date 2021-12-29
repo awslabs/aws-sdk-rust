@@ -166,12 +166,9 @@ pub mod put_project_events_output {
         ///
         /// <p>A structure that contains Evidently's response to the sent events, including an event ID and
         /// error codes, if any.</p>
-        pub fn event_results(
-            mut self,
-            input: impl Into<crate::model::PutProjectEventsResultEntry>,
-        ) -> Self {
+        pub fn event_results(mut self, input: crate::model::PutProjectEventsResultEntry) -> Self {
             let mut v = self.event_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_results = Some(v);
             self
         }
@@ -371,9 +368,9 @@ pub mod batch_evaluate_feature_output {
         ///
         /// <p>An array of structures, where each structure displays the results of one feature evaluation
         /// assignment to one user session.</p>
-        pub fn results(mut self, input: impl Into<crate::model::EvaluationResult>) -> Self {
+        pub fn results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -445,9 +442,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>An array of structures that contain the configuration details of the projects in the Region.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::ProjectSummary>) -> Self {
+        pub fn projects(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -783,9 +780,9 @@ pub mod list_launches_output {
         ///
         /// <p>An array of structures that contain the configuration details of the launches in the
         /// specified project.</p>
-        pub fn launches(mut self, input: impl Into<crate::model::Launch>) -> Self {
+        pub fn launches(mut self, input: crate::model::Launch) -> Self {
             let mut v = self.launches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launches = Some(v);
             self
         }
@@ -1065,9 +1062,9 @@ pub mod list_features_output {
         ///
         /// <p>An array of structures that contain the configuration details of the features in the
         /// specified project.</p>
-        pub fn features(mut self, input: impl Into<crate::model::FeatureSummary>) -> Self {
+        pub fn features(mut self, input: crate::model::FeatureSummary) -> Self {
             let mut v = self.features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.features = Some(v);
             self
         }
@@ -1465,12 +1462,9 @@ pub mod get_experiment_results_output {
         /// To override the contents of this collection use [`set_results_data`](Self::set_results_data).
         ///
         /// <p>An array of structures that include experiment results including metric names and values. </p>
-        pub fn results_data(
-            mut self,
-            input: impl Into<crate::model::ExperimentResultsData>,
-        ) -> Self {
+        pub fn results_data(mut self, input: crate::model::ExperimentResultsData) -> Self {
             let mut v = self.results_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results_data = Some(v);
             self
         }
@@ -1487,9 +1481,9 @@ pub mod get_experiment_results_output {
         /// To override the contents of this collection use [`set_reports`](Self::set_reports).
         ///
         /// <p>An array of structures that include the reports that you requested.</p>
-        pub fn reports(mut self, input: impl Into<crate::model::ExperimentReport>) -> Self {
+        pub fn reports(mut self, input: crate::model::ExperimentReport) -> Self {
             let mut v = self.reports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reports = Some(v);
             self
         }
@@ -1506,9 +1500,9 @@ pub mod get_experiment_results_output {
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
         /// <p>The timestamps of each result returned.</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timestamps = Some(v);
             self
         }
@@ -1584,9 +1578,9 @@ pub mod list_experiments_output {
         ///
         /// <p>An array of structures that contain the configuration details of the experiments in the
         /// specified project.</p>
-        pub fn experiments(mut self, input: impl Into<crate::model::Experiment>) -> Self {
+        pub fn experiments(mut self, input: crate::model::Experiment) -> Self {
             let mut v = self.experiments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.experiments = Some(v);
             self
         }

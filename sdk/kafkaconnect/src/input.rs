@@ -161,9 +161,9 @@ pub mod create_connector_input {
         /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
         ///
         /// <p>Specifies which plugins to use for the connector.</p>
-        pub fn plugins(mut self, input: impl Into<crate::model::Plugin>) -> Self {
+        pub fn plugins(mut self, input: crate::model::Plugin) -> Self {
             let mut v = self.plugins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.plugins = Some(v);
             self
         }

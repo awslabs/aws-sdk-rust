@@ -303,8 +303,8 @@ pub mod fluent_builders {
         /// names must be unique to your AWS account within a specific region. As an example, you could
         /// create a container named <code>movies</code> in every region, as long as you don’t have an
         /// existing container with that name.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name for the container. The name must be from 1 to 255 characters. Container
@@ -325,8 +325,8 @@ pub mod fluent_builders {
         /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
         /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
         /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
@@ -402,8 +402,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container to delete. </p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container to delete. </p>
@@ -475,8 +475,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that holds the policy.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that holds the policy.</p>
@@ -552,8 +552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container to remove the policy from.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container to remove the policy from.</p>
@@ -625,8 +625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that holds the object lifecycle policy.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that holds the object lifecycle policy.</p>
@@ -698,8 +698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
@@ -777,8 +777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container to query.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container to query.</p>
@@ -852,8 +852,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container. </p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container. </p>
@@ -929,8 +929,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that the policy is assigned to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that the policy is assigned to.</p>
@@ -1002,8 +1002,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
@@ -1075,8 +1075,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that is associated with the metric policy.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that is associated with the metric policy.</p>
@@ -1158,8 +1158,8 @@ pub mod fluent_builders {
         /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
         /// was included in the previous response) to obtain the next set of containers. This token is
         /// included in a response only if there actually are more containers to list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
@@ -1171,8 +1171,8 @@ pub mod fluent_builders {
         }
         /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
         /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
@@ -1242,8 +1242,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the container.</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the container.</p>
@@ -1318,8 +1318,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container.</p>
@@ -1340,8 +1340,8 @@ pub mod fluent_builders {
         /// policy.</p>
         /// </li>
         /// </ul>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The contents of the policy, which includes the following: </p>
@@ -1429,8 +1429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to assign the CORS policy to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that you want to assign the CORS policy to.</p>
@@ -1446,8 +1446,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
         ///
         /// <p>The CORS policy to apply to the container.  </p>
-        pub fn cors_policy(mut self, inp: impl Into<crate::model::CorsRule>) -> Self {
-            self.inner = self.inner.cors_policy(inp);
+        pub fn cors_policy(mut self, input: crate::model::CorsRule) -> Self {
+            self.inner = self.inner.cors_policy(input);
             self
         }
         /// <p>The CORS policy to apply to the container.  </p>
@@ -1520,8 +1520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
@@ -1533,8 +1533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object lifecycle policy to apply to the container.</p>
-        pub fn lifecycle_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_policy(inp);
+        pub fn lifecycle_policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_policy(signature.into());
             self
         }
         /// <p>The object lifecycle policy to apply to the container.</p>
@@ -1606,8 +1606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to add the metric policy to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that you want to add the metric policy to.</p>
@@ -1627,8 +1627,8 @@ pub mod fluent_builders {
         /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
         /// </li>
         /// </ul>
-        pub fn metric_policy(mut self, inp: crate::model::MetricPolicy) -> Self {
-            self.inner = self.inner.metric_policy(inp);
+        pub fn metric_policy(mut self, signature: crate::model::MetricPolicy) -> Self {
+            self.inner = self.inner.metric_policy(signature);
             self
         }
         /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
@@ -1708,8 +1708,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to start access logging on.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that you want to start access logging on.</p>
@@ -1781,8 +1781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to stop access logging on.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(signature.into());
             self
         }
         /// <p>The name of the container that you want to stop access logging on.</p>
@@ -1856,8 +1856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the container. </p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the container. </p>
@@ -1873,8 +1873,8 @@ pub mod fluent_builders {
         /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
         /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
         /// customer:CompanyA, priority:Medium, and type:Contract.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
@@ -1949,8 +1949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the container.</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the container.</p>
@@ -1965,8 +1965,8 @@ pub mod fluent_builders {
         /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
         /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
         /// (priority).</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA

@@ -17,9 +17,9 @@ pub mod batch_execute_statement_input {
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
         /// <p>The list of PartiQL statements representing the batch to run.</p>
-        pub fn statements(mut self, input: impl Into<crate::model::BatchStatementRequest>) -> Self {
+        pub fn statements(mut self, input: crate::model::BatchStatementRequest) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
@@ -353,10 +353,10 @@ pub mod batch_get_item_input {
         pub fn request_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::KeysAndAttributes>,
+            v: crate::model::KeysAndAttributes,
         ) -> Self {
             let mut hash_map = self.request_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_items = Some(hash_map);
             self
         }
@@ -736,10 +736,10 @@ pub mod batch_write_item_input {
         pub fn request_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::WriteRequest>>,
+            v: std::vec::Vec<crate::model::WriteRequest>,
         ) -> Self {
             let mut hash_map = self.request_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_items = Some(hash_map);
             self
         }
@@ -1214,9 +1214,9 @@ pub mod create_global_table_input {
         /// To override the contents of this collection use [`set_replication_group`](Self::set_replication_group).
         ///
         /// <p>The Regions where the global table needs to be created.</p>
-        pub fn replication_group(mut self, input: impl Into<crate::model::Replica>) -> Self {
+        pub fn replication_group(mut self, input: crate::model::Replica) -> Self {
             let mut v = self.replication_group.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_group = Some(v);
             self
         }
@@ -1391,12 +1391,9 @@ pub mod create_table_input {
         /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
         ///
         /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
-        pub fn attribute_definitions(
-            mut self,
-            input: impl Into<crate::model::AttributeDefinition>,
-        ) -> Self {
+        pub fn attribute_definitions(mut self, input: crate::model::AttributeDefinition) -> Self {
             let mut v = self.attribute_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_definitions = Some(v);
             self
         }
@@ -1466,9 +1463,9 @@ pub mod create_table_input {
         /// <code>RANGE</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -1585,12 +1582,9 @@ pub mod create_table_input {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn local_secondary_indexes(
-            mut self,
-            input: impl Into<crate::model::LocalSecondaryIndex>,
-        ) -> Self {
+        pub fn local_secondary_indexes(mut self, input: crate::model::LocalSecondaryIndex) -> Self {
             let mut v = self.local_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_secondary_indexes = Some(v);
             self
         }
@@ -1725,10 +1719,10 @@ pub mod create_table_input {
         /// </ul>
         pub fn global_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: crate::model::GlobalSecondaryIndex,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_indexes = Some(v);
             self
         }
@@ -1972,9 +1966,9 @@ pub mod create_table_input {
         ///
         /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
         /// for DynamoDB</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2350,10 +2344,10 @@ pub mod delete_item_input {
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
@@ -2382,10 +2376,10 @@ pub mod delete_item_input {
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExpectedAttributeValue>,
+            v: crate::model::ExpectedAttributeValue,
         ) -> Self {
             let mut hash_map = self.expected.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expected = Some(hash_map);
             self
         }
@@ -2764,10 +2758,10 @@ pub mod delete_item_input {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -5298,9 +5292,9 @@ pub mod execute_statement_input {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the PartiQL statement, if any.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
+        pub fn parameters(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -5557,12 +5551,9 @@ pub mod execute_transaction_input {
         /// To override the contents of this collection use [`set_transact_statements`](Self::set_transact_statements).
         ///
         /// <p>The list of PartiQL statements representing the transaction to run.</p>
-        pub fn transact_statements(
-            mut self,
-            input: impl Into<crate::model::ParameterizedStatement>,
-        ) -> Self {
+        pub fn transact_statements(mut self, input: crate::model::ParameterizedStatement) -> Self {
             let mut v = self.transact_statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transact_statements = Some(v);
             self
         }
@@ -6114,10 +6105,10 @@ pub mod get_item_input {
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
@@ -7756,10 +7747,10 @@ pub mod put_item_input {
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item = Some(hash_map);
             self
         }
@@ -7800,10 +7791,10 @@ pub mod put_item_input {
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExpectedAttributeValue>,
+            v: crate::model::ExpectedAttributeValue,
         ) -> Self {
             let mut hash_map = self.expected.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expected = Some(hash_map);
             self
         }
@@ -8188,10 +8179,10 @@ pub mod put_item_input {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -8616,10 +8607,10 @@ pub mod query_input {
         pub fn key_conditions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Condition>,
+            v: crate::model::Condition,
         ) -> Self {
             let mut hash_map = self.key_conditions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key_conditions = Some(hash_map);
             self
         }
@@ -8645,10 +8636,10 @@ pub mod query_input {
         pub fn query_filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Condition>,
+            v: crate::model::Condition,
         ) -> Self {
             let mut hash_map = self.query_filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.query_filter = Some(hash_map);
             self
         }
@@ -8722,10 +8713,10 @@ pub mod query_input {
         pub fn exclusive_start_key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.exclusive_start_key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.exclusive_start_key = Some(hash_map);
             self
         }
@@ -9272,10 +9263,10 @@ pub mod query_input {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -9515,10 +9506,10 @@ pub mod restore_table_from_backup_input {
         /// at the time of restore.</p>
         pub fn global_secondary_index_override(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: crate::model::GlobalSecondaryIndex,
         ) -> Self {
             let mut v = self.global_secondary_index_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_index_override = Some(v);
             self
         }
@@ -9541,10 +9532,10 @@ pub mod restore_table_from_backup_input {
         /// at the time of restore.</p>
         pub fn local_secondary_index_override(
             mut self,
-            input: impl Into<crate::model::LocalSecondaryIndex>,
+            input: crate::model::LocalSecondaryIndex,
         ) -> Self {
             let mut v = self.local_secondary_index_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_secondary_index_override = Some(v);
             self
         }
@@ -9839,10 +9830,10 @@ pub mod restore_table_to_point_in_time_input {
         /// at the time of restore.</p>
         pub fn global_secondary_index_override(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: crate::model::GlobalSecondaryIndex,
         ) -> Self {
             let mut v = self.global_secondary_index_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_index_override = Some(v);
             self
         }
@@ -9865,10 +9856,10 @@ pub mod restore_table_to_point_in_time_input {
         /// at the time of restore.</p>
         pub fn local_secondary_index_override(
             mut self,
-            input: impl Into<crate::model::LocalSecondaryIndex>,
+            input: crate::model::LocalSecondaryIndex,
         ) -> Self {
             let mut v = self.local_secondary_index_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_secondary_index_override = Some(v);
             self
         }
@@ -10289,10 +10280,10 @@ pub mod scan_input {
         pub fn scan_filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Condition>,
+            v: crate::model::Condition,
         ) -> Self {
             let mut hash_map = self.scan_filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.scan_filter = Some(hash_map);
             self
         }
@@ -10340,10 +10331,10 @@ pub mod scan_input {
         pub fn exclusive_start_key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.exclusive_start_key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.exclusive_start_key = Some(hash_map);
             self
         }
@@ -10699,10 +10690,10 @@ pub mod scan_input {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -10948,9 +10939,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the Amazon DynamoDB resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11115,9 +11106,9 @@ pub mod transact_get_items_input {
         ///
         /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which
         /// contains a <code>Get</code> structure.</p>
-        pub fn transact_items(mut self, input: impl Into<crate::model::TransactGetItem>) -> Self {
+        pub fn transact_items(mut self, input: crate::model::TransactGetItem) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transact_items = Some(v);
             self
         }
@@ -11310,9 +11301,9 @@ pub mod transact_write_items_input {
         /// <code>Delete</code> object. These can operate on items in different tables, but the
         /// tables must reside in the same Amazon Web Services account and Region, and no two of them
         /// can operate on the same item. </p>
-        pub fn transact_items(mut self, input: impl Into<crate::model::TransactWriteItem>) -> Self {
+        pub fn transact_items(mut self, input: crate::model::TransactWriteItem) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transact_items = Some(v);
             self
         }
@@ -12170,9 +12161,9 @@ pub mod update_global_table_input {
         /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
         ///
         /// <p>A list of Regions that should be added or removed from the global table.</p>
-        pub fn replica_updates(mut self, input: impl Into<crate::model::ReplicaUpdate>) -> Self {
+        pub fn replica_updates(mut self, input: crate::model::ReplicaUpdate) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_updates = Some(v);
             self
         }
@@ -12437,12 +12428,12 @@ pub mod update_global_table_settings_input {
         /// modified.</p>
         pub fn global_table_global_secondary_index_settings_update(
             mut self,
-            input: impl Into<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
+            input: crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate,
         ) -> Self {
             let mut v = self
                 .global_table_global_secondary_index_settings_update
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_table_global_secondary_index_settings_update = Some(v);
             self
         }
@@ -12464,10 +12455,10 @@ pub mod update_global_table_settings_input {
         /// <p>Represents the settings for a global table in a Region that will be modified.</p>
         pub fn replica_settings_update(
             mut self,
-            input: impl Into<crate::model::ReplicaSettingsUpdate>,
+            input: crate::model::ReplicaSettingsUpdate,
         ) -> Self {
             let mut v = self.replica_settings_update.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_settings_update = Some(v);
             self
         }
@@ -12680,10 +12671,10 @@ pub mod update_item_input {
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
@@ -12712,10 +12703,10 @@ pub mod update_item_input {
         pub fn attribute_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValueUpdate>,
+            v: crate::model::AttributeValueUpdate,
         ) -> Self {
             let mut hash_map = self.attribute_updates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attribute_updates = Some(hash_map);
             self
         }
@@ -12741,10 +12732,10 @@ pub mod update_item_input {
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExpectedAttributeValue>,
+            v: crate::model::ExpectedAttributeValue,
         ) -> Self {
             let mut hash_map = self.expected.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expected = Some(hash_map);
             self
         }
@@ -13372,10 +13363,10 @@ pub mod update_item_input {
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
@@ -13579,12 +13570,9 @@ pub mod update_table_input {
         /// <p>An array of attributes that describe the key schema for the table and indexes. If you
         /// are adding a new global secondary index to the table, <code>AttributeDefinitions</code>
         /// must include the key element(s) of the new index.</p>
-        pub fn attribute_definitions(
-            mut self,
-            input: impl Into<crate::model::AttributeDefinition>,
-        ) -> Self {
+        pub fn attribute_definitions(mut self, input: crate::model::AttributeDefinition) -> Self {
             let mut v = self.attribute_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_definitions = Some(v);
             self
         }
@@ -13699,10 +13687,10 @@ pub mod update_table_input {
         /// Guide</i>. </p>
         pub fn global_secondary_index_updates(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndexUpdate>,
+            input: crate::model::GlobalSecondaryIndexUpdate,
         ) -> Self {
             let mut v = self.global_secondary_index_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_index_updates = Some(v);
             self
         }
@@ -13780,12 +13768,9 @@ pub mod update_table_input {
         /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
         /// 2019.11.21</a> of global tables.</p>
         /// </note>
-        pub fn replica_updates(
-            mut self,
-            input: impl Into<crate::model::ReplicationGroupUpdate>,
-        ) -> Self {
+        pub fn replica_updates(mut self, input: crate::model::ReplicationGroupUpdate) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_updates = Some(v);
             self
         }
@@ -13981,10 +13966,10 @@ pub mod update_table_replica_auto_scaling_input {
         /// be updated.</p>
         pub fn global_secondary_index_updates(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndexAutoScalingUpdate>,
+            input: crate::model::GlobalSecondaryIndexAutoScalingUpdate,
         ) -> Self {
             let mut v = self.global_secondary_index_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_index_updates = Some(v);
             self
         }
@@ -14033,12 +14018,9 @@ pub mod update_table_replica_auto_scaling_input {
         ///
         /// <p>Represents the auto scaling settings of replicas of the table that will be
         /// modified.</p>
-        pub fn replica_updates(
-            mut self,
-            input: impl Into<crate::model::ReplicaAutoScalingUpdate>,
-        ) -> Self {
+        pub fn replica_updates(mut self, input: crate::model::ReplicaAutoScalingUpdate) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_updates = Some(v);
             self
         }

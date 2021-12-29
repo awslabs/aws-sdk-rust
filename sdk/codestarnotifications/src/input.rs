@@ -69,9 +69,9 @@ pub mod create_notification_rule_input {
         ///
         /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the
         /// notification rule.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -792,9 +792,9 @@ pub mod list_event_types_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to use to return information by service or resource type.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ListEventTypesFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ListEventTypesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -983,12 +983,9 @@ pub mod list_notification_rules_input {
         /// <note>
         /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
         /// </note>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::ListNotificationRulesFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::ListNotificationRulesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1331,9 +1328,9 @@ pub mod list_targets_input {
         /// <note>
         /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
         /// </note>
-        pub fn filters(mut self, input: impl Into<crate::model::ListTargetsFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ListTargetsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2262,9 +2259,9 @@ pub mod update_notification_rule_input {
         ///
         /// <p>The address and type of the targets to receive notifications from this notification
         /// rule.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }

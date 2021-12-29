@@ -311,9 +311,9 @@ pub mod get_transcript_output {
         /// To override the contents of this collection use [`set_transcript`](Self::set_transcript).
         ///
         /// <p>The list of messages in the session.</p>
-        pub fn transcript(mut self, input: impl Into<crate::model::Item>) -> Self {
+        pub fn transcript(mut self, input: crate::model::Item) -> Self {
             let mut v = self.transcript.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transcript = Some(v);
             self
         }

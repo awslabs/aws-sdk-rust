@@ -576,8 +576,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -586,8 +586,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the application.</p>
-        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_arn(inp);
+        pub fn application_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(signature.into());
             self
         }
         /// <p>The ARN of the application.</p>
@@ -659,8 +659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet. </p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet. </p>
@@ -669,8 +669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(signature.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -745,9 +745,9 @@ pub mod fluent_builders {
         /// <p>The list of UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            inp: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
-            self.inner = self.inner.user_stack_associations(inp);
+            self.inner = self.inner.user_stack_associations(input);
             self
         }
         /// <p>The list of UserStackAssociation objects.</p>
@@ -825,9 +825,9 @@ pub mod fluent_builders {
         /// <p>The list of UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            inp: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
-            self.inner = self.inner.user_stack_associations(inp);
+            self.inner = self.inner.user_stack_associations(input);
             self
         }
         /// <p>The list of UserStackAssociation objects.</p>
@@ -899,8 +899,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image to copy.</p>
-        pub fn source_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_image_name(inp);
+        pub fn source_image_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_image_name(signature.into());
             self
         }
         /// <p>The name of the image to copy.</p>
@@ -912,8 +912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that the image will have when it is copied to the destination.</p>
-        pub fn destination_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_image_name(inp);
+        pub fn destination_image_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_image_name(signature.into());
             self
         }
         /// <p>The name that the image will have when it is copied to the destination.</p>
@@ -925,8 +925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
-        pub fn destination_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_region(inp);
+        pub fn destination_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_region(signature.into());
             self
         }
         /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
@@ -940,9 +940,9 @@ pub mod fluent_builders {
         /// <p>The description that the image will have when it is copied to the destination.</p>
         pub fn destination_image_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_image_description(inp);
+            self.inner = self.inner.destination_image_description(signature.into());
             self
         }
         /// <p>The description that the image will have when it is copied to the destination.</p>
@@ -1020,8 +1020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app block.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the app block.</p>
@@ -1030,8 +1030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the app block.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the app block.</p>
@@ -1040,8 +1040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the app block. This is not displayed to the user.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The display name of the app block. This is not displayed to the user.</p>
@@ -1050,8 +1050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source S3 location of the app block.</p>
-        pub fn source_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.source_s3_location(inp);
+        pub fn source_s3_location(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.source_s3_location(signature);
             self
         }
         /// <p>The source S3 location of the app block.</p>
@@ -1063,8 +1063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The setup script details of the app block.</p>
-        pub fn setup_script_details(mut self, inp: crate::model::ScriptDetails) -> Self {
-            self.inner = self.inner.setup_script_details(inp);
+        pub fn setup_script_details(mut self, signature: crate::model::ScriptDetails) -> Self {
+            self.inner = self.inner.setup_script_details(signature);
             self
         }
         /// <p>The setup script details of the app block.</p>
@@ -1085,7 +1085,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to the app block.</p>
@@ -1165,8 +1165,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
@@ -1175,8 +1175,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
@@ -1185,8 +1185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the application.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the application.</p>
@@ -1195,8 +1195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location in S3 of the application icon.</p>
-        pub fn icon_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.icon_s3_location(inp);
+        pub fn icon_s3_location(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.icon_s3_location(signature);
             self
         }
         /// <p>The location in S3 of the application icon.</p>
@@ -1208,8 +1208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch path of the application.</p>
-        pub fn launch_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_path(inp);
+        pub fn launch_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_path(signature.into());
             self
         }
         /// <p>The launch path of the application.</p>
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The working directory of the application.</p>
-        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.working_directory(inp);
+        pub fn working_directory(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.working_directory(signature.into());
             self
         }
         /// <p>The working directory of the application.</p>
@@ -1231,8 +1231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch parameters of the application.</p>
-        pub fn launch_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_parameters(inp);
+        pub fn launch_parameters(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_parameters(signature.into());
             self
         }
         /// <p>The launch parameters of the application.</p>
@@ -1248,8 +1248,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-        pub fn platforms(mut self, inp: impl Into<crate::model::PlatformType>) -> Self {
-            self.inner = self.inner.platforms(inp);
+        pub fn platforms(mut self, input: crate::model::PlatformType) -> Self {
+            self.inner = self.inner.platforms(input);
             self
         }
         /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
@@ -1265,8 +1265,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_families`](Self::set_instance_families).
         ///
         /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-        pub fn instance_families(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_families(inp);
+        pub fn instance_families(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_families(input.into());
             self
         }
         /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
@@ -1278,8 +1278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app block ARN to which the application should be associated</p>
-        pub fn app_block_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_block_arn(inp);
+        pub fn app_block_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_block_arn(signature.into());
             self
         }
         /// <p>The app block ARN to which the application should be associated</p>
@@ -1300,7 +1300,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to the application.</p>
@@ -1374,8 +1374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-        pub fn directory_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_name(inp);
+        pub fn directory_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_name(signature.into());
             self
         }
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -1393,9 +1393,11 @@ pub mod fluent_builders {
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
         pub fn organizational_unit_distinguished_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organizational_unit_distinguished_names(inp);
+            self.inner = self
+                .inner
+                .organizational_unit_distinguished_names(input.into());
             self
         }
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
@@ -1411,9 +1413,9 @@ pub mod fluent_builders {
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
         pub fn service_account_credentials(
             mut self,
-            inp: crate::model::ServiceAccountCredentials,
+            signature: crate::model::ServiceAccountCredentials,
         ) -> Self {
-            self.inner = self.inner.service_account_credentials(inp);
+            self.inner = self.inner.service_account_credentials(signature);
             self
         }
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
@@ -1485,8 +1487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A unique name for the fleet.</p>
@@ -1495,8 +1497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the image used to create the fleet.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(signature.into());
             self
         }
         /// <p>The name of the image used to create the fleet.</p>
@@ -1505,8 +1507,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
-        pub fn image_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_arn(inp);
+        pub fn image_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_arn(signature.into());
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
@@ -1625,8 +1627,8 @@ pub mod fluent_builders {
         /// <p>stream.standard.medium</p>
         /// </li>
         /// </ul>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(signature.into());
             self
         }
         /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
@@ -1761,8 +1763,8 @@ pub mod fluent_builders {
         /// small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
-        pub fn fleet_type(mut self, inp: crate::model::FleetType) -> Self {
-            self.inner = self.inner.fleet_type(inp);
+        pub fn fleet_type(mut self, signature: crate::model::FleetType) -> Self {
+            self.inner = self.inner.fleet_type(signature);
             self
         }
         /// <p>The fleet type.</p>
@@ -1787,8 +1789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
-        pub fn compute_capacity(mut self, inp: crate::model::ComputeCapacity) -> Self {
-            self.inner = self.inner.compute_capacity(inp);
+        pub fn compute_capacity(mut self, signature: crate::model::ComputeCapacity) -> Self {
+            self.inner = self.inner.compute_capacity(signature);
             self
         }
         /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
@@ -1800,8 +1802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, signature: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(signature);
             self
         }
         /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
@@ -1814,8 +1816,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
         /// <p>Specify a value between 600 and 360000.</p>
-        pub fn max_user_duration_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_user_duration_in_seconds(inp);
+        pub fn max_user_duration_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_user_duration_in_seconds(signature);
             self
         }
         /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
@@ -1826,8 +1828,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
         /// <p>Specify a value between 60 and 360000.</p>
-        pub fn disconnect_timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.disconnect_timeout_in_seconds(inp);
+        pub fn disconnect_timeout_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.disconnect_timeout_in_seconds(signature);
             self
         }
         /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
@@ -1840,8 +1842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description to display.</p>
@@ -1850,8 +1852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fleet name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The fleet name to display.</p>
@@ -1860,8 +1862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables or disables default internet access for the fleet.</p>
-        pub fn enable_default_internet_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_default_internet_access(inp);
+        pub fn enable_default_internet_access(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_default_internet_access(signature);
             self
         }
         /// <p>Enables or disables default internet access for the fleet.</p>
@@ -1873,8 +1875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
-        pub fn domain_join_info(mut self, inp: crate::model::DomainJoinInfo) -> Self {
-            self.inner = self.inner.domain_join_info(inp);
+        pub fn domain_join_info(mut self, signature: crate::model::DomainJoinInfo) -> Self {
+            self.inner = self.inner.domain_join_info(signature);
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
@@ -1902,7 +1904,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
@@ -1936,8 +1938,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
-        pub fn idle_disconnect_timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.idle_disconnect_timeout_in_seconds(inp);
+        pub fn idle_disconnect_timeout_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.idle_disconnect_timeout_in_seconds(signature);
             self
         }
         /// <p>The amount of time that users can be idle (inactive) before they are disconnected
@@ -1964,8 +1966,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
         ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
@@ -1978,8 +1980,8 @@ pub mod fluent_builders {
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
         ///
         /// <p>The default value is <code>APP</code>.</p>
-        pub fn stream_view(mut self, inp: crate::model::StreamView) -> Self {
-            self.inner = self.inner.stream_view(inp);
+        pub fn stream_view(mut self, signature: crate::model::StreamView) -> Self {
+            self.inner = self.inner.stream_view(signature);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
@@ -1994,8 +1996,8 @@ pub mod fluent_builders {
         }
         /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
         /// fleets. </p>
-        pub fn platform(mut self, inp: crate::model::PlatformType) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, signature: crate::model::PlatformType) -> Self {
+            self.inner = self.inner.platform(signature);
             self
         }
         /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
@@ -2009,8 +2011,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
         /// fleets, and not allowed for other fleet types.</p>
-        pub fn max_concurrent_sessions(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_concurrent_sessions(inp);
+        pub fn max_concurrent_sessions(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_concurrent_sessions(signature);
             self
         }
         /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
@@ -2024,8 +2026,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
         ///
         /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-        pub fn usb_device_filter_strings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usb_device_filter_strings(inp);
+        pub fn usb_device_filter_strings(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usb_device_filter_strings(input.into());
             self
         }
         /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
@@ -2098,8 +2100,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A unique name for the image builder.</p>
@@ -2108,8 +2110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the image used to create the image builder.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(signature.into());
             self
         }
         /// <p>The name of the image used to create the image builder.</p>
@@ -2118,8 +2120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
-        pub fn image_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_arn(inp);
+        pub fn image_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_arn(signature.into());
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
@@ -2229,8 +2231,8 @@ pub mod fluent_builders {
         /// <p>stream.graphics-pro.16xlarge</p>
         /// </li>
         /// </ul>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(signature.into());
             self
         }
         /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
@@ -2343,8 +2345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description to display.</p>
@@ -2353,8 +2355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The image builder name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The image builder name to display.</p>
@@ -2363,8 +2365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, signature: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(signature);
             self
         }
         /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
@@ -2378,8 +2380,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
         ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
@@ -2390,8 +2392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables or disables default internet access for the image builder.</p>
-        pub fn enable_default_internet_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_default_internet_access(inp);
+        pub fn enable_default_internet_access(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_default_internet_access(signature);
             self
         }
         /// <p>Enables or disables default internet access for the image builder.</p>
@@ -2403,8 +2405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-        pub fn domain_join_info(mut self, inp: crate::model::DomainJoinInfo) -> Self {
-            self.inner = self.inner.domain_join_info(inp);
+        pub fn domain_join_info(mut self, signature: crate::model::DomainJoinInfo) -> Self {
+            self.inner = self.inner.domain_join_info(signature);
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
@@ -2416,8 +2418,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-        pub fn appstream_agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.appstream_agent_version(inp);
+        pub fn appstream_agent_version(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.appstream_agent_version(signature.into());
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
@@ -2445,7 +2450,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
@@ -2470,8 +2475,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, inp: impl Into<crate::model::AccessEndpoint>) -> Self {
-            self.inner = self.inner.access_endpoints(inp);
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
+            self.inner = self.inner.access_endpoints(input);
             self
         }
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
@@ -2543,8 +2548,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the image builder.</p>
@@ -2554,8 +2559,8 @@ pub mod fluent_builders {
         }
         /// <p>The time that the streaming URL will be valid, in seconds.
         /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
-        pub fn validity(mut self, inp: i64) -> Self {
-            self.inner = self.inner.validity(inp);
+        pub fn validity(mut self, signature: i64) -> Self {
+            self.inner = self.inner.validity(signature);
             self
         }
         /// <p>The time that the streaming URL will be valid, in seconds.
@@ -2625,8 +2630,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -2635,8 +2640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description to display.</p>
@@ -2645,8 +2650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The stack name to display.</p>
@@ -2659,11 +2664,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            inp: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
-            self.inner = self.inner.storage_connectors(inp);
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
+            self.inner = self.inner.storage_connectors(input);
             self
         }
         /// <p>The storage connectors to enable.</p>
@@ -2675,8 +2677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
-        pub fn redirect_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.redirect_url(inp);
+        pub fn redirect_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.redirect_url(signature.into());
             self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
@@ -2685,8 +2687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-        pub fn feedback_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feedback_url(inp);
+        pub fn feedback_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feedback_url(signature.into());
             self
         }
         /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
@@ -2699,8 +2701,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
-        pub fn user_settings(mut self, inp: impl Into<crate::model::UserSetting>) -> Self {
-            self.inner = self.inner.user_settings(inp);
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
@@ -2712,8 +2714,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-        pub fn application_settings(mut self, inp: crate::model::ApplicationSettings) -> Self {
-            self.inner = self.inner.application_settings(inp);
+        pub fn application_settings(
+            mut self,
+            signature: crate::model::ApplicationSettings,
+        ) -> Self {
+            self.inner = self.inner.application_settings(signature);
             self
         }
         /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
@@ -2741,7 +2746,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
@@ -2766,8 +2771,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, inp: impl Into<crate::model::AccessEndpoint>) -> Self {
-            self.inner = self.inner.access_endpoints(inp);
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
+            self.inner = self.inner.access_endpoints(input);
             self
         }
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
@@ -2783,8 +2788,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
         ///
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-        pub fn embed_host_domains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.embed_host_domains(inp);
+        pub fn embed_host_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.embed_host_domains(input.into());
             self
         }
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
@@ -2856,8 +2861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(signature.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -2866,8 +2871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -2876,8 +2881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The identifier of the user.</p>
@@ -2887,8 +2892,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the application to launch after the session starts. This is the name that you specified
         /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(signature.into());
             self
         }
         /// <p>The name of the application to launch after the session starts. This is the name that you specified
@@ -2902,8 +2907,8 @@ pub mod fluent_builders {
         }
         /// <p>The time that the streaming URL will be valid, in seconds.
         /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
-        pub fn validity(mut self, inp: i64) -> Self {
-            self.inner = self.inner.validity(inp);
+        pub fn validity(mut self, signature: i64) -> Self {
+            self.inner = self.inner.validity(signature);
             self
         }
         /// <p>The time that the streaming URL will be valid, in seconds.
@@ -2913,8 +2918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-        pub fn session_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_context(inp);
+        pub fn session_context(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_context(signature.into());
             self
         }
         /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -2989,8 +2994,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image to update.</p>
-        pub fn existing_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.existing_image_name(inp);
+        pub fn existing_image_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.existing_image_name(signature.into());
             self
         }
         /// <p>The name of the image to update.</p>
@@ -3002,8 +3007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
-        pub fn new_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_image_name(inp);
+        pub fn new_image_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_image_name(signature.into());
             self
         }
         /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
@@ -3015,8 +3020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display for the new image.</p>
-        pub fn new_image_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_image_description(inp);
+        pub fn new_image_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_image_description(signature.into());
             self
         }
         /// <p>The description to display for the new image.</p>
@@ -3028,8 +3033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to display for the new image.</p>
-        pub fn new_image_display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_image_display_name(inp);
+        pub fn new_image_display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_image_display_name(signature.into());
             self
         }
         /// <p>The name to display for the new image.</p>
@@ -3054,7 +3059,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.new_image_tags(k, v);
+            self.inner = self.inner.new_image_tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
@@ -3072,8 +3077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
@@ -3206,8 +3211,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(signature.into());
             self
         }
         /// <p>The email address of the user.</p>
@@ -3224,8 +3229,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
         /// </note>
-        pub fn message_action(mut self, inp: crate::model::MessageAction) -> Self {
-            self.inner = self.inner.message_action(inp);
+        pub fn message_action(mut self, signature: crate::model::MessageAction) -> Self {
+            self.inner = self.inner.message_action(signature);
             self
         }
         /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
@@ -3241,8 +3246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first name, or given name, of the user.</p>
-        pub fn first_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(inp);
+        pub fn first_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(signature.into());
             self
         }
         /// <p>The first name, or given name, of the user.</p>
@@ -3251,8 +3256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last name, or surname, of the user.</p>
-        pub fn last_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(inp);
+        pub fn last_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(signature.into());
             self
         }
         /// <p>The last name, or surname, of the user.</p>
@@ -3261,8 +3266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL. </p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(signature);
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL. </p>
@@ -3334,8 +3339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app block.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the app block.</p>
@@ -3404,8 +3409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -3474,8 +3479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the directory configuration.</p>
-        pub fn directory_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_name(inp);
+        pub fn directory_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_name(signature.into());
             self
         }
         /// <p>The name of the directory configuration.</p>
@@ -3547,8 +3552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -3618,8 +3623,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the image.</p>
@@ -3688,8 +3693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the image builder.</p>
@@ -3758,8 +3763,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the private image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the private image.</p>
@@ -3768,8 +3773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-        pub fn shared_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_account_id(inp);
+        pub fn shared_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_account_id(signature.into());
             self
         }
         /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
@@ -3841,8 +3846,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -3975,8 +3980,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(signature.into());
             self
         }
         /// <p>The email address of the user.</p>
@@ -3989,8 +3994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(signature);
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
@@ -4066,8 +4071,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>The ARNs of the app blocks.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>The ARNs of the app blocks.</p>
@@ -4080,8 +4085,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token used to retrieve the next page of results for this
         /// operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this
@@ -4091,8 +4096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4163,8 +4168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -4173,8 +4178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the application.</p>
-        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_arn(inp);
+        pub fn application_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(signature.into());
             self
         }
         /// <p>The ARN of the application.</p>
@@ -4186,8 +4191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4197,8 +4202,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token used to retrieve the next page of results for this
         /// operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this
@@ -4272,8 +4277,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>The ARNs for the applications.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>The ARNs for the applications.</p>
@@ -4286,8 +4291,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token used to retrieve the next page of results for this
         /// operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this
@@ -4297,8 +4302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4373,8 +4378,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_directory_names`](Self::set_directory_names).
         ///
         /// <p>The directory names.</p>
-        pub fn directory_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_names(inp);
+        pub fn directory_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_names(input.into());
             self
         }
         /// <p>The directory names.</p>
@@ -4386,8 +4391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4396,8 +4401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4470,8 +4475,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the fleets to describe.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the fleets to describe.</p>
@@ -4483,8 +4488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4557,8 +4562,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the image builders to describe.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the image builders to describe.</p>
@@ -4570,8 +4575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4580,8 +4585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4650,8 +4655,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
@@ -4660,8 +4665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4674,8 +4679,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_shared_aws_account_ids`](Self::set_shared_aws_account_ids).
         ///
         /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-        pub fn shared_aws_account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_aws_account_ids(inp);
+        pub fn shared_aws_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_aws_account_ids(input.into());
             self
         }
         /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
@@ -4687,8 +4692,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4761,8 +4766,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the public or private images to describe.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the public or private images to describe.</p>
@@ -4778,8 +4783,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>The ARNs of the public, private, and shared images to describe.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>The ARNs of the public, private, and shared images to describe.</p>
@@ -4791,8 +4796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of image (public, private, or shared) to describe. </p>
-        pub fn r#type(mut self, inp: crate::model::VisibilityType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::VisibilityType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of image (public, private, or shared) to describe. </p>
@@ -4804,8 +4809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4814,8 +4819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4886,8 +4891,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack. This value is case-sensitive.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(signature.into());
             self
         }
         /// <p>The name of the stack. This value is case-sensitive.</p>
@@ -4896,8 +4901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet. This value is case-sensitive.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet. This value is case-sensitive.</p>
@@ -4906,8 +4911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(signature.into());
             self
         }
         /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
@@ -4916,8 +4921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4926,8 +4931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
@@ -4938,8 +4943,8 @@ pub mod fluent_builders {
         /// <p>The authentication method. Specify <code>API</code> for a user
         /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
         /// The default is to authenticate users using a streaming URL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(signature);
             self
         }
         /// <p>The authentication method. Specify <code>API</code> for a user
@@ -5017,8 +5022,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the stacks to describe.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the stacks to describe.</p>
@@ -5030,8 +5035,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5100,8 +5105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -5110,8 +5115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5180,8 +5185,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(signature);
             self
         }
         /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
@@ -5193,8 +5198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -5203,8 +5208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5281,8 +5286,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack that is associated with the user.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(signature.into());
             self
         }
         /// <p>The name of the stack that is associated with the user.</p>
@@ -5295,8 +5300,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(signature.into());
             self
         }
         /// <p>The email address of the user who is associated with the stack.</p>
@@ -5309,8 +5314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(signature);
             self
         }
         /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
@@ -5322,8 +5327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -5332,8 +5337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5406,8 +5411,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(signature.into());
             self
         }
         /// <p>The email address of the user.</p>
@@ -5420,8 +5425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(signature);
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
@@ -5493,8 +5498,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -5503,8 +5508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the application.</p>
-        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_arn(inp);
+        pub fn application_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(signature.into());
             self
         }
         /// <p>The ARN of the application.</p>
@@ -5576,8 +5581,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -5586,8 +5591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(signature.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -5660,8 +5665,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(signature.into());
             self
         }
         /// <p>The email address of the user.</p>
@@ -5674,8 +5679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(signature);
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
@@ -5747,8 +5752,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the streaming session.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The identifier of the streaming session.</p>
@@ -5817,8 +5822,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(signature.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -5827,8 +5832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5897,8 +5902,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -5907,8 +5912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5978,8 +5983,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -6048,8 +6053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -6118,8 +6123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the image builder.</p>
@@ -6128,8 +6133,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-        pub fn appstream_agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.appstream_agent_version(inp);
+        pub fn appstream_agent_version(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.appstream_agent_version(signature.into());
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
@@ -6201,8 +6209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -6271,8 +6279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the image builder.</p>
@@ -6347,8 +6355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -6371,7 +6379,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
@@ -6452,8 +6460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -6466,8 +6474,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys for the tags to disassociate.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys for the tags to disassociate.</p>
@@ -6539,8 +6547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
@@ -6549,8 +6557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
@@ -6559,8 +6567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the application.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the application.</p>
@@ -6569,8 +6577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The icon S3 location of the application.</p>
-        pub fn icon_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.icon_s3_location(inp);
+        pub fn icon_s3_location(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.icon_s3_location(signature);
             self
         }
         /// <p>The icon S3 location of the application.</p>
@@ -6582,8 +6590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch path of the application.</p>
-        pub fn launch_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_path(inp);
+        pub fn launch_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_path(signature.into());
             self
         }
         /// <p>The launch path of the application.</p>
@@ -6592,8 +6600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The working directory of the application.</p>
-        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.working_directory(inp);
+        pub fn working_directory(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.working_directory(signature.into());
             self
         }
         /// <p>The working directory of the application.</p>
@@ -6605,8 +6613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch parameters of the application.</p>
-        pub fn launch_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_parameters(inp);
+        pub fn launch_parameters(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_parameters(signature.into());
             self
         }
         /// <p>The launch parameters of the application.</p>
@@ -6618,8 +6626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the app block.</p>
-        pub fn app_block_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_block_arn(inp);
+        pub fn app_block_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_block_arn(signature.into());
             self
         }
         /// <p>The ARN of the app block.</p>
@@ -6635,11 +6643,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The attributes to delete for an application.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            inp: impl Into<crate::model::ApplicationAttribute>,
-        ) -> Self {
-            self.inner = self.inner.attributes_to_delete(inp);
+        pub fn attributes_to_delete(mut self, input: crate::model::ApplicationAttribute) -> Self {
+            self.inner = self.inner.attributes_to_delete(input);
             self
         }
         /// <p>The attributes to delete for an application.</p>
@@ -6711,8 +6716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Directory Config object.</p>
-        pub fn directory_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_name(inp);
+        pub fn directory_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_name(signature.into());
             self
         }
         /// <p>The name of the Directory Config object.</p>
@@ -6730,9 +6735,11 @@ pub mod fluent_builders {
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
         pub fn organizational_unit_distinguished_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organizational_unit_distinguished_names(inp);
+            self.inner = self
+                .inner
+                .organizational_unit_distinguished_names(input.into());
             self
         }
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
@@ -6748,9 +6755,9 @@ pub mod fluent_builders {
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
         pub fn service_account_credentials(
             mut self,
-            inp: crate::model::ServiceAccountCredentials,
+            signature: crate::model::ServiceAccountCredentials,
         ) -> Self {
-            self.inner = self.inner.service_account_credentials(inp);
+            self.inner = self.inner.service_account_credentials(signature);
             self
         }
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
@@ -6843,8 +6850,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image used to create the fleet.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(signature.into());
             self
         }
         /// <p>The name of the image used to create the fleet.</p>
@@ -6853,8 +6860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
-        pub fn image_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_arn(inp);
+        pub fn image_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_arn(signature.into());
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
@@ -6863,8 +6870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique name for the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A unique name for the fleet.</p>
@@ -6983,8 +6990,8 @@ pub mod fluent_builders {
         /// <p>stream.standard.medium</p>
         /// </li>
         /// </ul>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(signature.into());
             self
         }
         /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
@@ -7106,8 +7113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
-        pub fn compute_capacity(mut self, inp: crate::model::ComputeCapacity) -> Self {
-            self.inner = self.inner.compute_capacity(inp);
+        pub fn compute_capacity(mut self, signature: crate::model::ComputeCapacity) -> Self {
+            self.inner = self.inner.compute_capacity(signature);
             self
         }
         /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
@@ -7119,8 +7126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, signature: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(signature);
             self
         }
         /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
@@ -7133,8 +7140,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
         /// <p>Specify a value between 600 and 360000.</p>
-        pub fn max_user_duration_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_user_duration_in_seconds(inp);
+        pub fn max_user_duration_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_user_duration_in_seconds(signature);
             self
         }
         /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
@@ -7145,8 +7152,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
         /// <p>Specify a value between 60 and 360000.</p>
-        pub fn disconnect_timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.disconnect_timeout_in_seconds(inp);
+        pub fn disconnect_timeout_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.disconnect_timeout_in_seconds(signature);
             self
         }
         /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
@@ -7159,8 +7166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Deletes the VPC association for the specified fleet.</p>
-        pub fn delete_vpc_config(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_vpc_config(inp);
+        pub fn delete_vpc_config(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_vpc_config(signature);
             self
         }
         /// <p>Deletes the VPC association for the specified fleet.</p>
@@ -7169,8 +7176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description to display.</p>
@@ -7179,8 +7186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fleet name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The fleet name to display.</p>
@@ -7189,8 +7196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables or disables default internet access for the fleet.</p>
-        pub fn enable_default_internet_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_default_internet_access(inp);
+        pub fn enable_default_internet_access(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enable_default_internet_access(signature);
             self
         }
         /// <p>Enables or disables default internet access for the fleet.</p>
@@ -7202,8 +7209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
-        pub fn domain_join_info(mut self, inp: crate::model::DomainJoinInfo) -> Self {
-            self.inner = self.inner.domain_join_info(inp);
+        pub fn domain_join_info(mut self, signature: crate::model::DomainJoinInfo) -> Self {
+            self.inner = self.inner.domain_join_info(signature);
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
@@ -7229,8 +7236,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
-        pub fn idle_disconnect_timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.idle_disconnect_timeout_in_seconds(inp);
+        pub fn idle_disconnect_timeout_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.idle_disconnect_timeout_in_seconds(signature);
             self
         }
         /// <p>The amount of time that users can be idle (inactive) before they are disconnected
@@ -7260,11 +7267,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The fleet attributes to delete.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            inp: impl Into<crate::model::FleetAttribute>,
-        ) -> Self {
-            self.inner = self.inner.attributes_to_delete(inp);
+        pub fn attributes_to_delete(mut self, input: crate::model::FleetAttribute) -> Self {
+            self.inner = self.inner.attributes_to_delete(input);
             self
         }
         /// <p>The fleet attributes to delete.</p>
@@ -7278,8 +7282,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
         ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
@@ -7292,8 +7296,8 @@ pub mod fluent_builders {
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
         ///
         /// <p>The default value is <code>APP</code>.</p>
-        pub fn stream_view(mut self, inp: crate::model::StreamView) -> Self {
-            self.inner = self.inner.stream_view(inp);
+        pub fn stream_view(mut self, signature: crate::model::StreamView) -> Self {
+            self.inner = self.inner.stream_view(signature);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
@@ -7307,8 +7311,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
-        pub fn platform(mut self, inp: crate::model::PlatformType) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, signature: crate::model::PlatformType) -> Self {
+            self.inner = self.inner.platform(signature);
             self
         }
         /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
@@ -7320,8 +7324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of concurrent sessions for a fleet.</p>
-        pub fn max_concurrent_sessions(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_concurrent_sessions(inp);
+        pub fn max_concurrent_sessions(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_concurrent_sessions(signature);
             self
         }
         /// <p>The maximum number of concurrent sessions for a fleet.</p>
@@ -7334,8 +7338,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
         ///
         /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-        pub fn usb_device_filter_strings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usb_device_filter_strings(inp);
+        pub fn usb_device_filter_strings(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usb_device_filter_strings(input.into());
             self
         }
         /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
@@ -7407,8 +7411,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the private image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the private image.</p>
@@ -7417,8 +7421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
-        pub fn shared_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_account_id(inp);
+        pub fn shared_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_account_id(signature.into());
             self
         }
         /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
@@ -7430,8 +7434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The permissions for the image.</p>
-        pub fn image_permissions(mut self, inp: crate::model::ImagePermissions) -> Self {
-            self.inner = self.inner.image_permissions(inp);
+        pub fn image_permissions(mut self, signature: crate::model::ImagePermissions) -> Self {
+            self.inner = self.inner.image_permissions(signature);
             self
         }
         /// <p>The permissions for the image.</p>
@@ -7503,8 +7507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The stack name to display.</p>
@@ -7513,8 +7517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description to display.</p>
@@ -7523,8 +7527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stack.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -7537,11 +7541,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            inp: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
-            self.inner = self.inner.storage_connectors(inp);
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
+            self.inner = self.inner.storage_connectors(input);
             self
         }
         /// <p>The storage connectors to enable.</p>
@@ -7553,8 +7554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Deletes the storage connectors currently enabled for the stack.</p>
-        pub fn delete_storage_connectors(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_storage_connectors(inp);
+        pub fn delete_storage_connectors(mut self, signature: bool) -> Self {
+            self.inner = self.inner.delete_storage_connectors(signature);
             self
         }
         /// <p>Deletes the storage connectors currently enabled for the stack.</p>
@@ -7563,8 +7564,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
-        pub fn redirect_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.redirect_url(inp);
+        pub fn redirect_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.redirect_url(signature.into());
             self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
@@ -7573,8 +7574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-        pub fn feedback_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feedback_url(inp);
+        pub fn feedback_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feedback_url(signature.into());
             self
         }
         /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
@@ -7587,11 +7588,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The stack attributes to delete.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            inp: impl Into<crate::model::StackAttribute>,
-        ) -> Self {
-            self.inner = self.inner.attributes_to_delete(inp);
+        pub fn attributes_to_delete(mut self, input: crate::model::StackAttribute) -> Self {
+            self.inner = self.inner.attributes_to_delete(input);
             self
         }
         /// <p>The stack attributes to delete.</p>
@@ -7607,8 +7605,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-        pub fn user_settings(mut self, inp: impl Into<crate::model::UserSetting>) -> Self {
-            self.inner = self.inner.user_settings(inp);
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
@@ -7620,8 +7618,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-        pub fn application_settings(mut self, inp: crate::model::ApplicationSettings) -> Self {
-            self.inner = self.inner.application_settings(inp);
+        pub fn application_settings(
+            mut self,
+            signature: crate::model::ApplicationSettings,
+        ) -> Self {
+            self.inner = self.inner.application_settings(signature);
             self
         }
         /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
@@ -7637,8 +7638,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, inp: impl Into<crate::model::AccessEndpoint>) -> Self {
-            self.inner = self.inner.access_endpoints(inp);
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
+            self.inner = self.inner.access_endpoints(input);
             self
         }
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
@@ -7654,8 +7655,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
         ///
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-        pub fn embed_host_domains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.embed_host_domains(inp);
+        pub fn embed_host_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.embed_host_domains(input.into());
             self
         }
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>

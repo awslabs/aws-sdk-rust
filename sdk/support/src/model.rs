@@ -980,10 +980,10 @@ pub mod trusted_advisor_check_result {
         /// <p>The details about each resource listed in the check result.</p>
         pub fn flagged_resources(
             mut self,
-            input: impl Into<crate::model::TrustedAdvisorResourceDetail>,
+            input: crate::model::TrustedAdvisorResourceDetail,
         ) -> Self {
             let mut v = self.flagged_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.flagged_resources = Some(v);
             self
         }
@@ -1463,9 +1463,9 @@ pub mod service {
         /// <p>A list of categories that describe the type of support issue a case describes.
         /// Categories consist of a category name and a category code. Category names and codes are
         /// passed to AWS Support when you call <a>CreateCase</a>.</p>
-        pub fn categories(mut self, input: impl Into<crate::model::Category>) -> Self {
+        pub fn categories(mut self, input: crate::model::Category) -> Self {
             let mut v = self.categories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categories = Some(v);
             self
         }
@@ -1708,9 +1708,9 @@ pub mod communication {
         /// To override the contents of this collection use [`set_attachment_set`](Self::set_attachment_set).
         ///
         /// <p>Information about the attachments to the case communication.</p>
-        pub fn attachment_set(mut self, input: impl Into<crate::model::AttachmentDetails>) -> Self {
+        pub fn attachment_set(mut self, input: crate::model::AttachmentDetails) -> Self {
             let mut v = self.attachment_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachment_set = Some(v);
             self
         }
@@ -2416,9 +2416,9 @@ pub mod recent_case_communications {
         /// To override the contents of this collection use [`set_communications`](Self::set_communications).
         ///
         /// <p>The five most recent communications associated with the case.</p>
-        pub fn communications(mut self, input: impl Into<crate::model::Communication>) -> Self {
+        pub fn communications(mut self, input: crate::model::Communication) -> Self {
             let mut v = self.communications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.communications = Some(v);
             self
         }

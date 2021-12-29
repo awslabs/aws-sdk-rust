@@ -250,9 +250,9 @@ pub mod check_capacity_input {
         ///
         /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
         /// ACL. </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -533,9 +533,9 @@ pub mod create_ip_set_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -752,9 +752,9 @@ pub mod create_regex_pattern_set_input {
         /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
         ///
         /// <p>Array of regular expression strings. </p>
-        pub fn regular_expression_list(mut self, input: impl Into<crate::model::Regex>) -> Self {
+        pub fn regular_expression_list(mut self, input: crate::model::Regex) -> Self {
             let mut v = self.regular_expression_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regular_expression_list = Some(v);
             self
         }
@@ -771,9 +771,9 @@ pub mod create_regex_pattern_set_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1032,9 +1032,9 @@ pub mod create_rule_group_input {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1067,9 +1067,9 @@ pub mod create_rule_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1093,10 +1093,10 @@ pub mod create_rule_group_input {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
             let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.custom_response_bodies = Some(hash_map);
             self
         }
@@ -1344,9 +1344,9 @@ pub mod create_web_acl_input {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1379,9 +1379,9 @@ pub mod create_web_acl_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1405,10 +1405,10 @@ pub mod create_web_acl_input {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
             let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.custom_response_bodies = Some(hash_map);
             self
         }
@@ -7526,10 +7526,10 @@ pub mod put_managed_rule_set_versions_input {
         pub fn versions_to_publish(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::VersionToPublish>,
+            v: crate::model::VersionToPublish,
         ) -> Self {
             let mut hash_map = self.versions_to_publish.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.versions_to_publish = Some(hash_map);
             self
         }
@@ -7923,9 +7923,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8844,9 +8844,9 @@ pub mod update_regex_pattern_set_input {
         /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
         ///
         /// <p></p>
-        pub fn regular_expression_list(mut self, input: impl Into<crate::model::Regex>) -> Self {
+        pub fn regular_expression_list(mut self, input: crate::model::Regex) -> Self {
             let mut v = self.regular_expression_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regular_expression_list = Some(v);
             self
         }
@@ -9094,9 +9094,9 @@ pub mod update_rule_group_input {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -9146,10 +9146,10 @@ pub mod update_rule_group_input {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
             let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.custom_response_bodies = Some(hash_map);
             self
         }
@@ -9408,9 +9408,9 @@ pub mod update_web_acl_input {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -9460,10 +9460,10 @@ pub mod update_web_acl_input {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
             let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.custom_response_bodies = Some(hash_map);
             self
         }

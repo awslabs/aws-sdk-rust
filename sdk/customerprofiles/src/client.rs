@@ -394,8 +394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(signature.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -404,8 +404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A searchable identifier of a customer profile.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(inp);
+        pub fn key_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(signature.into());
             self
         }
         /// <p>A searchable identifier of a customer profile.</p>
@@ -418,8 +418,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A list of key values.</p>
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.values(inp);
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.values(input.into());
             self
         }
         /// <p>A list of key values.</p>
@@ -431,8 +431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -510,8 +510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -520,8 +520,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
-        pub fn default_expiration_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.default_expiration_days(inp);
+        pub fn default_expiration_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.default_expiration_days(signature);
             self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
@@ -532,8 +532,8 @@ pub mod fluent_builders {
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
         /// of encryption key is specified. It is used to encrypt all data before it is placed in
         /// permanent or semi-permanent storage.</p>
-        pub fn default_encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_encryption_key(inp);
+        pub fn default_encryption_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_encryption_key(signature.into());
             self
         }
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
@@ -550,8 +550,8 @@ pub mod fluent_builders {
         /// ingesting data from third party applications. You must set up a policy on the
         /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
         /// messages to the DeadLetterQueue.</p>
-        pub fn dead_letter_queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dead_letter_queue_url(inp);
+        pub fn dead_letter_queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dead_letter_queue_url(signature.into());
             self
         }
         /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
@@ -572,8 +572,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
         /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
         /// S3.</p>
-        pub fn matching(mut self, inp: crate::model::MatchingRequest) -> Self {
-            self.inner = self.inner.matching(inp);
+        pub fn matching(mut self, signature: crate::model::MatchingRequest) -> Self {
+            self.inner = self.inner.matching(signature);
             self
         }
         /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
@@ -600,7 +600,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -676,8 +676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -686,8 +686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique account number that you have given to the customer.</p>
-        pub fn account_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_number(inp);
+        pub fn account_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_number(signature.into());
             self
         }
         /// <p>A unique account number that you have given to the customer.</p>
@@ -699,8 +699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Any additional information relevant to the customer’s profile.</p>
-        pub fn additional_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_information(inp);
+        pub fn additional_information(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.additional_information(signature.into());
             self
         }
         /// <p>Any additional information relevant to the customer’s profile.</p>
@@ -712,8 +712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of profile used to describe the customer.</p>
-        pub fn party_type(mut self, inp: crate::model::PartyType) -> Self {
-            self.inner = self.inner.party_type(inp);
+        pub fn party_type(mut self, signature: crate::model::PartyType) -> Self {
+            self.inner = self.inner.party_type(signature);
             self
         }
         /// <p>The type of profile used to describe the customer.</p>
@@ -725,8 +725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the customer’s business.</p>
-        pub fn business_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_name(inp);
+        pub fn business_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_name(signature.into());
             self
         }
         /// <p>The name of the customer’s business.</p>
@@ -738,8 +738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s first name.</p>
-        pub fn first_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(inp);
+        pub fn first_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(signature.into());
             self
         }
         /// <p>The customer’s first name.</p>
@@ -748,8 +748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s middle name.</p>
-        pub fn middle_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.middle_name(inp);
+        pub fn middle_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.middle_name(signature.into());
             self
         }
         /// <p>The customer’s middle name.</p>
@@ -758,8 +758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s last name.</p>
-        pub fn last_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(inp);
+        pub fn last_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(signature.into());
             self
         }
         /// <p>The customer’s last name.</p>
@@ -768,8 +768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s birth date. </p>
-        pub fn birth_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.birth_date(inp);
+        pub fn birth_date(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.birth_date(signature.into());
             self
         }
         /// <p>The customer’s birth date. </p>
@@ -778,8 +778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gender with which the customer identifies. </p>
-        pub fn gender(mut self, inp: crate::model::Gender) -> Self {
-            self.inner = self.inner.gender(inp);
+        pub fn gender(mut self, signature: crate::model::Gender) -> Self {
+            self.inner = self.inner.gender(signature);
             self
         }
         /// <p>The gender with which the customer identifies. </p>
@@ -789,8 +789,8 @@ pub mod fluent_builders {
         }
         /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
         /// number. </p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(signature.into());
             self
         }
         /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
@@ -800,8 +800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s mobile phone number.</p>
-        pub fn mobile_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mobile_phone_number(inp);
+        pub fn mobile_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mobile_phone_number(signature.into());
             self
         }
         /// <p>The customer’s mobile phone number.</p>
@@ -813,8 +813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s home phone number.</p>
-        pub fn home_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_phone_number(inp);
+        pub fn home_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_phone_number(signature.into());
             self
         }
         /// <p>The customer’s home phone number.</p>
@@ -826,8 +826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s business phone number.</p>
-        pub fn business_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_phone_number(inp);
+        pub fn business_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_phone_number(signature.into());
             self
         }
         /// <p>The customer’s business phone number.</p>
@@ -840,8 +840,8 @@ pub mod fluent_builders {
         }
         /// <p>The customer’s email address, which has not been specified as a personal or business
         /// address. </p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(signature.into());
             self
         }
         /// <p>The customer’s email address, which has not been specified as a personal or business
@@ -854,8 +854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s personal email address.</p>
-        pub fn personal_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.personal_email_address(inp);
+        pub fn personal_email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.personal_email_address(signature.into());
             self
         }
         /// <p>The customer’s personal email address.</p>
@@ -867,8 +867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s business email address.</p>
-        pub fn business_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_email_address(inp);
+        pub fn business_email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_email_address(signature.into());
             self
         }
         /// <p>The customer’s business email address.</p>
@@ -881,8 +881,8 @@ pub mod fluent_builders {
         }
         /// <p>A generic address associated with the customer that is not mailing, shipping, or
         /// billing.</p>
-        pub fn address(mut self, inp: crate::model::Address) -> Self {
-            self.inner = self.inner.address(inp);
+        pub fn address(mut self, signature: crate::model::Address) -> Self {
+            self.inner = self.inner.address(signature);
             self
         }
         /// <p>A generic address associated with the customer that is not mailing, shipping, or
@@ -892,8 +892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s shipping address.</p>
-        pub fn shipping_address(mut self, inp: crate::model::Address) -> Self {
-            self.inner = self.inner.shipping_address(inp);
+        pub fn shipping_address(mut self, signature: crate::model::Address) -> Self {
+            self.inner = self.inner.shipping_address(signature);
             self
         }
         /// <p>The customer’s shipping address.</p>
@@ -905,8 +905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s mailing address.</p>
-        pub fn mailing_address(mut self, inp: crate::model::Address) -> Self {
-            self.inner = self.inner.mailing_address(inp);
+        pub fn mailing_address(mut self, signature: crate::model::Address) -> Self {
+            self.inner = self.inner.mailing_address(signature);
             self
         }
         /// <p>The customer’s mailing address.</p>
@@ -918,8 +918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s billing address.</p>
-        pub fn billing_address(mut self, inp: crate::model::Address) -> Self {
-            self.inner = self.inner.billing_address(inp);
+        pub fn billing_address(mut self, signature: crate::model::Address) -> Self {
+            self.inner = self.inner.billing_address(signature);
             self
         }
         /// <p>The customer’s billing address.</p>
@@ -940,7 +940,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>A key value pair of attributes of a customer profile.</p>
@@ -1015,8 +1015,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1085,8 +1085,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1095,8 +1095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(signature.into());
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -1165,8 +1165,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(signature.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -1175,8 +1175,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1245,8 +1245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(signature.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -1255,8 +1255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A searchable identifier of a customer profile.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(inp);
+        pub fn key_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(signature.into());
             self
         }
         /// <p>A searchable identifier of a customer profile.</p>
@@ -1269,8 +1269,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A list of key values.</p>
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.values(inp);
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.values(input.into());
             self
         }
         /// <p>A list of key values.</p>
@@ -1282,8 +1282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1352,8 +1352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(signature.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -1362,8 +1362,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the profile object generated by the service.</p>
-        pub fn profile_object_unique_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_object_unique_key(inp);
+        pub fn profile_object_unique_key(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.profile_object_unique_key(signature.into());
             self
         }
         /// <p>The unique identifier of the profile object generated by the service.</p>
@@ -1375,8 +1378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(signature.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -1388,8 +1391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1461,8 +1464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1471,8 +1474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(signature.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -1557,8 +1560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1567,8 +1570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of matching attributes that represent matching criteria.</p>
-        pub fn consolidation(mut self, inp: crate::model::Consolidation) -> Self {
-            self.inner = self.inner.consolidation(inp);
+        pub fn consolidation(mut self, signature: crate::model::Consolidation) -> Self {
+            self.inner = self.inner.consolidation(signature);
             self
         }
         /// <p>A list of matching attributes that represent matching criteria.</p>
@@ -1580,8 +1583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-        pub fn conflict_resolution(mut self, inp: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(inp);
+        pub fn conflict_resolution(mut self, signature: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(signature);
             self
         }
         /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
@@ -1653,8 +1656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1725,8 +1728,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1735,8 +1738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the Identity Resolution Job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The unique identifier of the Identity Resolution Job.</p>
@@ -1805,8 +1808,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1815,8 +1818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(signature.into());
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -1935,8 +1938,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -1946,8 +1949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1956,8 +1959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2026,8 +2029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2036,8 +2039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(signature.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -2113,8 +2116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the object template.</p>
-        pub fn template_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(inp);
+        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(signature.into());
             self
         }
         /// <p>A unique identifier for the object template.</p>
@@ -2183,8 +2186,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(signature.into());
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -2193,8 +2196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
@@ -2203,8 +2206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2273,8 +2276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token from the previous ListDomain API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token from the previous ListDomain API call.</p>
@@ -2283,8 +2286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2354,8 +2357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2365,8 +2368,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -2376,8 +2379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2446,8 +2449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2456,8 +2459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token from the previous ListIntegrations API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token from the previous ListIntegrations API call.</p>
@@ -2466,8 +2469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2536,8 +2539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token from the previous call to ListProfileObjects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token from the previous call to ListProfileObjects.</p>
@@ -2546,8 +2549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2556,8 +2559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2566,8 +2569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(signature.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -2579,8 +2582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(signature.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -2590,8 +2593,8 @@ pub mod fluent_builders {
         }
         /// <p>Applies a filter to the response to include profile objects with the specified index
         /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
-        pub fn object_filter(mut self, inp: crate::model::ObjectFilter) -> Self {
-            self.inner = self.inner.object_filter(inp);
+        pub fn object_filter(mut self, signature: crate::model::ObjectFilter) -> Self {
+            self.inner = self.inner.object_filter(signature);
             self
         }
         /// <p>Applies a filter to the response to include profile objects with the specified index
@@ -2664,8 +2667,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2674,8 +2677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Identifies the next page of results to return.</p>
@@ -2684,8 +2687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2754,8 +2757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
@@ -2764,8 +2767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2835,8 +2838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource for which you want to view tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource for which you want to view tags.</p>
@@ -2949,8 +2952,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2959,8 +2962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the profile to be taken.</p>
-        pub fn main_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.main_profile_id(inp);
+        pub fn main_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.main_profile_id(signature.into());
             self
         }
         /// <p>The identifier of the profile to be taken.</p>
@@ -2976,8 +2979,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_profile_ids_to_be_merged`](Self::set_profile_ids_to_be_merged).
         ///
         /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-        pub fn profile_ids_to_be_merged(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_ids_to_be_merged(inp);
+        pub fn profile_ids_to_be_merged(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_ids_to_be_merged(input.into());
             self
         }
         /// <p>The identifier of the profile to be merged into MainProfileId.</p>
@@ -2993,9 +2996,9 @@ pub mod fluent_builders {
         /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn field_source_profile_ids(
             mut self,
-            inp: crate::model::FieldSourceProfileIds,
+            signature: crate::model::FieldSourceProfileIds,
         ) -> Self {
-            self.inner = self.inner.field_source_profile_ids(inp);
+            self.inner = self.inner.field_source_profile_ids(signature);
             self
         }
         /// <p>The identifiers of the fields in the profile that has the information you want to apply
@@ -3071,8 +3074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3081,8 +3084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(signature.into());
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -3091,8 +3094,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(signature.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -3113,7 +3116,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3128,8 +3131,8 @@ pub mod fluent_builders {
         }
         /// <p>The configuration that controls how Customer Profiles retrieves data from the
         /// source.</p>
-        pub fn flow_definition(mut self, inp: crate::model::FlowDefinition) -> Self {
-            self.inner = self.inner.flow_definition(inp);
+        pub fn flow_definition(mut self, signature: crate::model::FlowDefinition) -> Self {
+            self.inner = self.inner.flow_definition(signature);
             self
         }
         /// <p>The configuration that controls how Customer Profiles retrieves data from the
@@ -3211,8 +3214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(signature.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -3224,8 +3227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that is serialized from a JSON object.</p>
-        pub fn object(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object(inp);
+        pub fn object(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object(signature.into());
             self
         }
         /// <p>A string that is serialized from a JSON object.</p>
@@ -3234,8 +3237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3304,8 +3307,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3314,8 +3317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(signature.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -3327,8 +3330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the profile object type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Description of the profile object type.</p>
@@ -3337,8 +3340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the object template.</p>
-        pub fn template_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(inp);
+        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(signature.into());
             self
         }
         /// <p>A unique identifier for the object template.</p>
@@ -3347,8 +3350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days until the data in the object expires.</p>
-        pub fn expiration_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.expiration_days(inp);
+        pub fn expiration_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.expiration_days(signature);
             self
         }
         /// <p>The number of days until the data in the object expires.</p>
@@ -3358,8 +3361,8 @@ pub mod fluent_builders {
         }
         /// <p>The customer-provided key to encrypt the profile object that will be created in this
         /// profile object type.</p>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        pub fn encryption_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(signature.into());
             self
         }
         /// <p>The customer-provided key to encrypt the profile object that will be created in this
@@ -3376,8 +3379,8 @@ pub mod fluent_builders {
         /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
         /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
         /// is found, then the service creates a new standard profile.</p>
-        pub fn allow_profile_creation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_profile_creation(inp);
+        pub fn allow_profile_creation(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_profile_creation(signature);
             self
         }
         /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
@@ -3393,9 +3396,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn source_last_updated_timestamp_format(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_last_updated_timestamp_format(inp);
+            self.inner = self
+                .inner
+                .source_last_updated_timestamp_format(signature.into());
             self
         }
         /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
@@ -3415,9 +3420,9 @@ pub mod fluent_builders {
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ObjectTypeField>,
+            v: crate::model::ObjectTypeField,
         ) -> Self {
-            self.inner = self.inner.fields(k, v);
+            self.inner = self.inner.fields(k.into(), v);
             self
         }
         /// <p>A map of the name and ObjectType field.</p>
@@ -3438,9 +3443,9 @@ pub mod fluent_builders {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ObjectTypeKey>>,
+            v: std::vec::Vec<crate::model::ObjectTypeKey>,
         ) -> Self {
-            self.inner = self.inner.keys(k, v);
+            self.inner = self.inner.keys(k.into(), v);
             self
         }
         /// <p>A list of unique keys that can be used to map data to the profile.</p>
@@ -3466,7 +3471,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3541,8 +3546,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token from the previous SearchProfiles API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token from the previous SearchProfiles API call.</p>
@@ -3551,8 +3556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -3561,8 +3566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3573,8 +3578,8 @@ pub mod fluent_builders {
         /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
         /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
         /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(inp);
+        pub fn key_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(signature.into());
             self
         }
         /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
@@ -3589,8 +3594,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A list of key values.</p>
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.values(inp);
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.values(input.into());
             self
         }
         /// <p>A list of key values.</p>
@@ -3673,8 +3678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource that you're adding tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource that you're adding tags to.</p>
@@ -3692,7 +3697,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3767,8 +3772,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource from which you are removing tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource from which you are removing tags.</p>
@@ -3781,8 +3786,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -3861,8 +3866,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3871,8 +3876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
-        pub fn default_expiration_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.default_expiration_days(inp);
+        pub fn default_expiration_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.default_expiration_days(signature);
             self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
@@ -3884,8 +3889,8 @@ pub mod fluent_builders {
         /// of encryption key is specified. It is used to encrypt all data before it is placed in
         /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
         /// existing value.</p>
-        pub fn default_encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_encryption_key(inp);
+        pub fn default_encryption_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_encryption_key(signature.into());
             self
         }
         /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
@@ -3904,8 +3909,8 @@ pub mod fluent_builders {
         /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
         /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
         /// DeadLetterQueue.</p>
-        pub fn dead_letter_queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dead_letter_queue_url(inp);
+        pub fn dead_letter_queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dead_letter_queue_url(signature.into());
             self
         }
         /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
@@ -3927,8 +3932,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
         /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
         /// S3.</p>
-        pub fn matching(mut self, inp: crate::model::MatchingRequest) -> Self {
-            self.inner = self.inner.matching(inp);
+        pub fn matching(mut self, signature: crate::model::MatchingRequest) -> Self {
+            self.inner = self.inner.matching(signature);
             self
         }
         /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
@@ -3955,7 +3960,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -4033,8 +4038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -4043,8 +4048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(signature.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -4053,8 +4058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Any additional information relevant to the customer’s profile.</p>
-        pub fn additional_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_information(inp);
+        pub fn additional_information(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.additional_information(signature.into());
             self
         }
         /// <p>Any additional information relevant to the customer’s profile.</p>
@@ -4066,8 +4071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique account number that you have given to the customer.</p>
-        pub fn account_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_number(inp);
+        pub fn account_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_number(signature.into());
             self
         }
         /// <p>A unique account number that you have given to the customer.</p>
@@ -4079,8 +4084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of profile used to describe the customer.</p>
-        pub fn party_type(mut self, inp: crate::model::PartyType) -> Self {
-            self.inner = self.inner.party_type(inp);
+        pub fn party_type(mut self, signature: crate::model::PartyType) -> Self {
+            self.inner = self.inner.party_type(signature);
             self
         }
         /// <p>The type of profile used to describe the customer.</p>
@@ -4092,8 +4097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the customer’s business.</p>
-        pub fn business_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_name(inp);
+        pub fn business_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_name(signature.into());
             self
         }
         /// <p>The name of the customer’s business.</p>
@@ -4105,8 +4110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s first name.</p>
-        pub fn first_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(inp);
+        pub fn first_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(signature.into());
             self
         }
         /// <p>The customer’s first name.</p>
@@ -4115,8 +4120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s middle name.</p>
-        pub fn middle_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.middle_name(inp);
+        pub fn middle_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.middle_name(signature.into());
             self
         }
         /// <p>The customer’s middle name.</p>
@@ -4125,8 +4130,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s last name.</p>
-        pub fn last_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(inp);
+        pub fn last_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(signature.into());
             self
         }
         /// <p>The customer’s last name.</p>
@@ -4135,8 +4140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s birth date. </p>
-        pub fn birth_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.birth_date(inp);
+        pub fn birth_date(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.birth_date(signature.into());
             self
         }
         /// <p>The customer’s birth date. </p>
@@ -4145,8 +4150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gender with which the customer identifies. </p>
-        pub fn gender(mut self, inp: crate::model::Gender) -> Self {
-            self.inner = self.inner.gender(inp);
+        pub fn gender(mut self, signature: crate::model::Gender) -> Self {
+            self.inner = self.inner.gender(signature);
             self
         }
         /// <p>The gender with which the customer identifies. </p>
@@ -4156,8 +4161,8 @@ pub mod fluent_builders {
         }
         /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
         /// number. </p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(signature.into());
             self
         }
         /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
@@ -4167,8 +4172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s mobile phone number.</p>
-        pub fn mobile_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mobile_phone_number(inp);
+        pub fn mobile_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mobile_phone_number(signature.into());
             self
         }
         /// <p>The customer’s mobile phone number.</p>
@@ -4180,8 +4185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s home phone number.</p>
-        pub fn home_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_phone_number(inp);
+        pub fn home_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_phone_number(signature.into());
             self
         }
         /// <p>The customer’s home phone number.</p>
@@ -4193,8 +4198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s business phone number.</p>
-        pub fn business_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_phone_number(inp);
+        pub fn business_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_phone_number(signature.into());
             self
         }
         /// <p>The customer’s business phone number.</p>
@@ -4207,8 +4212,8 @@ pub mod fluent_builders {
         }
         /// <p>The customer’s email address, which has not been specified as a personal or business
         /// address. </p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(signature.into());
             self
         }
         /// <p>The customer’s email address, which has not been specified as a personal or business
@@ -4221,8 +4226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s personal email address.</p>
-        pub fn personal_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.personal_email_address(inp);
+        pub fn personal_email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.personal_email_address(signature.into());
             self
         }
         /// <p>The customer’s personal email address.</p>
@@ -4234,8 +4239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s business email address.</p>
-        pub fn business_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_email_address(inp);
+        pub fn business_email_address(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_email_address(signature.into());
             self
         }
         /// <p>The customer’s business email address.</p>
@@ -4248,8 +4253,8 @@ pub mod fluent_builders {
         }
         /// <p>A generic address associated with the customer that is not mailing, shipping, or
         /// billing.</p>
-        pub fn address(mut self, inp: crate::model::UpdateAddress) -> Self {
-            self.inner = self.inner.address(inp);
+        pub fn address(mut self, signature: crate::model::UpdateAddress) -> Self {
+            self.inner = self.inner.address(signature);
             self
         }
         /// <p>A generic address associated with the customer that is not mailing, shipping, or
@@ -4262,8 +4267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s shipping address.</p>
-        pub fn shipping_address(mut self, inp: crate::model::UpdateAddress) -> Self {
-            self.inner = self.inner.shipping_address(inp);
+        pub fn shipping_address(mut self, signature: crate::model::UpdateAddress) -> Self {
+            self.inner = self.inner.shipping_address(signature);
             self
         }
         /// <p>The customer’s shipping address.</p>
@@ -4275,8 +4280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s mailing address.</p>
-        pub fn mailing_address(mut self, inp: crate::model::UpdateAddress) -> Self {
-            self.inner = self.inner.mailing_address(inp);
+        pub fn mailing_address(mut self, signature: crate::model::UpdateAddress) -> Self {
+            self.inner = self.inner.mailing_address(signature);
             self
         }
         /// <p>The customer’s mailing address.</p>
@@ -4288,8 +4293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s billing address.</p>
-        pub fn billing_address(mut self, inp: crate::model::UpdateAddress) -> Self {
-            self.inner = self.inner.billing_address(inp);
+        pub fn billing_address(mut self, signature: crate::model::UpdateAddress) -> Self {
+            self.inner = self.inner.billing_address(signature);
             self
         }
         /// <p>The customer’s billing address.</p>
@@ -4310,7 +4315,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>A key value pair of attributes of a customer profile.</p>

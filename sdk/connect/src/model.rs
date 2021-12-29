@@ -7716,9 +7716,9 @@ pub mod historical_metric_result {
         /// To override the contents of this collection use [`set_collections`](Self::set_collections).
         ///
         /// <p>The set of metrics.</p>
-        pub fn collections(mut self, input: impl Into<crate::model::HistoricalMetricData>) -> Self {
+        pub fn collections(mut self, input: crate::model::HistoricalMetricData) -> Self {
             let mut v = self.collections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.collections = Some(v);
             self
         }
@@ -8638,9 +8638,9 @@ pub mod filters {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p>The channel to use to filter the metrics.</p>
-        pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -8847,9 +8847,9 @@ pub mod current_metric_result {
         /// To override the contents of this collection use [`set_collections`](Self::set_collections).
         ///
         /// <p>The set of metrics.</p>
-        pub fn collections(mut self, input: impl Into<crate::model::CurrentMetricData>) -> Self {
+        pub fn collections(mut self, input: crate::model::CurrentMetricData) -> Self {
             let mut v = self.collections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.collections = Some(v);
             self
         }
@@ -10264,12 +10264,9 @@ pub mod routing_profile {
         ///
         /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
         /// profile.</p>
-        pub fn media_concurrencies(
-            mut self,
-            input: impl Into<crate::model::MediaConcurrency>,
-        ) -> Self {
+        pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
             let mut v = self.media_concurrencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_concurrencies = Some(v);
             self
         }
@@ -11199,9 +11196,9 @@ pub mod hours_of_operation {
         /// To override the contents of this collection use [`set_config`](Self::set_config).
         ///
         /// <p>Configuration information for the hours of operation.</p>
-        pub fn config(mut self, input: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
+        pub fn config(mut self, input: crate::model::HoursOfOperationConfig) -> Self {
             let mut v = self.config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config = Some(v);
             self
         }

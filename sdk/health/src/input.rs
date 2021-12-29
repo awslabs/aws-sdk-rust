@@ -424,10 +424,10 @@ pub mod describe_affected_entities_for_organization_input {
         /// <code>eventArn</code>.</p>
         pub fn organization_entity_filters(
             mut self,
-            input: impl Into<crate::model::EventAccountFilter>,
+            input: crate::model::EventAccountFilter,
         ) -> Self {
             let mut v = self.organization_entity_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_entity_filters = Some(v);
             self
         }
@@ -1185,10 +1185,10 @@ pub mod describe_event_details_for_organization_input {
         /// <code>eventArn</code>.</p>
         pub fn organization_event_detail_filters(
             mut self,
-            input: impl Into<crate::model::EventAccountFilter>,
+            input: crate::model::EventAccountFilter,
         ) -> Self {
             let mut v = self.organization_event_detail_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_event_detail_filters = Some(v);
             self
         }

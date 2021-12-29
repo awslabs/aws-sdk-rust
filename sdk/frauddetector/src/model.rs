@@ -2286,10 +2286,10 @@ pub mod label_schema {
         pub fn label_mapper(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.label_mapper.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.label_mapper = Some(hash_map);
             self
         }
@@ -3783,9 +3783,9 @@ pub mod model_scores {
         /// To override the contents of this collection use [`set_scores`](Self::set_scores).
         ///
         /// <p>The model's fraud prediction scores.</p>
-        pub fn scores(mut self, k: impl Into<std::string::String>, v: impl Into<f32>) -> Self {
+        pub fn scores(mut self, k: impl Into<std::string::String>, v: f32) -> Self {
             let mut hash_map = self.scores.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.scores = Some(hash_map);
             self
         }
@@ -4064,9 +4064,9 @@ pub mod event {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>The event entities.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -5544,9 +5544,9 @@ pub mod variable_importance_metrics {
         /// To override the contents of this collection use [`set_log_odds_metrics`](Self::set_log_odds_metrics).
         ///
         /// <p>List of variable metrics.</p>
-        pub fn log_odds_metrics(mut self, input: impl Into<crate::model::LogOddsMetric>) -> Self {
+        pub fn log_odds_metrics(mut self, input: crate::model::LogOddsMetric) -> Self {
             let mut v = self.log_odds_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_odds_metrics = Some(v);
             self
         }
@@ -5724,12 +5724,9 @@ pub mod training_metrics {
         /// To override the contents of this collection use [`set_metric_data_points`](Self::set_metric_data_points).
         ///
         /// <p>The data points details.</p>
-        pub fn metric_data_points(
-            mut self,
-            input: impl Into<crate::model::MetricDataPoint>,
-        ) -> Self {
+        pub fn metric_data_points(mut self, input: crate::model::MetricDataPoint) -> Self {
             let mut v = self.metric_data_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data_points = Some(v);
             self
         }
@@ -5918,12 +5915,9 @@ pub mod data_validation_metrics {
         /// To override the contents of this collection use [`set_file_level_messages`](Self::set_file_level_messages).
         ///
         /// <p>The file-specific model training validation messages.</p>
-        pub fn file_level_messages(
-            mut self,
-            input: impl Into<crate::model::FileValidationMessage>,
-        ) -> Self {
+        pub fn file_level_messages(mut self, input: crate::model::FileValidationMessage) -> Self {
             let mut v = self.file_level_messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_level_messages = Some(v);
             self
         }
@@ -5940,12 +5934,9 @@ pub mod data_validation_metrics {
         /// To override the contents of this collection use [`set_field_level_messages`](Self::set_field_level_messages).
         ///
         /// <p>The field-specific model training validation messages.</p>
-        pub fn field_level_messages(
-            mut self,
-            input: impl Into<crate::model::FieldValidationMessage>,
-        ) -> Self {
+        pub fn field_level_messages(mut self, input: crate::model::FieldValidationMessage) -> Self {
             let mut v = self.field_level_messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_level_messages = Some(v);
             self
         }

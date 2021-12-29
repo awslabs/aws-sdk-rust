@@ -287,8 +287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, inp: crate::model::EgressAccessLogs) -> Self {
-            self.inner = self.inner.egress_access_logs(inp);
+        pub fn egress_access_logs(mut self, signature: crate::model::EgressAccessLogs) -> Self {
+            self.inner = self.inner.egress_access_logs(signature);
             self
         }
         /// Configure egress access logging.
@@ -300,8 +300,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the channel to log subscription.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the channel to log subscription.
@@ -310,8 +310,8 @@ pub mod fluent_builders {
             self
         }
         /// Configure ingress access logging.
-        pub fn ingress_access_logs(mut self, inp: crate::model::IngressAccessLogs) -> Self {
-            self.inner = self.inner.ingress_access_logs(inp);
+        pub fn ingress_access_logs(mut self, signature: crate::model::IngressAccessLogs) -> Self {
+            self.inner = self.inner.ingress_access_logs(signature);
             self
         }
         /// Configure ingress access logging.
@@ -383,8 +383,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A short text description of the Channel.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// A short text description of the Channel.
@@ -394,8 +394,8 @@ pub mod fluent_builders {
         }
         /// The ID of the Channel. The ID must be unique within the region and it
         /// cannot be changed after a Channel is created.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the Channel. The ID must be unique within the region and it
@@ -414,7 +414,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -488,8 +488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The end of the time-window which will be harvested
-        pub fn end_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_time(signature.into());
             self
         }
         /// The end of the time-window which will be harvested
@@ -499,8 +499,8 @@ pub mod fluent_builders {
         }
         /// The ID of the HarvestJob. The ID must be unique within the region
         /// and it cannot be changed after the HarvestJob is submitted
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the HarvestJob. The ID must be unique within the region
@@ -511,8 +511,8 @@ pub mod fluent_builders {
         }
         /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
         /// This cannot be changed after the HarvestJob is submitted.
-        pub fn origin_endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin_endpoint_id(inp);
+        pub fn origin_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin_endpoint_id(signature.into());
             self
         }
         /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
@@ -525,8 +525,8 @@ pub mod fluent_builders {
             self
         }
         /// Configuration parameters for where in an S3 bucket to place the harvested content
-        pub fn s3_destination(mut self, inp: crate::model::S3Destination) -> Self {
-            self.inner = self.inner.s3_destination(inp);
+        pub fn s3_destination(mut self, signature: crate::model::S3Destination) -> Self {
+            self.inner = self.inner.s3_destination(signature);
             self
         }
         /// Configuration parameters for where in an S3 bucket to place the harvested content
@@ -538,8 +538,8 @@ pub mod fluent_builders {
             self
         }
         /// The start of the time-window which will be harvested
-        pub fn start_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_time(signature.into());
             self
         }
         /// The start of the time-window which will be harvested
@@ -608,8 +608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, inp: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(inp);
+        pub fn authorization(mut self, signature: crate::model::Authorization) -> Self {
+            self.inner = self.inner.authorization(signature);
             self
         }
         /// CDN Authorization credentials
@@ -622,8 +622,8 @@ pub mod fluent_builders {
         }
         /// The ID of the Channel that the OriginEndpoint will be associated with.
         /// This cannot be changed after the OriginEndpoint is created.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// The ID of the Channel that the OriginEndpoint will be associated with.
@@ -635,9 +635,9 @@ pub mod fluent_builders {
         /// A Common Media Application Format (CMAF) packaging configuration.
         pub fn cmaf_package(
             mut self,
-            inp: crate::model::CmafPackageCreateOrUpdateParameters,
+            signature: crate::model::CmafPackageCreateOrUpdateParameters,
         ) -> Self {
-            self.inner = self.inner.cmaf_package(inp);
+            self.inner = self.inner.cmaf_package(signature);
             self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
@@ -649,8 +649,8 @@ pub mod fluent_builders {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn dash_package(mut self, inp: crate::model::DashPackage) -> Self {
-            self.inner = self.inner.dash_package(inp);
+        pub fn dash_package(mut self, signature: crate::model::DashPackage) -> Self {
+            self.inner = self.inner.dash_package(signature);
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
@@ -662,8 +662,8 @@ pub mod fluent_builders {
             self
         }
         /// A short text description of the OriginEndpoint.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// A short text description of the OriginEndpoint.
@@ -672,8 +672,8 @@ pub mod fluent_builders {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn hls_package(mut self, inp: crate::model::HlsPackage) -> Self {
-            self.inner = self.inner.hls_package(inp);
+        pub fn hls_package(mut self, signature: crate::model::HlsPackage) -> Self {
+            self.inner = self.inner.hls_package(signature);
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
@@ -686,8 +686,8 @@ pub mod fluent_builders {
         }
         /// The ID of the OriginEndpoint.  The ID must be unique within the region
         /// and it cannot be changed after the OriginEndpoint is created.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the OriginEndpoint.  The ID must be unique within the region
@@ -697,8 +697,8 @@ pub mod fluent_builders {
             self
         }
         /// A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
-        pub fn manifest_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.manifest_name(inp);
+        pub fn manifest_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.manifest_name(signature.into());
             self
         }
         /// A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
@@ -710,8 +710,8 @@ pub mod fluent_builders {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-        pub fn mss_package(mut self, inp: crate::model::MssPackage) -> Self {
-            self.inner = self.inner.mss_package(inp);
+        pub fn mss_package(mut self, signature: crate::model::MssPackage) -> Self {
+            self.inner = self.inner.mss_package(signature);
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
@@ -725,8 +725,8 @@ pub mod fluent_builders {
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
         /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
         /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-        pub fn origination(mut self, inp: crate::model::Origination) -> Self {
-            self.inner = self.inner.origination(inp);
+        pub fn origination(mut self, signature: crate::model::Origination) -> Self {
+            self.inner = self.inner.origination(signature);
             self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
@@ -741,8 +741,8 @@ pub mod fluent_builders {
         }
         /// Maximum duration (seconds) of content to retain for startover playback.
         /// If not specified, startover playback will be disabled for the OriginEndpoint.
-        pub fn startover_window_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.startover_window_seconds(inp);
+        pub fn startover_window_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.startover_window_seconds(signature);
             self
         }
         /// Maximum duration (seconds) of content to retain for startover playback.
@@ -761,7 +761,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -776,8 +776,8 @@ pub mod fluent_builders {
         }
         /// Amount of delay (seconds) to enforce on the playback of live content.
         /// If not specified, there will be no time delay in effect for the OriginEndpoint.
-        pub fn time_delay_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.time_delay_seconds(inp);
+        pub fn time_delay_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.time_delay_seconds(signature);
             self
         }
         /// Amount of delay (seconds) to enforce on the playback of live content.
@@ -791,8 +791,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_whitelist`](Self::set_whitelist).
         ///
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-        pub fn whitelist(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.whitelist(inp);
+        pub fn whitelist(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.whitelist(input.into());
             self
         }
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
@@ -864,8 +864,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Channel to delete.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the Channel to delete.
@@ -934,8 +934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the OriginEndpoint to delete.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the OriginEndpoint to delete.
@@ -1004,8 +1004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of a Channel.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of a Channel.
@@ -1074,8 +1074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the HarvestJob.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the HarvestJob.
@@ -1144,8 +1144,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the OriginEndpoint.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the OriginEndpoint.
@@ -1214,8 +1214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// Upper bound on number of records to return.
@@ -1224,8 +1224,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1294,8 +1294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
-        pub fn include_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include_channel_id(inp);
+        pub fn include_channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include_channel_id(signature.into());
             self
         }
         /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
@@ -1307,8 +1307,8 @@ pub mod fluent_builders {
             self
         }
         /// When specified, the request will return only HarvestJobs in the given status.
-        pub fn include_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include_status(inp);
+        pub fn include_status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include_status(signature.into());
             self
         }
         /// When specified, the request will return only HarvestJobs in the given status.
@@ -1320,8 +1320,8 @@ pub mod fluent_builders {
             self
         }
         /// The upper bound on the number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The upper bound on the number of records to return.
@@ -1330,8 +1330,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1400,8 +1400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(signature.into());
             self
         }
         /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
@@ -1410,8 +1410,8 @@ pub mod fluent_builders {
             self
         }
         /// The upper bound on the number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// The upper bound on the number of records to return.
@@ -1420,8 +1420,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1489,8 +1489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1559,8 +1559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the channel to update.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the channel to update.
@@ -1629,8 +1629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the channel the IngestEndpoint is on.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the channel the IngestEndpoint is on.
@@ -1639,8 +1639,8 @@ pub mod fluent_builders {
             self
         }
         /// The id of the IngestEndpoint whose credentials should be rotated
-        pub fn ingest_endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ingest_endpoint_id(inp);
+        pub fn ingest_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ingest_endpoint_id(signature.into());
             self
         }
         /// The id of the IngestEndpoint whose credentials should be rotated
@@ -1711,8 +1711,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1730,7 +1730,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1803,8 +1803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1817,8 +1817,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// The key(s) of tag to be deleted
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// The key(s) of tag to be deleted
@@ -1890,8 +1890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A short text description of the Channel.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// A short text description of the Channel.
@@ -1900,8 +1900,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Channel to update.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the Channel to update.
@@ -1970,8 +1970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, inp: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(inp);
+        pub fn authorization(mut self, signature: crate::model::Authorization) -> Self {
+            self.inner = self.inner.authorization(signature);
             self
         }
         /// CDN Authorization credentials
@@ -1985,9 +1985,9 @@ pub mod fluent_builders {
         /// A Common Media Application Format (CMAF) packaging configuration.
         pub fn cmaf_package(
             mut self,
-            inp: crate::model::CmafPackageCreateOrUpdateParameters,
+            signature: crate::model::CmafPackageCreateOrUpdateParameters,
         ) -> Self {
-            self.inner = self.inner.cmaf_package(inp);
+            self.inner = self.inner.cmaf_package(signature);
             self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
@@ -1999,8 +1999,8 @@ pub mod fluent_builders {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn dash_package(mut self, inp: crate::model::DashPackage) -> Self {
-            self.inner = self.inner.dash_package(inp);
+        pub fn dash_package(mut self, signature: crate::model::DashPackage) -> Self {
+            self.inner = self.inner.dash_package(signature);
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
@@ -2012,8 +2012,8 @@ pub mod fluent_builders {
             self
         }
         /// A short text description of the OriginEndpoint.
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// A short text description of the OriginEndpoint.
@@ -2022,8 +2022,8 @@ pub mod fluent_builders {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn hls_package(mut self, inp: crate::model::HlsPackage) -> Self {
-            self.inner = self.inner.hls_package(inp);
+        pub fn hls_package(mut self, signature: crate::model::HlsPackage) -> Self {
+            self.inner = self.inner.hls_package(signature);
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
@@ -2035,8 +2035,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the OriginEndpoint to update.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// The ID of the OriginEndpoint to update.
@@ -2045,8 +2045,8 @@ pub mod fluent_builders {
             self
         }
         /// A short string that will be appended to the end of the Endpoint URL.
-        pub fn manifest_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.manifest_name(inp);
+        pub fn manifest_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.manifest_name(signature.into());
             self
         }
         /// A short string that will be appended to the end of the Endpoint URL.
@@ -2058,8 +2058,8 @@ pub mod fluent_builders {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-        pub fn mss_package(mut self, inp: crate::model::MssPackage) -> Self {
-            self.inner = self.inner.mss_package(inp);
+        pub fn mss_package(mut self, signature: crate::model::MssPackage) -> Self {
+            self.inner = self.inner.mss_package(signature);
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
@@ -2073,8 +2073,8 @@ pub mod fluent_builders {
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
         /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
         /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-        pub fn origination(mut self, inp: crate::model::Origination) -> Self {
-            self.inner = self.inner.origination(inp);
+        pub fn origination(mut self, signature: crate::model::Origination) -> Self {
+            self.inner = self.inner.origination(signature);
             self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
@@ -2089,8 +2089,8 @@ pub mod fluent_builders {
         }
         /// Maximum duration (in seconds) of content to retain for startover playback.
         /// If not specified, startover playback will be disabled for the OriginEndpoint.
-        pub fn startover_window_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.startover_window_seconds(inp);
+        pub fn startover_window_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.startover_window_seconds(signature);
             self
         }
         /// Maximum duration (in seconds) of content to retain for startover playback.
@@ -2101,8 +2101,8 @@ pub mod fluent_builders {
         }
         /// Amount of delay (in seconds) to enforce on the playback of live content.
         /// If not specified, there will be no time delay in effect for the OriginEndpoint.
-        pub fn time_delay_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.time_delay_seconds(inp);
+        pub fn time_delay_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.time_delay_seconds(signature);
             self
         }
         /// Amount of delay (in seconds) to enforce on the playback of live content.
@@ -2116,8 +2116,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_whitelist`](Self::set_whitelist).
         ///
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-        pub fn whitelist(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.whitelist(inp);
+        pub fn whitelist(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.whitelist(input.into());
             self
         }
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.

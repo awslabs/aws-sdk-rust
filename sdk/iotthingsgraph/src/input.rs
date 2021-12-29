@@ -379,9 +379,9 @@ pub mod create_system_instance_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3956,9 +3956,9 @@ pub mod search_entities_input {
         /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
         ///
         /// <p>The entity types for which to search.</p>
-        pub fn entity_types(mut self, input: impl Into<crate::model::EntityType>) -> Self {
+        pub fn entity_types(mut self, input: crate::model::EntityType) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_types = Some(v);
             self
         }
@@ -3979,9 +3979,9 @@ pub mod search_entities_input {
         /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
         /// you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::EntityFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::EntityFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4410,9 +4410,9 @@ pub mod search_flow_templates_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::FlowTemplateFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::FlowTemplateFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4599,9 +4599,9 @@ pub mod search_system_instances_input {
         /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
         /// <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SystemInstanceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SystemInstanceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4790,9 +4790,9 @@ pub mod search_system_templates_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SystemTemplateFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SystemTemplateFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5185,9 +5185,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to add to the resource.></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -131,9 +131,9 @@ pub mod execute_statement_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>The records returned by the SQL statement.</p>
-        pub fn records(mut self, input: impl Into<std::vec::Vec<crate::model::Field>>) -> Self {
+        pub fn records(mut self, input: std::vec::Vec<crate::model::Field>) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -150,9 +150,9 @@ pub mod execute_statement_output {
         /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
         ///
         /// <p>Metadata for the columns included in the results.</p>
-        pub fn column_metadata(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_metadata(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_metadata = Some(v);
             self
         }
@@ -186,9 +186,9 @@ pub mod execute_statement_output {
         /// more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From
         /// Modified Rows</a> in the PostgreSQL documentation.</p>
         /// </note>
-        pub fn generated_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn generated_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.generated_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.generated_fields = Some(v);
             self
         }
@@ -263,12 +263,9 @@ pub mod execute_sql_output {
         /// To override the contents of this collection use [`set_sql_statement_results`](Self::set_sql_statement_results).
         ///
         /// <p>The results of the SQL statement or statements.</p>
-        pub fn sql_statement_results(
-            mut self,
-            input: impl Into<crate::model::SqlStatementResult>,
-        ) -> Self {
+        pub fn sql_statement_results(mut self, input: crate::model::SqlStatementResult) -> Self {
             let mut v = self.sql_statement_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sql_statement_results = Some(v);
             self
         }
@@ -445,9 +442,9 @@ pub mod batch_execute_statement_output {
         /// To override the contents of this collection use [`set_update_results`](Self::set_update_results).
         ///
         /// <p>The execution results of each batch entry.</p>
-        pub fn update_results(mut self, input: impl Into<crate::model::UpdateResult>) -> Self {
+        pub fn update_results(mut self, input: crate::model::UpdateResult) -> Self {
             let mut v = self.update_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_results = Some(v);
             self
         }

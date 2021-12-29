@@ -16,9 +16,9 @@ pub mod batch_meter_usage_input {
         ///
         /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at
         /// a time.</p>
-        pub fn usage_records(mut self, input: impl Into<crate::model::UsageRecord>) -> Self {
+        pub fn usage_records(mut self, input: crate::model::UsageRecord) -> Self {
             let mut v = self.usage_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_records = Some(v);
             self
         }
@@ -278,12 +278,9 @@ pub mod meter_usage_input {
         /// <p>The sum of all UsageAllocation quantities must equal the
         /// UsageQuantity of the MeterUsage request, and each UsageAllocation must have a
         /// unique set of tags (include no tags).</p>
-        pub fn usage_allocations(
-            mut self,
-            input: impl Into<crate::model::UsageAllocation>,
-        ) -> Self {
+        pub fn usage_allocations(mut self, input: crate::model::UsageAllocation) -> Self {
             let mut v = self.usage_allocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_allocations = Some(v);
             self
         }

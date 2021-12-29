@@ -1997,10 +1997,10 @@ pub mod trace_summary {
         pub fn annotations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ValueWithServiceIds>>,
+            v: std::vec::Vec<crate::model::ValueWithServiceIds>,
         ) -> Self {
             let mut hash_map = self.annotations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.annotations = Some(hash_map);
             self
         }
@@ -2022,9 +2022,9 @@ pub mod trace_summary {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>Users from the trace's segment documents.</p>
-        pub fn users(mut self, input: impl Into<crate::model::TraceUser>) -> Self {
+        pub fn users(mut self, input: crate::model::TraceUser) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -2041,9 +2041,9 @@ pub mod trace_summary {
         /// To override the contents of this collection use [`set_service_ids`](Self::set_service_ids).
         ///
         /// <p>Service IDs from the trace's segment documents.</p>
-        pub fn service_ids(mut self, input: impl Into<crate::model::ServiceId>) -> Self {
+        pub fn service_ids(mut self, input: crate::model::ServiceId) -> Self {
             let mut v = self.service_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_ids = Some(v);
             self
         }
@@ -2060,9 +2060,9 @@ pub mod trace_summary {
         /// To override the contents of this collection use [`set_resource_ar_ns`](Self::set_resource_ar_ns).
         ///
         /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-        pub fn resource_ar_ns(mut self, input: impl Into<crate::model::ResourceArnDetail>) -> Self {
+        pub fn resource_ar_ns(mut self, input: crate::model::ResourceArnDetail) -> Self {
             let mut v = self.resource_ar_ns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_ar_ns = Some(v);
             self
         }
@@ -2080,9 +2080,9 @@ pub mod trace_summary {
         ///
         /// <p>A list of EC2 instance IDs for any instance corresponding to the trace
         /// segments.</p>
-        pub fn instance_ids(mut self, input: impl Into<crate::model::InstanceIdDetail>) -> Self {
+        pub fn instance_ids(mut self, input: crate::model::InstanceIdDetail) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_ids = Some(v);
             self
         }
@@ -2100,12 +2100,9 @@ pub mod trace_summary {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZoneDetail>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZoneDetail) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -2135,9 +2132,9 @@ pub mod trace_summary {
         /// To override the contents of this collection use [`set_fault_root_causes`](Self::set_fault_root_causes).
         ///
         /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
-        pub fn fault_root_causes(mut self, input: impl Into<crate::model::FaultRootCause>) -> Self {
+        pub fn fault_root_causes(mut self, input: crate::model::FaultRootCause) -> Self {
             let mut v = self.fault_root_causes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fault_root_causes = Some(v);
             self
         }
@@ -2155,9 +2152,9 @@ pub mod trace_summary {
         ///
         /// <p>A collection of ErrorRootCause structures corresponding to the trace
         /// segments.</p>
-        pub fn error_root_causes(mut self, input: impl Into<crate::model::ErrorRootCause>) -> Self {
+        pub fn error_root_causes(mut self, input: crate::model::ErrorRootCause) -> Self {
             let mut v = self.error_root_causes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_root_causes = Some(v);
             self
         }
@@ -2178,10 +2175,10 @@ pub mod trace_summary {
         /// segments.</p>
         pub fn response_time_root_causes(
             mut self,
-            input: impl Into<crate::model::ResponseTimeRootCause>,
+            input: crate::model::ResponseTimeRootCause,
         ) -> Self {
             let mut v = self.response_time_root_causes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.response_time_root_causes = Some(v);
             self
         }
@@ -2297,12 +2294,9 @@ pub mod response_time_root_cause {
         ///
         /// <p>A list of corresponding services. A service identifies a segment and contains a name,
         /// account ID, type, and inferred flag.</p>
-        pub fn services(
-            mut self,
-            input: impl Into<crate::model::ResponseTimeRootCauseService>,
-        ) -> Self {
+        pub fn services(mut self, input: crate::model::ResponseTimeRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -2465,12 +2459,9 @@ pub mod response_time_root_cause_service {
         /// To override the contents of this collection use [`set_entity_path`](Self::set_entity_path).
         ///
         /// <p>The path of root cause entities found on the service. </p>
-        pub fn entity_path(
-            mut self,
-            input: impl Into<crate::model::ResponseTimeRootCauseEntity>,
-        ) -> Self {
+        pub fn entity_path(mut self, input: crate::model::ResponseTimeRootCauseEntity) -> Self {
             let mut v = self.entity_path.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_path = Some(v);
             self
         }
@@ -2651,9 +2642,9 @@ pub mod error_root_cause {
         ///
         /// <p>A list of services corresponding to an error. A service identifies a segment and it
         /// contains a name, account ID, type, and inferred flag.</p>
-        pub fn services(mut self, input: impl Into<crate::model::ErrorRootCauseService>) -> Self {
+        pub fn services(mut self, input: crate::model::ErrorRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -2816,9 +2807,9 @@ pub mod error_root_cause_service {
         /// To override the contents of this collection use [`set_entity_path`](Self::set_entity_path).
         ///
         /// <p>The path of root cause entities found on the service. </p>
-        pub fn entity_path(mut self, input: impl Into<crate::model::ErrorRootCauseEntity>) -> Self {
+        pub fn entity_path(mut self, input: crate::model::ErrorRootCauseEntity) -> Self {
             let mut v = self.entity_path.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_path = Some(v);
             self
         }
@@ -2921,9 +2912,9 @@ pub mod error_root_cause_entity {
         /// To override the contents of this collection use [`set_exceptions`](Self::set_exceptions).
         ///
         /// <p>The types and messages of the exceptions.</p>
-        pub fn exceptions(mut self, input: impl Into<crate::model::RootCauseException>) -> Self {
+        pub fn exceptions(mut self, input: crate::model::RootCauseException) -> Self {
             let mut v = self.exceptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exceptions = Some(v);
             self
         }
@@ -3081,9 +3072,9 @@ pub mod fault_root_cause {
         ///
         /// <p>A list of corresponding services. A service identifies a segment and it contains a
         /// name, account ID, type, and inferred flag.</p>
-        pub fn services(mut self, input: impl Into<crate::model::FaultRootCauseService>) -> Self {
+        pub fn services(mut self, input: crate::model::FaultRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -3246,9 +3237,9 @@ pub mod fault_root_cause_service {
         /// To override the contents of this collection use [`set_entity_path`](Self::set_entity_path).
         ///
         /// <p>The path of root cause entities found on the service. </p>
-        pub fn entity_path(mut self, input: impl Into<crate::model::FaultRootCauseEntity>) -> Self {
+        pub fn entity_path(mut self, input: crate::model::FaultRootCauseEntity) -> Self {
             let mut v = self.entity_path.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_path = Some(v);
             self
         }
@@ -3351,9 +3342,9 @@ pub mod fault_root_cause_entity {
         /// To override the contents of this collection use [`set_exceptions`](Self::set_exceptions).
         ///
         /// <p>The types and messages of the exceptions.</p>
-        pub fn exceptions(mut self, input: impl Into<crate::model::RootCauseException>) -> Self {
+        pub fn exceptions(mut self, input: crate::model::RootCauseException) -> Self {
             let mut v = self.exceptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exceptions = Some(v);
             self
         }
@@ -3720,9 +3711,9 @@ pub mod trace_user {
         /// To override the contents of this collection use [`set_service_ids`](Self::set_service_ids).
         ///
         /// <p>Services that the user's request hit.</p>
-        pub fn service_ids(mut self, input: impl Into<crate::model::ServiceId>) -> Self {
+        pub fn service_ids(mut self, input: crate::model::ServiceId) -> Self {
             let mut v = self.service_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_ids = Some(v);
             self
         }
@@ -3805,9 +3796,9 @@ pub mod value_with_service_ids {
         /// To override the contents of this collection use [`set_service_ids`](Self::set_service_ids).
         ///
         /// <p>Services to which the annotation applies.</p>
-        pub fn service_ids(mut self, input: impl Into<crate::model::ServiceId>) -> Self {
+        pub fn service_ids(mut self, input: crate::model::ServiceId) -> Self {
             let mut v = self.service_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_ids = Some(v);
             self
         }
@@ -4535,9 +4526,9 @@ pub mod service {
         /// To override the contents of this collection use [`set_edges`](Self::set_edges).
         ///
         /// <p>Connections to downstream services.</p>
-        pub fn edges(mut self, input: impl Into<crate::model::Edge>) -> Self {
+        pub fn edges(mut self, input: crate::model::Edge) -> Self {
             let mut v = self.edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.edges = Some(v);
             self
         }
@@ -4567,12 +4558,9 @@ pub mod service {
         /// To override the contents of this collection use [`set_duration_histogram`](Self::set_duration_histogram).
         ///
         /// <p>A histogram that maps the spread of service durations.</p>
-        pub fn duration_histogram(
-            mut self,
-            input: impl Into<crate::model::HistogramEntry>,
-        ) -> Self {
+        pub fn duration_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.duration_histogram.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.duration_histogram = Some(v);
             self
         }
@@ -4589,12 +4577,9 @@ pub mod service {
         /// To override the contents of this collection use [`set_response_time_histogram`](Self::set_response_time_histogram).
         ///
         /// <p>A histogram that maps the spread of service response times.</p>
-        pub fn response_time_histogram(
-            mut self,
-            input: impl Into<crate::model::HistogramEntry>,
-        ) -> Self {
+        pub fn response_time_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.response_time_histogram.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.response_time_histogram = Some(v);
             self
         }
@@ -5140,12 +5125,9 @@ pub mod edge {
         /// To override the contents of this collection use [`set_response_time_histogram`](Self::set_response_time_histogram).
         ///
         /// <p>A histogram that maps the spread of client response times on an edge.</p>
-        pub fn response_time_histogram(
-            mut self,
-            input: impl Into<crate::model::HistogramEntry>,
-        ) -> Self {
+        pub fn response_time_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.response_time_histogram.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.response_time_histogram = Some(v);
             self
         }
@@ -5162,9 +5144,9 @@ pub mod edge {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>Aliases for the edge.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::Alias>) -> Self {
+        pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }
@@ -5569,12 +5551,9 @@ pub mod time_series_service_statistics {
         /// To override the contents of this collection use [`set_response_time_histogram`](Self::set_response_time_histogram).
         ///
         /// <p>The response time histogram for the selected entities.</p>
-        pub fn response_time_histogram(
-            mut self,
-            input: impl Into<crate::model::HistogramEntry>,
-        ) -> Self {
+        pub fn response_time_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.response_time_histogram.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.response_time_histogram = Some(v);
             self
         }
@@ -6394,9 +6373,9 @@ pub mod insight_summary {
         /// To override the contents of this collection use [`set_categories`](Self::set_categories).
         ///
         /// <p> Categories The categories that label and describe the type of insight.</p>
-        pub fn categories(mut self, input: impl Into<crate::model::InsightCategory>) -> Self {
+        pub fn categories(mut self, input: crate::model::InsightCategory) -> Self {
             let mut v = self.categories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categories = Some(v);
             self
         }
@@ -6495,12 +6474,9 @@ pub mod insight_summary {
         /// To override the contents of this collection use [`set_top_anomalous_services`](Self::set_top_anomalous_services).
         ///
         /// <p>The service within the insight that is most impacted by the incident.</p>
-        pub fn top_anomalous_services(
-            mut self,
-            input: impl Into<crate::model::AnomalousService>,
-        ) -> Self {
+        pub fn top_anomalous_services(mut self, input: crate::model::AnomalousService) -> Self {
             let mut v = self.top_anomalous_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.top_anomalous_services = Some(v);
             self
         }
@@ -7010,9 +6986,9 @@ pub mod insight_impact_graph_service {
         /// To override the contents of this collection use [`set_edges`](Self::set_edges).
         ///
         /// <p>Connections to downstream services.</p>
-        pub fn edges(mut self, input: impl Into<crate::model::InsightImpactGraphEdge>) -> Self {
+        pub fn edges(mut self, input: crate::model::InsightImpactGraphEdge) -> Self {
             let mut v = self.edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.edges = Some(v);
             self
         }
@@ -7243,12 +7219,9 @@ pub mod insight_event {
         /// To override the contents of this collection use [`set_top_anomalous_services`](Self::set_top_anomalous_services).
         ///
         /// <p>The service during the event that is most impacted by the incident.</p>
-        pub fn top_anomalous_services(
-            mut self,
-            input: impl Into<crate::model::AnomalousService>,
-        ) -> Self {
+        pub fn top_anomalous_services(mut self, input: crate::model::AnomalousService) -> Self {
             let mut v = self.top_anomalous_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.top_anomalous_services = Some(v);
             self
         }
@@ -7465,9 +7438,9 @@ pub mod insight {
         /// To override the contents of this collection use [`set_categories`](Self::set_categories).
         ///
         /// <p>The categories that label and describe the type of insight.</p>
-        pub fn categories(mut self, input: impl Into<crate::model::InsightCategory>) -> Self {
+        pub fn categories(mut self, input: crate::model::InsightCategory) -> Self {
             let mut v = self.categories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categories = Some(v);
             self
         }
@@ -7566,12 +7539,9 @@ pub mod insight {
         /// To override the contents of this collection use [`set_top_anomalous_services`](Self::set_top_anomalous_services).
         ///
         /// <p>The service within the insight that is most impacted by the incident.</p>
-        pub fn top_anomalous_services(
-            mut self,
-            input: impl Into<crate::model::AnomalousService>,
-        ) -> Self {
+        pub fn top_anomalous_services(mut self, input: crate::model::AnomalousService) -> Self {
             let mut v = self.top_anomalous_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.top_anomalous_services = Some(v);
             self
         }
@@ -7872,9 +7842,9 @@ pub mod trace {
         /// To override the contents of this collection use [`set_segments`](Self::set_segments).
         ///
         /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-        pub fn segments(mut self, input: impl Into<crate::model::Segment>) -> Self {
+        pub fn segments(mut self, input: crate::model::Segment) -> Self {
             let mut v = self.segments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.segments = Some(v);
             self
         }

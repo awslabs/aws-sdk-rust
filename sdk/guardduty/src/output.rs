@@ -127,12 +127,9 @@ pub mod update_member_detectors_output {
         ///
         /// <p>A list of member account IDs that were unable to be processed along with an explanation
         /// for why they were not processed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -430,12 +427,9 @@ pub mod stop_monitoring_members_output {
         ///
         /// <p>A list of objects that contain an accountId for each account that could not be processed,
         /// and a result string that indicates why the account was not processed. </p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -501,12 +495,9 @@ pub mod start_monitoring_members_output {
         ///
         /// <p>A list of objects that contain the unprocessed account and a result string that explains
         /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -744,9 +735,9 @@ pub mod list_publishing_destinations_output {
         ///
         /// <p>A <code>Destinations</code> object that includes information about each publishing
         /// destination returned.</p>
-        pub fn destinations(mut self, input: impl Into<crate::model::Destination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -838,9 +829,9 @@ pub mod list_organization_admin_accounts_output {
         ///
         /// <p>A list of accounts configured as GuardDuty delegated
         /// administrators.</p>
-        pub fn admin_accounts(mut self, input: impl Into<crate::model::AdminAccount>) -> Self {
+        pub fn admin_accounts(mut self, input: crate::model::AdminAccount) -> Self {
             let mut v = self.admin_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.admin_accounts = Some(v);
             self
         }
@@ -925,9 +916,9 @@ pub mod list_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -1097,9 +1088,9 @@ pub mod list_invitations_output {
         /// To override the contents of this collection use [`set_invitations`](Self::set_invitations).
         ///
         /// <p>A list of invitation descriptions.</p>
-        pub fn invitations(mut self, input: impl Into<crate::model::Invitation>) -> Self {
+        pub fn invitations(mut self, input: crate::model::Invitation) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.invitations = Some(v);
             self
         }
@@ -1435,12 +1426,9 @@ pub mod invite_members_output {
         ///
         /// <p>A list of objects that contain the unprocessed account and a result string that explains
         /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -1762,9 +1750,9 @@ pub mod get_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -1782,12 +1770,9 @@ pub mod get_members_output {
         ///
         /// <p>A list of objects that contain the unprocessed account and a result string that explains
         /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -1870,10 +1855,10 @@ pub mod get_member_detectors_output {
         /// <p>An object that describes which data sources are enabled for a member account.</p>
         pub fn member_data_source_configurations(
             mut self,
-            input: impl Into<crate::model::MemberDataSourceConfiguration>,
+            input: crate::model::MemberDataSourceConfiguration,
         ) -> Self {
             let mut v = self.member_data_source_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_data_source_configurations = Some(v);
             self
         }
@@ -1891,12 +1876,9 @@ pub mod get_member_detectors_output {
         ///
         /// <p>A list of member account IDs that were unable to be processed along with an explanation
         /// for why they were not processed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -2279,9 +2261,9 @@ pub mod get_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>A list of findings.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::Finding>) -> Self {
+        pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -2765,12 +2747,9 @@ pub mod disassociate_members_output {
         ///
         /// <p>A list of objects that contain the unprocessed account and a result string that explains
         /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -3239,12 +3218,9 @@ pub mod delete_members_output {
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
         /// <p>The accounts that could not be processed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -3339,12 +3315,9 @@ pub mod delete_invitations_output {
         ///
         /// <p>A list of objects that contain the unprocessed account and a result string that explains
         /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -3470,12 +3443,9 @@ pub mod decline_invitations_output {
         ///
         /// <p>A list of objects that contain the unprocessed account and a result string that explains
         /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -3685,12 +3655,9 @@ pub mod create_members_output {
         ///
         /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and
         /// a result string that explains why each was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }

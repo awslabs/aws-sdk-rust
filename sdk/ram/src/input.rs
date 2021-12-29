@@ -746,9 +746,9 @@ pub mod create_resource_share_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2528,9 +2528,9 @@ pub mod get_resource_shares_input {
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
         /// <p>One or more tag filters.</p>
-        pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_filters = Some(v);
             self
         }
@@ -4278,9 +4278,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

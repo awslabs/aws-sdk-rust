@@ -217,11 +217,11 @@ pub mod resiliency_policy {
         /// <p>The resiliency policy.</p>
         pub fn policy(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::FailurePolicy>,
+            k: crate::model::DisruptionType,
+            v: crate::model::FailurePolicy,
         ) -> Self {
             let mut hash_map = self.policy.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.policy = Some(hash_map);
             self
         }
@@ -1339,11 +1339,11 @@ pub mod app_assessment {
         /// <p>The application compliance against the resiliency policy.</p>
         pub fn compliance(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::DisruptionCompliance>,
+            k: crate::model::DisruptionType,
+            v: crate::model::DisruptionCompliance,
         ) -> Self {
             let mut hash_map = self.compliance.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.compliance = Some(hash_map);
             self
         }
@@ -1940,13 +1940,9 @@ pub mod resiliency_score {
         /// To override the contents of this collection use [`set_disruption_score`](Self::set_disruption_score).
         ///
         /// <p>The disruption score for a valid key.</p>
-        pub fn disruption_score(
-            mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<f64>,
-        ) -> Self {
+        pub fn disruption_score(mut self, k: crate::model::DisruptionType, v: f64) -> Self {
             let mut hash_map = self.disruption_score.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.disruption_score = Some(hash_map);
             self
         }
@@ -2855,9 +2851,9 @@ pub mod test_recommendation {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The test recommendation items.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RecommendationItem>) -> Self {
+        pub fn items(mut self, input: crate::model::RecommendationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -3291,9 +3287,9 @@ pub mod sop_recommendation {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The recommendation items.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RecommendationItem>) -> Self {
+        pub fn items(mut self, input: crate::model::RecommendationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -3702,10 +3698,10 @@ pub mod recommendation_template {
         /// </dl>
         pub fn recommendation_types(
             mut self,
-            input: impl Into<crate::model::RenderRecommendationType>,
+            input: crate::model::RenderRecommendationType,
         ) -> Self {
             let mut v = self.recommendation_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_types = Some(v);
             self
         }
@@ -4328,9 +4324,9 @@ pub mod physical_resource {
         /// To override the contents of this collection use [`set_app_components`](Self::set_app_components).
         ///
         /// <p>The application components that belong to this resource.</p>
-        pub fn app_components(mut self, input: impl Into<crate::model::AppComponent>) -> Self {
+        pub fn app_components(mut self, input: crate::model::AppComponent) -> Self {
             let mut v = self.app_components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_components = Some(v);
             self
         }
@@ -5011,12 +5007,9 @@ pub mod component_recommendation {
         /// To override the contents of this collection use [`set_config_recommendations`](Self::set_config_recommendations).
         ///
         /// <p>The list of recommendations.</p>
-        pub fn config_recommendations(
-            mut self,
-            input: impl Into<crate::model::ConfigRecommendation>,
-        ) -> Self {
+        pub fn config_recommendations(mut self, input: crate::model::ConfigRecommendation) -> Self {
             let mut v = self.config_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config_recommendations = Some(v);
             self
         }
@@ -5215,11 +5208,11 @@ pub mod config_recommendation {
         /// change.</p>
         pub fn compliance(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::DisruptionCompliance>,
+            k: crate::model::DisruptionType,
+            v: crate::model::DisruptionCompliance,
         ) -> Self {
             let mut hash_map = self.compliance.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.compliance = Some(hash_map);
             self
         }
@@ -5245,11 +5238,11 @@ pub mod config_recommendation {
         /// change.</p>
         pub fn recommendation_compliance(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::RecommendationDisruptionCompliance>,
+            k: crate::model::DisruptionType,
+            v: crate::model::RecommendationDisruptionCompliance,
         ) -> Self {
             let mut hash_map = self.recommendation_compliance.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.recommendation_compliance = Some(hash_map);
             self
         }
@@ -5839,11 +5832,11 @@ pub mod app_component_compliance {
         /// <p>The compliance of the application component against the resiliency policy.</p>
         pub fn compliance(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::DisruptionCompliance>,
+            k: crate::model::DisruptionType,
+            v: crate::model::DisruptionCompliance,
         ) -> Self {
             let mut hash_map = self.compliance.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.compliance = Some(hash_map);
             self
         }
@@ -6388,9 +6381,9 @@ pub mod alarm_recommendation {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of CloudWatch alarm recommendations.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RecommendationItem>) -> Self {
+        pub fn items(mut self, input: crate::model::RecommendationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }

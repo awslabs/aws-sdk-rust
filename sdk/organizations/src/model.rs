@@ -1333,9 +1333,9 @@ pub mod root {
         /// separately enable and disable them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the availability of the policy types in
         /// that organization.</p>
         /// </note>
-        pub fn policy_types(mut self, input: impl Into<crate::model::PolicyTypeSummary>) -> Self {
+        pub fn policy_types(mut self, input: crate::model::PolicyTypeSummary) -> Self {
             let mut v = self.policy_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_types = Some(v);
             self
         }
@@ -1973,9 +1973,9 @@ pub mod handshake {
         /// To override the contents of this collection use [`set_parties`](Self::set_parties).
         ///
         /// <p>Information about the two accounts that are participating in the handshake.</p>
-        pub fn parties(mut self, input: impl Into<crate::model::HandshakeParty>) -> Self {
+        pub fn parties(mut self, input: crate::model::HandshakeParty) -> Self {
             let mut v = self.parties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parties = Some(v);
             self
         }
@@ -2173,9 +2173,9 @@ pub mod handshake {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>Additional information that is needed to process the handshake.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::HandshakeResource>) -> Self {
+        pub fn resources(mut self, input: crate::model::HandshakeResource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -2413,9 +2413,9 @@ pub mod handshake_resource {
         ///
         /// <p>When needed, contains an additional array of <code>HandshakeResource</code>
         /// objects.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::HandshakeResource>) -> Self {
+        pub fn resources(mut self, input: crate::model::HandshakeResource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -4807,12 +4807,9 @@ pub mod organization {
         /// </important>
         /// <p>To determine the policies that are enabled and available for use in your organization,
         /// use the <a>ListRoots</a> operation instead.</p>
-        pub fn available_policy_types(
-            mut self,
-            input: impl Into<crate::model::PolicyTypeSummary>,
-        ) -> Self {
+        pub fn available_policy_types(mut self, input: crate::model::PolicyTypeSummary) -> Self {
             let mut v = self.available_policy_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.available_policy_types = Some(v);
             self
         }

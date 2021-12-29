@@ -146,12 +146,9 @@ pub mod send_message_batch_output {
         /// <p>A list of <code>
         /// <a>SendMessageBatchResultEntry</a>
         /// </code> items.</p>
-        pub fn successful(
-            mut self,
-            input: impl Into<crate::model::SendMessageBatchResultEntry>,
-        ) -> Self {
+        pub fn successful(mut self, input: crate::model::SendMessageBatchResultEntry) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -172,9 +169,9 @@ pub mod send_message_batch_output {
         /// <p>A list of <code>
         /// <a>BatchResultErrorEntry</a>
         /// </code> items with error details about each message that can't be enqueued.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
@@ -436,9 +433,9 @@ pub mod receive_message_output {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// <p>A list of messages.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -838,11 +835,11 @@ pub mod get_queue_attributes_output {
         /// <p>A map of attributes to their respective values.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::QueueAttributeName>,
+            k: crate::model::QueueAttributeName,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -960,12 +957,9 @@ pub mod delete_message_batch_output {
         /// <p>A list of <code>
         /// <a>DeleteMessageBatchResultEntry</a>
         /// </code> items.</p>
-        pub fn successful(
-            mut self,
-            input: impl Into<crate::model::DeleteMessageBatchResultEntry>,
-        ) -> Self {
+        pub fn successful(mut self, input: crate::model::DeleteMessageBatchResultEntry) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -986,9 +980,9 @@ pub mod delete_message_batch_output {
         /// <p>A list of <code>
         /// <a>BatchResultErrorEntry</a>
         /// </code> items.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
@@ -1165,10 +1159,10 @@ pub mod change_message_visibility_batch_output {
         /// </code> items.</p>
         pub fn successful(
             mut self,
-            input: impl Into<crate::model::ChangeMessageVisibilityBatchResultEntry>,
+            input: crate::model::ChangeMessageVisibilityBatchResultEntry,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -1191,9 +1185,9 @@ pub mod change_message_visibility_batch_output {
         /// <p>A list of <code>
         /// <a>BatchResultErrorEntry</a>
         /// </code> items.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }

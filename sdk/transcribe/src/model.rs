@@ -342,9 +342,9 @@ pub mod category_properties {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules used to create a call analytics category.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -559,9 +559,9 @@ pub mod sentiment_filter {
         /// To override the contents of this collection use [`set_sentiments`](Self::set_sentiments).
         ///
         /// <p>An array that enables you to specify sentiments for the customer or agent. You can specify one or more values.</p>
-        pub fn sentiments(mut self, input: impl Into<crate::model::SentimentValue>) -> Self {
+        pub fn sentiments(mut self, input: crate::model::SentimentValue) -> Self {
             let mut v = self.sentiments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sentiments = Some(v);
             self
         }
@@ -2388,9 +2388,9 @@ pub mod transcription_job {
         ///
         /// <p>An object that shows the optional array of languages inputted for transcription jobs  with automatic language
         /// identification enabled.</p>
-        pub fn language_options(mut self, input: impl Into<crate::model::LanguageCode>) -> Self {
+        pub fn language_options(mut self, input: crate::model::LanguageCode) -> Self {
             let mut v = self.language_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.language_options = Some(v);
             self
         }
@@ -2420,9 +2420,9 @@ pub mod transcription_job {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A key:value pair assigned to a given transcription job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2456,11 +2456,11 @@ pub mod transcription_job {
         /// <code>LanguageModelName</code>LanguageModelName.</p>
         pub fn language_id_settings(
             mut self,
-            k: impl Into<crate::model::LanguageCode>,
-            v: impl Into<crate::model::LanguageIdSettings>,
+            k: crate::model::LanguageCode,
+            v: crate::model::LanguageIdSettings,
         ) -> Self {
             let mut hash_map = self.language_id_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.language_id_settings = Some(hash_map);
             self
         }
@@ -2681,9 +2681,9 @@ pub mod subtitles_output {
         /// To override the contents of this collection use [`set_formats`](Self::set_formats).
         ///
         /// <p>Specify the output format for your subtitle file; if you select both SRT and VTT formats, two output files are genereated.</p>
-        pub fn formats(mut self, input: impl Into<crate::model::SubtitleFormat>) -> Self {
+        pub fn formats(mut self, input: crate::model::SubtitleFormat) -> Self {
             let mut v = self.formats.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.formats = Some(v);
             self
         }
@@ -3892,9 +3892,9 @@ pub mod subtitles {
         /// To override the contents of this collection use [`set_formats`](Self::set_formats).
         ///
         /// <p>Specify the output format for your subtitle file.</p>
-        pub fn formats(mut self, input: impl Into<crate::model::SubtitleFormat>) -> Self {
+        pub fn formats(mut self, input: crate::model::SubtitleFormat) -> Self {
             let mut v = self.formats.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.formats = Some(v);
             self
         }
@@ -4495,9 +4495,9 @@ pub mod medical_transcription_job {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A key:value pair assigned to a given medical transcription job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5508,12 +5508,9 @@ pub mod call_analytics_job {
         ///
         /// <p>Shows numeric values to indicate the channel assigned to the agent's audio and the channel assigned to the
         /// customer's audio. </p>
-        pub fn channel_definitions(
-            mut self,
-            input: impl Into<crate::model::ChannelDefinition>,
-        ) -> Self {
+        pub fn channel_definitions(mut self, input: crate::model::ChannelDefinition) -> Self {
             let mut v = self.channel_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_definitions = Some(v);
             self
         }
@@ -5831,9 +5828,9 @@ pub mod call_analytics_job_settings {
         /// correctly identify the language, you can provide an array of the languages that can be present in the audio. Refer to
         /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported languages and language-specific
         /// features</a> for additional information.</p>
-        pub fn language_options(mut self, input: impl Into<crate::model::LanguageCode>) -> Self {
+        pub fn language_options(mut self, input: crate::model::LanguageCode) -> Self {
             let mut v = self.language_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.language_options = Some(v);
             self
         }
@@ -5860,11 +5857,11 @@ pub mod call_analytics_job_settings {
         /// <code>LanguageModelName</code>.</p>
         pub fn language_id_settings(
             mut self,
-            k: impl Into<crate::model::LanguageCode>,
-            v: impl Into<crate::model::LanguageIdSettings>,
+            k: crate::model::LanguageCode,
+            v: crate::model::LanguageIdSettings,
         ) -> Self {
             let mut hash_map = self.language_id_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.language_id_settings = Some(hash_map);
             self
         }

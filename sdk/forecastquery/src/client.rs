@@ -170,8 +170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
-        pub fn forecast_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(inp);
+        pub fn forecast_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
@@ -181,8 +181,8 @@ pub mod fluent_builders {
         }
         /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
         /// (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-        pub fn start_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date(signature.into());
             self
         }
         /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
@@ -193,8 +193,8 @@ pub mod fluent_builders {
         }
         /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
         /// (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-        pub fn end_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date(signature.into());
             self
         }
         /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
@@ -221,7 +221,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.filters(k, v);
+            self.inner = self.inner.filters(k.into(), v.into());
             self
         }
         /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the
@@ -245,8 +245,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a

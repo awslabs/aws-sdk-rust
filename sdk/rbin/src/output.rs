@@ -122,9 +122,9 @@ pub mod update_rule_output {
         ///
         /// <p>Information about the resource tags used to identify resources that are retained by the retention
         /// rule.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -261,9 +261,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -330,9 +330,9 @@ pub mod list_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Information about the retention rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::RuleSummary>) -> Self {
+        pub fn rules(mut self, input: crate::model::RuleSummary) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -490,9 +490,9 @@ pub mod get_rule_output {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The resource tags used to identify resources that are to be retained by the retention rule.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -681,9 +681,9 @@ pub mod create_rule_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the retention rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -714,9 +714,9 @@ pub mod create_rule_output {
         ///
         /// <p>Information about the resource tags used to identify resources that are retained by the retention
         /// rule.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }

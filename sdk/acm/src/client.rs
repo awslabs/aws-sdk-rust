@@ -281,8 +281,8 @@ pub mod fluent_builders {
         /// </p>
         ///
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied.
@@ -305,8 +305,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
@@ -390,8 +390,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the
@@ -473,8 +473,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following
@@ -560,8 +560,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
@@ -581,8 +581,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
         /// </p>
-        pub fn passphrase(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.passphrase(inp);
+        pub fn passphrase(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.passphrase(signature);
             self
         }
         /// <p>Passphrase to associate with the encrypted exported private key. If you want to later
@@ -727,8 +727,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>String that contains a certificate ARN in the following format:</p>
@@ -878,8 +878,8 @@ pub mod fluent_builders {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
         /// (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this
         /// field. </p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
@@ -893,8 +893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate to import.</p>
-        pub fn certificate(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.certificate(inp);
+        pub fn certificate(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificate(signature);
             self
         }
         /// <p>The certificate to import.</p>
@@ -906,8 +906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The private key that matches the public key in the certificate.</p>
-        pub fn private_key(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.private_key(inp);
+        pub fn private_key(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.private_key(signature);
             self
         }
         /// <p>The private key that matches the public key in the certificate.</p>
@@ -919,8 +919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The PEM encoded certificate chain.</p>
-        pub fn certificate_chain(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.certificate_chain(inp);
+        pub fn certificate_chain(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificate_chain(signature);
             self
         }
         /// <p>The PEM encoded certificate chain.</p>
@@ -937,8 +937,8 @@ pub mod fluent_builders {
         ///
         /// <p>One or more resource tags to associate with the imported certificate. </p>
         /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more resource tags to associate with the imported certificate. </p>
@@ -1018,11 +1018,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_certificate_statuses`](Self::set_certificate_statuses).
         ///
         /// <p>Filter the certificate list by status value.</p>
-        pub fn certificate_statuses(
-            mut self,
-            inp: impl Into<crate::model::CertificateStatus>,
-        ) -> Self {
-            self.inner = self.inner.certificate_statuses(inp);
+        pub fn certificate_statuses(mut self, input: crate::model::CertificateStatus) -> Self {
+            self.inner = self.inner.certificate_statuses(input);
             self
         }
         /// <p>Filter the certificate list by status value.</p>
@@ -1035,8 +1032,8 @@ pub mod fluent_builders {
         }
         /// <p>Filter the certificate list. For more information, see the <a>Filters</a>
         /// structure.</p>
-        pub fn includes(mut self, inp: crate::model::Filters) -> Self {
-            self.inner = self.inner.includes(inp);
+        pub fn includes(mut self, signature: crate::model::Filters) -> Self {
+            self.inner = self.inner.includes(signature);
             self
         }
         /// <p>Filter the certificate list. For more information, see the <a>Filters</a>
@@ -1048,8 +1045,8 @@ pub mod fluent_builders {
         /// <p>Use this parameter only when paginating results and only in a subsequent request after you
         /// receive a response with truncated results. Set it to the value of <code>NextToken</code> from
         /// the response you just received.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only in a subsequent request after you
@@ -1063,8 +1060,8 @@ pub mod fluent_builders {
         /// return in the response. If additional items exist beyond the number you specify, the
         /// <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code>
         /// value in a subsequent request to retrieve additional items.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>Use this parameter when paginating results to specify the maximum number of items to
@@ -1143,8 +1140,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags.
@@ -1230,8 +1227,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies expiration
         /// events associated with an account.</p>
-        pub fn expiry_events(mut self, inp: crate::model::ExpiryEventsConfiguration) -> Self {
-            self.inner = self.inner.expiry_events(inp);
+        pub fn expiry_events(mut self, signature: crate::model::ExpiryEventsConfiguration) -> Self {
+            self.inner = self.inner.expiry_events(signature);
             self
         }
         /// <p>Specifies expiration
@@ -1249,8 +1246,8 @@ pub mod fluent_builders {
         /// the same unexpired idempotency token, ACM treats it as the same request and returns the
         /// original result. If you change the idempotency token for each call, ACM treats each call as
         /// a new request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>Customer-chosen string
@@ -1340,8 +1337,8 @@ pub mod fluent_builders {
         /// </p>
         ///
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want
@@ -1364,8 +1361,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pair that defines the tag to remove.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value pair that defines the tag to remove.</p>
@@ -1446,8 +1443,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the
@@ -1544,8 +1541,8 @@ pub mod fluent_builders {
         ///
         /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each
         /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(signature.into());
             self
         }
         /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with
@@ -1562,8 +1559,8 @@ pub mod fluent_builders {
         /// <p>The method you want to use if you are requesting a public certificate to validate that you
         /// own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
         /// email</a>. We recommend that you use DNS validation. </p>
-        pub fn validation_method(mut self, inp: crate::model::ValidationMethod) -> Self {
-            self.inner = self.inner.validation_method(inp);
+        pub fn validation_method(mut self, signature: crate::model::ValidationMethod) -> Self {
+            self.inner = self.inner.validation_method(signature);
             self
         }
         /// <p>The method you want to use if you are requesting a public certificate to validate that you
@@ -1609,8 +1606,8 @@ pub mod fluent_builders {
         /// total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p>
         /// </li>
         /// </ul>
-        pub fn subject_alternative_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject_alternative_names(inp);
+        pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject_alternative_names(input.into());
             self
         }
         /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM
@@ -1655,8 +1652,8 @@ pub mod fluent_builders {
         /// one hour, ACM recognizes that you are requesting only one certificate and will issue only
         /// one. If you change the idempotency token for each call, ACM recognizes that you are
         /// requesting multiple certificates.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>Customer chosen string that can be used to distinguish between calls to
@@ -1680,9 +1677,9 @@ pub mod fluent_builders {
         /// domain ownership.</p>
         pub fn domain_validation_options(
             mut self,
-            inp: impl Into<crate::model::DomainValidationOption>,
+            input: crate::model::DomainValidationOption,
         ) -> Self {
-            self.inner = self.inner.domain_validation_options(inp);
+            self.inner = self.inner.domain_validation_options(input);
             self
         }
         /// <p>The domain name that you want ACM to use to send you emails so that you can validate
@@ -1698,8 +1695,8 @@ pub mod fluent_builders {
         /// certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS
         /// certificates that have been mistakenly or maliciously issued. Certificates that have not been
         /// logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
-        pub fn options(mut self, inp: crate::model::CertificateOptions) -> Self {
-            self.inner = self.inner.options(inp);
+        pub fn options(mut self, signature: crate::model::CertificateOptions) -> Self {
+            self.inner = self.inner.options(signature);
             self
         }
         /// <p>Currently, you can use this parameter to specify whether to add the certificate to a
@@ -1721,8 +1718,11 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used
@@ -1745,8 +1745,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more resource tags to associate with the certificate.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more resource tags to associate with the certificate.</p>
@@ -1833,8 +1833,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>String that contains the ARN of the requested certificate. The certificate ARN is
@@ -1854,8 +1854,8 @@ pub mod fluent_builders {
         }
         /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be
         /// validated.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(signature.into());
             self
         }
         /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be
@@ -1887,8 +1887,8 @@ pub mod fluent_builders {
         /// <p>webmaster@subdomain.example.com</p>
         /// </li>
         /// </ul>
-        pub fn validation_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.validation_domain(inp);
+        pub fn validation_domain(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.validation_domain(signature.into());
             self
         }
         /// <p>The base validation domain that will act as the suffix of the email addresses that are
@@ -1989,8 +1989,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>ARN of the requested certificate to update. This must be of the form:</p>
@@ -2009,8 +2009,8 @@ pub mod fluent_builders {
         /// your certificate to a transparency log. Certificate transparency makes it possible to detect
         /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have
         /// not been logged typically produce an error message in a browser. </p>
-        pub fn options(mut self, inp: crate::model::CertificateOptions) -> Self {
-            self.inner = self.inner.options(inp);
+        pub fn options(mut self, signature: crate::model::CertificateOptions) -> Self {
+            self.inner = self.inner.options(signature);
             self
         }
         /// <p>Use to update the options for your certificate. Currently, you can specify whether to add

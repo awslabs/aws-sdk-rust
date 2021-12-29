@@ -885,9 +885,9 @@ pub mod metric_value {
         ///
         /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this
         /// to specify that set to be compared with the <code>metric</code>.</p>
-        pub fn ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn ports(mut self, input: i32) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ports = Some(v);
             self
         }
@@ -918,9 +918,9 @@ pub mod metric_value {
         /// <p>
         /// The numeral values of a metric.
         /// </p>
-        pub fn numbers(mut self, input: impl Into<f64>) -> Self {
+        pub fn numbers(mut self, input: f64) -> Self {
             let mut v = self.numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.numbers = Some(v);
             self
         }
@@ -3024,9 +3024,9 @@ pub mod abort_config {
         /// To override the contents of this collection use [`set_criteria_list`](Self::set_criteria_list).
         ///
         /// <p>The list of criteria that determine when and how to abort the job.</p>
-        pub fn criteria_list(mut self, input: impl Into<crate::model::AbortCriteria>) -> Self {
+        pub fn criteria_list(mut self, input: crate::model::AbortCriteria) -> Self {
             let mut v = self.criteria_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.criteria_list = Some(v);
             self
         }
@@ -3717,9 +3717,9 @@ pub mod thing_group_indexing_configuration {
         ///
         /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
         /// service.</p>
-        pub fn managed_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn managed_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.managed_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_fields = Some(v);
             self
         }
@@ -3739,9 +3739,9 @@ pub mod thing_group_indexing_configuration {
         /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use
         /// the GetIndexingConfiguration API to get a list of managed fields.</p>
         /// <p>Contains custom field names and their data type.</p>
-        pub fn custom_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn custom_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.custom_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_fields = Some(v);
             self
         }
@@ -4298,9 +4298,9 @@ pub mod thing_indexing_configuration {
         ///
         /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
         /// service.</p>
-        pub fn managed_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn managed_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.managed_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_fields = Some(v);
             self
         }
@@ -4318,9 +4318,9 @@ pub mod thing_indexing_configuration {
         /// To override the contents of this collection use [`set_custom_fields`](Self::set_custom_fields).
         ///
         /// <p>Contains custom field names and their data type.</p>
-        pub fn custom_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn custom_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.custom_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_fields = Some(v);
             self
         }
@@ -6732,9 +6732,9 @@ pub mod explicit_deny {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>The policies that denied the authorization.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -6872,9 +6872,9 @@ pub mod implicit_deny {
         ///
         /// <p>Policies that don't contain a matching allow or deny statement for the specified
         /// action on the specified resource. </p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -6936,9 +6936,9 @@ pub mod allowed {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>A list of policies that allowed the authentication.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -7516,10 +7516,10 @@ pub mod audit_mitigation_actions_task_target {
         pub fn audit_check_to_reason_code_filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.audit_check_to_reason_code_filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_check_to_reason_code_filter = Some(hash_map);
             self
         }
@@ -8362,9 +8362,9 @@ pub mod topic_rule_payload {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions associated with the rule.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -9374,9 +9374,9 @@ pub mod http_action {
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
         /// <p>The HTTP headers to send with the message data.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpActionHeader>) -> Self {
+        pub fn headers(mut self, input: crate::model::HttpActionHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
@@ -9764,9 +9764,9 @@ pub mod timestream_action {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>Metadata attributes of the time series that are written in each measure record.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::TimestreamDimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::TimestreamDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -10177,10 +10177,10 @@ pub mod iot_site_wise_action {
         /// <p>A list of asset property value entries.</p>
         pub fn put_asset_property_value_entries(
             mut self,
-            input: impl Into<crate::model::PutAssetPropertyValueEntry>,
+            input: crate::model::PutAssetPropertyValueEntry,
         ) -> Self {
             let mut v = self.put_asset_property_value_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.put_asset_property_value_entries = Some(v);
             self
         }
@@ -10365,12 +10365,9 @@ pub mod put_asset_property_value_entry {
         ///
         /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV)
         /// information.</p>
-        pub fn property_values(
-            mut self,
-            input: impl Into<crate::model::AssetPropertyValue>,
-        ) -> Self {
+        pub fn property_values(mut self, input: crate::model::AssetPropertyValue) -> Self {
             let mut v = self.property_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_values = Some(v);
             self
         }
@@ -17709,12 +17706,9 @@ pub mod detect_mitigation_actions_task_summary {
         /// <p>
         /// The definition of the actions.
         /// </p>
-        pub fn actions_definition(
-            mut self,
-            input: impl Into<crate::model::MitigationAction>,
-        ) -> Self {
+        pub fn actions_definition(mut self, input: crate::model::MitigationAction) -> Self {
             let mut v = self.actions_definition.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions_definition = Some(v);
             self
         }
@@ -19910,12 +19904,9 @@ pub mod audit_finding {
         /// To override the contents of this collection use [`set_related_resources`](Self::set_related_resources).
         ///
         /// <p>The list of related resources.</p>
-        pub fn related_resources(
-            mut self,
-            input: impl Into<crate::model::RelatedResource>,
-        ) -> Self {
+        pub fn related_resources(mut self, input: crate::model::RelatedResource) -> Self {
             let mut v = self.related_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_resources = Some(v);
             self
         }
@@ -21297,9 +21288,9 @@ pub mod topic_rule {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions associated with the rule.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -21899,9 +21890,9 @@ pub mod ota_update_info {
         ///
         /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
         /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
@@ -21974,9 +21965,9 @@ pub mod ota_update_info {
         /// To override the contents of this collection use [`set_ota_update_files`](Self::set_ota_update_files).
         ///
         /// <p>A list of files associated with the OTA update.</p>
-        pub fn ota_update_files(mut self, input: impl Into<crate::model::OtaUpdateFile>) -> Self {
+        pub fn ota_update_files(mut self, input: crate::model::OtaUpdateFile) -> Self {
             let mut v = self.ota_update_files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ota_update_files = Some(v);
             self
         }
@@ -24304,12 +24295,9 @@ pub mod thing_group_metadata {
         /// To override the contents of this collection use [`set_root_to_parent_thing_groups`](Self::set_root_to_parent_thing_groups).
         ///
         /// <p>The root parent thing group.</p>
-        pub fn root_to_parent_thing_groups(
-            mut self,
-            input: impl Into<crate::model::GroupNameAndArn>,
-        ) -> Self {
+        pub fn root_to_parent_thing_groups(mut self, input: crate::model::GroupNameAndArn) -> Self {
             let mut v = self.root_to_parent_thing_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.root_to_parent_thing_groups = Some(v);
             self
         }
@@ -24481,9 +24469,9 @@ pub mod stream_info {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The files to stream.</p>
-        pub fn files(mut self, input: impl Into<crate::model::StreamFile>) -> Self {
+        pub fn files(mut self, input: crate::model::StreamFile) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -28533,12 +28521,9 @@ pub mod aws_job_abort_config {
         /// To override the contents of this collection use [`set_abort_criteria_list`](Self::set_abort_criteria_list).
         ///
         /// <p>The list of criteria that determine when and how to abort the job.</p>
-        pub fn abort_criteria_list(
-            mut self,
-            input: impl Into<crate::model::AwsJobAbortCriteria>,
-        ) -> Self {
+        pub fn abort_criteria_list(mut self, input: crate::model::AwsJobAbortCriteria) -> Self {
             let mut v = self.abort_criteria_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.abort_criteria_list = Some(v);
             self
         }

@@ -300,9 +300,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags related to the contact or escalation plan.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -379,9 +379,9 @@ pub mod list_pages_by_engagement_output {
         /// To override the contents of this collection use [`set_pages`](Self::set_pages).
         ///
         /// <p>The list of engagements to contact channels.</p>
-        pub fn pages(mut self, input: impl Into<crate::model::Page>) -> Self {
+        pub fn pages(mut self, input: crate::model::Page) -> Self {
             let mut v = self.pages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pages = Some(v);
             self
         }
@@ -461,9 +461,9 @@ pub mod list_pages_by_contact_output {
         /// To override the contents of this collection use [`set_pages`](Self::set_pages).
         ///
         /// <p>The list of engagements to a contact's contact channel.</p>
-        pub fn pages(mut self, input: impl Into<crate::model::Page>) -> Self {
+        pub fn pages(mut self, input: crate::model::Page) -> Self {
             let mut v = self.pages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pages = Some(v);
             self
         }
@@ -543,9 +543,9 @@ pub mod list_page_receipts_output {
         /// To override the contents of this collection use [`set_receipts`](Self::set_receipts).
         ///
         /// <p>A list of each acknowledgement.</p>
-        pub fn receipts(mut self, input: impl Into<crate::model::Receipt>) -> Self {
+        pub fn receipts(mut self, input: crate::model::Receipt) -> Self {
             let mut v = self.receipts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.receipts = Some(v);
             self
         }
@@ -628,9 +628,9 @@ pub mod list_engagements_output {
         ///
         /// <p>A list of each engagement that occurred during the specified time range of an
         /// incident.</p>
-        pub fn engagements(mut self, input: impl Into<crate::model::Engagement>) -> Self {
+        pub fn engagements(mut self, input: crate::model::Engagement) -> Self {
             let mut v = self.engagements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engagements = Some(v);
             self
         }
@@ -711,9 +711,9 @@ pub mod list_contacts_output {
         /// To override the contents of this collection use [`set_contacts`](Self::set_contacts).
         ///
         /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-        pub fn contacts(mut self, input: impl Into<crate::model::Contact>) -> Self {
+        pub fn contacts(mut self, input: crate::model::Contact) -> Self {
             let mut v = self.contacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contacts = Some(v);
             self
         }
@@ -794,9 +794,9 @@ pub mod list_contact_channels_output {
         /// To override the contents of this collection use [`set_contact_channels`](Self::set_contact_channels).
         ///
         /// <p>A list of contact channels related to the specified contact.</p>
-        pub fn contact_channels(mut self, input: impl Into<crate::model::ContactChannel>) -> Self {
+        pub fn contact_channels(mut self, input: crate::model::ContactChannel) -> Self {
             let mut v = self.contact_channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_channels = Some(v);
             self
         }

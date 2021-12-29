@@ -1336,9 +1336,9 @@ pub mod create_organization_input {
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
         /// <p>The email domains to associate with the organization.</p>
-        pub fn domains(mut self, input: impl Into<crate::model::Domain>) -> Self {
+        pub fn domains(mut self, input: crate::model::Domain) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domains = Some(v);
             self
         }
@@ -9662,9 +9662,9 @@ pub mod put_mailbox_permissions_input {
         /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
         /// access to the mailbox, irrespective of other folder-level permissions set on the
         /// mailbox.</p>
-        pub fn permission_values(mut self, input: impl Into<crate::model::PermissionType>) -> Self {
+        pub fn permission_values(mut self, input: crate::model::PermissionType) -> Self {
             let mut v = self.permission_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permission_values = Some(v);
             self
         }
@@ -10122,12 +10122,9 @@ pub mod put_retention_policy_input {
         /// To override the contents of this collection use [`set_folder_configurations`](Self::set_folder_configurations).
         ///
         /// <p>The retention policy folder configurations.</p>
-        pub fn folder_configurations(
-            mut self,
-            input: impl Into<crate::model::FolderConfiguration>,
-        ) -> Self {
+        pub fn folder_configurations(mut self, input: crate::model::FolderConfiguration) -> Self {
             let mut v = self.folder_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_configurations = Some(v);
             self
         }
@@ -11105,9 +11102,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

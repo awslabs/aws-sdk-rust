@@ -206,12 +206,9 @@ pub mod pull_request {
         /// To override the contents of this collection use [`set_pull_request_targets`](Self::set_pull_request_targets).
         ///
         /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
-        pub fn pull_request_targets(
-            mut self,
-            input: impl Into<crate::model::PullRequestTarget>,
-        ) -> Self {
+        pub fn pull_request_targets(mut self, input: crate::model::PullRequestTarget) -> Self {
             let mut v = self.pull_request_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pull_request_targets = Some(v);
             self
         }
@@ -257,9 +254,9 @@ pub mod pull_request {
         /// To override the contents of this collection use [`set_approval_rules`](Self::set_approval_rules).
         ///
         /// <p>The approval rules applied to the pull request.</p>
-        pub fn approval_rules(mut self, input: impl Into<crate::model::ApprovalRule>) -> Self {
+        pub fn approval_rules(mut self, input: crate::model::ApprovalRule) -> Self {
             let mut v = self.approval_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.approval_rules = Some(v);
             self
         }
@@ -1315,13 +1312,9 @@ pub mod comment {
         /// To override the contents of this collection use [`set_reaction_counts`](Self::set_reaction_counts).
         ///
         /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-        pub fn reaction_counts(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn reaction_counts(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.reaction_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.reaction_counts = Some(hash_map);
             self
         }
@@ -1823,12 +1816,9 @@ pub mod repository_trigger {
         /// <note>
         /// <p>The valid value "all" cannot be used with any other values.</p>
         /// </note>
-        pub fn events(
-            mut self,
-            input: impl Into<crate::model::RepositoryTriggerEventEnum>,
-        ) -> Self {
+        pub fn events(mut self, input: crate::model::RepositoryTriggerEventEnum) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -2260,12 +2250,9 @@ pub mod conflict_resolution {
         /// To override the contents of this collection use [`set_replace_contents`](Self::set_replace_contents).
         ///
         /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
-        pub fn replace_contents(
-            mut self,
-            input: impl Into<crate::model::ReplaceContentEntry>,
-        ) -> Self {
+        pub fn replace_contents(mut self, input: crate::model::ReplaceContentEntry) -> Self {
             let mut v = self.replace_contents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replace_contents = Some(v);
             self
         }
@@ -2282,9 +2269,9 @@ pub mod conflict_resolution {
         /// To override the contents of this collection use [`set_delete_files`](Self::set_delete_files).
         ///
         /// <p>Files to be deleted as part of the merge conflict resolution.</p>
-        pub fn delete_files(mut self, input: impl Into<crate::model::DeleteFileEntry>) -> Self {
+        pub fn delete_files(mut self, input: crate::model::DeleteFileEntry) -> Self {
             let mut v = self.delete_files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delete_files = Some(v);
             self
         }
@@ -2301,9 +2288,9 @@ pub mod conflict_resolution {
         /// To override the contents of this collection use [`set_set_file_modes`](Self::set_set_file_modes).
         ///
         /// <p>File modes that are set as part of the merge conflict resolution.</p>
-        pub fn set_file_modes(mut self, input: impl Into<crate::model::SetFileModeEntry>) -> Self {
+        pub fn set_file_modes(mut self, input: crate::model::SetFileModeEntry) -> Self {
             let mut v = self.set_file_modes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.set_file_modes = Some(v);
             self
         }
@@ -5317,9 +5304,9 @@ pub mod comments_for_pull_request {
         /// To override the contents of this collection use [`set_comments`](Self::set_comments).
         ///
         /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
-        pub fn comments(mut self, input: impl Into<crate::model::Comment>) -> Self {
+        pub fn comments(mut self, input: crate::model::Comment) -> Self {
             let mut v = self.comments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comments = Some(v);
             self
         }
@@ -5525,9 +5512,9 @@ pub mod comments_for_compared_commit {
         ///
         /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison
         /// between commits.</p>
-        pub fn comments(mut self, input: impl Into<crate::model::Comment>) -> Self {
+        pub fn comments(mut self, input: crate::model::Comment) -> Self {
             let mut v = self.comments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comments = Some(v);
             self
         }
@@ -8110,9 +8097,9 @@ pub mod conflict {
         /// To override the contents of this collection use [`set_merge_hunks`](Self::set_merge_hunks).
         ///
         /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
-        pub fn merge_hunks(mut self, input: impl Into<crate::model::MergeHunk>) -> Self {
+        pub fn merge_hunks(mut self, input: crate::model::MergeHunk) -> Self {
             let mut v = self.merge_hunks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.merge_hunks = Some(v);
             self
         }

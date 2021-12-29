@@ -161,8 +161,8 @@ pub mod fluent_builders {
         }
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code
         /// will be provided by AWS Marketplace when the product listing is created.</p>
-        pub fn product_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_code(inp);
+        pub fn product_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_code(signature.into());
             self
         }
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code
@@ -181,8 +181,8 @@ pub mod fluent_builders {
         /// <i>intersected</i> for each filter key.</p>
         pub fn filter(
             mut self,
-            k: impl Into<crate::model::GetEntitlementFilterName>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::GetEntitlementFilterName,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             self.inner = self.inner.filter(k, v);
             self
@@ -205,8 +205,8 @@ pub mod fluent_builders {
         }
         /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
         /// GetEntitlementsResult.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
@@ -217,8 +217,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For
         /// pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For

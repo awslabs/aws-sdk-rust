@@ -491,10 +491,10 @@ pub mod send_bulk_email_output {
         /// with a failure status.</p>
         pub fn bulk_email_entry_results(
             mut self,
-            input: impl Into<crate::model::BulkEmailEntryResult>,
+            input: crate::model::BulkEmailEntryResult,
         ) -> Self {
             let mut v = self.bulk_email_entry_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bulk_email_entry_results = Some(v);
             self
         }
@@ -1359,9 +1359,9 @@ pub mod list_tags_for_resource_output {
         /// <p>An array that lists all the tags that are associated with the resource. Each tag
         /// consists of a required tag key (<code>Key</code>) and an associated tag value
         /// (<code>Value</code>)</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1448,10 +1448,10 @@ pub mod list_suppressed_destinations_output {
         /// destination.</p>
         pub fn suppressed_destination_summaries(
             mut self,
-            input: impl Into<crate::model::SuppressedDestinationSummary>,
+            input: crate::model::SuppressedDestinationSummary,
         ) -> Self {
             let mut v = self.suppressed_destination_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suppressed_destination_summaries = Some(v);
             self
         }
@@ -1543,9 +1543,9 @@ pub mod list_import_jobs_output {
         /// To override the contents of this collection use [`set_import_jobs`](Self::set_import_jobs).
         ///
         /// <p>A list of the import job summaries.</p>
-        pub fn import_jobs(mut self, input: impl Into<crate::model::ImportJobSummary>) -> Self {
+        pub fn import_jobs(mut self, input: crate::model::ImportJobSummary) -> Self {
             let mut v = self.import_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_jobs = Some(v);
             self
         }
@@ -1639,12 +1639,9 @@ pub mod list_email_templates_output {
         ///
         /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
         /// account.</p>
-        pub fn templates_metadata(
-            mut self,
-            input: impl Into<crate::model::EmailTemplateMetadata>,
-        ) -> Self {
+        pub fn templates_metadata(mut self, input: crate::model::EmailTemplateMetadata) -> Self {
             let mut v = self.templates_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.templates_metadata = Some(v);
             self
         }
@@ -1739,9 +1736,9 @@ pub mod list_email_identities_output {
         ///
         /// <p>An array that includes all of the email identities associated with your Amazon Web Services
         /// account.</p>
-        pub fn email_identities(mut self, input: impl Into<crate::model::IdentityInfo>) -> Self {
+        pub fn email_identities(mut self, input: crate::model::IdentityInfo) -> Self {
             let mut v = self.email_identities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.email_identities = Some(v);
             self
         }
@@ -1846,10 +1843,10 @@ pub mod list_domain_deliverability_campaigns_output {
         /// the specified time range.</p>
         pub fn domain_deliverability_campaigns(
             mut self,
-            input: impl Into<crate::model::DomainDeliverabilityCampaign>,
+            input: crate::model::DomainDeliverabilityCampaign,
         ) -> Self {
             let mut v = self.domain_deliverability_campaigns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_deliverability_campaigns = Some(v);
             self
         }
@@ -1948,10 +1945,10 @@ pub mod list_deliverability_test_reports_output {
         /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
         pub fn deliverability_test_reports(
             mut self,
-            input: impl Into<crate::model::DeliverabilityTestReport>,
+            input: crate::model::DeliverabilityTestReport,
         ) -> Self {
             let mut v = self.deliverability_test_reports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deliverability_test_reports = Some(v);
             self
         }
@@ -2145,10 +2142,10 @@ pub mod list_custom_verification_email_templates_output {
         /// <p>A list of the custom verification email templates that exist in your account.</p>
         pub fn custom_verification_email_templates(
             mut self,
-            input: impl Into<crate::model::CustomVerificationEmailTemplateMetadata>,
+            input: crate::model::CustomVerificationEmailTemplateMetadata,
         ) -> Self {
             let mut v = self.custom_verification_email_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_verification_email_templates = Some(v);
             self
         }
@@ -2240,9 +2237,9 @@ pub mod list_contacts_output {
         /// To override the contents of this collection use [`set_contacts`](Self::set_contacts).
         ///
         /// <p>The contacts present in a specific contact list.</p>
-        pub fn contacts(mut self, input: impl Into<crate::model::Contact>) -> Self {
+        pub fn contacts(mut self, input: crate::model::Contact) -> Self {
             let mut v = self.contacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contacts = Some(v);
             self
         }
@@ -2330,9 +2327,9 @@ pub mod list_contact_lists_output {
         /// To override the contents of this collection use [`set_contact_lists`](Self::set_contact_lists).
         ///
         /// <p>The available contact lists.</p>
-        pub fn contact_lists(mut self, input: impl Into<crate::model::ContactList>) -> Self {
+        pub fn contact_lists(mut self, input: crate::model::ContactList) -> Self {
             let mut v = self.contact_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_lists = Some(v);
             self
         }
@@ -3154,9 +3151,9 @@ pub mod get_email_identity_output {
         ///
         /// <p>An array of objects that define the tags (keys and values) that are associated with
         /// the email identity.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3274,9 +3271,9 @@ pub mod get_domain_statistics_report_output {
         /// <p>An object that contains deliverability metrics for the domain that you specified. This
         /// object contains data for each day, starting on the <code>StartDate</code> and ending on
         /// the <code>EndDate</code>.</p>
-        pub fn daily_volumes(mut self, input: impl Into<crate::model::DailyVolume>) -> Self {
+        pub fn daily_volumes(mut self, input: crate::model::DailyVolume) -> Self {
             let mut v = self.daily_volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.daily_volumes = Some(v);
             self
         }
@@ -3491,9 +3488,9 @@ pub mod get_deliverability_test_report_output {
         ///
         /// <p>An object that describes how the test email was handled by several email providers,
         /// including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-        pub fn isp_placements(mut self, input: impl Into<crate::model::IspPlacement>) -> Self {
+        pub fn isp_placements(mut self, input: crate::model::IspPlacement) -> Self {
             let mut v = self.isp_placements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.isp_placements = Some(v);
             self
         }
@@ -3524,9 +3521,9 @@ pub mod get_deliverability_test_report_output {
         ///
         /// <p>An array of objects that define the tags (keys and values) that are associated with
         /// the predictive inbox placement test.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3713,10 +3710,10 @@ pub mod get_deliverability_dashboard_options_output {
         /// the end of the current calendar month.</p>
         pub fn active_subscribed_domains(
             mut self,
-            input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
+            input: crate::model::DomainDeliverabilityTrackingOption,
         ) -> Self {
             let mut v = self.active_subscribed_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_subscribed_domains = Some(v);
             self
         }
@@ -3741,12 +3738,12 @@ pub mod get_deliverability_dashboard_options_output {
         /// end of the current calendar month.</p>
         pub fn pending_expiration_subscribed_domains(
             mut self,
-            input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
+            input: crate::model::DomainDeliverabilityTrackingOption,
         ) -> Self {
             let mut v = self
                 .pending_expiration_subscribed_domains
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_expiration_subscribed_domains = Some(v);
             self
         }
@@ -3828,9 +3825,9 @@ pub mod get_dedicated_ips_output {
         /// To override the contents of this collection use [`set_dedicated_ips`](Self::set_dedicated_ips).
         ///
         /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
-        pub fn dedicated_ips(mut self, input: impl Into<crate::model::DedicatedIp>) -> Self {
+        pub fn dedicated_ips(mut self, input: crate::model::DedicatedIp) -> Self {
             let mut v = self.dedicated_ips.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dedicated_ips = Some(v);
             self
         }
@@ -4194,9 +4191,9 @@ pub mod get_contact_list_output {
         ///
         /// <p>An interest group, theme, or label within a list. A contact list can have multiple
         /// topics.</p>
-        pub fn topics(mut self, input: impl Into<crate::model::Topic>) -> Self {
+        pub fn topics(mut self, input: crate::model::Topic) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topics = Some(v);
             self
         }
@@ -4250,9 +4247,9 @@ pub mod get_contact_list_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with a contact list.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4407,12 +4404,9 @@ pub mod get_contact_output {
         /// To override the contents of this collection use [`set_topic_preferences`](Self::set_topic_preferences).
         ///
         /// <p>The contact's preference for being opted-in to or opted-out of a topic.></p>
-        pub fn topic_preferences(
-            mut self,
-            input: impl Into<crate::model::TopicPreference>,
-        ) -> Self {
+        pub fn topic_preferences(mut self, input: crate::model::TopicPreference) -> Self {
             let mut v = self.topic_preferences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_preferences = Some(v);
             self
         }
@@ -4429,12 +4423,9 @@ pub mod get_contact_output {
         /// To override the contents of this collection use [`set_topic_default_preferences`](Self::set_topic_default_preferences).
         ///
         /// <p>The default topic preferences applied to the contact.</p>
-        pub fn topic_default_preferences(
-            mut self,
-            input: impl Into<crate::model::TopicPreference>,
-        ) -> Self {
+        pub fn topic_default_preferences(mut self, input: crate::model::TopicPreference) -> Self {
             let mut v = self.topic_default_preferences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_default_preferences = Some(v);
             self
         }
@@ -4557,12 +4548,9 @@ pub mod get_configuration_set_event_destinations_output {
         ///
         /// <p>An array that includes all of the events destinations that have been configured for
         /// the configuration set.</p>
-        pub fn event_destinations(
-            mut self,
-            input: impl Into<crate::model::EventDestination>,
-        ) -> Self {
+        pub fn event_destinations(mut self, input: crate::model::EventDestination) -> Self {
             let mut v = self.event_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_destinations = Some(v);
             self
         }
@@ -4758,9 +4746,9 @@ pub mod get_configuration_set_output {
         ///
         /// <p>An array of objects that define the tags (keys and values) that are associated with
         /// the configuration set.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4863,10 +4851,10 @@ pub mod get_blacklist_reports_output {
         pub fn blacklist_report(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::BlacklistEntry>>,
+            v: std::vec::Vec<crate::model::BlacklistEntry>,
         ) -> Self {
             let mut hash_map = self.blacklist_report.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.blacklist_report = Some(hash_map);
             self
         }

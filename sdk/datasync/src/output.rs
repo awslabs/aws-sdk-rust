@@ -374,9 +374,9 @@ pub mod list_tasks_output {
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
         /// <p>A list of all the tasks that are returned.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::TaskListEntry>) -> Self {
+        pub fn tasks(mut self, input: crate::model::TaskListEntry) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -461,12 +461,9 @@ pub mod list_task_executions_output {
         /// To override the contents of this collection use [`set_task_executions`](Self::set_task_executions).
         ///
         /// <p>A list of executed tasks.</p>
-        pub fn task_executions(
-            mut self,
-            input: impl Into<crate::model::TaskExecutionListEntry>,
-        ) -> Self {
+        pub fn task_executions(mut self, input: crate::model::TaskExecutionListEntry) -> Self {
             let mut v = self.task_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_executions = Some(v);
             self
         }
@@ -550,9 +547,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Array of resource tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagListEntry>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -636,9 +633,9 @@ pub mod list_locations_output {
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
         /// <p>An array that contains a list of locations.</p>
-        pub fn locations(mut self, input: impl Into<crate::model::LocationListEntry>) -> Self {
+        pub fn locations(mut self, input: crate::model::LocationListEntry) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.locations = Some(v);
             self
         }
@@ -722,9 +719,9 @@ pub mod list_agents_output {
         /// To override the contents of this collection use [`set_agents`](Self::set_agents).
         ///
         /// <p>A list of agents in your account.</p>
-        pub fn agents(mut self, input: impl Into<crate::model::AgentListEntry>) -> Self {
+        pub fn agents(mut self, input: crate::model::AgentListEntry) -> Self {
             let mut v = self.agents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agents = Some(v);
             self
         }
@@ -1057,9 +1054,9 @@ pub mod describe_task_execution_output {
         /// </p>
         /// <p>
         /// </p>
-        pub fn excludes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excludes = Some(v);
             self
         }
@@ -1086,9 +1083,9 @@ pub mod describe_task_execution_output {
         /// </p>
         /// <p>
         /// </p>
-        pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.includes = Some(v);
             self
         }
@@ -1618,9 +1615,9 @@ pub mod describe_task_output {
         /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         /// <p>
         /// </p>
-        pub fn excludes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excludes = Some(v);
             self
         }
@@ -1693,9 +1690,9 @@ pub mod describe_task_output {
         /// <p>A list of filter rules that determines which files to include when running a task. The
         /// pattern contains a single filter string that consists of the patterns to include. The patterns
         /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2</code>".</p>
-        pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.includes = Some(v);
             self
         }
@@ -2636,9 +2633,9 @@ pub mod describe_location_hdfs_output {
         /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
         ///
         /// <p>The NameNode that manage the HDFS namespace. </p>
-        pub fn name_nodes(mut self, input: impl Into<crate::model::HdfsNameNode>) -> Self {
+        pub fn name_nodes(mut self, input: crate::model::HdfsNameNode) -> Self {
             let mut v = self.name_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.name_nodes = Some(v);
             self
         }

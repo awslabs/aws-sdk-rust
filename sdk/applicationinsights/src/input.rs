@@ -83,9 +83,9 @@ pub mod create_application_input {
         /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
         /// length of a tag key is 128 characters. The maximum length of a tag value is 256
         /// characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3924,9 +3924,9 @@ pub mod tag_resource_input {
         /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
         /// length of a tag key is 128 characters. The maximum length of a tag value is 256
         /// characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

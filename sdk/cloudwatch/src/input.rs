@@ -198,9 +198,9 @@ pub mod delete_anomaly_detector_input {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -1008,9 +1008,9 @@ pub mod describe_alarm_history_input {
         ///
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
         /// only metric alarms are returned.</p>
-        pub fn alarm_types(mut self, input: impl Into<crate::model::AlarmType>) -> Self {
+        pub fn alarm_types(mut self, input: crate::model::AlarmType) -> Self {
             let mut v = self.alarm_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_types = Some(v);
             self
         }
@@ -1296,9 +1296,9 @@ pub mod describe_alarms_input {
         ///
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
         /// only metric alarms are returned.</p>
-        pub fn alarm_types(mut self, input: impl Into<crate::model::AlarmType>) -> Self {
+        pub fn alarm_types(mut self, input: crate::model::AlarmType) -> Self {
             let mut v = self.alarm_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_types = Some(v);
             self
         }
@@ -1656,9 +1656,9 @@ pub mod describe_alarms_for_metric_input {
         ///
         /// <p>The dimensions associated with the metric. If the metric has any associated
         /// dimensions, you must specify them in order for the call to succeed.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -1904,9 +1904,9 @@ pub mod describe_anomaly_detectors_input {
         /// <p>Limits the results to only the anomaly detection models that are associated with the
         /// specified metric dimensions. If there are multiple metrics that have these dimensions
         /// and have anomaly detection models associated, they're all returned.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -1926,12 +1926,9 @@ pub mod describe_anomaly_detectors_input {
         ///
         /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
         /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-        pub fn anomaly_detector_types(
-            mut self,
-            input: impl Into<crate::model::AnomalyDetectorType>,
-        ) -> Self {
+        pub fn anomaly_detector_types(mut self, input: crate::model::AnomalyDetectorType) -> Self {
             let mut v = self.anomaly_detector_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_detector_types = Some(v);
             self
         }
@@ -3368,12 +3365,9 @@ pub mod get_metric_data_input {
         ///
         /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code>
         /// structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
-        pub fn metric_data_queries(
-            mut self,
-            input: impl Into<crate::model::MetricDataQuery>,
-        ) -> Self {
+        pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data_queries = Some(v);
             self
         }
@@ -3722,9 +3716,9 @@ pub mod get_metric_statistics_input {
         /// You must specify the same dimensions that were used when the metrics were created. For an example,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the
         /// <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -3872,9 +3866,9 @@ pub mod get_metric_statistics_input {
         /// <p>The metric statistics, other than percentile. For percentile statistics,
         /// use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must
         /// specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
-        pub fn statistics(mut self, input: impl Into<crate::model::Statistic>) -> Self {
+        pub fn statistics(mut self, input: crate::model::Statistic) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statistics = Some(v);
             self
         }
@@ -4692,9 +4686,9 @@ pub mod list_metrics_input {
         ///
         /// <p>The dimensions to filter against.  Only the dimensions that match exactly
         /// will be returned.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::DimensionFilter>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::DimensionFilter) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -5253,9 +5247,9 @@ pub mod put_anomaly_detector_input {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -5883,9 +5877,9 @@ pub mod put_composite_alarm_input {
         /// <p>Tags can help you organize and categorize your
         /// resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with
         /// certain tag values.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6277,9 +6271,9 @@ pub mod put_insight_rule_input {
         /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags
         /// you specify in this parameter are ignored. To change the tags of an existing rule, use
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6744,9 +6738,9 @@ pub mod put_metric_alarm_input {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -6964,9 +6958,9 @@ pub mod put_metric_alarm_input {
         /// <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation.
         /// Instead, you retrieve
         /// the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-        pub fn metrics(mut self, input: impl Into<crate::model::MetricDataQuery>) -> Self {
+        pub fn metrics(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics = Some(v);
             self
         }
@@ -6999,9 +6993,9 @@ pub mod put_metric_alarm_input {
         /// you specify in this parameter are ignored. To change the tags of an existing alarm, use
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7227,9 +7221,9 @@ pub mod put_metric_data_input {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatum>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatum) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }
@@ -7413,12 +7407,9 @@ pub mod put_metric_stream_input {
         /// metrics from the metric namespaces that you specify here.</p>
         /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code>
         /// in the same operation.</p>
-        pub fn include_filters(
-            mut self,
-            input: impl Into<crate::model::MetricStreamFilter>,
-        ) -> Self {
+        pub fn include_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.include_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include_filters = Some(v);
             self
         }
@@ -7441,12 +7432,9 @@ pub mod put_metric_stream_input {
         /// metric namespaces except for the namespaces that you specify here.</p>
         /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in
         /// the same operation.</p>
-        pub fn exclude_filters(
-            mut self,
-            input: impl Into<crate::model::MetricStreamFilter>,
-        ) -> Self {
+        pub fn exclude_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.exclude_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exclude_filters = Some(v);
             self
         }
@@ -7539,9 +7527,9 @@ pub mod put_metric_stream_input {
         /// you specify in this parameter are ignored. To change the tags of an existing metric stream, use
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8263,9 +8251,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the alarm.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

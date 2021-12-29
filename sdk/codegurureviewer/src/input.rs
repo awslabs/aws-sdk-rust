@@ -1278,9 +1278,9 @@ pub mod list_code_reviews_input {
         /// <p>
         /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
         /// </p>
-        pub fn provider_types(mut self, input: impl Into<crate::model::ProviderType>) -> Self {
+        pub fn provider_types(mut self, input: crate::model::ProviderType) -> Self {
             let mut v = self.provider_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provider_types = Some(v);
             self
         }
@@ -1324,9 +1324,9 @@ pub mod list_code_reviews_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn states(mut self, input: impl Into<crate::model::JobState>) -> Self {
+        pub fn states(mut self, input: crate::model::JobState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -2114,9 +2114,9 @@ pub mod list_repository_associations_input {
         /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
         ///
         /// <p>List of provider types to use as a filter.</p>
-        pub fn provider_types(mut self, input: impl Into<crate::model::ProviderType>) -> Self {
+        pub fn provider_types(mut self, input: crate::model::ProviderType) -> Self {
             let mut v = self.provider_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provider_types = Some(v);
             self
         }
@@ -2187,12 +2187,9 @@ pub mod list_repository_associations_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn states(
-            mut self,
-            input: impl Into<crate::model::RepositoryAssociationState>,
-        ) -> Self {
+        pub fn states(mut self, input: crate::model::RepositoryAssociationState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -2737,9 +2734,9 @@ pub mod put_recommendation_feedback_input {
         /// <p>
         /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
         /// </p>
-        pub fn reactions(mut self, input: impl Into<crate::model::Reaction>) -> Self {
+        pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
             let mut v = self.reactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactions = Some(v);
             self
         }

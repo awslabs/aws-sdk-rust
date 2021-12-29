@@ -93,9 +93,9 @@ pub mod create_configuration_set_input {
         ///
         /// <p>An array of objects that define the tags (keys and values) that you want to associate
         /// with the configuration set.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -479,9 +479,9 @@ pub mod create_dedicated_ip_pool_input {
         ///
         /// <p>An object that defines the tags (keys and values) that you want to associate with the
         /// pool.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -683,9 +683,9 @@ pub mod create_deliverability_test_report_input {
         ///
         /// <p>An array of objects that define the tags (keys and values) that you want to associate
         /// with the predictive inbox placement test.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -864,9 +864,9 @@ pub mod create_email_identity_input {
         ///
         /// <p>An array of objects that define the tags (keys and values) that you want to associate
         /// with the email identity.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6061,10 +6061,10 @@ pub mod put_deliverability_dashboard_option_input {
         /// enabled the Deliverability dashboard for.</p>
         pub fn subscribed_domains(
             mut self,
-            input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
+            input: crate::model::DomainDeliverabilityTrackingOption,
         ) -> Self {
             let mut v = self.subscribed_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribed_domains = Some(v);
             self
         }
@@ -6963,9 +6963,9 @@ pub mod send_email_input {
         /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
         /// email that you define, so that you can publish email sending events. </p>
-        pub fn email_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn email_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.email_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.email_tags = Some(v);
             self
         }
@@ -7153,9 +7153,9 @@ pub mod tag_resource_input {
         /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
         /// length of a tag key is 128 characters. The maximum length of a tag value is 256
         /// characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

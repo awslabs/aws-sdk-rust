@@ -280,8 +280,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the job that you want to cancel.</p>
         /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of
         /// <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the job that you want to cancel.</p>
@@ -359,8 +359,8 @@ pub mod fluent_builders {
         /// transcoding. The pipeline determines several settings, including the Amazon S3 bucket
         /// from which Elastic Transcoder gets the files to transcode and the bucket into which
         /// Elastic Transcoder puts the transcoded files.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for
@@ -373,8 +373,8 @@ pub mod fluent_builders {
         }
         /// <p>A section of the request body that provides information about the file that is being
         /// transcoded.</p>
-        pub fn input(mut self, inp: crate::model::JobInput) -> Self {
-            self.inner = self.inner.input(inp);
+        pub fn input(mut self, signature: crate::model::JobInput) -> Self {
+            self.inner = self.inner.input(signature);
             self
         }
         /// <p>A section of the request body that provides information about the file that is being
@@ -389,8 +389,8 @@ pub mod fluent_builders {
         ///
         /// <p>A section of the request body that provides information about the files that are being
         /// transcoded.</p>
-        pub fn inputs(mut self, inp: impl Into<crate::model::JobInput>) -> Self {
-            self.inner = self.inner.inputs(inp);
+        pub fn inputs(mut self, input: crate::model::JobInput) -> Self {
+            self.inner = self.inner.inputs(input);
             self
         }
         /// <p>A section of the request body that provides information about the files that are being
@@ -405,8 +405,8 @@ pub mod fluent_builders {
         /// <p> A section of the request body that provides information about the transcoded (target)
         /// file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the
         /// <code>Output</code> syntax. </p>
-        pub fn output(mut self, inp: crate::model::CreateJobOutput) -> Self {
-            self.inner = self.inner.output(inp);
+        pub fn output(mut self, signature: crate::model::CreateJobOutput) -> Self {
+            self.inner = self.inner.output(signature);
             self
         }
         /// <p> A section of the request body that provides information about the transcoded (target)
@@ -426,8 +426,8 @@ pub mod fluent_builders {
         /// <p> A section of the request body that provides information about the transcoded (target)
         /// files. We recommend that you use the <code>Outputs</code> syntax instead of the
         /// <code>Output</code> syntax. </p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::CreateJobOutput>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::CreateJobOutput) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p> A section of the request body that provides information about the transcoded (target)
@@ -442,8 +442,8 @@ pub mod fluent_builders {
         }
         /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this
         /// job creates, including output files, thumbnails, and playlists.</p>
-        pub fn output_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_key_prefix(inp);
+        pub fn output_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_key_prefix(signature.into());
             self
         }
         /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this
@@ -463,8 +463,8 @@ pub mod fluent_builders {
         /// <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains
         /// information about the master playlists that you want Elastic Transcoder to create.</p>
         /// <p>The maximum number of master playlists in a job is 30.</p>
-        pub fn playlists(mut self, inp: impl Into<crate::model::CreateJobPlaylist>) -> Self {
-            self.inner = self.inner.playlists(inp);
+        pub fn playlists(mut self, input: crate::model::CreateJobPlaylist) -> Self {
+            self.inner = self.inner.playlists(input);
             self
         }
         /// <p>If you specify a preset in <code>PresetId</code> for which the value of
@@ -491,7 +491,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.user_metadata(k, v);
+            self.inner = self.inner.user_metadata(k.into(), v.into());
             self
         }
         /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
@@ -570,8 +570,8 @@ pub mod fluent_builders {
         /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account,
         /// but uniqueness is not enforced.</p>
         /// <p>Constraints: Maximum 40 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account,
@@ -582,8 +582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
-        pub fn input_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_bucket(inp);
+        pub fn input_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_bucket(signature.into());
             self
         }
         /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
@@ -625,8 +625,8 @@ pub mod fluent_builders {
         /// the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code>
         /// and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
         /// instead.</p>
-        pub fn output_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_bucket(inp);
+        pub fn output_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_bucket(signature.into());
             self
         }
         /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use
@@ -671,8 +671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(signature.into());
             self
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
@@ -687,8 +687,8 @@ pub mod fluent_builders {
         /// You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are
         /// using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
         /// or <code>aes-gcm</code>.</p>
-        pub fn aws_kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_kms_key_arn(inp);
+        pub fn aws_kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_kms_key_arn(signature.into());
             self
         }
         /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
@@ -736,8 +736,8 @@ pub mod fluent_builders {
         /// ARN that Amazon SNS returned when you created the topic.</p>
         /// </li>
         /// </ul>
-        pub fn notifications(mut self, inp: crate::model::Notifications) -> Self {
-            self.inner = self.inner.notifications(inp);
+        pub fn notifications(mut self, signature: crate::model::Notifications) -> Self {
+            self.inner = self.inner.notifications(signature);
             self
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
@@ -877,8 +877,8 @@ pub mod fluent_builders {
         /// the video files and playlists that it stores in your Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
-        pub fn content_config(mut self, inp: crate::model::PipelineOutputConfig) -> Self {
-            self.inner = self.inner.content_config(inp);
+        pub fn content_config(mut self, signature: crate::model::PipelineOutputConfig) -> Self {
+            self.inner = self.inner.content_config(signature);
             self
         }
         /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3
@@ -1078,8 +1078,8 @@ pub mod fluent_builders {
         /// the thumbnails that it stores in your Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
-        pub fn thumbnail_config(mut self, inp: crate::model::PipelineOutputConfig) -> Self {
-            self.inner = self.inner.thumbnail_config(inp);
+        pub fn thumbnail_config(mut self, signature: crate::model::PipelineOutputConfig) -> Self {
+            self.inner = self.inner.thumbnail_config(signature);
             self
         }
         /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3
@@ -1254,8 +1254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
@@ -1264,8 +1264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the preset.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the preset.</p>
@@ -1278,8 +1278,8 @@ pub mod fluent_builders {
         /// <code>gif</code>, <code>mp3</code>,
         /// <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>,
         /// <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
-        pub fn container(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container(inp);
+        pub fn container(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container(signature.into());
             self
         }
         /// <p>The container type for the output file. Valid values include <code>flac</code>,
@@ -1292,8 +1292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A section of the request body that specifies the video parameters.</p>
-        pub fn video(mut self, inp: crate::model::VideoParameters) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, signature: crate::model::VideoParameters) -> Self {
+            self.inner = self.inner.video(signature);
             self
         }
         /// <p>A section of the request body that specifies the video parameters.</p>
@@ -1305,8 +1305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A section of the request body that specifies the audio parameters.</p>
-        pub fn audio(mut self, inp: crate::model::AudioParameters) -> Self {
-            self.inner = self.inner.audio(inp);
+        pub fn audio(mut self, signature: crate::model::AudioParameters) -> Self {
+            self.inner = self.inner.audio(signature);
             self
         }
         /// <p>A section of the request body that specifies the audio parameters.</p>
@@ -1318,8 +1318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
-        pub fn thumbnails(mut self, inp: crate::model::Thumbnails) -> Self {
-            self.inner = self.inner.thumbnails(inp);
+        pub fn thumbnails(mut self, signature: crate::model::Thumbnails) -> Self {
+            self.inner = self.inner.thumbnails(signature);
             self
         }
         /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
@@ -1394,8 +1394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the pipeline that you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the pipeline that you want to delete.</p>
@@ -1467,8 +1467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the preset for which you want to get detailed information.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the preset for which you want to get detailed information.</p>
@@ -1539,8 +1539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline for which you want to get job information.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(signature.into());
             self
         }
         /// <p>The ID of the pipeline for which you want to get job information.</p>
@@ -1551,8 +1551,8 @@ pub mod fluent_builders {
         /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
         /// <code>true</code>. To list jobs in reverse chronological order, enter
         /// <code>false</code>. </p>
-        pub fn ascending(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ascending(inp);
+        pub fn ascending(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ascending(signature.into());
             self
         }
         /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
@@ -1564,8 +1564,8 @@ pub mod fluent_builders {
         }
         /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
         /// subsequent <code>GET</code> requests to get each successive page of results. </p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
@@ -1639,8 +1639,8 @@ pub mod fluent_builders {
         /// have a given status, specify the following status: <code>Submitted</code>,
         /// <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or
         /// <code>Error</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(signature.into());
             self
         }
         /// <p>To get information about all of the jobs associated with the current AWS account that
@@ -1654,8 +1654,8 @@ pub mod fluent_builders {
         /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
         /// <code>true</code>. To list jobs in reverse chronological order, enter
         /// <code>false</code>. </p>
-        pub fn ascending(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ascending(inp);
+        pub fn ascending(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ascending(signature.into());
             self
         }
         /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
@@ -1667,8 +1667,8 @@ pub mod fluent_builders {
         }
         /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
         /// subsequent <code>GET</code> requests to get each successive page of results. </p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
@@ -1740,8 +1740,8 @@ pub mod fluent_builders {
         /// <p>To list pipelines in chronological order by the date and time that they were created, enter
         /// <code>true</code>. To list pipelines in reverse chronological order, enter
         /// <code>false</code>.</p>
-        pub fn ascending(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ascending(inp);
+        pub fn ascending(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ascending(signature.into());
             self
         }
         /// <p>To list pipelines in chronological order by the date and time that they were created, enter
@@ -1753,8 +1753,8 @@ pub mod fluent_builders {
         }
         /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
         /// subsequent <code>GET</code> requests to get each successive page of results. </p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
@@ -1827,8 +1827,8 @@ pub mod fluent_builders {
         /// <p>To list presets in chronological order by the date and time that they were created, enter
         /// <code>true</code>. To list presets in reverse chronological order, enter
         /// <code>false</code>.</p>
-        pub fn ascending(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ascending(inp);
+        pub fn ascending(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ascending(signature.into());
             self
         }
         /// <p>To list presets in chronological order by the date and time that they were created, enter
@@ -1840,8 +1840,8 @@ pub mod fluent_builders {
         }
         /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
         /// subsequent <code>GET</code> requests to get each successive page of results. </p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
@@ -1911,8 +1911,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the job for which you want to get detailed information.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the job for which you want to get detailed information.</p>
@@ -1981,8 +1981,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the pipeline to read.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the pipeline to read.</p>
@@ -2051,8 +2051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the preset for which you want to get detailed information.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the preset for which you want to get detailed information.</p>
@@ -2126,8 +2126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(signature.into());
             self
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
@@ -2136,8 +2136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
-        pub fn input_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_bucket(inp);
+        pub fn input_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_bucket(signature.into());
             self
         }
         /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
@@ -2146,8 +2146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
-        pub fn output_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_bucket(inp);
+        pub fn output_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_bucket(signature.into());
             self
         }
         /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
@@ -2163,8 +2163,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_topics`](Self::set_topics).
         ///
         /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
-        pub fn topics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topics(inp);
+        pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topics(input.into());
             self
         }
         /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
@@ -2241,8 +2241,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline that you want to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the pipeline that you want to update.</p>
@@ -2253,8 +2253,8 @@ pub mod fluent_builders {
         /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but
         /// uniqueness is not enforced.</p>
         /// <p>Constraints: Maximum 40 characters</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but
@@ -2266,8 +2266,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics
         /// that you want to use as watermarks.</p>
-        pub fn input_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_bucket(inp);
+        pub fn input_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_bucket(signature.into());
             self
         }
         /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics
@@ -2278,8 +2278,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for
         /// this pipeline.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(signature.into());
             self
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for
@@ -2294,8 +2294,8 @@ pub mod fluent_builders {
         /// created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default
         /// AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
         /// or <code>aes-gcm</code>.</p>
-        pub fn aws_kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_kms_key_arn(inp);
+        pub fn aws_kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_kms_key_arn(signature.into());
             self
         }
         /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
@@ -2341,8 +2341,8 @@ pub mod fluent_builders {
         /// created the topic.</p>
         /// </li>
         /// </ul>
-        pub fn notifications(mut self, inp: crate::model::Notifications) -> Self {
-            self.inner = self.inner.notifications(inp);
+        pub fn notifications(mut self, signature: crate::model::Notifications) -> Self {
+            self.inner = self.inner.notifications(signature);
             self
         }
         /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
@@ -2481,8 +2481,8 @@ pub mod fluent_builders {
         /// the video files and playlists that it stores in your Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
-        pub fn content_config(mut self, inp: crate::model::PipelineOutputConfig) -> Self {
-            self.inner = self.inner.content_config(inp);
+        pub fn content_config(mut self, signature: crate::model::PipelineOutputConfig) -> Self {
+            self.inner = self.inner.content_config(signature);
             self
         }
         /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3
@@ -2682,8 +2682,8 @@ pub mod fluent_builders {
         /// the thumbnails that it stores in your Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
-        pub fn thumbnail_config(mut self, inp: crate::model::PipelineOutputConfig) -> Self {
-            self.inner = self.inner.thumbnail_config(inp);
+        pub fn thumbnail_config(mut self, signature: crate::model::PipelineOutputConfig) -> Self {
+            self.inner = self.inner.thumbnail_config(signature);
             self
         }
         /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3
@@ -2846,8 +2846,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
@@ -2885,8 +2885,8 @@ pub mod fluent_builders {
         /// created the topic.</p>
         /// </li>
         /// </ul>
-        pub fn notifications(mut self, inp: crate::model::Notifications) -> Self {
-            self.inner = self.inner.notifications(inp);
+        pub fn notifications(mut self, signature: crate::model::Notifications) -> Self {
+            self.inner = self.inner.notifications(signature);
             self
         }
         /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
@@ -2992,8 +2992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the pipeline to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the pipeline to update.</p>
@@ -3012,8 +3012,8 @@ pub mod fluent_builders {
         /// <code>Paused</code>: The pipeline is not currently processing jobs.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(signature.into());
             self
         }
         /// <p>The desired status of the pipeline:</p>

@@ -916,10 +916,10 @@ pub mod describe_user_stack_associations_output {
         /// <p>The UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            input: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
             let mut v = self.user_stack_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_stack_associations = Some(v);
             self
         }
@@ -999,9 +999,9 @@ pub mod describe_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>Information about users in the user pool.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -1090,10 +1090,10 @@ pub mod describe_usage_report_subscriptions_output {
         /// <p>Information about the usage report subscription.</p>
         pub fn usage_report_subscriptions(
             mut self,
-            input: impl Into<crate::model::UsageReportSubscription>,
+            input: crate::model::UsageReportSubscription,
         ) -> Self {
             let mut v = self.usage_report_subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_report_subscriptions = Some(v);
             self
         }
@@ -1173,9 +1173,9 @@ pub mod describe_stacks_output {
         /// To override the contents of this collection use [`set_stacks`](Self::set_stacks).
         ///
         /// <p>Information about the stacks.</p>
-        pub fn stacks(mut self, input: impl Into<crate::model::Stack>) -> Self {
+        pub fn stacks(mut self, input: crate::model::Stack) -> Self {
             let mut v = self.stacks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stacks = Some(v);
             self
         }
@@ -1255,9 +1255,9 @@ pub mod describe_sessions_output {
         /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
         ///
         /// <p>Information about the streaming sessions.</p>
-        pub fn sessions(mut self, input: impl Into<crate::model::Session>) -> Self {
+        pub fn sessions(mut self, input: crate::model::Session) -> Self {
             let mut v = self.sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sessions = Some(v);
             self
         }
@@ -1337,9 +1337,9 @@ pub mod describe_images_output {
         /// To override the contents of this collection use [`set_images`](Self::set_images).
         ///
         /// <p>Information about the images.</p>
-        pub fn images(mut self, input: impl Into<crate::model::Image>) -> Self {
+        pub fn images(mut self, input: crate::model::Image) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.images = Some(v);
             self
         }
@@ -1446,10 +1446,10 @@ pub mod describe_image_permissions_output {
         /// <p>The permissions for a private image that you own. </p>
         pub fn shared_image_permissions_list(
             mut self,
-            input: impl Into<crate::model::SharedImagePermissions>,
+            input: crate::model::SharedImagePermissions,
         ) -> Self {
             let mut v = self.shared_image_permissions_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shared_image_permissions_list = Some(v);
             self
         }
@@ -1530,9 +1530,9 @@ pub mod describe_image_builders_output {
         /// To override the contents of this collection use [`set_image_builders`](Self::set_image_builders).
         ///
         /// <p>Information about the image builders.</p>
-        pub fn image_builders(mut self, input: impl Into<crate::model::ImageBuilder>) -> Self {
+        pub fn image_builders(mut self, input: crate::model::ImageBuilder) -> Self {
             let mut v = self.image_builders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_builders = Some(v);
             self
         }
@@ -1612,9 +1612,9 @@ pub mod describe_fleets_output {
         /// To override the contents of this collection use [`set_fleets`](Self::set_fleets).
         ///
         /// <p>Information about the fleets.</p>
-        pub fn fleets(mut self, input: impl Into<crate::model::Fleet>) -> Self {
+        pub fn fleets(mut self, input: crate::model::Fleet) -> Self {
             let mut v = self.fleets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleets = Some(v);
             self
         }
@@ -1695,12 +1695,9 @@ pub mod describe_directory_configs_output {
         /// To override the contents of this collection use [`set_directory_configs`](Self::set_directory_configs).
         ///
         /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
-        pub fn directory_configs(
-            mut self,
-            input: impl Into<crate::model::DirectoryConfig>,
-        ) -> Self {
+        pub fn directory_configs(mut self, input: crate::model::DirectoryConfig) -> Self {
             let mut v = self.directory_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.directory_configs = Some(v);
             self
         }
@@ -1782,9 +1779,9 @@ pub mod describe_applications_output {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>The applications in the list.</p>
-        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -1877,10 +1874,10 @@ pub mod describe_application_fleet_associations_output {
         /// <p>The application fleet associations in the list.</p>
         pub fn application_fleet_associations(
             mut self,
-            input: impl Into<crate::model::ApplicationFleetAssociation>,
+            input: crate::model::ApplicationFleetAssociation,
         ) -> Self {
             let mut v = self.application_fleet_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_fleet_associations = Some(v);
             self
         }
@@ -1964,9 +1961,9 @@ pub mod describe_app_blocks_output {
         /// To override the contents of this collection use [`set_app_blocks`](Self::set_app_blocks).
         ///
         /// <p>The app blocks in the list.</p>
-        pub fn app_blocks(mut self, input: impl Into<crate::model::AppBlock>) -> Self {
+        pub fn app_blocks(mut self, input: crate::model::AppBlock) -> Self {
             let mut v = self.app_blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_blocks = Some(v);
             self
         }
@@ -3140,9 +3137,9 @@ pub mod batch_disassociate_user_stack_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The list of UserStackAssociationError objects.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::UserStackAssociationError>) -> Self {
+        pub fn errors(mut self, input: crate::model::UserStackAssociationError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -3204,9 +3201,9 @@ pub mod batch_associate_user_stack_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The list of UserStackAssociationError objects.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::UserStackAssociationError>) -> Self {
+        pub fn errors(mut self, input: crate::model::UserStackAssociationError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

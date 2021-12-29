@@ -396,9 +396,9 @@ pub mod metric_datum {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions associated with the metric.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -463,9 +463,9 @@ pub mod metric_datum {
         /// <code>Double</code>, CloudWatch rejects values that are either too small
         /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
         /// -Infinity) are not supported.</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -488,9 +488,9 @@ pub mod metric_datum {
         /// is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
         /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you
         /// include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
-        pub fn counts(mut self, input: impl Into<f64>) -> Self {
+        pub fn counts(mut self, input: f64) -> Self {
             let mut v = self.counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.counts = Some(v);
             self
         }
@@ -1514,9 +1514,9 @@ pub mod metric {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions for the metric.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -1842,12 +1842,9 @@ pub mod metric_math_anomaly_detector {
         /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
         /// The designated expression must return
         /// a single time series.</p>
-        pub fn metric_data_queries(
-            mut self,
-            input: impl Into<crate::model::MetricDataQuery>,
-        ) -> Self {
+        pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data_queries = Some(v);
             self
         }
@@ -1964,9 +1961,9 @@ pub mod single_metric_anomaly_detector {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -2064,9 +2061,9 @@ pub mod anomaly_detector_configuration {
         /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use
         /// this to make sure that events that could cause unusual values for the metric, such as
         /// deployments, aren't used when CloudWatch creates the model.</p>
-        pub fn excluded_time_ranges(mut self, input: impl Into<crate::model::Range>) -> Self {
+        pub fn excluded_time_ranges(mut self, input: crate::model::Range) -> Self {
             let mut v = self.excluded_time_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excluded_time_ranges = Some(v);
             self
         }
@@ -2809,13 +2806,9 @@ pub mod datapoint {
         /// To override the contents of this collection use [`set_extended_statistics`](Self::set_extended_statistics).
         ///
         /// <p>The percentile statistic for the data point.</p>
-        pub fn extended_statistics(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<f64>,
-        ) -> Self {
+        pub fn extended_statistics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.extended_statistics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.extended_statistics = Some(hash_map);
             self
         }
@@ -3040,9 +3033,9 @@ pub mod metric_data_result {
         /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
         /// timestamps always matches the number of values and the value for Timestamps[x] is
         /// Values[x].</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timestamps = Some(v);
             self
         }
@@ -3063,9 +3056,9 @@ pub mod metric_data_result {
         /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
         /// values always matches the number of timestamps and the timestamp for Values[x] is
         /// Timestamps[x].</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -3102,9 +3095,9 @@ pub mod metric_data_result {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// <p>A list of messages with additional information about the data returned.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::MessageData>) -> Self {
+        pub fn messages(mut self, input: crate::model::MessageData) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -3642,12 +3635,9 @@ pub mod insight_rule_contributor {
         /// To override the contents of this collection use [`set_datapoints`](Self::set_datapoints).
         ///
         /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
-        pub fn datapoints(
-            mut self,
-            input: impl Into<crate::model::InsightRuleContributorDatapoint>,
-        ) -> Self {
+        pub fn datapoints(mut self, input: crate::model::InsightRuleContributorDatapoint) -> Self {
             let mut v = self.datapoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datapoints = Some(v);
             self
         }
@@ -4148,9 +4138,9 @@ pub mod anomaly_detector {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions associated with the anomaly detection model.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -4885,9 +4875,9 @@ pub mod metric_alarm {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions for the metric associated with the alarm.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -5010,9 +5000,9 @@ pub mod metric_alarm {
         /// One item in the Metrics array is the math expression that the alarm watches.
         /// This expression by designated by having <code>ReturnData</code> set to
         /// true.</p>
-        pub fn metrics(mut self, input: impl Into<crate::model::MetricDataQuery>) -> Self {
+        pub fn metrics(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics = Some(v);
             self
         }

@@ -193,12 +193,9 @@ pub mod associate_s3_resources_input {
         ///
         /// <p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring
         /// and data classification. </p>
-        pub fn s3_resources(
-            mut self,
-            input: impl Into<crate::model::S3ResourceClassification>,
-        ) -> Self {
+        pub fn s3_resources(mut self, input: crate::model::S3ResourceClassification) -> Self {
             let mut v = self.s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.s3_resources = Some(v);
             self
         }
@@ -543,12 +540,9 @@ pub mod disassociate_s3_resources_input {
         ///
         /// <p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and
         /// classified by Amazon Macie Classic. </p>
-        pub fn associated_s3_resources(
-            mut self,
-            input: impl Into<crate::model::S3Resource>,
-        ) -> Self {
+        pub fn associated_s3_resources(mut self, input: crate::model::S3Resource) -> Self {
             let mut v = self.associated_s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_s3_resources = Some(v);
             self
         }
@@ -1096,10 +1090,10 @@ pub mod update_s3_resources_input {
         /// <p>The S3 resources whose classification types you want to update.</p>
         pub fn s3_resources_update(
             mut self,
-            input: impl Into<crate::model::S3ResourceClassificationUpdate>,
+            input: crate::model::S3ResourceClassificationUpdate,
         ) -> Self {
             let mut v = self.s3_resources_update.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.s3_resources_update = Some(v);
             self
         }

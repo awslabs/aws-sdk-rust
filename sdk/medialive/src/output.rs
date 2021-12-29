@@ -861,12 +861,9 @@ pub mod stop_multiplex_output {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of the multiplex output destinations.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::MultiplexOutputDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1213,9 +1210,9 @@ pub mod stop_channel_output {
         /// A list of destinations of the channel. For UDP outputs, there is one
         /// destination per output. For other types (HLS, for example), there is
         /// one destination per packager.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1234,12 +1231,9 @@ pub mod stop_channel_output {
         /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
         ///
         /// The endpoints where outgoing connections initiate from
-        pub fn egress_endpoints(
-            mut self,
-            input: impl Into<crate::model::ChannelEgressEndpoint>,
-        ) -> Self {
+        pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_endpoints = Some(v);
             self
         }
@@ -1279,12 +1273,9 @@ pub mod stop_channel_output {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -1334,9 +1325,9 @@ pub mod stop_channel_output {
         /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
         ///
         /// Runtime details for the pipelines of a running channel.
-        pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
+        pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_details = Some(v);
             self
         }
@@ -1589,12 +1580,9 @@ pub mod start_multiplex_output {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of the multiplex output destinations.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::MultiplexOutputDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1941,9 +1929,9 @@ pub mod start_channel_output {
         /// A list of destinations of the channel. For UDP outputs, there is one
         /// destination per output. For other types (HLS, for example), there is
         /// one destination per packager.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1962,12 +1950,9 @@ pub mod start_channel_output {
         /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
         ///
         /// The endpoints where outgoing connections initiate from
-        pub fn egress_endpoints(
-            mut self,
-            input: impl Into<crate::model::ChannelEgressEndpoint>,
-        ) -> Self {
+        pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_endpoints = Some(v);
             self
         }
@@ -2007,12 +1992,9 @@ pub mod start_channel_output {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -2062,9 +2044,9 @@ pub mod start_channel_output {
         /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
         ///
         /// Runtime details for the pipelines of a running channel.
-        pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
+        pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_details = Some(v);
             self
         }
@@ -2387,9 +2369,9 @@ pub mod list_reservations_output {
         /// To override the contents of this collection use [`set_reservations`](Self::set_reservations).
         ///
         /// List of reservations
-        pub fn reservations(mut self, input: impl Into<crate::model::Reservation>) -> Self {
+        pub fn reservations(mut self, input: crate::model::Reservation) -> Self {
             let mut v = self.reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reservations = Some(v);
             self
         }
@@ -2469,9 +2451,9 @@ pub mod list_offerings_output {
         /// To override the contents of this collection use [`set_offerings`](Self::set_offerings).
         ///
         /// List of offerings
-        pub fn offerings(mut self, input: impl Into<crate::model::Offering>) -> Self {
+        pub fn offerings(mut self, input: crate::model::Offering) -> Self {
             let mut v = self.offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offerings = Some(v);
             self
         }
@@ -2545,12 +2527,9 @@ pub mod list_multiplex_programs_output {
         /// To override the contents of this collection use [`set_multiplex_programs`](Self::set_multiplex_programs).
         ///
         /// List of multiplex programs.
-        pub fn multiplex_programs(
-            mut self,
-            input: impl Into<crate::model::MultiplexProgramSummary>,
-        ) -> Self {
+        pub fn multiplex_programs(mut self, input: crate::model::MultiplexProgramSummary) -> Self {
             let mut v = self.multiplex_programs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.multiplex_programs = Some(v);
             self
         }
@@ -2630,9 +2609,9 @@ pub mod list_multiplexes_output {
         /// To override the contents of this collection use [`set_multiplexes`](Self::set_multiplexes).
         ///
         /// List of multiplexes.
-        pub fn multiplexes(mut self, input: impl Into<crate::model::MultiplexSummary>) -> Self {
+        pub fn multiplexes(mut self, input: crate::model::MultiplexSummary) -> Self {
             let mut v = self.multiplexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.multiplexes = Some(v);
             self
         }
@@ -2715,12 +2694,9 @@ pub mod list_input_security_groups_output {
         /// To override the contents of this collection use [`set_input_security_groups`](Self::set_input_security_groups).
         ///
         /// List of input security groups
-        pub fn input_security_groups(
-            mut self,
-            input: impl Into<crate::model::InputSecurityGroup>,
-        ) -> Self {
+        pub fn input_security_groups(mut self, input: crate::model::InputSecurityGroup) -> Self {
             let mut v = self.input_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_security_groups = Some(v);
             self
         }
@@ -2800,9 +2776,9 @@ pub mod list_inputs_output {
         /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
         ///
         /// Placeholder documentation for __listOfInput
-        pub fn inputs(mut self, input: impl Into<crate::model::Input>) -> Self {
+        pub fn inputs(mut self, input: crate::model::Input) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -2888,10 +2864,10 @@ pub mod list_input_device_transfers_output {
         /// The list of devices that you are transferring or are being transferred to you.
         pub fn input_device_transfers(
             mut self,
-            input: impl Into<crate::model::TransferringInputDeviceSummary>,
+            input: crate::model::TransferringInputDeviceSummary,
         ) -> Self {
             let mut v = self.input_device_transfers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_device_transfers = Some(v);
             self
         }
@@ -2972,9 +2948,9 @@ pub mod list_input_devices_output {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// The list of input devices.
-        pub fn input_devices(mut self, input: impl Into<crate::model::InputDeviceSummary>) -> Self {
+        pub fn input_devices(mut self, input: crate::model::InputDeviceSummary) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_devices = Some(v);
             self
         }
@@ -3054,9 +3030,9 @@ pub mod list_channels_output {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// Placeholder documentation for __listOfChannelSummary
-        pub fn channels(mut self, input: impl Into<crate::model::ChannelSummary>) -> Self {
+        pub fn channels(mut self, input: crate::model::ChannelSummary) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -3147,9 +3123,9 @@ pub mod describe_schedule_output {
         /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
         ///
         /// The list of actions in the schedule.
-        pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
+        pub fn schedule_actions(mut self, input: crate::model::ScheduleAction) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schedule_actions = Some(v);
             self
         }
@@ -3991,10 +3967,10 @@ pub mod describe_multiplex_program_output {
         /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn pipeline_details(
             mut self,
-            input: impl Into<crate::model::MultiplexProgramPipelineDetail>,
+            input: crate::model::MultiplexProgramPipelineDetail,
         ) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_details = Some(v);
             self
         }
@@ -4177,12 +4153,9 @@ pub mod describe_multiplex_output {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of the multiplex output destinations.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::MultiplexOutputDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -4467,12 +4440,9 @@ pub mod describe_input_security_group_output {
         /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
         ///
         /// Whitelist rules and their sync status
-        pub fn whitelist_rules(
-            mut self,
-            input: impl Into<crate::model::InputWhitelistRule>,
-        ) -> Self {
+        pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRule) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.whitelist_rules = Some(v);
             self
         }
@@ -5139,9 +5109,9 @@ pub mod describe_input_output {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of the destinations of the input (PUSH-type).
-        pub fn destinations(mut self, input: impl Into<crate::model::InputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::InputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -5183,12 +5153,9 @@ pub mod describe_input_output {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// Settings for the input devices.
-        pub fn input_devices(
-            mut self,
-            input: impl Into<crate::model::InputDeviceSettings>,
-        ) -> Self {
+        pub fn input_devices(mut self, input: crate::model::InputDeviceSettings) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_devices = Some(v);
             self
         }
@@ -5239,12 +5206,9 @@ pub mod describe_input_output {
         /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
         ///
         /// A list of MediaConnect Flows for this input.
-        pub fn media_connect_flows(
-            mut self,
-            input: impl Into<crate::model::MediaConnectFlow>,
-        ) -> Self {
+        pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlow) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_connect_flows = Some(v);
             self
         }
@@ -5300,9 +5264,9 @@ pub mod describe_input_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// A list of the sources of the input (PULL-type).
-        pub fn sources(mut self, input: impl Into<crate::model::InputSource>) -> Self {
+        pub fn sources(mut self, input: crate::model::InputSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -5609,9 +5573,9 @@ pub mod describe_channel_output {
         /// A list of destinations of the channel. For UDP outputs, there is one
         /// destination per output. For other types (HLS, for example), there is
         /// one destination per packager.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -5630,12 +5594,9 @@ pub mod describe_channel_output {
         /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
         ///
         /// The endpoints where outgoing connections initiate from
-        pub fn egress_endpoints(
-            mut self,
-            input: impl Into<crate::model::ChannelEgressEndpoint>,
-        ) -> Self {
+        pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_endpoints = Some(v);
             self
         }
@@ -5675,12 +5636,9 @@ pub mod describe_channel_output {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -5730,9 +5688,9 @@ pub mod describe_channel_output {
         /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
         ///
         /// Runtime details for the pipelines of a running channel.
-        pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
+        pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_details = Some(v);
             self
         }
@@ -6452,10 +6410,10 @@ pub mod delete_multiplex_program_output {
         /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn pipeline_details(
             mut self,
-            input: impl Into<crate::model::MultiplexProgramPipelineDetail>,
+            input: crate::model::MultiplexProgramPipelineDetail,
         ) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_details = Some(v);
             self
         }
@@ -6638,12 +6596,9 @@ pub mod delete_multiplex_output {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of the multiplex output destinations.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::MultiplexOutputDestination>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -7050,9 +7005,9 @@ pub mod delete_channel_output {
         /// A list of destinations of the channel. For UDP outputs, there is one
         /// destination per output. For other types (HLS, for example), there is
         /// one destination per packager.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -7071,12 +7026,9 @@ pub mod delete_channel_output {
         /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
         ///
         /// The endpoints where outgoing connections initiate from
-        pub fn egress_endpoints(
-            mut self,
-            input: impl Into<crate::model::ChannelEgressEndpoint>,
-        ) -> Self {
+        pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_endpoints = Some(v);
             self
         }
@@ -7116,12 +7068,9 @@ pub mod delete_channel_output {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -7171,9 +7120,9 @@ pub mod delete_channel_output {
         /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
         ///
         /// Runtime details for the pipelines of a running channel.
-        pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
+        pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_details = Some(v);
             self
         }
@@ -7825,9 +7774,9 @@ pub mod batch_stop_output {
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
         /// List of failed operations
-        pub fn failed(mut self, input: impl Into<crate::model::BatchFailedResultModel>) -> Self {
+        pub fn failed(mut self, input: crate::model::BatchFailedResultModel) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
@@ -7844,12 +7793,9 @@ pub mod batch_stop_output {
         /// To override the contents of this collection use [`set_successful`](Self::set_successful).
         ///
         /// List of successful operations
-        pub fn successful(
-            mut self,
-            input: impl Into<crate::model::BatchSuccessfulResultModel>,
-        ) -> Self {
+        pub fn successful(mut self, input: crate::model::BatchSuccessfulResultModel) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -7920,9 +7866,9 @@ pub mod batch_start_output {
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
         /// List of failed operations
-        pub fn failed(mut self, input: impl Into<crate::model::BatchFailedResultModel>) -> Self {
+        pub fn failed(mut self, input: crate::model::BatchFailedResultModel) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
@@ -7939,12 +7885,9 @@ pub mod batch_start_output {
         /// To override the contents of this collection use [`set_successful`](Self::set_successful).
         ///
         /// List of successful operations
-        pub fn successful(
-            mut self,
-            input: impl Into<crate::model::BatchSuccessfulResultModel>,
-        ) -> Self {
+        pub fn successful(mut self, input: crate::model::BatchSuccessfulResultModel) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -8015,9 +7958,9 @@ pub mod batch_delete_output {
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
         /// List of failed operations
-        pub fn failed(mut self, input: impl Into<crate::model::BatchFailedResultModel>) -> Self {
+        pub fn failed(mut self, input: crate::model::BatchFailedResultModel) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
@@ -8034,12 +7977,9 @@ pub mod batch_delete_output {
         /// To override the contents of this collection use [`set_successful`](Self::set_successful).
         ///
         /// List of successful operations
-        pub fn successful(
-            mut self,
-            input: impl Into<crate::model::BatchSuccessfulResultModel>,
-        ) -> Self {
+        pub fn successful(mut self, input: crate::model::BatchSuccessfulResultModel) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }

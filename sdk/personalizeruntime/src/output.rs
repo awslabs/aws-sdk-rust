@@ -44,9 +44,9 @@ pub mod get_recommendations_output {
         ///
         /// <p>A list of recommendations sorted in descending order by prediction score. There can be a
         /// maximum of 500 items in the list.</p>
-        pub fn item_list(mut self, input: impl Into<crate::model::PredictedItem>) -> Self {
+        pub fn item_list(mut self, input: crate::model::PredictedItem) -> Self {
             let mut v = self.item_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item_list = Some(v);
             self
         }
@@ -131,12 +131,9 @@ pub mod get_personalized_ranking_output {
         /// To override the contents of this collection use [`set_personalized_ranking`](Self::set_personalized_ranking).
         ///
         /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-        pub fn personalized_ranking(
-            mut self,
-            input: impl Into<crate::model::PredictedItem>,
-        ) -> Self {
+        pub fn personalized_ranking(mut self, input: crate::model::PredictedItem) -> Self {
             let mut v = self.personalized_ranking.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.personalized_ranking = Some(v);
             self
         }

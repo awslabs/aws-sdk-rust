@@ -1263,9 +1263,9 @@ pub mod configuration {
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>A list of additional configurations to apply within a configuration object.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -1965,9 +1965,9 @@ pub mod hadoop_jar_step_config {
         ///
         /// <p>A list of Java properties that are set when the step runs. You can use these properties
         /// to pass key-value pairs to your main function.</p>
-        pub fn properties(mut self, input: impl Into<crate::model::KeyValue>) -> Self {
+        pub fn properties(mut self, input: crate::model::KeyValue) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }
@@ -2449,12 +2449,9 @@ pub mod job_flow_instances_config {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>Configuration for the instance groups in a cluster.</p>
-        pub fn instance_groups(
-            mut self,
-            input: impl Into<crate::model::InstanceGroupConfig>,
-        ) -> Self {
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroupConfig) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_groups = Some(v);
             self
         }
@@ -2476,12 +2473,9 @@ pub mod job_flow_instances_config {
         /// </note>
         /// <p>Describes the EC2 instances and instance configurations for clusters that use the
         /// instance fleet configuration.</p>
-        pub fn instance_fleets(
-            mut self,
-            input: impl Into<crate::model::InstanceFleetConfig>,
-        ) -> Self {
+        pub fn instance_fleets(mut self, input: crate::model::InstanceFleetConfig) -> Self {
             let mut v = self.instance_fleets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_fleets = Some(v);
             self
         }
@@ -3136,12 +3130,9 @@ pub mod instance_fleet_config {
         ///
         /// <p>The instance type configurations that define the EC2 instances in the instance
         /// fleet.</p>
-        pub fn instance_type_configs(
-            mut self,
-            input: impl Into<crate::model::InstanceTypeConfig>,
-        ) -> Self {
+        pub fn instance_type_configs(mut self, input: crate::model::InstanceTypeConfig) -> Self {
             let mut v = self.instance_type_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_type_configs = Some(v);
             self
         }
@@ -4249,9 +4240,9 @@ pub mod instance_type_config {
         ///
         /// <p>A configuration classification that applies when provisioning cluster instances, which
         /// can include configurations for applications and software that run on the cluster.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -4347,10 +4338,10 @@ pub mod ebs_configuration {
         /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
         pub fn ebs_block_device_configs(
             mut self,
-            input: impl Into<crate::model::EbsBlockDeviceConfig>,
+            input: crate::model::EbsBlockDeviceConfig,
         ) -> Self {
             let mut v = self.ebs_block_device_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ebs_block_device_configs = Some(v);
             self
         }
@@ -4821,9 +4812,9 @@ pub mod instance_group_config {
         /// </note>
         /// <p>The list of configurations supplied for an EMR cluster instance group. You can specify a
         /// separate configuration for each instance group (master, core, and task).</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -4976,9 +4967,9 @@ pub mod auto_scaling_policy {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::ScalingRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::ScalingRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -5430,9 +5421,9 @@ pub mod cloud_watch_alarm_definition {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>A CloudWatch metric dimension.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::MetricDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -6462,12 +6453,12 @@ pub mod block_public_access_configuration {
         /// the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
         pub fn permitted_public_security_group_rule_ranges(
             mut self,
-            input: impl Into<crate::model::PortRange>,
+            input: crate::model::PortRange,
         ) -> Self {
             let mut v = self
                 .permitted_public_security_group_rule_ranges
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permitted_public_security_group_rule_ranges = Some(v);
             self
         }
@@ -6503,9 +6494,9 @@ pub mod block_public_access_configuration {
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>A list of additional configurations to apply within a configuration object.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -6726,9 +6717,9 @@ pub mod auto_scaling_policy_description {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::ScalingRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::ScalingRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -7206,9 +7197,9 @@ pub mod instance_group_modify_config {
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>A list of new or modified configurations to apply for an instance group.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -9678,9 +9669,9 @@ pub mod instance {
         /// To override the contents of this collection use [`set_ebs_volumes`](Self::set_ebs_volumes).
         ///
         /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-        pub fn ebs_volumes(mut self, input: impl Into<crate::model::EbsVolume>) -> Self {
+        pub fn ebs_volumes(mut self, input: crate::model::EbsVolume) -> Self {
             let mut v = self.ebs_volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ebs_volumes = Some(v);
             self
         }
@@ -10596,9 +10587,9 @@ pub mod instance_group {
         /// </note>
         /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a
         /// separate configuration for each instance group (master, core, and task).</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -10634,12 +10625,12 @@ pub mod instance_group {
         /// time.</p>
         pub fn last_successfully_applied_configurations(
             mut self,
-            input: impl Into<crate::model::Configuration>,
+            input: crate::model::Configuration,
         ) -> Self {
             let mut v = self
                 .last_successfully_applied_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.last_successfully_applied_configurations = Some(v);
             self
         }
@@ -10672,9 +10663,9 @@ pub mod instance_group {
         /// To override the contents of this collection use [`set_ebs_block_devices`](Self::set_ebs_block_devices).
         ///
         /// <p>The EBS block devices that are mapped to this instance group.</p>
-        pub fn ebs_block_devices(mut self, input: impl Into<crate::model::EbsBlockDevice>) -> Self {
+        pub fn ebs_block_devices(mut self, input: crate::model::EbsBlockDevice) -> Self {
             let mut v = self.ebs_block_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ebs_block_devices = Some(v);
             self
         }
@@ -11696,10 +11687,10 @@ pub mod instance_fleet {
         /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
         pub fn instance_type_specifications(
             mut self,
-            input: impl Into<crate::model::InstanceTypeSpecification>,
+            input: crate::model::InstanceTypeSpecification,
         ) -> Self {
             let mut v = self.instance_type_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_type_specifications = Some(v);
             self
         }
@@ -11922,9 +11913,9 @@ pub mod instance_type_specification {
         ///
         /// <p>A configuration classification that applies when provisioning cluster instances, which
         /// can include configurations for applications and software bundled with Amazon EMR.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -11943,9 +11934,9 @@ pub mod instance_type_specification {
         ///
         /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance
         /// as defined by <code>InstanceType</code>.</p>
-        pub fn ebs_block_devices(mut self, input: impl Into<crate::model::EbsBlockDevice>) -> Self {
+        pub fn ebs_block_devices(mut self, input: crate::model::EbsBlockDevice) -> Self {
             let mut v = self.ebs_block_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ebs_block_devices = Some(v);
             self
         }
@@ -13979,9 +13970,9 @@ pub mod studio {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the Amazon EMR Studio.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14770,9 +14761,9 @@ pub mod notebook_execution {
         /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
         /// pairs that consist of a required key string with a maximum of 128 characters and an
         /// optional value string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15099,9 +15090,9 @@ pub mod job_flow_detail {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>A list of steps run by the job flow.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::StepDetail>) -> Self {
+        pub fn steps(mut self, input: crate::model::StepDetail) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -15118,12 +15109,9 @@ pub mod job_flow_detail {
         /// To override the contents of this collection use [`set_bootstrap_actions`](Self::set_bootstrap_actions).
         ///
         /// <p>A list of the bootstrap actions run by the job flow.</p>
-        pub fn bootstrap_actions(
-            mut self,
-            input: impl Into<crate::model::BootstrapActionDetail>,
-        ) -> Self {
+        pub fn bootstrap_actions(mut self, input: crate::model::BootstrapActionDetail) -> Self {
             let mut v = self.bootstrap_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bootstrap_actions = Some(v);
             self
         }
@@ -15882,12 +15870,9 @@ pub mod job_flow_instances_detail {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>Details about the instance groups in a cluster.</p>
-        pub fn instance_groups(
-            mut self,
-            input: impl Into<crate::model::InstanceGroupDetail>,
-        ) -> Self {
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroupDetail) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_groups = Some(v);
             self
         }
@@ -17203,9 +17188,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>The applications installed on this cluster.</p>
-        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -17222,9 +17207,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with a cluster.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -17287,9 +17272,9 @@ pub mod cluster {
         ///
         /// <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied
         /// to the EMR cluster.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -17463,12 +17448,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_placement_groups`](Self::set_placement_groups).
         ///
         /// <p>Placement group configured for an Amazon EMR cluster.</p>
-        pub fn placement_groups(
-            mut self,
-            input: impl Into<crate::model::PlacementGroupConfig>,
-        ) -> Self {
+        pub fn placement_groups(mut self, input: crate::model::PlacementGroupConfig) -> Self {
             let mut v = self.placement_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_groups = Some(v);
             self
         }

@@ -173,9 +173,9 @@ pub mod update_pipeline_output {
         /// pipeline.</p>
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
         /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
@@ -411,9 +411,9 @@ pub mod read_pipeline_output {
         /// as the pipeline.</p>
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics,
         /// and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
@@ -542,9 +542,9 @@ pub mod list_presets_output {
         /// To override the contents of this collection use [`set_presets`](Self::set_presets).
         ///
         /// <p>An array of <code>Preset</code> objects.</p>
-        pub fn presets(mut self, input: impl Into<crate::model::Preset>) -> Self {
+        pub fn presets(mut self, input: crate::model::Preset) -> Self {
             let mut v = self.presets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.presets = Some(v);
             self
         }
@@ -635,9 +635,9 @@ pub mod list_pipelines_output {
         /// To override the contents of this collection use [`set_pipelines`](Self::set_pipelines).
         ///
         /// <p>An array of <code>Pipeline</code> objects.</p>
-        pub fn pipelines(mut self, input: impl Into<crate::model::Pipeline>) -> Self {
+        pub fn pipelines(mut self, input: crate::model::Pipeline) -> Self {
             let mut v = self.pipelines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipelines = Some(v);
             self
         }
@@ -730,9 +730,9 @@ pub mod list_jobs_by_status_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>An array of <code>Job</code> objects that have the specified status.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -823,9 +823,9 @@ pub mod list_jobs_by_pipeline_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1076,9 +1076,9 @@ pub mod create_pipeline_output {
         /// the pipeline.</p>
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
         /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }

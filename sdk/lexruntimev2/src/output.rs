@@ -498,9 +498,9 @@ pub mod recognize_text_output {
         /// <p>A list of messages last sent to the user. The messages are ordered
         /// based on the order that you returned the messages from your Lambda
         /// function or the order that the messages are defined in the bot.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -543,9 +543,9 @@ pub mod recognize_text_output {
         /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
         /// optional sentiment response that indicates the sentiment expressed in
         /// the utterance.</p>
-        pub fn interpretations(mut self, input: impl Into<crate::model::Interpretation>) -> Self {
+        pub fn interpretations(mut self, input: crate::model::Interpretation) -> Self {
             let mut v = self.interpretations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.interpretations = Some(v);
             self
         }
@@ -903,9 +903,9 @@ pub mod get_session_output {
         /// ordered based on the order that your returned the messages from your
         /// Lambda function or the order that messages are defined in the bot.
         /// </p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -930,9 +930,9 @@ pub mod get_session_output {
         /// confident Amazon Lex V2 is that the interpretation is the correct one, and an
         /// optional sentiment response that indicates the sentiment expressed in
         /// the utterance.</p>
-        pub fn interpretations(mut self, input: impl Into<crate::model::Interpretation>) -> Self {
+        pub fn interpretations(mut self, input: crate::model::Interpretation) -> Self {
             let mut v = self.interpretations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.interpretations = Some(v);
             self
         }

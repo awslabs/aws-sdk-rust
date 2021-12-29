@@ -1469,9 +1469,9 @@ pub mod signing_image_format {
         /// To override the contents of this collection use [`set_supported_formats`](Self::set_supported_formats).
         ///
         /// <p>The supported formats of a code signing image.</p>
-        pub fn supported_formats(mut self, input: impl Into<crate::model::ImageFormat>) -> Self {
+        pub fn supported_formats(mut self, input: crate::model::ImageFormat) -> Self {
             let mut v = self.supported_formats.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_formats = Some(v);
             self
         }
@@ -1644,9 +1644,9 @@ pub mod hash_algorithm_options {
         /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
         ///
         /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
-        pub fn allowed_values(mut self, input: impl Into<crate::model::HashAlgorithm>) -> Self {
+        pub fn allowed_values(mut self, input: crate::model::HashAlgorithm) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_values = Some(v);
             self
         }
@@ -1730,12 +1730,9 @@ pub mod encryption_algorithm_options {
         /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
         ///
         /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
-        pub fn allowed_values(
-            mut self,
-            input: impl Into<crate::model::EncryptionAlgorithm>,
-        ) -> Self {
+        pub fn allowed_values(mut self, input: crate::model::EncryptionAlgorithm) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_values = Some(v);
             self
         }

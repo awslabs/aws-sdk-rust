@@ -42,9 +42,9 @@ pub mod search_quantum_tasks_output {
         /// To override the contents of this collection use [`set_quantum_tasks`](Self::set_quantum_tasks).
         ///
         /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-        pub fn quantum_tasks(mut self, input: impl Into<crate::model::QuantumTaskSummary>) -> Self {
+        pub fn quantum_tasks(mut self, input: crate::model::QuantumTaskSummary) -> Self {
             let mut v = self.quantum_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quantum_tasks = Some(v);
             self
         }
@@ -575,9 +575,9 @@ pub mod search_jobs_output {
         ///
         /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter
         /// values.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
+        pub fn jobs(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1052,12 +1052,9 @@ pub mod get_job_output {
         ///
         /// <p>A list of parameters that specify the name and type of input data and where it is
         /// located.</p>
-        pub fn input_data_config(
-            mut self,
-            input: impl Into<crate::model::InputFileConfig>,
-        ) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::InputFileConfig) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -1213,9 +1210,9 @@ pub mod get_job_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
-        pub fn events(mut self, input: impl Into<crate::model::JobEventDetails>) -> Self {
+        pub fn events(mut self, input: crate::model::JobEventDetails) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1327,9 +1324,9 @@ pub mod search_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceSummary>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceSummary) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }

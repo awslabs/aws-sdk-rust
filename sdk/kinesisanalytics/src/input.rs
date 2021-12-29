@@ -1045,9 +1045,9 @@ pub mod create_application_input {
         /// data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role
         /// that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
         /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
-        pub fn inputs(mut self, input: impl Into<crate::model::Input>) -> Self {
+        pub fn inputs(mut self, input: crate::model::Input) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -1076,9 +1076,9 @@ pub mod create_application_input {
         /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format
         /// of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
         /// Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -1106,10 +1106,10 @@ pub mod create_application_input {
         /// CloudWatch Logs</a>.</p>
         pub fn cloud_watch_logging_options(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOption>,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
             let mut v = self.cloud_watch_logging_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_options = Some(v);
             self
         }
@@ -1174,9 +1174,9 @@ pub mod create_application_input {
         ///
         /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
         /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3040,12 +3040,9 @@ pub mod start_application_input {
         /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
         ///
         /// <p>Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.</p>
-        pub fn input_configurations(
-            mut self,
-            input: impl Into<crate::model::InputConfiguration>,
-        ) -> Self {
+        pub fn input_configurations(mut self, input: crate::model::InputConfiguration) -> Self {
             let mut v = self.input_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_configurations = Some(v);
             self
         }
@@ -3375,9 +3372,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags to assign to the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

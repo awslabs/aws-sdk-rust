@@ -364,9 +364,9 @@ pub mod fluent_builders {
         pub fn regions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RegionMapInputValue>,
+            v: crate::model::RegionMapInputValue,
         ) -> Self {
-            self.inner = self.inner.regions(k, v);
+            self.inner = self.inner.regions(k.into(), v);
             self
         }
         /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions
@@ -382,8 +382,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -456,8 +456,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -467,8 +467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The short format name of the response plan. Can't include spaces.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The short format name of the response plan. Can't include spaces.</p>
@@ -477,8 +477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The long format of the response plan name. This field can contain spaces.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The long format of the response plan name. This field can contain spaces.</p>
@@ -487,8 +487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details used to create an incident when using this response plan.</p>
-        pub fn incident_template(mut self, inp: crate::model::IncidentTemplate) -> Self {
-            self.inner = self.inner.incident_template(inp);
+        pub fn incident_template(mut self, signature: crate::model::IncidentTemplate) -> Self {
+            self.inner = self.inner.incident_template(signature);
             self
         }
         /// <p>Details used to create an incident when using this response plan.</p>
@@ -501,8 +501,8 @@ pub mod fluent_builders {
         }
         /// <p>The Chatbot chat channel used for collaboration during an
         /// incident.</p>
-        pub fn chat_channel(mut self, inp: crate::model::ChatChannel) -> Self {
-            self.inner = self.inner.chat_channel(inp);
+        pub fn chat_channel(mut self, signature: crate::model::ChatChannel) -> Self {
+            self.inner = self.inner.chat_channel(signature);
             self
         }
         /// <p>The Chatbot chat channel used for collaboration during an
@@ -516,8 +516,8 @@ pub mod fluent_builders {
         }
         /// <p>The contacts and escalation plans that the response plan engages during an
         /// incident.</p>
-        pub fn engagements(mut self, inp: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.engagements(inp);
+        pub fn engagements(mut self, signature: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.engagements(signature);
             self
         }
         /// <p>The contacts and escalation plans that the response plan engages during an
@@ -534,8 +534,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::Action>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>The actions that the response plan starts at the beginning of an incident.</p>
@@ -556,7 +556,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of tags that you are adding to the response plan.</p>
@@ -634,8 +634,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the action is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the action is called only once with the specified
@@ -646,8 +646,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
         /// added.</p>
-        pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_record_arn(inp);
+        pub fn incident_record_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_record_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
@@ -660,8 +660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time that the event occurred.</p>
-        pub fn event_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.event_time(inp);
+        pub fn event_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.event_time(signature);
             self
         }
         /// <p>The time that the event occurred.</p>
@@ -674,8 +674,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the event. You can create timeline events of type <code>Custom
         /// Event</code>.</p>
-        pub fn event_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type(inp);
+        pub fn event_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type(signature.into());
             self
         }
         /// <p>The type of the event. You can create timeline events of type <code>Custom
@@ -686,8 +686,8 @@ pub mod fluent_builders {
         }
         /// <p>A short description of the event as a valid JSON string. There is no other schema
         /// imposed.</p>
-        pub fn event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_data(inp);
+        pub fn event_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data(signature.into());
             self
         }
         /// <p>A short description of the event as a valid JSON string. There is no other schema
@@ -757,8 +757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
@@ -828,8 +828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
@@ -899,8 +899,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
@@ -909,8 +909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource policy you're deleting.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(signature.into());
             self
         }
         /// <p>The ID of the resource policy you're deleting.</p>
@@ -980,8 +980,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
@@ -1051,8 +1051,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
         /// event.</p>
-        pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_record_arn(inp);
+        pub fn incident_record_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_record_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
@@ -1066,8 +1066,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the event you are updating. You can find this by using
         /// <code>ListTimelineEvents</code>.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(inp);
+        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(signature.into());
             self
         }
         /// <p>The ID of the event you are updating. You can find this by using
@@ -1137,8 +1137,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
@@ -1207,8 +1207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
@@ -1277,8 +1277,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
@@ -1287,8 +1287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resource policies to display per page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of resource policies to display per page of results.</p>
@@ -1297,8 +1297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1367,8 +1367,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
@@ -1438,8 +1438,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
         /// event.</p>
-        pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_record_arn(inp);
+        pub fn incident_record_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_record_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
@@ -1453,8 +1453,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the event. You can get an event's ID when you create it, or by using
         /// <code>ListTimelineEvents</code>.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(inp);
+        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(signature.into());
             self
         }
         /// <p>The ID of the event. You can get an event's ID when you create it, or by using
@@ -1567,8 +1567,8 @@ pub mod fluent_builders {
         /// incident records that match any of the values provided.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the list of incident records through which you are searching. You can filter
@@ -1618,8 +1618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results per page.</p>
@@ -1628,8 +1628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1699,8 +1699,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
         /// items.</p>
-        pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_record_arn(inp);
+        pub fn incident_record_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_record_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
@@ -1713,8 +1713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of related items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of related items per page.</p>
@@ -1723,8 +1723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1793,8 +1793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results per page. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results per page. </p>
@@ -1803,8 +1803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1873,8 +1873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of response plans per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of response plans per page.</p>
@@ -1883,8 +1883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1953,8 +1953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
@@ -2024,8 +2024,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
         /// event.</p>
-        pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_record_arn(inp);
+        pub fn incident_record_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_record_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
@@ -2070,8 +2070,8 @@ pub mod fluent_builders {
         /// timeline events that match any of the values provided.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the timeline events based on the provided conditional values. You can filter
@@ -2111,8 +2111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sort by the specified key value pair.</p>
-        pub fn sort_by(mut self, inp: crate::model::TimelineEventSort) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::TimelineEventSort) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>Sort by the specified key value pair.</p>
@@ -2125,8 +2125,8 @@ pub mod fluent_builders {
         }
         /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
         /// field.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(signature);
             self
         }
         /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
@@ -2139,8 +2139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results per page.</p>
@@ -2149,8 +2149,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -2220,8 +2220,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
         /// to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
@@ -2231,8 +2231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details of the resource policy.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>Details of the resource policy.</p>
@@ -2303,8 +2303,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -2315,8 +2315,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
         /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-        pub fn response_plan_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_plan_arn(inp);
+        pub fn response_plan_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_plan_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
@@ -2330,8 +2330,8 @@ pub mod fluent_builders {
         }
         /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
         /// the response plan. </p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(signature.into());
             self
         }
         /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
@@ -2372,8 +2372,8 @@ pub mod fluent_builders {
         /// action is needed to avoid impact.</p>
         /// </li>
         /// </ul>
-        pub fn impact(mut self, inp: i32) -> Self {
-            self.inner = self.inner.impact(inp);
+        pub fn impact(mut self, signature: i32) -> Self {
+            self.inner = self.inner.impact(signature);
             self
         }
         /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
@@ -2413,8 +2413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details of what created the incident record in Incident Manager.</p>
-        pub fn trigger_details(mut self, inp: crate::model::TriggerDetails) -> Self {
-            self.inner = self.inner.trigger_details(inp);
+        pub fn trigger_details(mut self, signature: crate::model::TriggerDetails) -> Self {
+            self.inner = self.inner.trigger_details(signature);
             self
         }
         /// <p>Details of what created the incident record in Incident Manager.</p>
@@ -2431,8 +2431,8 @@ pub mod fluent_builders {
         ///
         /// <p>Add related items to the incident for other responders to use. Related items are AWS
         /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-        pub fn related_items(mut self, inp: impl Into<crate::model::RelatedItem>) -> Self {
-            self.inner = self.inner.related_items(inp);
+        pub fn related_items(mut self, input: crate::model::RelatedItem) -> Self {
+            self.inner = self.inner.related_items(input);
             self
         }
         /// <p>Add related items to the incident for other responders to use. Related items are AWS
@@ -2505,8 +2505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
@@ -2524,7 +2524,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of tags that you are adding to the response plan.</p>
@@ -2598,8 +2598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
@@ -2612,8 +2612,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The name of the tag you're removing from the response plan.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The name of the tag you're removing from the response plan.</p>
@@ -2686,8 +2686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
@@ -2696,8 +2696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details if deletion protection is enabled or disabled in your account.</p>
-        pub fn deletion_protected(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protected(inp);
+        pub fn deletion_protected(mut self, signature: bool) -> Self {
+            self.inner = self.inner.deletion_protected(signature);
             self
         }
         /// <p>Details if deletion protection is enabled or disabled in your account.</p>
@@ -2707,8 +2707,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -2781,8 +2781,8 @@ pub mod fluent_builders {
         }
         /// <p>A token that ensures that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token that ensures that the operation is called only once with the specified
@@ -2792,8 +2792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
@@ -2802,8 +2802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the incident.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(signature.into());
             self
         }
         /// <p>A brief description of the incident.</p>
@@ -2812,8 +2812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A longer description of what occurred during the incident.</p>
-        pub fn summary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.summary(inp);
+        pub fn summary(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.summary(signature.into());
             self
         }
         /// <p>A longer description of what occurred during the incident.</p>
@@ -2853,8 +2853,8 @@ pub mod fluent_builders {
         /// action is needed to avoid impact.</p>
         /// </li>
         /// </ul>
-        pub fn impact(mut self, inp: i32) -> Self {
-            self.inner = self.inner.impact(inp);
+        pub fn impact(mut self, signature: i32) -> Self {
+            self.inner = self.inner.impact(signature);
             self
         }
         /// <p>Defines the impact of the incident to customers and applications. Providing an impact
@@ -2895,8 +2895,8 @@ pub mod fluent_builders {
         }
         /// <p>The status of the incident. An incident can be <code>Open</code> or
         /// <code>Resolved</code>.</p>
-        pub fn status(mut self, inp: crate::model::IncidentRecordStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::IncidentRecordStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>The status of the incident. An incident can be <code>Open</code> or
@@ -2909,8 +2909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Chatbot chat channel where responders can collaborate.</p>
-        pub fn chat_channel(mut self, inp: crate::model::ChatChannel) -> Self {
-            self.inner = self.inner.chat_channel(inp);
+        pub fn chat_channel(mut self, signature: crate::model::ChatChannel) -> Self {
+            self.inner = self.inner.chat_channel(signature);
             self
         }
         /// <p>The Chatbot chat channel where responders can collaborate.</p>
@@ -2929,11 +2929,8 @@ pub mod fluent_builders {
         /// incident.</p>
         /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
         /// the incident.</p>
-        pub fn notification_targets(
-            mut self,
-            inp: impl Into<crate::model::NotificationTargetItem>,
-        ) -> Self {
-            self.inner = self.inner.notification_targets(inp);
+        pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
+            self.inner = self.inner.notification_targets(input);
             self
         }
         /// <p>The Amazon SNS targets that are notified when updates are made to an
@@ -3009,8 +3006,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -3021,8 +3018,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
         /// are updating.</p>
-        pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_record_arn(inp);
+        pub fn incident_record_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_record_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
@@ -3035,8 +3032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details about the item you are adding or deleting.</p>
-        pub fn related_items_update(mut self, inp: crate::model::RelatedItemsUpdate) -> Self {
-            self.inner = self.inner.related_items_update(inp);
+        pub fn related_items_update(mut self, signature: crate::model::RelatedItemsUpdate) -> Self {
+            self.inner = self.inner.related_items_update(signature);
             self
         }
         /// <p>Details about the item you are adding or deleting.</p>
@@ -3108,8 +3105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
@@ -3122,8 +3119,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>An action to add or delete a Region.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::UpdateReplicationSetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::UpdateReplicationSetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>An action to add or delete a Region.</p>
@@ -3136,8 +3133,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -3208,8 +3205,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -3219,8 +3216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
@@ -3230,8 +3227,8 @@ pub mod fluent_builders {
         }
         /// <p>The long format name of the response plan. The display name can't contain
         /// spaces.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The long format name of the response plan. The display name can't contain
@@ -3241,8 +3238,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The short format name of the incident. The title can't contain spaces.</p>
-        pub fn incident_template_title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_template_title(inp);
+        pub fn incident_template_title(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.incident_template_title(signature.into());
             self
         }
         /// <p>The short format name of the incident. The title can't contain spaces.</p>
@@ -3280,8 +3280,8 @@ pub mod fluent_builders {
         /// <code>1</code> - No impact</p>
         /// </li>
         /// </ul>
-        pub fn incident_template_impact(mut self, inp: i32) -> Self {
-            self.inner = self.inner.incident_template_impact(inp);
+        pub fn incident_template_impact(mut self, signature: i32) -> Self {
+            self.inner = self.inner.incident_template_impact(signature);
             self
         }
         /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
@@ -3317,8 +3317,11 @@ pub mod fluent_builders {
         }
         /// <p>A brief summary of the incident. This typically contains what has happened, what's
         /// currently happening, and next steps.</p>
-        pub fn incident_template_summary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_template_summary(inp);
+        pub fn incident_template_summary(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.incident_template_summary(signature.into());
             self
         }
         /// <p>A brief summary of the incident. This typically contains what has happened, what's
@@ -3334,9 +3337,9 @@ pub mod fluent_builders {
         /// same incident in the same account.</p>
         pub fn incident_template_dedupe_string(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.incident_template_dedupe_string(inp);
+            self.inner = self.inner.incident_template_dedupe_string(signature.into());
             self
         }
         /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
@@ -3356,9 +3359,9 @@ pub mod fluent_builders {
         /// incident.</p>
         pub fn incident_template_notification_targets(
             mut self,
-            inp: impl Into<crate::model::NotificationTargetItem>,
+            input: crate::model::NotificationTargetItem,
         ) -> Self {
-            self.inner = self.inner.incident_template_notification_targets(inp);
+            self.inner = self.inner.incident_template_notification_targets(input);
             self
         }
         /// <p>The Amazon SNS targets that are notified when updates are made to an
@@ -3373,8 +3376,8 @@ pub mod fluent_builders {
         /// <p>The Chatbot chat channel used for collaboration during an
         /// incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
-        pub fn chat_channel(mut self, inp: crate::model::ChatChannel) -> Self {
-            self.inner = self.inner.chat_channel(inp);
+        pub fn chat_channel(mut self, signature: crate::model::ChatChannel) -> Self {
+            self.inner = self.inner.chat_channel(signature);
             self
         }
         /// <p>The Chatbot chat channel used for collaboration during an
@@ -3388,8 +3391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
-        pub fn engagements(mut self, inp: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.engagements(inp);
+        pub fn engagements(mut self, signature: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.engagements(signature);
             self
         }
         /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
@@ -3405,8 +3408,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions that this response plan takes at the beginning of an incident.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::Action>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>The actions that this response plan takes at the beginning of an incident.</p>
@@ -3480,8 +3483,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -3492,8 +3495,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
         /// event.</p>
-        pub fn incident_record_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_record_arn(inp);
+        pub fn incident_record_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_record_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
@@ -3507,8 +3510,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the event you are updating. You can find this by using
         /// <code>ListTimelineEvents</code>.</p>
-        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(inp);
+        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(signature.into());
             self
         }
         /// <p>The ID of the event you are updating. You can find this by using
@@ -3518,8 +3521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time that the event occurred.</p>
-        pub fn event_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.event_time(inp);
+        pub fn event_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.event_time(signature);
             self
         }
         /// <p>The time that the event occurred.</p>
@@ -3531,8 +3534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
-        pub fn event_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type(inp);
+        pub fn event_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type(signature.into());
             self
         }
         /// <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
@@ -3541,8 +3544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A short description of the event.</p>
-        pub fn event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_data(inp);
+        pub fn event_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data(signature.into());
             self
         }
         /// <p>A short description of the event.</p>

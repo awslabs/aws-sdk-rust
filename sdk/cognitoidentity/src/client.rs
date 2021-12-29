@@ -347,8 +347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that you provide.</p>
-        pub fn identity_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_name(inp);
+        pub fn identity_pool_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_name(signature.into());
             self
         }
         /// <p>A string that you provide.</p>
@@ -360,8 +360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-        pub fn allow_unauthenticated_identities(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_unauthenticated_identities(inp);
+        pub fn allow_unauthenticated_identities(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_unauthenticated_identities(signature);
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
@@ -374,8 +374,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
         /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-        pub fn allow_classic_flow(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_classic_flow(inp);
+        pub fn allow_classic_flow(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_classic_flow(signature);
             self
         }
         /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
@@ -394,7 +394,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.supported_login_providers(k, v);
+            self.inner = self.inner.supported_login_providers(k.into(), v.into());
             self
         }
         /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -414,8 +414,11 @@ pub mod fluent_builders {
         /// (<code>-</code>).</p>
         /// <p>Once you have set a developer provider name, you cannot change it. Please take care
         /// in setting this parameter.</p>
-        pub fn developer_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_provider_name(inp);
+        pub fn developer_provider_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.developer_provider_name(signature.into());
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
@@ -439,9 +442,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_ar_ns(inp);
+            self.inner = self.inner.open_id_connect_provider_ar_ns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
@@ -459,9 +462,9 @@ pub mod fluent_builders {
         /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
         pub fn cognito_identity_providers(
             mut self,
-            inp: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
-            self.inner = self.inner.cognito_identity_providers(inp);
+            self.inner = self.inner.cognito_identity_providers(input);
             self
         }
         /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
@@ -478,8 +481,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
         /// pool.</p>
-        pub fn saml_provider_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_ar_ns(inp);
+        pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_ar_ns(input.into());
             self
         }
         /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
@@ -503,7 +506,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_pool_tags(k, v);
+            self.inner = self.inner.identity_pool_tags(k.into(), v.into());
             self
         }
         /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
@@ -585,8 +588,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_identity_ids_to_delete`](Self::set_identity_ids_to_delete).
         ///
         /// <p>A list of 1-60 identities that you want to delete.</p>
-        pub fn identity_ids_to_delete(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_ids_to_delete(inp);
+        pub fn identity_ids_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_ids_to_delete(input.into());
             self
         }
         /// <p>A list of 1-60 identities that you want to delete.</p>
@@ -660,8 +663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -735,8 +738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -807,8 +810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -884,8 +887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -911,7 +914,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
         /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
@@ -936,8 +939,8 @@ pub mod fluent_builders {
         /// received in the token from the identity provider. For example, a SAML-based identity
         /// provider. This parameter is optional for identity providers that do not support role
         /// customization.</p>
-        pub fn custom_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_role_arn(inp);
+        pub fn custom_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
@@ -1014,8 +1017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A standard AWS account ID (9+ digits).</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>A standard AWS account ID (9+ digits).</p>
@@ -1024,8 +1027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1075,7 +1078,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
         /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
@@ -1179,8 +1182,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1256,8 +1259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1278,7 +1281,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
         /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
@@ -1369,8 +1372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1382,8 +1385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1408,7 +1411,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
         /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
@@ -1438,7 +1441,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.principal_tags(k, v);
+            self.inner = self.inner.principal_tags(k.into(), v.into());
             self
         }
         /// <p>Use this operation to configure attribute mappings for custom providers. </p>
@@ -1461,8 +1464,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
         /// </note>
-        pub fn token_duration(mut self, inp: i64) -> Self {
-            self.inner = self.inner.token_duration(inp);
+        pub fn token_duration(mut self, signature: i64) -> Self {
+            self.inner = self.inner.token_duration(signature);
             self
         }
         /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
@@ -1540,8 +1543,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
@@ -1553,8 +1556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can use this operation to get the provider name.</p>
-        pub fn identity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_name(inp);
+        pub fn identity_provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_name(signature.into());
             self
         }
         /// <p>You can use this operation to get the provider name.</p>
@@ -1627,8 +1630,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1640,8 +1643,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of identities to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of identities to return.</p>
@@ -1650,8 +1653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A pagination token.</p>
@@ -1661,8 +1664,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional boolean parameter that allows you to hide disabled identities. If
         /// omitted, the ListIdentities API will include disabled identities in the response.</p>
-        pub fn hide_disabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.hide_disabled(inp);
+        pub fn hide_disabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.hide_disabled(signature);
             self
         }
         /// <p>An optional boolean parameter that allows you to hide disabled identities. If
@@ -1733,8 +1736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of identities to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of identities to return.</p>
@@ -1743,8 +1746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A pagination token.</p>
@@ -1817,8 +1820,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
         /// to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
@@ -1904,8 +1907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1917,8 +1920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1929,8 +1932,11 @@ pub mod fluent_builders {
         /// <p>A unique ID used by your backend authentication process to identify a user.
         /// Typically, a developer identity provider would issue many developer user identifiers, in
         /// keeping with the number of users.</p>
-        pub fn developer_user_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_user_identifier(inp);
+        pub fn developer_user_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.developer_user_identifier(signature.into());
             self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user.
@@ -1944,8 +1950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of identities to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of identities to return.</p>
@@ -1959,8 +1965,8 @@ pub mod fluent_builders {
         /// 20 matches in the database. The service will return a pagination token as a part of the
         /// response. This token can be used to call the API again and get results starting from the
         /// 11th match.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
@@ -2047,8 +2053,8 @@ pub mod fluent_builders {
         }
         /// <p>User identifier for the source user. The value should be a
         /// <code>DeveloperUserIdentifier</code>.</p>
-        pub fn source_user_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_user_identifier(inp);
+        pub fn source_user_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_user_identifier(signature.into());
             self
         }
         /// <p>User identifier for the source user. The value should be a
@@ -2062,8 +2068,11 @@ pub mod fluent_builders {
         }
         /// <p>User identifier for the destination user. The value should be a
         /// <code>DeveloperUserIdentifier</code>.</p>
-        pub fn destination_user_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_user_identifier(inp);
+        pub fn destination_user_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_user_identifier(signature.into());
             self
         }
         /// <p>User identifier for the destination user. The value should be a
@@ -2080,8 +2089,11 @@ pub mod fluent_builders {
         /// allows your backend and the Cognito service to communicate about the developer provider.
         /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
         /// underscore (_), and dash (-).</p>
-        pub fn developer_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_provider_name(inp);
+        pub fn developer_provider_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.developer_provider_name(signature.into());
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
@@ -2097,8 +2109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2171,8 +2183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2194,7 +2206,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.roles(k, v);
+            self.inner = self.inner.roles(k.into(), v.into());
             self
         }
         /// <p>The map of roles associated with this pool. For a given role, the key will be either
@@ -2220,9 +2232,9 @@ pub mod fluent_builders {
         pub fn role_mappings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RoleMapping>,
+            v: crate::model::RoleMapping,
         ) -> Self {
-            self.inner = self.inner.role_mappings(k, v);
+            self.inner = self.inner.role_mappings(k.into(), v);
             self
         }
         /// <p>How users for a specific identity provider are to mapped to roles. This is a string
@@ -2300,8 +2312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
@@ -2313,8 +2325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The provider name you want to use for attribute mappings.</p>
-        pub fn identity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_name(inp);
+        pub fn identity_provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_name(signature.into());
             self
         }
         /// <p>The provider name you want to use for attribute mappings.</p>
@@ -2326,8 +2338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
-        pub fn use_defaults(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_defaults(inp);
+        pub fn use_defaults(mut self, signature: bool) -> Self {
+            self.inner = self.inner.use_defaults(signature);
             self
         }
         /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
@@ -2345,7 +2357,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.principal_tags(k, v);
+            self.inner = self.inner.principal_tags(k.into(), v.into());
             self
         }
         /// <p>You can use this operation to add principal tags.</p>
@@ -2433,8 +2445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
@@ -2452,7 +2464,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the identity pool.</p>
@@ -2530,8 +2542,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -2540,8 +2552,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2553,8 +2565,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
-        pub fn developer_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_provider_name(inp);
+        pub fn developer_provider_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.developer_provider_name(signature.into());
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
@@ -2566,8 +2581,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-        pub fn developer_user_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_user_identifier(inp);
+        pub fn developer_user_identifier(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.developer_user_identifier(signature.into());
             self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user.</p>
@@ -2642,8 +2660,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(signature.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -2662,7 +2680,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
         /// <p>A set of optional name-value pairs that map provider names to provider
@@ -2681,8 +2699,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_logins_to_remove`](Self::set_logins_to_remove).
         ///
         /// <p>Provider names to unlink from this identity.</p>
-        pub fn logins_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logins_to_remove(inp);
+        pub fn logins_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logins_to_remove(input.into());
             self
         }
         /// <p>Provider names to unlink from this identity.</p>
@@ -2755,8 +2773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
@@ -2769,8 +2787,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to remove from the user pool.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to remove from the user pool.</p>
@@ -2843,8 +2861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(signature.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2856,8 +2874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that you provide.</p>
-        pub fn identity_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_name(inp);
+        pub fn identity_pool_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_name(signature.into());
             self
         }
         /// <p>A string that you provide.</p>
@@ -2869,8 +2887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-        pub fn allow_unauthenticated_identities(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_unauthenticated_identities(inp);
+        pub fn allow_unauthenticated_identities(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_unauthenticated_identities(signature);
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
@@ -2883,8 +2901,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
         /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-        pub fn allow_classic_flow(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_classic_flow(inp);
+        pub fn allow_classic_flow(mut self, signature: bool) -> Self {
+            self.inner = self.inner.allow_classic_flow(signature);
             self
         }
         /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
@@ -2903,7 +2921,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.supported_login_providers(k, v);
+            self.inner = self.inner.supported_login_providers(k.into(), v.into());
             self
         }
         /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -2917,8 +2935,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
-        pub fn developer_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_provider_name(inp);
+        pub fn developer_provider_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.developer_provider_name(signature.into());
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
@@ -2936,9 +2957,9 @@ pub mod fluent_builders {
         /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_ar_ns(inp);
+            self.inner = self.inner.open_id_connect_provider_ar_ns(input.into());
             self
         }
         /// <p>The ARNs of the OpenID Connect providers.</p>
@@ -2956,9 +2977,9 @@ pub mod fluent_builders {
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
-            inp: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
-            self.inner = self.inner.cognito_identity_providers(inp);
+            self.inner = self.inner.cognito_identity_providers(input);
             self
         }
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
@@ -2975,8 +2996,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
         /// pool.</p>
-        pub fn saml_provider_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_ar_ns(inp);
+        pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_ar_ns(input.into());
             self
         }
         /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
@@ -3000,7 +3021,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_pool_tags(k, v);
+            self.inner = self.inner.identity_pool_tags(k.into(), v.into());
             self
         }
         /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to

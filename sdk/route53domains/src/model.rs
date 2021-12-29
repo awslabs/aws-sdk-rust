@@ -847,9 +847,9 @@ pub mod contact_detail {
         /// To override the contents of this collection use [`set_extra_params`](Self::set_extra_params).
         ///
         /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-        pub fn extra_params(mut self, input: impl Into<crate::model::ExtraParam>) -> Self {
+        pub fn extra_params(mut self, input: crate::model::ExtraParam) -> Self {
             let mut v = self.extra_params.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extra_params = Some(v);
             self
         }

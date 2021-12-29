@@ -317,12 +317,9 @@ pub mod list_resource_types_output {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The shareable resource types supported by RAM.</p>
-        pub fn resource_types(
-            mut self,
-            input: impl Into<crate::model::ServiceNameAndResourceType>,
-        ) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ServiceNameAndResourceType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
@@ -406,12 +403,9 @@ pub mod list_resource_share_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions associated with the resource share.</p>
-        pub fn permissions(
-            mut self,
-            input: impl Into<crate::model::ResourceSharePermissionSummary>,
-        ) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourceSharePermissionSummary) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -491,9 +485,9 @@ pub mod list_resources_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>Information about the resources.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -573,9 +567,9 @@ pub mod list_principals_output {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The principals.</p>
-        pub fn principals(mut self, input: impl Into<crate::model::Principal>) -> Self {
+        pub fn principals(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principals = Some(v);
             self
         }
@@ -659,12 +653,9 @@ pub mod list_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions.</p>
-        pub fn permissions(
-            mut self,
-            input: impl Into<crate::model::ResourceSharePermissionSummary>,
-        ) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourceSharePermissionSummary) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -744,9 +735,9 @@ pub mod list_pending_invitation_resources_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>Information about the resources included the resource share.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -826,9 +817,9 @@ pub mod get_resource_shares_output {
         /// To override the contents of this collection use [`set_resource_shares`](Self::set_resource_shares).
         ///
         /// <p>Information about the resource shares.</p>
-        pub fn resource_shares(mut self, input: impl Into<crate::model::ResourceShare>) -> Self {
+        pub fn resource_shares(mut self, input: crate::model::ResourceShare) -> Self {
             let mut v = self.resource_shares.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_shares = Some(v);
             self
         }
@@ -917,10 +908,10 @@ pub mod get_resource_share_invitations_output {
         /// <p>Information about the invitations.</p>
         pub fn resource_share_invitations(
             mut self,
-            input: impl Into<crate::model::ResourceShareInvitation>,
+            input: crate::model::ResourceShareInvitation,
         ) -> Self {
             let mut v = self.resource_share_invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_invitations = Some(v);
             self
         }
@@ -1009,10 +1000,10 @@ pub mod get_resource_share_associations_output {
         /// <p>Information about the associations.</p>
         pub fn resource_share_associations(
             mut self,
-            input: impl Into<crate::model::ResourceShareAssociation>,
+            input: crate::model::ResourceShareAssociation,
         ) -> Self {
             let mut v = self.resource_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_associations = Some(v);
             self
         }
@@ -1367,10 +1358,10 @@ pub mod disassociate_resource_share_output {
         /// <p>Information about the associations.</p>
         pub fn resource_share_associations(
             mut self,
-            input: impl Into<crate::model::ResourceShareAssociation>,
+            input: crate::model::ResourceShareAssociation,
         ) -> Self {
             let mut v = self.resource_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_associations = Some(v);
             self
         }
@@ -1681,10 +1672,10 @@ pub mod associate_resource_share_output {
         /// <p>Information about the associations.</p>
         pub fn resource_share_associations(
             mut self,
-            input: impl Into<crate::model::ResourceShareAssociation>,
+            input: crate::model::ResourceShareAssociation,
         ) -> Self {
             let mut v = self.resource_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_associations = Some(v);
             self
         }

@@ -208,8 +208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the FinSpace environment to be created.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the FinSpace environment to be created.</p>
@@ -218,8 +218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the FinSpace environment to be created.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the FinSpace environment to be created.</p>
@@ -228,8 +228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
@@ -247,7 +247,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Add tags to your FinSpace environment.</p>
@@ -271,8 +271,8 @@ pub mod fluent_builders {
         /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
         /// </li>
         /// </ul>
-        pub fn federation_mode(mut self, inp: crate::model::FederationMode) -> Self {
-            self.inner = self.inner.federation_mode(inp);
+        pub fn federation_mode(mut self, signature: crate::model::FederationMode) -> Self {
+            self.inner = self.inner.federation_mode(signature);
             self
         }
         /// <p>Authentication mode for the environment.</p>
@@ -294,8 +294,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn federation_parameters(mut self, inp: crate::model::FederationParameters) -> Self {
-            self.inner = self.inner.federation_parameters(inp);
+        pub fn federation_parameters(
+            mut self,
+            signature: crate::model::FederationParameters,
+        ) -> Self {
+            self.inner = self.inner.federation_parameters(signature);
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
@@ -307,8 +310,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information for the superuser.</p>
-        pub fn superuser_parameters(mut self, inp: crate::model::SuperuserParameters) -> Self {
-            self.inner = self.inner.superuser_parameters(inp);
+        pub fn superuser_parameters(
+            mut self,
+            signature: crate::model::SuperuserParameters,
+        ) -> Self {
+            self.inner = self.inner.superuser_parameters(signature);
             self
         }
         /// <p>Configuration information for the superuser.</p>
@@ -334,8 +340,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
         /// </li>
         /// </ul>
-        pub fn data_bundles(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_bundles(inp);
+        pub fn data_bundles(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_bundles(input.into());
             self
         }
         /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
@@ -417,8 +423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the FinSpace environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The identifier for the FinSpace environment.</p>
@@ -490,8 +496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the FinSpace environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The identifier of the FinSpace environment.</p>
@@ -565,8 +571,8 @@ pub mod fluent_builders {
         /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
         /// request was truncated. To get the next set of pages, pass in the nextToken value from the
         /// response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
@@ -577,8 +583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -647,8 +653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
@@ -717,8 +723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource.</p>
@@ -736,7 +742,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags to be assigned to the resource.</p>
@@ -811,8 +817,8 @@ pub mod fluent_builders {
         }
         /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
         /// parameter is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
@@ -826,8 +832,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys (names) of one or more tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys (names) of one or more tags to be removed.</p>
@@ -899,8 +905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the FinSpace environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(signature.into());
             self
         }
         /// <p>The identifier of the FinSpace environment.</p>
@@ -912,8 +918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the environment.</p>
@@ -922,8 +928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the environment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the environment.</p>
@@ -942,8 +948,8 @@ pub mod fluent_builders {
         /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
         /// </li>
         /// </ul>
-        pub fn federation_mode(mut self, inp: crate::model::FederationMode) -> Self {
-            self.inner = self.inner.federation_mode(inp);
+        pub fn federation_mode(mut self, signature: crate::model::FederationMode) -> Self {
+            self.inner = self.inner.federation_mode(signature);
             self
         }
         /// <p>Authentication mode for the environment.</p>
@@ -965,8 +971,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn federation_parameters(mut self, inp: crate::model::FederationParameters) -> Self {
-            self.inner = self.inner.federation_parameters(inp);
+        pub fn federation_parameters(
+            mut self,
+            signature: crate::model::FederationParameters,
+        ) -> Self {
+            self.inner = self.inner.federation_parameters(signature);
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>

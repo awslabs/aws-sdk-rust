@@ -45,12 +45,9 @@ pub mod configuration_overrides {
         /// To override the contents of this collection use [`set_application_configuration`](Self::set_application_configuration).
         ///
         /// <p>The configurations for the application running by the job run. </p>
-        pub fn application_configuration(
-            mut self,
-            input: impl Into<crate::model::Configuration>,
-        ) -> Self {
+        pub fn application_configuration(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.application_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_configuration = Some(v);
             self
         }
@@ -496,9 +493,9 @@ pub mod configuration {
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>A list of additional configurations to apply within a configuration object.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }

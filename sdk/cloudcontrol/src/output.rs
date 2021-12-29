@@ -131,12 +131,9 @@ pub mod list_resources_output {
         ///
         /// <p>Information about the specified resources, including primary identifier and resource
         /// model.</p>
-        pub fn resource_descriptions(
-            mut self,
-            input: impl Into<crate::model::ResourceDescription>,
-        ) -> Self {
+        pub fn resource_descriptions(mut self, input: crate::model::ResourceDescription) -> Self {
             let mut v = self.resource_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_descriptions = Some(v);
             self
         }
@@ -227,10 +224,10 @@ pub mod list_resource_requests_output {
         /// <p>The requests that match the specified filter criteria.</p>
         pub fn resource_request_status_summaries(
             mut self,
-            input: impl Into<crate::model::ProgressEvent>,
+            input: crate::model::ProgressEvent,
         ) -> Self {
             let mut v = self.resource_request_status_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_request_status_summaries = Some(v);
             self
         }

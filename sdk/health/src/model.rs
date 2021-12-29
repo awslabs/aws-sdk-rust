@@ -279,12 +279,9 @@ pub mod event_type_filter {
         /// <p>A list of event type category codes. Possible values are
         /// <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
         /// the <code>investigation</code> value isn't supported at this time.</p>
-        pub fn event_type_categories(
-            mut self,
-            input: impl Into<crate::model::EventTypeCategory>,
-        ) -> Self {
+        pub fn event_type_categories(mut self, input: crate::model::EventTypeCategory) -> Self {
             let mut v = self.event_type_categories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_type_categories = Some(v);
             self
         }
@@ -1150,12 +1147,9 @@ pub mod organization_event_filter {
         /// <p>A list of event type category codes. Possible values are
         /// <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
         /// the <code>investigation</code> value isn't supported at this time.</p>
-        pub fn event_type_categories(
-            mut self,
-            input: impl Into<crate::model::EventTypeCategory>,
-        ) -> Self {
+        pub fn event_type_categories(mut self, input: crate::model::EventTypeCategory) -> Self {
             let mut v = self.event_type_categories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_type_categories = Some(v);
             self
         }
@@ -1174,12 +1168,9 @@ pub mod organization_event_filter {
         /// To override the contents of this collection use [`set_event_status_codes`](Self::set_event_status_codes).
         ///
         /// <p>A list of event status codes.</p>
-        pub fn event_status_codes(
-            mut self,
-            input: impl Into<crate::model::EventStatusCode>,
-        ) -> Self {
+        pub fn event_status_codes(mut self, input: crate::model::EventStatusCode) -> Self {
             let mut v = self.event_status_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_status_codes = Some(v);
             self
         }
@@ -1953,9 +1944,9 @@ pub mod event_filter {
         /// To override the contents of this collection use [`set_start_times`](Self::set_start_times).
         ///
         /// <p>A list of dates and times that the event began.</p>
-        pub fn start_times(mut self, input: impl Into<crate::model::DateTimeRange>) -> Self {
+        pub fn start_times(mut self, input: crate::model::DateTimeRange) -> Self {
             let mut v = self.start_times.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.start_times = Some(v);
             self
         }
@@ -1972,9 +1963,9 @@ pub mod event_filter {
         /// To override the contents of this collection use [`set_end_times`](Self::set_end_times).
         ///
         /// <p>A list of dates and times that the event ended.</p>
-        pub fn end_times(mut self, input: impl Into<crate::model::DateTimeRange>) -> Self {
+        pub fn end_times(mut self, input: crate::model::DateTimeRange) -> Self {
             let mut v = self.end_times.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_times = Some(v);
             self
         }
@@ -1991,9 +1982,9 @@ pub mod event_filter {
         /// To override the contents of this collection use [`set_last_updated_times`](Self::set_last_updated_times).
         ///
         /// <p>A list of dates and times that the event was last updated.</p>
-        pub fn last_updated_times(mut self, input: impl Into<crate::model::DateTimeRange>) -> Self {
+        pub fn last_updated_times(mut self, input: crate::model::DateTimeRange) -> Self {
             let mut v = self.last_updated_times.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.last_updated_times = Some(v);
             self
         }
@@ -2052,12 +2043,9 @@ pub mod event_filter {
         /// <p>A list of event type category codes. Possible values are
         /// <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently,
         /// the <code>investigation</code> value isn't supported at this time.</p>
-        pub fn event_type_categories(
-            mut self,
-            input: impl Into<crate::model::EventTypeCategory>,
-        ) -> Self {
+        pub fn event_type_categories(mut self, input: crate::model::EventTypeCategory) -> Self {
             let mut v = self.event_type_categories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_type_categories = Some(v);
             self
         }
@@ -2081,10 +2069,10 @@ pub mod event_filter {
         /// </note>
         pub fn tags(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2106,12 +2094,9 @@ pub mod event_filter {
         /// To override the contents of this collection use [`set_event_status_codes`](Self::set_event_status_codes).
         ///
         /// <p>A list of event status codes.</p>
-        pub fn event_status_codes(
-            mut self,
-            input: impl Into<crate::model::EventStatusCode>,
-        ) -> Self {
+        pub fn event_status_codes(mut self, input: crate::model::EventStatusCode) -> Self {
             let mut v = self.event_status_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_status_codes = Some(v);
             self
         }
@@ -3827,9 +3812,9 @@ pub mod entity_filter {
         /// To override the contents of this collection use [`set_last_updated_times`](Self::set_last_updated_times).
         ///
         /// <p>A list of the most recent dates and times that the entity was updated.</p>
-        pub fn last_updated_times(mut self, input: impl Into<crate::model::DateTimeRange>) -> Self {
+        pub fn last_updated_times(mut self, input: crate::model::DateTimeRange) -> Self {
             let mut v = self.last_updated_times.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.last_updated_times = Some(v);
             self
         }
@@ -3851,10 +3836,10 @@ pub mod entity_filter {
         /// </note>
         pub fn tags(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3877,9 +3862,9 @@ pub mod entity_filter {
         ///
         /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or
         /// <code>UNKNOWN</code>).</p>
-        pub fn status_codes(mut self, input: impl Into<crate::model::EntityStatusCode>) -> Self {
+        pub fn status_codes(mut self, input: crate::model::EntityStatusCode) -> Self {
             let mut v = self.status_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.status_codes = Some(v);
             self
         }

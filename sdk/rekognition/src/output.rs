@@ -814,9 +814,9 @@ pub mod search_faces_by_image_output {
         ///
         /// <p>An array of faces that match the input face, along with the confidence in the
         /// match.</p>
-        pub fn face_matches(mut self, input: impl Into<crate::model::FaceMatch>) -> Self {
+        pub fn face_matches(mut self, input: crate::model::FaceMatch) -> Self {
             let mut v = self.face_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_matches = Some(v);
             self
         }
@@ -926,9 +926,9 @@ pub mod search_faces_output {
         ///
         /// <p>An array of faces that matched the input face, along with the confidence in the
         /// match.</p>
-        pub fn face_matches(mut self, input: impl Into<crate::model::FaceMatch>) -> Self {
+        pub fn face_matches(mut self, input: crate::model::FaceMatch) -> Self {
             let mut v = self.face_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_matches = Some(v);
             self
         }
@@ -1069,9 +1069,9 @@ pub mod recognize_celebrities_output {
         /// <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
         /// <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
         /// <code>Urls</code>.</p>
-        pub fn celebrity_faces(mut self, input: impl Into<crate::model::Celebrity>) -> Self {
+        pub fn celebrity_faces(mut self, input: crate::model::Celebrity) -> Self {
             let mut v = self.celebrity_faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.celebrity_faces = Some(v);
             self
         }
@@ -1093,9 +1093,9 @@ pub mod recognize_celebrities_output {
         /// To override the contents of this collection use [`set_unrecognized_faces`](Self::set_unrecognized_faces).
         ///
         /// <p>Details about each unrecognized face in the image.</p>
-        pub fn unrecognized_faces(mut self, input: impl Into<crate::model::ComparedFace>) -> Self {
+        pub fn unrecognized_faces(mut self, input: crate::model::ComparedFace) -> Self {
             let mut v = self.unrecognized_faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unrecognized_faces = Some(v);
             self
         }
@@ -1308,12 +1308,9 @@ pub mod list_stream_processors_output {
         /// To override the contents of this collection use [`set_stream_processors`](Self::set_stream_processors).
         ///
         /// <p>List of stream processors that you have created.</p>
-        pub fn stream_processors(
-            mut self,
-            input: impl Into<crate::model::StreamProcessor>,
-        ) -> Self {
+        pub fn stream_processors(mut self, input: crate::model::StreamProcessor) -> Self {
             let mut v = self.stream_processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stream_processors = Some(v);
             self
         }
@@ -1393,9 +1390,9 @@ pub mod list_faces_output {
         /// To override the contents of this collection use [`set_faces`](Self::set_faces).
         ///
         /// <p>An array of <code>Face</code> objects. </p>
-        pub fn faces(mut self, input: impl Into<crate::model::Face>) -> Self {
+        pub fn faces(mut self, input: crate::model::Face) -> Self {
             let mut v = self.faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.faces = Some(v);
             self
         }
@@ -1510,10 +1507,10 @@ pub mod list_dataset_labels_output {
         /// </p>
         pub fn dataset_label_descriptions(
             mut self,
-            input: impl Into<crate::model::DatasetLabelDescription>,
+            input: crate::model::DatasetLabelDescription,
         ) -> Self {
             let mut v = self.dataset_label_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_label_descriptions = Some(v);
             self
         }
@@ -1903,9 +1900,9 @@ pub mod index_faces_output {
         /// <p>An array of faces detected and added to the collection.
         /// For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
         /// </p>
-        pub fn face_records(mut self, input: impl Into<crate::model::FaceRecord>) -> Self {
+        pub fn face_records(mut self, input: crate::model::FaceRecord) -> Self {
             let mut v = self.face_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_records = Some(v);
             self
         }
@@ -2010,9 +2007,9 @@ pub mod index_faces_output {
         /// indexed because the quality filter identified them as low quality, or the
         /// <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
         /// specify the <code>QualityFilter</code> request parameter.</p>
-        pub fn unindexed_faces(mut self, input: impl Into<crate::model::UnindexedFace>) -> Self {
+        pub fn unindexed_faces(mut self, input: crate::model::UnindexedFace) -> Self {
             let mut v = self.unindexed_faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unindexed_faces = Some(v);
             self
         }
@@ -2168,12 +2165,9 @@ pub mod get_text_detection_output {
         ///
         /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds
         /// from the start of the video that the text was detected, and where it was detected on the screen.</p>
-        pub fn text_detections(
-            mut self,
-            input: impl Into<crate::model::TextDetectionResult>,
-        ) -> Self {
+        pub fn text_detections(mut self, input: crate::model::TextDetectionResult) -> Self {
             let mut v = self.text_detections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_detections = Some(v);
             self
         }
@@ -2372,9 +2366,9 @@ pub mod get_segment_detection_output {
         /// contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze.  
         /// The <code>VideoMetadata</code> object includes the video codec, video format and other information.
         /// Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
-        pub fn video_metadata(mut self, input: impl Into<crate::model::VideoMetadata>) -> Self {
+        pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             let mut v = self.video_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.video_metadata = Some(v);
             self
         }
@@ -2401,9 +2395,9 @@ pub mod get_segment_detection_output {
         /// the audio codec, the number of audio channels, the duration of the audio stream,
         /// and the sample rate. Audio metadata is returned in each page of information returned
         /// by <code>GetSegmentDetection</code>.</p>
-        pub fn audio_metadata(mut self, input: impl Into<crate::model::AudioMetadata>) -> Self {
+        pub fn audio_metadata(mut self, input: crate::model::AudioMetadata) -> Self {
             let mut v = self.audio_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_metadata = Some(v);
             self
         }
@@ -2440,9 +2434,9 @@ pub mod get_segment_detection_output {
         /// <p>An array of segments detected in a video.  The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
         /// specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within
         /// each segment type the array is sorted by timestamp values.</p>
-        pub fn segments(mut self, input: impl Into<crate::model::SegmentDetection>) -> Self {
+        pub fn segments(mut self, input: crate::model::SegmentDetection) -> Self {
             let mut v = self.segments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.segments = Some(v);
             self
         }
@@ -2462,12 +2456,9 @@ pub mod get_segment_detection_output {
         ///
         /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.
         /// </p>
-        pub fn selected_segment_types(
-            mut self,
-            input: impl Into<crate::model::SegmentTypeInfo>,
-        ) -> Self {
+        pub fn selected_segment_types(mut self, input: crate::model::SegmentTypeInfo) -> Self {
             let mut v = self.selected_segment_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.selected_segment_types = Some(v);
             self
         }
@@ -2623,9 +2614,9 @@ pub mod get_person_tracking_output {
         ///
         /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video.
         /// An array element will exist for each time a person's path is tracked. </p>
-        pub fn persons(mut self, input: impl Into<crate::model::PersonDetection>) -> Self {
+        pub fn persons(mut self, input: crate::model::PersonDetection) -> Self {
             let mut v = self.persons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons = Some(v);
             self
         }
@@ -2791,9 +2782,9 @@ pub mod get_label_detection_output {
         ///
         /// <p>An array of labels detected in the video. Each element contains the detected label and the time,
         /// in milliseconds from the start of the video, that the label was detected. </p>
-        pub fn labels(mut self, input: impl Into<crate::model::LabelDetection>) -> Self {
+        pub fn labels(mut self, input: crate::model::LabelDetection) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
@@ -2976,9 +2967,9 @@ pub mod get_face_search_output {
         /// Each  <code>Persons</code> element includes a time the person was matched,
         /// face match details (<code>FaceMatches</code>) for matching faces in the collection,
         /// and person information (<code>Person</code>) for the matched person. </p>
-        pub fn persons(mut self, input: impl Into<crate::model::PersonMatch>) -> Self {
+        pub fn persons(mut self, input: crate::model::PersonMatch) -> Self {
             let mut v = self.persons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons = Some(v);
             self
         }
@@ -3137,9 +3128,9 @@ pub mod get_face_detection_output {
         ///
         /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time,
         /// in milliseconds from the start of the video, the face was detected. </p>
-        pub fn faces(mut self, input: impl Into<crate::model::FaceDetection>) -> Self {
+        pub fn faces(mut self, input: crate::model::FaceDetection) -> Self {
             let mut v = self.faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.faces = Some(v);
             self
         }
@@ -3296,10 +3287,10 @@ pub mod get_content_moderation_output {
         /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
         pub fn moderation_labels(
             mut self,
-            input: impl Into<crate::model::ContentModerationDetection>,
+            input: crate::model::ContentModerationDetection,
         ) -> Self {
             let mut v = self.moderation_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.moderation_labels = Some(v);
             self
         }
@@ -3480,9 +3471,9 @@ pub mod get_celebrity_recognition_output {
         /// To override the contents of this collection use [`set_celebrities`](Self::set_celebrities).
         ///
         /// <p>Array of celebrities recognized in the video.</p>
-        pub fn celebrities(mut self, input: impl Into<crate::model::CelebrityRecognition>) -> Self {
+        pub fn celebrities(mut self, input: crate::model::CelebrityRecognition) -> Self {
             let mut v = self.celebrities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.celebrities = Some(v);
             self
         }
@@ -3689,9 +3680,9 @@ pub mod detect_text_output {
         /// To override the contents of this collection use [`set_text_detections`](Self::set_text_detections).
         ///
         /// <p>An array of text that was detected in the input image.</p>
-        pub fn text_detections(mut self, input: impl Into<crate::model::TextDetection>) -> Self {
+        pub fn text_detections(mut self, input: crate::model::TextDetection) -> Self {
             let mut v = self.text_detections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_detections = Some(v);
             self
         }
@@ -3804,12 +3795,9 @@ pub mod detect_protective_equipment_output {
         /// To override the contents of this collection use [`set_persons`](Self::set_persons).
         ///
         /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
-        pub fn persons(
-            mut self,
-            input: impl Into<crate::model::ProtectiveEquipmentPerson>,
-        ) -> Self {
+        pub fn persons(mut self, input: crate::model::ProtectiveEquipmentPerson) -> Self {
             let mut v = self.persons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons = Some(v);
             self
         }
@@ -3913,12 +3901,9 @@ pub mod detect_moderation_labels_output {
         ///
         /// <p>Array of detected Moderation labels and the time, in milliseconds from the
         /// start of the video, they were detected.</p>
-        pub fn moderation_labels(
-            mut self,
-            input: impl Into<crate::model::ModerationLabel>,
-        ) -> Self {
+        pub fn moderation_labels(mut self, input: crate::model::ModerationLabel) -> Self {
             let mut v = self.moderation_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.moderation_labels = Some(v);
             self
         }
@@ -4047,9 +4032,9 @@ pub mod detect_labels_output {
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
         /// <p>An array of labels for the real-world objects detected. </p>
-        pub fn labels(mut self, input: impl Into<crate::model::Label>) -> Self {
+        pub fn labels(mut self, input: crate::model::Label) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
@@ -4187,9 +4172,9 @@ pub mod detect_faces_output {
         /// To override the contents of this collection use [`set_face_details`](Self::set_face_details).
         ///
         /// <p>Details of each face found in the image. </p>
-        pub fn face_details(mut self, input: impl Into<crate::model::FaceDetail>) -> Self {
+        pub fn face_details(mut self, input: crate::model::FaceDetail) -> Self {
             let mut v = self.face_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_details = Some(v);
             self
         }
@@ -4285,9 +4270,9 @@ pub mod detect_custom_labels_output {
         /// To override the contents of this collection use [`set_custom_labels`](Self::set_custom_labels).
         ///
         /// <p>An array of custom labels detected in the input image.</p>
-        pub fn custom_labels(mut self, input: impl Into<crate::model::CustomLabel>) -> Self {
+        pub fn custom_labels(mut self, input: crate::model::CustomLabel) -> Self {
             let mut v = self.custom_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_labels = Some(v);
             self
         }
@@ -4633,10 +4618,10 @@ pub mod describe_project_versions_output {
         /// the model versions, latest to earliest.</p>
         pub fn project_version_descriptions(
             mut self,
-            input: impl Into<crate::model::ProjectVersionDescription>,
+            input: crate::model::ProjectVersionDescription,
         ) -> Self {
             let mut v = self.project_version_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.project_version_descriptions = Some(v);
             self
         }
@@ -4726,12 +4711,9 @@ pub mod describe_projects_output {
         /// To override the contents of this collection use [`set_project_descriptions`](Self::set_project_descriptions).
         ///
         /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-        pub fn project_descriptions(
-            mut self,
-            input: impl Into<crate::model::ProjectDescription>,
-        ) -> Self {
+        pub fn project_descriptions(mut self, input: crate::model::ProjectDescription) -> Self {
             let mut v = self.project_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.project_descriptions = Some(v);
             self
         }
@@ -5750,9 +5732,9 @@ pub mod compare_faces_output {
         /// <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that
         /// the bounding box contains a face, and the similarity score for the face in the bounding box
         /// and the face in the source image.</p>
-        pub fn face_matches(mut self, input: impl Into<crate::model::CompareFacesMatch>) -> Self {
+        pub fn face_matches(mut self, input: crate::model::CompareFacesMatch) -> Self {
             let mut v = self.face_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_matches = Some(v);
             self
         }
@@ -5773,9 +5755,9 @@ pub mod compare_faces_output {
         ///
         /// <p>An array of faces in the target image that did not match the source image
         /// face.</p>
-        pub fn unmatched_faces(mut self, input: impl Into<crate::model::ComparedFace>) -> Self {
+        pub fn unmatched_faces(mut self, input: crate::model::ComparedFace) -> Self {
             let mut v = self.unmatched_faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unmatched_faces = Some(v);
             self
         }

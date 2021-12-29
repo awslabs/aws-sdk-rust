@@ -1001,9 +1001,9 @@ pub mod create_event_bus_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to associate with the event bus.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6498,9 +6498,9 @@ pub mod put_events_input {
         /// <p>The entry that defines an event in your system. You can specify several parameters for the
         /// entry such as the source and type of the event, resources associated with the event, and so
         /// on.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::PutEventsRequestEntry>) -> Self {
+        pub fn entries(mut self, input: crate::model::PutEventsRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -6659,12 +6659,9 @@ pub mod put_partner_events_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>The list of events to write to the event bus.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::PutPartnerEventsRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::PutPartnerEventsRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -7169,9 +7166,9 @@ pub mod put_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7376,9 +7373,9 @@ pub mod put_targets_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets to update or add to the rule.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -8178,9 +8175,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

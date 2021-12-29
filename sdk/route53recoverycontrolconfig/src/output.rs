@@ -244,9 +244,9 @@ pub mod list_safety_rules_output {
         /// To override the contents of this collection use [`set_safety_rules`](Self::set_safety_rules).
         ///
         /// <p>The list of safety rules in a control panel.</p>
-        pub fn safety_rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn safety_rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.safety_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.safety_rules = Some(v);
             self
         }
@@ -327,9 +327,9 @@ pub mod list_routing_controls_output {
         /// To override the contents of this collection use [`set_routing_controls`](Self::set_routing_controls).
         ///
         /// <p>An array of routing controls.</p>
-        pub fn routing_controls(mut self, input: impl Into<crate::model::RoutingControl>) -> Self {
+        pub fn routing_controls(mut self, input: crate::model::RoutingControl) -> Self {
             let mut v = self.routing_controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routing_controls = Some(v);
             self
         }
@@ -399,9 +399,9 @@ pub mod list_control_panels_output {
         /// To override the contents of this collection use [`set_control_panels`](Self::set_control_panels).
         ///
         /// <p>The result of a successful ListControlPanel request.</p>
-        pub fn control_panels(mut self, input: impl Into<crate::model::ControlPanel>) -> Self {
+        pub fn control_panels(mut self, input: crate::model::ControlPanel) -> Self {
             let mut v = self.control_panels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_panels = Some(v);
             self
         }
@@ -481,9 +481,9 @@ pub mod list_clusters_output {
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
         /// <p>An array of the clusters in an account.</p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }

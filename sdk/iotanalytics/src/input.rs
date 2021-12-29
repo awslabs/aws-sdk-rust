@@ -52,9 +52,9 @@ pub mod batch_put_message_input {
         /// </ul>
         /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
         /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -477,9 +477,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the channel.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -656,9 +656,9 @@ pub mod create_dataset_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of actions that create the dataset contents.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::DatasetAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -677,9 +677,9 @@ pub mod create_dataset_input {
         /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
         /// interval or when another dataset's contents are created. The list of triggers can be empty or
         /// contain up to five <code>DataSetTrigger</code> objects.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::DatasetTrigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -701,10 +701,10 @@ pub mod create_dataset_input {
         /// here.</p>
         pub fn content_delivery_rules(
             mut self,
-            input: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
             let mut v = self.content_delivery_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_delivery_rules = Some(v);
             self
         }
@@ -769,9 +769,9 @@ pub mod create_dataset_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the dataset.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -788,9 +788,9 @@ pub mod create_dataset_input {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, input: impl Into<crate::model::LateDataRule>) -> Self {
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
             let mut v = self.late_data_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.late_data_rules = Some(v);
             self
         }
@@ -1184,9 +1184,9 @@ pub mod create_datastore_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the data store.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1406,12 +1406,9 @@ pub mod create_pipeline_input {
         /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
         /// ]</code>
         /// </p>
-        pub fn pipeline_activities(
-            mut self,
-            input: impl Into<crate::model::PipelineActivity>,
-        ) -> Self {
+        pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
             let mut v = self.pipeline_activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_activities = Some(v);
             self
         }
@@ -1438,9 +1435,9 @@ pub mod create_pipeline_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the pipeline.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4632,9 +4629,9 @@ pub mod run_pipeline_activity_input {
         /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
         ///
         /// <p>The sample message payloads on which the pipeline activity is run.</p>
-        pub fn payloads(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.payloads.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.payloads = Some(v);
             self
         }
@@ -5265,9 +5262,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The new or modified tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5836,9 +5833,9 @@ pub mod update_dataset_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of <code>DatasetAction</code> objects.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::DatasetAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -5856,9 +5853,9 @@ pub mod update_dataset_input {
         ///
         /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
         /// five <code>DatasetTrigger</code> objects.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::DatasetTrigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -5879,10 +5876,10 @@ pub mod update_dataset_input {
         /// here.</p>
         pub fn content_delivery_rules(
             mut self,
-            input: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
             let mut v = self.content_delivery_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_delivery_rules = Some(v);
             self
         }
@@ -5937,9 +5934,9 @@ pub mod update_dataset_input {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, input: impl Into<crate::model::LateDataRule>) -> Self {
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
             let mut v = self.late_data_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.late_data_rules = Some(v);
             self
         }
@@ -6372,12 +6369,9 @@ pub mod update_pipeline_input {
         /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
         /// ]</code>
         /// </p>
-        pub fn pipeline_activities(
-            mut self,
-            input: impl Into<crate::model::PipelineActivity>,
-        ) -> Self {
+        pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
             let mut v = self.pipeline_activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_activities = Some(v);
             self
         }

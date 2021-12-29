@@ -2140,9 +2140,9 @@ pub mod list_parts_output {
         ///
         /// <p> Container for elements related to a particular part. A response can contain zero or
         /// more <code>Part</code> elements.</p>
-        pub fn parts(mut self, input: impl Into<crate::model::Part>) -> Self {
+        pub fn parts(mut self, input: crate::model::Part) -> Self {
             let mut v = self.parts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parts = Some(v);
             self
         }
@@ -2494,9 +2494,9 @@ pub mod list_object_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// <p>Container for version information.</p>
-        pub fn versions(mut self, input: impl Into<crate::model::ObjectVersion>) -> Self {
+        pub fn versions(mut self, input: crate::model::ObjectVersion) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -2513,9 +2513,9 @@ pub mod list_object_versions_output {
         /// To override the contents of this collection use [`set_delete_markers`](Self::set_delete_markers).
         ///
         /// <p>Container for an object that is a delete marker.</p>
-        pub fn delete_markers(mut self, input: impl Into<crate::model::DeleteMarkerEntry>) -> Self {
+        pub fn delete_markers(mut self, input: crate::model::DeleteMarkerEntry) -> Self {
             let mut v = self.delete_markers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delete_markers = Some(v);
             self
         }
@@ -2581,9 +2581,9 @@ pub mod list_object_versions_output {
         ///
         /// <p>All of the keys rolled up into a common prefix count as a single return when calculating
         /// the number of returns.</p>
-        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
+        pub fn common_prefixes(mut self, input: crate::model::CommonPrefix) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_prefixes = Some(v);
             self
         }
@@ -2862,9 +2862,9 @@ pub mod list_objects_v2_output {
         /// To override the contents of this collection use [`set_contents`](Self::set_contents).
         ///
         /// <p>Metadata about each object returned.</p>
-        pub fn contents(mut self, input: impl Into<crate::model::Object>) -> Self {
+        pub fn contents(mut self, input: crate::model::Object) -> Self {
             let mut v = self.contents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contents = Some(v);
             self
         }
@@ -2953,9 +2953,9 @@ pub mod list_objects_v2_output {
         /// (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
         /// <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a
         /// single return when calculating the number of returns. </p>
-        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
+        pub fn common_prefixes(mut self, input: crate::model::CommonPrefix) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_prefixes = Some(v);
             self
         }
@@ -3292,9 +3292,9 @@ pub mod list_objects_output {
         /// To override the contents of this collection use [`set_contents`](Self::set_contents).
         ///
         /// <p>Metadata about each object returned.</p>
-        pub fn contents(mut self, input: impl Into<crate::model::Object>) -> Self {
+        pub fn contents(mut self, input: crate::model::Object) -> Self {
             let mut v = self.contents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contents = Some(v);
             self
         }
@@ -3372,9 +3372,9 @@ pub mod list_objects_output {
         /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in
         /// notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a
         /// common prefix count as a single return when calculating the number of returns.</p>
-        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
+        pub fn common_prefixes(mut self, input: crate::model::CommonPrefix) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_prefixes = Some(v);
             self
         }
@@ -3706,9 +3706,9 @@ pub mod list_multipart_uploads_output {
         ///
         /// <p>Container for elements related to a particular multipart upload. A response can contain
         /// zero or more <code>Upload</code> elements.</p>
-        pub fn uploads(mut self, input: impl Into<crate::model::MultipartUpload>) -> Self {
+        pub fn uploads(mut self, input: crate::model::MultipartUpload) -> Self {
             let mut v = self.uploads.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.uploads = Some(v);
             self
         }
@@ -3728,9 +3728,9 @@ pub mod list_multipart_uploads_output {
         /// <p>If you specify a delimiter in the request, then the result returns each distinct key
         /// prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key
         /// prefixes are returned in the <code>Prefix</code> child element.</p>
-        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
+        pub fn common_prefixes(mut self, input: crate::model::CommonPrefix) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_prefixes = Some(v);
             self
         }
@@ -3839,9 +3839,9 @@ pub mod list_buckets_output {
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
         /// <p>The list of buckets owned by the requestor.</p>
-        pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
+        pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buckets = Some(v);
             self
         }
@@ -4006,10 +4006,10 @@ pub mod list_bucket_metrics_configurations_output {
         /// <p>The list of metrics configurations for a bucket.</p>
         pub fn metrics_configuration_list(
             mut self,
-            input: impl Into<crate::model::MetricsConfiguration>,
+            input: crate::model::MetricsConfiguration,
         ) -> Self {
             let mut v = self.metrics_configuration_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics_configuration_list = Some(v);
             self
         }
@@ -4131,10 +4131,10 @@ pub mod list_bucket_inventory_configurations_output {
         /// <p>The list of inventory configurations for a bucket.</p>
         pub fn inventory_configuration_list(
             mut self,
-            input: impl Into<crate::model::InventoryConfiguration>,
+            input: crate::model::InventoryConfiguration,
         ) -> Self {
             let mut v = self.inventory_configuration_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inventory_configuration_list = Some(v);
             self
         }
@@ -4318,12 +4318,12 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
         /// <p>The list of S3 Intelligent-Tiering configurations for a bucket.</p>
         pub fn intelligent_tiering_configuration_list(
             mut self,
-            input: impl Into<crate::model::IntelligentTieringConfiguration>,
+            input: crate::model::IntelligentTieringConfiguration,
         ) -> Self {
             let mut v = self
                 .intelligent_tiering_configuration_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intelligent_tiering_configuration_list = Some(v);
             self
         }
@@ -4487,10 +4487,10 @@ pub mod list_bucket_analytics_configurations_output {
         /// <p>The list of analytics configurations for a bucket.</p>
         pub fn analytics_configuration_list(
             mut self,
-            input: impl Into<crate::model::AnalyticsConfiguration>,
+            input: crate::model::AnalyticsConfiguration,
         ) -> Self {
             let mut v = self.analytics_configuration_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analytics_configuration_list = Some(v);
             self
         }
@@ -5778,9 +5778,9 @@ pub mod get_object_tagging_output {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>Contains the tag set.</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -6047,9 +6047,9 @@ pub mod get_object_acl_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -7027,9 +7027,9 @@ pub mod get_bucket_website_output {
         /// To override the contents of this collection use [`set_routing_rules`](Self::set_routing_rules).
         ///
         /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-        pub fn routing_rules(mut self, input: impl Into<crate::model::RoutingRule>) -> Self {
+        pub fn routing_rules(mut self, input: crate::model::RoutingRule) -> Self {
             let mut v = self.routing_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routing_rules = Some(v);
             self
         }
@@ -7180,9 +7180,9 @@ pub mod get_bucket_tagging_output {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>Contains the tag set.</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -7581,12 +7581,9 @@ pub mod get_bucket_notification_configuration_output {
         ///
         /// <p>The topic to which notifications are sent and the events for which notifications are
         /// generated.</p>
-        pub fn topic_configurations(
-            mut self,
-            input: impl Into<crate::model::TopicConfiguration>,
-        ) -> Self {
+        pub fn topic_configurations(mut self, input: crate::model::TopicConfiguration) -> Self {
             let mut v = self.topic_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_configurations = Some(v);
             self
         }
@@ -7605,12 +7602,9 @@ pub mod get_bucket_notification_configuration_output {
         ///
         /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
         /// to publish messages.</p>
-        pub fn queue_configurations(
-            mut self,
-            input: impl Into<crate::model::QueueConfiguration>,
-        ) -> Self {
+        pub fn queue_configurations(mut self, input: crate::model::QueueConfiguration) -> Self {
             let mut v = self.queue_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_configurations = Some(v);
             self
         }
@@ -7631,10 +7625,10 @@ pub mod get_bucket_notification_configuration_output {
         /// them.</p>
         pub fn lambda_function_configurations(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionConfiguration>,
+            input: crate::model::LambdaFunctionConfiguration,
         ) -> Self {
             let mut v = self.lambda_function_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lambda_function_configurations = Some(v);
             self
         }
@@ -7913,9 +7907,9 @@ pub mod get_bucket_lifecycle_configuration_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Container for a lifecycle rule.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -8175,9 +8169,9 @@ pub mod get_bucket_cors_output {
         ///
         /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
         /// up to 100 rules to the configuration.</p>
-        pub fn cors_rules(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
+        pub fn cors_rules(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cors_rules = Some(v);
             self
         }
@@ -8320,9 +8314,9 @@ pub mod get_bucket_acl_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -8548,9 +8542,9 @@ pub mod delete_objects_output {
         ///
         /// <p>Container element for a successful delete. It identifies the object that was
         /// successfully deleted.</p>
-        pub fn deleted(mut self, input: impl Into<crate::model::DeletedObject>) -> Self {
+        pub fn deleted(mut self, input: crate::model::DeletedObject) -> Self {
             let mut v = self.deleted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deleted = Some(v);
             self
         }
@@ -8584,9 +8578,9 @@ pub mod delete_objects_output {
         ///
         /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to
         /// delete and the error it encountered.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::Error>) -> Self {
+        pub fn errors(mut self, input: crate::model::Error) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

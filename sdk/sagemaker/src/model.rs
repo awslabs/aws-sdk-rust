@@ -144,12 +144,9 @@ pub mod workteam {
         /// For private workforces created using Amazon Cognito use
         /// <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity
         /// provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-        pub fn member_definitions(
-            mut self,
-            input: impl Into<crate::model::MemberDefinition>,
-        ) -> Self {
+        pub fn member_definitions(mut self, input: crate::model::MemberDefinition) -> Self {
             let mut v = self.member_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_definitions = Some(v);
             self
         }
@@ -2474,9 +2471,9 @@ pub mod kernel_gateway_app_settings {
         /// To override the contents of this collection use [`set_custom_images`](Self::set_custom_images).
         ///
         /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
-        pub fn custom_images(mut self, input: impl Into<crate::model::CustomImage>) -> Self {
+        pub fn custom_images(mut self, input: crate::model::CustomImage) -> Self {
             let mut v = self.custom_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_images = Some(v);
             self
         }
@@ -3949,10 +3946,10 @@ pub mod service_catalog_provisioning_update_details {
         /// <p>A list of key value pairs that you specify when you provision a product.</p>
         pub fn provisioning_parameters(
             mut self,
-            input: impl Into<crate::model::ProvisioningParameter>,
+            input: crate::model::ProvisioningParameter,
         ) -> Self {
             let mut v = self.provisioning_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_parameters = Some(v);
             self
         }
@@ -4956,12 +4953,9 @@ pub mod monitoring_job_definition {
         ///
         /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker
         /// Endpoint.</p>
-        pub fn monitoring_inputs(
-            mut self,
-            input: impl Into<crate::model::MonitoringInput>,
-        ) -> Self {
+        pub fn monitoring_inputs(mut self, input: crate::model::MonitoringInput) -> Self {
             let mut v = self.monitoring_inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitoring_inputs = Some(v);
             self
         }
@@ -5841,12 +5835,9 @@ pub mod monitoring_output_config {
         ///
         /// <p>Monitoring outputs for monitoring jobs. This is where the output of the periodic
         /// monitoring jobs is uploaded.</p>
-        pub fn monitoring_outputs(
-            mut self,
-            input: impl Into<crate::model::MonitoringOutput>,
-        ) -> Self {
+        pub fn monitoring_outputs(mut self, input: crate::model::MonitoringOutput) -> Self {
             let mut v = self.monitoring_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitoring_outputs = Some(v);
             self
         }
@@ -7228,12 +7219,9 @@ pub mod additional_inference_specification_definition {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-        pub fn containers(
-            mut self,
-            input: impl Into<crate::model::ModelPackageContainerDefinition>,
-        ) -> Self {
+        pub fn containers(mut self, input: crate::model::ModelPackageContainerDefinition) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.containers = Some(v);
             self
         }
@@ -7255,10 +7243,10 @@ pub mod additional_inference_specification_definition {
         /// or on which an endpoint can be deployed.</p>
         pub fn supported_transform_instance_types(
             mut self,
-            input: impl Into<crate::model::TransformInstanceType>,
+            input: crate::model::TransformInstanceType,
         ) -> Self {
             let mut v = self.supported_transform_instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_transform_instance_types = Some(v);
             self
         }
@@ -7278,12 +7266,12 @@ pub mod additional_inference_specification_definition {
         /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
         pub fn supported_realtime_inference_instance_types(
             mut self,
-            input: impl Into<crate::model::ProductionVariantInstanceType>,
+            input: crate::model::ProductionVariantInstanceType,
         ) -> Self {
             let mut v = self
                 .supported_realtime_inference_instance_types
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_realtime_inference_instance_types = Some(v);
             self
         }
@@ -8637,9 +8625,9 @@ pub mod auto_rollback_config {
         ///
         /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint.
         /// If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-        pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarms = Some(v);
             self
         }
@@ -10178,9 +10166,9 @@ pub mod kernel_gateway_image_config {
         /// To override the contents of this collection use [`set_kernel_specs`](Self::set_kernel_specs).
         ///
         /// <p>The specification of the Jupyter kernels in the image.</p>
-        pub fn kernel_specs(mut self, input: impl Into<crate::model::KernelSpec>) -> Self {
+        pub fn kernel_specs(mut self, input: crate::model::KernelSpec) -> Self {
             let mut v = self.kernel_specs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.kernel_specs = Some(v);
             self
         }
@@ -11168,9 +11156,9 @@ pub mod project {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11711,10 +11699,10 @@ pub mod service_catalog_provisioning_details {
         /// <p>A list of key value pairs that you specify when you provision a product.</p>
         pub fn provisioning_parameters(
             mut self,
-            input: impl Into<crate::model::ProvisioningParameter>,
+            input: crate::model::ProvisioningParameter,
         ) -> Self {
             let mut v = self.provisioning_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioning_parameters = Some(v);
             self
         }
@@ -12020,12 +12008,9 @@ pub mod feature_group {
         /// <code>write_time</code>, <code>api_invocation_time</code>.</p>
         /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per
         /// <code>FeatureGroup</code>.</p>
-        pub fn feature_definitions(
-            mut self,
-            input: impl Into<crate::model::FeatureDefinition>,
-        ) -> Self {
+        pub fn feature_definitions(mut self, input: crate::model::FeatureDefinition) -> Self {
             let mut v = self.feature_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.feature_definitions = Some(v);
             self
         }
@@ -12172,9 +12157,9 @@ pub mod feature_group {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags used to define a <code>FeatureGroup</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13654,9 +13639,9 @@ pub mod pipeline_execution {
         /// To override the contents of this collection use [`set_pipeline_parameters`](Self::set_pipeline_parameters).
         ///
         /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-        pub fn pipeline_parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn pipeline_parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.pipeline_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_parameters = Some(v);
             self
         }
@@ -14104,9 +14089,9 @@ pub mod pipeline {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags that apply to the pipeline.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14485,9 +14470,9 @@ pub mod model_package_group {
         ///
         /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15341,10 +15326,10 @@ pub mod model_package {
         /// <p>An array of additional Inference Specification objects.</p>
         pub fn additional_inference_specifications(
             mut self,
-            input: impl Into<crate::model::AdditionalInferenceSpecificationDefinition>,
+            input: crate::model::AdditionalInferenceSpecificationDefinition,
         ) -> Self {
             let mut v = self.additional_inference_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_inference_specifications = Some(v);
             self
         }
@@ -15364,9 +15349,9 @@ pub mod model_package {
         ///
         /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16732,12 +16717,9 @@ pub mod model_package_status_details {
         /// To override the contents of this collection use [`set_validation_statuses`](Self::set_validation_statuses).
         ///
         /// <p>The validation status of the model package.</p>
-        pub fn validation_statuses(
-            mut self,
-            input: impl Into<crate::model::ModelPackageStatusItem>,
-        ) -> Self {
+        pub fn validation_statuses(mut self, input: crate::model::ModelPackageStatusItem) -> Self {
             let mut v = self.validation_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_statuses = Some(v);
             self
         }
@@ -16754,12 +16736,9 @@ pub mod model_package_status_details {
         /// To override the contents of this collection use [`set_image_scan_statuses`](Self::set_image_scan_statuses).
         ///
         /// <p>The status of the scan of the Docker image container for the model package.</p>
-        pub fn image_scan_statuses(
-            mut self,
-            input: impl Into<crate::model::ModelPackageStatusItem>,
-        ) -> Self {
+        pub fn image_scan_statuses(mut self, input: crate::model::ModelPackageStatusItem) -> Self {
             let mut v = self.image_scan_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_scan_statuses = Some(v);
             self
         }
@@ -17079,10 +17058,10 @@ pub mod model_package_validation_specification {
         /// specifies a batch transform job that Amazon SageMaker runs to validate your model package.</p>
         pub fn validation_profiles(
             mut self,
-            input: impl Into<crate::model::ModelPackageValidationProfile>,
+            input: crate::model::ModelPackageValidationProfile,
         ) -> Self {
             let mut v = self.validation_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_profiles = Some(v);
             self
         }
@@ -18986,12 +18965,9 @@ pub mod source_algorithm_specification {
         /// To override the contents of this collection use [`set_source_algorithms`](Self::set_source_algorithms).
         ///
         /// <p>A list of the algorithms that were used to create a model package.</p>
-        pub fn source_algorithms(
-            mut self,
-            input: impl Into<crate::model::SourceAlgorithm>,
-        ) -> Self {
+        pub fn source_algorithms(mut self, input: crate::model::SourceAlgorithm) -> Self {
             let mut v = self.source_algorithms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_algorithms = Some(v);
             self
         }
@@ -19229,12 +19205,9 @@ pub mod inference_specification {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-        pub fn containers(
-            mut self,
-            input: impl Into<crate::model::ModelPackageContainerDefinition>,
-        ) -> Self {
+        pub fn containers(mut self, input: crate::model::ModelPackageContainerDefinition) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.containers = Some(v);
             self
         }
@@ -19258,10 +19231,10 @@ pub mod inference_specification {
         /// models.</p>
         pub fn supported_transform_instance_types(
             mut self,
-            input: impl Into<crate::model::TransformInstanceType>,
+            input: crate::model::TransformInstanceType,
         ) -> Self {
             let mut v = self.supported_transform_instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_transform_instance_types = Some(v);
             self
         }
@@ -19285,12 +19258,12 @@ pub mod inference_specification {
         /// models.</p>
         pub fn supported_realtime_inference_instance_types(
             mut self,
-            input: impl Into<crate::model::ProductionVariantInstanceType>,
+            input: crate::model::ProductionVariantInstanceType,
         ) -> Self {
             let mut v = self
                 .supported_realtime_inference_instance_types
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_realtime_inference_instance_types = Some(v);
             self
         }
@@ -19531,10 +19504,10 @@ pub mod endpoint {
         /// model.</p>
         pub fn production_variants(
             mut self,
-            input: impl Into<crate::model::ProductionVariantSummary>,
+            input: crate::model::ProductionVariantSummary,
         ) -> Self {
             let mut v = self.production_variants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.production_variants = Some(v);
             self
         }
@@ -19621,12 +19594,9 @@ pub mod endpoint {
         ///
         /// <p>A list of monitoring schedules for the endpoint. For information about model
         /// monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-        pub fn monitoring_schedules(
-            mut self,
-            input: impl Into<crate::model::MonitoringSchedule>,
-        ) -> Self {
+        pub fn monitoring_schedules(mut self, input: crate::model::MonitoringSchedule) -> Self {
             let mut v = self.monitoring_schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitoring_schedules = Some(v);
             self
         }
@@ -19645,9 +19615,9 @@ pub mod endpoint {
         ///
         /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -20028,9 +19998,9 @@ pub mod monitoring_schedule {
         ///
         /// <p>A list of the tags associated with the monitoring schedlue. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -20901,9 +20871,9 @@ pub mod production_variant_summary {
         ///
         /// <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
         /// inference images deployed on instances of this <code>ProductionVariant</code>.</p>
-        pub fn deployed_images(mut self, input: impl Into<crate::model::DeployedImage>) -> Self {
+        pub fn deployed_images(mut self, input: crate::model::DeployedImage) -> Self {
             let mut v = self.deployed_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployed_images = Some(v);
             self
         }
@@ -20965,12 +20935,9 @@ pub mod production_variant_summary {
         /// To override the contents of this collection use [`set_variant_status`](Self::set_variant_status).
         ///
         /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-        pub fn variant_status(
-            mut self,
-            input: impl Into<crate::model::ProductionVariantStatus>,
-        ) -> Self {
+        pub fn variant_status(mut self, input: crate::model::ProductionVariantStatus) -> Self {
             let mut v = self.variant_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variant_status = Some(v);
             self
         }
@@ -21877,10 +21844,10 @@ pub mod trial_component {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentParameterValue>,
+            v: crate::model::TrialComponentParameterValue,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -21905,10 +21872,10 @@ pub mod trial_component {
         pub fn input_artifacts(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentArtifact>,
+            v: crate::model::TrialComponentArtifact,
         ) -> Self {
             let mut hash_map = self.input_artifacts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.input_artifacts = Some(hash_map);
             self
         }
@@ -21933,10 +21900,10 @@ pub mod trial_component {
         pub fn output_artifacts(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::TrialComponentArtifact>,
+            v: crate::model::TrialComponentArtifact,
         ) -> Self {
             let mut hash_map = self.output_artifacts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.output_artifacts = Some(hash_map);
             self
         }
@@ -21958,12 +21925,9 @@ pub mod trial_component {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>The metrics for the component.</p>
-        pub fn metrics(
-            mut self,
-            input: impl Into<crate::model::TrialComponentMetricSummary>,
-        ) -> Self {
+        pub fn metrics(mut self, input: crate::model::TrialComponentMetricSummary) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics = Some(v);
             self
         }
@@ -22019,9 +21983,9 @@ pub mod trial_component {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are associated with the component. You can use <a>Search</a> API to search on the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -22039,9 +22003,9 @@ pub mod trial_component {
         ///
         /// <p>An array of the parents of the component. A parent is a trial the component is associated
         /// with and the experiment the trial is part of. A component might not have any parents.</p>
-        pub fn parents(mut self, input: impl Into<crate::model::Parent>) -> Self {
+        pub fn parents(mut self, input: crate::model::Parent) -> Self {
             let mut v = self.parents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parents = Some(v);
             self
         }
@@ -23027,9 +22991,9 @@ pub mod transform_job {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the transform job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -23897,12 +23861,9 @@ pub mod processing_job {
         /// To override the contents of this collection use [`set_processing_inputs`](Self::set_processing_inputs).
         ///
         /// <p>List of input configurations for the processing job.</p>
-        pub fn processing_inputs(
-            mut self,
-            input: impl Into<crate::model::ProcessingInput>,
-        ) -> Self {
+        pub fn processing_inputs(mut self, input: crate::model::ProcessingInput) -> Self {
             let mut v = self.processing_inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processing_inputs = Some(v);
             self
         }
@@ -24242,9 +24203,9 @@ pub mod processing_job {
         ///
         /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -24840,9 +24801,9 @@ pub mod processing_output_config {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::ProcessingOutput>) -> Self {
+        pub fn outputs(mut self, input: crate::model::ProcessingOutput) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -27798,9 +27759,9 @@ pub mod training_job {
         ///
         /// <p>An array of <code>Channel</code> objects that describes each data input
         /// channel.</p>
-        pub fn input_data_config(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -27957,10 +27918,10 @@ pub mod training_job {
         /// through.</p>
         pub fn secondary_status_transitions(
             mut self,
-            input: impl Into<crate::model::SecondaryStatusTransition>,
+            input: crate::model::SecondaryStatusTransition,
         ) -> Self {
             let mut v = self.secondary_status_transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secondary_status_transitions = Some(v);
             self
         }
@@ -27979,12 +27940,9 @@ pub mod training_job {
         ///
         /// <p>A list of final metric values that are set when the training job completes. Used only
         /// if the training job was configured to use metrics.</p>
-        pub fn final_metric_data_list(
-            mut self,
-            input: impl Into<crate::model::MetricData>,
-        ) -> Self {
+        pub fn final_metric_data_list(mut self, input: crate::model::MetricData) -> Self {
             let mut v = self.final_metric_data_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.final_metric_data_list = Some(v);
             self
         }
@@ -28157,10 +28115,10 @@ pub mod training_job {
         /// <p>Information about the debug rule configuration.</p>
         pub fn debug_rule_configurations(
             mut self,
-            input: impl Into<crate::model::DebugRuleConfiguration>,
+            input: crate::model::DebugRuleConfiguration,
         ) -> Self {
             let mut v = self.debug_rule_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.debug_rule_configurations = Some(v);
             self
         }
@@ -28195,10 +28153,10 @@ pub mod training_job {
         /// <p>Information about the evaluation status of the rules for the training job.</p>
         pub fn debug_rule_evaluation_statuses(
             mut self,
-            input: impl Into<crate::model::DebugRuleEvaluationStatus>,
+            input: crate::model::DebugRuleEvaluationStatus,
         ) -> Self {
             let mut v = self.debug_rule_evaluation_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.debug_rule_evaluation_statuses = Some(v);
             self
         }
@@ -28258,9 +28216,9 @@ pub mod training_job {
         /// different ways, for example, by purpose, owner, or environment. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -29040,10 +28998,10 @@ pub mod debug_hook_config {
         /// </p>
         pub fn collection_configurations(
             mut self,
-            input: impl Into<crate::model::CollectionConfiguration>,
+            input: crate::model::CollectionConfiguration,
         ) -> Self {
             let mut v = self.collection_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.collection_configurations = Some(v);
             self
         }
@@ -32884,12 +32842,9 @@ pub mod algorithm_specification {
         ///
         /// <p>A list of metric definition objects. Each object specifies the metric name and regular
         /// expressions used to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.</p>
-        pub fn metric_definitions(
-            mut self,
-            input: impl Into<crate::model::MetricDefinition>,
-        ) -> Self {
+        pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
             let mut v = self.metric_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_definitions = Some(v);
             self
         }
@@ -33750,9 +33705,9 @@ pub mod trial {
         ///
         /// <p>The list of tags that are associated with the trial. You can use <a>Search</a>
         /// API to search on the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -33773,10 +33728,10 @@ pub mod trial {
         /// component's properties is included.</p>
         pub fn trial_component_summaries(
             mut self,
-            input: impl Into<crate::model::TrialComponentSimpleSummary>,
+            input: crate::model::TrialComponentSimpleSummary,
         ) -> Self {
             let mut v = self.trial_component_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trial_component_summaries = Some(v);
             self
         }
@@ -34264,9 +34219,9 @@ pub mod experiment {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are associated with the experiment. You can use <a>Search</a> API to search on the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -34521,9 +34476,9 @@ pub mod search_expression {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of filter objects.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -34540,9 +34495,9 @@ pub mod search_expression {
         /// To override the contents of this collection use [`set_nested_filters`](Self::set_nested_filters).
         ///
         /// <p>A list of nested filter objects.</p>
-        pub fn nested_filters(mut self, input: impl Into<crate::model::NestedFilters>) -> Self {
+        pub fn nested_filters(mut self, input: crate::model::NestedFilters) -> Self {
             let mut v = self.nested_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nested_filters = Some(v);
             self
         }
@@ -34559,9 +34514,9 @@ pub mod search_expression {
         /// To override the contents of this collection use [`set_sub_expressions`](Self::set_sub_expressions).
         ///
         /// <p>A list of search expression objects.</p>
-        pub fn sub_expressions(mut self, input: impl Into<crate::model::SearchExpression>) -> Self {
+        pub fn sub_expressions(mut self, input: crate::model::SearchExpression) -> Self {
             let mut v = self.sub_expressions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_expressions = Some(v);
             self
         }
@@ -34754,9 +34709,9 @@ pub mod nested_filters {
         /// include a filter on the <code>PropertyName</code> parameter of the
         /// <code>InputDataConfig</code> property:
         /// <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -36251,9 +36206,9 @@ pub mod query_filters {
         /// To override the contents of this collection use [`set_lineage_types`](Self::set_lineage_types).
         ///
         /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
-        pub fn lineage_types(mut self, input: impl Into<crate::model::LineageType>) -> Self {
+        pub fn lineage_types(mut self, input: crate::model::LineageType) -> Self {
             let mut v = self.lineage_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lineage_types = Some(v);
             self
         }
@@ -41164,12 +41119,9 @@ pub mod lambda_step_metadata {
         /// To override the contents of this collection use [`set_output_parameters`](Self::set_output_parameters).
         ///
         /// <p>A list of the output parameters of the Lambda step.</p>
-        pub fn output_parameters(
-            mut self,
-            input: impl Into<crate::model::OutputParameter>,
-        ) -> Self {
+        pub fn output_parameters(mut self, input: crate::model::OutputParameter) -> Self {
             let mut v = self.output_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_parameters = Some(v);
             self
         }
@@ -41274,12 +41226,9 @@ pub mod callback_step_metadata {
         /// To override the contents of this collection use [`set_output_parameters`](Self::set_output_parameters).
         ///
         /// <p>A list of the output parameters of the callback step.</p>
-        pub fn output_parameters(
-            mut self,
-            input: impl Into<crate::model::OutputParameter>,
-        ) -> Self {
+        pub fn output_parameters(mut self, input: crate::model::OutputParameter) -> Self {
             let mut v = self.output_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_parameters = Some(v);
             self
         }
@@ -44381,9 +44330,9 @@ pub mod model_metadata_search_expression {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of filter objects.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ModelMetadataFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ModelMetadataFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -45513,12 +45462,9 @@ pub mod labeling_job_data_attributes {
         /// <p>Declares that your content is free of personally identifiable information or adult
         /// content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers that can view your task
         /// based on this information.</p>
-        pub fn content_classifiers(
-            mut self,
-            input: impl Into<crate::model::ContentClassifier>,
-        ) -> Self {
+        pub fn content_classifiers(mut self, input: crate::model::ContentClassifier) -> Self {
             let mut v = self.content_classifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_classifiers = Some(v);
             self
         }
@@ -50490,9 +50436,9 @@ pub mod device_summary {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>Models on the device.</p>
-        pub fn models(mut self, input: impl Into<crate::model::EdgeModelSummary>) -> Self {
+        pub fn models(mut self, input: crate::model::EdgeModelSummary) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }
@@ -52504,12 +52450,9 @@ pub mod auto_ml_candidate {
         /// To override the contents of this collection use [`set_candidate_steps`](Self::set_candidate_steps).
         ///
         /// <p>Information about the candidate's steps.</p>
-        pub fn candidate_steps(
-            mut self,
-            input: impl Into<crate::model::AutoMlCandidateStep>,
-        ) -> Self {
+        pub fn candidate_steps(mut self, input: crate::model::AutoMlCandidateStep) -> Self {
             let mut v = self.candidate_steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.candidate_steps = Some(v);
             self
         }
@@ -52541,10 +52484,10 @@ pub mod auto_ml_candidate {
         /// <p>Information about the inference container definitions.</p>
         pub fn inference_containers(
             mut self,
-            input: impl Into<crate::model::AutoMlContainerDefinition>,
+            input: crate::model::AutoMlContainerDefinition,
         ) -> Self {
             let mut v = self.inference_containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_containers = Some(v);
             self
         }
@@ -52710,9 +52653,9 @@ pub mod candidate_properties {
         /// To override the contents of this collection use [`set_candidate_metrics`](Self::set_candidate_metrics).
         ///
         /// <p>Information about the candidate metrics for an AutoML job.</p>
-        pub fn candidate_metrics(mut self, input: impl Into<crate::model::MetricDatum>) -> Self {
+        pub fn candidate_metrics(mut self, input: crate::model::MetricDatum) -> Self {
             let mut v = self.candidate_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.candidate_metrics = Some(v);
             self
         }
@@ -53865,10 +53808,10 @@ pub mod auto_ml_job_summary {
         /// <p>The list of reasons for partial failures within an AutoML job.</p>
         pub fn partial_failure_reasons(
             mut self,
-            input: impl Into<crate::model::AutoMlPartialFailureReason>,
+            input: crate::model::AutoMlPartialFailureReason,
         ) -> Self {
             let mut v = self.partial_failure_reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partial_failure_reasons = Some(v);
             self
         }
@@ -54738,9 +54681,9 @@ pub mod artifact_source {
         /// To override the contents of this collection use [`set_source_types`](Self::set_source_types).
         ///
         /// <p>A list of source types.</p>
-        pub fn source_types(mut self, input: impl Into<crate::model::ArtifactSourceType>) -> Self {
+        pub fn source_types(mut self, input: crate::model::ArtifactSourceType) -> Self {
             let mut v = self.source_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_types = Some(v);
             self
         }
@@ -73546,12 +73489,9 @@ pub mod model_configuration {
         /// To override the contents of this collection use [`set_environment_parameters`](Self::set_environment_parameters).
         ///
         /// <p>Defines the environment parameters that includes key, value types, and values.</p>
-        pub fn environment_parameters(
-            mut self,
-            input: impl Into<crate::model::EnvironmentParameter>,
-        ) -> Self {
+        pub fn environment_parameters(mut self, input: crate::model::EnvironmentParameter) -> Self {
             let mut v = self.environment_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_parameters = Some(v);
             self
         }
@@ -73969,10 +73909,10 @@ pub mod recommendation_job_stopping_conditions {
         /// complete the inference in the container.</p>
         pub fn model_latency_thresholds(
             mut self,
-            input: impl Into<crate::model::ModelLatencyThreshold>,
+            input: crate::model::ModelLatencyThreshold,
         ) -> Self {
             let mut v = self.model_latency_thresholds.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_latency_thresholds = Some(v);
             self
         }
@@ -74203,10 +74143,10 @@ pub mod recommendation_job_input_config {
         /// <p>Specifies the endpoint configuration to use for a job.</p>
         pub fn endpoint_configurations(
             mut self,
-            input: impl Into<crate::model::EndpointInputConfiguration>,
+            input: crate::model::EndpointInputConfiguration,
         ) -> Self {
             let mut v = self.endpoint_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_configurations = Some(v);
             self
         }
@@ -74398,10 +74338,10 @@ pub mod environment_parameter_ranges {
         /// <p>Specified a list of parameters for each category.</p>
         pub fn categorical_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::CategoricalParameter>,
+            input: crate::model::CategoricalParameter,
         ) -> Self {
             let mut v = self.categorical_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categorical_parameter_ranges = Some(v);
             self
         }
@@ -74639,9 +74579,9 @@ pub mod traffic_pattern {
         /// To override the contents of this collection use [`set_phases`](Self::set_phases).
         ///
         /// <p>Defines the phases traffic specification.</p>
-        pub fn phases(mut self, input: impl Into<crate::model::Phase>) -> Self {
+        pub fn phases(mut self, input: crate::model::Phase) -> Self {
             let mut v = self.phases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phases = Some(v);
             self
         }
@@ -74950,10 +74890,10 @@ pub mod hyper_parameter_tuning_job_warm_start_config {
         /// jobs for warm start tuning jobs.</p>
         pub fn parent_hyper_parameter_tuning_jobs(
             mut self,
-            input: impl Into<crate::model::ParentHyperParameterTuningJob>,
+            input: crate::model::ParentHyperParameterTuningJob,
         ) -> Self {
             let mut v = self.parent_hyper_parameter_tuning_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parent_hyper_parameter_tuning_jobs = Some(v);
             self
         }
@@ -75614,9 +75554,9 @@ pub mod hyper_parameter_training_job_definition {
         /// <p>An array of <a>Channel</a> objects that specify
         /// the
         /// input for the training jobs that the tuning job launches.</p>
-        pub fn input_data_config(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -76123,12 +76063,9 @@ pub mod hyper_parameter_algorithm_specification {
         /// <p>An array of <a>MetricDefinition</a> objects that specify the
         /// metrics
         /// that the algorithm emits.</p>
-        pub fn metric_definitions(
-            mut self,
-            input: impl Into<crate::model::MetricDefinition>,
-        ) -> Self {
+        pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
             let mut v = self.metric_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_definitions = Some(v);
             self
         }
@@ -76246,10 +76183,10 @@ pub mod parameter_ranges {
         /// integer hyperparameters that a hyperparameter tuning job searches.</p>
         pub fn integer_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::IntegerParameterRange>,
+            input: crate::model::IntegerParameterRange,
         ) -> Self {
             let mut v = self.integer_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.integer_parameter_ranges = Some(v);
             self
         }
@@ -76270,10 +76207,10 @@ pub mod parameter_ranges {
         /// continuous hyperparameters that a hyperparameter tuning job searches.</p>
         pub fn continuous_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::ContinuousParameterRange>,
+            input: crate::model::ContinuousParameterRange,
         ) -> Self {
             let mut v = self.continuous_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.continuous_parameter_ranges = Some(v);
             self
         }
@@ -76294,10 +76231,10 @@ pub mod parameter_ranges {
         /// of categorical hyperparameters that a hyperparameter tuning job searches.</p>
         pub fn categorical_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::CategoricalParameterRange>,
+            input: crate::model::CategoricalParameterRange,
         ) -> Self {
             let mut v = self.categorical_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categorical_parameter_ranges = Some(v);
             self
         }
@@ -79911,9 +79848,9 @@ pub mod data_capture_config {
         /// To override the contents of this collection use [`set_capture_options`](Self::set_capture_options).
         ///
         /// <p></p>
-        pub fn capture_options(mut self, input: impl Into<crate::model::CaptureOption>) -> Self {
+        pub fn capture_options(mut self, input: crate::model::CaptureOption) -> Self {
             let mut v = self.capture_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capture_options = Some(v);
             self
         }
@@ -80830,10 +80767,10 @@ pub mod pending_deployment_summary {
         /// <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
         pub fn production_variants(
             mut self,
-            input: impl Into<crate::model::PendingProductionVariantSummary>,
+            input: crate::model::PendingProductionVariantSummary,
         ) -> Self {
             let mut v = self.production_variants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.production_variants = Some(v);
             self
         }
@@ -81060,9 +80997,9 @@ pub mod pending_production_variant_summary {
         /// <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
         /// Container Registry paths of the inference images deployed on instances of this
         /// <code>ProductionVariant</code>.</p>
-        pub fn deployed_images(mut self, input: impl Into<crate::model::DeployedImage>) -> Self {
+        pub fn deployed_images(mut self, input: crate::model::DeployedImage) -> Self {
             let mut v = self.deployed_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployed_images = Some(v);
             self
         }
@@ -81168,12 +81105,9 @@ pub mod pending_production_variant_summary {
         /// To override the contents of this collection use [`set_variant_status`](Self::set_variant_status).
         ///
         /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-        pub fn variant_status(
-            mut self,
-            input: impl Into<crate::model::ProductionVariantStatus>,
-        ) -> Self {
+        pub fn variant_status(mut self, input: crate::model::ProductionVariantStatus) -> Self {
             let mut v = self.variant_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variant_status = Some(v);
             self
         }
@@ -87064,12 +86998,9 @@ pub mod algorithm_status_details {
         /// To override the contents of this collection use [`set_validation_statuses`](Self::set_validation_statuses).
         ///
         /// <p>The status of algorithm validation.</p>
-        pub fn validation_statuses(
-            mut self,
-            input: impl Into<crate::model::AlgorithmStatusItem>,
-        ) -> Self {
+        pub fn validation_statuses(mut self, input: crate::model::AlgorithmStatusItem) -> Self {
             let mut v = self.validation_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_statuses = Some(v);
             self
         }
@@ -87086,12 +87017,9 @@ pub mod algorithm_status_details {
         /// To override the contents of this collection use [`set_image_scan_statuses`](Self::set_image_scan_statuses).
         ///
         /// <p>The status of the scan of the algorithm's Docker image container.</p>
-        pub fn image_scan_statuses(
-            mut self,
-            input: impl Into<crate::model::AlgorithmStatusItem>,
-        ) -> Self {
+        pub fn image_scan_statuses(mut self, input: crate::model::AlgorithmStatusItem) -> Self {
             let mut v = self.image_scan_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_scan_statuses = Some(v);
             self
         }
@@ -87345,10 +87273,10 @@ pub mod algorithm_validation_specification {
         /// training job and batch transform job that Amazon SageMaker runs to validate your algorithm.</p>
         pub fn validation_profiles(
             mut self,
-            input: impl Into<crate::model::AlgorithmValidationProfile>,
+            input: crate::model::AlgorithmValidationProfile,
         ) -> Self {
             let mut v = self.validation_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_profiles = Some(v);
             self
         }
@@ -87781,9 +87709,9 @@ pub mod training_job_definition {
         ///
         /// <p>An array of <code>Channel</code> objects, each of which specifies an input
         /// source.</p>
-        pub fn input_data_config(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -88035,10 +87963,10 @@ pub mod training_specification {
         /// tuning.></p>
         pub fn supported_hyper_parameters(
             mut self,
-            input: impl Into<crate::model::HyperParameterSpecification>,
+            input: crate::model::HyperParameterSpecification,
         ) -> Self {
             let mut v = self.supported_hyper_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_hyper_parameters = Some(v);
             self
         }
@@ -88059,10 +87987,10 @@ pub mod training_specification {
         /// <p>A list of the instance types that this algorithm can use for training.</p>
         pub fn supported_training_instance_types(
             mut self,
-            input: impl Into<crate::model::TrainingInstanceType>,
+            input: crate::model::TrainingInstanceType,
         ) -> Self {
             let mut v = self.supported_training_instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_training_instance_types = Some(v);
             self
         }
@@ -88095,12 +88023,9 @@ pub mod training_specification {
         ///
         /// <p>A list of <code>MetricDefinition</code> objects, which are used for parsing metrics
         /// generated by the algorithm.</p>
-        pub fn metric_definitions(
-            mut self,
-            input: impl Into<crate::model::MetricDefinition>,
-        ) -> Self {
+        pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
             let mut v = self.metric_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_definitions = Some(v);
             self
         }
@@ -88119,12 +88044,9 @@ pub mod training_specification {
         ///
         /// <p>A list of <code>ChannelSpecification</code> objects, which specify the input sources
         /// to be used by the algorithm.</p>
-        pub fn training_channels(
-            mut self,
-            input: impl Into<crate::model::ChannelSpecification>,
-        ) -> Self {
+        pub fn training_channels(mut self, input: crate::model::ChannelSpecification) -> Self {
             let mut v = self.training_channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.training_channels = Some(v);
             self
         }
@@ -88145,12 +88067,12 @@ pub mod training_specification {
         /// metric in a hyperparameter tuning job.</p>
         pub fn supported_tuning_job_objective_metrics(
             mut self,
-            input: impl Into<crate::model::HyperParameterTuningJobObjective>,
+            input: crate::model::HyperParameterTuningJobObjective,
         ) -> Self {
             let mut v = self
                 .supported_tuning_job_objective_metrics
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_tuning_job_objective_metrics = Some(v);
             self
         }
@@ -88330,12 +88252,9 @@ pub mod channel_specification {
         /// To override the contents of this collection use [`set_supported_compression_types`](Self::set_supported_compression_types).
         ///
         /// <p>The allowed compression types, if data compression is used.</p>
-        pub fn supported_compression_types(
-            mut self,
-            input: impl Into<crate::model::CompressionType>,
-        ) -> Self {
+        pub fn supported_compression_types(mut self, input: crate::model::CompressionType) -> Self {
             let mut v = self.supported_compression_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_compression_types = Some(v);
             self
         }
@@ -88357,12 +88276,9 @@ pub mod channel_specification {
         /// This is the most commonly used input mode.</p>
         /// <p>In PIPE mode, Amazon SageMaker streams input data from the source directly to your
         /// algorithm without using the EBS volume.</p>
-        pub fn supported_input_modes(
-            mut self,
-            input: impl Into<crate::model::TrainingInputMode>,
-        ) -> Self {
+        pub fn supported_input_modes(mut self, input: crate::model::TrainingInputMode) -> Self {
             let mut v = self.supported_input_modes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_input_modes = Some(v);
             self
         }

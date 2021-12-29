@@ -153,12 +153,9 @@ pub mod search_organization_insights_output {
         ///
         /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
         /// account.</p>
-        pub fn proactive_insights(
-            mut self,
-            input: impl Into<crate::model::ProactiveInsightSummary>,
-        ) -> Self {
+        pub fn proactive_insights(mut self, input: crate::model::ProactiveInsightSummary) -> Self {
             let mut v = self.proactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_insights = Some(v);
             self
         }
@@ -177,12 +174,9 @@ pub mod search_organization_insights_output {
         ///
         /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
         /// account.</p>
-        pub fn reactive_insights(
-            mut self,
-            input: impl Into<crate::model::ReactiveInsightSummary>,
-        ) -> Self {
+        pub fn reactive_insights(mut self, input: crate::model::ReactiveInsightSummary) -> Self {
             let mut v = self.reactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_insights = Some(v);
             self
         }
@@ -283,12 +277,9 @@ pub mod search_insights_output {
         /// To override the contents of this collection use [`set_proactive_insights`](Self::set_proactive_insights).
         ///
         /// <p> The returned proactive insights. </p>
-        pub fn proactive_insights(
-            mut self,
-            input: impl Into<crate::model::ProactiveInsightSummary>,
-        ) -> Self {
+        pub fn proactive_insights(mut self, input: crate::model::ProactiveInsightSummary) -> Self {
             let mut v = self.proactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_insights = Some(v);
             self
         }
@@ -305,12 +296,9 @@ pub mod search_insights_output {
         /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
         ///
         /// <p> The returned reactive insights. </p>
-        pub fn reactive_insights(
-            mut self,
-            input: impl Into<crate::model::ReactiveInsightSummary>,
-        ) -> Self {
+        pub fn reactive_insights(mut self, input: crate::model::ReactiveInsightSummary) -> Self {
             let mut v = self.reactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_insights = Some(v);
             self
         }
@@ -456,9 +444,9 @@ pub mod list_recommendations_output {
         /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
         ///
         /// <p> An array of the requested recommendations. </p>
-        pub fn recommendations(mut self, input: impl Into<crate::model::Recommendation>) -> Self {
+        pub fn recommendations(mut self, input: crate::model::Recommendation) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendations = Some(v);
             self
         }
@@ -565,10 +553,10 @@ pub mod list_organization_insights_output {
         /// account.</p>
         pub fn proactive_insights(
             mut self,
-            input: impl Into<crate::model::ProactiveOrganizationInsightSummary>,
+            input: crate::model::ProactiveOrganizationInsightSummary,
         ) -> Self {
             let mut v = self.proactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_insights = Some(v);
             self
         }
@@ -591,10 +579,10 @@ pub mod list_organization_insights_output {
         /// account.</p>
         pub fn reactive_insights(
             mut self,
-            input: impl Into<crate::model::ReactiveOrganizationInsightSummary>,
+            input: crate::model::ReactiveOrganizationInsightSummary,
         ) -> Self {
             let mut v = self.reactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_insights = Some(v);
             self
         }
@@ -682,9 +670,9 @@ pub mod list_notification_channels_output {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p> An array that contains the requested notification channels. </p>
-        pub fn channels(mut self, input: impl Into<crate::model::NotificationChannel>) -> Self {
+        pub fn channels(mut self, input: crate::model::NotificationChannel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -783,12 +771,9 @@ pub mod list_insights_output {
         /// To override the contents of this collection use [`set_proactive_insights`](Self::set_proactive_insights).
         ///
         /// <p> The returned list of proactive insights. </p>
-        pub fn proactive_insights(
-            mut self,
-            input: impl Into<crate::model::ProactiveInsightSummary>,
-        ) -> Self {
+        pub fn proactive_insights(mut self, input: crate::model::ProactiveInsightSummary) -> Self {
             let mut v = self.proactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_insights = Some(v);
             self
         }
@@ -805,12 +790,9 @@ pub mod list_insights_output {
         /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
         ///
         /// <p> The returned list of reactive insights. </p>
-        pub fn reactive_insights(
-            mut self,
-            input: impl Into<crate::model::ReactiveInsightSummary>,
-        ) -> Self {
+        pub fn reactive_insights(mut self, input: crate::model::ReactiveInsightSummary) -> Self {
             let mut v = self.reactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_insights = Some(v);
             self
         }
@@ -895,9 +877,9 @@ pub mod list_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p> A list of the requested events. </p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1002,12 +984,9 @@ pub mod list_anomalies_for_insight_output {
         ///
         /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested
         /// anomalies </p>
-        pub fn proactive_anomalies(
-            mut self,
-            input: impl Into<crate::model::ProactiveAnomalySummary>,
-        ) -> Self {
+        pub fn proactive_anomalies(mut self, input: crate::model::ProactiveAnomalySummary) -> Self {
             let mut v = self.proactive_anomalies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_anomalies = Some(v);
             self
         }
@@ -1026,12 +1005,9 @@ pub mod list_anomalies_for_insight_output {
         ///
         /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested
         /// anomalies </p>
-        pub fn reactive_anomalies(
-            mut self,
-            input: impl Into<crate::model::ReactiveAnomalySummary>,
-        ) -> Self {
+        pub fn reactive_anomalies(mut self, input: crate::model::ReactiveAnomalySummary) -> Self {
             let mut v = self.reactive_anomalies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_anomalies = Some(v);
             self
         }
@@ -1298,9 +1274,9 @@ pub mod get_cost_estimation_output {
         ///
         /// <p>An array of <code>ResourceCost</code> objects that each contains details about the
         /// monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
-        pub fn costs(mut self, input: impl Into<crate::model::ServiceResourceCost>) -> Self {
+        pub fn costs(mut self, input: crate::model::ServiceResourceCost) -> Self {
             let mut v = self.costs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.costs = Some(v);
             self
         }
@@ -1573,12 +1549,9 @@ pub mod describe_resource_collection_health_output {
         /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an
         /// <code>InsightHealthOverview</code> object with the requested system health
         /// information. </p>
-        pub fn cloud_formation(
-            mut self,
-            input: impl Into<crate::model::CloudFormationHealth>,
-        ) -> Self {
+        pub fn cloud_formation(mut self, input: crate::model::CloudFormationHealth) -> Self {
             let mut v = self.cloud_formation.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_formation = Some(v);
             self
         }
@@ -1598,9 +1571,9 @@ pub mod describe_resource_collection_health_output {
         ///
         /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
         /// services associated with the resources in the collection.</p>
-        pub fn service(mut self, input: impl Into<crate::model::ServiceHealth>) -> Self {
+        pub fn service(mut self, input: crate::model::ServiceHealth) -> Self {
             let mut v = self.service.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service = Some(v);
             self
         }
@@ -1663,9 +1636,9 @@ pub mod describe_resource_collection_health_output {
         /// application might be <code>Devops-Guru-production-application/RDS</code> or
         /// <code>Devops-Guru-production-application/containers</code>.</p>
         /// </important>
-        pub fn tags(mut self, input: impl Into<crate::model::TagHealth>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagHealth) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1797,12 +1770,9 @@ pub mod describe_organization_resource_collection_health_output {
         /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an
         /// <code>InsightHealthOverview</code> object with the requested system health
         /// information.</p>
-        pub fn cloud_formation(
-            mut self,
-            input: impl Into<crate::model::CloudFormationHealth>,
-        ) -> Self {
+        pub fn cloud_formation(mut self, input: crate::model::CloudFormationHealth) -> Self {
             let mut v = self.cloud_formation.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_formation = Some(v);
             self
         }
@@ -1822,9 +1792,9 @@ pub mod describe_organization_resource_collection_health_output {
         ///
         /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
         /// services associated with the resources in the collection.</p>
-        pub fn service(mut self, input: impl Into<crate::model::ServiceHealth>) -> Self {
+        pub fn service(mut self, input: crate::model::ServiceHealth) -> Self {
             let mut v = self.service.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service = Some(v);
             self
         }
@@ -1842,9 +1812,9 @@ pub mod describe_organization_resource_collection_health_output {
         /// To override the contents of this collection use [`set_account`](Self::set_account).
         ///
         /// <p>The name of the organization's account.</p>
-        pub fn account(mut self, input: impl Into<crate::model::AccountHealth>) -> Self {
+        pub fn account(mut self, input: crate::model::AccountHealth) -> Self {
             let mut v = self.account.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account = Some(v);
             self
         }

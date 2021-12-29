@@ -154,12 +154,9 @@ pub mod policy_details {
         /// create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume
         /// snapshots from the volumes for an instance.</p>
         /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
-        pub fn resource_types(
-            mut self,
-            input: impl Into<crate::model::ResourceTypeValues>,
-        ) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ResourceTypeValues) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
@@ -183,12 +180,9 @@ pub mod policy_details {
         /// in your account, specify <code>OUTPOST</code>. </p>
         /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
         /// of the specified type with matching target tags across all of the Outposts in your account.</p>
-        pub fn resource_locations(
-            mut self,
-            input: impl Into<crate::model::ResourceLocationValues>,
-        ) -> Self {
+        pub fn resource_locations(mut self, input: crate::model::ResourceLocationValues) -> Self {
             let mut v = self.resource_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_locations = Some(v);
             self
         }
@@ -210,9 +204,9 @@ pub mod policy_details {
         ///
         /// <p>The single tag that identifies targeted resources for this policy.</p>
         /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
-        pub fn target_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn target_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.target_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_tags = Some(v);
             self
         }
@@ -232,9 +226,9 @@ pub mod policy_details {
         /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy
         /// can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
         /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
-        pub fn schedules(mut self, input: impl Into<crate::model::Schedule>) -> Self {
+        pub fn schedules(mut self, input: crate::model::Schedule) -> Self {
             let mut v = self.schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schedules = Some(v);
             self
         }
@@ -285,9 +279,9 @@ pub mod policy_details {
         /// <p>The actions to be performed when the event-based policy is triggered. You can specify
         /// only one action per policy.</p>
         /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -376,12 +370,9 @@ pub mod action {
         /// To override the contents of this collection use [`set_cross_region_copy`](Self::set_cross_region_copy).
         ///
         /// <p>The rule for copying shared snapshots across Regions.</p>
-        pub fn cross_region_copy(
-            mut self,
-            input: impl Into<crate::model::CrossRegionCopyAction>,
-        ) -> Self {
+        pub fn cross_region_copy(mut self, input: crate::model::CrossRegionCopyAction) -> Self {
             let mut v = self.cross_region_copy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cross_region_copy = Some(v);
             self
         }
@@ -1298,9 +1289,9 @@ pub mod schedule {
         ///
         /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition
         /// to the Amazon Web Services-added lifecycle tags.</p>
-        pub fn tags_to_add(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_to_add(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_to_add.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_to_add = Some(v);
             self
         }
@@ -1321,9 +1312,9 @@ pub mod schedule {
         /// executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two
         /// following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
         /// tags are only valid for EBS Snapshot Management – Instance policies.</p>
-        pub fn variable_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn variable_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.variable_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variable_tags = Some(v);
             self
         }
@@ -1386,12 +1377,9 @@ pub mod schedule {
         /// If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or
         /// to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three
         /// Regions or Outposts.</p>
-        pub fn cross_region_copy_rules(
-            mut self,
-            input: impl Into<crate::model::CrossRegionCopyRule>,
-        ) -> Self {
+        pub fn cross_region_copy_rules(mut self, input: crate::model::CrossRegionCopyRule) -> Self {
             let mut v = self.cross_region_copy_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cross_region_copy_rules = Some(v);
             self
         }
@@ -1412,9 +1400,9 @@ pub mod schedule {
         /// To override the contents of this collection use [`set_share_rules`](Self::set_share_rules).
         ///
         /// <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
-        pub fn share_rules(mut self, input: impl Into<crate::model::ShareRule>) -> Self {
+        pub fn share_rules(mut self, input: crate::model::ShareRule) -> Self {
             let mut v = self.share_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.share_rules = Some(v);
             self
         }

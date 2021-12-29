@@ -214,8 +214,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the
         /// resource operation request.</p>
-        pub fn request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_token(inp);
+        pub fn request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_token(signature.into());
             self
         }
         /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the
@@ -292,8 +292,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(signature.into());
             self
         }
         /// <p>The name of the resource type.</p>
@@ -302,8 +302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(inp);
+        pub fn type_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_version_id(signature.into());
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
@@ -319,8 +319,8 @@ pub mod fluent_builders {
         /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
         /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
@@ -336,8 +336,8 @@ pub mod fluent_builders {
         /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
         /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
@@ -368,8 +368,8 @@ pub mod fluent_builders {
         /// <p>For more information about the properties of a specific resource, refer to the related
         /// topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>Amazon Web Services
         /// CloudFormation Users Guide</i>.</p>
-        pub fn desired_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.desired_state(inp);
+        pub fn desired_state(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.desired_state(signature.into());
             self
         }
         /// <p>Structured data format representing the desired state of the resource, consisting of that
@@ -464,8 +464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(signature.into());
             self
         }
         /// <p>The name of the resource type.</p>
@@ -474,8 +474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(inp);
+        pub fn type_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_version_id(signature.into());
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
@@ -491,8 +491,8 @@ pub mod fluent_builders {
         /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
         /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
@@ -508,8 +508,8 @@ pub mod fluent_builders {
         /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
         /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
@@ -524,8 +524,8 @@ pub mod fluent_builders {
         /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
         /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>The identifier for the resource.</p>
@@ -600,8 +600,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(signature.into());
             self
         }
         /// <p>The name of the resource type.</p>
@@ -610,8 +610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(inp);
+        pub fn type_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_version_id(signature.into());
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
@@ -627,8 +627,8 @@ pub mod fluent_builders {
         /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
         /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
@@ -644,8 +644,8 @@ pub mod fluent_builders {
         /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
         /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>The identifier for the resource.</p>
@@ -721,8 +721,8 @@ pub mod fluent_builders {
         /// <p>A unique token used to track the progress of the resource operation request.</p>
         /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource
         /// operation request.</p>
-        pub fn request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_token(inp);
+        pub fn request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_token(signature.into());
             self
         }
         /// <p>A unique token used to track the progress of the resource operation request.</p>
@@ -805,8 +805,8 @@ pub mod fluent_builders {
         /// that you can assign to the <code>NextToken</code> request parameter to get the next set of
         /// results.</p>
         /// <p>The default is <code>20</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
@@ -819,8 +819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
@@ -831,9 +831,9 @@ pub mod fluent_builders {
         /// <p>The filter criteria to apply to the requests returned.</p>
         pub fn resource_request_status_filter(
             mut self,
-            inp: crate::model::ResourceRequestStatusFilter,
+            signature: crate::model::ResourceRequestStatusFilter,
         ) -> Self {
-            self.inner = self.inner.resource_request_status_filter(inp);
+            self.inner = self.inner.resource_request_status_filter(signature);
             self
         }
         /// <p>The filter criteria to apply to the requests returned.</p>
@@ -908,8 +908,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(signature.into());
             self
         }
         /// <p>The name of the resource type.</p>
@@ -918,8 +918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(inp);
+        pub fn type_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_version_id(signature.into());
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
@@ -935,8 +935,8 @@ pub mod fluent_builders {
         /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
         /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
@@ -949,8 +949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
@@ -963,8 +963,8 @@ pub mod fluent_builders {
         /// that you can assign to the <code>NextToken</code> request parameter to get the next set of
         /// results.</p>
         /// <p>The default is <code>20</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
@@ -977,8 +977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource model to use to select the resources to return.</p>
-        pub fn resource_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_model(inp);
+        pub fn resource_model(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_model(signature.into());
             self
         }
         /// <p>The resource model to use to select the resources to return.</p>
@@ -1062,8 +1062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource type.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(signature.into());
             self
         }
         /// <p>The name of the resource type.</p>
@@ -1072,8 +1072,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-        pub fn type_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_version_id(inp);
+        pub fn type_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_version_id(signature.into());
             self
         }
         /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
@@ -1089,8 +1089,8 @@ pub mod fluent_builders {
         /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
         /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
@@ -1106,8 +1106,8 @@ pub mod fluent_builders {
         /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
         /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
@@ -1122,8 +1122,8 @@ pub mod fluent_builders {
         /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
         /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>The identifier for the resource.</p>
@@ -1137,8 +1137,8 @@ pub mod fluent_builders {
         /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent
         /// the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User
         /// Guide</i>.</p>
-        pub fn patch_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_document(inp);
+        pub fn patch_document(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_document(signature.into());
             self
         }
         /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent

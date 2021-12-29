@@ -181,12 +181,9 @@ pub mod describe_accelerator_types_output {
         /// <p>
         /// The available accelerator types.
         /// </p>
-        pub fn accelerator_types(
-            mut self,
-            input: impl Into<crate::model::AcceleratorType>,
-        ) -> Self {
+        pub fn accelerator_types(mut self, input: crate::model::AcceleratorType) -> Self {
             let mut v = self.accelerator_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_types = Some(v);
             self
         }
@@ -271,12 +268,9 @@ pub mod describe_accelerators_output {
         /// <p>
         /// The details of the Elastic Inference Accelerators.
         /// </p>
-        pub fn accelerator_set(
-            mut self,
-            input: impl Into<crate::model::ElasticInferenceAccelerator>,
-        ) -> Self {
+        pub fn accelerator_set(mut self, input: crate::model::ElasticInferenceAccelerator) -> Self {
             let mut v = self.accelerator_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_set = Some(v);
             self
         }
@@ -369,10 +363,10 @@ pub mod describe_accelerator_offerings_output {
         /// </p>
         pub fn accelerator_type_offerings(
             mut self,
-            input: impl Into<crate::model::AcceleratorTypeOffering>,
+            input: crate::model::AcceleratorTypeOffering,
         ) -> Self {
             let mut v = self.accelerator_type_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerator_type_offerings = Some(v);
             self
         }

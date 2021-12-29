@@ -32,9 +32,9 @@ pub mod create_access_point_input {
         /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
         /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -493,9 +493,9 @@ pub mod create_file_system_input {
         /// <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
         /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -884,9 +884,9 @@ pub mod create_tags_input {
         ///
         /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
         /// pair. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4572,12 +4572,9 @@ pub mod put_lifecycle_configuration_input {
         /// an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>.
         /// See the example requests in the following section for more information.</p>
         /// </note>
-        pub fn lifecycle_policies(
-            mut self,
-            input: impl Into<crate::model::LifecyclePolicy>,
-        ) -> Self {
+        pub fn lifecycle_policies(mut self, input: crate::model::LifecyclePolicy) -> Self {
             let mut v = self.lifecycle_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_policies = Some(v);
             self
         }
@@ -4786,9 +4783,9 @@ pub mod tag_resource_input {
         ///
         /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
         /// pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

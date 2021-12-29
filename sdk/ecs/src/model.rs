@@ -637,10 +637,10 @@ pub mod task_set {
         /// <p>The capacity provider strategy that are associated with the task set.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_provider_strategy = Some(v);
             self
         }
@@ -704,9 +704,9 @@ pub mod task_set {
         /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
         ///
         /// <p>Details on a load balancer that are used with a task set.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -725,12 +725,9 @@ pub mod task_set {
         /// <p>The details for the service discovery registries to assign to this task set. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// discovery</a>.</p>
-        pub fn service_registries(
-            mut self,
-            input: impl Into<crate::model::ServiceRegistry>,
-        ) -> Self {
+        pub fn service_registries(mut self, input: crate::model::ServiceRegistry) -> Self {
             let mut v = self.service_registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_registries = Some(v);
             self
         }
@@ -863,9 +860,9 @@ pub mod task_set {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2700,9 +2697,9 @@ pub mod service {
         /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the
         /// container name, and the container port to access from the load balancer. The container
         /// name is as it appears in a container definition.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -2723,12 +2720,9 @@ pub mod service {
         /// <p>The details for the service discovery registries to assign to this service. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.</p>
-        pub fn service_registries(
-            mut self,
-            input: impl Into<crate::model::ServiceRegistry>,
-        ) -> Self {
+        pub fn service_registries(mut self, input: crate::model::ServiceRegistry) -> Self {
             let mut v = self.service_registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_registries = Some(v);
             self
         }
@@ -2809,10 +2803,10 @@ pub mod service {
         /// this field is omitted if the service was created using a launch type.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_provider_strategy = Some(v);
             self
         }
@@ -2907,9 +2901,9 @@ pub mod service {
         /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
         /// deployment. An Amazon ECS task set includes details such as the desired number of tasks, how
         /// many tasks are running, and whether the task set serves production traffic.</p>
-        pub fn task_sets(mut self, input: impl Into<crate::model::TaskSet>) -> Self {
+        pub fn task_sets(mut self, input: crate::model::TaskSet) -> Self {
             let mut v = self.task_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_sets = Some(v);
             self
         }
@@ -2928,9 +2922,9 @@ pub mod service {
         /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
         ///
         /// <p>The current state of deployments for the service.</p>
-        pub fn deployments(mut self, input: impl Into<crate::model::Deployment>) -> Self {
+        pub fn deployments(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments = Some(v);
             self
         }
@@ -2960,9 +2954,9 @@ pub mod service {
         ///
         /// <p>The event stream for your service. A maximum of 100 of the latest events are
         /// displayed.</p>
-        pub fn events(mut self, input: impl Into<crate::model::ServiceEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::ServiceEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -2993,12 +2987,9 @@ pub mod service {
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
         /// <p>The placement constraints for the tasks in the service.</p>
-        pub fn placement_constraints(
-            mut self,
-            input: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_constraints = Some(v);
             self
         }
@@ -3015,12 +3006,9 @@ pub mod service {
         /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
         ///
         /// <p>The placement strategy that determines how tasks for the service are placed.</p>
-        pub fn placement_strategy(
-            mut self,
-            input: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_strategy = Some(v);
             self
         }
@@ -3180,9 +3168,9 @@ pub mod service {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4490,10 +4478,10 @@ pub mod deployment {
         /// <p>The capacity provider strategy that the deployment is using.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_provider_strategy = Some(v);
             self
         }
@@ -5596,9 +5584,9 @@ pub mod container_instance {
         /// Amazon ECS container agent (at instance registration time) and any task containers that have
         /// reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
         /// network mode). Any port that's not specified here is available for new tasks.</p>
-        pub fn remaining_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn remaining_resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.remaining_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remaining_resources = Some(v);
             self
         }
@@ -5625,9 +5613,9 @@ pub mod container_instance {
         /// can be allocated on this container instance to tasks. For port resource types, this
         /// parameter describes the ports that were reserved by the Amazon ECS container agent when it
         /// registered the container instance with Amazon ECS.</p>
-        pub fn registered_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn registered_resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.registered_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.registered_resources = Some(v);
             self
         }
@@ -5761,9 +5749,9 @@ pub mod container_instance {
         /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at
         /// instance registration or manually with the <a>PutAttributes</a>
         /// operation.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -5796,9 +5784,9 @@ pub mod container_instance {
         ///
         /// <p>The resources attached to a container instance, such as elastic network
         /// interfaces.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
+        pub fn attachments(mut self, input: crate::model::Attachment) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -5848,9 +5836,9 @@ pub mod container_instance {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6002,12 +5990,9 @@ pub mod container_instance_health_status {
         ///
         /// <p>An array of objects representing the details of the container instance health
         /// status.</p>
-        pub fn details(
-            mut self,
-            input: impl Into<crate::model::InstanceHealthCheckResult>,
-        ) -> Self {
+        pub fn details(mut self, input: crate::model::InstanceHealthCheckResult) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.details = Some(v);
             self
         }
@@ -6376,9 +6361,9 @@ pub mod attachment {
         ///
         /// <p>Details of the attachment. For elastic network interfaces, this includes the network
         /// interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
-        pub fn details(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn details(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.details = Some(v);
             self
         }
@@ -7674,9 +7659,9 @@ pub mod cluster {
         /// <p>drainingFargateServiceCount</p>
         /// </li>
         /// </ul>
-        pub fn statistics(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn statistics(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statistics = Some(v);
             self
         }
@@ -7752,9 +7737,9 @@ pub mod cluster {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7804,9 +7789,9 @@ pub mod cluster {
         ///
         /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights
         /// is enabled or disabled for a cluster.</p>
-        pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
             let mut v = self.settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.settings = Some(v);
             self
         }
@@ -7847,10 +7832,10 @@ pub mod cluster {
         /// capacity provider strategy is used.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
-            input: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
             let mut v = self.default_capacity_provider_strategy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_capacity_provider_strategy = Some(v);
             self
         }
@@ -7870,9 +7855,9 @@ pub mod cluster {
         ///
         /// <p>The resources attached to a cluster. When using a capacity provider with a cluster,
         /// the Auto Scaling plan that's created is returned as a cluster attachment.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
+        pub fn attachments(mut self, input: crate::model::Attachment) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -8962,9 +8947,9 @@ pub mod capacity_provider {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10113,9 +10098,9 @@ pub mod container_state_change {
         /// To override the contents of this collection use [`set_network_bindings`](Self::set_network_bindings).
         ///
         /// <p>Any network bindings that are associated with the container.</p>
-        pub fn network_bindings(mut self, input: impl Into<crate::model::NetworkBinding>) -> Self {
+        pub fn network_bindings(mut self, input: crate::model::NetworkBinding) -> Self {
             let mut v = self.network_bindings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_bindings = Some(v);
             self
         }
@@ -10913,9 +10898,9 @@ pub mod task {
         ///
         /// <p>The Elastic Network Adapter that's associated with the task if the task uses the
         /// <code>awsvpc</code> network mode.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
+        pub fn attachments(mut self, input: crate::model::Attachment) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -10933,9 +10918,9 @@ pub mod task {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes of the task</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -11029,9 +11014,9 @@ pub mod task {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>The containers that's associated with the task.</p>
-        pub fn containers(mut self, input: impl Into<crate::model::Container>) -> Self {
+        pub fn containers(mut self, input: crate::model::Container) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.containers = Some(v);
             self
         }
@@ -11220,12 +11205,9 @@ pub mod task {
         /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
         ///
         /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-        pub fn inference_accelerators(
-            mut self,
-            input: impl Into<crate::model::InferenceAccelerator>,
-        ) -> Self {
+        pub fn inference_accelerators(mut self, input: crate::model::InferenceAccelerator) -> Self {
             let mut v = self.inference_accelerators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_accelerators = Some(v);
             self
         }
@@ -11532,9 +11514,9 @@ pub mod task {
         /// this prefix do not count against your tags per resource limit.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11949,12 +11931,9 @@ pub mod task_override {
         /// To override the contents of this collection use [`set_container_overrides`](Self::set_container_overrides).
         ///
         /// <p>One or more container overrides that are sent to a task.</p>
-        pub fn container_overrides(
-            mut self,
-            input: impl Into<crate::model::ContainerOverride>,
-        ) -> Self {
+        pub fn container_overrides(mut self, input: crate::model::ContainerOverride) -> Self {
             let mut v = self.container_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.container_overrides = Some(v);
             self
         }
@@ -11983,10 +11962,10 @@ pub mod task_override {
         /// <p>The Elastic Inference accelerator override for the task.</p>
         pub fn inference_accelerator_overrides(
             mut self,
-            input: impl Into<crate::model::InferenceAcceleratorOverride>,
+            input: crate::model::InferenceAcceleratorOverride,
         ) -> Self {
             let mut v = self.inference_accelerator_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_accelerator_overrides = Some(v);
             self
         }
@@ -12339,9 +12318,9 @@ pub mod container_override {
         /// variables, which are added to the container at launch, or you can override the existing
         /// environment variables from the Docker image or the task definition. You must also
         /// specify a container name.</p>
-        pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn environment(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
@@ -12362,12 +12341,9 @@ pub mod container_override {
         ///
         /// <p>A list of files containing the environment variables to pass to a container, instead
         /// of the value from the container definition.</p>
-        pub fn environment_files(
-            mut self,
-            input: impl Into<crate::model::EnvironmentFile>,
-        ) -> Self {
+        pub fn environment_files(mut self, input: crate::model::EnvironmentFile) -> Self {
             let mut v = self.environment_files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_files = Some(v);
             self
         }
@@ -12424,12 +12400,9 @@ pub mod container_override {
         ///
         /// <p>The type and amount of a resource to assign to a container, instead of the default
         /// value from the task definition. The only supported resource is a GPU.</p>
-        pub fn resource_requirements(
-            mut self,
-            input: impl Into<crate::model::ResourceRequirement>,
-        ) -> Self {
+        pub fn resource_requirements(mut self, input: crate::model::ResourceRequirement) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_requirements = Some(v);
             self
         }
@@ -13204,9 +13177,9 @@ pub mod container {
         /// To override the contents of this collection use [`set_network_bindings`](Self::set_network_bindings).
         ///
         /// <p>The network bindings associated with the container.</p>
-        pub fn network_bindings(mut self, input: impl Into<crate::model::NetworkBinding>) -> Self {
+        pub fn network_bindings(mut self, input: crate::model::NetworkBinding) -> Self {
             let mut v = self.network_bindings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_bindings = Some(v);
             self
         }
@@ -13223,12 +13196,9 @@ pub mod container {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>The network interfaces associated with the container.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -13262,9 +13232,9 @@ pub mod container {
         /// To override the contents of this collection use [`set_managed_agents`](Self::set_managed_agents).
         ///
         /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
-        pub fn managed_agents(mut self, input: impl Into<crate::model::ManagedAgent>) -> Self {
+        pub fn managed_agents(mut self, input: crate::model::ManagedAgent) -> Self {
             let mut v = self.managed_agents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_agents = Some(v);
             self
         }
@@ -14224,12 +14194,9 @@ pub mod task_definition {
         /// that make up your task. For more information about container definition parameters and
         /// defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
         /// Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn container_definitions(
-            mut self,
-            input: impl Into<crate::model::ContainerDefinition>,
-        ) -> Self {
+        pub fn container_definitions(mut self, input: crate::model::ContainerDefinition) -> Self {
             let mut v = self.container_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.container_definitions = Some(v);
             self
         }
@@ -14403,9 +14370,9 @@ pub mod task_definition {
         /// <p>The <code>host</code> and <code>sourcePath</code> parameters aren't supported for
         /// tasks run on Fargate.</p>
         /// </note>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -14448,9 +14415,9 @@ pub mod task_definition {
         /// <note>
         /// <p>This parameter isn't supported for tasks run on Fargate.</p>
         /// </note>
-        pub fn requires_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn requires_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.requires_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requires_attributes = Some(v);
             self
         }
@@ -14480,10 +14447,10 @@ pub mod task_definition {
         /// </note>
         pub fn placement_constraints(
             mut self,
-            input: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
+            input: crate::model::TaskDefinitionPlacementConstraint,
         ) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_constraints = Some(v);
             self
         }
@@ -14507,9 +14474,9 @@ pub mod task_definition {
         /// <p>The task launch types the task definition validated against during task definition
         /// registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn compatibilities(mut self, input: impl Into<crate::model::Compatibility>) -> Self {
+        pub fn compatibilities(mut self, input: crate::model::Compatibility) -> Self {
             let mut v = self.compatibilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatibilities = Some(v);
             self
         }
@@ -14548,12 +14515,9 @@ pub mod task_definition {
         ///
         /// <p>The task launch types the task definition was validated against. To determine which
         /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.</p>
-        pub fn requires_compatibilities(
-            mut self,
-            input: impl Into<crate::model::Compatibility>,
-        ) -> Self {
+        pub fn requires_compatibilities(mut self, input: crate::model::Compatibility) -> Self {
             let mut v = self.requires_compatibilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requires_compatibilities = Some(v);
             self
         }
@@ -14685,12 +14649,9 @@ pub mod task_definition {
         /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
         ///
         /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-        pub fn inference_accelerators(
-            mut self,
-            input: impl Into<crate::model::InferenceAccelerator>,
-        ) -> Self {
+        pub fn inference_accelerators(mut self, input: crate::model::InferenceAccelerator) -> Self {
             let mut v = self.inference_accelerators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inference_accelerators = Some(v);
             self
         }
@@ -15145,9 +15106,9 @@ pub mod proxy_configuration {
         /// <code>ProxyEgressPort</code>. It can be an empty list.</p>
         /// </li>
         /// </ul>
-        pub fn properties(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn properties(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }
@@ -18941,9 +18902,9 @@ pub mod container_definition {
         /// <code>networkBindings</code> section <a>DescribeTasks</a>
         /// responses.</p>
         /// </note>
-        pub fn port_mappings(mut self, input: impl Into<crate::model::PortMapping>) -> Self {
+        pub fn port_mappings(mut self, input: crate::model::PortMapping) -> Self {
             let mut v = self.port_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_mappings = Some(v);
             self
         }
@@ -19078,9 +19039,9 @@ pub mod container_definition {
         /// <p>We don't recommend that you use plaintext environment variables for sensitive
         /// information, such as credential data.</p>
         /// </important>
-        pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
+        pub fn environment(mut self, input: crate::model::KeyValuePair) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
@@ -19116,12 +19077,9 @@ pub mod container_definition {
         /// same variable, they're processed from the top down. We recommend that you use unique
         /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
         /// Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn environment_files(
-            mut self,
-            input: impl Into<crate::model::EnvironmentFile>,
-        ) -> Self {
+        pub fn environment_files(mut self, input: crate::model::EnvironmentFile) -> Self {
             let mut v = self.environment_files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_files = Some(v);
             self
         }
@@ -19156,9 +19114,9 @@ pub mod container_definition {
         /// <p>Windows containers can mount whole directories on the same drive as
         /// <code>$env:ProgramData</code>. Windows containers can't mount directories on a
         /// different drive, and mount point can't be across drives.</p>
-        pub fn mount_points(mut self, input: impl Into<crate::model::MountPoint>) -> Self {
+        pub fn mount_points(mut self, input: crate::model::MountPoint) -> Self {
             let mut v = self.mount_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mount_points = Some(v);
             self
         }
@@ -19182,9 +19140,9 @@ pub mod container_definition {
         /// <p>Data volumes to mount from another container. This parameter maps to
         /// <code>VolumesFrom</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
         /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volumes-from</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-        pub fn volumes_from(mut self, input: impl Into<crate::model::VolumeFrom>) -> Self {
+        pub fn volumes_from(mut self, input: crate::model::VolumeFrom) -> Self {
             let mut v = self.volumes_from.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes_from = Some(v);
             self
         }
@@ -19225,9 +19183,9 @@ pub mod container_definition {
         ///
         /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
         /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn secrets(mut self, input: impl Into<crate::model::Secret>) -> Self {
+        pub fn secrets(mut self, input: crate::model::Secret) -> Self {
             let mut v = self.secrets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secrets = Some(v);
             self
         }
@@ -19266,9 +19224,9 @@ pub mod container_definition {
         /// <p>Windows platform version <code>1.0.0</code> or later.</p>
         /// </li>
         /// </ul>
-        pub fn depends_on(mut self, input: impl Into<crate::model::ContainerDependency>) -> Self {
+        pub fn depends_on(mut self, input: crate::model::ContainerDependency) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.depends_on = Some(v);
             self
         }
@@ -19715,9 +19673,9 @@ pub mod container_definition {
         /// <p>This parameter isn't supported for Windows containers or tasks that use the
         /// <code>awsvpc</code> network mode.</p>
         /// </note>
-        pub fn extra_hosts(mut self, input: impl Into<crate::model::HostEntry>) -> Self {
+        pub fn extra_hosts(mut self, input: crate::model::HostEntry) -> Self {
             let mut v = self.extra_hosts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extra_hosts = Some(v);
             self
         }
@@ -19880,9 +19838,9 @@ pub mod container_definition {
         /// <note>
         /// <p>This parameter is not supported for Windows containers.</p>
         /// </note>
-        pub fn ulimits(mut self, input: impl Into<crate::model::Ulimit>) -> Self {
+        pub fn ulimits(mut self, input: crate::model::Ulimit) -> Self {
             let mut v = self.ulimits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ulimits = Some(v);
             self
         }
@@ -20012,9 +19970,9 @@ pub mod container_definition {
         /// <code>host</code> network mode, it changes the container instance's namespaced
         /// kernel parameters as well as the containers.</p>
         /// </note>
-        pub fn system_controls(mut self, input: impl Into<crate::model::SystemControl>) -> Self {
+        pub fn system_controls(mut self, input: crate::model::SystemControl) -> Self {
             let mut v = self.system_controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.system_controls = Some(v);
             self
         }
@@ -20043,12 +20001,9 @@ pub mod container_definition {
         ///
         /// <p>The type and amount of a resource to assign to a container. The only supported
         /// resource is a GPU.</p>
-        pub fn resource_requirements(
-            mut self,
-            input: impl Into<crate::model::ResourceRequirement>,
-        ) -> Self {
+        pub fn resource_requirements(mut self, input: crate::model::ResourceRequirement) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_requirements = Some(v);
             self
         }
@@ -20948,9 +20903,9 @@ pub mod log_configuration {
         ///
         /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
         /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn secret_options(mut self, input: impl Into<crate::model::Secret>) -> Self {
+        pub fn secret_options(mut self, input: crate::model::Secret) -> Self {
             let mut v = self.secret_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.secret_options = Some(v);
             self
         }
@@ -21974,9 +21929,9 @@ pub mod linux_parameters {
         /// <p>If you're using tasks that use the Fargate launch type, the
         /// <code>devices</code> parameter isn't supported.</p>
         /// </note>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -22040,9 +21995,9 @@ pub mod linux_parameters {
         /// <p>If you're using tasks that use the Fargate launch type, the
         /// <code>tmpfs</code> parameter isn't supported.</p>
         /// </note>
-        pub fn tmpfs(mut self, input: impl Into<crate::model::Tmpfs>) -> Self {
+        pub fn tmpfs(mut self, input: crate::model::Tmpfs) -> Self {
             let mut v = self.tmpfs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tmpfs = Some(v);
             self
         }
@@ -22356,12 +22311,9 @@ pub mod device {
         /// <p>The explicit permissions to provide to the container for the device. By default, the
         /// container has permissions for <code>read</code>, <code>write</code>, and
         /// <code>mknod</code> for the device.</p>
-        pub fn permissions(
-            mut self,
-            input: impl Into<crate::model::DeviceCgroupPermission>,
-        ) -> Self {
+        pub fn permissions(mut self, input: crate::model::DeviceCgroupPermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }

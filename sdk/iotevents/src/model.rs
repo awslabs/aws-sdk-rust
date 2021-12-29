@@ -266,9 +266,9 @@ pub mod input_definition {
         /// message contains a JSON payload, and those attributes (and their paired values) specified here
         /// are available for use in the <code>condition</code> expressions used by detectors that monitor
         /// this input. </p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -840,9 +840,9 @@ pub mod detector_model_definition {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>Information about the states of the detector.</p>
-        pub fn states(mut self, input: impl Into<crate::model::State>) -> Self {
+        pub fn states(mut self, input: crate::model::State) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -1053,9 +1053,9 @@ pub mod on_exit_lifecycle {
         ///
         /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the
         /// <code>condition</code> is <code>TRUE</code>.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1162,9 +1162,9 @@ pub mod event {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions to be performed.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -3832,9 +3832,9 @@ pub mod on_enter_lifecycle {
         ///
         /// <p>Specifies the actions that are performed when the state is entered and the
         /// <code>condition</code> is <code>TRUE</code>.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -3907,9 +3907,9 @@ pub mod on_input_lifecycle {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -3927,12 +3927,9 @@ pub mod on_input_lifecycle {
         ///
         /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code>
         /// evaluates to TRUE.</p>
-        pub fn transition_events(
-            mut self,
-            input: impl Into<crate::model::TransitionEvent>,
-        ) -> Self {
+        pub fn transition_events(mut self, input: crate::model::TransitionEvent) -> Self {
             let mut v = self.transition_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transition_events = Some(v);
             self
         }
@@ -4044,9 +4041,9 @@ pub mod transition_event {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions to be performed.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -4415,9 +4412,9 @@ pub mod alarm_event_actions {
         ///
         /// <p>Specifies one or more supported actions to receive notifications when the alarm state
         /// changes.</p>
-        pub fn alarm_actions(mut self, input: impl Into<crate::model::AlarmAction>) -> Self {
+        pub fn alarm_actions(mut self, input: crate::model::AlarmAction) -> Self {
             let mut v = self.alarm_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_actions = Some(v);
             self
         }
@@ -5238,12 +5235,9 @@ pub mod alarm_notification {
         ///
         /// <p>Contains the notification settings of an alarm model.
         /// The settings apply to all alarms that were created based on this alarm model.</p>
-        pub fn notification_actions(
-            mut self,
-            input: impl Into<crate::model::NotificationAction>,
-        ) -> Self {
+        pub fn notification_actions(mut self, input: crate::model::NotificationAction) -> Self {
             let mut v = self.notification_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_actions = Some(v);
             self
         }
@@ -5341,12 +5335,9 @@ pub mod notification_action {
         /// To override the contents of this collection use [`set_sms_configurations`](Self::set_sms_configurations).
         ///
         /// <p>Contains the configuration information of SMS notifications.</p>
-        pub fn sms_configurations(
-            mut self,
-            input: impl Into<crate::model::SmsConfiguration>,
-        ) -> Self {
+        pub fn sms_configurations(mut self, input: crate::model::SmsConfiguration) -> Self {
             let mut v = self.sms_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sms_configurations = Some(v);
             self
         }
@@ -5363,12 +5354,9 @@ pub mod notification_action {
         /// To override the contents of this collection use [`set_email_configurations`](Self::set_email_configurations).
         ///
         /// <p>Contains the configuration information of email notifications.</p>
-        pub fn email_configurations(
-            mut self,
-            input: impl Into<crate::model::EmailConfiguration>,
-        ) -> Self {
+        pub fn email_configurations(mut self, input: crate::model::EmailConfiguration) -> Self {
             let mut v = self.email_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.email_configurations = Some(v);
             self
         }
@@ -5560,9 +5548,9 @@ pub mod email_recipients {
         /// To override the contents of this collection use [`set_to`](Self::set_to).
         ///
         /// <p>Specifies one or more recipients who receive the email.</p>
-        pub fn to(mut self, input: impl Into<crate::model::RecipientDetail>) -> Self {
+        pub fn to(mut self, input: crate::model::RecipientDetail) -> Self {
             let mut v = self.to.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.to = Some(v);
             self
         }
@@ -5880,9 +5868,9 @@ pub mod sms_configuration {
         /// <important>
         /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
         /// </important>
-        pub fn recipients(mut self, input: impl Into<crate::model::RecipientDetail>) -> Self {
+        pub fn recipients(mut self, input: crate::model::RecipientDetail) -> Self {
             let mut v = self.recipients.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recipients = Some(v);
             self
         }
@@ -6385,12 +6373,9 @@ pub mod logging_options {
         ///
         /// <p>Information that identifies those detector models and their detectors (instances) for
         /// which the logging level is given.</p>
-        pub fn detector_debug_options(
-            mut self,
-            input: impl Into<crate::model::DetectorDebugOption>,
-        ) -> Self {
+        pub fn detector_debug_options(mut self, input: crate::model::DetectorDebugOption) -> Self {
             let mut v = self.detector_debug_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detector_debug_options = Some(v);
             self
         }
@@ -8218,9 +8203,9 @@ pub mod analysis_result {
         ///
         /// <p>Contains one or more locations that you can use to locate the fields in your detector
         /// model that the analysis result references.</p>
-        pub fn locations(mut self, input: impl Into<crate::model::AnalysisResultLocation>) -> Self {
+        pub fn locations(mut self, input: crate::model::AnalysisResultLocation) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.locations = Some(v);
             self
         }

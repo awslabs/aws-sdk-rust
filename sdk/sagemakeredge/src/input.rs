@@ -184,9 +184,9 @@ pub mod send_heartbeat_input {
         /// To override the contents of this collection use [`set_agent_metrics`](Self::set_agent_metrics).
         ///
         /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-        pub fn agent_metrics(mut self, input: impl Into<crate::model::EdgeMetric>) -> Self {
+        pub fn agent_metrics(mut self, input: crate::model::EdgeMetric) -> Self {
             let mut v = self.agent_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_metrics = Some(v);
             self
         }
@@ -203,9 +203,9 @@ pub mod send_heartbeat_input {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>Returns a list of models deployed on the the device.</p>
-        pub fn models(mut self, input: impl Into<crate::model::Model>) -> Self {
+        pub fn models(mut self, input: crate::model::Model) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }

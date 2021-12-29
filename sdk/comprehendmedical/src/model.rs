@@ -1029,9 +1029,9 @@ pub mod rx_norm_entity {
         /// InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>,
         /// <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and
         /// <code>STRENGTH</code>.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::RxNormAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::RxNormAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1051,9 +1051,9 @@ pub mod rx_norm_entity {
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
         /// <p> Contextual information for the entity.</p>
-        pub fn traits(mut self, input: impl Into<crate::model::RxNormTrait>) -> Self {
+        pub fn traits(mut self, input: crate::model::RxNormTrait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
@@ -1071,9 +1071,9 @@ pub mod rx_norm_entity {
         ///
         /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the
         /// likelihood of the match.</p>
-        pub fn rx_norm_concepts(mut self, input: impl Into<crate::model::RxNormConcept>) -> Self {
+        pub fn rx_norm_concepts(mut self, input: crate::model::RxNormConcept) -> Self {
             let mut v = self.rx_norm_concepts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rx_norm_concepts = Some(v);
             self
         }
@@ -1535,9 +1535,9 @@ pub mod rx_norm_attribute {
         /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait
         /// <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or
         /// form of a medication.</p>
-        pub fn traits(mut self, input: impl Into<crate::model::RxNormTrait>) -> Self {
+        pub fn traits(mut self, input: crate::model::RxNormTrait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
@@ -1987,9 +1987,9 @@ pub mod icd10_cm_entity {
         /// <p>The detected attributes that relate to the entity. An extracted segment of the text that
         /// is an attribute of an entity, or otherwise related to an entity, such as the nature of a
         /// medical condition.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Icd10CmAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Icd10CmAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -2011,9 +2011,9 @@ pub mod icd10_cm_entity {
         /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
         /// <code>NEGATION.</code>
         /// </p>
-        pub fn traits(mut self, input: impl Into<crate::model::Icd10CmTrait>) -> Self {
+        pub fn traits(mut self, input: crate::model::Icd10CmTrait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
@@ -2034,9 +2034,9 @@ pub mod icd10_cm_entity {
         ///
         /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the
         /// likelihood of the match.</p>
-        pub fn icd10_cm_concepts(mut self, input: impl Into<crate::model::Icd10CmConcept>) -> Self {
+        pub fn icd10_cm_concepts(mut self, input: crate::model::Icd10CmConcept) -> Self {
             let mut v = self.icd10_cm_concepts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.icd10_cm_concepts = Some(v);
             self
         }
@@ -2533,9 +2533,9 @@ pub mod icd10_cm_attribute {
         /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are
         /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
         /// <code>NEGATION</code>.</p>
-        pub fn traits(mut self, input: impl Into<crate::model::Icd10CmTrait>) -> Self {
+        pub fn traits(mut self, input: crate::model::Icd10CmTrait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
@@ -3028,9 +3028,9 @@ pub mod entity {
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
         /// <p>Contextual information for the entity.</p>
-        pub fn traits(mut self, input: impl Into<crate::model::Trait>) -> Self {
+        pub fn traits(mut self, input: crate::model::Trait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
@@ -3047,9 +3047,9 @@ pub mod entity {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p> The extracted attributes that relate to this entity.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -3317,9 +3317,9 @@ pub mod attribute {
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
         /// <p> Contextual information for this attribute. </p>
-        pub fn traits(mut self, input: impl Into<crate::model::Trait>) -> Self {
+        pub fn traits(mut self, input: crate::model::Trait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }

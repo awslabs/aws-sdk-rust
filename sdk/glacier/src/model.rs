@@ -180,9 +180,9 @@ pub mod data_retrieval_policy {
         ///
         /// <p>The policy rule. Although this is a list type, currently there must be only one rule,
         /// which contains a Strategy field and optionally a BytesPerHour field.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::DataRetrievalRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::DataRetrievalRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1681,9 +1681,9 @@ pub mod s3_location {
         /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
         ///
         /// <p>A list of grants that control access to the staged results.</p>
-        pub fn access_control_list(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn access_control_list(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.access_control_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_control_list = Some(v);
             self
         }

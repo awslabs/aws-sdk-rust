@@ -831,8 +831,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn sidewalk(mut self, inp: crate::model::SidewalkAccountInfo) -> Self {
-            self.inner = self.inner.sidewalk(inp);
+        pub fn sidewalk(mut self, signature: crate::model::SidewalkAccountInfo) -> Self {
+            self.inner = self.inner.sidewalk(signature);
             self
         }
         /// <p>The Sidewalk account credentials.</p>
@@ -844,8 +844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -861,8 +861,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -936,8 +936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -946,8 +946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multicast_group_id(inp);
+        pub fn multicast_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -1021,8 +1021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -1031,8 +1031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(signature.into());
             self
         }
         /// <p>The ID of the wireless device.</p>
@@ -1106,8 +1106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(signature.into());
             self
         }
         /// <p>The ID of the wireless device.</p>
@@ -1189,8 +1189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -1199,8 +1199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the thing to associate with the wireless device.</p>
-        pub fn thing_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_arn(inp);
+        pub fn thing_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_arn(signature.into());
             self
         }
         /// <p>The ARN of the thing to associate with the wireless device.</p>
@@ -1271,8 +1271,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -1281,8 +1281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the certificate to associate with the wireless gateway.</p>
-        pub fn iot_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iot_certificate_id(inp);
+        pub fn iot_certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iot_certificate_id(signature.into());
             self
         }
         /// <p>The ID of the certificate to associate with the wireless gateway.</p>
@@ -1354,8 +1354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -1364,8 +1364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the thing to associate with the wireless gateway.</p>
-        pub fn thing_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_arn(inp);
+        pub fn thing_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_arn(signature.into());
             self
         }
         /// <p>The ARN of the thing to associate with the wireless gateway.</p>
@@ -1434,8 +1434,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -1504,8 +1504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -1514,8 +1514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
-        pub fn expression_type(mut self, inp: crate::model::ExpressionType) -> Self {
-            self.inner = self.inner.expression_type(inp);
+        pub fn expression_type(mut self, signature: crate::model::ExpressionType) -> Self {
+            self.inner = self.inner.expression_type(signature);
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
@@ -1527,8 +1527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule name or topic rule to send messages to.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(signature.into());
             self
         }
         /// <p>The rule name or topic rule to send messages to.</p>
@@ -1537,8 +1537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -1547,8 +1547,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
@@ -1561,8 +1561,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
@@ -1574,8 +1574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -1647,8 +1647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -1657,8 +1657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device profile information to use to create the device profile.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanDeviceProfile) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanDeviceProfile) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The device profile information to use to create the device profile.</p>
@@ -1674,8 +1674,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
@@ -1687,8 +1687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -1760,8 +1760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a FUOTA task.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of a FUOTA task.</p>
@@ -1770,8 +1770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -1780,8 +1780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
@@ -1793,8 +1793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information used with a FUOTA task.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanFuotaTask) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The LoRaWAN information used with a FUOTA task.</p>
@@ -1806,8 +1806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-        pub fn firmware_update_image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firmware_update_image(inp);
+        pub fn firmware_update_image(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_image(signature.into());
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
@@ -1819,8 +1819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-        pub fn firmware_update_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firmware_update_role(inp);
+        pub fn firmware_update_role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_role(signature.into());
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
@@ -1836,8 +1836,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -1909,8 +1909,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the multicast group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the multicast group.</p>
@@ -1919,8 +1919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the multicast group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the multicast group.</p>
@@ -1931,8 +1931,8 @@ pub mod fluent_builders {
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
         /// same token as a resource that already exists, an exception occurs. If you omit this value,
         /// AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
@@ -1946,8 +1946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticast) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanMulticast) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
@@ -1963,8 +1963,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -2036,8 +2036,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -2046,8 +2046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service profile information to use to create the service profile.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanServiceProfile) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanServiceProfile) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The service profile information to use to create the service profile.</p>
@@ -2063,8 +2063,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
@@ -2076,8 +2076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -2149,8 +2149,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The wireless device type.</p>
-        pub fn r#type(mut self, inp: crate::model::WirelessDeviceType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::WirelessDeviceType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The wireless device type.</p>
@@ -2162,8 +2162,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -2172,8 +2172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -2182,8 +2182,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the destination to assign to the new wireless device.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(signature.into());
             self
         }
         /// <p>The name of the destination to assign to the new wireless device.</p>
@@ -2195,8 +2195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -2208,8 +2208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device configuration information to use to create the wireless device.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanDevice) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanDevice) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The device configuration information to use to create the wireless device.</p>
@@ -2225,8 +2225,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
@@ -2298,8 +2298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -2308,8 +2308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -2318,8 +2318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gateway configuration information to use to create the wireless gateway.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanGateway) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanGateway) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The gateway configuration information to use to create the wireless gateway.</p>
@@ -2335,8 +2335,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
@@ -2348,8 +2348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -2421,8 +2421,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -2433,9 +2433,11 @@ pub mod fluent_builders {
         /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
         pub fn wireless_gateway_task_definition_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            signature: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.wireless_gateway_task_definition_id(inp);
+            self.inner = self
+                .inner
+                .wireless_gateway_task_definition_id(signature.into());
             self
         }
         /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
@@ -2509,8 +2511,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
-        pub fn auto_create_tasks(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_create_tasks(inp);
+        pub fn auto_create_tasks(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_create_tasks(signature);
             self
         }
         /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
@@ -2519,8 +2521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -2529,8 +2531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the gateways to update.</p>
-        pub fn update(mut self, inp: crate::model::UpdateWirelessGatewayTaskCreate) -> Self {
-            self.inner = self.inner.update(inp);
+        pub fn update(mut self, signature: crate::model::UpdateWirelessGatewayTaskCreate) -> Self {
+            self.inner = self.inner.update(signature);
             self
         }
         /// <p>Information about the gateways to update.</p>
@@ -2542,8 +2544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -2559,8 +2561,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -2632,8 +2634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the resource to delete.</p>
@@ -2702,8 +2704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -2772,8 +2774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -2842,8 +2844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -2912,8 +2914,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -2982,8 +2984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -3052,8 +3054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -3122,8 +3124,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -3194,8 +3196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -3266,8 +3268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The partner account ID to disassociate from the AWS account.</p>
-        pub fn partner_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_account_id(inp);
+        pub fn partner_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_account_id(signature.into());
             self
         }
         /// <p>The partner account ID to disassociate from the AWS account.</p>
@@ -3279,8 +3281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The partner type.</p>
-        pub fn partner_type(mut self, inp: crate::model::PartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(mut self, signature: crate::model::PartnerType) -> Self {
+            self.inner = self.inner.partner_type(signature);
             self
         }
         /// <p>The partner type.</p>
@@ -3354,8 +3356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -3364,8 +3366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multicast_group_id(inp);
+        pub fn multicast_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -3439,8 +3441,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -3449,8 +3451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(signature.into());
             self
         }
         /// <p>The ID of the wireless device.</p>
@@ -3524,8 +3526,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -3534,8 +3536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(signature.into());
             self
         }
         /// <p>The ID of the wireless device.</p>
@@ -3609,8 +3611,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -3681,8 +3683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -3753,8 +3755,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -3823,8 +3825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource to get.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the resource to get.</p>
@@ -3893,8 +3895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -3963,8 +3965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -4094,8 +4096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -4164,8 +4166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -4234,8 +4236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>NetworkAnalyzer configuration name.</p>
-        pub fn configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_name(inp);
+        pub fn configuration_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(signature.into());
             self
         }
         /// <p>NetworkAnalyzer configuration name.</p>
@@ -4307,8 +4309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The partner account ID to disassociate from the AWS account.</p>
-        pub fn partner_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_account_id(inp);
+        pub fn partner_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_account_id(signature.into());
             self
         }
         /// <p>The partner account ID to disassociate from the AWS account.</p>
@@ -4320,8 +4322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The partner type.</p>
-        pub fn partner_type(mut self, inp: crate::model::PartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(mut self, signature: crate::model::PartnerType) -> Self {
+            self.inner = self.inner.partner_type(signature);
             self
         }
         /// <p>The partner type.</p>
@@ -4393,8 +4395,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Resource identifier to opt in for event messaging.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>Resource identifier to opt in for event messaging.</p>
@@ -4403,8 +4405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-        pub fn identifier_type(mut self, inp: crate::model::IdentifierType) -> Self {
-            self.inner = self.inner.identifier_type(inp);
+        pub fn identifier_type(mut self, signature: crate::model::IdentifierType) -> Self {
+            self.inner = self.inner.identifier_type(signature);
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
@@ -4416,8 +4418,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
-        pub fn partner_type(mut self, inp: crate::model::EventNotificationPartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(
+            mut self,
+            signature: crate::model::EventNotificationPartnerType,
+        ) -> Self {
+            self.inner = self.inner.partner_type(signature);
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
@@ -4491,8 +4496,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
         /// it is the wireless gateway ID.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
@@ -4505,8 +4510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
@@ -4578,8 +4583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
-        pub fn service_type(mut self, inp: crate::model::WirelessGatewayServiceType) -> Self {
-            self.inner = self.inner.service_type(inp);
+        pub fn service_type(mut self, signature: crate::model::WirelessGatewayServiceType) -> Self {
+            self.inner = self.inner.service_type(signature);
             self
         }
         /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
@@ -4651,8 +4656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -4721,8 +4726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the wireless device to get.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>The identifier of the wireless device to get.</p>
@@ -4731,8 +4736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of identifier used in <code>identifier</code>.</p>
-        pub fn identifier_type(mut self, inp: crate::model::WirelessDeviceIdType) -> Self {
-            self.inner = self.inner.identifier_type(inp);
+        pub fn identifier_type(mut self, signature: crate::model::WirelessDeviceIdType) -> Self {
+            self.inner = self.inner.identifier_type(signature);
             self
         }
         /// <p>The type of identifier used in <code>identifier</code>.</p>
@@ -4804,8 +4809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the wireless device for which to get the data.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(signature.into());
             self
         }
         /// <p>The ID of the wireless device for which to get the data.</p>
@@ -4877,8 +4882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the wireless gateway to get.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>The identifier of the wireless gateway to get.</p>
@@ -4887,8 +4892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of identifier used in <code>identifier</code>.</p>
-        pub fn identifier_type(mut self, inp: crate::model::WirelessGatewayIdType) -> Self {
-            self.inner = self.inner.identifier_type(inp);
+        pub fn identifier_type(mut self, signature: crate::model::WirelessGatewayIdType) -> Self {
+            self.inner = self.inner.identifier_type(signature);
             self
         }
         /// <p>The type of identifier used in <code>identifier</code>.</p>
@@ -4960,8 +4965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -5032,8 +5037,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -5102,8 +5107,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the wireless gateway for which to get the data.</p>
-        pub fn wireless_gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_gateway_id(inp);
+        pub fn wireless_gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_gateway_id(signature.into());
             self
         }
         /// <p>The ID of the wireless gateway for which to get the data.</p>
@@ -5175,8 +5180,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -5245,8 +5250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -5315,8 +5320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5325,8 +5330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5395,8 +5400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5405,8 +5410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5475,8 +5480,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5485,8 +5490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5555,8 +5560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5565,8 +5570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5635,8 +5640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -5645,8 +5650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5655,8 +5660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5725,8 +5730,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5735,8 +5740,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5805,8 +5810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5815,8 +5820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5885,8 +5890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource for which you want to list tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource for which you want to list tags.</p>
@@ -5955,8 +5960,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5965,8 +5970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5975,8 +5980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter to list only the wireless devices that use this destination.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(signature.into());
             self
         }
         /// <p>A filter to list only the wireless devices that use this destination.</p>
@@ -5988,8 +5993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter to list only the wireless devices that use this device profile.</p>
-        pub fn device_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_profile_id(inp);
+        pub fn device_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_profile_id(signature.into());
             self
         }
         /// <p>A filter to list only the wireless devices that use this device profile.</p>
@@ -6001,8 +6006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter to list only the wireless devices that use this service profile.</p>
-        pub fn service_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_profile_id(inp);
+        pub fn service_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_profile_id(signature.into());
             self
         }
         /// <p>A filter to list only the wireless devices that use this service profile.</p>
@@ -6014,8 +6019,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
-        pub fn wireless_device_type(mut self, inp: crate::model::WirelessDeviceType) -> Self {
-            self.inner = self.inner.wireless_device_type(inp);
+        pub fn wireless_device_type(mut self, signature: crate::model::WirelessDeviceType) -> Self {
+            self.inner = self.inner.wireless_device_type(signature);
             self
         }
         /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
@@ -6027,8 +6032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn fuota_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fuota_task_id(inp);
+        pub fn fuota_task_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fuota_task_id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -6040,8 +6045,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multicast_group_id(inp);
+        pub fn multicast_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -6113,8 +6118,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -6123,8 +6128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -6195,8 +6200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -6205,8 +6210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -6217,9 +6222,9 @@ pub mod fluent_builders {
         /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
         pub fn task_definition_type(
             mut self,
-            inp: crate::model::WirelessGatewayTaskDefinitionType,
+            signature: crate::model::WirelessGatewayTaskDefinitionType,
         ) -> Self {
-            self.inner = self.inner.task_definition_type(inp);
+            self.inner = self.inner.task_definition_type(signature);
             self
         }
         /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
@@ -6293,8 +6298,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
         /// it is the wireless gateway ID.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
@@ -6307,8 +6312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
@@ -6320,8 +6325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The log level for a log message.</p>
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.inner = self.inner.log_level(inp);
+        pub fn log_level(mut self, signature: crate::model::LogLevel) -> Self {
+            self.inner = self.inner.log_level(signature);
             self
         }
         /// <p>The log level for a log message.</p>
@@ -6452,8 +6457,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
         /// it is the wireless gateway ID.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(signature.into());
             self
         }
         /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
@@ -6466,8 +6471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
@@ -6539,8 +6544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -6549,8 +6554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The binary to be sent to the end device, encoded in base64.</p>
-        pub fn payload_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.payload_data(inp);
+        pub fn payload_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload_data(signature.into());
             self
         }
         /// <p>The binary to be sent to the end device, encoded in base64.</p>
@@ -6559,8 +6564,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Wireless metadata that is to be sent to multicast group.</p>
-        pub fn wireless_metadata(mut self, inp: crate::model::MulticastWirelessMetadata) -> Self {
-            self.inner = self.inner.wireless_metadata(inp);
+        pub fn wireless_metadata(
+            mut self,
+            signature: crate::model::MulticastWirelessMetadata,
+        ) -> Self {
+            self.inner = self.inner.wireless_metadata(signature);
             self
         }
         /// <p>Wireless metadata that is to be sent to multicast group.</p>
@@ -6632,8 +6640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the wireless device to receive the data.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the wireless device to receive the data.</p>
@@ -6642,8 +6650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
-        pub fn transmit_mode(mut self, inp: i32) -> Self {
-            self.inner = self.inner.transmit_mode(inp);
+        pub fn transmit_mode(mut self, signature: i32) -> Self {
+            self.inner = self.inner.transmit_mode(signature);
             self
         }
         /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
@@ -6652,8 +6660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The binary to be sent to the end device, encoded in base64.</p>
-        pub fn payload_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.payload_data(inp);
+        pub fn payload_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload_data(signature.into());
             self
         }
         /// <p>The binary to be sent to the end device, encoded in base64.</p>
@@ -6662,8 +6670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata about the message request.</p>
-        pub fn wireless_metadata(mut self, inp: crate::model::WirelessMetadata) -> Self {
-            self.inner = self.inner.wireless_metadata(inp);
+        pub fn wireless_metadata(mut self, signature: crate::model::WirelessMetadata) -> Self {
+            self.inner = self.inner.wireless_metadata(signature);
             self
         }
         /// <p>Metadata about the message request.</p>
@@ -6729,8 +6737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -6739,8 +6747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(signature.into());
             self
         }
         /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
@@ -6753,8 +6761,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -6815,8 +6823,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -6825,8 +6833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(signature.into());
             self
         }
         /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
@@ -6839,8 +6847,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -6912,8 +6920,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -6922,8 +6930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information used to start a FUOTA task.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanStartFuotaTask) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanStartFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The LoRaWAN information used to start a FUOTA task.</p>
@@ -6995,8 +7003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -7005,8 +7013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information used with the multicast session.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticastSession) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanMulticastSession) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The LoRaWAN information used with the multicast session.</p>
@@ -7078,8 +7086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to add tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to add tags to.</p>
@@ -7092,8 +7100,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
@@ -7165,8 +7173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the wireless device to test.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the wireless device to test.</p>
@@ -7235,8 +7243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to remove tags from.</p>
@@ -7249,8 +7257,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of the tags to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of the tags to remove from the resource.</p>
@@ -7322,8 +7330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The new name of the resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The new name of the resource.</p>
@@ -7332,8 +7340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
-        pub fn expression_type(mut self, inp: crate::model::ExpressionType) -> Self {
-            self.inner = self.inner.expression_type(inp);
+        pub fn expression_type(mut self, signature: crate::model::ExpressionType) -> Self {
+            self.inner = self.inner.expression_type(signature);
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
@@ -7345,8 +7353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new rule name or topic rule to send messages to.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(signature.into());
             self
         }
         /// <p>The new rule name or topic rule to send messages to.</p>
@@ -7355,8 +7363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description of the resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A new description of the resource.</p>
@@ -7365,8 +7373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
@@ -7435,8 +7443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -7445,8 +7453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a FUOTA task.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of a FUOTA task.</p>
@@ -7455,8 +7463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -7465,8 +7473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information used with a FUOTA task.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanFuotaTask) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The LoRaWAN information used with a FUOTA task.</p>
@@ -7478,8 +7486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-        pub fn firmware_update_image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firmware_update_image(inp);
+        pub fn firmware_update_image(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_image(signature.into());
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
@@ -7491,8 +7499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-        pub fn firmware_update_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firmware_update_role(inp);
+        pub fn firmware_update_role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_role(signature.into());
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
@@ -7565,8 +7573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The log level for a log message.</p>
-        pub fn default_log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.inner = self.inner.default_log_level(inp);
+        pub fn default_log_level(mut self, signature: crate::model::LogLevel) -> Self {
+            self.inner = self.inner.default_log_level(signature);
             self
         }
         /// <p>The log level for a log message.</p>
@@ -7584,9 +7592,9 @@ pub mod fluent_builders {
         /// <p>The list of wireless device log options.</p>
         pub fn wireless_device_log_options(
             mut self,
-            inp: impl Into<crate::model::WirelessDeviceLogOption>,
+            input: crate::model::WirelessDeviceLogOption,
         ) -> Self {
-            self.inner = self.inner.wireless_device_log_options(inp);
+            self.inner = self.inner.wireless_device_log_options(input);
             self
         }
         /// <p>The list of wireless device log options.</p>
@@ -7604,9 +7612,9 @@ pub mod fluent_builders {
         /// <p>The list of wireless gateway log options.</p>
         pub fn wireless_gateway_log_options(
             mut self,
-            inp: impl Into<crate::model::WirelessGatewayLogOption>,
+            input: crate::model::WirelessGatewayLogOption,
         ) -> Self {
-            self.inner = self.inner.wireless_gateway_log_options(inp);
+            self.inner = self.inner.wireless_gateway_log_options(input);
             self
         }
         /// <p>The list of wireless gateway log options.</p>
@@ -7678,8 +7686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -7688,8 +7696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the multicast group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the multicast group.</p>
@@ -7698,8 +7706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -7708,8 +7716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticast) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanMulticast) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
@@ -7783,8 +7791,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>NetworkAnalyzer configuration name.</p>
-        pub fn configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_name(inp);
+        pub fn configuration_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(signature.into());
             self
         }
         /// <p>NetworkAnalyzer configuration name.</p>
@@ -7796,8 +7804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Trace Content for resources.</p>
-        pub fn trace_content(mut self, inp: crate::model::TraceContent) -> Self {
-            self.inner = self.inner.trace_content(inp);
+        pub fn trace_content(mut self, signature: crate::model::TraceContent) -> Self {
+            self.inner = self.inner.trace_content(signature);
             self
         }
         /// <p>Trace Content for resources.</p>
@@ -7813,8 +7821,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_wireless_devices_to_add`](Self::set_wireless_devices_to_add).
         ///
         /// <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
-        pub fn wireless_devices_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_devices_to_add(inp);
+        pub fn wireless_devices_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_devices_to_add(input.into());
             self
         }
         /// <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
@@ -7830,8 +7838,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_wireless_devices_to_remove`](Self::set_wireless_devices_to_remove).
         ///
         /// <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
-        pub fn wireless_devices_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_devices_to_remove(inp);
+        pub fn wireless_devices_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_devices_to_remove(input.into());
             self
         }
         /// <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
@@ -7847,8 +7855,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_wireless_gateways_to_add`](Self::set_wireless_gateways_to_add).
         ///
         /// <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
-        pub fn wireless_gateways_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_gateways_to_add(inp);
+        pub fn wireless_gateways_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_gateways_to_add(input.into());
             self
         }
         /// <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
@@ -7864,8 +7872,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_wireless_gateways_to_remove`](Self::set_wireless_gateways_to_remove).
         ///
         /// <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
-        pub fn wireless_gateways_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_gateways_to_remove(inp);
+        pub fn wireless_gateways_to_remove(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.wireless_gateways_to_remove(input.into());
             self
         }
         /// <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
@@ -7937,8 +7948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn sidewalk(mut self, inp: crate::model::SidewalkUpdateAccount) -> Self {
-            self.inner = self.inner.sidewalk(inp);
+        pub fn sidewalk(mut self, signature: crate::model::SidewalkUpdateAccount) -> Self {
+            self.inner = self.inner.sidewalk(signature);
             self
         }
         /// <p>The Sidewalk account credentials.</p>
@@ -7950,8 +7961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the partner account to update.</p>
-        pub fn partner_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_account_id(inp);
+        pub fn partner_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_account_id(signature.into());
             self
         }
         /// <p>The ID of the partner account to update.</p>
@@ -7963,8 +7974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The partner type.</p>
-        pub fn partner_type(mut self, inp: crate::model::PartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(mut self, signature: crate::model::PartnerType) -> Self {
+            self.inner = self.inner.partner_type(signature);
             self
         }
         /// <p>The partner type.</p>
@@ -8036,8 +8047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Resource identifier to opt in for event messaging.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(signature.into());
             self
         }
         /// <p>Resource identifier to opt in for event messaging.</p>
@@ -8046,8 +8057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-        pub fn identifier_type(mut self, inp: crate::model::IdentifierType) -> Self {
-            self.inner = self.inner.identifier_type(inp);
+        pub fn identifier_type(mut self, signature: crate::model::IdentifierType) -> Self {
+            self.inner = self.inner.identifier_type(signature);
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
@@ -8059,8 +8070,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
-        pub fn partner_type(mut self, inp: crate::model::EventNotificationPartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(
+            mut self,
+            signature: crate::model::EventNotificationPartnerType,
+        ) -> Self {
+            self.inner = self.inner.partner_type(signature);
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
@@ -8074,9 +8088,9 @@ pub mod fluent_builders {
         /// <p>Event configuration for the device registration state event</p>
         pub fn device_registration_state(
             mut self,
-            inp: crate::model::DeviceRegistrationStateEventConfiguration,
+            signature: crate::model::DeviceRegistrationStateEventConfiguration,
         ) -> Self {
-            self.inner = self.inner.device_registration_state(inp);
+            self.inner = self.inner.device_registration_state(signature);
             self
         }
         /// <p>Event configuration for the device registration state event</p>
@@ -8088,8 +8102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Event configuration for the Proximity event</p>
-        pub fn proximity(mut self, inp: crate::model::ProximityEventConfiguration) -> Self {
-            self.inner = self.inner.proximity(inp);
+        pub fn proximity(mut self, signature: crate::model::ProximityEventConfiguration) -> Self {
+            self.inner = self.inner.proximity(signature);
             self
         }
         /// <p>Event configuration for the Proximity event</p>
@@ -8161,8 +8175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -8171,8 +8185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new destination for the device.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(signature.into());
             self
         }
         /// <p>The name of the new destination for the device.</p>
@@ -8184,8 +8198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The new name of the resource.</p>
@@ -8194,8 +8208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description of the resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A new description of the resource.</p>
@@ -8204,8 +8218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated wireless device's configuration.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanUpdateDevice) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, signature: crate::model::LoRaWanUpdateDevice) -> Self {
+            self.inner = self.inner.lo_ra_wan(signature);
             self
         }
         /// <p>The updated wireless device's configuration.</p>
@@ -8277,8 +8291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -8287,8 +8301,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The new name of the resource.</p>
@@ -8297,8 +8311,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description of the resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A new description of the resource.</p>
@@ -8311,11 +8325,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_join_eui_filters`](Self::set_join_eui_filters).
         ///
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-        pub fn join_eui_filters(
-            mut self,
-            inp: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.join_eui_filters(inp);
+        pub fn join_eui_filters(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.join_eui_filters(input);
             self
         }
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
@@ -8331,8 +8342,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_net_id_filters`](Self::set_net_id_filters).
         ///
         /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-        pub fn net_id_filters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.net_id_filters(inp);
+        pub fn net_id_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.net_id_filters(input.into());
             self
         }
         /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>

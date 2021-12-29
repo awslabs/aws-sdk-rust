@@ -339,8 +339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
@@ -349,8 +349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(signature.into());
             self
         }
         /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
@@ -359,8 +359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
@@ -376,8 +376,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
@@ -465,8 +465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-        pub fn app_instance_admin_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(inp);
+        pub fn app_instance_admin_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(signature.into());
             self
         }
         /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
@@ -478,8 +478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -552,8 +552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code> request.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code> request.</p>
@@ -565,8 +565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID of the <code>AppInstance</code>.</p>
-        pub fn app_instance_user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_id(inp);
+        pub fn app_instance_user_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_id(signature.into());
             self
         }
         /// <p>The user ID of the <code>AppInstance</code>.</p>
@@ -578,8 +578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The user's name.</p>
@@ -588,8 +588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(signature.into());
             self
         }
         /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
@@ -598,8 +598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
@@ -615,8 +615,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
@@ -688,8 +688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -762,8 +762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-        pub fn app_instance_admin_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(inp);
+        pub fn app_instance_admin_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
@@ -775,8 +775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -848,8 +848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user request being deleted.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(signature.into());
             self
         }
         /// <p>The ARN of the user request being deleted.</p>
@@ -921,8 +921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -934,8 +934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(signature.into());
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -1004,8 +1004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1077,8 +1077,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
-        pub fn app_instance_admin_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(inp);
+        pub fn app_instance_admin_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
@@ -1090,8 +1090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1163,8 +1163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1236,8 +1236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1249,8 +1249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(signature.into());
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -1319,8 +1319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1392,8 +1392,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1405,8 +1405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of administrators that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of administrators that you want to return.</p>
@@ -1416,8 +1416,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned from previous API requests until the number of administrators is
         /// reached.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token returned from previous API requests until the number of administrators is
@@ -1488,8 +1488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
@@ -1499,8 +1499,8 @@ pub mod fluent_builders {
         }
         /// <p>The token passed by previous API requests until you reach the maximum number of
         /// <code>AppInstances</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token passed by previous API requests until you reach the maximum number of
@@ -1570,8 +1570,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1583,8 +1583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of endpoints that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of endpoints that you want to return.</p>
@@ -1593,8 +1593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
@@ -1664,8 +1664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1677,8 +1677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of requests that you want returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of requests that you want returned.</p>
@@ -1687,8 +1687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested users are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested users are returned.</p>
@@ -1757,8 +1757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -1828,8 +1828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1843,9 +1843,9 @@ pub mod fluent_builders {
         /// <p>The time in days to retain data. Data type: number.</p>
         pub fn app_instance_retention_settings(
             mut self,
-            inp: crate::model::AppInstanceRetentionSettings,
+            signature: crate::model::AppInstanceRetentionSettings,
         ) -> Self {
-            self.inner = self.inner.app_instance_retention_settings(inp);
+            self.inner = self.inner.app_instance_retention_settings(signature);
             self
         }
         /// <p>The time in days to retain data. Data type: number.</p>
@@ -1917,8 +1917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1930,8 +1930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -1955,8 +1955,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::AppInstanceUserEndpointType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::AppInstanceUserEndpointType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
@@ -1983,8 +1983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource to which the endpoint belongs.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource to which the endpoint belongs.</p>
@@ -1993,8 +1993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The attributes of an <code>Endpoint</code>.</p>
-        pub fn endpoint_attributes(mut self, inp: crate::model::EndpointAttributes) -> Self {
-            self.inner = self.inner.endpoint_attributes(inp);
+        pub fn endpoint_attributes(mut self, signature: crate::model::EndpointAttributes) -> Self {
+            self.inner = self.inner.endpoint_attributes(signature);
             self
         }
         /// <p>The attributes of an <code>Endpoint</code>.</p>
@@ -2006,8 +2006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for each client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(signature.into());
             self
         }
         /// <p>The idempotency token for each client request. </p>
@@ -2020,8 +2020,8 @@ pub mod fluent_builders {
         }
         /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
         /// <code>NONE</code> indicates the endpoint receives no messages.</p>
-        pub fn allow_messages(mut self, inp: crate::model::AllowMessages) -> Self {
-            self.inner = self.inner.allow_messages(inp);
+        pub fn allow_messages(mut self, signature: crate::model::AllowMessages) -> Self {
+            self.inner = self.inner.allow_messages(signature);
             self
         }
         /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
@@ -2094,8 +2094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -2108,8 +2108,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag key-value pairs.</p>
@@ -2181,8 +2181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -2195,8 +2195,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -2268,8 +2268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -2281,8 +2281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that you want to change.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name that you want to change.</p>
@@ -2291,8 +2291,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata that you want to change.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(signature.into());
             self
         }
         /// <p>The metadata that you want to change.</p>
@@ -2362,8 +2362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -2375,8 +2375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
@@ -2385,8 +2385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(signature.into());
             self
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
@@ -2455,8 +2455,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(signature.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -2468,8 +2468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(signature.into());
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -2478,8 +2478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -2489,8 +2489,8 @@ pub mod fluent_builders {
         }
         /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
         /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
-        pub fn allow_messages(mut self, inp: crate::model::AllowMessages) -> Self {
-            self.inner = self.inner.allow_messages(inp);
+        pub fn allow_messages(mut self, signature: crate::model::AllowMessages) -> Self {
+            self.inner = self.inner.allow_messages(signature);
             self
         }
         /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.

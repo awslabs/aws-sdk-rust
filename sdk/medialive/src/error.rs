@@ -9420,12 +9420,9 @@ pub mod unprocessable_entity_exception {
         /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
         ///
         /// A collection of validation error responses.
-        pub fn validation_errors(
-            mut self,
-            input: impl Into<crate::model::ValidationError>,
-        ) -> Self {
+        pub fn validation_errors(mut self, input: crate::model::ValidationError) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_errors = Some(v);
             self
         }

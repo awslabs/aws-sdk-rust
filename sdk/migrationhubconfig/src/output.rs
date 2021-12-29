@@ -100,12 +100,9 @@ pub mod describe_home_region_controls_output {
         /// To override the contents of this collection use [`set_home_region_controls`](Self::set_home_region_controls).
         ///
         /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-        pub fn home_region_controls(
-            mut self,
-            input: impl Into<crate::model::HomeRegionControl>,
-        ) -> Self {
+        pub fn home_region_controls(mut self, input: crate::model::HomeRegionControl) -> Self {
             let mut v = self.home_region_controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_region_controls = Some(v);
             self
         }

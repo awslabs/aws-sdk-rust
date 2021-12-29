@@ -360,9 +360,9 @@ pub mod fluent_builders {
         /// X.500 certificate subject information.</p>
         pub fn certificate_authority_configuration(
             mut self,
-            inp: crate::model::CertificateAuthorityConfiguration,
+            signature: crate::model::CertificateAuthorityConfiguration,
         ) -> Self {
-            self.inner = self.inner.certificate_authority_configuration(inp);
+            self.inner = self.inner.certificate_authority_configuration(signature);
             self
         }
         /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and
@@ -380,9 +380,9 @@ pub mod fluent_builders {
         /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
         pub fn revocation_configuration(
             mut self,
-            inp: crate::model::RevocationConfiguration,
+            signature: crate::model::RevocationConfiguration,
         ) -> Self {
-            self.inner = self.inner.revocation_configuration(inp);
+            self.inner = self.inner.revocation_configuration(signature);
             self
         }
         /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
@@ -399,9 +399,9 @@ pub mod fluent_builders {
         /// <p>The type of the certificate authority.</p>
         pub fn certificate_authority_type(
             mut self,
-            inp: crate::model::CertificateAuthorityType,
+            signature: crate::model::CertificateAuthorityType,
         ) -> Self {
-            self.inner = self.inner.certificate_authority_type(inp);
+            self.inner = self.inner.certificate_authority_type(signature);
             self
         }
         /// <p>The type of the certificate authority.</p>
@@ -418,8 +418,8 @@ pub mod fluent_builders {
         /// token within five minutes, ACM Private CA recognizes that you are requesting only certificate
         /// authority and will issue only one. If you change the idempotency token for each call,
         /// PCA recognizes that you are requesting multiple certificate authorities.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for
@@ -446,9 +446,9 @@ pub mod fluent_builders {
         /// be created in this region with the specified security standard."</p>
         pub fn key_storage_security_standard(
             mut self,
-            inp: crate::model::KeyStorageSecurityStandard,
+            signature: crate::model::KeyStorageSecurityStandard,
         ) -> Self {
-            self.inner = self.inner.key_storage_security_standard(inp);
+            self.inner = self.inner.key_storage_security_standard(signature);
             self
         }
         /// <p>Specifies a
@@ -474,8 +474,8 @@ pub mod fluent_builders {
         /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to
         /// 50 tags with a private CA. For information using tags with IAM to manage permissions,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to
@@ -569,8 +569,11 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.</p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
@@ -585,8 +588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the S3 bucket that will contain the audit report.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(signature.into());
             self
         }
         /// <p>The name of the S3 bucket that will contain the audit report.</p>
@@ -600,9 +603,9 @@ pub mod fluent_builders {
         /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
         pub fn audit_report_response_format(
             mut self,
-            inp: crate::model::AuditReportResponseFormat,
+            signature: crate::model::AuditReportResponseFormat,
         ) -> Self {
-            self.inner = self.inner.audit_report_response_format(inp);
+            self.inner = self.inner.audit_report_response_format(signature);
             self
         }
         /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
@@ -705,8 +708,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the
@@ -724,8 +730,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS service or identity that receives the permission. At this time, the only
         /// valid principal is <code>acm.amazonaws.com</code>.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(signature.into());
             self
         }
         /// <p>The AWS service or identity that receives the permission. At this time, the only
@@ -735,8 +741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the calling account.</p>
-        pub fn source_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_account(inp);
+        pub fn source_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_account(signature.into());
             self
         }
         /// <p>The ID of the calling account.</p>
@@ -754,8 +760,8 @@ pub mod fluent_builders {
         /// <p>The actions that the specified AWS service principal can use. These include
         /// <code>IssueCertificate</code>, <code>GetCertificate</code>, and
         /// <code>ListPermissions</code>.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::ActionType>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::ActionType) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>The actions that the specified AWS service principal can use. These include
@@ -852,8 +858,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
@@ -870,8 +879,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of days to make a CA restorable after it has been deleted. This can be
         /// anywhere from 7 to 30 days, with 30 being the default.</p>
-        pub fn permanent_deletion_time_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.permanent_deletion_time_in_days(inp);
+        pub fn permanent_deletion_time_in_days(mut self, signature: i32) -> Self {
+            self.inner = self.inner.permanent_deletion_time_in_days(signature);
             self
         }
         /// <p>The number of days to make a CA restorable after it has been deleted. This can be
@@ -977,8 +986,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You
@@ -997,8 +1009,8 @@ pub mod fluent_builders {
         /// <p>The AWS service or identity that will have its CA permissions revoked. At this time,
         /// the only valid service principal is <code>acm.amazonaws.com</code>
         /// </p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(signature.into());
             self
         }
         /// <p>The AWS service or identity that will have its CA permissions revoked. At this time,
@@ -1009,8 +1021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account that calls this action.</p>
-        pub fn source_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_account(inp);
+        pub fn source_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_account(signature.into());
             self
         }
         /// <p>The AWS account that calls this action.</p>
@@ -1119,8 +1131,8 @@ pub mod fluent_builders {
         /// You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form
         /// <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>.
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted.
@@ -1236,8 +1248,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
@@ -1322,8 +1337,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
@@ -1339,8 +1357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The report ID returned by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action.</p>
-        pub fn audit_report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.audit_report_id(inp);
+        pub fn audit_report_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.audit_report_id(signature.into());
             self
         }
         /// <p>The report ID returned by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action.</p>
@@ -1423,8 +1441,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
@@ -1445,8 +1466,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
         /// </code>
         /// </p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(signature.into());
             self
         }
         /// <p>The ARN of the issued certificate. The ARN contains the certificate serial number and
@@ -1532,8 +1553,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
@@ -1617,8 +1641,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
@@ -1727,8 +1754,8 @@ pub mod fluent_builders {
         /// retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action.
         ///
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the private CA that will have its policy
@@ -1933,8 +1960,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
@@ -1951,8 +1981,8 @@ pub mod fluent_builders {
         }
         /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in
         /// the case of a root CA, or it may be signed by another CA that you control.</p>
-        pub fn certificate(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.certificate(inp);
+        pub fn certificate(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificate(signature);
             self
         }
         /// <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in
@@ -1970,8 +2000,8 @@ pub mod fluent_builders {
         /// preceding. </p>
         /// <p>This parameter must be supplied when you import a subordinate CA. When you import a
         /// root CA, there is no chain.</p>
-        pub fn certificate_chain(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.certificate_chain(inp);
+        pub fn certificate_chain(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificate_chain(signature);
             self
         }
         /// <p>A PEM-encoded file that contains all of your certificates, other than the certificate
@@ -2061,8 +2091,8 @@ pub mod fluent_builders {
         /// <p>If conflicting or duplicate certificate information is supplied during certificate
         /// issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of
         /// operation rules</a> to determine what information is used.</p>
-        pub fn api_passthrough(mut self, inp: crate::model::ApiPassthrough) -> Self {
-            self.inner = self.inner.api_passthrough(inp);
+        pub fn api_passthrough(mut self, signature: crate::model::ApiPassthrough) -> Self {
+            self.inner = self.inner.api_passthrough(signature);
             self
         }
         /// <p>Specifies X.509 certificate information to be included in the issued certificate. An
@@ -2084,8 +2114,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
@@ -2118,8 +2151,8 @@ pub mod fluent_builders {
         /// <p>Note: A CSR must provide either a <i>subject name</i> or a
         /// <i>subject alternative name</i> or the request will be rejected.
         /// </p>
-        pub fn csr(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.csr(inp);
+        pub fn csr(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.csr(signature);
             self
         }
         /// <p>The certificate signing request (CSR) for the certificate you want to issue. As an
@@ -2147,8 +2180,8 @@ pub mod fluent_builders {
         /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
         /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
         /// used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
-        pub fn signing_algorithm(mut self, inp: crate::model::SigningAlgorithm) -> Self {
-            self.inner = self.inner.signing_algorithm(inp);
+        pub fn signing_algorithm(mut self, signature: crate::model::SigningAlgorithm) -> Self {
+            self.inner = self.inner.signing_algorithm(signature);
             self
         }
         /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
@@ -2170,8 +2203,8 @@ pub mod fluent_builders {
         /// limit set by its parents in the CA hierarchy.</p>
         /// <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate
         /// Templates</a>.</p>
-        pub fn template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_arn(inp);
+        pub fn template_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_arn(signature.into());
             self
         }
         /// <p>Specifies a custom configuration template to use when issuing a certificate. If this
@@ -2199,8 +2232,8 @@ pub mod fluent_builders {
         /// value.</p>
         /// <p>The end of the validity period configured on a certificate must not exceed the limit
         /// set on its parents in the CA hierarchy.</p>
-        pub fn validity(mut self, inp: crate::model::Validity) -> Self {
-            self.inner = self.inner.validity(inp);
+        pub fn validity(mut self, signature: crate::model::Validity) -> Self {
+            self.inner = self.inner.validity(signature);
             self
         }
         /// <p>Information describing the end of the validity period of the certificate. This
@@ -2231,8 +2264,8 @@ pub mod fluent_builders {
         /// using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
         /// 5280.</p>
-        pub fn validity_not_before(mut self, inp: crate::model::Validity) -> Self {
-            self.inner = self.inner.validity_not_before(inp);
+        pub fn validity_not_before(mut self, signature: crate::model::Validity) -> Self {
+            self.inner = self.inner.validity_not_before(signature);
             self
         }
         /// <p>Information describing the start of the validity period of the certificate. This
@@ -2259,8 +2292,8 @@ pub mod fluent_builders {
         /// idempotency token within one minute, ACM Private CA recognizes that you are requesting only one
         /// certificate and will issue only one. If you change the idempotency token for each call,
         /// PCA recognizes that you are requesting multiple certificates.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you
@@ -2338,8 +2371,8 @@ pub mod fluent_builders {
         /// <p>Use this parameter when paginating results in a subsequent request after you receive a
         /// response with truncated results. Set it to the value of the <code>NextToken</code>
         /// parameter from the response you just received.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Use this parameter when paginating results in a subsequent request after you receive a
@@ -2354,8 +2387,8 @@ pub mod fluent_builders {
         /// specify, the <code>NextToken</code> element is sent in the response. Use this
         /// <code>NextToken</code> value in a subsequent request to retrieve additional
         /// items.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Use this parameter when paginating results to specify the maximum number of items to
@@ -2369,8 +2402,8 @@ pub mod fluent_builders {
         }
         /// <p>Use this parameter to filter the returned set of certificate authorities based on
         /// their owner. The default is SELF.</p>
-        pub fn resource_owner(mut self, inp: crate::model::ResourceOwner) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        pub fn resource_owner(mut self, signature: crate::model::ResourceOwner) -> Self {
+            self.inner = self.inner.resource_owner(signature);
             self
         }
         /// <p>Use this parameter to filter the returned set of certificate authorities based on
@@ -2473,8 +2506,11 @@ pub mod fluent_builders {
         /// calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form:
         /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
         /// You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by
@@ -2490,8 +2526,8 @@ pub mod fluent_builders {
         }
         /// <p>When paginating results, use this parameter in a subsequent request after you receive
         /// a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>When paginating results, use this parameter in a subsequent request after you receive
@@ -2505,8 +2541,8 @@ pub mod fluent_builders {
         /// <b>NextToken</b> element is sent in the response. Use this
         /// <b>NextToken</b> value in a subsequent request to retrieve
         /// additional items.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>When paginating results, use this parameter to specify the maximum number of items to
@@ -2586,8 +2622,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
@@ -2604,8 +2643,8 @@ pub mod fluent_builders {
         }
         /// <p>Use this parameter when paginating results in a subsequent request after you receive a
         /// response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Use this parameter when paginating results in a subsequent request after you receive a
@@ -2619,8 +2658,8 @@ pub mod fluent_builders {
         /// <b>NextToken</b> element is sent in the response. Use this
         /// <b>NextToken</b> value in a subsequent request to retrieve
         /// additional items.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Use this parameter when paginating results to specify the maximum number of items to
@@ -2726,8 +2765,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The
         /// ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
         /// <p></p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The
@@ -2742,8 +2781,8 @@ pub mod fluent_builders {
         /// includes any statement that is not allowed, the <code>PutPolicy</code> action returns an
         /// <code>InvalidPolicyException</code>. For information about IAM policy and
         /// statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The path and file name of a JSON-formatted IAM policy to attach to the specified
@@ -2830,8 +2869,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
@@ -2931,8 +2973,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
@@ -2959,8 +3004,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API
         /// Reference</i>. </p>
-        pub fn certificate_serial(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_serial(inp);
+        pub fn certificate_serial(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_serial(signature.into());
             self
         }
         /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format.
@@ -2982,8 +3027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies why you revoked the certificate.</p>
-        pub fn revocation_reason(mut self, inp: crate::model::RevocationReason) -> Self {
-            self.inner = self.inner.revocation_reason(inp);
+        pub fn revocation_reason(mut self, signature: crate::model::RevocationReason) -> Self {
+            self.inner = self.inner.revocation_reason(signature);
             self
         }
         /// <p>Specifies why you revoked the certificate.</p>
@@ -3066,8 +3111,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
@@ -3087,8 +3135,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>List of tags to be associated with the CA.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>List of tags to be associated with the CA.</p>
@@ -3168,8 +3216,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
@@ -3189,8 +3240,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>List of tags to be removed from the CA.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>List of tags to be removed from the CA.</p>
@@ -3277,8 +3328,11 @@ pub mod fluent_builders {
         /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>
         /// </p>
-        pub fn certificate_authority_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_arn(inp);
+        pub fn certificate_authority_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.certificate_authority_arn(signature.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be
@@ -3300,9 +3354,9 @@ pub mod fluent_builders {
         /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
         pub fn revocation_configuration(
             mut self,
-            inp: crate::model::RevocationConfiguration,
+            signature: crate::model::RevocationConfiguration,
         ) -> Self {
-            self.inner = self.inner.revocation_configuration(inp);
+            self.inner = self.inner.revocation_configuration(signature);
             self
         }
         /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
@@ -3317,8 +3371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Status of your private CA.</p>
-        pub fn status(mut self, inp: crate::model::CertificateAuthorityStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::CertificateAuthorityStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Status of your private CA.</p>

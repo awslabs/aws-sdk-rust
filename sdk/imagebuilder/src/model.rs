@@ -801,10 +801,10 @@ pub mod distribution {
         /// for specified accounts.</p>
         pub fn launch_template_configurations(
             mut self,
-            input: impl Into<crate::model::LaunchTemplateConfiguration>,
+            input: crate::model::LaunchTemplateConfiguration,
         ) -> Self {
             let mut v = self.launch_template_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_template_configurations = Some(v);
             self
         }
@@ -3305,9 +3305,9 @@ pub mod output_resources {
         /// To override the contents of this collection use [`set_amis`](Self::set_amis).
         ///
         /// <p>The Amazon EC2 AMIs created by this image.</p>
-        pub fn amis(mut self, input: impl Into<crate::model::Ami>) -> Self {
+        pub fn amis(mut self, input: crate::model::Ami) -> Self {
             let mut v = self.amis.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.amis = Some(v);
             self
         }
@@ -3324,9 +3324,9 @@ pub mod output_resources {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
-        pub fn containers(mut self, input: impl Into<crate::model::Container>) -> Self {
+        pub fn containers(mut self, input: crate::model::Container) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.containers = Some(v);
             self
         }
@@ -5861,12 +5861,9 @@ pub mod image_recipe {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>The components of the image recipe.</p>
-        pub fn components(
-            mut self,
-            input: impl Into<crate::model::ComponentConfiguration>,
-        ) -> Self {
+        pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -5895,10 +5892,10 @@ pub mod image_recipe {
         /// <p>The block device mappings to apply when creating images from this recipe.</p>
         pub fn block_device_mappings(
             mut self,
-            input: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: crate::model::InstanceBlockDeviceMapping,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -6626,9 +6623,9 @@ pub mod component_configuration {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::ComponentParameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::ComponentParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -7466,9 +7463,9 @@ pub mod distribution_configuration {
         ///
         /// <p>The distribution objects that apply Region-specific
         /// settings for the deployment of the image to targeted Regions.</p>
-        pub fn distributions(mut self, input: impl Into<crate::model::Distribution>) -> Self {
+        pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.distributions = Some(v);
             self
         }
@@ -7936,12 +7933,9 @@ pub mod container_recipe {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>Components for build and test that are included in the container recipe.</p>
-        pub fn components(
-            mut self,
-            input: impl Into<crate::model::ComponentConfiguration>,
-        ) -> Self {
+        pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -8167,10 +8161,10 @@ pub mod instance_configuration {
         /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
         pub fn block_device_mappings(
             mut self,
-            input: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: crate::model::InstanceBlockDeviceMapping,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -8480,12 +8474,9 @@ pub mod component {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
-        pub fn parameters(
-            mut self,
-            input: impl Into<crate::model::ComponentParameterDetail>,
-        ) -> Self {
+        pub fn parameters(mut self, input: crate::model::ComponentParameterDetail) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }

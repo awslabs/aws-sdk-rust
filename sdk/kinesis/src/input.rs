@@ -1656,9 +1656,9 @@ pub mod disable_enhanced_monitoring_input {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
         /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
         /// Kinesis Data Streams Developer Guide</i>.</p>
-        pub fn shard_level_metrics(mut self, input: impl Into<crate::model::MetricsName>) -> Self {
+        pub fn shard_level_metrics(mut self, input: crate::model::MetricsName) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shard_level_metrics = Some(v);
             self
         }
@@ -1929,9 +1929,9 @@ pub mod enable_enhanced_monitoring_input {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
         /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
         /// Kinesis Data Streams Developer Guide</i>.</p>
-        pub fn shard_level_metrics(mut self, input: impl Into<crate::model::MetricsName>) -> Self {
+        pub fn shard_level_metrics(mut self, input: crate::model::MetricsName) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shard_level_metrics = Some(v);
             self
         }
@@ -4148,9 +4148,9 @@ pub mod put_records_input {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>The records associated with the request.</p>
-        pub fn records(mut self, input: impl Into<crate::model::PutRecordsRequestEntry>) -> Self {
+        pub fn records(mut self, input: crate::model::PutRecordsRequestEntry) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }

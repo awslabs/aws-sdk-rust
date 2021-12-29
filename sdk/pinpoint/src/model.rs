@@ -1728,9 +1728,9 @@ pub mod segment_group_list {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::SegmentGroup>) -> Self {
+        pub fn groups(mut self, input: crate::model::SegmentGroup) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -1886,9 +1886,9 @@ pub mod segment_group {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>An array that defines the dimensions for the segment.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::SegmentDimensions>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::SegmentDimensions) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -1905,9 +1905,9 @@ pub mod segment_group {
         /// To override the contents of this collection use [`set_source_segments`](Self::set_source_segments).
         ///
         /// <p>The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify.</p> <p>You can specify more than one dimensional segment or only one imported segment. If you specify an imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported segment without any filters applied to it.</p>
-        pub fn source_segments(mut self, input: impl Into<crate::model::SegmentReference>) -> Self {
+        pub fn source_segments(mut self, input: crate::model::SegmentReference) -> Self {
             let mut v = self.source_segments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_segments = Some(v);
             self
         }
@@ -2252,10 +2252,10 @@ pub mod segment_dimensions {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeDimension>,
+            v: crate::model::AttributeDimension,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -2316,10 +2316,10 @@ pub mod segment_dimensions {
         pub fn metrics(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MetricDimension>,
+            v: crate::model::MetricDimension,
         ) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
@@ -2341,10 +2341,10 @@ pub mod segment_dimensions {
         pub fn user_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeDimension>,
+            v: crate::model::AttributeDimension,
         ) -> Self {
             let mut hash_map = self.user_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.user_attributes = Some(hash_map);
             self
         }
@@ -3479,13 +3479,9 @@ pub mod segment_import_resource {
         /// To override the contents of this collection use [`set_channel_counts`](Self::set_channel_counts).
         ///
         /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-        pub fn channel_counts(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn channel_counts(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.channel_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.channel_counts = Some(hash_map);
             self
         }
@@ -5391,10 +5387,10 @@ pub mod journey_response {
         pub fn activities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Activity>,
+            v: crate::model::Activity,
         ) -> Self {
             let mut hash_map = self.activities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.activities = Some(hash_map);
             self
         }
@@ -6252,10 +6248,10 @@ pub mod event_dimensions {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeDimension>,
+            v: crate::model::AttributeDimension,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -6290,10 +6286,10 @@ pub mod event_dimensions {
         pub fn metrics(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MetricDimension>,
+            v: crate::model::MetricDimension,
         ) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
@@ -7462,9 +7458,9 @@ pub mod random_split_activity {
         /// To override the contents of this collection use [`set_branches`](Self::set_branches).
         ///
         /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
-        pub fn branches(mut self, input: impl Into<crate::model::RandomSplitEntry>) -> Self {
+        pub fn branches(mut self, input: crate::model::RandomSplitEntry) -> Self {
             let mut v = self.branches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.branches = Some(v);
             self
         }
@@ -7795,9 +7791,9 @@ pub mod multi_conditional_split_activity {
         /// To override the contents of this collection use [`set_branches`](Self::set_branches).
         ///
         /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
-        pub fn branches(mut self, input: impl Into<crate::model::MultiConditionalBranch>) -> Self {
+        pub fn branches(mut self, input: crate::model::MultiConditionalBranch) -> Self {
             let mut v = self.branches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.branches = Some(v);
             self
         }
@@ -8529,9 +8525,9 @@ pub mod condition {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>The conditions to evaluate for the activity.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::SimpleCondition>) -> Self {
+        pub fn conditions(mut self, input: crate::model::SimpleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
@@ -8709,12 +8705,9 @@ pub mod custom_message_activity {
         /// To override the contents of this collection use [`set_endpoint_types`](Self::set_endpoint_types).
         ///
         /// <p>The types of endpoints to send the custom message to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-        pub fn endpoint_types(
-            mut self,
-            input: impl Into<crate::model::EndpointTypesElement>,
-        ) -> Self {
+        pub fn endpoint_types(mut self, input: crate::model::EndpointTypesElement) -> Self {
             let mut v = self.endpoint_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_types = Some(v);
             self
         }
@@ -9162,10 +9155,10 @@ pub mod write_journey_request {
         pub fn activities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Activity>,
+            v: crate::model::Activity,
         ) -> Self {
             let mut hash_map = self.activities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.activities = Some(hash_map);
             self
         }
@@ -9439,9 +9432,9 @@ pub mod in_app_template_request {
         /// To override the contents of this collection use [`set_content`](Self::set_content).
         ///
         /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-        pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
+        pub fn content(mut self, input: crate::model::InAppMessageContent) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content = Some(v);
             self
         }
@@ -10812,9 +10805,9 @@ pub mod endpoint_batch_request {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
-        pub fn item(mut self, input: impl Into<crate::model::EndpointBatchItem>) -> Self {
+        pub fn item(mut self, input: crate::model::EndpointBatchItem) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -10985,10 +10978,10 @@ pub mod endpoint_batch_item {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -11082,9 +11075,9 @@ pub mod endpoint_batch_item {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
-        pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
+        pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
@@ -11205,10 +11198,10 @@ pub mod endpoint_user {
         pub fn user_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.user_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.user_attributes = Some(hash_map);
             self
         }
@@ -11841,10 +11834,10 @@ pub mod endpoint_request {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -11928,9 +11921,9 @@ pub mod endpoint_request {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
-        pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
+        pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
@@ -12907,12 +12900,9 @@ pub mod campaign_response {
         /// To override the contents of this collection use [`set_additional_treatments`](Self::set_additional_treatments).
         ///
         /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
-        pub fn additional_treatments(
-            mut self,
-            input: impl Into<crate::model::TreatmentResource>,
-        ) -> Self {
+        pub fn additional_treatments(mut self, input: crate::model::TreatmentResource) -> Self {
             let mut v = self.additional_treatments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_treatments = Some(v);
             self
         }
@@ -14251,9 +14241,9 @@ pub mod campaign_in_app_message {
         /// To override the contents of this collection use [`set_content`](Self::set_content).
         ///
         /// <p>In-app message content.</p>
-        pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
+        pub fn content(mut self, input: crate::model::InAppMessageContent) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content = Some(v);
             self
         }
@@ -15238,12 +15228,9 @@ pub mod custom_delivery_configuration {
         /// To override the contents of this collection use [`set_endpoint_types`](Self::set_endpoint_types).
         ///
         /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-        pub fn endpoint_types(
-            mut self,
-            input: impl Into<crate::model::EndpointTypesElement>,
-        ) -> Self {
+        pub fn endpoint_types(mut self, input: crate::model::EndpointTypesElement) -> Self {
             let mut v = self.endpoint_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_types = Some(v);
             self
         }
@@ -15697,10 +15684,10 @@ pub mod write_campaign_request {
         /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
         pub fn additional_treatments(
             mut self,
-            input: impl Into<crate::model::WriteTreatmentResource>,
+            input: crate::model::WriteTreatmentResource,
         ) -> Self {
             let mut v = self.additional_treatments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_treatments = Some(v);
             self
         }
@@ -19195,12 +19182,10 @@ pub mod send_users_message_response {
         pub fn result(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<
-                std::collections::HashMap<std::string::String, crate::model::EndpointMessageResult>,
-            >,
+            v: std::collections::HashMap<std::string::String, crate::model::EndpointMessageResult>,
         ) -> Self {
             let mut hash_map = self.result.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.result = Some(hash_map);
             self
         }
@@ -19633,10 +19618,10 @@ pub mod send_users_message_request {
         pub fn users(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::EndpointSendConfiguration>,
+            v: crate::model::EndpointSendConfiguration,
         ) -> Self {
             let mut hash_map = self.users.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.users = Some(hash_map);
             self
         }
@@ -19803,10 +19788,10 @@ pub mod endpoint_send_configuration {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -20208,10 +20193,10 @@ pub mod voice_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -20429,10 +20414,10 @@ pub mod sms_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -20825,10 +20810,10 @@ pub mod gcm_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -21077,10 +21062,10 @@ pub mod email_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -21495,10 +21480,10 @@ pub mod default_push_notification_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -21616,10 +21601,10 @@ pub mod default_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -21928,10 +21913,10 @@ pub mod baidu_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -22347,10 +22332,10 @@ pub mod apns_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -22767,10 +22752,10 @@ pub mod adm_message {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -22924,10 +22909,10 @@ pub mod message_response {
         pub fn endpoint_result(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::EndpointMessageResult>,
+            v: crate::model::EndpointMessageResult,
         ) -> Self {
             let mut hash_map = self.endpoint_result.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.endpoint_result = Some(hash_map);
             self
         }
@@ -22959,10 +22944,10 @@ pub mod message_response {
         pub fn result(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageResult>,
+            v: crate::model::MessageResult,
         ) -> Self {
             let mut hash_map = self.result.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.result = Some(hash_map);
             self
         }
@@ -23487,10 +23472,10 @@ pub mod message_request {
         pub fn addresses(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AddressConfiguration>,
+            v: crate::model::AddressConfiguration,
         ) -> Self {
             let mut hash_map = self.addresses.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.addresses = Some(hash_map);
             self
         }
@@ -23537,10 +23522,10 @@ pub mod message_request {
         pub fn endpoints(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::EndpointSendConfiguration>,
+            v: crate::model::EndpointSendConfiguration,
         ) -> Self {
             let mut hash_map = self.endpoints.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.endpoints = Some(hash_map);
             self
         }
@@ -23771,10 +23756,10 @@ pub mod address_configuration {
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.substitutions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.substitutions = Some(hash_map);
             self
         }
@@ -24289,10 +24274,10 @@ pub mod events_response {
         pub fn results(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ItemResponse>,
+            v: crate::model::ItemResponse,
         ) -> Self {
             let mut hash_map = self.results.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.results = Some(hash_map);
             self
         }
@@ -24389,10 +24374,10 @@ pub mod item_response {
         pub fn events_item_response(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::EventItemResponse>,
+            v: crate::model::EventItemResponse,
         ) -> Self {
             let mut hash_map = self.events_item_response.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.events_item_response = Some(hash_map);
             self
         }
@@ -24613,10 +24598,10 @@ pub mod events_request {
         pub fn batch_item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::EventsBatch>,
+            v: crate::model::EventsBatch,
         ) -> Self {
             let mut hash_map = self.batch_item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.batch_item = Some(hash_map);
             self
         }
@@ -24706,13 +24691,9 @@ pub mod events_batch {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A set of properties that are associated with the event.</p>
-        pub fn events(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Event>,
-        ) -> Self {
+        pub fn events(mut self, k: impl Into<std::string::String>, v: crate::model::Event) -> Self {
             let mut hash_map = self.events.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.events = Some(hash_map);
             self
         }
@@ -24941,9 +24922,9 @@ pub mod event {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>One or more custom metrics that are associated with the event.</p>
-        pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
+        pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
@@ -25264,10 +25245,10 @@ pub mod public_endpoint {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -25351,9 +25332,9 @@ pub mod public_endpoint {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
-        pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
+        pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
@@ -25889,9 +25870,9 @@ pub mod template_versions_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each version of the message template.</p>
-        pub fn item(mut self, input: impl Into<crate::model::TemplateVersionResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::TemplateVersionResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -26179,9 +26160,9 @@ pub mod templates_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each message template that's associated with your Amazon Pinpoint account and meets any filter criteria that you specified in the request.</p>
-        pub fn item(mut self, input: impl Into<crate::model::TemplateResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::TemplateResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -26573,9 +26554,9 @@ pub mod journeys_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each journey that's associated with the application.</p>
-        pub fn item(mut self, input: impl Into<crate::model::JourneyResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::JourneyResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -26952,9 +26933,9 @@ pub mod endpoints_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-        pub fn item(mut self, input: impl Into<crate::model::EndpointResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::EndpointResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -27162,10 +27143,10 @@ pub mod endpoint_response {
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attributes = Some(hash_map);
             self
         }
@@ -27282,9 +27263,9 @@ pub mod endpoint_response {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
-        pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
+        pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metrics = Some(hash_map);
             self
         }
@@ -27683,9 +27664,9 @@ pub mod segments_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
-        pub fn item(mut self, input: impl Into<crate::model::SegmentResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::SegmentResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -27765,9 +27746,9 @@ pub mod import_jobs_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
-        pub fn item(mut self, input: impl Into<crate::model::ImportJobResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::ImportJobResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -28433,9 +28414,9 @@ pub mod export_jobs_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each export job that's associated with the application (Export Jobs resource) or segment (Segment Export Jobs resource).</p>
-        pub fn item(mut self, input: impl Into<crate::model::ExportJobResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::ExportJobResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -28936,12 +28917,9 @@ pub mod list_recommender_configurations_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
-        pub fn item(
-            mut self,
-            input: impl Into<crate::model::RecommenderConfigurationResponse>,
-        ) -> Self {
+        pub fn item(mut self, input: crate::model::RecommenderConfigurationResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -29902,9 +29880,9 @@ pub mod base_kpi_result {
         /// To override the contents of this collection use [`set_rows`](Self::set_rows).
         ///
         /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-        pub fn rows(mut self, input: impl Into<crate::model::ResultRow>) -> Self {
+        pub fn rows(mut self, input: crate::model::ResultRow) -> Self {
             let mut v = self.rows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rows = Some(v);
             self
         }
@@ -29971,9 +29949,9 @@ pub mod result_row {
         /// To override the contents of this collection use [`set_grouped_bys`](Self::set_grouped_bys).
         ///
         /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-        pub fn grouped_bys(mut self, input: impl Into<crate::model::ResultRowValue>) -> Self {
+        pub fn grouped_bys(mut self, input: crate::model::ResultRowValue) -> Self {
             let mut v = self.grouped_bys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grouped_bys = Some(v);
             self
         }
@@ -29990,9 +29968,9 @@ pub mod result_row {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-        pub fn values(mut self, input: impl Into<crate::model::ResultRowValue>) -> Self {
+        pub fn values(mut self, input: crate::model::ResultRowValue) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -30248,9 +30226,9 @@ pub mod in_app_template_response {
         /// To override the contents of this collection use [`set_content`](Self::set_content).
         ///
         /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-        pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
+        pub fn content(mut self, input: crate::model::InAppMessageContent) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content = Some(v);
             self
         }
@@ -30462,10 +30440,10 @@ pub mod in_app_messages_response {
         /// <p>List of targeted in-app message campaigns.</p>
         pub fn in_app_message_campaigns(
             mut self,
-            input: impl Into<crate::model::InAppMessageCampaign>,
+            input: crate::model::InAppMessageCampaign,
         ) -> Self {
             let mut v = self.in_app_message_campaigns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.in_app_message_campaigns = Some(v);
             self
         }
@@ -30839,9 +30817,9 @@ pub mod in_app_message {
         /// To override the contents of this collection use [`set_content`](Self::set_content).
         ///
         /// <p>In-app message content.</p>
-        pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
+        pub fn content(mut self, input: crate::model::InAppMessageContent) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content = Some(v);
             self
         }
@@ -31274,10 +31252,10 @@ pub mod channels_response {
         pub fn channels(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ChannelResponse>,
+            v: crate::model::ChannelResponse,
         ) -> Self {
             let mut hash_map = self.channels.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.channels = Some(hash_map);
             self
         }
@@ -31566,9 +31544,9 @@ pub mod campaigns_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each campaign that's associated with the application.</p>
-        pub fn item(mut self, input: impl Into<crate::model::CampaignResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::CampaignResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -31828,9 +31806,9 @@ pub mod activities_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each activity that was performed by the campaign.</p>
-        pub fn item(mut self, input: impl Into<crate::model::ActivityResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::ActivityResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }
@@ -32198,9 +32176,9 @@ pub mod applications_response {
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
         /// <p>An array of responses, one for each application that was returned.</p>
-        pub fn item(mut self, input: impl Into<crate::model::ApplicationResponse>) -> Self {
+        pub fn item(mut self, input: crate::model::ApplicationResponse) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item = Some(v);
             self
         }

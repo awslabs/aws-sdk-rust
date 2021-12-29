@@ -1319,10 +1319,10 @@ pub mod cluster {
         /// </p>
         pub fn cluster_security_groups(
             mut self,
-            input: impl Into<crate::model::ClusterSecurityGroupMembership>,
+            input: crate::model::ClusterSecurityGroupMembership,
         ) -> Self {
             let mut v = self.cluster_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_security_groups = Some(v);
             self
         }
@@ -1350,10 +1350,10 @@ pub mod cluster {
         /// VPC.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -1375,10 +1375,10 @@ pub mod cluster {
         /// parameter group in the list is returned with its status.</p>
         pub fn cluster_parameter_groups(
             mut self,
-            input: impl Into<crate::model::ClusterParameterGroupStatus>,
+            input: crate::model::ClusterParameterGroupStatus,
         ) -> Self {
             let mut v = self.cluster_parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_parameter_groups = Some(v);
             self
         }
@@ -1607,9 +1607,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_cluster_nodes`](Self::set_cluster_nodes).
         ///
         /// <p>The nodes in the cluster.</p>
-        pub fn cluster_nodes(mut self, input: impl Into<crate::model::ClusterNode>) -> Self {
+        pub fn cluster_nodes(mut self, input: crate::model::ClusterNode) -> Self {
             let mut v = self.cluster_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_nodes = Some(v);
             self
         }
@@ -1652,9 +1652,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the cluster.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1704,9 +1704,9 @@ pub mod cluster {
         ///
         /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
         /// cluster to access other Amazon Web Services services.</p>
-        pub fn iam_roles(mut self, input: impl Into<crate::model::ClusterIamRole>) -> Self {
+        pub fn iam_roles(mut self, input: crate::model::ClusterIamRole) -> Self {
             let mut v = self.iam_roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.iam_roles = Some(v);
             self
         }
@@ -1776,10 +1776,10 @@ pub mod cluster {
         /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
         pub fn deferred_maintenance_windows(
             mut self,
-            input: impl Into<crate::model::DeferredMaintenanceWindow>,
+            input: crate::model::DeferredMaintenanceWindow,
         ) -> Self {
             let mut v = self.deferred_maintenance_windows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deferred_maintenance_windows = Some(v);
             self
         }
@@ -4376,10 +4376,10 @@ pub mod cluster_parameter_group_status {
         /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn cluster_parameter_status_list(
             mut self,
-            input: impl Into<crate::model::ClusterParameterStatus>,
+            input: crate::model::ClusterParameterStatus,
         ) -> Self {
             let mut v = self.cluster_parameter_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_parameter_status_list = Some(v);
             self
         }
@@ -4911,9 +4911,9 @@ pub mod endpoint {
         /// To override the contents of this collection use [`set_vpc_endpoints`](Self::set_vpc_endpoints).
         ///
         /// <p>Describes a connection endpoint.</p>
-        pub fn vpc_endpoints(mut self, input: impl Into<crate::model::VpcEndpoint>) -> Self {
+        pub fn vpc_endpoints(mut self, input: crate::model::VpcEndpoint) -> Self {
             let mut v = self.vpc_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_endpoints = Some(v);
             self
         }
@@ -5016,12 +5016,9 @@ pub mod vpc_endpoint {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -5832,10 +5829,10 @@ pub mod snapshot {
         /// </p>
         pub fn accounts_with_restore_access(
             mut self,
-            input: impl Into<crate::model::AccountWithRestoreAccess>,
+            input: crate::model::AccountWithRestoreAccess,
         ) -> Self {
             let mut v = self.accounts_with_restore_access.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts_with_restore_access = Some(v);
             self
         }
@@ -5969,9 +5966,9 @@ pub mod snapshot {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the cluster snapshot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6384,12 +6381,9 @@ pub mod cluster_security_group {
         ///
         /// <p>A list of EC2 security groups that are permitted to access clusters associated with
         /// this cluster security group.</p>
-        pub fn ec2_security_groups(
-            mut self,
-            input: impl Into<crate::model::Ec2SecurityGroup>,
-        ) -> Self {
+        pub fn ec2_security_groups(mut self, input: crate::model::Ec2SecurityGroup) -> Self {
             let mut v = self.ec2_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_security_groups = Some(v);
             self
         }
@@ -6408,9 +6402,9 @@ pub mod cluster_security_group {
         ///
         /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated
         /// with this cluster security group.</p>
-        pub fn ip_ranges(mut self, input: impl Into<crate::model::IpRange>) -> Self {
+        pub fn ip_ranges(mut self, input: crate::model::IpRange) -> Self {
             let mut v = self.ip_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_ranges = Some(v);
             self
         }
@@ -6428,9 +6422,9 @@ pub mod cluster_security_group {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the cluster security group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6531,9 +6525,9 @@ pub mod ip_range {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the IP range.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6666,9 +6660,9 @@ pub mod ec2_security_group {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the EC2 security group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7993,12 +7987,9 @@ pub mod reserved_node {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>The recurring charges for the reserved node.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -9301,9 +9292,9 @@ pub mod event_subscription {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the event subscription.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9464,9 +9455,9 @@ pub mod cluster_subnet_group {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>A list of the VPC <a>Subnet</a> elements. </p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -9483,9 +9474,9 @@ pub mod cluster_subnet_group {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the cluster subnet group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9671,12 +9662,9 @@ pub mod availability_zone {
         /// To override the contents of this collection use [`set_supported_platforms`](Self::set_supported_platforms).
         ///
         /// <p></p>
-        pub fn supported_platforms(
-            mut self,
-            input: impl Into<crate::model::SupportedPlatform>,
-        ) -> Self {
+        pub fn supported_platforms(mut self, input: crate::model::SupportedPlatform) -> Self {
             let mut v = self.supported_platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_platforms = Some(v);
             self
         }
@@ -9958,12 +9946,9 @@ pub mod reserved_node_offering {
         /// <p>The charge to your account regardless of whether you are creating any clusters
         /// using the node offering. Recurring charges are only in effect for heavy-utilization
         /// reserved nodes.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -10420,9 +10405,9 @@ pub mod usage_limit {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10818,9 +10803,9 @@ pub mod snapshot_schedule {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional set of tags describing the schedule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10837,9 +10822,9 @@ pub mod snapshot_schedule {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p></p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -10868,10 +10853,10 @@ pub mod snapshot_schedule {
         /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
         pub fn associated_clusters(
             mut self,
-            input: impl Into<crate::model::ClusterAssociatedToSchedule>,
+            input: crate::model::ClusterAssociatedToSchedule,
         ) -> Self {
             let mut v = self.associated_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_clusters = Some(v);
             self
         }
@@ -10988,9 +10973,9 @@ pub mod snapshot_copy_grant {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11252,9 +11237,9 @@ pub mod scheduled_action {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -11770,12 +11755,9 @@ pub mod orderable_cluster_option {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>A list of availability zones for the orderable cluster.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -12445,9 +12427,9 @@ pub mod hsm_configuration {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the HSM configuration.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12572,9 +12554,9 @@ pub mod hsm_client_certificate {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the HSM client certificate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12923,9 +12905,9 @@ pub mod event_categories_map {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The events in the event category.</p>
-        pub fn events(mut self, input: impl Into<crate::model::EventInfoMap>) -> Self {
+        pub fn events(mut self, input: crate::model::EventInfoMap) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -13517,10 +13499,10 @@ pub mod endpoint_access {
         /// <p>The security groups associated with the endpoint.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -13662,9 +13644,9 @@ pub mod default_cluster_parameters {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The list of cluster default parameters.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -13796,10 +13778,10 @@ pub mod data_share {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -14151,9 +14133,9 @@ pub mod maintenance_track {
         ///
         /// <p>An array of <a>UpdateTarget</a> objects to update with the maintenance
         /// track. </p>
-        pub fn update_targets(mut self, input: impl Into<crate::model::UpdateTarget>) -> Self {
+        pub fn update_targets(mut self, input: crate::model::UpdateTarget) -> Self {
             let mut v = self.update_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_targets = Some(v);
             self
         }
@@ -14260,12 +14242,9 @@ pub mod update_target {
         /// To override the contents of this collection use [`set_supported_operations`](Self::set_supported_operations).
         ///
         /// <p>A list of operations supported by the maintenance track.</p>
-        pub fn supported_operations(
-            mut self,
-            input: impl Into<crate::model::SupportedOperation>,
-        ) -> Self {
+        pub fn supported_operations(mut self, input: crate::model::SupportedOperation) -> Self {
             let mut v = self.supported_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_operations = Some(v);
             self
         }
@@ -14642,9 +14621,9 @@ pub mod cluster_parameter_group {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the cluster parameter group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14780,9 +14759,9 @@ pub mod cluster_db_revision {
         ///
         /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the
         /// database revision that a cluster can be updated to.</p>
-        pub fn revision_targets(mut self, input: impl Into<crate::model::RevisionTarget>) -> Self {
+        pub fn revision_targets(mut self, input: crate::model::RevisionTarget) -> Self {
             let mut v = self.revision_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revision_targets = Some(v);
             self
         }
@@ -15075,12 +15054,9 @@ pub mod account_attribute {
         /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
         ///
         /// <p>A list of attribute values.</p>
-        pub fn attribute_values(
-            mut self,
-            input: impl Into<crate::model::AttributeValueTarget>,
-        ) -> Self {
+        pub fn attribute_values(mut self, input: crate::model::AttributeValueTarget) -> Self {
             let mut v = self.attribute_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_values = Some(v);
             self
         }

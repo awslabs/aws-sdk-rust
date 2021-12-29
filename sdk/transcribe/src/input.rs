@@ -30,9 +30,9 @@ pub mod create_call_analytics_category_input {
         /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a
         /// filter to be applied to the attributes of the call. For example, you can specify a sentiment
         /// filter to detect if the customer's sentiment was negative or neutral. </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -264,9 +264,9 @@ pub mod create_language_model_input {
         ///
         /// <p>Adds one or more tags, each in the form of a key:value pair, to a new language model at the time you create
         /// this new model.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -511,9 +511,9 @@ pub mod create_medical_vocabulary_input {
         ///
         /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
         /// create this new vocabulary.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -764,9 +764,9 @@ pub mod create_vocabulary_input {
         ///
         /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create
         /// this new vocabulary.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1015,9 +1015,9 @@ pub mod create_vocabulary_filter_input {
         ///
         /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you
         /// create this new vocabulary filter.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5898,12 +5898,9 @@ pub mod start_call_analytics_job_input {
         /// <p>When you start a call analytics job, you must pass an array that maps the agent and the customer to specific
         /// audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have
         /// their own channel. You can't assign more than one channel to an agent or customer. </p>
-        pub fn channel_definitions(
-            mut self,
-            input: impl Into<crate::model::ChannelDefinition>,
-        ) -> Self {
+        pub fn channel_definitions(mut self, input: crate::model::ChannelDefinition) -> Self {
             let mut v = self.channel_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_definitions = Some(v);
             self
         }
@@ -6376,9 +6373,9 @@ pub mod start_medical_transcription_job_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Add tags to an Amazon Transcribe medical transcription job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6879,9 +6876,9 @@ pub mod start_transcription_job_input {
         /// identification chooses a language that best matches the source audio from that list.</p>
         /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample
         /// rate of 16,000 Hz or higher.</p>
-        pub fn language_options(mut self, input: impl Into<crate::model::LanguageCode>) -> Self {
+        pub fn language_options(mut self, input: crate::model::LanguageCode) -> Self {
             let mut v = self.language_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.language_options = Some(v);
             self
         }
@@ -6914,9 +6911,9 @@ pub mod start_transcription_job_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Add tags to an Amazon Transcribe transcription job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6937,11 +6934,11 @@ pub mod start_transcription_job_input {
         /// <code>LanguageModelName</code>.</p>
         pub fn language_id_settings(
             mut self,
-            k: impl Into<crate::model::LanguageCode>,
-            v: impl Into<crate::model::LanguageIdSettings>,
+            k: crate::model::LanguageCode,
+            v: crate::model::LanguageIdSettings,
         ) -> Self {
             let mut hash_map = self.language_id_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.language_id_settings = Some(hash_map);
             self
         }
@@ -7151,9 +7148,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags you are assigning to a given Amazon Transcribe resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7519,9 +7516,9 @@ pub mod update_call_analytics_category_input {
         ///
         /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones
         /// that are currently being used. </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }

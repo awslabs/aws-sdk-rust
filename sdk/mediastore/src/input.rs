@@ -36,9 +36,9 @@ pub mod create_container_input {
         /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
         /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
         /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2305,9 +2305,9 @@ pub mod put_cors_policy_input {
         /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
         ///
         /// <p>The CORS policy to apply to the container.  </p>
-        pub fn cors_policy(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
+        pub fn cors_policy(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cors_policy = Some(v);
             self
         }
@@ -3157,9 +3157,9 @@ pub mod tag_resource_input {
         /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
         /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
         /// customer:CompanyA, priority:Medium, and type:Contract.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

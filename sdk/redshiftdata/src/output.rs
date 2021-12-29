@@ -41,9 +41,9 @@ pub mod list_tables_output {
         /// To override the contents of this collection use [`set_tables`](Self::set_tables).
         ///
         /// <p>The tables that match the request pattern. </p>
-        pub fn tables(mut self, input: impl Into<crate::model::TableMember>) -> Self {
+        pub fn tables(mut self, input: crate::model::TableMember) -> Self {
             let mut v = self.tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tables = Some(v);
             self
         }
@@ -123,9 +123,9 @@ pub mod list_statements_output {
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
         /// <p>The SQL statements. </p>
-        pub fn statements(mut self, input: impl Into<crate::model::StatementData>) -> Self {
+        pub fn statements(mut self, input: crate::model::StatementData) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
@@ -388,9 +388,9 @@ pub mod get_statement_result_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>The results of the SQL statement.</p>
-        pub fn records(mut self, input: impl Into<std::vec::Vec<crate::model::Field>>) -> Self {
+        pub fn records(mut self, input: std::vec::Vec<crate::model::Field>) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -407,9 +407,9 @@ pub mod get_statement_result_output {
         /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
         ///
         /// <p>The properties (metadata) of a column. </p>
-        pub fn column_metadata(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_metadata(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_metadata = Some(v);
             self
         }
@@ -676,9 +676,9 @@ pub mod describe_table_output {
         /// To override the contents of this collection use [`set_column_list`](Self::set_column_list).
         ///
         /// <p>A list of columns in the table. </p>
-        pub fn column_list(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_list(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_list = Some(v);
             self
         }
@@ -1172,9 +1172,9 @@ pub mod describe_statement_output {
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
         /// <p>The parameters for the SQL statement.</p>
-        pub fn query_parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
+        pub fn query_parameters(mut self, input: crate::model::SqlParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_parameters = Some(v);
             self
         }
@@ -1191,9 +1191,9 @@ pub mod describe_statement_output {
         /// To override the contents of this collection use [`set_sub_statements`](Self::set_sub_statements).
         ///
         /// <p>The SQL statements from a multiple statement run.</p>
-        pub fn sub_statements(mut self, input: impl Into<crate::model::SubStatementData>) -> Self {
+        pub fn sub_statements(mut self, input: crate::model::SubStatementData) -> Self {
             let mut v = self.sub_statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_statements = Some(v);
             self
         }

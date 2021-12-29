@@ -216,11 +216,11 @@ pub mod task {
         /// information based on the <code>TaskType</code>. </p>
         pub fn task_properties(
             mut self,
-            k: impl Into<crate::model::OperatorPropertiesKeys>,
+            k: crate::model::OperatorPropertiesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.task_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.task_properties = Some(hash_map);
             self
         }
@@ -12689,10 +12689,10 @@ pub mod connector_configuration {
         /// <p> Lists the connectors that are available for use as destinations. </p>
         pub fn supported_destination_connectors(
             mut self,
-            input: impl Into<crate::model::ConnectorType>,
+            input: crate::model::ConnectorType,
         ) -> Self {
             let mut v = self.supported_destination_connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_destination_connectors = Some(v);
             self
         }
@@ -12711,10 +12711,10 @@ pub mod connector_configuration {
         /// <p> Specifies the supported flow frequency for that connector. </p>
         pub fn supported_scheduling_frequencies(
             mut self,
-            input: impl Into<crate::model::ScheduleFrequencyType>,
+            input: crate::model::ScheduleFrequencyType,
         ) -> Self {
             let mut v = self.supported_scheduling_frequencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_scheduling_frequencies = Some(v);
             self
         }
@@ -12754,12 +12754,9 @@ pub mod connector_configuration {
         /// To override the contents of this collection use [`set_supported_trigger_types`](Self::set_supported_trigger_types).
         ///
         /// <p> Specifies the supported trigger types for the flow. </p>
-        pub fn supported_trigger_types(
-            mut self,
-            input: impl Into<crate::model::TriggerType>,
-        ) -> Self {
+        pub fn supported_trigger_types(mut self, input: crate::model::TriggerType) -> Self {
             let mut v = self.supported_trigger_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_trigger_types = Some(v);
             self
         }
@@ -15028,10 +15025,10 @@ pub mod destination_field_properties {
         /// option. </p>
         pub fn supported_write_operations(
             mut self,
-            input: impl Into<crate::model::WriteOperationType>,
+            input: crate::model::WriteOperationType,
         ) -> Self {
             let mut v = self.supported_write_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_write_operations = Some(v);
             self
         }
@@ -15261,9 +15258,9 @@ pub mod field_type_details {
         /// To override the contents of this collection use [`set_filter_operators`](Self::set_filter_operators).
         ///
         /// <p> The list of operators supported by a field. </p>
-        pub fn filter_operators(mut self, input: impl Into<crate::model::Operator>) -> Self {
+        pub fn filter_operators(mut self, input: crate::model::Operator) -> Self {
             let mut v = self.filter_operators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_operators = Some(v);
             self
         }

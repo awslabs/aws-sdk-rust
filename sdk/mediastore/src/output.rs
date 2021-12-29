@@ -273,9 +273,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs that are assigned to the container.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -348,9 +348,9 @@ pub mod list_containers_output {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>The names of the containers.</p>
-        pub fn containers(mut self, input: impl Into<crate::model::Container>) -> Self {
+        pub fn containers(mut self, input: crate::model::Container) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.containers = Some(v);
             self
         }
@@ -542,9 +542,9 @@ pub mod get_cors_policy_output {
         /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
         ///
         /// <p>The CORS policy assigned to the container.</p>
-        pub fn cors_policy(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
+        pub fn cors_policy(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cors_policy = Some(v);
             self
         }

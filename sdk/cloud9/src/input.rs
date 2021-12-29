@@ -223,9 +223,9 @@ pub mod create_environment_ec2_input {
         ///
         /// <p>An array of key-value pairs that will be associated with the new Cloud9 development
         /// environment.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1015,9 +1015,9 @@ pub mod describe_environment_memberships_input {
         /// </li>
         /// </ul>
         /// <p>If no value is specified, information about all environment members are returned.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permissions>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permissions) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1897,9 +1897,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to add to the given Cloud9 development environment.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

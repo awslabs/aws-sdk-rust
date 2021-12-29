@@ -594,10 +594,10 @@ pub mod create_job_queue_input {
         /// </note>
         pub fn compute_environment_order(
             mut self,
-            input: impl Into<crate::model::ComputeEnvironmentOrder>,
+            input: crate::model::ComputeEnvironmentOrder,
         ) -> Self {
             let mut v = self.compute_environment_order.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compute_environment_order = Some(v);
             self
         }
@@ -2717,9 +2717,9 @@ pub mod list_jobs_input {
         /// UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// </dl>
-        pub fn filters(mut self, input: impl Into<crate::model::KeyValuesPair>) -> Self {
+        pub fn filters(mut self, input: crate::model::KeyValuesPair) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3483,12 +3483,9 @@ pub mod register_job_definition_input {
         ///
         /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
         /// <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
-        pub fn platform_capabilities(
-            mut self,
-            input: impl Into<crate::model::PlatformCapability>,
-        ) -> Self {
+        pub fn platform_capabilities(mut self, input: crate::model::PlatformCapability) -> Self {
             let mut v = self.platform_capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_capabilities = Some(v);
             self
         }
@@ -3746,9 +3743,9 @@ pub mod submit_job_input {
         /// completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job
         /// ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each
         /// dependency to complete before it can begin.</p>
-        pub fn depends_on(mut self, input: impl Into<crate::model::JobDependency>) -> Self {
+        pub fn depends_on(mut self, input: crate::model::JobDependency) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.depends_on = Some(v);
             self
         }
@@ -4982,10 +4979,10 @@ pub mod update_job_queue_input {
         /// </note>
         pub fn compute_environment_order(
             mut self,
-            input: impl Into<crate::model::ComputeEnvironmentOrder>,
+            input: crate::model::ComputeEnvironmentOrder,
         ) -> Self {
             let mut v = self.compute_environment_order.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compute_environment_order = Some(v);
             self
         }

@@ -3933,9 +3933,9 @@ pub mod transfer_domain_input {
         /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
         ///
         /// <p>Contains details for the host and glue IP addresses.</p>
-        pub fn nameservers(mut self, input: impl Into<crate::model::Nameserver>) -> Self {
+        pub fn nameservers(mut self, input: crate::model::Nameserver) -> Self {
             let mut v = self.nameservers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nameservers = Some(v);
             self
         }
@@ -4839,9 +4839,9 @@ pub mod update_domain_nameservers_input {
         /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
         ///
         /// <p>A list of new name servers for the domain.</p>
-        pub fn nameservers(mut self, input: impl Into<crate::model::Nameserver>) -> Self {
+        pub fn nameservers(mut self, input: crate::model::Nameserver) -> Self {
             let mut v = self.nameservers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nameservers = Some(v);
             self
         }
@@ -5019,9 +5019,9 @@ pub mod update_tags_for_domain_input {
         ///
         /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
         /// that already exists, the corresponding value will be replaced.</p>
-        pub fn tags_to_update(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_to_update(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_to_update.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_to_update = Some(v);
             self
         }

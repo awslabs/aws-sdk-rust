@@ -687,12 +687,9 @@ pub mod list_unsupported_app_version_resources_output {
         /// To override the contents of this collection use [`set_unsupported_resources`](Self::set_unsupported_resources).
         ///
         /// <p>The unsupported resources for the application.</p>
-        pub fn unsupported_resources(
-            mut self,
-            input: impl Into<crate::model::UnsupportedResource>,
-        ) -> Self {
+        pub fn unsupported_resources(mut self, input: crate::model::UnsupportedResource) -> Self {
             let mut v = self.unsupported_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsupported_resources = Some(v);
             self
         }
@@ -797,12 +794,9 @@ pub mod list_test_recommendations_output {
         /// To override the contents of this collection use [`set_test_recommendations`](Self::set_test_recommendations).
         ///
         /// <p>The test recommendations for the Resilience Hub application.</p>
-        pub fn test_recommendations(
-            mut self,
-            input: impl Into<crate::model::TestRecommendation>,
-        ) -> Self {
+        pub fn test_recommendations(mut self, input: crate::model::TestRecommendation) -> Self {
             let mut v = self.test_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_recommendations = Some(v);
             self
         }
@@ -950,12 +944,9 @@ pub mod list_suggested_resiliency_policies_output {
         /// To override the contents of this collection use [`set_resiliency_policies`](Self::set_resiliency_policies).
         ///
         /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
-        pub fn resiliency_policies(
-            mut self,
-            input: impl Into<crate::model::ResiliencyPolicy>,
-        ) -> Self {
+        pub fn resiliency_policies(mut self, input: crate::model::ResiliencyPolicy) -> Self {
             let mut v = self.resiliency_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resiliency_policies = Some(v);
             self
         }
@@ -1049,12 +1040,9 @@ pub mod list_sop_recommendations_output {
         ///
         /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub
         /// applications.</p>
-        pub fn sop_recommendations(
-            mut self,
-            input: impl Into<crate::model::SopRecommendation>,
-        ) -> Self {
+        pub fn sop_recommendations(mut self, input: crate::model::SopRecommendation) -> Self {
             let mut v = self.sop_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sop_recommendations = Some(v);
             self
         }
@@ -1126,12 +1114,9 @@ pub mod list_resiliency_policies_output {
         /// To override the contents of this collection use [`set_resiliency_policies`](Self::set_resiliency_policies).
         ///
         /// <p>The resiliency policies for the Resilience Hub applications.</p>
-        pub fn resiliency_policies(
-            mut self,
-            input: impl Into<crate::model::ResiliencyPolicy>,
-        ) -> Self {
+        pub fn resiliency_policies(mut self, input: crate::model::ResiliencyPolicy) -> Self {
             let mut v = self.resiliency_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resiliency_policies = Some(v);
             self
         }
@@ -1227,10 +1212,10 @@ pub mod list_recommendation_templates_output {
         /// <p>The recommendation templates for the Resilience Hub applications.</p>
         pub fn recommendation_templates(
             mut self,
-            input: impl Into<crate::model::RecommendationTemplate>,
+            input: crate::model::RecommendationTemplate,
         ) -> Self {
             let mut v = self.recommendation_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_templates = Some(v);
             self
         }
@@ -1301,9 +1286,9 @@ pub mod list_app_versions_output {
         /// To override the contents of this collection use [`set_app_versions`](Self::set_app_versions).
         ///
         /// <p>The version of the application.</p>
-        pub fn app_versions(mut self, input: impl Into<crate::model::AppVersionSummary>) -> Self {
+        pub fn app_versions(mut self, input: crate::model::AppVersionSummary) -> Self {
             let mut v = self.app_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_versions = Some(v);
             self
         }
@@ -1392,12 +1377,9 @@ pub mod list_app_version_resources_output {
         /// To override the contents of this collection use [`set_physical_resources`](Self::set_physical_resources).
         ///
         /// <p>The physical resources in the application version.</p>
-        pub fn physical_resources(
-            mut self,
-            input: impl Into<crate::model::PhysicalResource>,
-        ) -> Self {
+        pub fn physical_resources(mut self, input: crate::model::PhysicalResource) -> Self {
             let mut v = self.physical_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.physical_resources = Some(v);
             self
         }
@@ -1504,12 +1486,9 @@ pub mod list_app_version_resource_mappings_output {
         /// a logical stack name. Or you can map individual resources by using the mapping type
         /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
         /// application is backed by a CloudFormation stack.</p>
-        pub fn resource_mappings(
-            mut self,
-            input: impl Into<crate::model::ResourceMapping>,
-        ) -> Self {
+        pub fn resource_mappings(mut self, input: crate::model::ResourceMapping) -> Self {
             let mut v = self.resource_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_mappings = Some(v);
             self
         }
@@ -1593,9 +1572,9 @@ pub mod list_apps_output {
         /// To override the contents of this collection use [`set_app_summaries`](Self::set_app_summaries).
         ///
         /// <p>Summaries for the Resilience Hub application.</p>
-        pub fn app_summaries(mut self, input: impl Into<crate::model::AppSummary>) -> Self {
+        pub fn app_summaries(mut self, input: crate::model::AppSummary) -> Self {
             let mut v = self.app_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_summaries = Some(v);
             self
         }
@@ -1687,10 +1666,10 @@ pub mod list_app_component_recommendations_output {
         /// statuses.</p>
         pub fn component_recommendations(
             mut self,
-            input: impl Into<crate::model::ComponentRecommendation>,
+            input: crate::model::ComponentRecommendation,
         ) -> Self {
             let mut v = self.component_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_recommendations = Some(v);
             self
         }
@@ -1784,10 +1763,10 @@ pub mod list_app_component_compliances_output {
         /// more.</p>
         pub fn component_compliances(
             mut self,
-            input: impl Into<crate::model::AppComponentCompliance>,
+            input: crate::model::AppComponentCompliance,
         ) -> Self {
             let mut v = self.component_compliances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_compliances = Some(v);
             self
         }
@@ -1889,12 +1868,9 @@ pub mod list_app_assessments_output {
         /// <p>The summaries for the specified assessments, returned as an object. This object includes
         /// application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency
         /// scores, and more.</p>
-        pub fn assessment_summaries(
-            mut self,
-            input: impl Into<crate::model::AppAssessmentSummary>,
-        ) -> Self {
+        pub fn assessment_summaries(mut self, input: crate::model::AppAssessmentSummary) -> Self {
             let mut v = self.assessment_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_summaries = Some(v);
             self
         }
@@ -1976,12 +1952,9 @@ pub mod list_alarm_recommendations_output {
         /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This
         /// object includes application component names, descriptions, information about whether a
         /// recommendation has already been implemented or not, prerequisites, and more.</p>
-        pub fn alarm_recommendations(
-            mut self,
-            input: impl Into<crate::model::AlarmRecommendation>,
-        ) -> Self {
+        pub fn alarm_recommendations(mut self, input: crate::model::AlarmRecommendation) -> Self {
             let mut v = self.alarm_recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_recommendations = Some(v);
             self
         }
@@ -3372,12 +3345,9 @@ pub mod add_draft_app_version_resource_mappings_output {
         /// a logical stack name. Or you can map individual resources by using the mapping type
         /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
         /// application is backed by a CloudFormation stack.</p>
-        pub fn resource_mappings(
-            mut self,
-            input: impl Into<crate::model::ResourceMapping>,
-        ) -> Self {
+        pub fn resource_mappings(mut self, input: crate::model::ResourceMapping) -> Self {
             let mut v = self.resource_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_mappings = Some(v);
             self
         }

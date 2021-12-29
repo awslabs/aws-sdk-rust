@@ -468,9 +468,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -888,9 +888,9 @@ pub mod describe_repositories_output {
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>A list of repository objects corresponding to valid repositories.</p>
-        pub fn repositories(mut self, input: impl Into<crate::model::Repository>) -> Self {
+        pub fn repositories(mut self, input: crate::model::Repository) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -986,9 +986,9 @@ pub mod describe_registries_output {
         /// To override the contents of this collection use [`set_registries`](Self::set_registries).
         ///
         /// <p>An object containing the details for a public registry.</p>
-        pub fn registries(mut self, input: impl Into<crate::model::Registry>) -> Self {
+        pub fn registries(mut self, input: crate::model::Registry) -> Self {
             let mut v = self.registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.registries = Some(v);
             self
         }
@@ -1083,9 +1083,9 @@ pub mod describe_image_tags_output {
         /// To override the contents of this collection use [`set_image_tag_details`](Self::set_image_tag_details).
         ///
         /// <p>The image tag details for the images in the requested repository.</p>
-        pub fn image_tag_details(mut self, input: impl Into<crate::model::ImageTagDetail>) -> Self {
+        pub fn image_tag_details(mut self, input: crate::model::ImageTagDetail) -> Self {
             let mut v = self.image_tag_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_tag_details = Some(v);
             self
         }
@@ -1180,9 +1180,9 @@ pub mod describe_images_output {
         ///
         /// <p>A list of <a>ImageDetail</a> objects that contain data about the
         /// image.</p>
-        pub fn image_details(mut self, input: impl Into<crate::model::ImageDetail>) -> Self {
+        pub fn image_details(mut self, input: crate::model::ImageDetail) -> Self {
             let mut v = self.image_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_details = Some(v);
             self
         }
@@ -1618,9 +1618,9 @@ pub mod batch_delete_image_output {
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
         /// <p>The image IDs of the deleted images.</p>
-        pub fn image_ids(mut self, input: impl Into<crate::model::ImageIdentifier>) -> Self {
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_ids = Some(v);
             self
         }
@@ -1637,9 +1637,9 @@ pub mod batch_delete_image_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::ImageFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::ImageFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -1712,9 +1712,9 @@ pub mod batch_check_layer_availability_output {
         ///
         /// <p>A list of image layer objects corresponding to the image layer references in the
         /// request.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -1732,9 +1732,9 @@ pub mod batch_check_layer_availability_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::LayerFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::LayerFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }

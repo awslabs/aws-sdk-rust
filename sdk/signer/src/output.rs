@@ -465,9 +465,9 @@ pub mod list_signing_profiles_output {
         /// <p>A list of profiles that are available in the AWS account. This includes profiles with
         /// the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set
         /// to <code>true</code>.</p>
-        pub fn profiles(mut self, input: impl Into<crate::model::SigningProfile>) -> Self {
+        pub fn profiles(mut self, input: crate::model::SigningProfile) -> Self {
             let mut v = self.profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profiles = Some(v);
             self
         }
@@ -549,9 +549,9 @@ pub mod list_signing_platforms_output {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>A list of all platforms that match the request parameters.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::SigningPlatform>) -> Self {
+        pub fn platforms(mut self, input: crate::model::SigningPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -631,9 +631,9 @@ pub mod list_signing_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of your signing jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::SigningJob>) -> Self {
+        pub fn jobs(mut self, input: crate::model::SigningJob) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -749,9 +749,9 @@ pub mod list_profile_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>List of permissions associated with the Signing Profile.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }

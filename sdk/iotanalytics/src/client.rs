@@ -394,8 +394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel where the messages are sent.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The name of the channel where the messages are sent.</p>
@@ -435,8 +435,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
         /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
-        pub fn messages(mut self, inp: impl Into<crate::model::Message>) -> Self {
-            self.inner = self.inner.messages(inp);
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
+            self.inner = self.inner.messages(input);
             self
         }
         /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
@@ -535,8 +535,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of pipeline for which data reprocessing is canceled.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(signature.into());
             self
         }
         /// <p>The name of pipeline for which data reprocessing is canceled.</p>
@@ -549,8 +549,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the reprocessing task (returned by
         /// <code>StartPipelineReprocessing</code>).</p>
-        pub fn reprocessing_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reprocessing_id(inp);
+        pub fn reprocessing_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reprocessing_id(signature.into());
             self
         }
         /// <p>The ID of the reprocessing task (returned by
@@ -624,8 +624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The name of the channel.</p>
@@ -637,8 +637,8 @@ pub mod fluent_builders {
         /// <code>customerManagedS3</code> storage. If not specified, the default is
         /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
         /// created.</p>
-        pub fn channel_storage(mut self, inp: crate::model::ChannelStorage) -> Self {
-            self.inner = self.inner.channel_storage(inp);
+        pub fn channel_storage(mut self, signature: crate::model::ChannelStorage) -> Self {
+            self.inner = self.inner.channel_storage(signature);
             self
         }
         /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
@@ -654,8 +654,8 @@ pub mod fluent_builders {
         }
         /// <p>How long, in days, message data is kept for the channel. When
         /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(signature);
             self
         }
         /// <p>How long, in days, message data is kept for the channel. When
@@ -672,8 +672,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the channel.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata which can be used to manage the channel.</p>
@@ -749,8 +749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset.</p>
@@ -763,8 +763,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of actions that create the dataset contents.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::DatasetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>A list of actions that create the dataset contents.</p>
@@ -782,8 +782,8 @@ pub mod fluent_builders {
         /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
         /// interval or when another dataset's contents are created. The list of triggers can be empty or
         /// contain up to five <code>DataSetTrigger</code> objects.</p>
-        pub fn triggers(mut self, inp: impl Into<crate::model::DatasetTrigger>) -> Self {
-            self.inner = self.inner.triggers(inp);
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
+            self.inner = self.inner.triggers(input);
             self
         }
         /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
@@ -804,9 +804,9 @@ pub mod fluent_builders {
         /// here.</p>
         pub fn content_delivery_rules(
             mut self,
-            inp: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
-            self.inner = self.inner.content_delivery_rules(inp);
+            self.inner = self.inner.content_delivery_rules(input);
             self
         }
         /// <p>When dataset contents are created, they are delivered to destinations specified
@@ -824,8 +824,8 @@ pub mod fluent_builders {
         /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
         /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
         /// <i>IoT Analytics User Guide</i>.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(signature);
             self
         }
         /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
@@ -848,9 +848,9 @@ pub mod fluent_builders {
         /// <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
-            inp: crate::model::VersioningConfiguration,
+            signature: crate::model::VersioningConfiguration,
         ) -> Self {
-            self.inner = self.inner.versioning_configuration(inp);
+            self.inner = self.inner.versioning_configuration(signature);
             self
         }
         /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
@@ -870,8 +870,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the dataset.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata which can be used to manage the dataset.</p>
@@ -887,8 +887,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, inp: impl Into<crate::model::LateDataRule>) -> Self {
-            self.inner = self.inner.late_data_rules(inp);
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
+            self.inner = self.inner.late_data_rules(input);
             self
         }
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
@@ -961,8 +961,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset.</p>
@@ -972,8 +972,8 @@ pub mod fluent_builders {
         }
         /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
         /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
@@ -1043,8 +1043,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data store.</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(signature.into());
             self
         }
         /// <p>The name of the data store.</p>
@@ -1056,8 +1056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
-        pub fn datastore_storage(mut self, inp: crate::model::DatastoreStorage) -> Self {
-            self.inner = self.inner.datastore_storage(inp);
+        pub fn datastore_storage(mut self, signature: crate::model::DatastoreStorage) -> Self {
+            self.inner = self.inner.datastore_storage(signature);
             self
         }
         /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
@@ -1070,8 +1070,8 @@ pub mod fluent_builders {
         }
         /// <p>How long, in days, message data is kept for the data store. When
         /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(signature);
             self
         }
         /// <p>How long, in days, message data is kept for the data store. When
@@ -1088,8 +1088,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the data store.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata which can be used to manage the data store.</p>
@@ -1105,9 +1105,9 @@ pub mod fluent_builders {
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
             mut self,
-            inp: crate::model::FileFormatConfiguration,
+            signature: crate::model::FileFormatConfiguration,
         ) -> Self {
-            self.inner = self.inner.file_format_configuration(inp);
+            self.inner = self.inner.file_format_configuration(signature);
             self
         }
         /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
@@ -1121,8 +1121,11 @@ pub mod fluent_builders {
             self
         }
         /// <p> Contains information about the partition dimensions in a data store. </p>
-        pub fn datastore_partitions(mut self, inp: crate::model::DatastorePartitions) -> Self {
-            self.inner = self.inner.datastore_partitions(inp);
+        pub fn datastore_partitions(
+            mut self,
+            signature: crate::model::DatastorePartitions,
+        ) -> Self {
+            self.inner = self.inner.datastore_partitions(signature);
             self
         }
         /// <p> Contains information about the partition dimensions in a data store. </p>
@@ -1197,8 +1200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(signature.into());
             self
         }
         /// <p>The name of the pipeline.</p>
@@ -1224,11 +1227,8 @@ pub mod fluent_builders {
         /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
         /// ]</code>
         /// </p>
-        pub fn pipeline_activities(
-            mut self,
-            inp: impl Into<crate::model::PipelineActivity>,
-        ) -> Self {
-            self.inner = self.inner.pipeline_activities(inp);
+        pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
+            self.inner = self.inner.pipeline_activities(input);
             self
         }
         /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
@@ -1254,8 +1254,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the pipeline.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata which can be used to manage the pipeline.</p>
@@ -1327,8 +1327,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel to delete.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The name of the channel to delete.</p>
@@ -1399,8 +1399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to delete.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset to delete.</p>
@@ -1469,8 +1469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset whose content is deleted.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset whose content is deleted.</p>
@@ -1481,8 +1481,8 @@ pub mod fluent_builders {
         /// <p>The version of the dataset whose content is deleted. You can also use the strings
         /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
         /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version of the dataset whose content is deleted. You can also use the strings
@@ -1553,8 +1553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data store to delete.</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(signature.into());
             self
         }
         /// <p>The name of the data store to delete.</p>
@@ -1626,8 +1626,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to delete.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(signature.into());
             self
         }
         /// <p>The name of the pipeline to delete.</p>
@@ -1699,8 +1699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel whose information is retrieved.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The name of the channel whose information is retrieved.</p>
@@ -1710,8 +1710,8 @@ pub mod fluent_builders {
         }
         /// <p>If true, additional statistical information about the channel is included in the response.
         /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
-        pub fn include_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_statistics(inp);
+        pub fn include_statistics(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_statistics(signature);
             self
         }
         /// <p>If true, additional statistical information about the channel is included in the response.
@@ -1781,8 +1781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset whose information is retrieved.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset whose information is retrieved.</p>
@@ -1851,8 +1851,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data store</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(signature.into());
             self
         }
         /// <p>The name of the data store</p>
@@ -1866,8 +1866,8 @@ pub mod fluent_builders {
         /// <p>If true, additional statistical information about the data store is included in the
         /// response. This feature can't be used with a data store whose S3 storage is
         /// customer-managed.</p>
-        pub fn include_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_statistics(inp);
+        pub fn include_statistics(mut self, signature: bool) -> Self {
+            self.inner = self.inner.include_statistics(signature);
             self
         }
         /// <p>If true, additional statistical information about the data store is included in the
@@ -1998,8 +1998,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline whose information is retrieved.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(signature.into());
             self
         }
         /// <p>The name of the pipeline whose information is retrieved.</p>
@@ -2071,8 +2071,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset whose contents are retrieved.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset whose contents are retrieved.</p>
@@ -2083,8 +2083,8 @@ pub mod fluent_builders {
         /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
         /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
         /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(signature.into());
             self
         }
         /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
@@ -2155,8 +2155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2166,8 +2166,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in this request.</p>
         /// <p>The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2237,8 +2237,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset whose contents information you want to list.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset whose contents information you want to list.</p>
@@ -2247,8 +2247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2257,8 +2257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2269,8 +2269,8 @@ pub mod fluent_builders {
         /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
         /// after the given time. See the field <code>triggers.schedule</code> in the
         /// <code>CreateDataset</code> request. (timestamp)</p>
-        pub fn scheduled_on_or_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_on_or_after(inp);
+        pub fn scheduled_on_or_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_on_or_after(signature);
             self
         }
         /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
@@ -2286,8 +2286,8 @@ pub mod fluent_builders {
         /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
         /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
         /// request. (timestamp)</p>
-        pub fn scheduled_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_before(inp);
+        pub fn scheduled_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_before(signature);
             self
         }
         /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
@@ -2361,8 +2361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2372,8 +2372,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in this request.</p>
         /// <p>The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2443,8 +2443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2454,8 +2454,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in this request.</p>
         /// <p>The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2525,8 +2525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2536,8 +2536,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in this request.</p>
         /// <p>The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2607,8 +2607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags you want to list.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource whose tags you want to list.</p>
@@ -2681,8 +2681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The new values of the IoT Analytics logging options.</p>
-        pub fn logging_options(mut self, inp: crate::model::LoggingOptions) -> Self {
-            self.inner = self.inner.logging_options(inp);
+        pub fn logging_options(mut self, signature: crate::model::LoggingOptions) -> Self {
+            self.inner = self.inner.logging_options(signature);
             self
         }
         /// <p>The new values of the IoT Analytics logging options.</p>
@@ -2758,8 +2758,8 @@ pub mod fluent_builders {
         /// to store the (possibly) transformed message. If a Lambda activity is specified, only
         /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
         /// used.</p>
-        pub fn pipeline_activity(mut self, inp: crate::model::PipelineActivity) -> Self {
-            self.inner = self.inner.pipeline_activity(inp);
+        pub fn pipeline_activity(mut self, signature: crate::model::PipelineActivity) -> Self {
+            self.inner = self.inner.pipeline_activity(signature);
             self
         }
         /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
@@ -2779,8 +2779,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
         ///
         /// <p>The sample message payloads on which the pipeline activity is run.</p>
-        pub fn payloads(mut self, inp: impl Into<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.payloads(inp);
+        pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.payloads(input);
             self
         }
         /// <p>The sample message payloads on which the pipeline activity is run.</p>
@@ -2853,8 +2853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel whose message samples are retrieved.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The name of the channel whose message samples are retrieved.</p>
@@ -2864,8 +2864,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
         /// 10.</p>
-        pub fn max_messages(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_messages(inp);
+        pub fn max_messages(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_messages(signature);
             self
         }
         /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
@@ -2875,8 +2875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start of the time window from which sample messages are retrieved.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time window from which sample messages are retrieved.</p>
@@ -2888,8 +2888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time window from which sample messages are retrieved.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time window from which sample messages are retrieved.</p>
@@ -2961,8 +2961,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline on which to start reprocessing.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(signature.into());
             self
         }
         /// <p>The name of the pipeline on which to start reprocessing.</p>
@@ -2976,8 +2976,8 @@ pub mod fluent_builders {
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
         /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
         /// <code>channelMessages</code> object.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
@@ -2993,8 +2993,8 @@ pub mod fluent_builders {
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
         /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
         /// <code>channelMessages</code> object.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
@@ -3010,8 +3010,8 @@ pub mod fluent_builders {
         /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
         /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
         /// <code>startTime</code> and <code>endTime</code>.</p>
-        pub fn channel_messages(mut self, inp: crate::model::ChannelMessages) -> Self {
-            self.inner = self.inner.channel_messages(inp);
+        pub fn channel_messages(mut self, signature: crate::model::ChannelMessages) -> Self {
+            self.inner = self.inner.channel_messages(signature);
             self
         }
         /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
@@ -3086,8 +3086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags you want to modify.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource whose tags you want to modify.</p>
@@ -3100,8 +3100,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The new or modified tags for the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The new or modified tags for the resource.</p>
@@ -3173,8 +3173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags you want to remove.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource whose tags you want to remove.</p>
@@ -3187,8 +3187,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of those tags which you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of those tags which you want to remove.</p>
@@ -3260,8 +3260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel to be updated.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The name of the channel to be updated.</p>
@@ -3273,8 +3273,8 @@ pub mod fluent_builders {
         /// <code>customerManagedS3</code> storage. If not specified, the default is
         /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
         /// created.</p>
-        pub fn channel_storage(mut self, inp: crate::model::ChannelStorage) -> Self {
-            self.inner = self.inner.channel_storage(inp);
+        pub fn channel_storage(mut self, signature: crate::model::ChannelStorage) -> Self {
+            self.inner = self.inner.channel_storage(signature);
             self
         }
         /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
@@ -3290,8 +3290,8 @@ pub mod fluent_builders {
         }
         /// <p>How long, in days, message data is kept for the channel. The retention period can't be
         /// updated if the channel's Amazon S3 storage is customer-managed.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(signature);
             self
         }
         /// <p>How long, in days, message data is kept for the channel. The retention period can't be
@@ -3364,8 +3364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to update.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(signature.into());
             self
         }
         /// <p>The name of the dataset to update.</p>
@@ -3378,8 +3378,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of <code>DatasetAction</code> objects.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::DatasetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>A list of <code>DatasetAction</code> objects.</p>
@@ -3396,8 +3396,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
         /// five <code>DatasetTrigger</code> objects.</p>
-        pub fn triggers(mut self, inp: impl Into<crate::model::DatasetTrigger>) -> Self {
-            self.inner = self.inner.triggers(inp);
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
+            self.inner = self.inner.triggers(input);
             self
         }
         /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
@@ -3417,9 +3417,9 @@ pub mod fluent_builders {
         /// here.</p>
         pub fn content_delivery_rules(
             mut self,
-            inp: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
-            self.inner = self.inner.content_delivery_rules(inp);
+            self.inner = self.inner.content_delivery_rules(input);
             self
         }
         /// <p>When dataset contents are created, they are delivered to destinations specified
@@ -3432,8 +3432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How long, in days, dataset contents are kept for the dataset.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(signature);
             self
         }
         /// <p>How long, in days, dataset contents are kept for the dataset.</p>
@@ -3451,9 +3451,9 @@ pub mod fluent_builders {
         /// <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
-            inp: crate::model::VersioningConfiguration,
+            signature: crate::model::VersioningConfiguration,
         ) -> Self {
-            self.inner = self.inner.versioning_configuration(inp);
+            self.inner = self.inner.versioning_configuration(signature);
             self
         }
         /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
@@ -3473,8 +3473,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, inp: impl Into<crate::model::LateDataRule>) -> Self {
-            self.inner = self.inner.late_data_rules(inp);
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
+            self.inner = self.inner.late_data_rules(input);
             self
         }
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
@@ -3546,8 +3546,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data store to be updated.</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(signature.into());
             self
         }
         /// <p>The name of the data store to be updated.</p>
@@ -3560,8 +3560,8 @@ pub mod fluent_builders {
         }
         /// <p>How long, in days, message data is kept for the data store. The retention period can't be
         /// updated if the data store's Amazon S3 storage is customer-managed.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(signature);
             self
         }
         /// <p>How long, in days, message data is kept for the data store. The retention period can't be
@@ -3574,8 +3574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
-        pub fn datastore_storage(mut self, inp: crate::model::DatastoreStorage) -> Self {
-            self.inner = self.inner.datastore_storage(inp);
+        pub fn datastore_storage(mut self, signature: crate::model::DatastoreStorage) -> Self {
+            self.inner = self.inner.datastore_storage(signature);
             self
         }
         /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
@@ -3591,9 +3591,9 @@ pub mod fluent_builders {
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
             mut self,
-            inp: crate::model::FileFormatConfiguration,
+            signature: crate::model::FileFormatConfiguration,
         ) -> Self {
-            self.inner = self.inner.file_format_configuration(inp);
+            self.inner = self.inner.file_format_configuration(signature);
             self
         }
         /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
@@ -3669,8 +3669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to update.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(signature.into());
             self
         }
         /// <p>The name of the pipeline to update.</p>
@@ -3696,11 +3696,8 @@ pub mod fluent_builders {
         /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
         /// ]</code>
         /// </p>
-        pub fn pipeline_activities(
-            mut self,
-            inp: impl Into<crate::model::PipelineActivity>,
-        ) -> Self {
-            self.inner = self.inner.pipeline_activities(inp);
+        pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
+            self.inner = self.inner.pipeline_activities(input);
             self
         }
         /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on

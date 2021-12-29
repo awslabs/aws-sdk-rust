@@ -547,9 +547,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>The overview of users for an organization.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -623,9 +623,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -696,9 +696,9 @@ pub mod list_resources_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>One page of the organization's resource representation.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -786,9 +786,9 @@ pub mod list_resource_delegates_output {
         /// To override the contents of this collection use [`set_delegates`](Self::set_delegates).
         ///
         /// <p>One page of the resource's delegates.</p>
-        pub fn delegates(mut self, input: impl Into<crate::model::Delegate>) -> Self {
+        pub fn delegates(mut self, input: crate::model::Delegate) -> Self {
             let mut v = self.delegates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegates = Some(v);
             self
         }
@@ -881,12 +881,9 @@ pub mod list_organizations_output {
         ///
         /// <p>The overview of owned organizations presented as a list of organization
         /// summaries.</p>
-        pub fn organization_summaries(
-            mut self,
-            input: impl Into<crate::model::OrganizationSummary>,
-        ) -> Self {
+        pub fn organization_summaries(mut self, input: crate::model::OrganizationSummary) -> Self {
             let mut v = self.organization_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_summaries = Some(v);
             self
         }
@@ -961,9 +958,9 @@ pub mod list_mobile_device_access_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::MobileDeviceAccessRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::MobileDeviceAccessRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1031,12 +1028,9 @@ pub mod list_mobile_device_access_overrides_output {
         /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
         ///
         /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
-        pub fn overrides(
-            mut self,
-            input: impl Into<crate::model::MobileDeviceAccessOverride>,
-        ) -> Self {
+        pub fn overrides(mut self, input: crate::model::MobileDeviceAccessOverride) -> Self {
             let mut v = self.overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.overrides = Some(v);
             self
         }
@@ -1117,9 +1111,9 @@ pub mod list_mail_domains_output {
         /// To override the contents of this collection use [`set_mail_domains`](Self::set_mail_domains).
         ///
         /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail  organization, along with the information about whether the domain is or isn't the default.</p>
-        pub fn mail_domains(mut self, input: impl Into<crate::model::MailDomainSummary>) -> Self {
+        pub fn mail_domains(mut self, input: crate::model::MailDomainSummary) -> Self {
             let mut v = self.mail_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mail_domains = Some(v);
             self
         }
@@ -1201,9 +1195,9 @@ pub mod list_mailbox_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>One page of the user, group, or resource mailbox permissions.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1285,9 +1279,9 @@ pub mod list_mailbox_export_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>The mailbox export job details.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::MailboxExportJob>) -> Self {
+        pub fn jobs(mut self, input: crate::model::MailboxExportJob) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1369,9 +1363,9 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The overview of groups for an organization.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -1455,9 +1449,9 @@ pub mod list_group_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>The members associated to the group.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -1617,9 +1611,9 @@ pub mod list_access_control_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The access control rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::AccessControlRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::AccessControlRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1865,12 +1859,9 @@ pub mod get_mobile_device_access_effect_output {
         /// To override the contents of this collection use [`set_matched_rules`](Self::set_matched_rules).
         ///
         /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
-        pub fn matched_rules(
-            mut self,
-            input: impl Into<crate::model::MobileDeviceAccessMatchedRule>,
-        ) -> Self {
+        pub fn matched_rules(mut self, input: crate::model::MobileDeviceAccessMatchedRule) -> Self {
             let mut v = self.matched_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matched_rules = Some(v);
             self
         }
@@ -1977,9 +1968,9 @@ pub mod get_mail_domain_output {
         ///
         /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming
         /// email traffic to SES. See admin guide for more details.</p>
-        pub fn records(mut self, input: impl Into<crate::model::DnsRecord>) -> Self {
+        pub fn records(mut self, input: crate::model::DnsRecord) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -2228,12 +2219,9 @@ pub mod get_default_retention_policy_output {
         /// To override the contents of this collection use [`set_folder_configurations`](Self::set_folder_configurations).
         ///
         /// <p>The retention policy folder configurations.</p>
-        pub fn folder_configurations(
-            mut self,
-            input: impl Into<crate::model::FolderConfiguration>,
-        ) -> Self {
+        pub fn folder_configurations(mut self, input: crate::model::FolderConfiguration) -> Self {
             let mut v = self.folder_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_configurations = Some(v);
             self
         }

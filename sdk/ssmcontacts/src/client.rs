@@ -341,8 +341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-        pub fn page_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_id(inp);
+        pub fn page_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
@@ -351,8 +351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the contact channel.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(signature.into());
             self
         }
         /// <p>The ARN of the contact channel.</p>
@@ -364,8 +364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
-        pub fn accept_type(mut self, inp: crate::model::AcceptType) -> Self {
-            self.inner = self.inner.accept_type(inp);
+        pub fn accept_type(mut self, signature: crate::model::AcceptType) -> Self {
+            self.inner = self.inner.accept_type(signature);
             self
         }
         /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
@@ -377,8 +377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information provided by the user when the user acknowledges the page.</p>
-        pub fn note(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.note(inp);
+        pub fn note(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.note(signature.into());
             self
         }
         /// <p>Information provided by the user when the user acknowledges the page.</p>
@@ -387,8 +387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
-        pub fn accept_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_code(inp);
+        pub fn accept_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_code(signature.into());
             self
         }
         /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
@@ -404,8 +404,11 @@ pub mod fluent_builders {
         /// <p>Incident Manager can also <code>IGNORE</code>
         /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
         /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
-        pub fn accept_code_validation(mut self, inp: crate::model::AcceptCodeValidation) -> Self {
-            self.inner = self.inner.accept_code_validation(inp);
+        pub fn accept_code_validation(
+            mut self,
+            signature: crate::model::AcceptCodeValidation,
+        ) -> Self {
+            self.inner = self.inner.accept_code_validation(signature);
             self
         }
         /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
@@ -485,8 +488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
@@ -498,8 +501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The code sent to the contact channel when it was created in the contact. </p>
-        pub fn activation_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activation_code(inp);
+        pub fn activation_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activation_code(signature.into());
             self
         }
         /// <p>The code sent to the contact channel when it was created in the contact. </p>
@@ -574,8 +577,8 @@ pub mod fluent_builders {
         }
         /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
         /// be unique and identifiable. </p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(signature.into());
             self
         }
         /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
@@ -585,8 +588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full name of the contact or escalation plan.  </p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The full name of the contact or escalation plan.  </p>
@@ -596,8 +599,8 @@ pub mod fluent_builders {
         }
         /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
         /// <code>PERSONAL</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ContactType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::ContactType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
@@ -608,8 +611,8 @@ pub mod fluent_builders {
         }
         /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
         /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
-        pub fn plan(mut self, inp: crate::model::Plan) -> Self {
-            self.inner = self.inner.plan(inp);
+        pub fn plan(mut self, signature: crate::model::Plan) -> Self {
+            self.inner = self.inner.plan(signature);
             self
         }
         /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
@@ -624,8 +627,8 @@ pub mod fluent_builders {
         ///
         /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
         /// replication set. </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
@@ -639,8 +642,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -713,8 +716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
@@ -723,8 +726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact channel.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the contact channel.</p>
@@ -750,8 +753,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::ChannelType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::ChannelType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
@@ -790,8 +793,8 @@ pub mod fluent_builders {
         /// <p>EMAIL - any standard email format</p>
         /// </li>
         /// </ul>
-        pub fn delivery_address(mut self, inp: crate::model::ContactChannelAddress) -> Self {
-            self.inner = self.inner.delivery_address(inp);
+        pub fn delivery_address(mut self, signature: crate::model::ContactChannelAddress) -> Self {
+            self.inner = self.inner.delivery_address(signature);
             self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
@@ -817,8 +820,8 @@ pub mod fluent_builders {
         }
         /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
         /// Incident Manager can't engage your contact channel until it has been activated.</p>
-        pub fn defer_activation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.defer_activation(inp);
+        pub fn defer_activation(mut self, signature: bool) -> Self {
+            self.inner = self.inner.defer_activation(signature);
             self
         }
         /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
@@ -829,8 +832,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -904,8 +907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
@@ -980,8 +983,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
@@ -1053,8 +1056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
@@ -1127,8 +1130,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-        pub fn engagement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engagement_id(inp);
+        pub fn engagement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engagement_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
@@ -1200,8 +1203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the engagement to a contact channel.</p>
-        pub fn page_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_id(inp);
+        pub fn page_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_id(signature.into());
             self
         }
         /// <p>The ID of the engagement to a contact channel.</p>
@@ -1270,8 +1273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -1340,8 +1343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
@@ -1414,8 +1417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn contact_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(inp);
+        pub fn contact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -1484,8 +1487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact. </p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact. </p>
@@ -1494,8 +1497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1504,8 +1507,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contact channels per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of contact channels per page.</p>
@@ -1574,8 +1577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1584,8 +1587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contacts and escalation plans per page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of contacts and escalation plans per page of results.</p>
@@ -1594,8 +1597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
-        pub fn alias_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_prefix(inp);
+        pub fn alias_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_prefix(signature.into());
             self
         }
         /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
@@ -1605,8 +1608,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
         /// type <code>ESCALATION</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ContactType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::ContactType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
@@ -1676,8 +1679,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1686,8 +1689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of engagements per page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of engagements per page of results.</p>
@@ -1696,8 +1699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
-        pub fn incident_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_id(inp);
+        pub fn incident_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
@@ -1706,8 +1709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time range to lists engagements for an incident.</p>
-        pub fn time_range_value(mut self, inp: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.time_range_value(inp);
+        pub fn time_range_value(mut self, signature: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.time_range_value(signature);
             self
         }
         /// <p>The time range to lists engagements for an incident.</p>
@@ -1779,8 +1782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
-        pub fn page_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_id(inp);
+        pub fn page_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
@@ -1789,8 +1792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1799,8 +1802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of acknowledgements per page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of acknowledgements per page of results.</p>
@@ -1869,8 +1872,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
@@ -1879,8 +1882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1889,8 +1892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
@@ -1959,8 +1962,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-        pub fn engagement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engagement_id(inp);
+        pub fn engagement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engagement_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
@@ -1972,8 +1975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1983,8 +1986,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of engagements to contact channels to list per page of
         /// results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of engagements to contact channels to list per page of
@@ -2054,8 +2057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -2124,8 +2127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn contact_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(inp);
+        pub fn contact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -2134,8 +2137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details of the resource policy.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>Details of the resource policy.</p>
@@ -2206,8 +2209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
@@ -2280,8 +2283,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
@@ -2290,8 +2293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user that started the engagement.</p>
-        pub fn sender(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sender(inp);
+        pub fn sender(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sender(signature.into());
             self
         }
         /// <p>The user that started the engagement.</p>
@@ -2301,8 +2304,8 @@ pub mod fluent_builders {
         }
         /// <p>The secure subject of the message that was sent to the contact. Use this field for
         /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject(inp);
+        pub fn subject(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject(signature.into());
             self
         }
         /// <p>The secure subject of the message that was sent to the contact. Use this field for
@@ -2313,8 +2316,8 @@ pub mod fluent_builders {
         }
         /// <p>The secure content of the message that was sent to the contact. Use this field for
         /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(signature.into());
             self
         }
         /// <p>The secure content of the message that was sent to the contact. Use this field for
@@ -2325,8 +2328,8 @@ pub mod fluent_builders {
         }
         /// <p>The insecure subject of the message that was sent to the contact. Use this field for
         /// engagements to <code>SMS</code>.</p>
-        pub fn public_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_subject(inp);
+        pub fn public_subject(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_subject(signature.into());
             self
         }
         /// <p>The insecure subject of the message that was sent to the contact. Use this field for
@@ -2340,8 +2343,8 @@ pub mod fluent_builders {
         }
         /// <p>The insecure content of the message that was sent to the contact. Use this field for
         /// engagements to <code>SMS</code>.</p>
-        pub fn public_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_content(inp);
+        pub fn public_content(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_content(signature.into());
             self
         }
         /// <p>The insecure content of the message that was sent to the contact. Use this field for
@@ -2354,8 +2357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the incident that the engagement is part of.</p>
-        pub fn incident_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_id(inp);
+        pub fn incident_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_id(signature.into());
             self
         }
         /// <p>The ARN of the incident that the engagement is part of.</p>
@@ -2365,8 +2368,8 @@ pub mod fluent_builders {
         }
         /// <p>A token ensuring that the operation is called only once with the specified
         /// details.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A token ensuring that the operation is called only once with the specified
@@ -2440,8 +2443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-        pub fn engagement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engagement_id(inp);
+        pub fn engagement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engagement_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
@@ -2453,8 +2456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason that you're stopping the engagement. </p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(signature.into());
             self
         }
         /// <p>The reason that you're stopping the engagement. </p>
@@ -2524,8 +2527,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -2538,8 +2541,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags that you are adding to the contact or escalation plan.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags that you are adding to the contact or escalation plan.</p>
@@ -2611,8 +2614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -2625,8 +2628,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The key of the tag that you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The key of the tag that you want to remove.</p>
@@ -2698,8 +2701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
@@ -2708,8 +2711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full name of the contact or escalation plan.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The full name of the contact or escalation plan.</p>
@@ -2719,8 +2722,8 @@ pub mod fluent_builders {
         }
         /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
         /// channels. An escalation plan uses these stages to contact specified contacts. </p>
-        pub fn plan(mut self, inp: crate::model::Plan) -> Self {
-            self.inner = self.inner.plan(inp);
+        pub fn plan(mut self, signature: crate::model::Plan) -> Self {
+            self.inner = self.inner.plan(signature);
             self
         }
         /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
@@ -2790,8 +2793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
@@ -2803,8 +2806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact channel.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the contact channel.</p>
@@ -2813,8 +2816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
-        pub fn delivery_address(mut self, inp: crate::model::ContactChannelAddress) -> Self {
-            self.inner = self.inner.delivery_address(inp);
+        pub fn delivery_address(mut self, signature: crate::model::ContactChannelAddress) -> Self {
+            self.inner = self.inner.delivery_address(signature);
             self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>

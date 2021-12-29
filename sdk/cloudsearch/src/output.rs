@@ -413,9 +413,9 @@ pub mod describe_suggesters_output {
         /// To override the contents of this collection use [`set_suggesters`](Self::set_suggesters).
         ///
         /// <p>The suggesters configured for the domain specified in the request.</p>
-        pub fn suggesters(mut self, input: impl Into<crate::model::SuggesterStatus>) -> Self {
+        pub fn suggesters(mut self, input: crate::model::SuggesterStatus) -> Self {
             let mut v = self.suggesters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suggesters = Some(v);
             self
         }
@@ -592,9 +592,9 @@ pub mod describe_index_fields_output {
         /// To override the contents of this collection use [`set_index_fields`](Self::set_index_fields).
         ///
         /// <p>The index fields configured for the domain.</p>
-        pub fn index_fields(mut self, input: impl Into<crate::model::IndexFieldStatus>) -> Self {
+        pub fn index_fields(mut self, input: crate::model::IndexFieldStatus) -> Self {
             let mut v = self.index_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.index_fields = Some(v);
             self
         }
@@ -655,9 +655,9 @@ pub mod describe_expressions_output {
         /// To override the contents of this collection use [`set_expressions`](Self::set_expressions).
         ///
         /// <p>The expressions configured for the domain.</p>
-        pub fn expressions(mut self, input: impl Into<crate::model::ExpressionStatus>) -> Self {
+        pub fn expressions(mut self, input: crate::model::ExpressionStatus) -> Self {
             let mut v = self.expressions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expressions = Some(v);
             self
         }
@@ -719,9 +719,9 @@ pub mod describe_domains_output {
         /// To override the contents of this collection use [`set_domain_status_list`](Self::set_domain_status_list).
         ///
         /// <p>A list that contains the status of each requested domain.</p>
-        pub fn domain_status_list(mut self, input: impl Into<crate::model::DomainStatus>) -> Self {
+        pub fn domain_status_list(mut self, input: crate::model::DomainStatus) -> Self {
             let mut v = self.domain_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_status_list = Some(v);
             self
         }
@@ -909,12 +909,9 @@ pub mod describe_analysis_schemes_output {
         /// To override the contents of this collection use [`set_analysis_schemes`](Self::set_analysis_schemes).
         ///
         /// <p>The analysis scheme descriptions.</p>
-        pub fn analysis_schemes(
-            mut self,
-            input: impl Into<crate::model::AnalysisSchemeStatus>,
-        ) -> Self {
+        pub fn analysis_schemes(mut self, input: crate::model::AnalysisSchemeStatus) -> Self {
             let mut v = self.analysis_schemes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_schemes = Some(v);
             self
         }

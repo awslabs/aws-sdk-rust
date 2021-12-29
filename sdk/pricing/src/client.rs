@@ -182,8 +182,8 @@ pub mod fluent_builders {
         /// You can use
         /// the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call.
         /// To retrieve a list of all services, leave this blank.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
@@ -197,8 +197,8 @@ pub mod fluent_builders {
         /// <p>The format version that you want the response to be in.</p>
         /// <p>Valid values are: <code>aws_v1</code>
         /// </p>
-        pub fn format_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.format_version(inp);
+        pub fn format_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format_version(signature.into());
             self
         }
         /// <p>The format version that you want the response to be in.</p>
@@ -212,8 +212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -222,8 +222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results that you want returned in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results that you want returned in the response.</p>
@@ -296,8 +296,8 @@ pub mod fluent_builders {
         }
         /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
         /// the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
@@ -307,8 +307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(signature.into());
             self
         }
         /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
@@ -320,8 +320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -330,8 +330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in response.</p>
@@ -400,8 +400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The code for the service whose products you want to retrieve. </p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(signature.into());
             self
         }
         /// <p>The code for the service whose products you want to retrieve. </p>
@@ -415,8 +415,8 @@ pub mod fluent_builders {
         ///
         /// <p>The list of filters that limit the returned products. only products that match all filters
         /// are returned.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The list of filters that limit the returned products. only products that match all filters
@@ -431,8 +431,8 @@ pub mod fluent_builders {
         /// <p>The format version that you want the response to be in.</p>
         /// <p>Valid values are: <code>aws_v1</code>
         /// </p>
-        pub fn format_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.format_version(inp);
+        pub fn format_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format_version(signature.into());
             self
         }
         /// <p>The format version that you want the response to be in.</p>
@@ -446,8 +446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -456,8 +456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>

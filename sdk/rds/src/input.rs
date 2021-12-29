@@ -612,9 +612,9 @@ pub mod add_tags_to_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the Amazon RDS resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1778,9 +1778,9 @@ pub mod copy_db_cluster_parameter_group_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2192,9 +2192,9 @@ pub mod copy_db_cluster_snapshot_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2470,9 +2470,9 @@ pub mod copy_db_parameter_group_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2832,9 +2832,9 @@ pub mod copy_db_snapshot_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3276,9 +3276,9 @@ pub mod copy_option_group_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3825,9 +3825,9 @@ pub mod create_custom_db_engine_version_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4661,9 +4661,9 @@ pub mod create_db_cluster_input {
         ///
         /// <p>Tags to assign to the DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5721,9 +5721,9 @@ pub mod create_db_cluster_endpoint_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the Amazon RDS resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6063,9 +6063,9 @@ pub mod create_db_cluster_parameter_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to assign to the DB cluster parameter group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6302,9 +6302,9 @@ pub mod create_db_cluster_snapshot_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8183,9 +8183,9 @@ pub mod create_db_instance_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to assign to the DB instance.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8672,12 +8672,9 @@ pub mod create_db_instance_input {
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn processor_features(
-            mut self,
-            input: impl Into<crate::model::ProcessorFeature>,
-        ) -> Self {
+        pub fn processor_features(mut self, input: crate::model::ProcessorFeature) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processor_features = Some(v);
             self
         }
@@ -9385,9 +9382,9 @@ pub mod create_db_instance_read_replica_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9887,12 +9884,9 @@ pub mod create_db_instance_read_replica_input {
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn processor_features(
-            mut self,
-            input: impl Into<crate::model::ProcessorFeature>,
-        ) -> Self {
+        pub fn processor_features(mut self, input: crate::model::ProcessorFeature) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processor_features = Some(v);
             self
         }
@@ -10491,9 +10485,9 @@ pub mod create_db_parameter_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to assign to the DB parameter group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10695,9 +10689,9 @@ pub mod create_db_proxy_input {
         /// To override the contents of this collection use [`set_auth`](Self::set_auth).
         ///
         /// <p>The authorization mechanism that the proxy uses.</p>
-        pub fn auth(mut self, input: impl Into<crate::model::UserAuthConfig>) -> Self {
+        pub fn auth(mut self, input: crate::model::UserAuthConfig) -> Self {
             let mut v = self.auth.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auth = Some(v);
             self
         }
@@ -10806,9 +10800,9 @@ pub mod create_db_proxy_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11065,9 +11059,9 @@ pub mod create_db_proxy_endpoint_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11297,9 +11291,9 @@ pub mod create_db_security_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to assign to the DB security group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11535,9 +11529,9 @@ pub mod create_db_snapshot_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11754,9 +11748,9 @@ pub mod create_db_subnet_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to assign to the DB subnet group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12081,9 +12075,9 @@ pub mod create_event_subscription_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12707,9 +12701,9 @@ pub mod create_option_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to assign to the option group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16384,9 +16378,9 @@ pub mod describe_certificates_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -16608,9 +16602,9 @@ pub mod describe_custom_availability_zones_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A filter that specifies one or more custom AZs to describe.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -16927,9 +16921,9 @@ pub mod describe_db_cluster_backtracks_input {
         /// by these values.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -17210,9 +17204,9 @@ pub mod describe_db_cluster_endpoints_input {
         /// <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>.
         /// <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
         /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -17452,9 +17446,9 @@ pub mod describe_db_cluster_parameter_groups_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -17710,9 +17704,9 @@ pub mod describe_db_cluster_parameters_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -17974,9 +17968,9 @@ pub mod describe_db_clusters_input {
         /// the DB clusters for these engines.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -18542,9 +18536,9 @@ pub mod describe_db_cluster_snapshots_input {
         /// <code>engine</code> - Accepts names of database engines.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -19006,9 +19000,9 @@ pub mod describe_db_engine_versions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -19355,9 +19349,9 @@ pub mod describe_db_instance_automated_backups_input {
         /// </li>
         /// </ul>
         /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -19658,9 +19652,9 @@ pub mod describe_db_instances_input {
         /// about the DB instances for these engines.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -19959,9 +19953,9 @@ pub mod describe_db_log_files_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20171,9 +20165,9 @@ pub mod describe_db_parameter_groups_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20426,9 +20420,9 @@ pub mod describe_db_parameters_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20656,9 +20650,9 @@ pub mod describe_db_proxies_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -20891,9 +20885,9 @@ pub mod describe_db_proxy_endpoints_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -21122,9 +21116,9 @@ pub mod describe_db_proxy_target_groups_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -21358,9 +21352,9 @@ pub mod describe_db_proxy_targets_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter is not currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -21580,9 +21574,9 @@ pub mod describe_db_security_groups_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -22134,9 +22128,9 @@ pub mod describe_db_snapshots_input {
         /// <code>engine</code> - Accepts names of database engines.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -22435,9 +22429,9 @@ pub mod describe_db_subnet_groups_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -22658,9 +22652,9 @@ pub mod describe_engine_default_cluster_parameters_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -22882,9 +22876,9 @@ pub mod describe_engine_default_parameters_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -23105,9 +23099,9 @@ pub mod describe_event_categories_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -23432,9 +23426,9 @@ pub mod describe_events_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -23660,9 +23654,9 @@ pub mod describe_event_subscriptions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -23949,9 +23943,9 @@ pub mod describe_export_tasks_input {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -24237,9 +24231,9 @@ pub mod describe_global_clusters_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -24471,9 +24465,9 @@ pub mod describe_installation_media_input {
         /// <p>For more information about the valid engines for installation media, see <a>ImportInstallationMedia</a>.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -24825,9 +24819,9 @@ pub mod describe_option_group_options_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -25047,9 +25041,9 @@ pub mod describe_option_groups_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -25635,9 +25629,9 @@ pub mod describe_orderable_db_instance_options_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -25881,9 +25875,9 @@ pub mod describe_pending_maintenance_actions_input {
         /// actions for the DB instances identified by these ARNs.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -26228,9 +26222,9 @@ pub mod describe_reserved_db_instances_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -26541,9 +26535,9 @@ pub mod describe_reserved_db_instances_offerings_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -26809,9 +26803,9 @@ pub mod describe_source_regions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -28099,9 +28093,9 @@ pub mod list_tags_for_resource_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>This parameter isn't currently supported.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -30213,9 +30207,9 @@ pub mod modify_db_cluster_parameter_group_input {
         /// changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the
         /// parameter group.</p>
         /// </note>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -32030,12 +32024,9 @@ pub mod modify_db_instance_input {
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn processor_features(
-            mut self,
-            input: impl Into<crate::model::ProcessorFeature>,
-        ) -> Self {
+        pub fn processor_features(mut self, input: crate::model::ProcessorFeature) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processor_features = Some(v);
             self
         }
@@ -32504,9 +32495,9 @@ pub mod modify_db_parameter_group_input {
         /// changes to dynamic and static parameters are applied after a reboot without failover to the DB instances associated with the
         /// parameter group.</p>
         /// </note>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -32709,9 +32700,9 @@ pub mod modify_db_proxy_input {
         /// To override the contents of this collection use [`set_auth`](Self::set_auth).
         ///
         /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-        pub fn auth(mut self, input: impl Into<crate::model::UserAuthConfig>) -> Self {
+        pub fn auth(mut self, input: crate::model::UserAuthConfig) -> Self {
             let mut v = self.auth.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auth = Some(v);
             self
         }
@@ -34636,12 +34627,9 @@ pub mod modify_option_group_input {
         /// To override the contents of this collection use [`set_options_to_include`](Self::set_options_to_include).
         ///
         /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-        pub fn options_to_include(
-            mut self,
-            input: impl Into<crate::model::OptionConfiguration>,
-        ) -> Self {
+        pub fn options_to_include(mut self, input: crate::model::OptionConfiguration) -> Self {
             let mut v = self.options_to_include.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.options_to_include = Some(v);
             self
         }
@@ -35320,9 +35308,9 @@ pub mod purchase_reserved_db_instances_offering_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -36981,9 +36969,9 @@ pub mod reset_db_cluster_parameter_group_input {
         ///
         /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this
         /// parameter if the <code>ResetAllParameters</code> parameter is enabled.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -37213,9 +37201,9 @@ pub mod reset_db_parameter_group_input {
         /// </p>
         /// <p>Valid Values (for Apply method): <code>pending-reboot</code>
         /// </p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -37868,9 +37856,9 @@ pub mod restore_db_cluster_from_s3_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -38661,9 +38649,9 @@ pub mod restore_db_cluster_from_snapshot_input {
         ///
         /// <p>The tags to be assigned to the restored DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -39558,9 +39546,9 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -40630,9 +40618,9 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -40843,12 +40831,9 @@ pub mod restore_db_instance_from_db_snapshot_input {
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn processor_features(
-            mut self,
-            input: impl Into<crate::model::ProcessorFeature>,
-        ) -> Self {
+        pub fn processor_features(mut self, input: crate::model::ProcessorFeature) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processor_features = Some(v);
             self
         }
@@ -41853,9 +41838,9 @@ pub mod restore_db_instance_from_s3_input {
         /// <p>A list of tags to associate with this DB instance.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>            
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -42213,12 +42198,9 @@ pub mod restore_db_instance_from_s3_input {
         /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-        pub fn processor_features(
-            mut self,
-            input: impl Into<crate::model::ProcessorFeature>,
-        ) -> Self {
+        pub fn processor_features(mut self, input: crate::model::ProcessorFeature) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processor_features = Some(v);
             self
         }
@@ -42999,9 +42981,9 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// <p>A list of tags.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -43204,12 +43186,9 @@ pub mod restore_db_instance_to_point_in_time_input {
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn processor_features(
-            mut self,
-            input: impl Into<crate::model::ProcessorFeature>,
-        ) -> Self {
+        pub fn processor_features(mut self, input: crate::model::ProcessorFeature) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processor_features = Some(v);
             self
         }

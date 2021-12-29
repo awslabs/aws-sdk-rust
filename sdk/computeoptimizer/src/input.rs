@@ -61,10 +61,10 @@ pub mod delete_recommendation_preferences_input {
         /// recommendation preference that can be deleted.</p>
         pub fn recommendation_preference_names(
             mut self,
-            input: impl Into<crate::model::RecommendationPreferenceName>,
+            input: crate::model::RecommendationPreferenceName,
         ) -> Self {
             let mut v = self.recommendation_preference_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_preference_names = Some(v);
             self
         }
@@ -262,9 +262,9 @@ pub mod describe_recommendation_export_jobs_input {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of export
         /// jobs.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::JobFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::JobFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -499,9 +499,9 @@ pub mod export_auto_scaling_group_recommendations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -522,10 +522,10 @@ pub mod export_auto_scaling_group_recommendations_input {
         /// Guide</i>.</p>
         pub fn fields_to_export(
             mut self,
-            input: impl Into<crate::model::ExportableAutoScalingGroupField>,
+            input: crate::model::ExportableAutoScalingGroupField,
         ) -> Self {
             let mut v = self.fields_to_export.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields_to_export = Some(v);
             self
         }
@@ -834,9 +834,9 @@ pub mod export_ebs_volume_recommendations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::EbsFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::EbsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -855,12 +855,9 @@ pub mod export_ebs_volume_recommendations_input {
         /// <p>The recommendations data to include in the export file. For more information about the
         /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
         /// Guide</i>.</p>
-        pub fn fields_to_export(
-            mut self,
-            input: impl Into<crate::model::ExportableVolumeField>,
-        ) -> Self {
+        pub fn fields_to_export(mut self, input: crate::model::ExportableVolumeField) -> Self {
             let mut v = self.fields_to_export.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields_to_export = Some(v);
             self
         }
@@ -1151,9 +1148,9 @@ pub mod export_ec2_instance_recommendations_input {
         ///
         /// <p>An array of objects to specify a filter that exports a more specific set of instance
         /// recommendations.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1173,12 +1170,9 @@ pub mod export_ec2_instance_recommendations_input {
         /// <p>The recommendations data to include in the export file. For more information about the
         /// fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User
         /// Guide</i>.</p>
-        pub fn fields_to_export(
-            mut self,
-            input: impl Into<crate::model::ExportableInstanceField>,
-        ) -> Self {
+        pub fn fields_to_export(mut self, input: crate::model::ExportableInstanceField) -> Self {
             let mut v = self.fields_to_export.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields_to_export = Some(v);
             self
         }
@@ -1484,12 +1478,9 @@ pub mod export_lambda_function_recommendations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::LambdaFunctionRecommendationFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::LambdaFunctionRecommendationFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1512,10 +1503,10 @@ pub mod export_lambda_function_recommendations_input {
         /// Guide</i>.</p>
         pub fn fields_to_export(
             mut self,
-            input: impl Into<crate::model::ExportableLambdaFunctionField>,
+            input: crate::model::ExportableLambdaFunctionField,
         ) -> Self {
             let mut v = self.fields_to_export.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields_to_export = Some(v);
             self
         }
@@ -1846,9 +1837,9 @@ pub mod get_auto_scaling_group_recommendations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2085,9 +2076,9 @@ pub mod get_ebs_volume_recommendations_input {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of volume
         /// recommendations.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::EbsFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::EbsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2334,9 +2325,9 @@ pub mod get_ec2_instance_recommendations_input {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of instance
         /// recommendations.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3084,9 +3075,9 @@ pub mod get_enrollment_statuses_for_organization_input {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of account
         /// enrollment statuses.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::EnrollmentFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::EnrollmentFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3347,12 +3338,9 @@ pub mod get_lambda_function_recommendations_input {
         ///
         /// <p>An array of objects to specify a filter that returns a more specific list of function
         /// recommendations.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::LambdaFunctionRecommendationFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::LambdaFunctionRecommendationFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }

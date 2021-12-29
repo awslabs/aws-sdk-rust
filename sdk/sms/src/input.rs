@@ -61,9 +61,9 @@ pub mod create_app_input {
         /// To override the contents of this collection use [`set_server_groups`](Self::set_server_groups).
         ///
         /// <p>The server groups to include in the application.</p>
-        pub fn server_groups(mut self, input: impl Into<crate::model::ServerGroup>) -> Self {
+        pub fn server_groups(mut self, input: crate::model::ServerGroup) -> Self {
             let mut v = self.server_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_groups = Some(v);
             self
         }
@@ -80,9 +80,9 @@ pub mod create_app_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be associated with the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3326,12 +3326,9 @@ pub mod get_servers_input {
         /// To override the contents of this collection use [`set_vm_server_address_list`](Self::set_vm_server_address_list).
         ///
         /// <p>The server addresses.</p>
-        pub fn vm_server_address_list(
-            mut self,
-            input: impl Into<crate::model::VmServerAddress>,
-        ) -> Self {
+        pub fn vm_server_address_list(mut self, input: crate::model::VmServerAddress) -> Self {
             let mut v = self.vm_server_address_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vm_server_address_list = Some(v);
             self
         }
@@ -4325,10 +4322,10 @@ pub mod put_app_launch_configuration_input {
         /// <p>Information about the launch configurations for server groups in the application.</p>
         pub fn server_group_launch_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupLaunchConfiguration>,
+            input: crate::model::ServerGroupLaunchConfiguration,
         ) -> Self {
             let mut v = self.server_group_launch_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_launch_configurations = Some(v);
             self
         }
@@ -4509,12 +4506,12 @@ pub mod put_app_replication_configuration_input {
         /// <p>Information about the replication configurations for server groups in the application.</p>
         pub fn server_group_replication_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupReplicationConfiguration>,
+            input: crate::model::ServerGroupReplicationConfiguration,
         ) -> Self {
             let mut v = self
                 .server_group_replication_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_replication_configurations = Some(v);
             self
         }
@@ -4698,10 +4695,10 @@ pub mod put_app_validation_configuration_input {
         /// <p>The configuration for application validation.</p>
         pub fn app_validation_configurations(
             mut self,
-            input: impl Into<crate::model::AppValidationConfiguration>,
+            input: crate::model::AppValidationConfiguration,
         ) -> Self {
             let mut v = self.app_validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_validation_configurations = Some(v);
             self
         }
@@ -4720,12 +4717,12 @@ pub mod put_app_validation_configuration_input {
         /// <p>The configuration for instance validation.</p>
         pub fn server_group_validation_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupValidationConfiguration>,
+            input: crate::model::ServerGroupValidationConfiguration,
         ) -> Self {
             let mut v = self
                 .server_group_validation_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_validation_configurations = Some(v);
             self
         }
@@ -5738,9 +5735,9 @@ pub mod update_app_input {
         /// To override the contents of this collection use [`set_server_groups`](Self::set_server_groups).
         ///
         /// <p>The server groups in the application to update.</p>
-        pub fn server_groups(mut self, input: impl Into<crate::model::ServerGroup>) -> Self {
+        pub fn server_groups(mut self, input: crate::model::ServerGroup) -> Self {
             let mut v = self.server_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_groups = Some(v);
             self
         }
@@ -5757,9 +5754,9 @@ pub mod update_app_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

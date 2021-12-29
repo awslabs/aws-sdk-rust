@@ -144,9 +144,9 @@ pub mod start_remediation_execution_output {
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
         /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-        pub fn failed_items(mut self, input: impl Into<crate::model::ResourceKey>) -> Self {
+        pub fn failed_items(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.failed_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_items = Some(v);
             self
         }
@@ -633,10 +633,10 @@ pub mod put_remediation_exceptions_output {
         /// <p>Returns a list of failed remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
         pub fn failed_batches(
             mut self,
-            input: impl Into<crate::model::FailedRemediationExceptionBatch>,
+            input: crate::model::FailedRemediationExceptionBatch,
         ) -> Self {
             let mut v = self.failed_batches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batches = Some(v);
             self
         }
@@ -700,12 +700,9 @@ pub mod put_remediation_configurations_output {
         /// To override the contents of this collection use [`set_failed_batches`](Self::set_failed_batches).
         ///
         /// <p>Returns a list of failed remediation batch objects.</p>
-        pub fn failed_batches(
-            mut self,
-            input: impl Into<crate::model::FailedRemediationBatch>,
-        ) -> Self {
+        pub fn failed_batches(mut self, input: crate::model::FailedRemediationBatch) -> Self {
             let mut v = self.failed_batches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batches = Some(v);
             self
         }
@@ -925,9 +922,9 @@ pub mod put_evaluations_output {
         ///
         /// <p>Requests that failed because of a client or server
         /// error.</p>
-        pub fn failed_evaluations(mut self, input: impl Into<crate::model::Evaluation>) -> Self {
+        pub fn failed_evaluations(mut self, input: crate::model::Evaluation) -> Self {
             let mut v = self.failed_evaluations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_evaluations = Some(v);
             self
         }
@@ -1278,9 +1275,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1368,12 +1365,9 @@ pub mod list_stored_queries_output {
         /// To override the contents of this collection use [`set_stored_query_metadata`](Self::set_stored_query_metadata).
         ///
         /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
-        pub fn stored_query_metadata(
-            mut self,
-            input: impl Into<crate::model::StoredQueryMetadata>,
-        ) -> Self {
+        pub fn stored_query_metadata(mut self, input: crate::model::StoredQueryMetadata) -> Self {
             let mut v = self.stored_query_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stored_query_metadata = Some(v);
             self
         }
@@ -1463,12 +1457,9 @@ pub mod list_discovered_resources_output {
         ///
         /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the
         /// custom resource name.</p>
-        pub fn resource_identifiers(
-            mut self,
-            input: impl Into<crate::model::ResourceIdentifier>,
-        ) -> Self {
+        pub fn resource_identifiers(mut self, input: crate::model::ResourceIdentifier) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
@@ -1557,10 +1548,10 @@ pub mod list_aggregate_discovered_resources_output {
         /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
         pub fn resource_identifiers(
             mut self,
-            input: impl Into<crate::model::AggregateResourceIdentifier>,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
@@ -1704,12 +1695,9 @@ pub mod get_resource_config_history_output {
         ///
         /// <p>A list that contains the configuration history of one or more
         /// resources.</p>
-        pub fn configuration_items(
-            mut self,
-            input: impl Into<crate::model::ConfigurationItem>,
-        ) -> Self {
+        pub fn configuration_items(mut self, input: crate::model::ConfigurationItem) -> Self {
             let mut v = self.configuration_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_items = Some(v);
             self
         }
@@ -1803,12 +1791,12 @@ pub mod get_organization_conformance_pack_detailed_status_output {
         /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
         pub fn organization_conformance_pack_detailed_statuses(
             mut self,
-            input: impl Into<crate::model::OrganizationConformancePackDetailedStatus>,
+            input: crate::model::OrganizationConformancePackDetailedStatus,
         ) -> Self {
             let mut v = self
                 .organization_conformance_pack_detailed_statuses
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_conformance_pack_detailed_statuses = Some(v);
             self
         }
@@ -1901,12 +1889,12 @@ pub mod get_organization_config_rule_detailed_status_output {
         /// <p>A list of <code>MemberAccountStatus</code> objects.</p>
         pub fn organization_config_rule_detailed_status(
             mut self,
-            input: impl Into<crate::model::MemberAccountStatus>,
+            input: crate::model::MemberAccountStatus,
         ) -> Self {
             let mut v = self
                 .organization_config_rule_detailed_status
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_config_rule_detailed_status = Some(v);
             self
         }
@@ -2122,9 +2110,9 @@ pub mod get_discovered_resource_counts_output {
         ///
         /// <p>The list of <code>ResourceCount</code> objects. Each object is
         /// listed in descending order by the number of resources.</p>
-        pub fn resource_counts(mut self, input: impl Into<crate::model::ResourceCount>) -> Self {
+        pub fn resource_counts(mut self, input: crate::model::ResourceCount) -> Self {
             let mut v = self.resource_counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_counts = Some(v);
             self
         }
@@ -2217,12 +2205,12 @@ pub mod get_conformance_pack_compliance_summary_output {
         /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
         pub fn conformance_pack_compliance_summary_list(
             mut self,
-            input: impl Into<crate::model::ConformancePackComplianceSummary>,
+            input: crate::model::ConformancePackComplianceSummary,
         ) -> Self {
             let mut v = self
                 .conformance_pack_compliance_summary_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_compliance_summary_list = Some(v);
             self
         }
@@ -2335,12 +2323,12 @@ pub mod get_conformance_pack_compliance_details_output {
         /// <p>Returns a list of <code>ConformancePackEvaluationResult</code> objects.</p>
         pub fn conformance_pack_rule_evaluation_results(
             mut self,
-            input: impl Into<crate::model::ConformancePackEvaluationResult>,
+            input: crate::model::ConformancePackEvaluationResult,
         ) -> Self {
             let mut v = self
                 .conformance_pack_rule_evaluation_results
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_rule_evaluation_results = Some(v);
             self
         }
@@ -2434,12 +2422,12 @@ pub mod get_compliance_summary_by_resource_type_output {
         /// maximum number returned is 100.</p>
         pub fn compliance_summaries_by_resource_type(
             mut self,
-            input: impl Into<crate::model::ComplianceSummaryByResourceType>,
+            input: crate::model::ComplianceSummaryByResourceType,
         ) -> Self {
             let mut v = self
                 .compliance_summaries_by_resource_type
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_summaries_by_resource_type = Some(v);
             self
         }
@@ -2581,12 +2569,9 @@ pub mod get_compliance_details_by_resource_output {
         /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
         ///
         /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
-        pub fn evaluation_results(
-            mut self,
-            input: impl Into<crate::model::EvaluationResult>,
-        ) -> Self {
+        pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_results = Some(v);
             self
         }
@@ -2674,12 +2659,9 @@ pub mod get_compliance_details_by_config_rule_output {
         ///
         /// <p>Indicates whether the Amazon Web Services resource complies with the specified
         /// Config rule.</p>
-        pub fn evaluation_results(
-            mut self,
-            input: impl Into<crate::model::EvaluationResult>,
-        ) -> Self {
+        pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_results = Some(v);
             self
         }
@@ -2864,10 +2846,10 @@ pub mod get_aggregate_discovered_resource_counts_output {
         /// <p>Returns a list of GroupedResourceCount objects.</p>
         pub fn grouped_resource_counts(
             mut self,
-            input: impl Into<crate::model::GroupedResourceCount>,
+            input: crate::model::GroupedResourceCount,
         ) -> Self {
             let mut v = self.grouped_resource_counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grouped_resource_counts = Some(v);
             self
         }
@@ -2968,12 +2950,12 @@ pub mod get_aggregate_conformance_pack_compliance_summary_output {
         /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
         pub fn aggregate_conformance_pack_compliance_summaries(
             mut self,
-            input: impl Into<crate::model::AggregateConformancePackComplianceSummary>,
+            input: crate::model::AggregateConformancePackComplianceSummary,
         ) -> Self {
             let mut v = self
                 .aggregate_conformance_pack_compliance_summaries
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_conformance_pack_compliance_summaries = Some(v);
             self
         }
@@ -3097,10 +3079,10 @@ pub mod get_aggregate_config_rule_compliance_summary_output {
         /// <p>Returns a list of AggregateComplianceCounts object.</p>
         pub fn aggregate_compliance_counts(
             mut self,
-            input: impl Into<crate::model::AggregateComplianceCount>,
+            input: crate::model::AggregateComplianceCount,
         ) -> Self {
             let mut v = self.aggregate_compliance_counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_compliance_counts = Some(v);
             self
         }
@@ -3195,10 +3177,10 @@ pub mod get_aggregate_compliance_details_by_config_rule_output {
         /// <p>Returns an AggregateEvaluationResults object.</p>
         pub fn aggregate_evaluation_results(
             mut self,
-            input: impl Into<crate::model::AggregateEvaluationResult>,
+            input: crate::model::AggregateEvaluationResult,
         ) -> Self {
             let mut v = self.aggregate_evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_evaluation_results = Some(v);
             self
         }
@@ -3291,10 +3273,10 @@ pub mod describe_retention_configurations_output {
         /// <p>Returns a retention configuration object.</p>
         pub fn retention_configurations(
             mut self,
-            input: impl Into<crate::model::RetentionConfiguration>,
+            input: crate::model::RetentionConfiguration,
         ) -> Self {
             let mut v = self.retention_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.retention_configurations = Some(v);
             self
         }
@@ -3387,10 +3369,10 @@ pub mod describe_remediation_execution_status_output {
         /// <p>Returns a list of remediation execution statuses objects.</p>
         pub fn remediation_execution_statuses(
             mut self,
-            input: impl Into<crate::model::RemediationExecutionStatus>,
+            input: crate::model::RemediationExecutionStatus,
         ) -> Self {
             let mut v = self.remediation_execution_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remediation_execution_statuses = Some(v);
             self
         }
@@ -3474,12 +3456,9 @@ pub mod describe_remediation_exceptions_output {
         /// To override the contents of this collection use [`set_remediation_exceptions`](Self::set_remediation_exceptions).
         ///
         /// <p>Returns a list of remediation exception objects.</p>
-        pub fn remediation_exceptions(
-            mut self,
-            input: impl Into<crate::model::RemediationException>,
-        ) -> Self {
+        pub fn remediation_exceptions(mut self, input: crate::model::RemediationException) -> Self {
             let mut v = self.remediation_exceptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remediation_exceptions = Some(v);
             self
         }
@@ -3560,10 +3539,10 @@ pub mod describe_remediation_configurations_output {
         /// <p>Returns a remediation configuration object.</p>
         pub fn remediation_configurations(
             mut self,
-            input: impl Into<crate::model::RemediationConfiguration>,
+            input: crate::model::RemediationConfiguration,
         ) -> Self {
             let mut v = self.remediation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remediation_configurations = Some(v);
             self
         }
@@ -3643,10 +3622,10 @@ pub mod describe_pending_aggregation_requests_output {
         /// <p>Returns a PendingAggregationRequests object.</p>
         pub fn pending_aggregation_requests(
             mut self,
-            input: impl Into<crate::model::PendingAggregationRequest>,
+            input: crate::model::PendingAggregationRequest,
         ) -> Self {
             let mut v = self.pending_aggregation_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_aggregation_requests = Some(v);
             self
         }
@@ -3737,12 +3716,12 @@ pub mod describe_organization_conformance_pack_statuses_output {
         /// <p>A list of <code>OrganizationConformancePackStatus</code> objects. </p>
         pub fn organization_conformance_pack_statuses(
             mut self,
-            input: impl Into<crate::model::OrganizationConformancePackStatus>,
+            input: crate::model::OrganizationConformancePackStatus,
         ) -> Self {
             let mut v = self
                 .organization_conformance_pack_statuses
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_conformance_pack_statuses = Some(v);
             self
         }
@@ -3836,10 +3815,10 @@ pub mod describe_organization_conformance_packs_output {
         /// <p>Returns a list of OrganizationConformancePacks objects.</p>
         pub fn organization_conformance_packs(
             mut self,
-            input: impl Into<crate::model::OrganizationConformancePack>,
+            input: crate::model::OrganizationConformancePack,
         ) -> Self {
             let mut v = self.organization_conformance_packs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_conformance_packs = Some(v);
             self
         }
@@ -3930,10 +3909,10 @@ pub mod describe_organization_config_rule_statuses_output {
         /// <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
         pub fn organization_config_rule_statuses(
             mut self,
-            input: impl Into<crate::model::OrganizationConfigRuleStatus>,
+            input: crate::model::OrganizationConfigRuleStatus,
         ) -> Self {
             let mut v = self.organization_config_rule_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_config_rule_statuses = Some(v);
             self
         }
@@ -4019,10 +3998,10 @@ pub mod describe_organization_config_rules_output {
         /// <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
         pub fn organization_config_rules(
             mut self,
-            input: impl Into<crate::model::OrganizationConfigRule>,
+            input: crate::model::OrganizationConfigRule,
         ) -> Self {
             let mut v = self.organization_config_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_config_rules = Some(v);
             self
         }
@@ -4103,10 +4082,10 @@ pub mod describe_delivery_channel_status_output {
         /// channel.</p>
         pub fn delivery_channels_status(
             mut self,
-            input: impl Into<crate::model::DeliveryChannelStatus>,
+            input: crate::model::DeliveryChannelStatus,
         ) -> Self {
             let mut v = self.delivery_channels_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delivery_channels_status = Some(v);
             self
         }
@@ -4173,12 +4152,9 @@ pub mod describe_delivery_channels_output {
         ///
         /// <p>A list that contains the descriptions of the specified delivery
         /// channel.</p>
-        pub fn delivery_channels(
-            mut self,
-            input: impl Into<crate::model::DeliveryChannel>,
-        ) -> Self {
+        pub fn delivery_channels(mut self, input: crate::model::DeliveryChannel) -> Self {
             let mut v = self.delivery_channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delivery_channels = Some(v);
             self
         }
@@ -4257,10 +4233,10 @@ pub mod describe_conformance_pack_status_output {
         /// <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
         pub fn conformance_pack_status_details(
             mut self,
-            input: impl Into<crate::model::ConformancePackStatusDetail>,
+            input: crate::model::ConformancePackStatusDetail,
         ) -> Self {
             let mut v = self.conformance_pack_status_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_status_details = Some(v);
             self
         }
@@ -4346,10 +4322,10 @@ pub mod describe_conformance_packs_output {
         /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
         pub fn conformance_pack_details(
             mut self,
-            input: impl Into<crate::model::ConformancePackDetail>,
+            input: crate::model::ConformancePackDetail,
         ) -> Self {
             let mut v = self.conformance_pack_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_details = Some(v);
             self
         }
@@ -4459,12 +4435,12 @@ pub mod describe_conformance_pack_compliance_output {
         /// <p>Returns a list of <code>ConformancePackRuleCompliance</code> objects.</p>
         pub fn conformance_pack_rule_compliance_list(
             mut self,
-            input: impl Into<crate::model::ConformancePackRuleCompliance>,
+            input: crate::model::ConformancePackRuleCompliance,
         ) -> Self {
             let mut v = self
                 .conformance_pack_rule_compliance_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_rule_compliance_list = Some(v);
             self
         }
@@ -4550,10 +4526,10 @@ pub mod describe_configuration_recorder_status_output {
         /// recorders.</p>
         pub fn configuration_recorders_status(
             mut self,
-            input: impl Into<crate::model::ConfigurationRecorderStatus>,
+            input: crate::model::ConfigurationRecorderStatus,
         ) -> Self {
             let mut v = self.configuration_recorders_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_recorders_status = Some(v);
             self
         }
@@ -4624,10 +4600,10 @@ pub mod describe_configuration_recorders_output {
         /// configuration recorders.</p>
         pub fn configuration_recorders(
             mut self,
-            input: impl Into<crate::model::ConfigurationRecorder>,
+            input: crate::model::ConfigurationRecorder,
         ) -> Self {
             let mut v = self.configuration_recorders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_recorders = Some(v);
             self
         }
@@ -4711,10 +4687,10 @@ pub mod describe_configuration_aggregator_sources_status_output {
         /// </p>
         pub fn aggregated_source_status_list(
             mut self,
-            input: impl Into<crate::model::AggregatedSourceStatus>,
+            input: crate::model::AggregatedSourceStatus,
         ) -> Self {
             let mut v = self.aggregated_source_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregated_source_status_list = Some(v);
             self
         }
@@ -4806,10 +4782,10 @@ pub mod describe_configuration_aggregators_output {
         /// <p>Returns a ConfigurationAggregators object.</p>
         pub fn configuration_aggregators(
             mut self,
-            input: impl Into<crate::model::ConfigurationAggregator>,
+            input: crate::model::ConfigurationAggregator,
         ) -> Self {
             let mut v = self.configuration_aggregators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_aggregators = Some(v);
             self
         }
@@ -4893,9 +4869,9 @@ pub mod describe_config_rules_output {
         /// To override the contents of this collection use [`set_config_rules`](Self::set_config_rules).
         ///
         /// <p>The details about your Config rules.</p>
-        pub fn config_rules(mut self, input: impl Into<crate::model::ConfigRule>) -> Self {
+        pub fn config_rules(mut self, input: crate::model::ConfigRule) -> Self {
             let mut v = self.config_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config_rules = Some(v);
             self
         }
@@ -4988,10 +4964,10 @@ pub mod describe_config_rule_evaluation_status_output {
         /// <p>Status information about your Config managed rules.</p>
         pub fn config_rules_evaluation_status(
             mut self,
-            input: impl Into<crate::model::ConfigRuleEvaluationStatus>,
+            input: crate::model::ConfigRuleEvaluationStatus,
         ) -> Self {
             let mut v = self.config_rules_evaluation_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config_rules_evaluation_status = Some(v);
             self
         }
@@ -5084,10 +5060,10 @@ pub mod describe_compliance_by_resource_output {
         /// of the Config rules that evaluate it.</p>
         pub fn compliance_by_resources(
             mut self,
-            input: impl Into<crate::model::ComplianceByResource>,
+            input: crate::model::ComplianceByResource,
         ) -> Self {
             let mut v = self.compliance_by_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_by_resources = Some(v);
             self
         }
@@ -5184,10 +5160,10 @@ pub mod describe_compliance_by_config_rule_output {
         /// compliant.</p>
         pub fn compliance_by_config_rules(
             mut self,
-            input: impl Into<crate::model::ComplianceByConfigRule>,
+            input: crate::model::ComplianceByConfigRule,
         ) -> Self {
             let mut v = self.compliance_by_config_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_by_config_rules = Some(v);
             self
         }
@@ -5284,10 +5260,10 @@ pub mod describe_aggregation_authorizations_output {
         /// accounts and regions.</p>
         pub fn aggregation_authorizations(
             mut self,
-            input: impl Into<crate::model::AggregationAuthorization>,
+            input: crate::model::AggregationAuthorization,
         ) -> Self {
             let mut v = self.aggregation_authorizations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregation_authorizations = Some(v);
             self
         }
@@ -5379,12 +5355,12 @@ pub mod describe_aggregate_compliance_by_conformance_packs_output {
         /// <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
         pub fn aggregate_compliance_by_conformance_packs(
             mut self,
-            input: impl Into<crate::model::AggregateComplianceByConformancePack>,
+            input: crate::model::AggregateComplianceByConformancePack,
         ) -> Self {
             let mut v = self
                 .aggregate_compliance_by_conformance_packs
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_compliance_by_conformance_packs = Some(v);
             self
         }
@@ -5482,12 +5458,12 @@ pub mod describe_aggregate_compliance_by_config_rules_output {
         /// object.</p>
         pub fn aggregate_compliance_by_config_rules(
             mut self,
-            input: impl Into<crate::model::AggregateComplianceByConfigRule>,
+            input: crate::model::AggregateComplianceByConfigRule,
         ) -> Self {
             let mut v = self
                 .aggregate_compliance_by_config_rules
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_compliance_by_config_rules = Some(v);
             self
         }
@@ -5720,10 +5696,10 @@ pub mod delete_remediation_exceptions_output {
         /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
         pub fn failed_batches(
             mut self,
-            input: impl Into<crate::model::FailedDeleteRemediationExceptionsBatch>,
+            input: crate::model::FailedDeleteRemediationExceptionsBatch,
         ) -> Self {
             let mut v = self.failed_batches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batches = Some(v);
             self
         }
@@ -6147,10 +6123,10 @@ pub mod batch_get_resource_config_output {
         /// resources.</p>
         pub fn base_configuration_items(
             mut self,
-            input: impl Into<crate::model::BaseConfigurationItem>,
+            input: crate::model::BaseConfigurationItem,
         ) -> Self {
             let mut v = self.base_configuration_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.base_configuration_items = Some(v);
             self
         }
@@ -6174,12 +6150,9 @@ pub mod batch_get_resource_config_output {
         ///
         /// If there are no unprocessed resource keys, the response contains an
         /// empty unprocessedResourceKeys list. </p>
-        pub fn unprocessed_resource_keys(
-            mut self,
-            input: impl Into<crate::model::ResourceKey>,
-        ) -> Self {
+        pub fn unprocessed_resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.unprocessed_resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_resource_keys = Some(v);
             self
         }
@@ -6268,10 +6241,10 @@ pub mod batch_get_aggregate_resource_config_output {
         /// <p>A list that contains the current configuration of one or more resources.</p>
         pub fn base_configuration_items(
             mut self,
-            input: impl Into<crate::model::BaseConfigurationItem>,
+            input: crate::model::BaseConfigurationItem,
         ) -> Self {
             let mut v = self.base_configuration_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.base_configuration_items = Some(v);
             self
         }
@@ -6290,10 +6263,10 @@ pub mod batch_get_aggregate_resource_config_output {
         /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
         pub fn unprocessed_resource_identifiers(
             mut self,
-            input: impl Into<crate::model::AggregateResourceIdentifier>,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
             let mut v = self.unprocessed_resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_resource_identifiers = Some(v);
             self
         }

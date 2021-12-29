@@ -1643,9 +1643,9 @@ pub mod finding_filter {
         ///
         /// <p>For a record to match a filter, one of the values that is specified for this data
         /// type property must be the exact match of the value of the <b>severity</b> property of the <a>Finding</a> data type.</p>
-        pub fn severities(mut self, input: impl Into<crate::model::Severity>) -> Self {
+        pub fn severities(mut self, input: crate::model::Severity) -> Self {
             let mut v = self.severities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.severities = Some(v);
             self
         }
@@ -1687,9 +1687,9 @@ pub mod finding_filter {
         ///
         /// <p>For a record to match a filter, the list of values that are specified for this data
         /// type property must be contained in the list of values of the <b>attributes</b> property of the <a>Finding</a> data type.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1709,9 +1709,9 @@ pub mod finding_filter {
         /// <p>For a record to match a filter, the value that is specified for this data type
         /// property must be contained in the list of values of the <b>userAttributes</b> property of the <a>Finding</a> data
         /// type.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
@@ -2060,12 +2060,9 @@ pub mod subscription {
         /// To override the contents of this collection use [`set_event_subscriptions`](Self::set_event_subscriptions).
         ///
         /// <p>The list of existing event subscriptions.</p>
-        pub fn event_subscriptions(
-            mut self,
-            input: impl Into<crate::model::EventSubscription>,
-        ) -> Self {
+        pub fn event_subscriptions(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_subscriptions = Some(v);
             self
         }
@@ -2583,9 +2580,9 @@ pub mod assessment_run_filter {
         /// <p>For a record to match a filter, one of the values specified for this data type
         /// property must be the exact match of the value of the <b>assessmentRunState</b> property of the <a>AssessmentRun</a> data
         /// type.</p>
-        pub fn states(mut self, input: impl Into<crate::model::AssessmentRunState>) -> Self {
+        pub fn states(mut self, input: crate::model::AssessmentRunState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -2994,12 +2991,9 @@ pub mod assessment_run_agent {
         ///
         /// <p>The Amazon Inspector application data metrics that are collected by the
         /// agent.</p>
-        pub fn telemetry_metadata(
-            mut self,
-            input: impl Into<crate::model::TelemetryMetadata>,
-        ) -> Self {
+        pub fn telemetry_metadata(mut self, input: crate::model::TelemetryMetadata) -> Self {
             let mut v = self.telemetry_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.telemetry_metadata = Some(v);
             self
         }
@@ -3252,9 +3246,9 @@ pub mod agent_filter {
         /// To override the contents of this collection use [`set_agent_healths`](Self::set_agent_healths).
         ///
         /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
-        pub fn agent_healths(mut self, input: impl Into<crate::model::AgentHealth>) -> Self {
+        pub fn agent_healths(mut self, input: crate::model::AgentHealth) -> Self {
             let mut v = self.agent_healths.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_healths = Some(v);
             self
         }
@@ -3271,12 +3265,9 @@ pub mod agent_filter {
         /// To override the contents of this collection use [`set_agent_health_codes`](Self::set_agent_health_codes).
         ///
         /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
-        pub fn agent_health_codes(
-            mut self,
-            input: impl Into<crate::model::AgentHealthCode>,
-        ) -> Self {
+        pub fn agent_health_codes(mut self, input: crate::model::AgentHealthCode) -> Self {
             let mut v = self.agent_health_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_health_codes = Some(v);
             self
         }
@@ -3404,9 +3395,9 @@ pub mod exclusion_preview {
         /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
         ///
         /// <p>The AWS resources for which the exclusion preview pertains.</p>
-        pub fn scopes(mut self, input: impl Into<crate::model::Scope>) -> Self {
+        pub fn scopes(mut self, input: crate::model::Scope) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scopes = Some(v);
             self
         }
@@ -3423,9 +3414,9 @@ pub mod exclusion_preview {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The system-defined attributes for the exclusion preview.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -4057,9 +4048,9 @@ pub mod resource_group {
         ///
         /// <p>The tags (key and value pairs) of the resource group. This data type property is used
         /// in the <a>CreateResourceGroup</a> action.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::ResourceGroupTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::ResourceGroupTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4509,9 +4500,9 @@ pub mod finding {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The system-defined attributes for the finding.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -4528,9 +4519,9 @@ pub mod finding {
         /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
         ///
         /// <p>The user-defined attributes that are assigned to the finding.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
@@ -4777,9 +4768,9 @@ pub mod asset_attributes {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags related to the EC2 instance where the finding is generated.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4797,12 +4788,9 @@ pub mod asset_attributes {
         ///
         /// <p>An array of the network interfaces interacting with the EC2 instance where the
         /// finding is generated.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -5010,9 +4998,9 @@ pub mod network_interface {
         ///
         /// <p>A list of the private IP addresses associated with the network interface. Includes
         /// the privateDnsName and privateIpAddress.</p>
-        pub fn private_ip_addresses(mut self, input: impl Into<crate::model::PrivateIp>) -> Self {
+        pub fn private_ip_addresses(mut self, input: crate::model::PrivateIp) -> Self {
             let mut v = self.private_ip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.private_ip_addresses = Some(v);
             self
         }
@@ -5073,9 +5061,9 @@ pub mod network_interface {
         ///
         /// <p>A list of the security groups associated with the network interface. Includes the
         /// groupId and groupName.</p>
-        pub fn security_groups(mut self, input: impl Into<crate::model::SecurityGroup>) -> Self {
+        pub fn security_groups(mut self, input: crate::model::SecurityGroup) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_groups = Some(v);
             self
         }
@@ -5534,9 +5522,9 @@ pub mod exclusion {
         /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
         ///
         /// <p>The AWS resources for which the exclusion pertains.</p>
-        pub fn scopes(mut self, input: impl Into<crate::model::Scope>) -> Self {
+        pub fn scopes(mut self, input: crate::model::Scope) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scopes = Some(v);
             self
         }
@@ -5553,9 +5541,9 @@ pub mod exclusion {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The system-defined attributes for the exclusion.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -5770,12 +5758,9 @@ pub mod assessment_template {
         ///
         /// <p>The user-defined attributes that are assigned to every generated finding from the
         /// assessment run that uses this assessment template.</p>
-        pub fn user_attributes_for_findings(
-            mut self,
-            input: impl Into<crate::model::Attribute>,
-        ) -> Self {
+        pub fn user_attributes_for_findings(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes_for_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes_for_findings = Some(v);
             self
         }
@@ -6240,12 +6225,9 @@ pub mod assessment_run {
         /// To override the contents of this collection use [`set_user_attributes_for_findings`](Self::set_user_attributes_for_findings).
         ///
         /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-        pub fn user_attributes_for_findings(
-            mut self,
-            input: impl Into<crate::model::Attribute>,
-        ) -> Self {
+        pub fn user_attributes_for_findings(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes_for_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes_for_findings = Some(v);
             self
         }
@@ -6328,12 +6310,9 @@ pub mod assessment_run {
         /// To override the contents of this collection use [`set_state_changes`](Self::set_state_changes).
         ///
         /// <p>A list of the assessment run state changes.</p>
-        pub fn state_changes(
-            mut self,
-            input: impl Into<crate::model::AssessmentRunStateChange>,
-        ) -> Self {
+        pub fn state_changes(mut self, input: crate::model::AssessmentRunStateChange) -> Self {
             let mut v = self.state_changes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.state_changes = Some(v);
             self
         }
@@ -6351,12 +6330,9 @@ pub mod assessment_run {
         ///
         /// <p>A list of notifications for the event subscriptions. A notification about a
         /// particular generated finding is added to this list only once.</p>
-        pub fn notifications(
-            mut self,
-            input: impl Into<crate::model::AssessmentRunNotification>,
-        ) -> Self {
+        pub fn notifications(mut self, input: crate::model::AssessmentRunNotification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notifications = Some(v);
             self
         }
@@ -6374,13 +6350,9 @@ pub mod assessment_run {
         /// To override the contents of this collection use [`set_finding_counts`](Self::set_finding_counts).
         ///
         /// <p>Provides a total count of generated findings per severity.</p>
-        pub fn finding_counts(
-            mut self,
-            k: impl Into<crate::model::Severity>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn finding_counts(mut self, k: crate::model::Severity, v: i32) -> Self {
             let mut hash_map = self.finding_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.finding_counts = Some(hash_map);
             self
         }

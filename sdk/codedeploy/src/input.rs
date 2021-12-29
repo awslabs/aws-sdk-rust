@@ -17,9 +17,9 @@ pub mod add_tags_to_on_premises_instances_input {
         /// <p>The tag key-value pairs to add to the on-premises instances.</p>
         /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only
         /// tags are not allowed.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -223,9 +223,9 @@ pub mod batch_get_application_revisions_input {
         /// <p>An array of <code>RevisionLocation</code> objects that specify information to get
         /// about the application revisions, including type and location. The maximum number of
         /// <code>RevisionLocation</code> objects you can specify is 25.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::RevisionLocation>) -> Self {
+        pub fn revisions(mut self, input: crate::model::RevisionLocation) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }
@@ -1701,9 +1701,9 @@ pub mod create_application_input {
         /// <p> The metadata that you apply to CodeDeploy applications to help you organize and
         /// categorize them. Each tag consists of a key and an optional value, both of which you
         /// define. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2589,9 +2589,9 @@ pub mod create_deployment_group_input {
         ///
         /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
         /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
-        pub fn ec2_tag_filters(mut self, input: impl Into<crate::model::Ec2TagFilter>) -> Self {
+        pub fn ec2_tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
             let mut v = self.ec2_tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_tag_filters = Some(v);
             self
         }
@@ -2611,12 +2611,9 @@ pub mod create_deployment_group_input {
         /// <p>The on-premises instance tags on which to filter. The deployment group includes
         /// on-premises instances with any of the specified tags. Cannot be used in the same call as
         /// <code>OnPremisesTagSet</code>.</p>
-        pub fn on_premises_instance_tag_filters(
-            mut self,
-            input: impl Into<crate::model::TagFilter>,
-        ) -> Self {
+        pub fn on_premises_instance_tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.on_premises_instance_tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_premises_instance_tag_filters = Some(v);
             self
         }
@@ -2672,12 +2669,9 @@ pub mod create_deployment_group_input {
         /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
         /// AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User
         /// Guide</i>.</p>
-        pub fn trigger_configurations(
-            mut self,
-            input: impl Into<crate::model::TriggerConfig>,
-        ) -> Self {
+        pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
             let mut v = self.trigger_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trigger_configurations = Some(v);
             self
         }
@@ -2824,9 +2818,9 @@ pub mod create_deployment_group_input {
         /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
         /// is specified as an Amazon ECS cluster and service name pair using the format
         /// <code><clustername>:<servicename></code>. </p>
-        pub fn ecs_services(mut self, input: impl Into<crate::model::EcsService>) -> Self {
+        pub fn ecs_services(mut self, input: crate::model::EcsService) -> Self {
             let mut v = self.ecs_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecs_services = Some(v);
             self
         }
@@ -2865,9 +2859,9 @@ pub mod create_deployment_group_input {
         /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and
         /// categorize them. Each tag consists of a key and an optional value, both of which you
         /// define. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6237,12 +6231,9 @@ pub mod list_deployment_instances_input {
         /// state.</p>
         /// </li>
         /// </ul>
-        pub fn instance_status_filter(
-            mut self,
-            input: impl Into<crate::model::InstanceStatus>,
-        ) -> Self {
+        pub fn instance_status_filter(mut self, input: crate::model::InstanceStatus) -> Self {
             let mut v = self.instance_status_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_status_filter = Some(v);
             self
         }
@@ -6290,12 +6281,9 @@ pub mod list_deployment_instances_input {
         /// <p>The set of instances in a blue/green deployment, either those in the original
         /// environment ("BLUE") or those in the replacement environment ("GREEN"), for which you
         /// want to view instance information.</p>
-        pub fn instance_type_filter(
-            mut self,
-            input: impl Into<crate::model::InstanceType>,
-        ) -> Self {
+        pub fn instance_type_filter(mut self, input: crate::model::InstanceType) -> Self {
             let mut v = self.instance_type_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_type_filter = Some(v);
             self
         }
@@ -6560,12 +6548,9 @@ pub mod list_deployments_input {
         /// list.</p>
         /// </li>
         /// </ul>
-        pub fn include_only_statuses(
-            mut self,
-            input: impl Into<crate::model::DeploymentStatus>,
-        ) -> Self {
+        pub fn include_only_statuses(mut self, input: crate::model::DeploymentStatus) -> Self {
             let mut v = self.include_only_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.include_only_statuses = Some(v);
             self
         }
@@ -6834,11 +6819,11 @@ pub mod list_deployment_targets_input {
         /// </ul>
         pub fn target_filters(
             mut self,
-            k: impl Into<crate::model::TargetFilterName>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::TargetFilterName,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.target_filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.target_filters = Some(hash_map);
             self
         }
@@ -7220,9 +7205,9 @@ pub mod list_on_premises_instances_input {
         ///
         /// <p>The on-premises instance tags that are used to restrict the on-premises instance names
         /// returned.</p>
-        pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_filters = Some(v);
             self
         }
@@ -8153,9 +8138,9 @@ pub mod remove_tags_from_on_premises_instances_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8684,9 +8669,9 @@ pub mod tag_resource_input {
         ///
         /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
         /// is identified by the <code>ResourceArn</code> input parameter. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9279,9 +9264,9 @@ pub mod update_deployment_group_input {
         /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
         /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
         /// names.</p>
-        pub fn ec2_tag_filters(mut self, input: impl Into<crate::model::Ec2TagFilter>) -> Self {
+        pub fn ec2_tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
             let mut v = self.ec2_tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_tag_filters = Some(v);
             self
         }
@@ -9302,12 +9287,9 @@ pub mod update_deployment_group_input {
         /// <p>The replacement set of on-premises instance tags on which to filter, if you want to
         /// change them. To keep the existing tags, enter their names. To remove tags, do not enter
         /// any tag names.</p>
-        pub fn on_premises_instance_tag_filters(
-            mut self,
-            input: impl Into<crate::model::TagFilter>,
-        ) -> Self {
+        pub fn on_premises_instance_tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.on_premises_instance_tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_premises_instance_tag_filters = Some(v);
             self
         }
@@ -9365,12 +9347,9 @@ pub mod update_deployment_group_input {
         /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
         /// CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
         /// Guide</i>.</p>
-        pub fn trigger_configurations(
-            mut self,
-            input: impl Into<crate::model::TriggerConfig>,
-        ) -> Self {
+        pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
             let mut v = self.trigger_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trigger_configurations = Some(v);
             self
         }
@@ -9515,9 +9494,9 @@ pub mod update_deployment_group_input {
         /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
         /// is specified as an Amazon ECS cluster and service name pair using the format
         /// <code><clustername>:<servicename></code>. </p>
-        pub fn ecs_services(mut self, input: impl Into<crate::model::EcsService>) -> Self {
+        pub fn ecs_services(mut self, input: crate::model::EcsService) -> Self {
             let mut v = self.ecs_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecs_services = Some(v);
             self
         }

@@ -597,12 +597,9 @@ pub mod db_cluster {
         /// To override the contents of this collection use [`set_db_cluster_members`](Self::set_db_cluster_members).
         ///
         /// <p>Provides the list of instances that make up the cluster.</p>
-        pub fn db_cluster_members(
-            mut self,
-            input: impl Into<crate::model::DbClusterMember>,
-        ) -> Self {
+        pub fn db_cluster_members(mut self, input: crate::model::DbClusterMember) -> Self {
             let mut v = self.db_cluster_members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_members = Some(v);
             self
         }
@@ -622,10 +619,10 @@ pub mod db_cluster {
         /// belongs to.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -706,9 +703,9 @@ pub mod db_cluster {
         /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
         ///
         /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
-        pub fn associated_roles(mut self, input: impl Into<crate::model::DbClusterRole>) -> Self {
+        pub fn associated_roles(mut self, input: crate::model::DbClusterRole) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_roles = Some(v);
             self
         }
@@ -2061,12 +2058,9 @@ pub mod global_cluster {
         /// To override the contents of this collection use [`set_global_cluster_members`](Self::set_global_cluster_members).
         ///
         /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
-        pub fn global_cluster_members(
-            mut self,
-            input: impl Into<crate::model::GlobalClusterMember>,
-        ) -> Self {
+        pub fn global_cluster_members(mut self, input: crate::model::GlobalClusterMember) -> Self {
             let mut v = self.global_cluster_members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_cluster_members = Some(v);
             self
         }
@@ -2583,10 +2577,10 @@ pub mod db_instance {
         /// <p>Provides a list of VPC security group elements that the instance belongs to.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -2714,12 +2708,9 @@ pub mod db_instance {
         ///
         /// <p>The status of a read replica. If the instance is not a read replica, this is
         /// blank.</p>
-        pub fn status_infos(
-            mut self,
-            input: impl Into<crate::model::DbInstanceStatusInfo>,
-        ) -> Self {
+        pub fn status_infos(mut self, input: crate::model::DbInstanceStatusInfo) -> Self {
             let mut v = self.status_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.status_infos = Some(v);
             self
         }
@@ -3616,9 +3607,9 @@ pub mod db_subnet_group {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>Detailed information about one or more subnets within a subnet group.</p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -3983,10 +3974,10 @@ pub mod db_cluster_snapshot_attributes_result {
         /// <p>The list of attributes and values for the cluster snapshot.</p>
         pub fn db_cluster_snapshot_attributes(
             mut self,
-            input: impl Into<crate::model::DbClusterSnapshotAttribute>,
+            input: crate::model::DbClusterSnapshotAttribute,
         ) -> Self {
             let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_snapshot_attributes = Some(v);
             self
         }
@@ -4359,10 +4350,10 @@ pub mod resource_pending_maintenance_actions {
         /// for the resource.</p>
         pub fn pending_maintenance_action_details(
             mut self,
-            input: impl Into<crate::model::PendingMaintenanceAction>,
+            input: crate::model::PendingMaintenanceAction,
         ) -> Self {
             let mut v = self.pending_maintenance_action_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_maintenance_action_details = Some(v);
             self
         }
@@ -4700,12 +4691,9 @@ pub mod orderable_db_instance_option {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>A list of Availability Zones for an instance.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -5153,9 +5141,9 @@ pub mod engine_defaults {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters of a particular cluster parameter group family.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -5350,12 +5338,9 @@ pub mod db_engine_version {
         /// To override the contents of this collection use [`set_valid_upgrade_target`](Self::set_valid_upgrade_target).
         ///
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn valid_upgrade_target(
-            mut self,
-            input: impl Into<crate::model::UpgradeTarget>,
-        ) -> Self {
+        pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.valid_upgrade_target = Some(v);
             self
         }

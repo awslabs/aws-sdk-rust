@@ -486,9 +486,9 @@ pub mod list_organization_admin_accounts_output {
         /// To override the contents of this collection use [`set_admin_accounts`](Self::set_admin_accounts).
         ///
         /// <p>The list of Security Hub administrator accounts.</p>
-        pub fn admin_accounts(mut self, input: impl Into<crate::model::AdminAccount>) -> Self {
+        pub fn admin_accounts(mut self, input: crate::model::AdminAccount) -> Self {
             let mut v = self.admin_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.admin_accounts = Some(v);
             self
         }
@@ -568,9 +568,9 @@ pub mod list_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>Member details returned by the operation.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -650,9 +650,9 @@ pub mod list_invitations_output {
         /// To override the contents of this collection use [`set_invitations`](Self::set_invitations).
         ///
         /// <p>The details of the invitations returned by the operation.</p>
-        pub fn invitations(mut self, input: impl Into<crate::model::Invitation>) -> Self {
+        pub fn invitations(mut self, input: crate::model::Invitation) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.invitations = Some(v);
             self
         }
@@ -737,12 +737,9 @@ pub mod list_finding_aggregators_output {
         /// To override the contents of this collection use [`set_finding_aggregators`](Self::set_finding_aggregators).
         ///
         /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
-        pub fn finding_aggregators(
-            mut self,
-            input: impl Into<crate::model::FindingAggregator>,
-        ) -> Self {
+        pub fn finding_aggregators(mut self, input: crate::model::FindingAggregator) -> Self {
             let mut v = self.finding_aggregators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_aggregators = Some(v);
             self
         }
@@ -903,9 +900,9 @@ pub mod invite_members_output {
         ///
         /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
         /// includes the account ID and the email address.</p>
-        pub fn unprocessed_accounts(mut self, input: impl Into<crate::model::Result>) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -977,9 +974,9 @@ pub mod get_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>The list of details about the Security Hub member accounts.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -997,9 +994,9 @@ pub mod get_members_output {
         ///
         /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
         /// includes the account ID and the email address.</p>
-        pub fn unprocessed_accounts(mut self, input: impl Into<crate::model::Result>) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -1186,9 +1183,9 @@ pub mod get_insights_output {
         /// To override the contents of this collection use [`set_insights`](Self::set_insights).
         ///
         /// <p>The insights returned by the operation.</p>
-        pub fn insights(mut self, input: impl Into<crate::model::Insight>) -> Self {
+        pub fn insights(mut self, input: crate::model::Insight) -> Self {
             let mut v = self.insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insights = Some(v);
             self
         }
@@ -1325,9 +1322,9 @@ pub mod get_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>The findings that matched the filters specified in the request.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::AwsSecurityFinding>) -> Self {
+        pub fn findings(mut self, input: crate::model::AwsSecurityFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -1548,10 +1545,10 @@ pub mod get_enabled_standards_output {
         /// the enabled standards.</p>
         pub fn standards_subscriptions(
             mut self,
-            input: impl Into<crate::model::StandardsSubscription>,
+            input: crate::model::StandardsSubscription,
         ) -> Self {
             let mut v = self.standards_subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standards_subscriptions = Some(v);
             self
         }
@@ -1986,9 +1983,9 @@ pub mod describe_standards_controls_output {
         /// To override the contents of this collection use [`set_controls`](Self::set_controls).
         ///
         /// <p>A list of security standards controls.</p>
-        pub fn controls(mut self, input: impl Into<crate::model::StandardsControl>) -> Self {
+        pub fn controls(mut self, input: crate::model::StandardsControl) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }
@@ -2068,9 +2065,9 @@ pub mod describe_standards_output {
         /// To override the contents of this collection use [`set_standards`](Self::set_standards).
         ///
         /// <p>A list of available standards.</p>
-        pub fn standards(mut self, input: impl Into<crate::model::Standard>) -> Self {
+        pub fn standards(mut self, input: crate::model::Standard) -> Self {
             let mut v = self.standards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standards = Some(v);
             self
         }
@@ -2150,9 +2147,9 @@ pub mod describe_products_output {
         /// To override the contents of this collection use [`set_products`](Self::set_products).
         ///
         /// <p>A list of products, including details for each product.</p>
-        pub fn products(mut self, input: impl Into<crate::model::Product>) -> Self {
+        pub fn products(mut self, input: crate::model::Product) -> Self {
             let mut v = self.products.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.products = Some(v);
             self
         }
@@ -2436,9 +2433,9 @@ pub mod describe_action_targets_output {
         /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>,
         /// <code>Description</code>, and <code>Name</code> of a custom action target available in
         /// Security Hub.</p>
-        pub fn action_targets(mut self, input: impl Into<crate::model::ActionTarget>) -> Self {
+        pub fn action_targets(mut self, input: crate::model::ActionTarget) -> Self {
             let mut v = self.action_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.action_targets = Some(v);
             self
         }
@@ -2515,9 +2512,9 @@ pub mod delete_members_output {
         ///
         /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the
         /// account ID and the email address.</p>
-        pub fn unprocessed_accounts(mut self, input: impl Into<crate::model::Result>) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -2582,9 +2579,9 @@ pub mod delete_invitations_output {
         ///
         /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account,
         /// the list includes the account ID and the email address.</p>
-        pub fn unprocessed_accounts(mut self, input: impl Into<crate::model::Result>) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -2790,9 +2787,9 @@ pub mod decline_invitations_output {
         ///
         /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
         /// the account ID and the email address.</p>
-        pub fn unprocessed_accounts(mut self, input: impl Into<crate::model::Result>) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -2857,9 +2854,9 @@ pub mod create_members_output {
         ///
         /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
         /// the account ID and the email address.</p>
-        pub fn unprocessed_accounts(mut self, input: impl Into<crate::model::Result>) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::Result) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -3182,10 +3179,10 @@ pub mod batch_update_findings_output {
         /// <p>The list of findings that were updated successfully.</p>
         pub fn processed_findings(
             mut self,
-            input: impl Into<crate::model::AwsSecurityFindingIdentifier>,
+            input: crate::model::AwsSecurityFindingIdentifier,
         ) -> Self {
             let mut v = self.processed_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processed_findings = Some(v);
             self
         }
@@ -3204,10 +3201,10 @@ pub mod batch_update_findings_output {
         /// <p>The list of findings that were not updated.</p>
         pub fn unprocessed_findings(
             mut self,
-            input: impl Into<crate::model::BatchUpdateFindingsUnprocessedFinding>,
+            input: crate::model::BatchUpdateFindingsUnprocessedFinding,
         ) -> Self {
             let mut v = self.unprocessed_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_findings = Some(v);
             self
         }
@@ -3308,12 +3305,9 @@ pub mod batch_import_findings_output {
         /// To override the contents of this collection use [`set_failed_findings`](Self::set_failed_findings).
         ///
         /// <p>The list of findings that failed to import.</p>
-        pub fn failed_findings(
-            mut self,
-            input: impl Into<crate::model::ImportFindingsError>,
-        ) -> Self {
+        pub fn failed_findings(mut self, input: crate::model::ImportFindingsError) -> Self {
             let mut v = self.failed_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_findings = Some(v);
             self
         }
@@ -3382,10 +3376,10 @@ pub mod batch_enable_standards_output {
         /// <p>The details of the standards subscriptions that were enabled.</p>
         pub fn standards_subscriptions(
             mut self,
-            input: impl Into<crate::model::StandardsSubscription>,
+            input: crate::model::StandardsSubscription,
         ) -> Self {
             let mut v = self.standards_subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standards_subscriptions = Some(v);
             self
         }
@@ -3452,10 +3446,10 @@ pub mod batch_disable_standards_output {
         /// <p>The details of the standards subscriptions that were disabled.</p>
         pub fn standards_subscriptions(
             mut self,
-            input: impl Into<crate::model::StandardsSubscription>,
+            input: crate::model::StandardsSubscription,
         ) -> Self {
             let mut v = self.standards_subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standards_subscriptions = Some(v);
             self
         }

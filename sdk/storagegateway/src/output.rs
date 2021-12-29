@@ -1700,9 +1700,9 @@ pub mod list_volumes_output {
         /// <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
         /// volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an
         /// empty array "[]".</p>
-        pub fn volume_infos(mut self, input: impl Into<crate::model::VolumeInfo>) -> Self {
+        pub fn volume_infos(mut self, input: crate::model::VolumeInfo) -> Self {
             let mut v = self.volume_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_infos = Some(v);
             self
         }
@@ -1798,10 +1798,10 @@ pub mod list_volume_recovery_points_output {
         /// <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
         pub fn volume_recovery_point_infos(
             mut self,
-            input: impl Into<crate::model::VolumeRecoveryPointInfo>,
+            input: crate::model::VolumeRecoveryPointInfo,
         ) -> Self {
             let mut v = self.volume_recovery_point_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_recovery_point_infos = Some(v);
             self
         }
@@ -1961,9 +1961,9 @@ pub mod list_tapes_output {
         /// <p>An array of <a>TapeInfo</a> objects, where each object describes a single
         /// tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is
         /// an empty array.</p>
-        pub fn tape_infos(mut self, input: impl Into<crate::model::TapeInfo>) -> Self {
+        pub fn tape_infos(mut self, input: crate::model::TapeInfo) -> Self {
             let mut v = self.tape_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tape_infos = Some(v);
             self
         }
@@ -2059,9 +2059,9 @@ pub mod list_tape_pools_output {
         /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom
         /// tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array.
         /// </p>
-        pub fn pool_infos(mut self, input: impl Into<crate::model::PoolInfo>) -> Self {
+        pub fn pool_infos(mut self, input: crate::model::PoolInfo) -> Self {
             let mut v = self.pool_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pool_infos = Some(v);
             self
         }
@@ -2179,9 +2179,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array that contains the tags for the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2290,9 +2290,9 @@ pub mod list_local_disks_output {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
+        pub fn disks(mut self, input: crate::model::Disk) -> Self {
             let mut v = self.disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disks = Some(v);
             self
         }
@@ -2372,9 +2372,9 @@ pub mod list_gateways_output {
         /// To override the contents of this collection use [`set_gateways`](Self::set_gateways).
         ///
         /// <p>An array of <a>GatewayInfo</a> objects.</p>
-        pub fn gateways(mut self, input: impl Into<crate::model::GatewayInfo>) -> Self {
+        pub fn gateways(mut self, input: crate::model::GatewayInfo) -> Self {
             let mut v = self.gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateways = Some(v);
             self
         }
@@ -2508,12 +2508,12 @@ pub mod list_file_system_associations_output {
         /// associations.</p>
         pub fn file_system_association_summary_list(
             mut self,
-            input: impl Into<crate::model::FileSystemAssociationSummary>,
+            input: crate::model::FileSystemAssociationSummary,
         ) -> Self {
             let mut v = self
                 .file_system_association_summary_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_association_summary_list = Some(v);
             self
         }
@@ -2626,12 +2626,9 @@ pub mod list_file_shares_output {
         /// To override the contents of this collection use [`set_file_share_info_list`](Self::set_file_share_info_list).
         ///
         /// <p>An array of information about the S3 File Gateway's file shares.</p>
-        pub fn file_share_info_list(
-            mut self,
-            input: impl Into<crate::model::FileShareInfo>,
-        ) -> Self {
+        pub fn file_share_info_list(mut self, input: crate::model::FileShareInfo) -> Self {
             let mut v = self.file_share_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_share_info_list = Some(v);
             self
         }
@@ -2709,12 +2706,12 @@ pub mod list_automatic_tape_creation_policies_output {
         /// policies.</p>
         pub fn automatic_tape_creation_policy_infos(
             mut self,
-            input: impl Into<crate::model::AutomaticTapeCreationPolicyInfo>,
+            input: crate::model::AutomaticTapeCreationPolicyInfo,
         ) -> Self {
             let mut v = self
                 .automatic_tape_creation_policy_infos
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.automatic_tape_creation_policy_infos = Some(v);
             self
         }
@@ -3379,9 +3376,9 @@ pub mod describe_vtl_devices_output {
         ///
         /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL
         /// devices.</p>
-        pub fn vtl_devices(mut self, input: impl Into<crate::model::VtlDevice>) -> Self {
+        pub fn vtl_devices(mut self, input: crate::model::VtlDevice) -> Self {
             let mut v = self.vtl_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vtl_devices = Some(v);
             self
         }
@@ -3624,9 +3621,9 @@ pub mod describe_tapes_output {
         /// To override the contents of this collection use [`set_tapes`](Self::set_tapes).
         ///
         /// <p>An array of virtual tape descriptions.</p>
-        pub fn tapes(mut self, input: impl Into<crate::model::Tape>) -> Self {
+        pub fn tapes(mut self, input: crate::model::Tape) -> Self {
             let mut v = self.tapes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tapes = Some(v);
             self
         }
@@ -3752,10 +3749,10 @@ pub mod describe_tape_recovery_points_output {
         /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
         pub fn tape_recovery_point_infos(
             mut self,
-            input: impl Into<crate::model::TapeRecoveryPointInfo>,
+            input: crate::model::TapeRecoveryPointInfo,
         ) -> Self {
             let mut v = self.tape_recovery_point_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tape_recovery_point_infos = Some(v);
             self
         }
@@ -3861,9 +3858,9 @@ pub mod describe_tape_archives_output {
         /// includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned
         /// includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the
         /// tapes, progress of the description, and tape barcode.</p>
-        pub fn tape_archives(mut self, input: impl Into<crate::model::TapeArchive>) -> Self {
+        pub fn tape_archives(mut self, input: crate::model::TapeArchive) -> Self {
             let mut v = self.tape_archives.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tape_archives = Some(v);
             self
         }
@@ -4194,12 +4191,9 @@ pub mod describe_storedi_scsi_volumes_output {
         /// volume. Currently, only <code>STORED</code> volumes are supported.</p>
         /// </li>
         /// </ul>
-        pub fn storedi_scsi_volumes(
-            mut self,
-            input: impl Into<crate::model::StorediScsiVolume>,
-        ) -> Self {
+        pub fn storedi_scsi_volumes(mut self, input: crate::model::StorediScsiVolume) -> Self {
             let mut v = self.storedi_scsi_volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storedi_scsi_volumes = Some(v);
             self
         }
@@ -4447,9 +4441,9 @@ pub mod describe_snapshot_schedule_output {
         /// <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key
         /// name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can
         /// view all tags using the <code>ListTagsForResource</code> API operation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4976,12 +4970,9 @@ pub mod describe_smb_file_shares_output {
         /// To override the contents of this collection use [`set_smb_file_share_info_list`](Self::set_smb_file_share_info_list).
         ///
         /// <p>An array containing a description for each requested file share.</p>
-        pub fn smb_file_share_info_list(
-            mut self,
-            input: impl Into<crate::model::SmbFileShareInfo>,
-        ) -> Self {
+        pub fn smb_file_share_info_list(mut self, input: crate::model::SmbFileShareInfo) -> Self {
             let mut v = self.smb_file_share_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.smb_file_share_info_list = Some(v);
             self
         }
@@ -5046,12 +5037,9 @@ pub mod describe_nfs_file_shares_output {
         /// To override the contents of this collection use [`set_nfs_file_share_info_list`](Self::set_nfs_file_share_info_list).
         ///
         /// <p>An array containing a description for each requested file share.</p>
-        pub fn nfs_file_share_info_list(
-            mut self,
-            input: impl Into<crate::model::NfsFileShareInfo>,
-        ) -> Self {
+        pub fn nfs_file_share_info_list(mut self, input: crate::model::NfsFileShareInfo) -> Self {
             let mut v = self.nfs_file_share_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nfs_file_share_info_list = Some(v);
             self
         }
@@ -5605,12 +5593,9 @@ pub mod describe_gateway_information_output {
         ///
         /// <p>A <a>NetworkInterface</a> array that contains descriptions of the gateway
         /// network interfaces.</p>
-        pub fn gateway_network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn gateway_network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.gateway_network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateway_network_interfaces = Some(v);
             self
         }
@@ -5701,9 +5686,9 @@ pub mod describe_gateway_information_output {
         /// <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each
         /// tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all
         /// tags using the <code>ListTagsForResource</code> API operation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5825,10 +5810,10 @@ pub mod describe_gateway_information_output {
         /// hardware specifications.</p>
         pub fn supported_gateway_capacities(
             mut self,
-            input: impl Into<crate::model::GatewayCapacity>,
+            input: crate::model::GatewayCapacity,
         ) -> Self {
             let mut v = self.supported_gateway_capacities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_gateway_capacities = Some(v);
             self
         }
@@ -5942,10 +5927,10 @@ pub mod describe_file_system_associations_output {
         /// </p>
         pub fn file_system_association_info_list(
             mut self,
-            input: impl Into<crate::model::FileSystemAssociationInfo>,
+            input: crate::model::FileSystemAssociationInfo,
         ) -> Self {
             let mut v = self.file_system_association_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_association_info_list = Some(v);
             self
         }
@@ -6104,9 +6089,9 @@ pub mod describe_chap_credentials_output {
         ///
         /// </li>
         /// </ul>
-        pub fn chap_credentials(mut self, input: impl Into<crate::model::ChapInfo>) -> Self {
+        pub fn chap_credentials(mut self, input: crate::model::ChapInfo) -> Self {
             let mut v = self.chap_credentials.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.chap_credentials = Some(v);
             self
         }
@@ -6200,12 +6185,9 @@ pub mod describe_cachedi_scsi_volumes_output {
         /// To override the contents of this collection use [`set_cachedi_scsi_volumes`](Self::set_cachedi_scsi_volumes).
         ///
         /// <p>An array of objects where each object contains metadata about one cached volume.</p>
-        pub fn cachedi_scsi_volumes(
-            mut self,
-            input: impl Into<crate::model::CachediScsiVolume>,
-        ) -> Self {
+        pub fn cachedi_scsi_volumes(mut self, input: crate::model::CachediScsiVolume) -> Self {
             let mut v = self.cachedi_scsi_volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cachedi_scsi_volumes = Some(v);
             self
         }
@@ -6506,10 +6488,10 @@ pub mod describe_bandwidth_rate_limit_schedule_output {
         /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
         pub fn bandwidth_rate_limit_intervals(
             mut self,
-            input: impl Into<crate::model::BandwidthRateLimitInterval>,
+            input: crate::model::BandwidthRateLimitInterval,
         ) -> Self {
             let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bandwidth_rate_limit_intervals = Some(v);
             self
         }

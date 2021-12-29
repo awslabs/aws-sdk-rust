@@ -394,12 +394,9 @@ pub mod create_job_input {
         ///
         /// <p>A list of parameters that specify the name and type of input data and where it is
         /// located.</p>
-        pub fn input_data_config(
-            mut self,
-            input: impl Into<crate::model::InputFileConfig>,
-        ) -> Self {
+        pub fn input_data_config(mut self, input: crate::model::InputFileConfig) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
@@ -1609,9 +1606,9 @@ pub mod search_devices_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filter values to use to search for a device.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SearchDevicesFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SearchDevicesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1792,9 +1789,9 @@ pub mod search_jobs_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filter values to use when searching for a job.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SearchJobsFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SearchJobsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1974,9 +1971,9 @@ pub mod search_quantum_tasks_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SearchQuantumTasksFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SearchQuantumTasksFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }

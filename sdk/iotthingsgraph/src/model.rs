@@ -2497,10 +2497,10 @@ pub mod system_instance_description {
         /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
         pub fn validated_dependency_revisions(
             mut self,
-            input: impl Into<crate::model::DependencyRevision>,
+            input: crate::model::DependencyRevision,
         ) -> Self {
             let mut v = self.validated_dependency_revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validated_dependency_revisions = Some(v);
             self
         }

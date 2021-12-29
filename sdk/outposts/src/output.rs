@@ -370,9 +370,9 @@ pub mod list_sites_output {
         /// To override the contents of this collection use [`set_sites`](Self::set_sites).
         ///
         /// <p>Information about the sites.</p>
-        pub fn sites(mut self, input: impl Into<crate::model::Site>) -> Self {
+        pub fn sites(mut self, input: crate::model::Site) -> Self {
             let mut v = self.sites.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sites = Some(v);
             self
         }
@@ -452,9 +452,9 @@ pub mod list_outposts_output {
         /// To override the contents of this collection use [`set_outposts`](Self::set_outposts).
         ///
         /// <p>Information about the Outposts.</p>
-        pub fn outposts(mut self, input: impl Into<crate::model::Outpost>) -> Self {
+        pub fn outposts(mut self, input: crate::model::Outpost) -> Self {
             let mut v = self.outposts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outposts = Some(v);
             self
         }
@@ -540,9 +540,9 @@ pub mod list_orders_output {
         /// <p>
         /// Information about the orders.
         /// </p>
-        pub fn orders(mut self, input: impl Into<crate::model::OrderSummary>) -> Self {
+        pub fn orders(mut self, input: crate::model::OrderSummary) -> Self {
             let mut v = self.orders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.orders = Some(v);
             self
         }
@@ -624,9 +624,9 @@ pub mod list_catalog_items_output {
         /// To override the contents of this collection use [`set_catalog_items`](Self::set_catalog_items).
         ///
         /// <p>Information about the catalog items.</p>
-        pub fn catalog_items(mut self, input: impl Into<crate::model::CatalogItem>) -> Self {
+        pub fn catalog_items(mut self, input: crate::model::CatalogItem) -> Self {
             let mut v = self.catalog_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.catalog_items = Some(v);
             self
         }
@@ -882,9 +882,9 @@ pub mod get_outpost_instance_types_output {
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
         /// <p>Information about the instance types.</p>
-        pub fn instance_types(mut self, input: impl Into<crate::model::InstanceTypeItem>) -> Self {
+        pub fn instance_types(mut self, input: crate::model::InstanceTypeItem) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_types = Some(v);
             self
         }

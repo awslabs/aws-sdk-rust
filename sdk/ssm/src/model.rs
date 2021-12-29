@@ -254,10 +254,10 @@ pub mod resource_data_sync_aws_organizations_source {
         /// <p>The Organizations organization units included in the sync.</p>
         pub fn organizational_units(
             mut self,
-            input: impl Into<crate::model::ResourceDataSyncOrganizationalUnit>,
+            input: crate::model::ResourceDataSyncOrganizationalUnit,
         ) -> Self {
             let mut v = self.organizational_units.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organizational_units = Some(v);
             self
         }
@@ -688,9 +688,9 @@ pub mod patch_rule_group {
         /// To override the contents of this collection use [`set_patch_rules`](Self::set_patch_rules).
         ///
         /// <p>The rules that make up the rule group.</p>
-        pub fn patch_rules(mut self, input: impl Into<crate::model::PatchRule>) -> Self {
+        pub fn patch_rules(mut self, input: crate::model::PatchRule) -> Self {
             let mut v = self.patch_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_rules = Some(v);
             self
         }
@@ -922,9 +922,9 @@ pub mod patch_filter_group {
         /// To override the contents of this collection use [`set_patch_filters`](Self::set_patch_filters).
         ///
         /// <p>The set of patch filters that make up the group.</p>
-        pub fn patch_filters(mut self, input: impl Into<crate::model::PatchFilter>) -> Self {
+        pub fn patch_filters(mut self, input: crate::model::PatchFilter) -> Self {
             let mut v = self.patch_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_filters = Some(v);
             self
         }
@@ -2385,10 +2385,10 @@ pub mod maintenance_window_automation_parameters {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -2743,10 +2743,10 @@ pub mod maintenance_window_run_command_parameters {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -2911,12 +2911,9 @@ pub mod notification_config {
         /// events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status
         /// changes using Amazon SNS notifications</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn notification_events(
-            mut self,
-            input: impl Into<crate::model::NotificationEvent>,
-        ) -> Self {
+        pub fn notification_events(mut self, input: crate::model::NotificationEvent) -> Self {
             let mut v = self.notification_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_events = Some(v);
             self
         }
@@ -3596,12 +3593,9 @@ pub mod document_reviews {
         /// To override the contents of this collection use [`set_comment`](Self::set_comment).
         ///
         /// <p>A comment entered by a user in your organization about the document review request.</p>
-        pub fn comment(
-            mut self,
-            input: impl Into<crate::model::DocumentReviewCommentSource>,
-        ) -> Self {
+        pub fn comment(mut self, input: crate::model::DocumentReviewCommentSource) -> Self {
             let mut v = self.comment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comment = Some(v);
             self
         }
@@ -4363,9 +4357,9 @@ pub mod document_description {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A description of the parameters for a document.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::DocumentParameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::DocumentParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -4382,9 +4376,9 @@ pub mod document_description {
         /// To override the contents of this collection use [`set_platform_types`](Self::set_platform_types).
         ///
         /// <p>The list of OS platforms compatible with this SSM document. </p>
-        pub fn platform_types(mut self, input: impl Into<crate::model::PlatformType>) -> Self {
+        pub fn platform_types(mut self, input: crate::model::PlatformType) -> Self {
             let mut v = self.platform_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_types = Some(v);
             self
         }
@@ -4480,9 +4474,9 @@ pub mod document_description {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags, or metadata, that have been applied to the document.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4501,10 +4495,10 @@ pub mod document_description {
         /// <p>Details about the document attachments, including names, locations, sizes, and so on.</p>
         pub fn attachments_information(
             mut self,
-            input: impl Into<crate::model::AttachmentInformation>,
+            input: crate::model::AttachmentInformation,
         ) -> Self {
             let mut v = self.attachments_information.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments_information = Some(v);
             self
         }
@@ -4523,9 +4517,9 @@ pub mod document_description {
         /// <p>A list of SSM documents required by a document. For example, an
         /// <code>ApplicationConfiguration</code> document requires an
         /// <code>ApplicationConfigurationSchema</code> document.</p>
-        pub fn requires(mut self, input: impl Into<crate::model::DocumentRequires>) -> Self {
+        pub fn requires(mut self, input: crate::model::DocumentRequires) -> Self {
             let mut v = self.requires.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requires = Some(v);
             self
         }
@@ -4554,12 +4548,9 @@ pub mod document_description {
         /// To override the contents of this collection use [`set_review_information`](Self::set_review_information).
         ///
         /// <p>Details about the review of a document.</p>
-        pub fn review_information(
-            mut self,
-            input: impl Into<crate::model::ReviewInformation>,
-        ) -> Self {
+        pub fn review_information(mut self, input: crate::model::ReviewInformation) -> Self {
             let mut v = self.review_information.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.review_information = Some(v);
             self
         }
@@ -6221,10 +6212,10 @@ pub mod association_description {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -6256,9 +6247,9 @@ pub mod association_description {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The managed nodes targeted by the request. </p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -6487,9 +6478,9 @@ pub mod association_description {
         ///
         /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
         /// association.</p>
-        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_locations = Some(v);
             self
         }
@@ -7090,10 +7081,10 @@ pub mod association_overview {
         pub fn association_status_aggregated_count(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<i32>,
+            v: i32,
         ) -> Self {
             let mut hash_map = self.association_status_aggregated_count.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.association_status_aggregated_count = Some(hash_map);
             self
         }
@@ -7504,10 +7495,10 @@ pub mod runbook {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -7543,9 +7534,9 @@ pub mod runbook {
         ///
         /// <p>A key-value mapping to target resources that the runbook operation performs tasks on.
         /// Required if you specify <code>TargetParameterName</code>.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -7595,9 +7586,9 @@ pub mod runbook {
         ///
         /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook
         /// operation.</p>
-        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_locations = Some(v);
             self
         }
@@ -8112,10 +8103,10 @@ pub mod command {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -8155,9 +8146,9 @@ pub mod command {
         /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that
         /// you specify. Targets is required if you don't provide one or more managed node IDs in the
         /// call.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -9377,10 +9368,10 @@ pub mod inventory_item {
         /// <p>The inventory data of the inventory type.</p>
         pub fn content(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content = Some(v);
             self
         }
@@ -13388,9 +13379,9 @@ pub mod document_identifier {
         /// To override the contents of this collection use [`set_platform_types`](Self::set_platform_types).
         ///
         /// <p>The operating system platform. </p>
-        pub fn platform_types(mut self, input: impl Into<crate::model::PlatformType>) -> Self {
+        pub fn platform_types(mut self, input: crate::model::PlatformType) -> Self {
             let mut v = self.platform_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_types = Some(v);
             self
         }
@@ -13473,9 +13464,9 @@ pub mod document_identifier {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags, or metadata, that have been applied to the document.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13494,9 +13485,9 @@ pub mod document_identifier {
         /// <p>A list of SSM documents required by a document. For example, an
         /// <code>ApplicationConfiguration</code> document requires an
         /// <code>ApplicationConfigurationSchema</code> document.</p>
-        pub fn requires(mut self, input: impl Into<crate::model::DocumentRequires>) -> Self {
+        pub fn requires(mut self, input: crate::model::DocumentRequires) -> Self {
             let mut v = self.requires.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requires = Some(v);
             self
         }
@@ -13946,10 +13937,10 @@ pub mod document_metadata_response_info {
         /// <p>Details about a reviewer's response to a document review request.</p>
         pub fn reviewer_response(
             mut self,
-            input: impl Into<crate::model::DocumentReviewerResponseSource>,
+            input: crate::model::DocumentReviewerResponseSource,
         ) -> Self {
             let mut v = self.reviewer_response.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reviewer_response = Some(v);
             self
         }
@@ -14102,12 +14093,9 @@ pub mod document_reviewer_response_source {
         /// To override the contents of this collection use [`set_comment`](Self::set_comment).
         ///
         /// <p>The comment entered by a reviewer as part of their document review response.</p>
-        pub fn comment(
-            mut self,
-            input: impl Into<crate::model::DocumentReviewCommentSource>,
-        ) -> Self {
+        pub fn comment(mut self, input: crate::model::DocumentReviewCommentSource) -> Self {
             let mut v = self.comment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comment = Some(v);
             self
         }
@@ -15979,9 +15967,9 @@ pub mod command_invocation {
         /// To override the contents of this collection use [`set_command_plugins`](Self::set_command_plugins).
         ///
         /// <p>Plugins processed by the command.</p>
-        pub fn command_plugins(mut self, input: impl Into<crate::model::CommandPlugin>) -> Self {
+        pub fn command_plugins(mut self, input: crate::model::CommandPlugin) -> Self {
             let mut v = self.command_plugins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.command_plugins = Some(v);
             self
         }
@@ -17169,10 +17157,10 @@ pub mod association_version_info {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -17191,9 +17179,9 @@ pub mod association_version_info {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets specified for the association when the association version was created. </p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -17402,9 +17390,9 @@ pub mod association_version_info {
         ///
         /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you wanted to run the association
         /// when this association version was created.</p>
-        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_locations = Some(v);
             self
         }
@@ -17625,9 +17613,9 @@ pub mod association {
         /// <p>The managed nodes targeted by the request to create an association. You can target all
         /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
         /// <code>*</code>.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -18578,9 +18566,9 @@ pub mod parameter_history {
         /// <p>
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter
         /// policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::ParameterInlinePolicy>) -> Self {
+        pub fn policies(mut self, input: crate::model::ParameterInlinePolicy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -18804,10 +18792,10 @@ pub mod ops_entity {
         pub fn data(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OpsEntityItem>,
+            v: crate::model::OpsEntityItem,
         ) -> Self {
             let mut hash_map = self.data.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.data = Some(hash_map);
             self
         }
@@ -18898,10 +18886,10 @@ pub mod ops_entity_item {
         /// <p>The details of an OpsData summary.</p>
         pub fn content(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content = Some(v);
             self
         }
@@ -19140,9 +19128,9 @@ pub mod ops_aggregator {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The aggregator filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::OpsFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::OpsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -19159,9 +19147,9 @@ pub mod ops_aggregator {
         /// To override the contents of this collection use [`set_aggregators`](Self::set_aggregators).
         ///
         /// <p>A nested aggregator for viewing counts of OpsData.</p>
-        pub fn aggregators(mut self, input: impl Into<crate::model::OpsAggregator>) -> Self {
+        pub fn aggregators(mut self, input: crate::model::OpsAggregator) -> Self {
             let mut v = self.aggregators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregators = Some(v);
             self
         }
@@ -19724,12 +19712,9 @@ pub mod ops_item {
         ///
         /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where
         /// notifications are sent when this OpsItem is edited or changed.</p>
-        pub fn notifications(
-            mut self,
-            input: impl Into<crate::model::OpsItemNotification>,
-        ) -> Self {
+        pub fn notifications(mut self, input: crate::model::OpsItemNotification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notifications = Some(v);
             self
         }
@@ -19759,9 +19744,9 @@ pub mod ops_item {
         /// <p>One or more OpsItems that share something in common with the current OpsItem. For example,
         /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
         /// statuses for the impacted resource.</p>
-        pub fn related_ops_items(mut self, input: impl Into<crate::model::RelatedOpsItem>) -> Self {
+        pub fn related_ops_items(mut self, input: crate::model::RelatedOpsItem) -> Self {
             let mut v = self.related_ops_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_ops_items = Some(v);
             self
         }
@@ -19859,10 +19844,10 @@ pub mod ops_item {
         pub fn operational_data(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OpsItemDataValue>,
+            v: crate::model::OpsItemDataValue,
         ) -> Self {
             let mut hash_map = self.operational_data.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.operational_data = Some(hash_map);
             self
         }
@@ -20194,12 +20179,9 @@ pub mod inventory_item_schema {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-        pub fn attributes(
-            mut self,
-            input: impl Into<crate::model::InventoryItemAttribute>,
-        ) -> Self {
+        pub fn attributes(mut self, input: crate::model::InventoryItemAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -20442,10 +20424,10 @@ pub mod inventory_result_entity {
         pub fn data(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::InventoryResultItem>,
+            v: crate::model::InventoryResultItem,
         ) -> Self {
             let mut hash_map = self.data.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.data = Some(hash_map);
             self
         }
@@ -20604,10 +20586,10 @@ pub mod inventory_result_item {
         /// values. </p>
         pub fn content(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.content.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content = Some(v);
             self
         }
@@ -20762,9 +20744,9 @@ pub mod inventory_aggregator {
         /// To override the contents of this collection use [`set_aggregators`](Self::set_aggregators).
         ///
         /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-        pub fn aggregators(mut self, input: impl Into<crate::model::InventoryAggregator>) -> Self {
+        pub fn aggregators(mut self, input: crate::model::InventoryAggregator) -> Self {
             let mut v = self.aggregators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregators = Some(v);
             self
         }
@@ -20782,9 +20764,9 @@ pub mod inventory_aggregator {
         ///
         /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups
         /// return a count of resources that match and don't match the specified criteria.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::InventoryGroup>) -> Self {
+        pub fn groups(mut self, input: crate::model::InventoryGroup) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -20873,9 +20855,9 @@ pub mod inventory_group {
         /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the
         /// number of resources that match the criteria. The <code>notMatchingCount</code> field displays the
         /// number of resources that don't match the criteria. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::InventoryFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::InventoryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -21362,9 +21344,9 @@ pub mod baseline_override {
         ///
         /// <p>Information about the patches to use to update the managed nodes, including target operating
         /// systems and source repositories. Applies to Linux managed nodes only.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::PatchSource>) -> Self {
+        pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -21928,9 +21910,9 @@ pub mod automation_execution {
         ///
         /// <p>A list of details about the current state of all steps that comprise an execution. An
         /// Automation runbook contains a list of steps that are run in order.</p>
-        pub fn step_executions(mut self, input: impl Into<crate::model::StepExecution>) -> Self {
+        pub fn step_executions(mut self, input: crate::model::StepExecution) -> Self {
             let mut v = self.step_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.step_executions = Some(v);
             self
         }
@@ -21965,10 +21947,10 @@ pub mod automation_execution {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -21990,10 +21972,10 @@ pub mod automation_execution {
         pub fn outputs(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.outputs.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.outputs = Some(hash_map);
             self
         }
@@ -22100,9 +22082,9 @@ pub mod automation_execution {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The specified targets.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -22121,12 +22103,13 @@ pub mod automation_execution {
         /// <p>The specified key-value mapping of document parameters to target resources.</p>
         pub fn target_maps(
             mut self,
-            input: impl Into<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
             >,
         ) -> Self {
             let mut v = self.target_maps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_maps = Some(v);
             self
         }
@@ -22199,9 +22182,9 @@ pub mod automation_execution {
         ///
         /// <p>The combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the
         /// Automation.</p>
-        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_locations = Some(v);
             self
         }
@@ -22266,9 +22249,9 @@ pub mod automation_execution {
         /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
         /// approvals for the change request have been received.</p>
         /// </note>
-        pub fn runbooks(mut self, input: impl Into<crate::model::Runbook>) -> Self {
+        pub fn runbooks(mut self, input: crate::model::Runbook) -> Self {
             let mut v = self.runbooks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.runbooks = Some(v);
             self
         }
@@ -23031,10 +23014,10 @@ pub mod step_execution {
         pub fn outputs(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.outputs.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.outputs = Some(hash_map);
             self
         }
@@ -23105,10 +23088,10 @@ pub mod step_execution {
         pub fn overridden_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.overridden_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.overridden_parameters = Some(hash_map);
             self
         }
@@ -23186,9 +23169,9 @@ pub mod step_execution {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets for the step execution.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -23343,10 +23326,10 @@ pub mod failure_details {
         pub fn details(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.details.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.details = Some(hash_map);
             self
         }
@@ -25023,9 +25006,9 @@ pub mod parameter_metadata {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>A list of policies associated with a parameter.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::ParameterInlinePolicy>) -> Self {
+        pub fn policies(mut self, input: crate::model::ParameterInlinePolicy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -25518,10 +25501,10 @@ pub mod ops_item_summary {
         pub fn operational_data(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OpsItemDataValue>,
+            v: crate::model::OpsItemDataValue,
         ) -> Self {
             let mut hash_map = self.operational_data.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.operational_data = Some(hash_map);
             self
         }
@@ -26275,9 +26258,9 @@ pub mod maintenance_window_task {
         /// <p>The targets (either managed nodes or tags). Managed nodes are specified using
         /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>. Tags are specified
         /// using <code>Key=<tag name>,Values=<tag value></code>.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -26306,10 +26289,10 @@ pub mod maintenance_window_task {
         pub fn task_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MaintenanceWindowTaskParameterValueExpression>,
+            v: crate::model::MaintenanceWindowTaskParameterValueExpression,
         ) -> Self {
             let mut hash_map = self.task_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.task_parameters = Some(hash_map);
             self
         }
@@ -26735,9 +26718,9 @@ pub mod maintenance_window_target {
         /// <p>Tags are specified using the following format:</p>
         /// <p>
         /// <code>Key=<tag name>,Values=<tag value></code>.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -28234,12 +28217,9 @@ pub mod inventory_deletion_summary {
         /// To override the contents of this collection use [`set_summary_items`](Self::set_summary_items).
         ///
         /// <p>A list of counts and versions for deleted items.</p>
-        pub fn summary_items(
-            mut self,
-            input: impl Into<crate::model::InventoryDeletionSummaryItem>,
-        ) -> Self {
+        pub fn summary_items(mut self, input: crate::model::InventoryDeletionSummaryItem) -> Self {
             let mut v = self.summary_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_items = Some(v);
             self
         }
@@ -30631,12 +30611,12 @@ pub mod instance_aggregated_association_overview {
         pub fn instance_association_status_aggregated_count(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<i32>,
+            v: i32,
         ) -> Self {
             let mut hash_map = self
                 .instance_association_status_aggregated_count
                 .unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.instance_association_status_aggregated_count = Some(hash_map);
             self
         }
@@ -33109,10 +33089,10 @@ pub mod automation_execution_metadata {
         pub fn outputs(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.outputs.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.outputs = Some(hash_map);
             self
         }
@@ -33209,9 +33189,9 @@ pub mod automation_execution_metadata {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets defined by the user when starting the automation.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -33230,12 +33210,13 @@ pub mod automation_execution_metadata {
         /// <p>The specified key-value mapping of document parameters to target resources.</p>
         pub fn target_maps(
             mut self,
-            input: impl Into<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            input: std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<std::string::String>,
             >,
         ) -> Self {
             let mut v = self.target_maps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_maps = Some(v);
             self
         }
@@ -33359,9 +33340,9 @@ pub mod automation_execution_metadata {
         /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
         /// approvals for the change request have been received.</p>
         /// </note>
-        pub fn runbooks(mut self, input: impl Into<crate::model::Runbook>) -> Self {
+        pub fn runbooks(mut self, input: crate::model::Runbook) -> Self {
             let mut v = self.runbooks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.runbooks = Some(v);
             self
         }
@@ -34778,9 +34759,9 @@ pub mod activation {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the activation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -35541,10 +35522,10 @@ pub mod create_association_batch_request_entry {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -35596,9 +35577,9 @@ pub mod create_association_batch_request_entry {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The managed nodes targeted by the request.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -35800,9 +35781,9 @@ pub mod create_association_batch_request_entry {
         /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
         ///
         /// <p>Use this action to create an association in multiple Regions and multiple accounts.</p>
-        pub fn target_locations(mut self, input: impl Into<crate::model::TargetLocation>) -> Self {
+        pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             let mut v = self.target_locations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_locations = Some(v);
             self
         }

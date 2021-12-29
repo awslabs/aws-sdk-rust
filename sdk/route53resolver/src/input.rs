@@ -110,9 +110,9 @@ pub mod associate_firewall_rule_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -858,9 +858,9 @@ pub mod create_firewall_domain_list_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1422,9 +1422,9 @@ pub mod create_firewall_rule_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the tag keys and values that you want to associate with the rule group. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1684,9 +1684,9 @@ pub mod create_resolver_endpoint_input {
         ///
         /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
         /// DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
-        pub fn ip_addresses(mut self, input: impl Into<crate::model::IpAddressRequest>) -> Self {
+        pub fn ip_addresses(mut self, input: crate::model::IpAddressRequest) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_addresses = Some(v);
             self
         }
@@ -1704,9 +1704,9 @@ pub mod create_resolver_endpoint_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1975,9 +1975,9 @@ pub mod create_resolver_query_log_config_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2221,9 +2221,9 @@ pub mod create_resolver_rule_input {
         /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP addresses with a space.</p>
         /// <p>
         /// <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-        pub fn target_ips(mut self, input: impl Into<crate::model::TargetAddress>) -> Self {
+        pub fn target_ips(mut self, input: crate::model::TargetAddress) -> Self {
             let mut v = self.target_ips.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_ips = Some(v);
             self
         }
@@ -2257,9 +2257,9 @@ pub mod create_resolver_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7939,9 +7939,9 @@ pub mod list_resolver_dnssec_configs_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An optional specification to return a subset of objects.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8331,9 +8331,9 @@ pub mod list_resolver_endpoints_input {
         /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter,
         /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8538,9 +8538,9 @@ pub mod list_resolver_query_log_config_associations_input {
         /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
         /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8927,9 +8927,9 @@ pub mod list_resolver_query_log_configs_input {
         /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
         /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9321,9 +9321,9 @@ pub mod list_resolver_rule_associations_input {
         /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter,
         /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9525,9 +9525,9 @@ pub mod list_resolver_rules_input {
         /// <p>If you submit a second or subsequent <code>ListResolverRules</code> request and specify the <code>NextToken</code> parameter,
         /// you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
         /// </note>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -10590,9 +10590,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that you want to add to the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

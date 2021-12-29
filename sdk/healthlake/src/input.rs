@@ -89,9 +89,9 @@ pub mod create_fhir_datastore_input {
         /// <p>
         /// Resource tags that are applied to a Data Store when it is created.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2231,9 +2231,9 @@ pub mod tag_resource_input {
         /// <p>
         /// The user specified key and value pair tags being added to a Data Store.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -1007,9 +1007,9 @@ pub mod project_description {
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
         /// <p>A list of datasets in the project.</p>
-        pub fn datasets(mut self, input: impl Into<crate::model::DatasetMetadata>) -> Self {
+        pub fn datasets(mut self, input: crate::model::DatasetMetadata) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }

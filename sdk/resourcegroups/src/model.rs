@@ -1147,12 +1147,9 @@ pub mod group_configuration_item {
         /// <p>A collection of parameters for this group configuration item. For the list of
         /// parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
         /// resource types and parameters</a>.</p>
-        pub fn parameters(
-            mut self,
-            input: impl Into<crate::model::GroupConfigurationParameter>,
-        ) -> Self {
+        pub fn parameters(mut self, input: crate::model::GroupConfigurationParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -1921,12 +1918,9 @@ pub mod group_configuration {
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
         /// <p>The configuration currently associated with the group and in effect.</p>
-        pub fn configuration(
-            mut self,
-            input: impl Into<crate::model::GroupConfigurationItem>,
-        ) -> Self {
+        pub fn configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             let mut v = self.configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration = Some(v);
             self
         }
@@ -1946,10 +1940,10 @@ pub mod group_configuration {
         /// group.</p>
         pub fn proposed_configuration(
             mut self,
-            input: impl Into<crate::model::GroupConfigurationItem>,
+            input: crate::model::GroupConfigurationItem,
         ) -> Self {
             let mut v = self.proposed_configuration.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proposed_configuration = Some(v);
             self
         }

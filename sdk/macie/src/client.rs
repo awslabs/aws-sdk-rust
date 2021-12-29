@@ -205,8 +205,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a
         /// member account.</p>
-        pub fn member_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(inp);
+        pub fn member_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(signature.into());
             self
         }
         /// <p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a
@@ -284,8 +284,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Macie Classic member account whose resources you want to associate
         /// with Macie Classic. </p>
-        pub fn member_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(inp);
+        pub fn member_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(signature.into());
             self
         }
         /// <p>The ID of the Amazon Macie Classic member account whose resources you want to associate
@@ -303,11 +303,8 @@ pub mod fluent_builders {
         ///
         /// <p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring
         /// and data classification. </p>
-        pub fn s3_resources(
-            mut self,
-            inp: impl Into<crate::model::S3ResourceClassification>,
-        ) -> Self {
-            self.inner = self.inner.s3_resources(inp);
+        pub fn s3_resources(mut self, input: crate::model::S3ResourceClassification) -> Self {
+            self.inner = self.inner.s3_resources(input);
             self
         }
         /// <p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring
@@ -381,8 +378,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the member account that you want to remove from Amazon Macie
         /// Classic.</p>
-        pub fn member_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(inp);
+        pub fn member_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(signature.into());
             self
         }
         /// <p>The ID of the member account that you want to remove from Amazon Macie
@@ -459,8 +456,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Macie Classic member account whose resources you want to remove
         /// from being monitored by Macie Classic. </p>
-        pub fn member_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(inp);
+        pub fn member_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(signature.into());
             self
         }
         /// <p>The ID of the Amazon Macie Classic member account whose resources you want to remove
@@ -478,8 +475,8 @@ pub mod fluent_builders {
         ///
         /// <p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and
         /// classified by Amazon Macie Classic. </p>
-        pub fn associated_s3_resources(mut self, inp: impl Into<crate::model::S3Resource>) -> Self {
-            self.inner = self.inner.associated_s3_resources(inp);
+        pub fn associated_s3_resources(mut self, input: crate::model::S3Resource) -> Self {
+            self.inner = self.inner.associated_s3_resources(input);
             self
         }
         /// <p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and
@@ -555,8 +552,8 @@ pub mod fluent_builders {
         /// your first call to the ListMemberAccounts action. Subsequent calls to the action fill
         /// nextToken in the request with the value of nextToken from the previous response to continue
         /// listing data. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Use this parameter when paginating results. Set the value of this parameter to null on
@@ -569,8 +566,8 @@ pub mod fluent_builders {
         }
         /// <p>Use this parameter to indicate the maximum number of items that you want in the
         /// response. The default value is 250. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Use this parameter to indicate the maximum number of items that you want in the
@@ -644,8 +641,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Macie Classic member account ID whose associated S3 resources you want to
         /// list. </p>
-        pub fn member_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(inp);
+        pub fn member_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(signature.into());
             self
         }
         /// <p>The Amazon Macie Classic member account ID whose associated S3 resources you want to
@@ -660,8 +657,8 @@ pub mod fluent_builders {
         /// <p>Use this parameter when paginating results. Set its value to null on your first call to
         /// the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with
         /// the value of nextToken from the previous response to continue listing data. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Use this parameter when paginating results. Set its value to null on your first call to
@@ -673,8 +670,8 @@ pub mod fluent_builders {
         }
         /// <p>Use this parameter to indicate the maximum number of items that you want in the
         /// response. The default value is 250. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Use this parameter to indicate the maximum number of items that you want in the
@@ -749,8 +746,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
         /// classification types you want to update. </p>
-        pub fn member_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(inp);
+        pub fn member_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(signature.into());
             self
         }
         /// <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
@@ -769,9 +766,9 @@ pub mod fluent_builders {
         /// <p>The S3 resources whose classification types you want to update.</p>
         pub fn s3_resources_update(
             mut self,
-            inp: impl Into<crate::model::S3ResourceClassificationUpdate>,
+            input: crate::model::S3ResourceClassificationUpdate,
         ) -> Self {
-            self.inner = self.inner.s3_resources_update(inp);
+            self.inner = self.inner.s3_resources_update(input);
             self
         }
         /// <p>The S3 resources whose classification types you want to update.</p>

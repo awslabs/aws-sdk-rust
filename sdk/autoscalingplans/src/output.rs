@@ -63,9 +63,9 @@ pub mod get_scaling_plan_resource_forecast_data_output {
         /// To override the contents of this collection use [`set_datapoints`](Self::set_datapoints).
         ///
         /// <p>The data points to return.</p>
-        pub fn datapoints(mut self, input: impl Into<crate::model::Datapoint>) -> Self {
+        pub fn datapoints(mut self, input: crate::model::Datapoint) -> Self {
             let mut v = self.datapoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datapoints = Some(v);
             self
         }
@@ -136,9 +136,9 @@ pub mod describe_scaling_plans_output {
         /// To override the contents of this collection use [`set_scaling_plans`](Self::set_scaling_plans).
         ///
         /// <p>Information about the scaling plans.</p>
-        pub fn scaling_plans(mut self, input: impl Into<crate::model::ScalingPlan>) -> Self {
+        pub fn scaling_plans(mut self, input: crate::model::ScalingPlan) -> Self {
             let mut v = self.scaling_plans.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_plans = Some(v);
             self
         }
@@ -226,12 +226,9 @@ pub mod describe_scaling_plan_resources_output {
         /// To override the contents of this collection use [`set_scaling_plan_resources`](Self::set_scaling_plan_resources).
         ///
         /// <p>Information about the scalable resources.</p>
-        pub fn scaling_plan_resources(
-            mut self,
-            input: impl Into<crate::model::ScalingPlanResource>,
-        ) -> Self {
+        pub fn scaling_plan_resources(mut self, input: crate::model::ScalingPlanResource) -> Self {
             let mut v = self.scaling_plan_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_plan_resources = Some(v);
             self
         }

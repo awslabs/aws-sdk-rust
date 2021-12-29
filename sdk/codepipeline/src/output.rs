@@ -703,9 +703,9 @@ pub mod poll_for_third_party_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>Information about the jobs to take action on.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::ThirdPartyJob>) -> Self {
+        pub fn jobs(mut self, input: crate::model::ThirdPartyJob) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -764,9 +764,9 @@ pub mod poll_for_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>Information about the jobs to take action on.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -840,9 +840,9 @@ pub mod list_webhooks_output {
         ///
         /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks
         /// call.</p>
-        pub fn webhooks(mut self, input: impl Into<crate::model::ListWebhookItem>) -> Self {
+        pub fn webhooks(mut self, input: crate::model::ListWebhookItem) -> Self {
             let mut v = self.webhooks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.webhooks = Some(v);
             self
         }
@@ -933,9 +933,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1025,9 +1025,9 @@ pub mod list_pipelines_output {
         /// To override the contents of this collection use [`set_pipelines`](Self::set_pipelines).
         ///
         /// <p>The list of pipelines.</p>
-        pub fn pipelines(mut self, input: impl Into<crate::model::PipelineSummary>) -> Self {
+        pub fn pipelines(mut self, input: crate::model::PipelineSummary) -> Self {
             let mut v = self.pipelines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipelines = Some(v);
             self
         }
@@ -1124,10 +1124,10 @@ pub mod list_pipeline_executions_output {
         /// <p>A list of executions in the history of a pipeline.</p>
         pub fn pipeline_execution_summaries(
             mut self,
-            input: impl Into<crate::model::PipelineExecutionSummary>,
+            input: crate::model::PipelineExecutionSummary,
         ) -> Self {
             let mut v = self.pipeline_execution_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_execution_summaries = Some(v);
             self
         }
@@ -1215,9 +1215,9 @@ pub mod list_action_types_output {
         /// To override the contents of this collection use [`set_action_types`](Self::set_action_types).
         ///
         /// <p>Provides details of the action types.</p>
-        pub fn action_types(mut self, input: impl Into<crate::model::ActionType>) -> Self {
+        pub fn action_types(mut self, input: crate::model::ActionType) -> Self {
             let mut v = self.action_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.action_types = Some(v);
             self
         }
@@ -1311,10 +1311,10 @@ pub mod list_action_executions_output {
         /// <p>The details for a list of recent executions, such as action execution ID.</p>
         pub fn action_execution_details(
             mut self,
-            input: impl Into<crate::model::ActionExecutionDetail>,
+            input: crate::model::ActionExecutionDetail,
         ) -> Self {
             let mut v = self.action_execution_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.action_execution_details = Some(v);
             self
         }
@@ -1525,9 +1525,9 @@ pub mod get_pipeline_state_output {
         ///
         /// <p>A list of the pipeline stage output information, including stage name, state, most
         /// recent run details, whether the stage is disabled, and other data.</p>
-        pub fn stage_states(mut self, input: impl Into<crate::model::StageState>) -> Self {
+        pub fn stage_states(mut self, input: crate::model::StageState) -> Self {
             let mut v = self.stage_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stage_states = Some(v);
             self
         }
@@ -2102,9 +2102,9 @@ pub mod create_pipeline_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to the pipeline.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2187,9 +2187,9 @@ pub mod create_custom_action_type_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to the custom action.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

@@ -564,9 +564,9 @@ pub mod job_resource {
         /// To override the contents of this collection use [`set_s3_resources`](Self::set_s3_resources).
         ///
         /// <p>An array of <code>S3Resource</code> objects.</p>
-        pub fn s3_resources(mut self, input: impl Into<crate::model::S3Resource>) -> Self {
+        pub fn s3_resources(mut self, input: crate::model::S3Resource) -> Self {
             let mut v = self.s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.s3_resources = Some(v);
             self
         }
@@ -583,9 +583,9 @@ pub mod job_resource {
         /// To override the contents of this collection use [`set_lambda_resources`](Self::set_lambda_resources).
         ///
         /// <p>The Python-language Lambda functions for this job.</p>
-        pub fn lambda_resources(mut self, input: impl Into<crate::model::LambdaResource>) -> Self {
+        pub fn lambda_resources(mut self, input: crate::model::LambdaResource) -> Self {
             let mut v = self.lambda_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lambda_resources = Some(v);
             self
         }
@@ -602,9 +602,9 @@ pub mod job_resource {
         /// To override the contents of this collection use [`set_ec2_ami_resources`](Self::set_ec2_ami_resources).
         ///
         /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
-        pub fn ec2_ami_resources(mut self, input: impl Into<crate::model::Ec2AmiResource>) -> Self {
+        pub fn ec2_ami_resources(mut self, input: crate::model::Ec2AmiResource) -> Self {
             let mut v = self.ec2_ami_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_ami_resources = Some(v);
             self
         }
@@ -768,12 +768,9 @@ pub mod lambda_resource {
         /// To override the contents of this collection use [`set_event_triggers`](Self::set_event_triggers).
         ///
         /// <p>The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job.</p>
-        pub fn event_triggers(
-            mut self,
-            input: impl Into<crate::model::EventTriggerDefinition>,
-        ) -> Self {
+        pub fn event_triggers(mut self, input: crate::model::EventTriggerDefinition) -> Self {
             let mut v = self.event_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_triggers = Some(v);
             self
         }
@@ -956,10 +953,10 @@ pub mod s3_resource {
         /// System).</p>
         pub fn target_on_device_services(
             mut self,
-            input: impl Into<crate::model::TargetOnDeviceService>,
+            input: crate::model::TargetOnDeviceService,
         ) -> Self {
             let mut v = self.target_on_device_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_on_device_services = Some(v);
             self
         }
@@ -1368,9 +1365,9 @@ pub mod notification {
         /// To override the contents of this collection use [`set_job_states_to_notify`](Self::set_job_states_to_notify).
         ///
         /// <p>The list of job states that will trigger a notification for this job.</p>
-        pub fn job_states_to_notify(mut self, input: impl Into<crate::model::JobState>) -> Self {
+        pub fn job_states_to_notify(mut self, input: crate::model::JobState) -> Self {
             let mut v = self.job_states_to_notify.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_states_to_notify = Some(v);
             self
         }

@@ -869,8 +869,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -896,8 +896,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -923,8 +923,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
         /// </p>
-        pub fn portfolio_share_type(mut self, inp: crate::model::PortfolioShareType) -> Self {
-            self.inner = self.inner.portfolio_share_type(inp);
+        pub fn portfolio_share_type(mut self, signature: crate::model::PortfolioShareType) -> Self {
+            self.inner = self.inner.portfolio_share_type(signature);
             self
         }
         /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
@@ -1013,8 +1013,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the budget you want to associate.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(signature.into());
             self
         }
         /// <p>The name of the budget you want to associate.</p>
@@ -1023,8 +1023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
@@ -1107,8 +1107,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -1134,8 +1134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -1144,8 +1144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the principal (IAM user, role, or group).</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(signature.into());
             self
         }
         /// <p>The ARN of the principal (IAM user, role, or group).</p>
@@ -1157,8 +1157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal type. The supported value is <code>IAM</code>.</p>
-        pub fn principal_type(mut self, inp: crate::model::PrincipalType) -> Self {
-            self.inner = self.inner.principal_type(inp);
+        pub fn principal_type(mut self, signature: crate::model::PrincipalType) -> Self {
+            self.inner = self.inner.principal_type(signature);
             self
         }
         /// <p>The principal type. The supported value is <code>IAM</code>.</p>
@@ -1245,8 +1245,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -1272,8 +1272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -1282,8 +1282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -1292,8 +1292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the source portfolio.</p>
-        pub fn source_portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_portfolio_id(inp);
+        pub fn source_portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_portfolio_id(signature.into());
             self
         }
         /// <p>The identifier of the source portfolio.</p>
@@ -1358,8 +1358,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -1368,8 +1368,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
@@ -1381,8 +1384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(signature.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -1408,8 +1411,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -1495,8 +1498,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The resource identifier.</p>
@@ -1505,8 +1508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TagOption identifier.</p>
-        pub fn tag_option_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_option_id(inp);
+        pub fn tag_option_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_option_id(signature.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -1578,9 +1581,9 @@ pub mod fluent_builders {
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn service_action_associations(
             mut self,
-            inp: impl Into<crate::model::ServiceActionAssociation>,
+            input: crate::model::ServiceActionAssociation,
         ) -> Self {
-            self.inner = self.inner.service_action_associations(inp);
+            self.inner = self.inner.service_action_associations(input);
             self
         }
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
@@ -1606,8 +1609,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -1688,9 +1691,9 @@ pub mod fluent_builders {
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn service_action_associations(
             mut self,
-            inp: impl Into<crate::model::ServiceActionAssociation>,
+            input: crate::model::ServiceActionAssociation,
         ) -> Self {
-            self.inner = self.inner.service_action_associations(inp);
+            self.inner = self.inner.service_action_associations(input);
             self
         }
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
@@ -1716,8 +1719,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -1821,8 +1824,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -1848,8 +1851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source product.</p>
-        pub fn source_product_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_product_arn(inp);
+        pub fn source_product_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_product_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source product.</p>
@@ -1861,8 +1864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the target product. By default, a new product is created.</p>
-        pub fn target_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_product_id(inp);
+        pub fn target_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_product_id(signature.into());
             self
         }
         /// <p>The identifier of the target product. By default, a new product is created.</p>
@@ -1874,8 +1877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the target product. The default is the name of the source product.</p>
-        pub fn target_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_product_name(inp);
+        pub fn target_product_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_product_name(signature.into());
             self
         }
         /// <p>A name for the target product. The default is the name of the source product.</p>
@@ -1894,14 +1897,12 @@ pub mod fluent_builders {
         /// By default, all provisioning artifacts are copied.</p>
         pub fn source_provisioning_artifact_identifiers(
             mut self,
-            inp: impl Into<
-                std::collections::HashMap<
-                    crate::model::ProvisioningArtifactPropertyName,
-                    std::string::String,
-                >,
+            input: std::collections::HashMap<
+                crate::model::ProvisioningArtifactPropertyName,
+                std::string::String,
             >,
         ) -> Self {
-            self.inner = self.inner.source_provisioning_artifact_identifiers(inp);
+            self.inner = self.inner.source_provisioning_artifact_identifiers(input);
             self
         }
         /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
@@ -1928,8 +1929,8 @@ pub mod fluent_builders {
         ///
         /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
         /// product are copied to the target product.</p>
-        pub fn copy_options(mut self, inp: impl Into<crate::model::CopyOption>) -> Self {
-            self.inner = self.inner.copy_options(inp);
+        pub fn copy_options(mut self, input: crate::model::CopyOption) -> Self {
+            self.inner = self.inner.copy_options(input);
             self
         }
         /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
@@ -1943,8 +1944,8 @@ pub mod fluent_builders {
         }
         /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request. </p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -2032,8 +2033,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -2059,8 +2060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -2069,8 +2070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -2130,8 +2131,8 @@ pub mod fluent_builders {
         /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
-        pub fn parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameters(signature.into());
             self
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
@@ -2218,8 +2219,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(signature.into());
             self
         }
         /// <p>The type of constraint.</p>
@@ -2255,8 +2256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the constraint.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the constraint.</p>
@@ -2266,8 +2267,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -2355,8 +2356,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -2382,8 +2383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to use for display purposes.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The name to use for display purposes.</p>
@@ -2392,8 +2393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the portfolio.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the portfolio.</p>
@@ -2402,8 +2403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the portfolio provider.</p>
-        pub fn provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(inp);
+        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(signature.into());
             self
         }
         /// <p>The name of the portfolio provider.</p>
@@ -2419,8 +2420,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -2433,8 +2434,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -2529,8 +2530,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -2556,8 +2557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -2566,8 +2567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
@@ -2581,8 +2582,8 @@ pub mod fluent_builders {
         /// <code>PortfolioShareToken</code> will be returned in the output in order for the
         /// administrator to monitor the status of the <code>PortfolioShare</code> creation
         /// process.</p>
-        pub fn organization_node(mut self, inp: crate::model::OrganizationNode) -> Self {
-            self.inner = self.inner.organization_node(inp);
+        pub fn organization_node(mut self, signature: crate::model::OrganizationNode) -> Self {
+            self.inner = self.inner.organization_node(signature);
             self
         }
         /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
@@ -2599,8 +2600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
-        pub fn share_tag_options(mut self, inp: bool) -> Self {
-            self.inner = self.inner.share_tag_options(inp);
+        pub fn share_tag_options(mut self, signature: bool) -> Self {
+            self.inner = self.inner.share_tag_options(signature);
             self
         }
         /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
@@ -2689,8 +2690,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -2716,8 +2717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the product.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the product.</p>
@@ -2726,8 +2727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The owner of the product.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(inp);
+        pub fn owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(signature.into());
             self
         }
         /// <p>The owner of the product.</p>
@@ -2736,8 +2737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the product.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the product.</p>
@@ -2746,8 +2747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The distributor of the product.</p>
-        pub fn distributor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distributor(inp);
+        pub fn distributor(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distributor(signature.into());
             self
         }
         /// <p>The distributor of the product.</p>
@@ -2756,8 +2757,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The support information about the product.</p>
-        pub fn support_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_description(inp);
+        pub fn support_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_description(signature.into());
             self
         }
         /// <p>The support information about the product.</p>
@@ -2769,8 +2770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contact email for product support.</p>
-        pub fn support_email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_email(inp);
+        pub fn support_email(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_email(signature.into());
             self
         }
         /// <p>The contact email for product support.</p>
@@ -2784,8 +2785,8 @@ pub mod fluent_builders {
         /// <p>The contact URL for product support.</p>
         /// <p>
         /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
-        pub fn support_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_url(inp);
+        pub fn support_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_url(signature.into());
             self
         }
         /// <p>The contact URL for product support.</p>
@@ -2796,8 +2797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of product.</p>
-        pub fn product_type(mut self, inp: crate::model::ProductType) -> Self {
-            self.inner = self.inner.product_type(inp);
+        pub fn product_type(mut self, signature: crate::model::ProductType) -> Self {
+            self.inner = self.inner.product_type(signature);
             self
         }
         /// <p>The type of product.</p>
@@ -2813,8 +2814,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -2828,9 +2829,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the provisioning artifact. </p>
         pub fn provisioning_artifact_parameters(
             mut self,
-            inp: crate::model::ProvisioningArtifactProperties,
+            signature: crate::model::ProvisioningArtifactProperties,
         ) -> Self {
-            self.inner = self.inner.provisioning_artifact_parameters(inp);
+            self.inner = self.inner.provisioning_artifact_parameters(signature);
             self
         }
         /// <p>The configuration of the provisioning artifact. </p>
@@ -2843,8 +2844,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -2937,8 +2938,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -2964,8 +2965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the plan.</p>
-        pub fn plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plan_name(inp);
+        pub fn plan_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plan_name(signature.into());
             self
         }
         /// <p>The name of the plan.</p>
@@ -2974,8 +2975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The plan type.</p>
-        pub fn plan_type(mut self, inp: crate::model::ProvisionedProductPlanType) -> Self {
-            self.inner = self.inner.plan_type(inp);
+        pub fn plan_type(mut self, signature: crate::model::ProvisionedProductPlanType) -> Self {
+            self.inner = self.inner.plan_type(signature);
             self
         }
         /// <p>The plan type.</p>
@@ -2992,8 +2993,8 @@ pub mod fluent_builders {
         ///
         /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
         /// events.</p>
-        pub fn notification_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_arns(inp);
+        pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_arns(input.into());
             self
         }
         /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
@@ -3008,8 +3009,8 @@ pub mod fluent_builders {
         /// <p>The path identifier of the product. This value is optional if the product
         /// has a default path, and required if the product has more than one path.
         /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
-        pub fn path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_id(inp);
+        pub fn path_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_id(signature.into());
             self
         }
         /// <p>The path identifier of the product. This value is optional if the product
@@ -3020,8 +3021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -3031,8 +3032,11 @@ pub mod fluent_builders {
         }
         /// <p>A user-friendly name for the provisioned product. This value must be
         /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        pub fn provisioned_product_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioned_product_name(signature.into());
             self
         }
         /// <p>A user-friendly name for the provisioned product. This value must be
@@ -3045,8 +3049,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -3065,9 +3072,9 @@ pub mod fluent_builders {
         /// product.</p>
         pub fn provisioning_parameters(
             mut self,
-            inp: impl Into<crate::model::UpdateProvisioningParameter>,
+            input: crate::model::UpdateProvisioningParameter,
         ) -> Self {
-            self.inner = self.inner.provisioning_parameters(inp);
+            self.inner = self.inner.provisioning_parameters(input);
             self
         }
         /// <p>Parameters specified by the administrator that are required for provisioning the
@@ -3081,8 +3088,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -3100,8 +3107,8 @@ pub mod fluent_builders {
         ///
         /// <p>One or more tags.</p>
         /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -3193,8 +3200,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -3220,8 +3227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -3230,8 +3237,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for the provisioning artifact.</p>
-        pub fn parameters(mut self, inp: crate::model::ProvisioningArtifactProperties) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(
+            mut self,
+            signature: crate::model::ProvisioningArtifactProperties,
+        ) -> Self {
+            self.inner = self.inner.parameters(signature);
             self
         }
         /// <p>The configuration for the provisioning artifact.</p>
@@ -3244,8 +3254,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -3318,8 +3328,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The self-service action name.</p>
@@ -3328,8 +3338,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-        pub fn definition_type(mut self, inp: crate::model::ServiceActionDefinitionType) -> Self {
-            self.inner = self.inner.definition_type(inp);
+        pub fn definition_type(
+            mut self,
+            signature: crate::model::ServiceActionDefinitionType,
+        ) -> Self {
+            self.inner = self.inner.definition_type(signature);
             self
         }
         /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
@@ -3369,10 +3382,10 @@ pub mod fluent_builders {
         /// </dl>
         pub fn definition(
             mut self,
-            k: impl Into<crate::model::ServiceActionDefinitionKey>,
+            k: crate::model::ServiceActionDefinitionKey,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.definition(k, v);
+            self.inner = self.inner.definition(k, v.into());
             self
         }
         /// <p>The self-service action definition. Can be one of the following:</p>
@@ -3411,8 +3424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The self-service action description.</p>
@@ -3435,8 +3448,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -3463,8 +3476,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -3537,8 +3550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(signature.into());
             self
         }
         /// <p>The TagOption key.</p>
@@ -3547,8 +3560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TagOption value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(signature.into());
             self
         }
         /// <p>The TagOption value.</p>
@@ -3632,8 +3645,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -3659,8 +3672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the constraint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the constraint.</p>
@@ -3746,8 +3759,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -3773,8 +3786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -3860,8 +3873,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -3887,8 +3900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -3897,8 +3910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The AWS account ID.</p>
@@ -3907,8 +3920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization node to whom you are going to stop sharing.</p>
-        pub fn organization_node(mut self, inp: crate::model::OrganizationNode) -> Self {
-            self.inner = self.inner.organization_node(inp);
+        pub fn organization_node(mut self, signature: crate::model::OrganizationNode) -> Self {
+            self.inner = self.inner.organization_node(signature);
             self
         }
         /// <p>The organization node to whom you are going to stop sharing.</p>
@@ -3996,8 +4009,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -4023,8 +4036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -4107,8 +4120,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -4134,8 +4147,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The plan identifier.</p>
-        pub fn plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plan_id(inp);
+        pub fn plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plan_id(signature.into());
             self
         }
         /// <p>The plan identifier.</p>
@@ -4145,8 +4158,8 @@ pub mod fluent_builders {
         }
         /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
         /// if it cannot delete the underlying resources.</p>
-        pub fn ignore_errors(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ignore_errors(inp);
+        pub fn ignore_errors(mut self, signature: bool) -> Self {
+            self.inner = self.inner.ignore_errors(signature);
             self
         }
         /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
@@ -4233,8 +4246,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -4260,8 +4273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -4270,8 +4283,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -4343,8 +4359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -4367,8 +4383,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -4455,8 +4471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -4539,8 +4555,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -4566,8 +4582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the constraint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the constraint.</p>
@@ -4650,8 +4666,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -4677,8 +4693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
-        pub fn copy_product_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_product_token(inp);
+        pub fn copy_product_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.copy_product_token(signature.into());
             self
         }
         /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
@@ -4765,8 +4781,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -4792,8 +4808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -4866,8 +4882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
@@ -4880,8 +4896,8 @@ pub mod fluent_builders {
         /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
         /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
         /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
-        pub fn r#type(mut self, inp: crate::model::DescribePortfolioShareType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::DescribePortfolioShareType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
@@ -4897,8 +4913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -4907,8 +4923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -4978,8 +4994,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-        pub fn portfolio_share_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_share_token(inp);
+        pub fn portfolio_share_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_share_token(signature.into());
             self
         }
         /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
@@ -5065,8 +5081,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -5092,8 +5108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -5102,8 +5118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The product name.</p>
@@ -5186,8 +5202,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -5213,8 +5229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -5223,8 +5239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The product name.</p>
@@ -5238,8 +5254,8 @@ pub mod fluent_builders {
         /// product. If this parameter is provided and if TagOptions sharing is enabled in the
         /// portfolio share, the API returns both local and shared TagOptions associated with the
         /// product. Otherwise only local TagOptions will be returned. </p>
-        pub fn source_portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_portfolio_id(inp);
+        pub fn source_portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_portfolio_id(signature.into());
             self
         }
         /// <p>The unique identifier of the shared portfolio that the specified product is associated
@@ -5330,8 +5346,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -5357,8 +5373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product view identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The product view identifier.</p>
@@ -5441,8 +5457,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -5469,8 +5485,8 @@ pub mod fluent_builders {
         }
         /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
         /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
@@ -5481,8 +5497,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
         /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
@@ -5566,8 +5582,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -5593,8 +5609,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The plan identifier.</p>
-        pub fn plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plan_id(inp);
+        pub fn plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plan_id(signature.into());
             self
         }
         /// <p>The plan identifier.</p>
@@ -5603,8 +5619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -5613,8 +5629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -5697,8 +5713,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -5724,8 +5740,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -5737,8 +5756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -5747,8 +5766,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The provisioning artifact name.</p>
-        pub fn provisioning_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_name(inp);
+        pub fn provisioning_artifact_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_name(signature.into());
             self
         }
         /// <p>The provisioning artifact name.</p>
@@ -5760,8 +5782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product name.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(signature.into());
             self
         }
         /// <p>The product name.</p>
@@ -5770,8 +5792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether a verbose level of detail is enabled.</p>
-        pub fn verbose(mut self, inp: bool) -> Self {
-            self.inner = self.inner.verbose(inp);
+        pub fn verbose(mut self, signature: bool) -> Self {
+            self.inner = self.inner.verbose(signature);
             self
         }
         /// <p>Indicates whether a verbose level of detail is enabled.</p>
@@ -5861,8 +5883,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -5888,8 +5910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
@@ -5898,8 +5920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(signature.into());
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
@@ -5908,8 +5930,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -5921,8 +5946,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_name(inp);
+        pub fn provisioning_artifact_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_name(signature.into());
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -5936,8 +5964,8 @@ pub mod fluent_builders {
         /// <p>The path identifier of the product. This value is optional if the product
         /// has a default path, and required if the product has more than one path.
         /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
-        pub fn path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_id(inp);
+        pub fn path_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_id(signature.into());
             self
         }
         /// <p>The path identifier of the product. This value is optional if the product
@@ -5948,8 +5976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-        pub fn path_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_name(inp);
+        pub fn path_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_name(signature.into());
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
@@ -6040,8 +6068,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -6068,8 +6096,8 @@ pub mod fluent_builders {
         }
         /// <p>The record identifier of the provisioned product. This identifier is returned by the
         /// request operation.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The record identifier of the provisioned product. This identifier is returned by the
@@ -6079,8 +6107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -6089,8 +6117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -6159,8 +6187,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The self-service action identifier.</p>
@@ -6183,8 +6211,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -6272,8 +6300,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioned product.</p>
@@ -6285,8 +6313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action identifier.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(signature.into());
             self
         }
         /// <p>The self-service action identifier.</p>
@@ -6312,8 +6340,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -6399,8 +6427,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -6535,8 +6563,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the budget you want to disassociate.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(signature.into());
             self
         }
         /// <p>The name of the budget you want to disassociate.</p>
@@ -6545,8 +6573,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
@@ -6632,8 +6660,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -6659,8 +6687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -6669,8 +6697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the principal (IAM user, role, or group).</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(signature.into());
             self
         }
         /// <p>The ARN of the principal (IAM user, role, or group).</p>
@@ -6757,8 +6785,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -6784,8 +6812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -6794,8 +6822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -6857,8 +6885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -6867,8 +6895,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
@@ -6880,8 +6911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(signature.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -6907,8 +6938,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -6994,8 +7025,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The resource identifier.</p>
@@ -7004,8 +7035,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TagOption identifier.</p>
-        pub fn tag_option_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_option_id(inp);
+        pub fn tag_option_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_option_id(signature.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -7156,8 +7187,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -7183,8 +7214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The plan identifier.</p>
-        pub fn plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plan_id(inp);
+        pub fn plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plan_id(signature.into());
             self
         }
         /// <p>The plan identifier.</p>
@@ -7194,8 +7225,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -7270,8 +7301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioned product.</p>
@@ -7283,8 +7314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(signature.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -7296,8 +7327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An idempotency token that uniquely identifies the execute request.</p>
-        pub fn execute_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execute_token(inp);
+        pub fn execute_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execute_token(signature.into());
             self
         }
         /// <p>An idempotency token that uniquely identifies the execute request.</p>
@@ -7323,8 +7354,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -7359,9 +7390,9 @@ pub mod fluent_builders {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.parameters(k, v);
+            self.inner = self.inner.parameters(k.into(), v);
             self
         }
         /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
@@ -7512,8 +7543,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -7539,8 +7570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioned product that you want the outputs from.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioned product that you want the outputs from.</p>
@@ -7552,8 +7583,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioned product that you want the outputs from.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        pub fn provisioned_product_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioned_product_name(signature.into());
             self
         }
         /// <p>The name of the provisioned product that you want the outputs from.</p>
@@ -7569,8 +7603,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_output_keys`](Self::set_output_keys).
         ///
         /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
-        pub fn output_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_keys(inp);
+        pub fn output_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_keys(input.into());
             self
         }
         /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
@@ -7582,8 +7616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -7592,8 +7626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -7689,8 +7723,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -7716,8 +7750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -7726,8 +7760,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -7740,8 +7777,11 @@ pub mod fluent_builders {
         }
         /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
         /// account. The name cannot be updated after the product is provisioned. </p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        pub fn provisioned_product_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioned_product_name(signature.into());
             self
         }
         /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
@@ -7755,8 +7795,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the resource to be imported. It only currently supports
         /// CloudFormation stack IDs.</p>
-        pub fn physical_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.physical_id(inp);
+        pub fn physical_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.physical_id(signature.into());
             self
         }
         /// <p>The unique identifier of the resource to be imported. It only currently supports
@@ -7767,8 +7807,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
         /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
@@ -7855,8 +7895,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -7882,8 +7922,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -7892,8 +7932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -7917,8 +7957,8 @@ pub mod fluent_builders {
         /// <code>IMPORTED</code> - List imported portfolios</p>
         /// </li>
         /// </ul>
-        pub fn portfolio_share_type(mut self, inp: crate::model::PortfolioShareType) -> Self {
-            self.inner = self.inner.portfolio_share_type(inp);
+        pub fn portfolio_share_type(mut self, signature: crate::model::PortfolioShareType) -> Self {
+            self.inner = self.inner.portfolio_share_type(signature);
             self
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
@@ -8019,8 +8059,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -8046,8 +8086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(signature.into());
             self
         }
         /// <p>The resource identifier.</p>
@@ -8056,8 +8096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8066,8 +8106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8150,8 +8190,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -8177,8 +8217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -8187,8 +8227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -8197,8 +8237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8207,8 +8247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8293,8 +8333,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -8320,8 +8360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -8330,8 +8370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8340,8 +8380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8427,8 +8467,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -8454,8 +8494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
@@ -8478,8 +8518,11 @@ pub mod fluent_builders {
         /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
         /// </li>
         /// </ul>
-        pub fn organization_node_type(mut self, inp: crate::model::OrganizationNodeType) -> Self {
-            self.inner = self.inner.organization_node_type(inp);
+        pub fn organization_node_type(
+            mut self,
+            signature: crate::model::OrganizationNodeType,
+        ) -> Self {
+            self.inner = self.inner.organization_node_type(signature);
             self
         }
         /// <p>The organization node type that will be returned in the output.</p>
@@ -8505,8 +8548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8515,8 +8558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8600,8 +8643,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -8627,8 +8670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -8637,8 +8680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-        pub fn organization_parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_parent_id(inp);
+        pub fn organization_parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_parent_id(signature.into());
             self
         }
         /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
@@ -8650,8 +8693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8660,8 +8703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8744,8 +8787,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -8771,8 +8814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8781,8 +8824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8865,8 +8908,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -8892,8 +8935,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -8902,8 +8945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8912,8 +8955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8996,8 +9039,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -9023,8 +9066,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -9033,8 +9076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9043,8 +9086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9127,8 +9170,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -9154,8 +9197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn provision_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provision_product_id(inp);
+        pub fn provision_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provision_product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -9167,8 +9210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9177,8 +9220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9187,8 +9230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-        pub fn access_level_filter(mut self, inp: crate::model::AccessLevelFilter) -> Self {
-            self.inner = self.inner.access_level_filter(inp);
+        pub fn access_level_filter(mut self, signature: crate::model::AccessLevelFilter) -> Self {
+            self.inner = self.inner.access_level_filter(signature);
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -9274,8 +9317,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -9301,8 +9344,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -9373,8 +9416,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(signature.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -9386,8 +9429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9396,8 +9439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9420,8 +9463,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -9521,8 +9564,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -9548,8 +9591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-        pub fn access_level_filter(mut self, inp: crate::model::AccessLevelFilter) -> Self {
-            self.inner = self.inner.access_level_filter(inp);
+        pub fn access_level_filter(mut self, signature: crate::model::AccessLevelFilter) -> Self {
+            self.inner = self.inner.access_level_filter(signature);
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -9561,8 +9604,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The search filter to scope the results.</p>
-        pub fn search_filter(mut self, inp: crate::model::ListRecordHistorySearchFilter) -> Self {
-            self.inner = self.inner.search_filter(inp);
+        pub fn search_filter(
+            mut self,
+            signature: crate::model::ListRecordHistorySearchFilter,
+        ) -> Self {
+            self.inner = self.inner.search_filter(signature);
             self
         }
         /// <p>The search filter to scope the results.</p>
@@ -9574,8 +9620,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9584,8 +9630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9654,8 +9700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption identifier.</p>
-        pub fn tag_option_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_option_id(inp);
+        pub fn tag_option_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_option_id(signature.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -9679,8 +9725,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(signature.into());
             self
         }
         /// <p>The resource type.</p>
@@ -9704,8 +9750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9714,8 +9760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9798,8 +9844,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -9825,8 +9871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9835,8 +9881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9907,8 +9953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -9917,8 +9963,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
@@ -9930,8 +9979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9940,8 +9989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9964,8 +10013,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -10067,8 +10116,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -10094,8 +10143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioned product.</p>
@@ -10107,8 +10156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -10117,8 +10166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -10187,8 +10236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
-        pub fn filters(mut self, inp: crate::model::ListTagOptionsFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, signature: crate::model::ListTagOptionsFilters) -> Self {
+            self.inner = self.inner.filters(signature);
             self
         }
         /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
@@ -10200,8 +10249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -10210,8 +10259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -10302,8 +10351,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -10329,8 +10378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier. You must provide the name or ID, but not both.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier. You must provide the name or ID, but not both.</p>
@@ -10339,8 +10388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(signature.into());
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
@@ -10349,8 +10398,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -10362,8 +10414,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_name(inp);
+        pub fn provisioning_artifact_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_name(signature.into());
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -10377,8 +10432,8 @@ pub mod fluent_builders {
         /// <p>The path identifier of the product. This value is optional if the product
         /// has a default path, and required if the product has more than one path.
         /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
-        pub fn path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_id(inp);
+        pub fn path_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_id(signature.into());
             self
         }
         /// <p>The path identifier of the product. This value is optional if the product
@@ -10389,8 +10444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-        pub fn path_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_name(inp);
+        pub fn path_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_name(signature.into());
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
@@ -10400,8 +10455,11 @@ pub mod fluent_builders {
         }
         /// <p>A user-friendly name for the provisioned product. This value must be
         /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        pub fn provisioned_product_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioned_product_name(signature.into());
             self
         }
         /// <p>A user-friendly name for the provisioned product. This value must be
@@ -10421,9 +10479,9 @@ pub mod fluent_builders {
         /// product.</p>
         pub fn provisioning_parameters(
             mut self,
-            inp: impl Into<crate::model::ProvisioningParameter>,
+            input: crate::model::ProvisioningParameter,
         ) -> Self {
-            self.inner = self.inner.provisioning_parameters(inp);
+            self.inner = self.inner.provisioning_parameters(input);
             self
         }
         /// <p>Parameters specified by the administrator that are required for provisioning the
@@ -10438,9 +10496,9 @@ pub mod fluent_builders {
         /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
         pub fn provisioning_preferences(
             mut self,
-            inp: crate::model::ProvisioningPreferences,
+            signature: crate::model::ProvisioningPreferences,
         ) -> Self {
-            self.inner = self.inner.provisioning_preferences(inp);
+            self.inner = self.inner.provisioning_preferences(signature);
             self
         }
         /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
@@ -10456,8 +10514,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -10474,8 +10532,8 @@ pub mod fluent_builders {
         ///
         /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
         /// events.</p>
-        pub fn notification_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_arns(inp);
+        pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_arns(input.into());
             self
         }
         /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
@@ -10488,8 +10546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
-        pub fn provision_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provision_token(inp);
+        pub fn provision_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provision_token(signature.into());
             self
         }
         /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
@@ -10575,8 +10633,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -10602,8 +10660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -10629,8 +10687,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
         /// </p>
-        pub fn portfolio_share_type(mut self, inp: crate::model::PortfolioShareType) -> Self {
-            self.inner = self.inner.portfolio_share_type(inp);
+        pub fn portfolio_share_type(mut self, signature: crate::model::PortfolioShareType) -> Self {
+            self.inner = self.inner.portfolio_share_type(signature);
             self
         }
         /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
@@ -10734,8 +10792,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -10761,8 +10819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-        pub fn access_level_filter(mut self, inp: crate::model::AccessLevelFilter) -> Self {
-            self.inner = self.inner.access_level_filter(inp);
+        pub fn access_level_filter(mut self, signature: crate::model::AccessLevelFilter) -> Self {
+            self.inner = self.inner.access_level_filter(signature);
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -10774,8 +10832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -10784,8 +10842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -10868,8 +10926,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -10902,8 +10960,8 @@ pub mod fluent_builders {
         /// all products to which the caller has access.</p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             self.inner = self.inner.filters(k, v);
             self
@@ -10923,8 +10981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -10933,8 +10991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-        pub fn sort_by(mut self, inp: crate::model::ProductViewSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::ProductViewSortBy) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -10946,8 +11004,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(signature);
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
@@ -10959,8 +11017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -11043,8 +11101,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -11070,8 +11128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -11087,8 +11145,8 @@ pub mod fluent_builders {
         /// to which the administrator has access.</p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             self.inner = self.inner.filters(k, v);
             self
@@ -11108,8 +11166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-        pub fn sort_by(mut self, inp: crate::model::ProductViewSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::ProductViewSortBy) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -11121,8 +11179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(signature);
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
@@ -11134,8 +11192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -11144,8 +11202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -11154,8 +11212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Access level of the source of the product.</p>
-        pub fn product_source(mut self, inp: crate::model::ProductSource) -> Self {
-            self.inner = self.inner.product_source(inp);
+        pub fn product_source(mut self, signature: crate::model::ProductSource) -> Self {
+            self.inner = self.inner.product_source(signature);
             self
         }
         /// <p>Access level of the source of the product.</p>
@@ -11241,8 +11299,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -11268,8 +11326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-        pub fn access_level_filter(mut self, inp: crate::model::AccessLevelFilter) -> Self {
-            self.inner = self.inner.access_level_filter(inp);
+        pub fn access_level_filter(mut self, signature: crate::model::AccessLevelFilter) -> Self {
+            self.inner = self.inner.access_level_filter(signature);
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -11295,8 +11353,8 @@ pub mod fluent_builders {
         /// </p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProvisionedProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProvisionedProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             self.inner = self.inner.filters(k, v);
             self
@@ -11324,8 +11382,8 @@ pub mod fluent_builders {
         }
         /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
         /// and <code>lastRecordId</code>.</p>
-        pub fn sort_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_by(signature.into());
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
@@ -11335,8 +11393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(signature);
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
@@ -11348,8 +11406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -11358,8 +11416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(signature.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -11431,8 +11489,11 @@ pub mod fluent_builders {
         }
         /// <p>The name of the provisioned product. You cannot specify both
         /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        pub fn provisioned_product_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioned_product_name(signature.into());
             self
         }
         /// <p>The name of the provisioned product. You cannot specify both
@@ -11446,8 +11507,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the provisioned product. You cannot specify both
         /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioned product. You cannot specify both
@@ -11463,8 +11524,8 @@ pub mod fluent_builders {
         /// only valid during the termination process. After the provisioned product is terminated,
         /// subsequent requests to terminate the same provisioned product always return
         /// <b>ResourceNotFound</b>.</p>
-        pub fn terminate_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.terminate_token(inp);
+        pub fn terminate_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.terminate_token(signature.into());
             self
         }
         /// <p>An idempotency token that uniquely identifies the termination request. This token is
@@ -11480,8 +11541,8 @@ pub mod fluent_builders {
         }
         /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
         /// if it cannot delete the underlying resources.</p>
-        pub fn ignore_errors(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ignore_errors(inp);
+        pub fn ignore_errors(mut self, signature: bool) -> Self {
+            self.inner = self.inner.ignore_errors(signature);
             self
         }
         /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
@@ -11505,8 +11566,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -11535,8 +11596,8 @@ pub mod fluent_builders {
         /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
         /// stack, stack set, or the underlying resources of the deleted provisioned product. The
         /// default value is false.</p>
-        pub fn retain_physical_resources(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retain_physical_resources(inp);
+        pub fn retain_physical_resources(mut self, signature: bool) -> Self {
+            self.inner = self.inner.retain_physical_resources(signature);
             self
         }
         /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
@@ -11622,8 +11683,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -11649,8 +11710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the constraint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The identifier of the constraint.</p>
@@ -11659,8 +11720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the constraint.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The updated description of the constraint.</p>
@@ -11720,8 +11781,8 @@ pub mod fluent_builders {
         /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
-        pub fn parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameters(signature.into());
             self
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
@@ -11856,8 +11917,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -11883,8 +11944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -11893,8 +11954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to use for display purposes.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(signature.into());
             self
         }
         /// <p>The name to use for display purposes.</p>
@@ -11903,8 +11964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the portfolio.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The updated description of the portfolio.</p>
@@ -11913,8 +11974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the portfolio provider.</p>
-        pub fn provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(inp);
+        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(signature.into());
             self
         }
         /// <p>The updated name of the portfolio provider.</p>
@@ -11930,8 +11991,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
         ///
         /// <p>The tags to add.</p>
-        pub fn add_tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.add_tags(inp);
+        pub fn add_tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.add_tags(input);
             self
         }
         /// <p>The tags to add.</p>
@@ -11947,8 +12008,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
         ///
         /// <p>The tags to remove.</p>
-        pub fn remove_tags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remove_tags(inp);
+        pub fn remove_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remove_tags(input.into());
             self
         }
         /// <p>The tags to remove.</p>
@@ -12042,8 +12103,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -12069,8 +12130,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(signature.into());
             self
         }
         /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
@@ -12079,8 +12140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
@@ -12089,8 +12150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the organization node.</p>
-        pub fn organization_node(mut self, inp: crate::model::OrganizationNode) -> Self {
-            self.inner = self.inner.organization_node(inp);
+        pub fn organization_node(mut self, signature: crate::model::OrganizationNode) -> Self {
+            self.inner = self.inner.organization_node(signature);
             self
         }
         /// <p>Information about the organization node.</p>
@@ -12102,8 +12163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
-        pub fn share_tag_options(mut self, inp: bool) -> Self {
-            self.inner = self.inner.share_tag_options(inp);
+        pub fn share_tag_options(mut self, signature: bool) -> Self {
+            self.inner = self.inner.share_tag_options(signature);
             self
         }
         /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
@@ -12186,8 +12247,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -12213,8 +12274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -12223,8 +12284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated product name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The updated product name.</p>
@@ -12233,8 +12294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated owner of the product.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(inp);
+        pub fn owner(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(signature.into());
             self
         }
         /// <p>The updated owner of the product.</p>
@@ -12243,8 +12304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the product.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The updated description of the product.</p>
@@ -12253,8 +12314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated distributor of the product.</p>
-        pub fn distributor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distributor(inp);
+        pub fn distributor(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distributor(signature.into());
             self
         }
         /// <p>The updated distributor of the product.</p>
@@ -12263,8 +12324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated support description for the product.</p>
-        pub fn support_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_description(inp);
+        pub fn support_description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_description(signature.into());
             self
         }
         /// <p>The updated support description for the product.</p>
@@ -12276,8 +12337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated support email for the product.</p>
-        pub fn support_email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_email(inp);
+        pub fn support_email(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_email(signature.into());
             self
         }
         /// <p>The updated support email for the product.</p>
@@ -12289,8 +12350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated support URL for the product.</p>
-        pub fn support_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_url(inp);
+        pub fn support_url(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_url(signature.into());
             self
         }
         /// <p>The updated support URL for the product.</p>
@@ -12303,8 +12364,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
         ///
         /// <p>The tags to add to the product.</p>
-        pub fn add_tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.add_tags(inp);
+        pub fn add_tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.add_tags(input);
             self
         }
         /// <p>The tags to add to the product.</p>
@@ -12320,8 +12381,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
         ///
         /// <p>The tags to remove from the product.</p>
-        pub fn remove_tags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remove_tags(inp);
+        pub fn remove_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remove_tags(input.into());
             self
         }
         /// <p>The tags to remove from the product.</p>
@@ -12411,8 +12472,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -12439,8 +12500,11 @@ pub mod fluent_builders {
         }
         /// <p>The name of the provisioned product. You cannot specify both
         /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        pub fn provisioned_product_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioned_product_name(signature.into());
             self
         }
         /// <p>The name of the provisioned product. You cannot specify both
@@ -12453,8 +12517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
@@ -12466,8 +12530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
@@ -12476,8 +12540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(signature.into());
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
@@ -12486,8 +12550,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -12499,8 +12566,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_name(inp);
+        pub fn provisioning_artifact_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_name(signature.into());
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -12513,8 +12583,8 @@ pub mod fluent_builders {
         }
         /// <p>The path identifier. This value is optional if the product
         /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
-        pub fn path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_id(inp);
+        pub fn path_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_id(signature.into());
             self
         }
         /// <p>The path identifier. This value is optional if the product
@@ -12524,8 +12594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-        pub fn path_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_name(inp);
+        pub fn path_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_name(signature.into());
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
@@ -12540,9 +12610,9 @@ pub mod fluent_builders {
         /// <p>The new parameters.</p>
         pub fn provisioning_parameters(
             mut self,
-            inp: impl Into<crate::model::UpdateProvisioningParameter>,
+            input: crate::model::UpdateProvisioningParameter,
         ) -> Self {
-            self.inner = self.inner.provisioning_parameters(inp);
+            self.inner = self.inner.provisioning_parameters(input);
             self
         }
         /// <p>The new parameters.</p>
@@ -12556,9 +12626,9 @@ pub mod fluent_builders {
         /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
         pub fn provisioning_preferences(
             mut self,
-            inp: crate::model::UpdateProvisioningPreferences,
+            signature: crate::model::UpdateProvisioningPreferences,
         ) -> Self {
-            self.inner = self.inner.provisioning_preferences(inp);
+            self.inner = self.inner.provisioning_preferences(signature);
             self
         }
         /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
@@ -12574,8 +12644,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
@@ -12587,8 +12657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(signature.into());
             self
         }
         /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
@@ -12673,8 +12743,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -12700,8 +12770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioned product.</p>
@@ -12737,10 +12807,10 @@ pub mod fluent_builders {
         /// API or the Service Catalog console on that provisioned product.</p>
         pub fn provisioned_product_properties(
             mut self,
-            k: impl Into<crate::model::PropertyKey>,
+            k: crate::model::PropertyKey,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.provisioned_product_properties(k, v);
+            self.inner = self.inner.provisioned_product_properties(k, v.into());
             self
         }
         /// <p>A map that contains the provisioned product properties to be updated.</p>
@@ -12772,8 +12842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
@@ -12860,8 +12930,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -12887,8 +12957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(signature.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -12897,8 +12967,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(signature.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -12910,8 +12983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the provisioning artifact.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The updated name of the provisioning artifact.</p>
@@ -12920,8 +12993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the provisioning artifact.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The updated description of the provisioning artifact.</p>
@@ -12931,8 +13004,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the product version is active.</p>
         /// <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
-        pub fn active(mut self, inp: bool) -> Self {
-            self.inner = self.inner.active(inp);
+        pub fn active(mut self, signature: bool) -> Self {
+            self.inner = self.inner.active(signature);
             self
         }
         /// <p>Indicates whether the product version is active.</p>
@@ -12946,8 +13019,8 @@ pub mod fluent_builders {
         /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
         /// users that the product version is deprecated. Users are able to make updates to a provisioned product
         /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-        pub fn guidance(mut self, inp: crate::model::ProvisioningArtifactGuidance) -> Self {
-            self.inner = self.inner.guidance(inp);
+        pub fn guidance(mut self, signature: crate::model::ProvisioningArtifactGuidance) -> Self {
+            self.inner = self.inner.guidance(signature);
             self
         }
         /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
@@ -13023,8 +13096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The self-service action identifier.</p>
@@ -13033,8 +13106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The self-service action name.</p>
@@ -13049,10 +13122,10 @@ pub mod fluent_builders {
         /// <p>A map that defines the self-service action.</p>
         pub fn definition(
             mut self,
-            k: impl Into<crate::model::ServiceActionDefinitionKey>,
+            k: crate::model::ServiceActionDefinitionKey,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.definition(k, v);
+            self.inner = self.inner.definition(k, v.into());
             self
         }
         /// <p>A map that defines the self-service action.</p>
@@ -13069,8 +13142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The self-service action description.</p>
@@ -13093,8 +13166,8 @@ pub mod fluent_builders {
         /// <code>zh</code> - Chinese</p>
         /// </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(signature.into());
             self
         }
         /// <p>The language code.</p>
@@ -13180,8 +13253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -13190,8 +13263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(signature.into());
             self
         }
         /// <p>The updated value.</p>
@@ -13200,8 +13273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated active state.</p>
-        pub fn active(mut self, inp: bool) -> Self {
-            self.inner = self.inner.active(inp);
+        pub fn active(mut self, signature: bool) -> Self {
+            self.inner = self.inner.active(signature);
             self
         }
         /// <p>The updated active state.</p>

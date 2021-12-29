@@ -1081,10 +1081,10 @@ pub mod create_domain_name_input {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            input: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
             let mut v = self.domain_name_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_name_configurations = Some(v);
             self
         }
@@ -1527,10 +1527,10 @@ pub mod create_integration_input {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -2422,10 +2422,10 @@ pub mod create_route_input {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -2705,10 +2705,10 @@ pub mod create_route_response_input {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -3031,10 +3031,10 @@ pub mod create_stage_input {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
             let mut hash_map = self.route_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.route_settings = Some(hash_map);
             self
         }
@@ -13519,10 +13519,10 @@ pub mod update_domain_name_input {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            input: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
             let mut v = self.domain_name_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_name_configurations = Some(v);
             self
         }
@@ -13973,10 +13973,10 @@ pub mod update_integration_input {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -14960,10 +14960,10 @@ pub mod update_route_input {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -15275,10 +15275,10 @@ pub mod update_route_response_input {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -15628,10 +15628,10 @@ pub mod update_stage_input {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
             let mut hash_map = self.route_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.route_settings = Some(hash_map);
             self
         }

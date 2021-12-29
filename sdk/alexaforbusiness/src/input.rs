@@ -1218,9 +1218,9 @@ pub mod create_address_book_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1491,9 +1491,9 @@ pub mod create_business_report_schedule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the business report schedule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1755,9 +1755,9 @@ pub mod create_conference_provider_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1985,9 +1985,9 @@ pub mod create_contact_input {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -2004,9 +2004,9 @@ pub mod create_contact_input {
         /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
         ///
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
+        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sip_addresses = Some(v);
             self
         }
@@ -2038,9 +2038,9 @@ pub mod create_contact_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2246,9 +2246,9 @@ pub mod create_gateway_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2567,9 +2567,9 @@ pub mod create_network_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2904,9 +2904,9 @@ pub mod create_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the profile.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3145,9 +3145,9 @@ pub mod create_room_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the room.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3356,9 +3356,9 @@ pub mod create_skill_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the skill group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3585,9 +3585,9 @@ pub mod create_user_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the user.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11639,9 +11639,9 @@ pub mod register_avs_device_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12299,9 +12299,9 @@ pub mod search_address_books_input {
         ///
         /// <p>The filters to use to list a specified set of address books. The supported filter key
         /// is AddressBookName.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12320,9 +12320,9 @@ pub mod search_address_books_input {
         ///
         /// <p>The sort order to use in listing the specified set of address books. The supported
         /// sort key is AddressBookName.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -12519,9 +12519,9 @@ pub mod search_contacts_input {
         ///
         /// <p>The filters to use to list a specified set of address books. The supported filter
         /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12540,9 +12540,9 @@ pub mod search_contacts_input {
         ///
         /// <p>The sort order to use in listing the specified set of contacts. The supported sort
         /// keys are DisplayName, FirstName, and LastName.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -12769,9 +12769,9 @@ pub mod search_devices_input {
         /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
         /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
         /// NetworkProfileArn, Feature, and FailureCode.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12793,9 +12793,9 @@ pub mod search_devices_input {
         /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
         /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
         /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -12992,9 +12992,9 @@ pub mod search_network_profiles_input {
         ///
         /// <p>The filters to use to list a specified set of network profiles. Valid filters are
         /// NetworkProfileName, Ssid, and SecurityType.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -13013,9 +13013,9 @@ pub mod search_network_profiles_input {
         ///
         /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
         /// includes NetworkProfileName, Ssid, and SecurityType.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -13214,9 +13214,9 @@ pub mod search_profiles_input {
         ///
         /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
         /// are ProfileName and Address. Required. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -13235,9 +13235,9 @@ pub mod search_profiles_input {
         ///
         /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
         /// keys are ProfileName and Address.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -13434,9 +13434,9 @@ pub mod search_rooms_input {
         ///
         /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
         /// RoomName and ProfileName.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -13455,9 +13455,9 @@ pub mod search_rooms_input {
         ///
         /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
         /// are RoomName and ProfileName.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -13655,9 +13655,9 @@ pub mod search_skill_groups_input {
         ///
         /// <p>The filters to use to list a specified set of skill groups. The supported filter key
         /// is SkillGroupName. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -13676,9 +13676,9 @@ pub mod search_skill_groups_input {
         ///
         /// <p>The sort order to use in listing the specified set of skill groups. The supported
         /// sort key is SkillGroupName. </p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -13877,9 +13877,9 @@ pub mod search_users_input {
         ///
         /// <p>The filters to use for listing a specific set of users. Required. Supported filter
         /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -13898,9 +13898,9 @@ pub mod search_users_input {
         ///
         /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
         /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -14067,9 +14067,9 @@ pub mod send_announcement_input {
         /// To override the contents of this collection use [`set_room_filters`](Self::set_room_filters).
         ///
         /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-        pub fn room_filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn room_filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.room_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.room_filters = Some(v);
             self
         }
@@ -14447,9 +14447,9 @@ pub mod start_device_sync_input {
         /// To override the contents of this collection use [`set_features`](Self::set_features).
         ///
         /// <p>Request structure to start the device sync. Required.</p>
-        pub fn features(mut self, input: impl Into<crate::model::Feature>) -> Self {
+        pub fn features(mut self, input: crate::model::Feature) -> Self {
             let mut v = self.features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.features = Some(v);
             self
         }
@@ -14781,9 +14781,9 @@ pub mod tag_resource_input {
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
         /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -15820,9 +15820,9 @@ pub mod update_contact_input {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -15839,9 +15839,9 @@ pub mod update_contact_input {
         /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
         ///
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
+        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sip_addresses = Some(v);
             self
         }

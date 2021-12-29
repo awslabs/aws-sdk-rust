@@ -1235,9 +1235,9 @@ pub mod processing_configuration {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>The data processors.</p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }
@@ -1317,9 +1317,9 @@ pub mod processor {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The processor parameters.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::ProcessorParameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::ProcessorParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -1652,10 +1652,10 @@ pub mod http_endpoint_request_configuration {
         /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
         pub fn common_attributes(
             mut self,
-            input: impl Into<crate::model::HttpEndpointCommonAttribute>,
+            input: crate::model::HttpEndpointCommonAttribute,
         ) -> Self {
             let mut v = self.common_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_attributes = Some(v);
             self
         }
@@ -7434,12 +7434,9 @@ pub mod delivery_stream_description {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// <p>The destinations.</p>
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::DestinationDescription>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::DestinationDescription) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }

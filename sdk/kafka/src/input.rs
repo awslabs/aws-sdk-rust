@@ -5041,10 +5041,10 @@ pub mod update_broker_storage_input {
         /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
         pub fn target_broker_ebs_volume_info(
             mut self,
-            input: impl Into<crate::model::BrokerEbsVolumeInfo>,
+            input: crate::model::BrokerEbsVolumeInfo,
         ) -> Self {
             let mut v = self.target_broker_ebs_volume_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_broker_ebs_volume_info = Some(v);
             self
         }

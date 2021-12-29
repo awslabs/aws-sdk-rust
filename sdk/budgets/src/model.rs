@@ -809,9 +809,9 @@ pub mod action {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p> A list of subscribers.</p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }
@@ -1949,10 +1949,10 @@ pub mod budget {
         pub fn planned_budget_limits(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Spend>,
+            v: crate::model::Spend,
         ) -> Self {
             let mut hash_map = self.planned_budget_limits.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.planned_budget_limits = Some(hash_map);
             self
         }
@@ -2001,10 +2001,10 @@ pub mod budget {
         pub fn cost_filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.cost_filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.cost_filters = Some(hash_map);
             self
         }
@@ -3014,10 +3014,10 @@ pub mod budget_performance_history {
         pub fn cost_filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.cost_filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.cost_filters = Some(hash_map);
             self
         }
@@ -3061,10 +3061,10 @@ pub mod budget_performance_history {
         /// <p>A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.</p>
         pub fn budgeted_and_actual_amounts_list(
             mut self,
-            input: impl Into<crate::model::BudgetedAndActualAmounts>,
+            input: crate::model::BudgetedAndActualAmounts,
         ) -> Self {
             let mut v = self.budgeted_and_actual_amounts_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.budgeted_and_actual_amounts_list = Some(v);
             self
         }
@@ -3559,9 +3559,9 @@ pub mod notification_with_subscribers {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p>A list of subscribers who are subscribed to this notification.</p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }

@@ -26,12 +26,9 @@ pub mod batch_create_attendee_input {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(
-            mut self,
-            input: impl Into<crate::model::CreateAttendeeRequestItem>,
-        ) -> Self {
+        pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -805,12 +802,9 @@ pub mod create_meeting_with_attendees_input {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(
-            mut self,
-            input: impl Into<crate::model::CreateAttendeeRequestItem>,
-        ) -> Self {
+        pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }

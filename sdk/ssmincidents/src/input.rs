@@ -21,10 +21,10 @@ pub mod create_replication_set_input {
         pub fn regions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RegionMapInputValue>,
+            v: crate::model::RegionMapInputValue,
         ) -> Self {
             let mut hash_map = self.regions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.regions = Some(hash_map);
             self
         }
@@ -285,9 +285,9 @@ pub mod create_response_plan_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -2290,9 +2290,9 @@ pub mod list_incident_records_input {
         /// incident records that match any of the values provided.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3207,9 +3207,9 @@ pub mod list_timeline_events_input {
         /// timeline events that match any of the values provided.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3739,9 +3739,9 @@ pub mod start_incident_input {
         ///
         /// <p>Add related items to the incident for other responders to use. Related items are AWS
         /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-        pub fn related_items(mut self, input: impl Into<crate::model::RelatedItem>) -> Self {
+        pub fn related_items(mut self, input: crate::model::RelatedItem) -> Self {
             let mut v = self.related_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_items = Some(v);
             self
         }
@@ -4617,12 +4617,9 @@ pub mod update_incident_record_input {
         /// incident.</p>
         /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
         /// the incident.</p>
-        pub fn notification_targets(
-            mut self,
-            input: impl Into<crate::model::NotificationTargetItem>,
-        ) -> Self {
+        pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             let mut v = self.notification_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_targets = Some(v);
             self
         }
@@ -4992,12 +4989,9 @@ pub mod update_replication_set_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>An action to add or delete a Region.</p>
-        pub fn actions(
-            mut self,
-            input: impl Into<crate::model::UpdateReplicationSetAction>,
-        ) -> Self {
+        pub fn actions(mut self, input: crate::model::UpdateReplicationSetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -5328,12 +5322,12 @@ pub mod update_response_plan_input {
         /// incident.</p>
         pub fn incident_template_notification_targets(
             mut self,
-            input: impl Into<crate::model::NotificationTargetItem>,
+            input: crate::model::NotificationTargetItem,
         ) -> Self {
             let mut v = self
                 .incident_template_notification_targets
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.incident_template_notification_targets = Some(v);
             self
         }
@@ -5381,9 +5375,9 @@ pub mod update_response_plan_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions that this response plan takes at the beginning of an incident.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }

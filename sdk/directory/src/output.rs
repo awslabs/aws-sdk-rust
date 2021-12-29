@@ -731,9 +731,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>List of tags returned by the ListTagsForResource operation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -821,12 +821,9 @@ pub mod list_schema_extensions_output {
         /// To override the contents of this collection use [`set_schema_extensions_info`](Self::set_schema_extensions_info).
         ///
         /// <p>Information about the schema extensions applied to the directory.</p>
-        pub fn schema_extensions_info(
-            mut self,
-            input: impl Into<crate::model::SchemaExtensionInfo>,
-        ) -> Self {
+        pub fn schema_extensions_info(mut self, input: crate::model::SchemaExtensionInfo) -> Self {
             let mut v = self.schema_extensions_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_extensions_info = Some(v);
             self
         }
@@ -911,12 +908,9 @@ pub mod list_log_subscriptions_output {
         /// To override the contents of this collection use [`set_log_subscriptions`](Self::set_log_subscriptions).
         ///
         /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
-        pub fn log_subscriptions(
-            mut self,
-            input: impl Into<crate::model::LogSubscription>,
-        ) -> Self {
+        pub fn log_subscriptions(mut self, input: crate::model::LogSubscription) -> Self {
             let mut v = self.log_subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_subscriptions = Some(v);
             self
         }
@@ -998,9 +992,9 @@ pub mod list_ip_routes_output {
         /// To override the contents of this collection use [`set_ip_routes_info`](Self::set_ip_routes_info).
         ///
         /// <p>A list of <a>IpRoute</a>s.</p>
-        pub fn ip_routes_info(mut self, input: impl Into<crate::model::IpRouteInfo>) -> Self {
+        pub fn ip_routes_info(mut self, input: crate::model::IpRouteInfo) -> Self {
             let mut v = self.ip_routes_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_routes_info = Some(v);
             self
         }
@@ -1100,12 +1094,9 @@ pub mod list_certificates_output {
         ///
         /// <p>A list of certificates with basic details including certificate ID, certificate common
         /// name, certificate state.</p>
-        pub fn certificates_info(
-            mut self,
-            input: impl Into<crate::model::CertificateInfo>,
-        ) -> Self {
+        pub fn certificates_info(mut self, input: crate::model::CertificateInfo) -> Self {
             let mut v = self.certificates_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates_info = Some(v);
             self
         }
@@ -1552,9 +1543,9 @@ pub mod describe_trusts_output {
         /// <i>Limit</i> member of the request. This occurs if there are less than the
         /// requested number of items left to retrieve, or if the limitations of the operation have been
         /// exceeded.</p>
-        pub fn trusts(mut self, input: impl Into<crate::model::Trust>) -> Self {
+        pub fn trusts(mut self, input: crate::model::Trust) -> Self {
             let mut v = self.trusts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trusts = Some(v);
             self
         }
@@ -1654,9 +1645,9 @@ pub mod describe_snapshots_output {
         /// <i>Limit</i> member of the request. This occurs if there are less than the requested
         /// number of items left to retrieve, or if the limitations of the operation have been
         /// exceeded.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -1745,12 +1736,9 @@ pub mod describe_shared_directories_output {
         /// To override the contents of this collection use [`set_shared_directories`](Self::set_shared_directories).
         ///
         /// <p>A list of all shared directories in your account.</p>
-        pub fn shared_directories(
-            mut self,
-            input: impl Into<crate::model::SharedDirectory>,
-        ) -> Self {
+        pub fn shared_directories(mut self, input: crate::model::SharedDirectory) -> Self {
             let mut v = self.shared_directories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shared_directories = Some(v);
             self
         }
@@ -1837,12 +1825,9 @@ pub mod describe_regions_output {
         /// To override the contents of this collection use [`set_regions_description`](Self::set_regions_description).
         ///
         /// <p>List of Region information related to the directory for each replicated Region.</p>
-        pub fn regions_description(
-            mut self,
-            input: impl Into<crate::model::RegionDescription>,
-        ) -> Self {
+        pub fn regions_description(mut self, input: crate::model::RegionDescription) -> Self {
             let mut v = self.regions_description.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions_description = Some(v);
             self
         }
@@ -1932,12 +1917,9 @@ pub mod describe_ldaps_settings_output {
         ///
         /// <p>Information about LDAP security for the specified directory, including status of
         /// enablement, state last updated date time, and the reason for the state.</p>
-        pub fn ldaps_settings_info(
-            mut self,
-            input: impl Into<crate::model::LdapsSettingInfo>,
-        ) -> Self {
+        pub fn ldaps_settings_info(mut self, input: crate::model::LdapsSettingInfo) -> Self {
             let mut v = self.ldaps_settings_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ldaps_settings_info = Some(v);
             self
         }
@@ -2015,9 +1997,9 @@ pub mod describe_event_topics_output {
         ///
         /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
         /// ID.</p>
-        pub fn event_topics(mut self, input: impl Into<crate::model::EventTopic>) -> Self {
+        pub fn event_topics(mut self, input: crate::model::EventTopic) -> Self {
             let mut v = self.event_topics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_topics = Some(v);
             self
         }
@@ -2092,12 +2074,9 @@ pub mod describe_domain_controllers_output {
         /// To override the contents of this collection use [`set_domain_controllers`](Self::set_domain_controllers).
         ///
         /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
-        pub fn domain_controllers(
-            mut self,
-            input: impl Into<crate::model::DomainController>,
-        ) -> Self {
+        pub fn domain_controllers(mut self, input: crate::model::DomainController) -> Self {
             let mut v = self.domain_controllers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_controllers = Some(v);
             self
         }
@@ -2201,12 +2180,9 @@ pub mod describe_directories_output {
         /// <code>Limit</code> member of the request. This occurs if there are less than the requested
         /// number of items left to retrieve, or if the limitations of the operation have been
         /// exceeded.</p>
-        pub fn directory_descriptions(
-            mut self,
-            input: impl Into<crate::model::DirectoryDescription>,
-        ) -> Self {
+        pub fn directory_descriptions(mut self, input: crate::model::DirectoryDescription) -> Self {
             let mut v = self.directory_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.directory_descriptions = Some(v);
             self
         }
@@ -2290,12 +2266,9 @@ pub mod describe_conditional_forwarders_output {
         /// To override the contents of this collection use [`set_conditional_forwarders`](Self::set_conditional_forwarders).
         ///
         /// <p>The list of conditional forwarders that have been created.</p>
-        pub fn conditional_forwarders(
-            mut self,
-            input: impl Into<crate::model::ConditionalForwarder>,
-        ) -> Self {
+        pub fn conditional_forwarders(mut self, input: crate::model::ConditionalForwarder) -> Self {
             let mut v = self.conditional_forwarders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditional_forwarders = Some(v);
             self
         }
@@ -2375,10 +2348,10 @@ pub mod describe_client_authentication_settings_output {
         /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
         pub fn client_authentication_settings_info(
             mut self,
-            input: impl Into<crate::model::ClientAuthenticationSettingInfo>,
+            input: crate::model::ClientAuthenticationSettingInfo,
         ) -> Self {
             let mut v = self.client_authentication_settings_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.client_authentication_settings_info = Some(v);
             self
         }

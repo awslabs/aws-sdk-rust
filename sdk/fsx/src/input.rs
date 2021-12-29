@@ -511,9 +511,9 @@ pub mod copy_backup_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -718,9 +718,9 @@ pub mod create_backup_input {
         /// <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more
         /// tags using the <code>CreateBackup</code> operation, no existing file system tags are
         /// copied from the file system to the backup.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1051,9 +1051,9 @@ pub mod create_data_repository_association_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1321,9 +1321,9 @@ pub mod create_data_repository_task_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1745,9 +1745,9 @@ pub mod create_file_system_input {
         ///
         /// <p>The tags to apply to the file system that's being created. The key value of the
         /// <code>Name</code> tag appears in the console as the file system name.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2213,9 +2213,9 @@ pub mod create_file_system_from_backup_input {
         /// <p>The tags to be applied to the file system at file system creation. The key value of
         /// the <code>Name</code> tag appears in the console as the file system
         /// name.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2629,9 +2629,9 @@ pub mod create_snapshot_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2883,9 +2883,9 @@ pub mod create_storage_virtual_machine_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3176,9 +3176,9 @@ pub mod create_volume_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3420,9 +3420,9 @@ pub mod create_volume_from_backup_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4807,9 +4807,9 @@ pub mod describe_backups_input {
         /// <p>The filters structure. The supported names are <code>file-system-id</code>,
         /// <code>backup-type</code>, <code>file-system-type</code>, and
         /// <code>volume-id</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5029,9 +5029,9 @@ pub mod describe_data_repository_associations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of <code>Filter</code> elements.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5250,9 +5250,9 @@ pub mod describe_data_repository_tasks_input {
         ///
         /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to
         /// include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::DataRepositoryTaskFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DataRepositoryTaskFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5887,9 +5887,9 @@ pub mod describe_snapshots_input {
         ///
         /// <p>The filters structure. The supported names are <code>file-system-id</code> or
         /// <code>volume-id</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SnapshotFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SnapshotFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6107,12 +6107,9 @@ pub mod describe_storage_virtual_machines_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::StorageVirtualMachineFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::StorageVirtualMachineFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6328,9 +6325,9 @@ pub mod describe_volumes_input {
         ///
         /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of
         /// volumes.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::VolumeFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::VolumeFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7152,12 +7149,9 @@ pub mod restore_volume_from_snapshot_input {
         /// <code>RestoreVolumeFromSnapshot</code> fails.</p>
         /// </li>
         /// </ul>
-        pub fn options(
-            mut self,
-            input: impl Into<crate::model::RestoreOpenZfsVolumeOption>,
-        ) -> Self {
+        pub fn options(mut self, input: crate::model::RestoreOpenZfsVolumeOption) -> Self {
             let mut v = self.options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.options = Some(v);
             self
         }
@@ -7355,9 +7349,9 @@ pub mod tag_resource_input {
         ///
         /// <p>A list of tags for the resource. If a tag with a given key already exists, the
         /// value is replaced by the one specified in this parameter.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

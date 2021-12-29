@@ -288,9 +288,9 @@ pub mod parameter_object {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes of the parameter object.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::ParameterAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::ParameterAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -461,9 +461,9 @@ pub mod pipeline_object {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>Key-value pairs that define the properties of the object.</p>
-        pub fn fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }
@@ -677,9 +677,9 @@ pub mod query {
         /// To override the contents of this collection use [`set_selectors`](Self::set_selectors).
         ///
         /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-        pub fn selectors(mut self, input: impl Into<crate::model::Selector>) -> Self {
+        pub fn selectors(mut self, input: crate::model::Selector) -> Self {
             let mut v = self.selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.selectors = Some(v);
             self
         }
@@ -1139,10 +1139,10 @@ pub mod task_object {
         pub fn objects(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PipelineObject>,
+            v: crate::model::PipelineObject,
         ) -> Self {
             let mut hash_map = self.objects.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.objects = Some(hash_map);
             self
         }
@@ -1410,9 +1410,9 @@ pub mod pipeline_description {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
-        pub fn fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }
@@ -1440,9 +1440,9 @@ pub mod pipeline_description {
         ///
         /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines.
         /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

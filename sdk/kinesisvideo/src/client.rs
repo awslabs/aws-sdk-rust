@@ -290,8 +290,8 @@ pub mod fluent_builders {
         }
         /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
         /// account and AWS Region.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
@@ -302,8 +302,8 @@ pub mod fluent_builders {
         }
         /// <p>A type of the signaling channel that you are creating. Currently,
         /// <code>SINGLE_MASTER</code> is the only supported channel type. </p>
-        pub fn channel_type(mut self, inp: crate::model::ChannelType) -> Self {
-            self.inner = self.inner.channel_type(inp);
+        pub fn channel_type(mut self, signature: crate::model::ChannelType) -> Self {
+            self.inner = self.inner.channel_type(signature);
             self
         }
         /// <p>A type of the signaling channel that you are creating. Currently,
@@ -319,9 +319,9 @@ pub mod fluent_builders {
         /// type. </p>
         pub fn single_master_configuration(
             mut self,
-            inp: crate::model::SingleMasterConfiguration,
+            signature: crate::model::SingleMasterConfiguration,
         ) -> Self {
-            self.inner = self.inner.single_master_configuration(inp);
+            self.inner = self.inner.single_master_configuration(signature);
             self
         }
         /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel
@@ -338,8 +338,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
@@ -423,8 +423,8 @@ pub mod fluent_builders {
         /// <p>In the current implementation, Kinesis Video Streams does not use this
         /// name.</p>
         /// </note>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(signature.into());
             self
         }
         /// <p>The name of the device that is writing to the stream. </p>
@@ -439,8 +439,8 @@ pub mod fluent_builders {
         /// <p>A name for the stream that you are creating.</p>
         /// <p>The stream name is an identifier for the stream, and must be unique for each
         /// account and region.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>A name for the stream that you are creating.</p>
@@ -458,8 +458,8 @@ pub mod fluent_builders {
         /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
         /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
         /// JSON).</p>
-        pub fn media_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_type(inp);
+        pub fn media_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_type(signature.into());
             self
         }
         /// <p>The media type of the stream. Consumers of the stream can use this information when
@@ -479,8 +479,8 @@ pub mod fluent_builders {
         /// <p>If no key ID is specified, the default, Kinesis Video-managed key
         /// (<code>aws/kinesisvideo</code>) is used.</p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(signature.into());
             self
         }
         /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
@@ -499,8 +499,8 @@ pub mod fluent_builders {
         /// the fragments that remain in the service host buffer, which has a retention time limit
         /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
         /// buffer when either limit is reached.</p>
-        pub fn data_retention_in_hours(mut self, inp: i32) -> Self {
-            self.inner = self.inner.data_retention_in_hours(inp);
+        pub fn data_retention_in_hours(mut self, signature: i32) -> Self {
+            self.inner = self.inner.data_retention_in_hours(signature);
             self
         }
         /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video
@@ -525,7 +525,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
@@ -603,8 +603,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
         /// delete.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
@@ -616,8 +616,8 @@ pub mod fluent_builders {
         /// <p>The current version of the signaling channel that you want to delete. You can obtain
         /// the current version by invoking the <code>DescribeSignalingChannel</code> or
         /// <code>ListSignalingChannels</code> API operations.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(signature.into());
             self
         }
         /// <p>The current version of the signaling channel that you want to delete. You can obtain
@@ -700,8 +700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
@@ -714,8 +714,8 @@ pub mod fluent_builders {
         /// stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
         /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the
         /// stream.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(signature.into());
             self
         }
         /// <p>Optional: The version of the stream that you want to delete. </p>
@@ -793,8 +793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the signaling channel that you want to describe.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(signature.into());
             self
         }
         /// <p>The name of the signaling channel that you want to describe.</p>
@@ -803,8 +803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the signaling channel that you want to describe.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>The ARN of the signaling channel that you want to describe.</p>
@@ -874,8 +874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream.</p>
@@ -884,8 +884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
@@ -966,8 +966,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the stream that you want to get the endpoint for. You must specify
         /// either this parameter or a <code>StreamARN</code> in the request.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream that you want to get the endpoint for. You must specify
@@ -979,8 +979,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
         /// You must specify either this parameter or a <code>StreamName</code> in the request.
         /// </p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
@@ -991,8 +991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the API action for which to get an endpoint.</p>
-        pub fn api_name(mut self, inp: crate::model::ApiName) -> Self {
-            self.inner = self.inner.api_name(inp);
+        pub fn api_name(mut self, signature: crate::model::ApiName) -> Self {
+            self.inner = self.inner.api_name(signature);
             self
         }
         /// <p>The name of the API action for which to get an endpoint.</p>
@@ -1075,8 +1075,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
         /// endpoint.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
@@ -1089,9 +1089,11 @@ pub mod fluent_builders {
         /// channel type.</p>
         pub fn single_master_channel_endpoint_configuration(
             mut self,
-            inp: crate::model::SingleMasterChannelEndpointConfiguration,
+            signature: crate::model::SingleMasterChannelEndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.single_master_channel_endpoint_configuration(inp);
+            self.inner = self
+                .inner
+                .single_master_channel_endpoint_configuration(signature);
             self
         }
         /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
@@ -1168,8 +1170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of channels to return in the response. The default is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of channels to return in the response. The default is 500.</p>
@@ -1180,8 +1182,8 @@ pub mod fluent_builders {
         /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
         /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
         /// get another batch of channels, provide this token in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
@@ -1192,8 +1194,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
-        pub fn channel_name_condition(mut self, inp: crate::model::ChannelNameCondition) -> Self {
-            self.inner = self.inner.channel_name_condition(inp);
+        pub fn channel_name_condition(
+            mut self,
+            signature: crate::model::ChannelNameCondition,
+        ) -> Self {
+            self.inner = self.inner.channel_name_condition(signature);
             self
         }
         /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
@@ -1268,8 +1273,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of streams to return in the response. The default is
         /// 10,000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of streams to return in the response. The default is
@@ -1281,8 +1286,8 @@ pub mod fluent_builders {
         /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
         /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
         /// get another batch of streams, provide this token in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
@@ -1294,8 +1299,11 @@ pub mod fluent_builders {
         }
         /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
         /// can specify only the prefix of a stream name as a condition. </p>
-        pub fn stream_name_condition(mut self, inp: crate::model::StreamNameCondition) -> Self {
-            self.inner = self.inner.stream_name_condition(inp);
+        pub fn stream_name_condition(
+            mut self,
+            signature: crate::model::StreamNameCondition,
+        ) -> Self {
+            self.inner = self.inner.stream_name_condition(signature);
             self
         }
         /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
@@ -1370,8 +1378,8 @@ pub mod fluent_builders {
         /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
         /// call is truncated, the response includes a token that you can use in the next request to
         /// fetch the next batch of tags. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
@@ -1383,8 +1391,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
         /// tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
@@ -1458,8 +1466,8 @@ pub mod fluent_builders {
         /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
         /// call is truncated, the response includes a token that you can use in the next request to
         /// fetch the next batch of tags.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
@@ -1471,8 +1479,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
         /// for.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
@@ -1482,8 +1490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stream that you want to list tags for.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream that you want to list tags for.</p>
@@ -1558,8 +1566,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
         /// tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
@@ -1574,8 +1582,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
         /// key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
@@ -1658,8 +1666,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
         /// to.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
@@ -1669,8 +1677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stream that you want to add the tag or tags to.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream that you want to add the tag or tags to.</p>
@@ -1689,7 +1697,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
@@ -1767,8 +1775,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
         /// tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
@@ -1782,8 +1790,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
         /// <p>A list of the keys of the tags that you want to remove.</p>
-        pub fn tag_key_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key_list(inp);
+        pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key_list(input.into());
             self
         }
         /// <p>A list of the keys of the tags that you want to remove.</p>
@@ -1860,8 +1868,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
         /// from.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
@@ -1871,8 +1879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stream that you want to remove tags from.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream that you want to remove tags from.</p>
@@ -1885,8 +1893,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
         /// <p>A list of the keys of the tags that you want to remove.</p>
-        pub fn tag_key_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key_list(inp);
+        pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key_list(input.into());
             self
         }
         /// <p>A list of the keys of the tags that you want to remove.</p>
@@ -1984,8 +1992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream whose retention period you want to change.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream whose retention period you want to change.</p>
@@ -1995,8 +2003,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
         /// change.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
@@ -2008,8 +2016,8 @@ pub mod fluent_builders {
         /// <p>The version of the stream whose retention period you want to change. To get the
         /// version, call either the <code>DescribeStream</code> or the <code>ListStreams</code>
         /// API.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(signature.into());
             self
         }
         /// <p>The version of the stream whose retention period you want to change. To get the
@@ -2023,8 +2031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want to increase or decrease the retention period.</p>
-        pub fn operation(mut self, inp: crate::model::UpdateDataRetentionOperation) -> Self {
-            self.inner = self.inner.operation(inp);
+        pub fn operation(mut self, signature: crate::model::UpdateDataRetentionOperation) -> Self {
+            self.inner = self.inner.operation(signature);
             self
         }
         /// <p>Indicates whether you want to increase or decrease the retention period.</p>
@@ -2037,8 +2045,8 @@ pub mod fluent_builders {
         }
         /// <p>The retention period, in hours. The value you specify replaces the current value.
         /// The maximum value for this parameter is 87600 (ten years).</p>
-        pub fn data_retention_change_in_hours(mut self, inp: i32) -> Self {
-            self.inner = self.inner.data_retention_change_in_hours(inp);
+        pub fn data_retention_change_in_hours(mut self, signature: i32) -> Self {
+            self.inner = self.inner.data_retention_change_in_hours(signature);
             self
         }
         /// <p>The retention period, in hours. The value you specify replaces the current value.
@@ -2117,8 +2125,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
         /// update.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
@@ -2128,8 +2136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current version of the signaling channel that you want to update.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(signature.into());
             self
         }
         /// <p>The current version of the signaling channel that you want to update.</p>
@@ -2144,9 +2152,9 @@ pub mod fluent_builders {
         /// the signaling channel that you want to update. </p>
         pub fn single_master_configuration(
             mut self,
-            inp: crate::model::SingleMasterConfiguration,
+            signature: crate::model::SingleMasterConfiguration,
         ) -> Self {
-            self.inner = self.inner.single_master_configuration(inp);
+            self.inner = self.inner.single_master_configuration(signature);
             self
         }
         /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of
@@ -2230,8 +2238,8 @@ pub mod fluent_builders {
         /// <p>The name of the stream whose metadata you want to update.</p>
         /// <p>The stream name is an identifier for the stream, and must be unique for each
         /// account and region.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(signature.into());
             self
         }
         /// <p>The name of the stream whose metadata you want to update.</p>
@@ -2242,8 +2250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the stream whose metadata you want to update.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(signature.into());
             self
         }
         /// <p>The ARN of the stream whose metadata you want to update.</p>
@@ -2252,8 +2260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the stream whose metadata you want to update.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(signature.into());
             self
         }
         /// <p>The version of the stream whose metadata you want to update.</p>
@@ -2269,8 +2277,8 @@ pub mod fluent_builders {
         /// <p> In the current implementation, Kinesis Video Streams does not use this name.
         /// </p>
         /// </note>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(signature.into());
             self
         }
         /// <p>The name of the device that is writing to the stream. </p>
@@ -2290,8 +2298,8 @@ pub mod fluent_builders {
         /// <p>To play video on the console, you must specify the correct video type. For example,
         /// if the video in the stream is H.264, specify <code>video/h264</code> as the
         /// <code>MediaType</code>.</p>
-        pub fn media_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_type(inp);
+        pub fn media_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_type(signature.into());
             self
         }
         /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content

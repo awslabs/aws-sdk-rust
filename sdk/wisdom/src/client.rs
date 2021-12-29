@@ -382,8 +382,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -393,8 +393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the assistant.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the assistant.</p>
@@ -403,8 +403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of assistant.</p>
-        pub fn r#type(mut self, inp: crate::model::AssistantType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::AssistantType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of assistant.</p>
@@ -413,8 +413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the assistant.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the assistant.</p>
@@ -432,7 +432,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -448,9 +448,9 @@ pub mod fluent_builders {
         /// <p>The KMS key used for encryption.</p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            signature: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(signature);
             self
         }
         /// <p>The KMS key used for encryption.</p>
@@ -524,8 +524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -534,8 +534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of association.</p>
-        pub fn association_type(mut self, inp: crate::model::AssociationType) -> Self {
-            self.inner = self.inner.association_type(inp);
+        pub fn association_type(mut self, signature: crate::model::AssociationType) -> Self {
+            self.inner = self.inner.association_type(signature);
             self
         }
         /// <p>The type of association.</p>
@@ -547,8 +547,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the associated resource.</p>
-        pub fn association(mut self, inp: crate::model::AssistantAssociationInputData) -> Self {
-            self.inner = self.inner.association(inp);
+        pub fn association(
+            mut self,
+            signature: crate::model::AssistantAssociationInputData,
+        ) -> Self {
+            self.inner = self.inner.association(signature);
             self
         }
         /// <p>The identifier of the associated resource.</p>
@@ -561,8 +564,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -581,7 +584,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -656,8 +659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -671,8 +674,8 @@ pub mod fluent_builders {
         /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
         /// name. You can retrieve a piece of content using only its knowledge base and its name with the
         /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
@@ -683,8 +686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The title of the content. If not set, the title is equal to the name.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(signature.into());
             self
         }
         /// <p>The title of the content. If not set, the title is equal to the name.</p>
@@ -694,8 +697,8 @@ pub mod fluent_builders {
         }
         /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
         /// this argument overrides it for this piece of content.</p>
-        pub fn override_link_out_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.override_link_out_uri(inp);
+        pub fn override_link_out_uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.override_link_out_uri(signature.into());
             self
         }
         /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
@@ -718,7 +721,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
         /// <p>A key/value map to store attributes without affecting tagging or recommendations.
@@ -733,8 +736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
@@ -744,8 +747,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -764,7 +767,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -863,8 +866,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -874,8 +877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the knowledge base.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the knowledge base.</p>
@@ -886,8 +889,8 @@ pub mod fluent_builders {
         /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
         /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
         /// synchronized automatically. </p>
-        pub fn knowledge_base_type(mut self, inp: crate::model::KnowledgeBaseType) -> Self {
-            self.inner = self.inner.knowledge_base_type(inp);
+        pub fn knowledge_base_type(mut self, signature: crate::model::KnowledgeBaseType) -> Self {
+            self.inner = self.inner.knowledge_base_type(signature);
             self
         }
         /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
@@ -902,8 +905,11 @@ pub mod fluent_builders {
         }
         /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
         /// bases.</p>
-        pub fn source_configuration(mut self, inp: crate::model::SourceConfiguration) -> Self {
-            self.inner = self.inner.source_configuration(inp);
+        pub fn source_configuration(
+            mut self,
+            signature: crate::model::SourceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.source_configuration(signature);
             self
         }
         /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
@@ -918,9 +924,9 @@ pub mod fluent_builders {
         /// <p>Information about how to render the content.</p>
         pub fn rendering_configuration(
             mut self,
-            inp: crate::model::RenderingConfiguration,
+            signature: crate::model::RenderingConfiguration,
         ) -> Self {
-            self.inner = self.inner.rendering_configuration(inp);
+            self.inner = self.inner.rendering_configuration(signature);
             self
         }
         /// <p>Information about how to render the content.</p>
@@ -934,9 +940,9 @@ pub mod fluent_builders {
         /// <p>The KMS key used for encryption.</p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            signature: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(signature);
             self
         }
         /// <p>The KMS key used for encryption.</p>
@@ -948,8 +954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -967,7 +973,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -1044,8 +1050,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1055,8 +1061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1065,8 +1071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the session.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the session.</p>
@@ -1075,8 +1081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description.</p>
@@ -1094,7 +1100,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -1168,8 +1174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1238,8 +1244,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_association_id(inp);
+        pub fn assistant_association_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.assistant_association_id(signature.into());
             self
         }
         /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1251,8 +1260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1321,8 +1330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1334,8 +1343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn content_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_id(inp);
+        pub fn content_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_id(signature.into());
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1411,8 +1420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1484,8 +1493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1554,8 +1563,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_association_id(inp);
+        pub fn assistant_association_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.assistant_association_id(signature.into());
             self
         }
         /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1567,8 +1579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1637,8 +1649,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn content_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_id(inp);
+        pub fn content_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_id(signature.into());
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1647,8 +1659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1720,8 +1732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn content_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_id(inp);
+        pub fn content_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_id(signature.into());
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1730,8 +1742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1803,8 +1815,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1879,8 +1891,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1889,8 +1901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1899,8 +1911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1912,8 +1924,8 @@ pub mod fluent_builders {
         /// available before returning. If a recommendation is available, the call returns sooner than
         /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
         /// call returns successfully with an empty list.</p>
-        pub fn wait_time_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.wait_time_seconds(inp);
+        pub fn wait_time_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.wait_time_seconds(signature);
             self
         }
         /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
@@ -1985,8 +1997,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1995,8 +2007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2066,8 +2078,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -2077,8 +2089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2087,8 +2099,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2158,8 +2170,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -2169,8 +2181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2240,8 +2252,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -2251,8 +2263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2261,8 +2273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2335,8 +2347,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -2346,8 +2358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2416,8 +2428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2488,8 +2500,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2498,8 +2510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(signature.into());
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2512,8 +2524,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
         ///
         /// <p>The identifiers of the recommendations.</p>
-        pub fn recommendation_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommendation_ids(inp);
+        pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommendation_ids(input.into());
             self
         }
         /// <p>The identifiers of the recommendations.</p>
@@ -2587,8 +2599,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2597,8 +2609,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The text to search for.</p>
-        pub fn query_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_text(inp);
+        pub fn query_text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_text(signature.into());
             self
         }
         /// <p>The text to search for.</p>
@@ -2608,8 +2620,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -2619,8 +2631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2689,8 +2701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2764,8 +2776,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -2775,8 +2787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2785,8 +2797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2798,8 +2810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The search expression to filter results.</p>
-        pub fn search_expression(mut self, inp: crate::model::SearchExpression) -> Self {
-            self.inner = self.inner.search_expression(inp);
+        pub fn search_expression(mut self, signature: crate::model::SearchExpression) -> Self {
+            self.inner = self.inner.search_expression(signature);
             self
         }
         /// <p>The search expression to filter results.</p>
@@ -2872,8 +2884,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -2883,8 +2895,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2893,8 +2905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(signature.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2903,8 +2915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The search expression to filter results.</p>
-        pub fn search_expression(mut self, inp: crate::model::SearchExpression) -> Self {
-            self.inner = self.inner.search_expression(inp);
+        pub fn search_expression(mut self, signature: crate::model::SearchExpression) -> Self {
+            self.inner = self.inner.search_expression(signature);
             self
         }
         /// <p>The search expression to filter results.</p>
@@ -2979,8 +2991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2992,8 +3004,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of content to upload.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(signature.into());
             self
         }
         /// <p>The type of content to upload.</p>
@@ -3062,8 +3074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -3081,7 +3093,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3155,8 +3167,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -3169,8 +3181,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -3242,8 +3254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
@@ -3255,8 +3267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn content_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_id(inp);
+        pub fn content_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_id(signature.into());
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -3269,8 +3281,8 @@ pub mod fluent_builders {
         /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
         /// content was not modified since it was last read. If it has been modified, this API throws a
         /// <code>PreconditionFailedException</code>.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
@@ -3283,8 +3295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The title of the content.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(signature.into());
             self
         }
         /// <p>The title of the content.</p>
@@ -3295,8 +3307,8 @@ pub mod fluent_builders {
         /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
         /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
         /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
-        pub fn override_link_out_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.override_link_out_uri(inp);
+        pub fn override_link_out_uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.override_link_out_uri(signature.into());
             self
         }
         /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
@@ -3310,8 +3322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
-        pub fn remove_override_link_out_uri(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remove_override_link_out_uri(inp);
+        pub fn remove_override_link_out_uri(mut self, signature: bool) -> Self {
+            self.inner = self.inner.remove_override_link_out_uri(signature);
             self
         }
         /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
@@ -3334,7 +3346,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
         /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
@@ -3351,8 +3363,8 @@ pub mod fluent_builders {
         }
         /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
         /// </p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(signature.into());
             self
         }
         /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
@@ -3427,8 +3439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(signature.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -3440,8 +3452,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template URI to update.</p>
-        pub fn template_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_uri(inp);
+        pub fn template_uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_uri(signature.into());
             self
         }
         /// <p>The template URI to update.</p>

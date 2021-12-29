@@ -187,12 +187,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            input: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
             let mut v = self.storage_connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_connectors = Some(v);
             self
         }
@@ -229,9 +226,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_stack_errors`](Self::set_stack_errors).
         ///
         /// <p>The errors for the stack.</p>
-        pub fn stack_errors(mut self, input: impl Into<crate::model::StackError>) -> Self {
+        pub fn stack_errors(mut self, input: crate::model::StackError) -> Self {
             let mut v = self.stack_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stack_errors = Some(v);
             self
         }
@@ -248,9 +245,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
-        pub fn user_settings(mut self, input: impl Into<crate::model::UserSetting>) -> Self {
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
             let mut v = self.user_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_settings = Some(v);
             self
         }
@@ -283,9 +280,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
-        pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_endpoints = Some(v);
             self
         }
@@ -2225,9 +2222,9 @@ pub mod fleet {
         /// To override the contents of this collection use [`set_fleet_errors`](Self::set_fleet_errors).
         ///
         /// <p>The fleet errors.</p>
-        pub fn fleet_errors(mut self, input: impl Into<crate::model::FleetError>) -> Self {
+        pub fn fleet_errors(mut self, input: crate::model::FleetError) -> Self {
             let mut v = self.fleet_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_errors = Some(v);
             self
         }
@@ -3938,9 +3935,9 @@ pub mod application {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms on which the application can run.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::PlatformType>) -> Self {
+        pub fn platforms(mut self, input: crate::model::PlatformType) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -4920,12 +4917,9 @@ pub mod image_builder {
         /// To override the contents of this collection use [`set_image_builder_errors`](Self::set_image_builder_errors).
         ///
         /// <p>The image builder errors.</p>
-        pub fn image_builder_errors(
-            mut self,
-            input: impl Into<crate::model::ResourceError>,
-        ) -> Self {
+        pub fn image_builder_errors(mut self, input: crate::model::ResourceError) -> Self {
             let mut v = self.image_builder_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_builder_errors = Some(v);
             self
         }
@@ -4955,9 +4949,9 @@ pub mod image_builder {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_endpoints = Some(v);
             self
         }
@@ -6008,10 +6002,10 @@ pub mod usage_report_subscription {
         /// <p>The errors that were returned if usage reports couldn't be generated.</p>
         pub fn subscription_errors(
             mut self,
-            input: impl Into<crate::model::LastReportGenerationExecutionError>,
+            input: crate::model::LastReportGenerationExecutionError,
         ) -> Self {
             let mut v = self.subscription_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscription_errors = Some(v);
             self
         }
@@ -6903,9 +6897,9 @@ pub mod image {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>The applications associated with the image.</p>
-        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -6979,9 +6973,9 @@ pub mod image {
         /// To override the contents of this collection use [`set_image_errors`](Self::set_image_errors).
         ///
         /// <p>Describes the errors that are returned when a new image can't be created.</p>
-        pub fn image_errors(mut self, input: impl Into<crate::model::ResourceError>) -> Self {
+        pub fn image_errors(mut self, input: crate::model::ResourceError) -> Self {
             let mut v = self.image_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_errors = Some(v);
             self
         }

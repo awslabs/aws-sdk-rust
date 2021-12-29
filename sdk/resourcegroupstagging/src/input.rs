@@ -295,9 +295,9 @@ pub mod get_compliance_summary_input {
         ///
         /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
         /// supplied, the counts are sorted by those attributes.</p>
-        pub fn group_by(mut self, input: impl Into<crate::model::GroupByAttribute>) -> Self {
+        pub fn group_by(mut self, input: crate::model::GroupByAttribute) -> Self {
             let mut v = self.group_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_by = Some(v);
             self
         }
@@ -579,9 +579,9 @@ pub mod get_resources_input {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_filters = Some(v);
             self
         }

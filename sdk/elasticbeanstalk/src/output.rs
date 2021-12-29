@@ -33,9 +33,9 @@ pub mod validate_configuration_settings_output {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// <p> A list of <a>ValidationMessage</a>. </p>
-        pub fn messages(mut self, input: impl Into<crate::model::ValidationMessage>) -> Self {
+        pub fn messages(mut self, input: crate::model::ValidationMessage) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -750,12 +750,9 @@ pub mod update_environment_output {
         /// To override the contents of this collection use [`set_environment_links`](Self::set_environment_links).
         ///
         /// <p>A list of links to other environments in the same group.</p>
-        pub fn environment_links(
-            mut self,
-            input: impl Into<crate::model::EnvironmentLink>,
-        ) -> Self {
+        pub fn environment_links(mut self, input: crate::model::EnvironmentLink) -> Self {
             let mut v = self.environment_links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_links = Some(v);
             self
         }
@@ -1164,12 +1161,9 @@ pub mod update_configuration_template_output {
         ///
         /// <p>A list of the configuration options and their values in this configuration
         /// set.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }
@@ -2074,12 +2068,9 @@ pub mod terminate_environment_output {
         /// To override the contents of this collection use [`set_environment_links`](Self::set_environment_links).
         ///
         /// <p>A list of links to other environments in the same group.</p>
-        pub fn environment_links(
-            mut self,
-            input: impl Into<crate::model::EnvironmentLink>,
-        ) -> Self {
+        pub fn environment_links(mut self, input: crate::model::EnvironmentLink) -> Self {
             let mut v = self.environment_links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_links = Some(v);
             self
         }
@@ -2222,12 +2213,9 @@ pub mod retrieve_environment_info_output {
         /// To override the contents of this collection use [`set_environment_info`](Self::set_environment_info).
         ///
         /// <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
-        pub fn environment_info(
-            mut self,
-            input: impl Into<crate::model::EnvironmentInfoDescription>,
-        ) -> Self {
+        pub fn environment_info(mut self, input: crate::model::EnvironmentInfoDescription) -> Self {
             let mut v = self.environment_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_info = Some(v);
             self
         }
@@ -2396,9 +2384,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>A list of tag key-value pairs.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -2471,12 +2459,9 @@ pub mod list_platform_versions_output {
         /// To override the contents of this collection use [`set_platform_summary_list`](Self::set_platform_summary_list).
         ///
         /// <p>Summary information about the platform versions.</p>
-        pub fn platform_summary_list(
-            mut self,
-            input: impl Into<crate::model::PlatformSummary>,
-        ) -> Self {
+        pub fn platform_summary_list(mut self, input: crate::model::PlatformSummary) -> Self {
             let mut v = self.platform_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_summary_list = Some(v);
             self
         }
@@ -2569,10 +2554,10 @@ pub mod list_platform_branches_output {
         /// <p>Summary information about the platform branches.</p>
         pub fn platform_branch_summary_list(
             mut self,
-            input: impl Into<crate::model::PlatformBranchSummary>,
+            input: crate::model::PlatformBranchSummary,
         ) -> Self {
             let mut v = self.platform_branch_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platform_branch_summary_list = Some(v);
             self
         }
@@ -2679,10 +2664,10 @@ pub mod list_available_solution_stacks_output {
         /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
         pub fn solution_stack_details(
             mut self,
-            input: impl Into<crate::model::SolutionStackDescription>,
+            input: crate::model::SolutionStackDescription,
         ) -> Self {
             let mut v = self.solution_stack_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.solution_stack_details = Some(v);
             self
         }
@@ -2858,12 +2843,9 @@ pub mod describe_instances_health_output {
         /// <p>Detailed health information about each instance.</p>
         /// <p>The output differs slightly between Linux and Windows environments. There is a difference
         /// in the members that are supported under the <code><CPUUtilization></code> type.</p>
-        pub fn instance_health_list(
-            mut self,
-            input: impl Into<crate::model::SingleInstanceHealth>,
-        ) -> Self {
+        pub fn instance_health_list(mut self, input: crate::model::SingleInstanceHealth) -> Self {
             let mut v = self.instance_health_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_health_list = Some(v);
             self
         }
@@ -2961,9 +2943,9 @@ pub mod describe_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p> A list of <a>EventDescription</a>. </p>
-        pub fn events(mut self, input: impl Into<crate::model::EventDescription>) -> Self {
+        pub fn events(mut self, input: crate::model::EventDescription) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -3048,12 +3030,9 @@ pub mod describe_environments_output {
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
         /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
-        pub fn environments(
-            mut self,
-            input: impl Into<crate::model::EnvironmentDescription>,
-        ) -> Self {
+        pub fn environments(mut self, input: crate::model::EnvironmentDescription) -> Self {
             let mut v = self.environments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environments = Some(v);
             self
         }
@@ -3190,9 +3169,9 @@ pub mod describe_environment_managed_actions_output {
         /// To override the contents of this collection use [`set_managed_actions`](Self::set_managed_actions).
         ///
         /// <p>A list of upcoming and in-progress managed actions.</p>
-        pub fn managed_actions(mut self, input: impl Into<crate::model::ManagedAction>) -> Self {
+        pub fn managed_actions(mut self, input: crate::model::ManagedAction) -> Self {
             let mut v = self.managed_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_actions = Some(v);
             self
         }
@@ -3272,10 +3251,10 @@ pub mod describe_environment_managed_action_history_output {
         /// <p>A list of completed and failed managed actions.</p>
         pub fn managed_action_history_items(
             mut self,
-            input: impl Into<crate::model::ManagedActionHistoryItem>,
+            input: crate::model::ManagedActionHistoryItem,
         ) -> Self {
             let mut v = self.managed_action_history_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_action_history_items = Some(v);
             self
         }
@@ -3586,10 +3565,10 @@ pub mod describe_configuration_settings_output {
         /// <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
         pub fn configuration_settings(
             mut self,
-            input: impl Into<crate::model::ConfigurationSettingsDescription>,
+            input: crate::model::ConfigurationSettingsDescription,
         ) -> Self {
             let mut v = self.configuration_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_settings = Some(v);
             self
         }
@@ -3692,12 +3671,9 @@ pub mod describe_configuration_options_output {
         /// To override the contents of this collection use [`set_options`](Self::set_options).
         ///
         /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
-        pub fn options(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionDescription>,
-        ) -> Self {
+        pub fn options(mut self, input: crate::model::ConfigurationOptionDescription) -> Self {
             let mut v = self.options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.options = Some(v);
             self
         }
@@ -3779,10 +3755,10 @@ pub mod describe_application_versions_output {
         /// creation.</p>
         pub fn application_versions(
             mut self,
-            input: impl Into<crate::model::ApplicationVersionDescription>,
+            input: crate::model::ApplicationVersionDescription,
         ) -> Self {
             let mut v = self.application_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_versions = Some(v);
             self
         }
@@ -3858,12 +3834,9 @@ pub mod describe_applications_output {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
-        pub fn applications(
-            mut self,
-            input: impl Into<crate::model::ApplicationDescription>,
-        ) -> Self {
+        pub fn applications(mut self, input: crate::model::ApplicationDescription) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -4916,12 +4889,9 @@ pub mod create_environment_output {
         /// To override the contents of this collection use [`set_environment_links`](Self::set_environment_links).
         ///
         /// <p>A list of links to other environments in the same group.</p>
-        pub fn environment_links(
-            mut self,
-            input: impl Into<crate::model::EnvironmentLink>,
-        ) -> Self {
+        pub fn environment_links(mut self, input: crate::model::EnvironmentLink) -> Self {
             let mut v = self.environment_links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_links = Some(v);
             self
         }
@@ -5330,12 +5300,9 @@ pub mod create_configuration_template_output {
         ///
         /// <p>A list of the configuration options and their values in this configuration
         /// set.</p>
-        pub fn option_settings(
-            mut self,
-            input: impl Into<crate::model::ConfigurationOptionSetting>,
-        ) -> Self {
+        pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_settings = Some(v);
             self
         }
@@ -5541,12 +5508,9 @@ pub mod compose_environments_output {
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
         /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
-        pub fn environments(
-            mut self,
-            input: impl Into<crate::model::EnvironmentDescription>,
-        ) -> Self {
+        pub fn environments(mut self, input: crate::model::EnvironmentDescription) -> Self {
             let mut v = self.environments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environments = Some(v);
             self
         }

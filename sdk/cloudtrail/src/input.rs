@@ -31,9 +31,9 @@ pub mod add_tags_input {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>Contains a list of tags, up to a limit of 50</p>
-        pub fn tags_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_list = Some(v);
             self
         }
@@ -430,9 +430,9 @@ pub mod create_trail_input {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>A list of tags.</p>
-        pub fn tags_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_list = Some(v);
             self
         }
@@ -2211,12 +2211,9 @@ pub mod lookup_events_input {
         /// To override the contents of this collection use [`set_lookup_attributes`](Self::set_lookup_attributes).
         ///
         /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-        pub fn lookup_attributes(
-            mut self,
-            input: impl Into<crate::model::LookupAttribute>,
-        ) -> Self {
+        pub fn lookup_attributes(mut self, input: crate::model::LookupAttribute) -> Self {
             let mut v = self.lookup_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lookup_attributes = Some(v);
             self
         }
@@ -2505,9 +2502,9 @@ pub mod put_event_selectors_input {
         /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
         /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
         /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
-        pub fn event_selectors(mut self, input: impl Into<crate::model::EventSelector>) -> Self {
+        pub fn event_selectors(mut self, input: crate::model::EventSelector) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_selectors = Some(v);
             self
         }
@@ -2536,10 +2533,10 @@ pub mod put_event_selectors_input {
         /// </p>
         pub fn advanced_event_selectors(
             mut self,
-            input: impl Into<crate::model::AdvancedEventSelector>,
+            input: crate::model::AdvancedEventSelector,
         ) -> Self {
             let mut v = self.advanced_event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_event_selectors = Some(v);
             self
         }
@@ -2722,12 +2719,9 @@ pub mod put_insight_selectors_input {
         /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
         ///
         /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
-        pub fn insight_selectors(
-            mut self,
-            input: impl Into<crate::model::InsightSelector>,
-        ) -> Self {
+        pub fn insight_selectors(mut self, input: crate::model::InsightSelector) -> Self {
             let mut v = self.insight_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_selectors = Some(v);
             self
         }
@@ -2906,9 +2900,9 @@ pub mod remove_tags_input {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>Specifies a list of tags to be removed.</p>
-        pub fn tags_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_list = Some(v);
             self
         }

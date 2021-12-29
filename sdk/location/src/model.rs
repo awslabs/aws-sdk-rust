@@ -187,9 +187,9 @@ pub mod list_device_positions_response_entry {
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
         /// <p>The last known device position. Empty if no positions currently stored.</p>
-        pub fn position(mut self, input: impl Into<f64>) -> Self {
+        pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.position = Some(v);
             self
         }
@@ -317,9 +317,9 @@ pub mod device_position {
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
         /// <p>The last known device position.</p>
-        pub fn position(mut self, input: impl Into<f64>) -> Self {
+        pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.position = Some(v);
             self
         }
@@ -650,9 +650,9 @@ pub mod device_position_update {
         ///
         /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
         /// <code>[X or longitude, Y or latitude]</code>.</p>
-        pub fn position(mut self, input: impl Into<f64>) -> Self {
+        pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.position = Some(v);
             self
         }
@@ -1249,9 +1249,9 @@ pub mod calculate_route_summary {
         /// upper northeast corner. </p>
         /// </li>
         /// </ul>
-        pub fn route_b_box(mut self, input: impl Into<f64>) -> Self {
+        pub fn route_b_box(mut self, input: f64) -> Self {
             let mut v = self.route_b_box.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_b_box = Some(v);
             self
         }
@@ -1560,9 +1560,9 @@ pub mod leg {
         /// <note>
         /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
         /// </note>
-        pub fn start_position(mut self, input: impl Into<f64>) -> Self {
+        pub fn start_position(mut self, input: f64) -> Self {
             let mut v = self.start_position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.start_position = Some(v);
             self
         }
@@ -1587,9 +1587,9 @@ pub mod leg {
         /// <note>
         /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
         /// </note>
-        pub fn end_position(mut self, input: impl Into<f64>) -> Self {
+        pub fn end_position(mut self, input: f64) -> Self {
             let mut v = self.end_position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_position = Some(v);
             self
         }
@@ -1660,9 +1660,9 @@ pub mod leg {
         /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides
         /// instructions for how to move to the next step in the leg such as the step's start
         /// position, end position, travel distance, travel duration, and geometry offset.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::Step>) -> Self {
+        pub fn steps(mut self, input: crate::model::Step) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -1782,9 +1782,9 @@ pub mod step {
         ///
         /// <p>The starting position of a step. If the position is the first step in the leg, this
         /// position is the same as the start position of the leg.</p>
-        pub fn start_position(mut self, input: impl Into<f64>) -> Self {
+        pub fn start_position(mut self, input: f64) -> Self {
             let mut v = self.start_position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.start_position = Some(v);
             self
         }
@@ -1803,9 +1803,9 @@ pub mod step {
         ///
         /// <p>The end position of a step. If the position the last step in the leg, this position is
         /// the same as the end position of the leg.</p>
-        pub fn end_position(mut self, input: impl Into<f64>) -> Self {
+        pub fn end_position(mut self, input: f64) -> Self {
             let mut v = self.end_position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_position = Some(v);
             self
         }
@@ -1940,9 +1940,9 @@ pub mod leg_geometry {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn line_string(mut self, input: impl Into<std::vec::Vec<f64>>) -> Self {
+        pub fn line_string(mut self, input: std::vec::Vec<f64>) -> Self {
             let mut v = self.line_string.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_string = Some(v);
             self
         }
@@ -3507,9 +3507,9 @@ pub mod place_geometry {
         /// <i>y</i> — Specifies the y coordinate or latitude. </p>
         /// </li>
         /// </ul>
-        pub fn point(mut self, input: impl Into<f64>) -> Self {
+        pub fn point(mut self, input: f64) -> Self {
             let mut v = self.point.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.point = Some(v);
             self
         }
@@ -3674,9 +3674,9 @@ pub mod search_place_index_for_text_summary {
         /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
         ///
         /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-        pub fn bias_position(mut self, input: impl Into<f64>) -> Self {
+        pub fn bias_position(mut self, input: f64) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bias_position = Some(v);
             self
         }
@@ -3690,9 +3690,9 @@ pub mod search_place_index_for_text_summary {
         /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
         ///
         /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
-        pub fn filter_b_box(mut self, input: impl Into<f64>) -> Self {
+        pub fn filter_b_box(mut self, input: f64) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_b_box = Some(v);
             self
         }
@@ -3739,9 +3739,9 @@ pub mod search_place_index_for_text_summary {
         /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code>
         /// is contained within <code>FilterBBox</code>.</p>
         /// </note>
-        pub fn result_b_box(mut self, input: impl Into<f64>) -> Self {
+        pub fn result_b_box(mut self, input: f64) -> Self {
             let mut v = self.result_b_box.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_b_box = Some(v);
             self
         }
@@ -3999,9 +3999,9 @@ pub mod search_place_index_for_position_summary {
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
         /// <p>The position specified in the request.</p>
-        pub fn position(mut self, input: impl Into<f64>) -> Self {
+        pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.position = Some(v);
             self
         }
@@ -4966,9 +4966,9 @@ pub mod geofence_geometry {
         /// list their vertices in counter-clockwise order around the ring's center, where the left
         /// side is the polygon's exterior. Inner rings must list their vertices in clockwise order,
         /// where the left side is the polygon's interior.</p>
-        pub fn polygon(mut self, input: impl Into<std::vec::Vec<std::vec::Vec<f64>>>) -> Self {
+        pub fn polygon(mut self, input: std::vec::Vec<std::vec::Vec<f64>>) -> Self {
             let mut v = self.polygon.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.polygon = Some(v);
             self
         }

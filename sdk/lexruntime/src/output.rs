@@ -1038,12 +1038,9 @@ pub mod post_text_output {
         /// <p>Each alternative includes a score that indicates how confident Amazon Lex
         /// is that the intent matches the user's intent. The intents are sorted by
         /// the confidence score.</p>
-        pub fn alternative_intents(
-            mut self,
-            input: impl Into<crate::model::PredictedIntent>,
-        ) -> Self {
+        pub fn alternative_intents(mut self, input: crate::model::PredictedIntent) -> Self {
             let mut v = self.alternative_intents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alternative_intents = Some(v);
             self
         }
@@ -1443,9 +1440,9 @@ pub mod post_text_output {
         /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
         /// <p>You can use a context to control the intents that can follow up an
         /// intent, or to modify the operation of your application.</p>
-        pub fn active_contexts(mut self, input: impl Into<crate::model::ActiveContext>) -> Self {
+        pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_contexts = Some(v);
             self
         }
@@ -2688,12 +2685,9 @@ pub mod get_session_output {
         /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the
         /// request, the array contains only the intents with the specified
         /// label.</p>
-        pub fn recent_intent_summary_view(
-            mut self,
-            input: impl Into<crate::model::IntentSummary>,
-        ) -> Self {
+        pub fn recent_intent_summary_view(mut self, input: crate::model::IntentSummary) -> Self {
             let mut v = self.recent_intent_summary_view.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recent_intent_summary_view = Some(v);
             self
         }
@@ -2772,9 +2766,9 @@ pub mod get_session_output {
         /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
         /// <p>You can use a context to control the intents that can follow up an
         /// intent, or to modify the operation of your application.</p>
-        pub fn active_contexts(mut self, input: impl Into<crate::model::ActiveContext>) -> Self {
+        pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_contexts = Some(v);
             self
         }

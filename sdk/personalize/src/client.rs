@@ -548,8 +548,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the batch inference job to create.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>The name of the batch inference job to create.</p>
@@ -559,8 +559,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
         /// batch inference recommendations.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
@@ -575,8 +575,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
         /// filters, see
         /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
-        pub fn filter_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_arn(inp);
+        pub fn filter_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(signature.into());
             self
         }
         /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
@@ -587,8 +587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of recommendations to retreive.</p>
-        pub fn num_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_results(inp);
+        pub fn num_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.num_results(signature);
             self
         }
         /// <p>The number of recommendations to retreive.</p>
@@ -598,8 +598,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
         /// material must be in JSON format.</p>
-        pub fn job_input(mut self, inp: crate::model::BatchInferenceJobInput) -> Self {
-            self.inner = self.inner.job_input(inp);
+        pub fn job_input(mut self, signature: crate::model::BatchInferenceJobInput) -> Self {
+            self.inner = self.inner.job_input(signature);
             self
         }
         /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
@@ -612,8 +612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
-        pub fn job_output(mut self, inp: crate::model::BatchInferenceJobOutput) -> Self {
-            self.inner = self.inner.job_output(inp);
+        pub fn job_output(mut self, signature: crate::model::BatchInferenceJobOutput) -> Self {
+            self.inner = self.inner.job_output(signature);
             self
         }
         /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
@@ -626,8 +626,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
         /// Amazon S3 buckets respectively.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
@@ -639,9 +639,9 @@ pub mod fluent_builders {
         /// <p>The configuration details of a batch inference job.</p>
         pub fn batch_inference_job_config(
             mut self,
-            inp: crate::model::BatchInferenceJobConfig,
+            signature: crate::model::BatchInferenceJobConfig,
         ) -> Self {
-            self.inner = self.inner.batch_inference_job_config(inp);
+            self.inner = self.inner.batch_inference_job_config(signature);
             self
         }
         /// <p>The configuration details of a batch inference job.</p>
@@ -714,8 +714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the batch segment job to create.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>The name of the batch segment job to create.</p>
@@ -725,8 +725,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
         /// batch segments.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
@@ -740,8 +740,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
         /// filters, see <a>filter-batch</a>.</p>
-        pub fn filter_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_arn(inp);
+        pub fn filter_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(signature.into());
             self
         }
         /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
@@ -751,8 +751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
-        pub fn num_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_results(inp);
+        pub fn num_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.num_results(signature);
             self
         }
         /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
@@ -761,8 +761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
-        pub fn job_input(mut self, inp: crate::model::BatchSegmentJobInput) -> Self {
-            self.inner = self.inner.job_input(inp);
+        pub fn job_input(mut self, signature: crate::model::BatchSegmentJobInput) -> Self {
+            self.inner = self.inner.job_input(signature);
             self
         }
         /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
@@ -774,8 +774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
-        pub fn job_output(mut self, inp: crate::model::BatchSegmentJobOutput) -> Self {
-            self.inner = self.inner.job_output(inp);
+        pub fn job_output(mut self, signature: crate::model::BatchSegmentJobOutput) -> Self {
+            self.inner = self.inner.job_output(signature);
             self
         }
         /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
@@ -788,8 +788,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
         /// Amazon S3 buckets respectively.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
@@ -929,8 +929,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
@@ -939,8 +939,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
@@ -953,8 +953,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
         /// Amazon Personalize will support.</p>
-        pub fn min_provisioned_tps(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_provisioned_tps(inp);
+        pub fn min_provisioned_tps(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_provisioned_tps(signature);
             self
         }
         /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
@@ -964,8 +964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration details of a campaign.</p>
-        pub fn campaign_config(mut self, inp: crate::model::CampaignConfig) -> Self {
-            self.inner = self.inner.campaign_config(inp);
+        pub fn campaign_config(mut self, signature: crate::model::CampaignConfig) -> Self {
+            self.inner = self.inner.campaign_config(signature);
             self
         }
         /// <p>The configuration details of a campaign.</p>
@@ -1087,8 +1087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the dataset.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the dataset.</p>
@@ -1098,8 +1098,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
         /// fields.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
@@ -1109,8 +1109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
@@ -1134,8 +1134,8 @@ pub mod fluent_builders {
         /// <p>Users</p>
         /// </li>
         /// </ul>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        pub fn dataset_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(signature.into());
             self
         }
         /// <p>The type of dataset.</p>
@@ -1237,8 +1237,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the dataset export job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>The name for the dataset export job.</p>
@@ -1247,8 +1247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
@@ -1260,8 +1260,8 @@ pub mod fluent_builders {
         /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
         /// for both types. The default value is <code>PUT</code>.
         /// </p>
-        pub fn ingestion_mode(mut self, inp: crate::model::IngestionMode) -> Self {
-            self.inner = self.inner.ingestion_mode(inp);
+        pub fn ingestion_mode(mut self, signature: crate::model::IngestionMode) -> Self {
+            self.inner = self.inner.ingestion_mode(signature);
             self
         }
         /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
@@ -1277,8 +1277,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
         /// output Amazon S3 bucket.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
@@ -1288,8 +1288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
-        pub fn job_output(mut self, inp: crate::model::DatasetExportJobOutput) -> Self {
-            self.inner = self.inner.job_output(inp);
+        pub fn job_output(mut self, signature: crate::model::DatasetExportJobOutput) -> Self {
+            self.inner = self.inner.job_output(signature);
             self
         }
         /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
@@ -1439,8 +1439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the new dataset group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the new dataset group.</p>
@@ -1450,8 +1450,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
         /// role is only valid when also specifying a KMS key.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
@@ -1461,8 +1461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
@@ -1474,8 +1474,8 @@ pub mod fluent_builders {
         /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
         /// you create a Custom dataset group with solution versions that you deploy with a campaign.
         /// </p>
-        pub fn domain(mut self, inp: crate::model::Domain) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(signature);
             self
         }
         /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
@@ -1588,8 +1588,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the dataset import job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(signature.into());
             self
         }
         /// <p>The name for the dataset import job.</p>
@@ -1598,8 +1598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the dataset that receives the imported data.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>The ARN of the dataset that receives the imported data.</p>
@@ -1608,8 +1608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 bucket that contains the training data to import.</p>
-        pub fn data_source(mut self, inp: crate::model::DataSource) -> Self {
-            self.inner = self.inner.data_source(inp);
+        pub fn data_source(mut self, signature: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(signature);
             self
         }
         /// <p>The Amazon S3 bucket that contains the training data to import.</p>
@@ -1621,8 +1621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
@@ -1736,8 +1736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the event tracker.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the event tracker.</p>
@@ -1746,8 +1746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
@@ -1819,8 +1819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the filter to create.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the filter to create.</p>
@@ -1829,8 +1829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the dataset group that the filter will belong to.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The ARN of the dataset group that the filter will belong to.</p>
@@ -1844,8 +1844,8 @@ pub mod fluent_builders {
         /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
         /// For information about filter expression structure and syntax, see
         /// <a>filter-expressions</a>.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(signature.into());
             self
         }
         /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
@@ -1968,8 +1968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the recommender.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the recommender.</p>
@@ -1978,8 +1978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
@@ -1993,8 +1993,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
         /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
         /// </p>
-        pub fn recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_arn(inp);
+        pub fn recipe_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
@@ -2005,8 +2005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration details of the recommender.</p>
-        pub fn recommender_config(mut self, inp: crate::model::RecommenderConfig) -> Self {
-            self.inner = self.inner.recommender_config(inp);
+        pub fn recommender_config(mut self, signature: crate::model::RecommenderConfig) -> Self {
+            self.inner = self.inner.recommender_config(signature);
             self
         }
         /// <p>The configuration details of the recommender.</p>
@@ -2104,8 +2104,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the schema.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the schema.</p>
@@ -2114,8 +2114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A schema in Avro JSON format.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(signature.into());
             self
         }
         /// <p>A schema in Avro JSON format.</p>
@@ -2125,8 +2125,8 @@ pub mod fluent_builders {
         }
         /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
         /// the domain you chose when you created the Domain dataset group.</p>
-        pub fn domain(mut self, inp: crate::model::Domain) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(signature);
             self
         }
         /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
@@ -2268,8 +2268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the solution.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name for the solution.</p>
@@ -2281,8 +2281,8 @@ pub mod fluent_builders {
         /// The default is <code>false</code>.</p>
         /// <p>When performing AutoML, this parameter is always <code>true</code> and you
         /// should not set it to <code>false</code>.</p>
-        pub fn perform_hpo(mut self, inp: bool) -> Self {
-            self.inner = self.inner.perform_hpo(inp);
+        pub fn perform_hpo(mut self, signature: bool) -> Self {
+            self.inner = self.inner.perform_hpo(signature);
             self
         }
         /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
@@ -2300,8 +2300,8 @@ pub mod fluent_builders {
         /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
         /// different values for the hyperparameters.
         /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
-        pub fn perform_auto_ml(mut self, inp: bool) -> Self {
-            self.inner = self.inner.perform_auto_ml(inp);
+        pub fn perform_auto_ml(mut self, signature: bool) -> Self {
+            self.inner = self.inner.perform_auto_ml(signature);
             self
         }
         /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
@@ -2317,8 +2317,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the recipe to use for model training. Only specified when
         /// <code>performAutoML</code> is false.</p>
-        pub fn recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_arn(inp);
+        pub fn recipe_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_arn(signature.into());
             self
         }
         /// <p>The ARN of the recipe to use for model training. Only specified when
@@ -2328,8 +2328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
@@ -2345,8 +2345,8 @@ pub mod fluent_builders {
         /// training the model.</p>
         /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
         /// equal weight regardless of type.</p>
-        pub fn event_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_type(inp);
+        pub fn event_type(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type(signature.into());
             self
         }
         /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
@@ -2365,8 +2365,8 @@ pub mod fluent_builders {
         /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
         /// at this time.</p>
         /// </note>
-        pub fn solution_config(mut self, inp: crate::model::SolutionConfig) -> Self {
-            self.inner = self.inner.solution_config(inp);
+        pub fn solution_config(mut self, signature: crate::model::SolutionConfig) -> Self {
+            self.inner = self.inner.solution_config(signature);
             self
         }
         /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
@@ -2512,8 +2512,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
         /// information.</p>
-        pub fn solution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_arn(inp);
+        pub fn solution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
@@ -2535,8 +2535,8 @@ pub mod fluent_builders {
         /// recipe or the
         /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
         /// </important>
-        pub fn training_mode(mut self, inp: crate::model::TrainingMode) -> Self {
-            self.inner = self.inner.training_mode(inp);
+        pub fn training_mode(mut self, signature: crate::model::TrainingMode) -> Self {
+            self.inner = self.inner.training_mode(signature);
             self
         }
         /// <p>The scope of training to be performed when creating the solution version. The
@@ -2625,8 +2625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
-        pub fn campaign_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_arn(inp);
+        pub fn campaign_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
@@ -2697,8 +2697,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
@@ -2779,8 +2779,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the dataset group to delete.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The ARN of the dataset group to delete.</p>
@@ -2854,8 +2854,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-        pub fn event_tracker_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_tracker_arn(inp);
+        pub fn event_tracker_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_tracker_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
@@ -2927,8 +2927,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the filter to delete.</p>
-        pub fn filter_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_arn(inp);
+        pub fn filter_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(signature.into());
             self
         }
         /// <p>The ARN of the filter to delete.</p>
@@ -2998,8 +2998,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-        pub fn recommender_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_arn(inp);
+        pub fn recommender_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
@@ -3073,8 +3073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
@@ -3149,8 +3149,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the solution to delete.</p>
-        pub fn solution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_arn(inp);
+        pub fn solution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_arn(signature.into());
             self
         }
         /// <p>The ARN of the solution to delete.</p>
@@ -3219,8 +3219,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
-        pub fn algorithm_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_arn(inp);
+        pub fn algorithm_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
@@ -3294,8 +3294,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the batch inference job to describe.</p>
-        pub fn batch_inference_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_inference_job_arn(inp);
+        pub fn batch_inference_job_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.batch_inference_job_arn(signature.into());
             self
         }
         /// <p>The ARN of the batch inference job to describe.</p>
@@ -3369,8 +3372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the batch segment job to describe.</p>
-        pub fn batch_segment_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_segment_job_arn(inp);
+        pub fn batch_segment_job_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_segment_job_arn(signature.into());
             self
         }
         /// <p>The ARN of the batch segment job to describe.</p>
@@ -3454,8 +3457,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-        pub fn campaign_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_arn(inp);
+        pub fn campaign_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
@@ -3524,8 +3527,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
@@ -3595,8 +3598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-        pub fn dataset_export_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_export_job_arn(inp);
+        pub fn dataset_export_job_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_export_job_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
@@ -3668,8 +3671,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
@@ -3742,8 +3745,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
-        pub fn dataset_import_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_import_job_arn(inp);
+        pub fn dataset_import_job_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_import_job_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
@@ -3817,8 +3820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
-        pub fn event_tracker_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_tracker_arn(inp);
+        pub fn event_tracker_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_tracker_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
@@ -3890,8 +3893,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
-        pub fn feature_transformation_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_transformation_arn(inp);
+        pub fn feature_transformation_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.feature_transformation_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
@@ -3963,8 +3969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the filter to describe.</p>
-        pub fn filter_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_arn(inp);
+        pub fn filter_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(signature.into());
             self
         }
         /// <p>The ARN of the filter to describe.</p>
@@ -4051,8 +4057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
-        pub fn recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_arn(inp);
+        pub fn recipe_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
@@ -4133,8 +4139,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
-        pub fn recommender_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_arn(inp);
+        pub fn recommender_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
@@ -4207,8 +4213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
@@ -4278,8 +4284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-        pub fn solution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_arn(inp);
+        pub fn solution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
@@ -4348,8 +4354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
@@ -4421,8 +4427,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
@@ -4496,8 +4502,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
         /// were created.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
@@ -4510,8 +4516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -4521,8 +4527,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of batch inference job results to return in each page. The default
         /// value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of batch inference job results to return in each page. The default
@@ -4593,8 +4599,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
@@ -4606,8 +4612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -4617,8 +4623,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of batch segment job results to return in each page. The default
         /// value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of batch segment job results to return in each page. The default
@@ -4692,8 +4698,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
         /// a solution is not specified, all the campaigns associated with the account are listed.</p>
-        pub fn solution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_arn(inp);
+        pub fn solution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
@@ -4704,8 +4710,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
         /// the next set of campaigns (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
@@ -4715,8 +4721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of campaigns to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of campaigns to return.</p>
@@ -4789,8 +4795,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
@@ -4800,8 +4806,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
         /// the next set of dataset export jobs (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
@@ -4811,8 +4817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of dataset export jobs to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of dataset export jobs to return.</p>
@@ -4884,8 +4890,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
         /// next set of dataset groups (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
@@ -4895,8 +4901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of dataset groups to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of dataset groups to return.</p>
@@ -4969,8 +4975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
@@ -4980,8 +4986,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
         /// the next set of dataset import jobs (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
@@ -4991,8 +4997,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of dataset import jobs to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of dataset import jobs to return.</p>
@@ -5064,8 +5070,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
         /// list.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
@@ -5079,8 +5085,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
         /// the next set of dataset import jobs (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
@@ -5090,8 +5096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of datasets to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of datasets to return.</p>
@@ -5163,8 +5169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of a dataset group used to filter the response.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The ARN of a dataset group used to filter the response.</p>
@@ -5177,8 +5183,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
         /// the next set of event trackers (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
@@ -5188,8 +5194,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of event trackers to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of event trackers to return.</p>
@@ -5258,8 +5264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the dataset group that contains the filters.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The ARN of the dataset group that contains the filters.</p>
@@ -5272,8 +5278,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
         /// next set of filters (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
@@ -5283,8 +5289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of filters to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of filters to return.</p>
@@ -5354,8 +5360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The default is <code>SERVICE</code>.</p>
-        pub fn recipe_provider(mut self, inp: crate::model::RecipeProvider) -> Self {
-            self.inner = self.inner.recipe_provider(inp);
+        pub fn recipe_provider(mut self, signature: crate::model::RecipeProvider) -> Self {
+            self.inner = self.inner.recipe_provider(signature);
             self
         }
         /// <p>The default is <code>SERVICE</code>.</p>
@@ -5368,8 +5374,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
         /// the next set of recipes (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
@@ -5379,8 +5385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of recipes to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of recipes to return.</p>
@@ -5392,8 +5398,8 @@ pub mod fluent_builders {
         /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
         /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
         /// </p>
-        pub fn domain(mut self, inp: crate::model::Domain) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, signature: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(signature);
             self
         }
         /// <p>
@@ -5469,8 +5475,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
         /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
@@ -5484,8 +5490,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
         /// the next set of recommenders (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
@@ -5495,8 +5501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of recommenders to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of recommenders to return.</p>
@@ -5568,8 +5574,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
         /// the next set of schemas (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
@@ -5579,8 +5585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of schemas to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of schemas to return.</p>
@@ -5652,8 +5658,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
@@ -5666,8 +5672,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
         /// the next set of solutions (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
@@ -5677,8 +5683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of solutions to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of solutions to return.</p>
@@ -5750,8 +5756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the solution.</p>
-        pub fn solution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_arn(inp);
+        pub fn solution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution.</p>
@@ -5761,8 +5767,8 @@ pub mod fluent_builders {
         }
         /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
         /// the next set of solution versions (if they exist).</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
@@ -5772,8 +5778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of solution versions to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of solution versions to return.</p>
@@ -5855,8 +5861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
@@ -5936,8 +5942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-        pub fn campaign_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_arn(inp);
+        pub fn campaign_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
@@ -5946,8 +5952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of a new solution version to deploy.</p>
-        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.solution_version_arn(inp);
+        pub fn solution_version_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(signature.into());
             self
         }
         /// <p>The ARN of a new solution version to deploy.</p>
@@ -5960,8 +5966,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
         /// Amazon Personalize will support.</p>
-        pub fn min_provisioned_tps(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_provisioned_tps(inp);
+        pub fn min_provisioned_tps(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_provisioned_tps(signature);
             self
         }
         /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
@@ -5971,8 +5977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration details of a campaign.</p>
-        pub fn campaign_config(mut self, inp: crate::model::CampaignConfig) -> Self {
-            self.inner = self.inner.campaign_config(inp);
+        pub fn campaign_config(mut self, signature: crate::model::CampaignConfig) -> Self {
+            self.inner = self.inner.campaign_config(signature);
             self
         }
         /// <p>The configuration details of a campaign.</p>
@@ -6044,8 +6050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-        pub fn recommender_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_arn(inp);
+        pub fn recommender_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
@@ -6057,8 +6063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration details of the recommender.</p>
-        pub fn recommender_config(mut self, inp: crate::model::RecommenderConfig) -> Self {
-            self.inner = self.inner.recommender_config(inp);
+        pub fn recommender_config(mut self, signature: crate::model::RecommenderConfig) -> Self {
+            self.inner = self.inner.recommender_config(signature);
             self
         }
         /// <p>The configuration details of the recommender.</p>

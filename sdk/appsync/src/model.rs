@@ -1416,10 +1416,10 @@ pub mod graphql_api {
         /// API.</p>
         pub fn additional_authentication_providers(
             mut self,
-            input: impl Into<crate::model::AdditionalAuthenticationProvider>,
+            input: crate::model::AdditionalAuthenticationProvider,
         ) -> Self {
             let mut v = self.additional_authentication_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_authentication_providers = Some(v);
             self
         }

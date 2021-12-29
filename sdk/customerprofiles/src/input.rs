@@ -5667,10 +5667,10 @@ pub mod put_profile_object_type_input {
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ObjectTypeField>,
+            v: crate::model::ObjectTypeField,
         ) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.fields = Some(hash_map);
             self
         }
@@ -5692,10 +5692,10 @@ pub mod put_profile_object_type_input {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ObjectTypeKey>>,
+            v: std::vec::Vec<crate::model::ObjectTypeKey>,
         ) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.keys = Some(hash_map);
             self
         }

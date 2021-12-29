@@ -405,8 +405,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The name of the load balancer. You can specify one load balancer only.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The name of the load balancer. You can specify one load balancer only.</p>
@@ -422,8 +422,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags.</p>
@@ -497,8 +497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -514,8 +514,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
@@ -590,8 +590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -607,8 +607,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
         /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
@@ -682,8 +682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -695,8 +695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration information.</p>
-        pub fn health_check(mut self, inp: crate::model::HealthCheck) -> Self {
-            self.inner = self.inner.health_check(inp);
+        pub fn health_check(mut self, signature: crate::model::HealthCheck) -> Self {
+            self.inner = self.inner.health_check(signature);
             self
         }
         /// <p>The configuration information.</p>
@@ -776,8 +776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -789,8 +789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
@@ -799,8 +799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the application cookie used for stickiness.</p>
-        pub fn cookie_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cookie_name(inp);
+        pub fn cookie_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cookie_name(signature.into());
             self
         }
         /// <p>The name of the application cookie used for stickiness.</p>
@@ -875,8 +875,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -888,8 +888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
@@ -898,8 +898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
-        pub fn cookie_expiration_period(mut self, inp: i64) -> Self {
-            self.inner = self.inner.cookie_expiration_period(inp);
+        pub fn cookie_expiration_period(mut self, signature: i64) -> Self {
+            self.inner = self.inner.cookie_expiration_period(signature);
             self
         }
         /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
@@ -982,8 +982,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the load balancer.</p>
         /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1002,8 +1002,8 @@ pub mod fluent_builders {
         /// <p>The listeners.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
         /// in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn listeners(mut self, inp: impl Into<crate::model::Listener>) -> Self {
-            self.inner = self.inner.listeners(inp);
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
+            self.inner = self.inner.listeners(input);
             self
         }
         /// <p>The listeners.</p>
@@ -1024,8 +1024,8 @@ pub mod fluent_builders {
         /// <p>You must specify at least one Availability Zone.</p>
         /// <p>You can add more Availability Zones after you create the load balancer using
         /// <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>One or more Availability Zones from the same region as the load balancer.</p>
@@ -1045,8 +1045,8 @@ pub mod fluent_builders {
         ///
         /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
         /// Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
         /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
@@ -1063,8 +1063,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The IDs of the security groups to assign to the load balancer.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>The IDs of the security groups to assign to the load balancer.</p>
@@ -1080,8 +1080,8 @@ pub mod fluent_builders {
         /// For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a>
         /// in the <i>Elastic Load Balancing User Guide</i>.</p>
         /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
-        pub fn scheme(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheme(inp);
+        pub fn scheme(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheme(signature.into());
             self
         }
         /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>          
@@ -1100,8 +1100,8 @@ pub mod fluent_builders {
         /// <p>A list of tags to assign to the load balancer.</p>
         /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
         /// in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to assign to the load balancer.</p>
@@ -1177,8 +1177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1194,8 +1194,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>The listeners.</p>
-        pub fn listeners(mut self, inp: impl Into<crate::model::Listener>) -> Self {
-            self.inner = self.inner.listeners(inp);
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
+            self.inner = self.inner.listeners(input);
             self
         }
         /// <p>The listeners.</p>
@@ -1268,8 +1268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1281,8 +1281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
@@ -1292,8 +1292,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the base policy type.
         /// To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
-        pub fn policy_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_type_name(inp);
+        pub fn policy_type_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_type_name(signature.into());
             self
         }
         /// <p>The name of the base policy type.
@@ -1310,8 +1310,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_attributes`](Self::set_policy_attributes).
         ///
         /// <p>The policy attributes.</p>
-        pub fn policy_attributes(mut self, inp: impl Into<crate::model::PolicyAttribute>) -> Self {
-            self.inner = self.inner.policy_attributes(inp);
+        pub fn policy_attributes(mut self, input: crate::model::PolicyAttribute) -> Self {
+            self.inner = self.inner.policy_attributes(input);
             self
         }
         /// <p>The policy attributes.</p>
@@ -1386,8 +1386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1459,8 +1459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1476,8 +1476,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_ports`](Self::set_load_balancer_ports).
         ///
         /// <p>The client port numbers of the listeners.</p>
-        pub fn load_balancer_ports(mut self, inp: impl Into<i32>) -> Self {
-            self.inner = self.inner.load_balancer_ports(inp);
+        pub fn load_balancer_ports(mut self, input: i32) -> Self {
+            self.inner = self.inner.load_balancer_ports(input);
             self
         }
         /// <p>The client port numbers of the listeners.</p>
@@ -1549,8 +1549,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1562,8 +1562,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(signature.into());
             self
         }
         /// <p>The name of the policy.</p>
@@ -1639,8 +1639,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1656,8 +1656,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, inp: impl Into<crate::model::Instance>) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>The IDs of the instances.</p>
@@ -1731,8 +1731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -1741,8 +1741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -1811,8 +1811,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1828,8 +1828,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, inp: impl Into<crate::model::Instance>) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>The IDs of the instances.</p>
@@ -1901,8 +1901,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1978,8 +1978,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1995,8 +1995,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
         /// <p>The names of the policies.</p>
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_names(inp);
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_names(input.into());
             self
         }
         /// <p>The names of the policies.</p>
@@ -2079,8 +2079,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_type_names`](Self::set_policy_type_names).
         ///
         /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-        pub fn policy_type_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_type_names(inp);
+        pub fn policy_type_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_type_names(input.into());
             self
         }
         /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
@@ -2156,8 +2156,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The names of the load balancers.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The names of the load balancers.</p>
@@ -2169,8 +2169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -2179,8 +2179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.page_size(signature);
             self
         }
         /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
@@ -2253,8 +2253,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The names of the load balancers.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The names of the load balancers.</p>
@@ -2329,8 +2329,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2346,8 +2346,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>The IDs of the subnets.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
         /// <p>The IDs of the subnets.</p>
@@ -2429,8 +2429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2446,8 +2446,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>The Availability Zones.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>The Availability Zones.</p>
@@ -2526,8 +2526,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2543,8 +2543,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
@@ -2642,8 +2642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2657,9 +2657,9 @@ pub mod fluent_builders {
         /// <p>The attributes for the load balancer.</p>
         pub fn load_balancer_attributes(
             mut self,
-            inp: crate::model::LoadBalancerAttributes,
+            signature: crate::model::LoadBalancerAttributes,
         ) -> Self {
-            self.inner = self.inner.load_balancer_attributes(inp);
+            self.inner = self.inner.load_balancer_attributes(signature);
             self
         }
         /// <p>The attributes for the load balancer.</p>
@@ -2749,8 +2749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2766,8 +2766,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, inp: impl Into<crate::model::Instance>) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>The IDs of the instances.</p>
@@ -2843,8 +2843,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
@@ -2860,8 +2860,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tag keys to remove.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::TagKeyOnly>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::TagKeyOnly) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tag keys to remove.</p>
@@ -2939,8 +2939,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2952,8 +2952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port that uses the specified SSL certificate.</p>
-        pub fn load_balancer_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.load_balancer_port(inp);
+        pub fn load_balancer_port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.load_balancer_port(signature);
             self
         }
         /// <p>The port that uses the specified SSL certificate.</p>
@@ -2962,8 +2962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-        pub fn ssl_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssl_certificate_id(inp);
+        pub fn ssl_certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssl_certificate_id(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
@@ -3047,8 +3047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -3060,8 +3060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port number associated with the EC2 instance.</p>
-        pub fn instance_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.instance_port(inp);
+        pub fn instance_port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.instance_port(signature);
             self
         }
         /// <p>The port number associated with the EC2 instance.</p>
@@ -3074,8 +3074,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
         /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_names(inp);
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_names(input.into());
             self
         }
         /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
@@ -3153,8 +3153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(signature.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -3166,8 +3166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external port of the load balancer.</p>
-        pub fn load_balancer_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.load_balancer_port(inp);
+        pub fn load_balancer_port(mut self, signature: i32) -> Self {
+            self.inner = self.inner.load_balancer_port(signature);
             self
         }
         /// <p>The external port of the load balancer.</p>
@@ -3180,8 +3180,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
         /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_names(inp);
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_names(input.into());
             self
         }
         /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>

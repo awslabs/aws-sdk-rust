@@ -1804,10 +1804,10 @@ pub mod create_studio_component_input {
         /// <p>Initialization scripts for studio components.</p>
         pub fn initialization_scripts(
             mut self,
-            input: impl Into<crate::model::StudioComponentInitializationScript>,
+            input: crate::model::StudioComponentInitializationScript,
         ) -> Self {
             let mut v = self.initialization_scripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.initialization_scripts = Some(v);
             self
         }
@@ -1836,12 +1836,9 @@ pub mod create_studio_component_input {
         /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).
         ///
         /// <p>Parameters for the studio component scripts.</p>
-        pub fn script_parameters(
-            mut self,
-            input: impl Into<crate::model::ScriptParameterKeyValue>,
-        ) -> Self {
+        pub fn script_parameters(mut self, input: crate::model::ScriptParameterKeyValue) -> Self {
             let mut v = self.script_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.script_parameters = Some(v);
             self
         }
@@ -7845,9 +7842,9 @@ pub mod put_launch_profile_members_input {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::NewLaunchProfileMember>) -> Self {
+        pub fn members(mut self, input: crate::model::NewLaunchProfileMember) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -8113,9 +8110,9 @@ pub mod put_studio_members_input {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::NewStudioMember>) -> Self {
+        pub fn members(mut self, input: crate::model::NewStudioMember) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -10585,10 +10582,10 @@ pub mod update_studio_component_input {
         /// <p>Initialization scripts for studio components.</p>
         pub fn initialization_scripts(
             mut self,
-            input: impl Into<crate::model::StudioComponentInitializationScript>,
+            input: crate::model::StudioComponentInitializationScript,
         ) -> Self {
             let mut v = self.initialization_scripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.initialization_scripts = Some(v);
             self
         }
@@ -10617,12 +10614,9 @@ pub mod update_studio_component_input {
         /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).
         ///
         /// <p>Parameters for the studio component scripts.</p>
-        pub fn script_parameters(
-            mut self,
-            input: impl Into<crate::model::ScriptParameterKeyValue>,
-        ) -> Self {
+        pub fn script_parameters(mut self, input: crate::model::ScriptParameterKeyValue) -> Self {
             let mut v = self.script_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.script_parameters = Some(v);
             self
         }

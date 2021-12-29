@@ -249,9 +249,9 @@ pub mod list_members_output {
         /// <p>The results include member accounts that did not pass verification and member accounts
         /// that have not yet accepted the invitation to the behavior graph. The results do not include
         /// member accounts that were removed from the behavior graph.</p>
-        pub fn member_details(mut self, input: impl Into<crate::model::MemberDetail>) -> Self {
+        pub fn member_details(mut self, input: crate::model::MemberDetail) -> Self {
             let mut v = self.member_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_details = Some(v);
             self
         }
@@ -341,9 +341,9 @@ pub mod list_invitations_output {
         ///
         /// <p>The list of behavior graphs for which the member account has open or accepted
         /// invitations.</p>
-        pub fn invitations(mut self, input: impl Into<crate::model::MemberDetail>) -> Self {
+        pub fn invitations(mut self, input: crate::model::MemberDetail) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.invitations = Some(v);
             self
         }
@@ -428,9 +428,9 @@ pub mod list_graphs_output {
         /// To override the contents of this collection use [`set_graph_list`](Self::set_graph_list).
         ///
         /// <p>A list of behavior graphs that the account is an administrator account for.</p>
-        pub fn graph_list(mut self, input: impl Into<crate::model::Graph>) -> Self {
+        pub fn graph_list(mut self, input: crate::model::Graph) -> Self {
             let mut v = self.graph_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.graph_list = Some(v);
             self
         }
@@ -517,9 +517,9 @@ pub mod get_members_output {
         /// To override the contents of this collection use [`set_member_details`](Self::set_member_details).
         ///
         /// <p>The member account details that Detective is returning in response to the request.</p>
-        pub fn member_details(mut self, input: impl Into<crate::model::MemberDetail>) -> Self {
+        pub fn member_details(mut self, input: crate::model::MemberDetail) -> Self {
             let mut v = self.member_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_details = Some(v);
             self
         }
@@ -538,12 +538,9 @@ pub mod get_members_output {
         /// <p>The requested member accounts for which Detective was unable to return member
         /// details.</p>
         /// <p>For each account, provides the reason why the request could not be processed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -675,12 +672,9 @@ pub mod delete_members_output {
         /// <p>The list of member accounts that Detective was not able to delete from the behavior graph.
         /// For each member account, provides the reason that the deletion could not be
         /// processed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -793,9 +787,9 @@ pub mod create_members_output {
         /// <p>The set of member account invitation requests that Detective was able to process. This
         /// includes accounts that are being verified, that failed verification, and that passed
         /// verification and are being sent an invitation.</p>
-        pub fn members(mut self, input: impl Into<crate::model::MemberDetail>) -> Self {
+        pub fn members(mut self, input: crate::model::MemberDetail) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -816,12 +810,9 @@ pub mod create_members_output {
         /// <p>The list of accounts for which Detective was unable to process the invitation request. For
         /// each account, the list provides the reason why the request could not be processed. The list
         /// includes accounts that are already member accounts in the behavior graph.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }

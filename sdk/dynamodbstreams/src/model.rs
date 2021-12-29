@@ -747,10 +747,10 @@ pub mod stream_record {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.keys = Some(hash_map);
             self
         }
@@ -772,10 +772,10 @@ pub mod stream_record {
         pub fn new_image(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.new_image.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.new_image = Some(hash_map);
             self
         }
@@ -797,10 +797,10 @@ pub mod stream_record {
         pub fn old_image(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.old_image.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.old_image = Some(hash_map);
             self
         }
@@ -1624,9 +1624,9 @@ pub mod stream_description {
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
         /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -1643,9 +1643,9 @@ pub mod stream_description {
         /// To override the contents of this collection use [`set_shards`](Self::set_shards).
         ///
         /// <p>The shards that comprise the stream.</p>
-        pub fn shards(mut self, input: impl Into<crate::model::Shard>) -> Self {
+        pub fn shards(mut self, input: crate::model::Shard) -> Self {
             let mut v = self.shards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shards = Some(v);
             self
         }

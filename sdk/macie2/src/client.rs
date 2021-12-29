@@ -587,8 +587,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-        pub fn administrator_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.administrator_account_id(inp);
+        pub fn administrator_account_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.administrator_account_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
@@ -600,8 +603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the invitation to accept.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(signature.into());
             self
         }
         /// <p>The unique identifier for the invitation to accept.</p>
@@ -613,8 +616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-        pub fn master_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_account(inp);
+        pub fn master_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_account(signature.into());
             self
         }
         /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
@@ -690,8 +693,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
         /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
@@ -763,8 +766,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -777,8 +780,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_data_identifier_ids`](Self::set_custom_data_identifier_ids).
         ///
         /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-        pub fn custom_data_identifier_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_data_identifier_ids(inp);
+        pub fn custom_data_identifier_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_data_identifier_ids(input.into());
             self
         }
         /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
@@ -790,8 +793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
@@ -800,8 +803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
-        pub fn initial_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.initial_run(inp);
+        pub fn initial_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.initial_run(signature);
             self
         }
         /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
@@ -810,8 +813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
-        pub fn job_type(mut self, inp: crate::model::JobType) -> Self {
-            self.inner = self.inner.job_type(inp);
+        pub fn job_type(mut self, signature: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(signature);
             self
         }
         /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
@@ -824,8 +827,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_managed_data_identifier_ids`](Self::set_managed_data_identifier_ids).
         ///
         /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-        pub fn managed_data_identifier_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_data_identifier_ids(inp);
+        pub fn managed_data_identifier_ids(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.managed_data_identifier_ids(input.into());
             self
         }
         /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
@@ -839,9 +845,9 @@ pub mod fluent_builders {
         /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
         pub fn managed_data_identifier_selector(
             mut self,
-            inp: crate::model::ManagedDataIdentifierSelector,
+            signature: crate::model::ManagedDataIdentifierSelector,
         ) -> Self {
-            self.inner = self.inner.managed_data_identifier_selector(inp);
+            self.inner = self.inner.managed_data_identifier_selector(signature);
             self
         }
         /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
@@ -853,8 +859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
@@ -863,8 +869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-        pub fn s3_job_definition(mut self, inp: crate::model::S3JobDefinition) -> Self {
-            self.inner = self.inner.s3_job_definition(inp);
+        pub fn s3_job_definition(mut self, signature: crate::model::S3JobDefinition) -> Self {
+            self.inner = self.inner.s3_job_definition(signature);
             self
         }
         /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
@@ -876,8 +882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
-        pub fn sampling_percentage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.sampling_percentage(inp);
+        pub fn sampling_percentage(mut self, signature: i32) -> Self {
+            self.inner = self.inner.sampling_percentage(signature);
             self
         }
         /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
@@ -886,8 +892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
-        pub fn schedule_frequency(mut self, inp: crate::model::JobScheduleFrequency) -> Self {
-            self.inner = self.inner.schedule_frequency(inp);
+        pub fn schedule_frequency(mut self, signature: crate::model::JobScheduleFrequency) -> Self {
+            self.inner = self.inner.schedule_frequency(signature);
             self
         }
         /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
@@ -908,7 +914,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -982,8 +988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -992,8 +998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -1006,8 +1012,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
         ///
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-        pub fn ignore_words(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ignore_words(inp);
+        pub fn ignore_words(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ignore_words(input.into());
             self
         }
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
@@ -1023,8 +1029,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(input.into());
             self
         }
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
@@ -1036,8 +1042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
-        pub fn maximum_match_distance(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_match_distance(inp);
+        pub fn maximum_match_distance(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_match_distance(signature);
             self
         }
         /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
@@ -1046,8 +1052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -1056,8 +1062,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
-        pub fn regex(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex(inp);
+        pub fn regex(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex(signature.into());
             self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
@@ -1070,8 +1076,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
         ///
         /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-        pub fn severity_levels(mut self, inp: impl Into<crate::model::SeverityLevel>) -> Self {
-            self.inner = self.inner.severity_levels(inp);
+        pub fn severity_levels(mut self, input: crate::model::SeverityLevel) -> Self {
+            self.inner = self.inner.severity_levels(input);
             self
         }
         /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
@@ -1092,7 +1098,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -1166,8 +1172,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-        pub fn action(mut self, inp: crate::model::FindingsFilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, signature: crate::model::FindingsFilterAction) -> Self {
+            self.inner = self.inner.action(signature);
             self
         }
         /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -1179,8 +1185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -1189,8 +1195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -1199,8 +1205,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to filter findings.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, signature: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(signature);
             self
         }
         /// <p>The criteria to use to filter findings.</p>
@@ -1212,8 +1218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -1222,8 +1228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-        pub fn position(mut self, inp: i32) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, signature: i32) -> Self {
+            self.inner = self.inner.position(signature);
             self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
@@ -1241,7 +1247,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -1319,8 +1325,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
@@ -1332,8 +1338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
-        pub fn disable_email_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_email_notification(inp);
+        pub fn disable_email_notification(mut self, signature: bool) -> Self {
+            self.inner = self.inner.disable_email_notification(signature);
             self
         }
         /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
@@ -1342,8 +1348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(signature.into());
             self
         }
         /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
@@ -1412,8 +1418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details of the account to associate with the administrator account.</p>
-        pub fn account(mut self, inp: crate::model::AccountDetail) -> Self {
-            self.inner = self.inner.account(inp);
+        pub fn account(mut self, signature: crate::model::AccountDetail) -> Self {
+            self.inner = self.inner.account(signature);
             self
         }
         /// <p>The details of the account to associate with the administrator account.</p>
@@ -1434,7 +1440,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -1512,8 +1518,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
         ///
         /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-        pub fn finding_types(mut self, inp: impl Into<crate::model::FindingType>) -> Self {
-            self.inner = self.inner.finding_types(inp);
+        pub fn finding_types(mut self, input: crate::model::FindingType) -> Self {
+            self.inner = self.inner.finding_types(input);
             self
         }
         /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
@@ -1589,8 +1595,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
@@ -1662,8 +1668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -1732,8 +1738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -1806,8 +1812,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
@@ -1879,8 +1885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -1956,9 +1962,9 @@ pub mod fluent_builders {
         pub fn criteria(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BucketCriteriaAdditionalProperties>,
+            v: crate::model::BucketCriteriaAdditionalProperties,
         ) -> Self {
-            self.inner = self.inner.criteria(k, v);
+            self.inner = self.inner.criteria(k.into(), v);
             self
         }
         /// <p>The criteria to use to filter the query results.</p>
@@ -1975,8 +1981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -1985,8 +1991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -1995,8 +2001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::BucketSortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, signature: crate::model::BucketSortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(signature);
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
@@ -2068,8 +2074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the classification job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The unique identifier for the classification job.</p>
@@ -2258,8 +2264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
@@ -2453,8 +2459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -2523,8 +2529,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -2535,9 +2541,9 @@ pub mod fluent_builders {
         /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
-            inp: crate::model::FindingPublishingFrequency,
+            signature: crate::model::FindingPublishingFrequency,
         ) -> Self {
-            self.inner = self.inner.finding_publishing_frequency(inp);
+            self.inner = self.inner.finding_publishing_frequency(signature);
             self
         }
         /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
@@ -2549,8 +2555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
-        pub fn status(mut self, inp: crate::model::MacieStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::MacieStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
@@ -2619,8 +2625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(signature.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
@@ -2632,8 +2638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -2762,8 +2768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Web Services account.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Web Services account.</p>
@@ -2894,8 +2900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -2968,8 +2974,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
@@ -2981,8 +2987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria for sorting the results of the request.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, signature: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(signature);
             self
         }
         /// <p>The criteria for sorting the results of the request.</p>
@@ -3054,8 +3060,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -3186,8 +3192,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The criteria to use to filter the query results.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, signature: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(signature);
             self
         }
         /// <p>The criteria to use to filter the query results.</p>
@@ -3199,8 +3205,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
-        pub fn group_by(mut self, inp: crate::model::GroupBy) -> Self {
-            self.inner = self.inner.group_by(inp);
+        pub fn group_by(mut self, signature: crate::model::GroupBy) -> Self {
+            self.inner = self.inner.group_by(signature);
             self
         }
         /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
@@ -3209,8 +3215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.size(inp);
+        pub fn size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.size(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3219,8 +3225,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::FindingStatisticsSortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(
+            mut self,
+            signature: crate::model::FindingStatisticsSortCriteria,
+        ) -> Self {
+            self.inner = self.inner.sort_criteria(signature);
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
@@ -3472,8 +3481,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -3546,8 +3555,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filter_by`](Self::set_filter_by).
         ///
         /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-        pub fn filter_by(mut self, inp: impl Into<crate::model::UsageStatisticsFilter>) -> Self {
-            self.inner = self.inner.filter_by(inp);
+        pub fn filter_by(mut self, input: crate::model::UsageStatisticsFilter) -> Self {
+            self.inner = self.inner.filter_by(input);
             self
         }
         /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
@@ -3559,8 +3568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3569,8 +3578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -3579,8 +3588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
-        pub fn sort_by(mut self, inp: crate::model::UsageStatisticsSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, signature: crate::model::UsageStatisticsSortBy) -> Self {
+            self.inner = self.inner.sort_by(signature);
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
@@ -3592,8 +3601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
-        pub fn time_range(mut self, inp: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.time_range(inp);
+        pub fn time_range(mut self, signature: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.time_range(signature);
             self
         }
         /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
@@ -3665,8 +3674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
-        pub fn time_range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_range(inp);
+        pub fn time_range(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_range(signature.into());
             self
         }
         /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
@@ -3735,8 +3744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The criteria to use to filter the results.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::ListJobsFilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        pub fn filter_criteria(mut self, signature: crate::model::ListJobsFilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(signature);
             self
         }
         /// <p>The criteria to use to filter the results.</p>
@@ -3748,8 +3757,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3758,8 +3767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -3768,8 +3777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::ListJobsSortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, signature: crate::model::ListJobsSortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(signature);
             self
         }
         /// <p>The criteria to use to sort the results.</p>
@@ -3841,8 +3850,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3851,8 +3860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -3921,8 +3930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The criteria to use to filter the results.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, signature: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(signature);
             self
         }
         /// <p>The criteria to use to filter the results.</p>
@@ -3934,8 +3943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3944,8 +3953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -3954,8 +3963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, signature: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(signature);
             self
         }
         /// <p>The criteria to use to sort the results.</p>
@@ -4027,8 +4036,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -4037,8 +4046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4107,8 +4116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -4117,8 +4126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4187,8 +4196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4257,8 +4266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -4267,8 +4276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4277,8 +4286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
-        pub fn only_associated(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.only_associated(inp);
+        pub fn only_associated(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.only_associated(signature.into());
             self
         }
         /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
@@ -4350,8 +4359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -4360,8 +4369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4430,8 +4439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
@@ -4504,9 +4513,9 @@ pub mod fluent_builders {
         /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
         pub fn configuration(
             mut self,
-            inp: crate::model::ClassificationExportConfiguration,
+            signature: crate::model::ClassificationExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.configuration(inp);
+            self.inner = self.inner.configuration(signature);
             self
         }
         /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
@@ -4580,8 +4589,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -4592,9 +4601,9 @@ pub mod fluent_builders {
         /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
         pub fn security_hub_configuration(
             mut self,
-            inp: crate::model::SecurityHubConfiguration,
+            signature: crate::model::SecurityHubConfiguration,
         ) -> Self {
-            self.inner = self.inner.security_hub_configuration(inp);
+            self.inner = self.inner.security_hub_configuration(signature);
             self
         }
         /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
@@ -4666,8 +4675,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
-        pub fn bucket_criteria(mut self, inp: crate::model::SearchResourcesBucketCriteria) -> Self {
-            self.inner = self.inner.bucket_criteria(inp);
+        pub fn bucket_criteria(
+            mut self,
+            signature: crate::model::SearchResourcesBucketCriteria,
+        ) -> Self {
+            self.inner = self.inner.bucket_criteria(signature);
             self
         }
         /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
@@ -4679,8 +4691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -4689,8 +4701,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4699,8 +4711,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SearchResourcesSortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(
+            mut self,
+            signature: crate::model::SearchResourcesSortCriteria,
+        ) -> Self {
+            self.inner = self.inner.sort_criteria(signature);
             self
         }
         /// <p>The criteria to use to sort the results.</p>
@@ -4772,8 +4787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
@@ -4791,7 +4806,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -4869,8 +4884,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
         ///
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-        pub fn ignore_words(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ignore_words(inp);
+        pub fn ignore_words(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ignore_words(input.into());
             self
         }
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
@@ -4886,8 +4901,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(input.into());
             self
         }
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
@@ -4899,8 +4914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
-        pub fn maximum_match_distance(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_match_distance(inp);
+        pub fn maximum_match_distance(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_match_distance(signature);
             self
         }
         /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
@@ -4909,8 +4924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
-        pub fn regex(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex(inp);
+        pub fn regex(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex(signature.into());
             self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
@@ -4919,8 +4934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
-        pub fn sample_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sample_text(inp);
+        pub fn sample_text(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sample_text(signature.into());
             self
         }
         /// <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
@@ -4989,8 +5004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
@@ -5003,8 +5018,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
@@ -5076,8 +5091,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the classification job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(signature.into());
             self
         }
         /// <p>The unique identifier for the classification job.</p>
@@ -5086,8 +5101,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
-        pub fn job_status(mut self, inp: crate::model::JobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        pub fn job_status(mut self, signature: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.job_status(signature);
             self
         }
         /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
@@ -5159,8 +5174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-        pub fn action(mut self, inp: crate::model::FindingsFilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, signature: crate::model::FindingsFilterAction) -> Self {
+            self.inner = self.inner.action(signature);
             self
         }
         /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -5172,8 +5187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -5182,8 +5197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to filter findings.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, signature: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(signature);
             self
         }
         /// <p>The criteria to use to filter findings.</p>
@@ -5195,8 +5210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -5205,8 +5220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -5215,8 +5230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-        pub fn position(mut self, inp: i32) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, signature: i32) -> Self {
+            self.inner = self.inner.position(signature);
             self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
@@ -5225,8 +5240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(signature.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -5297,9 +5312,9 @@ pub mod fluent_builders {
         /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
-            inp: crate::model::FindingPublishingFrequency,
+            signature: crate::model::FindingPublishingFrequency,
         ) -> Self {
-            self.inner = self.inner.finding_publishing_frequency(inp);
+            self.inner = self.inner.finding_publishing_frequency(signature);
             self
         }
         /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
@@ -5311,8 +5326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
-        pub fn status(mut self, inp: crate::model::MacieStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::MacieStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
@@ -5381,8 +5396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -5391,8 +5406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
-        pub fn status(mut self, inp: crate::model::MacieStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::MacieStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
@@ -5461,8 +5476,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
-        pub fn auto_enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_enable(inp);
+        pub fn auto_enable(mut self, signature: bool) -> Self {
+            self.inner = self.inner.auto_enable(signature);
             self
         }
         /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>

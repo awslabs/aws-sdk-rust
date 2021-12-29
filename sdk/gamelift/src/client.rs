@@ -910,8 +910,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
         /// request will fail.</p>
-        pub fn ticket_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_id(inp);
+        pub fn ticket_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_id(signature.into());
             self
         }
         /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
@@ -926,8 +926,8 @@ pub mod fluent_builders {
         ///
         /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
         /// player IDs.</p>
-        pub fn player_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_ids(inp);
+        pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_ids(input.into());
             self
         }
         /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
@@ -940,8 +940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Player response to the proposed match.</p>
-        pub fn acceptance_type(mut self, inp: crate::model::AcceptanceType) -> Self {
-            self.inner = self.inner.acceptance_type(inp);
+        pub fn acceptance_type(mut self, signature: crate::model::AcceptanceType) -> Self {
+            self.inner = self.inner.acceptance_type(signature);
             self
         }
         /// <p>Player response to the proposed match.</p>
@@ -1067,8 +1067,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the game server group where the game server is running.
         /// Use either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
         /// where you want GameLift FleetIQ to look for an available game server to claim. </p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group where the game server is running.
@@ -1084,8 +1084,8 @@ pub mod fluent_builders {
         /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
         /// is left empty, GameLift FleetIQ searches for an available game server in the specified game
         /// server group.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        pub fn game_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(signature.into());
             self
         }
         /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
@@ -1101,8 +1101,8 @@ pub mod fluent_builders {
         /// <p>A set of custom game server properties, formatted as a single string value. This data
         /// is passed to a game client or service when it requests information on game servers using
         /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
-        pub fn game_server_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_data(inp);
+        pub fn game_server_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_data(signature.into());
             self
         }
         /// <p>A set of custom game server properties, formatted as a single string value. This data
@@ -1201,8 +1201,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -1211,8 +1211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A human-readable description of the alias.</p>
@@ -1221,8 +1221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
-        pub fn routing_strategy(mut self, inp: crate::model::RoutingStrategy) -> Self {
-            self.inner = self.inner.routing_strategy(inp);
+        pub fn routing_strategy(mut self, signature: crate::model::RoutingStrategy) -> Self {
+            self.inner = self.inner.routing_strategy(signature);
             self
         }
         /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
@@ -1246,8 +1246,8 @@ pub mod fluent_builders {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
@@ -1381,8 +1381,8 @@ pub mod fluent_builders {
         }
         /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
         /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
@@ -1393,8 +1393,8 @@ pub mod fluent_builders {
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
         /// </p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
@@ -1408,8 +1408,8 @@ pub mod fluent_builders {
         /// location must specify an Amazon S3 bucket name and key. The location must also specify a role
         /// ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your
         /// new build must be in the same Region.</p>
-        pub fn storage_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.storage_location(inp);
+        pub fn storage_location(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.storage_location(signature);
             self
         }
         /// <p>Information indicating where your game build files are stored. Use this parameter only
@@ -1429,8 +1429,8 @@ pub mod fluent_builders {
         /// build contains multiple executables, they all must run on the same operating system. If
         /// an operating system is not specified when creating a build, Amazon GameLift uses the
         /// default value (WINDOWS_2012). This value cannot be changed later.</p>
-        pub fn operating_system(mut self, inp: crate::model::OperatingSystem) -> Self {
-            self.inner = self.inner.operating_system(inp);
+        pub fn operating_system(mut self, signature: crate::model::OperatingSystem) -> Self {
+            self.inner = self.inner.operating_system(signature);
             self
         }
         /// <p>The operating system that the game server binaries are built to run on. This value
@@ -1458,8 +1458,8 @@ pub mod fluent_builders {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
@@ -1590,8 +1590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
@@ -1600,8 +1600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of the fleet.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A human-readable description of the fleet.</p>
@@ -1612,8 +1612,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for a custom game server build to be deployed on fleet
         /// instances. You can use either the build ID or ARN. The build must be uploaded to GameLift
         /// and in <code>READY</code> status. This fleet property cannot be changed later.</p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(signature.into());
             self
         }
         /// <p>The unique identifier for a custom game server build to be deployed on fleet
@@ -1626,8 +1626,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
         /// instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift
         /// prior to creating the fleet. This fleet property cannot be changed later.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        pub fn script_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(signature.into());
             self
         }
         /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
@@ -1641,8 +1641,8 @@ pub mod fluent_builders {
         /// <b>This parameter is no longer used.</b> Specify a server
         /// launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use
         /// this parameter instead continue to be valid.</p>
-        pub fn server_launch_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_launch_path(inp);
+        pub fn server_launch_path(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_launch_path(signature.into());
             self
         }
         /// <p>
@@ -1660,8 +1660,11 @@ pub mod fluent_builders {
         /// <b>This parameter is no longer used.</b> Specify server
         /// launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that
         /// use this parameter instead continue to be valid.</p>
-        pub fn server_launch_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_launch_parameters(inp);
+        pub fn server_launch_parameters(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.server_launch_parameters(signature.into());
             self
         }
         /// <p>
@@ -1684,8 +1687,8 @@ pub mod fluent_builders {
         /// GameLift should store log files once a server process shuts down, use the GameLift server
         /// API <code>ProcessReady()</code> and specify one or more directory paths in
         /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
-        pub fn log_paths(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_paths(inp);
+        pub fn log_paths(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_paths(input.into());
             self
         }
         /// <p>
@@ -1704,8 +1707,8 @@ pub mod fluent_builders {
         /// type determines the computing resources that will be used to host your game servers,
         /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions
         /// of EC2 instance types.</p>
-        pub fn ec2_instance_type(mut self, inp: crate::model::Ec2InstanceType) -> Self {
-            self.inner = self.inner.ec2_instance_type(inp);
+        pub fn ec2_instance_type(mut self, signature: crate::model::Ec2InstanceType) -> Self {
+            self.inner = self.inner.ec2_instance_type(signature);
             self
         }
         /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance
@@ -1727,11 +1730,8 @@ pub mod fluent_builders {
         /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
         /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
         /// automatically sets TCP and UDP ranges. </p>
-        pub fn ec2_inbound_permissions(
-            mut self,
-            inp: impl Into<crate::model::IpPermission>,
-        ) -> Self {
-            self.inner = self.inner.ec2_inbound_permissions(inp);
+        pub fn ec2_inbound_permissions(mut self, input: crate::model::IpPermission) -> Self {
+            self.inner = self.inner.ec2_inbound_permissions(input);
             self
         }
         /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
@@ -1763,9 +1763,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn new_game_session_protection_policy(
             mut self,
-            inp: crate::model::ProtectionPolicy,
+            signature: crate::model::ProtectionPolicy,
         ) -> Self {
-            self.inner = self.inner.new_game_session_protection_policy(inp);
+            self.inner = self.inner.new_game_session_protection_policy(signature);
             self
         }
         /// <p>The status of termination protection for active game sessions on the fleet. By
@@ -1801,8 +1801,11 @@ pub mod fluent_builders {
         /// <code>ServerLaunchParameters</code>, which are still supported for backward
         /// compatibility.</p>
         /// </note>
-        pub fn runtime_configuration(mut self, inp: crate::model::RuntimeConfiguration) -> Self {
-            self.inner = self.inner.runtime_configuration(inp);
+        pub fn runtime_configuration(
+            mut self,
+            signature: crate::model::RuntimeConfiguration,
+        ) -> Self {
+            self.inner = self.inner.runtime_configuration(signature);
             self
         }
         /// <p>Instructions for how to launch and maintain server processes on instances in the
@@ -1826,9 +1829,9 @@ pub mod fluent_builders {
         /// on instances in this fleet within a specified span of time.</p>
         pub fn resource_creation_limit_policy(
             mut self,
-            inp: crate::model::ResourceCreationLimitPolicy,
+            signature: crate::model::ResourceCreationLimitPolicy,
         ) -> Self {
-            self.inner = self.inner.resource_creation_limit_policy(inp);
+            self.inner = self.inner.resource_creation_limit_policy(signature);
             self
         }
         /// <p>A policy that limits the number of game sessions that an individual player can create
@@ -1848,8 +1851,8 @@ pub mod fluent_builders {
         /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
         /// group name or set a new name to create a new metric group. A fleet can be included in
         /// only one metric group at a time. </p>
-        pub fn metric_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_groups(inp);
+        pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_groups(input.into());
             self
         }
         /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
@@ -1866,8 +1869,11 @@ pub mod fluent_builders {
         /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
         /// account that owns the VPC. You can find your account ID in the AWS Management Console under account
         /// settings. </p>
-        pub fn peer_vpc_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_aws_account_id(inp);
+        pub fn peer_vpc_aws_account_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.peer_vpc_aws_account_id(signature.into());
             self
         }
         /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
@@ -1884,8 +1890,8 @@ pub mod fluent_builders {
         /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
         /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
         /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
-        pub fn peer_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_id(inp);
+        pub fn peer_vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_id(signature.into());
             self
         }
         /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
@@ -1899,8 +1905,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
         /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the
         /// fleet is created.</p>
-        pub fn fleet_type(mut self, inp: crate::model::FleetType) -> Self {
-            self.inner = self.inner.fleet_type(inp);
+        pub fn fleet_type(mut self, signature: crate::model::FleetType) -> Self {
+            self.inner = self.inner.fleet_type(signature);
             self
         }
         /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
@@ -1920,8 +1926,8 @@ pub mod fluent_builders {
         /// Learn more about using on-box credentials for your game servers at
         /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Access external resources from a game server</a>.  This property cannot be changed after the fleet is created.</p>
-        pub fn instance_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_role_arn(inp);
+        pub fn instance_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_role_arn(signature.into());
             self
         }
         /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
@@ -1949,9 +1955,9 @@ pub mod fluent_builders {
         /// error.</p>
         pub fn certificate_configuration(
             mut self,
-            inp: crate::model::CertificateConfiguration,
+            signature: crate::model::CertificateConfiguration,
         ) -> Self {
-            self.inner = self.inner.certificate_configuration(inp);
+            self.inner = self.inner.certificate_configuration(signature);
             self
         }
         /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are
@@ -1979,8 +1985,8 @@ pub mod fluent_builders {
         /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
         /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
         /// instances in the home Region only, omit this parameter. </p>
-        pub fn locations(mut self, inp: impl Into<crate::model::LocationConfiguration>) -> Self {
-            self.inner = self.inner.locations(inp);
+        pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
+            self.inner = self.inner.locations(input);
             self
         }
         /// <p>A set of remote locations to deploy additional instances to and manage as part of the
@@ -2006,8 +2012,8 @@ pub mod fluent_builders {
         /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
         /// may be lower than stated. See the <i>AWS General Reference</i> for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
@@ -2127,8 +2133,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
@@ -2143,8 +2149,8 @@ pub mod fluent_builders {
         /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
         /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
         /// Region code such as <code>us-west-2</code>. </p>
-        pub fn locations(mut self, inp: impl Into<crate::model::LocationConfiguration>) -> Self {
-            self.inner = self.inner.locations(inp);
+        pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
+            self.inner = self.inner.locations(input);
             self
         }
         /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
@@ -2273,8 +2279,8 @@ pub mod fluent_builders {
         /// <p>An identifier for the new game server group. This value is used to generate unique ARN
         /// identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name
         /// must be unique per Region per AWS account.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>An identifier for the new game server group. This value is used to generate unique ARN
@@ -2289,8 +2295,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
         /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
@@ -2304,8 +2310,8 @@ pub mod fluent_builders {
         /// minimum. In production, this value should be set to at least 1. After the Auto Scaling
         /// group is created, update this value directly in the Auto Scaling group using the AWS
         /// console or APIs.</p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        pub fn min_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_size(signature);
             self
         }
         /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During
@@ -2321,8 +2327,8 @@ pub mod fluent_builders {
         /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
         /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
         /// group using the AWS console or APIs.</p>
-        pub fn max_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_size(inp);
+        pub fn max_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_size(signature);
             self
         }
         /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During
@@ -2346,8 +2352,11 @@ pub mod fluent_builders {
         /// interface is specified in the launch template,  GameLift FleetIQ uses your account's default
         /// VPC.</p>
         /// </note>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplateSpecification) -> Self {
-            self.inner = self.inner.launch_template(inp);
+        pub fn launch_template(
+            mut self,
+            signature: crate::model::LaunchTemplateSpecification,
+        ) -> Self {
+            self.inner = self.inner.launch_template(signature);
             self
         }
         /// <p>The EC2 launch template that contains configuration settings and game server code to
@@ -2382,11 +2391,8 @@ pub mod fluent_builders {
         /// it is set to the default value "1". For more information about capacity weighting, see
         /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
         /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-        pub fn instance_definitions(
-            mut self,
-            inp: impl Into<crate::model::InstanceDefinition>,
-        ) -> Self {
-            self.inner = self.inner.instance_definitions(inp);
+        pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
+            self.inner = self.inner.instance_definitions(input);
             self
         }
         /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
@@ -2412,9 +2418,9 @@ pub mod fluent_builders {
         /// APIs.</p>
         pub fn auto_scaling_policy(
             mut self,
-            inp: crate::model::GameServerGroupAutoScalingPolicy,
+            signature: crate::model::GameServerGroupAutoScalingPolicy,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_policy(inp);
+            self.inner = self.inner.auto_scaling_policy(signature);
             self
         }
         /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is
@@ -2456,8 +2462,8 @@ pub mod fluent_builders {
         /// balancing strategy is in force.</p>
         /// </li>
         /// </ul>
-        pub fn balancing_strategy(mut self, inp: crate::model::BalancingStrategy) -> Self {
-            self.inner = self.inner.balancing_strategy(inp);
+        pub fn balancing_strategy(mut self, signature: crate::model::BalancingStrategy) -> Self {
+            self.inner = self.inner.balancing_strategy(signature);
             self
         }
         /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
@@ -2501,9 +2507,9 @@ pub mod fluent_builders {
         /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn game_server_protection_policy(
             mut self,
-            inp: crate::model::GameServerProtectionPolicy,
+            signature: crate::model::GameServerProtectionPolicy,
         ) -> Self {
-            self.inner = self.inner.game_server_protection_policy(inp);
+            self.inner = self.inner.game_server_protection_policy(signature);
             self
         }
         /// <p>A flag that indicates whether instances in the game server group are protected
@@ -2529,8 +2535,8 @@ pub mod fluent_builders {
         /// game server group is created, and the corresponding Auto Scaling group will always use
         /// the property value that is set with this request, even if the Auto Scaling group is
         /// updated directly.</p>
-        pub fn vpc_subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_subnets(inp);
+        pub fn vpc_subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_subnets(input.into());
             self
         }
         /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
@@ -2557,8 +2563,8 @@ pub mod fluent_builders {
         /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
         /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
         /// AWS General Reference for actual tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of labels to assign to the new game server group resource. Tags are
@@ -2690,8 +2696,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
         /// request must reference either a fleet ID or alias ID, but not both.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
@@ -2703,8 +2709,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
         /// alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but
         /// not both.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(signature.into());
             self
         }
         /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
@@ -2715,8 +2721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-        pub fn maximum_player_session_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_player_session_count(inp);
+        pub fn maximum_player_session_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_player_session_count(signature);
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -2725,8 +2731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
@@ -2740,8 +2746,8 @@ pub mod fluent_builders {
         ///
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
         /// <a>GameSession</a> object with a request to start a new game session.</p>
-        pub fn game_properties(mut self, inp: impl Into<crate::model::GameProperty>) -> Self {
-            self.inner = self.inner.game_properties(inp);
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
+            self.inner = self.inner.game_properties(input);
             self
         }
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
@@ -2758,8 +2764,8 @@ pub mod fluent_builders {
         /// type of policy limits the number of concurrent active game sessions that one player can
         /// create within a certain time span. GameLift uses the CreatorId to evaluate the new
         /// request against the policy.</p>
-        pub fn creator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_id(inp);
+        pub fn creator_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_id(signature.into());
             self
         }
         /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when
@@ -2776,8 +2782,8 @@ pub mod fluent_builders {
         /// <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
         /// identifies a request for a new game session. Maximum token length is 48 characters. If
         /// provided, this string is included in the new game session's ID.</p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(signature.into());
             self
         }
         /// <p>
@@ -2800,8 +2806,8 @@ pub mod fluent_builders {
         /// A game session ARN has the following format:
         /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>. Idempotency tokens remain in use for 30 days after a game session has ended;
         /// game session objects are retained for this time period and then deleted.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(signature.into());
             self
         }
         /// <p>Custom string that uniquely identifies the new game session request.  This is useful
@@ -2821,8 +2827,8 @@ pub mod fluent_builders {
         }
         /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
         /// <a>GameSession</a> object with a request to start a new game session.</p>
-        pub fn game_session_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_data(inp);
+        pub fn game_session_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_data(signature.into());
             self
         }
         /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
@@ -2837,8 +2843,8 @@ pub mod fluent_builders {
         /// <p>A fleet's remote location to place the new game session in. If this parameter is not
         /// set, the new game session is placed in the fleet's home Region. Specify a remote
         /// location with an AWS Region code such as <code>us-west-2</code>.  </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>A fleet's remote location to place the new game session in. If this parameter is not
@@ -2952,8 +2958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
@@ -2962,8 +2968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
-        pub fn timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_seconds(inp);
+        pub fn timeout_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.timeout_in_seconds(signature);
             self
         }
         /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
@@ -2980,11 +2986,8 @@ pub mod fluent_builders {
         /// individual player can be placed into a game with unreasonably high latency. Use multiple
         /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
         /// maximum allowed latency, starting with the lowest value.</p>
-        pub fn player_latency_policies(
-            mut self,
-            inp: impl Into<crate::model::PlayerLatencyPolicy>,
-        ) -> Self {
-            self.inner = self.inner.player_latency_policies(inp);
+        pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
+            self.inner = self.inner.player_latency_policies(input);
             self
         }
         /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
@@ -3005,11 +3008,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
         /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-        pub fn destinations(
-            mut self,
-            inp: impl Into<crate::model::GameSessionQueueDestination>,
-        ) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
         /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
@@ -3024,8 +3024,11 @@ pub mod fluent_builders {
         /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
         /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
         /// not set, game sessions can be placed in any queue location. </p>
-        pub fn filter_configuration(mut self, inp: crate::model::FilterConfiguration) -> Self {
-            self.inner = self.inner.filter_configuration(inp);
+        pub fn filter_configuration(
+            mut self,
+            signature: crate::model::FilterConfiguration,
+        ) -> Self {
+            self.inner = self.inner.filter_configuration(signature);
             self
         }
         /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
@@ -3041,8 +3044,11 @@ pub mod fluent_builders {
         /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
         /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
         /// named will be automatically applied at the end of the prioritization process. </p>
-        pub fn priority_configuration(mut self, inp: crate::model::PriorityConfiguration) -> Self {
-            self.inner = self.inner.priority_configuration(inp);
+        pub fn priority_configuration(
+            mut self,
+            signature: crate::model::PriorityConfiguration,
+        ) -> Self {
+            self.inner = self.inner.priority_configuration(signature);
             self
         }
         /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
@@ -3058,8 +3064,8 @@ pub mod fluent_builders {
         /// <p>
         /// Information to be added to all events that are related to this game session queue.
         /// </p>
-        pub fn custom_event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_event_data(inp);
+        pub fn custom_event_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_event_data(signature.into());
             self
         }
         /// <p>
@@ -3074,8 +3080,8 @@ pub mod fluent_builders {
         }
         /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
         /// Setting up notifications for game session placement</a>.</p>
-        pub fn notification_target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target(inp);
+        pub fn notification_target(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_target(signature.into());
             self
         }
         /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
@@ -3100,8 +3106,8 @@ pub mod fluent_builders {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
@@ -3223,8 +3229,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
         /// matchmaking request or ticket.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
@@ -3234,8 +3240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of the matchmaking configuration. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A human-readable description of the matchmaking configuration. </p>
@@ -3251,8 +3257,8 @@ pub mod fluent_builders {
         /// GameLift-hosted game sessions for matches that are created with this matchmaking
         /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
         /// set this parameter.  </p>
-        pub fn game_session_queue_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_queue_arns(inp);
+        pub fn game_session_queue_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_queue_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
@@ -3269,8 +3275,8 @@ pub mod fluent_builders {
         /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
         /// before timing out. Requests that fail due to timing out can be resubmitted as
         /// needed.</p>
-        pub fn request_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.request_timeout_seconds(inp);
+        pub fn request_timeout_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.request_timeout_seconds(signature);
             self
         }
         /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
@@ -3282,8 +3288,8 @@ pub mod fluent_builders {
         }
         /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
         /// acceptance is required. </p>
-        pub fn acceptance_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.acceptance_timeout_seconds(inp);
+        pub fn acceptance_timeout_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.acceptance_timeout_seconds(signature);
             self
         }
         /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
@@ -3297,8 +3303,8 @@ pub mod fluent_builders {
         /// With this option enabled, matchmaking tickets use the status
         /// <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is
         /// waiting for player acceptance. </p>
-        pub fn acceptance_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.acceptance_required(inp);
+        pub fn acceptance_required(mut self, signature: bool) -> Self {
+            self.inner = self.inner.acceptance_required(signature);
             self
         }
         /// <p>A flag that determines whether a match that was created with this configuration must
@@ -3313,8 +3319,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
         /// value. A matchmaking configuration can only use rule sets that are defined in the same
         /// Region.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
@@ -3329,8 +3335,8 @@ pub mod fluent_builders {
         }
         /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
         /// Setting up notifications for matchmaking</a> for more information.</p>
-        pub fn notification_target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target(inp);
+        pub fn notification_target(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_target(signature.into());
             self
         }
         /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
@@ -3345,8 +3351,8 @@ pub mod fluent_builders {
         /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
         /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
         /// <code>STANDALONE</code>.</p>
-        pub fn additional_player_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.additional_player_count(inp);
+        pub fn additional_player_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.additional_player_count(signature);
             self
         }
         /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
@@ -3358,8 +3364,8 @@ pub mod fluent_builders {
         }
         /// <p>Information to be added to all events related to this matchmaking configuration.
         /// </p>
-        pub fn custom_event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_event_data(inp);
+        pub fn custom_event_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_event_data(signature.into());
             self
         }
         /// <p>Information to be added to all events related to this matchmaking configuration.
@@ -3379,8 +3385,8 @@ pub mod fluent_builders {
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
         /// object that is created for a successful match. This parameter is not used if
         /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_properties(mut self, inp: impl Into<crate::model::GameProperty>) -> Self {
-            self.inner = self.inner.game_properties(inp);
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
+            self.inner = self.inner.game_properties(input);
             self
         }
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
@@ -3398,8 +3404,8 @@ pub mod fluent_builders {
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
         /// that is created for a successful match. This parameter is not used if
         /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_session_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_data(inp);
+        pub fn game_session_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_data(signature.into());
             self
         }
         /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
@@ -3420,8 +3426,8 @@ pub mod fluent_builders {
         /// session has one or more open slots. Learn more about manual and automatic backfill in
         /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not
         /// available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn backfill_mode(mut self, inp: crate::model::BackfillMode) -> Self {
-            self.inner = self.inner.backfill_mode(inp);
+        pub fn backfill_mode(mut self, signature: crate::model::BackfillMode) -> Self {
+            self.inner = self.inner.backfill_mode(signature);
             self
         }
         /// <p>The method used to backfill game sessions that are created with this matchmaking
@@ -3454,8 +3460,8 @@ pub mod fluent_builders {
         /// start a game session for the match. </p>
         /// </li>
         /// </ul>
-        pub fn flex_match_mode(mut self, inp: crate::model::FlexMatchMode) -> Self {
-            self.inner = self.inner.flex_match_mode(inp);
+        pub fn flex_match_mode(mut self, signature: crate::model::FlexMatchMode) -> Self {
+            self.inner = self.inner.flex_match_mode(signature);
             self
         }
         /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
@@ -3494,8 +3500,8 @@ pub mod fluent_builders {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
@@ -3623,8 +3629,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
         /// value. Note that the rule set name is different from the optional <code>name</code>
         /// field in the rule set body.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
@@ -3636,8 +3642,8 @@ pub mod fluent_builders {
         }
         /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
         /// allowed in JSON, but most elements support a description field.</p>
-        pub fn rule_set_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_body(inp);
+        pub fn rule_set_body(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_body(signature.into());
             self
         }
         /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
@@ -3662,8 +3668,8 @@ pub mod fluent_builders {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
@@ -3766,8 +3772,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to add a player to.</p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(signature.into());
             self
         }
         /// <p>A unique identifier for the game session to add a player to.</p>
@@ -3779,8 +3785,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
-        pub fn player_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_id(inp);
+        pub fn player_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_id(signature.into());
             self
         }
         /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
@@ -3789,8 +3795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
-        pub fn player_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_data(inp);
+        pub fn player_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_data(signature.into());
             self
         }
         /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
@@ -3882,8 +3888,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to add players to.</p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(signature.into());
             self
         }
         /// <p>A unique identifier for the game session to add players to.</p>
@@ -3899,8 +3905,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
         ///
         /// <p>List of unique identifiers for the players to be added.</p>
-        pub fn player_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_ids(inp);
+        pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_ids(input.into());
             self
         }
         /// <p>List of unique identifiers for the players to be added.</p>
@@ -3924,7 +3930,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.player_data_map(k, v);
+            self.inner = self.inner.player_data_map(k.into(), v.into());
             self
         }
         /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
@@ -4045,8 +4051,8 @@ pub mod fluent_builders {
         }
         /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
         /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
@@ -4057,8 +4063,8 @@ pub mod fluent_builders {
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
         /// </p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
@@ -4074,8 +4080,8 @@ pub mod fluent_builders {
         /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
         /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
         /// version. </p>
-        pub fn storage_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.storage_location(inp);
+        pub fn storage_location(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.storage_location(signature);
             self
         }
         /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
@@ -4096,8 +4102,8 @@ pub mod fluent_builders {
         /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
         /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
         /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
-        pub fn zip_file(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.zip_file(inp);
+        pub fn zip_file(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.zip_file(signature);
             self
         }
         /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
@@ -4121,8 +4127,8 @@ pub mod fluent_builders {
         /// <a>ListTagsForResource</a> to add, remove, and view tags. The
         /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
         /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
@@ -4236,8 +4242,11 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
         /// You can find your Account ID in the AWS Management Console under account settings.</p>
-        pub fn game_lift_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_lift_aws_account_id(inp);
+        pub fn game_lift_aws_account_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.game_lift_aws_account_id(signature.into());
             self
         }
         /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
@@ -4253,8 +4262,8 @@ pub mod fluent_builders {
         /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
         /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
         /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn peer_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_id(inp);
+        pub fn peer_vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_id(signature.into());
             self
         }
         /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
@@ -4357,8 +4366,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
         /// VPC to peer with. </p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
@@ -4370,8 +4379,11 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
         /// Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account
         /// settings.</p>
-        pub fn peer_vpc_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_aws_account_id(inp);
+        pub fn peer_vpc_aws_account_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.peer_vpc_aws_account_id(signature.into());
             self
         }
         /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
@@ -4388,8 +4400,8 @@ pub mod fluent_builders {
         /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
         /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
         /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn peer_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_id(inp);
+        pub fn peer_vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_id(signature.into());
             self
         }
         /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
@@ -4476,8 +4488,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
         /// ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(signature.into());
             self
         }
         /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
@@ -4568,8 +4580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(signature.into());
             self
         }
         /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
@@ -4672,8 +4684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
@@ -4771,8 +4783,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to delete locations for.
         /// You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to delete locations for.
@@ -4787,8 +4799,8 @@ pub mod fluent_builders {
         ///
         /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
         /// <code>us-west-2</code>.</p>
-        pub fn locations(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locations(inp);
+        pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locations(input.into());
             self
         }
         /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
@@ -4908,8 +4920,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
@@ -4940,8 +4952,11 @@ pub mod fluent_builders {
         /// the EC2 Auto Scaling group as is.</p>
         /// </li>
         /// </ul>
-        pub fn delete_option(mut self, inp: crate::model::GameServerGroupDeleteOption) -> Self {
-            self.inner = self.inner.delete_option(inp);
+        pub fn delete_option(
+            mut self,
+            signature: crate::model::GameServerGroupDeleteOption,
+        ) -> Self {
+            self.inner = self.inner.delete_option(signature);
             self
         }
         /// <p>The type of delete to perform. Options include the following:</p>
@@ -5050,8 +5065,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
@@ -5136,8 +5151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
@@ -5234,8 +5249,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
         /// field in the rule set body.)  You can use either the rule set name or ARN value.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
@@ -5323,8 +5338,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
@@ -5333,8 +5348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
@@ -5426,8 +5441,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        pub fn script_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(signature.into());
             self
         }
         /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
@@ -5510,8 +5525,11 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
         /// You can find your Account ID in the AWS Management Console under account settings.</p>
-        pub fn game_lift_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_lift_aws_account_id(inp);
+        pub fn game_lift_aws_account_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.game_lift_aws_account_id(signature.into());
             self
         }
         /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
@@ -5527,8 +5545,8 @@ pub mod fluent_builders {
         /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
         /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
         /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn peer_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_id(inp);
+        pub fn peer_vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_id(signature.into());
             self
         }
         /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
@@ -5619,8 +5637,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
         /// connection record. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
@@ -5630,8 +5648,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
-        pub fn vpc_peering_connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_peering_connection_id(inp);
+        pub fn vpc_peering_connection_id(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.vpc_peering_connection_id(signature.into());
             self
         }
         /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
@@ -5730,8 +5751,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the game server group where the game server is running.
         /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group where the game server is running.
@@ -5744,8 +5765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        pub fn game_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(signature.into());
             self
         }
         /// <p>A custom string that uniquely identifies the game server to deregister.</p>
@@ -5833,8 +5854,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
         /// either the alias ID or ARN value. </p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(signature.into());
             self
         }
         /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
@@ -5923,8 +5944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(signature.into());
             self
         }
         /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
@@ -6066,8 +6087,8 @@ pub mod fluent_builders {
         /// determines the computing resources of each instance in the fleet, including CPU, memory,
         /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
         /// limits for all instance types.</p>
-        pub fn ec2_instance_type(mut self, inp: crate::model::Ec2InstanceType) -> Self {
-            self.inner = self.inner.ec2_instance_type(inp);
+        pub fn ec2_instance_type(mut self, signature: crate::model::Ec2InstanceType) -> Self {
+            self.inner = self.inner.ec2_instance_type(signature);
             self
         }
         /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type
@@ -6083,8 +6104,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a remote location to request instance limits for, in the form of an AWS
         /// Region code such as <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The name of a remote location to request instance limits for, in the form of an AWS
@@ -6202,8 +6223,8 @@ pub mod fluent_builders {
         /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
         /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
         /// this parameter. </p>
-        pub fn fleet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_ids(inp);
+        pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_ids(input.into());
             self
         }
         /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
@@ -6218,8 +6239,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
         /// IDs.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
@@ -6230,8 +6251,8 @@ pub mod fluent_builders {
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
         /// IDs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
@@ -6356,8 +6377,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
         /// value. Leave this parameter empty to retrieve capacity information for all
         /// fleets.</p>
-        pub fn fleet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_ids(inp);
+        pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_ids(input.into());
             self
         }
         /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
@@ -6372,8 +6393,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
         /// IDs.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
@@ -6384,8 +6405,8 @@ pub mod fluent_builders {
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
         /// IDs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
@@ -6484,8 +6505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
@@ -6496,8 +6517,8 @@ pub mod fluent_builders {
         /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
         /// returns entries starting from when the fleet was created to the specified end time.
         /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
@@ -6513,8 +6534,8 @@ pub mod fluent_builders {
         /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
         /// call returns entries from the specified start time up to the present. Format is a number
         /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
@@ -6528,8 +6549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -6538,8 +6559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -6649,8 +6670,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
@@ -6665,8 +6686,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
         /// <code>us-west-2</code>.</p>
-        pub fn locations(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locations(inp);
+        pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locations(input.into());
             self
         }
         /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
@@ -6679,8 +6700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced. </p>
@@ -6689,8 +6710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -6792,8 +6813,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to request location capacity for.
         /// You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to request location capacity for.
@@ -6804,8 +6825,8 @@ pub mod fluent_builders {
         }
         /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
         /// <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
@@ -6908,8 +6929,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to request location utilization for.
         /// You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to request location utilization for.
@@ -6920,8 +6941,8 @@ pub mod fluent_builders {
         }
         /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
         /// <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
@@ -7032,8 +7053,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
@@ -7044,8 +7065,8 @@ pub mod fluent_builders {
         }
         /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
         /// format, such as <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
@@ -7170,8 +7191,8 @@ pub mod fluent_builders {
         ///
         /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
         /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
-        pub fn fleet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_ids(inp);
+        pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_ids(input.into());
             self
         }
         /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
@@ -7185,8 +7206,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
         /// IDs.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
@@ -7197,8 +7218,8 @@ pub mod fluent_builders {
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
         /// IDs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
@@ -7293,8 +7314,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the game server group where the game server is running.
         /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group where the game server is running.
@@ -7307,8 +7328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        pub fn game_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(signature.into());
             self
         }
         /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
@@ -7408,8 +7429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
@@ -7519,8 +7540,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
@@ -7538,8 +7559,8 @@ pub mod fluent_builders {
         /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
         /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
         /// instances in the game server group, leave this parameter empty. </p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
@@ -7555,8 +7576,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
         /// </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>
@@ -7569,8 +7590,8 @@ pub mod fluent_builders {
         /// <p>
         /// A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>
@@ -7690,8 +7711,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
         /// ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
@@ -7701,8 +7722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the game session to retrieve. </p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(signature.into());
             self
         }
         /// <p>A unique identifier for the game session to retrieve. </p>
@@ -7715,8 +7736,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
         /// the alias ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(signature.into());
             self
         }
         /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
@@ -7727,8 +7748,8 @@ pub mod fluent_builders {
         }
         /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
         /// remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
@@ -7740,8 +7761,8 @@ pub mod fluent_builders {
         /// <p>Game session status to filter results on. Possible game session statuses include
         /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and
         /// <code>TERMINATING</code> (the last two are transitory). </p>
-        pub fn status_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        pub fn status_filter(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_filter(signature.into());
             self
         }
         /// <p>Game session status to filter results on. Possible game session statuses include
@@ -7755,8 +7776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -7765,8 +7786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -7852,8 +7873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for a game session placement to retrieve.</p>
-        pub fn placement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_id(inp);
+        pub fn placement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_id(signature.into());
             self
         }
         /// <p>A unique identifier for a game session placement to retrieve.</p>
@@ -7948,8 +7969,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
         /// ARN value. To request settings for all queues, leave this parameter empty. </p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
@@ -7962,8 +7983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
@@ -7972,8 +7993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8092,8 +8113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
@@ -8102,8 +8123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the game session to retrieve. </p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(signature.into());
             self
         }
         /// <p>A unique identifier for the game session to retrieve. </p>
@@ -8116,8 +8137,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
         /// alias ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(signature.into());
             self
         }
         /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
@@ -8129,8 +8150,8 @@ pub mod fluent_builders {
         /// <p>A fleet location to get game session details for. You can specify a fleet's home
         /// Region or a remote location. Use the AWS Region code format, such as
         /// <code>us-west-2</code>. </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>A fleet location to get game session details for. You can specify a fleet's home
@@ -8144,8 +8165,8 @@ pub mod fluent_builders {
         /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and
         /// <code>TERMINATING</code>. The last two are transitory and used for only very brief
         /// periods of time. </p>
-        pub fn status_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        pub fn status_filter(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_filter(signature.into());
             self
         }
         /// <p>Game session status to filter results on. You can filter on the following states:
@@ -8160,8 +8181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -8170,8 +8191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8279,8 +8300,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
@@ -8291,8 +8312,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
         /// blank to retrieve all instances in the fleet.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
@@ -8302,8 +8323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -8312,8 +8333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8323,8 +8344,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a location to retrieve instance information for, in the form of an AWS
         /// Region code such as <code>us-west-2</code>. </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The name of a location to retrieve instance information for, in the form of an AWS
@@ -8432,8 +8453,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ticket_ids`](Self::set_ticket_ids).
         ///
         /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
-        pub fn ticket_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_ids(inp);
+        pub fn ticket_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_ids(input.into());
             self
         }
         /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
@@ -8537,8 +8558,8 @@ pub mod fluent_builders {
         ///
         /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
         /// request all existing configurations, leave this parameter empty.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
@@ -8552,8 +8573,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
         /// retrieve all matchmaking configurations that use this rule set.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
@@ -8566,8 +8587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is limited to 10.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is limited to 10.</p>
@@ -8576,8 +8597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8680,8 +8701,8 @@ pub mod fluent_builders {
         /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
         /// rule set name is different from the optional "name" field in the rule set body.) You can
         /// use either the rule set name or ARN value. </p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
@@ -8695,8 +8716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -8705,8 +8726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8809,8 +8830,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(signature.into());
             self
         }
         /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
@@ -8822,8 +8843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a player to retrieve player sessions for.</p>
-        pub fn player_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_id(inp);
+        pub fn player_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_id(signature.into());
             self
         }
         /// <p>A unique identifier for a player to retrieve player sessions for.</p>
@@ -8832,8 +8853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a player session to retrieve.</p>
-        pub fn player_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_session_id(inp);
+        pub fn player_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_session_id(signature.into());
             self
         }
         /// <p>A unique identifier for a player session to retrieve.</p>
@@ -8870,8 +8891,11 @@ pub mod fluent_builders {
         /// timeout limit (60 seconds).</p>
         /// </li>
         /// </ul>
-        pub fn player_session_status_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_session_status_filter(inp);
+        pub fn player_session_status_filter(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.player_session_status_filter(signature.into());
             self
         }
         /// <p>Player session status to filter results on.</p>
@@ -8908,8 +8932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
@@ -8918,8 +8942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
@@ -9021,8 +9045,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
@@ -9115,8 +9139,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
@@ -9164,8 +9188,8 @@ pub mod fluent_builders {
         /// policy. It should be removed and recreated.</p>
         /// </li>
         /// </ul>
-        pub fn status_filter(mut self, inp: crate::model::ScalingStatusType) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        pub fn status_filter(mut self, signature: crate::model::ScalingStatusType) -> Self {
+            self.inner = self.inner.status_filter(signature);
             self
         }
         /// <p>Scaling policy status to filter results on. A scaling policy is only in force when
@@ -9215,8 +9239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -9225,8 +9249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -9237,8 +9261,8 @@ pub mod fluent_builders {
         /// <p>
         /// CONTENT TODO
         /// </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>
@@ -9329,8 +9353,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
         /// value.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        pub fn script_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(signature.into());
             self
         }
         /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
@@ -9492,8 +9516,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
@@ -9584,8 +9608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to get logs for. </p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(signature.into());
             self
         }
         /// <p>A unique identifier for the game session to get logs for. </p>
@@ -9695,8 +9719,8 @@ pub mod fluent_builders {
         /// <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an
         /// <code>ERROR</code> status may be accessible for a short time before they are
         /// deleted.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
@@ -9710,8 +9734,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
         /// status.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
@@ -9813,8 +9837,11 @@ pub mod fluent_builders {
         /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
         /// </li>
         /// </ul>
-        pub fn routing_strategy_type(mut self, inp: crate::model::RoutingStrategyType) -> Self {
-            self.inner = self.inner.routing_strategy_type(inp);
+        pub fn routing_strategy_type(
+            mut self,
+            signature: crate::model::RoutingStrategyType,
+        ) -> Self {
+            self.inner = self.inner.routing_strategy_type(signature);
             self
         }
         /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases
@@ -9841,8 +9868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -9851,8 +9878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -9861,8 +9888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -9976,8 +10003,8 @@ pub mod fluent_builders {
         /// cannot create new fleets for this build. </p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::BuildStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, signature: crate::model::BuildStatus) -> Self {
+            self.inner = self.inner.status(signature);
             self
         }
         /// <p>Build status to filter results by. To retrieve all builds, leave this parameter
@@ -10007,8 +10034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10017,8 +10044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10134,8 +10161,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
         /// specified build. Use either the build ID or ARN value.</p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(signature.into());
             self
         }
         /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
@@ -10146,8 +10173,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
         /// specified script. Use either the script ID or ARN value.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        pub fn script_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(signature.into());
             self
         }
         /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
@@ -10157,8 +10184,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10167,8 +10194,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10262,8 +10289,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10272,8 +10299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10366,8 +10393,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier for the game server group to retrieve a list of game servers from.
         /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>An identifier for the game server group to retrieve a list of game servers from.
@@ -10383,8 +10410,8 @@ pub mod fluent_builders {
         /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use
         /// <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is
         /// left empty, game servers are returned in no particular order.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(signature);
             self
         }
         /// <p>Indicates how to sort the returned data based on game server registration timestamp.
@@ -10399,8 +10426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10409,8 +10436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10496,8 +10523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10506,8 +10533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10629,8 +10656,8 @@ pub mod fluent_builders {
         /// that is assigned to and uniquely identifies the GameLift resource that you want to retrieve
         /// tags for. GameLift resource ARNs are included in the data object for the resource, which
         /// can be retrieved by calling a List or Describe operation for the resource type. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -10780,8 +10807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
@@ -10791,8 +10818,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
         /// cannot be in any of the following statuses: ERROR or DELETING.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
@@ -10802,8 +10829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-        pub fn scaling_adjustment(mut self, inp: i32) -> Self {
-            self.inner = self.inner.scaling_adjustment(inp);
+        pub fn scaling_adjustment(mut self, signature: i32) -> Self {
+            self.inner = self.inner.scaling_adjustment(signature);
             self
         }
         /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
@@ -10832,8 +10859,11 @@ pub mod fluent_builders {
         /// of "-10" scales the fleet down by 10%.</p>
         /// </li>
         /// </ul>
-        pub fn scaling_adjustment_type(mut self, inp: crate::model::ScalingAdjustmentType) -> Self {
-            self.inner = self.inner.scaling_adjustment_type(inp);
+        pub fn scaling_adjustment_type(
+            mut self,
+            signature: crate::model::ScalingAdjustmentType,
+        ) -> Self {
+            self.inner = self.inner.scaling_adjustment_type(signature);
             self
         }
         /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
@@ -10865,8 +10895,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metric value used to trigger a scaling event.</p>
-        pub fn threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.threshold(inp);
+        pub fn threshold(mut self, signature: f64) -> Self {
+            self.inner = self.inner.threshold(signature);
             self
         }
         /// <p>Metric value used to trigger a scaling event.</p>
@@ -10876,8 +10906,11 @@ pub mod fluent_builders {
         }
         /// <p>Comparison operator to use when measuring the metric against the threshold
         /// value.</p>
-        pub fn comparison_operator(mut self, inp: crate::model::ComparisonOperatorType) -> Self {
-            self.inner = self.inner.comparison_operator(inp);
+        pub fn comparison_operator(
+            mut self,
+            signature: crate::model::ComparisonOperatorType,
+        ) -> Self {
+            self.inner = self.inner.comparison_operator(signature);
             self
         }
         /// <p>Comparison operator to use when measuring the metric against the threshold
@@ -10891,8 +10924,8 @@ pub mod fluent_builders {
         }
         /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
         /// scaling event is triggered.</p>
-        pub fn evaluation_periods(mut self, inp: i32) -> Self {
-            self.inner = self.inner.evaluation_periods(inp);
+        pub fn evaluation_periods(mut self, signature: i32) -> Self {
+            self.inner = self.inner.evaluation_periods(signature);
             self
         }
         /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
@@ -10968,8 +11001,8 @@ pub mod fluent_builders {
         /// top-priority destination. </p>
         /// </li>
         /// </ul>
-        pub fn metric_name(mut self, inp: crate::model::MetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, signature: crate::model::MetricName) -> Self {
+            self.inner = self.inner.metric_name(signature);
             self
         }
         /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
@@ -11053,8 +11086,8 @@ pub mod fluent_builders {
         /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
         /// <i>ScalingAdjustmentType</i>, and
         /// <i>ScalingAdjustment</i>.</p>
-        pub fn policy_type(mut self, inp: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.policy_type(inp);
+        pub fn policy_type(mut self, signature: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.policy_type(signature);
             self
         }
         /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
@@ -11072,8 +11105,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains settings for a target-based scaling policy.</p>
-        pub fn target_configuration(mut self, inp: crate::model::TargetConfiguration) -> Self {
-            self.inner = self.inner.target_configuration(inp);
+        pub fn target_configuration(
+            mut self,
+            signature: crate::model::TargetConfiguration,
+        ) -> Self {
+            self.inner = self.inner.target_configuration(signature);
             self
         }
         /// <p>An object that contains settings for a target-based scaling policy.</p>
@@ -11180,8 +11216,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the game server group where the game server is running.
         /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group where the game server is running.
@@ -11195,8 +11231,8 @@ pub mod fluent_builders {
         }
         /// <p>A custom string that uniquely identifies the game server to register.  
         /// Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        pub fn game_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(signature.into());
             self
         }
         /// <p>A custom string that uniquely identifies the game server to register.  
@@ -11211,8 +11247,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the instance where the game server is running. This ID is
         /// available in the instance metadata. EC2 instance IDs
         /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(signature.into());
             self
         }
         /// <p>The unique identifier for the instance where the game server is running. This ID is
@@ -11224,8 +11260,8 @@ pub mod fluent_builders {
         }
         /// <p>Information that is needed to make inbound client connections to the game server. This
         /// might include the IP address and port, DNS name, and other information.</p>
-        pub fn connection_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_info(inp);
+        pub fn connection_info(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_info(signature.into());
             self
         }
         /// <p>Information that is needed to make inbound client connections to the game server. This
@@ -11240,8 +11276,8 @@ pub mod fluent_builders {
         /// <p>A set of custom game server properties, formatted as a single string value. This data
         /// is passed to a game client or service when it requests information on game servers using
         /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
-        pub fn game_server_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_data(inp);
+        pub fn game_server_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_data(signature.into());
             self
         }
         /// <p>A set of custom game server properties, formatted as a single string value. This data
@@ -11338,8 +11374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(signature.into());
             self
         }
         /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
@@ -11421,8 +11457,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
         /// use either the alias ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(signature.into());
             self
         }
         /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
@@ -11523,8 +11559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
@@ -11540,11 +11576,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resume_actions`](Self::set_resume_actions).
         ///
         /// <p>The activity to resume for this game server group.</p>
-        pub fn resume_actions(
-            mut self,
-            inp: impl Into<crate::model::GameServerGroupAction>,
-        ) -> Self {
-            self.inner = self.inner.resume_actions(inp);
+        pub fn resume_actions(mut self, input: crate::model::GameServerGroupAction) -> Self {
+            self.inner = self.inner.resume_actions(input);
             self
         }
         /// <p>The activity to resume for this game server group.</p>
@@ -11713,8 +11746,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
         /// value. Each request must reference either a fleet ID or alias ID, but not both.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
@@ -11726,8 +11759,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
         /// the alias ID or ARN value. Each request must reference either a fleet ID or alias ID,
         /// but not both.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(signature.into());
             self
         }
         /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
@@ -11740,8 +11773,8 @@ pub mod fluent_builders {
         /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
         /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         /// <p> </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
@@ -11812,8 +11845,8 @@ pub mod fluent_builders {
         /// <p>For example, this filter expression retrieves game sessions hosting at least ten
         /// players that have an open player slot: <code>"maximumSessions>=10 AND
         /// hasAvailablePlayerSessions=true"</code>. </p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(signature.into());
             self
         }
         /// <p>String containing the search criteria for the session search. If no filter
@@ -11905,8 +11938,8 @@ pub mod fluent_builders {
         /// <p>For example, this sort expression returns the oldest active sessions first:
         /// <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value
         /// for the sort operand are returned at the end of the list.</p>
-        pub fn sort_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_expression(inp);
+        pub fn sort_expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_expression(signature.into());
             self
         }
         /// <p>Instructions on how to sort the search results. If no sort expression is included,
@@ -11939,8 +11972,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
         /// or is set higher than 20. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
@@ -11950,8 +11983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -12057,8 +12090,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
@@ -12071,8 +12104,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>List of actions to restart on the fleet.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::FleetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::FleetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>List of actions to restart on the fleet.</p>
@@ -12085,8 +12118,8 @@ pub mod fluent_builders {
         }
         /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
         /// an AWS Region code, such as <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
@@ -12212,8 +12245,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier to assign to the new game session placement. This value is
         /// developer-defined. The value must be unique across all Regions and cannot be reused
         /// unless you are resubmitting a canceled or timed-out placement request.</p>
-        pub fn placement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_id(inp);
+        pub fn placement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_id(signature.into());
             self
         }
         /// <p>A unique identifier to assign to the new game session placement. This value is
@@ -12225,8 +12258,11 @@ pub mod fluent_builders {
         }
         /// <p>Name of the queue to use to place the new game session. You can use either the queue name
         /// or ARN value. </p>
-        pub fn game_session_queue_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_queue_name(inp);
+        pub fn game_session_queue_name(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.game_session_queue_name(signature.into());
             self
         }
         /// <p>Name of the queue to use to place the new game session. You can use either the queue name
@@ -12244,8 +12280,8 @@ pub mod fluent_builders {
         ///
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-        pub fn game_properties(mut self, inp: impl Into<crate::model::GameProperty>) -> Self {
-            self.inner = self.inner.game_properties(inp);
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
+            self.inner = self.inner.game_properties(input);
             self
         }
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
@@ -12258,8 +12294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-        pub fn maximum_player_session_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_player_session_count(inp);
+        pub fn maximum_player_session_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_player_session_count(signature);
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -12268,8 +12304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-        pub fn game_session_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_name(inp);
+        pub fn game_session_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
@@ -12286,8 +12322,8 @@ pub mod fluent_builders {
         ///
         /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
         /// it can offer the best possible gameplay experience for the players. </p>
-        pub fn player_latencies(mut self, inp: impl Into<crate::model::PlayerLatency>) -> Self {
-            self.inner = self.inner.player_latencies(inp);
+        pub fn player_latencies(mut self, input: crate::model::PlayerLatency) -> Self {
+            self.inner = self.inner.player_latencies(input);
             self
         }
         /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
@@ -12306,9 +12342,9 @@ pub mod fluent_builders {
         /// <p>Set of information on each player to create a player session for.</p>
         pub fn desired_player_sessions(
             mut self,
-            inp: impl Into<crate::model::DesiredPlayerSession>,
+            input: crate::model::DesiredPlayerSession,
         ) -> Self {
-            self.inner = self.inner.desired_player_sessions(inp);
+            self.inner = self.inner.desired_player_sessions(input);
             self
         }
         /// <p>Set of information on each player to create a player session for.</p>
@@ -12321,8 +12357,8 @@ pub mod fluent_builders {
         }
         /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-        pub fn game_session_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_data(inp);
+        pub fn game_session_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_data(signature.into());
             self
         }
         /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
@@ -12443,8 +12479,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
         /// a UUID. Use this identifier to track the match backfill ticket status and retrieve match
         /// results.</p>
-        pub fn ticket_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_id(inp);
+        pub fn ticket_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_id(signature.into());
             self
         }
         /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
@@ -12458,8 +12494,8 @@ pub mod fluent_builders {
         /// name or ARN value. The ARN of the matchmaker that was used with the original game
         /// session is listed in the <a>GameSession</a> object,
         /// <code>MatchmakerData</code> property.</p>
-        pub fn configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_name(inp);
+        pub fn configuration_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(signature.into());
             self
         }
         /// <p>Name of the matchmaker to use for this request. You can use either the configuration
@@ -12475,8 +12511,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
         /// solution, this parameter is not needed. </p>
-        pub fn game_session_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_arn(inp);
+        pub fn game_session_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_arn(signature.into());
             self
         }
         /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
@@ -12509,8 +12545,8 @@ pub mod fluent_builders {
         /// not include latency values for any other Region.</p>
         /// </li>
         /// </ul>
-        pub fn players(mut self, inp: impl Into<crate::model::Player>) -> Self {
-            self.inner = self.inner.players(inp);
+        pub fn players(mut self, input: crate::model::Player) -> Self {
+            self.inner = self.inner.players(input);
             self
         }
         /// <p>Match information on all players that are currently assigned to the game session.
@@ -12640,8 +12676,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
         /// a UUID. Use this identifier to track the matchmaking ticket status and retrieve match
         /// results.</p>
-        pub fn ticket_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_id(inp);
+        pub fn ticket_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_id(signature.into());
             self
         }
         /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
@@ -12654,8 +12690,8 @@ pub mod fluent_builders {
         /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
         /// configurations must exist in the same Region as this request. You can use either the
         /// configuration name or ARN value.</p>
-        pub fn configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_name(inp);
+        pub fn configuration_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(signature.into());
             self
         }
         /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
@@ -12676,8 +12712,8 @@ pub mod fluent_builders {
         /// ID, and may contain player attributes and latency data to be used in the matchmaking
         /// process. After a successful match, <code>Player</code> objects contain the name of the
         /// team the player is assigned to.</p>
-        pub fn players(mut self, inp: impl Into<crate::model::Player>) -> Self {
-            self.inner = self.inner.players(inp);
+        pub fn players(mut self, input: crate::model::Player) -> Self {
+            self.inner = self.inner.players(input);
             self
         }
         /// <p>Information on each player to be matched. This information must include a player
@@ -12794,8 +12830,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
@@ -12808,8 +12844,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>List of actions to suspend on the fleet. </p>
-        pub fn actions(mut self, inp: impl Into<crate::model::FleetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::FleetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>List of actions to suspend on the fleet. </p>
@@ -12822,8 +12858,8 @@ pub mod fluent_builders {
         }
         /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
         /// <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
@@ -12910,8 +12946,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for a game session placement to cancel.</p>
-        pub fn placement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_id(inp);
+        pub fn placement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_id(signature.into());
             self
         }
         /// <p>A unique identifier for a game session placement to cancel.</p>
@@ -13009,8 +13045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for a matchmaking ticket.</p>
-        pub fn ticket_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_id(inp);
+        pub fn ticket_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_id(signature.into());
             self
         }
         /// <p>A unique identifier for a matchmaking ticket.</p>
@@ -13120,8 +13156,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
@@ -13137,11 +13173,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_suspend_actions`](Self::set_suspend_actions).
         ///
         /// <p>The activity to suspend for this game server group.</p>
-        pub fn suspend_actions(
-            mut self,
-            inp: impl Into<crate::model::GameServerGroupAction>,
-        ) -> Self {
-            self.inner = self.inner.suspend_actions(inp);
+        pub fn suspend_actions(mut self, input: crate::model::GameServerGroupAction) -> Self {
+            self.inner = self.inner.suspend_actions(input);
             self
         }
         /// <p>The activity to suspend for this game server group.</p>
@@ -13268,8 +13301,8 @@ pub mod fluent_builders {
         /// that is assigned to and uniquely identifies the GameLift resource that you want to assign
         /// tags to. GameLift resource ARNs are included in the data object for the resource, which
         /// can be retrieved by calling a List or Describe operation for the resource type. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>
@@ -13290,8 +13323,8 @@ pub mod fluent_builders {
         /// Tags are developer-defined and structured as key-value pairs.
         /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
         /// for actual tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of one or more tags to assign to the specified GameLift resource.
@@ -13419,8 +13452,8 @@ pub mod fluent_builders {
         /// uniquely identifies the GameLift resource that you want to remove tags from. GameLift
         /// resource ARNs are included in the data object for the resource, which can be retrieved
         /// by calling a List or Describe operation for the resource type. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
@@ -13438,8 +13471,8 @@ pub mod fluent_builders {
         /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
         /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
         /// identifies which tag to remove. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
@@ -13529,8 +13562,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the alias that you want to update. You can use either the
         /// alias ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(signature.into());
             self
         }
         /// <p>A unique identifier for the alias that you want to update. You can use either the
@@ -13540,8 +13573,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -13550,8 +13583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A human-readable description of the alias.</p>
@@ -13561,8 +13594,8 @@ pub mod fluent_builders {
         }
         /// <p>The routing configuration, including routing type and fleet target, for the
         /// alias.</p>
-        pub fn routing_strategy(mut self, inp: crate::model::RoutingStrategy) -> Self {
-            self.inner = self.inner.routing_strategy(inp);
+        pub fn routing_strategy(mut self, signature: crate::model::RoutingStrategy) -> Self {
+            self.inner = self.inner.routing_strategy(signature);
             self
         }
         /// <p>The routing configuration, including routing type and fleet target, for the
@@ -13655,8 +13688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(signature.into());
             self
         }
         /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
@@ -13665,8 +13698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. </p>
@@ -13675,8 +13708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
@@ -13773,8 +13806,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
@@ -13784,8 +13817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
@@ -13794,8 +13827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of a fleet.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A human-readable description of a fleet.</p>
@@ -13821,9 +13854,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn new_game_session_protection_policy(
             mut self,
-            inp: crate::model::ProtectionPolicy,
+            signature: crate::model::ProtectionPolicy,
         ) -> Self {
-            self.inner = self.inner.new_game_session_protection_policy(inp);
+            self.inner = self.inner.new_game_session_protection_policy(signature);
             self
         }
         /// <p>The game session protection policy to apply to all new instances created in this
@@ -13853,9 +13886,9 @@ pub mod fluent_builders {
         /// over a span of time. </p>
         pub fn resource_creation_limit_policy(
             mut self,
-            inp: crate::model::ResourceCreationLimitPolicy,
+            signature: crate::model::ResourceCreationLimitPolicy,
         ) -> Self {
-            self.inner = self.inner.resource_creation_limit_policy(inp);
+            self.inner = self.inner.resource_creation_limit_policy(signature);
             self
         }
         /// <p>Policy settings that limit the number of game sessions an individual player can create
@@ -13875,8 +13908,8 @@ pub mod fluent_builders {
         /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
         /// group name, or create a new metric group by providing a new name. A fleet can only be in
         /// one metric group at a time.</p>
-        pub fn metric_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_groups(inp);
+        pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_groups(input.into());
             self
         }
         /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
@@ -14012,8 +14045,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
@@ -14024,8 +14057,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
         /// This value must fall between the minimum and maximum size limits.</p>
-        pub fn desired_instances(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_instances(inp);
+        pub fn desired_instances(mut self, signature: i32) -> Self {
+            self.inner = self.inner.desired_instances(signature);
             self
         }
         /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
@@ -14036,8 +14069,8 @@ pub mod fluent_builders {
         }
         /// <p>The minimum number of instances that are allowed in the specified fleet location. If
         /// this parameter is not set, the default is 0.</p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        pub fn min_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.min_size(signature);
             self
         }
         /// <p>The minimum number of instances that are allowed in the specified fleet location. If
@@ -14048,8 +14081,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of instances that are allowed in the specified fleet location. If
         /// this parameter is not set, the default is 1.</p>
-        pub fn max_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_size(inp);
+        pub fn max_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_size(signature);
             self
         }
         /// <p>The maximum number of instances that are allowed in the specified fleet location. If
@@ -14060,8 +14093,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
         /// AWS Region code such as <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(signature.into());
             self
         }
         /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
@@ -14165,8 +14198,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
@@ -14182,9 +14215,9 @@ pub mod fluent_builders {
         /// <p>A collection of port settings to be added to the fleet resource.</p>
         pub fn inbound_permission_authorizations(
             mut self,
-            inp: impl Into<crate::model::IpPermission>,
+            input: crate::model::IpPermission,
         ) -> Self {
-            self.inner = self.inner.inbound_permission_authorizations(inp);
+            self.inner = self.inner.inbound_permission_authorizations(input);
             self
         }
         /// <p>A collection of port settings to be added to the fleet resource.</p>
@@ -14200,11 +14233,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_inbound_permission_revocations`](Self::set_inbound_permission_revocations).
         ///
         /// <p>A collection of port settings to be removed from the fleet resource.</p>
-        pub fn inbound_permission_revocations(
-            mut self,
-            inp: impl Into<crate::model::IpPermission>,
-        ) -> Self {
-            self.inner = self.inner.inbound_permission_revocations(inp);
+        pub fn inbound_permission_revocations(mut self, input: crate::model::IpPermission) -> Self {
+            self.inner = self.inner.inbound_permission_revocations(input);
             self
         }
         /// <p>A collection of port settings to be removed from the fleet resource.</p>
@@ -14322,8 +14352,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the game server group where the game server is running.
         /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group where the game server is running.
@@ -14336,8 +14366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom string that uniquely identifies the game server to update.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        pub fn game_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(signature.into());
             self
         }
         /// <p>A custom string that uniquely identifies the game server to update.</p>
@@ -14351,8 +14381,8 @@ pub mod fluent_builders {
         /// <p>A set of custom game server properties, formatted as a single string value. This data
         /// is passed to a game client or service when it requests information on game servers using
         /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
-        pub fn game_server_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_data(inp);
+        pub fn game_server_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_data(signature.into());
             self
         }
         /// <p>A set of custom game server properties, formatted as a single string value. This data
@@ -14369,9 +14399,9 @@ pub mod fluent_builders {
         /// gameplay.</p>
         pub fn utilization_status(
             mut self,
-            inp: crate::model::GameServerUtilizationStatus,
+            signature: crate::model::GameServerUtilizationStatus,
         ) -> Self {
-            self.inner = self.inner.utilization_status(inp);
+            self.inner = self.inner.utilization_status(signature);
             self
         }
         /// <p>Indicates whether the game server is available or is currently hosting
@@ -14385,8 +14415,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates health status of the game server. A request that includes this parameter
         /// updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
-        pub fn health_check(mut self, inp: crate::model::GameServerHealthCheck) -> Self {
-            self.inner = self.inner.health_check(inp);
+        pub fn health_check(mut self, signature: crate::model::GameServerHealthCheck) -> Self {
+            self.inner = self.inner.health_check(signature);
             self
         }
         /// <p>Indicates health status of the game server. A request that includes this parameter
@@ -14488,8 +14518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        pub fn game_server_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(signature.into());
             self
         }
         /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
@@ -14502,8 +14532,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
         /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
@@ -14525,11 +14555,8 @@ pub mod fluent_builders {
         /// an instance type, it is set to the default value "1". For more information about
         /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
         /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-        pub fn instance_definitions(
-            mut self,
-            inp: impl Into<crate::model::InstanceDefinition>,
-        ) -> Self {
-            self.inner = self.inner.instance_definitions(inp);
+        pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
+            self.inner = self.inner.instance_definitions(input);
             self
         }
         /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
@@ -14556,9 +14583,9 @@ pub mod fluent_builders {
         /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn game_server_protection_policy(
             mut self,
-            inp: crate::model::GameServerProtectionPolicy,
+            signature: crate::model::GameServerProtectionPolicy,
         ) -> Self {
-            self.inner = self.inner.game_server_protection_policy(inp);
+            self.inner = self.inner.game_server_protection_policy(signature);
             self
         }
         /// <p>A flag that indicates whether instances in the game server group are protected
@@ -14600,8 +14627,8 @@ pub mod fluent_builders {
         /// balancing strategy is in force.</p>
         /// </li>
         /// </ul>
-        pub fn balancing_strategy(mut self, inp: crate::model::BalancingStrategy) -> Self {
-            self.inner = self.inner.balancing_strategy(inp);
+        pub fn balancing_strategy(mut self, signature: crate::model::BalancingStrategy) -> Self {
+            self.inner = self.inner.balancing_strategy(signature);
             self
         }
         /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
@@ -14716,8 +14743,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to update. </p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(signature.into());
             self
         }
         /// <p>A unique identifier for the game session to update. </p>
@@ -14729,8 +14756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-        pub fn maximum_player_session_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_player_session_count(inp);
+        pub fn maximum_player_session_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_player_session_count(signature);
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -14739,8 +14766,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
@@ -14751,9 +14778,9 @@ pub mod fluent_builders {
         /// <p>A policy that determines whether the game session is accepting new players.</p>
         pub fn player_session_creation_policy(
             mut self,
-            inp: crate::model::PlayerSessionCreationPolicy,
+            signature: crate::model::PlayerSessionCreationPolicy,
         ) -> Self {
-            self.inner = self.inner.player_session_creation_policy(inp);
+            self.inner = self.inner.player_session_creation_policy(signature);
             self
         }
         /// <p>A policy that determines whether the game session is accepting new players.</p>
@@ -14778,8 +14805,8 @@ pub mod fluent_builders {
         /// event.</p>
         /// </li>
         /// </ul>
-        pub fn protection_policy(mut self, inp: crate::model::ProtectionPolicy) -> Self {
-            self.inner = self.inner.protection_policy(inp);
+        pub fn protection_policy(mut self, signature: crate::model::ProtectionPolicy) -> Self {
+            self.inner = self.inner.protection_policy(signature);
             self
         }
         /// <p>Game session protection policy to apply to this game session only.</p>
@@ -14884,8 +14911,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
@@ -14894,8 +14921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
-        pub fn timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_seconds(inp);
+        pub fn timeout_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.timeout_in_seconds(signature);
             self
         }
         /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
@@ -14913,11 +14940,8 @@ pub mod fluent_builders {
         /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
         /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
         /// policies.</p>
-        pub fn player_latency_policies(
-            mut self,
-            inp: impl Into<crate::model::PlayerLatencyPolicy>,
-        ) -> Self {
-            self.inner = self.inner.player_latency_policies(inp);
+        pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
+            self.inner = self.inner.player_latency_policies(input);
             self
         }
         /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
@@ -14939,11 +14963,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
         /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-        pub fn destinations(
-            mut self,
-            inp: impl Into<crate::model::GameSessionQueueDestination>,
-        ) -> Self {
-            self.inner = self.inner.destinations(inp);
+        pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
         /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
@@ -14958,8 +14979,11 @@ pub mod fluent_builders {
         /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
         /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
         /// not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
-        pub fn filter_configuration(mut self, inp: crate::model::FilterConfiguration) -> Self {
-            self.inner = self.inner.filter_configuration(inp);
+        pub fn filter_configuration(
+            mut self,
+            signature: crate::model::FilterConfiguration,
+        ) -> Self {
+            self.inner = self.inner.filter_configuration(signature);
             self
         }
         /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
@@ -14975,8 +14999,11 @@ pub mod fluent_builders {
         /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
         /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
         /// named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
-        pub fn priority_configuration(mut self, inp: crate::model::PriorityConfiguration) -> Self {
-            self.inner = self.inner.priority_configuration(inp);
+        pub fn priority_configuration(
+            mut self,
+            signature: crate::model::PriorityConfiguration,
+        ) -> Self {
+            self.inner = self.inner.priority_configuration(signature);
             self
         }
         /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
@@ -14992,8 +15019,8 @@ pub mod fluent_builders {
         /// <p>
         /// Information to be added to all events that are related to this game session queue.
         /// </p>
-        pub fn custom_event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_event_data(inp);
+        pub fn custom_event_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_event_data(signature.into());
             self
         }
         /// <p>
@@ -15008,8 +15035,8 @@ pub mod fluent_builders {
         }
         /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
         /// Setting up notifications for game session placement</a>.</p>
-        pub fn notification_target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target(inp);
+        pub fn notification_target(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_target(signature.into());
             self
         }
         /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
@@ -15105,8 +15132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the matchmaking configuration to update. You can use either the configuration name or ARN value. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A unique identifier for the matchmaking configuration to update. You can use either the configuration name or ARN value. </p>
@@ -15115,8 +15142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with matchmaking configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with matchmaking configuration.</p>
@@ -15132,8 +15159,8 @@ pub mod fluent_builders {
         /// GameLift-hosted game sessions for matches that are created with this matchmaking
         /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
         /// set this parameter.</p>
-        pub fn game_session_queue_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_queue_arns(inp);
+        pub fn game_session_queue_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_queue_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
@@ -15150,8 +15177,8 @@ pub mod fluent_builders {
         /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
         /// before timing out. Requests that fail due to timing out can be resubmitted as
         /// needed.</p>
-        pub fn request_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.request_timeout_seconds(inp);
+        pub fn request_timeout_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.request_timeout_seconds(signature);
             self
         }
         /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
@@ -15163,8 +15190,8 @@ pub mod fluent_builders {
         }
         /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
         /// acceptance is required.</p>
-        pub fn acceptance_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.acceptance_timeout_seconds(inp);
+        pub fn acceptance_timeout_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.acceptance_timeout_seconds(signature);
             self
         }
         /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
@@ -15177,8 +15204,8 @@ pub mod fluent_builders {
         /// accepted by the matched players. To require acceptance, set to TRUE. With this option
         /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
         /// when a completed potential match is waiting for player acceptance. </p>
-        pub fn acceptance_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.acceptance_required(inp);
+        pub fn acceptance_required(mut self, signature: bool) -> Self {
+            self.inner = self.inner.acceptance_required(signature);
             self
         }
         /// <p>A flag that indicates whether a match that was created with this configuration must be
@@ -15192,8 +15219,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
         /// value. A matchmaking configuration can only use rule sets that are defined in the same
         /// Region.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        pub fn rule_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(signature.into());
             self
         }
         /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
@@ -15208,8 +15235,8 @@ pub mod fluent_builders {
         }
         /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
         /// Setting up notifications for matchmaking</a> for more information.</p>
-        pub fn notification_target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target(inp);
+        pub fn notification_target(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_target(signature.into());
             self
         }
         /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
@@ -15224,8 +15251,8 @@ pub mod fluent_builders {
         /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
         /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
         /// <code>STANDALONE</code>.</p>
-        pub fn additional_player_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.additional_player_count(inp);
+        pub fn additional_player_count(mut self, signature: i32) -> Self {
+            self.inner = self.inner.additional_player_count(signature);
             self
         }
         /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
@@ -15236,8 +15263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information to add to all events related to the matchmaking configuration. </p>
-        pub fn custom_event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_event_data(inp);
+        pub fn custom_event_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_event_data(signature.into());
             self
         }
         /// <p>Information to add to all events related to the matchmaking configuration. </p>
@@ -15256,8 +15283,8 @@ pub mod fluent_builders {
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
         /// object that is created for a successful match.  This parameter is not used if
         /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_properties(mut self, inp: impl Into<crate::model::GameProperty>) -> Self {
-            self.inner = self.inner.game_properties(inp);
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
+            self.inner = self.inner.game_properties(input);
             self
         }
         /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
@@ -15275,8 +15302,8 @@ pub mod fluent_builders {
         /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
         /// that is created for a successful match.  This parameter is not used if
         /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_session_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_data(inp);
+        pub fn game_session_data(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_data(signature.into());
             self
         }
         /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
@@ -15296,8 +15323,8 @@ pub mod fluent_builders {
         /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
         /// with FlexMatch</a>. Automatic backfill is not available when
         /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn backfill_mode(mut self, inp: crate::model::BackfillMode) -> Self {
-            self.inner = self.inner.backfill_mode(inp);
+        pub fn backfill_mode(mut self, signature: crate::model::BackfillMode) -> Self {
+            self.inner = self.inner.backfill_mode(signature);
             self
         }
         /// <p>The method that is used to backfill game sessions created with this matchmaking
@@ -15329,8 +15356,8 @@ pub mod fluent_builders {
         /// start a game session for the match. </p>
         /// </li>
         /// </ul>
-        pub fn flex_match_mode(mut self, inp: crate::model::FlexMatchMode) -> Self {
-            self.inner = self.inner.flex_match_mode(inp);
+        pub fn flex_match_mode(mut self, signature: crate::model::FlexMatchMode) -> Self {
+            self.inner = self.inner.flex_match_mode(signature);
             self
         }
         /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
@@ -15452,8 +15479,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
         /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(signature.into());
             self
         }
         /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
@@ -15466,8 +15493,11 @@ pub mod fluent_builders {
         /// processes run either a custom game build executable or a Realtime Servers script. The runtime
         /// configuration lists the types of server processes to run on an instance, how to launch
         /// them, and the number of processes to run concurrently.</p>
-        pub fn runtime_configuration(mut self, inp: crate::model::RuntimeConfiguration) -> Self {
-            self.inner = self.inner.runtime_configuration(inp);
+        pub fn runtime_configuration(
+            mut self,
+            signature: crate::model::RuntimeConfiguration,
+        ) -> Self {
+            self.inner = self.inner.runtime_configuration(signature);
             self
         }
         /// <p>Instructions for launching server processes on each instance in the fleet. Server
@@ -15568,8 +15598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        pub fn script_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(signature.into());
             self
         }
         /// <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
@@ -15578,8 +15608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
@@ -15588,8 +15618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(signature.into());
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
@@ -15604,8 +15634,8 @@ pub mod fluent_builders {
         /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
         /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
         /// version. </p>
-        pub fn storage_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.storage_location(inp);
+        pub fn storage_location(mut self, signature: crate::model::S3Location) -> Self {
+            self.inner = self.inner.storage_location(signature);
             self
         }
         /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
@@ -15628,8 +15658,8 @@ pub mod fluent_builders {
         /// name. It must be prepended with the string "fileb://" to indicate that the file data is
         /// a binary object. For example: <code>--zip-file
         /// fileb://myRealtimeScript.zip</code>.</p>
-        pub fn zip_file(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.zip_file(inp);
+        pub fn zip_file(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.zip_file(signature);
             self
         }
         /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
@@ -15730,8 +15760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
-        pub fn rule_set_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_body(inp);
+        pub fn rule_set_body(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_body(signature.into());
             self
         }
         /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>

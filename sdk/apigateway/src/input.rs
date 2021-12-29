@@ -73,9 +73,9 @@ pub mod create_api_key_input {
         /// To override the contents of this collection use [`set_stage_keys`](Self::set_stage_keys).
         ///
         /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
-        pub fn stage_keys(mut self, input: impl Into<crate::model::StageKey>) -> Self {
+        pub fn stage_keys(mut self, input: crate::model::StageKey) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stage_keys = Some(v);
             self
         }
@@ -3196,9 +3196,9 @@ pub mod create_usage_plan_input {
         /// To override the contents of this collection use [`set_api_stages`](Self::set_api_stages).
         ///
         /// <p>The associated API stages of the usage plan.</p>
-        pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
+        pub fn api_stages(mut self, input: crate::model::ApiStage) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.api_stages = Some(v);
             self
         }
@@ -19172,13 +19172,9 @@ pub mod put_method_input {
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
         /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.</p>
-        pub fn request_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<bool>,
-        ) -> Self {
+        pub fn request_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -19500,13 +19496,9 @@ pub mod put_method_response_input {
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
         /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-        pub fn response_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<bool>,
-        ) -> Self {
+        pub fn response_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -20284,10 +20276,10 @@ pub mod test_invoke_authorizer_input {
         pub fn multi_value_headers(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.multi_value_headers.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.multi_value_headers = Some(hash_map);
             self
         }
@@ -20662,10 +20654,10 @@ pub mod test_invoke_method_input {
         pub fn multi_value_headers(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.multi_value_headers.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.multi_value_headers = Some(hash_map);
             self
         }
@@ -21115,9 +21107,9 @@ pub mod update_account_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -21288,9 +21280,9 @@ pub mod update_api_key_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -21492,9 +21484,9 @@ pub mod update_authorizer_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -21717,9 +21709,9 @@ pub mod update_base_path_mapping_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -21934,9 +21926,9 @@ pub mod update_client_certificate_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -22146,9 +22138,9 @@ pub mod update_deployment_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -22372,9 +22364,9 @@ pub mod update_documentation_part_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -22601,9 +22593,9 @@ pub mod update_documentation_version_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -22816,9 +22808,9 @@ pub mod update_domain_name_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -23025,9 +23017,9 @@ pub mod update_gateway_response_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -23261,9 +23253,9 @@ pub mod update_integration_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -23523,9 +23515,9 @@ pub mod update_integration_response_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -23786,9 +23778,9 @@ pub mod update_method_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -24047,9 +24039,9 @@ pub mod update_method_response_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -24298,9 +24290,9 @@ pub mod update_model_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -24523,9 +24515,9 @@ pub mod update_request_validator_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -24748,9 +24740,9 @@ pub mod update_resource_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -24960,9 +24952,9 @@ pub mod update_rest_api_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -25162,9 +25154,9 @@ pub mod update_stage_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -25387,9 +25379,9 @@ pub mod update_usage_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -25601,9 +25593,9 @@ pub mod update_usage_plan_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }
@@ -25796,9 +25788,9 @@ pub mod update_vpc_link_input {
         /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
         ///
         /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
-        pub fn patch_operations(mut self, input: impl Into<crate::model::PatchOperation>) -> Self {
+        pub fn patch_operations(mut self, input: crate::model::PatchOperation) -> Self {
             let mut v = self.patch_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.patch_operations = Some(v);
             self
         }

@@ -1351,9 +1351,9 @@ pub mod registry {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>An array of objects representing the aliases for a public registry.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::RegistryAlias>) -> Self {
+        pub fn aliases(mut self, input: crate::model::RegistryAlias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }

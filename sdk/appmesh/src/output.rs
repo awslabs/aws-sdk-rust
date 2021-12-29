@@ -47,9 +47,9 @@ pub mod list_meshes_output {
         /// To override the contents of this collection use [`set_meshes`](Self::set_meshes).
         ///
         /// <p>The list of existing service meshes.</p>
-        pub fn meshes(mut self, input: impl Into<crate::model::MeshRef>) -> Self {
+        pub fn meshes(mut self, input: crate::model::MeshRef) -> Self {
             let mut v = self.meshes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.meshes = Some(v);
             self
         }
@@ -350,12 +350,9 @@ pub mod list_virtual_services_output {
         /// To override the contents of this collection use [`set_virtual_services`](Self::set_virtual_services).
         ///
         /// <p>The list of existing virtual services for the specified service mesh.</p>
-        pub fn virtual_services(
-            mut self,
-            input: impl Into<crate::model::VirtualServiceRef>,
-        ) -> Self {
+        pub fn virtual_services(mut self, input: crate::model::VirtualServiceRef) -> Self {
             let mut v = self.virtual_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_services = Some(v);
             self
         }
@@ -676,9 +673,9 @@ pub mod list_virtual_routers_output {
         /// To override the contents of this collection use [`set_virtual_routers`](Self::set_virtual_routers).
         ///
         /// <p>The list of existing virtual routers for the specified service mesh.</p>
-        pub fn virtual_routers(mut self, input: impl Into<crate::model::VirtualRouterRef>) -> Self {
+        pub fn virtual_routers(mut self, input: crate::model::VirtualRouterRef) -> Self {
             let mut v = self.virtual_routers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_routers = Some(v);
             self
         }
@@ -998,9 +995,9 @@ pub mod list_routes_output {
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
         /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::RouteRef>) -> Self {
+        pub fn routes(mut self, input: crate::model::RouteRef) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -1300,9 +1297,9 @@ pub mod list_virtual_nodes_output {
         /// To override the contents of this collection use [`set_virtual_nodes`](Self::set_virtual_nodes).
         ///
         /// <p>The list of existing virtual nodes for the specified service mesh.</p>
-        pub fn virtual_nodes(mut self, input: impl Into<crate::model::VirtualNodeRef>) -> Self {
+        pub fn virtual_nodes(mut self, input: crate::model::VirtualNodeRef) -> Self {
             let mut v = self.virtual_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_nodes = Some(v);
             self
         }
@@ -1623,12 +1620,9 @@ pub mod list_virtual_gateways_output {
         /// To override the contents of this collection use [`set_virtual_gateways`](Self::set_virtual_gateways).
         ///
         /// <p>The list of existing virtual gateways for the specified service mesh.</p>
-        pub fn virtual_gateways(
-            mut self,
-            input: impl Into<crate::model::VirtualGatewayRef>,
-        ) -> Self {
+        pub fn virtual_gateways(mut self, input: crate::model::VirtualGatewayRef) -> Self {
             let mut v = self.virtual_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_gateways = Some(v);
             self
         }
@@ -1952,9 +1946,9 @@ pub mod list_gateway_routes_output {
         ///
         /// <p>The list of existing gateway routes for the specified service mesh and virtual
         /// gateway.</p>
-        pub fn gateway_routes(mut self, input: impl Into<crate::model::GatewayRouteRef>) -> Self {
+        pub fn gateway_routes(mut self, input: crate::model::GatewayRouteRef) -> Self {
             let mut v = self.gateway_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateway_routes = Some(v);
             self
         }
@@ -2335,9 +2329,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

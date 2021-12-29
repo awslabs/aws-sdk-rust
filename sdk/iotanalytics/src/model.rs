@@ -1550,9 +1550,9 @@ pub mod schema_definition {
         /// <p>Specifies one or more columns that store your data.</p>
         /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
         /// types.</p>
-        pub fn columns(mut self, input: impl Into<crate::model::Column>) -> Self {
+        pub fn columns(mut self, input: crate::model::Column) -> Self {
             let mut v = self.columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.columns = Some(v);
             self
         }
@@ -3406,9 +3406,9 @@ pub mod container_dataset_action {
         /// application (basically, parameters passed to the application). Each variable must have a name
         /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
         /// or <code>outputFileUriValue</code>.</p>
-        pub fn variables(mut self, input: impl Into<crate::model::Variable>) -> Self {
+        pub fn variables(mut self, input: crate::model::Variable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variables = Some(v);
             self
         }
@@ -3900,9 +3900,9 @@ pub mod sql_query_dataset_action {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Prefilters applied to message data.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::QueryFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::QueryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4717,12 +4717,9 @@ pub mod pipeline_summary {
         /// To override the contents of this collection use [`set_reprocessing_summaries`](Self::set_reprocessing_summaries).
         ///
         /// <p>A summary of information about the pipeline reprocessing.</p>
-        pub fn reprocessing_summaries(
-            mut self,
-            input: impl Into<crate::model::ReprocessingSummary>,
-        ) -> Self {
+        pub fn reprocessing_summaries(mut self, input: crate::model::ReprocessingSummary) -> Self {
             let mut v = self.reprocessing_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reprocessing_summaries = Some(v);
             self
         }
@@ -5192,9 +5189,9 @@ pub mod datastore_partitions {
         /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
         ///
         /// <p> A list of partition dimensions in a data store. </p>
-        pub fn partitions(mut self, input: impl Into<crate::model::DatastorePartition>) -> Self {
+        pub fn partitions(mut self, input: crate::model::DatastorePartition) -> Self {
             let mut v = self.partitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions = Some(v);
             self
         }
@@ -6076,9 +6073,9 @@ pub mod dataset_summary {
         /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
         /// interval or when another dataset is populated. The list of triggers can be empty or contain up
         /// to five <code>DataSetTrigger</code> objects</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::DatasetTrigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -6097,9 +6094,9 @@ pub mod dataset_summary {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of <code>DataActionSummary</code> objects.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::DatasetActionSummary>) -> Self {
+        pub fn actions(mut self, input: crate::model::DatasetActionSummary) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -7231,9 +7228,9 @@ pub mod pipeline {
         /// To override the contents of this collection use [`set_activities`](Self::set_activities).
         ///
         /// <p>The activities that perform transformations on the messages.</p>
-        pub fn activities(mut self, input: impl Into<crate::model::PipelineActivity>) -> Self {
+        pub fn activities(mut self, input: crate::model::PipelineActivity) -> Self {
             let mut v = self.activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.activities = Some(v);
             self
         }
@@ -7250,12 +7247,9 @@ pub mod pipeline {
         /// To override the contents of this collection use [`set_reprocessing_summaries`](Self::set_reprocessing_summaries).
         ///
         /// <p>A summary of information about the pipeline reprocessing.</p>
-        pub fn reprocessing_summaries(
-            mut self,
-            input: impl Into<crate::model::ReprocessingSummary>,
-        ) -> Self {
+        pub fn reprocessing_summaries(mut self, input: crate::model::ReprocessingSummary) -> Self {
             let mut v = self.reprocessing_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reprocessing_summaries = Some(v);
             self
         }
@@ -7933,9 +7927,9 @@ pub mod dataset {
         ///
         /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
         /// contents.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::DatasetAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -7954,9 +7948,9 @@ pub mod dataset {
         ///
         /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
         /// updated.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::DatasetTrigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -7977,10 +7971,10 @@ pub mod dataset {
         /// here.</p>
         pub fn content_delivery_rules(
             mut self,
-            input: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
             let mut v = self.content_delivery_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_delivery_rules = Some(v);
             self
         }
@@ -8076,9 +8070,9 @@ pub mod dataset {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, input: impl Into<crate::model::LateDataRule>) -> Self {
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
             let mut v = self.late_data_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.late_data_rules = Some(v);
             self
         }

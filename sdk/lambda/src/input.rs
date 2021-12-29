@@ -1451,10 +1451,10 @@ pub mod create_event_source_mapping_input {
         /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            input: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_access_configurations = Some(v);
             self
         }
@@ -1489,10 +1489,10 @@ pub mod create_event_source_mapping_input {
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            input: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_response_types = Some(v);
             self
         }
@@ -1968,12 +1968,9 @@ pub mod create_function_input {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an Amazon EFS file system.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }
@@ -2021,9 +2018,9 @@ pub mod create_function_input {
         ///
         /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
         /// The default value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -9695,9 +9692,9 @@ pub mod publish_layer_version_input {
         ///
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
         /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
-        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_runtimes = Some(v);
             self
         }
@@ -9752,12 +9749,9 @@ pub mod publish_layer_version_input {
         ///
         /// <p>A list of compatible  
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn compatible_architectures(
-            mut self,
-            input: impl Into<crate::model::Architecture>,
-        ) -> Self {
+        pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
@@ -12856,10 +12850,10 @@ pub mod update_event_source_mapping_input {
         /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            input: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_access_configurations = Some(v);
             self
         }
@@ -12888,10 +12882,10 @@ pub mod update_event_source_mapping_input {
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            input: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_response_types = Some(v);
             self
         }
@@ -13235,9 +13229,9 @@ pub mod update_function_code_input {
         ///
         /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
         /// The default value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -13667,12 +13661,9 @@ pub mod update_function_configuration_input {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an Amazon EFS file system.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }

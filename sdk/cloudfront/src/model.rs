@@ -1087,9 +1087,9 @@ pub mod active_trusted_signers {
         ///
         /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that
         /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Signer>) -> Self {
+        pub fn items(mut self, input: crate::model::Signer) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1647,12 +1647,9 @@ pub mod response_headers_policy_custom_headers_config {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The list of HTTP response headers and their values.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ResponseHeadersPolicyCustomHeader>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ResponseHeadersPolicyCustomHeader) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -3623,10 +3620,10 @@ pub mod response_headers_policy_access_control_allow_methods {
         /// methods.</p>
         pub fn items(
             mut self,
-            input: impl Into<crate::model::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+            input: crate::model::ResponseHeadersPolicyAccessControlAllowMethodsValues,
         ) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -4078,9 +4075,9 @@ pub mod realtime_log_config {
         ///
         /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
         /// log data for this real-time log configuration.</p>
-        pub fn end_points(mut self, input: impl Into<crate::model::EndPoint>) -> Self {
+        pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
             let mut v = self.end_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_points = Some(v);
             self
         }
@@ -6771,9 +6768,9 @@ pub mod encryption_entities {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
-        pub fn items(mut self, input: impl Into<crate::model::EncryptionEntity>) -> Self {
+        pub fn items(mut self, input: crate::model::EncryptionEntity) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -7402,9 +7399,9 @@ pub mod content_type_profiles {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Items in a field-level encryption content type-profile mapping. </p>
-        pub fn items(mut self, input: impl Into<crate::model::ContentTypeProfile>) -> Self {
+        pub fn items(mut self, input: crate::model::ContentTypeProfile) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -7714,9 +7711,9 @@ pub mod query_arg_profiles {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
-        pub fn items(mut self, input: impl Into<crate::model::QueryArgProfile>) -> Self {
+        pub fn items(mut self, input: crate::model::QueryArgProfile) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -8121,12 +8118,9 @@ pub mod distribution {
         /// recordal status for CNAMEs associated with distributions.</p>
         /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
         /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-        pub fn alias_icp_recordals(
-            mut self,
-            input: impl Into<crate::model::AliasIcpRecordal>,
-        ) -> Self {
+        pub fn alias_icp_recordals(mut self, input: crate::model::AliasIcpRecordal) -> Self {
             let mut v = self.alias_icp_recordals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alias_icp_recordals = Some(v);
             self
         }
@@ -10748,9 +10742,9 @@ pub mod custom_error_responses {
         /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP
         /// status code for which you want to specify a custom error page and/or a caching duration.
         /// </p>
-        pub fn items(mut self, input: impl Into<crate::model::CustomErrorResponse>) -> Self {
+        pub fn items(mut self, input: crate::model::CustomErrorResponse) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -11156,9 +11150,9 @@ pub mod cache_behaviors {
         ///
         /// <p>Optional: A complex type that contains cache behaviors for this distribution. If
         /// <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-        pub fn items(mut self, input: impl Into<crate::model::CacheBehavior>) -> Self {
+        pub fn items(mut self, input: crate::model::CacheBehavior) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -12939,9 +12933,9 @@ pub mod function_associations {
         /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution.  CloudFront
         /// functions must be published to the <code>LIVE</code> stage to associate them with a
         /// cache behavior.</p>
-        pub fn items(mut self, input: impl Into<crate::model::FunctionAssociation>) -> Self {
+        pub fn items(mut self, input: crate::model::FunctionAssociation) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -13198,9 +13192,9 @@ pub mod lambda_function_associations {
         /// <p>
         /// <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items
         /// for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-        pub fn items(mut self, input: impl Into<crate::model::LambdaFunctionAssociation>) -> Self {
+        pub fn items(mut self, input: crate::model::LambdaFunctionAssociation) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -13555,9 +13549,9 @@ pub mod allowed_methods {
         ///
         /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward
         /// to your origin.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Method>) -> Self {
+        pub fn items(mut self, input: crate::model::Method) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -13706,9 +13700,9 @@ pub mod cached_methods {
         ///
         /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses
         /// to.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Method>) -> Self {
+        pub fn items(mut self, input: crate::model::Method) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -14952,9 +14946,9 @@ pub mod origin_groups {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The items (origin groups) in a distribution.</p>
-        pub fn items(mut self, input: impl Into<crate::model::OriginGroup>) -> Self {
+        pub fn items(mut self, input: crate::model::OriginGroup) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -15141,9 +15135,9 @@ pub mod origin_group_members {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Items (origins) in an origin group.</p>
-        pub fn items(mut self, input: impl Into<crate::model::OriginGroupMember>) -> Self {
+        pub fn items(mut self, input: crate::model::OriginGroupMember) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -15340,9 +15334,9 @@ pub mod status_codes {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The items (status codes) for an origin group.</p>
-        pub fn items(mut self, input: impl Into<i32>) -> Self {
+        pub fn items(mut self, input: i32) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -15419,9 +15413,9 @@ pub mod origins {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A list of origins.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Origin>) -> Self {
+        pub fn items(mut self, input: crate::model::Origin) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -16278,9 +16272,9 @@ pub mod origin_ssl_protocols {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-        pub fn items(mut self, input: impl Into<crate::model::SslProtocol>) -> Self {
+        pub fn items(mut self, input: crate::model::SslProtocol) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -16622,9 +16616,9 @@ pub mod custom_headers {
         /// <b>Optional</b>: A list that contains one
         /// <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward
         /// to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
-        pub fn items(mut self, input: impl Into<crate::model::OriginCustomHeader>) -> Self {
+        pub fn items(mut self, input: crate::model::OriginCustomHeader) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -16823,9 +16817,9 @@ pub mod active_trusted_key_groups {
         ///
         /// <p>A list of key groups, including the identifiers of the public keys in each key group that
         /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-        pub fn items(mut self, input: impl Into<crate::model::KgKeyPairIds>) -> Self {
+        pub fn items(mut self, input: crate::model::KgKeyPairIds) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -19057,9 +19051,9 @@ pub mod tags {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p> A complex type that contains <code>Tag</code> elements.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn items(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -19329,12 +19323,9 @@ pub mod streaming_distribution_list {
         ///
         /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for
         /// each distribution that was created by the current Amazon Web Services account.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::StreamingDistributionSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::StreamingDistributionSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -19793,12 +19784,9 @@ pub mod response_headers_policy_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The response headers policies in the list.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ResponseHeadersPolicySummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ResponseHeadersPolicySummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -20056,9 +20044,9 @@ pub mod realtime_log_configs {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Contains the list of real-time log configurations.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RealtimeLogConfig>) -> Self {
+        pub fn items(mut self, input: crate::model::RealtimeLogConfig) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -20223,9 +20211,9 @@ pub mod public_key_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A list of public keys.</p>
-        pub fn items(mut self, input: impl Into<crate::model::PublicKeySummary>) -> Self {
+        pub fn items(mut self, input: crate::model::PublicKeySummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -20493,9 +20481,9 @@ pub mod origin_request_policy_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Contains the origin request policies in the list.</p>
-        pub fn items(mut self, input: impl Into<crate::model::OriginRequestPolicySummary>) -> Self {
+        pub fn items(mut self, input: crate::model::OriginRequestPolicySummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -20759,9 +20747,9 @@ pub mod key_group_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A list of key groups.</p>
-        pub fn items(mut self, input: impl Into<crate::model::KeyGroupSummary>) -> Self {
+        pub fn items(mut self, input: crate::model::KeyGroupSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -20998,9 +20986,9 @@ pub mod invalidation_list {
         ///
         /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each
         /// invalidation batch created by the current Amazon Web Services account.</p>
-        pub fn items(mut self, input: impl Into<crate::model::InvalidationSummary>) -> Self {
+        pub fn items(mut self, input: crate::model::InvalidationSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -21224,9 +21212,9 @@ pub mod function_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Contains the functions in the list.</p>
-        pub fn items(mut self, input: impl Into<crate::model::FunctionSummary>) -> Self {
+        pub fn items(mut self, input: crate::model::FunctionSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -21355,12 +21343,9 @@ pub mod field_level_encryption_profile_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The field-level encryption profile items.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::FieldLevelEncryptionProfileSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::FieldLevelEncryptionProfileSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -21633,12 +21618,9 @@ pub mod field_level_encryption_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of field-level encryption items.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::FieldLevelEncryptionSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::FieldLevelEncryptionSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -21985,9 +21967,9 @@ pub mod distribution_list {
         ///
         /// <p>A complex type that contains one <code>DistributionSummary</code> element for each
         /// distribution that was created by the current Amazon Web Services account.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DistributionSummary>) -> Self {
+        pub fn items(mut self, input: crate::model::DistributionSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -22508,12 +22490,9 @@ pub mod distribution_summary {
         /// recordal status for CNAMEs associated with distributions.</p>
         /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
         /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-        pub fn alias_icp_recordals(
-            mut self,
-            input: impl Into<crate::model::AliasIcpRecordal>,
-        ) -> Self {
+        pub fn alias_icp_recordals(mut self, input: crate::model::AliasIcpRecordal) -> Self {
             let mut v = self.alias_icp_recordals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alias_icp_recordals = Some(v);
             self
         }
@@ -22832,9 +22811,9 @@ pub mod conflicting_aliases_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Contains the conflicting aliases in the list.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ConflictingAlias>) -> Self {
+        pub fn items(mut self, input: crate::model::ConflictingAlias) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -23139,12 +23118,9 @@ pub mod cloud_front_origin_access_identity_list {
         ///
         /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
         /// element for each origin access identity that was created by the current Amazon Web Services account.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::CloudFrontOriginAccessIdentitySummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::CloudFrontOriginAccessIdentitySummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -23382,9 +23358,9 @@ pub mod cache_policy_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Contains the cache policies in the list.</p>
-        pub fn items(mut self, input: impl Into<crate::model::CachePolicySummary>) -> Self {
+        pub fn items(mut self, input: crate::model::CachePolicySummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }

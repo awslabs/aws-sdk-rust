@@ -140,10 +140,10 @@ pub mod create_identity_pool_input {
         /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
         pub fn cognito_identity_providers(
             mut self,
-            input: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
             let mut v = self.cognito_identity_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cognito_identity_providers = Some(v);
             self
         }
@@ -3287,10 +3287,10 @@ pub mod set_identity_pool_roles_input {
         pub fn role_mappings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RoleMapping>,
+            v: crate::model::RoleMapping,
         ) -> Self {
             let mut hash_map = self.role_mappings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.role_mappings = Some(hash_map);
             self
         }
@@ -4569,10 +4569,10 @@ pub mod update_identity_pool_input {
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
-            input: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
             let mut v = self.cognito_identity_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cognito_identity_providers = Some(v);
             self
         }

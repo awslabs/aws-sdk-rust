@@ -268,8 +268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project containing the placement in which to associate the device.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project containing the placement in which to associate the device.</p>
@@ -278,8 +278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the placement in which to associate the device.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(signature.into());
             self
         }
         /// <p>The name of the placement in which to associate the device.</p>
@@ -293,8 +293,8 @@ pub mod fluent_builders {
         /// <p>The ID of the physical device to be associated with the given placement in the project.
         /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
         /// values.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(signature.into());
             self
         }
         /// <p>The ID of the physical device to be associated with the given placement in the project.
@@ -305,8 +305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device template name to associate with the device ID.</p>
-        pub fn device_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_template_name(inp);
+        pub fn device_template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_template_name(signature.into());
             self
         }
         /// <p>The device template name to associate with the device ID.</p>
@@ -378,8 +378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the placement to be created.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(signature.into());
             self
         }
         /// <p>The name of the placement to be created.</p>
@@ -391,8 +391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the project in which to create the placement.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project in which to create the placement.</p>
@@ -411,7 +411,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
@@ -487,8 +487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to create.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project to create.</p>
@@ -497,8 +497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>An optional description for the project.</p>
@@ -510,8 +510,8 @@ pub mod fluent_builders {
         /// default attributes and device templates. You cannot add or remove device templates after the
         /// project has been created. However, you can update <code>callbackOverrides</code> for the
         /// device templates using the <code>UpdateProject</code> API.</p>
-        pub fn placement_template(mut self, inp: crate::model::PlacementTemplate) -> Self {
-            self.inner = self.inner.placement_template(inp);
+        pub fn placement_template(mut self, signature: crate::model::PlacementTemplate) -> Self {
+            self.inner = self.inner.placement_template(signature);
             self
         }
         /// <p>The schema defining the placement to be created. A placement template defines placement
@@ -537,7 +537,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
@@ -617,8 +617,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the empty placement to delete.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(signature.into());
             self
         }
         /// <p>The name of the empty placement to delete.</p>
@@ -630,8 +630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The project containing the empty placement to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The project containing the empty placement to delete.</p>
@@ -704,8 +704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the empty project to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the empty project to delete.</p>
@@ -774,8 +774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the placement within a project.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(signature.into());
             self
         }
         /// <p>The name of the placement within a project.</p>
@@ -787,8 +787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The project containing the placement to be described.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The project containing the placement to be described.</p>
@@ -857,8 +857,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to be described.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project to be described.</p>
@@ -927,8 +927,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the placement.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project that contains the placement.</p>
@@ -937,8 +937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the placement that the device should be removed from.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(signature.into());
             self
         }
         /// <p>The name of the placement that the device should be removed from.</p>
@@ -950,8 +950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device ID that should be removed from the placement.</p>
-        pub fn device_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_template_name(inp);
+        pub fn device_template_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_template_name(signature.into());
             self
         }
         /// <p>The device ID that should be removed from the placement.</p>
@@ -1023,8 +1023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project containing the placement.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project containing the placement.</p>
@@ -1033,8 +1033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the placement to get the devices from.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(signature.into());
             self
         }
         /// <p>The name of the placement to get the devices from.</p>
@@ -1106,8 +1106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The project containing the placements to be listed.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The project containing the placements to be listed.</p>
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
@@ -1127,8 +1127,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
         /// used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
@@ -1198,8 +1198,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
@@ -1209,8 +1209,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
         /// used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
@@ -1280,8 +1280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags you want to list.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource whose tags you want to list.</p>
@@ -1352,8 +1352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
@@ -1372,7 +1372,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
@@ -1447,8 +1447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tag you want to remove.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource whose tag you want to remove.</p>
@@ -1461,8 +1461,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of those tags which you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of those tags which you want to remove.</p>
@@ -1535,8 +1535,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the placement to update.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(signature.into());
             self
         }
         /// <p>The name of the placement to update.</p>
@@ -1548,8 +1548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the project containing the placement to be updated.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project containing the placement to be updated.</p>
@@ -1568,7 +1568,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>The user-defined object of attributes used to update the placement. The maximum number of
@@ -1646,8 +1646,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to be updated.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(signature.into());
             self
         }
         /// <p>The name of the project to be updated.</p>
@@ -1656,8 +1656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional user-defined description for the project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>An optional user-defined description for the project.</p>
@@ -1669,8 +1669,8 @@ pub mod fluent_builders {
         /// device template names to the project. However, for a given <code>placementTemplate</code>, you
         /// can update the associated <code>callbackOverrides</code> for the device definition using this
         /// API.</p>
-        pub fn placement_template(mut self, inp: crate::model::PlacementTemplate) -> Self {
-            self.inner = self.inner.placement_template(inp);
+        pub fn placement_template(mut self, signature: crate::model::PlacementTemplate) -> Self {
+            self.inner = self.inner.placement_template(signature);
             self
         }
         /// <p>An object defining the project update. Once a project has been created, you cannot add

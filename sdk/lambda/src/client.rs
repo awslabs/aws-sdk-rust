@@ -603,8 +603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(signature.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -613,8 +613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, signature: i64) -> Self {
+            self.inner = self.inner.version_number(signature);
             self
         }
         /// <p>The version number.</p>
@@ -623,8 +623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(signature.into());
             self
         }
         /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
@@ -633,8 +633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(signature.into());
             self
         }
         /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
@@ -646,8 +646,8 @@ pub mod fluent_builders {
         /// accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified).
         /// For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
         /// </p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(signature.into());
             self
         }
         /// <p>An account ID, or <code>*</code> to grant layer usage permission to all
@@ -660,8 +660,8 @@ pub mod fluent_builders {
         }
         /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified
         /// organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(signature.into());
             self
         }
         /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified
@@ -675,8 +675,8 @@ pub mod fluent_builders {
         }
         /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
         /// policy that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
@@ -777,8 +777,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -809,8 +809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(signature.into());
             self
         }
         /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
@@ -820,8 +820,8 @@ pub mod fluent_builders {
         }
         /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
         /// <code>lambda:GetFunction</code>.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(signature.into());
             self
         }
         /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
@@ -832,8 +832,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
         /// <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(signature.into());
             self
         }
         /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
@@ -845,8 +845,8 @@ pub mod fluent_builders {
         /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
         /// Amazon SNS topic.</p>
         /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(signature.into());
             self
         }
         /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
@@ -859,8 +859,8 @@ pub mod fluent_builders {
         /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
         /// ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
         /// by its owner and recreated by another account.</p>
-        pub fn source_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_account(inp);
+        pub fn source_account(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_account(signature.into());
             self
         }
         /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
@@ -874,8 +874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For Alexa Smart Home functions, a token that must be supplied by the invoker.</p>
-        pub fn event_source_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_token(inp);
+        pub fn event_source_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_token(signature.into());
             self
         }
         /// <p>For Alexa Smart Home functions, a token that must be supplied by the invoker.</p>
@@ -887,8 +887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a version or alias to add permissions to a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>Specify a version or alias to add permissions to a published version of the function.</p>
@@ -898,8 +898,8 @@ pub mod fluent_builders {
         }
         /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
         /// policy that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
@@ -993,8 +993,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -1025,8 +1025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the alias.</p>
@@ -1035,8 +1035,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_version(inp);
+        pub fn function_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_version(signature.into());
             self
         }
         /// <p>The function version that the alias invokes.</p>
@@ -1048,8 +1048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the alias.</p>
@@ -1059,8 +1059,11 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
         /// configuration</a> of the alias.</p>
-        pub fn routing_config(mut self, inp: crate::model::AliasRoutingConfiguration) -> Self {
-            self.inner = self.inner.routing_config(inp);
+        pub fn routing_config(
+            mut self,
+            signature: crate::model::AliasRoutingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.routing_config(signature);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
@@ -1135,8 +1138,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Descriptive name for this code signing configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Descriptive name for this code signing configuration.</p>
@@ -1145,8 +1148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Signing profiles for this code signing configuration.</p>
-        pub fn allowed_publishers(mut self, inp: crate::model::AllowedPublishers) -> Self {
-            self.inner = self.inner.allowed_publishers(inp);
+        pub fn allowed_publishers(mut self, signature: crate::model::AllowedPublishers) -> Self {
+            self.inner = self.inner.allowed_publishers(signature);
             self
         }
         /// <p>Signing profiles for this code signing configuration.</p>
@@ -1158,8 +1161,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-        pub fn code_signing_policies(mut self, inp: crate::model::CodeSigningPolicies) -> Self {
-            self.inner = self.inner.code_signing_policies(inp);
+        pub fn code_signing_policies(
+            mut self,
+            signature: crate::model::CodeSigningPolicies,
+        ) -> Self {
+            self.inner = self.inner.code_signing_policies(signature);
             self
         }
         /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
@@ -1352,8 +1358,8 @@ pub mod fluent_builders {
         /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
         /// </li>
         /// </ul>
-        pub fn event_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_arn(inp);
+        pub fn event_source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
@@ -1406,8 +1412,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -1443,8 +1449,8 @@ pub mod fluent_builders {
         }
         /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
         /// <p>Default: True</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
@@ -1481,8 +1487,8 @@ pub mod fluent_builders {
         /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
         /// </li>
         /// </ul>
-        pub fn batch_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.batch_size(inp);
+        pub fn batch_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.batch_size(signature);
             self
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
@@ -1519,8 +1525,8 @@ pub mod fluent_builders {
         }
         /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
         /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        pub fn filter_criteria(mut self, signature: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(signature);
             self
         }
         /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
@@ -1535,8 +1541,8 @@ pub mod fluent_builders {
         /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
         /// <p>Default: 0</p>
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
-        pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_batching_window_in_seconds(inp);
+        pub fn maximum_batching_window_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_batching_window_in_seconds(signature);
             self
         }
         /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
@@ -1550,8 +1556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
-        pub fn parallelization_factor(mut self, inp: i32) -> Self {
-            self.inner = self.inner.parallelization_factor(inp);
+        pub fn parallelization_factor(mut self, signature: i32) -> Self {
+            self.inner = self.inner.parallelization_factor(signature);
             self
         }
         /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
@@ -1561,8 +1567,8 @@ pub mod fluent_builders {
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
         /// MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
-        pub fn starting_position(mut self, inp: crate::model::EventSourcePosition) -> Self {
-            self.inner = self.inner.starting_position(inp);
+        pub fn starting_position(mut self, signature: crate::model::EventSourcePosition) -> Self {
+            self.inner = self.inner.starting_position(signature);
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
@@ -1576,8 +1582,11 @@ pub mod fluent_builders {
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
         /// reading.</p>
-        pub fn starting_position_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.starting_position_timestamp(inp);
+        pub fn starting_position_timestamp(
+            mut self,
+            signature: aws_smithy_types::DateTime,
+        ) -> Self {
+            self.inner = self.inner.starting_position_timestamp(signature);
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
@@ -1590,8 +1599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, signature: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(signature);
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
@@ -1603,8 +1612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
-        pub fn maximum_record_age_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_record_age_in_seconds(inp);
+        pub fn maximum_record_age_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_record_age_in_seconds(signature);
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
@@ -1616,8 +1625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
-        pub fn bisect_batch_on_function_error(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bisect_batch_on_function_error(inp);
+        pub fn bisect_batch_on_function_error(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bisect_batch_on_function_error(signature);
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
@@ -1629,8 +1638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_retry_attempts(inp);
+        pub fn maximum_retry_attempts(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_retry_attempts(signature);
             self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
@@ -1639,8 +1648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-        pub fn tumbling_window_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.tumbling_window_in_seconds(inp);
+        pub fn tumbling_window_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.tumbling_window_in_seconds(signature);
             self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
@@ -1653,8 +1662,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_topics`](Self::set_topics).
         ///
         /// <p>The name of the Kafka topic.</p>
-        pub fn topics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topics(inp);
+        pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topics(input.into());
             self
         }
         /// <p>The name of the Kafka topic.</p>
@@ -1670,8 +1679,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_queues`](Self::set_queues).
         ///
         /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
-        pub fn queues(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queues(inp);
+        pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queues(input.into());
             self
         }
         /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
@@ -1689,9 +1698,9 @@ pub mod fluent_builders {
         /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            inp: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
-            self.inner = self.inner.source_access_configurations(inp);
+            self.inner = self.inner.source_access_configurations(input);
             self
         }
         /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
@@ -1705,9 +1714,9 @@ pub mod fluent_builders {
         /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
         pub fn self_managed_event_source(
             mut self,
-            inp: crate::model::SelfManagedEventSource,
+            signature: crate::model::SelfManagedEventSource,
         ) -> Self {
-            self.inner = self.inner.self_managed_event_source(inp);
+            self.inner = self.inner.self_managed_event_source(signature);
             self
         }
         /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
@@ -1725,9 +1734,9 @@ pub mod fluent_builders {
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            inp: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
-            self.inner = self.inner.function_response_types(inp);
+            self.inner = self.inner.function_response_types(input);
             self
         }
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
@@ -1864,8 +1873,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -1897,8 +1906,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
         /// </p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.inner = self.inner.runtime(inp);
+        pub fn runtime(mut self, signature: crate::model::Runtime) -> Self {
+            self.inner = self.inner.runtime(signature);
             self
         }
         /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
@@ -1908,8 +1917,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
@@ -1921,8 +1930,8 @@ pub mod fluent_builders {
         /// Handler is required if the deployment package is a .zip file archive. The format includes the
         /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
         /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.handler(inp);
+        pub fn handler(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.handler(signature.into());
             self
         }
         /// <p>The name of the method within your code that Lambda calls to execute your function.
@@ -1934,8 +1943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The code for the function.</p>
-        pub fn code(mut self, inp: crate::model::FunctionCode) -> Self {
-            self.inner = self.inner.code(inp);
+        pub fn code(mut self, signature: crate::model::FunctionCode) -> Self {
+            self.inner = self.inner.code(signature);
             self
         }
         /// <p>The code for the function.</p>
@@ -1944,8 +1953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the function.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the function.</p>
@@ -1955,8 +1964,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
         /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, signature: i32) -> Self {
+            self.inner = self.inner.timeout(signature);
             self
         }
         /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
@@ -1967,8 +1976,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
         /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.memory_size(inp);
+        pub fn memory_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.memory_size(signature);
             self
         }
         /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
@@ -1978,8 +1987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to true to publish the first version of the function during creation.</p>
-        pub fn publish(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publish(inp);
+        pub fn publish(mut self, signature: bool) -> Self {
+            self.inner = self.inner.publish(signature);
             self
         }
         /// <p>Set to true to publish the first version of the function during creation.</p>
@@ -1990,8 +1999,8 @@ pub mod fluent_builders {
         /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
         /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, signature: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(signature);
             self
         }
         /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
@@ -2005,8 +2014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP archive.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.inner = self.inner.package_type(inp);
+        pub fn package_type(mut self, signature: crate::model::PackageType) -> Self {
+            self.inner = self.inner.package_type(signature);
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP archive.</p>
@@ -2019,8 +2028,8 @@ pub mod fluent_builders {
         }
         /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
         /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.inner = self.inner.dead_letter_config(inp);
+        pub fn dead_letter_config(mut self, signature: crate::model::DeadLetterConfig) -> Self {
+            self.inner = self.inner.dead_letter_config(signature);
             self
         }
         /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
@@ -2033,8 +2042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Environment variables that are accessible from function code during execution.</p>
-        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, signature: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(signature);
             self
         }
         /// <p>Environment variables that are accessible from function code during execution.</p>
@@ -2047,8 +2056,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
         /// variables. If it's not provided, Lambda uses a default service key.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(signature.into());
             self
         }
         /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
@@ -2059,8 +2068,8 @@ pub mod fluent_builders {
         }
         /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfig) -> Self {
-            self.inner = self.inner.tracing_config(inp);
+        pub fn tracing_config(mut self, signature: crate::model::TracingConfig) -> Self {
+            self.inner = self.inner.tracing_config(signature);
             self
         }
         /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
@@ -2083,7 +2092,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the
@@ -2103,8 +2112,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
         /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-        pub fn layers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layers(inp);
+        pub fn layers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layers(input.into());
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
@@ -2121,11 +2130,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an Amazon EFS file system.</p>
-        pub fn file_system_configs(
-            mut self,
-            inp: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
-            self.inner = self.inner.file_system_configs(inp);
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
+            self.inner = self.inner.file_system_configs(input);
             self
         }
         /// <p>Connection settings for an Amazon EFS file system.</p>
@@ -2138,8 +2144,8 @@ pub mod fluent_builders {
         }
         /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
         /// values</a> that override the values in the container image Dockerfile.</p>
-        pub fn image_config(mut self, inp: crate::model::ImageConfig) -> Self {
-            self.inner = self.inner.image_config(inp);
+        pub fn image_config(mut self, signature: crate::model::ImageConfig) -> Self {
+            self.inner = self.inner.image_config(signature);
             self
         }
         /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
@@ -2153,8 +2159,11 @@ pub mod fluent_builders {
         }
         /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration
         /// includes a set of signing profiles, which define the trusted publishers for this function.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.code_signing_config_arn(signature.into());
             self
         }
         /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration
@@ -2172,8 +2181,8 @@ pub mod fluent_builders {
         ///
         /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
         /// The default value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, inp: impl Into<crate::model::Architecture>) -> Self {
-            self.inner = self.inner.architectures(inp);
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architectures(input);
             self
         }
         /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
@@ -2265,8 +2274,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -2297,8 +2306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the alias.</p>
@@ -2368,8 +2377,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.code_signing_config_arn(signature.into());
             self
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
@@ -2444,8 +2456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uuid(inp);
+        pub fn uuid(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uuid(signature.into());
             self
         }
         /// <p>The identifier of the event source mapping.</p>
@@ -2538,8 +2550,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function or version.</p>
@@ -2570,8 +2582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a version to delete. You can't delete a version that's referenced by an alias.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>Specify a version to delete. You can't delete a version that's referenced by an alias.</p>
@@ -2659,8 +2671,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -2770,8 +2782,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -2882,8 +2894,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -2914,8 +2926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>A version number or alias name.</p>
@@ -2986,8 +2998,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(signature.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -2996,8 +3008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, signature: i64) -> Self {
+            self.inner = self.inner.version_number(signature);
             self
         }
         /// <p>The version number.</p>
@@ -3087,8 +3099,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -3119,8 +3131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>The version number or alias name.</p>
@@ -3268,8 +3280,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -3300,8 +3312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the alias.</p>
@@ -3370,8 +3382,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.code_signing_config_arn(signature.into());
             self
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
@@ -3444,8 +3459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uuid(inp);
+        pub fn uuid(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uuid(signature.into());
             self
         }
         /// <p>The identifier of the event source mapping.</p>
@@ -3535,8 +3550,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -3567,8 +3582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a version or alias to get details about a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>Specify a version or alias to get details about a published version of the function.</p>
@@ -3656,8 +3671,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -3768,8 +3783,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -3881,8 +3896,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -3913,8 +3928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a version or alias to get details about a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>Specify a version or alias to get details about a published version of the function.</p>
@@ -4003,8 +4018,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -4035,8 +4050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>A version number or alias name.</p>
@@ -4107,8 +4122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(signature.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -4117,8 +4132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, signature: i64) -> Self {
+            self.inner = self.inner.version_number(signature);
             self
         }
         /// <p>The version number.</p>
@@ -4189,8 +4204,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The ARN of the layer version.</p>
@@ -4260,8 +4275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(signature.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -4270,8 +4285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, signature: i64) -> Self {
+            self.inner = self.inner.version_number(signature);
             self
         }
         /// <p>The version number.</p>
@@ -4359,8 +4374,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -4391,8 +4406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a version or alias to get the policy for that resource.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>Specify a version or alias to get the policy for that resource.</p>
@@ -4480,8 +4495,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -4512,8 +4527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>The version number or alias name.</p>
@@ -4627,8 +4642,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -4677,8 +4692,8 @@ pub mod fluent_builders {
         /// the function.</p>
         /// </li>
         /// </ul>
-        pub fn invocation_type(mut self, inp: crate::model::InvocationType) -> Self {
-            self.inner = self.inner.invocation_type(inp);
+        pub fn invocation_type(mut self, signature: crate::model::InvocationType) -> Self {
+            self.inner = self.inner.invocation_type(signature);
             self
         }
         /// <p>Choose from the following options.</p>
@@ -4708,8 +4723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
-        pub fn log_type(mut self, inp: crate::model::LogType) -> Self {
-            self.inner = self.inner.log_type(inp);
+        pub fn log_type(mut self, signature: crate::model::LogType) -> Self {
+            self.inner = self.inner.log_type(signature);
             self
         }
         /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
@@ -4719,8 +4734,8 @@ pub mod fluent_builders {
         }
         /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context
         /// object.</p>
-        pub fn client_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_context(inp);
+        pub fn client_context(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_context(signature.into());
             self
         }
         /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context
@@ -4736,8 +4751,8 @@ pub mod fluent_builders {
         /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>.
         /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
         /// </p>
-        pub fn payload(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.payload(inp);
+        pub fn payload(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.payload(signature);
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
@@ -4749,8 +4764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a version or alias to invoke a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>Specify a version or alias to invoke a published version of the function.</p>
@@ -4841,8 +4856,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -4873,8 +4888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-        pub fn invoke_args(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.invoke_args(inp);
+        pub fn invoke_args(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.invoke_args(signature);
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
@@ -4966,8 +4981,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -4998,8 +5013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a function version to only list aliases that invoke that version.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_version(inp);
+        pub fn function_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_version(signature.into());
             self
         }
         /// <p>Specify a function version to only list aliases that invoke that version.</p>
@@ -5011,8 +5026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -5021,8 +5036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limit the number of aliases returned.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>Limit the number of aliases returned.</p>
@@ -5093,8 +5108,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -5103,8 +5118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of items to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>Maximum number of items to return.</p>
@@ -5192,8 +5207,8 @@ pub mod fluent_builders {
         /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
         /// </li>
         /// </ul>
-        pub fn event_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_arn(inp);
+        pub fn event_source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
@@ -5246,8 +5261,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -5282,8 +5297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
@@ -5293,8 +5308,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of
         /// 100 items in each response, even if you set the number higher.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of
@@ -5384,8 +5399,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -5416,8 +5431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -5426,8 +5441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of configurations to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of configurations to return.</p>
@@ -5506,8 +5521,8 @@ pub mod fluent_builders {
         /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters
         /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
         /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
-        pub fn master_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_region(inp);
+        pub fn master_region(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_region(signature.into());
             self
         }
         /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters
@@ -5521,8 +5536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
-        pub fn function_version(mut self, inp: crate::model::FunctionVersion) -> Self {
-            self.inner = self.inner.function_version(inp);
+        pub fn function_version(mut self, signature: crate::model::FunctionVersion) -> Self {
+            self.inner = self.inner.function_version(signature);
             self
         }
         /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
@@ -5534,8 +5549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -5545,8 +5560,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
         /// even if you set the number higher.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
@@ -5617,8 +5632,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.code_signing_config_arn(signature.into());
             self
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
@@ -5630,8 +5648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -5640,8 +5658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of items to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>Maximum number of items to return.</p>
@@ -5715,8 +5733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
-        pub fn compatible_runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.inner = self.inner.compatible_runtime(inp);
+        pub fn compatible_runtime(mut self, signature: crate::model::Runtime) -> Self {
+            self.inner = self.inner.compatible_runtime(signature);
             self
         }
         /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
@@ -5728,8 +5746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
@@ -5738,8 +5756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of layers to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of layers to return.</p>
@@ -5749,8 +5767,8 @@ pub mod fluent_builders {
         }
         /// <p>The compatible
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-        pub fn compatible_architecture(mut self, inp: crate::model::Architecture) -> Self {
-            self.inner = self.inner.compatible_architecture(inp);
+        pub fn compatible_architecture(mut self, signature: crate::model::Architecture) -> Self {
+            self.inner = self.inner.compatible_architecture(signature);
             self
         }
         /// <p>The compatible
@@ -5826,8 +5844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
-        pub fn compatible_runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.inner = self.inner.compatible_runtime(inp);
+        pub fn compatible_runtime(mut self, signature: crate::model::Runtime) -> Self {
+            self.inner = self.inner.compatible_runtime(signature);
             self
         }
         /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
@@ -5839,8 +5857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(signature.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -5849,8 +5867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>A pagination token returned by a previous call.</p>
@@ -5859,8 +5877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of versions to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of versions to return.</p>
@@ -5870,8 +5888,8 @@ pub mod fluent_builders {
         }
         /// <p>The compatible
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-        pub fn compatible_architecture(mut self, inp: crate::model::Architecture) -> Self {
-            self.inner = self.inner.compatible_architecture(inp);
+        pub fn compatible_architecture(mut self, signature: crate::model::Architecture) -> Self {
+            self.inner = self.inner.compatible_architecture(signature);
             self
         }
         /// <p>The compatible
@@ -5963,8 +5981,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -5995,8 +6013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -6005,8 +6023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a number to limit the number of configurations returned.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>Specify a number to limit the number of configurations returned.</p>
@@ -6077,8 +6095,8 @@ pub mod fluent_builders {
         }
         /// <p>The function's Amazon Resource Name (ARN).
         /// Note: Lambda does not support adding tags to aliases or versions.</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(signature.into());
             self
         }
         /// <p>The function's Amazon Resource Name (ARN).
@@ -6168,8 +6186,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -6200,8 +6218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(signature.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -6211,8 +6229,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response,
         /// even if you set the number higher.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response,
@@ -6285,8 +6303,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(signature.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -6295,8 +6313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the version.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the version.</p>
@@ -6305,8 +6323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The function layer archive.</p>
-        pub fn content(mut self, inp: crate::model::LayerVersionContentInput) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, signature: crate::model::LayerVersionContentInput) -> Self {
+            self.inner = self.inner.content(signature);
             self
         }
         /// <p>The function layer archive.</p>
@@ -6323,8 +6341,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
         /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
-        pub fn compatible_runtimes(mut self, inp: impl Into<crate::model::Runtime>) -> Self {
-            self.inner = self.inner.compatible_runtimes(inp);
+        pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
+            self.inner = self.inner.compatible_runtimes(input);
             self
         }
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
@@ -6350,8 +6368,8 @@ pub mod fluent_builders {
         /// <p>The full text of the license.</p>
         /// </li>
         /// </ul>
-        pub fn license_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_info(inp);
+        pub fn license_info(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_info(signature.into());
             self
         }
         /// <p>The layer's software license. It can be any of the following:</p>
@@ -6378,11 +6396,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of compatible  
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn compatible_architectures(
-            mut self,
-            inp: impl Into<crate::model::Architecture>,
-        ) -> Self {
-            self.inner = self.inner.compatible_architectures(inp);
+        pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.compatible_architectures(input);
             self
         }
         /// <p>A list of compatible  
@@ -6482,8 +6497,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -6516,8 +6531,8 @@ pub mod fluent_builders {
         /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
         /// publishing a version if the function code has changed since you last updated it. You can get the hash for the
         /// version that you uploaded from the output of <a>UpdateFunctionCode</a>.</p>
-        pub fn code_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_sha256(inp);
+        pub fn code_sha256(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_sha256(signature.into());
             self
         }
         /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
@@ -6528,8 +6543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the version to override the description in the function configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description for the version to override the description in the function configuration.</p>
@@ -6539,8 +6554,8 @@ pub mod fluent_builders {
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
         /// publishing a version if the function configuration has changed since you last updated it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
@@ -6611,8 +6626,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.code_signing_config_arn(signature.into());
             self
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
@@ -6643,8 +6661,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -6762,8 +6780,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -6794,8 +6812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of simultaneous executions to reserve for the function.</p>
-        pub fn reserved_concurrent_executions(mut self, inp: i32) -> Self {
-            self.inner = self.inner.reserved_concurrent_executions(inp);
+        pub fn reserved_concurrent_executions(mut self, signature: i32) -> Self {
+            self.inner = self.inner.reserved_concurrent_executions(signature);
             self
         }
         /// <p>The number of simultaneous executions to reserve for the function.</p>
@@ -6896,8 +6914,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -6928,8 +6946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>A version number or alias name.</p>
@@ -6938,8 +6956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_retry_attempts(inp);
+        pub fn maximum_retry_attempts(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_retry_attempts(signature);
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -6948,8 +6966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-        pub fn maximum_event_age_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_event_age_in_seconds(inp);
+        pub fn maximum_event_age_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_event_age_in_seconds(signature);
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
@@ -6979,8 +6997,8 @@ pub mod fluent_builders {
         /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
         /// </li>
         /// </ul>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, signature: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(signature);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
@@ -7092,8 +7110,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -7124,8 +7142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>The version number or alias name.</p>
@@ -7134,8 +7152,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of provisioned concurrency to allocate for the version or alias.</p>
-        pub fn provisioned_concurrent_executions(mut self, inp: i32) -> Self {
-            self.inner = self.inner.provisioned_concurrent_executions(inp);
+        pub fn provisioned_concurrent_executions(mut self, signature: i32) -> Self {
+            self.inner = self.inner.provisioned_concurrent_executions(signature);
             self
         }
         /// <p>The amount of provisioned concurrency to allocate for the version or alias.</p>
@@ -7209,8 +7227,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-        pub fn layer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_name(inp);
+        pub fn layer_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_name(signature.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
@@ -7219,8 +7237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number.</p>
-        pub fn version_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.version_number(inp);
+        pub fn version_number(mut self, signature: i64) -> Self {
+            self.inner = self.inner.version_number(signature);
             self
         }
         /// <p>The version number.</p>
@@ -7229,8 +7247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier that was specified when the statement was added.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(signature.into());
             self
         }
         /// <p>The identifier that was specified when the statement was added.</p>
@@ -7240,8 +7258,8 @@ pub mod fluent_builders {
         }
         /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
         /// policy that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
@@ -7331,8 +7349,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -7363,8 +7381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Statement ID of the permission to remove.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(signature.into());
             self
         }
         /// <p>Statement ID of the permission to remove.</p>
@@ -7373,8 +7391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a version or alias to remove permissions from a published version of the function.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>Specify a version or alias to remove permissions from a published version of the function.</p>
@@ -7384,8 +7402,8 @@ pub mod fluent_builders {
         }
         /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
         /// policy that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
@@ -7455,8 +7473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(signature.into());
             self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
@@ -7474,7 +7492,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of tags to apply to the function.</p>
@@ -7548,8 +7566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(signature.into());
             self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
@@ -7562,8 +7580,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of tag keys to remove from the function.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag keys to remove from the function.</p>
@@ -7654,8 +7672,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -7686,8 +7704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the alias.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the alias.</p>
@@ -7696,8 +7714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn function_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_version(inp);
+        pub fn function_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_version(signature.into());
             self
         }
         /// <p>The function version that the alias invokes.</p>
@@ -7709,8 +7727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the alias.</p>
@@ -7720,8 +7738,11 @@ pub mod fluent_builders {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
         /// configuration</a> of the alias.</p>
-        pub fn routing_config(mut self, inp: crate::model::AliasRoutingConfiguration) -> Self {
-            self.inner = self.inner.routing_config(inp);
+        pub fn routing_config(
+            mut self,
+            signature: crate::model::AliasRoutingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.routing_config(signature);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
@@ -7735,8 +7756,8 @@ pub mod fluent_builders {
         }
         /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying
         /// an alias that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying
@@ -7807,8 +7828,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn code_signing_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_signing_config_arn(inp);
+        pub fn code_signing_config_arn(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.code_signing_config_arn(signature.into());
             self
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
@@ -7820,8 +7844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Descriptive name for this code signing configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>Descriptive name for this code signing configuration.</p>
@@ -7830,8 +7854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Signing profiles for this code signing configuration.</p>
-        pub fn allowed_publishers(mut self, inp: crate::model::AllowedPublishers) -> Self {
-            self.inner = self.inner.allowed_publishers(inp);
+        pub fn allowed_publishers(mut self, signature: crate::model::AllowedPublishers) -> Self {
+            self.inner = self.inner.allowed_publishers(signature);
             self
         }
         /// <p>Signing profiles for this code signing configuration.</p>
@@ -7843,8 +7867,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The code signing policy.</p>
-        pub fn code_signing_policies(mut self, inp: crate::model::CodeSigningPolicies) -> Self {
-            self.inner = self.inner.code_signing_policies(inp);
+        pub fn code_signing_policies(
+            mut self,
+            signature: crate::model::CodeSigningPolicies,
+        ) -> Self {
+            self.inner = self.inner.code_signing_policies(signature);
             self
         }
         /// <p>The code signing policy.</p>
@@ -8019,8 +8046,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source mapping.</p>
-        pub fn uuid(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uuid(inp);
+        pub fn uuid(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uuid(signature.into());
             self
         }
         /// <p>The identifier of the event source mapping.</p>
@@ -8052,8 +8079,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -8089,8 +8116,8 @@ pub mod fluent_builders {
         }
         /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
         /// <p>Default: True</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, signature: bool) -> Self {
+            self.inner = self.inner.enabled(signature);
             self
         }
         /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
@@ -8127,8 +8154,8 @@ pub mod fluent_builders {
         /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
         /// </li>
         /// </ul>
-        pub fn batch_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.batch_size(inp);
+        pub fn batch_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.batch_size(signature);
             self
         }
         /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
@@ -8165,8 +8192,8 @@ pub mod fluent_builders {
         }
         /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
         /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        pub fn filter_criteria(mut self, signature: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(signature);
             self
         }
         /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
@@ -8181,8 +8208,8 @@ pub mod fluent_builders {
         /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
         /// <p>Default: 0</p>
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
-        pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_batching_window_in_seconds(inp);
+        pub fn maximum_batching_window_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_batching_window_in_seconds(signature);
             self
         }
         /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
@@ -8196,8 +8223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, signature: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(signature);
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
@@ -8209,8 +8236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
-        pub fn maximum_record_age_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_record_age_in_seconds(inp);
+        pub fn maximum_record_age_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_record_age_in_seconds(signature);
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
@@ -8222,8 +8249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
-        pub fn bisect_batch_on_function_error(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bisect_batch_on_function_error(inp);
+        pub fn bisect_batch_on_function_error(mut self, signature: bool) -> Self {
+            self.inner = self.inner.bisect_batch_on_function_error(signature);
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
@@ -8235,8 +8262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_retry_attempts(inp);
+        pub fn maximum_retry_attempts(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_retry_attempts(signature);
             self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
@@ -8245,8 +8272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
-        pub fn parallelization_factor(mut self, inp: i32) -> Self {
-            self.inner = self.inner.parallelization_factor(inp);
+        pub fn parallelization_factor(mut self, signature: i32) -> Self {
+            self.inner = self.inner.parallelization_factor(signature);
             self
         }
         /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
@@ -8261,9 +8288,9 @@ pub mod fluent_builders {
         /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            inp: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
-            self.inner = self.inner.source_access_configurations(inp);
+            self.inner = self.inner.source_access_configurations(input);
             self
         }
         /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
@@ -8275,8 +8302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-        pub fn tumbling_window_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.tumbling_window_in_seconds(inp);
+        pub fn tumbling_window_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.tumbling_window_in_seconds(signature);
             self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
@@ -8291,9 +8318,9 @@ pub mod fluent_builders {
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            inp: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
-            self.inner = self.inner.function_response_types(inp);
+            self.inner = self.inner.function_response_types(input);
             self
         }
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
@@ -8392,8 +8419,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -8425,8 +8452,8 @@ pub mod fluent_builders {
         }
         /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
         /// you.</p>
-        pub fn zip_file(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.zip_file(inp);
+        pub fn zip_file(mut self, signature: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.zip_file(signature);
             self
         }
         /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
@@ -8436,8 +8463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(inp);
+        pub fn s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(signature.into());
             self
         }
         /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
@@ -8446,8 +8473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 key of the deployment package.</p>
-        pub fn s3_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key(inp);
+        pub fn s3_key(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key(signature.into());
             self
         }
         /// <p>The Amazon S3 key of the deployment package.</p>
@@ -8456,8 +8483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For versioned objects, the version of the deployment package object to use.</p>
-        pub fn s3_object_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_object_version(inp);
+        pub fn s3_object_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_object_version(signature.into());
             self
         }
         /// <p>For versioned objects, the version of the deployment package object to use.</p>
@@ -8469,8 +8496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>URI of a container image in the Amazon ECR registry.</p>
-        pub fn image_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_uri(inp);
+        pub fn image_uri(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_uri(signature.into());
             self
         }
         /// <p>URI of a container image in the Amazon ECR registry.</p>
@@ -8480,8 +8507,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as
         /// calling <a>PublishVersion</a> separately.</p>
-        pub fn publish(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publish(inp);
+        pub fn publish(mut self, signature: bool) -> Self {
+            self.inner = self.inner.publish(signature);
             self
         }
         /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as
@@ -8492,8 +8519,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to true to validate the request parameters and access permissions without modifying the function
         /// code.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, signature: bool) -> Self {
+            self.inner = self.inner.dry_run(signature);
             self
         }
         /// <p>Set to true to validate the request parameters and access permissions without modifying the function
@@ -8504,8 +8531,8 @@ pub mod fluent_builders {
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
         /// function that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
@@ -8520,8 +8547,8 @@ pub mod fluent_builders {
         ///
         /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
         /// The default value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, inp: impl Into<crate::model::Architecture>) -> Self {
-            self.inner = self.inner.architectures(inp);
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architectures(input);
             self
         }
         /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
@@ -8627,8 +8654,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
         /// characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
@@ -8659,8 +8686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
@@ -8672,8 +8699,8 @@ pub mod fluent_builders {
         /// Handler is required if the deployment package is a .zip file archive. The format includes the
         /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
         /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
-        pub fn handler(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.handler(inp);
+        pub fn handler(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.handler(signature.into());
             self
         }
         /// <p>The name of the method within your code that Lambda calls to execute your function.
@@ -8685,8 +8712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the function.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the function.</p>
@@ -8696,8 +8723,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
         /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, signature: i32) -> Self {
+            self.inner = self.inner.timeout(signature);
             self
         }
         /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
@@ -8708,8 +8735,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
         /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
-        pub fn memory_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.memory_size(inp);
+        pub fn memory_size(mut self, signature: i32) -> Self {
+            self.inner = self.inner.memory_size(signature);
             self
         }
         /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
@@ -8721,8 +8748,8 @@ pub mod fluent_builders {
         /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
         /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, signature: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(signature);
             self
         }
         /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
@@ -8736,8 +8763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Environment variables that are accessible from function code during execution.</p>
-        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, signature: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(signature);
             self
         }
         /// <p>Environment variables that are accessible from function code during execution.</p>
@@ -8750,8 +8777,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
         /// </p>
-        pub fn runtime(mut self, inp: crate::model::Runtime) -> Self {
-            self.inner = self.inner.runtime(inp);
+        pub fn runtime(mut self, signature: crate::model::Runtime) -> Self {
+            self.inner = self.inner.runtime(signature);
             self
         }
         /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
@@ -8762,8 +8789,8 @@ pub mod fluent_builders {
         }
         /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
         /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
-        pub fn dead_letter_config(mut self, inp: crate::model::DeadLetterConfig) -> Self {
-            self.inner = self.inner.dead_letter_config(inp);
+        pub fn dead_letter_config(mut self, signature: crate::model::DeadLetterConfig) -> Self {
+            self.inner = self.inner.dead_letter_config(signature);
             self
         }
         /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
@@ -8777,8 +8804,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
         /// variables. If it's not provided, Lambda uses a default service key.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(signature.into());
             self
         }
         /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
@@ -8789,8 +8816,8 @@ pub mod fluent_builders {
         }
         /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
-        pub fn tracing_config(mut self, inp: crate::model::TracingConfig) -> Self {
-            self.inner = self.inner.tracing_config(inp);
+        pub fn tracing_config(mut self, signature: crate::model::TracingConfig) -> Self {
+            self.inner = self.inner.tracing_config(signature);
             self
         }
         /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
@@ -8804,8 +8831,8 @@ pub mod fluent_builders {
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
         /// function that has changed since you last read it.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(signature.into());
             self
         }
         /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
@@ -8820,8 +8847,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
         /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-        pub fn layers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layers(inp);
+        pub fn layers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layers(input.into());
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
@@ -8838,11 +8865,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an Amazon EFS file system.</p>
-        pub fn file_system_configs(
-            mut self,
-            inp: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
-            self.inner = self.inner.file_system_configs(inp);
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
+            self.inner = self.inner.file_system_configs(input);
             self
         }
         /// <p>Connection settings for an Amazon EFS file system.</p>
@@ -8856,8 +8880,8 @@ pub mod fluent_builders {
         /// <p>
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
         /// values</a> that override the values in the container image Docker file.</p>
-        pub fn image_config(mut self, inp: crate::model::ImageConfig) -> Self {
-            self.inner = self.inner.image_config(inp);
+        pub fn image_config(mut self, signature: crate::model::ImageConfig) -> Self {
+            self.inner = self.inner.image_config(signature);
             self
         }
         /// <p>
@@ -8951,8 +8975,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
         /// If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(signature.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
@@ -8983,8 +9007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version number or alias name.</p>
-        pub fn qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualifier(inp);
+        pub fn qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualifier(signature.into());
             self
         }
         /// <p>A version number or alias name.</p>
@@ -8993,8 +9017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
-        pub fn maximum_retry_attempts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_retry_attempts(inp);
+        pub fn maximum_retry_attempts(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_retry_attempts(signature);
             self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -9003,8 +9027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-        pub fn maximum_event_age_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_event_age_in_seconds(inp);
+        pub fn maximum_event_age_in_seconds(mut self, signature: i32) -> Self {
+            self.inner = self.inner.maximum_event_age_in_seconds(signature);
             self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
@@ -9034,8 +9058,8 @@ pub mod fluent_builders {
         /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
         /// </li>
         /// </ul>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, signature: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(signature);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>

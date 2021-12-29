@@ -311,9 +311,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -390,9 +390,9 @@ pub mod list_speakers_output {
         ///
         /// <p>A list containing details about each speaker in the Amazon Web Services account.
         /// </p>
-        pub fn speaker_summaries(mut self, input: impl Into<crate::model::SpeakerSummary>) -> Self {
+        pub fn speaker_summaries(mut self, input: crate::model::SpeakerSummary) -> Self {
             let mut v = self.speaker_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.speaker_summaries = Some(v);
             self
         }
@@ -489,12 +489,9 @@ pub mod list_speaker_enrollment_jobs_output {
         /// To override the contents of this collection use [`set_job_summaries`](Self::set_job_summaries).
         ///
         /// <p>A list containing details about each specified speaker enrollment job.</p>
-        pub fn job_summaries(
-            mut self,
-            input: impl Into<crate::model::SpeakerEnrollmentJobSummary>,
-        ) -> Self {
+        pub fn job_summaries(mut self, input: crate::model::SpeakerEnrollmentJobSummary) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_summaries = Some(v);
             self
         }
@@ -592,10 +589,10 @@ pub mod list_fraudster_registration_jobs_output {
         /// <p>A list containing details about each specified fraudster registration job.</p>
         pub fn job_summaries(
             mut self,
-            input: impl Into<crate::model::FraudsterRegistrationJobSummary>,
+            input: crate::model::FraudsterRegistrationJobSummary,
         ) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_summaries = Some(v);
             self
         }
@@ -690,9 +687,9 @@ pub mod list_domains_output {
         /// To override the contents of this collection use [`set_domain_summaries`](Self::set_domain_summaries).
         ///
         /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-        pub fn domain_summaries(mut self, input: impl Into<crate::model::DomainSummary>) -> Self {
+        pub fn domain_summaries(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domain_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_summaries = Some(v);
             self
         }

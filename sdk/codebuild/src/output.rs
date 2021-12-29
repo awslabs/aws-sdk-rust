@@ -767,10 +767,10 @@ pub mod list_source_credentials_output {
         /// ARN, and type of source provider for one set of credentials. </p>
         pub fn source_credentials_infos(
             mut self,
-            input: impl Into<crate::model::SourceCredentialsInfo>,
+            input: crate::model::SourceCredentialsInfo,
         ) -> Self {
             let mut v = self.source_credentials_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_credentials_infos = Some(v);
             self
         }
@@ -1488,9 +1488,9 @@ pub mod list_curated_environment_images_output {
         ///
         /// <p>Information about supported platforms for Docker images that are managed by
         /// CodeBuild.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::EnvironmentPlatform>) -> Self {
+        pub fn platforms(mut self, input: crate::model::EnvironmentPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -2077,9 +2077,9 @@ pub mod get_report_group_trend_output {
         /// To override the contents of this collection use [`set_raw_data`](Self::set_raw_data).
         ///
         /// <p>An array that contains the raw data for each report.</p>
-        pub fn raw_data(mut self, input: impl Into<crate::model::ReportWithRawData>) -> Self {
+        pub fn raw_data(mut self, input: crate::model::ReportWithRawData) -> Self {
             let mut v = self.raw_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.raw_data = Some(v);
             self
         }
@@ -2189,9 +2189,9 @@ pub mod describe_test_cases_output {
         /// <p>
         /// The returned list of test cases.
         /// </p>
-        pub fn test_cases(mut self, input: impl Into<crate::model::TestCase>) -> Self {
+        pub fn test_cases(mut self, input: crate::model::TestCase) -> Self {
             let mut v = self.test_cases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_cases = Some(v);
             self
         }
@@ -2277,9 +2277,9 @@ pub mod describe_code_coverages_output {
         /// To override the contents of this collection use [`set_code_coverages`](Self::set_code_coverages).
         ///
         /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
-        pub fn code_coverages(mut self, input: impl Into<crate::model::CodeCoverage>) -> Self {
+        pub fn code_coverages(mut self, input: crate::model::CodeCoverage) -> Self {
             let mut v = self.code_coverages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.code_coverages = Some(v);
             self
         }
@@ -2592,12 +2592,9 @@ pub mod delete_build_batch_output {
         ///
         /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be
         /// deleted.</p>
-        pub fn builds_not_deleted(
-            mut self,
-            input: impl Into<crate::model::BuildNotDeleted>,
-        ) -> Self {
+        pub fn builds_not_deleted(mut self, input: crate::model::BuildNotDeleted) -> Self {
             let mut v = self.builds_not_deleted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.builds_not_deleted = Some(v);
             self
         }
@@ -2856,9 +2853,9 @@ pub mod batch_get_reports_output {
         /// <p>
         /// The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.
         /// </p>
-        pub fn reports(mut self, input: impl Into<crate::model::Report>) -> Self {
+        pub fn reports(mut self, input: crate::model::Report) -> Self {
             let mut v = self.reports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reports = Some(v);
             self
         }
@@ -2963,9 +2960,9 @@ pub mod batch_get_report_groups_output {
         /// <p>
         /// The array of report groups returned by <code>BatchGetReportGroups</code>.
         /// </p>
-        pub fn report_groups(mut self, input: impl Into<crate::model::ReportGroup>) -> Self {
+        pub fn report_groups(mut self, input: crate::model::ReportGroup) -> Self {
             let mut v = self.report_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_groups = Some(v);
             self
         }
@@ -3060,9 +3057,9 @@ pub mod batch_get_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>Information about the requested build projects.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::Project>) -> Self {
+        pub fn projects(mut self, input: crate::model::Project) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -3151,9 +3148,9 @@ pub mod batch_get_builds_output {
         /// To override the contents of this collection use [`set_builds`](Self::set_builds).
         ///
         /// <p>Information about the requested builds.</p>
-        pub fn builds(mut self, input: impl Into<crate::model::Build>) -> Self {
+        pub fn builds(mut self, input: crate::model::Build) -> Self {
             let mut v = self.builds.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.builds = Some(v);
             self
         }
@@ -3245,9 +3242,9 @@ pub mod batch_get_build_batches_output {
         ///
         /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch
         /// builds.</p>
-        pub fn build_batches(mut self, input: impl Into<crate::model::BuildBatch>) -> Self {
+        pub fn build_batches(mut self, input: crate::model::BuildBatch) -> Self {
             let mut v = self.build_batches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.build_batches = Some(v);
             self
         }
@@ -3357,12 +3354,9 @@ pub mod batch_delete_builds_output {
         /// To override the contents of this collection use [`set_builds_not_deleted`](Self::set_builds_not_deleted).
         ///
         /// <p>Information about any builds that could not be successfully deleted.</p>
-        pub fn builds_not_deleted(
-            mut self,
-            input: impl Into<crate::model::BuildNotDeleted>,
-        ) -> Self {
+        pub fn builds_not_deleted(mut self, input: crate::model::BuildNotDeleted) -> Self {
             let mut v = self.builds_not_deleted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.builds_not_deleted = Some(v);
             self
         }

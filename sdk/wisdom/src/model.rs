@@ -1218,9 +1218,9 @@ pub mod search_expression {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The search expression filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2442,9 +2442,9 @@ pub mod document_text {
         /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
         ///
         /// <p>Highlights in the document text.</p>
-        pub fn highlights(mut self, input: impl Into<crate::model::Highlight>) -> Self {
+        pub fn highlights(mut self, input: crate::model::Highlight) -> Self {
             let mut v = self.highlights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.highlights = Some(v);
             self
         }

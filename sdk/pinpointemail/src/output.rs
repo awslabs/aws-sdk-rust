@@ -584,9 +584,9 @@ pub mod list_tags_for_resource_output {
         /// <p>An array that lists all the tags that are associated with the resource. Each tag
         /// consists of a required tag key (<code>Key</code>) and an associated tag value
         /// (<code>Value</code>)</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -665,9 +665,9 @@ pub mod list_email_identities_output {
         ///
         /// <p>An array that includes all of the identities associated with your Amazon Pinpoint
         /// account.</p>
-        pub fn email_identities(mut self, input: impl Into<crate::model::IdentityInfo>) -> Self {
+        pub fn email_identities(mut self, input: crate::model::IdentityInfo) -> Self {
             let mut v = self.email_identities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.email_identities = Some(v);
             self
         }
@@ -773,10 +773,10 @@ pub mod list_domain_deliverability_campaigns_output {
         /// the specified time range.</p>
         pub fn domain_deliverability_campaigns(
             mut self,
-            input: impl Into<crate::model::DomainDeliverabilityCampaign>,
+            input: crate::model::DomainDeliverabilityCampaign,
         ) -> Self {
             let mut v = self.domain_deliverability_campaigns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_deliverability_campaigns = Some(v);
             self
         }
@@ -875,10 +875,10 @@ pub mod list_deliverability_test_reports_output {
         /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
         pub fn deliverability_test_reports(
             mut self,
-            input: impl Into<crate::model::DeliverabilityTestReport>,
+            input: crate::model::DeliverabilityTestReport,
         ) -> Self {
             let mut v = self.deliverability_test_reports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deliverability_test_reports = Some(v);
             self
         }
@@ -1306,9 +1306,9 @@ pub mod get_email_identity_output {
         ///
         /// <p>An array of objects that define the tags (keys and values) that are associated with
         /// the email identity.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1411,9 +1411,9 @@ pub mod get_domain_statistics_report_output {
         /// <p>An object that contains deliverability metrics for the domain that you specified. This
         /// object contains data for each day, starting on the <code>StartDate</code> and ending on
         /// the <code>EndDate</code>.</p>
-        pub fn daily_volumes(mut self, input: impl Into<crate::model::DailyVolume>) -> Self {
+        pub fn daily_volumes(mut self, input: crate::model::DailyVolume) -> Self {
             let mut v = self.daily_volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.daily_volumes = Some(v);
             self
         }
@@ -1629,9 +1629,9 @@ pub mod get_deliverability_test_report_output {
         ///
         /// <p>An object that describes how the test email was handled by several email providers,
         /// including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-        pub fn isp_placements(mut self, input: impl Into<crate::model::IspPlacement>) -> Self {
+        pub fn isp_placements(mut self, input: crate::model::IspPlacement) -> Self {
             let mut v = self.isp_placements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.isp_placements = Some(v);
             self
         }
@@ -1662,9 +1662,9 @@ pub mod get_deliverability_test_report_output {
         ///
         /// <p>An array of objects that define the tags (keys and values) that are associated with
         /// the predictive inbox placement test.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1851,10 +1851,10 @@ pub mod get_deliverability_dashboard_options_output {
         /// the end of the current calendar month.</p>
         pub fn active_subscribed_domains(
             mut self,
-            input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
+            input: crate::model::DomainDeliverabilityTrackingOption,
         ) -> Self {
             let mut v = self.active_subscribed_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_subscribed_domains = Some(v);
             self
         }
@@ -1879,12 +1879,12 @@ pub mod get_deliverability_dashboard_options_output {
         /// end of the current calendar month.</p>
         pub fn pending_expiration_subscribed_domains(
             mut self,
-            input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
+            input: crate::model::DomainDeliverabilityTrackingOption,
         ) -> Self {
             let mut v = self
                 .pending_expiration_subscribed_domains
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_expiration_subscribed_domains = Some(v);
             self
         }
@@ -1969,9 +1969,9 @@ pub mod get_dedicated_ips_output {
         ///
         /// <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint
         /// account.</p>
-        pub fn dedicated_ips(mut self, input: impl Into<crate::model::DedicatedIp>) -> Self {
+        pub fn dedicated_ips(mut self, input: crate::model::DedicatedIp) -> Self {
             let mut v = self.dedicated_ips.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dedicated_ips = Some(v);
             self
         }
@@ -2109,12 +2109,9 @@ pub mod get_configuration_set_event_destinations_output {
         ///
         /// <p>An array that includes all of the events destinations that have been configured for
         /// the configuration set.</p>
-        pub fn event_destinations(
-            mut self,
-            input: impl Into<crate::model::EventDestination>,
-        ) -> Self {
+        pub fn event_destinations(mut self, input: crate::model::EventDestination) -> Self {
             let mut v = self.event_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_destinations = Some(v);
             self
         }
@@ -2300,9 +2297,9 @@ pub mod get_configuration_set_output {
         ///
         /// <p>An array of objects that define the tags (keys and values) that are associated with
         /// the configuration set.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2389,10 +2386,10 @@ pub mod get_blacklist_reports_output {
         pub fn blacklist_report(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::BlacklistEntry>>,
+            v: std::vec::Vec<crate::model::BlacklistEntry>,
         ) -> Self {
             let mut hash_map = self.blacklist_report.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.blacklist_report = Some(hash_map);
             self
         }

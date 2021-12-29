@@ -406,12 +406,9 @@ pub mod list_workspaces_output {
         /// To override the contents of this collection use [`set_workspace_summaries`](Self::set_workspace_summaries).
         ///
         /// <p>A list of objects that contain information about the workspaces.</p>
-        pub fn workspace_summaries(
-            mut self,
-            input: impl Into<crate::model::WorkspaceSummary>,
-        ) -> Self {
+        pub fn workspace_summaries(mut self, input: crate::model::WorkspaceSummary) -> Self {
             let mut v = self.workspace_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspace_summaries = Some(v);
             self
         }
@@ -585,9 +582,9 @@ pub mod list_scenes_output {
         /// To override the contents of this collection use [`set_scene_summaries`](Self::set_scene_summaries).
         ///
         /// <p>A list of objects that contain information about the scenes.</p>
-        pub fn scene_summaries(mut self, input: impl Into<crate::model::SceneSummary>) -> Self {
+        pub fn scene_summaries(mut self, input: crate::model::SceneSummary) -> Self {
             let mut v = self.scene_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scene_summaries = Some(v);
             self
         }
@@ -668,9 +665,9 @@ pub mod list_entities_output {
         /// To override the contents of this collection use [`set_entity_summaries`](Self::set_entity_summaries).
         ///
         /// <p>A list of objects that contain information about the entities.</p>
-        pub fn entity_summaries(mut self, input: impl Into<crate::model::EntitySummary>) -> Self {
+        pub fn entity_summaries(mut self, input: crate::model::EntitySummary) -> Self {
             let mut v = self.entity_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_summaries = Some(v);
             self
         }
@@ -782,10 +779,10 @@ pub mod list_component_types_output {
         /// <p>A list of objects that contain information about the component types.</p>
         pub fn component_type_summaries(
             mut self,
-            input: impl Into<crate::model::ComponentTypeSummary>,
+            input: crate::model::ComponentTypeSummary,
         ) -> Self {
             let mut v = self.component_type_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_type_summaries = Some(v);
             self
         }
@@ -1260,12 +1257,9 @@ pub mod get_property_value_history_output {
         ///
         /// <p>An object that maps strings to the property definitions in the component type. Each string
         /// in the mapping must be unique to this object.</p>
-        pub fn property_values(
-            mut self,
-            input: impl Into<crate::model::PropertyValueHistory>,
-        ) -> Self {
+        pub fn property_values(mut self, input: crate::model::PropertyValueHistory) -> Self {
             let mut v = self.property_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_values = Some(v);
             self
         }
@@ -1352,10 +1346,10 @@ pub mod get_property_value_output {
         pub fn property_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyLatestValue>,
+            v: crate::model::PropertyLatestValue,
         ) -> Self {
             let mut hash_map = self.property_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.property_values = Some(hash_map);
             self
         }
@@ -1573,10 +1567,10 @@ pub mod get_entity_output {
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentResponse>,
+            v: crate::model::ComponentResponse,
         ) -> Self {
             let mut hash_map = self.components.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.components = Some(hash_map);
             self
         }
@@ -1871,10 +1865,10 @@ pub mod get_component_type_output {
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyDefinitionResponse>,
+            v: crate::model::PropertyDefinitionResponse,
         ) -> Self {
             let mut hash_map = self.property_definitions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.property_definitions = Some(hash_map);
             self
         }
@@ -1920,10 +1914,10 @@ pub mod get_component_type_output {
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FunctionResponse>,
+            v: crate::model::FunctionResponse,
         ) -> Self {
             let mut hash_map = self.functions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.functions = Some(hash_map);
             self
         }
@@ -2595,12 +2589,9 @@ pub mod batch_put_property_values_output {
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
         /// <p>Entries that caused errors in the batch put operation.</p>
-        pub fn error_entries(
-            mut self,
-            input: impl Into<crate::model::BatchPutPropertyErrorEntry>,
-        ) -> Self {
+        pub fn error_entries(mut self, input: crate::model::BatchPutPropertyErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }

@@ -392,9 +392,9 @@ pub mod list_timeline_events_output {
         /// To override the contents of this collection use [`set_event_summaries`](Self::set_event_summaries).
         ///
         /// <p>Details about each event that occurred during the incident.</p>
-        pub fn event_summaries(mut self, input: impl Into<crate::model::EventSummary>) -> Self {
+        pub fn event_summaries(mut self, input: crate::model::EventSummary) -> Self {
             let mut v = self.event_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_summaries = Some(v);
             self
         }
@@ -551,12 +551,9 @@ pub mod list_response_plans_output {
         /// To override the contents of this collection use [`set_response_plan_summaries`](Self::set_response_plan_summaries).
         ///
         /// <p>Details of each response plan.</p>
-        pub fn response_plan_summaries(
-            mut self,
-            input: impl Into<crate::model::ResponsePlanSummary>,
-        ) -> Self {
+        pub fn response_plan_summaries(mut self, input: crate::model::ResponsePlanSummary) -> Self {
             let mut v = self.response_plan_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.response_plan_summaries = Some(v);
             self
         }
@@ -718,9 +715,9 @@ pub mod list_related_items_output {
         /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
         ///
         /// <p>Details about each related item.</p>
-        pub fn related_items(mut self, input: impl Into<crate::model::RelatedItem>) -> Self {
+        pub fn related_items(mut self, input: crate::model::RelatedItem) -> Self {
             let mut v = self.related_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_items = Some(v);
             self
         }
@@ -806,10 +803,10 @@ pub mod list_incident_records_output {
         /// <p>The details of each listed incident record.</p>
         pub fn incident_record_summaries(
             mut self,
-            input: impl Into<crate::model::IncidentRecordSummary>,
+            input: crate::model::IncidentRecordSummary,
         ) -> Self {
             let mut v = self.incident_record_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.incident_record_summaries = Some(v);
             self
         }
@@ -1061,9 +1058,9 @@ pub mod get_response_plan_output {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions that this response plan takes at the beginning of the incident.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -1139,9 +1136,9 @@ pub mod get_resource_policies_output {
         /// To override the contents of this collection use [`set_resource_policies`](Self::set_resource_policies).
         ///
         /// <p>Details about the resource policy attached to the response plan.</p>
-        pub fn resource_policies(mut self, input: impl Into<crate::model::ResourcePolicy>) -> Self {
+        pub fn resource_policies(mut self, input: crate::model::ResourcePolicy) -> Self {
             let mut v = self.resource_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_policies = Some(v);
             self
         }

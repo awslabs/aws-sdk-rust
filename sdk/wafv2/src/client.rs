@@ -490,8 +490,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
         /// resource.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_arn(inp);
+        pub fn web_acl_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
@@ -520,8 +520,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
@@ -629,8 +629,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -653,8 +653,8 @@ pub mod fluent_builders {
         ///
         /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
         /// ACL. </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
@@ -730,8 +730,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -749,8 +749,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -768,8 +768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the IP set that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the IP set that helps with identification. </p>
@@ -778,8 +778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-        pub fn ip_address_version(mut self, inp: crate::model::IpAddressVersion) -> Self {
-            self.inner = self.inner.ip_address_version(inp);
+        pub fn ip_address_version(mut self, signature: crate::model::IpAddressVersion) -> Self {
+            self.inner = self.inner.ip_address_version(signature);
             self
         }
         /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
@@ -812,8 +812,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-        pub fn addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addresses(inp);
+        pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addresses(input.into());
             self
         }
         /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
@@ -846,8 +846,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -920,8 +920,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -939,8 +939,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the set that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the set that helps with identification. </p>
@@ -972,8 +972,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
         ///
         /// <p>Array of regular expression strings. </p>
-        pub fn regular_expression_list(mut self, inp: impl Into<crate::model::Regex>) -> Self {
-            self.inner = self.inner.regular_expression_list(inp);
+        pub fn regular_expression_list(mut self, input: crate::model::Regex) -> Self {
+            self.inner = self.inner.regular_expression_list(input);
             self
         }
         /// <p>Array of regular expression strings. </p>
@@ -989,8 +989,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -1063,8 +1063,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -1082,8 +1082,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -1112,8 +1112,8 @@ pub mod fluent_builders {
         /// Rule group capacity is fixed at creation, which helps users plan their  
         /// web ACL WCU usage when they use a rule group.
         /// The WCU limit for web ACLs is 1,500.  </p>
-        pub fn capacity(mut self, inp: i64) -> Self {
-            self.inner = self.inner.capacity(inp);
+        pub fn capacity(mut self, signature: i64) -> Self {
+            self.inner = self.inner.capacity(signature);
             self
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
@@ -1133,8 +1133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the rule group that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the rule group that helps with identification. </p>
@@ -1150,8 +1150,8 @@ pub mod fluent_builders {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>The <a>Rule</a> statements used to identify the web requests that you
@@ -1166,8 +1166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
-        pub fn visibility_config(mut self, inp: crate::model::VisibilityConfig) -> Self {
-            self.inner = self.inner.visibility_config(inp);
+        pub fn visibility_config(mut self, signature: crate::model::VisibilityConfig) -> Self {
+            self.inner = self.inner.visibility_config(signature);
             self
         }
         /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
@@ -1183,8 +1183,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -1207,9 +1207,9 @@ pub mod fluent_builders {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
-            self.inner = self.inner.custom_response_bodies(k, v);
+            self.inner = self.inner.custom_response_bodies(k.into(), v);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
@@ -1288,8 +1288,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -1307,8 +1307,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -1326,8 +1326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
-        pub fn default_action(mut self, inp: crate::model::DefaultAction) -> Self {
-            self.inner = self.inner.default_action(inp);
+        pub fn default_action(mut self, signature: crate::model::DefaultAction) -> Self {
+            self.inner = self.inner.default_action(signature);
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
@@ -1339,8 +1339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the web ACL that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the web ACL that helps with identification. </p>
@@ -1356,8 +1356,8 @@ pub mod fluent_builders {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>The <a>Rule</a> statements used to identify the web requests that you
@@ -1372,8 +1372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
-        pub fn visibility_config(mut self, inp: crate::model::VisibilityConfig) -> Self {
-            self.inner = self.inner.visibility_config(inp);
+        pub fn visibility_config(mut self, signature: crate::model::VisibilityConfig) -> Self {
+            self.inner = self.inner.visibility_config(signature);
             self
         }
         /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
@@ -1389,8 +1389,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -1413,9 +1413,9 @@ pub mod fluent_builders {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
-            self.inner = self.inner.custom_response_bodies(k, v);
+            self.inner = self.inner.custom_response_bodies(k.into(), v);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
@@ -1433,8 +1433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
-        pub fn captcha_config(mut self, inp: crate::model::CaptchaConfig) -> Self {
-            self.inner = self.inner.captcha_config(inp);
+        pub fn captcha_config(mut self, signature: crate::model::CaptchaConfig) -> Self {
+            self.inner = self.inner.captcha_config(signature);
             self
         }
         /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
@@ -1508,8 +1508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_arn(inp);
+        pub fn web_acl_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
@@ -1518,8 +1518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn web_acl_lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_lock_token(inp);
+        pub fn web_acl_lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -1591,8 +1591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -1610,8 +1610,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -1629,8 +1629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -1639,8 +1639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -1710,8 +1710,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the
         /// <a>LoggingConfiguration</a>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the
@@ -1784,8 +1784,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the
         /// policy.</p>
         /// <p>You must be the owner of the rule group to perform this operation.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the
@@ -1856,8 +1856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -1875,8 +1875,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -1894,8 +1894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -1904,8 +1904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -1974,8 +1974,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -1993,8 +1993,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -2012,8 +2012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2022,8 +2022,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -2094,8 +2094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -2113,8 +2113,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -2132,8 +2132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2142,8 +2142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -2213,8 +2213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
-        pub fn vendor_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vendor_name(inp);
+        pub fn vendor_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor_name(signature.into());
             self
         }
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
@@ -2223,8 +2223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -2242,8 +2242,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -2263,8 +2263,8 @@ pub mod fluent_builders {
         /// <p>The version of the rule group. You can only use a version that is not
         /// scheduled for expiration. If you don't provide this, WAF uses the vendor's default version.
         /// </p>
-        pub fn version_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_name(inp);
+        pub fn version_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(signature.into());
             self
         }
         /// <p>The version of the rule group. You can only use a version that is not
@@ -2357,8 +2357,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>
@@ -2446,8 +2446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -2465,8 +2465,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -2484,8 +2484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2555,8 +2555,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the
         /// <a>LoggingConfiguration</a>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the
@@ -2631,8 +2631,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
         /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -2651,8 +2651,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -2670,8 +2670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
@@ -2742,8 +2742,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the
         /// policy.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the
@@ -2824,8 +2824,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -2843,8 +2843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn web_acl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_name(inp);
+        pub fn web_acl_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_name(signature.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -2853,8 +2853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn web_acl_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(inp);
+        pub fn web_acl_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_id(signature.into());
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2864,8 +2864,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested
         /// inside a rule group. </p>
-        pub fn rule_group_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_rule_name(inp);
+        pub fn rule_group_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_rule_name(signature.into());
             self
         }
         /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested
@@ -2878,8 +2878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
@@ -2948,8 +2948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -2967,8 +2967,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -2986,8 +2986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -3056,8 +3056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -3075,8 +3075,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -3094,8 +3094,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -3104,8 +3104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the entity.</p>
@@ -3184,8 +3184,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of
         /// requests.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_arn(inp);
+        pub fn web_acl_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_arn(signature.into());
             self
         }
         /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of
@@ -3196,8 +3196,8 @@ pub mod fluent_builders {
         }
         /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
         /// you want a sample of requests.</p>
-        pub fn rule_metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_metric_name(inp);
+        pub fn rule_metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_metric_name(signature.into());
             self
         }
         /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
@@ -3219,8 +3219,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -3243,8 +3243,8 @@ pub mod fluent_builders {
         /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
         /// any time range in the previous three hours. If you specify a start time that's earlier than
         /// three hours ago, WAF sets it to three hours ago.</p>
-        pub fn time_window(mut self, inp: crate::model::TimeWindow) -> Self {
-            self.inner = self.inner.time_window(inp);
+        pub fn time_window(mut self, signature: crate::model::TimeWindow) -> Self {
+            self.inner = self.inner.time_window(signature);
             self
         }
         /// <p>The start date and time and the end date and time of the range for which you want
@@ -3264,8 +3264,8 @@ pub mod fluent_builders {
         /// requests that your Amazon Web Services resource received during the time range. If your resource received
         /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
         /// returns information about all of them. </p>
-        pub fn max_items(mut self, inp: i64) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, signature: i64) -> Self {
+            self.inner = self.inner.max_items(signature);
             self
         }
         /// <p>The number of requests that you want WAF to return from among the first 5,000
@@ -3337,8 +3337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -3356,8 +3356,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -3375,8 +3375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -3445,8 +3445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
@@ -3526,8 +3526,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -3547,8 +3547,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -3561,8 +3561,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -3635,8 +3635,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
-        pub fn vendor_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vendor_name(inp);
+        pub fn vendor_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor_name(signature.into());
             self
         }
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
@@ -3645,8 +3645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -3664,8 +3664,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -3685,8 +3685,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -3699,8 +3699,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -3781,8 +3781,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -3802,8 +3802,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -3816,8 +3816,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -3897,8 +3897,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -3918,8 +3918,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -3932,8 +3932,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -4017,8 +4017,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -4038,8 +4038,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -4052,8 +4052,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -4134,8 +4134,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -4155,8 +4155,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -4169,8 +4169,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -4243,8 +4243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_arn(inp);
+        pub fn web_acl_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
@@ -4254,8 +4254,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for web ACLs that are scoped for regional applications.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(signature);
             self
         }
         /// <p>Used for web ACLs that are scoped for regional applications.
@@ -4338,8 +4338,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -4359,8 +4359,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -4373,8 +4373,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -4454,8 +4454,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -4468,8 +4468,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -4480,8 +4480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -4560,8 +4560,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -4581,8 +4581,8 @@ pub mod fluent_builders {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
         /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
         /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        pub fn next_marker(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(signature.into());
             self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
@@ -4595,8 +4595,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
         /// objects are available, in the response, WAF provides a
         /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, signature: i32) -> Self {
+            self.inner = self.inner.limit(signature);
             self
         }
         /// <p>The maximum number of objects that you want WAF to return for this request. If more
@@ -4689,8 +4689,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p></p>
-        pub fn logging_configuration(mut self, inp: crate::model::LoggingConfiguration) -> Self {
-            self.inner = self.inner.logging_configuration(inp);
+        pub fn logging_configuration(
+            mut self,
+            signature: crate::model::LoggingConfiguration,
+        ) -> Self {
+            self.inner = self.inner.logging_configuration(signature);
             self
         }
         /// <p></p>
@@ -4774,8 +4777,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
         /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -4794,8 +4797,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -4813,8 +4816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
@@ -4823,8 +4826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -4834,8 +4837,8 @@ pub mod fluent_builders {
         }
         /// <p>The version of the named managed rule group that you'd like your customers to choose,
         /// from among your version offerings. </p>
-        pub fn recommended_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommended_version(inp);
+        pub fn recommended_version(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommended_version(signature.into());
             self
         }
         /// <p>The version of the named managed rule group that you'd like your customers to choose,
@@ -4856,9 +4859,9 @@ pub mod fluent_builders {
         pub fn versions_to_publish(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::VersionToPublish>,
+            v: crate::model::VersionToPublish,
         ) -> Self {
-            self.inner = self.inner.versions_to_publish(k, v);
+            self.inner = self.inner.versions_to_publish(k.into(), v);
             self
         }
         /// <p>The versions of the named managed rule group that you want to offer to your customers.
@@ -4950,8 +4953,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to
         /// attach the policy.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to
@@ -4983,8 +4986,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>     
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.  </p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(signature.into());
             self
         }
         /// <p>The policy to attach to the specified rule group. </p>
@@ -5082,8 +5085,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5096,8 +5099,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -5172,8 +5175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5186,8 +5189,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>An array of keys identifying the tags to disassociate from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>An array of keys identifying the tags to disassociate from the resource.</p>
@@ -5262,8 +5265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -5281,8 +5284,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -5300,8 +5303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -5310,8 +5313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the IP set that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the IP set that helps with identification. </p>
@@ -5341,8 +5344,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-        pub fn addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addresses(inp);
+        pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addresses(input.into());
             self
         }
         /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
@@ -5371,8 +5374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -5450,8 +5453,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
         /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -5470,8 +5473,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -5489,8 +5492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
@@ -5499,8 +5502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -5510,8 +5513,8 @@ pub mod fluent_builders {
         }
         /// <p>The version that you want to remove from your list of offerings for the named managed
         /// rule group. </p>
-        pub fn version_to_expire(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_to_expire(inp);
+        pub fn version_to_expire(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_to_expire(signature.into());
             self
         }
         /// <p>The version that you want to remove from your list of offerings for the named managed
@@ -5525,8 +5528,8 @@ pub mod fluent_builders {
         }
         /// <p>The time that you want the version to expire.</p>
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn expiry_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expiry_timestamp(inp);
+        pub fn expiry_timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expiry_timestamp(signature);
             self
         }
         /// <p>The time that you want the version to expire.</p>
@@ -5602,8 +5605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -5621,8 +5624,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -5640,8 +5643,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -5650,8 +5653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the set that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the set that helps with identification. </p>
@@ -5664,8 +5667,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
         ///
         /// <p></p>
-        pub fn regular_expression_list(mut self, inp: impl Into<crate::model::Regex>) -> Self {
-            self.inner = self.inner.regular_expression_list(inp);
+        pub fn regular_expression_list(mut self, input: crate::model::Regex) -> Self {
+            self.inner = self.inner.regular_expression_list(input);
             self
         }
         /// <p></p>
@@ -5677,8 +5680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -5751,8 +5754,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -5770,8 +5773,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -5789,8 +5792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -5799,8 +5802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the rule group that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the rule group that helps with identification. </p>
@@ -5816,8 +5819,8 @@ pub mod fluent_builders {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>The <a>Rule</a> statements used to identify the web requests that you
@@ -5832,8 +5835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
-        pub fn visibility_config(mut self, inp: crate::model::VisibilityConfig) -> Self {
-            self.inner = self.inner.visibility_config(inp);
+        pub fn visibility_config(mut self, signature: crate::model::VisibilityConfig) -> Self {
+            self.inner = self.inner.visibility_config(signature);
             self
         }
         /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
@@ -5845,8 +5848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -5866,9 +5869,9 @@ pub mod fluent_builders {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
-            self.inner = self.inner.custom_response_bodies(k, v);
+            self.inner = self.inner.custom_response_bodies(k.into(), v);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
@@ -5950,8 +5953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(signature.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -5969,8 +5972,8 @@ pub mod fluent_builders {
         /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
         /// </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(signature);
             self
         }
         /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
@@ -5988,8 +5991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(signature.into());
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -5998,8 +6001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
-        pub fn default_action(mut self, inp: crate::model::DefaultAction) -> Self {
-            self.inner = self.inner.default_action(inp);
+        pub fn default_action(mut self, signature: crate::model::DefaultAction) -> Self {
+            self.inner = self.inner.default_action(signature);
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
@@ -6011,8 +6014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the web ACL that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>A description of the web ACL that helps with identification. </p>
@@ -6028,8 +6031,8 @@ pub mod fluent_builders {
         /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
         /// web requests, and parameters that govern how WAF handles them.
         /// </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>The <a>Rule</a> statements used to identify the web requests that you
@@ -6044,8 +6047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
-        pub fn visibility_config(mut self, inp: crate::model::VisibilityConfig) -> Self {
-            self.inner = self.inner.visibility_config(inp);
+        pub fn visibility_config(mut self, signature: crate::model::VisibilityConfig) -> Self {
+            self.inner = self.inner.visibility_config(signature);
             self
         }
         /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
@@ -6057,8 +6060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(signature.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -6078,9 +6081,9 @@ pub mod fluent_builders {
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
-            self.inner = self.inner.custom_response_bodies(k, v);
+            self.inner = self.inner.custom_response_bodies(k.into(), v);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
@@ -6098,8 +6101,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
-        pub fn captcha_config(mut self, inp: crate::model::CaptchaConfig) -> Self {
-            self.inner = self.inner.captcha_config(inp);
+        pub fn captcha_config(mut self, signature: crate::model::CaptchaConfig) -> Self {
+            self.inner = self.inner.captcha_config(signature);
             self
         }
         /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>

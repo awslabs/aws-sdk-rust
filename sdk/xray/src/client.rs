@@ -351,8 +351,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_trace_ids`](Self::set_trace_ids).
         ///
         /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-        pub fn trace_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_ids(inp);
+        pub fn trace_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_ids(input.into());
             self
         }
         /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
@@ -364,8 +364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -435,8 +435,8 @@ pub mod fluent_builders {
         }
         /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
         /// be unique.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
@@ -446,8 +446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The filter expression defining criteria by which to group traces.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(signature.into());
             self
         }
         /// <p>The filter expression defining criteria by which to group traces.</p>
@@ -470,8 +470,11 @@ pub mod fluent_builders {
         /// with InsightsEnabled set to true.</p>
         /// </li>
         /// </ul>
-        pub fn insights_configuration(mut self, inp: crate::model::InsightsConfiguration) -> Self {
-            self.inner = self.inner.insights_configuration(inp);
+        pub fn insights_configuration(
+            mut self,
+            signature: crate::model::InsightsConfiguration,
+        ) -> Self {
+            self.inner = self.inner.insights_configuration(signature);
             self
         }
         /// <p>The structure containing configurations related to insights.</p>
@@ -523,8 +526,8 @@ pub mod fluent_builders {
         /// use.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
@@ -627,8 +630,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule definition.</p>
-        pub fn sampling_rule(mut self, inp: crate::model::SamplingRule) -> Self {
-            self.inner = self.inner.sampling_rule(inp);
+        pub fn sampling_rule(mut self, signature: crate::model::SamplingRule) -> Self {
+            self.inner = self.inner.sampling_rule(signature);
             self
         }
         /// <p>The rule definition.</p>
@@ -669,8 +672,8 @@ pub mod fluent_builders {
         /// use.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
@@ -767,8 +770,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The case-sensitive name of the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The case-sensitive name of the group.</p>
@@ -777,8 +780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the group that was generated on creation.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(signature.into());
             self
         }
         /// <p>The ARN of the group that was generated on creation.</p>
@@ -847,8 +850,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(signature.into());
             self
         }
         /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -857,8 +860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-        pub fn rule_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_arn(inp);
+        pub fn rule_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_arn(signature.into());
             self
         }
         /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -987,8 +990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The case-sensitive name of the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The case-sensitive name of the group.</p>
@@ -997,8 +1000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the group that was generated on creation.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(signature.into());
             self
         }
         /// <p>The ARN of the group that was generated on creation.</p>
@@ -1067,8 +1070,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1139,8 +1142,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(signature.into());
             self
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
@@ -1211,8 +1214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(signature.into());
             self
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
@@ -1221,8 +1224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to retrieve at most the specified value of events.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Used to retrieve at most the specified value of events.</p>
@@ -1231,8 +1234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
@@ -1302,8 +1305,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(signature.into());
             self
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
@@ -1313,8 +1316,8 @@ pub mod fluent_builders {
         }
         /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
         /// provided and can't be more than 30 days old.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
@@ -1328,8 +1331,8 @@ pub mod fluent_builders {
         }
         /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
         /// The time range between the start time and end time can't be more than six hours. </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
@@ -1342,8 +1345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
@@ -1416,8 +1419,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The list of insight states. </p>
-        pub fn states(mut self, inp: impl Into<crate::model::InsightState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::InsightState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The list of insight states. </p>
@@ -1429,8 +1432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
@@ -1439,8 +1442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
@@ -1450,8 +1453,8 @@ pub mod fluent_builders {
         }
         /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
         /// old.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
@@ -1464,8 +1467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
@@ -1477,8 +1480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -1487,8 +1490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1557,8 +1560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1627,8 +1630,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1704,9 +1707,9 @@ pub mod fluent_builders {
         /// <p>Information about rules that the service is using to sample requests.</p>
         pub fn sampling_statistics_documents(
             mut self,
-            inp: impl Into<crate::model::SamplingStatisticsDocument>,
+            input: crate::model::SamplingStatisticsDocument,
         ) -> Self {
-            self.inner = self.inner.sampling_statistics_documents(inp);
+            self.inner = self.inner.sampling_statistics_documents(input);
             self
         }
         /// <p>Information about rules that the service is using to sample requests.</p>
@@ -1782,8 +1785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The start of the time frame for which to generate a graph.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time frame for which to generate a graph.</p>
@@ -1795,8 +1798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the timeframe for which to generate a graph.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the timeframe for which to generate a graph.</p>
@@ -1808,8 +1811,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a group based on which you want to generate a graph.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The name of a group based on which you want to generate a graph.</p>
@@ -1818,8 +1821,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
@@ -1828,8 +1831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1899,8 +1902,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The start of the time frame for which to aggregate statistics.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time frame for which to aggregate statistics.</p>
@@ -1912,8 +1915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time frame for which to aggregate statistics.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time frame for which to aggregate statistics.</p>
@@ -1925,8 +1928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
@@ -1935,8 +1938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
@@ -1947,8 +1950,11 @@ pub mod fluent_builders {
         /// <p>A filter expression defining entities that will be aggregated for statistics.
         /// Supports ID, service, and edge functions. If no selector expression is specified, edge
         /// statistics are returned. </p>
-        pub fn entity_selector_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_selector_expression(inp);
+        pub fn entity_selector_expression(
+            mut self,
+            signature: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.entity_selector_expression(signature.into());
             self
         }
         /// <p>A filter expression defining entities that will be aggregated for statistics.
@@ -1962,8 +1968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Aggregation period in seconds.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, signature: i32) -> Self {
+            self.inner = self.inner.period(signature);
             self
         }
         /// <p>Aggregation period in seconds.</p>
@@ -1973,8 +1979,8 @@ pub mod fluent_builders {
         }
         /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
         /// EntitySelectorExpression ID be provided.</p>
-        pub fn forecast_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.forecast_statistics(inp);
+        pub fn forecast_statistics(mut self, signature: bool) -> Self {
+            self.inner = self.inner.forecast_statistics(signature);
             self
         }
         /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
@@ -1984,8 +1990,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -2058,8 +2064,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_trace_ids`](Self::set_trace_ids).
         ///
         /// <p>Trace IDs of requests for which to generate a service graph.</p>
-        pub fn trace_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_ids(inp);
+        pub fn trace_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_ids(input.into());
             self
         }
         /// <p>Trace IDs of requests for which to generate a service graph.</p>
@@ -2071,8 +2077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -2157,8 +2163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The start of the time frame for which to retrieve traces.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(signature);
             self
         }
         /// <p>The start of the time frame for which to retrieve traces.</p>
@@ -2170,8 +2176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time frame for which to retrieve traces.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(signature);
             self
         }
         /// <p>The end of the time frame for which to retrieve traces.</p>
@@ -2183,8 +2189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-        pub fn time_range_type(mut self, inp: crate::model::TimeRangeType) -> Self {
-            self.inner = self.inner.time_range_type(inp);
+        pub fn time_range_type(mut self, signature: crate::model::TimeRangeType) -> Self {
+            self.inner = self.inner.time_range_type(signature);
             self
         }
         /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
@@ -2197,8 +2203,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to <code>true</code> to get summaries for only a subset of available
         /// traces.</p>
-        pub fn sampling(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sampling(inp);
+        pub fn sampling(mut self, signature: bool) -> Self {
+            self.inner = self.inner.sampling(signature);
             self
         }
         /// <p>Set to <code>true</code> to get summaries for only a subset of available
@@ -2209,8 +2215,8 @@ pub mod fluent_builders {
         }
         /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
         /// Value.</p>
-        pub fn sampling_strategy(mut self, inp: crate::model::SamplingStrategy) -> Self {
-            self.inner = self.inner.sampling_strategy(inp);
+        pub fn sampling_strategy(mut self, signature: crate::model::SamplingStrategy) -> Self {
+            self.inner = self.inner.sampling_strategy(signature);
             self
         }
         /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
@@ -2224,8 +2230,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
         /// meet certain requirements.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(signature.into());
             self
         }
         /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
@@ -2239,8 +2245,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page
         /// of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page
@@ -2310,8 +2316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
@@ -2321,8 +2327,8 @@ pub mod fluent_builders {
         }
         /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
         /// the current page of results as the value of this parameter to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
@@ -2412,8 +2418,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(signature.into());
             self
         }
         /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
@@ -2443,8 +2449,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
         /// to <code>NONE</code> for default encryption.</p>
-        pub fn r#type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, signature: crate::model::EncryptionType) -> Self {
+            self.inner = self.inner.r#type(signature);
             self
         }
         /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
@@ -2521,8 +2527,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_telemetry_records`](Self::set_telemetry_records).
         ///
         /// <p></p>
-        pub fn telemetry_records(mut self, inp: impl Into<crate::model::TelemetryRecord>) -> Self {
-            self.inner = self.inner.telemetry_records(inp);
+        pub fn telemetry_records(mut self, input: crate::model::TelemetryRecord) -> Self {
+            self.inner = self.inner.telemetry_records(input);
             self
         }
         /// <p></p>
@@ -2534,8 +2540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn ec2_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_instance_id(inp);
+        pub fn ec2_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_instance_id(signature.into());
             self
         }
         /// <p></p>
@@ -2547,8 +2553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(signature.into());
             self
         }
         /// <p></p>
@@ -2557,8 +2563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p></p>
@@ -2694,8 +2700,8 @@ pub mod fluent_builders {
         ///
         /// <p>A string containing a JSON document defining one or more segments or
         /// subsegments.</p>
-        pub fn trace_segment_documents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_segment_documents(inp);
+        pub fn trace_segment_documents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_segment_documents(input.into());
             self
         }
         /// <p>A string containing a JSON document defining one or more segments or
@@ -2768,8 +2774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
@@ -2807,8 +2813,8 @@ pub mod fluent_builders {
         /// cannot edit or delete system tags.</p>
         /// </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
@@ -2906,8 +2912,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
@@ -2920,8 +2926,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
@@ -2993,8 +2999,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The case-sensitive name of the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(signature.into());
             self
         }
         /// <p>The case-sensitive name of the group.</p>
@@ -3003,8 +3009,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN that was generated upon creation.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(signature.into());
             self
         }
         /// <p>The ARN that was generated upon creation.</p>
@@ -3013,8 +3019,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated filter expression defining criteria by which to group traces.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(signature.into());
             self
         }
         /// <p>The updated filter expression defining criteria by which to group traces.</p>
@@ -3036,8 +3042,11 @@ pub mod fluent_builders {
         /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
         /// </li>
         /// </ul>
-        pub fn insights_configuration(mut self, inp: crate::model::InsightsConfiguration) -> Self {
-            self.inner = self.inner.insights_configuration(inp);
+        pub fn insights_configuration(
+            mut self,
+            signature: crate::model::InsightsConfiguration,
+        ) -> Self {
+            self.inner = self.inner.insights_configuration(signature);
             self
         }
         /// <p>The structure containing configurations related to insights.</p>
@@ -3119,8 +3128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule and fields to change.</p>
-        pub fn sampling_rule_update(mut self, inp: crate::model::SamplingRuleUpdate) -> Self {
-            self.inner = self.inner.sampling_rule_update(inp);
+        pub fn sampling_rule_update(mut self, signature: crate::model::SamplingRuleUpdate) -> Self {
+            self.inner = self.inner.sampling_rule_update(signature);
             self
         }
         /// <p>The rule and fields to change.</p>

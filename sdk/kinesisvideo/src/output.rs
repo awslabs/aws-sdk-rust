@@ -457,9 +457,9 @@ pub mod list_streams_output {
         /// To override the contents of this collection use [`set_stream_info_list`](Self::set_stream_info_list).
         ///
         /// <p>An array of <code>StreamInfo</code> objects.</p>
-        pub fn stream_info_list(mut self, input: impl Into<crate::model::StreamInfo>) -> Self {
+        pub fn stream_info_list(mut self, input: crate::model::StreamInfo) -> Self {
             let mut v = self.stream_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stream_info_list = Some(v);
             self
         }
@@ -543,9 +543,9 @@ pub mod list_signaling_channels_output {
         /// To override the contents of this collection use [`set_channel_info_list`](Self::set_channel_info_list).
         ///
         /// <p>An array of <code>ChannelInfo</code> objects.</p>
-        pub fn channel_info_list(mut self, input: impl Into<crate::model::ChannelInfo>) -> Self {
+        pub fn channel_info_list(mut self, input: crate::model::ChannelInfo) -> Self {
             let mut v = self.channel_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_info_list = Some(v);
             self
         }
@@ -625,10 +625,10 @@ pub mod get_signaling_channel_endpoint_output {
         /// <p>A list of endpoints for the specified signaling channel.</p>
         pub fn resource_endpoint_list(
             mut self,
-            input: impl Into<crate::model::ResourceEndpointListItem>,
+            input: crate::model::ResourceEndpointListItem,
         ) -> Self {
             let mut v = self.resource_endpoint_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_endpoint_list = Some(v);
             self
         }

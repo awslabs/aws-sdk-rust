@@ -700,10 +700,10 @@ pub mod db_cluster {
         /// <p>Not supported by Neptune.</p>
         pub fn db_cluster_option_group_memberships(
             mut self,
-            input: impl Into<crate::model::DbClusterOptionGroupStatus>,
+            input: crate::model::DbClusterOptionGroupStatus,
         ) -> Self {
             let mut v = self.db_cluster_option_group_memberships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_option_group_memberships = Some(v);
             self
         }
@@ -790,12 +790,9 @@ pub mod db_cluster {
         /// To override the contents of this collection use [`set_db_cluster_members`](Self::set_db_cluster_members).
         ///
         /// <p>Provides the list of instances that make up the DB cluster.</p>
-        pub fn db_cluster_members(
-            mut self,
-            input: impl Into<crate::model::DbClusterMember>,
-        ) -> Self {
+        pub fn db_cluster_members(mut self, input: crate::model::DbClusterMember) -> Self {
             let mut v = self.db_cluster_members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_members = Some(v);
             self
         }
@@ -814,10 +811,10 @@ pub mod db_cluster {
         /// <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -899,9 +896,9 @@ pub mod db_cluster {
         /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated
         /// with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the
         /// DB cluster to access other Amazon services on your behalf.</p>
-        pub fn associated_roles(mut self, input: impl Into<crate::model::DbClusterRole>) -> Self {
+        pub fn associated_roles(mut self, input: crate::model::DbClusterRole) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_roles = Some(v);
             self
         }
@@ -2967,10 +2964,10 @@ pub mod db_instance {
         /// <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
         pub fn db_security_groups(
             mut self,
-            input: impl Into<crate::model::DbSecurityGroupMembership>,
+            input: crate::model::DbSecurityGroupMembership,
         ) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_security_groups = Some(v);
             self
         }
@@ -2990,10 +2987,10 @@ pub mod db_instance {
         /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -3010,12 +3007,9 @@ pub mod db_instance {
         /// To override the contents of this collection use [`set_db_parameter_groups`](Self::set_db_parameter_groups).
         ///
         /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
-        pub fn db_parameter_groups(
-            mut self,
-            input: impl Into<crate::model::DbParameterGroupStatus>,
-        ) -> Self {
+        pub fn db_parameter_groups(mut self, input: crate::model::DbParameterGroupStatus) -> Self {
             let mut v = self.db_parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_parameter_groups = Some(v);
             self
         }
@@ -3239,10 +3233,10 @@ pub mod db_instance {
         /// </p>
         pub fn option_group_memberships(
             mut self,
-            input: impl Into<crate::model::OptionGroupMembership>,
+            input: crate::model::OptionGroupMembership,
         ) -> Self {
             let mut v = self.option_group_memberships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.option_group_memberships = Some(v);
             self
         }
@@ -3306,12 +3300,9 @@ pub mod db_instance {
         /// To override the contents of this collection use [`set_status_infos`](Self::set_status_infos).
         ///
         /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
-        pub fn status_infos(
-            mut self,
-            input: impl Into<crate::model::DbInstanceStatusInfo>,
-        ) -> Self {
+        pub fn status_infos(mut self, input: crate::model::DbInstanceStatusInfo) -> Self {
             let mut v = self.status_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.status_infos = Some(v);
             self
         }
@@ -3428,12 +3419,9 @@ pub mod db_instance {
         /// To override the contents of this collection use [`set_domain_memberships`](Self::set_domain_memberships).
         ///
         /// <p>Not supported</p>
-        pub fn domain_memberships(
-            mut self,
-            input: impl Into<crate::model::DomainMembership>,
-        ) -> Self {
+        pub fn domain_memberships(mut self, input: crate::model::DomainMembership) -> Self {
             let mut v = self.domain_memberships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_memberships = Some(v);
             self
         }
@@ -4602,9 +4590,9 @@ pub mod db_subnet_group {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p> Contains a list of <a>Subnet</a> elements.</p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -5246,10 +5234,10 @@ pub mod db_cluster_snapshot_attributes_result {
         /// <p>The list of attributes and values for the manual DB cluster snapshot.</p>
         pub fn db_cluster_snapshot_attributes(
             mut self,
-            input: impl Into<crate::model::DbClusterSnapshotAttribute>,
+            input: crate::model::DbClusterSnapshotAttribute,
         ) -> Self {
             let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_snapshot_attributes = Some(v);
             self
         }
@@ -5511,9 +5499,9 @@ pub mod valid_db_instance_modifications_message {
         /// To override the contents of this collection use [`set_storage`](Self::set_storage).
         ///
         /// <p>Valid storage options for your DB instance.</p>
-        pub fn storage(mut self, input: impl Into<crate::model::ValidStorageOptions>) -> Self {
+        pub fn storage(mut self, input: crate::model::ValidStorageOptions) -> Self {
             let mut v = self.storage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage = Some(v);
             self
         }
@@ -5613,9 +5601,9 @@ pub mod valid_storage_options {
         /// To override the contents of this collection use [`set_storage_size`](Self::set_storage_size).
         ///
         /// <p>The valid range of storage in gibibytes. For example, 100 to 16384.</p>
-        pub fn storage_size(mut self, input: impl Into<crate::model::Range>) -> Self {
+        pub fn storage_size(mut self, input: crate::model::Range) -> Self {
             let mut v = self.storage_size.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_size = Some(v);
             self
         }
@@ -5632,9 +5620,9 @@ pub mod valid_storage_options {
         /// To override the contents of this collection use [`set_provisioned_iops`](Self::set_provisioned_iops).
         ///
         /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
-        pub fn provisioned_iops(mut self, input: impl Into<crate::model::Range>) -> Self {
+        pub fn provisioned_iops(mut self, input: crate::model::Range) -> Self {
             let mut v = self.provisioned_iops.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.provisioned_iops = Some(v);
             self
         }
@@ -5652,12 +5640,9 @@ pub mod valid_storage_options {
         ///
         /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10,
         /// which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-        pub fn iops_to_storage_ratio(
-            mut self,
-            input: impl Into<crate::model::DoubleRange>,
-        ) -> Self {
+        pub fn iops_to_storage_ratio(mut self, input: crate::model::DoubleRange) -> Self {
             let mut v = self.iops_to_storage_ratio.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.iops_to_storage_ratio = Some(v);
             self
         }
@@ -5932,10 +5917,10 @@ pub mod resource_pending_maintenance_actions {
         /// resource.</p>
         pub fn pending_maintenance_action_details(
             mut self,
-            input: impl Into<crate::model::PendingMaintenanceAction>,
+            input: crate::model::PendingMaintenanceAction,
         ) -> Self {
             let mut v = self.pending_maintenance_action_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_maintenance_action_details = Some(v);
             self
         }
@@ -6412,12 +6397,9 @@ pub mod orderable_db_instance_option {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>A list of Availability Zones for a DB instance.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -7042,9 +7024,9 @@ pub mod engine_defaults {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Contains a list of engine default parameters.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -7426,12 +7408,9 @@ pub mod db_engine_version {
         /// <p>
         /// <i>(Not supported by Neptune)</i>
         /// </p>
-        pub fn supported_character_sets(
-            mut self,
-            input: impl Into<crate::model::CharacterSet>,
-        ) -> Self {
+        pub fn supported_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_character_sets = Some(v);
             self
         }
@@ -7450,12 +7429,9 @@ pub mod db_engine_version {
         /// To override the contents of this collection use [`set_valid_upgrade_target`](Self::set_valid_upgrade_target).
         ///
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn valid_upgrade_target(
-            mut self,
-            input: impl Into<crate::model::UpgradeTarget>,
-        ) -> Self {
+        pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.valid_upgrade_target = Some(v);
             self
         }
@@ -7473,9 +7449,9 @@ pub mod db_engine_version {
         ///
         /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter
         /// of the <code>CreateDBInstance</code> action.</p>
-        pub fn supported_timezones(mut self, input: impl Into<crate::model::Timezone>) -> Self {
+        pub fn supported_timezones(mut self, input: crate::model::Timezone) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_timezones = Some(v);
             self
         }

@@ -145,10 +145,10 @@ pub mod list_progress_update_streams_output {
         /// input.</p>
         pub fn progress_update_stream_summary_list(
             mut self,
-            input: impl Into<crate::model::ProgressUpdateStreamSummary>,
+            input: crate::model::ProgressUpdateStreamSummary,
         ) -> Self {
             let mut v = self.progress_update_stream_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.progress_update_stream_summary_list = Some(v);
             self
         }
@@ -260,10 +260,10 @@ pub mod list_migration_tasks_output {
         /// and the <code>UpdateDateTime</code> for each task.</p>
         pub fn migration_task_summary_list(
             mut self,
-            input: impl Into<crate::model::MigrationTaskSummary>,
+            input: crate::model::MigrationTaskSummary,
         ) -> Self {
             let mut v = self.migration_task_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.migration_task_summary_list = Some(v);
             self
         }
@@ -353,12 +353,9 @@ pub mod list_discovered_resources_output {
         /// To override the contents of this collection use [`set_discovered_resource_list`](Self::set_discovered_resource_list).
         ///
         /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
-        pub fn discovered_resource_list(
-            mut self,
-            input: impl Into<crate::model::DiscoveredResource>,
-        ) -> Self {
+        pub fn discovered_resource_list(mut self, input: crate::model::DiscoveredResource) -> Self {
             let mut v = self.discovered_resource_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.discovered_resource_list = Some(v);
             self
         }
@@ -446,12 +443,9 @@ pub mod list_created_artifacts_output {
         ///
         /// <p>List of created artifacts up to the maximum number of results specified in the
         /// request.</p>
-        pub fn created_artifact_list(
-            mut self,
-            input: impl Into<crate::model::CreatedArtifact>,
-        ) -> Self {
+        pub fn created_artifact_list(mut self, input: crate::model::CreatedArtifact) -> Self {
             let mut v = self.created_artifact_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.created_artifact_list = Some(v);
             self
         }
@@ -527,12 +521,9 @@ pub mod list_application_states_output {
         /// To override the contents of this collection use [`set_application_state_list`](Self::set_application_state_list).
         ///
         /// <p>A list of Applications that exist in Application Discovery Service.</p>
-        pub fn application_state_list(
-            mut self,
-            input: impl Into<crate::model::ApplicationState>,
-        ) -> Self {
+        pub fn application_state_list(mut self, input: crate::model::ApplicationState) -> Self {
             let mut v = self.application_state_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_state_list = Some(v);
             self
         }

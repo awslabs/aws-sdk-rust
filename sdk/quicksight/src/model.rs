@@ -2251,12 +2251,9 @@ pub mod template_source_analysis {
         ///
         /// <p>A structure containing information about the dataset references used as placeholders
         /// in the template.</p>
-        pub fn data_set_references(
-            mut self,
-            input: impl Into<crate::model::DataSetReference>,
-        ) -> Self {
+        pub fn data_set_references(mut self, input: crate::model::DataSetReference) -> Self {
             let mut v = self.data_set_references.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_set_references = Some(v);
             self
         }
@@ -2851,10 +2848,10 @@ pub mod credential_pair {
         /// <code>Credentials</code> is automatically allowed.</p>
         pub fn alternate_data_source_parameters(
             mut self,
-            input: impl Into<crate::model::DataSourceParameters>,
+            input: crate::model::DataSourceParameters,
         ) -> Self {
             let mut v = self.alternate_data_source_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alternate_data_source_parameters = Some(v);
             self
         }
@@ -5318,12 +5315,9 @@ pub mod row_level_permission_tag_configuration {
         /// To override the contents of this collection use [`set_tag_rules`](Self::set_tag_rules).
         ///
         /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
-        pub fn tag_rules(
-            mut self,
-            input: impl Into<crate::model::RowLevelPermissionTagRule>,
-        ) -> Self {
+        pub fn tag_rules(mut self, input: crate::model::RowLevelPermissionTagRule) -> Self {
             let mut v = self.tag_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_rules = Some(v);
             self
         }
@@ -6211,12 +6205,9 @@ pub mod logical_table {
         /// To override the contents of this collection use [`set_data_transforms`](Self::set_data_transforms).
         ///
         /// <p>Transform operations that act on this logical table.</p>
-        pub fn data_transforms(
-            mut self,
-            input: impl Into<crate::model::TransformOperation>,
-        ) -> Self {
+        pub fn data_transforms(mut self, input: crate::model::TransformOperation) -> Self {
             let mut v = self.data_transforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_transforms = Some(v);
             self
         }
@@ -6835,9 +6826,9 @@ pub mod untag_column_operation {
         /// To override the contents of this collection use [`set_tag_names`](Self::set_tag_names).
         ///
         /// <p>The column tags to remove from this column.</p>
-        pub fn tag_names(mut self, input: impl Into<crate::model::ColumnTagName>) -> Self {
+        pub fn tag_names(mut self, input: crate::model::ColumnTagName) -> Self {
             let mut v = self.tag_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_names = Some(v);
             self
         }
@@ -6981,9 +6972,9 @@ pub mod tag_column_operation {
         /// <note>
         /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::ColumnTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::ColumnTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7507,9 +7498,9 @@ pub mod create_columns_operation {
         /// To override the contents of this collection use [`set_columns`](Self::set_columns).
         ///
         /// <p>Calculated columns to create.</p>
-        pub fn columns(mut self, input: impl Into<crate::model::CalculatedColumn>) -> Self {
+        pub fn columns(mut self, input: crate::model::CalculatedColumn) -> Self {
             let mut v = self.columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.columns = Some(v);
             self
         }
@@ -7916,9 +7907,9 @@ pub mod s3_source {
         /// <note>
         /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
         /// </note>
-        pub fn input_columns(mut self, input: impl Into<crate::model::InputColumn>) -> Self {
+        pub fn input_columns(mut self, input: crate::model::InputColumn) -> Self {
             let mut v = self.input_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_columns = Some(v);
             self
         }
@@ -8453,9 +8444,9 @@ pub mod custom_sql {
         /// To override the contents of this collection use [`set_columns`](Self::set_columns).
         ///
         /// <p>The column schema from the SQL query result set.</p>
-        pub fn columns(mut self, input: impl Into<crate::model::InputColumn>) -> Self {
+        pub fn columns(mut self, input: crate::model::InputColumn) -> Self {
             let mut v = self.columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.columns = Some(v);
             self
         }
@@ -8594,9 +8585,9 @@ pub mod relational_table {
         /// To override the contents of this collection use [`set_input_columns`](Self::set_input_columns).
         ///
         /// <p>The column schema of the table.</p>
-        pub fn input_columns(mut self, input: impl Into<crate::model::InputColumn>) -> Self {
+        pub fn input_columns(mut self, input: crate::model::InputColumn) -> Self {
             let mut v = self.input_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_columns = Some(v);
             self
         }
@@ -8662,9 +8653,9 @@ pub mod link_sharing_configuration {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A structure that contains the permissions of a shareable link.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -9140,12 +9131,9 @@ pub mod parameters {
         /// To override the contents of this collection use [`set_string_parameters`](Self::set_string_parameters).
         ///
         /// <p>The parameters that have a data type of string.</p>
-        pub fn string_parameters(
-            mut self,
-            input: impl Into<crate::model::StringParameter>,
-        ) -> Self {
+        pub fn string_parameters(mut self, input: crate::model::StringParameter) -> Self {
             let mut v = self.string_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.string_parameters = Some(v);
             self
         }
@@ -9162,12 +9150,9 @@ pub mod parameters {
         /// To override the contents of this collection use [`set_integer_parameters`](Self::set_integer_parameters).
         ///
         /// <p>The parameters that have a data type of integer.</p>
-        pub fn integer_parameters(
-            mut self,
-            input: impl Into<crate::model::IntegerParameter>,
-        ) -> Self {
+        pub fn integer_parameters(mut self, input: crate::model::IntegerParameter) -> Self {
             let mut v = self.integer_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.integer_parameters = Some(v);
             self
         }
@@ -9184,12 +9169,9 @@ pub mod parameters {
         /// To override the contents of this collection use [`set_decimal_parameters`](Self::set_decimal_parameters).
         ///
         /// <p>The parameters that have a data type of decimal.</p>
-        pub fn decimal_parameters(
-            mut self,
-            input: impl Into<crate::model::DecimalParameter>,
-        ) -> Self {
+        pub fn decimal_parameters(mut self, input: crate::model::DecimalParameter) -> Self {
             let mut v = self.decimal_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.decimal_parameters = Some(v);
             self
         }
@@ -9206,12 +9188,9 @@ pub mod parameters {
         /// To override the contents of this collection use [`set_date_time_parameters`](Self::set_date_time_parameters).
         ///
         /// <p>The parameters that have a data type of date-time.</p>
-        pub fn date_time_parameters(
-            mut self,
-            input: impl Into<crate::model::DateTimeParameter>,
-        ) -> Self {
+        pub fn date_time_parameters(mut self, input: crate::model::DateTimeParameter) -> Self {
             let mut v = self.date_time_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.date_time_parameters = Some(v);
             self
         }
@@ -9293,9 +9272,9 @@ pub mod date_time_parameter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values for the date-time parameter.</p>
-        pub fn values(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn values(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -9375,9 +9354,9 @@ pub mod decimal_parameter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values for the decimal parameter.</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -9454,9 +9433,9 @@ pub mod integer_parameter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values for the integer parameter.</p>
-        pub fn values(mut self, input: impl Into<i64>) -> Self {
+        pub fn values(mut self, input: i64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -9663,12 +9642,9 @@ pub mod dashboard_source_template {
         /// To override the contents of this collection use [`set_data_set_references`](Self::set_data_set_references).
         ///
         /// <p>Dataset references.</p>
-        pub fn data_set_references(
-            mut self,
-            input: impl Into<crate::model::DataSetReference>,
-        ) -> Self {
+        pub fn data_set_references(mut self, input: crate::model::DataSetReference) -> Self {
             let mut v = self.data_set_references.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_set_references = Some(v);
             self
         }
@@ -9806,12 +9782,9 @@ pub mod analysis_source_template {
         /// To override the contents of this collection use [`set_data_set_references`](Self::set_data_set_references).
         ///
         /// <p>The dataset references of the source template of an analysis.</p>
-        pub fn data_set_references(
-            mut self,
-            input: impl Into<crate::model::DataSetReference>,
-        ) -> Self {
+        pub fn data_set_references(mut self, input: crate::model::DataSetReference) -> Self {
             let mut v = self.data_set_references.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_set_references = Some(v);
             self
         }
@@ -13713,10 +13686,10 @@ pub mod data_source {
         /// are automatically allowed.</p>
         pub fn alternate_data_source_parameters(
             mut self,
-            input: impl Into<crate::model::DataSourceParameters>,
+            input: crate::model::DataSourceParameters,
         ) -> Self {
             let mut v = self.alternate_data_source_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alternate_data_source_parameters = Some(v);
             self
         }
@@ -15721,9 +15694,9 @@ pub mod theme_version {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Errors associated with the theme.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ThemeError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ThemeError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -16183,9 +16156,9 @@ pub mod template_version {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Errors associated with this template version.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::TemplateError>) -> Self {
+        pub fn errors(mut self, input: crate::model::TemplateError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -16229,10 +16202,10 @@ pub mod template_version {
         /// API operation.</p>
         pub fn data_set_configurations(
             mut self,
-            input: impl Into<crate::model::DataSetConfiguration>,
+            input: crate::model::DataSetConfiguration,
         ) -> Self {
             let mut v = self.data_set_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_set_configurations = Some(v);
             self
         }
@@ -16286,9 +16259,9 @@ pub mod template_version {
         /// To override the contents of this collection use [`set_sheets`](Self::set_sheets).
         ///
         /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-        pub fn sheets(mut self, input: impl Into<crate::model::Sheet>) -> Self {
+        pub fn sheets(mut self, input: crate::model::Sheet) -> Self {
             let mut v = self.sheets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sheets = Some(v);
             self
         }
@@ -16481,12 +16454,9 @@ pub mod data_set_configuration {
         /// To override the contents of this collection use [`set_column_group_schema_list`](Self::set_column_group_schema_list).
         ///
         /// <p>A structure containing the list of column group schemas.</p>
-        pub fn column_group_schema_list(
-            mut self,
-            input: impl Into<crate::model::ColumnGroupSchema>,
-        ) -> Self {
+        pub fn column_group_schema_list(mut self, input: crate::model::ColumnGroupSchema) -> Self {
             let mut v = self.column_group_schema_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_group_schema_list = Some(v);
             self
         }
@@ -16576,10 +16546,10 @@ pub mod column_group_schema {
         /// <p>A structure containing the list of schemas for column group columns.</p>
         pub fn column_group_column_schema_list(
             mut self,
-            input: impl Into<crate::model::ColumnGroupColumnSchema>,
+            input: crate::model::ColumnGroupColumnSchema,
         ) -> Self {
             let mut v = self.column_group_column_schema_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_group_column_schema_list = Some(v);
             self
         }
@@ -16694,9 +16664,9 @@ pub mod data_set_schema {
         /// To override the contents of this collection use [`set_column_schema_list`](Self::set_column_schema_list).
         ///
         /// <p>A structure containing the list of column schemas.</p>
-        pub fn column_schema_list(mut self, input: impl Into<crate::model::ColumnSchema>) -> Self {
+        pub fn column_schema_list(mut self, input: crate::model::ColumnSchema) -> Self {
             let mut v = self.column_schema_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_schema_list = Some(v);
             self
         }
@@ -17096,10 +17066,10 @@ pub mod iam_policy_assignment {
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.identities = Some(hash_map);
             self
         }
@@ -17610,10 +17580,10 @@ pub mod data_set {
         pub fn physical_table_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PhysicalTable>,
+            v: crate::model::PhysicalTable,
         ) -> Self {
             let mut hash_map = self.physical_table_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.physical_table_map = Some(hash_map);
             self
         }
@@ -17636,10 +17606,10 @@ pub mod data_set {
         pub fn logical_table_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::LogicalTable>,
+            v: crate::model::LogicalTable,
         ) -> Self {
             let mut hash_map = self.logical_table_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.logical_table_map = Some(hash_map);
             self
         }
@@ -17660,9 +17630,9 @@ pub mod data_set {
         ///
         /// <p>The list of columns after all transforms. These columns are available in templates,
         /// analyses, and dashboards.</p>
-        pub fn output_columns(mut self, input: impl Into<crate::model::OutputColumn>) -> Self {
+        pub fn output_columns(mut self, input: crate::model::OutputColumn) -> Self {
             let mut v = self.output_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_columns = Some(v);
             self
         }
@@ -17709,9 +17679,9 @@ pub mod data_set {
         ///
         /// <p>Groupings of columns that work together in certain Amazon QuickSight features.
         /// Currently, only geospatial hierarchy is supported.</p>
-        pub fn column_groups(mut self, input: impl Into<crate::model::ColumnGroup>) -> Self {
+        pub fn column_groups(mut self, input: crate::model::ColumnGroup) -> Self {
             let mut v = self.column_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_groups = Some(v);
             self
         }
@@ -17732,10 +17702,10 @@ pub mod data_set {
         pub fn field_folders(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FieldFolder>,
+            v: crate::model::FieldFolder,
         ) -> Self {
             let mut hash_map = self.field_folders.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.field_folders = Some(hash_map);
             self
         }
@@ -17790,10 +17760,10 @@ pub mod data_set {
         /// </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
-            input: impl Into<crate::model::ColumnLevelPermissionRule>,
+            input: crate::model::ColumnLevelPermissionRule,
         ) -> Self {
             let mut v = self.column_level_permission_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_level_permission_rules = Some(v);
             self
         }
@@ -18251,9 +18221,9 @@ pub mod dashboard_version {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Errors associated with this dashboard version.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::DashboardError>) -> Self {
+        pub fn errors(mut self, input: crate::model::DashboardError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -18357,9 +18327,9 @@ pub mod dashboard_version {
         /// To override the contents of this collection use [`set_sheets`](Self::set_sheets).
         ///
         /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-        pub fn sheets(mut self, input: impl Into<crate::model::Sheet>) -> Self {
+        pub fn sheets(mut self, input: crate::model::Sheet) -> Self {
             let mut v = self.sheets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sheets = Some(v);
             self
         }
@@ -18718,9 +18688,9 @@ pub mod analysis {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Errors associated with the analysis.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::AnalysisError>) -> Self {
+        pub fn errors(mut self, input: crate::model::AnalysisError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -18792,9 +18762,9 @@ pub mod analysis {
         /// To override the contents of this collection use [`set_sheets`](Self::set_sheets).
         ///
         /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-        pub fn sheets(mut self, input: impl Into<crate::model::Sheet>) -> Self {
+        pub fn sheets(mut self, input: crate::model::Sheet) -> Self {
             let mut v = self.sheets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sheets = Some(v);
             self
         }

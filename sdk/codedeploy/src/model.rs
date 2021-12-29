@@ -118,10 +118,10 @@ pub mod on_premises_tag_set {
         /// in the list.</p>
         pub fn on_premises_tag_set_list(
             mut self,
-            input: impl Into<std::vec::Vec<crate::model::TagFilter>>,
+            input: std::vec::Vec<crate::model::TagFilter>,
         ) -> Self {
             let mut v = self.on_premises_tag_set_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_premises_tag_set_list = Some(v);
             self
         }
@@ -465,10 +465,10 @@ pub mod ec2_tag_set {
         /// list.</p>
         pub fn ec2_tag_set_list(
             mut self,
-            input: impl Into<std::vec::Vec<crate::model::Ec2TagFilter>>,
+            input: std::vec::Vec<crate::model::Ec2TagFilter>,
         ) -> Self {
             let mut v = self.ec2_tag_set_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_tag_set_list = Some(v);
             self
         }
@@ -793,9 +793,9 @@ pub mod load_balancer_info {
         /// <note>
         /// <p> Adding more than one load balancer to the array is not supported. </p>
         /// </note>
-        pub fn elb_info_list(mut self, input: impl Into<crate::model::ElbInfo>) -> Self {
+        pub fn elb_info_list(mut self, input: crate::model::ElbInfo) -> Self {
             let mut v = self.elb_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.elb_info_list = Some(v);
             self
         }
@@ -822,12 +822,9 @@ pub mod load_balancer_info {
         /// <note>
         /// <p> Adding more than one target group to the array is not supported. </p>
         /// </note>
-        pub fn target_group_info_list(
-            mut self,
-            input: impl Into<crate::model::TargetGroupInfo>,
-        ) -> Self {
+        pub fn target_group_info_list(mut self, input: crate::model::TargetGroupInfo) -> Self {
             let mut v = self.target_group_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_group_info_list = Some(v);
             self
         }
@@ -852,10 +849,10 @@ pub mod load_balancer_info {
         /// <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
         pub fn target_group_pair_info_list(
             mut self,
-            input: impl Into<crate::model::TargetGroupPairInfo>,
+            input: crate::model::TargetGroupPairInfo,
         ) -> Self {
             let mut v = self.target_group_pair_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_group_pair_info_list = Some(v);
             self
         }
@@ -948,9 +945,9 @@ pub mod target_group_pair_info {
         /// <p> One pair of target groups. One is associated with the original task set. The second
         /// is associated with the task set that serves traffic after the deployment is complete.
         /// </p>
-        pub fn target_groups(mut self, input: impl Into<crate::model::TargetGroupInfo>) -> Self {
+        pub fn target_groups(mut self, input: crate::model::TargetGroupInfo) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_groups = Some(v);
             self
         }
@@ -2249,9 +2246,9 @@ pub mod auto_rollback_configuration {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The event type or types that trigger a rollback.</p>
-        pub fn events(mut self, input: impl Into<crate::model::AutoRollbackEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::AutoRollbackEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -2467,9 +2464,9 @@ pub mod alarm_configuration {
         ///
         /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be
         /// added to a deployment group.</p>
-        pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarms = Some(v);
             self
         }
@@ -2633,9 +2630,9 @@ pub mod trigger_config {
         /// To override the contents of this collection use [`set_trigger_events`](Self::set_trigger_events).
         ///
         /// <p>The event type or types for which notifications are triggered.</p>
-        pub fn trigger_events(mut self, input: impl Into<crate::model::TriggerEventType>) -> Self {
+        pub fn trigger_events(mut self, input: crate::model::TriggerEventType) -> Self {
             let mut v = self.trigger_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trigger_events = Some(v);
             self
         }
@@ -4576,9 +4573,9 @@ pub mod instance_info {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags currently associated with the on-premises instance.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4920,9 +4917,9 @@ pub mod cloud_formation_target {
         ///
         /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target
         /// application. </p>
-        pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
+        pub fn lifecycle_events(mut self, input: crate::model::LifecycleEvent) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_events = Some(v);
             self
         }
@@ -5737,9 +5734,9 @@ pub mod ecs_target {
         /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
         ///
         /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
-        pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
+        pub fn lifecycle_events(mut self, input: crate::model::LifecycleEvent) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_events = Some(v);
             self
         }
@@ -5769,9 +5766,9 @@ pub mod ecs_target {
         /// To override the contents of this collection use [`set_task_sets_info`](Self::set_task_sets_info).
         ///
         /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
-        pub fn task_sets_info(mut self, input: impl Into<crate::model::EcsTaskSet>) -> Self {
+        pub fn task_sets_info(mut self, input: crate::model::EcsTaskSet) -> Self {
             let mut v = self.task_sets_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_sets_info = Some(v);
             self
         }
@@ -6325,9 +6322,9 @@ pub mod lambda_target {
         /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
         ///
         /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
-        pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
+        pub fn lifecycle_events(mut self, input: crate::model::LifecycleEvent) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_events = Some(v);
             self
         }
@@ -6678,9 +6675,9 @@ pub mod instance_target {
         /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
         ///
         /// <p> The lifecycle events of the deployment to this target instance. </p>
-        pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
+        pub fn lifecycle_events(mut self, input: crate::model::LifecycleEvent) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_events = Some(v);
             self
         }
@@ -7054,9 +7051,9 @@ pub mod instance_summary {
         /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
         ///
         /// <p>A list of lifecycle events for this instance.</p>
-        pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
+        pub fn lifecycle_events(mut self, input: crate::model::LifecycleEvent) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_events = Some(v);
             self
         }
@@ -7458,9 +7455,9 @@ pub mod deployment_group_info {
         ///
         /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
         /// with any of the specified tags.</p>
-        pub fn ec2_tag_filters(mut self, input: impl Into<crate::model::Ec2TagFilter>) -> Self {
+        pub fn ec2_tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
             let mut v = self.ec2_tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_tag_filters = Some(v);
             self
         }
@@ -7479,12 +7476,9 @@ pub mod deployment_group_info {
         ///
         /// <p>The on-premises instance tags on which to filter. The deployment group includes
         /// on-premises instances with any of the specified tags.</p>
-        pub fn on_premises_instance_tag_filters(
-            mut self,
-            input: impl Into<crate::model::TagFilter>,
-        ) -> Self {
+        pub fn on_premises_instance_tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.on_premises_instance_tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_premises_instance_tag_filters = Some(v);
             self
         }
@@ -7502,12 +7496,9 @@ pub mod deployment_group_info {
         /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
         ///
         /// <p>A list of associated Auto Scaling groups.</p>
-        pub fn auto_scaling_groups(
-            mut self,
-            input: impl Into<crate::model::AutoScalingGroup>,
-        ) -> Self {
+        pub fn auto_scaling_groups(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.auto_scaling_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_scaling_groups = Some(v);
             self
         }
@@ -7558,12 +7549,9 @@ pub mod deployment_group_info {
         /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
         ///
         /// <p>Information about triggers associated with the deployment group.</p>
-        pub fn trigger_configurations(
-            mut self,
-            input: impl Into<crate::model::TriggerConfig>,
-        ) -> Self {
+        pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
             let mut v = self.trigger_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trigger_configurations = Some(v);
             self
         }
@@ -7771,9 +7759,9 @@ pub mod deployment_group_info {
         /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
         /// is specified as an Amazon ECS cluster and service name pair using the format
         /// <code><clustername>:<servicename></code>. </p>
-        pub fn ecs_services(mut self, input: impl Into<crate::model::EcsService>) -> Self {
+        pub fn ecs_services(mut self, input: crate::model::EcsService) -> Self {
             let mut v = self.ecs_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecs_services = Some(v);
             self
         }
@@ -10063,9 +10051,9 @@ pub mod target_instances {
         /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a
         /// replacement environment for a blue/green deployment. Cannot be used in the same call as
         /// <code>ec2TagSet</code>.</p>
-        pub fn tag_filters(mut self, input: impl Into<crate::model::Ec2TagFilter>) -> Self {
+        pub fn tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_filters = Some(v);
             self
         }

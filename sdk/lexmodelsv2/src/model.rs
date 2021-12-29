@@ -415,9 +415,9 @@ pub mod slot_type_value {
         /// To override the contents of this collection use [`set_synonyms`](Self::set_synonyms).
         ///
         /// <p>Additional values related to the slot type entry.</p>
-        pub fn synonyms(mut self, input: impl Into<crate::model::SampleValue>) -> Self {
+        pub fn synonyms(mut self, input: crate::model::SampleValue) -> Self {
             let mut v = self.synonyms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.synonyms = Some(v);
             self
         }
@@ -856,12 +856,9 @@ pub mod slot_value_elicitation_setting {
         /// request for a slot value, you can provide those utterances to improve
         /// accuracy. This is optional. In most cases, Amazon Lex is capable of
         /// understanding user utterances.</p>
-        pub fn sample_utterances(
-            mut self,
-            input: impl Into<crate::model::SampleUtterance>,
-        ) -> Self {
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_utterances = Some(v);
             self
         }
@@ -1133,9 +1130,9 @@ pub mod still_waiting_response_specification {
         ///
         /// <p>One or more message groups, each containing one or more messages,
         /// that define the prompts that Amazon Lex sends to the user.</p>
-        pub fn message_groups(mut self, input: impl Into<crate::model::MessageGroup>) -> Self {
+        pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.message_groups = Some(v);
             self
         }
@@ -1261,9 +1258,9 @@ pub mod message_group {
         /// <p>Message variations to send to the user. When variations are defined,
         /// Amazon Lex chooses the primary message or one of the variations to send to
         /// the user.</p>
-        pub fn variations(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn variations(mut self, input: crate::model::Message) -> Self {
             let mut v = self.variations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variations = Some(v);
             self
         }
@@ -1541,9 +1538,9 @@ pub mod image_response_card {
         /// <p>A list of buttons that should be displayed on the response card. The
         /// arrangement of the buttons is determined by the platform that displays
         /// the button.</p>
-        pub fn buttons(mut self, input: impl Into<crate::model::Button>) -> Self {
+        pub fn buttons(mut self, input: crate::model::Button) -> Self {
             let mut v = self.buttons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buttons = Some(v);
             self
         }
@@ -1862,9 +1859,9 @@ pub mod response_specification {
         ///
         /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex
         /// chooses the actual response to send at runtime.</p>
-        pub fn message_groups(mut self, input: impl Into<crate::model::MessageGroup>) -> Self {
+        pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.message_groups = Some(v);
             self
         }
@@ -2022,9 +2019,9 @@ pub mod prompt_specification {
         ///
         /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex
         /// chooses the actual message to send at runtime.</p>
-        pub fn message_groups(mut self, input: impl Into<crate::model::MessageGroup>) -> Self {
+        pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.message_groups = Some(v);
             self
         }
@@ -2172,12 +2169,9 @@ pub mod slot_default_value_specification {
         ///
         /// <p>A list of default values. Amazon Lex chooses the default value to use in
         /// the order that they are presented in the list.</p>
-        pub fn default_value_list(
-            mut self,
-            input: impl Into<crate::model::SlotDefaultValue>,
-        ) -> Self {
+        pub fn default_value_list(mut self, input: crate::model::SlotDefaultValue) -> Self {
             let mut v = self.default_value_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_value_list = Some(v);
             self
         }
@@ -3245,9 +3239,9 @@ pub mod fulfillment_update_response_specification {
         ///
         /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses
         /// one of the messages to play to the user.</p>
-        pub fn message_groups(mut self, input: impl Into<crate::model::MessageGroup>) -> Self {
+        pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.message_groups = Some(v);
             self
         }
@@ -3363,9 +3357,9 @@ pub mod fulfillment_start_response_specification {
         ///
         /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses
         /// one of the messages to play to the user.</p>
-        pub fn message_groups(mut self, input: impl Into<crate::model::MessageGroup>) -> Self {
+        pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.message_groups = Some(v);
             self
         }
@@ -5162,9 +5156,9 @@ pub mod conversation_log_settings {
         /// To override the contents of this collection use [`set_text_log_settings`](Self::set_text_log_settings).
         ///
         /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-        pub fn text_log_settings(mut self, input: impl Into<crate::model::TextLogSetting>) -> Self {
+        pub fn text_log_settings(mut self, input: crate::model::TextLogSetting) -> Self {
             let mut v = self.text_log_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_log_settings = Some(v);
             self
         }
@@ -5181,12 +5175,9 @@ pub mod conversation_log_settings {
         /// To override the contents of this collection use [`set_audio_log_settings`](Self::set_audio_log_settings).
         ///
         /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-        pub fn audio_log_settings(
-            mut self,
-            input: impl Into<crate::model::AudioLogSetting>,
-        ) -> Self {
+        pub fn audio_log_settings(mut self, input: crate::model::AudioLogSetting) -> Self {
             let mut v = self.audio_log_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_log_settings = Some(v);
             self
         }
@@ -8603,9 +8594,9 @@ pub mod intent_summary {
         ///
         /// <p>The input contexts that must be active for this intent to be
         /// considered for recognition.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
@@ -8624,9 +8615,9 @@ pub mod intent_summary {
         ///
         /// <p>The output contexts that are activated when this intent is
         /// fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }

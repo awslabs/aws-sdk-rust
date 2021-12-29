@@ -183,9 +183,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags assigned to the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -255,12 +255,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_application_summaries`](Self::set_application_summaries).
         ///
         /// <p>List of <code>ApplicationSummary</code> objects. </p>
-        pub fn application_summaries(
-            mut self,
-            input: impl Into<crate::model::ApplicationSummary>,
-        ) -> Self {
+        pub fn application_summaries(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_summaries = Some(v);
             self
         }
@@ -373,12 +370,9 @@ pub mod discover_input_schema_output {
         /// To override the contents of this collection use [`set_parsed_input_records`](Self::set_parsed_input_records).
         ///
         /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-        pub fn parsed_input_records(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn parsed_input_records(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.parsed_input_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parsed_input_records = Some(v);
             self
         }

@@ -417,9 +417,9 @@ pub mod batch_get_record_result_detail {
         /// To override the contents of this collection use [`set_record`](Self::set_record).
         ///
         /// <p>The <code>Record</code> retrieved.</p>
-        pub fn record(mut self, input: impl Into<crate::model::FeatureValue>) -> Self {
+        pub fn record(mut self, input: crate::model::FeatureValue) -> Self {
             let mut v = self.record.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record = Some(v);
             self
         }

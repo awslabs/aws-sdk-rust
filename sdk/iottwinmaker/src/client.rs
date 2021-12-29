@@ -334,8 +334,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the properties to set.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the properties to set.</p>
@@ -349,8 +349,8 @@ pub mod fluent_builders {
         ///
         /// <p>An object that maps strings to the property value entries to set. Each string
         /// in the mapping must be unique to this object.</p>
-        pub fn entries(mut self, inp: impl Into<crate::model::PropertyValueEntry>) -> Self {
-            self.inner = self.inner.entries(inp);
+        pub fn entries(mut self, input: crate::model::PropertyValueEntry) -> Self {
+            self.inner = self.inner.entries(input);
             self
         }
         /// <p>An object that maps strings to the property value entries to set. Each string
@@ -428,8 +428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the component type.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -439,8 +439,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value that specifies whether an entity can have more than one component of
         /// this type.</p>
-        pub fn is_singleton(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_singleton(inp);
+        pub fn is_singleton(mut self, signature: bool) -> Self {
+            self.inner = self.inner.is_singleton(signature);
             self
         }
         /// <p>A Boolean value that specifies whether an entity can have more than one component of
@@ -450,8 +450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(signature.into());
             self
         }
         /// <p>The ID of the component type.</p>
@@ -463,8 +463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the component type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the component type.</p>
@@ -481,9 +481,9 @@ pub mod fluent_builders {
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyDefinitionRequest>,
+            v: crate::model::PropertyDefinitionRequest,
         ) -> Self {
-            self.inner = self.inner.property_definitions(k, v);
+            self.inner = self.inner.property_definitions(k.into(), v);
             self
         }
         /// <p>An object that maps strings to the property definitions in the component type. Each string
@@ -505,8 +505,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_extends_from`](Self::set_extends_from).
         ///
         /// <p>Specifies the parent component type to extend.</p>
-        pub fn extends_from(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extends_from(inp);
+        pub fn extends_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extends_from(input.into());
             self
         }
         /// <p>Specifies the parent component type to extend.</p>
@@ -526,9 +526,9 @@ pub mod fluent_builders {
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FunctionRequest>,
+            v: crate::model::FunctionRequest,
         ) -> Self {
-            self.inner = self.inner.functions(k, v);
+            self.inner = self.inner.functions(k.into(), v);
             self
         }
         /// <p>An object that maps strings to the functions in the component type. Each string in the
@@ -552,7 +552,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can use to manage the component type.</p>
@@ -626,8 +626,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the entity.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the entity.</p>
@@ -636,8 +636,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The ID of the entity.</p>
@@ -646,8 +646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the entity.</p>
-        pub fn entity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_name(inp);
+        pub fn entity_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_name(signature.into());
             self
         }
         /// <p>The name of the entity.</p>
@@ -656,8 +656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the entity.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the entity.</p>
@@ -674,9 +674,9 @@ pub mod fluent_builders {
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentRequest>,
+            v: crate::model::ComponentRequest,
         ) -> Self {
-            self.inner = self.inner.components(k, v);
+            self.inner = self.inner.components(k.into(), v);
             self
         }
         /// <p>An object that maps strings to the components in the entity. Each string
@@ -691,8 +691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity's parent entity.</p>
-        pub fn parent_entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_entity_id(inp);
+        pub fn parent_entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_entity_id(signature.into());
             self
         }
         /// <p>The ID of the entity's parent entity.</p>
@@ -713,7 +713,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can use to manage the entity.</p>
@@ -787,8 +787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the scene.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the scene.</p>
@@ -797,8 +797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the scene.</p>
-        pub fn scene_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scene_id(inp);
+        pub fn scene_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scene_id(signature.into());
             self
         }
         /// <p>The ID of the scene.</p>
@@ -807,8 +807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path that specifies the location of the content definition file.</p>
-        pub fn content_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_location(inp);
+        pub fn content_location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_location(signature.into());
             self
         }
         /// <p>The relative path that specifies the location of the content definition file.</p>
@@ -820,8 +820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for this scene.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description for this scene.</p>
@@ -834,8 +834,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>A list of capabilities that the scene uses to render itself.</p>
-        pub fn capabilities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capabilities(inp);
+        pub fn capabilities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capabilities(input.into());
             self
         }
         /// <p>A list of capabilities that the scene uses to render itself.</p>
@@ -856,7 +856,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can use to manage the scene.</p>
@@ -930,8 +930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -940,8 +940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the workspace.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the workspace.</p>
@@ -950,8 +950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-        pub fn s3_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_location(inp);
+        pub fn s3_location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_location(signature.into());
             self
         }
         /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
@@ -960,8 +960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the execution role associated with the workspace.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(signature.into());
             self
         }
         /// <p>The ARN of the execution role associated with the workspace.</p>
@@ -979,7 +979,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can use to manage the workspace</p>
@@ -1053,8 +1053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the component type.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -1063,8 +1063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type to delete.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(signature.into());
             self
         }
         /// <p>The ID of the component type to delete.</p>
@@ -1136,8 +1136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the entity to delete.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the entity to delete.</p>
@@ -1146,8 +1146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity to delete.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The ID of the entity to delete.</p>
@@ -1156,8 +1156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
-        pub fn is_recursive(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_recursive(inp);
+        pub fn is_recursive(mut self, signature: bool) -> Self {
+            self.inner = self.inner.is_recursive(signature);
             self
         }
         /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
@@ -1226,8 +1226,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -1236,8 +1236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the scene to delete.</p>
-        pub fn scene_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scene_id(inp);
+        pub fn scene_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scene_id(signature.into());
             self
         }
         /// <p>The ID of the scene to delete.</p>
@@ -1306,8 +1306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to delete.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace to delete.</p>
@@ -1376,8 +1376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the component type.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -1386,8 +1386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(signature.into());
             self
         }
         /// <p>The ID of the component type.</p>
@@ -1459,8 +1459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -1469,8 +1469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The ID of the entity.</p>
@@ -1540,8 +1540,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component whose property values the operation returns.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(signature.into());
             self
         }
         /// <p>The name of the component whose property values the operation returns.</p>
@@ -1553,8 +1553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type whose property values the operation returns.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(signature.into());
             self
         }
         /// <p>The ID of the component type whose property values the operation returns.</p>
@@ -1566,8 +1566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity whose property values the operation returns.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The ID of the entity whose property values the operation returns.</p>
@@ -1580,8 +1580,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
         ///
         /// <p>The properties whose values the operation returns.</p>
-        pub fn selected_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selected_properties(inp);
+        pub fn selected_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selected_properties(input.into());
             self
         }
         /// <p>The properties whose values the operation returns.</p>
@@ -1593,8 +1593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workspace whose values the operation returns.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace whose values the operation returns.</p>
@@ -1665,8 +1665,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -1675,8 +1675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The ID of the entity.</p>
@@ -1685,8 +1685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(signature.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -1698,8 +1698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(signature.into());
             self
         }
         /// <p>The ID of the component type.</p>
@@ -1715,8 +1715,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
         ///
         /// <p>A list of properties whose value histories the request retrieves.</p>
-        pub fn selected_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selected_properties(inp);
+        pub fn selected_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selected_properties(input.into());
             self
         }
         /// <p>A list of properties whose value histories the request retrieves.</p>
@@ -1732,8 +1732,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_property_filters`](Self::set_property_filters).
         ///
         /// <p>A list of objects that filter the property value history request.</p>
-        pub fn property_filters(mut self, inp: impl Into<crate::model::PropertyFilter>) -> Self {
-            self.inner = self.inner.property_filters(inp);
+        pub fn property_filters(mut self, input: crate::model::PropertyFilter) -> Self {
+            self.inner = self.inner.property_filters(input);
             self
         }
         /// <p>A list of objects that filter the property value history request.</p>
@@ -1745,8 +1745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the earliest property value to return.</p>
-        pub fn start_date_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date_time(inp);
+        pub fn start_date_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date_time(signature);
             self
         }
         /// <p>The date and time of the earliest property value to return.</p>
@@ -1758,8 +1758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the latest property value to return.</p>
-        pub fn end_date_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date_time(inp);
+        pub fn end_date_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date_time(signature);
             self
         }
         /// <p>The date and time of the latest property value to return.</p>
@@ -1771,8 +1771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-        pub fn interpolation(mut self, inp: crate::model::InterpolationParameters) -> Self {
-            self.inner = self.inner.interpolation(inp);
+        pub fn interpolation(mut self, signature: crate::model::InterpolationParameters) -> Self {
+            self.inner = self.inner.interpolation(signature);
             self
         }
         /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
@@ -1784,8 +1784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -1794,8 +1794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1804,8 +1804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time direction to use in the result order.</p>
-        pub fn order_by_time(mut self, inp: crate::model::OrderByTime) -> Self {
-            self.inner = self.inner.order_by_time(inp);
+        pub fn order_by_time(mut self, signature: crate::model::OrderByTime) -> Self {
+            self.inner = self.inner.order_by_time(signature);
             self
         }
         /// <p>The time direction to use in the result order.</p>
@@ -1877,8 +1877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the scene.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the scene.</p>
@@ -1887,8 +1887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the scene.</p>
-        pub fn scene_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scene_id(inp);
+        pub fn scene_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scene_id(signature.into());
             self
         }
         /// <p>The ID of the scene.</p>
@@ -1957,8 +1957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -2027,8 +2027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -2041,8 +2041,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of objects that filter the request.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ListComponentTypesFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ListComponentTypesFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of objects that filter the request.</p>
@@ -2054,8 +2054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2064,8 +2064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -2134,8 +2134,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -2148,8 +2148,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of objects that filter the request.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ListEntitiesFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ListEntitiesFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of objects that filter the request.</p>
@@ -2161,8 +2161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -2171,8 +2171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2241,8 +2241,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the scenes.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the scenes.</p>
@@ -2251,8 +2251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>Specifies the maximum number of results to display.</p>
@@ -2261,8 +2261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2331,8 +2331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2341,8 +2341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -2351,8 +2351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2421,8 +2421,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, signature: i32) -> Self {
+            self.inner = self.inner.max_results(signature);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -2431,8 +2431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(signature.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2501,8 +2501,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2520,7 +2520,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata to add to this resource.</p>
@@ -2594,8 +2594,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(signature.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2608,8 +2608,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.</p>
@@ -2681,8 +2681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the component type.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -2692,8 +2692,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value that specifies whether an entity can have more than one component of this
         /// type.</p>
-        pub fn is_singleton(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_singleton(inp);
+        pub fn is_singleton(mut self, signature: bool) -> Self {
+            self.inner = self.inner.is_singleton(signature);
             self
         }
         /// <p>A Boolean value that specifies whether an entity can have more than one component of this
@@ -2703,8 +2703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(signature.into());
             self
         }
         /// <p>The ID of the component type.</p>
@@ -2716,8 +2716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the component type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the component type.</p>
@@ -2734,9 +2734,9 @@ pub mod fluent_builders {
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyDefinitionRequest>,
+            v: crate::model::PropertyDefinitionRequest,
         ) -> Self {
-            self.inner = self.inner.property_definitions(k, v);
+            self.inner = self.inner.property_definitions(k.into(), v);
             self
         }
         /// <p>An object that maps strings to the property definitions in the component type. Each string
@@ -2758,8 +2758,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_extends_from`](Self::set_extends_from).
         ///
         /// <p>Specifies the component type that this component type extends.</p>
-        pub fn extends_from(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extends_from(inp);
+        pub fn extends_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extends_from(input.into());
             self
         }
         /// <p>Specifies the component type that this component type extends.</p>
@@ -2779,9 +2779,9 @@ pub mod fluent_builders {
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FunctionRequest>,
+            v: crate::model::FunctionRequest,
         ) -> Self {
-            self.inner = self.inner.functions(k, v);
+            self.inner = self.inner.functions(k.into(), v);
             self
         }
         /// <p>An object that maps strings to the functions in the component type. Each string
@@ -2856,8 +2856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the entity.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the entity.</p>
@@ -2866,8 +2866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(signature.into());
             self
         }
         /// <p>The ID of the entity.</p>
@@ -2876,8 +2876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the entity.</p>
-        pub fn entity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_name(inp);
+        pub fn entity_name(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_name(signature.into());
             self
         }
         /// <p>The name of the entity.</p>
@@ -2886,8 +2886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the entity.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the entity.</p>
@@ -2904,9 +2904,9 @@ pub mod fluent_builders {
         pub fn component_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentUpdateRequest>,
+            v: crate::model::ComponentUpdateRequest,
         ) -> Self {
-            self.inner = self.inner.component_updates(k, v);
+            self.inner = self.inner.component_updates(k.into(), v);
             self
         }
         /// <p>An object that maps strings to the component updates in the request. Each string
@@ -2926,9 +2926,9 @@ pub mod fluent_builders {
         /// <p>An object that describes the update request for a parent entity.</p>
         pub fn parent_entity_update(
             mut self,
-            inp: crate::model::ParentEntityUpdateRequest,
+            signature: crate::model::ParentEntityUpdateRequest,
         ) -> Self {
-            self.inner = self.inner.parent_entity_update(inp);
+            self.inner = self.inner.parent_entity_update(signature);
             self
         }
         /// <p>An object that describes the update request for a parent entity.</p>
@@ -3000,8 +3000,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the scene.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace that contains the scene.</p>
@@ -3010,8 +3010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the scene.</p>
-        pub fn scene_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scene_id(inp);
+        pub fn scene_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scene_id(signature.into());
             self
         }
         /// <p>The ID of the scene.</p>
@@ -3020,8 +3020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path that specifies the location of the content definition file.</p>
-        pub fn content_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_location(inp);
+        pub fn content_location(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_location(signature.into());
             self
         }
         /// <p>The relative path that specifies the location of the content definition file.</p>
@@ -3033,8 +3033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of this scene.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of this scene.</p>
@@ -3047,8 +3047,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>A list of capabilities that the scene uses to render.</p>
-        pub fn capabilities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capabilities(inp);
+        pub fn capabilities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capabilities(input.into());
             self
         }
         /// <p>A list of capabilities that the scene uses to render.</p>
@@ -3120,8 +3120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(signature.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -3130,8 +3130,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the workspace.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(signature.into());
             self
         }
         /// <p>The description of the workspace.</p>
@@ -3140,8 +3140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the execution role associated with the workspace.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(signature.into());
             self
         }
         /// <p>The ARN of the execution role associated with the workspace.</p>

@@ -544,10 +544,10 @@ pub mod update_stage_output {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
             let mut hash_map = self.route_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.route_settings = Some(hash_map);
             self
         }
@@ -773,10 +773,10 @@ pub mod update_route_response_output {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -1104,10 +1104,10 @@ pub mod update_route_output {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -2019,10 +2019,10 @@ pub mod update_integration_output {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -2226,10 +2226,10 @@ pub mod update_domain_name_output {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            input: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
             let mut v = self.domain_name_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_name_configurations = Some(v);
             self
         }
@@ -4236,9 +4236,9 @@ pub mod get_vpc_links_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A collection of VPC links.</p>
-        pub fn items(mut self, input: impl Into<crate::model::VpcLink>) -> Self {
+        pub fn items(mut self, input: crate::model::VpcLink) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -4648,9 +4648,9 @@ pub mod get_stages_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Stage>) -> Self {
+        pub fn items(mut self, input: crate::model::Stage) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -4976,10 +4976,10 @@ pub mod get_stage_output {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
             let mut hash_map = self.route_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.route_settings = Some(hash_map);
             self
         }
@@ -5123,9 +5123,9 @@ pub mod get_routes_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Route>) -> Self {
+        pub fn items(mut self, input: crate::model::Route) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -5205,9 +5205,9 @@ pub mod get_route_responses_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RouteResponse>) -> Self {
+        pub fn items(mut self, input: crate::model::RouteResponse) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -5369,10 +5369,10 @@ pub mod get_route_response_output {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -5700,10 +5700,10 @@ pub mod get_route_output {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -5884,9 +5884,9 @@ pub mod get_models_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Model>) -> Self {
+        pub fn items(mut self, input: crate::model::Model) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -6096,9 +6096,9 @@ pub mod get_integrations_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Integration>) -> Self {
+        pub fn items(mut self, input: crate::model::Integration) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -6178,9 +6178,9 @@ pub mod get_integration_responses_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::IntegrationResponse>) -> Self {
+        pub fn items(mut self, input: crate::model::IntegrationResponse) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -6913,10 +6913,10 @@ pub mod get_integration_output {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -7049,9 +7049,9 @@ pub mod get_domain_names_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DomainName>) -> Self {
+        pub fn items(mut self, input: crate::model::DomainName) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -7202,10 +7202,10 @@ pub mod get_domain_name_output {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            input: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
             let mut v = self.domain_name_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_name_configurations = Some(v);
             self
         }
@@ -7319,9 +7319,9 @@ pub mod get_deployments_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Deployment>) -> Self {
+        pub fn items(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -7562,9 +7562,9 @@ pub mod get_authorizers_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Authorizer>) -> Self {
+        pub fn items(mut self, input: crate::model::Authorizer) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -7945,9 +7945,9 @@ pub mod get_apis_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Api>) -> Self {
+        pub fn items(mut self, input: crate::model::Api) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -8027,9 +8027,9 @@ pub mod get_api_mappings_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ApiMapping>) -> Self {
+        pub fn items(mut self, input: crate::model::ApiMapping) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -9669,10 +9669,10 @@ pub mod create_stage_output {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
             let mut hash_map = self.route_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.route_settings = Some(hash_map);
             self
         }
@@ -9898,10 +9898,10 @@ pub mod create_route_response_output {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -10229,10 +10229,10 @@ pub mod create_route_output {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -11144,10 +11144,10 @@ pub mod create_integration_output {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -11351,10 +11351,10 @@ pub mod create_domain_name_output {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            input: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
             let mut v = self.domain_name_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_name_configurations = Some(v);
             self
         }

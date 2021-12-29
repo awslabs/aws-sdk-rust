@@ -311,10 +311,10 @@ pub mod update_user_attributes_output {
         /// attributes.</p>
         pub fn code_delivery_details_list(
             mut self,
-            input: impl Into<crate::model::CodeDeliveryDetailsType>,
+            input: crate::model::CodeDeliveryDetailsType,
         ) -> Self {
             let mut v = self.code_delivery_details_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.code_delivery_details_list = Some(v);
             self
         }
@@ -1504,9 +1504,9 @@ pub mod list_users_in_group_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>The users returned in the request to list users.</p>
-        pub fn users(mut self, input: impl Into<crate::model::UserType>) -> Self {
+        pub fn users(mut self, input: crate::model::UserType) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -1590,9 +1590,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>The users returned in the request to list users.</p>
-        pub fn users(mut self, input: impl Into<crate::model::UserType>) -> Self {
+        pub fn users(mut self, input: crate::model::UserType) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -1680,12 +1680,9 @@ pub mod list_user_pools_output {
         /// To override the contents of this collection use [`set_user_pools`](Self::set_user_pools).
         ///
         /// <p>The user pools from the response to list users.</p>
-        pub fn user_pools(
-            mut self,
-            input: impl Into<crate::model::UserPoolDescriptionType>,
-        ) -> Self {
+        pub fn user_pools(mut self, input: crate::model::UserPoolDescriptionType) -> Self {
             let mut v = self.user_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_pools = Some(v);
             self
         }
@@ -1773,12 +1770,9 @@ pub mod list_user_pool_clients_output {
         /// To override the contents of this collection use [`set_user_pool_clients`](Self::set_user_pool_clients).
         ///
         /// <p>The user pool clients in the response that lists user pool clients.</p>
-        pub fn user_pool_clients(
-            mut self,
-            input: impl Into<crate::model::UserPoolClientDescription>,
-        ) -> Self {
+        pub fn user_pool_clients(mut self, input: crate::model::UserPoolClientDescription) -> Self {
             let mut v = self.user_pool_clients.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_pool_clients = Some(v);
             self
         }
@@ -1864,12 +1858,9 @@ pub mod list_user_import_jobs_output {
         /// To override the contents of this collection use [`set_user_import_jobs`](Self::set_user_import_jobs).
         ///
         /// <p>The user import jobs.</p>
-        pub fn user_import_jobs(
-            mut self,
-            input: impl Into<crate::model::UserImportJobType>,
-        ) -> Self {
+        pub fn user_import_jobs(mut self, input: crate::model::UserImportJobType) -> Self {
             let mut v = self.user_import_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_import_jobs = Some(v);
             self
         }
@@ -2028,12 +2019,9 @@ pub mod list_resource_servers_output {
         /// To override the contents of this collection use [`set_resource_servers`](Self::set_resource_servers).
         ///
         /// <p>The resource servers.</p>
-        pub fn resource_servers(
-            mut self,
-            input: impl Into<crate::model::ResourceServerType>,
-        ) -> Self {
+        pub fn resource_servers(mut self, input: crate::model::ResourceServerType) -> Self {
             let mut v = self.resource_servers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_servers = Some(v);
             self
         }
@@ -2113,9 +2101,9 @@ pub mod list_identity_providers_output {
         /// To override the contents of this collection use [`set_providers`](Self::set_providers).
         ///
         /// <p>A list of identity provider objects.</p>
-        pub fn providers(mut self, input: impl Into<crate::model::ProviderDescription>) -> Self {
+        pub fn providers(mut self, input: crate::model::ProviderDescription) -> Self {
             let mut v = self.providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.providers = Some(v);
             self
         }
@@ -2197,9 +2185,9 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The group objects for the groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupType>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupType) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -2281,9 +2269,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>The devices returned in the list devices response.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceType>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceType) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -3094,9 +3082,9 @@ pub mod get_user_output {
         /// <p>An array of name-value pairs representing user attributes.</p>
         /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
         /// attribute name.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
@@ -3119,9 +3107,9 @@ pub mod get_user_output {
         /// information only about SMS MFA configurations. It doesn't provide information about TOTP
         /// software token MFA configurations. To look up information about either type of MFA
         /// configuration, use UserMFASettingList instead.</p>
-        pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
+        pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_options = Some(v);
             self
         }
@@ -5395,9 +5383,9 @@ pub mod admin_list_user_auth_events_output {
         /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>,
         /// <code>CreationDate</code>, <code>EventRisk</code>, and
         /// <code>EventResponse</code>.</p>
-        pub fn auth_events(mut self, input: impl Into<crate::model::AuthEventType>) -> Self {
+        pub fn auth_events(mut self, input: crate::model::AuthEventType) -> Self {
             let mut v = self.auth_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auth_events = Some(v);
             self
         }
@@ -5481,9 +5469,9 @@ pub mod admin_list_groups_for_user_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The groups that the user belongs to.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupType>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupType) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -5565,9 +5553,9 @@ pub mod admin_list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>The devices in the list of devices response.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceType>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceType) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -6309,9 +6297,9 @@ pub mod admin_get_user_output {
         /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
         ///
         /// <p>An array of name-value pairs representing user attributes.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
@@ -6433,9 +6421,9 @@ pub mod admin_get_user_output {
         /// information only about SMS MFA configurations. It doesn't provide information about TOTP
         /// software token MFA configurations. To look up information about either type of MFA
         /// configuration, use UserMFASettingList instead.</p>
-        pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
+        pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_options = Some(v);
             self
         }
